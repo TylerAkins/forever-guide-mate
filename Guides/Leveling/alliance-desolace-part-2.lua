@@ -1,471 +1,849 @@
 local _, ns = ...
 
--- Forever Casual spine: Desolace (40-41)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    HILLSBRAD_FOOTHILLS = 1424,
-    THOUSAND_NEEDLES = 1441,
-    DESOLACE = 1443,
-    IRONFORGE = 1455,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-alliance-desolace-part-2",
+    revision = 3,
     title = "Desolace",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-alliance-desolace-part-2",
     conditions = {
         all = {
             { faction = "Alliance" },
-            { level = { min = 40 } },
+            {
+                level = { min = 40 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-261-down-the-scarlet-path",
+            kind = "note",
+            text = "Reach level 34 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 34 },
+            },
+            requiredLevel = 34,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 261,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.0791, mapID = 1443, label = "Brother Anton", offMapText = "Travel to Brother Anton in Desolace.", x = 0.6652 },
+            },
+            text = "Accept Down the Scarlet Path from Brother Anton.",
             id = "accept-261-down-the-scarlet-path",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Down the Scarlet Path.",
-            complete = QuestState(261, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.6652, 0.0791, "Down the Scarlet Path",
-                    "Travel to Down the Scarlet Path."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 34 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 261, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 30,
+            route = {
+                { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
+            },
+            text = "Accept Reagents for Reclaimers Inc. from Kreldig Ungor.",
             id = "accept-1466-reagents-for-reclaimers-inc",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Reagents for Reclaimers Inc.",
-            complete = QuestState(1466, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.6620, 0.0963, "Reagents for Reclaimers Inc",
-                    "Travel to Reagents for Reclaimers Inc.."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1466, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1459 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-6134-ghost-o-plasm-round-up",
+            kind = "note",
+            text = "Reach level 34 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 34 },
+            },
+            requiredLevel = 34,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6134,
+            priority = 40,
+        },
+        {
+            priority = 50,
+            route = {
+                { y = 0.6182, mapID = 1443, label = "Hornizz Brimbuzzle", offMapText = "Travel to Hornizz Brimbuzzle in Desolace.", x = 0.4783 },
+            },
+            text = "Accept Ghost-o-plasm Round Up from Hornizz Brimbuzzle.",
             id = "accept-6134-ghost-o-plasm-round-up",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Ghost-o-plasm Round Up.",
-            complete = QuestState(6134, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.4783, 0.6182, "Ghost-o-plasm Round Up",
-                    "Travel to Ghost-o-plasm Round Up."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 34 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6134, state = "activeOrCompleted" },
+            },
+            sourceStep = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            route = {
+                { mapID = 1435, x = 0.6131, y = 0.2325, label = "Draenethyst Shard", offMapText = "Travel to Draenethyst Shard." },
+            },
+            text = "For Ongeku: Maintain your reputation with the Gelkis, and bring a Draenethyst Shard to Uthek the Wise in the Gelkis Village in Desolace.",
+            id = "objective-1373-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 1373, state = "complete" },
+            },
+            sourceStep = 5,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1370 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 70,
+            route = {
+                { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
+            },
+            text = "Turn in Ongeku to Uthek the Wise.",
             id = "turnin-1373-ongeku",
             kind = "turnin",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Ongeku.",
-            complete = QuestState(1373, "completed"),
-            route = {
-                Point(1443, 0.3622, 0.7925, "Ongeku",
-                    "Travel to Ongeku."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1373, state = "completed" },
+            },
+            sourceStep = 5,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1370 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-1373-quest-work" },
         },
         {
+            priority = 80,
+            route = {
+                { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
+            },
+            text = "Accept Khan Jehn from Uthek the Wise.",
             id = "accept-1374-khan-jehn",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Khan Jehn.",
-            complete = QuestState(1374, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.3622, 0.7925, "Khan Jehn",
-                    "Travel to Khan Jehn."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1374, state = "activeOrCompleted" },
+            },
+            sourceStep = 5,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1373 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 90,
+            text = "Collect 10 Doomwarder Blood.",
+            route = {
+                { y = 0.824, mapID = 1443, label = "Doomwarder Captain", offMapText = "Travel to Doomwarder Captain.", x = 0.504 },
+            },
+            dependsOn = { "accept-1466-reagents-for-reclaimers-inc" },
             id = "objective-1466-3-doomwarder-captain",
             kind = "objective",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Doomwarder Captain.",
-            complete = QuestObjective(1466, 3, "Doomwarder Captain"),
-            dependsOn = { "accept-1466-reagents-for-reclaimers-inc" },
-            route = {
-                Point(1443, 0.5040, 0.8240, "Doomwarder Captain",
-                    "Travel to Doomwarder Captain."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1466, text = "Doomwarder Captain", index = 3, count = 10 },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1459 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-1466-1-felhound-brain",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 10 Felhound Brain.",
+            complete = {
+                questObjective = { id = 1466, index = 1, text = "Felhound Brain", count = 10 },
+            },
+            route = {
+                { mapID = 1443, x = 0.534, y = 0.772, label = "Felhound Brain", offMapText = "Travel to Felhound Brain." },
+            },
+            sourceStep = 8,
+            priority = 100,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1459 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1466-reagents-for-reclaimers-inc" },
+        },
+        {
+            id = "objective-1466-2-nether-wing",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 10 Nether Wing.",
+            complete = {
+                questObjective = { id = 1466, index = 2, text = "Nether Wing", count = 10 },
+            },
+            route = {
+                { mapID = 1443, x = 0.542, y = 0.778, label = "Nether Wing", offMapText = "Travel to Nether Wing." },
+            },
+            sourceStep = 9,
+            priority = 110,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1459 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1466-reagents-for-reclaimers-inc" },
+        },
+        {
+            priority = 120,
+            text = "Use the Crate of Ghost Magnets beside the large bones in southern Desolace. Kill the Magrami Spectres it attracts and collect 8 Ghost-o-plasm. Pull them away from the magnet before they become hostile.",
+            route = {
+                { y = 0.9127, mapID = 1443, label = "Crate of Ghost Magnets", offMapText = "Travel to Crate of Ghost Magnets.", x = 0.6381 },
+            },
+            dependsOn = { "accept-6134-ghost-o-plasm-round-up" },
             id = "objective-6134-1-crate-of-ghost-magnets",
             kind = "objective",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use Crate of Ghost Magnets.",
-            complete = QuestObjective(6134, 1, "Crate of Ghost Magnets"),
-            dependsOn = { "accept-6134-ghost-o-plasm-round-up" },
-            route = {
-                Point(1443, 0.6381, 0.9127, "Crate of Ghost Magnets",
-                    "Travel to Crate of Ghost Magnets."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 34 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 6134, text = "Crate of Ghost Magnets", index = 1, count = 8 },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-261-1-undead-ravager",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 34 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Kill 30 Undead Ravager.",
+            complete = {
+                questObjective = { id = 261, index = 1, text = "Undead Ravager", count = 30 },
+            },
+            route = {
+                { mapID = 1443, x = 0.6459999999999999, y = 0.912, label = "Undead Ravager", offMapText = "Travel to Undead Ravager." },
+            },
+            sourceStep = 11,
+            priority = 130,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-261-down-the-scarlet-path" },
+        },
+        {
+            priority = 140,
+            text = "Collect 1 Khan Jehn's Head.",
+            route = {
+                { y = 0.8008, mapID = 1443, label = "Khan Jehn", offMapText = "Travel to Khan Jehn.", x = 0.6639 },
+            },
+            dependsOn = { "accept-1374-khan-jehn" },
             id = "objective-1374-1-khan-jehn",
             kind = "objective",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Khan Jehn.",
-            complete = QuestObjective(1374, 1, "Khan Jehn"),
-            dependsOn = { "accept-1374-khan-jehn" },
-            route = {
-                Point(1443, 0.6639, 0.8008, "Khan Jehn",
-                    "Travel to Khan Jehn."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1374, text = "Khan Jehn", index = 1, count = 1 },
+            },
+            sourceStep = 13,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1373 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 150,
+            text = "Turn in Ghost-o-plasm Round Up to Hornizz Brimbuzzle.",
+            route = {
+                { y = 0.6183, mapID = 1443, label = "Hornizz Brimbuzzle", offMapText = "Travel to Hornizz Brimbuzzle in Desolace.", x = 0.4783 },
+            },
+            dependsOn = { "accept-6134-ghost-o-plasm-round-up", "objective-6134-1-crate-of-ghost-magnets" },
             id = "turnin-6134-ghost-o-plasm-round-up",
             kind = "turnin",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Ghost-o-plasm Round Up.",
-            complete = QuestState(6134, "completed"),
-            dependsOn = { "accept-6134-ghost-o-plasm-round-up", "objective-6134-1-crate-of-ghost-magnets" },
-            route = {
-                Point(1443, 0.4783, 0.6183, "Ghost-o-plasm Round Up",
-                    "Travel to Ghost-o-plasm Round Up."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 34 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6134, state = "completed" },
+            },
+            sourceStep = 14,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 160,
+            text = "Turn in Khan Jehn to Uthek the Wise.",
+            route = {
+                { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
+            },
+            dependsOn = { "accept-1374-khan-jehn", "objective-1374-1-khan-jehn" },
             id = "turnin-1374-khan-jehn",
             kind = "turnin",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Khan Jehn.",
-            complete = QuestState(1374, "completed"),
-            dependsOn = { "accept-1374-khan-jehn", "objective-1374-1-khan-jehn" },
-            route = {
-                Point(1443, 0.3622, 0.7925, "Khan Jehn",
-                    "Travel to Khan Jehn."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1374, state = "completed" },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1373 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 170,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Turn in Rumors for Kravel to Kravel Koalbeard.",
             id = "turnin-1117-rumors-for-kravel",
             kind = "turnin",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Rumors for Kravel.",
-            complete = QuestState(1117, "completed"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "Rumors for Kravel",
-                    "Travel to Rumors for Kravel."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1117, state = "completed" },
+            },
+            sourceStep = 22,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1116 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-1118-back-to-booty-bay",
+            kind = "note",
+            text = "Reach level 35 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 35 },
+            },
+            requiredLevel = 35,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1118,
+            priority = 180,
+        },
+        {
+            priority = 190,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Accept Back to Booty Bay from Kravel Koalbeard.",
             id = "accept-1118-back-to-booty-bay",
             kind = "accept",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 44 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Back to Booty Bay.",
-            complete = QuestState(1118, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "Back to Booty Bay",
-                    "Travel to Back to Booty Bay."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 35 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1118, state = "activeOrCompleted" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1117 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 200,
+            route = {
+                { y = 0.7712, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
+            },
+            text = "Accept Martek the Exiled from Fizzle Brassbolts.",
             id = "accept-1106-martek-the-exiled",
             kind = "accept",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Martek the Exiled.",
-            complete = QuestState(1106, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7806, 0.7712, "Martek the Exiled",
-                    "Travel to Martek the Exiled."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 26 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1106, state = "activeOrCompleted" },
+            },
+            sourceStep = 24,
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 1104, 1105 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 210,
+            route = {
+                { mapID = 1445, x = 0.5407, y = 0.5649000000000001, label = "Razzeric's Tweaking", offMapText = "Travel to Razzeric's Tweaking." },
+            },
+            text = "Open the Gizmorium Shipping Crate on the Dustwallow coast and collect the Seaforium Booster.",
+            id = "objective-1187-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 1187, index = 1, count = 1 },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1186 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 220,
+            route = {
+                { y = 0.761, mapID = 1441, label = "Razzeric", offMapText = "Travel to Razzeric in Thousand Needles.", x = 0.8033 },
+            },
+            text = "Turn in Razzeric's Tweaking to Razzeric.",
             id = "turnin-1187-razzeric-s-tweaking",
             kind = "turnin",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 46 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Razzeric's Tweaking.",
-            complete = QuestState(1187, "completed"),
-            route = {
-                Point(1441, 0.8033, 0.7610, "Razzeric's Tweaking",
-                    "Travel to Razzeric's Tweaking."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1187, state = "completed" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1186 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-1187-quest-work" },
         },
         {
+            priority = 230,
+            route = {
+                { y = 0.761, mapID = 1441, label = "Razzeric", offMapText = "Travel to Razzeric in Thousand Needles.", x = 0.8033 },
+            },
+            text = "Accept Safety First from Razzeric.",
             id = "accept-1188-safety-first",
             kind = "accept",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 46 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Safety First.",
-            complete = QuestState(1188, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.8033, 0.7610, "Safety First",
-                    "Travel to Safety First."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1188, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1187 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 240,
+            text = "Turn in Down the Scarlet Path to Brother Anton.",
+            route = {
+                { y = 0.0791, mapID = 1443, label = "Brother Anton", offMapText = "Travel to Brother Anton in Desolace.", x = 0.6652 },
+            },
+            dependsOn = { "accept-261-down-the-scarlet-path", "objective-261-1-undead-ravager" },
             id = "turnin-261-down-the-scarlet-path",
             kind = "turnin",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Down the Scarlet Path.",
-            complete = QuestState(261, "completed"),
-            dependsOn = { "accept-261-down-the-scarlet-path" },
-            route = {
-                Point(1443, 0.6652, 0.0791, "Down the Scarlet Path",
-                    "Travel to Down the Scarlet Path."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 34 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 261, state = "completed" },
+            },
+            sourceStep = 26,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 250,
+            route = {
+                { y = 0.0791, mapID = 1443, label = "Brother Anton", offMapText = "Travel to Brother Anton in Desolace.", x = 0.6652 },
+            },
+            text = "Accept Down the Scarlet Path from Brother Anton.",
             id = "accept-1052-down-the-scarlet-path",
             kind = "accept",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Down the Scarlet Path.",
-            complete = QuestState(1052, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.6652, 0.0791, "Down the Scarlet Path",
-                    "Travel to Down the Scarlet Path."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 34 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1052, state = "activeOrCompleted" },
+            },
+            sourceStep = 26,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 261 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 260,
+            text = "Turn in Reagents for Reclaimers Inc. to Kreldig Ungor.",
+            route = {
+                { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
+            },
+            dependsOn = {
+                "accept-1466-reagents-for-reclaimers-inc",
+                "objective-1466-3-doomwarder-captain",
+                "objective-1466-1-felhound-brain",
+                "objective-1466-2-nether-wing",
+            },
             id = "turnin-1466-reagents-for-reclaimers-inc",
             kind = "turnin",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Reagents for Reclaimers Inc.",
-            complete = QuestState(1466, "completed"),
-            dependsOn = { "accept-1466-reagents-for-reclaimers-inc", "objective-1466-3-doomwarder-captain" },
-            route = {
-                Point(1443, 0.6620, 0.0963, "Reagents for Reclaimers Inc",
-                    "Travel to Reagents for Reclaimers Inc.."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1466, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1459 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 270,
+            route = {
+                { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
+            },
+            text = "Accept Reagents for Reclaimers Inc. from Kreldig Ungor.",
             id = "accept-1467-reagents-for-reclaimers-inc",
             kind = "accept",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Reagents for Reclaimers Inc.",
-            complete = QuestState(1467, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.6620, 0.0963, "Reagents for Reclaimers Inc",
-                    "Travel to Reagents for Reclaimers Inc.."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1467, state = "activeOrCompleted" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1466 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 280,
+            text = "Turn in Down the Scarlet Path to Raleigh the Devout.",
+            route = {
+                { y = 0.5835, mapID = 1424, label = "Raleigh the Devout", offMapText = "Travel to Raleigh the Devout in Hillsbrad Foothills.", x = 0.5147 },
+            },
+            dependsOn = { "accept-1052-down-the-scarlet-path" },
             id = "turnin-1052-down-the-scarlet-path",
             kind = "turnin",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Down the Scarlet Path.",
-            complete = QuestState(1052, "completed"),
-            dependsOn = { "accept-1052-down-the-scarlet-path" },
-            route = {
-                Point(1424, 0.5147, 0.5835, "Down the Scarlet Path",
-                    "Travel to Down the Scarlet Path."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 34 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
-        },
-        {
-            id = "accept-1053-in-the-name-of-the-light",
-            kind = "accept",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept In the Name of the Light.",
-            complete = QuestState(1053, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5147, 0.5835, "In the Name of the Light",
-                    "Travel to In the Name of the Light."),
+            complete = {
+                quest = { id = 1052, state = "completed" },
             },
-        },
-        {
-            id = "objective-1053-4-houndmaster-loksey",
-            kind = "objective",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Houndmaster Loksey.",
-            complete = QuestObjective(1053, 4, "Houndmaster Loksey"),
-            dependsOn = { "accept-1053-in-the-name-of-the-light" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "objective-1050-1-mythology-of-the-titans",
-            kind = "objective",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Click Mythology of the Titans.",
-            complete = QuestObjective(1050, 1, "Mythology of the Titans"),
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "objective-1053-3-herod",
-            kind = "objective",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Herod.",
-            complete = QuestObjective(1053, 3, "Herod"),
-            dependsOn = { "accept-1053-in-the-name-of-the-light" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "objective-1053-2-scarlet-commander-mograine",
-            kind = "objective",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Scarlet Commander Mograine.",
-            complete = QuestObjective(1053, 2, "Scarlet Commander Mograine"),
-            dependsOn = { "accept-1053-in-the-name-of-the-light" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "objective-1053-1-high-inquisitor-whitemane",
-            kind = "objective",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill High Inquisitor Whitemane.",
-            complete = QuestObjective(1053, 1, "High Inquisitor Whitemane"),
-            dependsOn = { "accept-1053-in-the-name-of-the-light" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "turnin-1053-in-the-name-of-the-light",
-            kind = "turnin",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in In the Name of the Light.",
-            complete = QuestState(1053, "completed"),
-            dependsOn = { "accept-1053-in-the-name-of-the-light", "objective-1053-4-houndmaster-loksey", "objective-1053-3-herod", "objective-1053-2-scarlet-commander-mograine", "objective-1053-1-high-inquisitor-whitemane" },
-            route = {
-                Point(1424, 0.5147, 0.5835, "In the Name of the Light",
-                    "Travel to In the Name of the Light."),
+            sourceStep = 29,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 261 },
+                    conditions = {},
+                },
             },
-        },
-        {
-            id = "turnin-1050-mythology-of-the-titans",
-            kind = "turnin",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Mythology of the Titans.",
-            complete = QuestState(1050, "completed"),
-            dependsOn = { "objective-1050-1-mythology-of-the-titans" },
-            route = {
-                Point(1455, 0.7497, 0.1248, "Mythology of the Titans",
-                    "Travel to Mythology of the Titans."),
-            },
+            useClientText = false,
+            useClientPin = false,
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

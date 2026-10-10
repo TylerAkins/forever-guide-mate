@@ -1608,6 +1608,8 @@ def repair_woven_levels() -> None:
             if name not in changes:
                 changes.append(str(name))
         rendered = ",\n        ".join(goal.raw for goal in updated)
+        if re.search(r'routeMode\s*=\s*"ordered"', text):
+            raise ValueError(f"Authored itinerary {path} cannot be overwritten by the legacy weave tool.")
         path.write_text(replace_goals(text, rendered), encoding="utf-8")
         print(f"{relative}: {', '.join(changes)}")
 

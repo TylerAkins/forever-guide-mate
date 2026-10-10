@@ -1,834 +1,2100 @@
 local _, ns = ...
 
--- Forever Casual spine: Stranglethorn Vale & Swamp of Sorrows (40-41)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves:
--- 93663 Lost in Transit from Dar in Stonard; turn in to Magtoor at the Harborage.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    THE_BARRENS = 1413,
-    DUSKWOOD = 1431,
-    STRANGLETHORN_VALE = 1434,
-    SWAMP_OF_SORROWS = 1435,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
+    revision = 3,
     title = "Stranglethorn Vale & Swamp of Sorrows",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
     conditions = {
         all = {
             { faction = "Horde" },
-            { level = { min = 40 } },
+            {
+                level = { min = 40 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-woven-class-warlock-accept-4489-summon-felsteed",
+            kind = "note",
+            text = "Reach level 40 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 40 },
+            },
+            requiredLevel = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4489,
+            alternativeQuests = { 3631, 4487, 4488 },
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
+            },
+            id = "woven-class-warlock-accept-4489-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4489-summon-felsteed",
+        },
+        {
+            priority = 30,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "woven-class-warlock-accept-4489-summon-felsteed" },
+            id = "woven-class-warlock-turnin-4489-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4489-summon-felsteed",
+        },
+        {
+            priority = 40,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Zevrost", x = 0.484, offMapText = "Travel to Zevrost in Orgrimmar." },
+            },
+            id = "woven-class-warlock-accept-3631-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3631-summon-felsteed",
+        },
+        {
+            priority = 50,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "woven-class-warlock-accept-3631-summon-felsteed" },
+            id = "woven-class-warlock-turnin-3631-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3631-summon-felsteed",
+        },
+        {
+            id = "level-before-woven-class-warlock-accept-4490-summon-felsteed",
+            kind = "note",
+            text = "Reach level 40 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        },
+                    },
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 40 },
+            },
+            requiredLevel = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4490,
+            priority = 60,
+        },
+        {
+            priority = 70,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            id = "woven-class-warlock-accept-4490-summon-felsteed",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        },
+                    },
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4490-summon-felsteed",
+        },
+        {
+            priority = 80,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "woven-class-warlock-accept-4490-summon-felsteed" },
+            id = "woven-class-warlock-turnin-4490-summon-felsteed",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        },
+                    },
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4490-summon-felsteed",
+        },
+        {
+            id = "level-before-turnin-1270-stinky-s-escape",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1270,
+            priority = 90,
+        },
+        {
+            priority = 100,
+            route = {
+                { y = 0.3762, mapID = 1413, label = "Mebok Mizzyrix", offMapText = "Travel to Mebok Mizzyrix in The Barrens.", x = 0.6237 },
+            },
+            text = "Turn in Stinky's Escape to Mebok Mizzyrix.",
             id = "turnin-1270-stinky-s-escape",
             kind = "turnin",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Stinky's Escape.",
-            complete = QuestState(1270, "completed"),
-            route = {
-                Point(1413, 0.6237, 0.3762, "Stinky's Escape",
-                    "Travel to Stinky's Escape."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1270, state = "completed" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-577-some-assembly-required",
+            kind = "note",
+            text = "Reach level 31 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 31 },
+            },
+            requiredLevel = 31,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 577,
+            priority = 110,
+        },
+        {
+            priority = 120,
+            route = {
+                { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
+            },
+            text = "Accept Some Assembly Required from Drizzlik.",
             id = "accept-577-some-assembly-required",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Some Assembly Required.",
-            complete = QuestState(577, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2829, 0.7759, "Some Assembly Required",
-                    "Travel to Some Assembly Required."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 577, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 575 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 130,
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
+            },
+            text = "Accept Venture Company Mining from Crank Fizzlebub.",
             id = "accept-600-venture-company-mining",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Venture Company Mining.",
-            complete = QuestState(600, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2712, 0.7721, "Venture Company Mining",
-                    "Travel to Venture Company Mining."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 600, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 605 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-209-skullsplitter-tusks",
+            kind = "note",
+            text = "Reach level 37 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 37 },
+            },
+            requiredLevel = 37,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 209,
+            priority = 140,
+        },
+        {
+            priority = 150,
+            route = {
+                { y = 0.7713, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
+            },
+            text = "Accept Skullsplitter Tusks from Kebok.",
             id = "accept-209-skullsplitter-tusks",
             kind = "accept",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Skullsplitter Tusks.",
-            complete = QuestState(209, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2700, 0.7713, "Skullsplitter Tusks",
-                    "Travel to Skullsplitter Tusks."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 37 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 209, state = "activeOrCompleted" },
+            },
+            sourceStep = 4,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 189 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 160,
+            route = {
+                { y = 0.7701, mapID = 1434, label = "Fleet Master Seahorn", offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.", x = 0.2717 },
+            },
+            text = "Turn in Sunken Treasure to Fleet Master Seahorn.",
             id = "turnin-669-sunken-treasure",
             kind = "turnin",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Sunken Treasure.",
-            complete = QuestState(669, "completed"),
-            route = {
-                Point(1434, 0.2717, 0.7701, "Sunken Treasure",
-                    "Travel to Sunken Treasure."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 669, state = "completed" },
+            },
+            sourceStep = 5,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 668 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-572-mok-thardin-s-enchantment",
+            kind = "note",
+            text = "Reach level 33 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 33 },
+            },
+            requiredLevel = 33,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 572,
+            priority = 170,
+        },
+        {
+            priority = 180,
+            route = {
+                { y = 0.2924, mapID = 1434, label = "Far Seer Mok'thardin", offMapText = "Travel to Far Seer Mok'thardin in Stranglethorn Vale.", x = 0.3212 },
+            },
+            text = "Accept Mok'thardin's Enchantment from Far Seer Mok'thardin.",
             id = "accept-572-mok-thardin-s-enchantment",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Mok'thardin's Enchantment.",
-            complete = QuestState(572, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.3212, 0.2924, "Mok'thardin's Enchantment",
-                    "Travel to Mok'thardin's Enchantment."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 33 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 572, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 570 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 190,
+            route = {
+                { y = 0.2772, mapID = 1434, label = "Nimboya", offMapText = "Travel to Nimboya in Stranglethorn Vale.", x = 0.3216 },
+            },
+            text = "Accept Bloodscalp Clan Heads from Nimboya.",
             id = "accept-584-bloodscalp-clan-heads",
             kind = "accept",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Bloodscalp Clan Heads.",
-            complete = QuestState(584, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.3216, 0.2772, "Bloodscalp Clan Heads",
-                    "Travel to Bloodscalp Clan Heads."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 584, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 582 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 200,
+            route = {
+                { y = 0.2771, mapID = 1434, label = "Kin'weelay", offMapText = "Travel to Kin'weelay in Stranglethorn Vale.", x = 0.3227 },
+            },
+            text = "Accept Split Bone Necklace from Kin'weelay.",
             id = "accept-598-split-bone-necklace",
             kind = "accept",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Split Bone Necklace.",
-            complete = QuestState(598, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.3227, 0.2771, "Split Bone Necklace",
-                    "Travel to Split Bone Necklace."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 598, state = "activeOrCompleted" },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 596, 629 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 210,
+            route = {
+                { y = 0.2771, mapID = 1434, label = "Kin'weelay", offMapText = "Travel to Kin'weelay in Stranglethorn Vale.", x = 0.3227 },
+            },
+            text = "Turn in The Troll Witchdoctor to Kin'weelay.",
             id = "turnin-1240-the-troll-witchdoctor",
             kind = "turnin",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Troll Witchdoctor.",
-            complete = QuestState(1240, "completed"),
-            route = {
-                Point(1434, 0.3227, 0.2771, "The Troll Witchdoctor",
-                    "Travel to The Troll Witchdoctor."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1240, state = "completed" },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1239 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 220,
+            text = "Collect 1 Nezzliok's Head.",
+            route = {
+                { mapID = 1434, x = 0.2352, y = 0.0953, label = "Nezzliok's Head", offMapText = "Travel to Nezzliok's Head." },
+            },
+            dependsOn = { "accept-584-bloodscalp-clan-heads" },
             id = "objective-584-2-nezzliok-the-dire",
             kind = "objective",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Nezzliok the Dire.",
-            complete = QuestObjective(584, 2, "Nezzliok the Dire"),
-            dependsOn = { "accept-584-bloodscalp-clan-heads" },
-            route = {
-                Point(1434, 0.2143, 0.1013, "Nezzliok the Dire",
-                    "Travel to Nezzliok the Dire."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 584, text = "Nezzliok the Dire", index = 2, count = 1 },
+            },
+            sourceStep = 9,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 582 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 230,
+            text = "Collect 1 Gan'zulah's Head.",
+            route = {
+                { y = 0.0812, mapID = 1434, label = "Gan'zulah", offMapText = "Travel to Gan'zulah.", x = 0.2344 },
+            },
+            dependsOn = { "accept-584-bloodscalp-clan-heads" },
             id = "objective-584-1-gan-zulah",
             kind = "objective",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Gan'zulah.",
-            complete = QuestObjective(584, 1, "Gan'zulah"),
-            dependsOn = { "accept-584-bloodscalp-clan-heads" },
-            route = {
-                Point(1434, 0.2344, 0.0812, "Gan'zulah",
-                    "Travel to Gan'zulah."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 584, text = "Gan'zulah", index = 1, count = 1 },
+            },
+            sourceStep = 10,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 582 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 240,
+            text = "Turn in Bloodscalp Clan Heads.",
+            route = {
+                { y = 0.276, mapID = 1434, label = "Bloodscalp Clan Heads", offMapText = "Travel to Bloodscalp Clan Heads.", x = 0.3222 },
+            },
+            dependsOn = { "accept-584-bloodscalp-clan-heads", "objective-584-2-nezzliok-the-dire", "objective-584-1-gan-zulah" },
             id = "turnin-584-bloodscalp-clan-heads",
             kind = "turnin",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Bloodscalp Clan Heads.",
-            complete = QuestState(584, "completed"),
-            dependsOn = { "accept-584-bloodscalp-clan-heads", "objective-584-2-nezzliok-the-dire", "objective-584-1-gan-zulah" },
-            route = {
-                Point(1434, 0.3222, 0.2760, "Bloodscalp Clan Heads",
-                    "Travel to Bloodscalp Clan Heads."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 584, state = "completed" },
+            },
+            sourceStep = 11,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 582 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 250,
+            route = {
+                { y = 0.276, mapID = 1434, label = "Speaking with Nezzliok", offMapText = "Travel to Speaking with Nezzliok.", x = 0.3222 },
+            },
+            text = "Accept Speaking with Nezzliok.",
             id = "accept-585-speaking-with-nezzliok",
             kind = "accept",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Speaking with Nezzliok.",
-            complete = QuestState(585, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.3222, 0.2760, "Speaking with Nezzliok",
-                    "Travel to Speaking with Nezzliok."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 585, state = "activeOrCompleted" },
+            },
+            sourceStep = 11,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 584 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 260,
+            text = "Collect 10 Jungle Stalker Feather.",
+            route = {
+                { y = 0.404, mapID = 1434, label = "Jungle Stalker", offMapText = "Travel to Jungle Stalker.", x = 0.334 },
+            },
+            dependsOn = { "accept-572-mok-thardin-s-enchantment" },
             id = "objective-572-1-jungle-stalker",
             kind = "objective",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Jungle Stalker.",
-            complete = QuestObjective(572, 1, "Jungle Stalker"),
-            dependsOn = { "accept-572-mok-thardin-s-enchantment" },
-            route = {
-                Point(1434, 0.3340, 0.4040, "Jungle Stalker",
-                    "Travel to Jungle Stalker."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 33 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 572, text = "Jungle Stalker", index = 1, count = 10 },
+            },
+            sourceStep = 12,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 570 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-196-1-jungle-stalker",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
+            },
+            text = "Kill 10 Jungle Stalker.",
+            complete = {
+                questObjective = { id = 196, index = 1, text = "Jungle Stalker", count = 10 },
+            },
+            route = {
+                { mapID = 1434, x = 0.33399999999999996, y = 0.40399999999999997, label = "Jungle Stalker", offMapText = "Travel to Jungle Stalker." },
+            },
+            sourceStep = 13,
+            priority = 270,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 195 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 280,
+            text = "Collect 10 Singing Blue Crystal.",
+            route = {
+                { y = 0.446, mapID = 1434, label = "Venture Co. Strip Miner", offMapText = "Travel to Venture Co. Strip Miner.", x = 0.414 },
+            },
+            dependsOn = { "accept-600-venture-company-mining" },
             id = "objective-600-1-venture-co-strip-miner",
             kind = "objective",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Venture Co. Strip Miner.",
-            complete = QuestObjective(600, 1, "Venture Co. Strip Miner"),
-            dependsOn = { "accept-600-venture-company-mining" },
-            route = {
-                Point(1434, 0.4140, 0.4460, "Venture Co. Strip Miner",
-                    "Travel to Venture Co. Strip Miner."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 600, text = "Venture Co. Strip Miner", index = 1, count = 10 },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 605 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-585-2-ziata-jai-trophy",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Ziata'jai Trophy.",
+            complete = {
+                questObjective = { id = 585, index = 2, text = "Ziata'jai Trophy", count = 1 },
+            },
+            route = {
+                { mapID = 1434, x = 0.42210000000000003, y = 0.36119999999999997, label = "Ziata'jai Trophy", offMapText = "Travel to Ziata'jai Trophy." },
+            },
+            sourceStep = 15,
+            priority = 290,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 584 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-585-speaking-with-nezzliok" },
+        },
+        {
+            id = "objective-585-1-balia-mah-trophy",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Balia'mah Trophy.",
+            complete = {
+                questObjective = { id = 585, index = 1, text = "Balia'mah Trophy", count = 1 },
+            },
+            route = {
+                { mapID = 1434, x = 0.46140000000000003, y = 0.3233, label = "Balia'mah Trophy", offMapText = "Travel to Balia'mah Trophy." },
+            },
+            sourceStep = 16,
+            priority = 300,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 584 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-585-speaking-with-nezzliok" },
+        },
+        {
+            id = "objective-585-3-zul-mamwe-trophy",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Zul'Mamwe Trophy.",
+            complete = {
+                questObjective = { id = 585, index = 3, text = "Zul'Mamwe Trophy", count = 1 },
+            },
+            route = {
+                { mapID = 1434, x = 0.4765, y = 0.3954, label = "Zul'Mamwe Trophy", offMapText = "Travel to Zul'Mamwe Trophy." },
+            },
+            sourceStep = 17,
+            priority = 310,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 584 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-585-speaking-with-nezzliok" },
+        },
+        {
+            id = "objective-209-1-skullsplitter-tusk",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 37 },
+                    },
+                },
+            },
+            text = "Collect 18 Skullsplitter Tusk.",
+            complete = {
+                questObjective = { id = 209, index = 1, text = "Skullsplitter Tusk", count = 18 },
+            },
+            route = {
+                { mapID = 1434, x = 0.42200000000000004, y = 0.36200000000000004, label = "Skullsplitter Tusk", offMapText = "Travel to Skullsplitter Tusk." },
+            },
+            sourceStep = 18,
+            priority = 320,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 189 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-209-skullsplitter-tusks" },
+        },
+        {
+            id = "objective-598-1-split-bone-necklace",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 25 Split Bone Necklace.",
+            complete = {
+                questObjective = { id = 598, index = 1, text = "Split Bone Necklace", count = 25 },
+            },
+            route = {
+                { mapID = 1434, x = 0.42200000000000004, y = 0.36200000000000004, label = "Split Bone Necklace", offMapText = "Travel to Split Bone Necklace." },
+            },
+            sourceStep = 18,
+            priority = 330,
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 596, 629 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-598-split-bone-necklace" },
+        },
+        {
+            priority = 340,
+            text = "Collect 5 Snapjaw Crocolisk Skin.",
+            route = {
+                { y = 0.306, mapID = 1434, label = "Snapjaw Crocolisk", offMapText = "Travel to Snapjaw Crocolisk.", x = 0.384 },
+            },
+            dependsOn = { "accept-577-some-assembly-required" },
             id = "objective-577-1-snapjaw-crocolisk",
             kind = "objective",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Snapjaw Crocolisk.",
-            complete = QuestObjective(577, 1, "Snapjaw Crocolisk"),
-            dependsOn = { "accept-577-some-assembly-required" },
-            route = {
-                Point(1434, 0.3840, 0.3060, "Snapjaw Crocolisk",
-                    "Travel to Snapjaw Crocolisk."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 577, text = "Snapjaw Crocolisk", index = 1, count = 5 },
+            },
+            sourceStep = 20,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 575 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 350,
+            text = "Turn in Mok'thardin's Enchantment to Far Seer Mok'thardin.",
+            route = {
+                { y = 0.2924, mapID = 1434, label = "Far Seer Mok'thardin", offMapText = "Travel to Far Seer Mok'thardin in Stranglethorn Vale.", x = 0.3212 },
+            },
+            dependsOn = { "accept-572-mok-thardin-s-enchantment", "objective-572-1-jungle-stalker" },
             id = "turnin-572-mok-thardin-s-enchantment",
             kind = "turnin",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Mok'thardin's Enchantment.",
-            complete = QuestState(572, "completed"),
-            dependsOn = { "accept-572-mok-thardin-s-enchantment", "objective-572-1-jungle-stalker" },
-            route = {
-                Point(1434, 0.3212, 0.2924, "Mok'thardin's Enchantment",
-                    "Travel to Mok'thardin's Enchantment."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 33 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 572, state = "completed" },
+            },
+            sourceStep = 21,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 570 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 360,
+            text = "Turn in Some Assembly Required to Drizzlik.",
+            route = {
+                { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
+            },
+            dependsOn = { "accept-577-some-assembly-required", "objective-577-1-snapjaw-crocolisk" },
             id = "turnin-577-some-assembly-required",
             kind = "turnin",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Some Assembly Required.",
-            complete = QuestState(577, "completed"),
-            dependsOn = { "accept-577-some-assembly-required", "objective-577-1-snapjaw-crocolisk" },
-            route = {
-                Point(1434, 0.2829, 0.7759, "Some Assembly Required",
-                    "Travel to Some Assembly Required."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 577, state = "completed" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 575 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 370,
+            route = {
+                { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
+            },
+            text = "Accept Excelsior from Drizzlik.",
             id = "accept-628-excelsior",
             kind = "accept",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 44 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Excelsior.",
-            complete = QuestState(628, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2829, 0.7759, "Excelsior",
-                    "Travel to Excelsior."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 628, state = "activeOrCompleted" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 577 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 380,
+            text = "Turn in Venture Company Mining to Crank Fizzlebub.",
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
+            },
+            dependsOn = { "accept-600-venture-company-mining", "objective-600-1-venture-co-strip-miner" },
             id = "turnin-600-venture-company-mining",
             kind = "turnin",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Venture Company Mining.",
-            complete = QuestState(600, "completed"),
-            dependsOn = { "accept-600-venture-company-mining", "objective-600-1-venture-co-strip-miner" },
-            route = {
-                Point(1434, 0.2712, 0.7721, "Venture Company Mining",
-                    "Travel to Venture Company Mining."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 600, state = "completed" },
+            },
+            sourceStep = 24,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 605 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 390,
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
+            },
+            text = "Accept Dream Dust in the Swamp from Krazek.",
             id = "accept-1116-dream-dust-in-the-swamp",
             kind = "accept",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Dream Dust in the Swamp.",
-            complete = QuestState(1116, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2694, 0.7721, "Dream Dust in the Swamp",
-                    "Travel to Dream Dust in the Swamp."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1116, state = "activeOrCompleted" },
+            },
+            sourceStep = 26,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1115 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 400,
+            text = "Turn in Skullsplitter Tusks to Kebok.",
+            route = {
+                { y = 0.7713, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
+            },
+            dependsOn = { "accept-209-skullsplitter-tusks", "objective-209-1-skullsplitter-tusk" },
             id = "turnin-209-skullsplitter-tusks",
             kind = "turnin",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Skullsplitter Tusks.",
-            complete = QuestState(209, "completed"),
-            dependsOn = { "accept-209-skullsplitter-tusks" },
-            route = {
-                Point(1434, 0.2700, 0.7713, "Skullsplitter Tusks",
-                    "Travel to Skullsplitter Tusks."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 37 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 209, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 189 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 410,
+            text = "Turn in Split Bone Necklace to Kin'weelay.",
+            route = {
+                { y = 0.2771, mapID = 1434, label = "Kin'weelay", offMapText = "Travel to Kin'weelay in Stranglethorn Vale.", x = 0.3227 },
+            },
+            dependsOn = { "accept-598-split-bone-necklace", "objective-598-1-split-bone-necklace" },
             id = "turnin-598-split-bone-necklace",
             kind = "turnin",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Split Bone Necklace.",
-            complete = QuestState(598, "completed"),
-            dependsOn = { "accept-598-split-bone-necklace" },
-            route = {
-                Point(1434, 0.3227, 0.2771, "Split Bone Necklace",
-                    "Travel to Split Bone Necklace."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 598, state = "completed" },
+            },
+            sourceStep = 28,
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 596, 629 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 420,
+            text = "Turn in Speaking with Nezzliok.",
+            route = {
+                { y = 0.276, mapID = 1434, label = "Speaking with Nezzliok", offMapText = "Travel to Speaking with Nezzliok.", x = 0.3222 },
+            },
+            dependsOn = {
+                "accept-585-speaking-with-nezzliok",
+                "objective-585-2-ziata-jai-trophy",
+                "objective-585-1-balia-mah-trophy",
+                "objective-585-3-zul-mamwe-trophy",
+            },
             id = "turnin-585-speaking-with-nezzliok",
             kind = "turnin",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Speaking with Nezzliok.",
-            complete = QuestState(585, "completed"),
-            dependsOn = { "accept-585-speaking-with-nezzliok" },
-            route = {
-                Point(1434, 0.3222, 0.2760, "Speaking with Nezzliok",
-                    "Travel to Speaking with Nezzliok."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 585, state = "completed" },
+            },
+            sourceStep = 29,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 584 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 430,
+            route = {
+                { y = 0.276, mapID = 1434, label = "Marg Speaks", offMapText = "Travel to Marg Speaks.", x = 0.3222 },
+            },
+            text = "Accept Marg Speaks.",
             id = "accept-1261-marg-speaks",
             kind = "accept",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Marg Speaks.",
-            complete = QuestState(1261, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.3222, 0.2760, "Marg Speaks",
-                    "Travel to Marg Speaks."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1261, state = "activeOrCompleted" },
+            },
+            sourceStep = 29,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1240 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 440,
+            route = {
+                { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
+            },
+            text = "Turn in Raptor Mastery to Hemet Nesingwary.",
             id = "turnin-196-raptor-mastery",
             kind = "turnin",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Raptor Mastery.",
-            complete = QuestState(196, "completed"),
-            route = {
-                Point(1434, 0.3566, 0.1081, "Raptor Mastery",
-                    "Travel to Raptor Mastery."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 196, state = "completed" },
+            },
+            sourceStep = 30,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 195 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-196-1-jungle-stalker" },
         },
         {
+            priority = 450,
+            route = {
+                { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
+            },
+            text = "Accept Raptor Mastery from Hemet Nesingwary.",
             id = "accept-197-raptor-mastery",
             kind = "accept",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 50 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Raptor Mastery.",
-            complete = QuestState(197, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.3566, 0.1081, "Raptor Mastery",
-                    "Travel to Raptor Mastery."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 197, state = "activeOrCompleted" },
+            },
+            sourceStep = 30,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 196 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-1372-nothing-but-the-truth",
+            kind = "note",
+            text = "Reach level 37 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 37 },
+            },
+            requiredLevel = 37,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1372,
+            priority = 460,
+        },
+        {
+            priority = 470,
+            route = {
+                { y = 0.3563, mapID = 1431, label = "Deathstalker Zraedus", offMapText = "Travel to Deathstalker Zraedus in Duskwood.", x = 0.8781 },
+            },
+            text = "Accept Nothing But The Truth from Deathstalker Zraedus.",
             id = "accept-1372-nothing-but-the-truth",
             kind = "accept",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Nothing But The Truth.",
-            complete = QuestState(1372, "activeOrCompleted"),
-            route = {
-                Point(1431, 0.8781, 0.3563, "Nothing But The Truth",
-                    "Travel to Nothing But The Truth."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 37 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1372, state = "activeOrCompleted" },
+            },
+            sourceStep = 31,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 480,
+            text = "Turn in Nothing But The Truth to Apothecary Faustin.",
+            route = {
+                { y = 0.3525, mapID = 1431, label = "Apothecary Faustin", offMapText = "Travel to Apothecary Faustin in Duskwood.", x = 0.8746 },
+            },
+            dependsOn = { "accept-1372-nothing-but-the-truth" },
             id = "turnin-1372-nothing-but-the-truth",
             kind = "turnin",
-            priority = 290,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Nothing But The Truth.",
-            complete = QuestState(1372, "completed"),
-            dependsOn = { "accept-1372-nothing-but-the-truth" },
-            route = {
-                Point(1431, 0.8746, 0.3525, "Nothing But The Truth",
-                    "Travel to Nothing But The Truth."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 37 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1372, state = "completed" },
+            },
+            sourceStep = 32,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 490,
+            text = "Collect 10 Speck of Dream Dust.",
+            route = {
+                { y = 0.574, mapID = 1435, label = "Adolescent Whelp", offMapText = "Travel to Adolescent Whelp.", x = 0.124 },
+            },
+            dependsOn = { "accept-1116-dream-dust-in-the-swamp" },
             id = "objective-1116-1-adolescent-whelp",
             kind = "objective",
-            priority = 300,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Adolescent Whelp.",
-            complete = QuestObjective(1116, 1, "Adolescent Whelp"),
-            dependsOn = { "accept-1116-dream-dust-in-the-swamp" },
-            route = {
-                Point(1435, 0.1240, 0.5740, "Adolescent Whelp",
-                    "Travel to Adolescent Whelp."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1116, text = "Adolescent Whelp", index = 1, count = 10 },
+            },
+            sourceStep = 33,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1115 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 500,
+            route = {
+                { y = 0.572, mapID = 1435, label = "Dar", offMapText = "Travel to Dar in Swamp of Sorrows.", x = 0.447 },
+            },
+            text = "Accept Lack of Surplus from Dar.",
             id = "accept-698-lack-of-surplus",
             kind = "accept",
-            priority = 310,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Lack of Surplus.",
-            complete = QuestState(698, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.4470, 0.5720, "Lack of Surplus",
-                    "Travel to Lack of Surplus."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 698, state = "activeOrCompleted" },
+            },
+            sourceStep = 34,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
-            id = "woven-accept-93663-lost-in-transit",
-            kind = "accept",
-            priority = 501,
-            conditions = { all = {
-                { level = { min = 35 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Lost in Transit from Dar in Stonard.",
-            complete = QuestState(93663, "activeOrCompleted"),
+            priority = 510,
             route = {
-                Point(1435, 0.4480, 0.5720, "Dar",
-                    "Travel to Dar."),
+                { y = 0.552, mapID = 1435, label = "Helgrum the Swift", offMapText = "Travel to Helgrum the Swift in Swamp of Sorrows.", x = 0.4774 },
             },
-        },
-        {
-            id = "woven-objective-93663-lost-in-transit",
-            kind = "objective",
-            priority = 502,
-            conditions = { all = {
-                { level = { min = 35 } },
-                { faction = "Horde" },
-            } },
-            text = "Lost in Transit: recover the Courier's Shipment.",
-            complete = QuestObjective(93663, 1, "Courier's Shipment"),
-            dependsOn = { "woven-accept-93663-lost-in-transit" },
-            useClientPin = true,
-            route = {
-                Point(1435, 0.4480, 0.5720, "Dar",
-                    "Travel to Dar."),
-            },
-        },
-        {
-            id = "woven-turnin-93663-lost-in-transit",
-            kind = "turnin",
-            priority = 503,
-            conditions = { all = {
-                { level = { min = 35 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Lost in Transit to Magtoor at the Harborage.",
-            complete = QuestState(93663, "completed"),
-            dependsOn = { "woven-accept-93663-lost-in-transit", "woven-objective-93663-lost-in-transit" },
-            route = {
-                Point(1435, 0.2600, 0.3140, "Magtoor",
-                    "Travel to Magtoor."),
-            },
-        },
-        {
+            text = "Turn in Report to Helgrum to Helgrum the Swift.",
             id = "turnin-1420-report-to-helgrum",
             kind = "turnin",
-            priority = 320,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Report to Helgrum.",
-            complete = QuestState(1420, "completed"),
-            route = {
-                Point(1435, 0.4774, 0.5520, "Report to Helgrum",
-                    "Travel to Report to Helgrum."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1420, state = "completed" },
+            },
+            sourceStep = 36,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-1424-pool-of-tears",
+            kind = "note",
+            text = "Reach level 38 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 38 },
+            },
+            requiredLevel = 38,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1424,
+            priority = 520,
+        },
+        {
+            priority = 530,
+            route = {
+                { y = 0.548, mapID = 1435, label = "Fel'zerul", offMapText = "Travel to Fel'zerul in Swamp of Sorrows.", x = 0.4793 },
+            },
+            text = "Accept Pool of Tears from Fel'zerul.",
             id = "accept-1424-pool-of-tears",
             kind = "accept",
-            priority = 330,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Pool of Tears.",
-            complete = QuestState(1424, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.4793, 0.5480, "Pool of Tears",
-                    "Travel to Pool of Tears."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1424, state = "activeOrCompleted" },
+            },
+            sourceStep = 37,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "loot-starter-before-accept-1392-noboru-the-cudgel",
+            kind = "note",
+            instructionOnly = true,
+            conditions = { faction = "Horde" },
+            text = "Loot Noboru's Cudgel from Noboru the Cudgel. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Noboru's Cudgel", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 1392, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 540,
+        },
+        {
+            priority = 550,
+            text = "Use the Noboru's Cudgel to accept Noboru the Cudgel.",
             id = "accept-1392-noboru-the-cudgel",
             kind = "accept",
-            priority = 340,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Use the Noboru's Cudgel to accept Noboru the Cudgel.",
-            complete = QuestState(1392, "activeOrCompleted"),
-            route = nil,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 1392, state = "activeOrCompleted" },
+            },
+            sourceStep = 38,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 560,
+            text = "Turn in Noboru the Cudgel to Magtoor.",
+            route = {
+                { y = 0.314, mapID = 1435, label = "Magtoor", offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599 },
+            },
+            dependsOn = { "accept-1392-noboru-the-cudgel" },
             id = "turnin-1392-noboru-the-cudgel",
             kind = "turnin",
-            priority = 350,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Noboru the Cudgel.",
-            complete = QuestState(1392, "completed"),
-            dependsOn = { "accept-1392-noboru-the-cudgel" },
-            route = {
-                Point(1435, 0.2599, 0.3140, "Noboru the Cudgel",
-                    "Travel to Noboru the Cudgel."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1392, state = "completed" },
+            },
+            sourceStep = 39,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 570,
+            route = {
+                { y = 0.314, mapID = 1435, label = "Magtoor", offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599 },
+            },
+            text = "Accept Draenethyst Crystals from Magtoor.",
             id = "accept-1389-draenethyst-crystals",
             kind = "accept",
-            priority = 360,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Draenethyst Crystals.",
-            complete = QuestState(1389, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.2599, 0.3140, "Draenethyst Crystals",
-                    "Travel to Draenethyst Crystals."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1389, state = "activeOrCompleted" },
+            },
+            sourceStep = 39,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 580,
+            route = {
+                { y = 0.2325, mapID = 1435, label = "Ongeku", offMapText = "Travel to Ongeku.", x = 0.6131 },
+            },
+            text = "Collect 1 Draenethyst Shard.",
             id = "objective-1373-1-ongeku",
             kind = "objective",
-            priority = 370,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Ongeku.",
-            complete = QuestObjective(1373, 1, "Ongeku"),
-            route = {
-                Point(1435, 0.6131, 0.2325, "Ongeku",
-                    "Travel to Ongeku."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1373, text = "Ongeku", index = 1, count = 1 },
+            },
+            sourceStep = 40,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1370 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 590,
+            route = {
+                { y = 0.1823, mapID = 1435, label = "Galen Goodward", offMapText = "Travel to Galen Goodward in Swamp of Sorrows.", x = 0.6541 },
+            },
+            text = "Accept Galen's Escape from Galen Goodward.",
             id = "accept-1393-galen-s-escape",
             kind = "accept",
-            priority = 380,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Galen's Escape.",
-            complete = QuestState(1393, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.6541, 0.1823, "Galen's Escape",
-                    "Travel to Galen's Escape."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1393, state = "activeOrCompleted" },
+            },
+            sourceStep = 41,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-1389-1-draenethyst-crystal",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            text = "Collect 6 Draenethyst Crystal.",
+            complete = {
+                questObjective = { id = 1389, index = 1, text = "Draenethyst Crystal", count = 6 },
+            },
+            route = {
+                { mapID = 1435, x = 0.55, y = 0.302, label = "Draenethyst Crystal", offMapText = "Travel to Draenethyst Crystal." },
+            },
+            sourceStep = 43,
+            priority = 600,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1389-draenethyst-crystals" },
+        },
+        {
+            priority = 610,
+            text = "Turn in Galen's Escape.",
+            route = {
+                { y = 0.3976, mapID = 1435, label = "Galen's Escape", offMapText = "Travel to Galen's Escape.", x = 0.4781 },
+            },
+            dependsOn = { "accept-1393-galen-s-escape" },
             id = "turnin-1393-galen-s-escape",
             kind = "turnin",
-            priority = 390,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Galen's Escape.",
-            complete = QuestState(1393, "completed"),
-            dependsOn = { "accept-1393-galen-s-escape" },
-            route = {
-                Point(1435, 0.4781, 0.3976, "Galen's Escape",
-                    "Travel to Galen's Escape."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1393, state = "completed" },
+            },
+            sourceStep = 44,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-698-1-unprepared-sawtooth-flank",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 8 Unprepared Sawtooth Flank.",
+            complete = {
+                questObjective = { id = 698, index = 1, text = "Unprepared Sawtooth Flank", count = 8 },
+            },
+            route = {
+                { mapID = 1435, x = 0.46399999999999997, y = 0.41200000000000003, label = "Unprepared Sawtooth Flank", offMapText = "Travel to Unprepared Sawtooth Flank." },
+            },
+            sourceStep = 45,
+            priority = 620,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-698-lack-of-surplus" },
+        },
+        {
+            priority = 630,
+            text = "Collect 10 Atal'ai Artifact.",
+            route = {
+                { y = 0.472, mapID = 1435, label = "Elixir of Water Breathing", offMapText = "Travel to Elixir of Water Breathing.", x = 0.659 },
+            },
+            dependsOn = { "accept-1424-pool-of-tears" },
             id = "objective-1424-1-elixir-of-water-breathing",
             kind = "objective",
-            priority = 400,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Use Elixir of Water Breathing.",
-            complete = QuestObjective(1424, 1, "Elixir of Water Breathing"),
-            dependsOn = { "accept-1424-pool-of-tears" },
-            route = {
-                Point(1435, 0.6590, 0.4720, "Elixir of Water Breathing",
-                    "Travel to Elixir of Water Breathing."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1424, text = "Elixir of Water Breathing", index = 1, count = 10 },
+            },
+            sourceStep = 46,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 640,
+            text = "Turn in Lack of Surplus to Tok'Kar.",
+            route = {
+                { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132 },
+            },
+            dependsOn = { "accept-698-lack-of-surplus", "objective-698-1-unprepared-sawtooth-flank" },
             id = "turnin-698-lack-of-surplus",
             kind = "turnin",
-            priority = 410,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Lack of Surplus.",
-            complete = QuestState(698, "completed"),
-            dependsOn = { "accept-698-lack-of-surplus" },
-            route = {
-                Point(1435, 0.8132, 0.8097, "Lack of Surplus",
-                    "Travel to Lack of Surplus."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 698, state = "completed" },
+            },
+            sourceStep = 47,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 650,
+            text = "Turn in Pool of Tears to Fel'zerul.",
+            route = {
+                { y = 0.5479, mapID = 1435, label = "Fel'zerul", offMapText = "Travel to Fel'zerul in Swamp of Sorrows.", x = 0.4793 },
+            },
+            dependsOn = { "accept-1424-pool-of-tears", "objective-1424-1-elixir-of-water-breathing" },
             id = "turnin-1424-pool-of-tears",
             kind = "turnin",
-            priority = 420,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Pool of Tears.",
-            complete = QuestState(1424, "completed"),
-            dependsOn = { "accept-1424-pool-of-tears", "objective-1424-1-elixir-of-water-breathing" },
-            route = {
-                Point(1435, 0.4793, 0.5479, "Pool of Tears",
-                    "Travel to Pool of Tears."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1424, state = "completed" },
+            },
+            sourceStep = 48,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 660,
+            text = "Turn in Draenethyst Crystals to Magtoor.",
+            route = {
+                { y = 0.314, mapID = 1435, label = "Magtoor", offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599 },
+            },
+            dependsOn = { "accept-1389-draenethyst-crystals", "objective-1389-1-draenethyst-crystal" },
             id = "turnin-1389-draenethyst-crystals",
             kind = "turnin",
-            priority = 430,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Draenethyst Crystals.",
-            complete = QuestState(1389, "completed"),
-            dependsOn = { "accept-1389-draenethyst-crystals" },
-            route = {
-                Point(1435, 0.2599, 0.3140, "Draenethyst Crystals",
-                    "Travel to Draenethyst Crystals."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1389, state = "completed" },
+            },
+            sourceStep = 49,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 670,
+            text = "Turn in Dream Dust in the Swamp to Krazek.",
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
+            },
+            dependsOn = { "accept-1116-dream-dust-in-the-swamp", "objective-1116-1-adolescent-whelp" },
             id = "turnin-1116-dream-dust-in-the-swamp",
             kind = "turnin",
-            priority = 440,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Dream Dust in the Swamp.",
-            complete = QuestState(1116, "completed"),
-            dependsOn = { "accept-1116-dream-dust-in-the-swamp", "objective-1116-1-adolescent-whelp" },
-            route = {
-                Point(1434, 0.2694, 0.7721, "Dream Dust in the Swamp",
-                    "Travel to Dream Dust in the Swamp."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1116, state = "completed" },
+            },
+            sourceStep = 51,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1115 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 680,
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
+            },
+            text = "Accept Rumors for Kravel from Krazek.",
             id = "accept-1117-rumors-for-kravel",
             kind = "accept",
-            priority = 450,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Rumors for Kravel.",
-            complete = QuestState(1117, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2694, 0.7721, "Rumors for Kravel",
-                    "Travel to Rumors for Kravel."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1117, state = "activeOrCompleted" },
+            },
+            sourceStep = 52,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1116 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
-            id = "accept-2864-tran-rek",
-            kind = "accept",
-            priority = 460,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Tran'rek.",
-            complete = QuestState(2864, "activeOrCompleted"),
+            priority = 690,
             route = {
-                Point(1434, 0.2694, 0.7721, "Tran'rek",
-                    "Travel to Tran'rek."),
+                { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
             },
-        },
-        {
+            text = "Accept Goblin Sponsorship from Baron Revilgaz.",
             id = "accept-1183-goblin-sponsorship",
             kind = "accept",
-            priority = 470,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Goblin Sponsorship.",
-            complete = QuestState(1183, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2723, 0.7687, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1183, state = "activeOrCompleted" },
+            },
+            sourceStep = 53,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1182 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-2872-stoley-s-debt",
+            kind = "note",
+            text = "Reach level 40 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 40 },
+            },
+            requiredLevel = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 2872,
+            priority = 700,
+        },
+        {
+            priority = 710,
+            route = {
+                { y = 0.7707, mapID = 1434, label = "\"Sea Wolf\" MacKinley", offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.", x = 0.2778 },
+            },
+            text = "Accept Stoley's Debt from \"Sea Wolf\" MacKinley.",
             id = "accept-2872-stoley-s-debt",
             kind = "accept",
-            priority = 480,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Stoley's Debt.",
-            complete = QuestState(2872, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2778, 0.7707, "Stoley's Debt",
-                    "Travel to Stoley's Debt."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2872, state = "activeOrCompleted" },
+            },
+            sourceStep = 54,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

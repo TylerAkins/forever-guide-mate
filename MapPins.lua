@@ -111,7 +111,7 @@ function MapPins:Refresh(mapCanvas)
     local goal = ns.Engine.currentGoal
     local state = ns.Engine.state or {}
     local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
-    local questTracking = goal and ns.Navigation:QuestDestinationID(goal)
+    local questTracking = goal and ns.Navigation:QuestDestinationID(goal, state)
     local useBlizzardPins = ns.db and (ns.db.waypointProvider or "blizzard") == "blizzard"
     local hasClientPin = false
     if useBlizzardPins and questTracking and routeLeg then
@@ -123,11 +123,18 @@ function MapPins:Refresh(mapCanvas)
         end
         local _, x = ns.Navigation:ClientPin(pinGoal, routeLeg.mapID, C_QuestLog, state)
         hasClientPin = x ~= nil
+        if not hasClientPin and C_QuestLog and type(C_QuestLog.GetNextWaypoint) == "function" then
+            local ok, mapID, pinX, pinY = pcall(C_QuestLog.GetNextWaypoint, questTracking)
+            hasClientPin = ok and type(mapID) == "number" and mapID > 0
+                and type(pinX) == "number" and pinX >= 0 and pinX <= 1
+                and type(pinY) == "number" and pinY >= 0 and pinY <= 1
+        end
     end
     local taxiPending = goal and ns.Navigation.PendingTaxiTravel
         and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg)
     if not mapCanvas or not ns.db or not ns.db.uiOpen or not goal
-        or (useBlizzardPins and hasClientPin and not taxiPending)
+        or (useBlizzardPins and hasClientPin and not taxiPending
+            and not (routeLeg and (routeLeg.transport or routeLeg.flight)))
         or (ns.TomTomWaypoints and ns.TomTomWaypoints.waypoint)
         or (mapCanvas.IsShown and not mapCanvas:IsShown()) then return end
     local viewedMapID = mapCanvas.GetMapID and mapCanvas:GetMapID() or nil

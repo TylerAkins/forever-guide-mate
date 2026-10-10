@@ -1,322 +1,656 @@
 local _, ns = ...
 
--- Forever Casual spine: Western Plaguelands (51-52)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    WESTERN_PLAGUELANDS = 1422,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-alliance-western-plaguelands",
+    revision = 3,
     title = "Western Plaguelands",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-alliance-western-plaguelands",
     conditions = {
         all = {
             { faction = "Alliance" },
-            { level = { min = 51 } },
+            {
+                level = { min = 51 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-5066-verified-pickup",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5066,
+            alternativeQuests = { 5090, 5091 },
+            priority = 10,
+        },
+        {
+            priority = 20,
+            text = "Accept A Call to Arms: The Plaguelands! from Crier Goodman in Stormwind City.",
+            id = "accept-5066-verified-pickup",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 5066, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 5090, 5091 },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = {},
+        },
+        {
+            priority = 30,
+            route = {
+                { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
+            },
+            text = "Turn in A Call to Arms: The Plaguelands! to Commander Ashlam Valorfist.",
             id = "turnin-5066-a-call-to-arms-the-plaguelands",
             kind = "turnin",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in A Call to Arms: The Plaguelands!.",
-            complete = QuestState(5066, "completed"),
-            route = {
-                Point(1422, 0.4270, 0.8403, "A Call to Arms: The Plaguelands!",
-                    "Travel to A Call to Arms: The Plaguelands!."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5066, state = "completed" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            alternativeQuests = { 5090, 5091 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-5066-verified-pickup" },
         },
         {
+            priority = 40,
+            route = {
+                { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
+            },
+            text = "Turn in A Call to Arms: The Plaguelands! to Commander Ashlam Valorfist.",
             id = "turnin-5090-a-call-to-arms-the-plaguelands",
             kind = "turnin",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in A Call to Arms: The Plaguelands!.",
-            complete = QuestState(5090, "completed"),
-            route = {
-                Point(1422, 0.4270, 0.8403, "A Call to Arms: The Plaguelands!",
-                    "Travel to A Call to Arms: The Plaguelands!."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5090, state = "completed" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            alternativeQuests = { 5066, 5091 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 50,
+            text = "Accept A Call to Arms: The Plaguelands! from Herald Moonstalker in Darnassus.",
+            id = "accept-5091-verified-pickup",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 5091, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 5066, 5090 },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = {},
+        },
+        {
+            priority = 60,
+            route = {
+                { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
+            },
+            text = "Turn in A Call to Arms: The Plaguelands! to Commander Ashlam Valorfist.",
             id = "turnin-5091-a-call-to-arms-the-plaguelands",
             kind = "turnin",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in A Call to Arms: The Plaguelands!.",
-            complete = QuestState(5091, "completed"),
-            route = {
-                Point(1422, 0.4270, 0.8403, "A Call to Arms: The Plaguelands!",
-                    "Travel to A Call to Arms: The Plaguelands!."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5091, state = "completed" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            alternativeQuests = { 5066, 5090 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-5091-verified-pickup" },
         },
         {
+            priority = 70,
+            route = {
+                { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
+            },
+            text = "Accept Clear the Way from Commander Ashlam Valorfist.",
             id = "accept-5092-clear-the-way",
             kind = "accept",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Clear the Way.",
-            complete = QuestState(5092, "activeOrCompleted"),
-            route = {
-                Point(1422, 0.4270, 0.8403, "Clear the Way",
-                    "Travel to Clear the Way."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5092, state = "activeOrCompleted" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-5401-argent-dawn-commission",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5401,
+            alternativeQuests = { 5405, 5503 },
+            priority = 80,
+        },
+        {
+            priority = 90,
+            route = {
+                { y = 0.8355, mapID = 1422, label = "Argent Officer Pureheart", offMapText = "Travel to Argent Officer Pureheart in Western Plaguelands.", x = 0.4297 },
+            },
+            text = "Accept Argent Dawn Commission from Argent Officer Pureheart.",
             id = "accept-5401-argent-dawn-commission",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Argent Dawn Commission.",
-            complete = QuestState(5401, "activeOrCompleted"),
-            route = {
-                Point(1422, 0.4297, 0.8355, "Argent Dawn Commission",
-                    "Travel to Argent Dawn Commission."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5401, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            alternativeQuests = { 5405, 5503 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 100,
+            text = "Kill 10 Skeletal Flayer.",
+            route = {
+                { y = 0.794, mapID = 1422, label = "Skeletal Flayer", offMapText = "Travel to Skeletal Flayer.", x = 0.508 },
+            },
+            dependsOn = { "accept-5092-clear-the-way" },
             id = "objective-5092-1-skeletal-flayer",
             kind = "objective",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Skeletal Flayer.",
-            complete = QuestObjective(5092, 1, "Skeletal Flayer"),
-            dependsOn = { "accept-5092-clear-the-way" },
-            route = {
-                Point(1422, 0.5080, 0.7940, "Skeletal Flayer",
-                    "Travel to Skeletal Flayer."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 5092, text = "Skeletal Flayer", index = 1, count = 10 },
+            },
+            sourceStep = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 110,
+            text = "Kill 10 Slavering Ghoul.",
+            route = {
+                { y = 0.794, mapID = 1422, label = "Slavering Ghoul", offMapText = "Travel to Slavering Ghoul.", x = 0.508 },
+            },
+            dependsOn = { "accept-5092-clear-the-way" },
             id = "objective-5092-2-slavering-ghoul",
             kind = "objective",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Slavering Ghoul.",
-            complete = QuestObjective(5092, 2, "Slavering Ghoul"),
-            dependsOn = { "accept-5092-clear-the-way" },
-            route = {
-                Point(1422, 0.5080, 0.7940, "Slavering Ghoul",
-                    "Travel to Slavering Ghoul."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 5092, text = "Slavering Ghoul", index = 2, count = 10 },
+            },
+            sourceStep = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 120,
+            text = "Turn in Clear the Way to Commander Ashlam Valorfist.",
+            route = {
+                { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
+            },
+            dependsOn = { "accept-5092-clear-the-way", "objective-5092-1-skeletal-flayer", "objective-5092-2-slavering-ghoul" },
             id = "turnin-5092-clear-the-way",
             kind = "turnin",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Clear the Way.",
-            complete = QuestState(5092, "completed"),
-            dependsOn = { "accept-5092-clear-the-way", "objective-5092-1-skeletal-flayer", "objective-5092-2-slavering-ghoul" },
-            route = {
-                Point(1422, 0.4270, 0.8403, "Clear the Way",
-                    "Travel to Clear the Way."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5092, state = "completed" },
+            },
+            sourceStep = 6,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 130,
+            route = {
+                { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
+            },
+            text = "Accept The Scourge Cauldrons from Commander Ashlam Valorfist.",
             id = "accept-5215-the-scourge-cauldrons",
             kind = "accept",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Scourge Cauldrons.",
-            complete = QuestState(5215, "activeOrCompleted"),
-            route = {
-                Point(1422, 0.4270, 0.8403, "The Scourge Cauldrons",
-                    "Travel to The Scourge Cauldrons."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5215, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5092 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 140,
+            text = "Turn in The Scourge Cauldrons to High Priestess MacDonnell.",
+            route = {
+                { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
+            },
+            dependsOn = { "accept-5215-the-scourge-cauldrons" },
             id = "turnin-5215-the-scourge-cauldrons",
             kind = "turnin",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Scourge Cauldrons.",
-            complete = QuestState(5215, "completed"),
-            dependsOn = { "accept-5215-the-scourge-cauldrons" },
-            route = {
-                Point(1422, 0.4297, 0.8450, "The Scourge Cauldrons",
-                    "Travel to The Scourge Cauldrons."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5215, state = "completed" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5092 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 150,
+            route = {
+                { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
+            },
+            text = "Accept Target: Felstone Field from High Priestess MacDonnell.",
             id = "accept-5216-target-felstone-field",
             kind = "accept",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Target: Felstone Field.",
-            complete = QuestState(5216, "activeOrCompleted"),
-            route = {
-                Point(1422, 0.4297, 0.8450, "Target: Felstone Field",
-                    "Travel to Target: Felstone Field."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5216, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5215 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 160,
+            text = "Collect 1 Felstone Field Cauldron Key.",
+            route = {
+                { y = 0.5711, mapID = 1422, label = "Cauldron Lord Bilemaw", offMapText = "Travel to Cauldron Lord Bilemaw.", x = 0.3703 },
+            },
+            dependsOn = { "accept-5216-target-felstone-field" },
             id = "objective-5216-1-cauldron-lord-bilemaw",
             kind = "objective",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Cauldron Lord Bilemaw.",
-            complete = QuestObjective(5216, 1, "Cauldron Lord Bilemaw"),
-            dependsOn = { "accept-5216-target-felstone-field" },
-            route = {
-                Point(1422, 0.3703, 0.5711, "Cauldron Lord Bilemaw",
-                    "Travel to Cauldron Lord Bilemaw."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 5216, text = "Cauldron Lord Bilemaw", index = 1, count = 1 },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5215 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 170,
+            text = "Turn in Target: Felstone Field.",
+            route = {
+                { y = 0.5687, mapID = 1422, label = "Target: Felstone Field", offMapText = "Travel to Target: Felstone Field.", x = 0.3719 },
+            },
+            dependsOn = { "accept-5216-target-felstone-field", "objective-5216-1-cauldron-lord-bilemaw" },
             id = "turnin-5216-target-felstone-field",
             kind = "turnin",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Target: Felstone Field.",
-            complete = QuestState(5216, "completed"),
-            dependsOn = { "accept-5216-target-felstone-field", "objective-5216-1-cauldron-lord-bilemaw" },
-            route = {
-                Point(1422, 0.3719, 0.5687, "Target: Felstone Field",
-                    "Travel to Target: Felstone Field."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5216, state = "completed" },
+            },
+            sourceStep = 9,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5215 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 180,
+            route = {
+                { y = 0.5687, mapID = 1422, label = "Return to Chillwind Camp", offMapText = "Travel to Chillwind Camp.", x = 0.3719 },
+            },
+            text = "Accept Return to Chillwind Camp.",
             id = "accept-5217-return-to-chillwind-camp",
             kind = "accept",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Return to Chillwind Camp.",
-            complete = QuestState(5217, "activeOrCompleted"),
-            route = {
-                Point(1422, 0.3719, 0.5687, "Return to Chillwind Camp",
-                    "Travel to Chillwind Camp."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5217, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5216 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 190,
+            route = {
+                { y = 0.5405, mapID = 1422, label = "Janice Felstone", offMapText = "Travel to Janice Felstone in Western Plaguelands.", x = 0.384 },
+            },
+            text = "Accept Better Late Than Never from Janice Felstone.",
             id = "accept-5021-better-late-than-never",
             kind = "accept",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 56 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Better Late Than Never.",
-            complete = QuestState(5021, "activeOrCompleted"),
-            route = {
-                Point(1422, 0.3840, 0.5405, "Better Late Than Never",
-                    "Travel to Better Late Than Never."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5021, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 200,
+            text = "Turn in Better Late Than Never.",
+            route = {
+                { y = 0.5524, mapID = 1422, label = "Better Late Than Never", offMapText = "Travel to Better Late Than Never.", x = 0.3873 },
+            },
+            dependsOn = { "accept-5021-better-late-than-never" },
             id = "turnin-5021-better-late-than-never",
             kind = "turnin",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 56 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Better Late Than Never.",
-            complete = QuestState(5021, "completed"),
-            dependsOn = { "accept-5021-better-late-than-never" },
-            route = {
-                Point(1422, 0.3873, 0.5524, "Better Late Than Never",
-                    "Travel to Better Late Than Never."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5021, state = "completed" },
+            },
+            sourceStep = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 210,
+            route = {
+                { y = 0.5524, mapID = 1422, label = "Better Late Than Never", offMapText = "Travel to Better Late Than Never.", x = 0.3873 },
+            },
+            text = "Accept Better Late Than Never.",
             id = "accept-5022-better-late-than-never",
             kind = "accept",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 56 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Better Late Than Never.",
-            complete = QuestState(5022, "activeOrCompleted"),
-            route = {
-                Point(1422, 0.3873, 0.5524, "Better Late Than Never",
-                    "Travel to Better Late Than Never."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5022, state = "activeOrCompleted" },
+            },
+            sourceStep = 11,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5021 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 220,
+            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
+            route = {
+                { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
+            },
+            dependsOn = { "accept-5217-return-to-chillwind-camp" },
             id = "turnin-5217-return-to-chillwind-camp",
             kind = "turnin",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Return to Chillwind Camp.",
-            complete = QuestState(5217, "completed"),
-            dependsOn = { "accept-5217-return-to-chillwind-camp" },
-            route = {
-                Point(1422, 0.4297, 0.8450, "Return to Chillwind Camp",
-                    "Travel to Chillwind Camp."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5217, state = "completed" },
+            },
+            sourceStep = 12,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5216 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

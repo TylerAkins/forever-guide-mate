@@ -435,6 +435,7 @@ function UI:CreateTracker()
     local complete = CreateIconButton(frame, "Interface\\Buttons\\UI-CheckBox-Check", "Mark complete")
     complete:SetPoint("LEFT", skip, "RIGHT", 4, 0)
     complete:SetScript("OnClick", function() ns.Engine:CompleteCurrent() end)
+    frame.complete = complete
 
     frame.library, frame.title, frame.percent, frame.progress = library, title, percent, progress
     frame.typeIcon, frame.typeLabel = typeIcon, typeLabel
@@ -1131,6 +1132,13 @@ function UI:GoalInstruction(engine)
         return ""
     end
     local state = engine.state or {}
+    if engine.currentGuide and engine.currentGuide.routeMode == "ordered" then
+        local leg = ns.Navigation:GetActiveLeg(goal, state)
+        if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
+            return goal.text .. "\n" .. (leg.offMapText or leg.label or "")
+        end
+        return goal.text
+    end
     local leg, status = ns.Navigation:GetActiveLeg(goal, state)
     if state.onTaxi == true and type(status) == "string" and status ~= "" then
         return status
@@ -1223,13 +1231,33 @@ function UI:Update(engine)
         SetSolidColor(self.tracker.typeIcon, color[1], color[2], color[3], 1)
         self.tracker.typeIcon:Show()
         local instruction = self:GoalInstruction(engine)
-        if type(engine.status) == "string" and string.sub(engine.status, 1, 8) == "Blocked:" then
+        if engine.currentGuide and engine.currentGuide.routeMode == "ordered" and engine.status then
+            instruction = instruction .. "\n" .. engine.status
+        elseif type(engine.status) == "string" and string.sub(engine.status, 1, 8) == "Blocked:" then
             instruction = engine.status
+        end
+        if guide and guide.routeMode == "ordered" then
+            local questID = engine:GetGoalQuestID(engine.currentGoal)
+            local quest = questID and engine.state and engine.state.quests and engine.state.quests[questID]
+            for _, objective in ipairs(quest and quest.objectives or {}) do
+                if objective.text then instruction = instruction .. "\nProgress: " .. objective.text end
+            end
+            local remaining
+            for _, timer in pairs(engine.urgentGoals or {}) do
+                if not remaining or timer.seconds < remaining then remaining = timer.seconds end
+            end
+            if remaining then
+                instruction = instruction .. ("\nTimed quest warning: %d seconds remaining. The route stays on this action."):format(remaining)
+            end
+            local storage = ns.OrderedRoutes:Storage(guide)
+            if storage.migrationMessage then instruction = instruction .. "\n" .. storage.migrationMessage end
         end
         self.tracker.instruction:SetText(instruction)
         local nextText = self:NextGoalText(engine)
         self.tracker.nextStep:SetText(nextText and ("Next: " .. nextText) or "")
-        self.tracker.status:SetText(("%d/%d complete"):format(progress.completed, progress.eligible))
+        local status = ("%d/%d complete"):format(progress.completed, progress.eligible)
+        if progress.skipped and progress.skipped > 0 then status = status .. (", %d skipped"):format(progress.skipped) end
+        self.tracker.status:SetText(status)
     else
         self.tracker.typeLabel:SetText("")
         self.tracker.typeIcon:Hide()
@@ -1258,6 +1286,16 @@ function UI:Update(engine)
         else
             self.tracker.skip:Disable()
         end
+    end
+    if self.tracker.complete and self.tracker.complete.SetEnabled then
+        local canComplete = engine.currentGoal ~= nil
+        if canComplete and guide and guide.routeMode == "ordered" then
+            local goal = engine.currentGoal
+            canComplete = not engine.status and ((not goal.complete and not engine:GetGoalQuestID(goal))
+                or ns.OrderedRoutes:Observed(goal, engine.state or {})
+                or ns.OrderedRoutes:Prepared(guide, goal, engine.state or {}))
+        end
+        self.tracker.complete:SetEnabled(canComplete and true or false)
     end
     self:ResizeTracker()
     if self.browser and self.browser:IsShown() then self:RefreshGuideBrowser() end

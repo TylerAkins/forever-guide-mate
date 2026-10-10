@@ -31,10 +31,15 @@ Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-d
 ```sh
 python3 -m unittest discover -s tests
 lua5.1 tests/lua/run.lua
+lua5.1 tests/lua/ordered.lua
+lua5.1 tests/lua/catalog.lua
+lua5.1 tests/lua/journeys.lua
 lua5.1 tests/lua/ui.lua
 lua5.1 tests/lua/lint.lua
 lua5.1 tests/lua/audit_accept_chains.lua
 ```
+
+For the complete simulated race/class matrix, run `FGM_FULL_MATRIX=1 lua5.1 tests/lua/journeys.lua`. This covers every itinerary branch with observed quest snapshots; it does not replace client walkthroughs.
 
 CI (`validate`) runs the same suite, validates `RELEASE_NOTES.md` against `VERSION`, and on pull requests checks that any change under `Guides/`, `QuestPrerequisites.lua`, core addon Lua, `ForeverGuideMate.toc`, or `VERSION` bumps the patch version and updates `CHANGELOG.md` (see the `Validate automated release intent` step in `.github/workflows/ci.yml`). It then dry-runs the packager.
 

@@ -1,630 +1,1564 @@
 local _, ns = ...
 
--- Forever Casual spine: Searing Gorge (51-51)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    BADLANDS = 1418,
-    SEARING_GORGE = 1427,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-horde-searing-gorge",
+    revision = 3,
     title = "Searing Gorge",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-horde-searing-gorge",
     conditions = {
         all = {
             { faction = "Horde" },
-            { level = { min = 51 } },
+            {
+                level = { min = 51 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-3821-dreadmaul-rock",
+            kind = "note",
+            text = "Reach level 48 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 48 },
+            },
+            requiredLevel = 48,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 3821,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.4807, mapID = 1418, label = "Thal'trak Proudtusk", offMapText = "Travel to Thal'trak Proudtusk in Badlands.", x = 0.0336 },
+            },
+            text = "Accept Dreadmaul Rock from Thal'trak Proudtusk.",
             id = "accept-3821-dreadmaul-rock",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Dreadmaul Rock.",
-            complete = QuestState(3821, "activeOrCompleted"),
-            route = {
-                Point(1418, 0.0336, 0.4807, "Dreadmaul Rock",
-                    "Travel to Dreadmaul Rock."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3821, state = "activeOrCompleted" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-4449-caught",
+            kind = "note",
+            text = "Reach level 43 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 43 },
+            },
+            requiredLevel = 43,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4449,
+            priority = 30,
+        },
+        {
+            priority = 40,
+            route = {
+                { y = 0.6224, mapID = 1427, label = "Caught!", offMapText = "Travel to Caught!.", x = 0.6554 },
+            },
+            text = "Accept Caught!.",
             id = "accept-4449-caught",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Caught!.",
-            complete = QuestState(4449, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.6554, 0.6224, "Caught!",
-                    "Travel to Caught!."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4449, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 50,
+            text = "Kill 8 Dark Iron Geologist.",
+            route = {
+                { y = 0.614, mapID = 1427, label = "Dark Iron Geologist", offMapText = "Travel to Dark Iron Geologist.", x = 0.634 },
+            },
+            dependsOn = { "accept-4449-caught" },
             id = "objective-4449-1-dark-iron-geologist",
             kind = "objective",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 8 Dark Iron Geologist.",
-            complete = QuestObjective(4449, 1, "Dark Iron Geologist"),
-            dependsOn = { "accept-4449-caught" },
-            route = {
-                Point(1427, 0.6340, 0.6140, "Dark Iron Geologist",
-                    "Travel to Dark Iron Geologist."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4449, text = "Dark Iron Geologist", index = 1, count = 8 },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "collect-before-pickup-objective-4449-2-silk-cloth",
+            kind = "note",
+            conditions = { faction = "Horde" },
+            text = "Collect 15 Silk Cloth. Keep 15 Silk Cloth for the later quest pickup.",
+            complete = {
+                item = { name = "Silk Cloth", minCount = 15 },
+            },
+            route = {
+                { mapID = 1427, x = 0.634, y = 0.614, label = "Silk Cloth", offMapText = "Travel to Silk Cloth." },
+            },
+            sourceStep = 4,
+            priority = 60,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            referenceQuest = 4449,
+        },
+        {
+            priority = 70,
+            text = "Turn in Caught!.",
+            route = {
+                { y = 0.6224, mapID = 1427, label = "Caught!", offMapText = "Travel to Caught!.", x = 0.6554 },
+            },
+            dependsOn = { "accept-4449-caught", "objective-4449-1-dark-iron-geologist" },
             id = "turnin-4449-caught",
             kind = "turnin",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Caught!.",
-            complete = QuestState(4449, "completed"),
-            dependsOn = { "accept-4449-caught", "objective-4449-1-dark-iron-geologist" },
-            route = {
-                Point(1427, 0.6554, 0.6224, "Caught!",
-                    "Travel to Caught!."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4449, state = "completed" },
+            },
+            sourceStep = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 80,
+            route = {
+                { mapID = 1427, x = 0.39049999999999996, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
+            },
+            text = "Accept Divine Retribution from Velarok Windblade.",
             id = "accept-3441-divine-retribution",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Divine Retribution.",
-            complete = QuestState(3441, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.6679, 0.3456, "Divine Retribution",
-                    "Travel to Divine Retribution."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3441, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 90,
+            text = "For Divine Retribution: Listen as Kalaran Windblade tells his story.",
+            id = "objective-3441-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3441, state = "complete" },
+            },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-3441-divine-retribution" },
+        },
+        {
+            priority = 100,
+            text = "Turn in Divine Retribution to Velarok Windblade.",
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
+            },
+            dependsOn = { "accept-3441-divine-retribution", "objective-3441-quest-work" },
             id = "turnin-3441-divine-retribution",
             kind = "turnin",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Divine Retribution.",
-            complete = QuestState(3441, "completed"),
-            dependsOn = { "accept-3441-divine-retribution" },
-            route = {
-                Point(1427, 0.3905, 0.3899, "Divine Retribution",
-                    "Travel to Divine Retribution."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3441, state = "completed" },
+            },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 110,
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
+            },
+            text = "Accept The Flawless Flame from Velarok Windblade.",
             id = "accept-3442-the-flawless-flame",
             kind = "accept",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Flawless Flame.",
-            complete = QuestState(3442, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3905, 0.3899, "The Flawless Flame",
-                    "Travel to The Flawless Flame."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3442, state = "activeOrCompleted" },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3441 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-7728-stolen-smithing-tuyere-and-lookout-s-spy",
+            kind = "note",
+            text = "Reach level 45 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 45 },
+            },
+            requiredLevel = 45,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7728,
+            priority = 120,
+        },
+        {
+            priority = 130,
+            route = {
+                { y = 0.2653, mapID = 1427, label = "STOLEN: Smithing Tuyere and Lookout's Spyglass", offMapText = "Travel to STOLEN: Smithing Tuyere and Lookout's Spyglass.", x = 0.3763 },
+            },
+            text = "Accept STOLEN: Smithing Tuyere and Lookout's Spyglass.",
             id = "accept-7728-stolen-smithing-tuyere-and-lookout-s-spy",
             kind = "accept",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept STOLEN: Smithing Tuyere and Lookout's Spyglass.",
-            complete = QuestState(7728, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3763, 0.2653, "STOLEN: Smithing Tuyere and Lookout's Spyglass",
-                    "Travel to STOLEN: Smithing Tuyere and Lookout's Spyglass."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7728, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 140,
+            route = {
+                { y = 0.2653, mapID = 1427, label = "JOB OPPORTUNITY: Culling the Competition", offMapText = "Travel to JOB OPPORTUNITY: Culling the Competition.", x = 0.3763 },
+            },
+            text = "Accept JOB OPPORTUNITY: Culling the Competition.",
             id = "accept-7729-job-opportunity-culling-the-competition",
             kind = "accept",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept JOB OPPORTUNITY: Culling the Competition.",
-            complete = QuestState(7729, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3763, 0.2653, "JOB OPPORTUNITY: Culling the Competition",
-                    "Travel to JOB OPPORTUNITY: Culling the Competition."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7729, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 150,
+            route = {
+                { y = 0.278, mapID = 1427, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge.", x = 0.3857 },
+            },
+            text = "Accept Curse These Fat Fingers from Hansel Heavyhands.",
             id = "accept-7723-curse-these-fat-fingers",
             kind = "accept",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Curse These Fat Fingers.",
-            complete = QuestState(7723, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3857, 0.2780, "Curse These Fat Fingers",
-                    "Travel to Curse These Fat Fingers."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7723, state = "activeOrCompleted" },
+            },
+            sourceStep = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 160,
+            route = {
+                { y = 0.278, mapID = 1427, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge.", x = 0.3857 },
+            },
+            text = "Accept Fiery Menace! from Hansel Heavyhands.",
             id = "accept-7724-fiery-menace",
             kind = "accept",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Fiery Menace!.",
-            complete = QuestState(7724, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3857, 0.2780, "Fiery Menace!",
-                    "Travel to Fiery Menace!."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7724, state = "activeOrCompleted" },
+            },
+            sourceStep = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 170,
+            route = {
+                { y = 0.278, mapID = 1427, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge.", x = 0.3857 },
+            },
+            text = "Accept Incendosaurs? Whateverosaur is More Like It from Hansel Heavyhands.",
             id = "accept-7727-incendosaurs-whateverosaur-is-more-like-",
             kind = "accept",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Incendosaurs? Whateverosaur is More Like It.",
-            complete = QuestState(7727, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3857, 0.2780, "Incendosaurs? Whateverosaur is More Like It",
-                    "Travel to Incendosaurs? Whateverosaur is More Like It."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7727, state = "activeOrCompleted" },
+            },
+            sourceStep = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 180,
+            text = "Collect 1 Smithing Tuyere.",
+            route = {
+                { y = 0.494, mapID = 1427, label = "Dark Iron Steamsmith", offMapText = "Travel to Dark Iron Steamsmith.", x = 0.392 },
+            },
+            dependsOn = { "accept-7728-stolen-smithing-tuyere-and-lookout-s-spy" },
             id = "objective-7728-1-dark-iron-steamsmith",
             kind = "objective",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Dark Iron Steamsmith.",
-            complete = QuestObjective(7728, 1, "Dark Iron Steamsmith"),
-            dependsOn = { "accept-7728-stolen-smithing-tuyere-and-lookout-s-spy" },
-            route = {
-                Point(1427, 0.3920, 0.4940, "Dark Iron Steamsmith",
-                    "Travel to Dark Iron Steamsmith."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 7728, text = "Dark Iron Steamsmith", index = 1, count = 1 },
+            },
+            sourceStep = 12,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-3442-1-heart-of-flame",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            text = "Collect 4 Heart of Flame.",
+            complete = {
+                questObjective = { id = 3442, index = 1, text = "Heart of Flame", count = 4 },
+            },
+            route = {
+                { mapID = 1427, x = 0.42579999999999996, y = 0.3858, label = "Heart of Flame", offMapText = "Travel to Heart of Flame." },
+            },
+            sourceStep = 13,
+            priority = 190,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3441 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3442-the-flawless-flame" },
+        },
+        {
+            id = "objective-3442-2-golem-oil",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            text = "Collect 4 Golem Oil.",
+            complete = {
+                questObjective = { id = 3442, index = 2, text = "Golem Oil", count = 4 },
+            },
+            route = {
+                { mapID = 1427, x = 0.392, y = 0.434, label = "Golem Oil", offMapText = "Travel to Golem Oil." },
+            },
+            sourceStep = 14,
+            priority = 200,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3441 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3442-the-flawless-flame" },
+        },
+        {
+            priority = 210,
+            text = "Turn in The Flawless Flame to Velarok Windblade.",
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
+            },
+            dependsOn = { "accept-3442-the-flawless-flame", "objective-3442-1-heart-of-flame", "objective-3442-2-golem-oil" },
             id = "turnin-3442-the-flawless-flame",
             kind = "turnin",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Flawless Flame.",
-            complete = QuestState(3442, "completed"),
-            dependsOn = { "accept-3442-the-flawless-flame" },
-            route = {
-                Point(1427, 0.3905, 0.3899, "The Flawless Flame",
-                    "Travel to The Flawless Flame."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3442, state = "completed" },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3441 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 220,
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
+            },
+            text = "Accept Forging the Shaft from Velarok Windblade.",
             id = "accept-3443-forging-the-shaft",
             kind = "accept",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Forging the Shaft.",
-            complete = QuestState(3443, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3905, 0.3899, "Forging the Shaft",
-                    "Travel to Forging the Shaft."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3443, state = "activeOrCompleted" },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3442 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 230,
+            text = "Kill 20 Incendosaur.",
+            route = {
+                { mapID = 1427, x = 0.514, y = 0.36, label = "Incendosaur", offMapText = "Travel to Incendosaur." },
+            },
+            dependsOn = { "accept-7727-incendosaurs-whateverosaur-is-more-like-" },
             id = "objective-7727-1-incendosaur",
             kind = "objective",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 20 Incendosaur.",
-            complete = QuestObjective(7727, 1, "Incendosaur"),
-            dependsOn = { "accept-7727-incendosaurs-whateverosaur-is-more-like-" },
-            route = {
-                Point(1427, 0.4773, 0.4192, "Incendosaur",
-                    "Travel to Incendosaur."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 7727, text = "Incendosaur", index = 1, count = 20 },
+            },
+            sourceStep = 17,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "loot-starter-before-accept-4451-the-key-to-freedom",
+            kind = "note",
+            instructionOnly = true,
+            conditions = { faction = "Horde" },
+            text = "Loot Grimesilt Outhouse Key from Dark Iron Steamsmith, Dark Iron Slaver, Dark Iron Taskmaster, Dark Iron Lookout. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Grimesilt Outhouse Key", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 4451, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 240,
+        },
+        {
+            priority = 250,
+            text = "Use the Grimesilt Outhouse Key to accept The Key to Freedom.",
             id = "accept-4451-the-key-to-freedom",
             kind = "accept",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Use the Grim Guzzler Key to accept The Key to Freedom.",
-            complete = QuestState(4451, "activeOrCompleted"),
-            route = nil,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4451, state = "activeOrCompleted" },
+            },
+            sourceStep = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-3443-1-thorium-plated-dagger",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            text = "Collect 8 Thorium Plated Dagger.",
+            complete = {
+                questObjective = { id = 3443, index = 1, text = "Thorium Plated Dagger", count = 8 },
+            },
+            route = {
+                { mapID = 1427, x = 0.446, y = 0.374, label = "Thorium Plated Dagger", offMapText = "Travel to Thorium Plated Dagger." },
+            },
+            sourceStep = 21,
+            priority = 260,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3442 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3443-forging-the-shaft" },
+        },
+        {
+            id = "objective-7729-1-dark-iron-taskmaster",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
+            },
+            text = "Kill 15 Dark Iron Taskmaster.",
+            complete = {
+                questObjective = { id = 7729, index = 1, text = "Dark Iron Taskmaster", count = 15 },
+            },
+            route = {
+                { mapID = 1427, x = 0.446, y = 0.374, label = "Dark Iron Taskmaster", offMapText = "Travel to Dark Iron Taskmaster." },
+            },
+            sourceStep = 22,
+            priority = 270,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-7729-job-opportunity-culling-the-competition" },
+        },
+        {
+            id = "objective-7729-2-dark-iron-slaver",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
+            },
+            text = "Kill 15 Dark Iron Slaver.",
+            complete = {
+                questObjective = { id = 7729, index = 2, text = "Dark Iron Slaver", count = 15 },
+            },
+            route = {
+                { mapID = 1427, x = 0.446, y = 0.374, label = "Dark Iron Slaver", offMapText = "Travel to Dark Iron Slaver." },
+            },
+            sourceStep = 22,
+            priority = 280,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-7729-job-opportunity-culling-the-competition" },
+        },
+        {
+            priority = 290,
+            text = "Turn in Forging the Shaft to Velarok Windblade.",
+            route = {
+                { mapID = 1427, x = 0.3906, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
+            },
+            dependsOn = { "accept-3443-forging-the-shaft", "objective-3443-1-thorium-plated-dagger" },
             id = "turnin-3443-forging-the-shaft",
             kind = "turnin",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Forging the Shaft.",
-            complete = QuestState(3443, "completed"),
-            dependsOn = { "accept-3443-forging-the-shaft" },
-            route = {
-                Point(1427, 0.4960, 0.4550, "Forging the Shaft",
-                    "Travel to Forging the Shaft."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3443, state = "completed" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3442 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 300,
+            route = {
+                { mapID = 1427, x = 0.3906, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
+            },
+            text = "Accept The Flame's Casing from Velarok Windblade.",
             id = "accept-3452-the-flame-s-casing",
             kind = "accept",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Flame's Casing.",
-            complete = QuestState(3452, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.4960, 0.4550, "The Flame's Casing",
-                    "Travel to The Flame's Casing."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3452, state = "activeOrCompleted" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3443 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 310,
+            text = "Collect 1 Symbol of Ragnaros.",
+            route = {
+                { y = 0.364, mapID = 1427, label = "Twilight Dark Shaman", offMapText = "Travel to Twilight Dark Shaman.", x = 0.25 },
+            },
+            dependsOn = { "accept-3452-the-flame-s-casing" },
             id = "objective-3452-1-twilight-dark-shaman",
             kind = "objective",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Twilight Dark Shaman.",
-            complete = QuestObjective(3452, 1, "Twilight Dark Shaman"),
-            dependsOn = { "accept-3452-the-flame-s-casing" },
-            route = {
-                Point(1427, 0.2500, 0.3640, "Twilight Dark Shaman",
-                    "Travel to Twilight Dark Shaman."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 3452, text = "Twilight Dark Shaman", index = 1, count = 1 },
+            },
+            sourceStep = 24,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3443 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 320,
+            text = "Turn in The Flame's Casing to Velarok Windblade.",
+            route = {
+                { mapID = 1427, x = 0.39049999999999996, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
+            },
+            dependsOn = { "accept-3452-the-flame-s-casing", "objective-3452-1-twilight-dark-shaman" },
             id = "turnin-3452-the-flame-s-casing",
             kind = "turnin",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Flame's Casing.",
-            complete = QuestState(3452, "completed"),
-            dependsOn = { "accept-3452-the-flame-s-casing", "objective-3452-1-twilight-dark-shaman" },
-            route = {
-                Point(1427, 0.2116, 0.3591, "The Flame's Casing",
-                    "Travel to The Flame's Casing."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3452, state = "completed" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3443 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 330,
+            route = {
+                { mapID = 1427, x = 0.39049999999999996, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
+            },
+            text = "Accept The Torch of Retribution from Velarok Windblade.",
             id = "accept-3453-the-torch-of-retribution",
             kind = "accept",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Torch of Retribution.",
-            complete = QuestState(3453, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.2116, 0.3591, "The Torch of Retribution",
-                    "Travel to The Torch of Retribution."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3453, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3452 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 340,
+            text = "For The Torch of Retribution: Wait for Kalaran Windblade to complete the Torch of Retribution.",
+            id = "objective-3453-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3453, state = "complete" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3452 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-3453-the-torch-of-retribution" },
+        },
+        {
+            priority = 350,
+            text = "Turn in The Torch of Retribution to Velarok Windblade.",
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
+            },
+            dependsOn = { "accept-3453-the-torch-of-retribution", "objective-3453-quest-work" },
             id = "turnin-3453-the-torch-of-retribution",
             kind = "turnin",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Torch of Retribution.",
-            complete = QuestState(3453, "completed"),
-            dependsOn = { "accept-3453-the-torch-of-retribution" },
-            route = {
-                Point(1427, 0.3905, 0.3899, "The Torch of Retribution",
-                    "Travel to The Torch of Retribution."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3453, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3452 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 360,
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
+            },
+            text = "Accept The Torch of Retribution from Velarok Windblade.",
             id = "accept-3454-the-torch-of-retribution",
             kind = "accept",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Torch of Retribution.",
-            complete = QuestState(3454, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3905, 0.3899, "The Torch of Retribution",
-                    "Travel to The Torch of Retribution."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3454, state = "activeOrCompleted" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3453 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 370,
+            text = "Turn in The Torch of Retribution.",
+            route = {
+                { y = 0.3906, mapID = 1427, label = "The Torch of Retribution", offMapText = "Travel to The Torch of Retribution.", x = 0.3906 },
+            },
+            dependsOn = { "accept-3454-the-torch-of-retribution" },
             id = "turnin-3454-the-torch-of-retribution",
             kind = "turnin",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Torch of Retribution.",
-            complete = QuestState(3454, "completed"),
-            dependsOn = { "accept-3454-the-torch-of-retribution" },
-            route = {
-                Point(1427, 0.3906, 0.3906, "The Torch of Retribution",
-                    "Travel to The Torch of Retribution."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3454, state = "completed" },
+            },
+            sourceStep = 28,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3453 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 380,
+            route = {
+                { y = 0.39, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
+            },
+            text = "Accept Squire Maltrake from Velarok Windblade.",
             id = "accept-3462-squire-maltrake",
             kind = "accept",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Squire Maltrake.",
-            complete = QuestState(3462, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3905, 0.3900, "Squire Maltrake",
-                    "Travel to Squire Maltrake."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3462, state = "activeOrCompleted" },
+            },
+            sourceStep = 29,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3454 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 390,
+            text = "Turn in Squire Maltrake to Squire Maltrake.",
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Squire Maltrake", offMapText = "Travel to Squire Maltrake in Searing Gorge.", x = 0.3916 },
+            },
+            dependsOn = { "accept-3462-squire-maltrake" },
             id = "turnin-3462-squire-maltrake",
             kind = "turnin",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Squire Maltrake.",
-            complete = QuestState(3462, "completed"),
-            dependsOn = { "accept-3462-squire-maltrake" },
-            route = {
-                Point(1427, 0.3916, 0.3899, "Squire Maltrake",
-                    "Travel to Squire Maltrake."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3462, state = "completed" },
+            },
+            sourceStep = 30,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3454 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 400,
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Squire Maltrake", offMapText = "Travel to Squire Maltrake in Searing Gorge.", x = 0.3916 },
+            },
+            text = "Accept Set Them Ablaze! from Squire Maltrake.",
             id = "accept-3463-set-them-ablaze",
             kind = "accept",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Set Them Ablaze!.",
-            complete = QuestState(3463, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3916, 0.3899, "Set Them Ablaze!",
-                    "Travel to Set Them Ablaze!."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3463, state = "activeOrCompleted" },
+            },
+            sourceStep = 30,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3462 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 410,
+            text = "Turn in The Key to Freedom.",
+            route = {
+                { y = 0.6223, mapID = 1427, label = "The Key to Freedom", offMapText = "Travel to The Key to Freedom.", x = 0.6553 },
+            },
+            dependsOn = { "accept-4451-the-key-to-freedom" },
             id = "turnin-4451-the-key-to-freedom",
             kind = "turnin",
-            priority = 290,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Key to Freedom.",
-            complete = QuestState(4451, "completed"),
-            dependsOn = { "accept-4451-the-key-to-freedom" },
-            route = {
-                Point(1427, 0.6553, 0.6223, "The Key to Freedom",
-                    "Travel to The Key to Freedom."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4451, state = "completed" },
+            },
+            sourceStep = 39,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "turnin-3463-set-them-ablaze",
-            kind = "turnin",
-            priority = 300,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Set Them Ablaze!.",
-            complete = QuestState(3463, "completed"),
+            priority = 420,
+            text = "Climb the northern sentry tower. Equip the Torch of Retribution and light its Sentry Brazier. Reequip your normal weapon afterward.",
+            id = "objective-3463-4-authored-Northern-Tower",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 3463, index = 4, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3462 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
             dependsOn = { "accept-3463-set-them-ablaze" },
             route = {
-                Point(1427, 0.6679, 0.3456, "Set Them Ablaze!",
-                    "Travel to Set Them Ablaze!."),
+                { mapID = 1427, x = 0.3331, y = 0.5449, label = "Northern-Tower", offMapText = "Travel to Northern-Tower." },
             },
         },
         {
+            priority = 430,
+            text = "Climb the western sentry tower. Equip the Torch of Retribution and light its Sentry Brazier. Reequip your normal weapon afterward.",
+            id = "objective-3463-1-authored-Western-Tower",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 3463, index = 1, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3462 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3463-set-them-ablaze" },
+            route = {
+                { mapID = 1427, x = 0.3567, y = 0.6068, label = "Western-Tower", offMapText = "Travel to Western-Tower." },
+            },
+        },
+        {
+            priority = 440,
+            text = "Climb the southern sentry tower. Equip the Torch of Retribution and light its Sentry Brazier. Reequip your normal weapon afterward.",
+            id = "objective-3463-2-authored-Southern-Tower",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 3463, index = 2, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3462 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3463-set-them-ablaze" },
+            route = {
+                { mapID = 1427, x = 0.4403, y = 0.6091, label = "Southern-Tower", offMapText = "Travel to Southern-Tower." },
+            },
+        },
+        {
+            priority = 450,
+            text = "Cross the hanging bridge at Searing Gorge 52.48,57.95 and climb the eastern sentry tower. Equip the Torch of Retribution and light its Sentry Brazier. Reequip your normal weapon afterward.",
+            id = "objective-3463-3-authored-Eastern-Tower",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 3463, index = 3, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3462 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3463-set-them-ablaze" },
+            route = {
+                { mapID = 1427, x = 0.5006, y = 0.5474, label = "Eastern-Tower", offMapText = "Travel to Eastern-Tower." },
+            },
+        },
+        {
+            priority = 460,
+            text = "Turn in Set Them Ablaze! to Squire Maltrake.",
+            route = {
+                { mapID = 1427, x = 0.3917, y = 0.39, label = "Squire Maltrake", offMapText = "Travel to Squire Maltrake in Searing Gorge." },
+            },
+            dependsOn = {
+                "accept-3463-set-them-ablaze",
+                "objective-3463-4-authored-Northern-Tower",
+                "objective-3463-1-authored-Western-Tower",
+                "objective-3463-2-authored-Southern-Tower",
+                "objective-3463-3-authored-Eastern-Tower",
+            },
+            id = "turnin-3463-set-them-ablaze",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3463, state = "completed" },
+            },
+            sourceStep = 40,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3462 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 470,
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Trinkets..", offMapText = "Travel to Trinkets....", x = 0.3886 },
+            },
+            text = "Accept Trinkets...",
             id = "accept-3481-trinkets",
             kind = "accept",
-            priority = 310,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Trinkets...",
-            complete = QuestState(3481, "activeOrCompleted"),
-            route = {
-                Point(1427, 0.3886, 0.3899, "Trinkets..",
-                    "Travel to Trinkets...."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3481, state = "activeOrCompleted" },
+            },
+            sourceStep = 42,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3463 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 480,
+            text = "Turn in Trinkets...",
+            route = {
+                { y = 0.3899, mapID = 1427, label = "Trinkets..", offMapText = "Travel to Trinkets....", x = 0.3886 },
+            },
+            dependsOn = { "accept-3481-trinkets" },
             id = "turnin-3481-trinkets",
             kind = "turnin",
-            priority = 320,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Trinkets...",
-            complete = QuestState(3481, "completed"),
-            dependsOn = { "accept-3481-trinkets" },
-            route = {
-                Point(1427, 0.3886, 0.3899, "Trinkets..",
-                    "Travel to Trinkets...."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3481, state = "completed" },
+            },
+            sourceStep = 43,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3463 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "objective-4022-1-hoard-of-the-black-dragonflight",
+            id = "objective-7728-2-lookout-s-spyglass",
             kind = "objective",
-            priority = 330,
-            conditions = { all = {
-                { level = { min = 56 } },
-                { faction = "Horde" },
-            } },
-            text = "Use Hoard of the Black Dragonflight.",
-            complete = QuestObjective(4022, 1, "Hoard of the Black Dragonflight"),
-            useClientPin = true,
-            route = nil,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
+            },
+            text = "Collect 1 Lookout's Spyglass.",
+            complete = {
+                questObjective = { id = 7728, index = 2, text = "Lookout's Spyglass", count = 1 },
+            },
+            route = {
+                { mapID = 1427, x = 0.332, y = 0.536, label = "Lookout's Spyglass", offMapText = "Travel to Lookout's Spyglass." },
+            },
+            sourceStep = 45,
+            priority = 490,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-7728-stolen-smithing-tuyere-and-lookout-s-spy" },
         },
         {
+            priority = 500,
+            conditions = { faction = "Horde" },
+            text = "Open the Hoard of the Black Dragonflight from Kalaran Windblade to obtain the Black Dragonflight Molt. Keep it for Cyrus Therepentous.",
+            id = "open-objective-4022-1-hoard-of-the-black-dragonflight",
+            kind = "note",
+            useClientPin = true,
+            complete = {
+                item = { name = "Black Dragonflight Molt", minCount = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3481 },
+                    conditions = {},
+                },
+            },
+            alternativeQuests = { 4023 },
+            useClientText = false,
+            dependsOn = {},
+            referenceQuest = 4022,
+        },
+        {
+            id = "objective-7724-1-greater-lava-spider",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
+            },
+            text = "Kill 20 Greater Lava Spider.",
+            complete = {
+                questObjective = { id = 7724, index = 1, text = "Greater Lava Spider", count = 20 },
+            },
+            route = {
+                { mapID = 1427, x = 0.326, y = 0.426, label = "Greater Lava Spider", offMapText = "Travel to Greater Lava Spider." },
+            },
+            sourceStep = 46,
+            priority = 510,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-7724-fiery-menace" },
+        },
+        {
+            id = "objective-7723-1-heavy-war-golem",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
+            },
+            text = "Kill 20 Heavy War Golem.",
+            complete = {
+                questObjective = { id = 7723, index = 1, text = "Heavy War Golem", count = 20 },
+            },
+            route = {
+                { mapID = 1427, x = 0.392, y = 0.434, label = "Heavy War Golem", offMapText = "Travel to Heavy War Golem." },
+            },
+            sourceStep = 47,
+            priority = 520,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-7723-curse-these-fat-fingers" },
+        },
+        {
+            priority = 530,
+            text = "Turn in Curse These Fat Fingers to Hansel Heavyhands.",
+            route = {
+                { mapID = 1427, x = 0.3859, y = 0.2781, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge." },
+            },
+            dependsOn = { "accept-7723-curse-these-fat-fingers", "objective-7723-1-heavy-war-golem" },
             id = "turnin-7723-curse-these-fat-fingers",
             kind = "turnin",
-            priority = 340,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Curse These Fat Fingers.",
-            complete = QuestState(7723, "completed"),
-            dependsOn = { "accept-7723-curse-these-fat-fingers" },
-            route = {
-                Point(1427, 0.3152, 0.3354, "Curse These Fat Fingers",
-                    "Travel to Curse These Fat Fingers."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7723, state = "completed" },
+            },
+            sourceStep = 48,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 540,
+            text = "Turn in Fiery Menace! to Hansel Heavyhands.",
+            route = {
+                { mapID = 1427, x = 0.3859, y = 0.2781, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge." },
+            },
+            dependsOn = { "accept-7724-fiery-menace", "objective-7724-1-greater-lava-spider" },
             id = "turnin-7724-fiery-menace",
             kind = "turnin",
-            priority = 350,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Fiery Menace!.",
-            complete = QuestState(7724, "completed"),
-            dependsOn = { "accept-7724-fiery-menace" },
-            route = {
-                Point(1427, 0.3152, 0.3354, "Fiery Menace!",
-                    "Travel to Fiery Menace!."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7724, state = "completed" },
+            },
+            sourceStep = 48,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 550,
+            text = "Turn in Incendosaurs? Whateverosaur is More Like It to Hansel Heavyhands.",
+            route = {
+                { mapID = 1427, x = 0.3859, y = 0.2781, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge." },
+            },
+            dependsOn = { "accept-7727-incendosaurs-whateverosaur-is-more-like-", "objective-7727-1-incendosaur" },
             id = "turnin-7727-incendosaurs-whateverosaur-is-more-like-",
             kind = "turnin",
-            priority = 360,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Incendosaurs? Whateverosaur is More Like It.",
-            complete = QuestState(7727, "completed"),
-            dependsOn = { "accept-7727-incendosaurs-whateverosaur-is-more-like-", "objective-7727-1-incendosaur" },
-            route = {
-                Point(1427, 0.3152, 0.3354, "Incendosaurs? Whateverosaur is More Like It",
-                    "Travel to Incendosaurs? Whateverosaur is More Like It."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7727, state = "completed" },
+            },
+            sourceStep = 48,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 560,
+            text = "Turn in STOLEN: Smithing Tuyere and Lookout's Spyglass to Taskmaster Scrange.",
+            route = {
+                { y = 0.2751, mapID = 1427, label = "Taskmaster Scrange", offMapText = "Travel to Taskmaster Scrange in Searing Gorge.", x = 0.3898 },
+            },
+            dependsOn = {
+                "accept-7728-stolen-smithing-tuyere-and-lookout-s-spy",
+                "objective-7728-1-dark-iron-steamsmith",
+                "objective-7728-2-lookout-s-spyglass",
+            },
             id = "turnin-7728-stolen-smithing-tuyere-and-lookout-s-spy",
             kind = "turnin",
-            priority = 370,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in STOLEN: Smithing Tuyere and Lookout's Spyglass.",
-            complete = QuestState(7728, "completed"),
-            dependsOn = { "accept-7728-stolen-smithing-tuyere-and-lookout-s-spy", "objective-7728-1-dark-iron-steamsmith" },
-            route = {
-                Point(1427, 0.3898, 0.2751, "STOLEN: Smithing Tuyere and Lookout's Spyglass",
-                    "Travel to STOLEN: Smithing Tuyere and Lookout's Spyglass."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7728, state = "completed" },
+            },
+            sourceStep = 49,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 570,
+            text = "Turn in JOB OPPORTUNITY: Culling the Competition to Taskmaster Scrange.",
+            route = {
+                { y = 0.2751, mapID = 1427, label = "Taskmaster Scrange", offMapText = "Travel to Taskmaster Scrange in Searing Gorge.", x = 0.3898 },
+            },
+            dependsOn = {
+                "accept-7729-job-opportunity-culling-the-competition",
+                "objective-7729-1-dark-iron-taskmaster",
+                "objective-7729-2-dark-iron-slaver",
+            },
             id = "turnin-7729-job-opportunity-culling-the-competition",
             kind = "turnin",
-            priority = 380,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in JOB OPPORTUNITY: Culling the Competition.",
-            complete = QuestState(7729, "completed"),
-            dependsOn = { "accept-7729-job-opportunity-culling-the-competition" },
-            route = {
-                Point(1427, 0.3898, 0.2751, "JOB OPPORTUNITY: Culling the Competition",
-                    "Travel to JOB OPPORTUNITY: Culling the Competition."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7729, state = "completed" },
+            },
+            sourceStep = 49,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

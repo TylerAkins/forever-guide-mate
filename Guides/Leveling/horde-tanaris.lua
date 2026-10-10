@@ -1,381 +1,785 @@
 local _, ns = ...
 
--- Forever Casual spine: Tanaris (41-42)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    THOUSAND_NEEDLES = 1441,
-    TANARIS = 1446,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-horde-tanaris",
+    revision = 3,
     title = "Tanaris",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-horde-tanaris",
     conditions = {
         all = {
             { faction = "Horde" },
-            { level = { min = 41 } },
+            {
+                level = { min = 41 },
+            },
         },
     },
     goals = {
         {
-            id = "turnin-2864-tran-rek",
-            kind = "turnin",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Tran'rek.",
-            complete = QuestState(2864, "completed"),
-            route = {
-                Point(1446, 0.5157, 0.2676, "Tran'rek",
-                    "Travel to Tran'rek."),
+            id = "level-before-accept-1707-water-pouch-bounty",
+            kind = "note",
+            text = "Reach level 40 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 40 },
             },
+            requiredLevel = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1707,
+            priority = 10,
         },
         {
+            priority = 20,
+            route = {
+                { y = 0.2844, mapID = 1446, label = "Spigot Operator Luglunket", offMapText = "Travel to Spigot Operator Luglunket in Tanaris.", x = 0.5248 },
+            },
+            text = "Accept Water Pouch Bounty from Spigot Operator Luglunket.",
             id = "accept-1707-water-pouch-bounty",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Water Pouch Bounty.",
-            complete = QuestState(1707, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.5248, 0.2844, "Water Pouch Bounty",
-                    "Travel to Water Pouch Bounty."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1707, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-turnin-243-into-the-field",
+            kind = "note",
+            text = "Reach level 38 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 38 },
+            },
+            requiredLevel = 38,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 243,
+            priority = 30,
+        },
+        {
+            priority = 40,
+            route = {
+                { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
+            },
+            text = "Turn in Into the Field to Chief Engineer Bilgewhizzle.",
             id = "turnin-243-into-the-field",
             kind = "turnin",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Into the Field.",
-            complete = QuestState(243, "completed"),
-            route = {
-                Point(1446, 0.5246, 0.2851, "Into the Field",
-                    "Travel to Into the Field."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 243, state = "completed" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 238 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 50,
+            route = {
+                { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
+            },
+            text = "Accept Slake That Thirst from Chief Engineer Bilgewhizzle.",
             id = "accept-379-slake-that-thirst",
             kind = "accept",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Slake That Thirst.",
-            complete = QuestState(379, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.5246, 0.2851, "Slake That Thirst",
-                    "Travel to Slake That Thirst."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 379, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 243 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            route = {
+                { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
+            },
+            text = "Accept Wastewander Justice from Chief Engineer Bilgewhizzle.",
             id = "accept-1690-wastewander-justice",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Wastewander Justice.",
-            complete = QuestState(1690, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.5246, 0.2851, "Wastewander Justice",
-                    "Travel to Wastewander Justice."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1690, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 70,
+            route = {
+                { y = 0.2236, mapID = 1446, label = "Yeh'kinya", offMapText = "Travel to Yeh'kinya in Tanaris.", x = 0.6699 },
+            },
+            text = "Accept Screecher Spirits from Yeh'kinya.",
             id = "accept-3520-screecher-spirits",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Screecher Spirits.",
-            complete = QuestState(3520, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.6699, 0.2236, "Screecher Spirits",
-                    "Travel to Screecher Spirits."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3520, state = "activeOrCompleted" },
+            },
+            sourceStep = 12,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 80,
+            route = {
+                { y = 0.2398, mapID = 1446, label = "Stoley", offMapText = "Travel to Stoley in Tanaris.", x = 0.6711 },
+            },
+            text = "Turn in Stoley's Debt to Stoley.",
             id = "turnin-2872-stoley-s-debt",
             kind = "turnin",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Stoley's Debt.",
-            complete = QuestState(2872, "completed"),
-            route = {
-                Point(1446, 0.6711, 0.2398, "Stoley's Debt",
-                    "Travel to Stoley's Debt."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2872, state = "completed" },
+            },
+            sourceStep = 13,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-1690-1-wastewander-bandit",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            text = "Kill 10 Wastewander Bandit.",
+            complete = {
+                questObjective = { id = 1690, index = 1, text = "Wastewander Bandit", count = 10 },
+            },
+            route = {
+                { mapID = 1446, x = 0.628, y = 0.304, label = "Wastewander Bandit", offMapText = "Travel to Wastewander Bandit." },
+            },
+            sourceStep = 15,
+            priority = 90,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1690-wastewander-justice" },
+        },
+        {
+            id = "objective-1690-2-wastewander-thief",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            text = "Kill 10 Wastewander Thief.",
+            complete = {
+                questObjective = { id = 1690, index = 2, text = "Wastewander Thief", count = 10 },
+            },
+            route = {
+                { mapID = 1446, x = 0.628, y = 0.304, label = "Wastewander Thief", offMapText = "Travel to Wastewander Thief." },
+            },
+            sourceStep = 15,
+            priority = 100,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1690-wastewander-justice" },
+        },
+        {
+            priority = 110,
+            text = "For Slake That Thirst: Bring 5 Wastewander Water Pouches to Chief Engineer Bilgewhizzle in Gadgetzan.",
+            id = "objective-379-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 379, state = "complete" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 243 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-379-slake-that-thirst" },
+        },
+        {
+            priority = 120,
+            text = "Turn in Slake That Thirst to Chief Engineer Bilgewhizzle.",
+            route = {
+                { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
+            },
+            dependsOn = { "accept-379-slake-that-thirst", "objective-379-quest-work" },
             id = "turnin-379-slake-that-thirst",
             kind = "turnin",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Slake That Thirst.",
-            complete = QuestState(379, "completed"),
-            dependsOn = { "accept-379-slake-that-thirst" },
-            route = {
-                Point(1446, 0.5246, 0.2851, "Slake That Thirst",
-                    "Travel to Slake That Thirst."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 379, state = "completed" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 243 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 130,
+            text = "Turn in Wastewander Justice to Chief Engineer Bilgewhizzle.",
+            route = {
+                { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
+            },
+            dependsOn = {
+                "accept-1690-wastewander-justice",
+                "objective-1690-1-wastewander-bandit",
+                "objective-1690-2-wastewander-thief",
+            },
             id = "turnin-1690-wastewander-justice",
             kind = "turnin",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Wastewander Justice.",
-            complete = QuestState(1690, "completed"),
-            dependsOn = { "accept-1690-wastewander-justice" },
-            route = {
-                Point(1446, 0.5246, 0.2851, "Wastewander Justice",
-                    "Travel to Wastewander Justice."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1690, state = "completed" },
+            },
+            sourceStep = 17,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 140,
+            text = "For Water Pouch Bounty: Bring 5 Wastewander Water Pouches to Spigot Operator Luglunket in Gadgetzan.",
+            route = {
+                { mapID = 1446, x = 0.628, y = 0.304, label = "Wastewander Water Pouch", offMapText = "Travel to Wastewander Water Pouch." },
+            },
+            id = "objective-1707-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 1707, state = "complete" },
+            },
+            sourceStep = 18,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1707-water-pouch-bounty" },
+        },
+        {
+            priority = 150,
+            text = "Turn in Water Pouch Bounty to Spigot Operator Luglunket.",
+            route = {
+                { y = 0.2844, mapID = 1446, label = "Spigot Operator Luglunket", offMapText = "Travel to Spigot Operator Luglunket in Tanaris.", x = 0.5248 },
+            },
+            dependsOn = { "accept-1707-water-pouch-bounty", "objective-1707-quest-work" },
             id = "turnin-1707-water-pouch-bounty",
             kind = "turnin",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Water Pouch Bounty.",
-            complete = QuestState(1707, "completed"),
-            dependsOn = { "accept-1707-water-pouch-bounty" },
-            route = {
-                Point(1446, 0.5248, 0.2844, "Water Pouch Bounty",
-                    "Travel to Water Pouch Bounty."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1707, state = "completed" },
+            },
+            sourceStep = 18,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 160,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Turn in Rumors for Kravel to Kravel Koalbeard.",
             id = "turnin-1117-rumors-for-kravel",
             kind = "turnin",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Rumors for Kravel.",
-            complete = QuestState(1117, "completed"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "Rumors for Kravel",
-                    "Travel to Rumors for Kravel."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1117, state = "completed" },
+            },
+            sourceStep = 22,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1116 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 170,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Accept Back to Booty Bay from Kravel Koalbeard.",
             id = "accept-1118-back-to-booty-bay",
             kind = "accept",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 44 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Back to Booty Bay.",
-            complete = QuestState(1118, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "Back to Booty Bay",
-                    "Travel to Back to Booty Bay."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1118, state = "activeOrCompleted" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1117 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 180,
+            route = {
+                { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
+            },
+            text = "Turn in News for Fizzle to Fizzle Brassbolts.",
             id = "turnin-1137-news-for-fizzle",
             kind = "turnin",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in News for Fizzle.",
-            complete = QuestState(1137, "completed"),
-            route = {
-                Point(1441, 0.7806, 0.7713, "News for Fizzle",
-                    "Travel to News for Fizzle."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1137, state = "completed" },
+            },
+            sourceStep = 24,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1108 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 190,
+            route = {
+                { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
+            },
+            text = "Turn in Goblin Sponsorship to Pozzik.",
             id = "turnin-1183-goblin-sponsorship",
             kind = "turnin",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Goblin Sponsorship.",
-            complete = QuestState(1183, "completed"),
-            route = {
-                Point(1441, 0.8018, 0.7588, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1183, state = "completed" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1182 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 200,
+            route = {
+                { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
+            },
+            text = "Accept The Eighteenth Pilot from Pozzik.",
             id = "accept-1186-the-eighteenth-pilot",
             kind = "accept",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Eighteenth Pilot.",
-            complete = QuestState(1186, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.8018, 0.7588, "The Eighteenth Pilot",
-                    "Travel to The Eighteenth Pilot."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1186, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1183 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 210,
+            route = {
+                { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
+            },
+            text = "Accept Keeping Pace from Pozzik.",
             id = "accept-1190-keeping-pace",
             kind = "accept",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Keeping Pace.",
-            complete = QuestState(1190, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.8018, 0.7588, "Keeping Pace",
-                    "Travel to Keeping Pace."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1190, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1137 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 220,
+            text = "Turn in The Eighteenth Pilot to Razzeric.",
+            route = {
+                { y = 0.7609, mapID = 1441, label = "Razzeric", offMapText = "Travel to Razzeric in Thousand Needles.", x = 0.8033 },
+            },
+            dependsOn = { "accept-1186-the-eighteenth-pilot" },
             id = "turnin-1186-the-eighteenth-pilot",
             kind = "turnin",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Eighteenth Pilot.",
-            complete = QuestState(1186, "completed"),
-            dependsOn = { "accept-1186-the-eighteenth-pilot" },
-            route = {
-                Point(1441, 0.8033, 0.7609, "The Eighteenth Pilot",
-                    "Travel to The Eighteenth Pilot."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1186, state = "completed" },
+            },
+            sourceStep = 26,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1183 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 230,
+            route = {
+                { y = 0.7609, mapID = 1441, label = "Razzeric", offMapText = "Travel to Razzeric in Thousand Needles.", x = 0.8033 },
+            },
+            text = "Accept Razzeric's Tweaking from Razzeric.",
             id = "accept-1187-razzeric-s-tweaking",
             kind = "accept",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 46 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Razzeric's Tweaking.",
-            complete = QuestState(1187, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.8033, 0.7609, "Razzeric's Tweaking",
-                    "Travel to Razzeric's Tweaking."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1187, state = "activeOrCompleted" },
+            },
+            sourceStep = 26,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1186 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 240,
+            route = {
+                { y = 0.7702, mapID = 1441, label = "Zamek", offMapText = "Travel to Zamek in Thousand Needles.", x = 0.7981 },
+            },
+            text = "Accept Zamek's Distraction from Zamek.",
             id = "accept-1191-zamek-s-distraction",
             kind = "accept",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Zamek's Distraction.",
-            complete = QuestState(1191, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7981, 0.7702, "Zamek's Distraction",
-                    "Travel to Zamek's Distraction."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1191, state = "activeOrCompleted" },
+            },
+            sourceStep = 27,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 250,
+            text = "Turn in Keeping Pace.",
+            route = {
+                { y = 0.7738, mapID = 1441, label = "Keeping Pace", offMapText = "Travel to Keeping Pace.", x = 0.7721 },
+            },
+            dependsOn = { "accept-1190-keeping-pace" },
             id = "turnin-1190-keeping-pace",
             kind = "turnin",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Keeping Pace.",
-            complete = QuestState(1190, "completed"),
-            dependsOn = { "accept-1190-keeping-pace" },
-            route = {
-                Point(1441, 0.7721, 0.7738, "Keeping Pace",
-                    "Travel to Keeping Pace."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1190, state = "completed" },
+            },
+            sourceStep = 28,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1137 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 260,
+            route = {
+                { y = 0.7738, mapID = 1441, label = "Rizzle's Schematics", offMapText = "Travel to Rizzle's Schematics.", x = 0.7721 },
+            },
+            text = "Accept Rizzle's Schematics.",
             id = "accept-1194-rizzle-s-schematics",
             kind = "accept",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Rizzle's Schematics.",
-            complete = QuestState(1194, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7721, 0.7738, "Rizzle's Schematics",
-                    "Travel to Rizzle's Schematics."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1194, state = "activeOrCompleted" },
+            },
+            sourceStep = 28,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1190 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 270,
+            text = "Turn in Rizzle's Schematics to Pozzik.",
+            route = {
+                { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
+            },
+            dependsOn = { "accept-1194-rizzle-s-schematics" },
             id = "turnin-1194-rizzle-s-schematics",
             kind = "turnin",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Rizzle's Schematics.",
-            complete = QuestState(1194, "completed"),
-            dependsOn = { "accept-1194-rizzle-s-schematics" },
-            route = {
-                Point(1441, 0.8018, 0.7588, "Rizzle's Schematics",
-                    "Travel to Rizzle's Schematics."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1194, state = "completed" },
+            },
+            sourceStep = 29,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1190 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

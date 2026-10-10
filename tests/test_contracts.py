@@ -456,12 +456,12 @@ class ContractTests(unittest.TestCase):
         self.assertIn('id = "leveling-zephras-isle"', guide)
         self.assertIn('category = "Leveling Quest Guides"', guide)
         self.assertIn("level = { min = 1 }", guide)
-        self.assertIn("ZEPHRAS = 2521", guide)
+        self.assertIn("mapID = 2521", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn('{ faction = "Alliance" }', guide)
-        self.assertIn("{ class = 7 }", guide)
-        self.assertIn("RACE_ALLIANCE = 95", guide)
-        self.assertIn("RACE_HORDE = 96", guide)
+        self.assertRegex(guide, r'class\s*=\s*(?:7\b|\{\s*7\s*\})')
+        self.assertRegex(guide, r'race\s*=\s*\{[^}]*\b95\b')
+        self.assertRegex(guide, r'race\s*=\s*\{[^}]*\b96\b')
         self.assertNotIn("97963", guide)
 
     def test_durotar_guide_is_loremaster_without_dungeons(self) -> None:
@@ -677,7 +677,7 @@ class ContractTests(unittest.TestCase):
             "Barrens Casual spine should carry Forever woven steps",
         )
         shaman = (ROOT / "Guides/Class/Shaman.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(76156,", shaman)
+        self.assertIn("accept-76156-", shaman)
 
 
     def test_compiler_installs_into_wow_addons(self) -> None:

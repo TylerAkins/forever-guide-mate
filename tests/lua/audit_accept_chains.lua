@@ -18,7 +18,7 @@ end
 CreateFrame = nil
 C_Timer = nil
 for _, path in ipairs({
-    "Core.lua", "PlayerState.lua", "Travel.lua", "Taxi.lua", "GuideEngine.lua", "QuestPrerequisites.lua",
+    "Core.lua", "PlayerState.lua", "Travel.lua", "Taxi.lua", "GuideEngine.lua", "OrderedRoutes.lua", "ClassChains.lua", "QuestPrerequisites.lua",
     "QuestAudit.lua", "QuestDialog.lua", "Navigation.lua", "TomTomWaypoints.lua",
     "MapPins.lua", "UI.lua",
 }) do

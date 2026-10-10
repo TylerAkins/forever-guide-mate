@@ -1,778 +1,1169 @@
 local _, ns = ...
 
--- Forever Casual spine: Un'Goro Crater (49-50)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    DESOLACE = 1443,
-    TANARIS = 1446,
-    UN_GORO_CRATER = 1449,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-alliance-ungoro-crater",
+    revision = 3,
     title = "Un'Goro Crater",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-alliance-ungoro-crater",
     conditions = {
         all = {
             { faction = "Alliance" },
-            { level = { min = 49 } },
+            {
+                level = { min = 49 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-4289-the-apes-of-un-goro",
+            kind = "note",
+            text = "Reach level 47 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 47 },
+            },
+            requiredLevel = 47,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4289,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.7596, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
+            },
+            text = "Accept The Apes of Un'Goro from Torwa Pathfinder.",
             id = "accept-4289-the-apes-of-un-goro",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Apes of Un'Goro.",
-            complete = QuestState(4289, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.7164, 0.7596, "The Apes of Un'Goro",
-                    "Travel to The Apes of Un'Goro."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4289, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-4290-the-fare-of-lar-korwi",
+            kind = "note",
+            text = "Reach level 48 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 48 },
+            },
+            requiredLevel = 48,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4290,
+            priority = 30,
+        },
+        {
+            priority = 40,
+            route = {
+                { y = 0.7596, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
+            },
+            text = "Accept The Fare of Lar'korwi from Torwa Pathfinder.",
             id = "accept-4290-the-fare-of-lar-korwi",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Fare of Lar'korwi.",
-            complete = QuestState(4290, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.7164, 0.7596, "The Fare of Lar'korwi",
-                    "Travel to The Fare of Lar'korwi."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4290, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 50,
+            route = {
+                { y = 0.685, mapID = 1449, label = "It's a Secret to Everybody", offMapText = "Travel to It's a Secret to Everybody.", x = 0.6302 },
+            },
+            text = "Accept It's a Secret to Everybody.",
             id = "accept-3844-it-s-a-secret-to-everybody",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept It's a Secret to Everybody.",
-            complete = QuestState(3844, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.6302, 0.6850, "It's a Secret to Everybody",
-                    "Travel to It's a Secret to Everybody."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3844, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            text = "Turn in It's a Secret to Everybody.",
+            route = {
+                { y = 0.6902, mapID = 1449, label = "It's a Secret to Everybody", offMapText = "Travel to It's a Secret to Everybody.", x = 0.6312 },
+            },
+            dependsOn = { "accept-3844-it-s-a-secret-to-everybody" },
             id = "turnin-3844-it-s-a-secret-to-everybody",
             kind = "turnin",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in It's a Secret to Everybody.",
-            complete = QuestState(3844, "completed"),
-            dependsOn = { "accept-3844-it-s-a-secret-to-everybody" },
-            route = {
-                Point(1449, 0.6312, 0.6902, "It's a Secret to Everybody",
-                    "Travel to It's a Secret to Everybody."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3844, state = "completed" },
+            },
+            sourceStep = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 70,
+            route = {
+                { y = 0.6902, mapID = 1449, label = "It's a Secret to Everybody", offMapText = "Travel to It's a Secret to Everybody.", x = 0.6312 },
+            },
+            text = "Accept It's a Secret to Everybody.",
             id = "accept-3845-it-s-a-secret-to-everybody",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept It's a Secret to Everybody.",
-            complete = QuestState(3845, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.6312, 0.6902, "It's a Secret to Everybody",
-                    "Travel to It's a Secret to Everybody."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3845, state = "activeOrCompleted" },
+            },
+            sourceStep = 4,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3844 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-4290-1-piece-of-threshadon-carcass",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
+            },
+            text = "Collect 1 Piece of Threshadon Carcass.",
+            complete = {
+                questObjective = { id = 4290, index = 1, text = "Piece of Threshadon Carcass", count = 1 },
+            },
+            route = {
+                { mapID = 1449, x = 0.6875, y = 0.5666, label = "Piece of Threshadon Carcass", offMapText = "Travel to Piece of Threshadon Carcass." },
+            },
+            sourceStep = 5,
+            priority = 80,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4290-the-fare-of-lar-korwi" },
+        },
+        {
+            priority = 90,
+            text = "Turn in The Fare of Lar'korwi to Torwa Pathfinder.",
+            route = {
+                { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
+            },
+            dependsOn = { "accept-4290-the-fare-of-lar-korwi", "objective-4290-1-piece-of-threshadon-carcass" },
             id = "turnin-4290-the-fare-of-lar-korwi",
             kind = "turnin",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Fare of Lar'korwi.",
-            complete = QuestState(4290, "completed"),
-            dependsOn = { "accept-4290-the-fare-of-lar-korwi" },
-            route = {
-                Point(1449, 0.7164, 0.7597, "The Fare of Lar'korwi",
-                    "Travel to The Fare of Lar'korwi."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4290, state = "completed" },
+            },
+            sourceStep = 6,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 100,
+            route = {
+                { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
+            },
+            text = "Accept The Scent of Lar'korwi from Torwa Pathfinder.",
             id = "accept-4291-the-scent-of-lar-korwi",
             kind = "accept",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Scent of Lar'korwi.",
-            complete = QuestState(4291, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.7164, 0.7597, "The Scent of Lar'korwi",
-                    "Travel to The Scent of Lar'korwi."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4291, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4290 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 110,
+            text = "Collect 2 Ravasaur Pheromone Gland.",
+            route = {
+                { y = 0.73, mapID = 1449, label = "Lar'korwi Mate", offMapText = "Travel to Lar'korwi Mate.", x = 0.672 },
+            },
+            dependsOn = { "accept-4291-the-scent-of-lar-korwi" },
             id = "objective-4291-1-lar-korwi-mate",
             kind = "objective",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Lar'korwi Mate.",
-            complete = QuestObjective(4291, 1, "Lar'korwi Mate"),
-            dependsOn = { "accept-4291-the-scent-of-lar-korwi" },
-            route = {
-                Point(1449, 0.6720, 0.7300, "Lar'korwi Mate",
-                    "Travel to Lar'korwi Mate."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4291, text = "Lar'korwi Mate", index = 1, count = 2 },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4290 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 120,
+            text = "Turn in The Scent of Lar'korwi to Torwa Pathfinder.",
+            route = {
+                { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7163 },
+            },
+            dependsOn = { "accept-4291-the-scent-of-lar-korwi", "objective-4291-1-lar-korwi-mate" },
             id = "turnin-4291-the-scent-of-lar-korwi",
             kind = "turnin",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Scent of Lar'korwi.",
-            complete = QuestState(4291, "completed"),
-            dependsOn = { "accept-4291-the-scent-of-lar-korwi", "objective-4291-1-lar-korwi-mate" },
-            route = {
-                Point(1449, 0.7163, 0.7597, "The Scent of Lar'korwi",
-                    "Travel to The Scent of Lar'korwi."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4291, state = "completed" },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4290 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 130,
+            route = {
+                { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7163 },
+            },
+            text = "Accept The Bait for Lar'korwi from Torwa Pathfinder.",
             id = "accept-4292-the-bait-for-lar-korwi",
             kind = "accept",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Bait for Lar'korwi.",
-            complete = QuestState(4292, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.7163, 0.7597, "The Bait for Lar'korwi",
-                    "Travel to The Bait for Lar'korwi."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4292, state = "activeOrCompleted" },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4291 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "loot-starter-before-accept-3884-williden-s-journal",
+            kind = "note",
+            instructionOnly = true,
+            conditions = { faction = "Alliance" },
+            text = "Loot A Mangled Journal from Ravasaur Hunter, Venomhide Ravasaur, Bloodpetal Lasher, Bloodpetal Flayer, Bloodpetal Thresher, Bloodpetal Trapper, Un'Goro Stomper, Un'Goro Gorilla, Un'Goro Thunderer, Tar Beast, Gorishi Worker, Young Diemetradon, Fledgling Pterrordax, Pterrordax, Frenzied Pterrordax, Lar'korwi Mate, Lar'korwi. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "A Mangled Journal", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 3884, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 140,
+        },
+        {
+            priority = 150,
+            text = "Use the A Mangled Journal to accept Williden's Journal.",
             id = "accept-3884-williden-s-journal",
             kind = "accept",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Williden's Journal.",
-            complete = QuestState(3884, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.6720, 0.7300, "Williden's Journal",
-                    "Travel to Williden's Journal."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3884, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
-            id = "objective-3845-1-a-small-pack",
-            kind = "objective",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use A Small Pack.",
-            complete = QuestObjective(3845, 1, "A Small Pack"),
             dependsOn = { "accept-3845-it-s-a-secret-to-everybody" },
+            id = "objective-3845-1-a-small-pack",
+            text = "Collect 1 Large Compass.",
             useClientPin = true,
-            route = nil,
+            complete = {
+                questObjective = { id = 3845, text = "A Small Pack", index = 1, count = 1 },
+            },
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            priority = 160,
+            sourceStep = 11,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3844 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
         },
         {
+            id = "objective-3845-2-curled-map-parchment",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            text = "Collect 1 Curled Map Parchment.",
+            complete = {
+                questObjective = { id = 3845, index = 2, text = "Curled Map Parchment", count = 1 },
+            },
+            sourceStep = 11,
+            priority = 170,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3844 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-3845-it-s-a-secret-to-everybody" },
+        },
+        {
+            id = "objective-3845-3-lion-headed-key",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            text = "Collect 1 Lion-headed Key.",
+            complete = {
+                questObjective = { id = 3845, index = 3, text = "Lion-headed Key", count = 1 },
+            },
+            sourceStep = 11,
+            priority = 180,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3844 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-3845-it-s-a-secret-to-everybody" },
+        },
+        {
+            priority = 190,
+            text = "Turn in It's a Secret to Everybody to Linken.",
+            route = {
+                { y = 0.0811, mapID = 1449, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466 },
+            },
+            dependsOn = {
+                "accept-3845-it-s-a-secret-to-everybody",
+                "objective-3845-1-a-small-pack",
+                "objective-3845-2-curled-map-parchment",
+                "objective-3845-3-lion-headed-key",
+            },
             id = "turnin-3845-it-s-a-secret-to-everybody",
             kind = "turnin",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in It's a Secret to Everybody.",
-            complete = QuestState(3845, "completed"),
-            dependsOn = { "accept-3845-it-s-a-secret-to-everybody", "objective-3845-1-a-small-pack" },
-            route = {
-                Point(1449, 0.4466, 0.0811, "It's a Secret to Everybody",
-                    "Travel to It's a Secret to Everybody."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3845, state = "completed" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3844 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 200,
+            route = {
+                { y = 0.0811, mapID = 1449, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466 },
+            },
+            text = "Accept It's a Secret to Everybody from Linken.",
             id = "accept-3908-it-s-a-secret-to-everybody",
             kind = "accept",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept It's a Secret to Everybody.",
-            complete = QuestState(3908, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4466, 0.0811, "It's a Secret to Everybody",
-                    "Travel to It's a Secret to Everybody."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3908, state = "activeOrCompleted" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3845 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 210,
+            text = "Turn in Williden's Journal to Williden Marshal.",
+            route = {
+                { y = 0.0714, mapID = 1449, label = "Williden Marshal", offMapText = "Travel to Williden Marshal in Un'Goro Crater.", x = 0.4395 },
+            },
+            dependsOn = { "accept-3884-williden-s-journal" },
             id = "turnin-3884-williden-s-journal",
             kind = "turnin",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Williden's Journal.",
-            complete = QuestState(3884, "completed"),
-            dependsOn = { "accept-3884-williden-s-journal" },
-            route = {
-                Point(1449, 0.4395, 0.0714, "Williden's Journal",
-                    "Travel to Williden's Journal."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3884, state = "completed" },
+            },
+            sourceStep = 15,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 220,
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            text = "Accept Crystals of Power from J.D. Collie.",
             id = "accept-4284-crystals-of-power",
             kind = "accept",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Crystals of Power.",
-            complete = QuestState(4284, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4347, 0.0679, "Crystals of Power",
-                    "Travel to Crystals of Power."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4284, state = "activeOrCompleted" },
+            },
+            sourceStep = 16,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 230,
+            text = "For Crystals of Power: Collect 7 Power Crystals of each color: red, blue, yellow, and green.",
+            id = "objective-4284-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4284, state = "complete" },
+            },
+            sourceStep = 17,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-4284-crystals-of-power" },
+        },
+        {
+            priority = 240,
+            text = "Turn in Crystals of Power to J.D. Collie.",
+            route = {
+                { y = 0.027, mapID = 1449, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192 },
+            },
+            dependsOn = { "accept-4284-crystals-of-power", "objective-4284-quest-work" },
             id = "turnin-4284-crystals-of-power",
             kind = "turnin",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Crystals of Power.",
-            complete = QuestState(4284, "completed"),
-            dependsOn = { "accept-4284-crystals-of-power" },
-            route = {
-                Point(1449, 0.4192, 0.0270, "Crystals of Power",
-                    "Travel to Crystals of Power."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4284, state = "completed" },
+            },
+            sourceStep = 17,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "level-before-accept-4141-muigin-and-larion",
+            kind = "note",
+            text = "Reach level 47 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 47 },
+            },
+            requiredLevel = 47,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4141,
+            priority = 250,
+        },
+        {
+            priority = 260,
+            route = {
+                { mapID = 1449, x = 0.4294, y = 0.0964, label = "Muigin", offMapText = "Travel to Muigin in Un'Goro Crater." },
+            },
+            text = "Accept Muigin and Larion from Muigin.",
             id = "accept-4141-muigin-and-larion",
             kind = "accept",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Muigin and Larion.",
-            complete = QuestState(4141, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4347, 0.0681, "Muigin and Larion",
-                    "Travel to Muigin and Larion."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4141, state = "activeOrCompleted" },
+            },
+            sourceStep = 19,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 270,
+            text = "Collect 15 Bloodpetal.",
+            route = {
+                { y = 0.352, mapID = 1449, label = "Bloodpetal Flayer", offMapText = "Travel to Bloodpetal Flayer.", x = 0.692 },
+            },
+            dependsOn = { "accept-4141-muigin-and-larion" },
             id = "objective-4141-1-bloodpetal-flayer",
             kind = "objective",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Bloodpetal Flayer.",
-            complete = QuestObjective(4141, 1, "Bloodpetal Flayer"),
-            dependsOn = { "accept-4141-muigin-and-larion" },
-            route = {
-                Point(1449, 0.6920, 0.3520, "Bloodpetal Flayer",
-                    "Travel to Bloodpetal Flayer."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4141, text = "Bloodpetal Flayer", index = 1, count = 15 },
+            },
+            sourceStep = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 280,
+            text = "Turn in Muigin and Larion to Muigin.",
+            route = {
+                { y = 0.0964, mapID = 1449, label = "Muigin", offMapText = "Travel to Muigin in Un'Goro Crater.", x = 0.4294 },
+            },
+            dependsOn = { "accept-4141-muigin-and-larion", "objective-4141-1-bloodpetal-flayer" },
             id = "turnin-4141-muigin-and-larion",
             kind = "turnin",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Muigin and Larion.",
-            complete = QuestState(4141, "completed"),
-            dependsOn = { "accept-4141-muigin-and-larion", "objective-4141-1-bloodpetal-flayer" },
-            route = {
-                Point(1449, 0.4294, 0.0964, "Muigin and Larion",
-                    "Travel to Muigin and Larion."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4141, state = "completed" },
+            },
+            sourceStep = 22,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 290,
+            route = {
+                { y = 0.0964, mapID = 1449, label = "Muigin", offMapText = "Travel to Muigin in Un'Goro Crater.", x = 0.4294 },
+            },
+            text = "Accept A Visit to Gregan from Muigin.",
             id = "accept-4142-a-visit-to-gregan",
             kind = "accept",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 52 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept A Visit to Gregan.",
-            complete = QuestState(4142, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4294, 0.0964, "A Visit to Gregan",
-                    "Travel to A Visit to Gregan."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4142, state = "activeOrCompleted" },
+            },
+            sourceStep = 22,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4141 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 300,
+            route = {
+                { mapID = 1446, x = 0.298, y = 0.6679999999999999, label = "Laden Dew Gland", offMapText = "Travel to Laden Dew Gland." },
+            },
+            text = "For The Thirsty Goblin: Collect a Laden Dew Gland and bring it to Marin Noggenfogger in Gadgetzan.",
+            id = "objective-2605-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 44 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 2605, state = "complete" },
+            },
+            sourceStep = 25,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 310,
+            route = {
+                { y = 0.2866, mapID = 1446, label = "Marin Noggenfogger", offMapText = "Travel to Marin Noggenfogger in Tanaris.", x = 0.5181 },
+            },
+            text = "Turn in The Thirsty Goblin to Marin Noggenfogger.",
             id = "turnin-2605-the-thirsty-goblin",
             kind = "turnin",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Thirsty Goblin.",
-            complete = QuestState(2605, "completed"),
-            route = {
-                Point(1446, 0.5181, 0.2866, "The Thirsty Goblin",
-                    "Travel to The Thirsty Goblin."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 44 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2605, state = "completed" },
+            },
+            sourceStep = 25,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-2605-quest-work" },
         },
         {
+            priority = 320,
+            route = {
+                { y = 0.2866, mapID = 1446, label = "Marin Noggenfogger", offMapText = "Travel to Marin Noggenfogger in Tanaris.", x = 0.5181 },
+            },
+            text = "Accept In Good Taste from Marin Noggenfogger.",
             id = "accept-2606-in-good-taste",
             kind = "accept",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept In Good Taste.",
-            complete = QuestState(2606, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.5181, 0.2866, "In Good Taste",
-                    "Travel to In Good Taste."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 44 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2606, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2605 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 330,
+            route = {
+                { y = 0.2892, mapID = 1446, label = "Pupellyverbos Port", offMapText = "Travel to Pupellyverbos Port.", x = 0.523 },
+            },
+            text = "Collect 12 Pupellyverbos Port.",
             id = "objective-580-1-pupellyverbos-port",
             kind = "objective",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 50 } },
-                { faction = "Alliance" },
-            } },
-            text = "Collect 12 Pupellyverbos Port.",
-            complete = QuestObjective(580, 1, "Pupellyverbos Port"),
-            route = {
-                Point(1446, 0.5230, 0.2892, "Pupellyverbos Port",
-                    "Travel to Pupellyverbos Port."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 580, text = "Pupellyverbos Port", index = 1 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 340,
+            route = {
+                { mapID = 1446, x = 0.415, y = 0.5781000000000001, label = "Gor'marok the Ravager", offMapText = "Travel to Gor'marok the Ravager." },
+            },
+            text = "For The Dunemaul Compound: Andi Lynn in Gadgetzan wants you to destroy the Dunemaul Compound by killing 10 Dunemaul Brutes, 10 Dunemaul Enforcers, and Gor'marok the Ravager.",
+            id = "objective-5863-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 44 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 5863, state = "complete" },
+            },
+            sourceStep = 28,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 350,
+            route = {
+                { y = 0.274, mapID = 1446, label = "Andi Lynn", offMapText = "Travel to Andi Lynn in Tanaris.", x = 0.5282 },
+            },
+            text = "Turn in The Dunemaul Compound to Andi Lynn.",
             id = "turnin-5863-the-dunemaul-compound",
             kind = "turnin",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Dunemaul Compound.",
-            complete = QuestState(5863, "completed"),
-            route = {
-                Point(1446, 0.5282, 0.2740, "The Dunemaul Compound",
-                    "Travel to The Dunemaul Compound."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 44 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5863, state = "completed" },
+            },
+            sourceStep = 28,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-5863-quest-work" },
         },
         {
+            priority = 360,
+            route = {
+                { mapID = 1446, x = 0.298, y = 0.6679999999999999, label = "Gnarled Thistleshrub", offMapText = "Travel to Gnarled Thistleshrub." },
+            },
+            text = "For Thistleshrub Valley: Tran'rek in Gadgetzan wants you to kill 8 Gnarled Thistleshrubs and 8 Thistleshrub Rootshapers.",
+            id = "objective-3362-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3362, state = "complete" },
+            },
+            sourceStep = 29,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 370,
+            route = {
+                { y = 0.2676, mapID = 1446, label = "Tran'rek", offMapText = "Travel to Tran'rek in Tanaris.", x = 0.5157 },
+            },
+            text = "Turn in Thistleshrub Valley to Tran'rek.",
             id = "turnin-3362-thistleshrub-valley",
             kind = "turnin",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Thistleshrub Valley.",
-            complete = QuestState(3362, "completed"),
-            route = {
-                Point(1446, 0.5157, 0.2676, "Thistleshrub Valley",
-                    "Travel to Thistleshrub Valley."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3362, state = "completed" },
+            },
+            sourceStep = 29,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-3362-quest-work" },
         },
         {
+            priority = 380,
+            text = "Turn in In Good Taste to Sprinkle.",
+            route = {
+                { y = 0.2687, mapID = 1446, label = "Sprinkle", offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106 },
+            },
+            dependsOn = { "accept-2606-in-good-taste" },
             id = "turnin-2606-in-good-taste",
             kind = "turnin",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in In Good Taste.",
-            complete = QuestState(2606, "completed"),
-            dependsOn = { "accept-2606-in-good-taste" },
-            route = {
-                Point(1446, 0.5106, 0.2687, "In Good Taste",
-                    "Travel to In Good Taste."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 44 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2606, state = "completed" },
+            },
+            sourceStep = 30,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2605 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 390,
+            route = {
+                { y = 0.2687, mapID = 1446, label = "Sprinkle", offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106 },
+            },
+            text = "Accept Sprinkle's Secret Ingredient from Sprinkle.",
             id = "accept-2641-sprinkle-s-secret-ingredient",
             kind = "accept",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Sprinkle's Secret Ingredient.",
-            complete = QuestState(2641, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.5106, 0.2687, "Sprinkle's Secret Ingredient",
-                    "Travel to Sprinkle's Secret Ingredient."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 44 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2641, state = "activeOrCompleted" },
+            },
+            sourceStep = 30,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2606 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 400,
+            route = {
+                { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
+            },
+            text = "Accept Rise of the Silithid from Senior Surveyor Fizzledowser.",
             id = "accept-162-rise-of-the-silithid",
             kind = "accept",
-            priority = 290,
-            conditions = { all = {
-                { level = { min = 52 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Rise of the Silithid.",
-            complete = QuestState(162, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.5021, 0.2748, "Rise of the Silithid",
-                    "Travel to Rise of the Silithid."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 39 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 162, state = "activeOrCompleted" },
+            },
+            sourceStep = 31,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 113 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 410,
+            route = {
+                { mapID = 1446, x = 0.40299999999999997, y = 0.6890000000000001, label = "Gahz'ridian Ornament", offMapText = "Travel to Gahz'ridian Ornament." },
+            },
+            text = "For Gahz'ridian: Marvon Rivetseeker in Tanaris wants you to collect 30 Gahz'ridian Ornaments.",
+            id = "objective-3161-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3161, state = "complete" },
+            },
+            sourceStep = 32,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 420,
+            route = {
+                { y = 0.4593, mapID = 1446, label = "Marvon Rivetseeker", offMapText = "Travel to Marvon Rivetseeker in Tanaris.", x = 0.5271 },
+            },
+            text = "Turn in Gahz'ridian to Marvon Rivetseeker.",
             id = "turnin-3161-gahz-ridian",
             kind = "turnin",
-            priority = 300,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Gahz'ridian.",
-            complete = QuestState(3161, "completed"),
-            route = {
-                Point(1446, 0.5271, 0.4593, "Gahz'ridian",
-                    "Travel to Gahz'ridian."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3161, state = "completed" },
+            },
+            sourceStep = 32,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-3161-quest-work" },
         },
         {
+            priority = 430,
+            route = {
+                { y = 0.4593, mapID = 1446, label = "Marvon Rivetseeker", offMapText = "Travel to Marvon Rivetseeker in Tanaris.", x = 0.5271 },
+            },
+            text = "Accept The Stone Circle from Marvon Rivetseeker.",
             id = "accept-3444-the-stone-circle",
             kind = "accept",
-            priority = 310,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Stone Circle.",
-            complete = QuestState(3444, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.5271, 0.4593, "The Stone Circle",
-                    "Travel to The Stone Circle."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 46 },
+                    },
+                },
             },
-        },
-        {
-            id = "accept-7065-corruption-of-earth-and-seed",
-            kind = "accept",
-            priority = 320,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Corruption of Earth and Seed.",
-            complete = QuestState(7065, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.6383, 0.1067, "Corruption of Earth and Seed",
-                    "Travel to Corruption of Earth and Seed."),
+            complete = {
+                quest = { id = 3444, state = "activeOrCompleted" },
             },
-        },
-        {
-            id = "accept-7041-vyletongue-corruption",
-            kind = "accept",
-            priority = 330,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Vyletongue Corruption.",
-            complete = QuestState(7041, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.6850, 0.0888, "Vyletongue Corruption",
-                    "Travel to Vyletongue Corruption."),
+            sourceStep = 32,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3380, 3445 },
+                    conditions = {},
+                },
             },
-        },
-        {
-            id = "accept-7028-twisted-evils",
-            kind = "accept",
-            priority = 340,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Twisted Evils.",
-            complete = QuestState(7028, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.6220, 0.3963, "Twisted Evils",
-                    "Travel to Twisted Evils."),
-            },
-        },
-        {
-            id = "accept-7067-the-pariah-s-instructions",
-            kind = "accept",
-            priority = 350,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Pariah's Instructions.",
-            complete = QuestState(7067, "activeOrCompleted"),
-            route = {
-                Point(1443, 0.5042, 0.8665, "The Pariah's Instructions",
-                    "Travel to The Pariah's Instructions."),
-            },
-        },
-        {
-            id = "objective-7067-1-the-nameless-prophet",
-            kind = "objective",
-            priority = 360,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill The Nameless Prophet.",
-            complete = QuestObjective(7067, 1, "The Nameless Prophet"),
-            dependsOn = { "accept-7067-the-pariah-s-instructions" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "accept-7044-legends-of-maraudon",
-            kind = "accept",
-            priority = 370,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Inside Maraudon, accept Legends of Maraudon from the Centaur Apparition.",
-            complete = QuestState(7044, "activeOrCompleted"),
-            route = nil,
-        },
-        {
-            id = "objective-7041-2-coated-cerulean-vial",
-            kind = "objective",
-            priority = 380,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use Coated Cerulean Vial.",
-            complete = QuestObjective(7041, 2, "Coated Cerulean Vial"),
-            dependsOn = { "accept-7041-vyletongue-corruption" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "objective-7044-2-noxxion",
-            kind = "objective",
-            priority = 390,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Noxxion.",
-            complete = QuestObjective(7044, 2, "Noxxion"),
-            dependsOn = { "accept-7044-legends-of-maraudon" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "objective-7044-1-lord-vyletongue",
-            kind = "objective",
-            priority = 400,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Lord Vyletongue.",
-            complete = QuestObjective(7044, 1, "Lord Vyletongue"),
-            dependsOn = { "accept-7044-legends-of-maraudon" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "turnin-7044-legend-of-maraudon",
-            kind = "turnin",
-            priority = 410,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Legend of Maraudon.",
-            complete = QuestState(7044, "completed"),
-            dependsOn = { "accept-7044-legends-of-maraudon", "objective-7044-2-noxxion", "objective-7044-1-lord-vyletongue" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "accept-7046-the-scepter-of-celebras",
-            kind = "accept",
-            priority = 420,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Inside Maraudon, accept The Scepter of Celebras from Celebras the Redeemed.",
-            complete = QuestState(7046, "activeOrCompleted"),
-            route = nil,
-        },
-        {
-            id = "turnin-7046-the-scepter-of-celebras",
-            kind = "turnin",
-            priority = 430,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Scepter of Celebras.",
-            complete = QuestState(7046, "completed"),
-            dependsOn = { "accept-7046-the-scepter-of-celebras" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "objective-7065-1-princess-theradras",
-            kind = "objective",
-            priority = 440,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Princess Theradras.",
-            complete = QuestObjective(7065, 1, "Princess Theradras"),
-            dependsOn = { "accept-7065-corruption-of-earth-and-seed" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "accept-7066-seed-of-life",
-            kind = "accept",
-            priority = 450,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Inside Maraudon, accept Seed of Life from Zaetar's Spirit.",
-            complete = QuestState(7066, "activeOrCompleted"),
-            route = nil,
-        },
-        {
-            id = "turnin-7067-the-pariah-s-instructions",
-            kind = "turnin",
-            priority = 460,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Pariah's Instructions.",
-            complete = QuestState(7067, "completed"),
-            dependsOn = { "accept-7067-the-pariah-s-instructions", "objective-7067-1-the-nameless-prophet" },
-            route = {
-                Point(1443, 0.4340, 0.8480, "The Pariah's Instructions",
-                    "Travel to The Pariah's Instructions."),
-            },
-        },
-        {
-            id = "turnin-7028-twisted-evils",
-            kind = "turnin",
-            priority = 470,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Twisted Evils.",
-            complete = QuestState(7028, "completed"),
-            dependsOn = { "accept-7028-twisted-evils" },
-            route = {
-                Point(1443, 0.6220, 0.3963, "Twisted Evils",
-                    "Travel to Twisted Evils."),
-            },
-        },
-        {
-            id = "turnin-7041-vyletongue-corruption",
-            kind = "turnin",
-            priority = 480,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Vyletongue Corruption.",
-            complete = QuestState(7041, "completed"),
-            dependsOn = { "accept-7041-vyletongue-corruption", "objective-7041-2-coated-cerulean-vial" },
-            route = {
-                Point(1443, 0.6850, 0.0888, "Vyletongue Corruption",
-                    "Travel to Vyletongue Corruption."),
-            },
-        },
-        {
-            id = "turnin-7065-corruption-of-earth-and-seed",
-            kind = "turnin",
-            priority = 490,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Corruption of Earth and Seed.",
-            complete = QuestState(7065, "completed"),
-            dependsOn = { "accept-7065-corruption-of-earth-and-seed", "objective-7065-1-princess-theradras" },
-            route = {
-                Point(1443, 0.6383, 0.1067, "Corruption of Earth and Seed",
-                    "Travel to Corruption of Earth and Seed."),
-            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

@@ -1,229 +1,583 @@
 local _, ns = ...
 
--- Forever Casual spine: The Hinterlands (48-49)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    THE_HINTERLANDS = 1425,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-alliance-the-hinterlands",
+    revision = 3,
     title = "The Hinterlands",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-alliance-the-hinterlands",
     conditions = {
         all = {
             { faction = "Alliance" },
-            { level = { min = 48 } },
+            {
+                level = { min = 48 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-2988-witherbark-cages",
+            kind = "note",
+            text = "Reach level 40 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 40 },
+            },
+            requiredLevel = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 2988,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
+            },
+            text = "Accept Witherbark Cages from Gryphon Master Talonaxe.",
             id = "accept-2988-witherbark-cages",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 48 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Witherbark Cages.",
-            complete = QuestState(2988, "activeOrCompleted"),
-            route = {
-                Point(1425, 0.0976, 0.4448, "Witherbark Cages",
-                    "Travel to Witherbark Cages."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2988, state = "activeOrCompleted" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 30,
+            route = {
+                { mapID = 1446, x = 0.4991, y = 0.35159999999999997, label = "Roc Gizzard", offMapText = "Travel to Roc Gizzard." },
+            },
+            text = "For Rhapsody's Kalimdor Kocktail: Rhapsody Shindigger in The Hinterlands wants you to bring him 3 Roc Gizzards, 3 Groddoc Livers and 3 Ironfur Livers.",
+            id = "objective-1452-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 1452, state = "complete" },
+            },
+            sourceStep = 2,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1451 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 40,
+            route = {
+                { mapID = 1425, x = 0.26940000000000003, y = 0.48590000000000005, label = "Rhapsody Shindigger", offMapText = "Travel to Rhapsody Shindigger in The Hinterlands." },
+            },
+            text = "Turn in Rhapsody's Kalimdor Kocktail to Rhapsody Shindigger.",
             id = "turnin-1452-rhapsody-s-kalimdor-kocktail",
             kind = "turnin",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 48 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Rhapsody's Kalimdor Kocktail.",
-            complete = QuestState(1452, "completed"),
-            route = {
-                Point(1425, 0.2081, 0.4782, "Rhapsody's Kalimdor Kocktail",
-                    "Travel to Rhapsody's Kalimdor Kocktail."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1452, state = "completed" },
+            },
+            sourceStep = 2,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1451 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-1452-quest-work" },
         },
         {
+            priority = 50,
+            route = {
+                { y = 0.4859, mapID = 1425, label = "Rhapsody Shindigger", offMapText = "Travel to Rhapsody Shindigger in The Hinterlands.", x = 0.2694 },
+            },
+            text = "Accept Rhapsody's Tale from Rhapsody Shindigger.",
             id = "accept-1469-rhapsody-s-tale",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 50 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Rhapsody's Tale.",
-            complete = QuestState(1469, "activeOrCompleted"),
-            route = {
-                Point(1425, 0.2694, 0.4859, "Rhapsody's Tale",
-                    "Travel to Rhapsody's Tale."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1469, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1452 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            route = {
+                { y = 0.4456, mapID = 1425, label = "Fraggar Thundermantle", offMapText = "Travel to Fraggar Thundermantle in The Hinterlands.", x = 0.1483 },
+            },
+            text = "Accept Troll Necklace Bounty from Fraggar Thundermantle.",
             id = "accept-2880-troll-necklace-bounty",
             kind = "accept",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 48 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Troll Necklace Bounty.",
-            complete = QuestState(2880, "activeOrCompleted"),
-            route = {
-                Point(1425, 0.1483, 0.4456, "Troll Necklace Bounty",
-                    "Travel to Troll Necklace Bounty."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2880, state = "activeOrCompleted" },
+            },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 70,
+            text = "For Troll Necklace Bounty: Bring 5 Troll Tribal Necklaces to Fraggar Thundermantle in Aerie Peak.",
+            id = "objective-2880-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 2880, state = "complete" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-2880-troll-necklace-bounty" },
+        },
+        {
+            priority = 80,
+            text = "Turn in Troll Necklace Bounty to Fraggar Thundermantle.",
+            route = {
+                { y = 0.4456, mapID = 1425, label = "Fraggar Thundermantle", offMapText = "Travel to Fraggar Thundermantle in The Hinterlands.", x = 0.1483 },
+            },
+            dependsOn = { "accept-2880-troll-necklace-bounty", "objective-2880-quest-work" },
             id = "turnin-2880-troll-necklace-bounty",
             kind = "turnin",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 48 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Troll Necklace Bounty.",
-            complete = QuestState(2880, "completed"),
-            dependsOn = { "accept-2880-troll-necklace-bounty" },
-            route = {
-                Point(1425, 0.1483, 0.4456, "Troll Necklace Bounty",
-                    "Travel to Troll Necklace Bounty."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2880, state = "completed" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 90,
+            route = {
+                { y = 0.4456, mapID = 1425, label = "Fraggar Thundermantle", offMapText = "Travel to Fraggar Thundermantle in The Hinterlands.", x = 0.1483 },
+            },
+            text = "Accept Skulk Rock Clean-up from Fraggar Thundermantle.",
             id = "accept-2877-skulk-rock-clean-up",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Skulk Rock Clean-up.",
-            complete = QuestState(2877, "activeOrCompleted"),
-            route = {
-                Point(1425, 0.1483, 0.4456, "Skulk Rock Clean-up",
-                    "Travel to Skulk Rock Clean-up."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2877, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 100,
+            text = "For Witherbark Cages: Check the cages at the two Witherbark villages.",
+            id = "objective-2988-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 2988, state = "complete" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-2988-witherbark-cages" },
+        },
+        {
+            priority = 110,
+            text = "Turn in Witherbark Cages to Gryphon Master Talonaxe.",
+            route = {
+                { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
+            },
+            dependsOn = { "accept-2988-witherbark-cages", "objective-2988-quest-work" },
             id = "turnin-2988-witherbark-cages",
             kind = "turnin",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 48 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Witherbark Cages.",
-            complete = QuestState(2988, "completed"),
-            dependsOn = { "accept-2988-witherbark-cages" },
-            route = {
-                Point(1425, 0.0976, 0.4448, "Witherbark Cages",
-                    "Travel to Witherbark Cages."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2988, state = "completed" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 120,
+            route = {
+                { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
+            },
+            text = "Accept The Altar of Zul from Gryphon Master Talonaxe.",
             id = "accept-2989-the-altar-of-zul",
             kind = "accept",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Altar of Zul.",
-            complete = QuestState(2989, "activeOrCompleted"),
-            route = {
-                Point(1425, 0.0976, 0.4448, "The Altar of Zul",
-                    "Travel to The Altar of Zul."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2989, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2988 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-objective-3661-1-wildkin-feather",
+            kind = "note",
+            text = "Reach level 42 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 42 },
+            },
+            requiredLevel = 42,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 3661,
+            priority = 130,
+        },
+        {
+            id = "objective-3661-1-wildkin-feather",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 42 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 15 Wildkin Feather.",
+            complete = {
+                questObjective = { id = 3661, index = 1, text = "Wildkin Feather", count = 15 },
+            },
+            route = {
+                { mapID = 1425, x = 0.22899999999999998, y = 0.5489999999999999, label = "Wildkin Feather", offMapText = "Travel to Wildkin Feather." },
+            },
+            sourceStep = 11,
+            priority = 140,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 150,
+            text = "Kill 10 Green Sludge.",
+            route = {
+                { y = 0.426, mapID = 1425, label = "Green Sludge", offMapText = "Travel to Green Sludge.", x = 0.486 },
+            },
+            dependsOn = { "accept-2877-skulk-rock-clean-up" },
             id = "objective-2877-1-green-sludge",
             kind = "objective",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Green Sludge.",
-            complete = QuestObjective(2877, 1, "Green Sludge"),
-            dependsOn = { "accept-2877-skulk-rock-clean-up" },
-            route = {
-                Point(1425, 0.4860, 0.4260, "Green Sludge",
-                    "Travel to Green Sludge."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 2877, text = "Green Sludge", index = 1, count = 10 },
+            },
+            sourceStep = 15,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 160,
+            text = "Kill 10 Jade Ooze.",
+            route = {
+                { y = 0.426, mapID = 1425, label = "Jade Ooze", offMapText = "Travel to Jade Ooze.", x = 0.486 },
+            },
+            dependsOn = { "accept-2877-skulk-rock-clean-up" },
             id = "objective-2877-2-jade-ooze",
             kind = "objective",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 51 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Jade Ooze.",
-            complete = QuestObjective(2877, 2, "Jade Ooze"),
-            dependsOn = { "accept-2877-skulk-rock-clean-up" },
-            route = {
-                Point(1425, 0.4860, 0.4260, "Jade Ooze",
-                    "Travel to Jade Ooze."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 2877, text = "Jade Ooze", index = 2, count = 10 },
+            },
+            sourceStep = 15,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "loot-starter-before-accept-485-find-oox-09-hl",
+            kind = "note",
+            instructionOnly = true,
+            conditions = { faction = "Alliance" },
+            text = "Loot OOX-09/HL Distress Beacon from Saltwater Snapjaw, Witherbark Scalper, Witherbark Hideskinner, Ebenezer Rustlocke's Corpse, Lesser Bloodstone Deposit, Green Sludge, Waterlogged Letter, Razorbeak Skylord, Witherbark Broodguard, Stone of East Binding, Highvale Scout, Highvale Marksman, Highvale Ranger, Maiden's Folly Charts, Silvermane Howler, Silvermane Stalker, Savage Owlbeast, Vilebranch Scalper, Vilebranch Soothsayer, Gammerita, Wild Leather Shoulders, Wild Leather Helmet, Quickdraw Quiver. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "OOX-09/HL Distress Beacon", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 485, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 170,
+        },
+        {
+            id = "level-before-accept-485-find-oox-09-hl",
+            kind = "note",
+            text = "Reach level 43 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 43 },
+            },
+            requiredLevel = 43,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 485,
+            priority = 180,
+        },
+        {
+            priority = 190,
+            text = "Use the OOX-09/HL Distress Beacon to accept Find OOX-09/HL!.",
             id = "accept-485-find-oox-09-hl",
             kind = "accept",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 48 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Find OOX-09/HL!.",
-            complete = QuestState(485, "activeOrCompleted"),
-            route = {
-                Point(1425, 0.5740, 0.5040, "Find OOX-09/HL!",
-                    "Travel to Find OOX-09/HL!."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 485, state = "activeOrCompleted" },
+            },
+            sourceStep = 16,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 200,
+            text = "Turn in Find OOX-09/HL! to Homing Robot OOX-09/HL.",
+            route = {
+                { y = 0.3766, mapID = 1425, label = "Homing Robot OOX-09/HL", offMapText = "Travel to Homing Robot OOX-09/HL in The Hinterlands.", x = 0.4935 },
+            },
+            dependsOn = { "accept-485-find-oox-09-hl" },
             id = "turnin-485-find-oox-09-hl",
             kind = "turnin",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 48 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Find OOX-09/HL!.",
-            complete = QuestState(485, "completed"),
-            dependsOn = { "accept-485-find-oox-09-hl" },
-            route = {
-                Point(1425, 0.4935, 0.3766, "Find OOX-09/HL!",
-                    "Travel to Find OOX-09/HL!."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 43 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 485, state = "completed" },
+            },
+            sourceStep = 17,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            id = "objective-580-1-pupellyverbos-port",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                },
+            },
+            text = "Collect 12 Pupellyverbos Port.",
+            complete = {
+                questObjective = { id = 580, index = 1, text = "Pupellyverbos Port", count = 12 },
+            },
+            route = {
+                { mapID = 1425, x = 0.778, y = 0.654, label = "Pupellyverbos Port", offMapText = "Travel to Pupellyverbos Port." },
+            },
+            sourceStep = 20,
+            priority = 210,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

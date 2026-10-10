@@ -1,2581 +1,4497 @@
 local _, ns = ...
 
--- Druid class quests.
--- Forever quests are woven in after the quest that unlocks them, or by the level the NPC offers them.
--- Dungeon, raid, and PvP quests stay in their own guides.
--- A quest with no start pin is named below and is not given a coordinate.
--- Revisit every quest left out below when the database records a giver, objectives, and a turn-in.
--- Coordinates have not been validated in the Forever client.
--- Forever quests woven into this route:
--- A Student of Nature
--- The Great Ursera Spirit
--- Strength and Mercy
--- Child of Nature
--- Moonglade
--- Child of Nature
--- Moonglade
--- The Great Cat Spirit
--- The Great Windborne Cat Spirit
--- The Great Cat Spirit
--- The Great Cat Spirit
--- The Great Cat Spirit
--- Blessings of the Great Cat Spirit
--- To Darnassus
--- The Great Windborne Cat Spirit
--- Blessings of the Great Windborne Cat Spirit
--- The Great Cat Spirit
--- The Great Cat Spirit
--- Blessings of the Great Cat Spirit
--- To Thunder Bluff
--- Stalk With The Earthmother
--- Stalk With The Earthmother
--- Left out (dungeon quest): A Better Ingredient
--- Left out (no start pin): Relics of the Kaldorei, Wisdom of the Guardians, The Lost Saplings, Trial of The Owls, The Frigid Barrow, A Better Ingredient, Relics of the Tauren, The Lost Ancient, The Heart of Chromaggus
-
-local MAP = {
-    ALTERACMOUNTAINS = 1416,
-    BARRENS = 1413,
-    DARKSHORE = 1439,
-    DARNASSUS = 1457,
-    MOONGLADE = 1450,
-    MULGORE = 1412,
-    ORGRIMMAR = 1454,
-    STORMWINDCITY = 1453,
-    TELDRASSIL = 1438,
-    THUNDERBLUFF = 1456,
-    UNGOROCRATER = 1449,
-    ZEPHRASISLE = 2521,
-}
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText, complete)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-        complete = complete,
-    }
-end
-
 ns:RegisterGuide({
-    id = "class-druid",
+    revision = 3,
     title = "Druid",
     category = "Class Quests",
-    revision = 1,
+    id = "class-druid",
     conditions = {
         all = {
             { class = 11 },
-            { level = { min = 1 } },
+            {
+                level = { min = 1 },
+            },
         },
     },
     goals = {
         {
-            id = "accept-92461-harmony-in-balance",
-            kind = "accept",
-            priority = 7,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept Harmony in Balance from Rorian the Dayseeker in Zephras Isle.",
-            complete = QuestState(92461, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
+                { y = 0.234, mapID = 2521, label = "Ailee Farheart", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
-        },
-        {
-            id = "objective-92461-harmony-in-balance",
-            kind = "objective",
-            priority = 8,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Slay 8 Vuldren Juveniles in Thendal Grove.",
-            dependsOn = { "accept-92461-harmony-in-balance" },
-            complete = QuestState(92461, "complete"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4320, 0.2560, "Juvenile Vuldren",
-                    "Travel to Juvenile Vuldren in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-92461-harmony-in-balance",
-            kind = "turnin",
-            priority = 9,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Turn in Harmony in Balance to Rorian the Dayseeker in Zephras Isle.",
-            dependsOn = { "objective-92461-harmony-in-balance" },
-            complete = QuestState(92461, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-92485-a-student-of-nature",
-            kind = "accept",
             priority = 10,
-            dependsOn = { "turnin-92461-harmony-in-balance" },
+            id = "accept-coming-of-age",
             conditions = {
                 all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { level = { min = 2 } },
+                    {
+                        level = { min = 1 },
+                    },
                 },
             },
-            text = "Accept A Student of Nature from Rorian the Dayseeker in Zephras Isle.",
-            complete = QuestState(92485, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-coming-of-age",
         },
         {
-            id = "turnin-92485-a-student-of-nature",
-            kind = "turnin",
             priority = 20,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
+            },
+            dependsOn = { "accept-coming-of-age" },
+            id = "turnin-coming-of-age",
             conditions = {
                 all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { level = { min = 2 } },
+                    {
+                        level = { min = 1 },
+                    },
                 },
             },
-            text = "Turn in A Student of Nature to Xyton Silverwind in Zephras Isle.",
-            dependsOn = { "accept-92485-a-student-of-nature" },
-            complete = QuestState(92485, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4160, 0.2340, "Xyton Silverwind",
-                    "Travel to Xyton Silverwind in Zephras Isle."),
-            },
+            useClientPin = false,
+            classAction = "turnin-coming-of-age",
         },
         {
-            id = "accept-76156-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 21,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76156, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "objective-76156-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 22,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            useClientPin = true,
-            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the mine southeast of Thunder Bluff. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
-            complete = QuestObjective(76156, 1, "Seaforium Mining Charge"),
-            route = {
-                Point(MAP.MULGORE, 0.6440, 0.4360, "Venture Co. Mine",
-                    "Travel to the Venture Co. Mine in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-76156-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 23,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76156-stalk-with-the-earthmother-1" },
-            complete = QuestState(76156, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "accept-76160-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 24,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76160, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "objective-76160-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 25,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            useClientPin = true,
-            text = "Stalk With The Earthmother: Pine Salve. Gather Windfury Cones in the harpy area and use the Mortar and Pestle. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-76160-stalk-with-the-earthmother" },
-            complete = QuestObjective(76160, 1, "Pine Salve"),
-            route = {
-                Point(MAP.MULGORE, 0.3240, 0.2760, "Windfury Matriarch",
-                    "Travel to the Windfury harpies in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-76160-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 26,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76160-stalk-with-the-earthmother-1" },
-            complete = QuestState(76160, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "accept-5923-heeding-the-call",
-            kind = "accept",
             priority = 30,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            id = "accept-92461-harmony-in-balance",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        level = { min = 1 },
+                    },
                 },
             },
-            text = "Accept Heeding the Call from Denatharion in Darnassus. This step is for Night Elves.",
-            complete = QuestState(5923, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3480, 0.0780, "Denatharion",
-                    "Travel to Denatharion in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-92461-harmony-in-balance",
         },
         {
-            id = "turnin-5923-heeding-the-call",
-            kind = "turnin",
             priority = 40,
+            route = {
+                { y = 0.256, mapID = 2521, label = "Juvenile Vuldren", x = 0.432, offMapText = "Travel to Juvenile Vuldren in Zephras Isle." },
+            },
+            dependsOn = { "accept-92461-harmony-in-balance" },
+            id = "objective-92461-harmony-in-balance",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        level = { min = 1 },
+                    },
                 },
             },
-            text = "Turn in Heeding the Call to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5923-heeding-the-call" },
-            complete = QuestState(5923, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "objective-92461-harmony-in-balance",
         },
         {
-            id = "accept-3094-verdant-note",
-            kind = "accept",
             priority = 50,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            dependsOn = { "accept-92461-harmony-in-balance", "objective-92461-harmony-in-balance" },
+            id = "turnin-92461-harmony-in-balance",
             conditions = {
                 all = {
-                    { faction = "Horde" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 6 },
+                    {
+                        level = { min = 1 },
+                    },
                 },
             },
-            text = "Accept Verdant Note from Grull Hawkwind in Mulgore. This step is for Tauren.",
-            complete = QuestState(3094, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7720, "Grull Hawkwind",
-                    "Travel to Grull Hawkwind in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-92461-harmony-in-balance",
         },
         {
-            id = "turnin-3094-verdant-note",
-            kind = "turnin",
             priority = 60,
+            route = {
+                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+            },
+            id = "accept-747-the-hunt-begins",
             conditions = {
                 all = {
-                    { faction = "Horde" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 6 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Verdant Note to Gart Mistrunner in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-3094-verdant-note" },
-            complete = QuestState(3094, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4500, 0.7600, "Gart Mistrunner",
-                    "Travel to Gart Mistrunner in Mulgore."),
-            },
+            sourceStep = 6,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-747-the-hunt-begins",
         },
         {
-            id = "accept-3120-verdant-sigil",
-            kind = "accept",
+            id = "objective-747-1-plainstrider-meat",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 11 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Meat", offMapText = "Travel to Plainstrider Meat." },
+            },
+            sourceStep = 12,
             priority = 70,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                },
-            },
-            text = "Accept Verdant Sigil from Conservator Ilthalaine in Teldrassil. This step is for Night Elves.",
-            complete = QuestState(3120, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5860, 0.4420, "Conservator Ilthalaine",
-                    "Travel to Conservator Ilthalaine in Teldrassil."),
-            },
+            useClientPin = false,
+            dependsOn = { "accept-747-the-hunt-begins" },
+            classAction = "objective-747-1-plainstrider-meat",
         },
         {
-            id = "turnin-3120-verdant-sigil",
-            kind = "turnin",
+            id = "objective-747-2-plainstrider-feather",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 11 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Feather", offMapText = "Travel to Plainstrider Feather." },
+            },
+            sourceStep = 12,
             priority = 80,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                },
-            },
-            text = "Turn in Verdant Sigil to Mardant Strongoak in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "accept-3120-verdant-sigil" },
-            complete = QuestState(3120, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5860, 0.4040, "Mardant Strongoak",
-                    "Travel to Mardant Strongoak in Teldrassil."),
-            },
+            useClientPin = false,
+            dependsOn = { "accept-747-the-hunt-begins" },
+            classAction = "objective-747-2-plainstrider-feather",
         },
         {
-            id = "accept-5924-heeding-the-call",
-            kind = "accept",
             priority = 90,
+            route = {
+                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+            },
+            dependsOn = { "accept-747-the-hunt-begins", "objective-747-1-plainstrider-meat", "objective-747-2-plainstrider-feather" },
+            id = "turnin-747-the-hunt-begins",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Heeding the Call from Theridran in Stormwind City. This step is for Night Elves.",
-            dependsOn = { "turnin-5923-heeding-the-call" },
-            complete = QuestState(5924, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2140, 0.5140, "Theridran",
-                    "Travel to Theridran in Stormwind City."),
-            },
+            sourceStep = 13,
+            useClientPin = false,
+            classAction = "turnin-747-the-hunt-begins",
         },
         {
-            id = "turnin-5924-heeding-the-call",
-            kind = "turnin",
             priority = 100,
+            route = {
+                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+            },
+            id = "accept-3094-verdant-note",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Heeding the Call to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5924-heeding-the-call" },
-            complete = QuestState(5924, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3094-verdant-note",
         },
         {
-            id = "accept-5925-heeding-the-call",
-            kind = "accept",
             priority = 110,
+            route = {
+                { y = 0.76, mapID = 1412, label = "Gart Mistrunner", x = 0.45, offMapText = "Travel to Gart Mistrunner in Mulgore." },
+            },
+            dependsOn = { "accept-3094-verdant-note" },
+            id = "turnin-3094-verdant-note",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Heeding the Call from Kal in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "turnin-5924-heeding-the-call" },
-            complete = QuestState(5925, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5600, 0.6160, "Kal",
-                    "Travel to Kal in Teldrassil."),
-            },
+            useClientPin = false,
+            classAction = "turnin-3094-verdant-note",
         },
         {
-            id = "turnin-5925-heeding-the-call",
-            kind = "turnin",
             priority = 120,
+            route = {
+                { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.5869 },
+            },
+            id = "accept-456-the-balance-of-nature",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Heeding the Call to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5925-heeding-the-call" },
-            complete = QuestState(5925, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            sourceStep = 7,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-456-the-balance-of-nature",
         },
         {
-            id = "accept-5921-moonglade",
-            kind = "accept",
             priority = 130,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
+            },
+            id = "objective-456-1-young-nightsaber",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Moonglade from Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "turnin-5925-heeding-the-call", "turnin-5923-heeding-the-call" },
-            complete = QuestState(5921, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            sourceStep = 8,
+            useClientPin = false,
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            classAction = "objective-456-1-young-nightsaber",
         },
         {
-            id = "turnin-5921-moonglade",
-            kind = "turnin",
             priority = 140,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
+            },
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            id = "objective-456-1-young-nightsaber-2",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Moonglade to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-5921-moonglade" },
-            complete = QuestState(5921, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "objective-456-1-young-nightsaber-2",
         },
         {
-            id = "accept-5929-great-bear-spirit",
-            kind = "accept",
             priority = 150,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Thistle Boar", offMapText = "Travel to Young Thistle Boar.", x = 0.582 },
+            },
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            id = "objective-456-2-young-thistle-boar",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Great Bear Spirit from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-5921-moonglade" },
-            complete = QuestState(5929, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            sourceStep = 8,
+            useClientPin = false,
+            classAction = "objective-456-2-young-thistle-boar",
         },
         {
-            id = "turnin-5929-great-bear-spirit",
-            kind = "turnin",
             priority = 160,
+            route = {
+                { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.587 },
+            },
+            dependsOn = {
+                "accept-456-the-balance-of-nature",
+                "objective-456-1-young-nightsaber",
+                "objective-456-1-young-nightsaber-2",
+                "objective-456-2-young-thistle-boar",
+            },
+            id = "turnin-456-the-balance-of-nature",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 11 },
+                                    {
+                                        class = { 11 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Great Bear Spirit to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-5929-great-bear-spirit" },
-            complete = QuestState(5929, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "turnin-456-the-balance-of-nature",
         },
         {
-            id = "accept-5931-back-to-darnassus",
-            kind = "accept",
             priority = 170,
+            route = {
+                { y = 0.442, mapID = 1438, label = "Conservator Ilthalaine", x = 0.586, offMapText = "Travel to Conservator Ilthalaine in Teldrassil." },
+            },
+            id = "accept-3120-verdant-sigil",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Back to Darnassus from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-5929-great-bear-spirit", "turnin-5921-moonglade" },
-            complete = QuestState(5931, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3120-verdant-sigil",
         },
         {
-            id = "turnin-5931-back-to-darnassus",
-            kind = "turnin",
             priority = 180,
+            route = {
+                { y = 0.404, mapID = 1438, label = "Mardant Strongoak", x = 0.586, offMapText = "Travel to Mardant Strongoak in Teldrassil." },
+            },
+            dependsOn = { "accept-3120-verdant-sigil" },
+            id = "turnin-3120-verdant-sigil",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Back to Darnassus to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5931-back-to-darnassus" },
-            complete = QuestState(5931, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-3120-verdant-sigil",
         },
         {
-            id = "accept-6001-body-and-heart",
-            kind = "accept",
+            id = "level-before-accept-92485-a-student-of-nature",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 2 },
+            },
+            requiredLevel = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 92485,
             priority = 190,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Body and Heart from Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "turnin-5931-back-to-darnassus" },
-            complete = QuestState(6001, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
         },
         {
-            id = "turnin-6001-body-and-heart",
-            kind = "turnin",
             priority = 200,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            dependsOn = { "turnin-92461-harmony-in-balance" },
+            id = "accept-92485-a-student-of-nature",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Turn in Body and Heart to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-6001-body-and-heart" },
-            complete = QuestState(6001, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "accept-92485-a-student-of-nature",
         },
         {
-            id = "accept-94006-the-great-ursera-spirit",
-            kind = "accept",
             priority = 210,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Xyton Silverwind", x = 0.416, offMapText = "Travel to Xyton Silverwind in Zephras Isle." },
+            },
+            dependsOn = { "accept-92485-a-student-of-nature" },
+            id = "turnin-92485-a-student-of-nature",
             conditions = {
                 all = {
                     { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept The Great Ursera Spirit from Lotheluum Starbreeze in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            complete = QuestState(94006, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.6400, 0.7500, "Lotheluum Starbreeze",
-                    "Travel to Lotheluum Starbreeze in Zephras Isle."),
-            },
+            useClientPin = false,
+            classAction = "turnin-92485-a-student-of-nature",
         },
         {
-            id = "turnin-94006-the-great-ursera-spirit",
-            kind = "turnin",
+            id = "level-before-accept-76156-stalk-with-the-earthmother",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 76156,
             priority = 220,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Great Ursera Spirit to Urs'endris in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94006-the-great-ursera-spirit" },
-            complete = QuestState(94006, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.6980, 0.6160, "Urs'endris",
-                    "Travel to Urs'endris in Zephras Isle."),
-            },
         },
         {
-            id = "accept-94638-strength-and-mercy",
-            kind = "accept",
             priority = 230,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            id = "accept-76156-stalk-with-the-earthmother",
             conditions = {
                 all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Strength and Mercy from Urs'endris in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-94006-the-great-ursera-spirit" },
-            complete = QuestState(94638, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.6980, 0.6160, "Urs'endris",
-                    "Travel to Urs'endris in Zephras Isle."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-76156-stalk-with-the-earthmother",
         },
         {
-            id = "turnin-94638-strength-and-mercy",
-            kind = "turnin",
+            route = {
+                { y = 0.436, mapID = 1412, label = "Venture Co. Mine", x = 0.644, offMapText = "Travel to the Venture Co. Mine in Mulgore." },
+            },
+            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
+            id = "objective-76156-stalk-with-the-earthmother-1",
+            useClientPin = false,
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
             priority = 240,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Strength and Mercy to Urs'endris in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94638-strength-and-mercy" },
-            complete = QuestState(94638, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.6980, 0.6160, "Urs'endris",
-                    "Travel to Urs'endris in Zephras Isle."),
-            },
+            classAction = "objective-76156-stalk-with-the-earthmother-1",
         },
         {
-            id = "accept-94911-child-of-nature",
-            kind = "accept",
             priority = 250,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-76156-stalk-with-the-earthmother", "objective-76156-stalk-with-the-earthmother-1" },
+            id = "turnin-76156-stalk-with-the-earthmother",
             conditions = {
                 all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
                     { faction = "Horde" },
-                    { class = 11 },
-                    { race = 96 },
-                    { level = { min = 10 } },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Child of Nature from Muln Earthfury in Mulgore. This step is for Horde Skyborne.",
-            complete = QuestState(94911, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.3340, 0.2240, "Muln Earthfury",
-                    "Travel to Muln Earthfury in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-76156-stalk-with-the-earthmother",
         },
         {
-            id = "turnin-94911-child-of-nature",
-            kind = "turnin",
+            id = "level-before-accept-5923-heeding-the-call",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5923,
+            alternativeQuests = { 5924, 5925 },
             priority = 260,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Child of Nature to Turak Runetotem in Thunder Bluff. This step is for Horde Skyborne.",
-            dependsOn = { "accept-94911-child-of-nature" },
-            complete = QuestState(94911, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
         },
         {
-            id = "accept-94913-moonglade",
-            kind = "accept",
             priority = 270,
+            route = {
+                { y = 0.078, mapID = 1457, label = "Denatharion", x = 0.348, offMapText = "Travel to Denatharion in Darnassus." },
+            },
+            id = "accept-5923-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 96 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Moonglade from Turak Runetotem in Thunder Bluff. This step is for Horde Skyborne.",
-            dependsOn = { "turnin-94911-child-of-nature" },
-            complete = QuestState(94913, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5923-heeding-the-call",
         },
         {
-            id = "turnin-94913-moonglade",
-            kind = "turnin",
             priority = 280,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "accept-5923-heeding-the-call" },
+            id = "turnin-5923-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 96 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Moonglade to Dendrite Starblaze in Moonglade. This step is for Horde Skyborne.",
-            dependsOn = { "accept-94913-moonglade" },
-            complete = QuestState(94913, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5923-heeding-the-call",
         },
         {
-            id = "accept-94912-child-of-nature",
-            kind = "accept",
             priority = 290,
+            route = {
+                { y = 0.514, mapID = 1453, label = "Theridran", x = 0.214, offMapText = "Travel to Theridran in Stormwind City." },
+            },
+            dependsOn = { "turnin-5923-heeding-the-call" },
+            id = "accept-5924-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 95 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Child of Nature from Archmage Ansirem Runeweaver in Alterac Mountains. This step is for Alliance Skyborne.",
-            complete = QuestState(94912, "activeOrCompleted"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.1880, 0.7860, "Archmage Ansirem Runeweaver",
-                    "Travel to Archmage Ansirem Runeweaver in Alterac Mountains."),
-            },
+            useClientPin = false,
+            classAction = "accept-5924-heeding-the-call",
         },
         {
-            id = "turnin-94912-child-of-nature",
-            kind = "turnin",
             priority = 300,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "accept-5924-heeding-the-call" },
+            id = "turnin-5924-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 95 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Child of Nature to Sheldras Moontree in Stormwind City. This step is for Alliance Skyborne.",
-            dependsOn = { "accept-94912-child-of-nature" },
-            complete = QuestState(94912, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2100, 0.5540, "Sheldras Moontree",
-                    "Travel to Sheldras Moontree in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5924-heeding-the-call",
         },
         {
-            id = "accept-94914-moonglade",
-            kind = "accept",
             priority = 310,
+            route = {
+                { y = 0.616, mapID = 1438, label = "Kal", x = 0.56, offMapText = "Travel to Kal in Teldrassil." },
+            },
+            dependsOn = { "turnin-5924-heeding-the-call" },
+            id = "accept-5925-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 95 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Moonglade from Sheldras Moontree in Stormwind City. This step is for Alliance Skyborne.",
-            complete = QuestState(94914, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2100, 0.5540, "Sheldras Moontree",
-                    "Travel to Sheldras Moontree in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "accept-5925-heeding-the-call",
         },
         {
-            id = "turnin-94914-moonglade",
-            kind = "turnin",
             priority = 320,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "accept-5925-heeding-the-call" },
+            id = "turnin-5925-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 95 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Moonglade to Dendrite Starblaze in Moonglade. This step is for Alliance Skyborne.",
-            dependsOn = { "accept-94914-moonglade" },
-            complete = QuestState(94914, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5925-heeding-the-call",
         },
         {
-            id = "accept-6121-lessons-anew",
-            kind = "accept",
             priority = 330,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "turnin-5925-heeding-the-call", "turnin-5923-heeding-the-call" },
+            id = "accept-5921-moonglade",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Lessons Anew from Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "turnin-6001-body-and-heart" },
-            complete = QuestState(6121, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "accept-5921-moonglade",
         },
         {
-            id = "turnin-6121-lessons-anew",
-            kind = "turnin",
             priority = 340,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-5921-moonglade" },
+            id = "turnin-5921-moonglade",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Lessons Anew to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-6121-lessons-anew" },
-            complete = QuestState(6121, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5921-moonglade",
         },
         {
-            id = "accept-6122-the-principal-source",
-            kind = "accept",
             priority = 350,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-5921-moonglade" },
+            id = "accept-5929-great-bear-spirit",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept The Principal Source from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-6121-lessons-anew" },
-            complete = QuestState(6122, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-5929-great-bear-spirit",
         },
         {
-            id = "turnin-6122-the-principal-source",
-            kind = "turnin",
             priority = 360,
+            id = "objective-5929-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in The Principal Source to Alanndarian Nightsong in Darkshore. This step is for Night Elves.",
-            dependsOn = { "accept-6122-the-principal-source" },
-            complete = QuestState(6122, "completed"),
-            route = {
-                Point(MAP.DARKSHORE, 0.3760, 0.4060, "Alanndarian Nightsong",
-                    "Travel to Alanndarian Nightsong in Darkshore."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-5929-great-bear-spirit" },
+            classAction = "objective-5929-quest-work",
         },
         {
-            id = "accept-6123-gathering-the-cure",
-            kind = "accept",
             priority = 370,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-5929-great-bear-spirit", "objective-5929-quest-work" },
+            id = "turnin-5929-great-bear-spirit",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Gathering the Cure from Alanndarian Nightsong in Darkshore. This step is for Night Elves.",
-            dependsOn = { "turnin-6122-the-principal-source" },
-            complete = QuestState(6123, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARKSHORE, 0.3760, 0.4060, "Alanndarian Nightsong",
-                    "Travel to Alanndarian Nightsong in Darkshore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5929-great-bear-spirit",
         },
         {
-            id = "objective-6123-gathering-the-cure",
-            kind = "objective",
             priority = 380,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-5929-great-bear-spirit", "turnin-5921-moonglade" },
+            id = "accept-5931-back-to-darnassus",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Gather 5 Earthroot with Herbalism or buy from the auction house. This step is for Night Elves.",
-            dependsOn = { "accept-6123-gathering-the-cure" },
-            complete = QuestState(6123, "complete"),
-            route = {
-                Point(MAP.DARKSHORE, 0.3630, 0.8650, "Battered Chest",
-                    "Travel to Battered Chest in Darkshore."),
-                Point(MAP.DARKSHORE, 0.4710, 0.3700, "Battered Chest",
-                    "Travel to Battered Chest in Darkshore."),
-            },
+            useClientPin = false,
+            classAction = "accept-5931-back-to-darnassus",
         },
         {
-            id = "turnin-6123-gathering-the-cure",
-            kind = "turnin",
             priority = 390,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "accept-5931-back-to-darnassus" },
+            id = "turnin-5931-back-to-darnassus",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Gathering the Cure to Alanndarian Nightsong in Darkshore. This step is for Night Elves.",
-            dependsOn = { "objective-6123-gathering-the-cure" },
-            complete = QuestState(6123, "completed"),
-            route = {
-                Point(MAP.DARKSHORE, 0.3760, 0.4060, "Alanndarian Nightsong",
-                    "Travel to Alanndarian Nightsong in Darkshore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5931-back-to-darnassus",
         },
         {
-            id = "accept-6124-curing-the-sick",
-            kind = "accept",
             priority = 400,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "turnin-5931-back-to-darnassus" },
+            id = "accept-6001-body-and-heart",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Curing the Sick from Alanndarian Nightsong in Darkshore. This step is for Night Elves.",
-            dependsOn = { "turnin-6123-gathering-the-cure", "turnin-6122-the-principal-source" },
-            complete = QuestState(6124, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARKSHORE, 0.3760, 0.4060, "Alanndarian Nightsong",
-                    "Travel to Alanndarian Nightsong in Darkshore."),
-            },
+            useClientPin = false,
+            classAction = "accept-6001-body-and-heart",
         },
         {
-            id = "turnin-6124-curing-the-sick",
-            kind = "turnin",
             priority = 410,
+            id = "objective-6001-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Curing the Sick to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-6124-curing-the-sick" },
-            complete = QuestState(6124, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-6001-body-and-heart" },
+            classAction = "objective-6001-quest-work",
         },
         {
-            id = "accept-6125-power-over-poison",
-            kind = "accept",
             priority = 420,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "accept-6001-body-and-heart", "objective-6001-quest-work" },
+            id = "turnin-6001-body-and-heart",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Power over Poison from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-6124-curing-the-sick" },
-            complete = QuestState(6125, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6001-body-and-heart",
         },
         {
-            id = "turnin-6125-power-over-poison",
-            kind = "turnin",
+            id = "level-before-accept-94006-the-great-ursera-spirit",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94006,
             priority = 430,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 14 } },
-                },
-            },
-            text = "Turn in Power over Poison to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-6125-power-over-poison" },
-            complete = QuestState(6125, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
         },
         {
-            id = "accept-26-a-lesson-to-learn",
-            kind = "accept",
             priority = 440,
+            route = {
+                { y = 0.75, mapID = 2521, label = "Lotheluum Starbreeze", x = 0.64, offMapText = "Travel to Lotheluum Starbreeze in Zephras Isle." },
+            },
+            id = "accept-94006-the-great-ursera-spirit",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept A Lesson to Learn from Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "turnin-6125-power-over-poison" },
-            complete = QuestState(26, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94006-the-great-ursera-spirit",
         },
         {
-            id = "turnin-26-a-lesson-to-learn",
-            kind = "turnin",
             priority = 450,
+            route = {
+                { y = 0.616, mapID = 2521, label = "Urs'endris", x = 0.698, offMapText = "Travel to Urs'endris in Zephras Isle." },
+            },
+            dependsOn = { "accept-94006-the-great-ursera-spirit" },
+            id = "turnin-94006-the-great-ursera-spirit",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Turn in A Lesson to Learn to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-26-a-lesson-to-learn" },
-            complete = QuestState(26, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94006-the-great-ursera-spirit",
         },
         {
-            id = "accept-29-trial-of-the-lake",
-            kind = "accept",
             priority = 460,
+            route = {
+                { y = 0.616, mapID = 2521, label = "Urs'endris", x = 0.698, offMapText = "Travel to Urs'endris in Zephras Isle." },
+            },
+            dependsOn = { "turnin-94006-the-great-ursera-spirit" },
+            id = "accept-94638-strength-and-mercy",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept Trial of the Lake from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-26-a-lesson-to-learn" },
-            complete = QuestState(29, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-94638-strength-and-mercy",
         },
         {
-            id = "turnin-29-trial-of-the-lake",
-            kind = "turnin",
             priority = 470,
+            id = "objective-94638-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Turn in Trial of the Lake to Tajarri in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-29-trial-of-the-lake" },
-            complete = QuestState(29, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.3640, 0.4020, "Tajarri",
-                    "Travel to Tajarri in Moonglade."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-94638-strength-and-mercy" },
+            classAction = "objective-94638-quest-work",
         },
         {
-            id = "accept-272-trial-of-the-sea-lion",
-            kind = "accept",
             priority = 480,
+            route = {
+                { y = 0.616, mapID = 2521, label = "Urs'endris", x = 0.698, offMapText = "Travel to Urs'endris in Zephras Isle." },
+            },
+            dependsOn = { "accept-94638-strength-and-mercy", "objective-94638-quest-work" },
+            id = "turnin-94638-strength-and-mercy",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept Trial of the Sea Lion from Tajarri in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-29-trial-of-the-lake" },
-            complete = QuestState(272, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.3640, 0.4020, "Tajarri",
-                    "Travel to Tajarri in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94638-strength-and-mercy",
         },
         {
-            id = "turnin-272-trial-of-the-sea-lion",
-            kind = "turnin",
+            id = "level-before-accept-94911-child-of-nature",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94911,
             priority = 490,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 16 } },
-                },
-            },
-            text = "Turn in Trial of the Sea Lion to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-272-trial-of-the-sea-lion" },
-            complete = QuestState(272, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
         },
         {
-            id = "accept-5061-aquatic-form",
-            kind = "accept",
             priority = 500,
+            route = {
+                { y = 0.224, mapID = 1412, label = "Muln Earthfury", x = 0.334, offMapText = "Travel to Muln Earthfury in Mulgore." },
+            },
+            id = "accept-94911-child-of-nature",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Accept Aquatic Form from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-272-trial-of-the-sea-lion" },
-            complete = QuestState(5061, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94911-child-of-nature",
         },
         {
-            id = "turnin-5061-aquatic-form",
-            kind = "turnin",
             priority = 510,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-94911-child-of-nature" },
+            id = "turnin-94911-child-of-nature",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Turn in Aquatic Form to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5061-aquatic-form" },
-            complete = QuestState(5061, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94911-child-of-nature",
         },
         {
-            id = "accept-5926-heeding-the-call",
-            kind = "accept",
             priority = 520,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-94911-child-of-nature" },
+            id = "accept-94913-moonglade",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Accept Heeding the Call from Innkeeper Pala in Thunder Bluff. This step is for Tauren.",
-            complete = QuestState(5926, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.4580, 0.6440, "Innkeeper Pala",
-                    "Travel to Innkeeper Pala in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "accept-94913-moonglade",
         },
         {
-            id = "turnin-5926-heeding-the-call",
-            kind = "turnin",
             priority = 530,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-94913-moonglade" },
+            id = "turnin-94913-moonglade",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Turn in Heeding the Call to Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "accept-5926-heeding-the-call" },
-            complete = QuestState(5926, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94913-moonglade",
         },
         {
-            id = "accept-5927-heeding-the-call",
-            kind = "accept",
+            id = "level-before-accept-94912-child-of-nature",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 95 },
+                    {
+                        race = { 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94912,
             priority = 540,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Heeding the Call from Innkeeper Gryshka in Orgrimmar. This step is for Tauren.",
-            dependsOn = { "turnin-5926-heeding-the-call" },
-            complete = QuestState(5927, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.5420, 0.6840, "Innkeeper Gryshka",
-                    "Travel to Innkeeper Gryshka in Orgrimmar."),
-            },
         },
         {
-            id = "turnin-5927-heeding-the-call",
-            kind = "turnin",
             priority = 550,
+            route = {
+                { y = 0.786, mapID = 1416, label = "Archmage Ansirem Runeweaver", x = 0.188, offMapText = "Travel to Archmage Ansirem Runeweaver in Alterac Mountains." },
+            },
+            id = "accept-94912-child-of-nature",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 95 },
+                    {
+                        race = { 95 },
+                    },
                 },
             },
-            text = "Turn in Heeding the Call to Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "accept-5927-heeding-the-call" },
-            complete = QuestState(5927, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94912-child-of-nature",
         },
         {
-            id = "accept-5928-heeding-the-call",
-            kind = "accept",
             priority = 560,
+            route = {
+                { y = 0.554, mapID = 1453, label = "Sheldras Moontree", x = 0.21, offMapText = "Travel to Sheldras Moontree in Stormwind City." },
+            },
+            dependsOn = { "accept-94912-child-of-nature" },
+            id = "turnin-94912-child-of-nature",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 95 },
+                    {
+                        race = { 95 },
+                    },
                 },
             },
-            text = "Accept Heeding the Call from Gennia Runetotem in Mulgore. This step is for Tauren.",
-            dependsOn = { "turnin-5927-heeding-the-call" },
-            complete = QuestState(5928, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4840, 0.5960, "Gennia Runetotem",
-                    "Travel to Gennia Runetotem in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94912-child-of-nature",
         },
         {
-            id = "turnin-5928-heeding-the-call",
-            kind = "turnin",
             priority = 570,
+            route = {
+                { y = 0.554, mapID = 1453, label = "Sheldras Moontree", x = 0.21, offMapText = "Travel to Sheldras Moontree in Stormwind City." },
+            },
+            id = "accept-94914-moonglade",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 95 },
+                    {
+                        race = { 95 },
+                    },
                 },
             },
-            text = "Turn in Heeding the Call to Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "accept-5928-heeding-the-call" },
-            complete = QuestState(5928, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94914-moonglade",
         },
         {
-            id = "accept-5922-moonglade",
-            kind = "accept",
             priority = 580,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-94914-moonglade" },
+            id = "turnin-94914-moonglade",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 95 },
+                    {
+                        race = { 95 },
+                    },
                 },
             },
-            text = "Accept Moonglade from Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "turnin-5928-heeding-the-call" },
-            complete = QuestState(5922, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94914-moonglade",
         },
         {
-            id = "turnin-5922-moonglade",
-            kind = "turnin",
+            id = "level-before-accept-5926-heeding-the-call",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5926,
+            alternativeQuests = { 5927, 5928 },
             priority = 590,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Moonglade to Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-5922-moonglade" },
-            complete = QuestState(5922, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
         },
         {
-            id = "accept-5930-great-bear-spirit",
-            kind = "accept",
             priority = 600,
+            route = {
+                { y = 0.644, mapID = 1456, label = "Innkeeper Pala", x = 0.458, offMapText = "Travel to Innkeeper Pala in Thunder Bluff." },
+            },
+            id = "accept-5926-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Great Bear Spirit from Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-5922-moonglade" },
-            complete = QuestState(5930, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5926-heeding-the-call",
         },
         {
-            id = "turnin-5930-great-bear-spirit",
-            kind = "turnin",
             priority = 610,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-5926-heeding-the-call" },
+            id = "turnin-5926-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Great Bear Spirit to Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-5930-great-bear-spirit" },
-            complete = QuestState(5930, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5926-heeding-the-call",
         },
         {
-            id = "accept-5932-back-to-thunder-bluff",
-            kind = "accept",
             priority = 620,
+            route = {
+                { y = 0.684, mapID = 1454, label = "Innkeeper Gryshka", x = 0.542, offMapText = "Travel to Innkeeper Gryshka in Orgrimmar." },
+            },
+            dependsOn = { "turnin-5926-heeding-the-call" },
+            id = "accept-5927-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Back to Thunder Bluff from Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-5930-great-bear-spirit", "turnin-5922-moonglade" },
-            complete = QuestState(5932, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-5927-heeding-the-call",
         },
         {
-            id = "turnin-5932-back-to-thunder-bluff",
-            kind = "turnin",
             priority = 630,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-5927-heeding-the-call" },
+            id = "turnin-5927-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Back to Thunder Bluff to Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "accept-5932-back-to-thunder-bluff" },
-            complete = QuestState(5932, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5927-heeding-the-call",
         },
         {
-            id = "accept-6002-body-and-heart",
-            kind = "accept",
             priority = 640,
+            route = {
+                { y = 0.596, mapID = 1412, label = "Gennia Runetotem", x = 0.484, offMapText = "Travel to Gennia Runetotem in Mulgore." },
+            },
+            dependsOn = { "turnin-5927-heeding-the-call" },
+            id = "accept-5928-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Body and Heart from Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "turnin-5932-back-to-thunder-bluff" },
-            complete = QuestState(6002, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "accept-5928-heeding-the-call",
         },
         {
-            id = "turnin-6002-body-and-heart",
-            kind = "turnin",
             priority = 650,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-5928-heeding-the-call" },
+            id = "turnin-5928-heeding-the-call",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Body and Heart to Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "accept-6002-body-and-heart" },
-            complete = QuestState(6002, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5928-heeding-the-call",
         },
         {
-            id = "accept-6126-lessons-anew",
-            kind = "accept",
             priority = 660,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-5928-heeding-the-call" },
+            id = "accept-5922-moonglade",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Lessons Anew from Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "turnin-6002-body-and-heart" },
-            complete = QuestState(6126, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "accept-5922-moonglade",
         },
         {
-            id = "turnin-6126-lessons-anew",
-            kind = "turnin",
             priority = 670,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-5922-moonglade" },
+            id = "turnin-5922-moonglade",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Lessons Anew to Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-6126-lessons-anew" },
-            complete = QuestState(6126, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5922-moonglade",
         },
         {
-            id = "accept-6127-the-principal-source",
-            kind = "accept",
             priority = 680,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-5922-moonglade" },
+            id = "accept-5930-great-bear-spirit",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept The Principal Source from Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-6126-lessons-anew" },
-            complete = QuestState(6127, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-5930-great-bear-spirit",
         },
         {
-            id = "turnin-6127-the-principal-source",
-            kind = "turnin",
             priority = 690,
+            id = "objective-5930-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Principal Source to Tonga Runetotem in The Barrens. This step is for Tauren.",
-            dependsOn = { "accept-6127-the-principal-source" },
-            complete = QuestState(6127, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5220, 0.3180, "Tonga Runetotem",
-                    "Travel to Tonga Runetotem in The Barrens."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-5930-great-bear-spirit" },
+            classAction = "objective-5930-quest-work",
         },
         {
-            id = "accept-6128-gathering-the-cure",
-            kind = "accept",
             priority = 700,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-5930-great-bear-spirit", "objective-5930-quest-work" },
+            id = "turnin-5930-great-bear-spirit",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Gathering the Cure from Tonga Runetotem in The Barrens. This step is for Tauren.",
-            dependsOn = { "turnin-6127-the-principal-source" },
-            complete = QuestState(6128, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5220, 0.3180, "Tonga Runetotem",
-                    "Travel to Tonga Runetotem in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5930-great-bear-spirit",
         },
         {
-            id = "objective-6128-gathering-the-cure",
-            kind = "objective",
             priority = 710,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-5930-great-bear-spirit", "turnin-5922-moonglade" },
+            id = "accept-5932-back-to-thunder-bluff",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Gather Earthroot and kodo horns for Gathering the Cure in The Barrens. This step is for Tauren.",
-            dependsOn = { "accept-6128-gathering-the-cure" },
-            complete = QuestState(6128, "complete"),
-            route = {
-                Point(MAP.BARRENS, 0.6400, 0.0940, "Dreadmaw Crocolisk",
-                    "Travel to Dreadmaw Crocolisk in The Barrens."),
-                Point(MAP.BARRENS, 0.5600, 0.2480, "Fel Interloper",
-                    "Travel to Fel Interloper in The Barrens."),
-                Point(MAP.BARRENS, 0.4330, 0.4830, "Battered Chest",
-                    "Travel to Battered Chest in The Barrens."),
-                Point(MAP.BARRENS, 0.4200, 0.8170, "Solid Chest",
-                    "Travel to Solid Chest in The Barrens."),
-                Point(MAP.BARRENS, 0.4960, 0.8360, "Alliance Strongbox",
-                    "Travel to Alliance Strongbox in The Barrens."),
-                Point(MAP.BARRENS, 0.4940, 0.8370, "Alliance Chest",
-                    "Travel to Alliance Chest in The Barrens."),
-                Point(MAP.BARRENS, 0.6430, 0.4730, "Battered Chest",
-                    "Travel to Battered Chest in The Barrens."),
-                Point(MAP.BARRENS, 0.6120, 0.5570, "Alliance Chest",
-                    "Travel to Alliance Chest in The Barrens."),
-                Point(MAP.BARRENS, 0.5480, 0.4000, "Lost Barrens Kodo",
-                    "Travel to Lost Barrens Kodo in The Barrens."),
-                Point(MAP.BARRENS, 0.4600, 0.7420, "Barrens Kodo",
-                    "Travel to Barrens Kodo in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-5932-back-to-thunder-bluff",
         },
         {
-            id = "turnin-6128-gathering-the-cure",
-            kind = "turnin",
             priority = 720,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-5932-back-to-thunder-bluff" },
+            id = "turnin-5932-back-to-thunder-bluff",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Gathering the Cure to Tonga Runetotem in The Barrens. This step is for Tauren.",
-            dependsOn = { "objective-6128-gathering-the-cure" },
-            complete = QuestState(6128, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5220, 0.3180, "Tonga Runetotem",
-                    "Travel to Tonga Runetotem in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5932-back-to-thunder-bluff",
         },
         {
-            id = "accept-6129-curing-the-sick",
-            kind = "accept",
             priority = 730,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-5932-back-to-thunder-bluff" },
+            id = "accept-6002-body-and-heart",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Curing the Sick from Tonga Runetotem in The Barrens. This step is for Tauren.",
-            dependsOn = { "turnin-6128-gathering-the-cure", "turnin-6127-the-principal-source" },
-            complete = QuestState(6129, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5220, 0.3180, "Tonga Runetotem",
-                    "Travel to Tonga Runetotem in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-6002-body-and-heart",
         },
         {
-            id = "turnin-6129-curing-the-sick",
-            kind = "turnin",
             priority = 740,
+            id = "objective-6002-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Curing the Sick to Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-6129-curing-the-sick" },
-            complete = QuestState(6129, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-6002-body-and-heart" },
+            classAction = "objective-6002-quest-work",
         },
         {
-            id = "accept-6130-power-over-poison",
-            kind = "accept",
             priority = 750,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-6002-body-and-heart", "objective-6002-quest-work" },
+            id = "turnin-6002-body-and-heart",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 6 },
-                    { level = { min = 14 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Power over Poison from Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-6129-curing-the-sick" },
-            complete = QuestState(6130, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6002-body-and-heart",
         },
         {
-            id = "turnin-6130-power-over-poison",
-            kind = "turnin",
+            id = "level-before-accept-6121-lessons-anew",
+            kind = "note",
+            text = "Reach level 14 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 14 },
+            },
+            requiredLevel = 14,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6121,
             priority = 760,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 14 } },
-                },
-            },
-            text = "Turn in Power over Poison to Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "accept-6130-power-over-poison" },
-            complete = QuestState(6130, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
         },
         {
-            id = "accept-27-a-lesson-to-learn",
-            kind = "accept",
             priority = 770,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "turnin-6001-body-and-heart" },
+            id = "accept-6121-lessons-anew",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4, 95 },
+                    },
                 },
             },
-            text = "Accept A Lesson to Learn from Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "turnin-6130-power-over-poison" },
-            complete = QuestState(27, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "accept-6121-lessons-anew",
         },
         {
-            id = "turnin-27-a-lesson-to-learn",
-            kind = "turnin",
             priority = 780,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-6121-lessons-anew" },
+            id = "turnin-6121-lessons-anew",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4, 95 },
+                    },
                 },
             },
-            text = "Turn in A Lesson to Learn to Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-27-a-lesson-to-learn" },
-            complete = QuestState(27, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6121-lessons-anew",
         },
         {
-            id = "accept-28-trial-of-the-lake",
-            kind = "accept",
             priority = 790,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-6121-lessons-anew" },
+            id = "accept-6122-the-principal-source",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4, 95 },
+                    },
                 },
             },
-            text = "Accept Trial of the Lake from Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-27-a-lesson-to-learn" },
-            complete = QuestState(28, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-6122-the-principal-source",
         },
         {
-            id = "turnin-28-trial-of-the-lake",
-            kind = "turnin",
             priority = 800,
+            route = {
+                { mapID = 1439, x = 0.5493, y = 0.3332, label = "Filled Cliffspring Falls Sampler", offMapText = "Travel to Filled Cliffspring Falls Sampler." },
+            },
+            id = "objective-6122-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4, 95 },
+                    },
                 },
             },
-            text = "Turn in Trial of the Lake to Tajarri in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-28-trial-of-the-lake" },
-            complete = QuestState(28, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.3640, 0.4020, "Tajarri",
-                    "Travel to Tajarri in Moonglade."),
-            },
+            useClientPin = false,
+            dependsOn = { "accept-6122-the-principal-source" },
+            classAction = "objective-6122-quest-work",
         },
         {
-            id = "accept-30-trial-of-the-sea-lion",
-            kind = "accept",
             priority = 810,
+            route = {
+                { y = 0.406, mapID = 1439, label = "Alanndarian Nightsong", x = 0.376, offMapText = "Travel to Alanndarian Nightsong in Darkshore." },
+            },
+            dependsOn = { "accept-6122-the-principal-source", "objective-6122-quest-work" },
+            id = "turnin-6122-the-principal-source",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4, 95 },
+                    },
                 },
             },
-            text = "Accept Trial of the Sea Lion from Tajarri in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-28-trial-of-the-lake" },
-            complete = QuestState(30, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.3640, 0.4020, "Tajarri",
-                    "Travel to Tajarri in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6122-the-principal-source",
         },
         {
-            id = "turnin-30-trial-of-the-sea-lion",
-            kind = "turnin",
+            id = "level-before-accept-6123-gathering-the-cure",
+            kind = "note",
+            text = "Reach level 14 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 14 },
+            },
+            requiredLevel = 14,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6123,
             priority = 820,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 16 } },
-                },
-            },
-            text = "Turn in Trial of the Sea Lion to Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-30-trial-of-the-sea-lion" },
-            complete = QuestState(30, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
         },
         {
-            id = "accept-31-aquatic-form",
-            kind = "accept",
             priority = 830,
+            route = {
+                { y = 0.406, mapID = 1439, label = "Alanndarian Nightsong", x = 0.376, offMapText = "Travel to Alanndarian Nightsong in Darkshore." },
+            },
+            dependsOn = { "turnin-6122-the-principal-source" },
+            id = "accept-6123-gathering-the-cure",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Aquatic Form from Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-30-trial-of-the-sea-lion" },
-            complete = QuestState(31, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-6123-gathering-the-cure",
         },
         {
-            id = "turnin-31-aquatic-form",
-            kind = "turnin",
             priority = 840,
+            dependsOn = { "accept-6123-gathering-the-cure" },
+            id = "objective-6123-gathering-the-cure",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 16 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Aquatic Form to Turak Runetotem in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "accept-31-aquatic-form" },
-            complete = QuestState(31, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = true,
+            classAction = "objective-6123-gathering-the-cure",
         },
         {
-            id = "accept-98340-the-great-cat-spirit",
-            kind = "accept",
             priority = 850,
+            route = {
+                { y = 0.406, mapID = 1439, label = "Alanndarian Nightsong", x = 0.376, offMapText = "Travel to Alanndarian Nightsong in Darkshore." },
+            },
+            dependsOn = { "accept-6123-gathering-the-cure", "objective-6123-gathering-the-cure" },
+            id = "turnin-6123-gathering-the-cure",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = { 6, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept The Great Cat Spirit from Turak Runetotem in Thunder Bluff. This step is for Tauren and Horde Skyborne.",
-            complete = QuestState(98340, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6123-gathering-the-cure",
         },
         {
-            id = "turnin-98340-the-great-cat-spirit",
-            kind = "turnin",
             priority = 860,
+            route = {
+                { y = 0.406, mapID = 1439, label = "Alanndarian Nightsong", x = 0.376, offMapText = "Travel to Alanndarian Nightsong in Darkshore." },
+            },
+            dependsOn = { "turnin-6123-gathering-the-cure", "turnin-6122-the-principal-source" },
+            id = "accept-6124-curing-the-sick",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = { 6, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in The Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Tauren and Horde Skyborne.",
-            dependsOn = { "accept-98340-the-great-cat-spirit" },
-            complete = QuestState(98340, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-6124-curing-the-sick",
         },
         {
-            id = "accept-98341-the-great-windborne-cat-spirit",
-            kind = "accept",
             priority = 870,
+            id = "objective-6124-quest-work",
             conditions = {
                 all = {
                     { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept The Great Windborne Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-98340-the-great-cat-spirit" },
-            complete = QuestState(98341, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-6124-curing-the-sick" },
+            classAction = "objective-6124-quest-work",
         },
         {
-            id = "turnin-98341-the-great-windborne-cat-spirit",
-            kind = "turnin",
             priority = 880,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-6124-curing-the-sick", "objective-6124-quest-work" },
+            id = "turnin-6124-curing-the-sick",
             conditions = {
                 all = {
                     { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in The Great Windborne Cat Spirit to Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-98341-the-great-windborne-cat-spirit" },
-            complete = QuestState(98341, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
-                    "Travel to Avatar of Saeyleenan in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6124-curing-the-sick",
         },
         {
-            id = "accept-98393-the-great-cat-spirit",
-            kind = "accept",
             priority = 890,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-6124-curing-the-sick" },
+            id = "accept-6125-power-over-poison",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = { 4, 95 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept The Great Cat Spirit from Mathrengyl Bearwalker in Darnassus. This step is for Night Elves and Alliance Skyborne.",
-            complete = QuestState(98393, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "accept-6125-power-over-poison",
         },
         {
-            id = "turnin-98393-the-great-cat-spirit",
-            kind = "turnin",
             priority = 900,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "accept-6125-power-over-poison" },
+            id = "turnin-6125-power-over-poison",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = { 4, 95 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in The Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Night Elves and Alliance Skyborne.",
-            dependsOn = { "accept-98393-the-great-cat-spirit" },
-            complete = QuestState(98393, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6125-power-over-poison",
         },
         {
-            id = "accept-98394-the-great-cat-spirit",
-            kind = "accept",
+            id = "level-before-accept-6126-lessons-anew",
+            kind = "note",
+            text = "Reach level 14 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 14 },
+            },
+            requiredLevel = 14,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6126,
             priority = 910,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-98393-the-great-cat-spirit" },
-            complete = QuestState(98394, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
         },
         {
-            id = "turnin-98394-the-great-cat-spirit",
-            kind = "turnin",
             priority = 920,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-6002-body-and-heart" },
+            id = "accept-6126-lessons-anew",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-98394-the-great-cat-spirit" },
-            complete = QuestState(98394, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-6126-lessons-anew",
         },
         {
-            id = "accept-98396-the-great-cat-spirit",
-            kind = "accept",
             priority = 930,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-6126-lessons-anew" },
+            id = "turnin-6126-lessons-anew",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept The Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-98394-the-great-cat-spirit" },
-            complete = QuestState(98396, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6126-lessons-anew",
         },
         {
-            id = "turnin-98396-the-great-cat-spirit",
-            kind = "turnin",
             priority = 940,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-6126-lessons-anew" },
+            id = "accept-6127-the-principal-source",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-98396-the-great-cat-spirit" },
-            complete = QuestState(98396, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-6127-the-principal-source",
         },
         {
-            id = "accept-98731-blessings-of-the-great-cat-spirit",
-            kind = "accept",
             priority = 950,
+            id = "objective-6127-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Blessings of the Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-98396-the-great-cat-spirit" },
-            complete = QuestState(98731, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-6127-the-principal-source" },
+            classAction = "objective-6127-quest-work",
         },
         {
-            id = "turnin-98731-blessings-of-the-great-cat-spirit",
-            kind = "turnin",
             priority = 960,
+            route = {
+                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
+            },
+            dependsOn = { "accept-6127-the-principal-source", "objective-6127-quest-work" },
+            id = "turnin-6127-the-principal-source",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Blessings of the Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-98731-blessings-of-the-great-cat-spirit" },
-            complete = QuestState(98731, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6127-the-principal-source",
         },
         {
-            id = "accept-98397-to-darnassus",
-            kind = "accept",
             priority = 970,
+            route = {
+                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
+            },
+            dependsOn = { "turnin-6127-the-principal-source" },
+            id = "accept-6128-gathering-the-cure",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = { 4, 95 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept To Darnassus from Dendrite Starblaze in Moonglade. This step is for Night Elves and Alliance Skyborne.",
-            dependsOn = { "turnin-98731-blessings-of-the-great-cat-spirit" },
-            complete = QuestState(98397, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-6128-gathering-the-cure",
         },
         {
-            id = "turnin-98397-to-darnassus",
-            kind = "turnin",
             priority = 980,
+            dependsOn = { "accept-6128-gathering-the-cure" },
+            id = "objective-6128-gathering-the-cure",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 11 },
-                    { race = { 4, 95 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in To Darnassus to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves and Alliance Skyborne.",
-            dependsOn = { "accept-98397-to-darnassus" },
-            complete = QuestState(98397, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
+            useClientPin = true,
+            classAction = "objective-6128-gathering-the-cure",
         },
         {
-            id = "accept-98404-the-great-windborne-cat-spirit",
-            kind = "accept",
             priority = 990,
+            route = {
+                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
+            },
+            dependsOn = { "accept-6128-gathering-the-cure", "objective-6128-gathering-the-cure" },
+            id = "turnin-6128-gathering-the-cure",
             conditions = {
                 all = {
                     { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept The Great Windborne Cat Spirit from Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            complete = QuestState(98404, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
-                    "Travel to Avatar of Saeyleenan in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6128-gathering-the-cure",
         },
         {
-            id = "turnin-98404-the-great-windborne-cat-spirit",
-            kind = "turnin",
             priority = 1000,
+            route = {
+                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
+            },
+            dependsOn = { "turnin-6128-gathering-the-cure", "turnin-6127-the-principal-source" },
+            id = "accept-6129-curing-the-sick",
             conditions = {
                 all = {
                     { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Great Windborne Cat Spirit to Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-98404-the-great-windborne-cat-spirit" },
-            complete = QuestState(98404, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
-                    "Travel to Avatar of Saeyleenan in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-6129-curing-the-sick",
         },
         {
-            id = "accept-98738-blessings-of-the-great-windborne-cat-spirit",
-            kind = "accept",
             priority = 1010,
+            id = "objective-6129-quest-work",
             conditions = {
                 all = {
                     { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Blessings of the Great Windborne Cat Spirit from Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-98404-the-great-windborne-cat-spirit" },
-            complete = QuestState(98738, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
-                    "Travel to Avatar of Saeyleenan in Moonglade."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-6129-curing-the-sick" },
+            classAction = "objective-6129-quest-work",
         },
         {
-            id = "turnin-98738-blessings-of-the-great-windborne-cat-spirit",
-            kind = "turnin",
             priority = 1020,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-6129-curing-the-sick", "objective-6129-quest-work" },
+            id = "turnin-6129-curing-the-sick",
             conditions = {
                 all = {
                     { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Blessings of the Great Windborne Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-98738-blessings-of-the-great-windborne-cat-spirit" },
-            complete = QuestState(98738, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6129-curing-the-sick",
         },
         {
-            id = "accept-98405-the-great-cat-spirit",
-            kind = "accept",
             priority = 1030,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-6129-curing-the-sick" },
+            id = "accept-6130-power-over-poison",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
                     { race = 6 },
-                    { level = { min = 20 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept The Great Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            complete = QuestState(98405, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-6130-power-over-poison",
         },
         {
-            id = "turnin-98405-the-great-cat-spirit",
-            kind = "turnin",
             priority = 1040,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-6130-power-over-poison" },
+            id = "turnin-6130-power-over-poison",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
                     { race = 6 },
-                    { level = { min = 20 } },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-98405-the-great-cat-spirit" },
-            complete = QuestState(98405, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6130-power-over-poison",
         },
         {
-            id = "accept-98342-the-great-cat-spirit",
-            kind = "accept",
+            id = "level-before-accept-26-a-lesson-to-learn",
+            kind = "note",
+            text = "Reach level 16 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 16 },
+            },
+            requiredLevel = 16,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 26,
             priority = 1050,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-98405-the-great-cat-spirit" },
-            complete = QuestState(98342, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
         },
         {
-            id = "turnin-98342-the-great-cat-spirit",
-            kind = "turnin",
             priority = 1060,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "turnin-6125-power-over-poison" },
+            id = "accept-26-a-lesson-to-learn",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-98342-the-great-cat-spirit" },
-            complete = QuestState(98342, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-26-a-lesson-to-learn",
         },
         {
-            id = "accept-98739-blessings-of-the-great-cat-spirit",
-            kind = "accept",
             priority = 1070,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-26-a-lesson-to-learn" },
+            id = "turnin-26-a-lesson-to-learn",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Blessings of the Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-98342-the-great-cat-spirit" },
-            complete = QuestState(98739, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "turnin-26-a-lesson-to-learn",
         },
         {
-            id = "turnin-98739-blessings-of-the-great-cat-spirit",
-            kind = "turnin",
             priority = 1080,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-26-a-lesson-to-learn" },
+            id = "accept-29-trial-of-the-lake",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Blessings of the Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-98739-blessings-of-the-great-cat-spirit" },
-            complete = QuestState(98739, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-29-trial-of-the-lake",
         },
         {
-            id = "accept-98362-to-thunder-bluff",
-            kind = "accept",
             priority = 1090,
+            id = "objective-29-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = { 6, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept To Thunder Bluff from Dendrite Starblaze in Moonglade. This step is for Tauren and Horde Skyborne.",
-            dependsOn = { "turnin-98739-blessings-of-the-great-cat-spirit" },
-            complete = QuestState(98362, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-29-trial-of-the-lake" },
+            classAction = "objective-29-quest-work",
         },
         {
-            id = "turnin-98362-to-thunder-bluff",
-            kind = "turnin",
             priority = 1100,
+            route = {
+                { y = 0.402, mapID = 1450, label = "Tajarri", x = 0.364, offMapText = "Travel to Tajarri in Moonglade." },
+            },
+            dependsOn = { "accept-29-trial-of-the-lake", "objective-29-quest-work" },
+            id = "turnin-29-trial-of-the-lake",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 11 },
-                    { race = { 6, 96 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in To Thunder Bluff to Turak Runetotem in Thunder Bluff. This step is for Tauren and Horde Skyborne.",
-            dependsOn = { "accept-98362-to-thunder-bluff" },
-            complete = QuestState(98362, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-29-trial-of-the-lake",
         },
         {
-            id = "accept-9063-torwa-pathfinder",
-            kind = "accept",
             priority = 1110,
+            route = {
+                { y = 0.402, mapID = 1450, label = "Tajarri", x = 0.364, offMapText = "Travel to Tajarri in Moonglade." },
+            },
+            dependsOn = { "turnin-29-trial-of-the-lake" },
+            id = "accept-272-trial-of-the-sea-lion",
             conditions = {
                 all = {
                     { class = 11 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Torwa Pathfinder from Theridran in Stormwind City.",
-            dependsOn = { "turnin-5061-aquatic-form", "turnin-31-aquatic-form" },
-            complete = QuestState(9063, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2140, 0.5140, "Theridran",
-                    "Travel to Theridran in Stormwind City.", { map = { MAP.THUNDERBLUFF, MAP.DARNASSUS, MAP.MOONGLADE } }),
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff.", { map = { MAP.DARNASSUS, MAP.MOONGLADE } }),
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus.", { map = { MAP.MOONGLADE } }),
-                Point(MAP.MOONGLADE, 0.5240, 0.4040, "Loganaar",
-                    "Travel to Loganaar in Moonglade."),
-            },
+            useClientPin = false,
+            classAction = "accept-272-trial-of-the-sea-lion",
         },
         {
-            id = "turnin-9063-torwa-pathfinder",
-            kind = "turnin",
             priority = 1120,
+            id = "objective-272-quest-work",
             conditions = {
                 all = {
                     { class = 11 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Torwa Pathfinder to Torwa Pathfinder in Un'Goro Crater.",
-            dependsOn = { "accept-9063-torwa-pathfinder" },
-            complete = QuestState(9063, "completed"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-272-trial-of-the-sea-lion" },
+            classAction = "objective-272-quest-work",
         },
         {
-            id = "accept-9052-bloodpetal-poison",
-            kind = "accept",
             priority = 1130,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-272-trial-of-the-sea-lion", "objective-272-quest-work" },
+            id = "turnin-272-trial-of-the-sea-lion",
             conditions = {
                 all = {
                     { class = 11 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Bloodpetal Poison from Torwa Pathfinder in Un'Goro Crater.",
-            dependsOn = { "turnin-9063-torwa-pathfinder" },
-            complete = QuestState(9052, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
+            useClientPin = false,
+            classAction = "turnin-272-trial-of-the-sea-lion",
         },
         {
-            id = "objective-9052-bloodpetal-poison",
-            kind = "objective",
             priority = 1140,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-272-trial-of-the-sea-lion" },
+            id = "accept-5061-aquatic-form",
             conditions = {
                 all = {
                     { class = 11 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Collect 8 Gorishi Sting and 8 Bloodcap in Un'Goro Crater.",
-            dependsOn = { "accept-9052-bloodpetal-poison" },
-            complete = QuestState(9052, "complete"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.5040, 0.7880, "Gorishi Wasp",
-                    "Travel to Gorishi Wasp in Un'Goro Crater."),
-                Point(MAP.UNGOROCRATER, 0.5000, 0.8080, "Gorishi Stinger",
-                    "Travel to Gorishi Stinger in Un'Goro Crater."),
-                Point(MAP.UNGOROCRATER, 0.4360, 0.8140, "Gorishi Hive Queen",
-                    "Travel to Gorishi Hive Queen in Un'Goro Crater."),
-            },
+            useClientPin = false,
+            classAction = "accept-5061-aquatic-form",
         },
         {
-            id = "turnin-9052-bloodpetal-poison",
-            kind = "turnin",
             priority = 1150,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "accept-5061-aquatic-form" },
+            id = "turnin-5061-aquatic-form",
             conditions = {
                 all = {
                     { class = 11 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Bloodpetal Poison to Torwa Pathfinder in Un'Goro Crater.",
-            dependsOn = { "objective-9052-bloodpetal-poison" },
-            complete = QuestState(9052, "completed"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5061-aquatic-form",
         },
         {
-            id = "accept-9051-toxic-test",
-            kind = "accept",
+            id = "level-before-accept-27-a-lesson-to-learn",
+            kind = "note",
+            text = "Reach level 16 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 16 },
+            },
+            requiredLevel = 16,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 27,
             priority = 1160,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Toxic Test from Torwa Pathfinder in Un'Goro Crater.",
-            dependsOn = { "turnin-9052-bloodpetal-poison", "turnin-9063-torwa-pathfinder" },
-            complete = QuestState(9051, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
         },
         {
-            id = "turnin-9051-toxic-test",
-            kind = "turnin",
             priority = 1170,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-6130-power-over-poison" },
+            id = "accept-27-a-lesson-to-learn",
             conditions = {
                 all = {
                     { class = 11 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Toxic Test to Torwa Pathfinder in Un'Goro Crater.",
-            dependsOn = { "accept-9051-toxic-test" },
-            complete = QuestState(9051, "completed"),
+            useClientPin = false,
+            classAction = "accept-27-a-lesson-to-learn",
+        },
+        {
+            priority = 1180,
             route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
-        }
+            dependsOn = { "accept-27-a-lesson-to-learn" },
+            id = "turnin-27-a-lesson-to-learn",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-27-a-lesson-to-learn",
+        },
+        {
+            priority = 1190,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-27-a-lesson-to-learn" },
+            id = "accept-28-trial-of-the-lake",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-28-trial-of-the-lake",
+        },
+        {
+            priority = 1200,
+            route = {
+                { mapID = 1450, x = 0.5433, y = 0.5565, label = "Shrine Bauble", offMapText = "Travel to Shrine Bauble." },
+            },
+            id = "objective-28-quest-work",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-28-trial-of-the-lake" },
+            classAction = "objective-28-quest-work",
+        },
+        {
+            priority = 1210,
+            route = {
+                { y = 0.402, mapID = 1450, label = "Tajarri", x = 0.364, offMapText = "Travel to Tajarri in Moonglade." },
+            },
+            dependsOn = { "accept-28-trial-of-the-lake", "objective-28-quest-work" },
+            id = "turnin-28-trial-of-the-lake",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-28-trial-of-the-lake",
+        },
+        {
+            priority = 1220,
+            route = {
+                { y = 0.402, mapID = 1450, label = "Tajarri", x = 0.364, offMapText = "Travel to Tajarri in Moonglade." },
+            },
+            dependsOn = { "turnin-28-trial-of-the-lake" },
+            id = "accept-30-trial-of-the-sea-lion",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-30-trial-of-the-sea-lion",
+        },
+        {
+            priority = 1230,
+            id = "objective-30-quest-work",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-30-trial-of-the-sea-lion" },
+            classAction = "objective-30-quest-work",
+        },
+        {
+            priority = 1240,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-30-trial-of-the-sea-lion", "objective-30-quest-work" },
+            id = "turnin-30-trial-of-the-sea-lion",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-30-trial-of-the-sea-lion",
+        },
+        {
+            priority = 1250,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-30-trial-of-the-sea-lion" },
+            id = "accept-31-aquatic-form",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-31-aquatic-form",
+        },
+        {
+            priority = 1260,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-31-aquatic-form" },
+            id = "turnin-31-aquatic-form",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-31-aquatic-form",
+        },
+        {
+            id = "level-before-accept-98340-the-great-cat-spirit",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 6, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98340,
+            priority = 1270,
+        },
+        {
+            priority = 1280,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            id = "accept-98340-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 6, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-98340-the-great-cat-spirit",
+        },
+        {
+            priority = 1290,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-98340-the-great-cat-spirit" },
+            id = "turnin-98340-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 6, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98340-the-great-cat-spirit",
+        },
+        {
+            id = "level-before-accept-98341-the-great-windborne-cat-spirit",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98341,
+            priority = 1300,
+        },
+        {
+            priority = 1310,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-98340-the-great-cat-spirit" },
+            id = "accept-98341-the-great-windborne-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98341-the-great-windborne-cat-spirit",
+        },
+        {
+            priority = 1320,
+            route = {
+                { y = 0.734, mapID = 1450, label = "Avatar of Saeyleenan", x = 0.44, offMapText = "Travel to Avatar of Saeyleenan in Moonglade." },
+            },
+            dependsOn = { "accept-98341-the-great-windborne-cat-spirit" },
+            id = "turnin-98341-the-great-windborne-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98341-the-great-windborne-cat-spirit",
+        },
+        {
+            id = "level-before-accept-98393-the-great-cat-spirit",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98393,
+            priority = 1330,
+        },
+        {
+            priority = 1340,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            id = "accept-98393-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 4, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-98393-the-great-cat-spirit",
+        },
+        {
+            priority = 1350,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-98393-the-great-cat-spirit" },
+            id = "turnin-98393-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 4, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98393-the-great-cat-spirit",
+        },
+        {
+            id = "level-before-accept-98394-the-great-cat-spirit",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98394,
+            priority = 1360,
+        },
+        {
+            priority = 1370,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-98393-the-great-cat-spirit" },
+            id = "accept-98394-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98394-the-great-cat-spirit",
+        },
+        {
+            priority = 1380,
+            route = {
+                { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
+            },
+            dependsOn = { "accept-98394-the-great-cat-spirit" },
+            id = "turnin-98394-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98394-the-great-cat-spirit",
+        },
+        {
+            priority = 1390,
+            route = {
+                { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
+            },
+            dependsOn = { "turnin-98394-the-great-cat-spirit" },
+            id = "accept-98396-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98396-the-great-cat-spirit",
+        },
+        {
+            priority = 1400,
+            id = "objective-98396-quest-work",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-98396-the-great-cat-spirit" },
+            classAction = "objective-98396-quest-work",
+        },
+        {
+            priority = 1410,
+            route = {
+                { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
+            },
+            dependsOn = { "accept-98396-the-great-cat-spirit", "objective-98396-quest-work" },
+            id = "turnin-98396-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98396-the-great-cat-spirit",
+        },
+        {
+            priority = 1420,
+            route = {
+                { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
+            },
+            dependsOn = { "turnin-98396-the-great-cat-spirit" },
+            id = "accept-98731-blessings-of-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98731-blessings-of-the-great-cat-spirit",
+        },
+        {
+            priority = 1430,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-98731-blessings-of-the-great-cat-spirit" },
+            id = "turnin-98731-blessings-of-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98731-blessings-of-the-great-cat-spirit",
+        },
+        {
+            priority = 1440,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-98731-blessings-of-the-great-cat-spirit" },
+            id = "accept-98397-to-darnassus",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 4, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98397-to-darnassus",
+        },
+        {
+            priority = 1450,
+            route = {
+                { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
+            },
+            dependsOn = { "accept-98397-to-darnassus" },
+            id = "turnin-98397-to-darnassus",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 4, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98397-to-darnassus",
+        },
+        {
+            priority = 1460,
+            route = {
+                { y = 0.734, mapID = 1450, label = "Avatar of Saeyleenan", x = 0.44, offMapText = "Travel to Avatar of Saeyleenan in Moonglade." },
+            },
+            id = "accept-98404-the-great-windborne-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-98404-the-great-windborne-cat-spirit",
+        },
+        {
+            priority = 1470,
+            id = "objective-98404-quest-work",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-98404-the-great-windborne-cat-spirit" },
+            classAction = "objective-98404-quest-work",
+        },
+        {
+            priority = 1480,
+            route = {
+                { y = 0.734, mapID = 1450, label = "Avatar of Saeyleenan", x = 0.44, offMapText = "Travel to Avatar of Saeyleenan in Moonglade." },
+            },
+            dependsOn = { "accept-98404-the-great-windborne-cat-spirit", "objective-98404-quest-work" },
+            id = "turnin-98404-the-great-windborne-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98404-the-great-windborne-cat-spirit",
+        },
+        {
+            priority = 1490,
+            route = {
+                { y = 0.734, mapID = 1450, label = "Avatar of Saeyleenan", x = 0.44, offMapText = "Travel to Avatar of Saeyleenan in Moonglade." },
+            },
+            dependsOn = { "turnin-98404-the-great-windborne-cat-spirit" },
+            id = "accept-98738-blessings-of-the-great-windborne-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98738-blessings-of-the-great-windborne-cat-spirit",
+        },
+        {
+            priority = 1500,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-98738-blessings-of-the-great-windborne-cat-spirit" },
+            id = "turnin-98738-blessings-of-the-great-windborne-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98738-blessings-of-the-great-windborne-cat-spirit",
+        },
+        {
+            id = "level-before-accept-98405-the-great-cat-spirit",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98405,
+            priority = 1510,
+        },
+        {
+            priority = 1520,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            id = "accept-98405-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-98405-the-great-cat-spirit",
+        },
+        {
+            priority = 1530,
+            route = {
+                { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
+            },
+            dependsOn = { "accept-98405-the-great-cat-spirit" },
+            id = "turnin-98405-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98405-the-great-cat-spirit",
+        },
+        {
+            priority = 1540,
+            route = {
+                { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
+            },
+            dependsOn = { "turnin-98405-the-great-cat-spirit" },
+            id = "accept-98342-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98342-the-great-cat-spirit",
+        },
+        {
+            priority = 1550,
+            id = "objective-98342-quest-work",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-98342-the-great-cat-spirit" },
+            classAction = "objective-98342-quest-work",
+        },
+        {
+            priority = 1560,
+            route = {
+                { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
+            },
+            dependsOn = { "accept-98342-the-great-cat-spirit", "objective-98342-quest-work" },
+            id = "turnin-98342-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98342-the-great-cat-spirit",
+        },
+        {
+            priority = 1570,
+            route = {
+                { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
+            },
+            dependsOn = { "turnin-98342-the-great-cat-spirit" },
+            id = "accept-98739-blessings-of-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98739-blessings-of-the-great-cat-spirit",
+        },
+        {
+            priority = 1580,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "accept-98739-blessings-of-the-great-cat-spirit" },
+            id = "turnin-98739-blessings-of-the-great-cat-spirit",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98739-blessings-of-the-great-cat-spirit",
+        },
+        {
+            priority = 1590,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "turnin-98739-blessings-of-the-great-cat-spirit" },
+            id = "accept-98362-to-thunder-bluff",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 6, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-98362-to-thunder-bluff",
+        },
+        {
+            priority = 1600,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-98362-to-thunder-bluff" },
+            id = "turnin-98362-to-thunder-bluff",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 6, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-98362-to-thunder-bluff",
+        },
+        {
+            id = "level-before-accept-9063-torwa-pathfinder",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 9063,
+            priority = 1610,
+        },
+        {
+            priority = 1620,
+            route = {
+                { y = 0.514, mapID = 1453, label = "Theridran", x = 0.214, offMapText = "Travel to Theridran in Stormwind City." },
+            },
+            dependsOn = { "turnin-5061-aquatic-form", "turnin-31-aquatic-form" },
+            id = "accept-9063-torwa-pathfinder",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-9063-torwa-pathfinder",
+        },
+        {
+            id = "level-before-accept-9063-torwa-pathfinder-horde",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 9063,
+            priority = 1630,
+        },
+        {
+            priority = 1640,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-5061-aquatic-form", "turnin-31-aquatic-form" },
+            id = "accept-9063-torwa-pathfinder-horde",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-9063-torwa-pathfinder-horde",
+        },
+        {
+            id = "level-before-turnin-9063-torwa-pathfinder",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 9063,
+            priority = 1650,
+        },
+        {
+            priority = 1660,
+            route = {
+                { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-9063-torwa-pathfinder", "accept-9063-torwa-pathfinder-horde" },
+            id = "turnin-9063-torwa-pathfinder",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-9063-torwa-pathfinder",
+        },
+        {
+            priority = 1670,
+            route = {
+                { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
+            },
+            dependsOn = { "turnin-9063-torwa-pathfinder" },
+            id = "accept-9052-bloodpetal-poison",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-9052-bloodpetal-poison",
+        },
+        {
+            priority = 1680,
+            route = {
+                { y = 0.788, mapID = 1449, label = "Gorishi Wasp", x = 0.504, offMapText = "Travel to Gorishi Wasp in Un'Goro Crater." },
+                { y = 0.808, mapID = 1449, label = "Gorishi Stinger", x = 0.5, offMapText = "Travel to Gorishi Stinger in Un'Goro Crater." },
+                { y = 0.814, mapID = 1449, label = "Gorishi Hive Queen", x = 0.436, offMapText = "Travel to Gorishi Hive Queen in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-9052-bloodpetal-poison" },
+            id = "objective-9052-bloodpetal-poison",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-9052-bloodpetal-poison",
+        },
+        {
+            priority = 1690,
+            route = {
+                { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-9052-bloodpetal-poison", "objective-9052-bloodpetal-poison" },
+            id = "turnin-9052-bloodpetal-poison",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-9052-bloodpetal-poison",
+        },
+        {
+            priority = 1700,
+            route = {
+                { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
+            },
+            dependsOn = { "turnin-9052-bloodpetal-poison", "turnin-9063-torwa-pathfinder" },
+            id = "accept-9051-toxic-test",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-9051-toxic-test",
+        },
+        {
+            priority = 1710,
+            id = "objective-9051-quest-work",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-9051-toxic-test" },
+            classAction = "objective-9051-quest-work",
+        },
+        {
+            priority = 1720,
+            route = {
+                { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-9051-toxic-test", "objective-9051-quest-work" },
+            id = "turnin-9051-toxic-test",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-9051-toxic-test",
+        },
     },
+    routeMode = "ordered",
 })
