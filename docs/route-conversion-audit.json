@@ -14306,5 +14306,39 @@
     "6662": "Deeprun Tram delivery",
     "3380": "Outdoor delivery to Marvon in Tanaris",
     "7583": "Class world encounter in the Tainted Scar"
+  },
+  "mulgoreReturn": {
+    "guide": "leveling-era-horde-mulgore-part-2",
+    "afterChapter": "leveling-era-horde-thousand-needles",
+    "questFacts": "https://www.wowhead.com/forever/quests/kalimdor/mulgore",
+    "quests": [
+      96241,
+      96259,
+      96260,
+      96261,
+      96294,
+      96774
+    ],
+    "offerLevel": {
+      "outdoor": 23,
+      "dungeon": 30
+    },
+    "scheduledLevel": {
+      "outdoor": 30,
+      "elite": 31,
+      "dungeonPickup": 30
+    },
+    "itemStarter": {
+      "quest": 96294,
+      "item": "Bloody Parchment",
+      "drop": "Broodmother Valraxx",
+      "source": "Player screenshots, 2026-10-10"
+    },
+    "giverConfirmation": {
+      "quest": 96261,
+      "giver": "Muln Earthfury",
+      "source": "Player confirmation, 2026-10-10"
+    },
+    "coordinateLimit": "Skywatcher Plateau landmark from existing Muln guides; exact NPC and objective pins use client quest data."
   }
 }

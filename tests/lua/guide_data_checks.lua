@@ -5,6 +5,14 @@
 
 local M = {}
 
+-- Wowhead Forever quest series and the Starving Arcane unlock report.
+M.DalaranDungeonTurninGates = {
+    [92458] = 92432,
+    [92457] = 92432,
+    [92459] = 92458,
+    [97287] = 96984,
+}
+
 -- Single-predecessor, same-title chains verified against wow-database Forever exports.
 M.SameTitleQuestChains = {
     [1499] = 1485,

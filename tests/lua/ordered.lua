@@ -754,4 +754,38 @@ invalidGuide.metadata.self = invalidGuide.metadata
 registered = pcall(function() ns:RegisterGuide(invalidGuide) end)
 equal(registered, false, 'memoized validation rejects cyclic declarative tables')
 
+
+-- The Mulgore return keeps the item-started quest in the same Gloomrise outing.
+do
+    local casual = ns.guides["leveling-casual-horde"]
+    local segment, position
+    for index, candidate in ipairs(casual.segments) do
+        if candidate.id == "leveling-era-horde-mulgore-part-2" then segment, position = candidate, index end
+    end
+    equal(casual.segments[position - 1].id, "leveling-era-horde-thousand-needles", "Mulgore return follows Thousand Needles")
+    equal(casual.segments[position + 1].id, "leveling-era-horde-hillsbrad-foothills-part-2", "Mulgore return precedes the next Eastern Kingdoms visit")
+    ns:RegisterGuide({ id = "test-mulgore-return", title = "Mulgore return test", category = "Leveling Quest Guides",
+        revision = 1, routeMode = "ordered", conditions = { faction = "Horde" }, goals = segment.goals })
+    local snapshot = state(2, 1, "Horde", 31)
+    journey("test-mulgore-return", snapshot, {
+        "accept:96259", "accept:96241", "accept:96260", "accept:96261", "accept:96774",
+        "objective:96259", "objective:96241", "objective:96260", "objective:96261",
+    })
+    equal(ns.Engine.currentGoal.id:match("collect%-bloody%-parchment$") ~= nil, true, "Loot parchment before leaving the elite")
+    equal(ns.EvaluateCondition(ns.Engine.currentGoal.complete, snapshot), false, "Elite kill alone does not grant the parchment")
+    snapshot.items["Bloody Parchment"] = 1
+    ns.Engine:Refresh(snapshot)
+    equal(signature(ns.Engine.currentGoal), "accept:96294", "Parchment in bags unlocks the item-started pickup")
+    observe(ns.Engine.currentGoal, snapshot)
+    snapshot.items["Bloody Parchment"] = nil
+    local parchment
+    for _, goal in ipairs(segment.goals) do
+        if goal.id:match("collect%-bloody%-parchment$") then parchment = goal end
+    end
+    equal(ns.EvaluateCondition(parchment.complete, snapshot), true, "Active A Darker Truth preserves the collection handoff")
+    journey("test-mulgore-return", snapshot, { "turnin:96259", "turnin:96241", "turnin:96260", "turnin:96261", "turnin:96294" })
+    equal(ns.Engine.currentGoal, nil, "Outdoor return ends without requiring the dungeon")
+    equal(snapshot.quests[96774] ~= nil, true, "Idol remains active for the dungeon handoff")
+    equal(snapshot.completedQuests[96774], nil, "Outdoor route grants no dungeon completion")
+end
 print('Ordered production journey tests passed: ' .. assertions .. ' assertions')

@@ -74,6 +74,9 @@ Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
 Load("Guides/Dungeons/ExcavationSiteWetlands.lua")
 Load("Guides/Dungeons/CityOfDalaranAttunement.lua")
+Load("Guides/Dungeons/CityOfDalaran.lua")
+Load("Guides/Dungeons/DrownedCity.lua")
+Load("Guides/Leveling/horde-mulgore-part-2.lua")
 Load("Guides/Leveling/zephras-isle.lua")
 Load("Guides/Loremaster/Durotar.lua")
 Load("Guides/Loremaster/Mulgore.lua")
@@ -3299,6 +3302,69 @@ Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use
 Check(ns.guides["dungeons-excavation-site-wetlands"] ~= nil, "excavation site wetlands guide is registered")
 
 do
+    local guide = ns.guides["dungeons-city-of-dalaran"]
+    Check(guide ~= nil, "City of Dalaran dungeon quests are registered separately from access quests")
+    local horde = { faction = "Horde", level = 24, quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    local alliance = { faction = "Alliance", level = 24, quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    for _, case in ipairs({ { 96986, horde, alliance }, { 96988, horde, alliance },
+        { 96987, horde, alliance }, { 92489, alliance, horde }, { 92456, alliance, horde },
+        { 92457, alliance, horde }, { 92458, alliance, horde } }) do
+        for _, kind in ipairs({ "accept", "objective", "turnin" }) do
+            local found
+            for _, goal in ipairs(guide.goals) do
+                if goal.kind == kind and goal.complete and goal.complete.quest
+                    and goal.complete.quest.id == case[1] then found = goal; break end
+            end
+            Check(found ~= nil, "Dalaran quest " .. case[1] .. " has its " .. kind .. " action")
+            if found then
+                Equal(ns.EvaluateCondition(found.conditions, case[2]), true, "Dalaran action allows its faction")
+                Equal(ns.EvaluateCondition(found.conditions, case[3]), false, "Dalaran action excludes the other faction")
+                Equal(found.complete.quest.state, kind == "accept" and "activeOrCompleted"
+                    or kind == "objective" and "complete" or "completed", "Dalaran action observes matching quest state")
+            end
+        end
+    end
+    local handoff = ns.Engine:GetGoal(guide, "prepare-horde-dalaran-access")
+    Equal(ns.EvaluateCondition(handoff.complete, horde), false, "Dalaran handoff waits for the attunement quest")
+    horde.quests[96984] = { complete = false }
+    Equal(ns.EvaluateCondition(handoff.complete, horde), true, "active Heart of Disruption completes the Dalaran handoff")
+    local gates = dofile("tests/lua/guide_data_checks.lua").DalaranDungeonTurninGates
+    for questID, prerequisite in pairs(gates) do
+        local accept
+        for _, goal in ipairs(guide.goals) do
+            if goal.kind == "accept" and goal.complete.quest.id == questID then accept = goal end
+        end
+        Check(accept ~= nil, "Dalaran dependent pickup exists")
+        local turninID = accept.dependsOn and accept.dependsOn[1]
+        local turnin = turninID and ns.Engine:GetGoal(guide, turninID)
+        Check(turnin and turnin.kind == "turnin" and turnin.complete.quest.id == prerequisite,
+            "Dalaran pickup " .. questID .. " waits on turn-in " .. prerequisite)
+        local state = questID == 97287 and horde or alliance
+        Equal(ns.Engine:IsReady(guide, accept, state), false, "Dalaran chain cannot accept before its prior turn-in")
+        state.completedQuests[prerequisite] = true
+        Equal(ns.Engine:IsReady(guide, accept, state), true, "Dalaran pickup becomes ready after its prior turn-in")
+        state.completedQuests[prerequisite] = nil
+    end
+end
+
+do
+    local guide = ns.guides["dungeons-excavation-site-wetlands"]
+    local turnins = {}
+    for _, goal in ipairs(guide.goals) do
+        if goal.id == "turnin-95682-open-the-maw"
+            or goal.id == "turnin-95697-changing-tastes"
+            or goal.id == "turnin-95664-elder-knowledge" then
+            turnins[#turnins + 1] = goal
+        end
+    end
+    Equal(turnins[1].id, "turnin-95682-open-the-maw", "Wetlands returns to Open the Maw first")
+    Equal(turnins[2].id, "turnin-95697-changing-tastes", "Wetlands turns in Changing Tastes second")
+    Equal(turnins[3].id, "turnin-95664-elder-knowledge", "Wetlands turns in Elder Knowledge third")
+    Check(turnins[1].priority < turnins[2].priority and turnins[2].priority < turnins[3].priority,
+        "Wetlands dungeon routing follows the final Horde turn-in order")
+end
+
+do
     local guide = ns.guides["dungeons-city-of-dalaran-attunement"]
     Check(guide ~= nil, "city of dalaran attunement guide is registered")
     Equal(guide.category, "Dungeon Quest Guides", "city of dalaran attunement is a dungeon guide")
@@ -3324,6 +3390,105 @@ do
     Check(bloodDeps["turnin-545-dalaran-patrols"], "blood in the streets waits on dalaran patrols")
     Check(bloodDeps["turnin-93680-key-to-the-city"], "blood in the streets waits on key to the city")
 end
+
+function TestDalaranCombinedRoute()
+    local savedLedger = ns.charDB.completionLedger
+    ns.charDB.completionLedger = {}
+    local attune = ns.guides["dungeons-city-of-dalaran-attunement"]
+    local dungeon = ns.guides["dungeons-city-of-dalaran"]
+    local state = {
+        faction = "Horde", raceID = 2, classID = 1, level = 30,
+        mapID = 1458, x = 0.466, y = 0.715, instanceID = 0,
+        quests = {}, completedQuests = {}, questLogKnown = true,
+        questCompletionKnown = true, professionsKnown = true, professions = {},
+    }
+    local function Next(guide)
+        local candidates = ns.Engine:CandidateGoals(guide, state)
+        return candidates[1] and candidates[1].id
+    end
+    Equal(Next(attune), "accept-96988-source-of-power", "Dalaran preparation starts in Undercity")
+    state.quests[96988] = { complete = false, objectives = {} }
+    Equal(Next(attune), "accept-544-prison-break-in", "Dalaran preparation travels to Tarren Mill once")
+    state.quests[544] = { complete = false, objectives = {} }
+    Equal(Next(attune), "accept-93680-key-to-the-city", "Tarren Mill collects both attunement quests")
+    state.quests[93680] = { complete = false, objectives = {} }
+    Equal(Next(attune), "accept-96986-the-grave-knight", "Tarren Mill collects its dungeon quest before leaving")
+    state.quests[96986] = { complete = false, objectives = {} }
+    Equal(Next(attune), "objective-544-prison-break-in", "Preparation proceeds to the internment camp")
+    state.completedQuests[544] = true
+    state.quests[544] = nil
+    state.completedQuests[93680] = true
+    state.quests[93680] = nil
+    Equal(Next(attune), "accept-545-dalaran-patrols", "Dalaran Patrols unlocks at level 30 after Prison Break In")
+    for _, id in ipairs({ "accept-545-dalaran-patrols", "objective-545-dalaran-patrols", "turnin-545-dalaran-patrols" }) do
+        Equal(ns.Engine:GetGoal(attune, id).conditions.all[2].level.min, 30, "All Dalaran Patrols actions use the offer level")
+    end
+    state.completedQuests[545] = true
+    state.completedQuests[92434] = true
+    state.quests[96984] = { complete = false, objectives = {} }
+    Equal(Next(dungeon), "enter-city-of-dalaran", "Attunement handoff avoids another capital pickup trip")
+
+    -- A completed quest at a hub must not pull the route outside mid-dungeon.
+    state.instanceID = 1
+    local ledger = ns.Engine:GetLedger(dungeon, true)
+    for _, goal in ipairs(dungeon.goals) do
+        if goal.priority < 53 and goal.kind ~= "turnin" then ledger[goal.id] = true end
+    end
+    state.quests[96986].complete = true
+    state.quests[96988].complete = true
+    state.completedQuests[96987] = true
+    Equal(Next(dungeon), "dalaran-shade-strategy", "Horde finishes the last boss before outdoor returns")
+    state.faction = "Alliance"
+    state.completedQuests[92432] = true
+    state.quests[92456] = { complete = true, objectives = {} }
+    state.quests[92489] = { complete = true, objectives = {} }
+    state.quests[92457] = { complete = true, objectives = {} }
+    state.quests[92458] = { complete = false, objectives = {} }
+    Equal(Next(dungeon), "dalaran-shade-strategy", "Alliance finishes the last boss before Stormwind returns")
+    for _, goal in ipairs(dungeon.goals) do
+        if goal.priority <= 54 and goal.kind ~= "turnin" then ledger[goal.id] = true end
+    end
+    state.instanceID = 0
+    state.faction = "Horde"
+    state.quests[96984].complete = true
+    Equal(Next(dungeon), "turnin-96986-the-grave-knight", "Horde returns to Tarren Mill first")
+    state.completedQuests[96986] = true
+    state.quests[96986] = nil
+    Equal(Next(dungeon), "turnin-96984-heart-of-disruption", "Horde finishes both Tarren Mill returns together")
+    state.completedQuests[96984] = true
+    state.quests[96984] = nil
+    Equal(Next(dungeon), "accept-97287-shrewd-negotiations", "Horde collects the delivery before leaving Tarren Mill")
+    state.quests[97287] = { complete = true, objectives = {} }
+    Equal(Next(dungeon), "turnin-97287-shrewd-negotiations", "Horde returns the mote to outdoor Dalaran")
+    state.completedQuests[97287] = true
+    state.quests[97287] = nil
+    Equal(Next(dungeon), "turnin-96988-source-of-power", "Horde finishes with its Undercity return")
+    state.completedQuests[96988] = true
+    state.quests[96988] = nil
+    Equal(Next(dungeon), nil, "Horde dungeon route finishes without repeating pickups")
+    state.faction = "Alliance"
+    state.quests[92458].complete = true
+    Equal(Next(dungeon), "turnin-92457-starving-arcane", "Alliance returns to Modera first")
+    state.completedQuests[92457] = true
+    state.quests[92457] = nil
+    Equal(Next(dungeon), "turnin-92458-heart-of-disruption", "Alliance finishes both Modera returns together")
+    state.completedQuests[92458] = true
+    state.quests[92458] = nil
+    Equal(Next(dungeon), "accept-92459-friend-of-the-kirin-tor", "Alliance collects the delivery at Modera")
+    state.quests[92459] = { complete = true, objectives = {} }
+    Equal(Next(dungeon), "turnin-92459-friend-of-the-kirin-tor", "Alliance visits Celindra before Stormwind")
+    state.completedQuests[92459] = true
+    state.quests[92459] = nil
+    Equal(Next(dungeon), "turnin-92489-power-overwhelming", "Alliance returns to Stormwind last")
+    state.completedQuests[92489] = true
+    state.quests[92489] = nil
+    Equal(Next(dungeon), "turnin-92456-a-green-sample", "Alliance completes both Stormwind returns")
+    state.completedQuests[92456] = true
+    state.quests[92456] = nil
+    Equal(Next(dungeon), nil, "Alliance dungeon route finishes without repeating pickups")
+    ns.charDB.completionLedger = savedLedger
+end
+TestDalaranCombinedRoute()
 
 local zephras = ns.guides["leveling-zephras-isle"]
 Equal(zephras.category, "Leveling Quest Guides", "Zephras Isle stays a leveling guide")

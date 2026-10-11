@@ -19,8 +19,13 @@ sys.path.insert(0, str(ROOT / "tools"))
 from weave_loremaster import parse_goals  # noqa: E402
 
 FIXTURE = ROOT / "tests" / "fixtures" / "quest_min_levels.json"
+# Dalaran follow-ups 92459 and 97287 inherit their parent chains' effective
+# level-24 gate; their independent offer minima have not been verified.
 # Quests that appear in guides but intentionally have no fixture minimum.
 UNLEVELED: set[int] = set()
+# Dungeon attunement uses the offer level from the Forever quest export.
+# Other routes retain their existing level-38 scheduling for this quest.
+DUNGEON_OFFER_LEVELS = {545: 30}
 LEVEL_RE = re.compile(r"level = \{\s*min = (\d+)\s*\}")
 
 
@@ -58,6 +63,8 @@ class QuestMinLevelTests(unittest.TestCase):
             if quest_id in UNLEVELED:
                 continue
             expected = self.levels[quest_id]
+            if goal.source_file.startswith("Guides/Dungeons/"):
+                expected = DUNGEON_OFFER_LEVELS.get(quest_id, expected)
             found = [int(value) for value in LEVEL_RE.findall(goal.raw)]
             if expected <= 1:
                 if found:
