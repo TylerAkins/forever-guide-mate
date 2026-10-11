@@ -5,7 +5,11 @@ local _, ns = ...
 -- Horde Heart of Disruption is picked up in CityOfDalaranAttunement.lua.
 -- Alliance An Alarming Request unlocks Heart of Disruption and Starving Arcane.
 -- Celindra's delivery follow-ups visit the outdoor city, not the instance.
--- Modera's pin matches the attunement guide; other unknown pins use quest data.
+-- Landmark pins for Tarren Mill and the Apothecarium match existing guides;
+-- they locate the hub rather than claiming an exact NPC position.
+-- Shylamiir: https://www.wowhead.com/forever/quest=92456/a-green-sample
+-- Celindra: https://warcraft.wiki.gg/wiki/Archmage_Celindra (Forever location).
+-- Interior steps and other unknown destinations follow quest data.
 
 local function QuestState(id, state)
     return { quest = { id = id, state = state } }
@@ -23,7 +27,7 @@ ns:RegisterGuide({
     id = "dungeons-city-of-dalaran",
     title = "City of Dalaran",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = { level = { min = 24 } },
     goals = {
         {
@@ -33,6 +37,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Accept Source of Power from Doctor Martin Felben in the Apothecarium in Undercity.",
             complete = QuestState(96988, "activeOrCompleted"),
+            route = { Point(1458, 0.466, 0.715, "Apothecarium", "Travel to the Apothecarium in Undercity.") },
         },
         {
             id = "accept-96986-the-grave-knight",
@@ -41,6 +46,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Accept The Grave Knight from Melisara in Tarren Mill.",
             complete = QuestState(96986, "activeOrCompleted"),
+            route = { Point(1424, 0.6159, 0.2071, "Tarren Mill", "Travel to Tarren Mill.") },
         },
         {
             id = "accept-92489-power-overwhelming",
@@ -49,6 +55,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept Power Overwhelming from High Sorcerer Andromath in the Mage Tower in Stormwind.",
             complete = QuestState(92489, "activeOrCompleted"),
+            route = { Point(1453, 0.376, 0.816, "High Sorcerer Andromath", "Travel to Stormwind.") },
         },
         {
             id = "accept-92456-a-green-sample",
@@ -57,6 +64,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept A Green Sample from Shylamiir in the herbalist shop in the Park in Stormwind.",
             complete = QuestState(92456, "activeOrCompleted"),
+            route = { Point(1453, 0.313, 0.629, "Shylamiir", "Travel to the Park in Stormwind.") },
         },
         {
             id = "accept-92432-an-alarming-request",
@@ -324,6 +332,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-92459-friend-of-the-kirin-tor" },
             complete = QuestState(92459, "completed"),
             useClientPin = true,
+            route = { Point(1416, 0.141, 0.601, "Archmage Celindra", "Travel to the Violet Citadel in outdoor Dalaran.") },
         },
         {
             id = "turnin-96986-the-grave-knight",
@@ -334,6 +343,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-96986-the-grave-knight" },
             complete = QuestState(96986, "completed"),
             useClientPin = true,
+            route = { Point(1424, 0.6159, 0.2071, "Tarren Mill", "Travel to Tarren Mill.") },
         },
         {
             id = "turnin-96984-heart-of-disruption",
@@ -364,6 +374,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-97287-shrewd-negotiations" },
             complete = QuestState(97287, "completed"),
             useClientPin = true,
+            route = { Point(1416, 0.141, 0.601, "Archmage Celindra", "Travel to the Violet Citadel in outdoor Dalaran.") },
         },
         {
             id = "turnin-96988-source-of-power",
@@ -371,9 +382,10 @@ ns:RegisterGuide({
             priority = 80,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Turn in Source of Power to Doctor Martin Felben in the Apothecarium in Undercity. Follow the quest log pin.",
-            dependsOn = { "objective-96988-source-of-power" },
+            dependsOn = { "objective-96988-source-of-power", "turnin-97287-shrewd-negotiations" },
             complete = QuestState(96988, "completed"),
             useClientPin = true,
+            route = { Point(1458, 0.466, 0.715, "Apothecarium", "Travel to the Apothecarium in Undercity.") },
         },
         {
             id = "turnin-92489-power-overwhelming",
@@ -381,7 +393,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Turn in Power Overwhelming to High Sorcerer Andromath in Stormwind.",
-            dependsOn = { "objective-92489-power-overwhelming" },
+            dependsOn = { "objective-92489-power-overwhelming", "turnin-92459-friend-of-the-kirin-tor" },
             complete = QuestState(92489, "completed"),
             route = { Point(1453, 0.376, 0.816, "High Sorcerer Andromath", "Travel to Stormwind.") },
         },
@@ -391,9 +403,10 @@ ns:RegisterGuide({
             priority = 81,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Turn in A Green Sample to Shylamiir in the Park in Stormwind. Follow the quest log pin.",
-            dependsOn = { "objective-92456-a-green-sample" },
+            dependsOn = { "objective-92456-a-green-sample", "turnin-92489-power-overwhelming" },
             complete = QuestState(92456, "completed"),
             useClientPin = true,
+            route = { Point(1453, 0.313, 0.629, "Shylamiir", "Travel to the Park in Stormwind.") },
         },
     },
 })

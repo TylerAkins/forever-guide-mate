@@ -2,6 +2,9 @@ local _, ns = ...
 
 -- Horde City of Dalaran dungeon attunement (Dalaran Sewer Key).
 -- Source: https://www.wowhead.com/forever/news/how-to-become-attuned-to-city-of-dalaran-dungeon-as-horde-in-wow-forever-383256
+-- Dungeon pickups at Undercity and Tarren Mill are completed in CityOfDalaran.lua.
+-- Dalaran Patrols offer level: wow-database export/forever quest 545 (requiredLevel 30).
+-- Current objective counts: https://www.wowhead.com/forever/quest=545/dalaran-patrols
 -- Required chain: Prison Break In (544) and Key to the City (93680), then
 -- Dalaran Patrols (545), Blood in the Streets (92434), Heart of Disruption (96984).
 -- Accepting Heart of Disruption grants the Dalaran Sewer Key. The Arcane Mote
@@ -50,7 +53,7 @@ ns:RegisterGuide({
     id = "dungeons-city-of-dalaran-attunement",
     title = "City of Dalaran Attunement",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 30 } },
@@ -58,6 +61,15 @@ ns:RegisterGuide({
         },
     },
     goals = {
+        {
+            id = "accept-96988-source-of-power",
+            kind = "accept",
+            priority = 5,
+            conditions = { all = { HORDE, { level = { min = 24 } } } },
+            text = "Accept Source of Power from Doctor Martin Felben in the Apothecarium in Undercity before heading to Tarren Mill. Its objectives are inside the dungeon.",
+            complete = QuestState(96988, "activeOrCompleted"),
+            route = { Point(1458, 0.466, 0.715, "Apothecarium", "Travel to the Apothecarium in Undercity.") },
+        },
         {
             id = "accept-544-prison-break-in",
             kind = "accept",
@@ -77,6 +89,15 @@ ns:RegisterGuide({
             taxiDestination = "Tarren Mill",
             complete = QuestState(93680, "activeOrCompleted"),
             route = TarrenMill("Magus Wordeen Voidglare"),
+        },
+        {
+            id = "accept-96986-the-grave-knight",
+            kind = "accept",
+            priority = 12,
+            conditions = { all = { HORDE, { level = { min = 24 } } } },
+            text = "Accept The Grave Knight from Melisara in Tarren Mill before leaving for Lordamere Internment Camp. Its objectives are inside the dungeon.",
+            complete = QuestState(96986, "activeOrCompleted"),
+            route = TarrenMill("Tarren Mill"),
         },
         {
             id = "objective-544-prison-break-in",
@@ -129,7 +150,7 @@ ns:RegisterGuide({
             id = "accept-545-dalaran-patrols",
             kind = "accept",
             priority = 40,
-            conditions = { all = { HORDE, { level = { min = 38 } } } },
+            conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Accept Dalaran Patrols from Magus Wordeen Voidglare in Tarren Mill.",
             dependsOn = { "turnin-544-prison-break-in" },
             complete = QuestState(545, "activeOrCompleted"),
@@ -139,8 +160,8 @@ ns:RegisterGuide({
             id = "objective-545-dalaran-patrols",
             kind = "objective",
             priority = 50,
-            conditions = { all = { HORDE, { level = { min = 38 } } } },
-            text = "Kill 6 Dalaran Summoners and 12 Elemental Slaves outside Dalaran.",
+            conditions = { all = { HORDE, { level = { min = 30 } } } },
+            text = "Kill 6 Dalaran Summoners and 8 Elemental Slaves outside Dalaran.",
             dependsOn = { "accept-545-dalaran-patrols" },
             complete = QuestState(545, "complete"),
             route = {
@@ -152,7 +173,7 @@ ns:RegisterGuide({
             id = "turnin-545-dalaran-patrols",
             kind = "turnin",
             priority = 60,
-            conditions = { all = { HORDE, { level = { min = 38 } } } },
+            conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Turn in Dalaran Patrols to Magus Wordeen Voidglare.",
             dependsOn = { "objective-545-dalaran-patrols" },
             complete = QuestState(545, "completed"),
