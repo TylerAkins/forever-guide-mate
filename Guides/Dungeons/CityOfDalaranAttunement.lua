@@ -12,10 +12,10 @@ local _, ns = ...
 -- Keeper Bel'varil's Stone Tokens (556) and Bracers of Binding (557) share the
 -- same camp and patrol kills but are not required for the key.
 -- Alliance gets the key from Image of Archmage Modera without this chain.
--- Coordinates for Magus Wordeen Voidglare and Lordamere Internment Camp match
--- the Era Alterac chapter. Image of Archmage Modera is Silverpine 68.6, 45.2
--- from ForeverChanges. Grimy Key drop pin is the internment camp; exact object
--- is not published, so that step follows the quest log pin.
+-- The Lordamere camp pin uses the safe approach at 23.3, 55.1; the older
+-- pins at 21, 83 and 21.8, 89.9 lead into dangerous areas. Image of
+-- Archmage Modera is at Silverpine 68.6, 45.2 (ForeverChanges). The exact
+-- Grimy Key object location is not published, so that step follows its quest pin.
 
 local MAP = {
     HILLSBRAD = 1424,
@@ -68,7 +68,7 @@ ns:RegisterGuide({
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Accept Source of Power from Doctor Martin Felben in the Apothecarium in Undercity before heading to Tarren Mill. Its objectives are inside the dungeon.",
             complete = QuestState(96988, "activeOrCompleted"),
-            route = { Point(1458, 0.466, 0.715, "Apothecarium", "Travel to the Apothecarium in Undercity.") },
+            route = { Point(1458, 0.466, 0.746, "Doctor Martin Felben", "Travel to Doctor Martin Felben in the Apothecarium in Undercity.") },
         },
         {
             id = "accept-544-prison-break-in",
@@ -108,7 +108,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-544-prison-break-in" },
             complete = QuestState(544, "complete"),
             route = {
-                Point(MAP.ALTERAC, 0.2100, 0.8300, "Lordamere Internment Camp",
+                Point(MAP.ALTERAC, 0.2330, 0.5510, "Lordamere Internment Camp",
                     "Travel to Lordamere Internment Camp in Alterac Mountains."),
             },
         },
@@ -122,7 +122,7 @@ ns:RegisterGuide({
             complete = QuestObjective(93680, 1, "Grimy Key"),
             useClientPin = true,
             route = {
-                Point(MAP.ALTERAC, 0.2100, 0.8300, "Lordamere Internment Camp",
+                Point(MAP.ALTERAC, 0.2330, 0.5510, "Lordamere Internment Camp",
                     "Travel to Lordamere Internment Camp in Alterac Mountains."),
             },
         },

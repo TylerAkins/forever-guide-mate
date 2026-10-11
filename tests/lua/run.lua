@@ -3324,6 +3324,12 @@ do
             end
         end
     end
+    for _, id in ipairs({ "accept-96988-source-of-power", "turnin-96988-source-of-power" }) do
+        local goal = ns.Engine:GetGoal(guide, id)
+        Equal(goal.route[1].label, "Doctor Martin Felben", "Source of Power points to its quest NPC")
+        Equal(goal.route[1].x, 0.466, "Source of Power uses Martin Felben's Undercity x coordinate")
+        Equal(goal.route[1].y, 0.746, "Source of Power uses Martin Felben's Undercity y coordinate")
+    end
     local handoff = ns.Engine:GetGoal(guide, "prepare-horde-dalaran-access")
     Equal(ns.EvaluateCondition(handoff.complete, horde), false, "Dalaran handoff waits for the attunement quest")
     horde.quests[96984] = { complete = false }
@@ -3377,6 +3383,10 @@ do
     state.faction = "Alliance"
     Equal(ns.EvaluateCondition(guide.conditions, state), false, "alliance cannot use the horde city of dalaran attunement guide")
     local bloodAccept
+    local sourceAccept = ns.Engine:GetGoal(guide, "accept-96988-source-of-power")
+    Equal(sourceAccept.route[1].label, "Doctor Martin Felben", "attunement points to Martin Felben, not a nearby trainer")
+    Equal(sourceAccept.route[1].x, 0.466, "attunement Source of Power uses Martin Felben's x coordinate")
+    Equal(sourceAccept.route[1].y, 0.746, "attunement Source of Power uses Martin Felben's y coordinate")
     for _, goal in ipairs(guide.goals) do
         if goal.id == "accept-92434-blood-in-the-streets" then
             bloodAccept = goal
@@ -3389,6 +3399,11 @@ do
     for _, dep in ipairs(bloodAccept.dependsOn) do bloodDeps[dep] = true end
     Check(bloodDeps["turnin-545-dalaran-patrols"], "blood in the streets waits on dalaran patrols")
     Check(bloodDeps["turnin-93680-key-to-the-city"], "blood in the streets waits on key to the city")
+    for _, id in ipairs({ "objective-544-prison-break-in", "objective-93680-grimy-key" }) do
+        local goal = ns.Engine:GetGoal(guide, id)
+        Equal(goal.route[1].x, 0.2330, "Lordamere camp uses the safe approach x coordinate")
+        Equal(goal.route[1].y, 0.5510, "Lordamere camp uses the safe approach y coordinate")
+    end
 end
 
 function TestDalaranCombinedRoute()

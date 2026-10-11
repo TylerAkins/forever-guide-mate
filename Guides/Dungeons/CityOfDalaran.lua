@@ -5,8 +5,8 @@ local _, ns = ...
 -- Horde Heart of Disruption is picked up in CityOfDalaranAttunement.lua.
 -- Alliance An Alarming Request unlocks Heart of Disruption and Starving Arcane.
 -- Celindra's delivery follow-ups visit the outdoor city, not the instance.
--- Landmark pins for Tarren Mill and the Apothecarium match existing guides;
--- they locate the hub rather than claiming an exact NPC position.
+-- Landmark pins for Tarren Mill locate the hub; Martin Felben uses his exact
+-- NPC location so the Source of Power pickup is distinct from nearby trainers.
 -- Shylamiir: https://www.wowhead.com/forever/quest=92456/a-green-sample
 -- Celindra: https://warcraft.wiki.gg/wiki/Archmage_Celindra (Forever location).
 -- Interior steps and other unknown destinations follow quest data.
@@ -37,7 +37,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Accept Source of Power from Doctor Martin Felben in the Apothecarium in Undercity.",
             complete = QuestState(96988, "activeOrCompleted"),
-            route = { Point(1458, 0.466, 0.715, "Apothecarium", "Travel to the Apothecarium in Undercity.") },
+            route = { Point(1458, 0.466, 0.746, "Doctor Martin Felben", "Travel to Doctor Martin Felben in the Apothecarium in Undercity.") },
         },
         {
             id = "accept-96986-the-grave-knight",
@@ -385,7 +385,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-96988-source-of-power", "turnin-97287-shrewd-negotiations" },
             complete = QuestState(96988, "completed"),
             useClientPin = true,
-            route = { Point(1458, 0.466, 0.715, "Apothecarium", "Travel to the Apothecarium in Undercity.") },
+            route = { Point(1458, 0.466, 0.746, "Doctor Martin Felben", "Travel to Doctor Martin Felben in the Apothecarium in Undercity.") },
         },
         {
             id = "turnin-92489-power-overwhelming",
