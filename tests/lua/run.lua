@@ -74,6 +74,7 @@ Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
 Load("Guides/Dungeons/ExcavationSiteWetlands.lua")
 Load("Guides/Dungeons/CityOfDalaranAttunement.lua")
+Load("Guides/Dungeons/CityOfDalaran.lua")
 Load("Guides/Leveling/zephras-isle.lua")
 Load("Guides/Loremaster/Durotar.lua")
 Load("Guides/Loremaster/Mulgore.lua")
@@ -3297,6 +3298,52 @@ for key, value in pairs(hordeHot) do allianceHot[key] = value end
 allianceHot.faction = "Alliance"
 Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use the hall of thanes guide")
 Check(ns.guides["dungeons-excavation-site-wetlands"] ~= nil, "excavation site wetlands guide is registered")
+
+do
+    local guide = ns.guides["dungeons-city-of-dalaran"]
+    Check(guide ~= nil, "City of Dalaran dungeon quests are registered separately from access quests")
+    local horde = { faction = "Horde", level = 24, quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    local alliance = { faction = "Alliance", level = 24, quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    for _, case in ipairs({ { 96986, horde, alliance }, { 96988, horde, alliance },
+        { 96987, horde, alliance }, { 92489, alliance, horde }, { 92456, alliance, horde },
+        { 92457, alliance, horde }, { 92458, alliance, horde } }) do
+        for _, kind in ipairs({ "accept", "objective", "turnin" }) do
+            local found
+            for _, goal in ipairs(guide.goals) do
+                if goal.kind == kind and goal.complete and goal.complete.quest
+                    and goal.complete.quest.id == case[1] then found = goal; break end
+            end
+            Check(found ~= nil, "Dalaran quest " .. case[1] .. " has its " .. kind .. " action")
+            if found then
+                Equal(ns.EvaluateCondition(found.conditions, case[2]), true, "Dalaran action allows its faction")
+                Equal(ns.EvaluateCondition(found.conditions, case[3]), false, "Dalaran action excludes the other faction")
+                Equal(found.complete.quest.state, kind == "accept" and "activeOrCompleted"
+                    or kind == "objective" and "complete" or "completed", "Dalaran action observes matching quest state")
+            end
+        end
+    end
+    local handoff = ns.Engine:GetGoal(guide, "prepare-horde-dalaran-access")
+    Equal(ns.EvaluateCondition(handoff.complete, horde), false, "Dalaran handoff waits for the attunement quest")
+    horde.quests[96984] = { complete = false }
+    Equal(ns.EvaluateCondition(handoff.complete, horde), true, "active Heart of Disruption completes the Dalaran handoff")
+    local gates = dofile("tests/lua/guide_data_checks.lua").DalaranDungeonTurninGates
+    for questID, prerequisite in pairs(gates) do
+        local accept
+        for _, goal in ipairs(guide.goals) do
+            if goal.kind == "accept" and goal.complete.quest.id == questID then accept = goal end
+        end
+        Check(accept ~= nil, "Dalaran dependent pickup exists")
+        local turninID = accept.dependsOn and accept.dependsOn[1]
+        local turnin = turninID and ns.Engine:GetGoal(guide, turninID)
+        Check(turnin and turnin.kind == "turnin" and turnin.complete.quest.id == prerequisite,
+            "Dalaran pickup " .. questID .. " waits on turn-in " .. prerequisite)
+        local state = questID == 97287 and horde or alliance
+        Equal(ns.Engine:IsReady(guide, accept, state), false, "Dalaran chain cannot accept before its prior turn-in")
+        state.completedQuests[prerequisite] = true
+        Equal(ns.Engine:IsReady(guide, accept, state), true, "Dalaran pickup becomes ready after its prior turn-in")
+        state.completedQuests[prerequisite] = nil
+    end
+end
 
 do
     local guide = ns.guides["dungeons-excavation-site-wetlands"]

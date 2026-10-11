@@ -39,6 +39,7 @@ SHIPPED = (
     "Guides/Dungeons/HallOfThanes.lua",
     "Guides/Dungeons/ExcavationSiteWetlands.lua",
     "Guides/Dungeons/CityOfDalaranAttunement.lua",
+    "Guides/Dungeons/CityOfDalaran.lua",
     "Guides/Dungeons/ShadowfangKeep.lua",
     "Guides/Dungeons/BlackfathomDeeps.lua",
     "Guides/Dungeons/Gnomeregan.lua",
