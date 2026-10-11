@@ -139,13 +139,7 @@ function MapPins:Refresh(mapCanvas)
         or (mapCanvas.IsShown and not mapCanvas:IsShown()) then return end
     local viewedMapID = mapCanvas.GetMapID and mapCanvas:GetMapID() or nil
     local x, y, leg = self:GetLocation(goal, state, viewedMapID, C_Map)
-    if not x then
-        if useBlizzardPins and questTracking and not hasClientPin and routeLeg
-            and routeLeg.mapID ~= viewedMapID and type(mapCanvas.SetMapID) == "function" then
-            pcall(mapCanvas.SetMapID, mapCanvas, routeLeg.mapID)
-        end
-        return
-    end
+    if not x then return end
     self:Place(mapCanvas, x, y, leg.label or goal.text)
 end
 

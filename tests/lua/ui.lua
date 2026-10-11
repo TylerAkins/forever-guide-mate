@@ -564,7 +564,11 @@ do
     ns.Engine.state = { mapID = 1442, x = 0.5, y = 0.5 }
     viewedMapID = 1454
     ns.MapPins:Refresh(map)
-    Equal(viewedMapID, 1442, "a pinless quest opens the saved route map when its pin cannot project here")
+    Equal(viewedMapID, 1454, "a pinless quest refresh preserves the player-selected map")
+    Equal(ns.MapPins.pin.shown, false, "an unprojectable route pin stays hidden on another map")
+    ns.MapPins:Refresh(map)
+    Equal(viewedMapID, 1454, "repeated refreshes do not force the quest destination map")
+    viewedMapID = 1442
     ns.MapPins:Refresh(map)
     Equal(ns.MapPins.pin.shown, true, "the saved route pin appears after switching to its map")
     C_Map = savedMapAPI

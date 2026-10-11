@@ -90254,5 +90254,56 @@
       }
     ],
     "nextGuide": null
+  },
+  "leveling-era-horde-mulgore-part-2": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          1412,
+          "Skywatcher Plateau"
+        ],
+        "actions": [
+          "level-before-96259",
+          "accept-96259-defending-the-dead",
+          "accept-96241-talkin-bout-toxins-mon",
+          "accept-96260-stronger-than-steel",
+          "level-before-96261",
+          "accept-96261-the-broodmother",
+          "accept-96774-ancient-gurubashi-idol"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Gloomrise"
+        ],
+        "actions": [
+          "objective-96259-defending-the-dead",
+          "objective-96241-talkin-bout-toxins-mon",
+          "objective-96260-stronger-than-steel",
+          "objective-96261-the-broodmother",
+          "collect-bloody-parchment",
+          "accept-96294-a-darker-truth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Skywatcher Plateau"
+        ],
+        "actions": [
+          "turnin-96259-defending-the-dead",
+          "turnin-96241-talkin-bout-toxins-mon",
+          "turnin-96260-stronger-than-steel",
+          "turnin-96261-the-broodmother",
+          "turnin-96294-a-darker-truth"
+        ]
+      }
+    ],
+    "nextGuide": null
   }
 }

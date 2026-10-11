@@ -1,3 +1,5 @@
-## 0.4.1 - 2026-10-10
-- Stop sending paladins back for Seeking the Kor Gem once they carry a Purified Kor Gem or have turned in A Moon-Kissed Blade. The quest is repeatable, so the client does not remember finishing it.
-- Fix an ADDON_ACTION_BLOCKED error blamed on Forever GuideMate when the guide changed Blizzard quest tracking during combat. Blizzard map pin and quest tracking updates now wait until combat ends.
+## 0.4.2 - 2026-10-10
+- Add the Skywatcher Plateau and Gloomrise quests to the Horde Mulgore return visit and Loremaster, including Bloody Parchment, A Darker Truth, and the Ancient Gurubashi Idol dungeon handoff.
+- Add City of Dalaran dungeon quests for both factions, post-dungeon delivery quests, and encounter advice. Collect Horde dungeon quests during attunement, keep outdoor returns after dungeon work, and correct Dalaran Patrols to level 30 and eight Elemental Slaves.
+- Keep the player-selected map when refreshing guide pins instead of forcing a quest destination map.
+- Reorder the Wetlands dungeon guide’s final Horde turn-ins: Open the Maw, Changing Tastes, then Elder Knowledge.
