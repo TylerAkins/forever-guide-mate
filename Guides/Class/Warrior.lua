@@ -332,7 +332,7 @@ ns:RegisterGuide({
         {
             priority = 100,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             id = "accept-747-the-hunt-begins",
             conditions = {
@@ -452,7 +452,7 @@ ns:RegisterGuide({
         {
             priority = 130,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             dependsOn = { "accept-747-the-hunt-begins", "objective-747-1-plainstrider-meat", "objective-747-2-plainstrider-feather" },
             id = "turnin-747-the-hunt-begins",
@@ -492,7 +492,7 @@ ns:RegisterGuide({
         {
             priority = 140,
             route = {
-                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
             id = "accept-3091-simple-note",
             conditions = {
@@ -518,7 +518,7 @@ ns:RegisterGuide({
         {
             priority = 150,
             route = {
-                { y = 0.76, mapID = 1412, label = "Harutt Thunderhorn", x = 0.44, offMapText = "Travel to Harutt Thunderhorn in Mulgore." },
+                { y = 0.767, mapID = 1412, label = "Harutt Thunderhorn", x = 0.437, offMapText = "Travel to Harutt Thunderhorn in Mulgore." },
             },
             dependsOn = { "accept-3091-simple-note" },
             id = "turnin-3091-simple-note",

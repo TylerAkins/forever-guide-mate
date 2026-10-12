@@ -1,4 +1,4 @@
-## 0.4.4 - 2026-10-11
-- Correct quest-start coordinates across leveling, class, dungeon, and Loremaster guides using Forever quest-marker data.
-- Prefer Blizzard's destination for the current unfinished quest objective, with authored guide coordinates as fallback.
-- Fix starter route sequencing and pins, including The Adventurer in Teldrassil, Kyle's Gone Missing!, and the Dirt-stained Map in Mulgore.
+## 0.4.5 - 2026-10-12
+- Correct Mulgore quest pickup pins using AllTheThings and current Forever quest markers, including Harken Windtotem and Mull Thunderhorn.
+- Use Blizzard quest POIs for Mulgore objectives such as Ambercorn, Well Stone, and Winterhoof Cleansing when the client provides them.
+- Fix starter-zone quest order and cave routing, including the combined Sharing the Land and The Longwalkers outing in Mulgore.

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Dwarf & Gnome Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-dun-morogh",
@@ -1439,41 +1439,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
-            text = "Turn in Beginnings to Alamar Grimm.",
-            route = {
-                { mapID = 1426, x = 0.2865, y = 0.6614, label = "Alamar Grimm", offMapText = "Travel to Alamar Grimm in Dun Morogh." },
-            },
-            dependsOn = { "accept-1599-beginnings", "objective-1599-1-frostmane-novice" },
-            id = "turnin-1599-beginnings",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    {
-                        class = { 9 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                    {
-                        race = { 7 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 1599, state = "completed" },
-            },
-            sourceStep = 47,
-            requiredQuests = {},
-            alternativeQuests = { 1598 },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             id = "objective-3361-1-felix-s-box",
             kind = "objective",
             conditions = {
@@ -1614,6 +1579,41 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 465,
+            text = "Turn in Beginnings to Alamar Grimm.",
+            route = {
+                { mapID = 1426, x = 0.2865, y = 0.6614, label = "Alamar Grimm", offMapText = "Travel to Alamar Grimm in Dun Morogh." },
+            },
+            dependsOn = { "accept-1599-beginnings", "objective-1599-1-frostmane-novice" },
+            id = "turnin-1599-beginnings",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 1599, state = "completed" },
+            },
+            sourceStep = 47,
+            requiredQuests = {},
+            alternativeQuests = { 1598 },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
             priority = 480,
             route = {
                 { mapID = 1426, x = 0.25079999999999997, y = 0.7570999999999999, label = "Grelin Whitebeard", offMapText = "Travel to Grelin Whitebeard in Dun Morogh." },
@@ -1645,7 +1645,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-182-the-troll-cave" },
         },
         {
             priority = 490,

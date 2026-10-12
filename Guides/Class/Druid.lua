@@ -182,7 +182,7 @@ ns:RegisterGuide({
         {
             priority = 60,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             id = "accept-747-the-hunt-begins",
             conditions = {
@@ -302,7 +302,7 @@ ns:RegisterGuide({
         {
             priority = 90,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             dependsOn = { "accept-747-the-hunt-begins", "objective-747-1-plainstrider-meat", "objective-747-2-plainstrider-feather" },
             id = "turnin-747-the-hunt-begins",
@@ -342,7 +342,7 @@ ns:RegisterGuide({
         {
             priority = 100,
             route = {
-                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
             id = "accept-3094-verdant-note",
             conditions = {
@@ -368,7 +368,7 @@ ns:RegisterGuide({
         {
             priority = 110,
             route = {
-                { y = 0.76, mapID = 1412, label = "Gart Mistrunner", x = 0.45, offMapText = "Travel to Gart Mistrunner in Mulgore." },
+                { y = 0.766, mapID = 1412, label = "Gart Mistrunner", x = 0.446, offMapText = "Travel to Gart Mistrunner in Mulgore." },
             },
             dependsOn = { "accept-3094-verdant-note" },
             id = "turnin-3094-verdant-note",
@@ -1794,7 +1794,7 @@ ns:RegisterGuide({
         {
             priority = 640,
             route = {
-                { y = 0.596, mapID = 1412, label = "Gennia Runetotem", x = 0.484, offMapText = "Travel to Gennia Runetotem in Mulgore." },
+                { y = 0.630, mapID = 1412, label = "Gennia Runetotem", x = 0.475, offMapText = "Travel to Gennia Runetotem in Mulgore." },
             },
             dependsOn = { "turnin-5927-heeding-the-call" },
             id = "accept-5928-heeding-the-call",

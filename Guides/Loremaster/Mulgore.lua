@@ -55,7 +55,7 @@ ns:RegisterGuide({
     id = "leveling-mulgore",
     title = "Mulgore (Loremaster)",
     category = "Loremaster Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { level = { min = 1 } },
@@ -74,7 +74,7 @@ ns:RegisterGuide({
             text = "Accept The Hunt Begins from Grull Hawkwind.",
             complete = QuestState(747, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.772, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -125,7 +125,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-747-the-hunt-begins-1", "objective-747-the-hunt-begins-2" },
             complete = QuestState(747, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.772, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -143,7 +143,7 @@ ns:RegisterGuide({
             text = "Accept Etched Note from Grull Hawkwind in Camp Narache.",
             complete = QuestState(3092, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4491, 0.7715, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -161,7 +161,7 @@ ns:RegisterGuide({
             text = "Accept Simple Note from Grull Hawkwind in Camp Narache.",
             complete = QuestState(3091, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4491, 0.7715, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -179,7 +179,7 @@ ns:RegisterGuide({
             text = "Accept Rune-Inscribed Note from Grull Hawkwind in Camp Narache.",
             complete = QuestState(3093, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4491, 0.7715, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -197,7 +197,7 @@ ns:RegisterGuide({
             text = "Accept Verdant Note from Grull Hawkwind in Camp Narache.",
             complete = QuestState(3094, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4491, 0.7715, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -214,7 +214,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-747-the-hunt-begins" },
             complete = QuestState(750, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.772, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -230,7 +230,7 @@ ns:RegisterGuide({
             text = "Accept A Humble Task from Chief Hawkwind.",
             complete = QuestState(752, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.442, 0.760, "Chief Hawkwind",
+                Point(MAP.MULGORE, 0.439, 0.767, "Chief Hawkwind",
                     "Travel to Chief Hawkwind."),
             },
         },
@@ -249,7 +249,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-3092-etched-note" },
             complete = QuestState(3092, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4426, 0.7580, "Lanka Farshot",
+                Point(MAP.MULGORE, 0.440, 0.764, "Lanka Farshot",
                     "Travel to Lanka Farshot."),
             },
         },
@@ -268,7 +268,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-3091-simple-note" },
             complete = QuestState(3091, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4410, 0.7610, "Harutt Thunderhorn",
+                Point(MAP.MULGORE, 0.437, 0.767, "Harutt Thunderhorn",
                     "Travel to Harutt Thunderhorn."),
             },
         },
@@ -287,7 +287,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-3093-rune-inscribed-note" },
             complete = QuestState(3093, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4500, 0.7600, "Meela Dawnstrider",
+                Point(MAP.MULGORE, 0.446, 0.766, "Meela Dawnstrider",
                     "Travel to Meela Dawnstrider."),
             },
         },
@@ -306,7 +306,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-3094-verdant-note" },
             complete = QuestState(3094, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4510, 0.7600, "Gart Mistrunner",
+                Point(MAP.MULGORE, 0.446, 0.766, "Gart Mistrunner",
                     "Travel to Gart Mistrunner."),
             },
         },
@@ -323,7 +323,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-752-a-humble-task" },
             complete = QuestState(752, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.500, 0.810, "Greatmother Hawkwind",
+                Point(MAP.MULGORE, 0.488, 0.809, "Greatmother Hawkwind",
                     "Travel to Greatmother Hawkwind."),
             },
         },
@@ -340,7 +340,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-752-a-humble-task" },
             complete = QuestState(753, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.500, 0.810, "Greatmother Hawkwind",
+                Point(MAP.MULGORE, 0.488, 0.809, "Greatmother Hawkwind",
                     "Travel to Greatmother Hawkwind."),
             },
         },
@@ -375,7 +375,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-753-a-humble-task-1" },
             complete = QuestState(753, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.442, 0.760, "Chief Hawkwind",
+                Point(MAP.MULGORE, 0.439, 0.767, "Chief Hawkwind",
                     "Travel to Chief Hawkwind."),
             },
         },
@@ -392,7 +392,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-753-a-humble-task" },
             complete = QuestState(755, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.442, 0.760, "Chief Hawkwind",
+                Point(MAP.MULGORE, 0.439, 0.767, "Chief Hawkwind",
                     "Travel to Chief Hawkwind."),
             },
         },
@@ -426,7 +426,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-755-rites-of-the-earthmother" },
             complete = QuestState(755, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.426, 0.920, "Seer Graytongue",
+                Point(MAP.MULGORE, 0.425, 0.901, "Seer Graytongue",
                     "Travel to Seer Graytongue."),
             },
         },
@@ -443,7 +443,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-755-rites-of-the-earthmother" },
             complete = QuestState(757, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.426, 0.920, "Seer Graytongue",
+                Point(MAP.MULGORE, 0.425, 0.901, "Seer Graytongue",
                     "Travel to Seer Graytongue."),
             },
         },
@@ -496,7 +496,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-750-the-hunt-continues-1" },
             complete = QuestState(750, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.772, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -513,7 +513,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-750-the-hunt-continues" },
             complete = QuestState(780, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.772, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -530,7 +530,7 @@ ns:RegisterGuide({
             text = "Accept Break Sharptusk! from Brave Windfeather.",
             complete = QuestState(3376, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.766, "Brave Windfeather",
+                Point(MAP.MULGORE, 0.442, 0.770, "Brave Windfeather",
                     "Travel to Brave Windfeather."),
             },
         },
@@ -549,7 +549,7 @@ ns:RegisterGuide({
             text = "Accept Call of Earth from Seer Ravenfeather in Camp Narache.",
             complete = QuestState(1519, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4473, 0.7624, "Seer Ravenfeather",
+                Point(MAP.MULGORE, 0.443, 0.768, "Seer Ravenfeather",
                     "Travel to Seer Ravenfeather."),
             },
         },
@@ -655,7 +655,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-780-the-battleboars-1", "objective-780-the-battleboars-2" },
             complete = QuestState(780, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.772, "Grull Hawkwind",
+                Point(MAP.MULGORE, 0.445, 0.775, "Grull Hawkwind",
                     "Travel to Grull Hawkwind."),
             },
         },
@@ -673,7 +673,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-3376-break-sharptusk-1" },
             complete = QuestState(3376, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.766, "Brave Windfeather",
+                Point(MAP.MULGORE, 0.442, 0.770, "Brave Windfeather",
                     "Travel to Brave Windfeather."),
             },
         },
@@ -690,7 +690,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-757-rite-of-strength-1" },
             complete = QuestState(757, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.442, 0.760, "Chief Hawkwind",
+                Point(MAP.MULGORE, 0.439, 0.767, "Chief Hawkwind",
                     "Travel to Chief Hawkwind."),
             },
         },
@@ -707,7 +707,7 @@ ns:RegisterGuide({
             text = "Turn in Attack on Camp Narache to Chief Hawkwind if the bristlebacks dropped their plans.",
             complete = QuestState(781, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.442, 0.760, "Chief Hawkwind",
+                Point(MAP.MULGORE, 0.439, 0.767, "Chief Hawkwind",
                     "Travel to Chief Hawkwind."),
             },
         },
@@ -725,7 +725,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-757-rite-of-strength" },
             complete = QuestState(96659, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4420, 0.7600, "Chief Hawkwind",
+                Point(MAP.MULGORE, 0.439, 0.767, "Chief Hawkwind",
                     "Travel to Chief Hawkwind."),
             },
         },
@@ -742,7 +742,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-757-rite-of-strength" },
             complete = QuestState(763, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.442, 0.760, "Chief Hawkwind",
+                Point(MAP.MULGORE, 0.439, 0.767, "Chief Hawkwind",
                     "Travel to Chief Hawkwind."),
             },
         },
@@ -762,7 +762,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-1519-call-of-earth" },
             complete = QuestState(1519, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4475, 0.7620, "Seer Ravenfeather",
+                Point(MAP.MULGORE, 0.443, 0.768, "Seer Ravenfeather",
                     "Travel to Seer Ravenfeather."),
             },
         },
@@ -782,7 +782,7 @@ ns:RegisterGuide({
             text = "Accept Call of Earth from Seer Ravenfeather in Camp Narache.",
             complete = QuestState(1520, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4475, 0.7620, "Seer Ravenfeather",
+                Point(MAP.MULGORE, 0.443, 0.768, "Seer Ravenfeather",
                     "Travel to Seer Ravenfeather."),
             },
         },
@@ -841,7 +841,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-1521-call-of-earth" },
             complete = QuestState(1521, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4474, 0.7619, "Seer Ravenfeather",
+                Point(MAP.MULGORE, 0.443, 0.768, "Seer Ravenfeather",
                     "Travel to Seer Ravenfeather."),
             },
         },
@@ -857,7 +857,7 @@ ns:RegisterGuide({
             text = "Accept A Task Unfinished from Antur Fallow.",
             complete = QuestState(1656, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.386, 0.816, "Antur Fallow",
+                Point(MAP.MULGORE, 0.392, 0.812, "Antur Fallow",
                     "Travel to Antur Fallow."),
             },
         },
@@ -874,7 +874,7 @@ ns:RegisterGuide({
             text = "Accept Dangers of the Windfury from Ruul Eagletalon.",
             complete = QuestState(743, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.618, "Ruul Eagletalon",
+                Point(MAP.MULGORE, 0.465, 0.649, "Ruul Eagletalon",
                     "Travel to Ruul Eagletalon."),
             },
         },
@@ -892,7 +892,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-96659-the-adventurer" },
             complete = QuestState(96659, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4620, 0.6720, "Kaga Wildhoof",
+                Point(MAP.MULGORE, 0.462, 0.672, "Kaga Wildhoof",
                     "Travel to Kaga Wildhoof."),
             },
         },
@@ -905,7 +905,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-96659-the-adventurer" },
             complete = QuestState(96101, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4620, 0.6720, "Kaga Wildhoof",
+                Point(MAP.MULGORE, 0.462, 0.672, "Kaga Wildhoof",
                     "Travel to Kaga Wildhoof."),
             },
         },
@@ -927,7 +927,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-96101-the-great-outdoors" },
             complete = QuestState(96101, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4620, 0.6720, "Kaga Wildhoof",
+                Point(MAP.MULGORE, 0.462, 0.672, "Kaga Wildhoof",
                     "Travel to Kaga Wildhoof."),
             },
         },
@@ -944,7 +944,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-763-rites-of-the-earthmother" },
             complete = QuestState(763, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -962,7 +962,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-763-rites-of-the-earthmother" },
             complete = QuestState(767, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -978,7 +978,7 @@ ns:RegisterGuide({
             text = "Accept Sharing the Land from Baine Bloodhoof.",
             complete = QuestState(745, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -995,7 +995,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-1656-a-task-unfinished" },
             complete = QuestState(1656, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.466, 0.610, "Innkeeper Kauth",
+                Point(MAP.MULGORE, 0.459, 0.642, "Innkeeper Kauth",
                     "Travel to Innkeeper Kauth."),
             },
         },
@@ -1013,7 +1013,7 @@ ns:RegisterGuide({
             text = "Accept Poison Water from Mull Thunderhorn.",
             complete = QuestState(748, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -1030,7 +1030,7 @@ ns:RegisterGuide({
             text = "Accept Swoop Hunting from Harken Windtotem.",
             complete = QuestState(761, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.486, 0.594, "Harken Windtotem",
+                Point(MAP.MULGORE, 0.476, 0.627, "Harken Windtotem",
                     "Travel to Harken Windtotem."),
             },
         },
@@ -1048,7 +1048,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-767-rite-of-vision" },
             complete = QuestState(767, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.478, 0.576, "Zarlman Two-Moons",
+                Point(MAP.MULGORE, 0.469, 0.612, "Zarlman Two-Moons",
                     "Travel to Zarlman Two-Moons."),
             },
         },
@@ -1066,7 +1066,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-767-rite-of-vision" },
             complete = QuestState(771, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.478, 0.576, "Zarlman Two-Moons",
+                Point(MAP.MULGORE, 0.469, 0.612, "Zarlman Two-Moons",
                     "Travel to Zarlman Two-Moons."),
             },
         },
@@ -1083,7 +1083,7 @@ ns:RegisterGuide({
             text = "Accept Mazzranache from Maur Raincaller.",
             complete = QuestState(766, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.470, 0.570, "Maur Raincaller",
+                Point(MAP.MULGORE, 0.462, 0.608, "Maur Raincaller",
                     "Travel to Maur Raincaller."),
             },
         },
@@ -1239,7 +1239,7 @@ ns:RegisterGuide({
         {
             id = "accept-98430-the-longwalkers",
             kind = "accept",
-            priority = 680,
+            priority = 684,
             conditions = {
                 all = {
                     { level = { min = 8 } },
@@ -1249,32 +1249,32 @@ ns:RegisterGuide({
             text = "Accept The Longwalkers from Perith Stormhoof.",
             complete = QuestState(98430, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.330, 0.658, "Perith Stormhoof",
+                Point(MAP.MULGORE, 0.331, 0.659, "Perith Stormhoof",
                     "Travel to Perith Stormhoof."),
             },
         },
         {
             id = "objective-98430-the-longwalkers-1",
             kind = "objective",
-            priority = 690,
+            priority = 685,
             conditions = {
                 all = {
                     { level = { min = 8 } },
                     { faction = "Horde" },
                 },
             },
-            text = "The Longwalkers: Escort Perith Stormhoof. Perith starts inside Palemane Rock.",
+            text = "After killing the Palemane mobs for Sharing the Land, escort Perith Stormhoof out of Palemane Rock.",
             dependsOn = { "accept-98430-the-longwalkers" },
             complete = QuestObjective(98430, 1, "Escort Perith Stormhoof"),
             route = {
-                Point(MAP.MULGORE, 0.330, 0.658, "Perith Stormhoof",
+                Point(MAP.MULGORE, 0.331, 0.659, "Perith Stormhoof",
                     "Travel to Perith Stormhoof."),
             },
         },
         {
             id = "objective-745-sharing-the-land-1",
             kind = "objective",
-            priority = 700,
+            priority = 681,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1284,14 +1284,14 @@ ns:RegisterGuide({
             dependsOn = { "accept-745-sharing-the-land" },
             complete = QuestObjective(745, 1, "Palemane Tanner"),
             route = {
-                Point(MAP.MULGORE, 0.526, 0.722, "Palemane Tanner",
-                    "Travel to Palemane Tanner."),
+                Point(MAP.MULGORE, 0.356, 0.634, "Palemane Tanner",
+                    "Travel to Palemane Tanner in Palemane Rock."),
             },
         },
         {
             id = "objective-745-sharing-the-land-2",
             kind = "objective",
-            priority = 710,
+            priority = 682,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1301,14 +1301,14 @@ ns:RegisterGuide({
             dependsOn = { "accept-745-sharing-the-land" },
             complete = QuestObjective(745, 2, "Palemane Skinner"),
             route = {
-                Point(MAP.MULGORE, 0.532, 0.718, "Palemane Skinner",
-                    "Travel to Palemane Skinner."),
+                Point(MAP.MULGORE, 0.356, 0.634, "Palemane Skinner",
+                    "Travel to Palemane Skinner in Palemane Rock."),
             },
         },
         {
             id = "objective-745-sharing-the-land-3",
             kind = "objective",
-            priority = 720,
+            priority = 683,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1319,7 +1319,7 @@ ns:RegisterGuide({
             complete = QuestObjective(745, 3, "Palemane Poacher"),
             route = {
                 Point(MAP.MULGORE, 0.308, 0.604, "Palemane Poacher",
-                    "Travel to Palemane Poacher."),
+                    "Travel to Palemane Poacher in Palemane Rock."),
             },
         },
         {
@@ -1371,7 +1371,7 @@ ns:RegisterGuide({
             text = "Accept The Ravaged Caravan from Morin Cloudstalker.",
             complete = QuestState(749, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.544, 0.604, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -1407,7 +1407,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-743-dangers-of-the-windfury-1" },
             complete = QuestState(743, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.618, "Ruul Eagletalon",
+                Point(MAP.MULGORE, 0.465, 0.649, "Ruul Eagletalon",
                     "Travel to Ruul Eagletalon."),
             },
         },
@@ -1426,7 +1426,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-748-poison-water-1", "objective-748-poison-water-2" },
             complete = QuestState(748, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -1445,7 +1445,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-748-poison-water" },
             complete = QuestState(754, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -1463,7 +1463,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-761-swoop-hunting-1" },
             complete = QuestState(761, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.486, 0.594, "Harken Windtotem",
+                Point(MAP.MULGORE, 0.476, 0.627, "Harken Windtotem",
                     "Travel to Harken Windtotem."),
             },
         },
@@ -1481,7 +1481,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-771-rite-of-vision-1", "objective-771-rite-of-vision-2" },
             complete = QuestState(771, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.478, 0.576, "Zarlman Two-Moons",
+                Point(MAP.MULGORE, 0.469, 0.612, "Zarlman Two-Moons",
                     "Travel to Zarlman Two-Moons."),
             },
         },
@@ -1499,7 +1499,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-771-rite-of-vision" },
             complete = QuestState(772, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.478, 0.576, "Zarlman Two-Moons",
+                Point(MAP.MULGORE, 0.469, 0.612, "Zarlman Two-Moons",
                     "Travel to Zarlman Two-Moons."),
             },
         },
@@ -1517,7 +1517,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-766-mazzranache-1", "objective-766-mazzranache-2", "objective-766-mazzranache-3", "objective-766-mazzranache-4" },
             complete = QuestState(766, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.470, 0.570, "Maur Raincaller",
+                Point(MAP.MULGORE, 0.462, 0.608, "Maur Raincaller",
                     "Travel to Maur Raincaller."),
             },
         },
@@ -1534,7 +1534,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-745-sharing-the-land-1", "objective-745-sharing-the-land-2", "objective-745-sharing-the-land-3" },
             complete = QuestState(745, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -1551,7 +1551,7 @@ ns:RegisterGuide({
             text = "Accept Dwarven Digging from Baine Bloodhoof.",
             complete = QuestState(746, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -1569,7 +1569,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-749-the-ravaged-caravan-1" },
             complete = QuestState(751, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -1647,7 +1647,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-751-the-ravaged-caravan" },
             complete = QuestState(764, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.544, 0.604, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -1778,10 +1778,10 @@ ns:RegisterGuide({
                     { race = 6 },
                 },
             },
-            text = "Accept Journey to the Crossroads from Kirge Sternhorn in Bloodhoof Village.",
+            text = "Accept Journey to the Crossroads from Kirge Sternhorn in The Barrens.",
             complete = QuestState(854, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.448, 0.586, "Kirge Sternhorn",
+                Point(MAP.BARRENS, 0.448, 0.586, "Kirge Sternhorn",
                     "Travel to Kirge Sternhorn."),
             },
         },
@@ -1818,7 +1818,7 @@ ns:RegisterGuide({
             text = "Turn in The Demon Scarred Cloak to Skorn Whitecloud if you found Ghost Howl's cloak.",
             complete = QuestState(770, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.468, 0.602, "Skorn Whitecloud",
+                Point(MAP.MULGORE, 0.460, 0.634, "Skorn Whitecloud",
                     "Travel to Skorn Whitecloud."),
             },
         },
@@ -1836,7 +1836,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-751-the-ravaged-caravan" },
             complete = QuestState(765, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.544, 0.604, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -1875,7 +1875,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-754-winterhoof-cleansing-1" },
             complete = QuestState(754, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -1894,7 +1894,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-754-winterhoof-cleansing" },
             complete = QuestState(756, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -1949,7 +1949,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-772-rite-of-vision" },
             complete = QuestState(772, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.328, 0.360, "Seer Wiserunner",
+                Point(MAP.MULGORE, 0.343, 0.433, "Seer Wiserunner",
                     "Travel to Seer Wiserunner."),
             },
         },
@@ -1967,7 +1967,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-772-rite-of-vision" },
             complete = QuestState(773, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.328, 0.360, "Seer Wiserunner",
+                Point(MAP.MULGORE, 0.343, 0.433, "Seer Wiserunner",
                     "Travel to Seer Wiserunner."),
             },
         },
@@ -1984,7 +1984,7 @@ ns:RegisterGuide({
             text = "Accept A Sacred Burial from Lorekeeper Raintotem.",
             complete = QuestState(833, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.598, 0.256, "Lorekeeper Raintotem",
+                Point(MAP.MULGORE, 0.570, 0.345, "Lorekeeper Raintotem",
                     "Travel to Lorekeeper Raintotem."),
             },
         },
@@ -2020,7 +2020,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-773-rite-of-wisdom" },
             complete = QuestState(773, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.614, 0.210, "Ancestral Spirit",
+                Point(MAP.MULGORE, 0.583, 0.307, "Ancestral Spirit",
                     "Travel to Ancestral Spirit."),
             },
         },
@@ -2038,7 +2038,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-773-rite-of-wisdom" },
             complete = QuestState(775, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.614, 0.210, "Ancestral Spirit",
+                Point(MAP.MULGORE, 0.583, 0.307, "Ancestral Spirit",
                     "Travel to Ancestral Spirit."),
             },
         },
@@ -2056,7 +2056,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-833-a-sacred-burial-1" },
             complete = QuestState(833, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.598, 0.256, "Lorekeeper Raintotem",
+                Point(MAP.MULGORE, 0.570, 0.345, "Lorekeeper Raintotem",
                     "Travel to Lorekeeper Raintotem."),
             },
         },
@@ -2112,7 +2112,7 @@ ns:RegisterGuide({
             text = "Accept The Hunter's Way from Skorn Whitecloud.",
             complete = QuestState(861, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.468, 0.602, "Skorn Whitecloud",
+                Point(MAP.MULGORE, 0.460, 0.634, "Skorn Whitecloud",
                     "Travel to Skorn Whitecloud."),
             },
         },
@@ -2129,7 +2129,7 @@ ns:RegisterGuide({
             text = "Accept Longwalker Malah from Brave Wildrunner.",
             complete = QuestState(99079, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.466, 0.63, "Brave Wildrunner",
+                Point(MAP.MULGORE, 0.467, 0.638, "Brave Wildrunner",
                     "Travel to Brave Wildrunner."),
             },
         },
@@ -2146,7 +2146,7 @@ ns:RegisterGuide({
             text = "Accept Sparring Match from Krang Stonehoof.",
             complete = QuestState(99108, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.494, 0.604, "Krang Stonehoof",
+                Point(MAP.MULGORE, 0.484, 0.637, "Krang Stonehoof",
                     "Travel to Krang Stonehoof."),
             },
         },
@@ -2165,7 +2165,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-99108-sparring-match" },
             complete = QuestState(99108, "complete"),
             route = {
-                Point(MAP.MULGORE, 0.494, 0.604, "Krang Stonehoof",
+                Point(MAP.MULGORE, 0.484, 0.637, "Krang Stonehoof",
                     "Travel to Krang Stonehoof."),
             },
         },
@@ -2183,7 +2183,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-99108-sparring-match-1" },
             complete = QuestState(99108, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.494, 0.604, "Krang Stonehoof",
+                Point(MAP.MULGORE, 0.484, 0.637, "Krang Stonehoof",
                     "Travel to Krang Stonehoof."),
             },
         },
@@ -2202,7 +2202,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-756-thunderhorn-totem-1", "objective-756-thunderhorn-totem-2" },
             complete = QuestState(756, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -2220,7 +2220,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-746-dwarven-digging-1", "objective-746-dwarven-digging-2" },
             complete = QuestState(746, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -2239,7 +2239,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-756-thunderhorn-totem" },
             complete = QuestState(758, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -2258,7 +2258,7 @@ ns:RegisterGuide({
             text = "Accept Call of Fire from Narm Skychaser in Bloodhoof Village.",
             complete = QuestState(2984, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4839, 0.5915, "Narm Skychaser",
+                Point(MAP.MULGORE, 0.474, 0.625, "Narm Skychaser",
                     "Travel to Narm Skychaser."),
             },
         },
@@ -2277,7 +2277,7 @@ ns:RegisterGuide({
             text = "Accept Taming the Beast from Yaw Sharpmane in Bloodhoof Village.",
             complete = QuestState(6061, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4776, 0.5564, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -2352,7 +2352,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-6061-taming-the-beast" },
             complete = QuestState(6061, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4772, 0.5564, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -2370,7 +2370,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-96130-chakuyak-1" },
             complete = QuestState(96130, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.478, 0.556, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -2389,7 +2389,7 @@ ns:RegisterGuide({
             text = "Accept Taming the Beast from Yaw Sharpmane in Bloodhoof Village.",
             complete = QuestState(6087, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4772, 0.5564, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -2429,7 +2429,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-6087-taming-the-beast" },
             complete = QuestState(6087, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4779, 0.5567, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -2448,7 +2448,7 @@ ns:RegisterGuide({
             text = "Accept Taming the Beast from Yaw Sharpmane in Bloodhoof Village.",
             complete = QuestState(6088, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4779, 0.5567, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -2488,7 +2488,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-6088-taming-the-beast" },
             complete = QuestState(6088, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.4782, 0.5564, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -2507,12 +2507,12 @@ ns:RegisterGuide({
             text = "Accept Training the Beast from Yaw Sharpmane in Bloodhoof Village.",
             complete = QuestState(6089, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4782, 0.5564, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
         {
-            id = "accept-5927-heeding-the-call",
+            id = "accept-5928-heeding-the-call",
             kind = "accept",
             priority = 1370,
             conditions = {
@@ -2524,9 +2524,9 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Heeding the Call from Gennia Runetotem in Bloodhoof Village.",
-            complete = QuestState(5927, "activeOrCompleted"),
+            complete = QuestState(5928, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.4840, 0.5960, "Gennia Runetotem",
+                Point(MAP.MULGORE, 0.475, 0.630, "Gennia Runetotem",
                     "Travel to Gennia Runetotem."),
             },
         },
@@ -2770,7 +2770,7 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-5927-heeding-the-call",
+            id = "turnin-5928-heeding-the-call",
             kind = "turnin",
             priority = 1510,
             conditions = {
@@ -2782,8 +2782,8 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Heeding the Call to Turak Runetotem in Elder Rise.",
-            dependsOn = { "accept-5927-heeding-the-call" },
-            complete = QuestState(5927, "completed"),
+            dependsOn = { "accept-5928-heeding-the-call" },
+            complete = QuestState(5928, "completed"),
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.7660, 0.2760, "Turak Runetotem",
                     "Travel to Turak Runetotem."),
@@ -3170,7 +3170,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-758-thunderhorn-cleansing-1" },
             complete = QuestState(758, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -3224,7 +3224,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-99081-grim-tidings" },
             complete = QuestState(99081, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.472, 0.596, "Brave Wildrunner",
+                Point(MAP.MULGORE, 0.467, 0.638, "Brave Wildrunner",
                     "Travel to Brave Wildrunner."),
             },
         },
@@ -3242,7 +3242,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-99081-grim-tidings" },
             complete = QuestState(99101, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.466, 0.63, "Brave Wildrunner",
+                Point(MAP.MULGORE, 0.467, 0.638, "Brave Wildrunner",
                     "Travel to Brave Wildrunner."),
             },
         },
@@ -3260,7 +3260,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-99101-our-ancient-enemy" },
             complete = QuestState(99101, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -3278,7 +3278,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-99101-our-ancient-enemy" },
             complete = QuestState(99080, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -3297,7 +3297,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-758-thunderhorn-cleansing" },
             complete = QuestState(759, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -3315,7 +3315,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-764-the-venture-co-1", "objective-764-the-venture-co-2" },
             complete = QuestState(764, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -3333,7 +3333,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-765-supervisor-fizsprocket-1" },
             complete = QuestState(765, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -3352,7 +3352,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-98424-fizsprockets-notes-1", "objective-98424-fizsprockets-notes-2", "objective-98424-fizsprockets-notes-3", "objective-98424-fizsprockets-notes-4" },
             complete = QuestState(98424, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -3371,7 +3371,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-98424-fizsprockets-notes" },
             complete = QuestState(98427, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -3409,7 +3409,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-98427-ceasing-operations-1" },
             complete = QuestState(98427, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -3518,7 +3518,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-99080-drive-them-out-1", "objective-99080-drive-them-out-2", "objective-99080-drive-them-out-3" },
             complete = QuestState(99080, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -3536,7 +3536,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-99080-drive-them-out" },
             complete = QuestState(99082, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Baine Bloodhoof",
+                Point(MAP.MULGORE, 0.467, 0.634, "Baine Bloodhoof",
                     "Travel to Baine Bloodhoof."),
             },
         },
@@ -3682,7 +3682,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-759-wildmane-totem-1" },
             complete = QuestState(759, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -3701,7 +3701,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-759-wildmane-totem" },
             complete = QuestState(760, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -3740,7 +3740,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-760-wildmane-cleansing-1" },
             complete = QuestState(760, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -3759,7 +3759,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-760-wildmane-cleansing" },
             complete = QuestState(98435, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                Point(MAP.MULGORE, 0.475, 0.636, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
             },
         },
@@ -3789,7 +3789,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Defending the Dead from Muln Earthfury at Skywatcher Plateau.",
             complete = { quest = { id = 96259, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Muln Earthfury", offMapText = "Travel to Muln Earthfury in Mulgore." } },
             useClientText = false,
         },
         {
@@ -3799,7 +3799,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Talkin' bout Toxins, Mon from Mazu'kon at Skywatcher Plateau.",
             complete = { quest = { id = 96241, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.324, y = 0.206, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.206, label = "Mazu'kon", offMapText = "Travel to Mazu'kon in Mulgore." } },
             useClientText = false,
         },
         {
@@ -3809,7 +3809,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Stronger than Steel from Yorn Grimtotem at Skywatcher Plateau.",
             complete = { quest = { id = 96260, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.324, y = 0.2, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.200, label = "Yorn Grimtotem", offMapText = "Travel to Yorn Grimtotem in Mulgore." } },
             useClientText = false,
         },
         {
@@ -3819,7 +3819,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 31 } } } },
             text = "Accept The Broodmother from Muln Earthfury at Skywatcher Plateau. This is an elite quest; bring allies.",
             complete = { quest = { id = 96261, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Muln Earthfury", offMapText = "Travel to Muln Earthfury in Mulgore." } },
             useClientText = false,
         },
         {
@@ -3829,7 +3829,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Ancient Gurubashi Idol from Mazu'kon at Skywatcher Plateau. Keep it for the Drowned City dungeon guide.",
             complete = { quest = { id = 96774, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.206, label = "Mazu'kon", offMapText = "Travel to Mazu'kon in Mulgore." } },
             useClientText = false,
         },
         {
@@ -3906,7 +3906,7 @@ ns:RegisterGuide({
             text = "Turn in Defending the Dead to Muln Earthfury at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96259-defending-the-dead" },
             complete = { quest = { id = 96259, state = "completed" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Muln Earthfury", offMapText = "Travel to Muln Earthfury in Mulgore." } },
             useClientPin = true,
             useClientText = false,
         },
@@ -3918,7 +3918,7 @@ ns:RegisterGuide({
             text = "Turn in Talkin' bout Toxins, Mon to Mazu'kon at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96241-talkin-bout-toxins-mon" },
             complete = { quest = { id = 96241, state = "completed" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.206, label = "Mazu'kon", offMapText = "Travel to Mazu'kon in Mulgore." } },
             useClientPin = true,
             useClientText = false,
         },
@@ -3930,7 +3930,7 @@ ns:RegisterGuide({
             text = "Turn in Stronger than Steel to Yorn Grimtotem at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96260-stronger-than-steel" },
             complete = { quest = { id = 96260, state = "completed" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.200, label = "Yorn Grimtotem", offMapText = "Travel to Yorn Grimtotem in Mulgore." } },
             useClientPin = true,
             useClientText = false,
         },
@@ -3942,7 +3942,7 @@ ns:RegisterGuide({
             text = "Turn in The Broodmother to Muln Earthfury at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96261-the-broodmother" },
             complete = { quest = { id = 96261, state = "completed" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Muln Earthfury", offMapText = "Travel to Muln Earthfury in Mulgore." } },
             useClientPin = true,
             useClientText = false,
         },
@@ -3954,7 +3954,7 @@ ns:RegisterGuide({
             text = "Bring Bloody Parchment to Muln Earthfury at Skywatcher Plateau to turn in A Darker Truth.",
             dependsOn = { "accept-96294-a-darker-truth" },
             complete = { quest = { id = 96294, state = "completed" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Muln Earthfury", offMapText = "Travel to Muln Earthfury in Mulgore." } },
             useClientPin = true,
             useClientText = false,
         },
