@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 5,
     title = "Night Elf Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-teldrassil",
@@ -639,6 +639,33 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 205,
+            route = {
+                { y = 0.45, mapID = 1438, label = "Tarindrella", offMapText = "Travel to Tarindrella.", x = 0.578 },
+            },
+            text = "Accept Nature's Call from Tarindrella.",
+            id = "woven-accept-97977-natures-call",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97977, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             priority = 210,
             route = {
                 { y = 0.452, mapID = 1438, label = "Tarindrella", offMapText = "Travel to Tarindrella in Teldrassil.", x = 0.5783 },
@@ -705,6 +732,33 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            text = "Collect a Gnarlpine Totem from the abandoned camps on the western edge of Shadowglen. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 225,
+            route = {
+                { y = 0.446, mapID = 1438, label = "Grell camps", offMapText = "Travel to Grell camps.", x = 0.55 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            id = "woven-objective-97977-natures-call",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                quest = { id = 97977, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-97977-natures-call" },
         },
         {
             id = "level-before-accept-916-webwood-venom",
@@ -1045,6 +1099,33 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 335,
+            route = {
+                { y = 0.45, mapID = 1438, label = "Tarindrella", offMapText = "Travel to Tarindrella.", x = 0.578 },
+            },
+            text = "Turn in Nature's Call to Tarindrella.",
+            id = "woven-turnin-97977-natures-call",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97977, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97977-natures-call", "woven-objective-97977-natures-call" },
+        },
+        {
             priority = 340,
             text = "Turn in A Friend in Need to Dirania Silvershine.",
             route = {
@@ -1351,6 +1432,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-96630-the-adventurer",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 96630,
+            alternativeQuests = { 96627, 96628, 96638, 96652, 96656, 96659 },
+            priority = 425,
+        },
+        {
             priority = 430,
             route = {
                 { mapID = 1438, x = 0.5907, y = 0.3945, label = "Tenaron Stormgrip", offMapText = "Travel to Tenaron Stormgrip in Teldrassil." },
@@ -1616,6 +1720,40 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 505,
+            route = {
+                { y = 0.3939, mapID = 1438, label = "Tenaron Stormgrip", offMapText = "Travel to Tenaron Stormgrip.", x = 0.5909 },
+            },
+            text = "Accept The Adventurer from the book on the table behind Tenaron Stormgrip in Aldrassil.",
+            id = "woven-accept-96630-the-adventurer",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96630, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 921 },
+                    conditions = {},
+                },
+            },
+            alternativeQuests = { 96627, 96628, 96638, 96652, 96656, 96659 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-921-crown-of-the-earth" },
+        },
+        {
             priority = 510,
             route = {
                 { mapID = 1438, x = 0.5907, y = 0.3945, label = "Tenaron Stormgrip", offMapText = "Travel to Tenaron Stormgrip in Teldrassil." },
@@ -1782,6 +1920,124 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            priority = 565,
+            route = {
+                { y = 0.566, mapID = 1438, label = "Lyreena Duskblade", offMapText = "Travel to Lyreena Duskblade.", x = 0.576 },
+            },
+            text = "Turn in The Adventurer to Lyreena Duskblade near Dolanaar.",
+            id = "woven-turnin-96630-the-adventurer",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96630, state = "completed" },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 921 },
+                    conditions = {},
+                },
+            },
+            alternativeQuests = { 96627, 96628, 96638, 96652, 96656, 96659 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96630-the-adventurer" },
+        },
+        {
+            priority = 566,
+            route = {
+                { mapID = 1438, x = 0.5757, y = 0.5672999999999999, label = "Lyreena Duskblade", offMapText = "Travel to Lyreena Duskblade." },
+            },
+            text = "Accept The Great Outdoors from Lyreena Duskblade.",
+            id = "woven-accept-96101-the-great-outdoors",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96606, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96101, 96604, 96605, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 567,
+            text = "Type /sit beside Lyreena Duskblade's Basic Campfire and wait until you receive the Boosted Rest buff.",
+            id = "woven-objective-96101-the-great-outdoors",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96606, state = "complete" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96101, 96604, 96605, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96101-the-great-outdoors" },
+            route = {
+                { mapID = 1438, x = 0.5757, y = 0.5672999999999999, label = "Lyreena Duskblade", offMapText = "Travel to Lyreena Duskblade." },
+            },
+        },
+        {
+            priority = 568,
+            route = {
+                { mapID = 1438, x = 0.5757, y = 0.5672999999999999, label = "Lyreena Duskblade", offMapText = "Travel to Lyreena Duskblade." },
+            },
+            text = "Turn in The Great Outdoors to Lyreena Duskblade.",
+            id = "woven-turnin-96101-the-great-outdoors",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96606, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96101, 96604, 96605, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96101-the-great-outdoors", "woven-objective-96101-the-great-outdoors" },
         },
         {
             priority = 570,
@@ -2471,7 +2727,7 @@ ns:RegisterGuide({
         {
             priority = 800,
             route = {
-                { y = 0.5773, mapID = 1438, label = "Syral Bladeleaf", offMapText = "Travel to Syral Bladeleaf in Teldrassil.", x = 0.5608 },
+                { y = 0.594, mapID = 1438, label = "Syral Bladeleaf", offMapText = "Travel to Syral Bladeleaf in Teldrassil.", x = 0.56 },
             },
             text = "Accept Seek Redemption! from Syral Bladeleaf.",
             id = "accept-489-seek-redemption",
@@ -7292,7 +7548,7 @@ ns:RegisterGuide({
         {
             priority = 2350,
             route = {
-                { y = 0.1207, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.5176 },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.597 },
             },
             text = "Accept Stormpike's Delivery from Grimand Elmore.",
             id = "accept-353-stormpike-s-delivery",
@@ -7348,7 +7604,7 @@ ns:RegisterGuide({
         {
             priority = 2370,
             route = {
-                { y = 0.4571, mapID = 1453, label = "Ilsa Corbin", offMapText = "Travel to Ilsa Corbin in Stormwind City.", x = 0.785 },
+                { y = 0.598, mapID = 1453, label = "Ilsa Corbin", offMapText = "Travel to Ilsa Corbin in Stormwind City.", x = 0.804 },
             },
             id = "accept-1638-a-warrior-s-training",
             conditions = {
@@ -7405,7 +7661,7 @@ ns:RegisterGuide({
         {
             priority = 2390,
             route = {
-                { y = 0.3726, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.7425 },
+                { y = 0.533, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.771 },
             },
             text = "Accept Bartleby the Drunk from Harry Burlguard.",
             id = "accept-1639-bartleby-the-drunk",
@@ -7469,7 +7725,7 @@ ns:RegisterGuide({
         {
             priority = 2410,
             route = {
-                { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.7383 },
+                { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
             },
             text = "Accept Beat Bartleby from Bartleby.",
             id = "accept-1640-beat-bartleby",
@@ -7606,7 +7862,7 @@ ns:RegisterGuide({
         {
             priority = 2450,
             route = {
-                { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.7383 },
+                { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
             },
             text = "Accept Bartleby's Mug from Bartleby.",
             id = "accept-1665-bartleby-s-mug",
@@ -7676,87 +7932,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            priority = 2470,
-            route = {
-                { y = 0.45, mapID = 1438, label = "Tarindrella", offMapText = "Travel to Tarindrella.", x = 0.578 },
-            },
-            text = "Accept Nature's Call from Tarindrella.",
-            id = "woven-accept-97977-natures-call",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97977, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Collect a Gnarlpine Totem from the abandoned camps on the western edge of Shadowglen. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2480,
-            route = {
-                { y = 0.446, mapID = 1438, label = "Grell camps", offMapText = "Travel to Grell camps.", x = 0.55 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            id = "woven-objective-97977-natures-call",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 97977, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-97977-natures-call" },
-        },
-        {
-            priority = 2490,
-            route = {
-                { y = 0.45, mapID = 1438, label = "Tarindrella", offMapText = "Travel to Tarindrella.", x = 0.578 },
-            },
-            text = "Turn in Nature's Call to Tarindrella.",
-            id = "woven-turnin-97977-natures-call",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97977, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97977-natures-call", "woven-objective-97977-natures-call" },
         },
         {
             id = "loot-starter-before-accept-97236-verified-pickup",
@@ -7837,181 +8012,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-97236-verified-pickup" },
-        },
-        {
-            id = "level-before-woven-accept-96630-the-adventurer",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 96630,
-            alternativeQuests = { 96627, 96628, 96638, 96652, 96656, 96659 },
-            priority = 2530,
-        },
-        {
-            priority = 2540,
-            route = {
-                { y = 0.3939, mapID = 1438, label = "Tenaron Stormgrip", offMapText = "Travel to Tenaron Stormgrip.", x = 0.5909 },
-            },
-            text = "Accept The Adventurer from the book on the table behind Tenaron Stormgrip in Aldrassil.",
-            id = "woven-accept-96630-the-adventurer",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96630, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 921 },
-                    conditions = {},
-                },
-            },
-            alternativeQuests = { 96627, 96628, 96638, 96652, 96656, 96659 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2550,
-            route = {
-                { y = 0.566, mapID = 1438, label = "Lyreena Duskblade", offMapText = "Travel to Lyreena Duskblade.", x = 0.576 },
-            },
-            text = "Turn in The Adventurer to Lyreena Duskblade near Dolanaar.",
-            id = "woven-turnin-96630-the-adventurer",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96630, state = "completed" },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 921 },
-                    conditions = {},
-                },
-            },
-            alternativeQuests = { 96627, 96628, 96638, 96652, 96656, 96659 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96630-the-adventurer" },
-        },
-        {
-            priority = 2560,
-            route = {
-                { mapID = 1438, x = 0.5757, y = 0.5672999999999999, label = "Lyreena Duskblade", offMapText = "Travel to Lyreena Duskblade." },
-            },
-            text = "Accept The Great Outdoors from Lyreena Duskblade.",
-            id = "woven-accept-96101-the-great-outdoors",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96606, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96101, 96604, 96605, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2570,
-            text = "Type /sit beside Lyreena Duskblade's Basic Campfire and wait until you receive the Boosted Rest buff.",
-            id = "woven-objective-96101-the-great-outdoors",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96606, state = "complete" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96101, 96604, 96605, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96101-the-great-outdoors" },
-            route = {
-                { mapID = 1438, x = 0.5757, y = 0.5672999999999999, label = "Lyreena Duskblade", offMapText = "Travel to Lyreena Duskblade." },
-            },
-        },
-        {
-            priority = 2580,
-            route = {
-                { mapID = 1438, x = 0.5757, y = 0.5672999999999999, label = "Lyreena Duskblade", offMapText = "Travel to Lyreena Duskblade." },
-            },
-            text = "Turn in The Great Outdoors to Lyreena Duskblade.",
-            id = "woven-turnin-96101-the-great-outdoors",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96606, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96101, 96604, 96605, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96101-the-great-outdoors", "woven-objective-96101-the-great-outdoors" },
         },
         {
             id = "level-before-woven-accept-98391-the-sisterhood-of-elune",

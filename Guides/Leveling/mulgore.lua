@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 6,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -675,6 +675,60 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            priority = 215,
+            route = {
+                { y = 0.901, mapID = 1412, label = "Seer Graytongue", offMapText = "Travel to Seer Graytongue.", x = 0.425 },
+            },
+            text = "Accept Grace of An'she and Mu'sha from Seer Graytongue.",
+            id = "woven-accept-95805-grace-of-anshe-and-musha",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95805, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Carry the Smoldering Incense to the Ritual Fire at 56.6, 88.7 in the southeastern hills before it burns out. Follow the quest log pin.",
+            priority = 216,
+            route = {
+                { mapID = 1412, x = 0.566, y = 0.887, label = "Ritual Fire", offMapText = "Travel to the Ritual Fire in southeastern Mulgore." },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            id = "woven-objective-95805-grace-of-anshe-and-musha",
+            kind = "objective",
+            useClientPin = true,
+            complete = {
+                quest = { id = 95805, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-95805-grace-of-anshe-and-musha" },
+        },
+        {
             id = "objective-750-1-mountain-cougar-pelt",
             kind = "objective",
             conditions = {
@@ -998,7 +1052,7 @@ ns:RegisterGuide({
                     },
                 },
             },
-            text = "Loot Dirt-stained Map from Dirt-stained Map. Keep it for the next pickup.",
+            text = "In Brambleblade Ravine, follow the path right of Chief Sharptusk's lodge into the small cave and loot the Dirt-stained Map. Keep it for the next pickup.",
             complete = {
                 any = {
                     {
@@ -1013,7 +1067,7 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             route = {
-                { mapID = 1412, x = 0.598, y = 0.8220000000000001, label = "Dirt-stained Map", offMapText = "Travel to Dirt-stained Map." },
+                { mapID = 1412, x = 0.599, y = 0.818, label = "Dirt-stained Map", offMapText = "Travel to the Dirt-stained Map in Brambleblade Ravine." },
             },
             dependsOn = {},
             priority = 320,
@@ -1470,6 +1524,57 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-96659-the-adventurer",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 96659,
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96656 },
+            priority = 465,
+        },
+        {
+            priority = 466,
+            route = {
+                { y = 0.76, mapID = 1412, label = "Chief Hawkwind", offMapText = "Travel to Chief Hawkwind.", x = 0.442 },
+            },
+            text = "Accept The Adventurer from Chief Hawkwind in Camp Narache.",
+            id = "woven-accept-96659-the-adventurer",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96659, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96656 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             priority = 470,
             route = {
                 { y = 0.8156, mapID = 1412, label = "Antur Fallow", offMapText = "Travel to Antur Fallow in Mulgore.", x = 0.3852 },
@@ -1496,6 +1601,118 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            priority = 475,
+            route = {
+                { y = 0.672, mapID = 1412, label = "Kaga Wildhoof", offMapText = "Travel to Kaga Wildhoof.", x = 0.462 },
+            },
+            text = "Turn in The Adventurer to Kaga Wildhoof on the road to Bloodhoof Village.",
+            id = "woven-turnin-96659-the-adventurer",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96659, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96656 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96659-the-adventurer" },
+        },
+        {
+            priority = 476,
+            route = {
+                { mapID = 1412, x = 0.4619, y = 0.6720999999999999, label = "Kaga Wildhoof", offMapText = "Travel to Kaga Wildhoof." },
+            },
+            text = "Accept The Great Outdoors from Kaga Wildhoof.",
+            id = "woven-accept-96605-the-great-outdoors",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96605, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-96659-the-adventurer" },
+        },
+        {
+            priority = 477,
+            text = "Type /sit beside Kaga Wildhoof's Basic Campfire and wait until you receive the Boosted Rest buff.",
+            id = "woven-objective-96605-the-great-outdoors",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96605, state = "complete" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96605-the-great-outdoors" },
+            route = {
+                { mapID = 1412, x = 0.4619, y = 0.6720999999999999, label = "Kaga Wildhoof", offMapText = "Travel to Kaga Wildhoof." },
+            },
+        },
+        {
+            priority = 478,
+            route = {
+                { mapID = 1412, x = 0.4619, y = 0.6720999999999999, label = "Kaga Wildhoof", offMapText = "Travel to Kaga Wildhoof." },
+            },
+            text = "Turn in The Great Outdoors to Kaga Wildhoof.",
+            id = "woven-turnin-96605-the-great-outdoors",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96605, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96605-the-great-outdoors", "woven-objective-96605-the-great-outdoors" },
         },
         {
             id = "level-before-accept-766-mazzranache",
@@ -1686,6 +1903,60 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 545,
+            route = {
+                { y = 0.658, mapID = 1412, label = "Perith Stormhoof", offMapText = "Travel to Perith Stormhoof.", x = 0.33 },
+            },
+            text = "Accept The Longwalkers from Perith Stormhoof inside Palemane Rock.",
+            id = "woven-accept-98430-the-longwalkers",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98430, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 546,
+            route = {
+                { y = 0.658, mapID = 1412, label = "Perith Stormhoof", offMapText = "Travel to Perith Stormhoof.", x = 0.33 },
+            },
+            text = "Escort Perith Stormhoof out of Palemane Rock.",
+            id = "woven-objective-98430-the-longwalkers",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98430, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98430-the-longwalkers" },
         },
         {
             priority = 550,
@@ -3267,6 +3538,98 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-woven-accept-99411-kyles-gone-missing",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 5, 6, 8, 96 } },
+                },
+            },
+            complete = {
+                level = { min = 7 },
+            },
+            requiredLevel = 7,
+            checkpointQuest = 99411,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1065,
+        },
+        {
+            priority = 1070,
+            route = {
+                { mapID = 1412, x = 0.472, y = 0.577, label = "Ahab Wheathoof", offMapText = "Travel to Ahab Wheathoof in Bloodhoof Village." },
+            },
+            text = "Accept Kyle's Gone Missing! from Ahab Wheathoof in Bloodhoof Village.",
+            id = "woven-accept-99411-kyles-gone-missing",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                    { race = { 2, 5, 6, 8, 96 } },
+                },
+            },
+            complete = {
+                quest = { id = 99411, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1071,
+            route = {
+                { mapID = 1412, x = 0.472, y = 0.577, label = "Bloodhoof Village", offMapText = "Travel to Bloodhoof Village." },
+            },
+            text = "Kill Adult Plainstriders for Tender Strider Meat if needed, then use it on Kyle the Frenzied as he circles Bloodhoof Village.",
+            id = "woven-objective-99411-kyles-gone-missing",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                    { race = { 2, 5, 6, 8, 96 } },
+                },
+            },
+            complete = {
+                questObjective = { id = 99411, index = 1, text = "Kyle fed", count = 1 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-99411-kyles-gone-missing" },
+        },
+        {
+            priority = 1072,
+            route = {
+                { mapID = 1412, x = 0.472, y = 0.577, label = "Ahab Wheathoof", offMapText = "Travel to Ahab Wheathoof in Bloodhoof Village." },
+            },
+            text = "Turn in Kyle's Gone Missing! to Ahab Wheathoof.",
+            id = "woven-turnin-99411-kyles-gone-missing",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                    { race = { 2, 5, 6, 8, 96 } },
+                },
+            },
+            complete = {
+                quest = { id = 99411, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = {
+                "woven-accept-99411-kyles-gone-missing",
+                "woven-objective-99411-kyles-gone-missing",
+            },
         },
         {
             id = "level-before-accept-6061-taming-the-beast",
@@ -7022,6 +7385,33 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 2305,
+            route = {
+                { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
+            },
+            text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
+            id = "woven-turnin-98430-the-longwalkers",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98430, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98430-the-longwalkers", "woven-objective-98430-the-longwalkers" },
+        },
+        {
             id = "level-before-accept-445-delivery-to-silverpine-forest",
             kind = "note",
             text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
@@ -7072,280 +7462,9 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2330,
-            route = {
-                { y = 0.92, mapID = 1412, label = "Seer Graytongue", offMapText = "Travel to Seer Graytongue.", x = 0.426 },
-            },
-            text = "Accept Grace of An'she and Mu'sha from Seer Graytongue.",
-            id = "woven-accept-95805-grace-of-anshe-and-musha",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95805, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Carry the Smoldering Incense to the shrine of An'she and Mu'sha in the southeastern hills before it burns out. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2340,
-            route = {
-                { y = 0.81, mapID = 1412, label = "Southeastern hills", offMapText = "Travel to Southeastern hills.", x = 0.5 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            id = "woven-objective-95805-grace-of-anshe-and-musha",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 95805, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-95805-grace-of-anshe-and-musha" },
-        },
-        {
-            id = "level-before-woven-accept-96659-the-adventurer",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 96659,
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96656 },
-            priority = 2350,
-        },
-        {
-            priority = 2360,
-            route = {
-                { y = 0.76, mapID = 1412, label = "Chief Hawkwind", offMapText = "Travel to Chief Hawkwind.", x = 0.442 },
-            },
-            text = "Accept The Adventurer from Chief Hawkwind in Camp Narache.",
-            id = "woven-accept-96659-the-adventurer",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96659, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96656 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2370,
-            route = {
-                { y = 0.672, mapID = 1412, label = "Kaga Wildhoof", offMapText = "Travel to Kaga Wildhoof.", x = 0.462 },
-            },
-            text = "Turn in The Adventurer to Kaga Wildhoof on the road to Bloodhoof Village.",
-            id = "woven-turnin-96659-the-adventurer",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96659, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96656 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96659-the-adventurer" },
-        },
-        {
-            priority = 2380,
-            route = {
-                { mapID = 1412, x = 0.4619, y = 0.6720999999999999, label = "Kaga Wildhoof", offMapText = "Travel to Kaga Wildhoof." },
-            },
-            text = "Accept The Great Outdoors from Kaga Wildhoof.",
-            id = "woven-accept-96605-the-great-outdoors",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96605, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2390,
-            text = "Type /sit beside Kaga Wildhoof's Basic Campfire and wait until you receive the Boosted Rest buff.",
-            id = "woven-objective-96605-the-great-outdoors",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96605, state = "complete" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96605-the-great-outdoors" },
-            route = {
-                { mapID = 1412, x = 0.4619, y = 0.6720999999999999, label = "Kaga Wildhoof", offMapText = "Travel to Kaga Wildhoof." },
-            },
-        },
-        {
-            priority = 2400,
-            route = {
-                { mapID = 1412, x = 0.4619, y = 0.6720999999999999, label = "Kaga Wildhoof", offMapText = "Travel to Kaga Wildhoof." },
-            },
-            text = "Turn in The Great Outdoors to Kaga Wildhoof.",
-            id = "woven-turnin-96605-the-great-outdoors",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96605, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96605-the-great-outdoors", "woven-objective-96605-the-great-outdoors" },
-        },
-        {
-            priority = 2410,
-            route = {
-                { y = 0.658, mapID = 1412, label = "Perith Stormhoof", offMapText = "Travel to Perith Stormhoof.", x = 0.33 },
-            },
-            text = "Accept The Longwalkers from Perith Stormhoof inside Palemane Rock.",
-            id = "woven-accept-98430-the-longwalkers",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98430, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2420,
-            route = {
-                { y = 0.658, mapID = 1412, label = "Perith Stormhoof", offMapText = "Travel to Perith Stormhoof.", x = 0.33 },
-            },
-            text = "Escort Perith Stormhoof out of Palemane Rock.",
-            id = "woven-objective-98430-the-longwalkers",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98430, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98430-the-longwalkers" },
-        },
-        {
             priority = 2430,
             route = {
-                { y = 0.596, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.472 },
+                { y = 0.63, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.466 },
             },
             text = "Accept Longwalker Malah from Brave Wildrunner in Bloodhoof Village.",
             id = "woven-accept-99079-longwalker-malah",
@@ -7475,7 +7594,7 @@ ns:RegisterGuide({
         {
             priority = 2480,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", offMapText = "Travel to Yaw Sharpmane.", x = 0.478 },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", offMapText = "Travel to Yaw Sharpmane.", x = 0.469 },
             },
             text = "Accept Chakuyak from Yaw Sharpmane in Bloodhoof Village.",
             id = "woven-accept-96130-chakuyak",
@@ -7552,33 +7671,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-96130-chakuyak", "woven-objective-96130-chakuyak" },
-        },
-        {
-            priority = 2510,
-            route = {
-                { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
-            },
-            text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
-            id = "woven-turnin-98430-the-longwalkers",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98430, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98430-the-longwalkers", "woven-objective-98430-the-longwalkers" },
         },
         {
             priority = 2520,
@@ -7932,7 +8024,7 @@ ns:RegisterGuide({
         {
             priority = 2640,
             route = {
-                { y = 0.596, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.472 },
+                { y = 0.63, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.466 },
             },
             text = "Turn in Grim Tidings to Brave Wildrunner in Bloodhoof Village.",
             id = "woven-turnin-99081-grim-tidings",
@@ -7959,7 +8051,7 @@ ns:RegisterGuide({
         {
             priority = 2650,
             route = {
-                { y = 0.596, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.472 },
+                { y = 0.63, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.466 },
             },
             text = "Accept Our Ancient Enemy from Brave Wildrunner in Bloodhoof Village.",
             id = "woven-accept-99101-our-ancient-enemy",

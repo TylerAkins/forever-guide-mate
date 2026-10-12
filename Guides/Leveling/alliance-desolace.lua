@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Desolace",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-desolace",
@@ -136,7 +136,7 @@ ns:RegisterGuide({
         {
             priority = 60,
             route = {
-                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+                { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
             id = "woven-class-warlock-accept-4968-knowledge-of-the-orb-of-orahil",
             conditions = {
@@ -765,7 +765,7 @@ ns:RegisterGuide({
         {
             priority = 340,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             id = "woven-class-mage-accept-1953-return-to-the-marsh",
             conditions = {
@@ -2680,7 +2680,7 @@ ns:RegisterGuide({
         {
             priority = 980,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Delivery to the Gnomes from Kravel Koalbeard.",
             id = "accept-1114-delivery-to-the-gnomes",
@@ -2742,7 +2742,7 @@ ns:RegisterGuide({
         {
             priority = 1000,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept The Rumormonger from Kravel Koalbeard.",
             id = "accept-1115-the-rumormonger",

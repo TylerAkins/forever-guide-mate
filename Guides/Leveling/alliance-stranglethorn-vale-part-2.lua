@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-stranglethorn-vale-part-2",
@@ -571,7 +571,7 @@ ns:RegisterGuide({
         {
             priority = 200,
             route = {
-                { y = 0.667, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.793, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
+                { y = 0.668, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.804, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
             },
             id = "woven-class-warrior-accept-1714-essence-of-the-exile",
             conditions = {
@@ -727,7 +727,7 @@ ns:RegisterGuide({
         {
             priority = 260,
             route = {
-                { mapID = 1434, x = 0.4961, y = 0.0757, label = "The Spy Revealed!", offMapText = "Travel to The Spy Revealed!." },
+                { mapID = 1434, x = 0.322, y = 0.278, label = "The Spy Revealed!", offMapText = "Travel to The Spy Revealed!." },
             },
             text = "Accept The Spy Revealed!.",
             id = "accept-329-the-spy-revealed",

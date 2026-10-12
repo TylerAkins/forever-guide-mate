@@ -51,7 +51,7 @@ ns:RegisterGuide({
     id = "dungeons-hall-of-thanes",
     title = "Hall of Thanes",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -106,7 +106,7 @@ ns:RegisterGuide({
             text = "Accept The Restless Dead from Afadra Dunwall up the Old Ironforge stairs.",
             taxiDestination = "Ironforge",
             complete = QuestState(96394, "activeOrCompleted"),
-            route = Ironforge(0.340, 0.488, "Afadra Dunwall in Old Ironforge"),
+            route = Ironforge(0.332, 0.478, "Afadra Dunwall in Old Ironforge"),
         },
         {
             id = "accept-important-heirlooms",

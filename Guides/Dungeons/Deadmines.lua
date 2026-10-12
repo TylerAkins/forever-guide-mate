@@ -54,7 +54,7 @@ ns:RegisterGuide({
     id = "dungeons-the-deadmines",
     title = "The Deadmines",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -107,7 +107,7 @@ ns:RegisterGuide({
             text = "Accept Collecting Memories from Wilder Thistlenettle in the Dwarven District.",
             taxiDestination = "Stormwind",
             complete = QuestState(168, "activeOrCompleted"),
-            route = Stormwind(0.652, 0.212, "Wilder Thistlenettle in the Dwarven District"),
+            route = Stormwind(0.702, 0.408, "Wilder Thistlenettle in the Dwarven District"),
         },
         {
             id = "accept-oh-brother",
@@ -122,7 +122,7 @@ ns:RegisterGuide({
             text = "Accept Oh Brother. . . from Wilder Thistlenettle in the Dwarven District.",
             taxiDestination = "Stormwind",
             complete = QuestState(167, "activeOrCompleted"),
-            route = Stormwind(0.652, 0.212, "Wilder Thistlenettle in the Dwarven District"),
+            route = Stormwind(0.702, 0.408, "Wilder Thistlenettle in the Dwarven District"),
         },
         {
             id = "accept-underground-assault",
@@ -137,7 +137,7 @@ ns:RegisterGuide({
             text = "Accept Underground Assault from Shoni the Shilent in the Dwarven District.",
             taxiDestination = "Stormwind",
             complete = QuestState(2040, "activeOrCompleted"),
-            route = Stormwind(0.554, 0.126, "Shoni the Shilent in the Dwarven District"),
+            route = Stormwind(0.628, 0.348, "Shoni the Shilent in the Dwarven District"),
         },
         {
             id = "enter-deadmines",

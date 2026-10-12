@@ -4,7 +4,7 @@ ns:RegisterGuide({
     id = "dungeons-class-prerequisites",
     title = "Class Dungeon Prerequisites",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     routeMode = "ordered",
     goals = {
         {
@@ -337,7 +337,7 @@ ns:RegisterGuide({
             },
             text = "Accept Rituals of Power from Magus Tirth.",
             route = {
-                { mapID = 1441, x = 0.7829, y = 0.757, label = "Magus Tirth", offMapText = "Travel to Magus Tirth." },
+                { mapID = 1441, x = 0.4782, y = 0.758, label = "Magus Tirth", offMapText = "Travel to Magus Tirth." },
             },
             priority = 120,
             dependsOn = {},
@@ -688,7 +688,7 @@ ns:RegisterGuide({
             },
             text = "Accept Collection of Goods from Grimand Elmore.",
             route = {
-                { mapID = 1453, x = 0.5174, y = 0.1207, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore." },
+                { mapID = 1453, x = 0.597, y = 0.338, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore." },
             },
             priority = 240,
             dependsOn = {},

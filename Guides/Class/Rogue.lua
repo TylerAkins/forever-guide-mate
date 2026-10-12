@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Rogue",
     category = "Class Quests",
     id = "class-rogue",
@@ -2320,7 +2320,7 @@ ns:RegisterGuide({
         {
             priority = 750,
             route = {
-                { y = 0.598, mapID = 1453, label = "Master Mathias Shaw", x = 0.758, offMapText = "Travel to Master Mathias Shaw in Stormwind City." },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", x = 0.783, offMapText = "Travel to Master Mathias Shaw in Stormwind City." },
             },
             id = "accept-2206-snatch-and-grab",
             conditions = {
@@ -2544,7 +2544,7 @@ ns:RegisterGuide({
         {
             priority = 840,
             route = {
-                { y = 0.69, mapID = 1458, label = "Mennet Carkad", x = 0.832, offMapText = "Travel to Mennet Carkad in Undercity." },
+                { y = 0.676, mapID = 1458, label = "Mennet Carkad", x = 0.836, offMapText = "Travel to Mennet Carkad in Undercity." },
             },
             id = "accept-1998-fenwick-thatros",
             conditions = {
@@ -2820,7 +2820,7 @@ ns:RegisterGuide({
         {
             priority = 950,
             route = {
-                { y = 0.602, mapID = 1453, label = "Renzik \"The Shiv\"", x = 0.758, offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City." },
+                { y = 0.708, mapID = 1453, label = "Renzik \"The Shiv\"", x = 0.788, offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City." },
             },
             id = "accept-2281-redridge-rendezvous",
             conditions = {
@@ -2870,7 +2870,7 @@ ns:RegisterGuide({
         {
             priority = 970,
             route = {
-                { y = 0.522, mapID = 1433, label = "Lucius", x = 0.282, offMapText = "Travel to Lucius in Redridge Mountains." },
+                { y = 0.52, mapID = 1433, label = "Lucius", x = 0.23, offMapText = "Travel to Lucius in Redridge Mountains." },
             },
             dependsOn = { "turnin-2281-redridge-rendezvous" },
             id = "accept-2282-althers-mill",
@@ -3480,7 +3480,7 @@ ns:RegisterGuide({
         {
             priority = 1200,
             route = {
-                { y = 0.598, mapID = 1453, label = "Master Mathias Shaw", x = 0.758, offMapText = "Travel to Master Mathias Shaw in Stormwind City." },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", x = 0.783, offMapText = "Travel to Master Mathias Shaw in Stormwind City." },
             },
             id = "accept-2360-mathias-and-the-defias",
             conditions = {
@@ -3602,7 +3602,7 @@ ns:RegisterGuide({
         {
             priority = 1250,
             route = {
-                { y = 0.598, mapID = 1453, label = "Master Mathias Shaw", x = 0.758, offMapText = "Travel to Master Mathias Shaw in Stormwind City." },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", x = 0.783, offMapText = "Travel to Master Mathias Shaw in Stormwind City." },
             },
             dependsOn = { "turnin-2359-klavens-tower" },
             id = "accept-2607-the-touch-of-zanzil",
@@ -3652,7 +3652,7 @@ ns:RegisterGuide({
         {
             priority = 1270,
             route = {
-                { y = 0.59, mapID = 1453, label = "Doc Mixilpixil", x = 0.78, offMapText = "Travel to Doc Mixilpixil in Stormwind City." },
+                { y = 0.699, mapID = 1453, label = "Doc Mixilpixil", x = 0.801, offMapText = "Travel to Doc Mixilpixil in Stormwind City." },
             },
             dependsOn = { "turnin-2607-the-touch-of-zanzil" },
             id = "accept-2608-the-touch-of-zanzil",
@@ -4133,7 +4133,7 @@ ns:RegisterGuide({
         {
             priority = 1450,
             route = {
-                { y = 0.59, mapID = 1453, label = "Doc Mixilpixil", x = 0.78, offMapText = "Travel to Doc Mixilpixil in Stormwind City." },
+                { y = 0.699, mapID = 1453, label = "Doc Mixilpixil", x = 0.801, offMapText = "Travel to Doc Mixilpixil in Stormwind City." },
             },
             id = "accept-2609-the-touch-of-zanzil",
             conditions = {

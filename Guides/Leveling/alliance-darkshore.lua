@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Darkshore",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-darkshore",
@@ -319,7 +319,7 @@ ns:RegisterGuide({
         {
             priority = 130,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-mage-accept-1920-investigate-the-blue-recluse",
@@ -391,7 +391,7 @@ ns:RegisterGuide({
         {
             priority = 160,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-mage-accept-1921-gathering-materials",
@@ -463,7 +463,7 @@ ns:RegisterGuide({
         {
             priority = 190,
             route = {
-                { y = 0.766, mapID = 1453, label = "Wynne Larson", x = 0.416, offMapText = "Travel to Wynne Larson in Stormwind City." },
+                { y = 0.836, mapID = 1453, label = "Wynne Larson", x = 0.52, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-mage-accept-1941-manaweave-robe",

@@ -31,7 +31,7 @@ ns:RegisterGuide({
     id = "dungeons-blackfathom-deeps",
     title = "Blackfathom Deeps",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 20 } },
@@ -47,7 +47,7 @@ ns:RegisterGuide({
             text = "Accept The Corruption Abroad from Argos Nightwhisper.",
             complete = QuestState(3765, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.214, 0.558, "Argos Nightwhisper", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.362, 0.676, "Argos Nightwhisper", "Travel to Stormwind City."),
             },
         },
         {
@@ -93,7 +93,7 @@ ns:RegisterGuide({
             text = "Accept Twilight Falls from Argent Guard Manados.",
             complete = QuestState(1199, "activeOrCompleted"),
             route = {
-                Point(MAP.DARNASSUS, 0.552, 0.240, "Argent Guard Manados", "Travel to Darnassus."),
+                Point(MAP.DARNASSUS, 0.383, 0.43, "Argent Guard Manados", "Travel to Darnassus."),
             },
         },
         {
@@ -104,7 +104,7 @@ ns:RegisterGuide({
             text = "Accept In Search of Thaelrid from Dawnwatcher Shaedlass.",
             complete = QuestState(1198, "activeOrCompleted"),
             route = {
-                Point(MAP.DARNASSUS, 0.554, 0.250, "Dawnwatcher Shaedlass", "Travel to Darnassus."),
+                Point(MAP.DARNASSUS, 0.287, 0.521, "Dawnwatcher Shaedlass", "Travel to Darnassus."),
             },
         },
         {

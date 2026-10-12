@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Warrior",
     category = "Class Quests",
     id = "class-warrior",
@@ -1890,7 +1890,7 @@ ns:RegisterGuide({
         {
             priority = 560,
             route = {
-                { y = 0.456, mapID = 1453, label = "Ilsa Corbin", x = 0.786, offMapText = "Travel to Ilsa Corbin in Stormwind City." },
+                { y = 0.598, mapID = 1453, label = "Ilsa Corbin", x = 0.804, offMapText = "Travel to Ilsa Corbin in Stormwind City." },
             },
             id = "accept-1638-a-warriors-training",
             conditions = {
@@ -1942,7 +1942,7 @@ ns:RegisterGuide({
         {
             priority = 580,
             route = {
-                { y = 0.372, mapID = 1453, label = "Harry Burlguard", x = 0.74, offMapText = "Travel to Harry Burlguard in Stormwind City." },
+                { y = 0.533, mapID = 1453, label = "Harry Burlguard", x = 0.771, offMapText = "Travel to Harry Burlguard in Stormwind City." },
             },
             dependsOn = { "turnin-1638-a-warriors-training" },
             id = "accept-1639-bartleby-the-drunk",
@@ -2320,7 +2320,7 @@ ns:RegisterGuide({
         {
             priority = 720,
             route = {
-                { y = 0.366, mapID = 1453, label = "Bartleby", x = 0.738, offMapText = "Travel to Bartleby in Stormwind City." },
+                { y = 0.525, mapID = 1453, label = "Bartleby", x = 0.768, offMapText = "Travel to Bartleby in Stormwind City." },
             },
             dependsOn = { "turnin-1639-bartleby-the-drunk" },
             id = "accept-1640-beat-bartleby",
@@ -2395,7 +2395,7 @@ ns:RegisterGuide({
         {
             priority = 750,
             route = {
-                { y = 0.366, mapID = 1453, label = "Bartleby", x = 0.738, offMapText = "Travel to Bartleby in Stormwind City." },
+                { y = 0.525, mapID = 1453, label = "Bartleby", x = 0.768, offMapText = "Travel to Bartleby in Stormwind City." },
             },
             dependsOn = { "turnin-1640-beat-bartleby", "turnin-1639-bartleby-the-drunk" },
             id = "accept-1665-bartlebys-mug",
@@ -3133,7 +3133,7 @@ ns:RegisterGuide({
         {
             priority = 1030,
             route = {
-                { y = 0.372, mapID = 1453, label = "Harry Burlguard", x = 0.74, offMapText = "Travel to Harry Burlguard in Stormwind City." },
+                { y = 0.533, mapID = 1453, label = "Harry Burlguard", x = 0.771, offMapText = "Travel to Harry Burlguard in Stormwind City." },
             },
             id = "accept-1666-marshal-haggard",
             conditions = {
@@ -3806,7 +3806,7 @@ ns:RegisterGuide({
         {
             priority = 1280,
             route = {
-                { y = 0.448, mapID = 1433, label = "Yorus Barleybrew", x = 0.266, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
+                { y = 0.447, mapID = 1433, label = "Yorus Barleybrew", x = 0.215, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
             },
             dependsOn = { "turnin-1698-yorus-barleybrew" },
             id = "accept-1699-the-rethban-gauntlet",
@@ -3878,7 +3878,7 @@ ns:RegisterGuide({
         {
             priority = 1310,
             route = {
-                { y = 0.448, mapID = 1433, label = "Yorus Barleybrew", x = 0.266, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
+                { y = 0.447, mapID = 1433, label = "Yorus Barleybrew", x = 0.215, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
             },
             id = "accept-1702-the-shieldsmith",
             conditions = {
@@ -3928,7 +3928,7 @@ ns:RegisterGuide({
         {
             priority = 1330,
             route = {
-                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+                { y = 0.372, mapID = 1453, label = "Furen Longbeard", x = 0.646, offMapText = "Travel to Furen Longbeard in Stormwind City." },
             },
             dependsOn = { "turnin-1702-the-shieldsmith" },
             id = "accept-1701-fire-hardened-mail",
@@ -4883,7 +4883,7 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             route = {
-                { mapID = 1453, x = 0.58, y = 0.168, label = "Furen Longbeard", offMapText = "Travel to Furen Longbeard." },
+                { mapID = 1453, x = 0.646, y = 0.372, label = "Furen Longbeard", offMapText = "Travel to Furen Longbeard." },
             },
             dependsOn = {},
             priority = 1710,
@@ -4943,7 +4943,7 @@ ns:RegisterGuide({
         {
             priority = 1740,
             route = {
-                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+                { y = 0.372, mapID = 1453, label = "Furen Longbeard", x = 0.646, offMapText = "Travel to Furen Longbeard in Stormwind City." },
             },
             id = "accept-1700-grimand-elmore",
             conditions = {
@@ -5022,7 +5022,7 @@ ns:RegisterGuide({
         {
             priority = 1770,
             route = {
-                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+                { y = 0.372, mapID = 1453, label = "Furen Longbeard", x = 0.646, offMapText = "Travel to Furen Longbeard in Stormwind City." },
             },
             id = "accept-1703-mathiel",
             conditions = {
@@ -5100,7 +5100,7 @@ ns:RegisterGuide({
         {
             priority = 1800,
             route = {
-                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+                { y = 0.372, mapID = 1453, label = "Furen Longbeard", x = 0.646, offMapText = "Travel to Furen Longbeard in Stormwind City." },
             },
             id = "accept-1704-klockmort-spannerspan",
             conditions = {
@@ -5150,7 +5150,7 @@ ns:RegisterGuide({
         {
             priority = 1820,
             route = {
-                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", x = 0.597, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
             dependsOn = { "turnin-1700-grimand-elmore" },
             id = "accept-1705-burning-blood",
@@ -5222,7 +5222,7 @@ ns:RegisterGuide({
         {
             priority = 1850,
             route = {
-                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", x = 0.597, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
             id = "accept-1706-grimands-armor",
             conditions = {
@@ -5649,7 +5649,7 @@ ns:RegisterGuide({
         {
             priority = 2030,
             route = {
-                { y = 0.49, mapID = 1413, label = "Klannoc Macleod", x = 0.686, offMapText = "Travel to Klannoc Macleod in The Barrens." },
+                { y = 0.49, mapID = 1413, label = "Klannoc Macleod", x = 0.666, offMapText = "Travel to Klannoc Macleod in The Barrens." },
             },
             dependsOn = { "turnin-1718-the-islander" },
             id = "accept-1719-the-affray",
@@ -5772,7 +5772,7 @@ ns:RegisterGuide({
         {
             priority = 2090,
             route = {
-                { y = 0.667, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.793, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
+                { y = 0.668, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.804, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
             },
             id = "accept-1714-essence-of-the-exile",
             conditions = {

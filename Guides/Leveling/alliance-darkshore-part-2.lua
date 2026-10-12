@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Darkshore",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-darkshore-part-2",
@@ -183,7 +183,7 @@ ns:RegisterGuide({
         {
             priority = 70,
             route = {
-                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+                { y = 0.076, mapID = 1455, label = "High Priest Rohan", x = 0.264, offMapText = "Travel to High Priest Rohan in Ironforge." },
             },
             id = "woven-class-priest-accept-5677-arcane-feedback",
             conditions = {
@@ -1195,7 +1195,7 @@ ns:RegisterGuide({
         {
             priority = 470,
             route = {
-                { y = 0.448, mapID = 1433, label = "Yorus Barleybrew", x = 0.266, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
+                { y = 0.447, mapID = 1433, label = "Yorus Barleybrew", x = 0.215, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
             },
             dependsOn = {},
             id = "woven-class-warrior-accept-1699-the-rethban-gauntlet",
@@ -1270,7 +1270,7 @@ ns:RegisterGuide({
         {
             priority = 500,
             route = {
-                { y = 0.448, mapID = 1433, label = "Yorus Barleybrew", x = 0.266, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
+                { y = 0.447, mapID = 1433, label = "Yorus Barleybrew", x = 0.215, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
             },
             id = "woven-class-warrior-accept-1702-the-shieldsmith",
             conditions = {
@@ -1320,7 +1320,7 @@ ns:RegisterGuide({
         {
             priority = 520,
             route = {
-                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+                { y = 0.372, mapID = 1453, label = "Furen Longbeard", x = 0.646, offMapText = "Travel to Furen Longbeard in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-warrior-accept-1701-fire-hardened-mail",
@@ -1432,7 +1432,7 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             route = {
-                { mapID = 1453, x = 0.58, y = 0.168, label = "Furen Longbeard", offMapText = "Travel to Furen Longbeard." },
+                { mapID = 1453, x = 0.646, y = 0.372, label = "Furen Longbeard", offMapText = "Travel to Furen Longbeard." },
             },
             dependsOn = {},
             priority = 560,
@@ -1709,7 +1709,7 @@ ns:RegisterGuide({
         {
             priority = 680,
             route = {
-                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", x = 0.597, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-warrior-accept-1705-burning-blood",
@@ -1781,7 +1781,7 @@ ns:RegisterGuide({
         {
             priority = 710,
             route = {
-                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", x = 0.597, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
             id = "woven-class-warrior-accept-1706-grimands-armor",
             conditions = {
@@ -1857,7 +1857,7 @@ ns:RegisterGuide({
         {
             priority = 740,
             route = {
-                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+                { y = 0.372, mapID = 1453, label = "Furen Longbeard", x = 0.646, offMapText = "Travel to Furen Longbeard in Stormwind City." },
             },
             id = "woven-class-warrior-accept-1704-klockmort-spannerspan",
             conditions = {
@@ -1934,7 +1934,7 @@ ns:RegisterGuide({
         {
             priority = 770,
             route = {
-                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+                { y = 0.372, mapID = 1453, label = "Furen Longbeard", x = 0.646, offMapText = "Travel to Furen Longbeard in Stormwind City." },
             },
             id = "woven-class-warrior-accept-1703-mathiel",
             conditions = {
@@ -2013,7 +2013,7 @@ ns:RegisterGuide({
         {
             priority = 800,
             route = {
-                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+                { y = 0.372, mapID = 1453, label = "Furen Longbeard", x = 0.646, offMapText = "Travel to Furen Longbeard in Stormwind City." },
             },
             id = "woven-class-warrior-accept-1700-grimand-elmore",
             conditions = {
@@ -2747,7 +2747,7 @@ ns:RegisterGuide({
         {
             priority = 1100,
             route = {
-                { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
+                { y = 0.064, mapID = 1455, label = "Tiza Battleforge", x = 0.236, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
             id = "woven-class-paladin-accept-1794-the-tome-of-valor",
             conditions = {

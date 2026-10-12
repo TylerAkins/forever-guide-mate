@@ -35,7 +35,7 @@ ns:RegisterGuide({
     id = "dungeons-uldaman",
     title = "Uldaman",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 37 } },
@@ -189,7 +189,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-721-a-sign-of-hope" },
             complete = QuestState(722, "activeOrCompleted"),
             route = {
-                Point(MAP.BADLANDS, 0.540, 0.577, "Hammertoe Grez", "Travel to Badlands."),
+                Point(MAP.BADLANDS, 0.3794, 0.1053, "Hammertoe Grez", "Travel to Badlands."),
             },
         },
         {
@@ -225,7 +225,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-722-amulet-of-secrets" },
             complete = QuestState(723, "activeOrCompleted"),
             route = {
-                Point(MAP.BADLANDS, 0.540, 0.577, "Hammertoe Grez", "Travel to Badlands."),
+                Point(MAP.BADLANDS, 0.3794, 0.1053, "Hammertoe Grez", "Travel to Badlands."),
             },
         },
         {

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Ashenvale",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-ashenvale",
@@ -265,7 +265,7 @@ ns:RegisterGuide({
         {
             priority = 100,
             route = {
-                { y = 0.148, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
+                { y = 0.256, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
             },
             dependsOn = {},
             id = "woven-class-warlock-accept-65593-hearts-of-the-lovers",

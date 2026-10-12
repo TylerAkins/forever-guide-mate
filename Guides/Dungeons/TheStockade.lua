@@ -31,7 +31,7 @@ ns:RegisterGuide({
     id = "dungeons-the-stockade",
     title = "The Stockade",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -130,7 +130,7 @@ ns:RegisterGuide({
             text = "Accept What Comes Around from Guard Berton.",
             complete = QuestState(386, "activeOrCompleted"),
             route = {
-                Point(MAP.REDRIDGE_MOUNTAINS, 0.263, 0.466, "Guard Berton", "Travel to Redridge Mountains."),
+                Point(MAP.REDRIDGE_MOUNTAINS, 0.212, 0.466, "Guard Berton", "Travel to Redridge Mountains."),
             },
         },
         {
@@ -141,7 +141,7 @@ ns:RegisterGuide({
             text = "Accept Crime and Punishment from Councilman Millstipe.",
             complete = QuestState(377, "activeOrCompleted"),
             route = {
-                Point(MAP.DUSKWOOD, 0.719, 0.478, "Councilman Millstipe", "Travel to Duskwood."),
+                Point(MAP.DUSKWOOD, 0.72, 0.468, "Councilman Millstipe", "Travel to Duskwood."),
             },
         },
         {
@@ -152,7 +152,7 @@ ns:RegisterGuide({
             text = "Accept The Color of Blood from Nikova Raskol.",
             complete = QuestState(388, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.736, 0.466, "Nikova Raskol", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.766, 0.604, "Nikova Raskol", "Travel to Stormwind City."),
             },
         },
         {
@@ -186,7 +186,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-373-the-unsent-letter" },
             complete = QuestState(389, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.492, 0.303, "Baros Alexston", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.577, 0.479, "Baros Alexston", "Travel to Stormwind City."),
             },
         },
         {
@@ -210,7 +210,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-389-bazil-thredd" },
             complete = QuestState(391, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.411, 0.581, "Warden Thelwater", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.516, 0.694, "Warden Thelwater", "Travel to Stormwind City."),
             },
         },
         {
@@ -221,7 +221,7 @@ ns:RegisterGuide({
             text = "Accept Quell The Uprising from Warden Thelwater.",
             complete = QuestState(387, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.411, 0.581, "Warden Thelwater", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.516, 0.694, "Warden Thelwater", "Travel to Stormwind City."),
             },
         },
         {

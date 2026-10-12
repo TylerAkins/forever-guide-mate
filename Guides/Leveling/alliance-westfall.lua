@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Westfall",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-westfall",
@@ -321,7 +321,7 @@ ns:RegisterGuide({
         {
             priority = 130,
             route = {
-                { y = 0.154, mapID = 1453, label = "Einris Brightspear", x = 0.616, offMapText = "Travel to Einris Brightspear in Stormwind City." },
+                { y = 0.364, mapID = 1453, label = "Einris Brightspear", x = 0.676, offMapText = "Travel to Einris Brightspear in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-6076-the-hunters-path",
@@ -1542,7 +1542,7 @@ ns:RegisterGuide({
         {
             priority = 600,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-warlock-accept-1688-surena-caledon",
@@ -1626,7 +1626,7 @@ ns:RegisterGuide({
         {
             priority = 630,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-warlock-accept-1689-the-binding",
@@ -2067,7 +2067,7 @@ ns:RegisterGuide({
         {
             priority = 790,
             route = {
-                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+                { y = 0.076, mapID = 1455, label = "High Priest Rohan", x = 0.264, offMapText = "Travel to High Priest Rohan in Ironforge." },
             },
             id = "woven-class-priest-accept-5639-desperate-prayer",
             conditions = {
@@ -3712,7 +3712,7 @@ ns:RegisterGuide({
         {
             priority = 1430,
             route = {
-                { y = 0.598, mapID = 1453, label = "Master Mathias Shaw", x = 0.758, offMapText = "Travel to Master Mathias Shaw in Stormwind City." },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", x = 0.783, offMapText = "Travel to Master Mathias Shaw in Stormwind City." },
             },
             id = "woven-class-rogue-accept-2206-snatch-and-grab",
             conditions = {
@@ -5052,7 +5052,7 @@ ns:RegisterGuide({
         {
             priority = 1960,
             route = {
-                { y = 0.372, mapID = 1453, label = "Harry Burlguard", x = 0.74, offMapText = "Travel to Harry Burlguard in Stormwind City." },
+                { y = 0.533, mapID = 1453, label = "Harry Burlguard", x = 0.771, offMapText = "Travel to Harry Burlguard in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-warrior-accept-1639-bartleby-the-drunk",
@@ -5519,7 +5519,7 @@ ns:RegisterGuide({
         {
             priority = 2130,
             route = {
-                { y = 0.366, mapID = 1453, label = "Bartleby", x = 0.738, offMapText = "Travel to Bartleby in Stormwind City." },
+                { y = 0.525, mapID = 1453, label = "Bartleby", x = 0.768, offMapText = "Travel to Bartleby in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-warrior-accept-1640-beat-bartleby",
@@ -5594,7 +5594,7 @@ ns:RegisterGuide({
         {
             priority = 2160,
             route = {
-                { y = 0.366, mapID = 1453, label = "Bartleby", x = 0.738, offMapText = "Travel to Bartleby in Stormwind City." },
+                { y = 0.525, mapID = 1453, label = "Bartleby", x = 0.768, offMapText = "Travel to Bartleby in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-warrior-accept-1665-bartlebys-mug",
@@ -5646,7 +5646,7 @@ ns:RegisterGuide({
         {
             priority = 2180,
             route = {
-                { y = 0.372, mapID = 1453, label = "Harry Burlguard", x = 0.74, offMapText = "Travel to Harry Burlguard in Stormwind City." },
+                { y = 0.533, mapID = 1453, label = "Harry Burlguard", x = 0.771, offMapText = "Travel to Harry Burlguard in Stormwind City." },
             },
             id = "woven-class-warrior-accept-1666-marshal-haggard",
             conditions = {
@@ -5776,7 +5776,7 @@ ns:RegisterGuide({
         {
             priority = 2230,
             route = {
-                { y = 0.456, mapID = 1453, label = "Ilsa Corbin", x = 0.786, offMapText = "Travel to Ilsa Corbin in Stormwind City." },
+                { y = 0.598, mapID = 1453, label = "Ilsa Corbin", x = 0.804, offMapText = "Travel to Ilsa Corbin in Stormwind City." },
             },
             id = "woven-class-warrior-accept-1638-a-warriors-training",
             conditions = {
@@ -6214,7 +6214,7 @@ ns:RegisterGuide({
         {
             priority = 2400,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-mage-accept-1861-mirror-lake",
@@ -7493,7 +7493,7 @@ ns:RegisterGuide({
         {
             priority = 2850,
             route = {
-                { y = 0.786, mapID = 1416, label = "Archmage Ansirem Runeweaver", x = 0.188, offMapText = "Travel to Archmage Ansirem Runeweaver in Alterac Mountains." },
+                { y = 0.566, mapID = 1416, label = "Archmage Ansirem Runeweaver", x = 0.118, offMapText = "Travel to Archmage Ansirem Runeweaver in Alterac Mountains." },
             },
             id = "woven-class-druid-accept-94912-child-of-nature",
             conditions = {
@@ -8026,7 +8026,7 @@ ns:RegisterGuide({
         {
             priority = 3060,
             route = {
-                { y = 0.514, mapID = 1453, label = "Theridran", x = 0.214, offMapText = "Travel to Theridran in Stormwind City." },
+                { y = 0.642, mapID = 1453, label = "Theridran", x = 0.362, offMapText = "Travel to Theridran in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-druid-accept-5924-heeding-the-call",
@@ -9341,7 +9341,7 @@ ns:RegisterGuide({
         {
             priority = 3520,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             id = "woven-class-paladin-accept-3000-tome-of-divinity",
             conditions = {
@@ -10239,7 +10239,7 @@ ns:RegisterGuide({
         {
             priority = 3870,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-1643-the-tome-of-divinity",
@@ -10291,7 +10291,7 @@ ns:RegisterGuide({
         {
             priority = 3890,
             route = {
-                { y = 0.618, mapID = 1453, label = "Stephanie Turner", x = 0.57, offMapText = "Travel to Stephanie Turner in Stormwind City." },
+                { y = 0.722, mapID = 1453, label = "Stephanie Turner", x = 0.638, offMapText = "Travel to Stephanie Turner in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-1644-the-tome-of-divinity",
@@ -10375,7 +10375,7 @@ ns:RegisterGuide({
         {
             priority = 3920,
             route = {
-                { y = 0.618, mapID = 1453, label = "Stephanie Turner", x = 0.57, offMapText = "Travel to Stephanie Turner in Stormwind City." },
+                { y = 0.722, mapID = 1453, label = "Stephanie Turner", x = 0.638, offMapText = "Travel to Stephanie Turner in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-1780-the-tome-of-divinity",
@@ -10427,7 +10427,7 @@ ns:RegisterGuide({
         {
             priority = 3940,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-1781-the-tome-of-divinity",
@@ -10479,7 +10479,7 @@ ns:RegisterGuide({
         {
             priority = 3960,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             id = "woven-class-paladin-accept-1790-the-symbol-of-life",
             conditions = {
@@ -10531,7 +10531,7 @@ ns:RegisterGuide({
         {
             priority = 3980,
             route = {
-                { y = 0.266, mapID = 1453, label = "Gazin Tenorm", x = 0.386, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
+                { y = 0.449, mapID = 1453, label = "Gazin Tenorm", x = 0.495, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-1786-the-tome-of-divinity",
@@ -10688,7 +10688,7 @@ ns:RegisterGuide({
         {
             priority = 4040,
             route = {
-                { y = 0.266, mapID = 1453, label = "Gazin Tenorm", x = 0.386, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
+                { y = 0.449, mapID = 1453, label = "Gazin Tenorm", x = 0.495, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-1788-the-tome-of-divinity",
@@ -10740,7 +10740,7 @@ ns:RegisterGuide({
         {
             priority = 4060,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             id = "woven-class-paladin-accept-1641-the-tome-of-divinity",
             conditions = {
@@ -12197,7 +12197,7 @@ ns:RegisterGuide({
         {
             priority = 4570,
             route = {
-                { y = 0.18, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon.", x = 0.78 },
+                { y = 0.384, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon.", x = 0.801 },
             },
             text = "Accept Journey to Sentinel Hill from Highlord Bolvar Fordragon in Stormwind Keep. This step is for Alliance Skyborne.",
             id = "woven-accept-98021-journey-to-sentinel-hill",
@@ -12674,7 +12674,7 @@ ns:RegisterGuide({
         {
             priority = 4740,
             route = {
-                { y = 0.6947, mapID = 1436, label = "Moonbrook", offMapText = "Travel to Moonbrook.", x = 0.4401 },
+                { y = 0.79, mapID = 1436, label = "Moonbrook", offMapText = "Travel to Moonbrook.", x = 0.41 },
             },
             text = "Accept My First Real Potion from the young alchemist in the Moonbrook barn. This step is for alchemists.",
             id = "woven-accept-92110-my-first-real-potion",
@@ -12844,7 +12844,7 @@ ns:RegisterGuide({
         {
             priority = 4800,
             route = {
-                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.308 },
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.256 },
             },
             text = "Accept Show of Force from Deputy Feldon.",
             id = "woven-accept-98407-show-of-force",

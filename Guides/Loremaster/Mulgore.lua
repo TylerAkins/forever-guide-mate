@@ -55,7 +55,7 @@ ns:RegisterGuide({
     id = "leveling-mulgore",
     title = "Mulgore (Loremaster)",
     category = "Loremaster Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 1 } },
@@ -460,7 +460,7 @@ ns:RegisterGuide({
             text = "Accept Grace of An'she and Mu'sha from Seer Graytongue.",
             complete = QuestState(95805, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.426, 0.920, "Seer Graytongue",
+                Point(MAP.MULGORE, 0.425, 0.901, "Seer Graytongue",
                     "Travel to Seer Graytongue."),
             },
         },
@@ -1371,7 +1371,7 @@ ns:RegisterGuide({
             text = "Accept The Ravaged Caravan from Morin Cloudstalker.",
             complete = QuestState(749, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.544, 0.604, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -1647,7 +1647,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-751-the-ravaged-caravan" },
             complete = QuestState(764, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.544, 0.604, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -1836,7 +1836,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-751-the-ravaged-caravan" },
             complete = QuestState(765, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                Point(MAP.MULGORE, 0.544, 0.604, "Morin Cloudstalker",
                     "Travel to Morin Cloudstalker."),
             },
         },
@@ -2129,7 +2129,7 @@ ns:RegisterGuide({
             text = "Accept Longwalker Malah from Brave Wildrunner.",
             complete = QuestState(99079, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.472, 0.596, "Brave Wildrunner",
+                Point(MAP.MULGORE, 0.466, 0.63, "Brave Wildrunner",
                     "Travel to Brave Wildrunner."),
             },
         },
@@ -2294,7 +2294,7 @@ ns:RegisterGuide({
             text = "Accept Chakuyak from Yaw Sharpmane.",
             complete = QuestState(96130, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.478, 0.556, "Yaw Sharpmane",
+                Point(MAP.MULGORE, 0.469, 0.596, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -3242,7 +3242,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-99081-grim-tidings" },
             complete = QuestState(99101, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.472, 0.596, "Brave Wildrunner",
+                Point(MAP.MULGORE, 0.466, 0.63, "Brave Wildrunner",
                     "Travel to Brave Wildrunner."),
             },
         },
@@ -3799,7 +3799,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Talkin' bout Toxins, Mon from Mazu'kon at Skywatcher Plateau.",
             complete = { quest = { id = 96241, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.206, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
             useClientText = false,
         },
         {
@@ -3809,7 +3809,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Stronger than Steel from Yorn Grimtotem at Skywatcher Plateau.",
             complete = { quest = { id = 96260, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.2, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
             useClientText = false,
         },
         {

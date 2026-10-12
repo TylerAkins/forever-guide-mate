@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Warlock",
     category = "Class Quests",
     id = "class-warlock",
@@ -1393,7 +1393,7 @@ ns:RegisterGuide({
         {
             priority = 450,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = { "turnin-1685-gakins-summons", "turnin-1715-the-slaughtered-lamb" },
             id = "accept-1688-surena-caledon",
@@ -1477,7 +1477,7 @@ ns:RegisterGuide({
         {
             priority = 480,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = { "turnin-1688-surena-caledon", "turnin-1715-the-slaughtered-lamb", "turnin-1685-gakins-summons" },
             id = "accept-1689-the-binding",
@@ -2148,7 +2148,7 @@ ns:RegisterGuide({
         {
             priority = 730,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = { "turnin-1717-gakins-summons" },
             id = "accept-1716-devourer-of-souls",
@@ -2288,7 +2288,7 @@ ns:RegisterGuide({
         {
             priority = 780,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = { "turnin-1738-heartswood" },
             id = "accept-1739-the-binding",
@@ -2453,7 +2453,7 @@ ns:RegisterGuide({
         {
             priority = 840,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = { "turnin-65602-what-is-love" },
             id = "accept-65603-the-binding",
@@ -3314,7 +3314,7 @@ ns:RegisterGuide({
         {
             priority = 1150,
             route = {
-                { y = 0.148, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
+                { y = 0.256, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
             },
             dependsOn = { "turnin-1472-devourer-of-souls" },
             id = "accept-65593-hearts-of-the-lovers",
@@ -3667,7 +3667,7 @@ ns:RegisterGuide({
         {
             priority = 1280,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = { "turnin-1739-the-binding" },
             id = "accept-1798-seeking-strahad",
@@ -4628,7 +4628,7 @@ ns:RegisterGuide({
         {
             priority = 1630,
             route = {
-                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+                { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
             id = "accept-4738-in-search-of-menara-voidrender",
             conditions = {
@@ -5898,7 +5898,7 @@ ns:RegisterGuide({
         {
             priority = 2000,
             route = {
-                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+                { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
             id = "accept-4968-knowledge-of-the-orb-of-orahil",
             conditions = {
@@ -6378,7 +6378,7 @@ ns:RegisterGuide({
         {
             priority = 2210,
             route = {
-                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+                { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
             id = "accept-4488-summon-felsteed",
             conditions = {
@@ -6824,7 +6824,7 @@ ns:RegisterGuide({
         {
             priority = 2380,
             route = {
-                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.284, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
             id = "accept-8419-an-imps-request",
             conditions = {

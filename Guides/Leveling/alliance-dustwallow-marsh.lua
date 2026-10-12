@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Dustwallow Marsh",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-dustwallow-marsh",
@@ -170,7 +170,7 @@ ns:RegisterGuide({
         {
             priority = 70,
             route = {
-                { mapID = 1453, x = 0.3981, y = 0.298, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { mapID = 1453, x = 0.505, y = 0.475, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             text = "Accept The Tome of Nobility from Duthorian Rall.",
             id = "accept-1661-the-tome-of-nobility",
@@ -378,7 +378,7 @@ ns:RegisterGuide({
         {
             priority = 140,
             route = {
-                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+                { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
             id = "woven-class-warlock-accept-4488-summon-felsteed",
             conditions = {

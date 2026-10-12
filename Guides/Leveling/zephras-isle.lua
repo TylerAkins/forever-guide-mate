@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 8,
+    revision = 9,
     title = "Zephras Isle",
     category = "Leveling Quest Guides",
     id = "leveling-zephras-isle",
@@ -3429,7 +3429,7 @@ ns:RegisterGuide({
             text = "Accept WANTED: Vulgara the Insatiable from the notice in Shen'dar Village.",
             priority = 1180,
             route = {
-                { y = 0.452, mapID = 2521, label = "Vulgara wanted notice in Shen'dar Village", offMapText = "Travel to Zephras Isle.", x = 0.452 },
+                { y = 0.459, mapID = 2521, label = "Vulgara wanted notice in Shen'dar Village", offMapText = "Travel to Zephras Isle.", x = 0.434 },
             },
             dependsOn = { "objective-pilfered-windstones" },
             id = "accept-wanted-vulgara-the-insatiable",
@@ -7230,7 +7230,7 @@ ns:RegisterGuide({
             text = "Accept the next Missing Scholar step where you found Fillion Flamebreeze.",
             priority = 2390,
             route = {
-                { y = 0.654, mapID = 2521, label = "Fillion Flamebreeze", offMapText = "Travel to Zephras Isle.", x = 0.506 },
+                { y = 0.721, mapID = 2521, label = "Fillion Flamebreeze", offMapText = "Travel to Zephras Isle.", x = 0.533 },
             },
             dependsOn = { "turnin-the-missing-scholar" },
             id = "accept-the-missing-scholar-92849",
@@ -13102,7 +13102,7 @@ ns:RegisterGuide({
             text = "Accept Exploring the Alliance from Bolvar Fordragon.",
             priority = 4230,
             route = {
-                { y = 0.18, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.78 },
+                { y = 0.384, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.801 },
             },
             dependsOn = { "turnin-welcome-to-azeroth-94947" },
             id = "accept-exploring-the-alliance",
@@ -13136,7 +13136,7 @@ ns:RegisterGuide({
             text = "Accept Journey to Sentinel Hill from Bolvar Fordragon. Westfall turns this in at Sentinel Hill.",
             priority = 4240,
             route = {
-                { y = 0.18, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.78 },
+                { y = 0.384, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.801 },
             },
             dependsOn = { "turnin-welcome-to-azeroth-94947" },
             id = "accept-journey-to-sentinel-hill",

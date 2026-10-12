@@ -27,7 +27,7 @@ ns:RegisterGuide({
     id = "dungeons-city-of-dalaran",
     title = "City of Dalaran",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = { level = { min = 24 } },
     goals = {
         {
@@ -55,7 +55,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept Power Overwhelming from High Sorcerer Andromath in the Mage Tower in Stormwind.",
             complete = QuestState(92489, "activeOrCompleted"),
-            route = { Point(1453, 0.376, 0.816, "High Sorcerer Andromath", "Travel to Stormwind.") },
+            route = { Point(1453, 0.487, 0.876, "High Sorcerer Andromath", "Travel to Stormwind.") },
         },
         {
             id = "accept-92456-a-green-sample",

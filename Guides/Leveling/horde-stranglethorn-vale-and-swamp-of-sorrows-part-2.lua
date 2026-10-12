@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Stranglethorn Vale & Swamp of Sorrows",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
@@ -1227,7 +1227,7 @@ ns:RegisterGuide({
         {
             priority = 540,
             route = {
-                { y = 0.362, mapID = 1454, label = "Sagorne Creststrider", x = 0.386, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
+                { y = 0.378, mapID = 1454, label = "Sagorne Creststrider", x = 0.38, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
             },
             id = "woven-class-shaman-accept-8410-elemental-mastery",
             conditions = {

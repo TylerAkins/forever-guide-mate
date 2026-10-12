@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Silithus",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-silithus",
@@ -98,7 +98,7 @@ ns:RegisterGuide({
         {
             priority = 50,
             route = {
-                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+                { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-7636-stave-of-the-ancients",
@@ -161,7 +161,7 @@ ns:RegisterGuide({
         {
             priority = 80,
             route = {
-                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+                { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-7633-an-introduction",
@@ -1524,7 +1524,7 @@ ns:RegisterGuide({
         {
             priority = 690,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-7637-emphasis-on-sacrifice",
@@ -1624,7 +1624,7 @@ ns:RegisterGuide({
         {
             priority = 730,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-7640-exorcising-terrordale",
@@ -1696,7 +1696,7 @@ ns:RegisterGuide({
         {
             priority = 760,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-paladin-accept-7641-the-work-of-grimand-elmore",
@@ -1792,7 +1792,7 @@ ns:RegisterGuide({
         {
             priority = 800,
             route = {
-                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", x = 0.597, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
             id = "woven-class-paladin-accept-7648-grimands-finest-work",
             conditions = {

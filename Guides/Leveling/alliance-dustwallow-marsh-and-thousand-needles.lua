@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Dustwallow Marsh & Thousand Needles",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
@@ -275,7 +275,7 @@ ns:RegisterGuide({
         {
             priority = 100,
             route = {
-                { y = 0.4125, mapID = 1445, label = "Archmage Tervosh", offMapText = "Travel to Archmage Tervosh in Dustwallow Marsh.", x = 0.5966 },
+                { y = 0.493, mapID = 1445, label = "Archmage Tervosh", offMapText = "Travel to Archmage Tervosh in Dustwallow Marsh.", x = 0.664 },
             },
             text = "Accept The Missing Diplomat from Archmage Tervosh.",
             id = "accept-1266-the-missing-diplomat",
@@ -919,7 +919,7 @@ ns:RegisterGuide({
         {
             priority = 320,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Rocket Car Parts from Kravel Koalbeard.",
             id = "accept-1110-rocket-car-parts",
@@ -1272,7 +1272,7 @@ ns:RegisterGuide({
         {
             priority = 460,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Wharfmaster Dizzywig from Kravel Koalbeard.",
             id = "accept-1111-wharfmaster-dizzywig",
@@ -1297,7 +1297,7 @@ ns:RegisterGuide({
         {
             priority = 470,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Hemet Nesingwary Jr. from Kravel Koalbeard.",
             id = "accept-5762-hemet-nesingwary-jr",
@@ -2180,7 +2180,7 @@ ns:RegisterGuide({
         {
             priority = 760,
             route = {
-                { y = 0.4917, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.6862 },
+                { y = 0.49, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.666 },
             },
             text = "Accept The Affray from Klannoc Macleod.",
             id = "accept-1719-the-affray",

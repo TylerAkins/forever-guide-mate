@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Swamp of Sorrows",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-swamp-of-sorrows",
@@ -42,7 +42,7 @@ ns:RegisterGuide({
         {
             priority = 20,
             route = {
-                { mapID = 1453, x = 0.415, y = 0.8939, label = "Angus Stern", offMapText = "Travel to Angus Stern in Stormwind City." },
+                { mapID = 1453, x = 0.518, y = 0.937, label = "Angus Stern", offMapText = "Travel to Angus Stern in Stormwind City." },
             },
             text = "Accept Morgan Stern from Angus Stern.",
             id = "accept-1260-morgan-stern",
@@ -98,7 +98,7 @@ ns:RegisterGuide({
         {
             priority = 40,
             route = {
-                { y = 0.6367, mapID = 1453, label = "Mazen Mac'Nadir", offMapText = "Travel to Mazen Mac'Nadir in Stormwind City.", x = 0.4117 },
+                { y = 0.743, mapID = 1453, label = "Mazen Mac'Nadir", offMapText = "Travel to Mazen Mac'Nadir in Stormwind City.", x = 0.518 },
             },
             text = "Accept Mazen's Behest from Mazen Mac'Nadir.",
             id = "accept-1363-mazen-s-behest",
@@ -161,7 +161,7 @@ ns:RegisterGuide({
             priority = 60,
             text = "Accept Mazen's Behest from Acolyte Dellis.",
             route = {
-                { y = 0.6383, mapID = 1453, label = "Acolyte Dellis", offMapText = "Travel to Acolyte Dellis in Stormwind City.", x = 0.4097 },
+                { y = 0.738, mapID = 1453, label = "Acolyte Dellis", offMapText = "Travel to Acolyte Dellis in Stormwind City.", x = 0.514 },
             },
             dependsOn = { "turnin-1363-mazen-s-behest" },
             id = "accept-1364-mazen-s-behest",
@@ -235,7 +235,7 @@ ns:RegisterGuide({
                 quest = { id = 1363, state = "activeOrCompleted" },
             },
             route = {
-                { mapID = 1453, x = 0.4152, y = 0.6437999999999999, label = "Mazen Mac'Nadir", offMapText = "Travel to Mazen Mac'Nadir in Stormwind City." },
+                { mapID = 1453, x = 0.518, y = 0.743, label = "Mazen Mac'Nadir", offMapText = "Travel to Mazen Mac'Nadir in Stormwind City." },
             },
             sourceStep = 5,
             priority = 80,
@@ -291,7 +291,7 @@ ns:RegisterGuide({
                 quest = { id = 1260, state = "activeOrCompleted" },
             },
             route = {
-                { mapID = 1453, x = 0.415, y = 0.8939, label = "Angus Stern", offMapText = "Travel to Angus Stern in Stormwind City." },
+                { mapID = 1453, x = 0.518, y = 0.937, label = "Angus Stern", offMapText = "Travel to Angus Stern in Stormwind City." },
             },
             sourceStep = 7,
             priority = 100,

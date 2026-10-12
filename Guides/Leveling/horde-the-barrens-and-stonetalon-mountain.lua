@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "The Barrens & Stonetalon Mountain",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
@@ -207,7 +207,7 @@ ns:RegisterGuide({
         {
             priority = 80,
             route = {
-                { y = 0.69, mapID = 1458, label = "Mennet Carkad", x = 0.832, offMapText = "Travel to Mennet Carkad in Undercity." },
+                { y = 0.676, mapID = 1458, label = "Mennet Carkad", x = 0.836, offMapText = "Travel to Mennet Carkad in Undercity." },
             },
             id = "woven-class-rogue-accept-1998-fenwick-thatros",
             conditions = {
@@ -1720,7 +1720,7 @@ ns:RegisterGuide({
         {
             priority = 630,
             route = {
-                { y = 0.01, mapID = 1454, label = "Therzok", offMapText = "Travel to Therzok in Orgrimmar.", x = 0.4383 },
+                { y = 0.5352, mapID = 1454, label = "Therzok", offMapText = "Travel to Therzok in Orgrimmar.", x = 0.4274 },
             },
             text = "Accept The Shattered Hand from Therzok.",
             id = "accept-1963-the-shattered-hand",
@@ -4296,7 +4296,7 @@ ns:RegisterGuide({
         {
             priority = 1520,
             route = {
-                { y = 0.01, mapID = 1454, label = "Therzok", offMapText = "Travel to Therzok in Orgrimmar.", x = 0.4383 },
+                { y = 0.5352, mapID = 1454, label = "Therzok", offMapText = "Travel to Therzok in Orgrimmar.", x = 0.4274 },
             },
             text = "Accept The Shattered Hand from Therzok.",
             id = "accept-1858-the-shattered-hand",
@@ -8410,7 +8410,7 @@ ns:RegisterGuide({
         {
             priority = 2820,
             route = {
-                { mapID = 1456, x = 0.24719999999999998, y = 0.223, label = "Clarice Foster", offMapText = "Travel to Clarice Foster in Thunder Bluff." },
+                { mapID = 1456, x = 0.2819, y = 0.2531, label = "Clarice Foster", offMapText = "Travel to Clarice Foster in Thunder Bluff." },
             },
             text = "Accept Until Death Do Us Part from Clarice Foster.",
             id = "accept-264-until-death-do-us-part",

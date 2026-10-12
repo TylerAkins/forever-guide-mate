@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## 0.4.4 - 2026-10-11
+- Audit quest-start pins across leveling, class, dungeon, and Loremaster guides against Forever quest markers, correcting source-backed coordinates.
+- Prefer the current unfinished quest objective's Blizzard destination, with authored guide coordinates as fallback.
+- Correct starter quest ordering and pins, including The Adventurer in Teldrassil, Kyle's Gone Missing!, and the Dirt-stained Map in Mulgore.
+
 ## 0.4.3 - 2026-10-11
 - Correct City of Dalaran attunement pins to the safe Lordamere approach and point Source of Power to Doctor Martin Felben.
 

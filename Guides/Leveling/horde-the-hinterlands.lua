@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "The Hinterlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-the-hinterlands",
@@ -152,7 +152,7 @@ ns:RegisterGuide({
         {
             priority = 60,
             route = {
-                { y = 0.5772, mapID = 1425, label = "Venom Bottles", offMapText = "Travel to Venom Bottles.", x = 0.2299 },
+                { y = 0.587, mapID = 1425, label = "Venom Bottles", offMapText = "Travel to Venom Bottles.", x = 0.236 },
             },
             text = "Accept Venom Bottles.",
             id = "accept-2933-venom-bottles",
@@ -2032,7 +2032,7 @@ ns:RegisterGuide({
         {
             priority = 700,
             route = {
-                { mapID = 1458, x = 0.48710000000000003, y = 0.7142000000000001, label = "Chemist Cuely", offMapText = "Travel to Chemist Cuely in Undercity." },
+                { mapID = 1458, x = 0.476, y = 0.73, label = "Chemist Cuely", offMapText = "Travel to Chemist Cuely in Undercity." },
             },
             text = "Accept Seeping Corruption from Chemist Cuely.",
             id = "accept-3568-seeping-corruption",

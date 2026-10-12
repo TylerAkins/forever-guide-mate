@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Feralas",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-feralas",
@@ -223,7 +223,7 @@ ns:RegisterGuide({
         {
             priority = 90,
             route = {
-                { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
+                { y = 0.446, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.742 },
             },
             text = "Accept The Ogres of Feralas from Rok Orhan.",
             id = "accept-2975-the-ogres-of-feralas",
@@ -595,7 +595,7 @@ ns:RegisterGuide({
         {
             priority = 220,
             route = {
-                { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
+                { y = 0.446, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.742 },
             },
             text = "Accept The Ogres of Feralas from Rok Orhan.",
             id = "accept-2980-the-ogres-of-feralas",
@@ -657,7 +657,7 @@ ns:RegisterGuide({
         {
             priority = 240,
             route = {
-                { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
+                { y = 0.446, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.742 },
             },
             text = "Accept Dark Ceremony from Rok Orhan.",
             id = "accept-2979-dark-ceremony",
@@ -1733,7 +1733,7 @@ ns:RegisterGuide({
         {
             priority = 580,
             route = {
-                { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
+                { y = 0.446, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.742 },
             },
             text = "Accept The Gordunni Orb from Rok Orhan.",
             id = "accept-3002-the-gordunni-orb",

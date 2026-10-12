@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Duskwood & Redridge Mountains",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-duskwood-and-redridge-mountains",
@@ -43,7 +43,7 @@ ns:RegisterGuide({
         {
             priority = 20,
             route = {
-                { y = 0.816, mapID = 1453, label = "High Sorcerer Andromath", x = 0.376, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
+                { y = 0.876, mapID = 1453, label = "High Sorcerer Andromath", x = 0.487, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-mage-accept-1938-urs-treatise-on-shadow-magic",
@@ -115,7 +115,7 @@ ns:RegisterGuide({
         {
             priority = 50,
             route = {
-                { y = 0.816, mapID = 1453, label = "High Sorcerer Andromath", x = 0.376, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
+                { y = 0.876, mapID = 1453, label = "High Sorcerer Andromath", x = 0.487, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-mage-accept-1940-pristine-spider-silk",
@@ -187,7 +187,7 @@ ns:RegisterGuide({
         {
             priority = 80,
             route = {
-                { y = 0.766, mapID = 1453, label = "Wynne Larson", x = 0.416, offMapText = "Travel to Wynne Larson in Stormwind City." },
+                { y = 0.836, mapID = 1453, label = "Wynne Larson", x = 0.52, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-mage-accept-1942-astral-knot-garment",
@@ -237,7 +237,7 @@ ns:RegisterGuide({
         {
             priority = 100,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             id = "woven-class-mage-accept-1939-high-sorcerer-andromath",
             conditions = {
@@ -2712,7 +2712,7 @@ ns:RegisterGuide({
         {
             priority = 890,
             route = {
-                { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
             text = "Accept The Touch of Zanzil from Master Mathias Shaw.",
             id = "accept-2607-the-touch-of-zanzil",
@@ -2786,7 +2786,7 @@ ns:RegisterGuide({
         {
             priority = 910,
             route = {
-                { y = 0.5877, mapID = 1453, label = "Doc Mixilpixil", offMapText = "Travel to Doc Mixilpixil in Stormwind City.", x = 0.7804 },
+                { y = 0.699, mapID = 1453, label = "Doc Mixilpixil", offMapText = "Travel to Doc Mixilpixil in Stormwind City.", x = 0.801 },
             },
             text = "Accept The Touch of Zanzil from Doc Mixilpixil.",
             id = "accept-2608-the-touch-of-zanzil",
@@ -2907,7 +2907,7 @@ ns:RegisterGuide({
         {
             priority = 950,
             route = {
-                { y = 0.59, mapID = 1453, label = "Doc Mixilpixil", x = 0.78, offMapText = "Travel to Doc Mixilpixil in Stormwind City." },
+                { y = 0.699, mapID = 1453, label = "Doc Mixilpixil", x = 0.801, offMapText = "Travel to Doc Mixilpixil in Stormwind City." },
             },
             id = "woven-class-rogue-accept-2609-the-touch-of-zanzil",
             conditions = {
@@ -3140,7 +3140,7 @@ ns:RegisterGuide({
         {
             priority = 1030,
             route = {
-                { mapID = 1453, x = 0.2645, y = 0.7866, label = "Zardeth of the Black Claw", offMapText = "Travel to Zardeth of the Black Claw in Stormwind City." },
+                { mapID = 1453, x = 0.401, y = 0.853, label = "Zardeth of the Black Claw", offMapText = "Travel to Zardeth of the Black Claw in Stormwind City." },
             },
             text = "Accept A Noble Brew from Zardeth of the Black Claw.",
             id = "accept-335-a-noble-brew",
@@ -3168,7 +3168,7 @@ ns:RegisterGuide({
         {
             priority = 1040,
             route = {
-                { y = 0.4897, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris in Redridge Mountains.", x = 0.3351 },
+                { y = 0.49, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris in Redridge Mountains.", x = 0.284 },
             },
             text = "Accept Blackrock Menace from Marshal Marris.",
             id = "accept-20-blackrock-menace",
@@ -3196,7 +3196,7 @@ ns:RegisterGuide({
         {
             priority = 1050,
             route = {
-                { y = 0.4738, mapID = 1433, label = "Dockmaster Baren", offMapText = "Travel to Dockmaster Baren in Redridge Mountains.", x = 0.2772 },
+                { y = 0.474, mapID = 1433, label = "Dockmaster Baren", offMapText = "Travel to Dockmaster Baren in Redridge Mountains.", x = 0.226 },
             },
             text = "Accept Selling Fish from Dockmaster Baren.",
             id = "accept-127-selling-fish",
@@ -3224,7 +3224,7 @@ ns:RegisterGuide({
         {
             priority = 1060,
             route = {
-                { y = 0.4738, mapID = 1433, label = "Dockmaster Baren", offMapText = "Travel to Dockmaster Baren in Redridge Mountains.", x = 0.2772 },
+                { y = 0.474, mapID = 1433, label = "Dockmaster Baren", offMapText = "Travel to Dockmaster Baren in Redridge Mountains.", x = 0.226 },
             },
             text = "Accept Murloc Poachers from Dockmaster Baren.",
             id = "accept-150-murloc-poachers",
@@ -3252,7 +3252,7 @@ ns:RegisterGuide({
         {
             priority = 1070,
             route = {
-                { y = 0.4633, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.2186 },
+                { y = 0.463, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.168 },
             },
             text = "Accept An Unwelcome Guest from Martie Jainrose.",
             id = "accept-34-an-unwelcome-guest",
@@ -4325,7 +4325,7 @@ ns:RegisterGuide({
         {
             priority = 1400,
             route = {
-                { y = 0.5785, mapID = 1433, label = "Guard Howe", offMapText = "Travel to Guard Howe in Redridge Mountains.", x = 0.3154 },
+                { y = 0.579, mapID = 1433, label = "Guard Howe", offMapText = "Travel to Guard Howe in Redridge Mountains.", x = 0.265 },
             },
             text = "Accept Blackrock Bounty from Guard Howe.",
             id = "accept-128-blackrock-bounty",
@@ -4353,7 +4353,7 @@ ns:RegisterGuide({
         {
             priority = 1410,
             route = {
-                { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
+                { y = 0.473, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.259 },
             },
             text = "Accept Howling in the Hills from Verner Osgood.",
             id = "accept-126-howling-in-the-hills",
@@ -4387,7 +4387,7 @@ ns:RegisterGuide({
         {
             priority = 1420,
             route = {
-                { y = 0.4426, mapID = 1433, label = "Bailiff Conacher", offMapText = "Travel to Bailiff Conacher in Redridge Mountains.", x = 0.2972 },
+                { y = 0.443, mapID = 1433, label = "Bailiff Conacher", offMapText = "Travel to Bailiff Conacher in Redridge Mountains.", x = 0.246 },
             },
             text = "Accept Solomon's Law from Bailiff Conacher.",
             id = "accept-91-solomon-s-law",
@@ -4415,7 +4415,7 @@ ns:RegisterGuide({
         {
             priority = 1430,
             route = {
-                { y = 0.4647, mapID = 1433, label = "Wanted: Lieutenant Fangore", offMapText = "Travel to Wanted: Lieutenant Fangore.", x = 0.2675 },
+                { y = 0.465, mapID = 1433, label = "Wanted: Lieutenant Fangore", offMapText = "Travel to Wanted: Lieutenant Fangore.", x = 0.217 },
             },
             text = "Accept Wanted: Lieutenant Fangore.",
             id = "accept-180-wanted-lieutenant-fangore",
@@ -4589,7 +4589,7 @@ ns:RegisterGuide({
         {
             priority = 1490,
             route = {
-                { y = 0.1255, mapID = 1433, label = "Corporal Keeshan", offMapText = "Travel to Corporal Keeshan in Redridge Mountains.", x = 0.2839 },
+                { y = 0.126, mapID = 1433, label = "Corporal Keeshan", offMapText = "Travel to Corporal Keeshan in Redridge Mountains.", x = 0.234 },
             },
             text = "Accept Missing In Action from Corporal Keeshan.",
             id = "accept-219-missing-in-action",
@@ -4859,7 +4859,7 @@ ns:RegisterGuide({
         {
             priority = 1580,
             route = {
-                { y = 0.3028, mapID = 1453, label = "Baros Alexston", offMapText = "Travel to Baros Alexston in Stormwind City.", x = 0.4919 },
+                { y = 0.479, mapID = 1453, label = "Baros Alexston", offMapText = "Travel to Baros Alexston in Stormwind City.", x = 0.577 },
             },
             text = "Accept Bazil Thredd from Baros Alexston.",
             id = "accept-389-bazil-thredd",
@@ -4949,7 +4949,7 @@ ns:RegisterGuide({
         {
             priority = 1610,
             route = {
-                { y = 0.488, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris.", x = 0.334 },
+                { y = 0.49, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris.", x = 0.284 },
             },
             text = "Accept Blackrock Blockade from Marshal Marris in Lakeshire.",
             id = "woven-accept-98387-blackrock-blockade",
@@ -4976,7 +4976,7 @@ ns:RegisterGuide({
         {
             priority = 1620,
             route = {
-                { y = 0.486, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow.", x = 0.322 },
+                { y = 0.486, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow.", x = 0.27 },
             },
             text = "Accept Alther's Mill from Foreman Oslow in Lakeshire.",
             id = "woven-accept-98386-althers-mill",

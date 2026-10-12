@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Hillsbrad Foothills & Arathi Highlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
@@ -878,7 +878,7 @@ ns:RegisterGuide({
         {
             priority = 290,
             route = {
-                { mapID = 1416, x = 0.47909999999999997, y = 0.8212999999999999, label = "Foreboding Plans", offMapText = "Travel to Foreboding Plans." },
+                { mapID = 1416, x = 0.583, y = 0.68, label = "Foreboding Plans", offMapText = "Travel to Foreboding Plans." },
             },
             text = "Accept Foreboding Plans.",
             id = "accept-510-foreboding-plans",
@@ -906,7 +906,7 @@ ns:RegisterGuide({
         {
             priority = 300,
             route = {
-                { mapID = 1416, x = 0.47909999999999997, y = 0.8212999999999999, label = "Encrypted Letter", offMapText = "Travel to Encrypted Letter." },
+                { mapID = 1416, x = 0.583, y = 0.68, label = "Encrypted Letter", offMapText = "Travel to Encrypted Letter." },
             },
             text = "Accept Encrypted Letter.",
             id = "accept-511-encrypted-letter",
@@ -1584,7 +1584,7 @@ ns:RegisterGuide({
         {
             priority = 530,
             route = {
-                { y = 0.8805, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.3904 },
+                { y = 0.87, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.386 },
             },
             text = "Accept A King's Tribute from Grand Mason Marblesten.",
             id = "accept-700-a-king-s-tribute",

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-stranglethorn-vale-part-4",
@@ -322,7 +322,7 @@ ns:RegisterGuide({
         {
             priority = 140,
             route = {
-                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.284, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
             id = "woven-class-warlock-accept-8419-an-imps-request",
             conditions = {
@@ -1857,7 +1857,7 @@ ns:RegisterGuide({
         {
             priority = 820,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             id = "woven-class-paladin-accept-8415-chillwind-point",
             conditions = {

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Thousand Needles",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-thousand-needles",
@@ -1898,7 +1898,7 @@ ns:RegisterGuide({
         {
             priority = 640,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Wharfmaster Dizzywig from Kravel Koalbeard.",
             id = "accept-1111-wharfmaster-dizzywig",
@@ -2181,7 +2181,7 @@ ns:RegisterGuide({
         {
             priority = 740,
             route = {
-                { y = 0.4917, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.6862 },
+                { y = 0.49, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.666 },
             },
             text = "Accept The Affray from Klannoc Macleod.",
             id = "accept-1719-the-affray",

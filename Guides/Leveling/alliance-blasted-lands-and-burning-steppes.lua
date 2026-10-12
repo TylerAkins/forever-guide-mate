@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Blasted Lands & Burning Steppes",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-blasted-lands-and-burning-steppes",
@@ -945,7 +945,7 @@ ns:RegisterGuide({
         {
             priority = 370,
             route = {
-                { y = 0.148, mapID = 1455, label = "Curator Thorius", offMapText = "Travel to Curator Thorius in Ironforge.", x = 0.712 },
+                { y = 0.162, mapID = 1455, label = "Curator Thorius", offMapText = "Travel to Curator Thorius in Ironforge.", x = 0.714 },
             },
             text = "Accept At Last! from Curator Thorius.",
             id = "accept-3201-at-last",

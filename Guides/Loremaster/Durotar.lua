@@ -66,7 +66,7 @@ ns:RegisterGuide({
     id = "leveling-durotar",
     title = "Durotar (Loremaster)",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 1 } },
@@ -1387,7 +1387,7 @@ ns:RegisterGuide({
             text = "Accept Thwarting Kolkar Aggression from Lar Prowltusk.",
             complete = QuestState(786, "activeOrCompleted"),
             route = {
-                Point(MAP.DUROTAR, 0.542, 0.732, "Lar Prowltusk",
+                Point(MAP.DUROTAR, 0.5452, 0.752, "Lar Prowltusk",
                     "Travel to Lar Prowltusk."),
             },
         },
@@ -1459,7 +1459,7 @@ ns:RegisterGuide({
             text = "Accept The Adventurer from the Lost Journal. No saved spot for the journal, so the guide follows the pin in your quest log.",
             complete = QuestState(96652, "activeOrCompleted"),
             route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Valley of Trials",
+                Point(MAP.DUROTAR, 0.4282, 0.6914, "Valley of Trials",
                     "Travel to the Valley of Trials."),
             },
         },

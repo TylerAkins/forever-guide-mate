@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Burning Steppes & Azshara",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-burning-steppes-and-azshara",
@@ -425,7 +425,7 @@ ns:RegisterGuide({
         {
             priority = 170,
             route = {
-                { mapID = 1454, x = 0.5627, y = 0.4667, label = "Zilzibin Drumlore", offMapText = "Travel to Zilzibin Drumlore in Orgrimmar." },
+                { mapID = 1454, x = 0.552, y = 0.558, label = "Zilzibin Drumlore", offMapText = "Travel to Zilzibin Drumlore in Orgrimmar." },
             },
             text = "Accept March of the Silithid from Zilzibin Drumlore.",
             id = "accept-4494-march-of-the-silithid",

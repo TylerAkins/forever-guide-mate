@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "The Barrens",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-the-barrens",
@@ -630,7 +630,7 @@ ns:RegisterGuide({
         {
             priority = 230,
             route = {
-                { y = 0.591, mapID = 1413, label = "Egg Hunt", offMapText = "Travel to Camp Taurajo.", x = 0.444 },
+                { y = 0.2962, mapID = 1413, label = "Egg Hunt", offMapText = "Travel to Camp Taurajo.", x = 0.5107 },
             },
             text = "Accept Egg Hunt.",
             id = "accept-868-egg-hunt",
@@ -1312,7 +1312,7 @@ ns:RegisterGuide({
         {
             priority = 460,
             route = {
-                { mapID = 1413, x = 0.4612, y = 0.8123999999999999, label = "Gann Stonespire", offMapText = "Travel to Gann Stonespire in The Barrens." },
+                { mapID = 1413, x = 0.4608, y = 0.7637, label = "Gann Stonespire", offMapText = "Travel to Gann Stonespire in The Barrens." },
             },
             text = "Accept Revenge of Gann from Gann Stonespire.",
             id = "accept-846-revenge-of-gann",
@@ -1487,7 +1487,7 @@ ns:RegisterGuide({
         {
             priority = 510,
             route = {
-                { y = 0.8124, mapID = 1413, label = "Gann Stonespire", offMapText = "Travel to Gann Stonespire in The Barrens.", x = 0.4612 },
+                { y = 0.7637, mapID = 1413, label = "Gann Stonespire", offMapText = "Travel to Gann Stonespire in The Barrens.", x = 0.4608 },
             },
             text = "Accept Revenge of Gann from Gann Stonespire.",
             id = "accept-849-revenge-of-gann",

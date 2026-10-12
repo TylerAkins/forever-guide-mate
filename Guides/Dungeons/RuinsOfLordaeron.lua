@@ -55,7 +55,7 @@ ns:RegisterGuide({
     id = "dungeons-ruins-of-lordaeron",
     title = "Ruins of Lordaeron",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 16 } },
@@ -660,7 +660,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-remember-letter" },
             taxiDestination = "Stormwind",
             complete = QuestState(95161, "activeOrCompleted"),
-            route = Stormwind(0.474, 0.384, "Orphan Matron Nightingale in Stormwind"),
+            route = Stormwind(0.562, 0.542, "Orphan Matron Nightingale in Stormwind"),
         },
         {
             id = "turnin-remember-duskwood",

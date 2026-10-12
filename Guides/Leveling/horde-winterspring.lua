@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Winterspring",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-winterspring",
@@ -46,7 +46,7 @@ ns:RegisterGuide({
         {
             priority = 20,
             route = {
-                { y = 0.362, mapID = 1454, label = "Sagorne Creststrider", x = 0.386, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
+                { y = 0.484, mapID = 1454, label = "Sagorne Creststrider", x = 0.392, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
             },
             id = "woven-class-shaman-accept-7667-material-assistance",
             conditions = {

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Paladin",
     category = "Class Quests",
     id = "class-paladin",
@@ -1191,7 +1191,7 @@ ns:RegisterGuide({
         {
             priority = 420,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             id = "accept-1641-the-tome-of-divinity",
             conditions = {
@@ -1313,7 +1313,7 @@ ns:RegisterGuide({
         {
             priority = 470,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             dependsOn = { "turnin-1642-the-tome-of-divinity" },
             id = "accept-1643-the-tome-of-divinity",
@@ -1365,7 +1365,7 @@ ns:RegisterGuide({
         {
             priority = 490,
             route = {
-                { y = 0.618, mapID = 1453, label = "Stephanie Turner", x = 0.57, offMapText = "Travel to Stephanie Turner in Stormwind City." },
+                { y = 0.722, mapID = 1453, label = "Stephanie Turner", x = 0.638, offMapText = "Travel to Stephanie Turner in Stormwind City." },
             },
             dependsOn = { "turnin-1643-the-tome-of-divinity" },
             id = "accept-1644-the-tome-of-divinity",
@@ -1446,7 +1446,7 @@ ns:RegisterGuide({
         {
             priority = 520,
             route = {
-                { y = 0.618, mapID = 1453, label = "Stephanie Turner", x = 0.57, offMapText = "Travel to Stephanie Turner in Stormwind City." },
+                { y = 0.722, mapID = 1453, label = "Stephanie Turner", x = 0.638, offMapText = "Travel to Stephanie Turner in Stormwind City." },
             },
             dependsOn = { "turnin-1644-the-tome-of-divinity", "turnin-1643-the-tome-of-divinity" },
             id = "accept-1780-the-tome-of-divinity",
@@ -1498,7 +1498,7 @@ ns:RegisterGuide({
         {
             priority = 540,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             dependsOn = { "turnin-1780-the-tome-of-divinity" },
             id = "accept-1781-the-tome-of-divinity",
@@ -1550,7 +1550,7 @@ ns:RegisterGuide({
         {
             priority = 560,
             route = {
-                { y = 0.266, mapID = 1453, label = "Gazin Tenorm", x = 0.386, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
+                { y = 0.449, mapID = 1453, label = "Gazin Tenorm", x = 0.495, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
             },
             dependsOn = { "turnin-1781-the-tome-of-divinity" },
             id = "accept-1786-the-tome-of-divinity",
@@ -1704,7 +1704,7 @@ ns:RegisterGuide({
         {
             priority = 620,
             route = {
-                { y = 0.266, mapID = 1453, label = "Gazin Tenorm", x = 0.386, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
+                { y = 0.449, mapID = 1453, label = "Gazin Tenorm", x = 0.495, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
             },
             dependsOn = { "turnin-1787-the-tome-of-divinity" },
             id = "accept-1788-the-tome-of-divinity",
@@ -2910,7 +2910,7 @@ ns:RegisterGuide({
         {
             priority = 1090,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             id = "accept-1790-the-symbol-of-life",
             conditions = {
@@ -3066,7 +3066,7 @@ ns:RegisterGuide({
         {
             priority = 1150,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             id = "accept-3000-tome-of-divinity",
             conditions = {
@@ -3610,7 +3610,7 @@ ns:RegisterGuide({
         {
             priority = 1360,
             route = {
-                { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
+                { y = 0.064, mapID = 1455, label = "Tiza Battleforge", x = 0.236, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
             id = "accept-1794-the-tome-of-valor",
             conditions = {
@@ -3660,7 +3660,7 @@ ns:RegisterGuide({
         {
             priority = 1380,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             id = "accept-1793-the-tome-of-valor",
             conditions = {
@@ -3777,7 +3777,7 @@ ns:RegisterGuide({
         {
             priority = 1430,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             dependsOn = { "turnin-1649-the-tome-of-valor" },
             id = "accept-1650-the-tome-of-valor",
@@ -4476,7 +4476,7 @@ ns:RegisterGuide({
         {
             priority = 1710,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             id = "accept-1661-the-tome-of-nobility",
             conditions = {
@@ -4652,7 +4652,7 @@ ns:RegisterGuide({
         {
             priority = 1780,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             id = "accept-8415-chillwind-point",
             conditions = {
@@ -4922,7 +4922,7 @@ ns:RegisterGuide({
         {
             priority = 1880,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             dependsOn = { "turnin-7638-lord-grayson-shadowbreaker" },
             id = "accept-7637-emphasis-on-sacrifice",
@@ -5022,7 +5022,7 @@ ns:RegisterGuide({
         {
             priority = 1920,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             dependsOn = { "turnin-7639-to-show-due-judgment" },
             id = "accept-7640-exorcising-terrordale",
@@ -5094,7 +5094,7 @@ ns:RegisterGuide({
         {
             priority = 1950,
             route = {
-                { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
+                { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
             dependsOn = { "turnin-7640-exorcising-terrordale", "turnin-7639-to-show-due-judgment" },
             id = "accept-7641-the-work-of-grimand-elmore",
@@ -5348,7 +5348,7 @@ ns:RegisterGuide({
         {
             priority = 2050,
             route = {
-                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", x = 0.597, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
             id = "accept-7648-grimands-finest-work",
             conditions = {
