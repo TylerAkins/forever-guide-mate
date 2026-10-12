@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Orc & Troll Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-durotar",
@@ -1912,6 +1912,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6394-thazz-ril-s-pick",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 3 } },
+            requiredLevel = 3,
+            checkpointQuest = 6394,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 545,
+        },
+        {
             priority = 550,
             route = {
                 { y = 0.6864, mapID = 1411, label = "Foreman Thazz'ril", offMapText = "Travel to Foreman Thazz'ril in Durotar.", x = 0.4462 },
@@ -2199,6 +2219,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1517-call-of-earth",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 1517,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 635,
+        },
+        {
             text = "Accept Call of Earth from Canaga Earthcaller.",
             priority = 640,
             route = {
@@ -2296,6 +2339,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1518-call-of-earth",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 1518,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 665,
         },
         {
             priority = 670,
@@ -2406,6 +2472,96 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 692.5,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek.", x = 0.42 },
+            },
+            text = "Accept Wayward Weapons from Gornek in The Den.",
+            id = "woven-accept-97279-wayward-weapons",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97279, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Collect 6 Abandoned Training Weapons around the Valley of Trials. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 695,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Valley of Trials", offMapText = "Travel to Valley of Trials.", x = 0.42 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            id = "woven-objective-97279-wayward-weapons",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                quest = { id = 97279, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-97279-wayward-weapons" },
+        },
+        {
+            priority = 697.5,
+            route = {
+                { y = 0.68, mapID = 1411, label = "Kzan Thornslash", offMapText = "Travel to Kzan Thornslash.", x = 0.404 },
+            },
+            text = "Turn in Wayward Weapons to Kzan Thornslash in The Den.",
+            id = "woven-turnin-97279-wayward-weapons",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97279, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97279-wayward-weapons", "woven-objective-97279-wayward-weapons" },
+        },
+        {
             priority = 700,
             route = {
                 { y = 0.6831, mapID = 1411, label = "Ukor", offMapText = "Travel to Ukor in Durotar.", x = 0.5206 },
@@ -2484,6 +2640,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-817-practical-prey",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 817,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 725,
+        },
+        {
             priority = 730,
             route = {
                 { y = 0.7392, mapID = 1411, label = "Vel'rin Fang", offMapText = "Travel to Vel'rin Fang in Durotar.", x = 0.5596 },
@@ -2510,6 +2686,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-818-a-solvent-spirit",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 818,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 735,
         },
         {
             priority = 740,
@@ -2574,6 +2770,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-808-minshina-s-skull",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 808,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 755,
+        },
+        {
             priority = 760,
             route = {
                 { y = 0.7472, mapID = 1411, label = "Master Gadrin", offMapText = "Travel to Master Gadrin in Durotar.", x = 0.5595 },
@@ -2600,6 +2816,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-826-zalazane",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 826,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 765,
         },
         {
             priority = 770,
@@ -2630,6 +2866,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-823-report-to-orgnil",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 823,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 775,
+        },
+        {
             priority = 780,
             route = {
                 { y = 0.7472, mapID = 1411, label = "Master Gadrin", offMapText = "Travel to Master Gadrin in Durotar.", x = 0.5595 },
@@ -2652,6 +2908,129 @@ ns:RegisterGuide({
                 quest = { id = 823, state = "activeOrCompleted" },
             },
             sourceStep = 72,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 781.666667,
+            route = {
+                { y = 0.74, mapID = 1411, label = "Vel'rin Fang", offMapText = "Travel to Vel'rin Fang.", x = 0.558 },
+            },
+            text = "Accept Legging It from Vel'rin Fang in Sen'jin Village.",
+            id = "woven-accept-96821-legging-it",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96821, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-97225-forgotten-loa-idols",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 97225,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 783.333333,
+        },
+        {
+            priority = 785,
+            route = {
+                { y = 0.744, mapID = 1411, label = "Master Vornal", offMapText = "Travel to Master Vornal.", x = 0.558 },
+            },
+            text = "Accept Forgotten Loa Idols from Master Vornal in Sen'jin Village.",
+            id = "woven-accept-97225-forgotten-loa-idols",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97225, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-97223-bloodtalon-matriarch",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 97223,
+            priority = 786.666667,
+        },
+        {
+            priority = 788.333333,
+            route = {
+                { y = 0.754, mapID = 1411, label = "Xar'Ti", offMapText = "Travel to Xar'Ti.", x = 0.552 },
+            },
+            text = "Accept Bloodtalon Matriarch from Xar'Ti in Sen'jin Village.",
+            id = "woven-accept-97223-bloodtalon-matriarch",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97223, state = "activeOrCompleted" },
+            },
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -2913,6 +3292,264 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-99123-lost-in-the-shadows",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 99123,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 850.909091,
+        },
+        {
+            priority = 851.818182,
+            route = {
+                { y = 0.786, mapID = 1411, label = "Pal'juh", offMapText = "Travel to Pal'juh.", x = 0.462 },
+            },
+            text = "Accept Lost in the Shadows from Pal'juh inside Kolkar Crag.",
+            id = "woven-accept-99123-lost-in-the-shadows",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99123, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 852.727273,
+            route = {
+                { y = 0.786, mapID = 1411, label = "Pal'juh", offMapText = "Travel to Pal'juh.", x = 0.462 },
+            },
+            text = "Escort Pal'juh out of Kolkar Crag.",
+            id = "woven-objective-99123-lost-in-the-shadows",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99123, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99123-lost-in-the-shadows" },
+        },
+        {
+            priority = 853.636364,
+            route = {
+                { y = 0.744, mapID = 1411, label = "Master Vornal", offMapText = "Travel to Master Vornal.", x = 0.558 },
+            },
+            text = "Turn in Lost in the Shadows to Master Vornal in Sen'jin Village.",
+            id = "woven-turnin-99123-lost-in-the-shadows",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99123, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99123-lost-in-the-shadows", "woven-objective-99123-lost-in-the-shadows" },
+        },
+        {
+            priority = 854.545455,
+            route = {
+                { y = 0.574, mapID = 1411, label = "Ridgeshade Creeper", offMapText = "Travel to Ridgeshade Creeper.", x = 0.516 },
+            },
+            text = "Legging It: kill Ridgeshade Creepers on the way to Razor Hill.",
+            id = "woven-objective-96821-legging-it-1",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 96821, index = 1 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96821-legging-it" },
+        },
+        {
+            priority = 855.454545,
+            route = {
+                { y = 0.518, mapID = 1411, label = "Ridgeshade Lurker", offMapText = "Travel to Ridgeshade Lurker.", x = 0.504 },
+            },
+            text = "Legging It: kill Ridgeshade Lurkers on the way to Razor Hill. A lost pack can drop for Ukor.",
+            id = "woven-objective-96821-legging-it-2",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 96821, index = 2 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96821-legging-it" },
+        },
+        {
+            id = "loot-starter-before-accept-96876-verified-pickup",
+            kind = "note",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Loot Ukor's Lost Pack from Ukorsbane. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Ukor's Lost Pack", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 96876, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1411, x = 0.4917, y = 0.5696, label = "Ukorsbane", offMapText = "Travel to Ukorsbane." },
+            },
+            dependsOn = {},
+            priority = 856.363636,
+        },
+        {
+            id = "level-before-accept-96876-verified-pickup",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 96876,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 857.272727,
+        },
+        {
+            priority = 858.181818,
+            text = "Use the Ukor's Lost Pack to accept Ukor's Lost Pack.",
+            id = "accept-96876-verified-pickup",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96876, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 859.090909,
+            route = {
+                { y = 0.682, mapID = 1411, label = "Ukor", offMapText = "Travel to Ukor.", x = 0.52 },
+            },
+            text = "Turn in Ukor's Lost Pack to Ukor in the Valley of Trials if you found the pack.",
+            id = "woven-turnin-96876-ukors-lost-pack",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96876, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-96876-verified-pickup" },
+        },
+        {
             priority = 860,
             text = "Turn in Report to Orgnil to Orgnil Soulscar.",
             route = {
@@ -2946,9 +3583,6 @@ ns:RegisterGuide({
             text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
             conditions = {
                 all = {
-                    {
-                        class = { 1, 7 },
-                    },
                     { faction = "Horde" },
                     {
                         race = { 2, 5, 6, 8, 96 },
@@ -2975,9 +3609,6 @@ ns:RegisterGuide({
             kind = "accept",
             conditions = {
                 all = {
-                    {
-                        class = { 1, 7 },
-                    },
                     { faction = "Horde" },
                     {
                         level = { min = 4 },
@@ -3001,6 +3632,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-784-vanquish-the-betrayers",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 3 } },
+            requiredLevel = 3,
+            checkpointQuest = 784,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 885,
         },
         {
             priority = 890,
@@ -3081,6 +3732,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-815-break-a-few-eggs",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 815,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 915,
+        },
+        {
             priority = 920,
             route = {
                 { y = 0.4245, mapID = 1411, label = "Cook Torka", offMapText = "Travel to Cook Torka in Durotar.", x = 0.5111 },
@@ -3109,6 +3780,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-791-carry-your-weight",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 791,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 925,
+        },
+        {
             priority = 930,
             route = {
                 { mapID = 1411, x = 0.4989, y = 0.40380000000000005, label = "Furl Scornbrow", offMapText = "Travel to Furl Scornbrow in Durotar." },
@@ -3131,6 +3822,100 @@ ns:RegisterGuide({
                 quest = { id = 791, state = "activeOrCompleted" },
             },
             sourceStep = 85,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-96822-for-honor",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 3 } },
+            requiredLevel = 3,
+            checkpointQuest = 96822,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 932,
+        },
+        {
+            priority = 934,
+            route = {
+                { y = 0.426, mapID = 1411, label = "Turroc", offMapText = "Travel to Turroc.", x = 0.54 },
+            },
+            text = "Accept For Honor from Turroc in Razor Hill Barracks.",
+            id = "woven-accept-96822-for-honor",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96822, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-96825-this-fruit-could-bite-back",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 3 } },
+            requiredLevel = 3,
+            checkpointQuest = 96825,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 936,
+        },
+        {
+            priority = 938,
+            route = {
+                { y = 0.424, mapID = 1411, label = "Cook Torka", offMapText = "Travel to Cook Torka.", x = 0.512 },
+            },
+            text = "Accept This Fruit Could Bite Back from Cook Torka in Razor Hill.",
+            id = "woven-accept-96825-this-fruit-could-bite-back",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96825, state = "activeOrCompleted" },
+            },
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -3194,6 +3979,29 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-5648-garments-of-spirituality",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 5648,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 955,
         },
         {
             priority = 960,
@@ -3449,6 +4257,33 @@ ns:RegisterGuide({
             dependsOn = { "accept-784-vanquish-the-betrayers" },
         },
         {
+            text = "For Honor: collect the Raider's Bow, Battleaxe, and Shield on the Tiragarde Keep outskirts. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 1045,
+            route = {
+                { y = 0.588, mapID = 1411, label = "Tiragarde Keep outskirts", offMapText = "Travel to Tiragarde Keep outskirts.", x = 0.594 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            id = "woven-objective-96822-for-honor",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                quest = { id = 96822, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-96822-for-honor" },
+        },
+        {
             priority = 1050,
             text = "Turn in Vanquish the Betrayers to Gar'Thok.",
             route = {
@@ -3480,6 +4315,53 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1053.333333,
+            route = {
+                { y = 0.426, mapID = 1411, label = "Turroc", offMapText = "Travel to Turroc.", x = 0.54 },
+            },
+            text = "Turn in For Honor to Turroc in Razor Hill Barracks.",
+            id = "woven-turnin-96822-for-honor",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96822, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96822-for-honor", "woven-objective-96822-for-honor" },
+        },
+        {
+            id = "level-before-accept-825-from-the-wreckage",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 3 } },
+            requiredLevel = 3,
+            checkpointQuest = 825,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1056.666667,
         },
         {
             priority = 1060,
@@ -3604,6 +4486,33 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1095,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Gar'Thok", offMapText = "Travel to Gar'Thok.", x = 0.52 },
+            },
+            text = "Turn in Legging It to Gar'Thok in Razor Hill.",
+            id = "woven-turnin-96821-legging-it",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96821, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96821-legging-it", "woven-objective-96821-legging-it-1", "woven-objective-96821-legging-it-2" },
         },
         {
             priority = 1100,
@@ -3808,6 +4717,60 @@ ns:RegisterGuide({
             dependsOn = { "accept-817-practical-prey" },
         },
         {
+            text = "Collect Forgotten Loa Idols on the Echo Isles. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 1163.333333,
+            route = {
+                { y = 0.834, mapID = 1411, label = "Echo Isles", offMapText = "Travel to Echo Isles.", x = 0.676 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            id = "woven-objective-97225-forgotten-loa-idols",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                quest = { id = 97225, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-97225-forgotten-loa-idols" },
+        },
+        {
+            priority = 1166.666667,
+            route = {
+                { y = 0.716, mapID = 1411, label = "Bloodtalon Matriarch", offMapText = "Travel to Bloodtalon Matriarch.", x = 0.686 },
+            },
+            text = "Collect Bloodtalon Matriarch Eggs.",
+            id = "woven-objective-97223-bloodtalon-matriarch",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97223, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97223-bloodtalon-matriarch" },
+        },
+        {
             priority = 1170,
             text = "Turn in Minshina's Skull to Master Gadrin.",
             route = {
@@ -3890,6 +4853,60 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1193.333333,
+            route = {
+                { y = 0.746, mapID = 1411, label = "Master Gadrin", offMapText = "Travel to Master Gadrin.", x = 0.56 },
+            },
+            text = "Turn in Forgotten Loa Idols to Master Gadrin in Sen'jin Village.",
+            id = "woven-turnin-97225-forgotten-loa-idols",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97225, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97225-forgotten-loa-idols", "woven-objective-97225-forgotten-loa-idols" },
+        },
+        {
+            priority = 1196.666667,
+            route = {
+                { y = 0.754, mapID = 1411, label = "Xar'Ti", offMapText = "Travel to Xar'Ti.", x = 0.552 },
+            },
+            text = "Turn in Bloodtalon Matriarch to Xar'Ti in Sen'jin Village.",
+            id = "woven-turnin-97223-bloodtalon-matriarch",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97223, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97223-bloodtalon-matriarch", "woven-objective-97223-bloodtalon-matriarch" },
         },
         {
             priority = 1200,
@@ -4066,6 +5083,33 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            text = "Collect Prickly Pear Fruit on the Razormane grounds. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 1255,
+            route = {
+                { y = 0.398, mapID = 1411, label = "Razormane grounds", offMapText = "Travel to Razormane grounds.", x = 0.43 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            id = "woven-objective-96825-this-fruit-could-bite-back",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                quest = { id = 96825, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-96825-this-fruit-could-bite-back" },
+        },
+        {
             priority = 1260,
             text = "Turn in Encroachment to Gar'Thok.",
             route = {
@@ -4098,6 +5142,33 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1265,
+            route = {
+                { y = 0.424, mapID = 1411, label = "Cook Torka", offMapText = "Travel to Cook Torka.", x = 0.512 },
+            },
+            text = "Turn in This Fruit Could Bite Back to Cook Torka in Razor Hill.",
+            id = "woven-turnin-96825-this-fruit-could-bite-back",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96825, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96825-this-fruit-could-bite-back", "woven-objective-96825-this-fruit-could-bite-back" },
         },
         {
             id = "level-before-accept-5654-hex-of-weakness",
@@ -4305,6 +5376,27 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96652-the-adventurer" },
         },
         {
+            id = "level-before-woven-accept-96604-the-great-outdoors",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 96604,
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1321.5,
+        },
+        {
             priority = 1322,
             route = {
                 { mapID = 1411, x = 0.5203, y = 0.47409999999999997, label = "Brakk", offMapText = "Travel to Brakk." },
@@ -4420,6 +5512,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6083-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6083,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1335,
+        },
+        {
             priority = 1340,
             route = {
                 { y = 0.4349, mapID = 1411, label = "Thotar", offMapText = "Travel to Thotar in Durotar.", x = 0.5185 },
@@ -4531,6 +5646,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6082-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6082,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1365,
+        },
+        {
             priority = 1370,
             route = {
                 { y = 0.4349, mapID = 1411, label = "Thotar", offMapText = "Travel to Thotar in Durotar.", x = 0.5185 },
@@ -4640,6 +5778,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-6081-training-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6081,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1395,
         },
         {
             priority = 1400,
@@ -4770,6 +5931,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-813-finding-the-antidote",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 813,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1435,
         },
         {
             priority = 1440,
@@ -4930,6 +6114,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1524-call-of-fire",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1524,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1485,
+        },
+        {
             priority = 1490,
             route = {
                 { y = 0.1989, mapID = 1413, label = "Kranal Fiss", offMapText = "Travel to Kranal Fiss in The Barrens.", x = 0.5603 },
@@ -4990,6 +6197,29 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1525-call-of-fire",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1525,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1505,
         },
         {
             priority = 1510,
@@ -5156,6 +6386,23 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-835-securing-the-lines",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 835,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1565,
+        },
+        {
             priority = 1570,
             route = {
                 { y = 0.2294, mapID = 1411, label = "Rezlak", offMapText = "Travel to Rezlak in Durotar.", x = 0.4637 },
@@ -5215,6 +6462,84 @@ ns:RegisterGuide({
             dependsOn = { "accept-835-securing-the-lines" },
         },
         {
+            id = "loot-starter-before-accept-97281-verified-pickup",
+            kind = "note",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Loot Dull Storm Orb from Dustwind Storm Witch, Dustwind Eggtender. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Dull Storm Orb", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 97281, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1411, x = 0.512, y = 0.20600000000000002, label = "Dustwind Storm Witch", offMapText = "Travel to Dustwind Storm Witch." },
+            },
+            dependsOn = {},
+            priority = 1582.5,
+        },
+        {
+            id = "level-before-accept-97281-verified-pickup",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 7 },
+            },
+            requiredLevel = 7,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 97281,
+            priority = 1585,
+        },
+        {
+            priority = 1587.5,
+            text = "Use the Dull Storm Orb to accept A Simmering Storm.",
+            id = "accept-97281-verified-pickup",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97281, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             priority = 1590,
             text = "Turn in Securing the Lines to Rezlak.",
             route = {
@@ -5244,6 +6569,107 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1592,
+            route = {
+                { y = 0.23, mapID = 1411, label = "Rezlak", offMapText = "Travel to Rezlak.", x = 0.464 },
+            },
+            text = "Turn in A Simmering Storm to Rezlak if a thunder lizard dropped the Dull Stormy Orb.",
+            id = "woven-turnin-97281-a-simmering-storm",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97281, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-97281-verified-pickup" },
+        },
+        {
+            id = "level-before-woven-accept-97282-stormy-potential",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 97282,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1594,
+        },
+        {
+            priority = 1596,
+            route = {
+                { y = 0.23, mapID = 1411, label = "Rezlak", offMapText = "Travel to Rezlak.", x = 0.464 },
+            },
+            text = "Accept Stormy Potential from Rezlak.",
+            id = "woven-accept-97282-stormy-potential",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97282, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1598,
+            route = {
+                { y = 0.23, mapID = 1411, label = "Rezlak", offMapText = "Travel to Rezlak.", x = 0.464 },
+            },
+            text = "Turn in Stormy Potential to Rezlak.",
+            id = "woven-turnin-97282-stormy-potential",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97282, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97282-stormy-potential", "woven-objective-97282-stormy-potential" },
         },
         {
             id = "level-before-accept-816-lost-but-not-forgotten",
@@ -5361,6 +6787,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1526-call-of-fire",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1526,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1635,
+        },
+        {
             priority = 1640,
             route = {
                 { mapID = 1411, x = 0.38549999999999995, y = 0.5896, label = "Telf Joolam", offMapText = "Travel to Telf Joolam in Durotar." },
@@ -5458,6 +6907,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1527-call-of-fire",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1527,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1665,
         },
         {
             priority = 1670,
@@ -5623,12 +7095,6 @@ ns:RegisterGuide({
             text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
             conditions = {
                 all = {
-                    {
-                        any = {
-                            { class = 1 },
-                            { class = 7 },
-                        },
-                    },
                     { faction = "Horde" },
                     {
                         race = { 2, 5, 6, 8, 96 },
@@ -5656,12 +7122,6 @@ ns:RegisterGuide({
             kind = "objective",
             conditions = {
                 all = {
-                    {
-                        any = {
-                            { class = 1 },
-                            { class = 7 },
-                        },
-                    },
                     { faction = "Horde" },
                     {
                         level = { min = 4 },
@@ -5685,6 +7145,109 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "loot-starter-before-accept-96877-verified-pickup",
+            kind = "note",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Loot Halikor's Hoof from Halikor. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Halikor's Hoof", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 96877, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1411, x = 0.4177, y = 0.251, label = "Halikor", offMapText = "Travel to Halikor." },
+            },
+            dependsOn = {},
+            priority = 1732,
+        },
+        {
+            id = "level-before-accept-96877-verified-pickup",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 96877,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1734,
+        },
+        {
+            priority = 1736,
+            text = "Use the Halikor's Hoof to accept Halikor's Hoof.",
+            id = "accept-96877-verified-pickup",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96877, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1738,
+            route = {
+                { y = 0.284, mapID = 1411, label = "Thunder Lizard", offMapText = "Travel to Thunder Lizard.", x = 0.392 },
+            },
+            text = "Collect a Charged Thunder Lizard Organ from the thunder lizards on Thunder Ridge.",
+            id = "woven-objective-97282-stormy-potential",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97282, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97282-stormy-potential" },
+        },
+        {
             priority = 1740,
             text = "Turn in Dark Storms.",
             route = {
@@ -5695,12 +7258,6 @@ ns:RegisterGuide({
             kind = "turnin",
             conditions = {
                 all = {
-                    {
-                        any = {
-                            { class = 1 },
-                            { class = 7 },
-                        },
-                    },
                     { faction = "Horde" },
                     {
                         level = { min = 4 },
@@ -5722,6 +7279,659 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-woven-accept-828-margoz",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 828,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1740.344828,
+        },
+        {
+            priority = 1740.689655,
+            id = "woven-accept-828-margoz",
+            kind = "accept",
+            text = "Accept Margoz from Orgnil Soulscar.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 828, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1411, x = 0.5225, y = 0.4315, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 806 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-806-dark-storms" },
+        },
+        {
+            id = "level-before-woven-accept-840-conscript-of-the-horde",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 840,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1741.034483,
+        },
+        {
+            priority = 1741.37931,
+            id = "woven-accept-840-conscript-of-the-horde",
+            kind = "accept",
+            text = "Accept Conscript of the Horde from Takrin Pathseeker.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { quest = { id = 840, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1411, x = 0.5084, y = 0.4359, label = "Takrin Pathseeker", offMapText = "Travel to Takrin Pathseeker." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            priority = 1741.724138,
+            id = "woven-turnin-828-margoz",
+            kind = "turnin",
+            text = "Turn in Margoz to Margoz.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 828, state = "completed" } },
+            route = {
+                { mapID = 1411, x = 0.5641, y = 0.2004, label = "Margoz", offMapText = "Travel to Margoz." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-828-margoz" },
+        },
+        {
+            id = "level-before-woven-accept-827-skull-rock",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 827,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1742.068966,
+        },
+        {
+            priority = 1742.413793,
+            id = "woven-accept-827-skull-rock",
+            kind = "accept",
+            text = "Accept Skull Rock from Margoz.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 827, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1411, x = 0.5641, y = 0.2004, label = "Margoz", offMapText = "Travel to Margoz." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 828 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-828-margoz" },
+        },
+        {
+            priority = 1742.758621,
+            id = "woven-objective-827-skull-rock",
+            kind = "objective",
+            text = "Kill Burning Blade cultists inside Skull Rock and collect Searing Collars until Skull Rock is ready.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 827, state = "complete" } },
+            route = {
+                { mapID = 1411, x = 0.5460, y = 0.0880, label = "Skull Rock", offMapText = "Travel to Skull Rock." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-827-skull-rock" },
+        },
+        {
+            id = "level-before-woven-accept-832-burning-shadows",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 832,
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Eye of Burning Shadow", minCount = 1 } } },
+                { ["not"] = { quest = { id = 832, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1743.103448,
+        },
+        {
+            priority = 1743.448276,
+            id = "woven-accept-832-burning-shadows",
+            kind = "accept",
+            text = "Use the Eye of Burning Shadow to accept Burning Shadows if you found it during this outing.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 832, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1411, x = 0.5181, y = 0.1005, label = "Gazz'uz", offMapText = "Travel to Gazz'uz." },
+            },
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Eye of Burning Shadow", minCount = 1 } } },
+                { ["not"] = { quest = { id = 832, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            priority = 1743.793103,
+            id = "woven-turnin-827-skull-rock",
+            kind = "turnin",
+            text = "Turn in Skull Rock to Margoz.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 827, state = "completed" } },
+            route = {
+                { mapID = 1411, x = 0.5641, y = 0.2004, label = "Margoz", offMapText = "Travel to Margoz." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-827-skull-rock", "woven-objective-827-skull-rock" },
+        },
+        {
+            id = "level-before-woven-accept-829-neeru-fireblade",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 829,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1744.137931,
+        },
+        {
+            priority = 1744.482759,
+            id = "woven-accept-829-neeru-fireblade",
+            kind = "accept",
+            text = "Accept Neeru Fireblade from Margoz.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 829, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1411, x = 0.5641, y = 0.2004, label = "Margoz", offMapText = "Travel to Margoz." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 827 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-827-skull-rock" },
+        },
+        {
+            id = "level-before-woven-accept-99048-a-missing-hand",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 9 },
+            },
+            requiredLevel = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 99048,
+            priority = 1744.827586,
+        },
+        {
+            priority = 1745.172414,
+            route = {
+                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
+            },
+            text = "Accept A Missing Hand from Orgnil Soulscar in Razor Hill.",
+            id = "woven-accept-99048-a-missing-hand",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99048, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1745.517241,
+            route = {
+                { y = 0.456, mapID = 1411, label = "Heglan Shadeeye", offMapText = "Travel to Heglan Shadeeye.", x = 0.586 },
+            },
+            text = "Turn in A Missing Hand to Heglan Shadeeye, north of Tiragarde Keep.",
+            id = "woven-turnin-99048-a-missing-hand",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99048, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99048-a-missing-hand" },
+        },
+        {
+            id = "level-before-woven-accept-99049-threat-from-below",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 99049,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1745.862069,
+        },
+        {
+            priority = 1746.206897,
+            route = {
+                { y = 0.456, mapID = 1411, label = "Heglan Shadeeye", offMapText = "Travel to Heglan Shadeeye.", x = 0.586 },
+            },
+            text = "Accept Threat from Below from Heglan Shadeeye.",
+            id = "woven-accept-99049-threat-from-below",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99049, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Collect the Orcish Dagger, Banner Scrap, and Broken Bone Trident on the destroyed ground north of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 1746.551724,
+            route = {
+                { y = 0.456, mapID = 1411, label = "Skirmish site", offMapText = "Travel to Skirmish site.", x = 0.586 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            id = "woven-objective-99049-threat-from-below",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                quest = { id = 99049, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-99049-threat-from-below" },
+        },
+        {
+            priority = 1746.896552,
+            route = {
+                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
+            },
+            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
+            id = "woven-turnin-99049-threat-from-below",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99049, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99049-threat-from-below", "woven-objective-99049-threat-from-below" },
+        },
+        {
+            id = "level-before-woven-accept-99051-threat-from-below",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 99051,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1747.241379,
+        },
+        {
+            priority = 1747.586207,
+            route = {
+                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
+            },
+            text = "Accept the next Threat from Below from Orgnil Soulscar.",
+            id = "woven-accept-99051-threat-from-below",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99051, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1747.931034,
+            route = {
+                { y = 0.238, mapID = 1411, label = "Spitelash Scout", offMapText = "Travel to Spitelash Scout.", x = 0.59 },
+            },
+            text = "Collect 9 Naga Spinefins from Spitelash naga on the north coast.",
+            id = "woven-objective-99051-threat-from-below",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99051, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99051-threat-from-below" },
+        },
+        {
+            priority = 1748.275862,
+            route = {
+                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
+            },
+            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
+            id = "woven-turnin-99051-threat-from-below",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99051, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99051-threat-from-below", "woven-objective-99051-threat-from-below" },
+        },
+        {
+            id = "level-before-woven-accept-99052-threat-from-below",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 99052,
+            priority = 1748.62069,
+        },
+        {
+            priority = 1748.965517,
+            route = {
+                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
+            },
+            text = "Accept the next Threat from Below from Orgnil Soulscar. This is an elite. Bring a group.",
+            id = "woven-accept-99052-threat-from-below",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99052, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1749.310345,
+            route = {
+                { y = 0.174, mapID = 1411, label = "Aggor the Young", offMapText = "Travel to Aggor the Young.", x = 0.59 },
+            },
+            text = "Kill Aggor the Young on the north coast and take Aggor's Belt. This is an elite. Bring a group.",
+            id = "woven-objective-99052-threat-from-below",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99052, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99052-threat-from-below" },
+        },
+        {
+            priority = 1749.655172,
+            route = {
+                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
+            },
+            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
+            id = "woven-turnin-99052-threat-from-below",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99052, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99052-threat-from-below", "woven-objective-99052-threat-from-below" },
         },
         {
             priority = 1750,
@@ -5788,6 +7998,26 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-813-finding-the-antidote-2",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 813,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1765,
         },
         {
             id = "accept-813-finding-the-antidote-2",
@@ -5872,6 +8102,140 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1791.428571,
+            id = "woven-turnin-829-neeru-fireblade",
+            kind = "turnin",
+            text = "Turn in Neeru Fireblade to Neeru Fireblade.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 829, state = "completed" } },
+            route = {
+                { mapID = 1454, x = 0.4947, y = 0.5059, label = "Neeru Fireblade", offMapText = "Travel to Neeru Fireblade." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-829-neeru-fireblade" },
+        },
+        {
+            id = "level-before-woven-accept-809-akzeloth",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 809,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1792.857143,
+        },
+        {
+            priority = 1794.285714,
+            id = "woven-accept-809-akzeloth",
+            kind = "accept",
+            text = "Accept Ak'Zeloth from Neeru Fireblade.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 809, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1454, x = 0.4947, y = 0.5059, label = "Neeru Fireblade", offMapText = "Travel to Neeru Fireblade." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 829 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-829-neeru-fireblade" },
+        },
+        {
+            priority = 1795.714286,
+            id = "woven-turnin-832-burning-shadows",
+            kind = "turnin",
+            text = "Turn in Burning Shadows to Neeru Fireblade.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 832, state = "completed" } },
+            route = {
+                { mapID = 1454, x = 0.4947, y = 0.5059, label = "Neeru Fireblade", offMapText = "Travel to Neeru Fireblade." },
+            },
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Eye of Burning Shadow", minCount = 1 } } },
+                { ["not"] = { quest = { id = 832, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-832-burning-shadows" },
+        },
+        {
+            priority = 1797.142857,
+            route = {
+                { y = 0.45, mapID = 1454, label = "Kamari", offMapText = "Travel to Kamari.", x = 0.63 },
+            },
+            text = "Turn in Halikor's Hoof to Kamari if a thunder lizard dropped the hoof.",
+            id = "woven-turnin-96877-halikors-hoof",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96877, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-96877-verified-pickup" },
+        },
+        {
+            id = "level-before-accept-812-need-for-a-cure-3",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 812,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1798.571429,
         },
         {
             id = "accept-812-need-for-a-cure-3",
@@ -5960,6 +8324,193 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 1821,
+            id = "woven-turnin-809-akzeloth",
+            kind = "turnin",
+            text = "Turn in Ak'Zeloth to Ak'Zeloth.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 809, state = "completed" } },
+            route = {
+                { mapID = 1413, x = 0.6234, y = 0.2007, label = "Ak'Zeloth", offMapText = "Travel to Ak'Zeloth." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-809-akzeloth" },
+        },
+        {
+            priority = 1822,
+            id = "woven-turnin-840-conscript-of-the-horde",
+            kind = "turnin",
+            text = "Turn in Conscript of the Horde to Kargal Battlescar.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { quest = { id = 840, state = "completed" } },
+            route = {
+                { mapID = 1413, x = 0.6226, y = 0.1938, label = "Kargal Battlescar", offMapText = "Travel to Kargal Battlescar." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-840-conscript-of-the-horde" },
+        },
+        {
+            id = "level-before-woven-accept-842-crossroads-conscription",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 842,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1823,
+        },
+        {
+            priority = 1824,
+            id = "woven-accept-842-crossroads-conscription",
+            kind = "accept",
+            text = "Accept Crossroads Conscription from Kargal Battlescar.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { quest = { id = 842, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1413, x = 0.6226, y = 0.1938, label = "Kargal Battlescar", offMapText = "Travel to Kargal Battlescar." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 840 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-840-conscript-of-the-horde" },
+        },
+        {
+            id = "level-before-woven-accept-924-the-demon-seed",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 924,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1825,
+        },
+        {
+            priority = 1826,
+            id = "woven-accept-924-the-demon-seed",
+            kind = "accept",
+            text = "Accept The Demon Seed from Ak'Zeloth.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 924, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1413, x = 0.6234, y = 0.2007, label = "Ak'Zeloth", offMapText = "Travel to Ak'Zeloth." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 809 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-809-akzeloth" },
+        },
+        {
+            priority = 1827,
+            id = "woven-objective-924-the-demon-seed",
+            kind = "objective",
+            text = "Take a Flawed Power Stone from the table beside Ak'Zeloth. Use it at the Altar of Fire on Dreadmist Peak before its timer expires.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 924, state = "complete" } },
+            route = {
+                { mapID = 1413, x = 0.4800, y = 0.1910, label = "Altar of Fire", offMapText = "Travel to Altar of Fire." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-924-the-demon-seed" },
+        },
+        {
+            priority = 1828,
+            id = "woven-turnin-924-the-demon-seed",
+            kind = "turnin",
+            text = "Turn in The Demon Seed to Ak'Zeloth.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 924, state = "completed" } },
+            route = {
+                { mapID = 1413, x = 0.6234, y = 0.2007, label = "Ak'Zeloth", offMapText = "Travel to Ak'Zeloth." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-924-the-demon-seed", "woven-objective-924-the-demon-seed" },
+        },
+        {
+            priority = 1829,
+            id = "woven-turnin-842-crossroads-conscription",
+            kind = "turnin",
+            text = "Turn in Crossroads Conscription to Sergra Darkthorn.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 2, 8 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { quest = { id = 842, state = "completed" } },
+            route = {
+                { mapID = 1413, x = 0.5223, y = 0.3101, label = "Sergra Darkthorn", offMapText = "Travel to Sergra Darkthorn." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-842-crossroads-conscription" },
+        },
+        {
             id = "level-before-accept-1818-speak-with-dillinger",
             kind = "note",
             text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
@@ -6018,6 +8569,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-354-deaths-in-the-family",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 354,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1845,
+        },
+        {
             priority = 1850,
             route = {
                 { y = 0.5229, mapID = 1420, label = "Coleman Farthing", offMapText = "Travel to Coleman Farthing in Tirisfal Glades.", x = 0.6172 },
@@ -6044,6 +8615,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-362-the-haunted-mills",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 362,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1855,
         },
         {
             priority = 1860,
@@ -6132,6 +8723,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-375-the-chill-of-death",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 375,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1885,
+        },
+        {
             priority = 1890,
             route = {
                 { y = 0.5273, mapID = 1420, label = "Gretchen Dedmar", offMapText = "Travel to Gretchen Dedmar in Tirisfal Glades.", x = 0.6189 },
@@ -6216,6 +8827,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-358-graverobbers",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 358,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1915,
+        },
+        {
             priority = 1920,
             route = {
                 { y = 0.5084, mapID = 1420, label = "Magistrate Sevren", offMapText = "Travel to Magistrate Sevren in Tirisfal Glades.", x = 0.6126 },
@@ -6244,6 +8875,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-398-wanted-maggot-eye",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 398,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1925,
+        },
+        {
             priority = 1930,
             route = {
                 { y = 0.5152, mapID = 1420, label = "Wanted: Maggot Eye", offMapText = "Travel to Wanted: Maggot Eye.", x = 0.6073 },
@@ -6270,6 +8921,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-367-a-new-plague",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 367,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1935,
         },
         {
             priority = 1940,
@@ -6330,6 +9001,30 @@ ns:RegisterGuide({
             alternativeQuests = { 1498 },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1819-ulag-the-cleaver",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1819,
+            requiredQuests = {},
+            alternativeQuests = { 1498 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1955,
         },
         {
             priority = 1960,
@@ -6426,6 +9121,29 @@ ns:RegisterGuide({
             alternativeQuests = { 1498 },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1820-speak-with-coleman",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1820,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1985,
         },
         {
             priority = 1990,
@@ -6651,6 +9369,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1471-the-binding",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1471,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2055,
+        },
+        {
             priority = 2060,
             route = {
                 { y = 0.2601, mapID = 1458, label = "Carendin Halgar", offMapText = "Travel to Carendin Halgar in Undercity.", x = 0.8504 },
@@ -6794,6 +9535,30 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1882-the-balnir-farmstead",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 8 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 5, 8 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1882,
+            requiredQuests = {},
+            alternativeQuests = { 1884 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 2095,
+        },
+        {
             priority = 2100,
             route = {
                 { y = 0.1003, mapID = 1458, label = "Anastasia Hartwell", offMapText = "Travel to Anastasia Hartwell in Undercity.", x = 0.8514 },
@@ -6905,6 +9670,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-368-a-new-plague",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 368,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2135,
         },
         {
             priority = 2140,
@@ -7111,6 +9896,26 @@ ns:RegisterGuide({
             },
             dependsOn = {},
             priority = 2200,
+        },
+        {
+            id = "level-before-accept-361-a-letter-undelivered",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 361,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2205,
         },
         {
             priority = 2210,
@@ -7373,6 +10178,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-355-speak-with-sevren",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 355,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2295,
+        },
+        {
             priority = 2300,
             route = {
                 { y = 0.5229, mapID = 1420, label = "Coleman Farthing", offMapText = "Travel to Coleman Farthing in Tirisfal Glades.", x = 0.6172 },
@@ -7586,6 +10411,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-356-rear-guard-patrol",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 356,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2365,
+        },
+        {
             priority = 2370,
             route = {
                 { y = 0.6025, mapID = 1420, label = "Deathguard Linnea", offMapText = "Travel to Deathguard Linnea in Tirisfal Glades.", x = 0.6549 },
@@ -7760,1324 +10605,6 @@ ns:RegisterGuide({
             alternativeQuests = { 1884 },
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            priority = 2430,
-            route = {
-                { y = 0.684, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek.", x = 0.42 },
-            },
-            text = "Accept Wayward Weapons from Gornek in The Den.",
-            id = "woven-accept-97279-wayward-weapons",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                    {
-                        race = { 2, 8 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97279, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Collect 6 Abandoned Training Weapons around the Valley of Trials. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2440,
-            route = {
-                { y = 0.684, mapID = 1411, label = "Valley of Trials", offMapText = "Travel to Valley of Trials.", x = 0.42 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                    {
-                        race = { 2, 8 },
-                    },
-                },
-            },
-            id = "woven-objective-97279-wayward-weapons",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 97279, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-97279-wayward-weapons" },
-        },
-        {
-            priority = 2450,
-            route = {
-                { y = 0.68, mapID = 1411, label = "Kzan Thornslash", offMapText = "Travel to Kzan Thornslash.", x = 0.404 },
-            },
-            text = "Turn in Wayward Weapons to Kzan Thornslash in The Den.",
-            id = "woven-turnin-97279-wayward-weapons",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                    {
-                        race = { 2, 8 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97279, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97279-wayward-weapons", "woven-objective-97279-wayward-weapons" },
-        },
-        {
-            priority = 2520,
-            route = {
-                { y = 0.74, mapID = 1411, label = "Vel'rin Fang", offMapText = "Travel to Vel'rin Fang.", x = 0.558 },
-            },
-            text = "Accept Legging It from Vel'rin Fang in Sen'jin Village.",
-            id = "woven-accept-96821-legging-it",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96821, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2530,
-            route = {
-                { y = 0.744, mapID = 1411, label = "Master Vornal", offMapText = "Travel to Master Vornal.", x = 0.558 },
-            },
-            text = "Accept Forgotten Loa Idols from Master Vornal in Sen'jin Village.",
-            id = "woven-accept-97225-forgotten-loa-idols",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97225, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            id = "level-before-woven-accept-97223-bloodtalon-matriarch",
-            kind = "note",
-            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 5 },
-            },
-            requiredLevel = 5,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 97223,
-            priority = 2540,
-        },
-        {
-            priority = 2550,
-            route = {
-                { y = 0.754, mapID = 1411, label = "Xar'Ti", offMapText = "Travel to Xar'Ti.", x = 0.552 },
-            },
-            text = "Accept Bloodtalon Matriarch from Xar'Ti in Sen'jin Village.",
-            id = "woven-accept-97223-bloodtalon-matriarch",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97223, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2560,
-            route = {
-                { y = 0.574, mapID = 1411, label = "Ridgeshade Creeper", offMapText = "Travel to Ridgeshade Creeper.", x = 0.516 },
-            },
-            text = "Legging It: kill Ridgeshade Creepers on the way to Razor Hill.",
-            id = "woven-objective-96821-legging-it-1",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 96821, index = 1 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96821-legging-it" },
-        },
-        {
-            priority = 2570,
-            route = {
-                { y = 0.518, mapID = 1411, label = "Ridgeshade Lurker", offMapText = "Travel to Ridgeshade Lurker.", x = 0.504 },
-            },
-            text = "Legging It: kill Ridgeshade Lurkers on the way to Razor Hill. A lost pack can drop for Ukor.",
-            id = "woven-objective-96821-legging-it-2",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 96821, index = 2 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96821-legging-it" },
-        },
-        {
-            id = "loot-starter-before-accept-96876-verified-pickup",
-            kind = "note",
-            instructionOnly = true,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Loot Ukor's Lost Pack from Ukorsbane. Keep it for the next pickup.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Ukor's Lost Pack", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 96876, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            route = {
-                { mapID = 1411, x = 0.4917, y = 0.5696, label = "Ukorsbane", offMapText = "Travel to Ukorsbane." },
-            },
-            dependsOn = {},
-            priority = 2580,
-        },
-        {
-            priority = 2590,
-            text = "Use the Ukor's Lost Pack to accept Ukor's Lost Pack.",
-            id = "accept-96876-verified-pickup",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96876, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2600,
-            route = {
-                { y = 0.682, mapID = 1411, label = "Ukor", offMapText = "Travel to Ukor.", x = 0.52 },
-            },
-            text = "Turn in Ukor's Lost Pack to Ukor in the Valley of Trials if you found the pack.",
-            id = "woven-turnin-96876-ukors-lost-pack",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96876, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-96876-verified-pickup" },
-        },
-        {
-            priority = 2650,
-            route = {
-                { y = 0.434, mapID = 1411, label = "Gar'Thok", offMapText = "Travel to Gar'Thok.", x = 0.52 },
-            },
-            text = "Turn in Legging It to Gar'Thok in Razor Hill.",
-            id = "woven-turnin-96821-legging-it",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96821, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96821-legging-it", "woven-objective-96821-legging-it-1", "woven-objective-96821-legging-it-2" },
-        },
-        {
-            priority = 2660,
-            route = {
-                { y = 0.426, mapID = 1411, label = "Turroc", offMapText = "Travel to Turroc.", x = 0.54 },
-            },
-            text = "Accept For Honor from Turroc in Razor Hill Barracks.",
-            id = "woven-accept-96822-for-honor",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96822, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2670,
-            route = {
-                { y = 0.424, mapID = 1411, label = "Cook Torka", offMapText = "Travel to Cook Torka.", x = 0.512 },
-            },
-            text = "Accept This Fruit Could Bite Back from Cook Torka in Razor Hill.",
-            id = "woven-accept-96825-this-fruit-could-bite-back",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96825, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Collect Prickly Pear Fruit on the Razormane grounds. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2700,
-            route = {
-                { y = 0.398, mapID = 1411, label = "Razormane grounds", offMapText = "Travel to Razormane grounds.", x = 0.43 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            id = "woven-objective-96825-this-fruit-could-bite-back",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 96825, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-96825-this-fruit-could-bite-back" },
-        },
-        {
-            text = "For Honor: collect the Raider's Bow, Battleaxe, and Shield on the Tiragarde Keep outskirts. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2710,
-            route = {
-                { y = 0.588, mapID = 1411, label = "Tiragarde Keep outskirts", offMapText = "Travel to Tiragarde Keep outskirts.", x = 0.594 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            id = "woven-objective-96822-for-honor",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 96822, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-96822-for-honor" },
-        },
-        {
-            priority = 2711,
-            route = {
-                { y = 0.426, mapID = 1411, label = "Turroc", offMapText = "Travel to Turroc.", x = 0.54 },
-            },
-            text = "Turn in For Honor to Turroc in Razor Hill Barracks.",
-            id = "woven-turnin-96822-for-honor",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96822, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96822-for-honor", "woven-objective-96822-for-honor" },
-        },
-        {
-            priority = 2712,
-            route = {
-                { y = 0.424, mapID = 1411, label = "Cook Torka", offMapText = "Travel to Cook Torka.", x = 0.512 },
-            },
-            text = "Turn in This Fruit Could Bite Back to Cook Torka in Razor Hill.",
-            id = "woven-turnin-96825-this-fruit-could-bite-back",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96825, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96825-this-fruit-could-bite-back", "woven-objective-96825-this-fruit-could-bite-back" },
-        },
-        {
-            priority = 2720,
-            route = {
-                { y = 0.786, mapID = 1411, label = "Pal'juh", offMapText = "Travel to Pal'juh.", x = 0.462 },
-            },
-            text = "Accept Lost in the Shadows from Pal'juh inside Kolkar Crag.",
-            id = "woven-accept-99123-lost-in-the-shadows",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99123, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2730,
-            route = {
-                { y = 0.786, mapID = 1411, label = "Pal'juh", offMapText = "Travel to Pal'juh.", x = 0.462 },
-            },
-            text = "Escort Pal'juh out of Kolkar Crag.",
-            id = "woven-objective-99123-lost-in-the-shadows",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99123, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99123-lost-in-the-shadows" },
-        },
-        {
-            priority = 2740,
-            route = {
-                { y = 0.744, mapID = 1411, label = "Master Vornal", offMapText = "Travel to Master Vornal.", x = 0.558 },
-            },
-            text = "Turn in Lost in the Shadows to Master Vornal in Sen'jin Village.",
-            id = "woven-turnin-99123-lost-in-the-shadows",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99123, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99123-lost-in-the-shadows", "woven-objective-99123-lost-in-the-shadows" },
-        },
-        {
-            text = "Collect Forgotten Loa Idols on the Echo Isles. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2750,
-            route = {
-                { y = 0.834, mapID = 1411, label = "Echo Isles", offMapText = "Travel to Echo Isles.", x = 0.676 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            id = "woven-objective-97225-forgotten-loa-idols",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 97225, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-97225-forgotten-loa-idols" },
-        },
-        {
-            priority = 2760,
-            route = {
-                { y = 0.716, mapID = 1411, label = "Bloodtalon Matriarch", offMapText = "Travel to Bloodtalon Matriarch.", x = 0.686 },
-            },
-            text = "Collect Bloodtalon Matriarch Eggs.",
-            id = "woven-objective-97223-bloodtalon-matriarch",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97223, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97223-bloodtalon-matriarch" },
-        },
-        {
-            priority = 2770,
-            route = {
-                { y = 0.746, mapID = 1411, label = "Master Gadrin", offMapText = "Travel to Master Gadrin.", x = 0.56 },
-            },
-            text = "Turn in Forgotten Loa Idols to Master Gadrin in Sen'jin Village.",
-            id = "woven-turnin-97225-forgotten-loa-idols",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97225, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97225-forgotten-loa-idols", "woven-objective-97225-forgotten-loa-idols" },
-        },
-        {
-            priority = 2780,
-            route = {
-                { y = 0.754, mapID = 1411, label = "Xar'Ti", offMapText = "Travel to Xar'Ti.", x = 0.552 },
-            },
-            text = "Turn in Bloodtalon Matriarch to Xar'Ti in Sen'jin Village.",
-            id = "woven-turnin-97223-bloodtalon-matriarch",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97223, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97223-bloodtalon-matriarch", "woven-objective-97223-bloodtalon-matriarch" },
-        },
-        {
-            id = "loot-starter-before-accept-97281-verified-pickup",
-            kind = "note",
-            instructionOnly = true,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Loot Dull Storm Orb from Dustwind Storm Witch, Dustwind Eggtender. Keep it for the next pickup.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Dull Storm Orb", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 97281, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            route = {
-                { mapID = 1411, x = 0.512, y = 0.20600000000000002, label = "Dustwind Storm Witch", offMapText = "Travel to Dustwind Storm Witch." },
-            },
-            dependsOn = {},
-            priority = 2790,
-        },
-        {
-            id = "level-before-accept-97281-verified-pickup",
-            kind = "note",
-            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 7 },
-            },
-            requiredLevel = 7,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 97281,
-            priority = 2800,
-        },
-        {
-            priority = 2810,
-            text = "Use the Dull Storm Orb to accept A Simmering Storm.",
-            id = "accept-97281-verified-pickup",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97281, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2820,
-            route = {
-                { y = 0.23, mapID = 1411, label = "Rezlak", offMapText = "Travel to Rezlak.", x = 0.464 },
-            },
-            text = "Turn in A Simmering Storm to Rezlak if a thunder lizard dropped the Dull Stormy Orb.",
-            id = "woven-turnin-97281-a-simmering-storm",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97281, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-97281-verified-pickup" },
-        },
-        {
-            priority = 2830,
-            route = {
-                { y = 0.23, mapID = 1411, label = "Rezlak", offMapText = "Travel to Rezlak.", x = 0.464 },
-            },
-            text = "Accept Stormy Potential from Rezlak.",
-            id = "woven-accept-97282-stormy-potential",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97282, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2840,
-            route = {
-                { y = 0.284, mapID = 1411, label = "Thunder Lizard", offMapText = "Travel to Thunder Lizard.", x = 0.392 },
-            },
-            text = "Collect a Charged Thunder Lizard Organ from the thunder lizards on Thunder Ridge.",
-            id = "woven-objective-97282-stormy-potential",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97282, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97282-stormy-potential" },
-        },
-        {
-            priority = 2850,
-            route = {
-                { y = 0.23, mapID = 1411, label = "Rezlak", offMapText = "Travel to Rezlak.", x = 0.464 },
-            },
-            text = "Turn in Stormy Potential to Rezlak.",
-            id = "woven-turnin-97282-stormy-potential",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97282, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97282-stormy-potential", "woven-objective-97282-stormy-potential" },
-        },
-        {
-            id = "level-before-woven-accept-99048-a-missing-hand",
-            kind = "note",
-            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 9 },
-            },
-            requiredLevel = 9,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 99048,
-            priority = 2860,
-        },
-        {
-            priority = 2870,
-            route = {
-                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
-            },
-            text = "Accept A Missing Hand from Orgnil Soulscar in Razor Hill.",
-            id = "woven-accept-99048-a-missing-hand",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99048, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2880,
-            route = {
-                { y = 0.456, mapID = 1411, label = "Heglan Shadeeye", offMapText = "Travel to Heglan Shadeeye.", x = 0.586 },
-            },
-            text = "Turn in A Missing Hand to Heglan Shadeeye, north of Tiragarde Keep.",
-            id = "woven-turnin-99048-a-missing-hand",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99048, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99048-a-missing-hand" },
-        },
-        {
-            priority = 2890,
-            route = {
-                { y = 0.456, mapID = 1411, label = "Heglan Shadeeye", offMapText = "Travel to Heglan Shadeeye.", x = 0.586 },
-            },
-            text = "Accept Threat from Below from Heglan Shadeeye.",
-            id = "woven-accept-99049-threat-from-below",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99049, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Collect the Orcish Dagger, Banner Scrap, and Broken Bone Trident on the destroyed ground north of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2900,
-            route = {
-                { y = 0.456, mapID = 1411, label = "Skirmish site", offMapText = "Travel to Skirmish site.", x = 0.586 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            id = "woven-objective-99049-threat-from-below",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 99049, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-99049-threat-from-below" },
-        },
-        {
-            priority = 2910,
-            route = {
-                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
-            },
-            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
-            id = "woven-turnin-99049-threat-from-below",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99049, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99049-threat-from-below", "woven-objective-99049-threat-from-below" },
-        },
-        {
-            priority = 2920,
-            route = {
-                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
-            },
-            text = "Accept the next Threat from Below from Orgnil Soulscar.",
-            id = "woven-accept-99051-threat-from-below",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99051, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2930,
-            route = {
-                { y = 0.238, mapID = 1411, label = "Spitelash Scout", offMapText = "Travel to Spitelash Scout.", x = 0.59 },
-            },
-            text = "Collect 9 Naga Spinefins from Spitelash naga on the north coast.",
-            id = "woven-objective-99051-threat-from-below",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99051, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99051-threat-from-below" },
-        },
-        {
-            priority = 2940,
-            route = {
-                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
-            },
-            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
-            id = "woven-turnin-99051-threat-from-below",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99051, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99051-threat-from-below", "woven-objective-99051-threat-from-below" },
-        },
-        {
-            id = "level-before-woven-accept-99052-threat-from-below",
-            kind = "note",
-            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 10 },
-            },
-            requiredLevel = 10,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 99052,
-            priority = 2950,
-        },
-        {
-            priority = 2960,
-            route = {
-                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
-            },
-            text = "Accept the next Threat from Below from Orgnil Soulscar. This is an elite. Bring a group.",
-            id = "woven-accept-99052-threat-from-below",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99052, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2970,
-            route = {
-                { y = 0.174, mapID = 1411, label = "Aggor the Young", offMapText = "Travel to Aggor the Young.", x = 0.59 },
-            },
-            text = "Kill Aggor the Young on the north coast and take Aggor's Belt. This is an elite. Bring a group.",
-            id = "woven-objective-99052-threat-from-below",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99052, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99052-threat-from-below" },
-        },
-        {
-            priority = 2980,
-            route = {
-                { y = 0.432, mapID = 1411, label = "Orgnil Soulscar", offMapText = "Travel to Orgnil Soulscar.", x = 0.522 },
-            },
-            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
-            id = "woven-turnin-99052-threat-from-below",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99052, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99052-threat-from-below", "woven-objective-99052-threat-from-below" },
-        },
-        {
-            id = "loot-starter-before-accept-96877-verified-pickup",
-            kind = "note",
-            instructionOnly = true,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Loot Halikor's Hoof from Halikor. Keep it for the next pickup.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Halikor's Hoof", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 96877, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            route = {
-                { mapID = 1411, x = 0.4177, y = 0.251, label = "Halikor", offMapText = "Travel to Halikor." },
-            },
-            dependsOn = {},
-            priority = 2990,
-        },
-        {
-            priority = 3000,
-            text = "Use the Halikor's Hoof to accept Halikor's Hoof.",
-            id = "accept-96877-verified-pickup",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96877, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3010,
-            route = {
-                { y = 0.45, mapID = 1454, label = "Kamari", offMapText = "Travel to Kamari.", x = 0.63 },
-            },
-            text = "Turn in Halikor's Hoof to Kamari if a thunder lizard dropped the hoof.",
-            id = "woven-turnin-96877-halikors-hoof",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96877, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-96877-verified-pickup" },
         },
     },
     casualSpine = true,

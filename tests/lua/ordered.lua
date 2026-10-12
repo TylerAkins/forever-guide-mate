@@ -57,6 +57,223 @@ end
 local tauren = { 'accept:747', 'accept:752', 'turnin:752', 'accept:753',
     'objective:753:1', 'objective:747:1', 'objective:747:2', 'turnin:747' }
 for _, class in ipairs({ 1, 3, 7, 11 }) do journey('leveling-era-mulgore', state(6, class, 'Horde'), tauren) end
+local function fulfill(condition, snapshot)
+    if condition.all then
+        for _, child in ipairs(condition.all) do fulfill(child, snapshot) end
+    elseif condition.any then
+        fulfill(condition.any[1], snapshot)
+    elseif condition.quest then
+        local id, wanted = condition.quest.id, condition.quest.state
+        if wanted == 'completed' then
+            snapshot.quests[id], snapshot.completedQuests[id] = nil, true
+        else
+            snapshot.quests[id] = snapshot.quests[id] or { objectives = {} }
+            if wanted == 'complete' then snapshot.quests[id].complete = true end
+        end
+    elseif condition.questObjective then
+        local spec = condition.questObjective
+        local quest = snapshot.quests[spec.id] or { objectives = {} }
+        snapshot.quests[spec.id] = quest
+        quest.objectives[spec.index or (#quest.objectives + 1)] = { text = spec.text, finished = true,
+            numFulfilled = spec.count or 100, numRequired = spec.count or 100 }
+    elseif condition.level then
+        snapshot.level = math.max(snapshot.level, condition.level.min or 1)
+    elseif condition.item then
+        snapshot.items[condition.item.name] = condition.item.minCount or 1
+    end
+end
+local function walkAfter(guideID, snapshot, startID, count)
+    select(guideID, snapshot)
+    local seen, recording = {}, false
+    for _ = 1, 2000 do
+        local goal = ns.Engine.currentGoal
+        if not goal or #seen >= count then break end
+        if recording then seen[#seen + 1] = goal.id end
+        if goal.id == startID then recording = true end
+        if goal.requiredLevel then snapshot.level = math.max(snapshot.level, goal.requiredLevel) end
+        if goal.complete then fulfill(goal.complete, snapshot) else ns.Engine:CompleteCurrent() end
+        ns.Engine:Refresh(snapshot)
+        assert(ns.Engine.currentGoal ~= goal, 'walk stuck at ' .. goal.id)
+    end
+    return seen
+end
+-- After bear form, Mulgore's Forever quests finish before the Crossroads turn-ins and Durotar.
+local afterBearForm = {
+    'woven-accept-97485-traditions-of-the-bluff', 'woven-preparation-97485-bundle-of-herbs',
+    'woven-preparation-97485-cedar-twigs', 'woven-preparation-97485-sinew-thread',
+    'woven-preparation-97485-flint-and-tinder', 'woven-preparation-97485-prepared-incense',
+    'woven-objective-97485-traditions-of-the-bluff',
+    'woven-turnin-97485-traditions-of-the-bluff', 'woven-accept-99079-longwalker-malah',
+    'woven-accept-861-the-hunters-way', 'woven-accept-96130-chakuyak', 'woven-objective-96130-chakuyak',
+    'woven-turnin-96130-chakuyak', 'woven-accept-764-the-venture-co', 'woven-accept-765-supervisor-fizsprocket',
+    'woven-objective-764-the-venture-co-1', 'woven-objective-764-the-venture-co-2',
+    'woven-objective-765-supervisor-fizsprocket', 'loot-starter-before-woven-accept-98424-fizsprockets-notes',
+    'woven-accept-98424-fizsprockets-notes', 'woven-objective-98424-fizsprockets-notes',
+    'woven-objective-98424-fizsprockets-notes-gerenzo', 'woven-objective-98424-fizsprockets-notes-barrens',
+    'woven-turnin-99079-longwalker-malah', 'woven-accept-99081-grim-tidings', 'woven-turnin-99081-grim-tidings',
+    'woven-accept-99101-our-ancient-enemy', 'woven-turnin-99101-our-ancient-enemy',
+    'woven-accept-99080-drive-them-out', 'woven-turnin-764-the-venture-co',
+    'woven-turnin-765-supervisor-fizsprocket', 'woven-turnin-98424-fizsprockets-notes',
+    'woven-accept-98427-ceasing-operations', 'woven-objective-98427-ceasing-operations',
+    'woven-turnin-98427-ceasing-operations', 'woven-objective-99080-drive-them-out-1',
+    'woven-objective-99080-drive-them-out-2', 'woven-objective-99080-drive-them-out-3',
+    'woven-turnin-99080-drive-them-out', 'woven-accept-99082-the-high-chieftain',
+    'woven-accept-98435-thunderhorns-report',
+    'woven-accept-759-wildmane-totem', 'woven-objective-759-wildmane-totem',
+    'woven-objective-861-the-hunters-way', 'woven-objective-776-rites-of-the-earthmother', 'woven-turnin-759-wildmane-totem',
+    'woven-accept-760-wildmane-cleansing', 'woven-objective-760-wildmane-cleansing', 'woven-turnin-760-wildmane-cleansing',
+    'woven-turnin-99082-the-high-chieftain', 'woven-turnin-776-rites-of-the-earthmother', 'woven-turnin-98435-thunderhorns-report',
+    'woven-turnin-861-the-hunters-way', 'woven-accept-860-sergra-darkthorn',
+    'turnin-886-the-barrens-oases', 'turnin-6364-return-to-jahan', 'woven-turnin-860-sergra-darkthorn',
+    'accept-791-carry-your-weight' }
+local walked = walkAfter('leveling-era-mulgore', state(6, 11, 'Horde'), 'turnin-6002-body-and-heart', #afterBearForm)
+for index, goalID in ipairs(afterBearForm) do
+    equal(walked[index], goalID, 'Tauren druid after bear form step ' .. index)
+end
+walked = walkAfter('leveling-era-mulgore', state(6, 1, 'Horde'), 'accept-6364-return-to-jahan', 1)
+equal(walked[1], 'woven-accept-97485-traditions-of-the-bluff', 'Tauren warrior starts the Mulgore Forever quests after Tal')
+walked = walkAfter('leveling-era-mulgore', state(6, 11, 'Horde'), 'accept-5928-heeding-the-call', 5)
+equal(table.concat(walked, ','), table.concat({ 'accept-749-the-ravaged-caravan', 'turnin-749-the-ravaged-caravan',
+    'accept-751-the-ravaged-caravan', 'turnin-751-the-ravaged-caravan',
+    'accept-854-journey-to-the-crossroads' }, ','), 'Tauren druid finishes The Ravaged Caravan before leaving Mulgore')
+local function recoverTaurenBefore(targetID, activeQuest)
+    local guideID = 'leveling-era-mulgore'
+    local snapshot = state(6, 11, 'Horde', 10)
+    for _, goal in ipairs(ns.guides[guideID].goals) do
+        if goal.id == targetID then break end
+        if goal.complete then fulfill(goal.complete, snapshot) end
+    end
+    if activeQuest then snapshot.quests[activeQuest] = { complete = true, objectives = {} } end
+    ns.charDB = { selectedGuide = guideID, activeGoalByGuide = {}, orderedRoutes = {
+        [guideID] = { revision = 16, cursor = 'accept-791-carry-your-weight',
+            confirmed = {}, skipped = {}, history = {} },
+    } }
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Refresh(snapshot)
+    return ns.Engine.currentGoal
+end
+local recovered = recoverTaurenBefore('turnin-751-the-ravaged-caravan', 751)
+equal(recovered.id, 'turnin-751-the-ravaged-caravan', 'revision 17 recovers an active caravan quest at Morin before departure')
+recovered = recoverTaurenBefore('woven-accept-97485-traditions-of-the-bluff')
+equal(recovered.id, 'woven-accept-97485-traditions-of-the-bluff', 'revision 17 recovers past bear form at Traditions of the Bluff')
+for _, goalID in ipairs({ 'woven-accept-764-the-venture-co', 'woven-accept-765-supervisor-fizsprocket' }) do
+    local guide = ns.guides['leveling-era-mulgore']
+    local accept = ns.Engine:GetGoal(guide, goalID)
+    local snapshot = state(6, 11, 'Horde', 10)
+    equal(ns.OrderedRoutes:Prerequisites(accept, snapshot), false, goalID .. ' blocks before the caravan turn-in')
+    snapshot.quests[751] = { complete = true, objectives = {} }
+    equal(ns.OrderedRoutes:Prerequisites(accept, snapshot), false, goalID .. ' still blocks while the caravan remains in the log')
+    snapshot.quests[751], snapshot.completedQuests[751] = nil, true
+    equal(ns.OrderedRoutes:Prerequisites(accept, snapshot), true, goalID .. ' unlocks after the caravan turn-in')
+end
+local starterVisits = {
+    { 'durotar', 2, 1, 'turnin-6394-thazz-ril-s-pick', {
+        'woven-accept-97279-wayward-weapons', 'woven-objective-97279-wayward-weapons', 'woven-turnin-97279-wayward-weapons' } },
+    { 'elwynn-forest', 1, 3, 'turnin-21-skirmish-at-echo-ridge', {
+        'woven-turnin-92479-a-scribbled-letter', 'loot-starter-before-accept-91741-verified-pickup', 'accept-91741-verified-pickup' } },
+    { 'dun-morogh', 3, 7, 'turnin-3361-a-refugee-s-quandary', {
+        'woven-accept-98581-archaic-rune', 'woven-turnin-98581-archaic-rune' } },
+    { 'teldrassil', 4, 1, 'turnin-917-webwood-egg', {
+        'loot-starter-before-accept-97236-verified-pickup', 'accept-97236-verified-pickup', 'woven-turnin-97236-fang-of-githyiss' } },
+    { 'tirisfal-glades', 5, 1, 'turnin-5482-doom-weed', { 'woven-accept-99142-tomb-weed' } },
+}
+for _, visit in ipairs(starterVisits) do
+    local seen = walkAfter('leveling-era-' .. visit[1], state(visit[2], visit[3], (visit[1] == 'durotar' or visit[1] == 'tirisfal-glades') and 'Horde' or 'Alliance'), visit[4], #visit[5])
+    for i, expectedID in ipairs(visit[5]) do equal(seen[i], expectedID, visit[1] .. ' local visit step ' .. i) end
+end
+local optionalDrops = {
+    { 'mulgore', 6, 770, 'the-demon-scarred-cloak', 'Demon Scarred Cloak' },
+    { 'durotar', 2, 832, 'burning-shadows', 'Eye of Burning Shadow' },
+    { 'elwynn-forest', 1, 123, 'the-collector', 'Gold Pickup Schedule' },
+    { 'dun-morogh', 3, 96391, 'underground-map', 'Dark Iron Map' },
+    { 'teldrassil', 4, 927, 'the-moss-twined-heart', 'Moss-twined Heart' },
+}
+for _, spec in ipairs(optionalDrops) do
+    local guide = ns.guides['leveling-era-' .. spec[1]]
+    local snapshot = state(spec[2], 1, (spec[2] == 2 or spec[2] == 6) and 'Horde' or 'Alliance', 60)
+    for _, kind in ipairs({ 'note', 'accept', 'turnin' }) do
+        local goal = ns.Engine:GetGoal(guide, (kind == 'note' and 'level-before-woven-accept-' or 'woven-' .. kind .. '-') .. spec[3] .. '-' .. spec[4])
+        equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), true, goal.id .. ' does not require farming a rare starter')
+        snapshot.items[spec[5]] = 1
+        equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), false, goal.id .. ' appears when its starter item is found')
+        snapshot.items[spec[5]] = nil
+        snapshot.quests[spec[3]] = { objectives = {} }
+        equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), false, goal.id .. ' remains after the starter is consumed')
+        snapshot.quests[spec[3]] = nil
+    end
+end
+for _, spec in ipairs({ { 'elwynn-forest', 1, 147, 'manhunt', 123 }, { 'teldrassil', 4, 941, 'planting-the-heart', 927 } }) do
+    local guide = ns.guides['leveling-era-' .. spec[1]]
+    local snapshot = state(spec[2], 1, 'Alliance', 60)
+    for _, kind in ipairs({ 'note', 'accept', 'turnin' }) do
+        local goal = ns.Engine:GetGoal(guide, (kind == 'note' and 'level-before-woven-accept-' or 'woven-' .. kind .. '-') .. spec[3] .. '-' .. spec[4])
+        equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), true, goal.id .. ' bypasses an unfound optional chain')
+        snapshot.completedQuests[spec[5]] = true
+        equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), false, goal.id .. ' follows its completed item-started quest')
+        snapshot.completedQuests[spec[5]] = nil
+        snapshot.quests[spec[3]] = { objectives = {} }
+        equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), false, goal.id .. ' preserves an active follow-up')
+        snapshot.quests[spec[3]] = nil
+    end
+end
+local traditionsGuide = { id = 'beta-traditions', title = 'Beta Traditions of the Bluff', category = 'Test',
+    routeMode = 'ordered', revision = 1, goals = {} }
+local preparationIDs = { 'woven-preparation-97485-bundle-of-herbs', 'woven-preparation-97485-cedar-twigs',
+    'woven-preparation-97485-sinew-thread', 'woven-preparation-97485-flint-and-tinder', 'woven-preparation-97485-prepared-incense' }
+traditionsGuide.goals[1] = ns.Engine:GetGoal(ns.guides['leveling-era-mulgore'], 'woven-accept-97485-traditions-of-the-bluff')
+for _, id in ipairs(preparationIDs) do traditionsGuide.goals[#traditionsGuide.goals + 1] = ns.Engine:GetGoal(ns.guides['leveling-era-mulgore'], id) end
+traditionsGuide.goals[#traditionsGuide.goals + 1] = ns.Engine:GetGoal(ns.guides['leveling-era-mulgore'], 'woven-objective-97485-traditions-of-the-bluff')
+traditionsGuide.goals[#traditionsGuide.goals + 1] = ns.Engine:GetGoal(ns.guides['leveling-era-mulgore'], 'woven-turnin-97485-traditions-of-the-bluff')
+traditionsGuide.goals[#traditionsGuide.goals + 1] = { id = 'beta-traditions-finished', kind = 'note', text = 'Continue the route.' }
+ns:RegisterGuide(traditionsGuide)
+local shopping = state(6, 11, 'Horde', 10)
+shopping.quests[97485] = { objectives = {} }
+select(traditionsGuide.id, shopping)
+for i, item in ipairs({ 'Bundle of Herbs', 'Bundle of Dried Cedar Twigs', 'Sinew Thread', 'Ceremonial Flint and Tinder' }) do
+    equal(ns.Engine.currentGoal.id, preparationIDs[i], 'beta vendor route purchase ' .. i)
+    shopping.items[item] = 1
+    ns.Engine:Refresh(shopping)
+end
+equal(ns.Engine.currentGoal.id, preparationIDs[5], 'purchased components lead to incense preparation')
+shopping.items = { ['Prepared Incense'] = 1 }
+ns.Engine:Refresh(shopping)
+equal(ns.Engine.currentGoal.id, 'woven-objective-97485-traditions-of-the-bluff', 'prepared incense leads to the ceremonial site')
+shopping.items = {}
+ns.Engine:Refresh(shopping)
+equal(ns.Engine.currentGoal.id, 'woven-objective-97485-traditions-of-the-bluff', 'consumed incense does not rewind purchases while quest credit loads')
+for _, id in ipairs(preparationIDs) do
+    equal(ns.OrderedRoutes:Done(traditionsGuide, ns.Engine:GetGoal(traditionsGuide, id), shopping), true, id .. ' retains observed preparation while active')
+end
+shopping.quests[97485] = nil
+for _, id in ipairs(preparationIDs) do
+    equal(ns.OrderedRoutes:Done(traditionsGuide, ns.Engine:GetGoal(traditionsGuide, id), shopping), false, id .. ' resets when the quest is abandoned')
+end
+ns.Engine:ResyncCurrent(shopping)
+equal(ns.Engine.currentGoal.id, 'woven-accept-97485-traditions-of-the-bluff', 'abandoned ceremony returns to the pickup on Sync')
+shopping.completedQuests[97485] = true
+ns.Engine:Refresh(shopping)
+equal(ns.Engine.currentGoal.id, 'beta-traditions-finished', 'completed ceremony bypasses purchases without retained bag items')
+local breadcrumbGuide = { id = 'tauren-hunting-breadcrumbs', title = 'Tauren hunting breadcrumbs',
+    category = 'Test', routeMode = 'ordered', revision = 1, goals = {} }
+for _, goalID in ipairs({ 'woven-accept-861-the-hunters-way', 'woven-objective-861-the-hunters-way',
+    'woven-turnin-861-the-hunters-way', 'woven-accept-860-sergra-darkthorn', 'woven-turnin-860-sergra-darkthorn' }) do
+    breadcrumbGuide.goals[#breadcrumbGuide.goals + 1] = ns.Engine:GetGoal(ns.guides['leveling-era-mulgore'], goalID)
+end
+breadcrumbGuide.goals[#breadcrumbGuide.goals + 1] = { id = 'hunting-breadcrumbs-finished', kind = 'note', text = 'Continue the route.' }
+ns:RegisterGuide(breadcrumbGuide)
+for _, completed in ipairs({ false, true }) do
+    local snapshot = state(6, 1, 'Horde', 10)
+    if completed then snapshot.completedQuests[844] = true else snapshot.quests[844] = { objectives = {} } end
+    select(breadcrumbGuide.id, snapshot)
+    equal(ns.Engine.currentGoal.id, 'hunting-breadcrumbs-finished', 'Plainstrider Menace bypasses every untaken hunting breadcrumb action')
+    snapshot.quests[861] = { objectives = {} }
+    select(breadcrumbGuide.id, snapshot)
+    equal(ns.Engine.currentGoal.id, 'woven-objective-861-the-hunters-way', "active The Hunter's Way remains actionable after Plainstrider Menace")
+    snapshot.quests[861] = nil
+    snapshot.quests[860] = { complete = true, objectives = {} }
+    select(breadcrumbGuide.id, snapshot)
+    equal(ns.Engine.currentGoal.id, 'woven-turnin-860-sergra-darkthorn', 'active Sergra Darkthorn still turns in after Plainstrider Menace')
+end
 journey('leveling-era-durotar', state(2, 1, 'Horde'), {
     'accept:4641', 'turnin:4641', 'accept:788', 'objective:788:1', 'accept:790',
     'objective:790:1', 'turnin:790', 'accept:804', 'turnin:788', 'turnin:804' })
@@ -788,4 +1005,15 @@ do
     equal(snapshot.quests[96774] ~= nil, true, "Idol remains active for the dungeon handoff")
     equal(snapshot.completedQuests[96774], nil, "Outdoor route grants no dungeon completion")
 end
+
+local westbrook = walkAfter('leveling-era-elwynn-forest', state(1, 1, 'Alliance', 10),
+    'turnin-239-westbrook-garrison-needs-help', 8)
+local expectedWestbrook = { 'woven-accept-176-wanted-hogger', 'woven-accept-91738-an-apple-treat',
+    'woven-objective-91738-an-apple-treat', 'woven-turnin-91738-an-apple-treat',
+    'accept-11-riverpaw-gnoll-bounty', 'objective-11-1-riverpaw-runt',
+    'woven-objective-176-wanted-hogger', 'turnin-11-riverpaw-gnoll-bounty' }
+for index, goalID in ipairs(expectedWestbrook) do
+    equal(westbrook[index], goalID, 'Westbrook quests share the gnoll outing ' .. index)
+end
+
 print('Ordered production journey tests passed: ' .. assertions .. ' assertions')

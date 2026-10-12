@@ -57,9 +57,16 @@ for id, actions in pairs(expected) do
   end
  end
  local previous, sourceStep, stepFloor = 0, nil, 0
+ local outingProgress = {}
  for _,a in ipairs(actions) do
   if not excluded[a[2]] and not (a[1]=='objective' and a[2]==1009 ) then
    local signature = table.concat({a[1],a[2] or 0,a[3] or 0,a[4]},':')
+   local outing = 'reference'
+   if id == 'leveling-era-tirisfal-glades' then
+    outing = ((a[4] >= 95 and a[4] <= 159) or a[2] == 5660) and 'durotar-detour' or 'home-zone'
+   end
+   local progress = outingProgress[outing] or { previous = 0, stepFloor = 0 }
+   previous, sourceStep, stepFloor = progress.previous, progress.sourceStep, progress.stepFloor
    local position = actual[signature]
    if id=='leveling-era-horde-winterspring' and a[1]=='accept' and a[2]==4809 then
     local earlier=chapters['leveling-era-horde-felwood-and-winterspring-part-2']
@@ -73,6 +80,7 @@ for id, actions in pairs(expected) do
     if sourceStep ~= a[4] then sourceStep, stepFloor = a[4], previous end
     check(position >= stepFloor, id..' preserves reference outing order: '..signature)
     previous = math.max(previous, position)
+    outingProgress[outing] = { previous = previous, sourceStep = sourceStep, stepFloor = stepFloor }
    end
   end
  end
