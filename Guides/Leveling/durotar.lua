@@ -1856,7 +1856,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
         },
         {
             priority = 530,
@@ -2004,7 +2004,7 @@ ns:RegisterGuide({
                 { mapID = 1411, x = 0.4534, y = 0.5636, label = "Felstalker Hoof", offMapText = "Travel to Felstalker Hoof." },
             },
             sourceStep = 51,
-            priority = 570,
+            priority = 465,
             requiredQuests = {},
             alternativeQuests = { 1519, 92466 },
             useClientText = false,
@@ -2108,7 +2108,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-794-burning-blade-medallion" },
         },
         {
             id = "level-before-accept-5649-in-favor-of-spirituality",

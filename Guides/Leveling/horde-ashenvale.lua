@@ -936,7 +936,7 @@ ns:RegisterGuide({
         {
             priority = 350,
             route = {
-                { y = 0.592, mapID = 1412, label = "Narm Skychaser", x = 0.484, offMapText = "Travel to Narm Skychaser in Mulgore." },
+                { y = 0.625, mapID = 1412, label = "Narm Skychaser", x = 0.474, offMapText = "Travel to Narm Skychaser in Mulgore." },
             },
             dependsOn = {},
             id = "woven-class-shaman-accept-2986-call-of-water",

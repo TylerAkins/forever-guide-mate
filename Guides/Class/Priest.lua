@@ -2994,7 +2994,7 @@ ns:RegisterGuide({
         {
             priority = 1050,
             route = {
-                { y = 0.588, mapID = 1412, label = "Var'jun", x = 0.47, offMapText = "Travel to Var'jun in Mulgore." },
+                { y = 0.623, mapID = 1412, label = "Var'jun", x = 0.462, offMapText = "Travel to Var'jun in Mulgore." },
             },
             id = "accept-5655-hex-of-weakness",
             conditions = {
@@ -3178,7 +3178,7 @@ ns:RegisterGuide({
         {
             priority = 1120,
             route = {
-                { y = 0.588, mapID = 1412, label = "Var'jun", x = 0.47, offMapText = "Travel to Var'jun in Mulgore." },
+                { y = 0.623, mapID = 1412, label = "Var'jun", x = 0.462, offMapText = "Travel to Var'jun in Mulgore." },
             },
             id = "accept-5661-touch-of-weakness",
             conditions = {

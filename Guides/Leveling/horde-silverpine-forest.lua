@@ -487,7 +487,7 @@ ns:RegisterGuide({
         {
             priority = 200,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-6061-taming-the-beast",
@@ -536,7 +536,7 @@ ns:RegisterGuide({
         {
             priority = 220,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "woven-class-hunter-accept-6061-taming-the-beast", "woven-class-hunter-objective-6061-quest-work" },
             id = "woven-class-hunter-turnin-6061-taming-the-beast",
@@ -562,7 +562,7 @@ ns:RegisterGuide({
         {
             priority = 230,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-6087-taming-the-beast",
@@ -611,7 +611,7 @@ ns:RegisterGuide({
         {
             priority = 250,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "woven-class-hunter-accept-6087-taming-the-beast", "woven-class-hunter-objective-6087-quest-work" },
             id = "woven-class-hunter-turnin-6087-taming-the-beast",
@@ -637,7 +637,7 @@ ns:RegisterGuide({
         {
             priority = 260,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-6088-taming-the-beast",
@@ -686,7 +686,7 @@ ns:RegisterGuide({
         {
             priority = 280,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "woven-class-hunter-accept-6088-taming-the-beast", "woven-class-hunter-objective-6088-quest-work" },
             id = "woven-class-hunter-turnin-6088-taming-the-beast",
@@ -712,7 +712,7 @@ ns:RegisterGuide({
         {
             priority = 290,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-6089-training-the-beast",
@@ -790,7 +790,7 @@ ns:RegisterGuide({
         {
             priority = 320,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "woven-class-hunter-accept-6067-the-hunters-path" },
             id = "woven-class-hunter-turnin-6067-the-hunters-path",
@@ -842,7 +842,7 @@ ns:RegisterGuide({
         {
             priority = 340,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "woven-class-hunter-accept-6066-the-hunters-path" },
             id = "woven-class-hunter-turnin-6066-the-hunters-path",
@@ -894,7 +894,7 @@ ns:RegisterGuide({
         {
             priority = 360,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "woven-class-hunter-accept-6065-the-hunters-path" },
             id = "woven-class-hunter-turnin-6065-the-hunters-path",
@@ -2156,7 +2156,7 @@ ns:RegisterGuide({
         {
             priority = 850,
             route = {
-                { y = 0.588, mapID = 1412, label = "Var'jun", x = 0.47, offMapText = "Travel to Var'jun in Mulgore." },
+                { y = 0.623, mapID = 1412, label = "Var'jun", x = 0.462, offMapText = "Travel to Var'jun in Mulgore." },
             },
             id = "woven-class-priest-accept-5661-touch-of-weakness",
             conditions = {
@@ -2340,7 +2340,7 @@ ns:RegisterGuide({
         {
             priority = 920,
             route = {
-                { y = 0.588, mapID = 1412, label = "Var'jun", x = 0.47, offMapText = "Travel to Var'jun in Mulgore." },
+                { y = 0.623, mapID = 1412, label = "Var'jun", x = 0.462, offMapText = "Travel to Var'jun in Mulgore." },
             },
             id = "woven-class-priest-accept-5655-hex-of-weakness",
             conditions = {
@@ -3190,7 +3190,7 @@ ns:RegisterGuide({
         {
             priority = 1240,
             route = {
-                { y = 0.592, mapID = 1412, label = "Narm Skychaser", x = 0.484, offMapText = "Travel to Narm Skychaser in Mulgore." },
+                { y = 0.625, mapID = 1412, label = "Narm Skychaser", x = 0.474, offMapText = "Travel to Narm Skychaser in Mulgore." },
             },
             dependsOn = {},
             id = "woven-class-shaman-accept-2984-call-of-fire",
@@ -4004,7 +4004,7 @@ ns:RegisterGuide({
         {
             priority = 1540,
             route = {
-                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+                { y = 0.768, mapID = 1412, label = "Seer Ravenfeather", x = 0.443, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
             },
             id = "woven-class-shaman-accept-1519-call-of-earth",
             conditions = {
@@ -4056,7 +4056,7 @@ ns:RegisterGuide({
         {
             priority = 1560,
             route = {
-                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+                { y = 0.768, mapID = 1412, label = "Seer Ravenfeather", x = 0.443, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
             },
             dependsOn = { "woven-class-shaman-accept-1519-call-of-earth", "woven-class-shaman-objective-1519-call-of-earth" },
             id = "woven-class-shaman-turnin-1519-call-of-earth",
@@ -4362,7 +4362,7 @@ ns:RegisterGuide({
         {
             priority = 1670,
             route = {
-                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+                { y = 0.768, mapID = 1412, label = "Seer Ravenfeather", x = 0.443, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
             },
             dependsOn = {},
             id = "woven-class-shaman-accept-1520-call-of-earth",
@@ -4476,7 +4476,7 @@ ns:RegisterGuide({
         {
             priority = 1710,
             route = {
-                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+                { y = 0.768, mapID = 1412, label = "Seer Ravenfeather", x = 0.443, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
             },
             dependsOn = { "woven-class-shaman-accept-1521-call-of-earth" },
             id = "woven-class-shaman-turnin-1521-call-of-earth",
@@ -6728,7 +6728,7 @@ ns:RegisterGuide({
         {
             priority = 2530,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             id = "woven-class-druid-accept-747-the-hunt-begins",
             conditions = {
@@ -6848,7 +6848,7 @@ ns:RegisterGuide({
         {
             priority = 2560,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             dependsOn = {
                 "woven-class-druid-accept-747-the-hunt-begins",
@@ -6892,7 +6892,7 @@ ns:RegisterGuide({
         {
             priority = 2570,
             route = {
-                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
             id = "woven-class-hunter-accept-3092-etched-note",
             conditions = {
@@ -6918,7 +6918,7 @@ ns:RegisterGuide({
         {
             priority = 2580,
             route = {
-                { y = 0.758, mapID = 1412, label = "Lanka Farshot", x = 0.442, offMapText = "Travel to Lanka Farshot in Mulgore." },
+                { y = 0.764, mapID = 1412, label = "Lanka Farshot", x = 0.440, offMapText = "Travel to Lanka Farshot in Mulgore." },
             },
             dependsOn = { "woven-class-hunter-accept-3092-etched-note" },
             id = "woven-class-hunter-turnin-3092-etched-note",
@@ -6944,7 +6944,7 @@ ns:RegisterGuide({
         {
             priority = 2590,
             route = {
-                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
             id = "woven-class-shaman-accept-3093-rune-inscribed-note",
             conditions = {
@@ -6970,7 +6970,7 @@ ns:RegisterGuide({
         {
             priority = 2600,
             route = {
-                { y = 0.76, mapID = 1412, label = "Meela Dawnstrider", x = 0.45, offMapText = "Travel to Meela Dawnstrider in Mulgore." },
+                { y = 0.766, mapID = 1412, label = "Meela Dawnstrider", x = 0.446, offMapText = "Travel to Meela Dawnstrider in Mulgore." },
             },
             dependsOn = { "woven-class-shaman-accept-3093-rune-inscribed-note" },
             id = "woven-class-shaman-turnin-3093-rune-inscribed-note",
@@ -6996,7 +6996,7 @@ ns:RegisterGuide({
         {
             priority = 2610,
             route = {
-                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
             id = "woven-class-warrior-accept-3091-simple-note",
             conditions = {
@@ -7022,7 +7022,7 @@ ns:RegisterGuide({
         {
             priority = 2620,
             route = {
-                { y = 0.76, mapID = 1412, label = "Harutt Thunderhorn", x = 0.44, offMapText = "Travel to Harutt Thunderhorn in Mulgore." },
+                { y = 0.767, mapID = 1412, label = "Harutt Thunderhorn", x = 0.437, offMapText = "Travel to Harutt Thunderhorn in Mulgore." },
             },
             dependsOn = { "woven-class-warrior-accept-3091-simple-note" },
             id = "woven-class-warrior-turnin-3091-simple-note",
@@ -7048,7 +7048,7 @@ ns:RegisterGuide({
         {
             priority = 2630,
             route = {
-                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
             id = "woven-class-druid-accept-3094-verdant-note",
             conditions = {
@@ -7074,7 +7074,7 @@ ns:RegisterGuide({
         {
             priority = 2640,
             route = {
-                { y = 0.76, mapID = 1412, label = "Gart Mistrunner", x = 0.45, offMapText = "Travel to Gart Mistrunner in Mulgore." },
+                { y = 0.766, mapID = 1412, label = "Gart Mistrunner", x = 0.446, offMapText = "Travel to Gart Mistrunner in Mulgore." },
             },
             dependsOn = { "woven-class-druid-accept-3094-verdant-note" },
             id = "woven-class-druid-turnin-3094-verdant-note",
@@ -8265,7 +8265,7 @@ ns:RegisterGuide({
         {
             priority = 3090,
             route = {
-                { y = 0.596, mapID = 1412, label = "Gennia Runetotem", x = 0.484, offMapText = "Travel to Gennia Runetotem in Mulgore." },
+                { y = 0.630, mapID = 1412, label = "Gennia Runetotem", x = 0.475, offMapText = "Travel to Gennia Runetotem in Mulgore." },
             },
             dependsOn = {},
             id = "woven-class-druid-accept-5928-heeding-the-call",

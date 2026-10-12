@@ -3795,6 +3795,56 @@ Equal(multiSpot and multiSpot.x, 0.10, "multiple quest POIs pick the one nearest
 Equal(multiSpot and multiSpot.y, 0.20, "multiple quest POIs pick the nearest y")
 end
 TestClientQuestPin()
+function TestMulgoreObjectivesPreferTheirNearestQuestPOI()
+    local guide = ns.guides["leveling-era-mulgore"]
+    local questLogPins = {
+        GetQuestsOnMap = function(mapID)
+            if mapID == 1412 then
+                return {
+                    { questID = 771, x = 0.389, y = 0.598 },
+                    { questID = 771, x = 0.535, y = 0.662 },
+                    { questID = 754, x = 0.526, y = 0.722 },
+                }
+            end
+            return {}
+        end,
+    }
+    local ambercorn = ns.Engine:GetGoal(guide, "objective-771-2-ambercorn")
+    local nearAmbercorn = {
+        mapID = 1412, x = 0.40, y = 0.60,
+        quests = { [771] = { complete = false, objectives = {
+            { text = "Well Stone", numRequired = 2, numFulfilled = 0 },
+            { text = "Ambercorn", numRequired = 2, numFulfilled = 1 },
+        } } },
+    }
+    ns.Navigation:InvalidateClientPins()
+    local ambercornLeg = ns.Navigation:GetActiveLeg(ambercorn, nearAmbercorn, questLogPins)
+    Equal(ambercornLeg.x, 0.389, "Ambercorn follows its nearby Blizzard quest POI")
+    Equal(ambercornLeg.y, 0.598, "Ambercorn follows its nearby Blizzard quest POI y")
+
+    local wellStone = ns.Engine:GetGoal(guide, "objective-771-1-well-stone")
+    local nearWellStone = {
+        mapID = 1412, x = 0.53, y = 0.66,
+        quests = nearAmbercorn.quests,
+    }
+    ns.Navigation:InvalidateClientPins()
+    local wellStoneLeg = ns.Navigation:GetActiveLeg(wellStone, nearWellStone, questLogPins)
+    Equal(wellStoneLeg.x, 0.535, "Well Stone follows its nearby Blizzard quest POI")
+    Equal(wellStoneLeg.y, 0.662, "Well Stone follows its nearby Blizzard quest POI y")
+
+    local winterhoof = ns.Engine:GetGoal(guide, "objective-754-1-winterhoof-cleansing-totem")
+    local winterhoofState = {
+        mapID = 1412, x = 0.54, y = 0.68,
+        quests = { [754] = { complete = false, objectives = {
+            { text = "Winterhoof Cleansing Totem", numRequired = 1, numFulfilled = 0 },
+        } } },
+    }
+    ns.Navigation:InvalidateClientPins()
+    local winterhoofLeg = ns.Navigation:GetActiveLeg(winterhoof, winterhoofState, questLogPins)
+    Equal(winterhoofLeg.x, 0.526, "Winterhoof Cleansing follows its Blizzard quest POI")
+    Equal(winterhoofLeg.y, 0.722, "Winterhoof Cleansing follows its Blizzard quest POI y")
+end
+TestMulgoreObjectivesPreferTheirNearestQuestPOI()
 local zephrasProgress = ns.Engine:GetGuideProgress(zephras, starter)
 Check(zephrasProgress.eligible > 8, "a level 1 Zephras character still counts later steps")
 local trackedZephras = {}
@@ -4543,6 +4593,67 @@ end
 local mulgore = ns.guides["leveling-mulgore"]
 Check(mulgore ~= nil, "the Mulgore guide is registered")
 Equal(mulgore.category, "Loremaster Guides", "the Mulgore guide is a Loremaster guide")
+do
+    local taurenStarter = ns.guides["leveling-era-mulgore"]
+    local taurenGoalIndex = {}
+    for index, goal in ipairs(taurenStarter.goals) do taurenGoalIndex[goal.id] = index end
+    local longwalkersAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-98430-the-longwalkers")
+    local longwalkersTurnin = ns.Engine:GetGoal(taurenStarter, "woven-turnin-98430-the-longwalkers")
+    local sparringAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-99108-sparring-match")
+    local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
+    local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
+    local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
+    Equal(taurenStarter.revision, 9, "Mulgore starter guide revision advances with the route correction")
+    Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
+    Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
+    Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
+    Check(taurenGoalIndex["accept-745-sharing-the-land"] < taurenGoalIndex["objective-745-1-palemane-tanner"]
+        and taurenGoalIndex["objective-745-1-palemane-tanner"] < taurenGoalIndex["woven-accept-98430-the-longwalkers"]
+        and taurenGoalIndex["objective-745-2-palemane-skinner"] < taurenGoalIndex["woven-accept-98430-the-longwalkers"]
+        and taurenGoalIndex["objective-745-3-palemane-poacher"] < taurenGoalIndex["woven-accept-98430-the-longwalkers"],
+        "Mulgore clears Sharing the Land's cave objectives before sending the player to Perith")
+    Check(DependsOn(longwalkersAccept, "objective-745-1-palemane-tanner")
+        and DependsOn(longwalkersAccept, "objective-745-2-palemane-skinner")
+        and DependsOn(longwalkersAccept, "objective-745-3-palemane-poacher"),
+        "The Longwalkers pickup also requires every Sharing the Land cave objective")
+    Check(taurenGoalIndex["woven-turnin-98430-the-longwalkers"] < taurenGoalIndex["woven-accept-99108-sparring-match"]
+        and taurenGoalIndex["woven-accept-99108-sparring-match"] < taurenGoalIndex["woven-objective-99108-sparring-match"]
+        and taurenGoalIndex["woven-objective-99108-sparring-match"] < taurenGoalIndex["woven-turnin-99108-sparring-match"]
+        and taurenGoalIndex["woven-turnin-99108-sparring-match"] < taurenGoalIndex["accept-749-the-ravaged-caravan"],
+        "Mulgore turns in The Longwalkers, completes Sparring Match, and then picks up The Ravaged Caravan")
+    Check(DependsOn(sparringAccept, "woven-turnin-98430-the-longwalkers"),
+        "Sparring Match waits for The Longwalkers turn-in")
+end
+do
+    local dunMorogh = ns.guides["leveling-era-dun-morogh"]
+    local dunMoroghIndex = {}
+    for index, goal in ipairs(dunMorogh.goals) do dunMoroghIndex[goal.id] = index end
+    Equal(dunMorogh.revision, 6, "Dun Morogh guide revision advances with the route correction")
+    Check(dunMoroghIndex["objective-182-1-frostmane-troll-whelp"] < dunMoroghIndex["turnin-182-the-troll-cave"]
+        and dunMoroghIndex["turnin-182-the-troll-cave"] < dunMoroghIndex["turnin-1599-beginnings"],
+        "Dun Morogh completes the troll-cave outing before routing to Alamar")
+
+    local tirisfal = ns.guides["leveling-era-tirisfal-glades"]
+    local tirisfalIndex = {}
+    for index, goal in ipairs(tirisfal.goals) do tirisfalIndex[goal.id] = index end
+    Equal(tirisfal.revision, 6, "Tirisfal guide revision advances with the route correction")
+    Check(tirisfalIndex["turnin-1470-piercing-the-veil"] < tirisfalIndex["objective-364-1-duskbat"],
+        "Tirisfal preserves its Venya turn-in before the Mindless Ones outing")
+
+    local teldrassil = ns.guides["leveling-era-teldrassil"]
+    local teldrassilIndex = {}
+    for index, goal in ipairs(teldrassil.goals) do teldrassilIndex[goal.id] = index end
+    Equal(teldrassil.revision, 6, "Teldrassil guide revision advances with the route correction")
+    Check(teldrassilIndex["accept-3519-a-friend-in-need"] < teldrassilIndex["turnin-3519-a-friend-in-need"]
+        and teldrassilIndex["turnin-3519-a-friend-in-need"] < teldrassilIndex["accept-3521-iverron-s-antidote"]
+        and teldrassilIndex["accept-3521-iverron-s-antidote"] < teldrassilIndex["accept-916-webwood-venom"]
+        and teldrassilIndex["objective-916-1-webwood-venom-sac"] < teldrassilIndex["objective-3521-3-webwood-ichor"]
+        and teldrassilIndex["objective-3521-3-webwood-ichor"] < teldrassilIndex["turnin-916-webwood-venom"]
+        and teldrassilIndex["turnin-916-webwood-venom"] < teldrassilIndex["accept-917-webwood-egg"]
+        and teldrassilIndex["accept-917-webwood-egg"] < teldrassilIndex["objective-3521-2-moonpetal-lily"]
+        and teldrassilIndex["objective-3521-2-moonpetal-lily"] < teldrassilIndex["objective-917-1-webwood-egg"],
+        "Teldrassil completes its shared cave outing before turning in and taking the follow-up")
+end
 local palemaneGoals = 0
 for _, goal in ipairs(mulgore.goals) do
     if string.find(goal.id, "objective-745-sharing-the-land-", 1, true) then

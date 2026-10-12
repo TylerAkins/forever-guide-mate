@@ -873,7 +873,7 @@ ns:RegisterGuide({
         {
             priority = 250,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             id = "accept-747-the-hunt-begins",
             conditions = {
@@ -993,7 +993,7 @@ ns:RegisterGuide({
         {
             priority = 280,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             dependsOn = { "accept-747-the-hunt-begins", "objective-747-1-plainstrider-meat", "objective-747-2-plainstrider-feather" },
             id = "turnin-747-the-hunt-begins",
@@ -1033,7 +1033,7 @@ ns:RegisterGuide({
         {
             priority = 290,
             route = {
-                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
             id = "accept-3092-etched-note",
             conditions = {
@@ -1059,7 +1059,7 @@ ns:RegisterGuide({
         {
             priority = 300,
             route = {
-                { y = 0.758, mapID = 1412, label = "Lanka Farshot", x = 0.442, offMapText = "Travel to Lanka Farshot in Mulgore." },
+                { y = 0.764, mapID = 1412, label = "Lanka Farshot", x = 0.440, offMapText = "Travel to Lanka Farshot in Mulgore." },
             },
             dependsOn = { "accept-3092-etched-note" },
             id = "turnin-3092-etched-note",
@@ -2172,7 +2172,7 @@ ns:RegisterGuide({
         {
             priority = 740,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "accept-6065-the-hunters-path" },
             id = "turnin-6065-the-hunters-path",
@@ -2224,7 +2224,7 @@ ns:RegisterGuide({
         {
             priority = 760,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "accept-6066-the-hunters-path" },
             id = "turnin-6066-the-hunters-path",
@@ -2276,7 +2276,7 @@ ns:RegisterGuide({
         {
             priority = 780,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "accept-6067-the-hunters-path" },
             id = "turnin-6067-the-hunters-path",
@@ -2302,7 +2302,7 @@ ns:RegisterGuide({
         {
             priority = 790,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "turnin-6067-the-hunters-path" },
             id = "accept-6061-taming-the-beast",
@@ -2351,7 +2351,7 @@ ns:RegisterGuide({
         {
             priority = 810,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "accept-6061-taming-the-beast", "objective-6061-quest-work" },
             id = "turnin-6061-taming-the-beast",
@@ -2377,7 +2377,7 @@ ns:RegisterGuide({
         {
             priority = 820,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "turnin-6061-taming-the-beast" },
             id = "accept-6087-taming-the-beast",
@@ -2426,7 +2426,7 @@ ns:RegisterGuide({
         {
             priority = 840,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "accept-6087-taming-the-beast", "objective-6087-quest-work" },
             id = "turnin-6087-taming-the-beast",
@@ -2452,7 +2452,7 @@ ns:RegisterGuide({
         {
             priority = 850,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "turnin-6087-taming-the-beast", "turnin-6061-taming-the-beast" },
             id = "accept-6088-taming-the-beast",
@@ -2501,7 +2501,7 @@ ns:RegisterGuide({
         {
             priority = 870,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "accept-6088-taming-the-beast", "objective-6088-quest-work" },
             id = "turnin-6088-taming-the-beast",
@@ -2527,7 +2527,7 @@ ns:RegisterGuide({
         {
             priority = 880,
             route = {
-                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
             dependsOn = { "turnin-6088-taming-the-beast", "turnin-6087-taming-the-beast" },
             id = "accept-6089-training-the-beast",

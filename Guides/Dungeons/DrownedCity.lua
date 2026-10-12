@@ -16,7 +16,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Ancient Gurubashi Idol from Mazu'kon at Skywatcher Plateau.",
             complete = { quest = { id = 96774, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.206, label = "Mazu'kon", offMapText = "Travel to Mazu'kon in Mulgore." } },
             useClientText = false,
         },
         {
@@ -38,7 +38,7 @@ ns:RegisterGuide({
             text = "Return the Ancient Gurubashi Idol to Mazu'kon at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96774-ancient-gurubashi-idol" },
             complete = { quest = { id = 96774, state = "completed" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.206, label = "Mazu'kon", offMapText = "Travel to Mazu'kon in Mulgore." } },
             useClientPin = true,
             useClientText = false,
         },

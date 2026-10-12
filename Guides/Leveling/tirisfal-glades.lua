@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Undead Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-tirisfal-glades",
@@ -298,7 +298,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-364-the-mindless-ones" },
         },
         {
             priority = 110,
@@ -335,7 +335,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-364-the-mindless-ones" },
         },
         {
             priority = 120,

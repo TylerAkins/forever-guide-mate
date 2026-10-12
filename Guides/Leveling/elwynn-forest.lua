@@ -445,7 +445,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-7-kobold-camp-cleanup" },
         },
         {
             priority = 150,
@@ -547,7 +547,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-15-investigate-echo-ridge" },
         },
         {
             priority = 180,

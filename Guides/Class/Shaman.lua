@@ -507,7 +507,7 @@ ns:RegisterGuide({
         {
             priority = 150,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             id = "accept-747-the-hunt-begins",
             conditions = {
@@ -627,7 +627,7 @@ ns:RegisterGuide({
         {
             priority = 180,
             route = {
-                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
             dependsOn = { "accept-747-the-hunt-begins", "objective-747-1-plainstrider-meat", "objective-747-2-plainstrider-feather" },
             id = "turnin-747-the-hunt-begins",
@@ -667,7 +667,7 @@ ns:RegisterGuide({
         {
             priority = 190,
             route = {
-                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+                { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
             id = "accept-3093-rune-inscribed-note",
             conditions = {
@@ -693,7 +693,7 @@ ns:RegisterGuide({
         {
             priority = 200,
             route = {
-                { y = 0.76, mapID = 1412, label = "Meela Dawnstrider", x = 0.45, offMapText = "Travel to Meela Dawnstrider in Mulgore." },
+                { y = 0.766, mapID = 1412, label = "Meela Dawnstrider", x = 0.446, offMapText = "Travel to Meela Dawnstrider in Mulgore." },
             },
             dependsOn = { "accept-3093-rune-inscribed-note" },
             id = "turnin-3093-rune-inscribed-note",
@@ -955,7 +955,7 @@ ns:RegisterGuide({
         {
             priority = 300,
             route = {
-                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+                { y = 0.768, mapID = 1412, label = "Seer Ravenfeather", x = 0.443, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
             },
             id = "accept-1519-call-of-earth",
             conditions = {
@@ -1007,7 +1007,7 @@ ns:RegisterGuide({
         {
             priority = 320,
             route = {
-                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+                { y = 0.768, mapID = 1412, label = "Seer Ravenfeather", x = 0.443, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
             },
             dependsOn = { "accept-1519-call-of-earth", "objective-1519-call-of-earth" },
             id = "turnin-1519-call-of-earth",
@@ -1277,7 +1277,7 @@ ns:RegisterGuide({
         {
             priority = 420,
             route = {
-                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+                { y = 0.768, mapID = 1412, label = "Seer Ravenfeather", x = 0.443, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
             },
             dependsOn = { "turnin-1519-call-of-earth" },
             id = "accept-1520-call-of-earth",
@@ -1391,7 +1391,7 @@ ns:RegisterGuide({
         {
             priority = 460,
             route = {
-                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+                { y = 0.768, mapID = 1412, label = "Seer Ravenfeather", x = 0.443, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
             },
             dependsOn = { "accept-1521-call-of-earth" },
             id = "turnin-1521-call-of-earth",
@@ -2937,7 +2937,7 @@ ns:RegisterGuide({
         {
             priority = 1060,
             route = {
-                { y = 0.592, mapID = 1412, label = "Narm Skychaser", x = 0.484, offMapText = "Travel to Narm Skychaser in Mulgore." },
+                { y = 0.625, mapID = 1412, label = "Narm Skychaser", x = 0.474, offMapText = "Travel to Narm Skychaser in Mulgore." },
             },
             dependsOn = { "turnin-2983-call-of-fire" },
             id = "accept-2984-call-of-fire",
@@ -3953,7 +3953,7 @@ ns:RegisterGuide({
         {
             priority = 1450,
             route = {
-                { y = 0.592, mapID = 1412, label = "Narm Skychaser", x = 0.484, offMapText = "Travel to Narm Skychaser in Mulgore." },
+                { y = 0.625, mapID = 1412, label = "Narm Skychaser", x = 0.474, offMapText = "Travel to Narm Skychaser in Mulgore." },
             },
             dependsOn = { "turnin-2985-call-of-water" },
             id = "accept-2986-call-of-water",

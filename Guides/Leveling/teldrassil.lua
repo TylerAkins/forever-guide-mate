@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Night Elf Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-teldrassil",
@@ -238,7 +238,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-456-the-balance-of-nature" },
         },
         {
             priority = 100,
@@ -697,7 +697,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-458-the-woodland-protector" },
         },
         {
             priority = 220,
@@ -781,6 +781,136 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 916,
             priority = 230,
+        },
+        {
+            priority = 270,
+            text = "Turn in A Good Friend to Iverron.",
+            route = {
+                { y = 0.3299, mapID = 1438, label = "Iverron", offMapText = "Travel to Iverron in Teldrassil.", x = 0.546 },
+            },
+            dependsOn = { "accept-4495-a-good-friend" },
+            id = "turnin-4495-a-good-friend",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4495, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 280,
+            route = {
+                { y = 0.3299, mapID = 1438, label = "Iverron", offMapText = "Travel to Iverron in Teldrassil.", x = 0.546 },
+            },
+            text = "Accept A Friend in Need from Iverron.",
+            id = "accept-3519-a-friend-in-need",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3519, state = "activeOrCompleted" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4495 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-4495-a-good-friend" },
+        },
+        {
+            priority = 285,
+            text = "Turn in A Friend in Need to Dirania Silvershine.",
+            route = {
+                { y = 0.4196, mapID = 1438, label = "Dirania Silvershine", offMapText = "Travel to Dirania Silvershine in Teldrassil.", x = 0.609 },
+            },
+            dependsOn = { "accept-3519-a-friend-in-need" },
+            id = "turnin-3519-a-friend-in-need",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3519, state = "completed" },
+            },
+            sourceStep = 34,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4495 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 286,
+            route = {
+                { y = 0.4196, mapID = 1438, label = "Dirania Silvershine", offMapText = "Travel to Dirania Silvershine in Teldrassil.", x = 0.609 },
+            },
+            text = "Accept Iverron's Antidote from Dirania Silvershine.",
+            id = "accept-3521-iverron-s-antidote",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3521, state = "activeOrCompleted" },
+            },
+            sourceStep = 34,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3519 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-3519-a-friend-in-need" },
         },
         {
             priority = 240,
@@ -879,68 +1009,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
-            text = "Turn in A Good Friend to Iverron.",
-            route = {
-                { y = 0.3299, mapID = 1438, label = "Iverron", offMapText = "Travel to Iverron in Teldrassil.", x = 0.546 },
-            },
-            dependsOn = { "accept-4495-a-good-friend" },
-            id = "turnin-4495-a-good-friend",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 2 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 4495, state = "completed" },
-            },
-            sourceStep = 27,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            priority = 280,
-            route = {
-                { y = 0.3299, mapID = 1438, label = "Iverron", offMapText = "Travel to Iverron in Teldrassil.", x = 0.546 },
-            },
-            text = "Accept A Friend in Need from Iverron.",
-            id = "accept-3519-a-friend-in-need",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 2 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 3519, state = "activeOrCompleted" },
-            },
-            sourceStep = 27,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 4495 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
             id = "objective-916-1-webwood-venom-sac",
             kind = "objective",
             conditions = {
@@ -967,6 +1035,40 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-916-webwood-venom" },
+        },
+        {
+            id = "objective-3521-3-webwood-ichor",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 1 Webwood Ichor.",
+            complete = {
+                questObjective = { id = 3521, index = 3, text = "Webwood Ichor", count = 1 },
+            },
+            route = {
+                { mapID = 1438, x = 0.568, y = 0.3159, label = "Webwood Ichor", offMapText = "Travel to Webwood Ichor." },
+            },
+            sourceStep = 44,
+            priority = 295,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3519 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3521-iverron-s-antidote" },
         },
         {
             priority = 300,
@@ -1028,7 +1130,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-916-webwood-venom" },
         },
         {
             priority = 320,
@@ -1124,74 +1226,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-97977-natures-call", "woven-objective-97977-natures-call" },
-        },
-        {
-            priority = 340,
-            text = "Turn in A Friend in Need to Dirania Silvershine.",
-            route = {
-                { y = 0.4196, mapID = 1438, label = "Dirania Silvershine", offMapText = "Travel to Dirania Silvershine in Teldrassil.", x = 0.609 },
-            },
-            dependsOn = { "accept-3519-a-friend-in-need" },
-            id = "turnin-3519-a-friend-in-need",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 2 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 3519, state = "completed" },
-            },
-            sourceStep = 34,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 4495 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            priority = 350,
-            route = {
-                { y = 0.4196, mapID = 1438, label = "Dirania Silvershine", offMapText = "Travel to Dirania Silvershine in Teldrassil.", x = 0.609 },
-            },
-            text = "Accept Iverron's Antidote from Dirania Silvershine.",
-            id = "accept-3521-iverron-s-antidote",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 2 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 3521, state = "activeOrCompleted" },
-            },
-            sourceStep = 34,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 3519 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
             priority = 360,
@@ -1294,40 +1328,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-917-webwood-egg" },
-        },
-        {
-            id = "objective-3521-3-webwood-ichor",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 2 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            text = "Collect 1 Webwood Ichor.",
-            complete = {
-                questObjective = { id = 3521, index = 3, text = "Webwood Ichor", count = 1 },
-            },
-            route = {
-                { mapID = 1438, x = 0.568, y = 0.3159, label = "Webwood Ichor", offMapText = "Travel to Webwood Ichor." },
-            },
-            sourceStep = 44,
-            priority = 390,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 3519 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-3521-iverron-s-antidote" },
         },
         {
             priority = 400,
