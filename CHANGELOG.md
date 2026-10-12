@@ -3,7 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.4.7 - 2026-10-12
-- Accept Thunderhorn Cleansing before starting Sparring Match in the Mulgore route.
+- Turn in The Longwalkers at the first Thunder Bluff stop, during Dwarven Digging, and accept Thunderhorn Cleansing before starting Sparring Match.
 
 ## 0.4.6 - 2026-10-12
 - Turn in The Longwalkers during the first Thunder Bluff visit, then complete Sparring Match before accepting The Ravaged Caravan.
