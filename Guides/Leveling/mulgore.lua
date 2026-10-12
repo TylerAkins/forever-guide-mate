@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 14,
+    revision = 16,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -4159,6 +4159,124 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            priority = 1230,
+            text = "Accept The Ravaged Caravan from Morin Cloudstalker.",
+            id = "accept-749-the-ravaged-caravan",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 749, state = "activeOrCompleted" },
+            },
+            sourceStep = 79,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-turnin-99108-sparring-match" },
+        },
+        {
+            priority = 1231,
+            text = "Turn in The Ravaged Caravan.",
+            route = {
+                { y = 0.4818, mapID = 1412, label = "The Ravaged Caravan", offMapText = "Travel to The Ravaged Caravan.", x = 0.5374 },
+            },
+            dependsOn = { "accept-749-the-ravaged-caravan" },
+            id = "turnin-749-the-ravaged-caravan",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 749, state = "completed" },
+            },
+            sourceStep = 80,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 1232,
+            route = {
+                { y = 0.4818, mapID = 1412, label = "The Ravaged Caravan", offMapText = "Travel to The Ravaged Caravan.", x = 0.5374 },
+            },
+            text = "Accept The Ravaged Caravan.",
+            id = "accept-751-the-ravaged-caravan",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 751, state = "activeOrCompleted" },
+            },
+            sourceStep = 80,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 749 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-749-the-ravaged-caravan" },
+        },
+        {
+            dependsOn = { "accept-751-the-ravaged-caravan" },
+            id = "turnin-751-the-ravaged-caravan",
+            text = "Turn in The Ravaged Caravan to Morin Cloudstalker.",
+            useClientPin = true,
+            complete = {
+                quest = { id = 751, state = "completed" },
+            },
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            priority = 1233,
+            sourceStep = 119,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 749 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+        },
+        {
             id = "level-before-accept-854-journey-to-the-crossroads",
             kind = "note",
             text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
@@ -4641,124 +4759,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1384,
-            text = "Accept The Ravaged Caravan from Morin Cloudstalker.",
-            id = "accept-749-the-ravaged-caravan",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 749, state = "activeOrCompleted" },
-            },
-            sourceStep = 79,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-turnin-99108-sparring-match" },
-        },
-        {
-            priority = 1385,
-            text = "Turn in The Ravaged Caravan.",
-            route = {
-                { y = 0.4818, mapID = 1412, label = "The Ravaged Caravan", offMapText = "Travel to The Ravaged Caravan.", x = 0.5374 },
-            },
-            dependsOn = { "accept-749-the-ravaged-caravan" },
-            id = "turnin-749-the-ravaged-caravan",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 749, state = "completed" },
-            },
-            sourceStep = 80,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            priority = 1386,
-            route = {
-                { y = 0.4818, mapID = 1412, label = "The Ravaged Caravan", offMapText = "Travel to The Ravaged Caravan.", x = 0.5374 },
-            },
-            text = "Accept The Ravaged Caravan.",
-            id = "accept-751-the-ravaged-caravan",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 751, state = "activeOrCompleted" },
-            },
-            sourceStep = 80,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 749 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "turnin-749-the-ravaged-caravan" },
-        },
-        {
-            dependsOn = { "accept-751-the-ravaged-caravan" },
-            id = "turnin-751-the-ravaged-caravan",
-            text = "Turn in The Ravaged Caravan to Morin Cloudstalker.",
-            useClientPin = true,
-            complete = {
-                quest = { id = 751, state = "completed" },
-            },
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            priority = 1387,
-            sourceStep = 119,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 749 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-        },
-        {
             priority = 1390,
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
@@ -5149,6 +5149,1054 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 1501.0,
+            route = {
+                { y = 0.562, mapID = 1456, label = "Eylah Sunhorn", offMapText = "Travel to Eylah Sunhorn.", x = 0.382 },
+            },
+            text = "Accept Traditions of the Bluff from Eylah Sunhorn in Thunder Bluff.",
+            id = "woven-accept-97485-traditions-of-the-bluff",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97485, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1501.1,
+            route = {
+                { y = 0.562, mapID = 1456, label = "Eylah Sunhorn", offMapText = "Travel to Eylah Sunhorn.", x = 0.382 },
+            },
+            text = "Buy a Bundle of Herbs from Nida, a Bundle of Cedar Twigs from Nata, Sinew Thread from Mahu, and Ceremonial Flint and Tinder from Naal. Combine them for Eylah Sunhorn.",
+            id = "woven-objective-97485-traditions-of-the-bluff",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97485, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-97485-traditions-of-the-bluff" },
+        },
+        {
+            priority = 1501.2,
+            route = {
+                { y = 0.562, mapID = 1456, label = "Eylah Sunhorn", offMapText = "Travel to Eylah Sunhorn.", x = 0.382 },
+            },
+            text = "Turn in Traditions of the Bluff to Eylah Sunhorn in Thunder Bluff.",
+            id = "woven-turnin-97485-traditions-of-the-bluff",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97485, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97485-traditions-of-the-bluff", "woven-objective-97485-traditions-of-the-bluff" },
+        },
+        {
+            priority = 1501.3,
+            route = {
+                { y = 0.638, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.467 },
+            },
+            text = "Accept Longwalker Malah from Brave Wildrunner in Bloodhoof Village.",
+            id = "woven-accept-99079-longwalker-malah",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99079, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1501.4,
+            id = "woven-accept-861-the-hunters-way",
+            kind = "accept",
+            text = "Accept The Hunter's Way from Skorn Whitecloud in Bloodhoof Village.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { quest = { id = 861, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1412, x = 0.460, y = 0.634, label = "Skorn Whitecloud", offMapText = "Travel to Skorn Whitecloud." },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 844 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            id = "level-before-woven-accept-96130-chakuyak",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 96130,
+            priority = 1501.5,
+        },
+        {
+            priority = 1501.6,
+            route = {
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", offMapText = "Travel to Yaw Sharpmane.", x = 0.469 },
+            },
+            text = "Accept Chakuyak from Yaw Sharpmane in Bloodhoof Village.",
+            id = "woven-accept-96130-chakuyak",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96130, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1501.7,
+            route = {
+                { y = 0.652, mapID = 1412, label = "Chakuyak", offMapText = "Travel to Chakuyak.", x = 0.394 },
+            },
+            text = "Kill Chakuyak.",
+            id = "woven-objective-96130-chakuyak",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96130, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-96130-chakuyak" },
+        },
+        {
+            priority = 1501.8,
+            route = {
+                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", offMapText = "Travel to Yaw Sharpmane.", x = 0.469 },
+            },
+            text = "Turn in Chakuyak to Yaw Sharpmane in Bloodhoof Village.",
+            id = "woven-turnin-96130-chakuyak",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96130, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96130-chakuyak", "woven-objective-96130-chakuyak" },
+        },
+        {
+            priority = 1501.9,
+            id = "woven-accept-764-the-venture-co",
+            kind = "accept",
+            text = "Accept The Venture Co. from Morin Cloudstalker.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { quest = { id = 764, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1412, x = 0.500, y = 0.626, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 751 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-751-the-ravaged-caravan" },
+        },
+        {
+            priority = 1502.0,
+            id = "woven-accept-765-supervisor-fizsprocket",
+            kind = "accept",
+            text = "Accept Supervisor Fizsprocket from Morin Cloudstalker.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { quest = { id = 765, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1412, x = 0.500, y = 0.626, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 751 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-751-the-ravaged-caravan" },
+        },
+        {
+            priority = 1502.1,
+            id = "woven-objective-764-the-venture-co-1",
+            kind = "objective",
+            text = "Kill Venture Co. Workers near the Venture Co. mine until you have slain 14.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { questObjective = { id = 764, index = 1, text = "Venture Co. Worker" } },
+            route = {
+                { mapID = 1412, x = 0.616, y = 0.466, label = "Venture Co. Worker", offMapText = "Travel to Venture Co. Worker." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-764-the-venture-co" },
+        },
+        {
+            priority = 1502.2,
+            id = "woven-objective-764-the-venture-co-2",
+            kind = "objective",
+            text = "Kill Venture Co. Supervisors near the Venture Co. mine until you have slain six.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { questObjective = { id = 764, index = 2, text = "Venture Co. Supervisor" } },
+            route = {
+                { mapID = 1412, x = 0.614, y = 0.472, label = "Venture Co. Supervisor", offMapText = "Travel to Venture Co. Supervisor." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-764-the-venture-co" },
+        },
+        {
+            priority = 1502.3,
+            id = "woven-objective-765-supervisor-fizsprocket",
+            kind = "objective",
+            text = "Kill Supervisor Fizsprocket inside the Venture Co. mine and loot Fizsprocket's Clipboard. The pages for Fizsprocket's Notes are inside this mine too.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { questObjective = { id = 765, index = 1, text = "Fizsprocket's Clipboard" } },
+            route = {
+                { mapID = 1412, x = 0.644, y = 0.436, label = "Supervisor Fizsprocket", offMapText = "Travel to Supervisor Fizsprocket." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-765-supervisor-fizsprocket" },
+        },
+        {
+            id = "loot-starter-before-woven-accept-98424-fizsprockets-notes",
+            kind = "note",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill Supervisor Fizsprocket in the Venture Co. Mine in Mulgore and loot the Mulgore Expansion Plans.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Mulgore Expansion Plans", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 98424, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 1502.4,
+        },
+        {
+            priority = 1502.5,
+            text = "Use the Mulgore Expansion Plans to accept Fizsprocket's Notes.",
+            id = "woven-accept-98424-fizsprockets-notes",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98424, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Collect the remaining pages inside the Venture Co. Mine.",
+            priority = 1502.6,
+            route = {
+                { y = 0.436, mapID = 1412, label = "Venture Co. Mine", offMapText = "Travel to Venture Co. Mine.", x = 0.644 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            id = "woven-objective-98424-fizsprockets-notes",
+            kind = "objective",
+            useClientPin = true,
+            complete = {
+                quest = { id = 98424, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-98424-fizsprockets-notes" },
+        },
+        {
+            priority = 1502.7,
+            route = {
+                { y = 0.632, mapID = 1412, label = "Malah Longwind", offMapText = "Travel to Malah Longwind.", x = 0.576 },
+            },
+            text = "Turn in Longwalker Malah to Malah Longwind, east of Bloodhoof Village.",
+            id = "woven-turnin-99079-longwalker-malah",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99079, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99079-longwalker-malah" },
+        },
+        {
+            priority = 1502.8,
+            route = {
+                { y = 0.632, mapID = 1412, label = "Malah Longwind", offMapText = "Travel to Malah Longwind.", x = 0.576 },
+            },
+            text = "Accept Grim Tidings from Malah Longwind.",
+            id = "woven-accept-99081-grim-tidings",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99081, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1502.9,
+            route = {
+                { y = 0.638, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.467 },
+            },
+            text = "Turn in Grim Tidings to Brave Wildrunner in Bloodhoof Village.",
+            id = "woven-turnin-99081-grim-tidings",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99081, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99081-grim-tidings" },
+        },
+        {
+            priority = 1503.0,
+            route = {
+                { y = 0.638, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.467 },
+            },
+            text = "Accept Our Ancient Enemy from Brave Wildrunner in Bloodhoof Village.",
+            id = "woven-accept-99101-our-ancient-enemy",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99101, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1503.1,
+            route = {
+                { y = 0.634, mapID = 1412, label = "Baine Bloodhoof", offMapText = "Travel to Baine Bloodhoof.", x = 0.467 },
+            },
+            text = "Turn in Our Ancient Enemy to Baine Bloodhoof in Bloodhoof Village.",
+            id = "woven-turnin-99101-our-ancient-enemy",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99101, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99101-our-ancient-enemy" },
+        },
+        {
+            priority = 1503.2,
+            route = {
+                { y = 0.634, mapID = 1412, label = "Baine Bloodhoof", offMapText = "Travel to Baine Bloodhoof.", x = 0.467 },
+            },
+            text = "Accept Drive Them Out from Baine Bloodhoof in Bloodhoof Village.",
+            id = "woven-accept-99080-drive-them-out",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99080, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1503.3,
+            id = "woven-turnin-764-the-venture-co",
+            kind = "turnin",
+            text = "Turn in The Venture Co. to Morin Cloudstalker.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { quest = { id = 764, state = "completed" } },
+            route = {
+                { mapID = 1412, x = 0.500, y = 0.626, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-764-the-venture-co", "woven-objective-764-the-venture-co-1", "woven-objective-764-the-venture-co-2" },
+        },
+        {
+            priority = 1503.4,
+            id = "woven-turnin-765-supervisor-fizsprocket",
+            kind = "turnin",
+            text = "Turn in Supervisor Fizsprocket to Morin Cloudstalker.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { quest = { id = 765, state = "completed" } },
+            route = {
+                { mapID = 1412, x = 0.500, y = 0.626, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-765-supervisor-fizsprocket", "woven-objective-765-supervisor-fizsprocket" },
+        },
+        {
+            priority = 1503.5,
+            route = {
+                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
+            },
+            text = "Turn in Fizsprocket's Notes to Morin Cloudstalker.",
+            id = "woven-turnin-98424-fizsprockets-notes",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98424, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98424-fizsprockets-notes", "woven-objective-98424-fizsprockets-notes" },
+        },
+        {
+            priority = 1503.6,
+            route = {
+                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
+            },
+            text = "Accept Ceasing Operations from Morin Cloudstalker. This is an elite. Bring a group.",
+            id = "woven-accept-98427-ceasing-operations",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98427, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1503.7,
+            route = {
+                { y = 0.43, mapID = 1412, label = "Venture Co. Clearclutter", offMapText = "Travel to Venture Co. Clearclutter.", x = 0.57 },
+            },
+            text = "Take the Clearcutter Key from the Venture Co. Clearclutter. This is an elite. Bring a group.",
+            id = "woven-objective-98427-ceasing-operations",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98427, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-98427-ceasing-operations" },
+        },
+        {
+            priority = 1503.8,
+            route = {
+                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
+            },
+            text = "Turn in Ceasing Operations to Morin Cloudstalker.",
+            id = "woven-turnin-98427-ceasing-operations",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98427, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98427-ceasing-operations", "woven-objective-98427-ceasing-operations" },
+        },
+        {
+            priority = 1503.9,
+            route = {
+                { y = 0.594, mapID = 1412, label = "Galak Centaur", offMapText = "Travel to Galak Centaur.", x = 0.672 },
+            },
+            text = "Drive Them Out: kill 6 Galak Centaurs.",
+            id = "woven-objective-99080-drive-them-out-1",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 99080, index = 1 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-99080-drive-them-out" },
+        },
+        {
+            priority = 1504.0,
+            route = {
+                { y = 0.606, mapID = 1412, label = "Galak Outrunner", offMapText = "Travel to Galak Outrunner.", x = 0.602 },
+            },
+            text = "Drive Them Out: kill 4 Galak Outrunners.",
+            id = "woven-objective-99080-drive-them-out-2",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 99080, index = 2 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-99080-drive-them-out" },
+        },
+        {
+            priority = 1504.1,
+            route = {
+                { y = 0.598, mapID = 1412, label = "Herak the Pillager", offMapText = "Travel to Herak the Pillager.", x = 0.604 },
+            },
+            text = "Drive Them Out: bring Herak the Pillager's head.",
+            id = "woven-objective-99080-drive-them-out-3",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 99080, index = 3 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-99080-drive-them-out" },
+        },
+        {
+            priority = 1504.2,
+            route = {
+                { y = 0.634, mapID = 1412, label = "Baine Bloodhoof", offMapText = "Travel to Baine Bloodhoof.", x = 0.467 },
+            },
+            text = "Turn in Drive Them Out to Baine Bloodhoof in Bloodhoof Village.",
+            id = "woven-turnin-99080-drive-them-out",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99080, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {
+                "woven-accept-99080-drive-them-out",
+                "woven-objective-99080-drive-them-out-1",
+                "woven-objective-99080-drive-them-out-2",
+                "woven-objective-99080-drive-them-out-3",
+            },
+        },
+        {
+            priority = 1504.3,
+            route = {
+                { y = 0.634, mapID = 1412, label = "Baine Bloodhoof", offMapText = "Travel to Baine Bloodhoof.", x = 0.467 },
+            },
+            text = "Accept The High Chieftain from Baine Bloodhoof.",
+            id = "woven-accept-99082-the-high-chieftain",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99082, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-98435-thunderhorns-report",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98435,
+            priority = 1504.4,
+        },
+        {
+            priority = 1504.5,
+            route = {
+                { y = 0.636, mapID = 1412, label = "Mull Thunderhorn", offMapText = "Travel to Mull Thunderhorn.", x = 0.475 },
+            },
+            text = "Accept Thunderhorn's Report from Mull Thunderhorn. This step is for tauren.",
+            id = "woven-accept-98435-thunderhorns-report",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98435, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1504.6,
+            id = "woven-objective-861-the-hunters-way",
+            kind = "objective",
+            text = "Kill Flatland Prowlers in northern Mulgore until you have four Flatland Prowler Claws.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { questObjective = { id = 861, index = 1, text = "Flatland Prowler Claw" } },
+            route = {
+                { mapID = 1412, x = 0.526, y = 0.128, label = "Flatland Prowler", offMapText = "Travel to Flatland Prowler." },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 844 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-861-the-hunters-way" },
+        },
+        {
+            priority = 1504.7,
+            route = {
+                { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
+            },
+            text = "Turn in The High Chieftain to Cairne Bloodhoof.",
+            id = "woven-turnin-99082-the-high-chieftain",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99082, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99082-the-high-chieftain" },
+        },
+        {
+            priority = 1504.8,
+            route = {
+                { y = 0.284, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem.", x = 0.784 },
+            },
+            text = "Turn in Thunderhorn's Report to Arch Druid Hamuul Runetotem in Elder Rise. This step is for tauren.",
+            id = "woven-turnin-98435-thunderhorns-report",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98435, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98435-thunderhorns-report" },
+        },
+        {
+            priority = 1504.9,
+            id = "woven-turnin-861-the-hunters-way",
+            kind = "turnin",
+            text = "Turn in The Hunter's Way to Melor Stonehoof on Hunter Rise in Thunder Bluff.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { quest = { id = 861, state = "completed" } },
+            route = {
+                { mapID = 1456, x = 0.6153, y = 0.809, label = "Melor Stonehoof", offMapText = "Travel to Melor Stonehoof." },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 844 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-861-the-hunters-way", "woven-objective-861-the-hunters-way" },
+        },
+        {
+            priority = 1505.0,
+            id = "woven-accept-860-sergra-darkthorn",
+            kind = "accept",
+            text = "Accept Sergra Darkthorn from Melor Stonehoof.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { quest = { id = 860, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1456, x = 0.6153, y = 0.809, label = "Melor Stonehoof", offMapText = "Travel to Melor Stonehoof." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 861 } },
+            },
+            alternativeQuests = { 844 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-861-the-hunters-way" },
+        },
+        {
             priority = 1510,
             text = "Turn in The Barrens Oases to Tonga Runetotem.",
             route = {
@@ -5212,6 +6260,28 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1521,
+            id = "woven-turnin-860-sergra-darkthorn",
+            kind = "turnin",
+            text = "Turn in Sergra Darkthorn to Sergra Darkthorn at the Crossroads.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { quest = { id = 860, state = "completed" } },
+            route = {
+                { mapID = 1413, x = 0.5224, y = 0.3101, label = "Sergra Darkthorn", offMapText = "Travel to Sergra Darkthorn." },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 844 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-860-sergra-darkthorn" },
         },
         {
             id = "level-before-turnin-2984-call-of-fire",
@@ -7551,217 +8621,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2430,
-            route = {
-                { y = 0.638, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.467 },
-            },
-            text = "Accept Longwalker Malah from Brave Wildrunner in Bloodhoof Village.",
-            id = "woven-accept-99079-longwalker-malah",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99079, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            id = "level-before-woven-accept-96130-chakuyak",
-            kind = "note",
-            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 5 },
-            },
-            requiredLevel = 5,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 96130,
-            priority = 2470,
-        },
-        {
-            priority = 2480,
-            route = {
-                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", offMapText = "Travel to Yaw Sharpmane.", x = 0.469 },
-            },
-            text = "Accept Chakuyak from Yaw Sharpmane in Bloodhoof Village.",
-            id = "woven-accept-96130-chakuyak",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96130, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2490,
-            route = {
-                { y = 0.652, mapID = 1412, label = "Chakuyak", offMapText = "Travel to Chakuyak.", x = 0.394 },
-            },
-            text = "Kill Chakuyak.",
-            id = "woven-objective-96130-chakuyak",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96130, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-accept-96130-chakuyak" },
-        },
-        {
-            priority = 2500,
-            route = {
-                { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", offMapText = "Travel to Yaw Sharpmane.", x = 0.469 },
-            },
-            text = "Turn in Chakuyak to Yaw Sharpmane in Bloodhoof Village.",
-            id = "woven-turnin-96130-chakuyak",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96130, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96130-chakuyak", "woven-objective-96130-chakuyak" },
-        },
-        {
-            priority = 2520,
-            route = {
-                { y = 0.562, mapID = 1456, label = "Eylah Sunhorn", offMapText = "Travel to Eylah Sunhorn.", x = 0.382 },
-            },
-            text = "Accept Traditions of the Bluff from Eylah Sunhorn in Thunder Bluff.",
-            id = "woven-accept-97485-traditions-of-the-bluff",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97485, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2530,
-            route = {
-                { y = 0.562, mapID = 1456, label = "Eylah Sunhorn", offMapText = "Travel to Eylah Sunhorn.", x = 0.382 },
-            },
-            text = "Buy a Bundle of Herbs from Nida, a Bundle of Cedar Twigs from Nata, Sinew Thread from Mahu, and Ceremonial Flint and Tinder from Naal. Combine them for Eylah Sunhorn.",
-            id = "woven-objective-97485-traditions-of-the-bluff",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97485, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-accept-97485-traditions-of-the-bluff" },
-        },
-        {
-            priority = 2540,
-            route = {
-                { y = 0.562, mapID = 1456, label = "Eylah Sunhorn", offMapText = "Travel to Eylah Sunhorn.", x = 0.382 },
-            },
-            text = "Turn in Traditions of the Bluff to Eylah Sunhorn in Thunder Bluff.",
-            id = "woven-turnin-97485-traditions-of-the-bluff",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97485, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97485-traditions-of-the-bluff", "woven-objective-97485-traditions-of-the-bluff" },
-        },
-        {
             id = "level-before-woven-accept-94911-child-of-nature",
             kind = "note",
             text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
@@ -7894,602 +8753,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
-        {
-            id = "loot-starter-before-woven-accept-98424-fizsprockets-notes",
-            kind = "note",
-            instructionOnly = true,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Kill Supervisor Fizsprocket in the Venture Co. Mine in Mulgore and loot the Mulgore Expansion Plans.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Mulgore Expansion Plans", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 98424, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-            priority = 2590,
-        },
-        {
-            priority = 2600,
-            text = "Use the Mulgore Expansion Plans to accept Fizsprocket's Notes.",
-            id = "woven-accept-98424-fizsprockets-notes",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98424, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Collect the remaining pages inside the Venture Co. Mine.",
-            priority = 2610,
-            route = {
-                { y = 0.436, mapID = 1412, label = "Venture Co. Mine", offMapText = "Travel to Venture Co. Mine.", x = 0.644 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            id = "woven-objective-98424-fizsprockets-notes",
-            kind = "objective",
-            useClientPin = true,
-            complete = {
-                quest = { id = 98424, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-98424-fizsprockets-notes" },
-        },
-        {
-            priority = 2620,
-            route = {
-                { y = 0.632, mapID = 1412, label = "Malah Longwind", offMapText = "Travel to Malah Longwind.", x = 0.576 },
-            },
-            text = "Turn in Longwalker Malah to Malah Longwind, east of Bloodhoof Village.",
-            id = "woven-turnin-99079-longwalker-malah",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99079, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99079-longwalker-malah" },
-        },
-        {
-            priority = 2630,
-            route = {
-                { y = 0.632, mapID = 1412, label = "Malah Longwind", offMapText = "Travel to Malah Longwind.", x = 0.576 },
-            },
-            text = "Accept Grim Tidings from Malah Longwind.",
-            id = "woven-accept-99081-grim-tidings",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99081, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2640,
-            route = {
-                { y = 0.638, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.467 },
-            },
-            text = "Turn in Grim Tidings to Brave Wildrunner in Bloodhoof Village.",
-            id = "woven-turnin-99081-grim-tidings",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99081, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99081-grim-tidings" },
-        },
-        {
-            priority = 2650,
-            route = {
-                { y = 0.638, mapID = 1412, label = "Brave Wildrunner", offMapText = "Travel to Brave Wildrunner.", x = 0.467 },
-            },
-            text = "Accept Our Ancient Enemy from Brave Wildrunner in Bloodhoof Village.",
-            id = "woven-accept-99101-our-ancient-enemy",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99101, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2660,
-            route = {
-                { y = 0.634, mapID = 1412, label = "Baine Bloodhoof", offMapText = "Travel to Baine Bloodhoof.", x = 0.467 },
-            },
-            text = "Turn in Our Ancient Enemy to Baine Bloodhoof in Bloodhoof Village.",
-            id = "woven-turnin-99101-our-ancient-enemy",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99101, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99101-our-ancient-enemy" },
-        },
-        {
-            priority = 2670,
-            route = {
-                { y = 0.634, mapID = 1412, label = "Baine Bloodhoof", offMapText = "Travel to Baine Bloodhoof.", x = 0.467 },
-            },
-            text = "Accept Drive Them Out from Baine Bloodhoof in Bloodhoof Village.",
-            id = "woven-accept-99080-drive-them-out",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99080, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2680,
-            route = {
-                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
-            },
-            text = "Turn in Fizsprocket's Notes to Morin Cloudstalker.",
-            id = "woven-turnin-98424-fizsprockets-notes",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98424, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98424-fizsprockets-notes", "woven-objective-98424-fizsprockets-notes" },
-        },
-        {
-            priority = 2690,
-            route = {
-                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
-            },
-            text = "Accept Ceasing Operations from Morin Cloudstalker. This is an elite. Bring a group.",
-            id = "woven-accept-98427-ceasing-operations",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98427, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2700,
-            route = {
-                { y = 0.43, mapID = 1412, label = "Venture Co. Clearclutter", offMapText = "Travel to Venture Co. Clearclutter.", x = 0.57 },
-            },
-            text = "Take the Clearcutter Key from the Venture Co. Clearclutter. This is an elite. Bring a group.",
-            id = "woven-objective-98427-ceasing-operations",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98427, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-accept-98427-ceasing-operations" },
-        },
-        {
-            priority = 2710,
-            route = {
-                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
-            },
-            text = "Turn in Ceasing Operations to Morin Cloudstalker.",
-            id = "woven-turnin-98427-ceasing-operations",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98427, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98427-ceasing-operations", "woven-objective-98427-ceasing-operations" },
-        },
-        {
-            priority = 2720,
-            route = {
-                { y = 0.594, mapID = 1412, label = "Galak Centaur", offMapText = "Travel to Galak Centaur.", x = 0.672 },
-            },
-            text = "Drive Them Out: kill 6 Galak Centaurs.",
-            id = "woven-objective-99080-drive-them-out-1",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 99080, index = 1 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-accept-99080-drive-them-out" },
-        },
-        {
-            priority = 2730,
-            route = {
-                { y = 0.606, mapID = 1412, label = "Galak Outrunner", offMapText = "Travel to Galak Outrunner.", x = 0.602 },
-            },
-            text = "Drive Them Out: kill 4 Galak Outrunners.",
-            id = "woven-objective-99080-drive-them-out-2",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 99080, index = 2 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-accept-99080-drive-them-out" },
-        },
-        {
-            priority = 2740,
-            route = {
-                { y = 0.598, mapID = 1412, label = "Herak the Pillager", offMapText = "Travel to Herak the Pillager.", x = 0.604 },
-            },
-            text = "Drive Them Out: bring Herak the Pillager's head.",
-            id = "woven-objective-99080-drive-them-out-3",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 99080, index = 3 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-accept-99080-drive-them-out" },
-        },
-        {
-            priority = 2750,
-            route = {
-                { y = 0.634, mapID = 1412, label = "Baine Bloodhoof", offMapText = "Travel to Baine Bloodhoof.", x = 0.467 },
-            },
-            text = "Turn in Drive Them Out to Baine Bloodhoof in Bloodhoof Village.",
-            id = "woven-turnin-99080-drive-them-out",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99080, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {
-                "woven-accept-99080-drive-them-out",
-                "woven-objective-99080-drive-them-out-1",
-                "woven-objective-99080-drive-them-out-2",
-                "woven-objective-99080-drive-them-out-3",
-            },
-        },
-        {
-            priority = 2760,
-            route = {
-                { y = 0.634, mapID = 1412, label = "Baine Bloodhoof", offMapText = "Travel to Baine Bloodhoof.", x = 0.467 },
-            },
-            text = "Accept The High Chieftain from Baine Bloodhoof.",
-            id = "woven-accept-99082-the-high-chieftain",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99082, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2770,
-            route = {
-                { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
-            },
-            text = "Turn in The High Chieftain to Cairne Bloodhoof.",
-            id = "woven-turnin-99082-the-high-chieftain",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99082, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99082-the-high-chieftain" },
-        },
-        {
-            id = "level-before-woven-accept-98435-thunderhorns-report",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { race = 6 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 98435,
-            priority = 2780,
-        },
-        {
-            priority = 2790,
-            route = {
-                { y = 0.636, mapID = 1412, label = "Mull Thunderhorn", offMapText = "Travel to Mull Thunderhorn.", x = 0.475 },
-            },
-            text = "Accept Thunderhorn's Report from Mull Thunderhorn. This step is for tauren.",
-            id = "woven-accept-98435-thunderhorns-report",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98435, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2800,
-            route = {
-                { y = 0.284, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem.", x = 0.784 },
-            },
-            text = "Turn in Thunderhorn's Report to Arch Druid Hamuul Runetotem in Elder Rise. This step is for tauren.",
-            id = "woven-turnin-98435-thunderhorns-report",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98435, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98435-thunderhorns-report" },
         },
     },
     casualSpine = true,

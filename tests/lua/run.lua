@@ -4611,7 +4611,7 @@ do
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 14, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 16, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -4627,8 +4627,7 @@ do
     Check(taurenGoalIndex["accept-758-thunderhorn-cleansing"] < taurenGoalIndex["woven-accept-99108-sparring-match"]
         and taurenGoalIndex["woven-accept-99108-sparring-match"] < taurenGoalIndex["woven-objective-99108-sparring-match"]
         and taurenGoalIndex["woven-objective-99108-sparring-match"] < taurenGoalIndex["woven-turnin-99108-sparring-match"]
-        and taurenGoalIndex["woven-turnin-99108-sparring-match"] < taurenGoalIndex["accept-749-the-ravaged-caravan"]
-        and taurenGoalIndex["woven-turnin-98430-the-longwalkers"] < taurenGoalIndex["accept-749-the-ravaged-caravan"],
+        and taurenGoalIndex["woven-turnin-99108-sparring-match"] < taurenGoalIndex["accept-749-the-ravaged-caravan"],
         "Mulgore accepts Thunderhorn Cleansing, completes Sparring Match, and later picks up The Ravaged Caravan")
     Check(not DependsOn(chain.sparringAccept, "woven-turnin-98430-the-longwalkers")
         and DependsOn(chain.sparringAccept, "accept-758-thunderhorn-cleansing")
@@ -4641,15 +4640,118 @@ do
         and DependsOn(chain.longwalkersTurnin, "turnin-775-journey-into-thunder-bluff"),
         "The Longwalkers turn-in waits for Rite of Wisdom, A Sacred Burial, and the Journey into Thunder Bluff visit")
     Check(chain.sparringTurnin.priority < chain.ravagedCaravanAccept.priority
-        and chain.longwalkersTurnin.priority < chain.ravagedCaravanAccept.priority
         and chain.ravagedCaravanAccept.priority < chain.ravagedCaravanTurnin.priority
         and chain.ravagedCaravanTurnin.priority < chain.nextCaravanAccept.priority,
-        "Mulgore schedules Longwalkers and Sparring Match before The Ravaged Caravan")
+        "Mulgore schedules Sparring Match before The Ravaged Caravan")
     Check(DependsOn(chain.ravagedCaravanAccept, "woven-turnin-99108-sparring-match")
         and DependsOn(chain.nextCaravanAccept, "turnin-749-the-ravaged-caravan")
         and taurenGoalIndex["accept-751-the-ravaged-caravan"] < taurenGoalIndex["turnin-751-the-ravaged-caravan"],
         "Ravaged Caravan accepts wait for the prior turn-ins")
 end
+
+function TestTaurenStarterMulgoreForeverOrder()
+    local taurenStarter = ns.guides["leveling-era-mulgore"]
+    local taurenGoalIndex = {}
+    for index, goal in ipairs(taurenStarter.goals) do taurenGoalIndex[goal.id] = index end
+    local function Before(first, second)
+        return taurenGoalIndex[first] ~= nil and taurenGoalIndex[second] ~= nil
+            and taurenGoalIndex[first] < taurenGoalIndex[second]
+    end
+    Check(Before("accept-5928-heeding-the-call", "accept-749-the-ravaged-caravan")
+        and Before("turnin-751-the-ravaged-caravan", "level-before-accept-854-journey-to-the-crossroads"),
+        "The Ravaged Caravan is turned in to Morin before the route leaves Mulgore for the Crossroads")
+    Check(Before("turnin-6002-body-and-heart", "woven-accept-97485-traditions-of-the-bluff")
+        and Before("accept-6364-return-to-jahan", "woven-accept-97485-traditions-of-the-bluff")
+        and Before("woven-turnin-97485-traditions-of-the-bluff", "woven-accept-99079-longwalker-malah"),
+        "the Mulgore Forever quests start in Thunder Bluff after bear form and the Tal visit")
+    for _, goalID in ipairs({
+        "woven-turnin-96130-chakuyak",
+        "woven-turnin-98427-ceasing-operations",
+        "woven-turnin-99082-the-high-chieftain",
+        "woven-turnin-98435-thunderhorns-report",
+    }) do
+        Check(Before(goalID, "turnin-886-the-barrens-oases") and Before(goalID, "turnin-6364-return-to-jahan")
+            and Before(goalID, "accept-791-carry-your-weight"),
+            goalID .. " finishes before the route returns to the Crossroads and Durotar")
+    end
+    Check(Before("woven-accept-99082-the-high-chieftain", "woven-accept-98435-thunderhorns-report")
+        and Before("woven-accept-98435-thunderhorns-report", "woven-turnin-99082-the-high-chieftain"),
+        "Thunderhorn's Report is picked up from Mull in Bloodhoof before the closing Thunder Bluff stop")
+    for _, spec in ipairs({ { 764, "woven-accept-764-the-venture-co", "woven-turnin-764-the-venture-co" },
+        { 765, "woven-accept-765-supervisor-fizsprocket", "woven-turnin-765-supervisor-fizsprocket" } }) do
+        local accept = ns.Engine:GetGoal(taurenStarter, spec[2])
+        Check(Before("turnin-6002-body-and-heart", spec[2])
+            and Before("woven-turnin-96130-chakuyak", spec[2])
+            and Before(spec[2], "loot-starter-before-woven-accept-98424-fizsprockets-notes")
+            and Before(spec[3], "woven-turnin-98424-fizsprockets-notes")
+            and Before(spec[3], "turnin-886-the-barrens-oases"),
+            "quest " .. spec[1] .. " finishes on the return Mulgore mine outing before the Crossroads")
+        Check(accept and DependsOn(accept, "turnin-751-the-ravaged-caravan"),
+            "quest " .. spec[1] .. " pickup waits for The Ravaged Caravan turn-in")
+        local requiresCaravan = false
+        for _, group in ipairs(accept and accept.requiredQuests or {}) do
+            if group.mode == "any" and #group.quests == 1 and group.quests[1] == 751 then requiresCaravan = true end
+        end
+        Check(requiresCaravan, "quest " .. spec[1] .. " has an ordered-route caravan prerequisite")
+    end
+    Check(Before("woven-accept-764-the-venture-co", "woven-objective-764-the-venture-co-1")
+        and Before("woven-objective-764-the-venture-co-1", "woven-objective-764-the-venture-co-2")
+        and Before("woven-objective-764-the-venture-co-2", "woven-objective-765-supervisor-fizsprocket")
+        and Before("woven-accept-765-supervisor-fizsprocket", "woven-objective-765-supervisor-fizsprocket")
+        and Before("woven-objective-765-supervisor-fizsprocket", "loot-starter-before-woven-accept-98424-fizsprockets-notes"),
+        "Venture Co. workers and supervisors lead into Fizsprocket and his Notes on the same mine outing")
+    local hunterAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-861-the-hunters-way")
+    local sergraAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-860-sergra-darkthorn")
+    Equal(taurenGoalIndex["woven-accept-861-the-hunters-way"], (taurenGoalIndex["woven-accept-99079-longwalker-malah"] or 0) + 1,
+        "The Hunter's Way is accepted from Skorn beside Brave Wildrunner")
+    Check(Before("woven-accept-861-the-hunters-way", "woven-objective-861-the-hunters-way")
+        and Before("woven-accept-98435-thunderhorns-report", "woven-objective-861-the-hunters-way")
+        and Before("woven-objective-861-the-hunters-way", "woven-turnin-99082-the-high-chieftain")
+        and Before("woven-turnin-99082-the-high-chieftain", "woven-turnin-861-the-hunters-way")
+        and Before("woven-turnin-861-the-hunters-way", "woven-accept-860-sergra-darkthorn")
+        and Before("woven-accept-860-sergra-darkthorn", "turnin-886-the-barrens-oases")
+        and Before("turnin-6364-return-to-jahan", "woven-turnin-860-sergra-darkthorn")
+        and Before("woven-turnin-860-sergra-darkthorn", "accept-791-carry-your-weight"),
+        "The Hunter's Way turns in to Melor on the closing Thunder Bluff stop and Sergra waits for the Crossroads")
+    Check(hunterAccept and sergraAccept and DependsOn(sergraAccept, "woven-turnin-861-the-hunters-way"),
+        "Sergra Darkthorn follows The Hunter's Way turn-in")
+    local requiresHuntersWay = false
+    for _, group in ipairs(sergraAccept and sergraAccept.requiredQuests or {}) do
+        for _, questID in ipairs(group.quests or {}) do
+            if questID == 861 then requiresHuntersWay = true end
+        end
+    end
+    Check(requiresHuntersWay, "Sergra Darkthorn requires The Hunter's Way turn-in")
+    local function Offered(goal, raceID, level)
+        return goal ~= nil and ns.EvaluateCondition(goal.conditions,
+            { faction = "Horde", raceID = raceID, classID = 1, level = level }) == true
+    end
+    for _, goalID in ipairs({ "woven-accept-861-the-hunters-way", "woven-objective-861-the-hunters-way",
+        "woven-turnin-861-the-hunters-way", "woven-accept-860-sergra-darkthorn", "woven-turnin-860-sergra-darkthorn" }) do
+        local goal = ns.Engine:GetGoal(taurenStarter, goalID)
+        Check(Offered(goal, 6, 10) and not Offered(goal, 6, 9) and not Offered(goal, 2, 10),
+            goalID .. " applies only to level 10 tauren")
+    end
+    local skorn = hunterAccept and hunterAccept.route[1]
+    local melor = sergraAccept and sergraAccept.route[1]
+    local sergra = ns.Engine:GetGoal(taurenStarter, "woven-turnin-860-sergra-darkthorn")
+    sergra = sergra and sergra.route[1]
+    Check(skorn and skorn.mapID == 1412 and skorn.x == 0.460 and skorn.y == 0.634,
+        "The Hunter's Way pickup uses Skorn's Bloodhoof pin")
+    Check(melor and melor.mapID == 1456 and melor.x == 0.6153 and melor.y == 0.809,
+        "Sergra Darkthorn pickup uses Melor's Hunter Rise pin")
+    Check(sergra and sergra.mapID == 1413 and sergra.x == 0.5224 and sergra.y == 0.3101,
+        "Sergra Darkthorn turn-in uses Sergra's Crossroads pin")
+    for _, goalID in ipairs({ "woven-accept-861-the-hunters-way", "woven-accept-860-sergra-darkthorn" }) do
+        local goal = ns.Engine:GetGoal(taurenStarter, goalID)
+        local hidesForPlainstrider = false
+        for _, questID in ipairs(goal and goal.alternativeQuests or {}) do
+            if questID == 844 then hidesForPlainstrider = true end
+        end
+        Check(hidesForPlainstrider, goalID .. " drops out once Plainstrider Menace is started")
+    end
+end
+TestTaurenStarterMulgoreForeverOrder()
 do
     local dunMorogh = ns.guides["leveling-era-dun-morogh"]
     local dunMoroghIndex = {}

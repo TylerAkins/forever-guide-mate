@@ -1,5 +1,17 @@
 local _, ns = ...
 
+ns:RegisterQuestPrerequisite({ quest = 764, mode = "any", quests = { 751 },
+    note = "The Venture Co. follows The Ravaged Caravan." })
+ns:RegisterQuestPrerequisite({ quest = 765, mode = "any", quests = { 751 },
+    note = "Supervisor Fizsprocket follows The Ravaged Caravan." })
+
+ns:RegisterQuestPrerequisite({
+    quest = 860,
+    mode = "any",
+    quests = { 861 },
+    note = "Sergra Darkthorn follows The Hunter's Way.",
+})
+
 ns:RegisterQuestPrerequisite({
     quest = 499,
     mode = "all",

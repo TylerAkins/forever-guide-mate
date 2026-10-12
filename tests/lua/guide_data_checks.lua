@@ -298,6 +298,9 @@ M.SameTitleQuestChains = {
 
 -- Forever quests woven into starter routes that unlock after a spine turn-in.
 M.WovenQuestTurninGates = {
+    [764] = 751,
+    [765] = 751,
+    [860] = 861, -- Sergra Darkthorn follows The Hunter's Way.
     [96630] = 921, -- The Adventurer follows Crown of the Earth in Teldrassil.
 }
 

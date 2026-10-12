@@ -75192,7 +75192,7 @@
     "nextGuide": null
   },
   "leveling-era-mulgore": {
-    "revision": 6,
+    "revision": 16,
     "visits": [
       {
         "boundary": [
@@ -75667,27 +75667,7 @@
           "Baine Bloodhoof"
         ],
         "actions": [
-          "turnin-763-rites-of-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Perith Stormhoof"
-        ],
-        "actions": [
-          "woven-accept-98430-the-longwalkers",
-          "woven-objective-98430-the-longwalkers"
-        ]
-      },
-      {
-        "boundary": [
-          57,
-          1412,
-          "Baine Bloodhoof"
-        ],
-        "actions": [
+          "turnin-763-rites-of-the-earthmother",
           "accept-745-sharing-the-land",
           "accept-767-rite-of-vision"
         ]
@@ -75886,6 +75866,17 @@
       },
       {
         "boundary": [
+          null,
+          1412,
+          "Perith Stormhoof"
+        ],
+        "actions": [
+          "woven-accept-98430-the-longwalkers",
+          "woven-objective-98430-the-longwalkers"
+        ]
+      },
+      {
+        "boundary": [
           72,
           1412,
           "Mull Thunderhorn"
@@ -75914,27 +75905,6 @@
         "actions": [
           "turnin-771-rite-of-vision",
           "accept-772-rite-of-vision"
-        ]
-      },
-      {
-        "boundary": [
-          79,
-          null,
-          null
-        ],
-        "actions": [
-          "accept-749-the-ravaged-caravan"
-        ]
-      },
-      {
-        "boundary": [
-          80,
-          1412,
-          "The Ravaged Caravan"
-        ],
-        "actions": [
-          "turnin-749-the-ravaged-caravan",
-          "accept-751-the-ravaged-caravan"
         ]
       },
       {
@@ -75986,6 +75956,18 @@
         "actions": [
           "turnin-756-thunderhorn-totem",
           "accept-758-thunderhorn-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Krang Stonehoof"
+        ],
+        "actions": [
+          "woven-accept-99108-sparring-match",
+          "woven-objective-99108-sparring-match",
+          "woven-turnin-99108-sparring-match"
         ]
       },
       {
@@ -76295,6 +76277,27 @@
       },
       {
         "boundary": [
+          79,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-749-the-ravaged-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1412,
+          "The Ravaged Caravan"
+        ],
+        "actions": [
+          "turnin-749-the-ravaged-caravan",
+          "accept-751-the-ravaged-caravan"
+        ]
+      },
+      {
+        "boundary": [
           119,
           null,
           null
@@ -76393,6 +76396,16 @@
         ],
         "actions": [
           "turnin-775-journey-into-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Cairne Bloodhoof"
+        ],
+        "actions": [
+          "woven-turnin-98430-the-longwalkers"
         ]
       },
       {
@@ -76512,6 +76525,308 @@
       },
       {
         "boundary": [
+          null,
+          1456,
+          "Eylah Sunhorn"
+        ],
+        "actions": [
+          "woven-accept-97485-traditions-of-the-bluff",
+          "woven-objective-97485-traditions-of-the-bluff",
+          "woven-turnin-97485-traditions-of-the-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Brave Wildrunner"
+        ],
+        "actions": [
+          "woven-accept-99079-longwalker-malah"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Skorn Whitecloud"
+        ],
+        "actions": [
+          "woven-accept-861-the-hunters-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96130-chakuyak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "woven-accept-96130-chakuyak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Chakuyak"
+        ],
+        "actions": [
+          "woven-objective-96130-chakuyak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "woven-turnin-96130-chakuyak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Morin Cloudstalker"
+        ],
+        "actions": [
+          "woven-accept-764-the-venture-co",
+          "woven-accept-765-supervisor-fizsprocket"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Worker"
+        ],
+        "actions": [
+          "woven-objective-764-the-venture-co-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Supervisor"
+        ],
+        "actions": [
+          "woven-objective-764-the-venture-co-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Supervisor Fizsprocket"
+        ],
+        "actions": [
+          "woven-objective-765-supervisor-fizsprocket"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "loot-starter-before-woven-accept-98424-fizsprockets-notes",
+          "woven-accept-98424-fizsprockets-notes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Mine"
+        ],
+        "actions": [
+          "woven-objective-98424-fizsprockets-notes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Malah Longwind"
+        ],
+        "actions": [
+          "woven-turnin-99079-longwalker-malah",
+          "woven-accept-99081-grim-tidings"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Brave Wildrunner"
+        ],
+        "actions": [
+          "woven-turnin-99081-grim-tidings",
+          "woven-accept-99101-our-ancient-enemy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "woven-turnin-99101-our-ancient-enemy",
+          "woven-accept-99080-drive-them-out"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Morin Cloudstalker"
+        ],
+        "actions": [
+          "woven-turnin-764-the-venture-co",
+          "woven-turnin-765-supervisor-fizsprocket",
+          "woven-turnin-98424-fizsprockets-notes",
+          "woven-accept-98427-ceasing-operations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Clearclutter"
+        ],
+        "actions": [
+          "woven-objective-98427-ceasing-operations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Morin Cloudstalker"
+        ],
+        "actions": [
+          "woven-turnin-98427-ceasing-operations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Galak Centaur"
+        ],
+        "actions": [
+          "woven-objective-99080-drive-them-out-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Galak Outrunner"
+        ],
+        "actions": [
+          "woven-objective-99080-drive-them-out-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Herak the Pillager"
+        ],
+        "actions": [
+          "woven-objective-99080-drive-them-out-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "woven-turnin-99080-drive-them-out",
+          "woven-accept-99082-the-high-chieftain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98435-thunderhorns-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "woven-accept-98435-thunderhorns-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Flatland Prowler"
+        ],
+        "actions": [
+          "woven-objective-861-the-hunters-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Cairne Bloodhoof"
+        ],
+        "actions": [
+          "woven-turnin-99082-the-high-chieftain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "woven-turnin-98435-thunderhorns-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Melor Stonehoof"
+        ],
+        "actions": [
+          "woven-turnin-861-the-hunters-way",
+          "woven-accept-860-sergra-darkthorn"
+        ]
+      },
+      {
+        "boundary": [
           148,
           1413,
           "Tonga Runetotem"
@@ -76528,6 +76843,16 @@
         ],
         "actions": [
           "turnin-6364-return-to-jahan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "woven-turnin-860-sergra-darkthorn"
         ]
       },
       {
@@ -77187,16 +77512,6 @@
       {
         "boundary": [
           null,
-          1456,
-          "Cairne Bloodhoof"
-        ],
-        "actions": [
-          "woven-turnin-98430-the-longwalkers"
-        ]
-      },
-      {
-        "boundary": [
-          null,
           null,
           null
         ],
@@ -77212,80 +77527,6 @@
         ],
         "actions": [
           "accept-445-delivery-to-silverpine-forest"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Brave Wildrunner"
-        ],
-        "actions": [
-          "woven-accept-99079-longwalker-malah"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Krang Stonehoof"
-        ],
-        "actions": [
-          "woven-accept-99108-sparring-match",
-          "woven-objective-99108-sparring-match",
-          "woven-turnin-99108-sparring-match"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-96130-chakuyak"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Yaw Sharpmane"
-        ],
-        "actions": [
-          "woven-accept-96130-chakuyak"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Chakuyak"
-        ],
-        "actions": [
-          "woven-objective-96130-chakuyak"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Yaw Sharpmane"
-        ],
-        "actions": [
-          "woven-turnin-96130-chakuyak"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Eylah Sunhorn"
-        ],
-        "actions": [
-          "woven-accept-97485-traditions-of-the-bluff",
-          "woven-objective-97485-traditions-of-the-bluff",
-          "woven-turnin-97485-traditions-of-the-bluff"
         ]
       },
       {
@@ -77317,172 +77558,6 @@
         "actions": [
           "woven-turnin-94911-child-of-nature",
           "woven-accept-94913-moonglade-skyborne"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "loot-starter-before-woven-accept-98424-fizsprockets-notes",
-          "woven-accept-98424-fizsprockets-notes"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Venture Co. Mine"
-        ],
-        "actions": [
-          "woven-objective-98424-fizsprockets-notes"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Malah Longwind"
-        ],
-        "actions": [
-          "woven-turnin-99079-longwalker-malah",
-          "woven-accept-99081-grim-tidings"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Brave Wildrunner"
-        ],
-        "actions": [
-          "woven-turnin-99081-grim-tidings",
-          "woven-accept-99101-our-ancient-enemy"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Baine Bloodhoof"
-        ],
-        "actions": [
-          "woven-turnin-99101-our-ancient-enemy",
-          "woven-accept-99080-drive-them-out"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Morin Cloudstalker"
-        ],
-        "actions": [
-          "woven-turnin-98424-fizsprockets-notes",
-          "woven-accept-98427-ceasing-operations"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Venture Co. Clearclutter"
-        ],
-        "actions": [
-          "woven-objective-98427-ceasing-operations"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Morin Cloudstalker"
-        ],
-        "actions": [
-          "woven-turnin-98427-ceasing-operations"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Galak Centaur"
-        ],
-        "actions": [
-          "woven-objective-99080-drive-them-out-1"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Galak Outrunner"
-        ],
-        "actions": [
-          "woven-objective-99080-drive-them-out-2"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Herak the Pillager"
-        ],
-        "actions": [
-          "woven-objective-99080-drive-them-out-3"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Baine Bloodhoof"
-        ],
-        "actions": [
-          "woven-turnin-99080-drive-them-out",
-          "woven-accept-99082-the-high-chieftain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Cairne Bloodhoof"
-        ],
-        "actions": [
-          "woven-turnin-99082-the-high-chieftain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-98435-thunderhorns-report"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Mull Thunderhorn"
-        ],
-        "actions": [
-          "woven-accept-98435-thunderhorns-report"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Arch Druid Hamuul Runetotem"
-        ],
-        "actions": [
-          "woven-turnin-98435-thunderhorns-report"
         ]
       }
     ],
