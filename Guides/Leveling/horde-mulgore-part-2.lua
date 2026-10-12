@@ -9,7 +9,7 @@ ns:RegisterGuide({
     id = "leveling-era-horde-mulgore-part-2",
     title = "Mulgore (Part 2)",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     casualSpine = true,
     conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
@@ -42,7 +42,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Talkin' bout Toxins, Mon from Mazu'kon at Skywatcher Plateau.",
             complete = { quest = { id = 96241, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.206, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
             useClientText = false,
         },
         {
@@ -52,7 +52,7 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Stronger than Steel from Yorn Grimtotem at Skywatcher Plateau.",
             complete = { quest = { id = 96260, state = "activeOrCompleted" } },
-            route = { { mapID = 1412, x = 0.334, y = 0.224, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
+            route = { { mapID = 1412, x = 0.324, y = 0.2, label = "Skywatcher Plateau", offMapText = "Travel to Skywatcher Plateau in northwest Mulgore." } },
             useClientText = false,
         },
         {

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Ashenvale & Stonetalon Mountains",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
@@ -751,7 +751,7 @@ ns:RegisterGuide({
         {
             priority = 260,
             route = {
-                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             dependsOn = {},
             id = "woven-class-warlock-accept-65603-the-binding",

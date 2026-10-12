@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Druid",
     category = "Class Quests",
     id = "class-druid",
@@ -900,7 +900,7 @@ ns:RegisterGuide({
         {
             priority = 290,
             route = {
-                { y = 0.514, mapID = 1453, label = "Theridran", x = 0.214, offMapText = "Travel to Theridran in Stormwind City." },
+                { y = 0.642, mapID = 1453, label = "Theridran", x = 0.362, offMapText = "Travel to Theridran in Stormwind City." },
             },
             dependsOn = { "turnin-5923-heeding-the-call" },
             id = "accept-5924-heeding-the-call",
@@ -1558,7 +1558,7 @@ ns:RegisterGuide({
         {
             priority = 550,
             route = {
-                { y = 0.786, mapID = 1416, label = "Archmage Ansirem Runeweaver", x = 0.188, offMapText = "Travel to Archmage Ansirem Runeweaver in Alterac Mountains." },
+                { y = 0.566, mapID = 1416, label = "Archmage Ansirem Runeweaver", x = 0.118, offMapText = "Travel to Archmage Ansirem Runeweaver in Alterac Mountains." },
             },
             id = "accept-94912-child-of-nature",
             conditions = {

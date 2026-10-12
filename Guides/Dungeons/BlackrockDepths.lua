@@ -42,7 +42,7 @@ ns:RegisterGuide({
     id = "dungeons-blackrock-depths",
     title = "Blackrock Depths",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 52 } },
@@ -304,7 +304,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-4183-the-true-masters" },
             complete = QuestState(4184, "activeOrCompleted"),
             route = {
-                Point(MAP.REDRIDGE_MOUNTAINS, 0.300, 0.445, "Magistrate Solomon", "Travel to Redridge Mountains."),
+                Point(MAP.REDRIDGE_MOUNTAINS, 0.249, 0.444, "Magistrate Solomon", "Travel to Redridge Mountains."),
             },
         },
         {
@@ -388,7 +388,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-4186-the-true-masters" },
             complete = QuestState(4223, "activeOrCompleted"),
             route = {
-                Point(MAP.REDRIDGE_MOUNTAINS, 0.300, 0.445, "Magistrate Solomon", "Travel to Redridge Mountains."),
+                Point(MAP.REDRIDGE_MOUNTAINS, 0.249, 0.444, "Magistrate Solomon", "Travel to Redridge Mountains."),
             },
         },
         {

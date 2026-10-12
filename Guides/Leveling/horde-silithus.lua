@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Silithus",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-silithus",
@@ -98,7 +98,7 @@ ns:RegisterGuide({
         {
             priority = 50,
             route = {
-                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+                { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-7636-stave-of-the-ancients",
@@ -161,7 +161,7 @@ ns:RegisterGuide({
         {
             priority = 80,
             route = {
-                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+                { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-7633-an-introduction",

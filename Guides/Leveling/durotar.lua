@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 5,
     title = "Orc & Troll Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-durotar",
@@ -860,6 +860,70 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            priority = 261,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek.", x = 0.42 },
+            },
+            text = "Accept Glyphic Parchment from Gornek in the Den.",
+            id = "woven-accept-98576-glyphic-parchment",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 8 },
+                    {
+                        class = { 8 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98576, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 262,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek.", x = 0.42 },
+            },
+            text = "Accept Tainted Tablet from Gornek in the Den.",
+            id = "woven-accept-98575-tainted-tablet",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98575, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             priority = 270,
             route = {
                 { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
@@ -1003,6 +1067,38 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 301,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Nartok", offMapText = "Travel to Nartok.", x = 0.406 },
+            },
+            text = "Read Tainted Tablet in your bags. Turn in Tainted Tablet to Nartok in the Valley of Trials.",
+            id = "woven-turnin-98575-tainted-tablet",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98575, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98575-tainted-tablet" },
         },
         {
             priority = 310,
@@ -1243,6 +1339,38 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 371,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Mai'ah", offMapText = "Travel to Mai'ah.", x = 0.424 },
+            },
+            text = "Read Glyphic Parchment in your bags. Turn in Glyphic Parchment to Mai'ah in the Valley of Trials.",
+            id = "woven-turnin-98576-glyphic-parchment",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 8 },
+                    {
+                        class = { 8 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98576, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98576-glyphic-parchment" },
         },
         {
             id = "level-before-accept-792-vile-familiars",
@@ -2330,7 +2458,7 @@ ns:RegisterGuide({
         {
             priority = 720,
             route = {
-                { y = 0.7329, mapID = 1411, label = "Lar Prowltusk", offMapText = "Travel to Lar Prowltusk in Durotar.", x = 0.5419 },
+                { y = 0.752, mapID = 1411, label = "Lar Prowltusk", offMapText = "Travel to Lar Prowltusk in Durotar.", x = 0.5452 },
             },
             text = "Accept Thwarting Kolkar Aggression from Lar Prowltusk.",
             id = "accept-786-thwarting-kolkar-aggression",
@@ -2612,6 +2740,63 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-woven-accept-96652-the-adventurer",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 96652,
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96656, 96659 },
+            priority = 815,
+        },
+        {
+            text = "Accept The Adventurer from the Lost Journal. No saved spot for the journal, so the guide follows the pin in your quest log.",
+            priority = 816,
+            route = {
+                { y = 0.6914, mapID = 1411, label = "Valley of Trials", offMapText = "Travel to the Valley of Trials.", x = 0.4282 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            id = "woven-accept-96652-the-adventurer",
+            kind = "accept",
+            useClientPin = false,
+            complete = {
+                quest = { id = 96652, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 794 },
+                    conditions = {},
+                },
+            },
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96656, 96659 },
+            useClientText = false,
+            dependsOn = {},
         },
         {
             priority = 820,
@@ -4084,6 +4269,124 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1321,
+            route = {
+                { y = 0.474, mapID = 1411, label = "Brakk", offMapText = "Travel to Brakk.", x = 0.52 },
+            },
+            text = "Turn in The Adventurer to Brakk near Razor Hill.",
+            id = "woven-turnin-96652-the-adventurer",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96652, state = "completed" },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 794 },
+                    conditions = {},
+                },
+            },
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96656, 96659 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96652-the-adventurer" },
+        },
+        {
+            priority = 1322,
+            route = {
+                { mapID = 1411, x = 0.5203, y = 0.47409999999999997, label = "Brakk", offMapText = "Travel to Brakk." },
+            },
+            text = "Accept The Great Outdoors from Brakk.",
+            id = "woven-accept-96604-the-great-outdoors",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96604, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1323,
+            text = "Type /sit beside Brakk's Basic Campfire and wait until you receive the Boosted Rest buff.",
+            id = "woven-objective-96604-the-great-outdoors",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96604, state = "complete" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96604-the-great-outdoors" },
+            route = {
+                { mapID = 1411, x = 0.5203, y = 0.47409999999999997, label = "Brakk", offMapText = "Travel to Brakk." },
+            },
+        },
+        {
+            priority = 1324,
+            route = {
+                { mapID = 1411, x = 0.5203, y = 0.47409999999999997, label = "Brakk", offMapText = "Travel to Brakk." },
+            },
+            text = "Turn in The Great Outdoors to Brakk.",
+            id = "woven-turnin-96604-the-great-outdoors",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96604, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96604-the-great-outdoors", "woven-objective-96604-the-great-outdoors" },
         },
         {
             priority = 1330,
@@ -6804,7 +7107,7 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             route = {
-                { mapID = 1420, x = 0.08650000000000001, y = 0.5952000000000001, label = "Darkeye Bonecaster", offMapText = "Travel to Darkeye Bonecaster." },
+                { mapID = 1420, x = 0.616, y = 0.526, label = "Darkeye Bonecaster", offMapText = "Travel to Darkeye Bonecaster." },
             },
             dependsOn = {},
             priority = 2200,
@@ -7549,191 +7852,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-97279-wayward-weapons", "woven-objective-97279-wayward-weapons" },
         },
         {
-            priority = 2460,
-            route = {
-                { y = 0.684, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek.", x = 0.42 },
-            },
-            text = "Accept Glyphic Parchment from Gornek in the Den.",
-            id = "woven-accept-98576-glyphic-parchment",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 8 },
-                    {
-                        class = { 8 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 2 },
-                    {
-                        race = { 2 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98576, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2470,
-            route = {
-                { y = 0.69, mapID = 1411, label = "Mai'ah", offMapText = "Travel to Mai'ah.", x = 0.424 },
-            },
-            text = "Read Glyphic Parchment in your bags. Turn in Glyphic Parchment to Mai'ah in the Valley of Trials.",
-            id = "woven-turnin-98576-glyphic-parchment",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 8 },
-                    {
-                        class = { 8 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 2 },
-                    {
-                        race = { 2 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98576, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98576-glyphic-parchment" },
-        },
-        {
-            priority = 2480,
-            route = {
-                { y = 0.684, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek.", x = 0.42 },
-            },
-            text = "Accept Tainted Tablet from Gornek in the Den.",
-            id = "woven-accept-98575-tainted-tablet",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 9 },
-                    {
-                        class = { 9 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 8 },
-                    {
-                        race = { 8 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98575, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2490,
-            route = {
-                { y = 0.684, mapID = 1411, label = "Nartok", offMapText = "Travel to Nartok.", x = 0.406 },
-            },
-            text = "Read Tainted Tablet in your bags. Turn in Tainted Tablet to Nartok in the Valley of Trials.",
-            id = "woven-turnin-98575-tainted-tablet",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 9 },
-                    {
-                        class = { 9 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 8 },
-                    {
-                        race = { 8 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98575, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98575-tainted-tablet" },
-        },
-        {
-            id = "level-before-woven-accept-96652-the-adventurer",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 96652,
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96656, 96659 },
-            priority = 2500,
-        },
-        {
-            text = "Accept The Adventurer from the Lost Journal. No saved spot for the journal, so the guide follows the pin in your quest log.",
-            priority = 2510,
-            route = {
-                { y = 0.684, mapID = 1411, label = "Valley of Trials", offMapText = "Travel to the Valley of Trials.", x = 0.42 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            id = "woven-accept-96652-the-adventurer",
-            kind = "accept",
-            useClientPin = false,
-            complete = {
-                quest = { id = 96652, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 794 },
-                    conditions = {},
-                },
-            },
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96656, 96659 },
-            useClientText = false,
-            dependsOn = {},
-        },
-        {
             priority = 2520,
             route = {
                 { y = 0.74, mapID = 1411, label = "Vel'rin Fang", offMapText = "Travel to Vel'rin Fang.", x = 0.558 },
@@ -7974,124 +8092,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-96876-verified-pickup" },
         },
         {
-            priority = 2610,
-            route = {
-                { y = 0.474, mapID = 1411, label = "Brakk", offMapText = "Travel to Brakk.", x = 0.52 },
-            },
-            text = "Turn in The Adventurer to Brakk near Razor Hill.",
-            id = "woven-turnin-96652-the-adventurer",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96652, state = "completed" },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 794 },
-                    conditions = {},
-                },
-            },
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96656, 96659 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96652-the-adventurer" },
-        },
-        {
-            priority = 2620,
-            route = {
-                { mapID = 1411, x = 0.5203, y = 0.47409999999999997, label = "Brakk", offMapText = "Travel to Brakk." },
-            },
-            text = "Accept The Great Outdoors from Brakk.",
-            id = "woven-accept-96604-the-great-outdoors",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96604, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2630,
-            text = "Type /sit beside Brakk's Basic Campfire and wait until you receive the Boosted Rest buff.",
-            id = "woven-objective-96604-the-great-outdoors",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96604, state = "complete" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96604-the-great-outdoors" },
-            route = {
-                { mapID = 1411, x = 0.5203, y = 0.47409999999999997, label = "Brakk", offMapText = "Travel to Brakk." },
-            },
-        },
-        {
-            priority = 2640,
-            route = {
-                { mapID = 1411, x = 0.5203, y = 0.47409999999999997, label = "Brakk", offMapText = "Travel to Brakk." },
-            },
-            text = "Turn in The Great Outdoors to Brakk.",
-            id = "woven-turnin-96604-the-great-outdoors",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96604, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96604-the-great-outdoors", "woven-objective-96604-the-great-outdoors" },
-        },
-        {
             priority = 2650,
             route = {
                 { y = 0.434, mapID = 1411, label = "Gar'Thok", offMapText = "Travel to Gar'Thok.", x = 0.52 },
@@ -8173,60 +8173,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2680,
-            route = {
-                { y = 0.426, mapID = 1411, label = "Turroc", offMapText = "Travel to Turroc.", x = 0.54 },
-            },
-            text = "Turn in For Honor to Turroc in Razor Hill Barracks.",
-            id = "woven-turnin-96822-for-honor",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96822, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96822-for-honor", "woven-objective-96822-for-honor" },
-        },
-        {
-            priority = 2690,
-            route = {
-                { y = 0.424, mapID = 1411, label = "Cook Torka", offMapText = "Travel to Cook Torka.", x = 0.512 },
-            },
-            text = "Turn in This Fruit Could Bite Back to Cook Torka in Razor Hill.",
-            id = "woven-turnin-96825-this-fruit-could-bite-back",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 3 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96825, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96825-this-fruit-could-bite-back", "woven-objective-96825-this-fruit-could-bite-back" },
-        },
-        {
             text = "Collect Prickly Pear Fruit on the Razormane grounds. No saved spot for this, so the guide follows the pin in your quest log.",
             priority = 2700,
             route = {
@@ -8279,6 +8225,60 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             dependsOn = { "woven-accept-96822-for-honor" },
+        },
+        {
+            priority = 2711,
+            route = {
+                { y = 0.426, mapID = 1411, label = "Turroc", offMapText = "Travel to Turroc.", x = 0.54 },
+            },
+            text = "Turn in For Honor to Turroc in Razor Hill Barracks.",
+            id = "woven-turnin-96822-for-honor",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96822, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96822-for-honor", "woven-objective-96822-for-honor" },
+        },
+        {
+            priority = 2712,
+            route = {
+                { y = 0.424, mapID = 1411, label = "Cook Torka", offMapText = "Travel to Cook Torka.", x = 0.512 },
+            },
+            text = "Turn in This Fruit Could Bite Back to Cook Torka in Razor Hill.",
+            id = "woven-turnin-96825-this-fruit-could-bite-back",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96825, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96825-this-fruit-could-bite-back", "woven-objective-96825-this-fruit-could-bite-back" },
         },
         {
             priority = 2720,

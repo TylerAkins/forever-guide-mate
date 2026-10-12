@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 5,
     title = "Undead Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-tirisfal-glades",
@@ -483,6 +483,38 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            priority = 151,
+            route = {
+                { y = 0.6617, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis.", x = 0.3086 },
+            },
+            text = "Accept A Difficult Path from Shadow Priest Sarvis in Deathknell.",
+            id = "woven-accept-98601-a-difficult-path",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 2 },
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98601, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             id = "level-before-accept-376-the-damned",
             kind = "note",
             text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
@@ -531,6 +563,38 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            priority = 175,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
+            },
+            text = "Read Consecrated Scroll in your bags. Turn in A Difficult Path to Aramis Hammerhand in Deathknell.",
+            id = "woven-turnin-98601-a-difficult-path",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 2 },
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98601, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98601-a-difficult-path" },
         },
         {
             priority = 180,
@@ -1164,6 +1228,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-96656-the-adventurer",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 96656,
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96659 },
+            priority = 365,
+        },
+        {
             priority = 370,
             route = {
                 { y = 0.6601, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren in Tirisfal Glades.", x = 0.3215 },
@@ -1193,6 +1280,34 @@ ns:RegisterGuide({
                     conditions = {},
                 },
             },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 371,
+            route = {
+                { y = 0.66, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren.", x = 0.32 },
+            },
+            text = "Accept The Adventurer from Executor Arren in Deathknell.",
+            id = "woven-accept-96656-the-adventurer",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96656, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96659 },
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
@@ -1573,6 +1688,118 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 365,
             priority = 490,
+        },
+        {
+            priority = 495,
+            route = {
+                { y = 0.554, mapID = 1420, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton.", x = 0.572 },
+            },
+            text = "Turn in The Adventurer to Eleanor Shackleton in Brill.",
+            id = "woven-turnin-96656-the-adventurer",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96656, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96659 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96656-the-adventurer" },
+        },
+        {
+            priority = 496,
+            route = {
+                { mapID = 1420, x = 0.5722999999999999, y = 0.5547, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton." },
+            },
+            text = "Accept The Great Outdoors from Eleanor Shackleton.",
+            id = "woven-accept-96607-the-great-outdoors",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96607, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 497,
+            text = "Type /sit beside Eleanor Shackleton's Basic Campfire and wait until you receive the Boosted Rest buff.",
+            id = "woven-objective-96607-the-great-outdoors",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96607, state = "complete" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96607-the-great-outdoors" },
+            route = {
+                { mapID = 1420, x = 0.5722999999999999, y = 0.5547, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton." },
+            },
+        },
+        {
+            priority = 498,
+            route = {
+                { mapID = 1420, x = 0.5722999999999999, y = 0.5547, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton." },
+            },
+            text = "Turn in The Great Outdoors to Eleanor Shackleton.",
+            id = "woven-turnin-96607-the-great-outdoors",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96607, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96607-the-great-outdoors", "woven-objective-96607-the-great-outdoors" },
         },
         {
             priority = 500,
@@ -2512,7 +2739,7 @@ ns:RegisterGuide({
         {
             priority = 830,
             route = {
-                { y = 0.7329, mapID = 1411, label = "Lar Prowltusk", offMapText = "Travel to Lar Prowltusk in Durotar.", x = 0.5419 },
+                { y = 0.752, mapID = 1411, label = "Lar Prowltusk", offMapText = "Travel to Lar Prowltusk in Durotar.", x = 0.5452 },
             },
             text = "Accept Thwarting Kolkar Aggression from Lar Prowltusk.",
             id = "accept-786-thwarting-kolkar-aggression",
@@ -5512,7 +5739,7 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             route = {
-                { mapID = 1420, x = 0.08650000000000001, y = 0.5952000000000001, label = "Darkeye Bonecaster", offMapText = "Travel to Darkeye Bonecaster." },
+                { mapID = 1420, x = 0.616, y = 0.526, label = "Darkeye Bonecaster", offMapText = "Travel to Darkeye Bonecaster." },
             },
             dependsOn = {},
             priority = 1840,
@@ -6841,70 +7068,6 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
-            priority = 2270,
-            route = {
-                { y = 0.6617, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis.", x = 0.3086 },
-            },
-            text = "Accept A Difficult Path from Shadow Priest Sarvis in Deathknell.",
-            id = "woven-accept-98601-a-difficult-path",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 2 },
-                    {
-                        class = { 2 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 5 },
-                    {
-                        race = { 5 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98601, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2280,
-            route = {
-                { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
-            },
-            text = "Read Consecrated Scroll in your bags. Turn in A Difficult Path to Aramis Hammerhand in Deathknell.",
-            id = "woven-turnin-98601-a-difficult-path",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 2 },
-                    {
-                        class = { 2 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 5 },
-                    {
-                        race = { 5 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98601, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98601-a-difficult-path" },
-        },
-        {
             id = "level-before-woven-accept-98389-a-light-in-the-darkness",
             kind = "note",
             text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
@@ -7289,57 +7452,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            id = "level-before-woven-accept-96656-the-adventurer",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 96656,
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96659 },
-            priority = 2420,
-        },
-        {
-            priority = 2430,
-            route = {
-                { y = 0.66, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren.", x = 0.32 },
-            },
-            text = "Accept The Adventurer from Executor Arren in Deathknell.",
-            id = "woven-accept-96656-the-adventurer",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96656, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96659 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
             priority = 2440,
             route = {
                 { y = 0.526, mapID = 1420, label = "Shari Stilwell", offMapText = "Travel to Shari Stilwell.", x = 0.602 },
@@ -7382,118 +7494,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-91209-continue-your-training" },
-        },
-        {
-            priority = 2450,
-            route = {
-                { y = 0.554, mapID = 1420, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton.", x = 0.572 },
-            },
-            text = "Turn in The Adventurer to Eleanor Shackleton in Brill.",
-            id = "woven-turnin-96656-the-adventurer",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96656, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96659 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96656-the-adventurer" },
-        },
-        {
-            priority = 2460,
-            route = {
-                { mapID = 1420, x = 0.5722999999999999, y = 0.5547, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton." },
-            },
-            text = "Accept The Great Outdoors from Eleanor Shackleton.",
-            id = "woven-accept-96607-the-great-outdoors",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96607, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2470,
-            text = "Type /sit beside Eleanor Shackleton's Basic Campfire and wait until you receive the Boosted Rest buff.",
-            id = "woven-objective-96607-the-great-outdoors",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96607, state = "complete" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96607-the-great-outdoors" },
-            route = {
-                { mapID = 1420, x = 0.5722999999999999, y = 0.5547, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton." },
-            },
-        },
-        {
-            priority = 2480,
-            route = {
-                { mapID = 1420, x = 0.5722999999999999, y = 0.5547, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton." },
-            },
-            text = "Turn in The Great Outdoors to Eleanor Shackleton.",
-            id = "woven-turnin-96607-the-great-outdoors",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96607, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96607-the-great-outdoors", "woven-objective-96607-the-great-outdoors" },
         },
         {
             priority = 2490,

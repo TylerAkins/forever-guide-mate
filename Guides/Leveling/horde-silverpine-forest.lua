@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-silverpine-forest",
@@ -360,7 +360,7 @@ ns:RegisterGuide({
         {
             priority = 150,
             route = {
-                { y = 0.742, mapID = 1411, label = "Kali Remik", x = 0.562, offMapText = "Travel to Kali Remik in Durotar." },
+                { y = 0.742, mapID = 1411, label = "Kali Remik", x = 0.062, offMapText = "Travel to Kali Remik in Durotar." },
             },
             dependsOn = {},
             id = "woven-class-hunter-accept-6069-the-hunters-path",
@@ -12394,7 +12394,7 @@ ns:RegisterGuide({
         {
             priority = 4530,
             route = {
-                { mapID = 1458, x = 0.6553, y = 0.7973, label = "Mennet Carkad", offMapText = "Travel to Mennet Carkad in Undercity." },
+                { mapID = 1458, x = 0.832, y = 0.69, label = "Mennet Carkad", offMapText = "Travel to Mennet Carkad in Undercity." },
             },
             text = "Accept The Deathstalkers from Mennet Carkad.",
             id = "accept-1978-the-deathstalkers",

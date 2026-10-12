@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Mage",
     category = "Class Quests",
     id = "class-mage",
@@ -1311,7 +1311,7 @@ ns:RegisterGuide({
         {
             priority = 410,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             dependsOn = { "turnin-1860-speak-with-jennea" },
             id = "accept-1861-mirror-lake",
@@ -2058,7 +2058,7 @@ ns:RegisterGuide({
         {
             priority = 700,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             dependsOn = { "turnin-1919-report-to-jennea" },
             id = "accept-1920-investigate-the-blue-recluse",
@@ -2130,7 +2130,7 @@ ns:RegisterGuide({
         {
             priority = 730,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             dependsOn = { "turnin-1920-investigate-the-blue-recluse", "turnin-1919-report-to-jennea" },
             id = "accept-1921-gathering-materials",
@@ -2202,7 +2202,7 @@ ns:RegisterGuide({
         {
             priority = 760,
             route = {
-                { y = 0.766, mapID = 1453, label = "Wynne Larson", x = 0.416, offMapText = "Travel to Wynne Larson in Stormwind City." },
+                { y = 0.836, mapID = 1453, label = "Wynne Larson", x = 0.52, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
             dependsOn = { "turnin-1921-gathering-materials" },
             id = "accept-1941-manaweave-robe",
@@ -2588,7 +2588,7 @@ ns:RegisterGuide({
         {
             priority = 910,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             id = "accept-1939-high-sorcerer-andromath",
             conditions = {
@@ -2638,7 +2638,7 @@ ns:RegisterGuide({
         {
             priority = 930,
             route = {
-                { y = 0.816, mapID = 1453, label = "High Sorcerer Andromath", x = 0.376, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
+                { y = 0.876, mapID = 1453, label = "High Sorcerer Andromath", x = 0.487, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
             },
             dependsOn = { "turnin-1939-high-sorcerer-andromath" },
             id = "accept-1938-urs-treatise-on-shadow-magic",
@@ -2710,7 +2710,7 @@ ns:RegisterGuide({
         {
             priority = 960,
             route = {
-                { y = 0.816, mapID = 1453, label = "High Sorcerer Andromath", x = 0.376, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
+                { y = 0.876, mapID = 1453, label = "High Sorcerer Andromath", x = 0.487, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
             },
             dependsOn = { "turnin-1938-urs-treatise-on-shadow-magic", "turnin-1939-high-sorcerer-andromath" },
             id = "accept-1940-pristine-spider-silk",
@@ -2782,7 +2782,7 @@ ns:RegisterGuide({
         {
             priority = 990,
             route = {
-                { y = 0.766, mapID = 1453, label = "Wynne Larson", x = 0.416, offMapText = "Travel to Wynne Larson in Stormwind City." },
+                { y = 0.836, mapID = 1453, label = "Wynne Larson", x = 0.52, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
             dependsOn = { "turnin-1940-pristine-spider-silk" },
             id = "accept-1942-astral-knot-garment",
@@ -3125,7 +3125,7 @@ ns:RegisterGuide({
         {
             priority = 1130,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             id = "accept-1947-journey-to-the-marsh",
             conditions = {
@@ -3496,7 +3496,7 @@ ns:RegisterGuide({
         {
             priority = 1310,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             id = "accept-1953-return-to-the-marsh",
             conditions = {

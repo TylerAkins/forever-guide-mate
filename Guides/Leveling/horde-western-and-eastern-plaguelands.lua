@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Western & Eastern Plaguelands",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-western-and-eastern-plaguelands",
@@ -85,7 +85,7 @@ ns:RegisterGuide({
                 quest = { id = 5093, state = "activeOrCompleted" },
             },
             route = {
-                { mapID = 1454, x = 0.3768, y = 0.7515999999999999, label = "Warcaller Gorlach", offMapText = "Travel to Warcaller Gorlach." },
+                { mapID = 1454, x = 0.466, y = 0.646, label = "Warcaller Gorlach", offMapText = "Travel to Warcaller Gorlach." },
             },
             priority = 30,
             requiredQuests = {},

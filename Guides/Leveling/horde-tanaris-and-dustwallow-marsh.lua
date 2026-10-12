@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Tanaris & Dustwallow Marsh",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-tanaris-and-dustwallow-marsh",
@@ -63,7 +63,7 @@ ns:RegisterGuide({
         {
             priority = 30,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Get the Gnomes Drunk from Kravel Koalbeard.",
             id = "accept-1120-get-the-gnomes-drunk",
@@ -127,7 +127,7 @@ ns:RegisterGuide({
         {
             priority = 50,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Report Back to Fizzlebub from Kravel Koalbeard.",
             id = "accept-1122-report-back-to-fizzlebub",

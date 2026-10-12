@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Hunter",
     category = "Class Quests",
     id = "class-hunter",
@@ -2656,7 +2656,7 @@ ns:RegisterGuide({
         {
             priority = 930,
             route = {
-                { y = 0.742, mapID = 1411, label = "Kali Remik", x = 0.562, offMapText = "Travel to Kali Remik in Durotar." },
+                { y = 0.742, mapID = 1411, label = "Kali Remik", x = 0.062, offMapText = "Travel to Kali Remik in Durotar." },
             },
             dependsOn = { "turnin-6068-the-hunters-path" },
             id = "accept-6069-the-hunters-path",
@@ -3206,7 +3206,7 @@ ns:RegisterGuide({
         {
             priority = 1150,
             route = {
-                { y = 0.154, mapID = 1453, label = "Einris Brightspear", x = 0.616, offMapText = "Travel to Einris Brightspear in Stormwind City." },
+                { y = 0.364, mapID = 1453, label = "Einris Brightspear", x = 0.676, offMapText = "Travel to Einris Brightspear in Stormwind City." },
             },
             dependsOn = { "turnin-6075-the-hunters-path" },
             id = "accept-6076-the-hunters-path",
@@ -3873,7 +3873,7 @@ ns:RegisterGuide({
         {
             priority = 1440,
             route = {
-                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+                { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
             dependsOn = { "turnin-7632-the-ancient-leaf" },
             id = "accept-7633-an-introduction",
@@ -3915,7 +3915,7 @@ ns:RegisterGuide({
         {
             priority = 1460,
             route = {
-                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+                { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
             dependsOn = { "turnin-7632-the-ancient-leaf" },
             id = "accept-7636-stave-of-the-ancients",

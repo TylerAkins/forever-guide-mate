@@ -33,7 +33,7 @@ ns:RegisterGuide({
     id = "dungeons-maraudon",
     title = "Maraudon",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 45 } },
@@ -93,7 +93,7 @@ ns:RegisterGuide({
             text = "Accept The Pariah's Instructions from Centuar Pariah.",
             complete = QuestState(7067, "activeOrCompleted"),
             route = {
-                Point(MAP.DESOLACE, 0.515, 0.874, "Centuar Pariah", "Travel to Desolace."),
+                Point(MAP.DESOLACE, 0.505, 0.867, "Centuar Pariah", "Travel to Desolace."),
             },
         },
         {
@@ -116,7 +116,7 @@ ns:RegisterGuide({
             text = "Accept Legend of Maraudon |goto Desolace 38.76,58.13 from CavindraCavindra.",
             complete = QuestState(7044, "activeOrCompleted"),
             route = {
-                Point(MAP.DESOLACE, 0.386, 0.580, "CavindraCavindra", "Travel to Desolace."),
+                Point(MAP.DESOLACE, 0.321, 0.64, "CavindraCavindra", "Travel to Desolace."),
                 Point(MAP.DESOLACE, 0.384, 0.581, "CavindraCavindra", "Travel to Desolace."),
                 Point(MAP.DESOLACE, 0.385, 0.582, "CavindraCavindra", "Travel to Desolace."),
             },

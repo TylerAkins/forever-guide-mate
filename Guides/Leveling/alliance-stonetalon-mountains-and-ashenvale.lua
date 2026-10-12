@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Stonetalon Mountains & Ashenvale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
@@ -2239,7 +2239,7 @@ ns:RegisterGuide({
         {
             priority = 700,
             route = {
-                { y = 0.8802, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.3903 },
+                { y = 0.87, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.386 },
             },
             text = "Accept A King's Tribute from Grand Mason Marblesten.",
             id = "accept-689-a-king-s-tribute",

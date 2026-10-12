@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Felwood & Winterspring",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-felwood-and-winterspring-part-2",
@@ -2452,7 +2452,7 @@ ns:RegisterGuide({
         {
             priority = 860,
             route = {
-                { y = 0.7141, mapID = 1458, label = "Chemist Cuely", offMapText = "Travel to Chemist Cuely in Undercity.", x = 0.4869 },
+                { y = 0.73, mapID = 1458, label = "Chemist Cuely", offMapText = "Travel to Chemist Cuely in Undercity.", x = 0.476 },
             },
             text = "Accept Seeping Corruption from Chemist Cuely.",
             id = "accept-3569-seeping-corruption",
@@ -2520,7 +2520,7 @@ ns:RegisterGuide({
         {
             priority = 880,
             route = {
-                { y = 0.714, mapID = 1458, label = "Chemist Cuely", offMapText = "Travel to Chemist Cuely in Undercity.", x = 0.4871 },
+                { y = 0.73, mapID = 1458, label = "Chemist Cuely", offMapText = "Travel to Chemist Cuely in Undercity.", x = 0.476 },
             },
             text = "Accept Seeping Corruption from Chemist Cuely.",
             id = "accept-3570-seeping-corruption",

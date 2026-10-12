@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Duskwood & Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
@@ -919,7 +919,7 @@ ns:RegisterGuide({
         {
             priority = 220,
             route = {
-                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+                { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
             id = "woven-class-warlock-accept-4738-in-search-of-menara-voidrender",
             conditions = {
@@ -1054,7 +1054,7 @@ ns:RegisterGuide({
         {
             priority = 270,
             route = {
-                { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
+                { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
             id = "woven-class-mage-accept-1947-journey-to-the-marsh",
             conditions = {
@@ -1430,7 +1430,7 @@ ns:RegisterGuide({
         {
             priority = 440,
             route = {
-                { y = 0.294, mapID = 1453, label = "Thomas", offMapText = "Travel to Thomas in Stormwind City.", x = 0.4037 },
+                { y = 0.445, mapID = 1453, label = "Thomas", offMapText = "Travel to Thomas in Stormwind City.", x = 0.496 },
             },
             text = "Accept The Missing Diplomat from Thomas.",
             id = "accept-1274-the-missing-diplomat",
@@ -1492,7 +1492,7 @@ ns:RegisterGuide({
         {
             priority = 460,
             route = {
-                { y = 0.1206, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.5176 },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.597 },
             },
             text = "Accept Armed and Ready from Grimand Elmore.",
             id = "accept-325-armed-and-ready",
@@ -1608,7 +1608,7 @@ ns:RegisterGuide({
         {
             priority = 500,
             route = {
-                { mapID = 1453, x = 0.7829999999999999, y = 0.2544, label = "Bishop DeLavey", offMapText = "Travel to Bishop DeLavey in Stormwind City." },
+                { mapID = 1453, x = 0.803, y = 0.441, label = "Bishop DeLavey", offMapText = "Travel to Bishop DeLavey in Stormwind City." },
             },
             text = "Accept The Missing Diplomat from Bishop DeLavey.",
             id = "accept-1241-the-missing-diplomat",
@@ -1670,7 +1670,7 @@ ns:RegisterGuide({
         {
             priority = 520,
             route = {
-                { mapID = 1453, x = 0.7417, y = 0.07490000000000001, label = "Milton Sheaf", offMapText = "Travel to Milton Sheaf in Stormwind City." },
+                { mapID = 1453, x = 0.771, y = 0.302, label = "Milton Sheaf", offMapText = "Travel to Milton Sheaf in Stormwind City." },
             },
             text = "Accept Southshore from Milton Sheaf.",
             id = "accept-538-southshore",
@@ -1738,7 +1738,7 @@ ns:RegisterGuide({
         {
             priority = 540,
             route = {
-                { y = 0.7842, mapID = 1453, label = "Jorgen", offMapText = "Travel to Jorgen in Stormwind City.", x = 0.7317 },
+                { y = 0.851, mapID = 1453, label = "Jorgen", offMapText = "Travel to Jorgen in Stormwind City.", x = 0.763 },
             },
             text = "Accept The Missing Diplomat from Jorgen.",
             id = "accept-1242-the-missing-diplomat",
@@ -1806,7 +1806,7 @@ ns:RegisterGuide({
         {
             priority = 560,
             route = {
-                { y = 0.6417, mapID = 1453, label = "Elling Trias", offMapText = "Travel to Elling Trias in Stormwind City.", x = 0.5991 },
+                { y = 0.741, mapID = 1453, label = "Elling Trias", offMapText = "Travel to Elling Trias in Stormwind City.", x = 0.66 },
             },
             text = "Accept The Missing Diplomat from Elling Trias.",
             id = "accept-1243-the-missing-diplomat",
@@ -3745,7 +3745,7 @@ ns:RegisterGuide({
         {
             priority = 1150,
             route = {
-                { y = 0.0341, mapID = 1434, label = "Private Thorsen", offMapText = "Travel to Private Thorsen in Stranglethorn Vale.", x = 0.3798 },
+                { y = 0.08, mapID = 1434, label = "Private Thorsen", offMapText = "Travel to Private Thorsen in Stranglethorn Vale.", x = 0.4 },
             },
             text = "Accept Jungle Secrets from Private Thorsen.",
             id = "accept-215-jungle-secrets",
@@ -4183,7 +4183,7 @@ ns:RegisterGuide({
         {
             priority = 1300,
             route = {
-                { y = 0.8146, mapID = 1453, label = "Archmage Malin", offMapText = "Travel to Archmage Malin in Stormwind City.", x = 0.3984 },
+                { y = 0.876, mapID = 1453, label = "Archmage Malin", offMapText = "Travel to Archmage Malin in Stormwind City.", x = 0.506 },
             },
             text = "Accept Malin's Request from Archmage Malin.",
             id = "accept-690-malin-s-request",
@@ -4276,7 +4276,7 @@ ns:RegisterGuide({
         {
             priority = 1330,
             route = {
-                { mapID = 1453, x = 0.2645, y = 0.7865000000000001, label = "Zardeth of the Black Claw", offMapText = "Travel to Zardeth of the Black Claw in Stormwind City." },
+                { mapID = 1453, x = 0.401, y = 0.853, label = "Zardeth of the Black Claw", offMapText = "Travel to Zardeth of the Black Claw in Stormwind City." },
             },
             text = "Accept A Noble Brew from Zardeth of the Black Claw.",
             id = "accept-336-a-noble-brew",
@@ -4373,7 +4373,7 @@ ns:RegisterGuide({
         {
             priority = 1360,
             route = {
-                { y = 0.6417, mapID = 1453, label = "Elling Trias", offMapText = "Travel to Elling Trias in Stormwind City.", x = 0.5991 },
+                { y = 0.741, mapID = 1453, label = "Elling Trias", offMapText = "Travel to Elling Trias in Stormwind City.", x = 0.66 },
             },
             text = "Accept The Missing Diplomat from Elling Trias.",
             id = "accept-1246-the-missing-diplomat",
@@ -4451,7 +4451,7 @@ ns:RegisterGuide({
                 quest = { id = 690, state = "activeOrCompleted" },
             },
             route = {
-                { mapID = 1453, x = 0.39840000000000003, y = 0.8146, label = "Archmage Malin", offMapText = "Travel to Archmage Malin in Stormwind City." },
+                { mapID = 1453, x = 0.506, y = 0.876, label = "Archmage Malin", offMapText = "Travel to Archmage Malin in Stormwind City." },
             },
             sourceStep = 75,
             priority = 1380,
@@ -4544,7 +4544,7 @@ ns:RegisterGuide({
                 quest = { id = 336, state = "activeOrCompleted" },
             },
             route = {
-                { mapID = 1453, x = 0.2645, y = 0.7865000000000001, label = "Zardeth of the Black Claw", offMapText = "Travel to Zardeth of the Black Claw in Stormwind City." },
+                { mapID = 1453, x = 0.401, y = 0.853, label = "Zardeth of the Black Claw", offMapText = "Travel to Zardeth of the Black Claw in Stormwind City." },
             },
             sourceStep = 77,
             priority = 1410,
@@ -4587,7 +4587,7 @@ ns:RegisterGuide({
         {
             priority = 1430,
             route = {
-                { y = 0.7854, mapID = 1453, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City.", x = 0.2525 },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City.", x = 0.392 },
             },
             text = "Accept Seeking Strahad from Gakin the Darkbinder.",
             id = "accept-1798-seeking-strahad",
@@ -4797,7 +4797,7 @@ ns:RegisterGuide({
         {
             priority = 1500,
             route = {
-                { y = 0.4488, mapID = 1453, label = "Dashel Stonefist", offMapText = "Travel to Dashel Stonefist in Stormwind City.", x = 0.7053 },
+                { y = 0.592, mapID = 1453, label = "Dashel Stonefist", offMapText = "Travel to Dashel Stonefist in Stormwind City.", x = 0.743 },
             },
             text = "Accept The Missing Diplomat from Dashel Stonefist.",
             id = "accept-1247-the-missing-diplomat",
@@ -4865,7 +4865,7 @@ ns:RegisterGuide({
         {
             priority = 1520,
             route = {
-                { y = 0.6417, mapID = 1453, label = "Elling Trias", offMapText = "Travel to Elling Trias in Stormwind City.", x = 0.5991 },
+                { y = 0.741, mapID = 1453, label = "Elling Trias", offMapText = "Travel to Elling Trias in Stormwind City.", x = 0.66 },
             },
             text = "Accept The Missing Diplomat from Elling Trias.",
             id = "accept-1248-the-missing-diplomat",

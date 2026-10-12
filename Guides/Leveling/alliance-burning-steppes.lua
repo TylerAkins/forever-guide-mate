@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Burning Steppes",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-burning-steppes",
@@ -933,7 +933,7 @@ ns:RegisterGuide({
         {
             priority = 330,
             route = {
-                { y = 0.4445, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
+                { y = 0.444, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.249 },
             },
             text = "Accept The True Masters from Magistrate Solomon.",
             id = "accept-4184-the-true-masters",
@@ -1057,7 +1057,7 @@ ns:RegisterGuide({
         {
             priority = 370,
             route = {
-                { mapID = 1453, x = 0.7822, y = 0.17989999999999998, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City." },
+                { mapID = 1453, x = 0.798, y = 0.386, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City." },
             },
             text = "Accept The First and the Last from Highlord Bolvar Fordragon.",
             id = "accept-6182-the-first-and-the-last",
@@ -1212,7 +1212,7 @@ ns:RegisterGuide({
         {
             priority = 420,
             route = {
-                { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7579 },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
             text = "Accept Honor the Dead from Master Mathias Shaw.",
             id = "accept-6183-honor-the-dead",
@@ -1280,7 +1280,7 @@ ns:RegisterGuide({
         {
             priority = 440,
             route = {
-                { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7579 },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
             text = "Accept Flint Shadowmore from Master Mathias Shaw.",
             id = "accept-6184-flint-shadowmore",
@@ -1475,7 +1475,7 @@ ns:RegisterGuide({
         {
             priority = 500,
             route = {
-                { y = 0.4445, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
+                { y = 0.444, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.249 },
             },
             text = "Accept The True Masters from Magistrate Solomon.",
             id = "accept-4223-the-true-masters",

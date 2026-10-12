@@ -48,7 +48,7 @@ ns:RegisterGuide({
     id = "dungeons-sunken-temple-raid",
     title = "Sunken Temple Raid",
     category = "Raid Quests",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 25 } },
@@ -75,7 +75,7 @@ ns:RegisterGuide({
             text = "Accept Chillwind Point from Lord Grayson Shadowbreaker.",
             complete = QuestState(8415, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.371, 0.333, "Lord Grayson Shadowbreaker", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.486, 0.5, "Lord Grayson Shadowbreaker", "Travel to Stormwind City."),
             },
         },
         {
@@ -108,7 +108,7 @@ ns:RegisterGuide({
             text = "Accept An Imp's Request from Demisette Cloyce.",
             complete = QuestState(8419, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.253, 0.782, "Demisette Cloyce", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.284, 0.782, "Demisette Cloyce", "Travel to Stormwind City."),
             },
         },
         {
@@ -368,7 +368,7 @@ ns:RegisterGuide({
             text = "Accept Magic Dust from Archmage Xylem.",
             complete = QuestState(8251, "activeOrCompleted"),
             route = {
-                Point(MAP.AZSHARA, 0.281, 0.501, "Archmage Xylem", "Travel to Azshara."),
+                Point(MAP.AZSHARA, 0.296, 0.406, "Archmage Xylem", "Travel to Azshara."),
             },
         },
         {
@@ -415,7 +415,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-8251-magic-dust" },
             complete = QuestState(8252, "activeOrCompleted"),
             route = {
-                Point(MAP.AZSHARA, 0.281, 0.501, "Archmage Xylem", "Travel to Azshara."),
+                Point(MAP.AZSHARA, 0.296, 0.406, "Archmage Xylem", "Travel to Azshara."),
             },
         },
         {
@@ -451,7 +451,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-8252-the-siren-s-coral" },
             complete = QuestState(8253, "activeOrCompleted"),
             route = {
-                Point(MAP.AZSHARA, 0.281, 0.501, "Archmage Xylem", "Travel to Azshara."),
+                Point(MAP.AZSHARA, 0.296, 0.406, "Archmage Xylem", "Travel to Azshara."),
             },
         },
         {
@@ -702,7 +702,7 @@ ns:RegisterGuide({
             text = "Accept Return Trip from Nyrill.",
             complete = QuestState(3421, "activeOrCompleted"),
             route = {
-                Point(MAP.AZSHARA, 0.361, 0.678, "Nyrill", "Travel to Azshara."),
+                Point(MAP.AZSHARA, 0.264, 0.462, "Nyrill", "Travel to Azshara."),
             },
         },
         {

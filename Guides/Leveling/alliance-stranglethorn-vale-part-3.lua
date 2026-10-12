@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-stranglethorn-vale-part-3",
@@ -39,7 +39,7 @@ ns:RegisterGuide({
         {
             priority = 20,
             route = {
-                { y = 0.8167, mapID = 1453, label = "High Sorcerer Andromath", offMapText = "Travel to High Sorcerer Andromath in Stormwind City.", x = 0.3752 },
+                { y = 0.876, mapID = 1453, label = "High Sorcerer Andromath", offMapText = "Travel to High Sorcerer Andromath in Stormwind City.", x = 0.487 },
             },
             text = "Accept Vital Supplies from High Sorcerer Andromath.",
             id = "accept-1477-vital-supplies",
@@ -67,7 +67,7 @@ ns:RegisterGuide({
         {
             priority = 30,
             route = {
-                { y = 0.6367, mapID = 1453, label = "Acolyte Dellis", offMapText = "Travel to Acolyte Dellis in Stormwind City.", x = 0.4117 },
+                { y = 0.738, mapID = 1453, label = "Acolyte Dellis", offMapText = "Travel to Acolyte Dellis in Stormwind City.", x = 0.514 },
             },
             text = "Accept Mazen's Behest from Acolyte Dellis.",
             id = "accept-1364-mazen-s-behest",

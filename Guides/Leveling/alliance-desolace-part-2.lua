@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Desolace",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-desolace-part-2",
@@ -522,7 +522,7 @@ ns:RegisterGuide({
         {
             priority = 190,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Back to Booty Bay from Kravel Koalbeard.",
             id = "accept-1118-back-to-booty-bay",

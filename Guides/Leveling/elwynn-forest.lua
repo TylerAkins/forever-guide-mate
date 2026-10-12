@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 5,
     title = "Human Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-elwynn-forest",
@@ -162,6 +162,38 @@ ns:RegisterGuide({
             sourceStep = 13,
             useClientPin = false,
             classAction = "turnin-783-a-threat-within",
+        },
+        {
+            priority = 55,
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
+            },
+            text = "Accept A Scribbled Letter from Marshal McBride in Northshire Abbey.",
+            id = "woven-accept-92479-a-scribbled-letter",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 92479, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
             priority = 60,
@@ -1460,6 +1492,57 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-96627-the-adventurer",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 96627,
+            alternativeQuests = { 96628, 96630, 96638, 96652, 96656, 96659 },
+            priority = 445,
+        },
+        {
+            priority = 446,
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
+            },
+            text = "Accept The Adventurer from Marshal McBride in Northshire Abbey.",
+            id = "woven-accept-96627-the-adventurer",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96627, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96628, 96630, 96638, 96652, 96656, 96659 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             priority = 450,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
@@ -1748,6 +1831,118 @@ ns:RegisterGuide({
             },
             sourceStep = 54,
             requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in The Adventurer to Sam Sarsaparilla near Goldshire.",
+            priority = 545,
+            route = {
+                { y = 0.632, mapID = 1429, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla.", x = 0.448 },
+            },
+            dependsOn = { "woven-accept-96627-the-adventurer" },
+            id = "woven-turnin-96627-the-adventurer",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96627, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96628, 96630, 96638, 96652, 96656, 96659 },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Accept The Great Outdoors from Sam Sarsaparilla.",
+            priority = 546,
+            route = {
+                { mapID = 1429, x = 0.44799999999999995, y = 0.6344, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla." },
+            },
+            dependsOn = { "woven-turnin-96627-the-adventurer" },
+            id = "woven-accept-96101-the-great-outdoors",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95998, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96101, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 547,
+            text = "Type /sit beside Sam Sarsaparilla's Basic Campfire and wait until you receive the Boosted Rest buff.",
+            dependsOn = { "woven-accept-96101-the-great-outdoors" },
+            id = "woven-objective-96101-the-great-outdoors",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95998, state = "complete" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96101, 96604, 96605, 96606, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1429, x = 0.44799999999999995, y = 0.6344, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla." },
+            },
+        },
+        {
+            text = "Turn in The Great Outdoors to Sam Sarsaparilla.",
+            priority = 548,
+            route = {
+                { mapID = 1429, x = 0.44799999999999995, y = 0.6344, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla." },
+            },
+            dependsOn = { "woven-accept-96101-the-great-outdoors", "woven-objective-96101-the-great-outdoors" },
+            id = "woven-turnin-96101-the-great-outdoors",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95998, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96101, 96604, 96605, 96606, 96607, 96608 },
             useClientText = false,
             useClientPin = false,
         },
@@ -4613,7 +4808,7 @@ ns:RegisterGuide({
         {
             priority = 1490,
             route = {
-                { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             text = "Accept Surena Caledon from Gakin the Darkbinder.",
             id = "accept-1688-surena-caledon",
@@ -4712,7 +4907,7 @@ ns:RegisterGuide({
         {
             priority = 1520,
             route = {
-                { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             text = "Accept The Binding from Gakin the Darkbinder.",
             id = "accept-1689-the-binding",
@@ -4897,7 +5092,7 @@ ns:RegisterGuide({
         {
             priority = 1570,
             route = {
-                { y = 0.4724, mapID = 1453, label = "Osric Strang", offMapText = "Travel to Osric Strang in Stormwind City.", x = 0.7432 },
+                { y = 0.612, mapID = 1453, label = "Osric Strang", offMapText = "Travel to Osric Strang in Stormwind City.", x = 0.77 },
             },
             text = "Accept Dungar Longdrink from Osric Strang.",
             id = "accept-6261-dungar-longdrink",
@@ -4966,7 +5161,7 @@ ns:RegisterGuide({
         {
             priority = 1590,
             route = {
-                { y = 0.3726, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.7425 },
+                { y = 0.533, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.771 },
             },
             text = "Accept Bartleby the Drunk from Harry Burlguard.",
             id = "accept-1639-bartleby-the-drunk",
@@ -5036,7 +5231,7 @@ ns:RegisterGuide({
         {
             priority = 1610,
             route = {
-                { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.7383 },
+                { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
             },
             text = "Accept Beat Bartleby from Bartleby.",
             id = "accept-1640-beat-bartleby",
@@ -5179,7 +5374,7 @@ ns:RegisterGuide({
         {
             priority = 1650,
             route = {
-                { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.7383 },
+                { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
             },
             text = "Accept Bartleby's Mug from Bartleby.",
             id = "accept-1665-bartleby-s-mug",
@@ -5322,7 +5517,7 @@ ns:RegisterGuide({
         {
             priority = 1690,
             route = {
-                { y = 0.1207, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.5176 },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.597 },
             },
             text = "Accept Stormpike's Delivery from Grimand Elmore.",
             id = "accept-353-stormpike-s-delivery",
@@ -6609,7 +6804,7 @@ ns:RegisterGuide({
         {
             priority = 2150,
             route = {
-                { mapID = 1453, x = 0.3981, y = 0.298, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { mapID = 1453, x = 0.505, y = 0.475, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             text = "Accept The Tome of Divinity from Duthorian Rall.",
             id = "accept-1641-the-tome-of-divinity",
@@ -6743,7 +6938,7 @@ ns:RegisterGuide({
         {
             priority = 2200,
             route = {
-                { y = 0.298, mapID = 1453, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City.", x = 0.3981 },
+                { y = 0.475, mapID = 1453, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City.", x = 0.505 },
             },
             text = "Accept The Tome of Divinity from Duthorian Rall.",
             id = "accept-1643-the-tome-of-divinity",
@@ -6845,7 +7040,7 @@ ns:RegisterGuide({
         {
             priority = 2230,
             route = {
-                { y = 0.6174, mapID = 1453, label = "Stephanie Turner", offMapText = "Travel to Stephanie Turner in Stormwind City.", x = 0.5708 },
+                { y = 0.722, mapID = 1453, label = "Stephanie Turner", offMapText = "Travel to Stephanie Turner in Stormwind City.", x = 0.638 },
             },
             text = "Accept The Tome of Divinity from Stephanie Turner.",
             id = "accept-1644-the-tome-of-divinity",
@@ -6987,7 +7182,7 @@ ns:RegisterGuide({
         {
             priority = 2270,
             route = {
-                { mapID = 1453, x = 0.6627, y = 0.6213000000000001, label = "Dungar Longdrink", offMapText = "Travel to Dungar Longdrink in Stormwind City." },
+                { mapID = 1453, x = 0.71, y = 0.725, label = "Dungar Longdrink", offMapText = "Travel to Dungar Longdrink in Stormwind City." },
             },
             text = "Accept Return to Lewis from Dungar Longdrink.",
             id = "accept-6285-return-to-lewis",
@@ -7053,38 +7248,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2290,
-            route = {
-                { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
-            },
-            text = "Accept A Scribbled Letter from Marshal McBride in Northshire Abbey.",
-            id = "woven-accept-92479-a-scribbled-letter",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 1 },
-                    {
-                        class = { 1 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 1 },
-                    {
-                        race = { 1 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 92479, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
             text = "Read Scribbled Letter in your bags. Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
             priority = 2300,
             route = {
@@ -7095,9 +7258,9 @@ ns:RegisterGuide({
             kind = "turnin",
             conditions = {
                 all = {
-                    { class = 1 },
+                    { class = 3 },
                     {
-                        class = { 1 },
+                        class = { 3 },
                     },
                     { faction = "Alliance" },
                     {
@@ -7524,7 +7687,7 @@ ns:RegisterGuide({
             text = "Accept Shhh! We're Hunting Kobolds from Tordrin Sternblade. Use the Kobold Tracking Kit on the tracks.",
             priority = 2460,
             route = {
-                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
+                { y = 0.416, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.489 },
             },
             dependsOn = { "woven-turnin-91758-follow-that-kobold" },
             id = "woven-accept-91772-shhh-were-hunting-kobolds",
@@ -7544,169 +7707,6 @@ ns:RegisterGuide({
                 quest = { id = 91772, state = "activeOrCompleted" },
             },
             requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            id = "level-before-woven-accept-96627-the-adventurer",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 96627,
-            alternativeQuests = { 96628, 96630, 96638, 96652, 96656, 96659 },
-            priority = 2470,
-        },
-        {
-            priority = 2480,
-            route = {
-                { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
-            },
-            text = "Accept The Adventurer from Marshal McBride in Northshire Abbey.",
-            id = "woven-accept-96627-the-adventurer",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96627, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96628, 96630, 96638, 96652, 96656, 96659 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Turn in The Adventurer to Sam Sarsaparilla near Goldshire.",
-            priority = 2490,
-            route = {
-                { y = 0.632, mapID = 1429, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla.", x = 0.448 },
-            },
-            dependsOn = { "woven-accept-96627-the-adventurer" },
-            id = "woven-turnin-96627-the-adventurer",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96627, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96628, 96630, 96638, 96652, 96656, 96659 },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Accept The Great Outdoors from Sam Sarsaparilla.",
-            priority = 2500,
-            route = {
-                { mapID = 1429, x = 0.44799999999999995, y = 0.6344, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla." },
-            },
-            dependsOn = { "woven-turnin-96627-the-adventurer" },
-            id = "woven-accept-96101-the-great-outdoors",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95998, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96101, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            priority = 2510,
-            text = "Type /sit beside Sam Sarsaparilla's Basic Campfire and wait until you receive the Boosted Rest buff.",
-            dependsOn = { "woven-accept-96101-the-great-outdoors" },
-            id = "woven-objective-96101-the-great-outdoors",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95998, state = "complete" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96101, 96604, 96605, 96606, 96607, 96608 },
-            useClientText = false,
-            useClientPin = false,
-            route = {
-                { mapID = 1429, x = 0.44799999999999995, y = 0.6344, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla." },
-            },
-        },
-        {
-            text = "Turn in The Great Outdoors to Sam Sarsaparilla.",
-            priority = 2520,
-            route = {
-                { mapID = 1429, x = 0.44799999999999995, y = 0.6344, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla." },
-            },
-            dependsOn = { "woven-accept-96101-the-great-outdoors", "woven-objective-96101-the-great-outdoors" },
-            id = "woven-turnin-96101-the-great-outdoors",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95998, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96101, 96604, 96605, 96606, 96607, 96608 },
             useClientText = false,
             useClientPin = false,
         },
@@ -7949,33 +7949,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            text = "Accept Slimy Menace from Jason Mathers. A murloc may drop Croaky's Head. Use it if it does.",
-            priority = 2620,
-            route = {
-                { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
-            },
-            dependsOn = { "woven-turnin-99127-a-net-disaster" },
-            id = "woven-accept-99128-slimy-menace",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99128, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             priority = 2630,
             route = {
                 { y = 0.622, mapID = 1429, label = "Lee Brown", offMapText = "Travel to Lee Brown.", x = 0.474 },
@@ -8084,33 +8057,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Kill the murlocs at Crystal Lake.",
-            priority = 2670,
-            route = {
-                { y = 0.668, mapID = 1429, label = "Murloc", offMapText = "Travel to Murloc.", x = 0.502 },
-            },
-            dependsOn = { "woven-accept-99128-slimy-menace" },
-            id = "woven-objective-99128-slimy-menace",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99128, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             text = "Collect 6 pieces of shiny junk from the murloc camp.",
             priority = 2680,
             route = {
@@ -8138,33 +8084,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Turn in Rare Books to Brother Paxton in Northshire Abbey.",
-            priority = 2690,
-            route = {
-                { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
-            },
-            dependsOn = { "woven-accept-91777-rare-books", "woven-objective-91777-rare-books" },
-            id = "woven-turnin-91777-rare-books",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 91777, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             text = "Recover Geomancy for Curious Young Wizards and Arcane Explainer from Mother Fang and Geosculptor Yip in Jasperlode Mine.",
             priority = 2700,
             route = {
@@ -8186,6 +8105,33 @@ ns:RegisterGuide({
             },
             complete = {
                 quest = { id = 91777, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in Rare Books to Brother Paxton in Northshire Abbey.",
+            priority = 2701,
+            route = {
+                { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
+            },
+            dependsOn = { "woven-accept-91777-rare-books", "woven-objective-91777-rare-books" },
+            id = "woven-turnin-91777-rare-books",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 91777, state = "completed" },
             },
             requiredQuests = {},
             useClientText = false,
@@ -8646,8 +8592,62 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Turn in Slimy Menace to Jason Mathers.",
+            text = "Accept Slimy Menace from Jason Mathers. A murloc may drop Croaky's Head. Use it if it does.",
             priority = 2880,
+            route = {
+                { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
+            },
+            dependsOn = { "woven-turnin-99127-a-net-disaster" },
+            id = "woven-accept-99128-slimy-menace",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99128, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Kill the murlocs at Crystal Lake.",
+            priority = 2881,
+            route = {
+                { y = 0.668, mapID = 1429, label = "Murloc", offMapText = "Travel to Murloc.", x = 0.502 },
+            },
+            dependsOn = { "woven-accept-99128-slimy-menace" },
+            id = "woven-objective-99128-slimy-menace",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99128, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in Slimy Menace to Jason Mathers.",
+            priority = 2882,
             route = {
                 { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
             },

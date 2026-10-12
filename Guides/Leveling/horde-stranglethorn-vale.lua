@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-stranglethorn-vale",
@@ -481,7 +481,7 @@ ns:RegisterGuide({
         {
             priority = 180,
             route = {
-                { y = 0.667, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.793, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
+                { y = 0.668, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.804, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
             },
             id = "woven-class-warrior-accept-1714-essence-of-the-exile",
             conditions = {

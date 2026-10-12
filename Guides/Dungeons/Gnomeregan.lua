@@ -35,7 +35,7 @@ ns:RegisterGuide({
     id = "dungeons-gnomeregan",
     title = "Gnomeregan",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 25 } },
@@ -51,7 +51,7 @@ ns:RegisterGuide({
             text = "Accept Tinkmaster Overspark from Brother Sarno.",
             complete = QuestState(2923, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.406, 0.309, "Brother Sarno", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.516, 0.486, "Brother Sarno", "Travel to Stormwind City."),
             },
         },
         {
@@ -62,7 +62,7 @@ ns:RegisterGuide({
             text = "Accept Gyrodrillmatic Excavationators from Shoni the Shilent.",
             complete = QuestState(2928, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.555, 0.125, "Shoni the Shilent", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.628, 0.348, "Shoni the Shilent", "Travel to Stormwind City."),
             },
         },
         {
@@ -121,7 +121,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-2923-tinkmaster-overspark" },
             complete = QuestState(2922, "activeOrCompleted"),
             route = {
-                Point(MAP.IRONFORGE, 0.696, 0.503, "Tinkmaster Overspark", "Travel to Ironforge."),
+                Point(MAP.IRONFORGE, 0.704, 0.494, "Tinkmaster Overspark", "Travel to Ironforge."),
             },
         },
         {

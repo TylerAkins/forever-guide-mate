@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Priest",
     category = "Class Quests",
     id = "class-priest",
@@ -2814,7 +2814,7 @@ ns:RegisterGuide({
         {
             priority = 980,
             route = {
-                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+                { y = 0.076, mapID = 1455, label = "High Priest Rohan", x = 0.264, offMapText = "Travel to High Priest Rohan in Ironforge." },
             },
             id = "accept-5639-desperate-prayer",
             conditions = {
@@ -4046,7 +4046,7 @@ ns:RegisterGuide({
         {
             priority = 1450,
             route = {
-                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+                { y = 0.076, mapID = 1455, label = "High Priest Rohan", x = 0.264, offMapText = "Travel to High Priest Rohan in Ironforge." },
             },
             id = "accept-5677-arcane-feedback",
             conditions = {

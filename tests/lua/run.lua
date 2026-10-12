@@ -6534,7 +6534,10 @@ end
 TestPinsStayOffInsideAnInstance()
 
 function TestSameTitleQuestChainGates()
-    local chains = dofile("tests/lua/guide_data_checks.lua").SameTitleQuestChains
+    local guideData = dofile("tests/lua/guide_data_checks.lua")
+    local chains = {}
+    for questID, previousQuest in pairs(guideData.SameTitleQuestChains) do chains[questID] = previousQuest end
+    for questID, previousQuest in pairs(guideData.WovenQuestTurninGates) do chains[questID] = previousQuest end
     local seen = {}
     local actual = {}
     local savedCreateFrame, savedTimer = CreateFrame, C_Timer
@@ -6784,8 +6787,8 @@ local function TestOrderedNativeQuestNavigation()
     ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = savedEngineGuide, savedEngineGoal, savedEngineState
     state.quests[3922].complete = false
     state.quests[3922].objectives[2] = { text = '0/1 Other objective', numFulfilled = 0, numRequired = 1 }
-    Equal(ns.Navigation:QuestDestinationID(guide.goals[1], state), nil,
-        'split objective work retains its authored destination when another objective is unfinished')
+    Equal(ns.Navigation:QuestDestinationID(guide.goals[1], state), 3922,
+        'current split objective keeps native quest navigation while another objective is unfinished')
     guide.goals[1].useQuestNavigation = false
     state.quests[3922].objectives[2] = nil
     Equal(ns.Navigation:QuestDestinationID(guide.goals[1], state), nil,

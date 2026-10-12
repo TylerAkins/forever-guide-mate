@@ -45,7 +45,7 @@ ns:RegisterGuide({
     id = "dungeons-upper-blackrock-spire",
     title = "Upper Blackrock Spire",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 57 } },
@@ -215,7 +215,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-4183-the-true-masters" },
             complete = QuestState(4184, "activeOrCompleted"),
             route = {
-                Point(MAP.REDRIDGE_MOUNTAINS, 0.300, 0.445, "Magistrate Solomon", "Travel to Redridge Mountains."),
+                Point(MAP.REDRIDGE_MOUNTAINS, 0.249, 0.444, "Magistrate Solomon", "Travel to Redridge Mountains."),
             },
         },
         {
@@ -299,7 +299,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-4186-the-true-masters" },
             complete = QuestState(4223, "activeOrCompleted"),
             route = {
-                Point(MAP.REDRIDGE_MOUNTAINS, 0.300, 0.445, "Magistrate Solomon", "Travel to Redridge Mountains."),
+                Point(MAP.REDRIDGE_MOUNTAINS, 0.249, 0.444, "Magistrate Solomon", "Travel to Redridge Mountains."),
             },
         },
         {
@@ -528,7 +528,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-6402-stormwind-rendezvous" },
             complete = QuestState(6403, "activeOrCompleted"),
             route = {
-                Point(MAP.STORMWIND_CITY, 0.697, 0.861, "Reginald Windsor", "Travel to Stormwind City."),
+                Point(MAP.STORMWIND_CITY, 0.647, 0.768, "Reginald Windsor", "Travel to Stormwind City."),
             },
         },
         {

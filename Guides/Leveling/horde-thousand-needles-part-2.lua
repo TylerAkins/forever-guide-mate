@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Thousand Needles",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-thousand-needles-part-2",
@@ -211,7 +211,7 @@ ns:RegisterGuide({
         {
             priority = 80,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Rocket Car Parts from Kravel Koalbeard.",
             id = "accept-1110-rocket-car-parts",
@@ -236,7 +236,7 @@ ns:RegisterGuide({
         {
             priority = 90,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Delivery to the Gnomes from Kravel Koalbeard.",
             id = "accept-1114-delivery-to-the-gnomes",
@@ -323,7 +323,7 @@ ns:RegisterGuide({
         {
             priority = 120,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept The Rumormonger from Kravel Koalbeard.",
             id = "accept-1115-the-rumormonger",
@@ -932,7 +932,7 @@ ns:RegisterGuide({
         {
             priority = 330,
             route = {
-                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+                { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
             text = "Accept Hemet Nesingwary Jr. from Kravel Koalbeard.",
             id = "accept-5762-hemet-nesingwary-jr",

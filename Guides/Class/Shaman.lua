@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Shaman",
     category = "Class Quests",
     id = "class-shaman",
@@ -4785,7 +4785,7 @@ ns:RegisterGuide({
         {
             priority = 1750,
             route = {
-                { y = 0.362, mapID = 1454, label = "Sagorne Creststrider", x = 0.386, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
+                { y = 0.378, mapID = 1454, label = "Sagorne Creststrider", x = 0.38, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
             },
             id = "accept-8410-elemental-mastery",
             conditions = {
@@ -5075,7 +5075,7 @@ ns:RegisterGuide({
         {
             priority = 1860,
             route = {
-                { y = 0.362, mapID = 1454, label = "Sagorne Creststrider", x = 0.386, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
+                { y = 0.484, mapID = 1454, label = "Sagorne Creststrider", x = 0.392, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
             },
             id = "accept-7667-material-assistance",
             conditions = {

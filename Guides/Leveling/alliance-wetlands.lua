@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Wetlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-wetlands",
@@ -1613,7 +1613,7 @@ ns:RegisterGuide({
         {
             priority = 560,
             route = {
-                { mapID = 1453, x = 0.3981, y = 0.298, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { mapID = 1453, x = 0.505, y = 0.475, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             text = "Accept The Tome of Valor from Duthorian Rall.",
             id = "accept-1650-the-tome-of-valor",
@@ -1675,7 +1675,7 @@ ns:RegisterGuide({
         {
             priority = 580,
             route = {
-                { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
             text = "Accept Mathias and the Defias from Master Mathias Shaw.",
             id = "accept-2360-mathias-and-the-defias",
@@ -1827,7 +1827,7 @@ ns:RegisterGuide({
         {
             priority = 630,
             route = {
-                { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             text = "Accept The Binding from Gakin the Darkbinder.",
             id = "accept-1739-the-binding",

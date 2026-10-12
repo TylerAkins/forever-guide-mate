@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 5,
     title = "Dwarf & Gnome Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-dun-morogh",
@@ -443,6 +443,38 @@ ns:RegisterGuide({
                     conditions = {},
                 },
             },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 135,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm.", x = 0.298 },
+            },
+            text = "Accept Hallowed Memorandum from Sten Stoutarm in Coldridge Valley.",
+            id = "woven-accept-98574-hallowed-memorandum",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98574, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
@@ -985,6 +1017,38 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 305,
+            route = {
+                { y = 0.664, mapID = 1426, label = "Branstock Khalder", offMapText = "Travel to Branstock Khalder.", x = 0.286 },
+            },
+            text = "Read Hallowed Memorandum in your bags. Turn in Hallowed Memorandum to Branstock Khalder in Coldridge Valley.",
+            id = "woven-turnin-98574-hallowed-memorandum",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98574, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98574-hallowed-memorandum" },
         },
         {
             priority = 310,
@@ -1849,6 +1913,90 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 561,
+            route = {
+                { mapID = 1426, x = 0.4669, y = 0.5392, label = "Eric Brighthammer", offMapText = "Travel to Eric Brighthammer." },
+            },
+            text = "Accept The Great Outdoors from Eric Brighthammer.",
+            id = "woven-accept-96101-the-great-outdoors",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96608, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96101, 96604, 96605, 96606, 96607 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 562,
+            text = "Type /sit beside Eric Brighthammer's Basic Campfire and wait until you receive the Boosted Rest buff.",
+            id = "woven-objective-96101-the-great-outdoors",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96608, state = "complete" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96101, 96604, 96605, 96606, 96607 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96101-the-great-outdoors" },
+            route = {
+                { mapID = 1426, x = 0.4669, y = 0.5392, label = "Eric Brighthammer", offMapText = "Travel to Eric Brighthammer." },
+            },
+        },
+        {
+            priority = 563,
+            route = {
+                { mapID = 1426, x = 0.4669, y = 0.5392, label = "Eric Brighthammer", offMapText = "Travel to Eric Brighthammer." },
+            },
+            text = "Turn in The Great Outdoors to Eric Brighthammer.",
+            id = "woven-turnin-96101-the-great-outdoors",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96608, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96101, 96604, 96605, 96606, 96607 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96101-the-great-outdoors", "woven-objective-96101-the-great-outdoors" },
         },
         {
             id = "level-before-accept-384-beer-basted-boar-ribs",
@@ -4937,7 +5085,7 @@ ns:RegisterGuide({
         {
             priority = 1610,
             route = {
-                { y = 0.1207, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.5176 },
+                { y = 0.338, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.597 },
             },
             text = "Accept Stormpike's Delivery from Grimand Elmore.",
             id = "accept-353-stormpike-s-delivery",
@@ -5019,7 +5167,7 @@ ns:RegisterGuide({
         {
             priority = 1640,
             route = {
-                { y = 0.4571, mapID = 1453, label = "Ilsa Corbin", offMapText = "Travel to Ilsa Corbin in Stormwind City.", x = 0.785 },
+                { y = 0.598, mapID = 1453, label = "Ilsa Corbin", offMapText = "Travel to Ilsa Corbin in Stormwind City.", x = 0.804 },
             },
             id = "accept-1638-a-warrior-s-training",
             conditions = {
@@ -5076,7 +5224,7 @@ ns:RegisterGuide({
         {
             priority = 1660,
             route = {
-                { y = 0.3726, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.7425 },
+                { y = 0.533, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.771 },
             },
             text = "Accept Bartleby the Drunk from Harry Burlguard.",
             id = "accept-1639-bartleby-the-drunk",
@@ -5140,7 +5288,7 @@ ns:RegisterGuide({
         {
             priority = 1680,
             route = {
-                { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.7383 },
+                { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
             },
             text = "Accept Beat Bartleby from Bartleby.",
             id = "accept-1640-beat-bartleby",
@@ -5277,7 +5425,7 @@ ns:RegisterGuide({
         {
             priority = 1720,
             route = {
-                { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.7383 },
+                { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
             },
             text = "Accept Bartleby's Mug from Bartleby.",
             id = "accept-1665-bartleby-s-mug",
@@ -5444,7 +5592,7 @@ ns:RegisterGuide({
         {
             priority = 1770,
             route = {
-                { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             text = "Accept Surena Caledon from Gakin the Darkbinder.",
             id = "accept-1688-surena-caledon",
@@ -6286,7 +6434,7 @@ ns:RegisterGuide({
         {
             priority = 2050,
             route = {
-                { y = 0.7145, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.1527 },
+                { y = 0.714, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.104 },
             },
             text = "Accept Encroaching Gnolls from Guard Parker.",
             id = "accept-244-encroaching-gnolls",
@@ -6373,7 +6521,7 @@ ns:RegisterGuide({
         {
             priority = 2080,
             route = {
-                { y = 0.7856, mapID = 1453, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City.", x = 0.2526 },
+                { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City.", x = 0.392 },
             },
             text = "Accept The Binding from Gakin the Darkbinder.",
             id = "accept-1689-the-binding",
@@ -7676,70 +7824,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2490,
-            route = {
-                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm.", x = 0.298 },
-            },
-            text = "Accept Hallowed Memorandum from Sten Stoutarm in Coldridge Valley.",
-            id = "woven-accept-98574-hallowed-memorandum",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 5 },
-                    {
-                        class = { 5 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 7 },
-                    {
-                        race = { 7 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98574, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2500,
-            route = {
-                { y = 0.664, mapID = 1426, label = "Branstock Khalder", offMapText = "Travel to Branstock Khalder.", x = 0.286 },
-            },
-            text = "Read Hallowed Memorandum in your bags. Turn in Hallowed Memorandum to Branstock Khalder in Coldridge Valley.",
-            id = "woven-turnin-98574-hallowed-memorandum",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 5 },
-                    {
-                        class = { 5 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 7 },
-                    {
-                        race = { 7 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98574, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98574-hallowed-memorandum" },
-        },
-        {
             priority = 2510,
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm.", x = 0.298 },
@@ -8262,7 +8346,7 @@ ns:RegisterGuide({
         {
             priority = 2690,
             route = {
-                { y = 0.718, mapID = 1426, label = "Mountaineer Thalos", offMapText = "Travel to Mountaineer Thalos.", x = 0.334 },
+                { y = 0.758, mapID = 1426, label = "Mountaineer Thalos", offMapText = "Travel to Mountaineer Thalos.", x = 0.25 },
             },
             text = "Accept The Adventurer from Mountaineer Thalos in Coldridge Pass.",
             id = "woven-accept-96628-the-adventurer",
@@ -8314,90 +8398,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-96628-the-adventurer" },
-        },
-        {
-            priority = 2710,
-            route = {
-                { mapID = 1426, x = 0.4669, y = 0.5392, label = "Eric Brighthammer", offMapText = "Travel to Eric Brighthammer." },
-            },
-            text = "Accept The Great Outdoors from Eric Brighthammer.",
-            id = "woven-accept-96101-the-great-outdoors",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96608, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96101, 96604, 96605, 96606, 96607 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2720,
-            text = "Type /sit beside Eric Brighthammer's Basic Campfire and wait until you receive the Boosted Rest buff.",
-            id = "woven-objective-96101-the-great-outdoors",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96608, state = "complete" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96101, 96604, 96605, 96606, 96607 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96101-the-great-outdoors" },
-            route = {
-                { mapID = 1426, x = 0.4669, y = 0.5392, label = "Eric Brighthammer", offMapText = "Travel to Eric Brighthammer." },
-            },
-        },
-        {
-            priority = 2730,
-            route = {
-                { mapID = 1426, x = 0.4669, y = 0.5392, label = "Eric Brighthammer", offMapText = "Travel to Eric Brighthammer." },
-            },
-            text = "Turn in The Great Outdoors to Eric Brighthammer.",
-            id = "woven-turnin-96101-the-great-outdoors",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96608, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 95998, 96101, 96604, 96605, 96606, 96607 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96101-the-great-outdoors", "woven-objective-96101-the-great-outdoors" },
         },
         {
             priority = 2740,

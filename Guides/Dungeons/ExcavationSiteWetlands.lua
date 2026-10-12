@@ -54,7 +54,7 @@ ns:RegisterGuide({
     id = "dungeons-excavation-site-wetlands",
     title = "Excavation Site: Wetlands",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 24 } },
@@ -100,7 +100,7 @@ ns:RegisterGuide({
             text = "Accept Songblade Search from Dorin Songblade in Lakeshire.",
             complete = QuestState(95772, "activeOrCompleted"),
             route = {
-                Point(MAP.REDRIDGE_MOUNTAINS, 0.308, 0.466, "Dorin Songblade",
+                Point(MAP.REDRIDGE_MOUNTAINS, 0.258, 0.465, "Dorin Songblade",
                     "Travel to Redridge Mountains."),
             },
         },

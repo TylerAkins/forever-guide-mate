@@ -296,6 +296,11 @@ M.SameTitleQuestChains = {
     [7383] = 933,
 }
 
+-- Forever quests woven into starter routes that unlock after a spine turn-in.
+M.WovenQuestTurninGates = {
+    [96630] = 921, -- The Adventurer follows Crown of the Earth in Teldrassil.
+}
+
 
 function M.FocusedPickupCategory(category)
     return category == "Dungeon Quest Guides" or category == "Raid Quests"

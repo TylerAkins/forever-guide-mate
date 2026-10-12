@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Redridge & Westfall",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-redridge-and-westfall",
@@ -39,7 +39,7 @@ ns:RegisterGuide({
         {
             priority = 20,
             route = {
-                { y = 0.7145, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.1527 },
+                { y = 0.714, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.104 },
             },
             text = "Accept Encroaching Gnolls from Guard Parker.",
             id = "accept-244-encroaching-gnolls",
@@ -117,7 +117,7 @@ ns:RegisterGuide({
         {
             priority = 50,
             route = {
-                { y = 0.4864, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.3214 },
+                { y = 0.486, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.27 },
             },
             text = "Accept The Lost Tools from Foreman Oslow.",
             id = "accept-125-the-lost-tools",
@@ -145,7 +145,7 @@ ns:RegisterGuide({
         {
             priority = 60,
             route = {
-                { y = 0.4728, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3098 },
+                { y = 0.473, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.259 },
             },
             text = "Accept The Price of Shoes from Verner Osgood.",
             id = "accept-118-the-price-of-shoes",
@@ -173,7 +173,7 @@ ns:RegisterGuide({
         {
             priority = 70,
             route = {
-                { y = 0.4445, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
+                { y = 0.444, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.249 },
             },
             text = "Accept Messenger to Stormwind from Magistrate Solomon.",
             id = "accept-120-messenger-to-stormwind",
@@ -201,7 +201,7 @@ ns:RegisterGuide({
         {
             priority = 80,
             route = {
-                { y = 0.4435, mapID = 1433, label = "Darcy", offMapText = "Travel to Darcy in Redridge Mountains.", x = 0.2675 },
+                { y = 0.45, mapID = 1433, label = "Darcy", offMapText = "Travel to Darcy in Redridge Mountains.", x = 0.22 },
             },
             text = "Accept A Free Lunch from Darcy.",
             id = "accept-129-a-free-lunch",
@@ -257,7 +257,7 @@ ns:RegisterGuide({
         {
             priority = 100,
             route = {
-                { y = 0.4535, mapID = 1433, label = "Wiley the Black", offMapText = "Travel to Wiley the Black in Redridge Mountains.", x = 0.2648 },
+                { y = 0.453, mapID = 1433, label = "Wiley the Black", offMapText = "Travel to Wiley the Black in Redridge Mountains.", x = 0.214 },
             },
             text = "Accept The Defias Brotherhood from Wiley the Black.",
             id = "accept-132-the-defias-brotherhood",
@@ -291,7 +291,7 @@ ns:RegisterGuide({
         {
             priority = 110,
             route = {
-                { y = 0.4384, mapID = 1433, label = "Chef Breanna", offMapText = "Travel to Chef Breanna in Redridge Mountains.", x = 0.2268 },
+                { y = 0.438, mapID = 1433, label = "Chef Breanna", offMapText = "Travel to Chef Breanna in Redridge Mountains.", x = 0.176 },
             },
             text = "Accept Redridge Goulash from Chef Breanna.",
             id = "accept-92-redridge-goulash",
@@ -334,7 +334,7 @@ ns:RegisterGuide({
         {
             priority = 130,
             route = {
-                { y = 0.5363, mapID = 1433, label = "Shawn", offMapText = "Travel to Shawn in Redridge Mountains.", x = 0.2932 },
+                { y = 0.536, mapID = 1433, label = "Shawn", offMapText = "Travel to Shawn in Redridge Mountains.", x = 0.242 },
             },
             text = "Accept Hilary's Necklace from Shawn.",
             id = "accept-3741-hilary-s-necklace",
@@ -573,7 +573,7 @@ ns:RegisterGuide({
         {
             priority = 210,
             route = {
-                { y = 0.5984, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
             text = "Accept The Defias Brotherhood from Master Mathias Shaw.",
             id = "accept-141-the-defias-brotherhood",
@@ -1006,7 +1006,7 @@ ns:RegisterGuide({
         {
             priority = 360,
             route = {
-                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon in Redridge Mountains.", x = 0.3074 },
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon in Redridge Mountains.", x = 0.256 },
             },
             text = "Accept Assessing the Threat from Deputy Feldon.",
             id = "accept-246-assessing-the-threat",
@@ -1068,7 +1068,7 @@ ns:RegisterGuide({
         {
             priority = 380,
             route = {
-                { y = 0.7145, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.1527 },
+                { y = 0.714, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.104 },
             },
             text = "Accept Visit the Herbalist from Guard Parker.",
             id = "accept-130-visit-the-herbalist",
@@ -1257,7 +1257,7 @@ ns:RegisterGuide({
         {
             priority = 440,
             route = {
-                { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
             text = "Accept Mathias and the Defias from Master Mathias Shaw.",
             id = "accept-2360-mathias-and-the-defias",
@@ -1288,7 +1288,7 @@ ns:RegisterGuide({
         {
             priority = 450,
             route = {
-                { y = 0.6036, mapID = 1453, label = "Renzik \"The Shiv\"", offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City.", x = 0.7576 },
+                { y = 0.708, mapID = 1453, label = "Renzik \"The Shiv\"", offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City.", x = 0.788 },
             },
             text = "Accept Redridge Rendezvous from Renzik \"The Shiv\".",
             id = "accept-2281-redridge-rendezvous",
@@ -1344,7 +1344,7 @@ ns:RegisterGuide({
         {
             priority = 470,
             route = {
-                { mapID = 1453, x = 0.3981, y = 0.298, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
+                { mapID = 1453, x = 0.505, y = 0.475, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
             text = "Accept The Tome of Valor from Duthorian Rall.",
             id = "accept-1793-the-tome-of-valor",
@@ -1472,7 +1472,7 @@ ns:RegisterGuide({
         {
             priority = 520,
             route = {
-                { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+                { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
             text = "Accept Devourer of Souls from Gakin the Darkbinder.",
             id = "accept-1716-devourer-of-souls",
@@ -1525,7 +1525,7 @@ ns:RegisterGuide({
         {
             priority = 540,
             route = {
-                { y = 0.558, mapID = 1453, label = "Argos Nightwhisper", offMapText = "Travel to Argos Nightwhisper in Stormwind City.", x = 0.214 },
+                { y = 0.676, mapID = 1453, label = "Argos Nightwhisper", offMapText = "Travel to Argos Nightwhisper in Stormwind City.", x = 0.362 },
             },
             text = "Accept The Corruption Abroad from Argos Nightwhisper.",
             id = "accept-3765-the-corruption-abroad",
@@ -1721,7 +1721,7 @@ ns:RegisterGuide({
         {
             priority = 610,
             route = {
-                { y = 0.4864, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.3214 },
+                { y = 0.486, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.27 },
             },
             text = "Accept The Everstill Bridge from Foreman Oslow.",
             id = "accept-89-the-everstill-bridge",
@@ -1789,7 +1789,7 @@ ns:RegisterGuide({
         {
             priority = 630,
             route = {
-                { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
+                { y = 0.473, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.259 },
             },
             text = "Accept Underbelly Scales from Verner Osgood.",
             id = "accept-122-underbelly-scales",
@@ -1823,7 +1823,7 @@ ns:RegisterGuide({
         {
             priority = 640,
             route = {
-                { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
+                { y = 0.473, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.259 },
             },
             text = "Accept A Baying of Gnolls from Verner Osgood.",
             id = "accept-124-a-baying-of-gnolls",
@@ -2082,7 +2082,7 @@ ns:RegisterGuide({
         {
             priority = 720,
             route = {
-                { y = 0.4633, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.2186 },
+                { y = 0.463, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.168 },
             },
             text = "Accept Delivering Daffodils from Martie Jainrose.",
             id = "accept-131-delivering-daffodils",
@@ -2317,7 +2317,7 @@ ns:RegisterGuide({
         {
             priority = 790,
             route = {
-                { y = 0.5204, mapID = 1433, label = "Lucius", offMapText = "Travel to Lucius in Redridge Mountains.", x = 0.2806 },
+                { y = 0.52, mapID = 1433, label = "Lucius", offMapText = "Travel to Lucius in Redridge Mountains.", x = 0.23 },
             },
             text = "Accept Alther's Mill from Lucius.",
             id = "accept-2282-alther-s-mill",
@@ -2600,7 +2600,7 @@ ns:RegisterGuide({
         {
             priority = 880,
             route = {
-                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.308 },
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.256 },
             },
             text = "Accept Show of Force from Deputy Feldon.",
             id = "woven-accept-98407-show-of-force",
