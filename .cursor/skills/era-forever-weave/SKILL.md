@@ -14,8 +14,9 @@ The 1–60 Casual spine lives in `Guides/Leveling/`. Weaving means inserting For
 3. Every quest on that page that the spine already runs stays as-is. Classic quests the spine left off stay off, unless a new quest requires them.
 4. A new quest is woven in only when the route is already there, the quest is low-level and right there, or it is the first quest the route should accept. Anything else stays out (see below).
 5. Class quests are part of this pass when their start pin is in the chapter zone or a capital/neighbor the route already visits. Put `class` and `race` on every step. Gate at offer level (`requiredLevel`).
-6. Register verified prerequisites in `QuestPrerequisites.lua` using `all` or `any` semantics.
-7. Run the checks at the bottom.
+6. Register verified prerequisites in `QuestPrerequisites.lua` using `all` or `any` semantics, and put them in the accept's `requiredQuests`; ordered chapters do not read `dependsOn` or attach catalog gates.
+7. When moving, re-gating, or retargeting steps on an existing chapter, follow [Editing an existing route](../../../docs/guide-authoring.md#editing-an-existing-route).
+8. Run the checks at the bottom.
 
 `tools/weave_loremaster.py` (`recommended_level`, `insert_quest`, `place_woven`) encodes placement helpers. Read its output before shipping.
 
@@ -23,7 +24,7 @@ The 1–60 Casual spine lives in `Guides/Leveling/`. Weaving means inserting For
 
 Use the first rule that fits.
 
-1. **Series follow-up.** It continues a quest already on the route. Put it immediately after that quest's turn-in. The accept or handoff `dependsOn` that turn-in.
+1. **Series follow-up.** It continues a quest already on the route. Put it immediately after that quest's turn-in. The accept or handoff `dependsOn` that turn-in and lists the quest in `requiredQuests`.
 2. **Same giver.** The route already stops at this NPC at the quest's recommended level. Accept it with the other accepts on that visit. Do its objectives on the trip that leaves. Turn it in with that NPC's turn-ins.
 3. **Nearest stop.** Insert beside the closest pin, after quests of a lower recommended level. A Wowhead level above that chapter's end waits at the end of the chapter.
 
