@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 8,
+    revision = 9,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -2793,6 +2793,114 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            priority = 825,
+            route = {
+                { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
+            },
+            text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
+            id = "woven-turnin-98430-the-longwalkers",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98430, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98430-the-longwalkers", "woven-objective-98430-the-longwalkers" },
+        },
+        {
+            priority = 826,
+            route = {
+                { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
+            },
+            text = "Accept Sparring Match from Krang Stonehoof in Bloodhoof Village.",
+            id = "woven-accept-99108-sparring-match",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99108, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-98430-the-longwalkers" },
+        },
+        {
+            priority = 827,
+            route = {
+                { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
+            },
+            text = "Win 3 duels, or defeat Novice Warriors, for Krang Stonehoof.",
+            id = "woven-objective-99108-sparring-match",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99108, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-99108-sparring-match" },
+        },
+        {
+            priority = 828,
+            route = {
+                { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
+            },
+            text = "Turn in Sparring Match to Krang Stonehoof in Bloodhoof Village.",
+            id = "woven-turnin-99108-sparring-match",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99108, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99108-sparring-match", "woven-objective-99108-sparring-match" },
         },
         {
             priority = 830,
@@ -7389,33 +7497,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2305,
-            route = {
-                { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
-            },
-            text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
-            id = "woven-turnin-98430-the-longwalkers",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98430, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98430-the-longwalkers", "woven-objective-98430-the-longwalkers" },
-        },
-        {
             id = "level-before-accept-445-delivery-to-silverpine-forest",
             kind = "note",
             text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
@@ -7491,87 +7572,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
-        {
-            priority = 2440,
-            route = {
-                { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
-            },
-            text = "Accept Sparring Match from Krang Stonehoof in Bloodhoof Village.",
-            id = "woven-accept-99108-sparring-match",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99108, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2450,
-            route = {
-                { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
-            },
-            text = "Win 3 duels, or defeat Novice Warriors, for Krang Stonehoof.",
-            id = "woven-objective-99108-sparring-match",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99108, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-accept-99108-sparring-match" },
-        },
-        {
-            priority = 2460,
-            route = {
-                { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
-            },
-            text = "Turn in Sparring Match to Krang Stonehoof in Bloodhoof Village.",
-            id = "woven-turnin-99108-sparring-match",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99108, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99108-sparring-match", "woven-objective-99108-sparring-match" },
         },
         {
             id = "level-before-woven-accept-96130-chakuyak",

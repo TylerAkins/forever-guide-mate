@@ -4598,10 +4598,12 @@ do
     local taurenGoalIndex = {}
     for index, goal in ipairs(taurenStarter.goals) do taurenGoalIndex[goal.id] = index end
     local longwalkersAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-98430-the-longwalkers")
+    local longwalkersTurnin = ns.Engine:GetGoal(taurenStarter, "woven-turnin-98430-the-longwalkers")
+    local sparringAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-99108-sparring-match")
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 8, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 9, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -4614,6 +4616,13 @@ do
         and DependsOn(longwalkersAccept, "objective-745-2-palemane-skinner")
         and DependsOn(longwalkersAccept, "objective-745-3-palemane-poacher"),
         "The Longwalkers pickup also requires every Sharing the Land cave objective")
+    Check(taurenGoalIndex["woven-turnin-98430-the-longwalkers"] < taurenGoalIndex["woven-accept-99108-sparring-match"]
+        and taurenGoalIndex["woven-accept-99108-sparring-match"] < taurenGoalIndex["woven-objective-99108-sparring-match"]
+        and taurenGoalIndex["woven-objective-99108-sparring-match"] < taurenGoalIndex["woven-turnin-99108-sparring-match"]
+        and taurenGoalIndex["woven-turnin-99108-sparring-match"] < taurenGoalIndex["accept-749-the-ravaged-caravan"],
+        "Mulgore turns in The Longwalkers, completes Sparring Match, and then picks up The Ravaged Caravan")
+    Check(DependsOn(sparringAccept, "woven-turnin-98430-the-longwalkers"),
+        "Sparring Match waits for The Longwalkers turn-in")
 end
 do
     local dunMorogh = ns.guides["leveling-era-dun-morogh"]
