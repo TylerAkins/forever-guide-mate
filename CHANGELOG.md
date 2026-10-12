@@ -2,11 +2,9 @@
 
 All notable changes to this project are documented here.
 
-## 0.4.8 - 2026-10-12
-- Select the client turn-in pin for Rite of Vision and the objective pin during Dwarven Digging preparation; remove the unnecessary spirit wolf instruction.
-
 ## 0.4.7 - 2026-10-12
 - Turn in The Longwalkers at the first Thunder Bluff stop, during Dwarven Digging, and accept Thunderhorn Cleansing before starting Sparring Match.
+- Select the client quest pins for Rite of Vision turn-in and Dwarven Digging objectives. Skip following the spirit wolf before turning in Rite of Vision.
 
 ## 0.4.6 - 2026-10-12
 - Turn in The Longwalkers during the first Thunder Bluff visit, then complete Sparring Match before accepting The Ravaged Caravan.
