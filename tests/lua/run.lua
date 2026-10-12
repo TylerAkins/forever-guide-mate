@@ -4597,13 +4597,20 @@ do
     local taurenStarter = ns.guides["leveling-era-mulgore"]
     local taurenGoalIndex = {}
     for index, goal in ipairs(taurenStarter.goals) do taurenGoalIndex[goal.id] = index end
-    local longwalkersAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-98430-the-longwalkers")
-    local longwalkersTurnin = ns.Engine:GetGoal(taurenStarter, "woven-turnin-98430-the-longwalkers")
-    local sparringAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-99108-sparring-match")
+    local chain = {
+        longwalkersAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-98430-the-longwalkers"),
+        longwalkersTurnin = ns.Engine:GetGoal(taurenStarter, "woven-turnin-98430-the-longwalkers"),
+        sparringAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-99108-sparring-match"),
+        sparringTurnin = ns.Engine:GetGoal(taurenStarter, "woven-turnin-99108-sparring-match"),
+        ravagedCaravanAccept = ns.Engine:GetGoal(taurenStarter, "accept-749-the-ravaged-caravan"),
+        ravagedCaravanTurnin = ns.Engine:GetGoal(taurenStarter, "turnin-749-the-ravaged-caravan"),
+        nextCaravanAccept = ns.Engine:GetGoal(taurenStarter, "accept-751-the-ravaged-caravan"),
+        thunderBluffJourneyTurnin = ns.Engine:GetGoal(taurenStarter, "turnin-775-journey-into-thunder-bluff"),
+    }
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 9, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 10, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -4612,17 +4619,29 @@ do
         and taurenGoalIndex["objective-745-2-palemane-skinner"] < taurenGoalIndex["woven-accept-98430-the-longwalkers"]
         and taurenGoalIndex["objective-745-3-palemane-poacher"] < taurenGoalIndex["woven-accept-98430-the-longwalkers"],
         "Mulgore clears Sharing the Land's cave objectives before sending the player to Perith")
-    Check(DependsOn(longwalkersAccept, "objective-745-1-palemane-tanner")
-        and DependsOn(longwalkersAccept, "objective-745-2-palemane-skinner")
-        and DependsOn(longwalkersAccept, "objective-745-3-palemane-poacher"),
+    Check(DependsOn(chain.longwalkersAccept, "objective-745-1-palemane-tanner")
+        and DependsOn(chain.longwalkersAccept, "objective-745-2-palemane-skinner")
+        and DependsOn(chain.longwalkersAccept, "objective-745-3-palemane-poacher"),
         "The Longwalkers pickup also requires every Sharing the Land cave objective")
     Check(taurenGoalIndex["woven-turnin-98430-the-longwalkers"] < taurenGoalIndex["woven-accept-99108-sparring-match"]
         and taurenGoalIndex["woven-accept-99108-sparring-match"] < taurenGoalIndex["woven-objective-99108-sparring-match"]
         and taurenGoalIndex["woven-objective-99108-sparring-match"] < taurenGoalIndex["woven-turnin-99108-sparring-match"]
         and taurenGoalIndex["woven-turnin-99108-sparring-match"] < taurenGoalIndex["accept-749-the-ravaged-caravan"],
         "Mulgore turns in The Longwalkers, completes Sparring Match, and then picks up The Ravaged Caravan")
-    Check(DependsOn(sparringAccept, "woven-turnin-98430-the-longwalkers"),
+    Check(DependsOn(chain.sparringAccept, "woven-turnin-98430-the-longwalkers"),
         "Sparring Match waits for The Longwalkers turn-in")
+    Check(DependsOn(chain.longwalkersTurnin, "turnin-775-journey-into-thunder-bluff")
+        and chain.longwalkersTurnin.priority > chain.thunderBluffJourneyTurnin.priority,
+        "The Longwalkers turn-in waits for the first Thunder Bluff visit")
+    Check(chain.longwalkersTurnin.priority < chain.sparringAccept.priority
+        and chain.sparringAccept.priority < chain.sparringTurnin.priority
+        and chain.sparringTurnin.priority < chain.ravagedCaravanAccept.priority
+        and chain.ravagedCaravanAccept.priority < chain.ravagedCaravanTurnin.priority
+        and chain.ravagedCaravanTurnin.priority < chain.nextCaravanAccept.priority,
+        "Mulgore schedules Longwalkers, Sparring Match, and The Ravaged Caravan in order")
+    Check(DependsOn(chain.ravagedCaravanAccept, "woven-turnin-99108-sparring-match")
+        and DependsOn(chain.nextCaravanAccept, "turnin-749-the-ravaged-caravan"),
+        "Ravaged Caravan accepts wait for the prior turn-ins")
 end
 do
     local dunMorogh = ns.guides["leveling-era-dun-morogh"]

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 9,
+    revision = 10,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -2795,7 +2795,7 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 825,
+            priority = 1345,
             route = {
                 { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
             },
@@ -2819,10 +2819,14 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            dependsOn = { "woven-accept-98430-the-longwalkers", "woven-objective-98430-the-longwalkers" },
+            dependsOn = {
+                "woven-accept-98430-the-longwalkers",
+                "woven-objective-98430-the-longwalkers",
+                "turnin-775-journey-into-thunder-bluff",
+            },
         },
         {
-            priority = 826,
+            priority = 1381,
             route = {
                 { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
             },
@@ -2849,7 +2853,7 @@ ns:RegisterGuide({
             dependsOn = { "woven-turnin-98430-the-longwalkers" },
         },
         {
-            priority = 827,
+            priority = 1382,
             route = {
                 { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
             },
@@ -2876,7 +2880,7 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99108-sparring-match" },
         },
         {
-            priority = 828,
+            priority = 1383,
             route = {
                 { y = 0.637, mapID = 1412, label = "Krang Stonehoof", offMapText = "Travel to Krang Stonehoof.", x = 0.484 },
             },
@@ -2903,7 +2907,7 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99108-sparring-match", "woven-objective-99108-sparring-match" },
         },
         {
-            priority = 830,
+            priority = 1384,
             text = "Accept The Ravaged Caravan from Morin Cloudstalker.",
             id = "accept-749-the-ravaged-caravan",
             kind = "accept",
@@ -2925,10 +2929,10 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = true,
-            dependsOn = {},
+            dependsOn = { "woven-turnin-99108-sparring-match" },
         },
         {
-            priority = 840,
+            priority = 1385,
             text = "Turn in The Ravaged Caravan.",
             route = {
                 { y = 0.4818, mapID = 1412, label = "The Ravaged Caravan", offMapText = "Travel to The Ravaged Caravan.", x = 0.5374 },
@@ -2956,7 +2960,7 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 850,
+            priority = 1386,
             route = {
                 { y = 0.4818, mapID = 1412, label = "The Ravaged Caravan", offMapText = "Travel to The Ravaged Caravan.", x = 0.5374 },
             },
@@ -2987,7 +2991,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-749-the-ravaged-caravan" },
         },
         {
             id = "objective-766-2-flatland-cougar-femur",
