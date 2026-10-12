@@ -4611,7 +4611,7 @@ do
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 16, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 17, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -4674,6 +4674,9 @@ function TestTaurenStarterMulgoreForeverOrder()
             and Before(goalID, "accept-791-carry-your-weight"),
             goalID .. " finishes before the route returns to the Crossroads and Durotar")
     end
+    Check(taurenGoalIndex["level-before-woven-accept-98435-thunderhorns-report"] == taurenGoalIndex["woven-accept-99082-the-high-chieftain"] + 1
+        and taurenGoalIndex["woven-accept-98435-thunderhorns-report"] == taurenGoalIndex["level-before-woven-accept-98435-thunderhorns-report"] + 1,
+        "Thunderhorn's Report checkpoint and pickup immediately follow The High Chieftain")
     Check(Before("woven-accept-99082-the-high-chieftain", "woven-accept-98435-thunderhorns-report")
         and Before("woven-accept-98435-thunderhorns-report", "woven-turnin-99082-the-high-chieftain"),
         "Thunderhorn's Report is picked up from Mull in Bloodhoof before the closing Thunder Bluff stop")
@@ -4702,10 +4705,13 @@ function TestTaurenStarterMulgoreForeverOrder()
         "Venture Co. workers and supervisors lead into Fizsprocket and his Notes on the same mine outing")
     local hunterAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-861-the-hunters-way")
     local sergraAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-860-sergra-darkthorn")
-    Equal(taurenGoalIndex["woven-accept-861-the-hunters-way"], (taurenGoalIndex["woven-accept-99079-longwalker-malah"] or 0) + 1,
-        "The Hunter's Way is accepted from Skorn beside Brave Wildrunner")
+    Equal(taurenGoalIndex["level-before-woven-accept-861-the-hunters-way"], (taurenGoalIndex["woven-accept-99079-longwalker-malah"] or 0) + 1,
+        "The Hunter's Way level checkpoint follows Brave Wildrunner's pickup")
+    Equal(taurenGoalIndex["woven-accept-861-the-hunters-way"], (taurenGoalIndex["level-before-woven-accept-861-the-hunters-way"] or 0) + 1,
+        "The Hunter's Way is accepted from Skorn beside Brave Wildrunner after its level checkpoint")
     Check(Before("woven-accept-861-the-hunters-way", "woven-objective-861-the-hunters-way")
-        and Before("woven-accept-98435-thunderhorns-report", "woven-objective-861-the-hunters-way")
+        and Before("woven-objective-759-wildmane-totem", "woven-objective-861-the-hunters-way")
+        and Before("woven-objective-861-the-hunters-way", "woven-turnin-759-wildmane-totem")
         and Before("woven-objective-861-the-hunters-way", "woven-turnin-99082-the-high-chieftain")
         and Before("woven-turnin-99082-the-high-chieftain", "woven-turnin-861-the-hunters-way")
         and Before("woven-turnin-861-the-hunters-way", "woven-accept-860-sergra-darkthorn")
@@ -4756,7 +4762,7 @@ do
     local dunMorogh = ns.guides["leveling-era-dun-morogh"]
     local dunMoroghIndex = {}
     for index, goal in ipairs(dunMorogh.goals) do dunMoroghIndex[goal.id] = index end
-    Equal(dunMorogh.revision, 6, "Dun Morogh guide revision advances with the route correction")
+    Equal(dunMorogh.revision, 7, "Dun Morogh guide revision advances with the route correction")
     Check(dunMoroghIndex["objective-182-1-frostmane-troll-whelp"] < dunMoroghIndex["turnin-182-the-troll-cave"]
         and dunMoroghIndex["turnin-182-the-troll-cave"] < dunMoroghIndex["turnin-1599-beginnings"],
         "Dun Morogh completes the troll-cave outing before routing to Alamar")
@@ -4764,14 +4770,14 @@ do
     local tirisfal = ns.guides["leveling-era-tirisfal-glades"]
     local tirisfalIndex = {}
     for index, goal in ipairs(tirisfal.goals) do tirisfalIndex[goal.id] = index end
-    Equal(tirisfal.revision, 6, "Tirisfal guide revision advances with the route correction")
+    Equal(tirisfal.revision, 7, "Tirisfal guide revision advances with the route correction")
     Check(tirisfalIndex["turnin-1470-piercing-the-veil"] < tirisfalIndex["objective-364-1-duskbat"],
         "Tirisfal preserves its Venya turn-in before the Mindless Ones outing")
 
     local teldrassil = ns.guides["leveling-era-teldrassil"]
     local teldrassilIndex = {}
     for index, goal in ipairs(teldrassil.goals) do teldrassilIndex[goal.id] = index end
-    Equal(teldrassil.revision, 6, "Teldrassil guide revision advances with the route correction")
+    Equal(teldrassil.revision, 7, "Teldrassil guide revision advances with the route correction")
     Check(teldrassilIndex["accept-3519-a-friend-in-need"] < teldrassilIndex["turnin-3519-a-friend-in-need"]
         and teldrassilIndex["turnin-3519-a-friend-in-need"] < teldrassilIndex["accept-3521-iverron-s-antidote"]
         and teldrassilIndex["accept-3521-iverron-s-antidote"] < teldrassilIndex["accept-916-webwood-venom"]
@@ -7058,6 +7064,96 @@ local function TestOrderedNativeQuestNavigation()
     ns.db = savedDB
 end
 TestOrderedNativeQuestNavigation()
+
+function TestStarterZoneAuditOrder()
+    for _, classID in ipairs({ 1, 2, 3, 4, 5, 7, 8, 9, 11 }) do
+        local guide = ns.guides["leveling-era-durotar"]
+        for _, goalID in ipairs({ "accept-806-dark-storms", "objective-806-1-fizzle-s-claw", "turnin-806-dark-storms" }) do
+            local goal = ns.Engine:GetGoal(guide, goalID)
+            Check(ns.EvaluateCondition(goal.conditions, { faction = "Horde", raceID = 2, classID = classID, level = 4 }) == true,
+                "Dark Storms is available to class " .. classID .. " before its universal follow-ups")
+        end
+    end
+    local expectations = {
+        { "durotar", "woven-turnin-97279-wayward-weapons", "accept-2161-a-peon-s-burden" },
+        { "durotar", "woven-turnin-97225-forgotten-loa-idols", "level-before-accept-1818-speak-with-dillinger" },
+        { "durotar", "woven-turnin-99052-threat-from-below", "level-before-accept-1818-speak-with-dillinger" },
+        { "tirisfal-glades", "woven-turnin-98389-a-light-in-the-darkness", "accept-383-vital-intelligence" },
+        { "tirisfal-glades", "woven-accept-99142-tomb-weed", "objective-1882-1-balnir-snapdragons" },
+        { "tirisfal-glades", "woven-turnin-99142-tomb-weed", "travel-tirisfal-to-durotar" },
+        { "tirisfal-glades", "turnin-371-at-war-with-the-scarlet-crusade", "travel-tirisfal-to-durotar" },
+        { "elwynn-forest", "woven-turnin-92479-a-scribbled-letter", "accept-54-report-to-goldshire" },
+        { "elwynn-forest", "woven-accept-91772-shhh-were-hunting-kobolds", "accept-54-report-to-goldshire" },
+        { "elwynn-forest", "woven-turnin-99131-baited-for-success", "turnin-184-furlbrow-s-deed" },
+        { "dun-morogh", "woven-turnin-98581-archaic-rune", "turnin-282-senir-s-observations" },
+        { "dun-morogh", "woven-turnin-98321-flintfires-shipment", "accept-419-the-lost-pilot" },
+        { "dun-morogh", "woven-turnin-95214-stolen-blasting-powder", "accept-419-the-lost-pilot" },
+        { "teldrassil", "woven-turnin-97236-fang-of-githyiss", "accept-2159-dolanaar-delivery" },
+        { "teldrassil", "woven-turnin-98403-twisted-hatred", "accept-940-teldrassil" },
+        { "teldrassil", "woven-turnin-99073-easing-suffering", "accept-6342-flight-to-auberdine" },
+        { "teldrassil", "woven-turnin-98067-eyes-of-the-sentinels", "accept-6342-flight-to-auberdine" },
+    }
+    for _, spec in ipairs(expectations) do
+        local guide = ns.guides["leveling-era-" .. spec[1]]
+        local index = {}
+        for i, goal in ipairs(guide.goals) do index[goal.id] = i end
+        Check(index[spec[2]] and index[spec[3]] and index[spec[2]] < index[spec[3]],
+            spec[1] .. " completes " .. spec[2] .. " before " .. spec[3])
+    end
+    local mulgore = ns.guides["leveling-era-mulgore"]
+    local stops = {
+        { "woven-preparation-97485-bundle-of-herbs", 0.493, 0.396, "Bundle of Herbs" },
+        { "woven-preparation-97485-cedar-twigs", 0.454, 0.386, "Bundle of Dried Cedar Twigs" },
+        { "woven-preparation-97485-sinew-thread", 0.437, 0.450, "Sinew Thread" },
+        { "woven-preparation-97485-flint-and-tinder", 0.514, 0.524, "Ceremonial Flint and Tinder" },
+        { "woven-preparation-97485-prepared-incense", 0.533, 0.879, "Prepared Incense" },
+    }
+    for _, stop in ipairs(stops) do
+        local goal = ns.Engine:GetGoal(mulgore, stop[1])
+        Check(goal and goal.route[1].mapID == 1456 and goal.route[1].x == stop[2] and goal.route[1].y == stop[3]
+            and goal.rememberPreparation == 97485 and goal.complete.any[1].item.name == stop[4],
+            stop[1] .. " follows the verified beta preparation stop")
+    end
+    local ceremony = ns.Engine:GetGoal(mulgore, "woven-objective-97485-traditions-of-the-bluff")
+    Check(ceremony.route[1].x == 0.533 and ceremony.route[1].y == 0.879
+        and ceremony.complete.questObjective.index == 2 and ceremony.complete.questObjective.text == "Spread incense"
+        and ceremony.useQuestNavigation == false, "incense is spread at the Hunter Rise ceremonial site")
+    for _, id in ipairs({ "woven-accept-97485-traditions-of-the-bluff", "woven-turnin-97485-traditions-of-the-bluff" }) do
+        local goal = ns.Engine:GetGoal(mulgore, id)
+        Check(goal.route[1].x == 0.381 and goal.route[1].y == 0.561, id .. " uses Eylah's beta pin")
+    end
+    for _, page in ipairs({
+        { "woven-objective-98424-fizsprockets-notes", 1, "Shredder Operation Instructions", 0.586, 0.473 },
+        { "woven-objective-98424-fizsprockets-notes-gerenzo", 3, 'One "Gerenzo", of Stonetalon', 0.590, 0.464 },
+        { "woven-objective-98424-fizsprockets-notes-barrens", 2, "Barrens Operations Best Practices", 0.617, 0.473 },
+    }) do
+        local goal = ns.Engine:GetGoal(mulgore, page[1])
+        Check(goal.complete.questObjective.id == 98424 and goal.complete.questObjective.index == page[2]
+            and goal.complete.questObjective.text == page[3] and goal.route[1].x == page[4] and goal.route[1].y == page[5],
+            page[1] .. " collects the named page at its verified mine pin")
+        Check(DependsOn(ns.Engine:GetGoal(mulgore, "woven-turnin-98424-fizsprockets-notes"), page[1]),
+            "Fizsprocket's Notes turn-in waits for " .. page[1])
+    end
+    local followups = { mulgore = { 759, 760, 776 }, durotar = { 828, 827, 829 },
+        ["tirisfal-glades"] = { 372, 408, 405, 357, 366, 409, 411 },
+        ["elwynn-forest"] = { 46, 59, 88, 147, 176 },
+        ["dun-morogh"] = { 314, 96408, 96392, 96390 },
+        teldrassil = { 483, 486, 2541, 2561, 2399, 2498, 2499 } }
+    for zone, quests in pairs(followups) do
+        local guide = ns.guides["leveling-era-" .. zone]
+        for _, questID in ipairs(quests) do
+            local accept, turnin = false, false
+            for _, goal in ipairs(guide.goals) do
+                if ns.Engine:GetGoalQuestID(goal) == questID then
+                    accept = accept or goal.kind == "accept"
+                    turnin = turnin or goal.kind == "turnin"
+                end
+            end
+            Check(accept and turnin, zone .. " retains a complete local quest " .. questID)
+        end
+    end
+end
+TestStarterZoneAuditOrder()
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))

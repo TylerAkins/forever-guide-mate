@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 6,
+    revision = 7,
     title = "Night Elf Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-teldrassil",
@@ -811,6 +811,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-3519-a-friend-in-need",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 3519,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 275,
+        },
+        {
             priority = 280,
             route = {
                 { y = 0.3299, mapID = 1438, label = "Iverron", offMapText = "Travel to Iverron in Teldrassil.", x = 0.546 },
@@ -877,6 +897,26 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-3521-iverron-s-antidote",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 3521,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 285.5,
         },
         {
             priority = 286,
@@ -1364,6 +1404,86 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "loot-starter-before-accept-97236-verified-pickup",
+            kind = "note",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Loot Fang of Githyiss from Githyiss the Vile. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Fang of Githyiss", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 97236, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 402.5,
+        },
+        {
+            priority = 405,
+            text = "Use the Fang of Githyiss to accept Fang of Githyiss.",
+            id = "accept-97236-verified-pickup",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97236, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 407.5,
+            route = {
+                { y = 0.416, mapID = 1438, label = "Gilshalan Windwalker", offMapText = "Travel to Gilshalan Windwalker.", x = 0.578 },
+            },
+            text = "Turn in Fang of Githyiss to Gilshalan Windwalker if Githyiss the Vile dropped the fang.",
+            id = "woven-turnin-97236-fang-of-githyiss",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97236, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-97236-verified-pickup" },
+        },
+        {
             priority = 410,
             route = {
                 { mapID = 1438, x = 0.5781000000000001, y = 0.4165, label = "Gilshalan Windwalker", offMapText = "Travel to Gilshalan Windwalker in Teldrassil." },
@@ -1526,6 +1646,26 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-3522-iverron-s-antidote",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 3522,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 445,
         },
         {
             priority = 450,
@@ -1866,6 +2006,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-997-denalan-s-earth",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 997,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 545,
+        },
+        {
             priority = 550,
             route = {
                 { y = 0.5773, mapID = 1438, label = "Syral Bladeleaf", offMapText = "Travel to Syral Bladeleaf in Teldrassil.", x = 0.5608 },
@@ -1892,6 +2052,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-475-a-troubling-breeze",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 475,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 555,
         },
         {
             priority = 560,
@@ -1954,6 +2134,27 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-96630-the-adventurer" },
+        },
+        {
+            id = "level-before-woven-accept-96101-the-great-outdoors",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 96101,
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96101, 96604, 96605, 96607, 96608 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 565.5,
         },
         {
             priority = 566,
@@ -2071,6 +2272,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-5621-garments-of-the-moon",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 5621,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 575,
+        },
+        {
             priority = 580,
             route = {
                 { y = 0.5675, mapID = 1438, label = "Laurna Morninglight", offMapText = "Travel to Laurna Morninglight in Teldrassil.", x = 0.5556 },
@@ -2102,6 +2326,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-932-twisted-hatred",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 932,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 585,
+        },
+        {
             priority = 590,
             route = {
                 { y = 0.5695, mapID = 1438, label = "Tallonkai Swiftroot", offMapText = "Travel to Tallonkai Swiftroot in Teldrassil.", x = 0.5557 },
@@ -2124,6 +2368,183 @@ ns:RegisterGuide({
                 quest = { id = 932, state = "activeOrCompleted" },
             },
             sourceStep = 66,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-87288-soft-saber-pelts",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 87288,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 591.111111,
+        },
+        {
+            priority = 592.222222,
+            id = "woven-accept-87288-soft-saber-pelts",
+            kind = "accept",
+            text = "Accept Soft Saber Pelts from Aldia.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 87288, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.5540, y = 0.5720, label = "Aldia", offMapText = "Travel to Aldia." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            priority = 593.333333,
+            id = "woven-objective-87288-soft-saber-pelts",
+            kind = "objective",
+            text = "Collect Soft Nightsaber Pelts from Nightsabers east of Dolanaar until Soft Saber Pelts is ready.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 87288, state = "complete" } },
+            route = {
+                { mapID = 1438, x = 0.6140, y = 0.5880, label = "Nightsaber", offMapText = "Travel to Nightsaber." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-87288-soft-saber-pelts" },
+        },
+        {
+            priority = 594.444444,
+            id = "woven-turnin-87288-soft-saber-pelts",
+            kind = "turnin",
+            text = "Turn in Soft Saber Pelts to Aldia.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 87288, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.5540, y = 0.5720, label = "Aldia", offMapText = "Travel to Aldia." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-87288-soft-saber-pelts", "woven-objective-87288-soft-saber-pelts" },
+        },
+        {
+            id = "level-before-woven-accept-98403-twisted-hatred",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 98403,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 595.555556,
+        },
+        {
+            priority = 596.666667,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Tallonkai Swiftroot", offMapText = "Travel to Tallonkai Swiftroot.", x = 0.554 },
+            },
+            text = "Accept Twisted Hatred from Tallonkai Swiftroot. This is an elite. Bring a group.",
+            id = "woven-accept-98403-twisted-hatred",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98403, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-98391-the-sisterhood-of-elune",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98391,
+            priority = 597.777778,
+        },
+        {
+            priority = 598.888889,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Laurna Morninglight", offMapText = "Travel to Laurna Morninglight.", x = 0.556 },
+            },
+            text = "Accept The Sisterhood of Elune from Laurna Morninglight in Dolanaar.",
+            id = "woven-accept-98391-the-sisterhood-of-elune",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98391, state = "activeOrCompleted" },
+            },
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -2282,6 +2703,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-918-timberling-seeds",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 918,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 645,
+        },
+        {
             priority = 650,
             route = {
                 { y = 0.6854, mapID = 1438, label = "Denalan", offMapText = "Travel to Denalan in Teldrassil.", x = 0.608 },
@@ -2308,6 +2749,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-919-timberling-sprouts",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 919,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 655,
         },
         {
             priority = 660,
@@ -2420,6 +2881,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-922-rellian-greenspyre",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 922,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 695,
         },
         {
             priority = 700,
@@ -2544,6 +3025,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-476-gnarlpine-corruption",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 476,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 735,
         },
         {
             priority = 740,
@@ -2725,6 +3226,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-489-seek-redemption",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 489,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 795,
+        },
+        {
             priority = 800,
             route = {
                 { y = 0.594, mapID = 1438, label = "Syral Bladeleaf", offMapText = "Travel to Syral Bladeleaf in Teldrassil.", x = 0.56 },
@@ -2791,6 +3312,819 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-woven-accept-483-the-relics-of-wakening",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 483,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 810.277778,
+        },
+        {
+            priority = 810.555556,
+            id = "woven-accept-483-the-relics-of-wakening",
+            kind = "accept",
+            text = "Accept The Relics of Wakening from Athridas Bearmantle.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 483, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.5595, y = 0.5728, label = "Athridas Bearmantle", offMapText = "Travel to Athridas Bearmantle." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 476 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-476-gnarlpine-corruption" },
+        },
+        {
+            priority = 810.833333,
+            id = "woven-objective-483-the-relics-of-wakening",
+            kind = "objective",
+            text = "Search the chests in Ban'ethil Barrow Den for the Raven Claw Talisman, Black Feather Quill, Sapphire of Sky, and Rune of Nesting.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 483, state = "complete" } },
+            route = {
+                { mapID = 1438, x = 0.4494, y = 0.6159, label = "Ban'ethil Barrow Den", offMapText = "Travel to Ban'ethil Barrow Den." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-483-the-relics-of-wakening" },
+        },
+        {
+            id = "level-before-woven-accept-2541-the-sleeping-druid",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 3 } },
+            requiredLevel = 3,
+            checkpointQuest = 2541,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 811.111111,
+        },
+        {
+            priority = 811.388889,
+            id = "woven-accept-2541-the-sleeping-druid",
+            kind = "accept",
+            text = "Accept The Sleeping Druid from Oben Rageclaw.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 3 } },
+                },
+            },
+            complete = { quest = { id = 2541, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.4494, y = 0.6159, label = "Oben Rageclaw", offMapText = "Travel to Oben Rageclaw." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            priority = 811.666667,
+            id = "woven-objective-2541-the-sleeping-druid",
+            kind = "objective",
+            text = "Collect a Shaman Voodoo Charm from Gnarlpine Shamans inside Ban'ethil Barrow Den for Oben Rageclaw.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 3 } },
+                },
+            },
+            complete = { quest = { id = 2541, state = "complete" } },
+            route = {
+                { mapID = 1438, x = 0.4400, y = 0.5820, label = "Gnarlpine Shaman", offMapText = "Travel to Gnarlpine Shaman." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-2541-the-sleeping-druid" },
+        },
+        {
+            priority = 811.944444,
+            id = "woven-turnin-2541-the-sleeping-druid",
+            kind = "turnin",
+            text = "Turn in The Sleeping Druid to Oben Rageclaw.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 3 } },
+                },
+            },
+            complete = { quest = { id = 2541, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.4494, y = 0.6159, label = "Oben Rageclaw", offMapText = "Travel to Oben Rageclaw." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-2541-the-sleeping-druid", "woven-objective-2541-the-sleeping-druid" },
+        },
+        {
+            id = "level-before-woven-accept-2561-druid-of-the-claw",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 3 } },
+            requiredLevel = 3,
+            checkpointQuest = 2561,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 812.222222,
+        },
+        {
+            priority = 812.5,
+            id = "woven-accept-2561-druid-of-the-claw",
+            kind = "accept",
+            text = "Accept Druid of the Claw from Oben Rageclaw.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 3 } },
+                },
+            },
+            complete = { quest = { id = 2561, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.4494, y = 0.6159, label = "Oben Rageclaw", offMapText = "Travel to Oben Rageclaw." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 2541 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-2541-the-sleeping-druid" },
+        },
+        {
+            priority = 812.777778,
+            id = "woven-objective-2561-druid-of-the-claw",
+            kind = "objective",
+            text = "Kill Rageclaw, then use the supplied Voodoo Charm on his corpse to release his spirit.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 3 } },
+                },
+            },
+            complete = { quest = { id = 2561, state = "complete" } },
+            route = {
+                { mapID = 1438, x = 0.4494, y = 0.6159, label = "Rageclaw", offMapText = "Travel to Rageclaw." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-2561-druid-of-the-claw" },
+        },
+        {
+            priority = 813.055556,
+            id = "woven-turnin-2561-druid-of-the-claw",
+            kind = "turnin",
+            text = "Turn in Druid of the Claw to Oben Rageclaw.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 3 } },
+                },
+            },
+            complete = { quest = { id = 2561, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.4494, y = 0.6159, label = "Oben Rageclaw", offMapText = "Travel to Oben Rageclaw." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-2561-druid-of-the-claw", "woven-objective-2561-druid-of-the-claw" },
+        },
+        {
+            id = "level-before-woven-accept-99053-escaping-banethil",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 99053,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 813.333333,
+        },
+        {
+            priority = 813.611111,
+            route = {
+                { y = 0.588, mapID = 1438, label = "Sentinel Lynessa Duskblossom", offMapText = "Travel to Sentinel Lynessa Duskblossom.", x = 0.446 },
+            },
+            text = "Accept Escaping Ban'ethil from Sentinel Lynessa Duskblossom in the Ban'ethil Barrow Den.",
+            id = "woven-accept-99053-escaping-banethil",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99053, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 813.888889,
+            route = {
+                { y = 0.588, mapID = 1438, label = "Sentinel Lynessa Duskblossom", offMapText = "Travel to Sentinel Lynessa Duskblossom.", x = 0.446 },
+            },
+            text = "Escort Sentinel Lynessa Duskblossom out of the Ban'ethil Barrow Den.",
+            id = "woven-objective-99053-escaping-banethil",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99053, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99053-escaping-banethil" },
+        },
+        {
+            priority = 814.166667,
+            id = "woven-turnin-483-the-relics-of-wakening",
+            kind = "turnin",
+            text = "Turn in The Relics of Wakening to Athridas Bearmantle.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 483, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.5595, y = 0.5728, label = "Athridas Bearmantle", offMapText = "Travel to Athridas Bearmantle." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-483-the-relics-of-wakening", "woven-objective-483-the-relics-of-wakening" },
+        },
+        {
+            priority = 814.444444,
+            route = {
+                { y = 0.594, mapID = 1438, label = "Sentinel Kyra Starsong", offMapText = "Travel to Sentinel Kyra Starsong.", x = 0.56 },
+            },
+            text = "Turn in Escaping Ban'ethil to Sentinel Kyra Starsong in Dolanaar.",
+            id = "woven-turnin-99053-escaping-banethil",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99053, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99053-escaping-banethil", "woven-objective-99053-escaping-banethil" },
+        },
+        {
+            id = "level-before-woven-accept-486-ursal-the-mauler",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 486,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 814.722222,
+        },
+        {
+            priority = 815,
+            id = "woven-accept-486-ursal-the-mauler",
+            kind = "accept",
+            text = "Accept Ursal the Mauler from Athridas Bearmantle.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 486, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.5595, y = 0.5728, label = "Athridas Bearmantle", offMapText = "Travel to Athridas Bearmantle." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 483 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-483-the-relics-of-wakening" },
+        },
+        {
+            priority = 815.277778,
+            id = "woven-objective-486-ursal-the-mauler",
+            kind = "objective",
+            text = "Kill Ursal the Mauler in southwestern Teldrassil.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 486, state = "complete" } },
+            route = {
+                { mapID = 1438, x = 0.3940, y = 0.8020, label = "Ursal the Mauler", offMapText = "Travel to Ursal the Mauler." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-486-ursal-the-mauler" },
+        },
+        {
+            priority = 815.555556,
+            id = "woven-turnin-486-ursal-the-mauler",
+            kind = "turnin",
+            text = "Turn in Ursal the Mauler to Athridas Bearmantle.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 486, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.5595, y = 0.5728, label = "Athridas Bearmantle", offMapText = "Travel to Athridas Bearmantle." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-486-ursal-the-mauler", "woven-objective-486-ursal-the-mauler" },
+        },
+        {
+            id = "level-before-woven-accept-99046-the-lost-runner",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 99046,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 815.833333,
+        },
+        {
+            priority = 816.111111,
+            route = {
+                { y = 0.594, mapID = 1438, label = "Sentinel Kyra Starsong", offMapText = "Travel to Sentinel Kyra Starsong.", x = 0.56 },
+            },
+            text = "Accept The Lost Runner from Sentinel Kyra Starsong in Dolanaar.",
+            id = "woven-accept-99046-the-lost-runner",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99046, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 816.388889,
+            route = {
+                { y = 0.368, mapID = 1438, label = "Sentinel Eralya Leafshadow", offMapText = "Travel to Sentinel Eralya Leafshadow.", x = 0.376 },
+            },
+            text = "Turn in The Lost Runner to Sentinel Eralya Leafshadow on the road to the Oracle Glade.",
+            id = "woven-turnin-99046-the-lost-runner",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99046, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99046-the-lost-runner" },
+        },
+        {
+            id = "level-before-woven-accept-99047-not-dead-yet",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 99047,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 816.666667,
+        },
+        {
+            priority = 816.944444,
+            route = {
+                { y = 0.368, mapID = 1438, label = "Sentinel Eralya Leafshadow", offMapText = "Travel to Sentinel Eralya Leafshadow.", x = 0.376 },
+            },
+            text = "Accept Not Dead Yet from Sentinel Eralya Leafshadow.",
+            id = "woven-accept-99047-not-dead-yet",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99047, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 817.222222,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Byancie", offMapText = "Travel to Byancie.", x = 0.552 },
+            },
+            text = "Tell Byancie in Dolanaar.",
+            id = "woven-turnin-99047-not-dead-yet",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99047, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99047-not-dead-yet" },
+        },
+        {
+            id = "level-before-woven-accept-99050-the-great-tree-provides",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 99050,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 817.5,
+        },
+        {
+            priority = 817.777778,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Byancie", offMapText = "Travel to Byancie.", x = 0.552 },
+            },
+            text = "Accept The Great Tree Provides from Byancie in Dolanaar.",
+            id = "woven-accept-99050-the-great-tree-provides",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99050, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Buy an Empty Vial in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 818.055556,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Dolanaar vendor", offMapText = "Travel to Dolanaar vendor.", x = 0.552 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            id = "woven-objective-99050-the-great-tree-provides-2",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                questObjective = { id = 99050, index = 2 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-99050-the-great-tree-provides" },
+        },
+        {
+            text = "Buy a Refreshing Spring Water in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 818.333333,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Dolanaar vendor", offMapText = "Travel to Dolanaar vendor.", x = 0.552 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            id = "woven-objective-99050-the-great-tree-provides-3",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                questObjective = { id = 99050, index = 3 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-99050-the-great-tree-provides" },
+        },
+        {
+            priority = 818.611111,
+            route = {
+                { y = 0.64, mapID = 1438, label = "Lasher Sproutling", offMapText = "Travel to Lasher Sproutling.", x = 0.59 },
+            },
+            text = "Collect 6 Dewy Lasher Fronds from lashers around Lake Al'Ameth.",
+            id = "woven-objective-99050-the-great-tree-provides-1",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 99050, index = 1 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99050-the-great-tree-provides" },
+        },
+        {
+            priority = 818.888889,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Byancie", offMapText = "Travel to Byancie.", x = 0.552 },
+            },
+            text = "Turn in The Great Tree Provides to Byancie in Dolanaar.",
+            id = "woven-turnin-99050-the-great-tree-provides",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99050, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {
+                "woven-accept-99050-the-great-tree-provides",
+                "woven-objective-99050-the-great-tree-provides-2",
+                "woven-objective-99050-the-great-tree-provides-3",
+                "woven-objective-99050-the-great-tree-provides-1",
+            },
+        },
+        {
+            id = "level-before-woven-accept-99073-easing-suffering",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 99073,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 819.166667,
+        },
+        {
+            priority = 819.444444,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Byancie", offMapText = "Travel to Byancie.", x = 0.552 },
+            },
+            text = "Accept Easing Suffering from Byancie.",
+            id = "woven-accept-99073-easing-suffering",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99073, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 819.722222,
+            route = {
+                { y = 0.368, mapID = 1438, label = "Sentinel Eralya Leafshadow", offMapText = "Travel to Sentinel Eralya Leafshadow.", x = 0.376 },
+            },
+            text = "Take the salve to Sentinel Eralya Leafshadow.",
+            id = "woven-turnin-99073-easing-suffering",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99073, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99073-easing-suffering" },
         },
         {
             priority = 820,
@@ -3270,6 +4604,33 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 965,
+            route = {
+                { y = 0.442, mapID = 1438, label = "Xethorr the Wicked", offMapText = "Travel to Xethorr the Wicked.", x = 0.514 },
+            },
+            text = "Kill Xethorr the Wicked in the Cleft northwest of Dolanaar and collect Mature Fel Moss. This is an elite. Bring a group.",
+            id = "woven-objective-98403-twisted-hatred",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98403, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98403-twisted-hatred" },
+        },
+        {
             priority = 970,
             text = "Turn in Twisted Hatred to Tallonkai Swiftroot.",
             route = {
@@ -3296,6 +4657,33 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 975,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Tallonkai Swiftroot", offMapText = "Travel to Tallonkai Swiftroot.", x = 0.554 },
+            },
+            text = "Turn in Twisted Hatred to Tallonkai Swiftroot.",
+            id = "woven-turnin-98403-twisted-hatred",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98403, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98403-twisted-hatred", "woven-objective-98403-twisted-hatred" },
         },
         {
             priority = 980,
@@ -3335,6 +4723,26 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-930-the-glowing-fruit",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 930,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 985,
         },
         {
             priority = 990,
@@ -3632,6 +5040,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-931-the-shimmering-frond",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 931,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1085,
+        },
+        {
             priority = 1090,
             route = {
                 { y = 0.2885, mapID = 1438, label = "The Shimmering Frond", offMapText = "Travel to The Shimmering Frond.", x = 0.346 },
@@ -3800,6 +5228,262 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-98392-darkness-in-the-glade",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 6 },
+            },
+            requiredLevel = 6,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98392,
+            priority = 1140.909091,
+        },
+        {
+            priority = 1141.818182,
+            route = {
+                { y = 0.344, mapID = 1438, label = "Sentinel Arynia Cloudsbreak", offMapText = "Travel to Sentinel Arynia Cloudsbreak.", x = 0.382 },
+            },
+            text = "Accept Darkness in the Glade from Sentinel Arynia Cloudsbreak.",
+            id = "woven-accept-98392-darkness-in-the-glade",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98392, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1142.727273,
+            route = {
+                { y = 0.392, mapID = 1438, label = "Hatescreech", offMapText = "Travel to Hatescreech.", x = 0.35 },
+            },
+            text = "Darkness in the Glade: take Hatescreech's Amulet.",
+            id = "woven-objective-98392-darkness-in-the-glade-1",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 98392, index = 1 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98392-darkness-in-the-glade" },
+        },
+        {
+            priority = 1143.636364,
+            route = {
+                { y = 0.36, mapID = 1438, label = "Windmistress Gaedress", offMapText = "Travel to Windmistress Gaedress.", x = 0.332 },
+            },
+            text = "Darkness in the Glade: take Windmistress Gaedress' Amulet.",
+            id = "woven-objective-98392-darkness-in-the-glade-2",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 98392, index = 2 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98392-darkness-in-the-glade" },
+        },
+        {
+            priority = 1144.545455,
+            route = {
+                { y = 0.28, mapID = 1438, label = "Witchmother Arysa", offMapText = "Travel to Witchmother Arysa.", x = 0.342 },
+            },
+            text = "Darkness in the Glade: take Witchmother Arysa's Amulet.",
+            id = "woven-objective-98392-darkness-in-the-glade-3",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 98392, index = 3 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98392-darkness-in-the-glade" },
+        },
+        {
+            priority = 1145.454545,
+            route = {
+                { y = 0.344, mapID = 1438, label = "Sentinel Arynia Cloudsbreak", offMapText = "Travel to Sentinel Arynia Cloudsbreak.", x = 0.382 },
+            },
+            text = "Turn in Darkness in the Glade to Sentinel Arynia Cloudsbreak.",
+            id = "woven-turnin-98392-darkness-in-the-glade",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98392, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {
+                "woven-accept-98392-darkness-in-the-glade",
+                "woven-objective-98392-darkness-in-the-glade-1",
+                "woven-objective-98392-darkness-in-the-glade-2",
+                "woven-objective-98392-darkness-in-the-glade-3",
+            },
+        },
+        {
+            id = "level-before-woven-accept-98398-the-oracle-tree",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 98398,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1146.363636,
+        },
+        {
+            priority = 1147.272727,
+            route = {
+                { y = 0.344, mapID = 1438, label = "Sentinel Arynia Cloudsbreak", offMapText = "Travel to Sentinel Arynia Cloudsbreak.", x = 0.383 },
+            },
+            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak.",
+            id = "woven-accept-98398-the-oracle-tree",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98398, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Speak with the Oracle Tree. No saved spot for this, so the guide follows the pin in your quest log.",
+            priority = 1148.181818,
+            route = {
+                { y = 0.344, mapID = 1438, label = "Oracle Tree", offMapText = "Travel to Oracle Tree.", x = 0.382 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 6 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            id = "woven-turnin-98398-the-oracle-tree",
+            kind = "turnin",
+            useClientPin = false,
+            complete = {
+                quest = { id = 98398, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-98398-the-oracle-tree" },
+        },
+        {
+            id = "level-before-accept-940-teldrassil",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 940,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1149.090909,
+        },
+        {
             priority = 1150,
             route = {
                 { y = 0.3436, mapID = 1438, label = "Sentinel Arynia Cloudsbreak", offMapText = "Travel to Sentinel Arynia Cloudsbreak in Teldrassil.", x = 0.3831 },
@@ -3866,6 +5550,53 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1163.333333,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Sister Aquinne", offMapText = "Travel to Sister Aquinne.", x = 0.29 },
+            },
+            text = "Turn in The Sisterhood of Elune to Sister Aquinne in the Temple Garden.",
+            id = "woven-turnin-98391-the-sisterhood-of-elune",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98391, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98391-the-sisterhood-of-elune" },
+        },
+        {
+            id = "level-before-accept-923-tumors",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 923,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1166.666667,
         },
         {
             priority = 1170,
@@ -4050,6 +5781,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-952-grove-of-the-ancients",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 952,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1225,
+        },
+        {
             priority = 1230,
             route = {
                 { y = 0.0924, mapID = 1457, label = "Arch Druid Fandral Staghelm", offMapText = "Travel to Arch Druid Fandral Staghelm in Darnassus.", x = 0.348 },
@@ -4082,6 +5833,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-2518-tears-of-the-moon",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 2518,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1235,
         },
         {
             priority = 1240,
@@ -4135,6 +5906,29 @@ ns:RegisterGuide({
             sourceStep = 139,
             useClientPin = false,
             classAction = "turnin-5921-moonglade",
+        },
+        {
+            id = "level-before-accept-5929-great-bear-spirit",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 5929,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1255,
         },
         {
             priority = 1260,
@@ -4231,6 +6025,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-5931-back-to-darnassus",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 5931,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1285,
         },
         {
             priority = 1290,
@@ -4360,6 +6177,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6063-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6063,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1325,
+        },
+        {
             priority = 1330,
             route = {
                 { y = 0.5949, mapID = 1438, label = "Dazalar", offMapText = "Travel to Dazalar in Teldrassil.", x = 0.5668 },
@@ -4479,6 +6319,29 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-6101-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6101,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1365,
         },
         {
             priority = 1370,
@@ -4620,6 +6483,68 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-2399-the-sprouted-fronds",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 2399,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1402.5,
+        },
+        {
+            priority = 1405,
+            id = "woven-accept-2399-the-sprouted-fronds",
+            kind = "accept",
+            text = "Accept The Sprouted Fronds from Sprouted Frond.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 2399, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.6075, y = 0.6856, label = "Sprouted Frond", offMapText = "Travel to Sprouted Frond." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 931 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-931-the-shimmering-frond" },
+        },
+        {
+            priority = 1407.5,
+            id = "woven-turnin-2399-the-sprouted-fronds",
+            kind = "turnin",
+            text = "Turn in The Sprouted Fronds to Sprouted Frond.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 2399, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.6075, y = 0.6856, label = "Sprouted Frond", offMapText = "Travel to Sprouted Frond." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-2399-the-sprouted-fronds" },
+        },
+        {
             priority = 1410,
             text = "Turn in The Glowing Fruit to Denalan.",
             route = {
@@ -4727,6 +6652,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-6102-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6102,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1435,
         },
         {
             priority = 1440,
@@ -4839,6 +6787,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-6103-training-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6103,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1465,
         },
         {
             priority = 1470,
@@ -5057,6 +7028,32 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-2242-destiny-calls",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 4 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 2242,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1535,
+        },
+        {
             priority = 1540,
             route = {
                 { mapID = 1457, x = 0.3699, y = 0.2191, label = "Syurna", offMapText = "Travel to Syurna in Darnassus." },
@@ -5199,6 +7196,53 @@ ns:RegisterGuide({
             dependsOn = { "accept-923-tumors" },
         },
         {
+            id = "level-before-woven-accept-927-the-moss-twined-heart",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 927,
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Moss-twined Heart", minCount = 1 } } },
+                { ["not"] = { quest = { id = 927, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1573.333333,
+        },
+        {
+            priority = 1576.666667,
+            id = "woven-accept-927-the-moss-twined-heart",
+            kind = "accept",
+            text = "Use the Moss-twined Heart to accept The Moss-twined Heart if you found it during this outing.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { quest = { id = 927, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.4397, y = 0.3022, label = "Blackmoss the Fetid", offMapText = "Travel to Blackmoss the Fetid." },
+            },
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Moss-twined Heart", minCount = 1 } } },
+                { ["not"] = { quest = { id = 927, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
             id = "level-before-accept-6344-nessa-shadowsong",
             kind = "note",
             text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
@@ -5279,6 +7323,30 @@ ns:RegisterGuide({
             alternativeQuests = { 1639, 1678, 1683 },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1683-vorlus-vilehoof",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1683,
+            requiredQuests = {},
+            alternativeQuests = { 1639, 1678 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1605,
         },
         {
             priority = 1610,
@@ -5409,6 +7477,250 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-woven-accept-2498-return-to-denalan",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 2498,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1640.833333,
+        },
+        {
+            priority = 1641.666667,
+            id = "woven-accept-2498-return-to-denalan",
+            kind = "accept",
+            text = "Accept Return to Denalan from Rellian Greenspyre.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 2498, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1457, x = 0.3819, y = 0.2163, label = "Rellian Greenspyre", offMapText = "Travel to Rellian Greenspyre." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 923 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-923-tumors" },
+        },
+        {
+            priority = 1642.5,
+            id = "woven-turnin-2498-return-to-denalan",
+            kind = "turnin",
+            text = "Turn in Return to Denalan to Denalan.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 2498, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.6090, y = 0.6849, label = "Denalan", offMapText = "Travel to Denalan." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-2498-return-to-denalan" },
+        },
+        {
+            priority = 1643.333333,
+            id = "woven-turnin-927-the-moss-twined-heart",
+            kind = "turnin",
+            text = "Turn in The Moss-twined Heart to Denalan.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 5 } },
+                },
+            },
+            complete = { quest = { id = 927, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.6090, y = 0.6849, label = "Denalan", offMapText = "Travel to Denalan." },
+            },
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Moss-twined Heart", minCount = 1 } } },
+                { ["not"] = { quest = { id = 927, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-927-the-moss-twined-heart" },
+        },
+        {
+            id = "level-before-woven-accept-941-planting-the-heart",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 941,
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { quest = { id = 927, state = "completed" } } },
+                { ["not"] = { quest = { id = 941, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1644.166667,
+        },
+        {
+            priority = 1645,
+            id = "woven-accept-941-planting-the-heart",
+            kind = "accept",
+            text = "Accept Planting the Heart from Denalan.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 941, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.6090, y = 0.6849, label = "Denalan", offMapText = "Travel to Denalan." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 927 } },
+            },
+            excludeWhen = { all = {
+                { ["not"] = { quest = { id = 927, state = "completed" } } },
+                { ["not"] = { quest = { id = 941, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-927-the-moss-twined-heart" },
+        },
+        {
+            priority = 1645.833333,
+            id = "woven-turnin-941-planting-the-heart",
+            kind = "turnin",
+            text = "Turn in Planting the Heart to Denalan's Planter.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 941, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.6077, y = 0.6863, label = "Denalan's Planter", offMapText = "Travel to Denalan's Planter." },
+            },
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { quest = { id = 927, state = "completed" } } },
+                { ["not"] = { quest = { id = 941, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-941-planting-the-heart" },
+        },
+        {
+            id = "level-before-woven-accept-2499-oakenscowl",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 2499,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1646.666667,
+        },
+        {
+            priority = 1647.5,
+            id = "woven-accept-2499-oakenscowl",
+            kind = "accept",
+            text = "Accept Oakenscowl from Denalan.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 2499, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1438, x = 0.6090, y = 0.6849, label = "Denalan", offMapText = "Travel to Denalan." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 2498 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-2498-return-to-denalan" },
+        },
+        {
+            priority = 1648.333333,
+            id = "woven-objective-2499-oakenscowl",
+            kind = "objective",
+            text = "Kill Oakenscowl southwest of Lake Al'Ameth and loot his Gargantuan Tumor. This is an elite; bring a group.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 2499, state = "complete" } },
+            route = {
+                { mapID = 1438, x = 0.5360, y = 0.7500, label = "Oakenscowl", offMapText = "Travel to Oakenscowl." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-2499-oakenscowl" },
+        },
+        {
+            priority = 1649.166667,
+            id = "woven-turnin-2499-oakenscowl",
+            kind = "turnin",
+            text = "Turn in Oakenscowl to Denalan.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 4 } },
+                    { level = { min = 4 } },
+                },
+            },
+            complete = { quest = { id = 2499, state = "completed" } },
+            route = {
+                { mapID = 1438, x = 0.6090, y = 0.6849, label = "Denalan", offMapText = "Travel to Denalan." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-2499-oakenscowl", "woven-objective-2499-oakenscowl" },
         },
         {
             id = "level-before-turnin-2242-destiny-calls",
@@ -5547,6 +7859,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6001-body-and-heart",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6001,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1685,
+        },
+        {
             priority = 1690,
             route = {
                 { y = 0.0841, mapID = 1457, label = "Mathrengyl Bearwalker", offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.", x = 0.3538 },
@@ -5618,6 +7953,197 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 1701.25,
+            route = {
+                { y = 0.0897, mapID = 1457, label = "Archdruid Fandral Staghelm", offMapText = "Travel to Archdruid Fandral Staghelm.", x = 0.3486 },
+            },
+            text = "Accept Crown of the Earth from Arch Druid Fandral Staghelm.",
+            id = "woven-accept-98046-crown-of-the-earth",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98046, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1702.5,
+            route = {
+                { y = 0.874, mapID = 1457, label = "Priestess Lariia", offMapText = "Travel to Priestess Lariia.", x = 0.4 },
+            },
+            text = "Bring the drained vessel to Priestess Lariia in the Temple of the Moon.",
+            id = "woven-turnin-98046-crown-of-the-earth",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98046, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98046-crown-of-the-earth" },
+        },
+        {
+            priority = 1703.75,
+            route = {
+                { y = 0.874, mapID = 1457, label = "Priestess Lariia", offMapText = "Travel to Priestess Lariia.", x = 0.4 },
+            },
+            text = "Accept Crown of the Earth from Priestess Lariia.",
+            id = "woven-accept-98065-crown-of-the-earth",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98065, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1705,
+            route = {
+                { y = 0.812, mapID = 1457, label = "Tyrande Whisperwind", offMapText = "Travel to Tyrande Whisperwind.", x = 0.39 },
+            },
+            text = "Bring the moonwell remnants to Tyrande Whisperwind.",
+            id = "woven-turnin-98065-crown-of-the-earth",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98065, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98065-crown-of-the-earth" },
+        },
+        {
+            priority = 1706.25,
+            route = {
+                { y = 0.892, mapID = 1457, label = "Sentinel Dalia Sunblade", offMapText = "Travel to Sentinel Dalia Sunblade.", x = 0.398 },
+            },
+            text = "Accept Eyes of the Sentinels from Sentinel Dalia Sunblade in the Temple of the Moon.",
+            id = "woven-accept-98067-eyes-of-the-sentinels",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98067, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1707.5,
+            route = {
+                { y = 0.158, mapID = 1457, label = "Cenarion Hold depths", offMapText = "Travel to Cenarion Hold depths.", x = 0.338 },
+                { y = 0.432, mapID = 1457, label = "Darnassus Bank", offMapText = "Travel to Darnassus Bank.", x = 0.414 },
+                { y = 0.154, mapID = 1457, label = "Craftsmen's Terrace", offMapText = "Travel to Craftsmen's Terrace.", x = 0.664 },
+            },
+            text = "Place Sentinel Owls at the Cenarion Hold depths entrance, the Darnassus Bank, the Craftsmen's Terrace Inn, and the City Gate.",
+            id = "woven-objective-98067-eyes-of-the-sentinels",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98067, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98067-eyes-of-the-sentinels" },
+        },
+        {
+            priority = 1708.75,
+            route = {
+                { y = 0.892, mapID = 1457, label = "Sentinel Dalia Sunblade", offMapText = "Travel to Sentinel Dalia Sunblade.", x = 0.398 },
+            },
+            text = "Turn in Eyes of the Sentinels to Sentinel Dalia Sunblade.",
+            id = "woven-turnin-98067-eyes-of-the-sentinels",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98067, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98067-eyes-of-the-sentinels", "woven-objective-98067-eyes-of-the-sentinels" },
+        },
+        {
             priority = 1710,
             text = "Turn in Tears of the Moon to Priestess A'moora.",
             route = {
@@ -5644,6 +8170,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-2520-sathrah-s-sacrifice",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 2520,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1715,
         },
         {
             priority = 1720,
@@ -5710,6 +8256,30 @@ ns:RegisterGuide({
             alternativeQuests = { 5627, 5628, 5630, 5631, 5632, 5633 },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-5627-stars-of-elune",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 5627,
+            requiredQuests = {},
+            alternativeQuests = { 5628, 5629, 5630, 5631, 5632, 5633 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1735,
         },
         {
             priority = 1740,
@@ -5845,6 +8415,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6341-the-bounty-of-teldrassil",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6341,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1775,
+        },
+        {
             priority = 1780,
             route = {
                 { y = 0.9243, mapID = 1438, label = "Nessa Shadowsong", offMapText = "Travel to Nessa Shadowsong in Teldrassil.", x = 0.5625 },
@@ -5899,6 +8489,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-6342-flight-to-auberdine",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6342,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1795,
         },
         {
             priority = 1800,
@@ -6019,6 +8629,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-983-buzzbox-827",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 983,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1835,
+        },
+        {
             priority = 1840,
             route = {
                 { y = 0.4414, mapID = 1439, label = "Wizbang Cranktoggle", offMapText = "Travel to Wizbang Cranktoggle in Darkshore.", x = 0.3698 },
@@ -6047,6 +8677,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-2118-plagued-lands",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 2118,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1845,
+        },
+        {
             priority = 1850,
             route = {
                 { y = 0.4342, mapID = 1439, label = "Tharnariun Treetender", offMapText = "Travel to Tharnariun Treetender in Darkshore.", x = 0.3884 },
@@ -6073,6 +8723,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-984-how-big-a-threat",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 984,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1855,
         },
         {
             priority = 1860,
@@ -6242,6 +8912,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-4681-washed-ashore",
+            kind = "note",
+            text = "Reach level 11 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 11 } },
+            requiredLevel = 11,
+            checkpointQuest = 4681,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1915,
+        },
+        {
             priority = 1920,
             route = {
                 { y = 0.4559, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
@@ -6395,6 +9085,26 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             classAction = "objective-6001-quest-work",
+        },
+        {
+            id = "level-before-accept-6343-return-to-nessa",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6343,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1965,
         },
         {
             priority = 1970,
@@ -6558,6 +9268,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-4761-thundris-windweaver",
+            kind = "note",
+            text = "Reach level 11 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 11 } },
+            requiredLevel = 11,
+            checkpointQuest = 4761,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2015,
+        },
+        {
             priority = 2020,
             route = {
                 { y = 0.4348, mapID = 1439, label = "Terenthis", offMapText = "Travel to Terenthis in Darkshore.", x = 0.3937 },
@@ -6626,6 +9356,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-954-bashal-aran",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 954,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2035,
+        },
+        {
             priority = 2040,
             route = {
                 { y = 0.4013, mapID = 1439, label = "Thundris Windweaver", offMapText = "Travel to Thundris Windweaver in Darkshore.", x = 0.374 },
@@ -6680,6 +9430,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-955-bashal-aran",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 955,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2055,
         },
         {
             priority = 2060,
@@ -6784,6 +9554,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-956-bashal-aran",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 956,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2085,
+        },
+        {
             priority = 2090,
             route = {
                 { y = 0.3629, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
@@ -6886,6 +9676,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-957-bashal-aran",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 957,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2115,
+        },
+        {
             priority = 2120,
             route = {
                 { y = 0.363, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
@@ -6947,6 +9757,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-2178-easy-strider-living",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 2178,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2135,
+        },
+        {
             priority = 2140,
             route = {
                 { y = 0.4066, mapID = 1439, label = "Alanndarian Nightsong", offMapText = "Travel to Alanndarian Nightsong in Darkshore.", x = 0.3769 },
@@ -7003,6 +9833,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-433-the-public-servant",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 433,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2155,
+        },
+        {
             priority = 2160,
             route = {
                 { y = 0.5597, mapID = 1426, label = "Senator Mehr Stonehallow", offMapText = "Travel to Senator Mehr Stonehallow in Dun Morogh.", x = 0.6867 },
@@ -7029,6 +9879,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-432-those-blasted-troggs",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 432,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2165,
         },
         {
             priority = 2170,
@@ -7171,6 +10041,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-419-the-lost-pilot",
+            kind = "note",
+            text = "Reach level 8 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 8 } },
+            requiredLevel = 8,
+            checkpointQuest = 419,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2215,
+        },
+        {
             priority = 2220,
             route = {
                 { y = 0.3919, mapID = 1426, label = "Pilot Hammerfoot", offMapText = "Travel to Pilot Hammerfoot in Dun Morogh.", x = 0.8389 },
@@ -7225,6 +10115,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-417-a-pilot-s-revenge",
+            kind = "note",
+            text = "Reach level 8 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 8 } },
+            requiredLevel = 8,
+            checkpointQuest = 417,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2235,
         },
         {
             priority = 2240,
@@ -7329,6 +10239,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1339-mountaineer-stormpike-s-task",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 1339,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2265,
+        },
+        {
             priority = 2270,
             text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell.",
             id = "accept-1339-mountaineer-stormpike-s-task",
@@ -7382,6 +10312,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1338-stormpike-s-order",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 1338,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2285,
+        },
+        {
             priority = 2290,
             route = {
                 { y = 0.184, mapID = 1432, label = "Mountaineer Stormpike", offMapText = "Travel to Mountaineer Stormpike in Loch Modan.", x = 0.2476 },
@@ -7408,6 +10358,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-6661-deeprun-rat-roundup",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6661,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2295,
         },
         {
             priority = 2300,
@@ -7484,6 +10454,26 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
+            id = "level-before-accept-6662-me-brother-nipsy",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6662,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2325,
+        },
+        {
             priority = 2330,
             text = "Accept Me Brother, Nipsy from Monty.",
             id = "accept-6662-me-brother-nipsy",
@@ -7546,6 +10536,26 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
+            id = "level-before-accept-353-stormpike-s-delivery",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 353,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2345,
+        },
+        {
             priority = 2350,
             route = {
                 { y = 0.338, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.597 },
@@ -7600,6 +10610,29 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1638-a-warrior-s-training",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1638,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2365,
         },
         {
             priority = 2370,
@@ -7657,6 +10690,30 @@ ns:RegisterGuide({
             alternativeQuests = { 1678, 1683, 1639 },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1639-bartleby-the-drunk",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1639,
+            requiredQuests = {},
+            alternativeQuests = { 1678, 1683 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 2385,
         },
         {
             priority = 2390,
@@ -7721,6 +10778,29 @@ ns:RegisterGuide({
             alternativeQuests = { 1678, 1683 },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1640-beat-bartleby",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1640,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2405,
         },
         {
             priority = 2410,
@@ -7860,6 +10940,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1665-bartleby-s-mug",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1665,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2445,
+        },
+        {
             priority = 2450,
             route = {
                 { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
@@ -7932,1033 +11035,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            id = "loot-starter-before-accept-97236-verified-pickup",
-            kind = "note",
-            instructionOnly = true,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            text = "Loot Fang of Githyiss from Githyiss the Vile. Keep it for the next pickup.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Fang of Githyiss", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 97236, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-            priority = 2500,
-        },
-        {
-            priority = 2510,
-            text = "Use the Fang of Githyiss to accept Fang of Githyiss.",
-            id = "accept-97236-verified-pickup",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97236, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2520,
-            route = {
-                { y = 0.416, mapID = 1438, label = "Gilshalan Windwalker", offMapText = "Travel to Gilshalan Windwalker.", x = 0.578 },
-            },
-            text = "Turn in Fang of Githyiss to Gilshalan Windwalker if Githyiss the Vile dropped the fang.",
-            id = "woven-turnin-97236-fang-of-githyiss",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97236, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-97236-verified-pickup" },
-        },
-        {
-            id = "level-before-woven-accept-98391-the-sisterhood-of-elune",
-            kind = "note",
-            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 5 },
-            },
-            requiredLevel = 5,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 98391,
-            priority = 2590,
-        },
-        {
-            priority = 2600,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Laurna Morninglight", offMapText = "Travel to Laurna Morninglight.", x = 0.556 },
-            },
-            text = "Accept The Sisterhood of Elune from Laurna Morninglight in Dolanaar.",
-            id = "woven-accept-98391-the-sisterhood-of-elune",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98391, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2610,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Tallonkai Swiftroot", offMapText = "Travel to Tallonkai Swiftroot.", x = 0.554 },
-            },
-            text = "Accept Twisted Hatred from Tallonkai Swiftroot. This is an elite. Bring a group.",
-            id = "woven-accept-98403-twisted-hatred",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98403, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2620,
-            route = {
-                { y = 0.442, mapID = 1438, label = "Xethorr the Wicked", offMapText = "Travel to Xethorr the Wicked.", x = 0.514 },
-            },
-            text = "Kill Xethorr the Wicked in the Cleft northwest of Dolanaar and collect Mature Fel Moss. This is an elite. Bring a group.",
-            id = "woven-objective-98403-twisted-hatred",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98403, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98403-twisted-hatred" },
-        },
-        {
-            priority = 2630,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Tallonkai Swiftroot", offMapText = "Travel to Tallonkai Swiftroot.", x = 0.554 },
-            },
-            text = "Turn in Twisted Hatred to Tallonkai Swiftroot.",
-            id = "woven-turnin-98403-twisted-hatred",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98403, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98403-twisted-hatred", "woven-objective-98403-twisted-hatred" },
-        },
-        {
-            priority = 2640,
-            route = {
-                { y = 0.588, mapID = 1438, label = "Sentinel Lynessa Duskblossom", offMapText = "Travel to Sentinel Lynessa Duskblossom.", x = 0.446 },
-            },
-            text = "Accept Escaping Ban'ethil from Sentinel Lynessa Duskblossom in the Ban'ethil Barrow Den.",
-            id = "woven-accept-99053-escaping-banethil",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99053, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2650,
-            route = {
-                { y = 0.588, mapID = 1438, label = "Sentinel Lynessa Duskblossom", offMapText = "Travel to Sentinel Lynessa Duskblossom.", x = 0.446 },
-            },
-            text = "Escort Sentinel Lynessa Duskblossom out of the Ban'ethil Barrow Den.",
-            id = "woven-objective-99053-escaping-banethil",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99053, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99053-escaping-banethil" },
-        },
-        {
-            priority = 2660,
-            route = {
-                { y = 0.594, mapID = 1438, label = "Sentinel Kyra Starsong", offMapText = "Travel to Sentinel Kyra Starsong.", x = 0.56 },
-            },
-            text = "Turn in Escaping Ban'ethil to Sentinel Kyra Starsong in Dolanaar.",
-            id = "woven-turnin-99053-escaping-banethil",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99053, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99053-escaping-banethil", "woven-objective-99053-escaping-banethil" },
-        },
-        {
-            priority = 2670,
-            route = {
-                { y = 0.594, mapID = 1438, label = "Sentinel Kyra Starsong", offMapText = "Travel to Sentinel Kyra Starsong.", x = 0.56 },
-            },
-            text = "Accept The Lost Runner from Sentinel Kyra Starsong in Dolanaar.",
-            id = "woven-accept-99046-the-lost-runner",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99046, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2680,
-            route = {
-                { y = 0.368, mapID = 1438, label = "Sentinel Eralya Leafshadow", offMapText = "Travel to Sentinel Eralya Leafshadow.", x = 0.376 },
-            },
-            text = "Turn in The Lost Runner to Sentinel Eralya Leafshadow on the road to the Oracle Glade.",
-            id = "woven-turnin-99046-the-lost-runner",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99046, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99046-the-lost-runner" },
-        },
-        {
-            priority = 2690,
-            route = {
-                { y = 0.454, mapID = 1457, label = "Sister Aquinne", offMapText = "Travel to Sister Aquinne.", x = 0.29 },
-            },
-            text = "Turn in The Sisterhood of Elune to Sister Aquinne in the Temple Garden.",
-            id = "woven-turnin-98391-the-sisterhood-of-elune",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98391, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98391-the-sisterhood-of-elune" },
-        },
-        {
-            priority = 2700,
-            route = {
-                { y = 0.368, mapID = 1438, label = "Sentinel Eralya Leafshadow", offMapText = "Travel to Sentinel Eralya Leafshadow.", x = 0.376 },
-            },
-            text = "Accept Not Dead Yet from Sentinel Eralya Leafshadow.",
-            id = "woven-accept-99047-not-dead-yet",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99047, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2710,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Byancie", offMapText = "Travel to Byancie.", x = 0.552 },
-            },
-            text = "Tell Byancie in Dolanaar.",
-            id = "woven-turnin-99047-not-dead-yet",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99047, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99047-not-dead-yet" },
-        },
-        {
-            priority = 2720,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Byancie", offMapText = "Travel to Byancie.", x = 0.552 },
-            },
-            text = "Accept The Great Tree Provides from Byancie in Dolanaar.",
-            id = "woven-accept-99050-the-great-tree-provides",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99050, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Buy an Empty Vial in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2730,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Dolanaar vendor", offMapText = "Travel to Dolanaar vendor.", x = 0.552 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            id = "woven-objective-99050-the-great-tree-provides-2",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                questObjective = { id = 99050, index = 2 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-99050-the-great-tree-provides" },
-        },
-        {
-            text = "Buy a Refreshing Spring Water in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2740,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Dolanaar vendor", offMapText = "Travel to Dolanaar vendor.", x = 0.552 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            id = "woven-objective-99050-the-great-tree-provides-3",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                questObjective = { id = 99050, index = 3 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-99050-the-great-tree-provides" },
-        },
-        {
-            id = "level-before-woven-accept-98392-darkness-in-the-glade",
-            kind = "note",
-            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 6 },
-            },
-            requiredLevel = 6,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 98392,
-            priority = 2750,
-        },
-        {
-            priority = 2760,
-            route = {
-                { y = 0.344, mapID = 1438, label = "Sentinel Arynia Cloudsbreak", offMapText = "Travel to Sentinel Arynia Cloudsbreak.", x = 0.382 },
-            },
-            text = "Accept Darkness in the Glade from Sentinel Arynia Cloudsbreak.",
-            id = "woven-accept-98392-darkness-in-the-glade",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98392, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2770,
-            route = {
-                { y = 0.392, mapID = 1438, label = "Hatescreech", offMapText = "Travel to Hatescreech.", x = 0.35 },
-            },
-            text = "Darkness in the Glade: take Hatescreech's Amulet.",
-            id = "woven-objective-98392-darkness-in-the-glade-1",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 98392, index = 1 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98392-darkness-in-the-glade" },
-        },
-        {
-            priority = 2780,
-            route = {
-                { y = 0.36, mapID = 1438, label = "Windmistress Gaedress", offMapText = "Travel to Windmistress Gaedress.", x = 0.332 },
-            },
-            text = "Darkness in the Glade: take Windmistress Gaedress' Amulet.",
-            id = "woven-objective-98392-darkness-in-the-glade-2",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 98392, index = 2 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98392-darkness-in-the-glade" },
-        },
-        {
-            priority = 2790,
-            route = {
-                { y = 0.28, mapID = 1438, label = "Witchmother Arysa", offMapText = "Travel to Witchmother Arysa.", x = 0.342 },
-            },
-            text = "Darkness in the Glade: take Witchmother Arysa's Amulet.",
-            id = "woven-objective-98392-darkness-in-the-glade-3",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 98392, index = 3 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98392-darkness-in-the-glade" },
-        },
-        {
-            priority = 2800,
-            route = {
-                { y = 0.344, mapID = 1438, label = "Sentinel Arynia Cloudsbreak", offMapText = "Travel to Sentinel Arynia Cloudsbreak.", x = 0.382 },
-            },
-            text = "Turn in Darkness in the Glade to Sentinel Arynia Cloudsbreak.",
-            id = "woven-turnin-98392-darkness-in-the-glade",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98392, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {
-                "woven-accept-98392-darkness-in-the-glade",
-                "woven-objective-98392-darkness-in-the-glade-1",
-                "woven-objective-98392-darkness-in-the-glade-2",
-                "woven-objective-98392-darkness-in-the-glade-3",
-            },
-        },
-        {
-            priority = 2810,
-            route = {
-                { y = 0.344, mapID = 1438, label = "Sentinel Arynia Cloudsbreak", offMapText = "Travel to Sentinel Arynia Cloudsbreak.", x = 0.383 },
-            },
-            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak.",
-            id = "woven-accept-98398-the-oracle-tree",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98398, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Speak with the Oracle Tree. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 2820,
-            route = {
-                { y = 0.344, mapID = 1438, label = "Oracle Tree", offMapText = "Travel to Oracle Tree.", x = 0.382 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 6 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            id = "woven-turnin-98398-the-oracle-tree",
-            kind = "turnin",
-            useClientPin = false,
-            complete = {
-                quest = { id = 98398, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-98398-the-oracle-tree" },
-        },
-        {
-            priority = 2830,
-            route = {
-                { y = 0.64, mapID = 1438, label = "Lasher Sproutling", offMapText = "Travel to Lasher Sproutling.", x = 0.59 },
-            },
-            text = "Collect 6 Dewy Lasher Fronds from lashers around Lake Al'Ameth.",
-            id = "woven-objective-99050-the-great-tree-provides-1",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 99050, index = 1 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99050-the-great-tree-provides" },
-        },
-        {
-            priority = 2840,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Byancie", offMapText = "Travel to Byancie.", x = 0.552 },
-            },
-            text = "Turn in The Great Tree Provides to Byancie in Dolanaar.",
-            id = "woven-turnin-99050-the-great-tree-provides",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99050, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {
-                "woven-accept-99050-the-great-tree-provides",
-                "woven-objective-99050-the-great-tree-provides-2",
-                "woven-objective-99050-the-great-tree-provides-3",
-                "woven-objective-99050-the-great-tree-provides-1",
-            },
-        },
-        {
-            priority = 2850,
-            route = {
-                { y = 0.568, mapID = 1438, label = "Byancie", offMapText = "Travel to Byancie.", x = 0.552 },
-            },
-            text = "Accept Easing Suffering from Byancie.",
-            id = "woven-accept-99073-easing-suffering",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99073, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2860,
-            route = {
-                { y = 0.368, mapID = 1438, label = "Sentinel Eralya Leafshadow", offMapText = "Travel to Sentinel Eralya Leafshadow.", x = 0.376 },
-            },
-            text = "Take the salve to Sentinel Eralya Leafshadow.",
-            id = "woven-turnin-99073-easing-suffering",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99073, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99073-easing-suffering" },
-        },
-        {
-            priority = 2870,
-            route = {
-                { y = 0.0897, mapID = 1457, label = "Archdruid Fandral Staghelm", offMapText = "Travel to Archdruid Fandral Staghelm.", x = 0.3486 },
-            },
-            text = "Accept Crown of the Earth from Arch Druid Fandral Staghelm.",
-            id = "woven-accept-98046-crown-of-the-earth",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98046, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2880,
-            route = {
-                { y = 0.874, mapID = 1457, label = "Priestess Lariia", offMapText = "Travel to Priestess Lariia.", x = 0.4 },
-            },
-            text = "Bring the drained vessel to Priestess Lariia in the Temple of the Moon.",
-            id = "woven-turnin-98046-crown-of-the-earth",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98046, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98046-crown-of-the-earth" },
-        },
-        {
-            priority = 2890,
-            route = {
-                { y = 0.874, mapID = 1457, label = "Priestess Lariia", offMapText = "Travel to Priestess Lariia.", x = 0.4 },
-            },
-            text = "Accept Crown of the Earth from Priestess Lariia.",
-            id = "woven-accept-98065-crown-of-the-earth",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98065, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2900,
-            route = {
-                { y = 0.812, mapID = 1457, label = "Tyrande Whisperwind", offMapText = "Travel to Tyrande Whisperwind.", x = 0.39 },
-            },
-            text = "Bring the moonwell remnants to Tyrande Whisperwind.",
-            id = "woven-turnin-98065-crown-of-the-earth",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98065, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98065-crown-of-the-earth" },
-        },
-        {
-            priority = 2910,
-            route = {
-                { y = 0.892, mapID = 1457, label = "Sentinel Dalia Sunblade", offMapText = "Travel to Sentinel Dalia Sunblade.", x = 0.398 },
-            },
-            text = "Accept Eyes of the Sentinels from Sentinel Dalia Sunblade in the Temple of the Moon.",
-            id = "woven-accept-98067-eyes-of-the-sentinels",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98067, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2920,
-            route = {
-                { y = 0.158, mapID = 1457, label = "Cenarion Hold depths", offMapText = "Travel to Cenarion Hold depths.", x = 0.338 },
-                { y = 0.432, mapID = 1457, label = "Darnassus Bank", offMapText = "Travel to Darnassus Bank.", x = 0.414 },
-                { y = 0.154, mapID = 1457, label = "Craftsmen's Terrace", offMapText = "Travel to Craftsmen's Terrace.", x = 0.664 },
-            },
-            text = "Place Sentinel Owls at the Cenarion Hold depths entrance, the Darnassus Bank, the Craftsmen's Terrace Inn, and the City Gate.",
-            id = "woven-objective-98067-eyes-of-the-sentinels",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98067, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98067-eyes-of-the-sentinels" },
-        },
-        {
-            priority = 2930,
-            route = {
-                { y = 0.892, mapID = 1457, label = "Sentinel Dalia Sunblade", offMapText = "Travel to Sentinel Dalia Sunblade.", x = 0.398 },
-            },
-            text = "Turn in Eyes of the Sentinels to Sentinel Dalia Sunblade.",
-            id = "woven-turnin-98067-eyes-of-the-sentinels",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98067, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98067-eyes-of-the-sentinels", "woven-objective-98067-eyes-of-the-sentinels" },
         },
     },
     casualSpine = true,

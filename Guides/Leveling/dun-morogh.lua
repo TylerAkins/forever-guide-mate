@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 6,
+    revision = 7,
     title = "Dwarf & Gnome Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-dun-morogh",
@@ -818,6 +818,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-3361-a-refugee-s-quandary",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 3 } },
+            requiredLevel = 3,
+            checkpointQuest = 3361,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 245,
+        },
+        {
             priority = 250,
             route = {
                 { mapID = 1426, x = 0.2851, y = 0.6767, label = "Felix Whindlebolt", offMapText = "Travel to Felix Whindlebolt in Dun Morogh." },
@@ -872,6 +892,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-3365-bring-back-the-mug",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 3365,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 265,
         },
         {
             priority = 270,
@@ -1784,6 +1824,598 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 520.454545,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm.", x = 0.298 },
+            },
+            text = "Accept Archaic Rune from Sten Stoutarm in Coldridge Valley.",
+            id = "woven-accept-98581-archaic-rune",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98581, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 520.909091,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
+            },
+            text = "Read Archaic Rune in your bags. Turn in Archaic Rune to Teo Hammerstorm in Coldridge Valley.",
+            id = "woven-turnin-98581-archaic-rune",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98581, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98581-archaic-rune" },
+        },
+        {
+            id = "level-before-woven-accept-94373-call-of-earth",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94373,
+            priority = 521.363636,
+        },
+        {
+            priority = 521.818182,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
+            },
+            text = "Accept Call of Earth from Teo Hammerstorm in Coldridge Valley.",
+            id = "woven-accept-94373-call-of-earth",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94373, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 522.272727,
+            id = "woven-objective-94373-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "woven-accept-94373-call-of-earth" },
+            classAction = "objective-94373-call-of-earth",
+        },
+        {
+            priority = 522.727273,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
+            },
+            text = "Turn in Call of Earth to Teo Hammerstorm in Coldridge Valley.",
+            id = "woven-turnin-94373-call-of-earth",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94373, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-94373-call-of-earth", "woven-objective-94373-call-of-earth" },
+        },
+        {
+            id = "level-before-woven-accept-94374-call-of-earth-shrine",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 94374,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 523.181818,
+        },
+        {
+            priority = 523.636364,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
+            },
+            text = "Accept Call of Earth from Teo Hammerstorm in Coldridge Valley.",
+            id = "woven-accept-94374-call-of-earth-shrine",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94374, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 94373 },
+                    conditions = {
+                        all = {
+                            { faction = "Alliance" },
+                            { class = 7 },
+                        },
+                    },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 524.090909,
+            id = "objective-94374-reviewed-mechanics",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "woven-accept-94374-call-of-earth-shrine" },
+            classAction = "objective-94374-reviewed-mechanics",
+        },
+        {
+            priority = 524.545455,
+            id = "woven-turnin-94374-call-of-earth-shrine",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "woven-accept-94374-call-of-earth-shrine", "objective-94374-reviewed-mechanics" },
+            classAction = "turnin-94374-call-of-earth",
+        },
+        {
+            id = "level-before-woven-accept-94375-call-of-earth-return",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 94375,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 525,
+        },
+        {
+            priority = 525.454545,
+            id = "woven-accept-94375-call-of-earth-return",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = {},
+            classAction = "accept-94375-call-of-earth",
+        },
+        {
+            priority = 525.909091,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
+            },
+            text = "Turn in Call of Earth to Teo Hammerstorm in Coldridge Valley.",
+            id = "woven-turnin-94375-call-of-earth-return",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94375, state = "completed" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 94374 },
+                    conditions = {
+                        all = {
+                            { faction = "Alliance" },
+                            { class = 7 },
+                        },
+                    },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-94375-call-of-earth-return" },
+        },
+        {
+            id = "level-before-woven-accept-94472-earth-sapta",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 94472,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 526.363636,
+        },
+        {
+            priority = 526.818182,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
+            },
+            text = "Accept Earth Sapta from Teo Hammerstorm in Coldridge Valley.",
+            id = "woven-accept-94472-earth-sapta",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94472, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            priority = 527.272727,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
+            },
+            text = "Bring Teo Hammerstorm the Earth Sapta he asks for. The guide follows the pin in your quest log.",
+            id = "woven-objective-94472-earth-sapta",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                quest = { id = 94472, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-94472-earth-sapta" },
+        },
+        {
+            priority = 527.727273,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
+            },
+            text = "Turn in Earth Sapta to Teo Hammerstorm in Coldridge Valley.",
+            id = "woven-turnin-94472-earth-sapta",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94472, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-94472-earth-sapta", "woven-objective-94472-earth-sapta" },
+        },
+        {
+            id = "level-before-woven-accept-97277-grund-and-gozwin",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 97277,
+            priority = 528.181818,
+        },
+        {
+            priority = 528.636364,
+            route = {
+                { y = 0.674, mapID = 1426, label = "Grund Drokda", offMapText = "Travel to Grund Drokda.", x = 0.286 },
+            },
+            text = "Accept Grund and Gozwin from Grund Drokda in Anvilmar.",
+            id = "woven-accept-97277-grund-and-gozwin",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97277, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 529.090909,
+            route = {
+                { y = 0.674, mapID = 1426, label = "Grund Drokda", offMapText = "Travel to Grund Drokda.", x = 0.286 },
+            },
+            text = "Find Grund and Gozwin's camp in the hills northwest of Anvilmar. Recover Gozwin's Mechanic's Log and kill the Snow Leopard Prowler.",
+            id = "woven-objective-97277-grund-and-gozwin",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97277, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97277-grund-and-gozwin" },
+        },
+        {
+            priority = 529.545455,
+            route = {
+                { y = 0.674, mapID = 1426, label = "Grund Drokda", offMapText = "Travel to Grund Drokda.", x = 0.286 },
+            },
+            text = "Turn in Grund and Gozwin to Grund Drokda in Anvilmar.",
+            id = "woven-turnin-97277-grund-and-gozwin",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97277, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97277-grund-and-gozwin", "woven-objective-97277-grund-and-gozwin" },
+        },
+        {
             priority = 530,
             text = "Turn in Senir's Observations to Mountaineer Thalos.",
             route = {
@@ -1853,6 +2485,55 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-woven-accept-96628-the-adventurer",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 96628,
+            requiredQuests = {},
+            alternativeQuests = { 96627, 96630, 96638, 96652, 96656, 96659 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 543.333333,
+        },
+        {
+            priority = 546.666667,
+            route = {
+                { y = 0.758, mapID = 1426, label = "Mountaineer Thalos", offMapText = "Travel to Mountaineer Thalos.", x = 0.25 },
+            },
+            text = "Accept The Adventurer from Mountaineer Thalos in Coldridge Pass.",
+            id = "woven-accept-96628-the-adventurer",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96628, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96627, 96630, 96638, 96652, 96656, 96659 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             priority = 550,
             route = {
                 { y = 0.7224, mapID = 1426, label = "Hands Springsprocket", offMapText = "Travel to Hands Springsprocket in Dun Morogh.", x = 0.3385 },
@@ -1913,6 +2594,55 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 560.333333,
+            route = {
+                { y = 0.538, mapID = 1426, label = "Eric Brighthammer", offMapText = "Travel to Eric Brighthammer.", x = 0.466 },
+            },
+            text = "Turn in The Adventurer to Eric Brighthammer in Kharanos.",
+            id = "woven-turnin-96628-the-adventurer",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 96628, state = "completed" },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 96627, 96630, 96638, 96652, 96656, 96659 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96628-the-adventurer" },
+        },
+        {
+            id = "level-before-woven-accept-96101-the-great-outdoors",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 96101,
+            requiredQuests = {},
+            alternativeQuests = { 95998, 96101, 96604, 96605, 96606, 96607 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 560.666667,
         },
         {
             priority = 561,
@@ -2133,6 +2863,55 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-woven-accept-99158-dawn-in-the-mountains",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 99158,
+            priority = 613.333333,
+        },
+        {
+            priority = 616.666667,
+            route = {
+                { y = 0.522, mapID = 1426, label = "Maxan Anvol", offMapText = "Travel to Maxan Anvol.", x = 0.472 },
+            },
+            text = "Accept Dawn in the Mountains from Maxan Anvol in Kharanos.",
+            id = "woven-accept-99158-dawn-in-the-mountains",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99158, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             priority = 620,
             id = "objective-5625-quest-work",
             conditions = {
@@ -2186,6 +2965,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-400-tools-for-steelgrill",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 400,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 635,
+        },
+        {
             priority = 640,
             route = {
                 { y = 0.5168, mapID = 1426, label = "Tharek Blackstone", offMapText = "Travel to Tharek Blackstone in Dun Morogh.", x = 0.4602 },
@@ -2212,6 +3011,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-317-stocking-jetsteam",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 317,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 645,
         },
         {
             priority = 650,
@@ -2242,6 +3061,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-313-the-grizzled-den",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 313,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 655,
+        },
+        {
             priority = 660,
             route = {
                 { y = 0.4861, mapID = 1426, label = "Pilot Stonegear", offMapText = "Travel to Pilot Stonegear in Dun Morogh.", x = 0.4962 },
@@ -2264,6 +3103,100 @@ ns:RegisterGuide({
                 quest = { id = 313, state = "activeOrCompleted" },
             },
             sourceStep = 80,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-98321-flintfires-shipment",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 98321,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 662,
+        },
+        {
+            priority = 664,
+            route = {
+                { y = 0.52, mapID = 1426, label = "Tognus Flintfire", offMapText = "Travel to Tognus Flintfire.", x = 0.452 },
+            },
+            text = "Accept Flintfire's Shipment from Tognus Flintfire in Kharanos.",
+            id = "woven-accept-98321-flintfires-shipment",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98321, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-98319-secure-the-mountain",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 98319,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 666,
+        },
+        {
+            priority = 668,
+            route = {
+                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
+            },
+            text = "Accept Secure the Mountain from Mountaineer Gretchen.",
+            id = "woven-accept-98319-secure-the-mountain",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98319, state = "activeOrCompleted" },
+            },
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -2296,6 +3229,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-5541-ammo-for-rumbleshot",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 5541,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 675,
         },
         {
             priority = 680,
@@ -2380,6 +3333,60 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 703.333333,
+            route = {
+                { y = 0.54, mapID = 1426, label = "Grizzled Den", offMapText = "Travel to Grizzled Den.", x = 0.42 },
+            },
+            text = "Find Mountaineer Cornelius in the Grizzled Den.",
+            id = "woven-objective-98319-secure-the-mountain",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98319, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98319-secure-the-mountain" },
+        },
+        {
+            priority = 706.666667,
+            route = {
+                { y = 0.54, mapID = 1426, label = "Grizzled Den", offMapText = "Travel to Grizzled Den.", x = 0.42 },
+            },
+            text = "Collect 8 Flintfire Shipments in the Grizzled Den.",
+            id = "woven-objective-98321-flintfires-shipment",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98321, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98321-flintfires-shipment" },
         },
         {
             priority = 710,
@@ -2600,6 +3607,437 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 780.555556,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Turn in Dawn in the Mountains to Father Gavin.",
+            id = "woven-turnin-99158-dawn-in-the-mountains",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99158, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99158-dawn-in-the-mountains" },
+        },
+        {
+            id = "level-before-woven-accept-99159-finding-warmth",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 99159,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 781.111111,
+        },
+        {
+            priority = 781.666667,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Accept Finding Warmth from Father Gavin.",
+            id = "woven-accept-99159-finding-warmth",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99159, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-99160-rimes-wrath",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 99160,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 782.222222,
+        },
+        {
+            priority = 782.777778,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Accept Rime's Wrath from Father Gavin.",
+            id = "woven-accept-99160-rimes-wrath",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99160, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-99162-treacherous-cold",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 99162,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 783.333333,
+        },
+        {
+            priority = 783.888889,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Accept Treacherous Cold from Father Gavin.",
+            id = "woven-accept-99162-treacherous-cold",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99162, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 784.444444,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Collect 14 pieces of Mostly Dry Firewood.",
+            id = "woven-objective-99159-finding-warmth",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99159, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99159-finding-warmth" },
+        },
+        {
+            priority = 785,
+            route = {
+                { y = 0.452, mapID = 1426, label = "Minor Ice Elemental", offMapText = "Travel to Minor Ice Elemental.", x = 0.57 },
+            },
+            text = "Destroy 10 minor ice elementals.",
+            id = "woven-objective-99160-rimes-wrath",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99160, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99160-rimes-wrath" },
+        },
+        {
+            priority = 785.555556,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Collect Stoneanvil's Rifle, Sunhammer's Rifle, and Coalbeard's Rifle.",
+            id = "woven-objective-99162-treacherous-cold",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99162, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99162-treacherous-cold" },
+        },
+        {
+            priority = 786.111111,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Turn in Finding Warmth to Father Gavin.",
+            id = "woven-turnin-99159-finding-warmth",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99159, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99159-finding-warmth", "woven-objective-99159-finding-warmth" },
+        },
+        {
+            priority = 786.666667,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Turn in Rime's Wrath to Father Gavin.",
+            id = "woven-turnin-99160-rimes-wrath",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99160, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99160-rimes-wrath", "woven-objective-99160-rimes-wrath" },
+        },
+        {
+            id = "level-before-woven-accept-99161-rimes-wrath",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 99161,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 787.222222,
+        },
+        {
+            priority = 787.777778,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Accept the next Rime's Wrath from Father Gavin.",
+            id = "woven-accept-99161-rimes-wrath",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99161, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 788.333333,
+            route = {
+                { y = 0.42, mapID = 1426, label = "Avala", offMapText = "Travel to Avala.", x = 0.582 },
+            },
+            text = "Kill Avala and take Avala's Core.",
+            id = "woven-objective-99161-rimes-wrath",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99161, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99161-rimes-wrath" },
+        },
+        {
+            priority = 788.888889,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Turn in Rime's Wrath to Father Gavin.",
+            id = "woven-turnin-99161-rimes-wrath",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99161, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99161-rimes-wrath", "woven-objective-99161-rimes-wrath" },
+        },
+        {
+            priority = 789.444444,
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Turn in Treacherous Cold to Father Gavin.",
+            id = "woven-turnin-99162-treacherous-cold",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99162, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99162-treacherous-cold", "woven-objective-99162-treacherous-cold" },
+        },
+        {
             priority = 790,
             text = "Turn in Stocking Jetsteam to Pilot Bellowfiz.",
             route = {
@@ -2626,6 +4064,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-318-evershine",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 318,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 795,
         },
         {
             priority = 800,
@@ -2690,6 +4148,228 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 811,
+            route = {
+                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
+            },
+            text = "Turn in Secure the Mountain to Mountaineer Gretchen.",
+            id = "woven-turnin-98319-secure-the-mountain",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98319, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98319-secure-the-mountain", "woven-objective-98319-secure-the-mountain" },
+        },
+        {
+            id = "level-before-woven-accept-98323-secure-the-mountain",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 98323,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 812,
+        },
+        {
+            priority = 813,
+            route = {
+                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
+            },
+            text = "Accept Secure the Mountain from Mountaineer Gretchen.",
+            id = "woven-accept-98323-secure-the-mountain",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98323, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-woven-accept-98322-secure-the-mountain",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 98322,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 814,
+        },
+        {
+            priority = 815,
+            route = {
+                { y = 0.538, mapID = 1426, label = "Senir Whitebeard", offMapText = "Travel to Senir Whitebeard.", x = 0.466 },
+            },
+            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
+            id = "woven-accept-98322-secure-the-mountain",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98322, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 816,
+            route = {
+                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
+            },
+            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
+            id = "woven-turnin-98322-secure-the-mountain",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98322, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98322-secure-the-mountain" },
+        },
+        {
+            priority = 817,
+            route = {
+                { y = 0.538, mapID = 1426, label = "Senir Whitebeard", offMapText = "Travel to Senir Whitebeard.", x = 0.466 },
+            },
+            text = "Turn in Secure the Mountain to Senir Whitebeard in Kharanos.",
+            id = "woven-turnin-98323-secure-the-mountain",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98323, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98323-secure-the-mountain" },
+        },
+        {
+            priority = 818,
+            route = {
+                { y = 0.52, mapID = 1426, label = "Tognus Flintfire", offMapText = "Travel to Tognus Flintfire.", x = 0.452 },
+            },
+            text = "Turn in Flintfire's Shipment to Tognus Flintfire in Kharanos.",
+            id = "woven-turnin-98321-flintfires-shipment",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98321, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98321-flintfires-shipment", "woven-objective-98321-flintfires-shipment" },
+        },
+        {
+            id = "level-before-accept-412-operation-recombobulation",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 412,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 819,
+        },
+        {
             priority = 820,
             route = {
                 { y = 0.4937, mapID = 1426, label = "Razzle Sprysprocket", offMapText = "Travel to Razzle Sprysprocket in Dun Morogh.", x = 0.4585 },
@@ -2716,6 +4396,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-312-tundra-macgrann-s-stolen-stash",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 312,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 825,
         },
         {
             priority = 830,
@@ -2836,6 +4536,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-319-a-favor-for-evershine",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 319,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 865,
+        },
+        {
             priority = 870,
             route = {
                 { y = 0.4573, mapID = 1426, label = "Rejold Barleybrew", offMapText = "Travel to Rejold Barleybrew in Dun Morogh.", x = 0.3019 },
@@ -2870,6 +4590,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-315-the-perfect-stout",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 315,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 875,
+        },
+        {
             priority = 880,
             route = {
                 { y = 0.4573, mapID = 1426, label = "Rejold Barleybrew", offMapText = "Travel to Rejold Barleybrew in Dun Morogh.", x = 0.3019 },
@@ -2896,6 +4636,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-310-bitter-rivals",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 310,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 885,
         },
         {
             priority = 890,
@@ -3112,6 +4872,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-311-return-to-marleth",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 311,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 955,
+        },
+        {
             priority = 960,
             route = {
                 { y = 0.5269, mapID = 1426, label = "Return to Marleth", offMapText = "Travel to Marleth.", x = 0.477 },
@@ -3217,6 +4997,26 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-320-return-to-bellowfiz",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 2 } },
+            requiredLevel = 2,
+            checkpointQuest = 320,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 985,
         },
         {
             priority = 990,
@@ -3419,6 +5219,107 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-woven-accept-98326-frosthowl",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 98326,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1052,
+        },
+        {
+            priority = 1054,
+            route = {
+                { y = 0.446, mapID = 1426, label = "Gretta Ganter", offMapText = "Travel to Gretta Ganter.", x = 0.314 },
+            },
+            text = "Accept Frosthowl from Gretta Ganter in Brewnall Village.",
+            id = "woven-accept-98326-frosthowl",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98326, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1056,
+            route = {
+                { y = 0.446, mapID = 1426, label = "Frosthowl", offMapText = "Travel to Frosthowl.", x = 0.314 },
+            },
+            text = "Slay Frosthowl and take the Sack of Fish.",
+            id = "woven-objective-98326-frosthowl",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98326, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98326-frosthowl" },
+        },
+        {
+            priority = 1058,
+            route = {
+                { y = 0.446, mapID = 1426, label = "Gretta Ganter", offMapText = "Travel to Gretta Ganter.", x = 0.314 },
+            },
+            text = "Turn in Frosthowl to Gretta Ganter.",
+            id = "woven-turnin-98326-frosthowl",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98326, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98326-frosthowl", "woven-objective-98326-frosthowl" },
         },
         {
             priority = 1060,
@@ -3665,6 +5566,65 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-woven-accept-94824-confounding-flash",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94824,
+            priority = 1133.333333,
+        },
+        {
+            priority = 1136.666667,
+            route = {
+                { y = 0.522, mapID = 1426, label = "Maxan Anvol", offMapText = "Travel to Maxan Anvol.", x = 0.472 },
+            },
+            text = "Accept Confounding Flash from Maxan Anvol in Kharanos.",
+            id = "woven-accept-94824-confounding-flash",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94824, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             id = "level-before-objective-6064-1-taming-rod",
             kind = "note",
             text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
@@ -3747,6 +5707,29 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-6084-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6084,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1165,
         },
         {
             priority = 1170,
@@ -3849,6 +5832,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6085-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6085,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1195,
+        },
+        {
             priority = 1200,
             route = {
                 { y = 0.5304, mapID = 1426, label = "Grif Wildheart", offMapText = "Travel to Grif Wildheart in Dun Morogh.", x = 0.4581 },
@@ -3949,6 +5955,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6086-training-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6086,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1225,
+        },
+        {
             priority = 1230,
             route = {
                 { y = 0.5304, mapID = 1426, label = "Grif Wildheart", offMapText = "Travel to Grif Wildheart in Dun Morogh.", x = 0.4581 },
@@ -4023,6 +6052,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-433-the-public-servant",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 433,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1245,
+        },
+        {
             priority = 1250,
             route = {
                 { y = 0.5597, mapID = 1426, label = "Senator Mehr Stonehallow", offMapText = "Travel to Senator Mehr Stonehallow in Dun Morogh.", x = 0.6867 },
@@ -4049,6 +6098,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-432-those-blasted-troggs",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 432,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1255,
         },
         {
             priority = 1260,
@@ -4191,6 +6260,887 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-95212-never-saddle-on-quality",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 7 },
+            },
+            requiredLevel = 7,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 95212,
+            priority = 1300.263158,
+        },
+        {
+            priority = 1300.526316,
+            route = {
+                { y = 0.498, mapID = 1426, label = "Rudra Amberstill", offMapText = "Travel to Rudra Amberstill.", x = 0.63 },
+            },
+            text = "Accept Never Saddle on Quality from Rudra Amberstill.",
+            id = "woven-accept-95212-never-saddle-on-quality",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95212, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1300.789474,
+            route = {
+                { y = 0.62, mapID = 1426, label = "Elder Snow Leopard", offMapText = "Travel to Elder Snow Leopard.", x = 0.714 },
+            },
+            text = "Collect 6 Pristine Leopard Pelts from Elder Snow Leopards.",
+            id = "woven-objective-95212-never-saddle-on-quality",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95212, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-95212-never-saddle-on-quality" },
+        },
+        {
+            priority = 1301.052632,
+            route = {
+                { y = 0.498, mapID = 1426, label = "Rudra Amberstill", offMapText = "Travel to Rudra Amberstill.", x = 0.63 },
+            },
+            text = "Turn in Never Saddle on Quality to Rudra Amberstill.",
+            id = "woven-turnin-95212-never-saddle-on-quality",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95212, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-95212-never-saddle-on-quality", "woven-objective-95212-never-saddle-on-quality" },
+        },
+        {
+            id = "level-before-woven-accept-314-protecting-the-herd",
+            kind = "note",
+            text = "Reach level 6 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                },
+            },
+            complete = { level = { min = 6 } },
+            requiredLevel = 6,
+            checkpointQuest = 314,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1301.315789,
+        },
+        {
+            priority = 1301.578947,
+            id = "woven-accept-314-protecting-the-herd",
+            kind = "accept",
+            text = "Accept Protecting the Herd from Rudra Amberstill.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 6 } },
+                },
+            },
+            complete = { quest = { id = 314, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1426, x = 0.6300, y = 0.4980, label = "Rudra Amberstill", offMapText = "Travel to Rudra Amberstill." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            priority = 1301.842105,
+            id = "woven-objective-314-protecting-the-herd",
+            kind = "objective",
+            text = "Kill Vagash above Amberstill Ranch and loot his fang. This is an elite; bring a group.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 6 } },
+                },
+            },
+            complete = { quest = { id = 314, state = "complete" } },
+            route = {
+                { mapID = 1426, x = 0.6240, y = 0.4620, label = "Vagash", offMapText = "Travel to Vagash." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-314-protecting-the-herd" },
+        },
+        {
+            priority = 1302.105263,
+            id = "woven-turnin-314-protecting-the-herd",
+            kind = "turnin",
+            text = "Turn in Protecting the Herd to Rudra Amberstill.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 6 } },
+                },
+            },
+            complete = { quest = { id = 314, state = "completed" } },
+            route = {
+                { mapID = 1426, x = 0.6300, y = 0.4980, label = "Rudra Amberstill", offMapText = "Travel to Rudra Amberstill." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-314-protecting-the-herd", "woven-objective-314-protecting-the-herd" },
+        },
+        {
+            id = "loot-starter-before-accept-95213-verified-pickup",
+            kind = "note",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Loot Empty Powder Keg. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Empty Powder Keg", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 95213, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 1302.368421,
+        },
+        {
+            id = "level-before-accept-95213-verified-pickup",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 95213,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1302.631579,
+        },
+        {
+            priority = 1302.894737,
+            text = "Use the Empty Powder Keg to accept Stolen Blasting Powder.",
+            id = "accept-95213-verified-pickup",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95213, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1303.157895,
+            text = "For Stolen Blasting Powder: Bring the Empty Powder Keg to Quarrymaster Thesten at Gol'Bolar Quarry.",
+            id = "objective-95213-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95213, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-95213-verified-pickup" },
+        },
+        {
+            priority = 1303.421053,
+            route = {
+                { y = 0.548, mapID = 1426, label = "Quarrymaster Thesten", offMapText = "Travel to Quarrymaster Thesten.", x = 0.69 },
+            },
+            text = "Use the Empty Powder Keg if a trogg drops it, then turn in Stolen Blasting Powder to Quarrymaster Thesten.",
+            id = "woven-turnin-95213-stolen-blasting-powder",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95213, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-95213-quest-work", "accept-95213-verified-pickup" },
+        },
+        {
+            id = "level-before-woven-accept-95214-stolen-blasting-powder",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 95214,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1303.684211,
+        },
+        {
+            priority = 1303.947368,
+            route = {
+                { y = 0.548, mapID = 1426, label = "Quarrymaster Thesten", offMapText = "Travel to Quarrymaster Thesten.", x = 0.69 },
+            },
+            text = "Accept Stolen Blasting Powder from Quarrymaster Thesten.",
+            id = "woven-accept-95214-stolen-blasting-powder",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95214, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1304.210526,
+            route = {
+                { y = 0.512, mapID = 1426, label = "Rockjaw Ambusher", offMapText = "Travel to Rockjaw Ambusher.", x = 0.738 },
+            },
+            text = "Collect 16 Stolen Blasting Powder from the troggs east of Gol'Bolar Quarry.",
+            id = "woven-objective-95214-stolen-blasting-powder",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95214, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-95214-stolen-blasting-powder" },
+        },
+        {
+            priority = 1304.473684,
+            route = {
+                { y = 0.548, mapID = 1426, label = "Quarrymaster Thesten", offMapText = "Travel to Quarrymaster Thesten.", x = 0.69 },
+            },
+            text = "Turn in Stolen Blasting Powder to Quarrymaster Thesten.",
+            id = "woven-turnin-95214-stolen-blasting-powder",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 7 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95214, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-95214-stolen-blasting-powder", "woven-objective-95214-stolen-blasting-powder" },
+        },
+        {
+            id = "level-before-woven-accept-96408-a-visitor-to-dun-morogh",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 96408,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1304.736842,
+        },
+        {
+            priority = 1305,
+            id = "woven-accept-96408-a-visitor-to-dun-morogh",
+            kind = "accept",
+            text = "Accept A Visitor to Dun Morogh from Beldin Steelgrill.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96408, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1426, x = 0.5044, y = 0.4909, label = "Beldin Steelgrill", offMapText = "Travel to Beldin Steelgrill." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            priority = 1305.263158,
+            id = "woven-turnin-96408-a-visitor-to-dun-morogh",
+            kind = "turnin",
+            text = "Turn in A Visitor to Dun Morogh to Earthseer Farsen.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96408, state = "completed" } },
+            route = {
+                { mapID = 1426, x = 0.6480, y = 0.5840, label = "Earthseer Farsen", offMapText = "Travel to Earthseer Farsen." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96408-a-visitor-to-dun-morogh" },
+        },
+        {
+            id = "level-before-woven-accept-96392-farsens-watch",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 96392,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1305.526316,
+        },
+        {
+            priority = 1305.789474,
+            id = "woven-accept-96392-farsens-watch",
+            kind = "accept",
+            text = "Accept Farsen's Watch from Earthseer Farsen.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96392, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1426, x = 0.6480, y = 0.5840, label = "Earthseer Farsen", offMapText = "Travel to Earthseer Farsen." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 96408 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-96408-a-visitor-to-dun-morogh" },
+        },
+        {
+            priority = 1306.052632,
+            id = "woven-gossip-96392-farsens-watch",
+            kind = "gossip",
+            text = "Ask Earthseer Farsen to share his farsight and watch the vision.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96392, state = "complete" } },
+            route = {
+                { mapID = 1426, x = 0.6480, y = 0.5840, label = "Earthseer Farsen", offMapText = "Travel to Earthseer Farsen." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96392-farsens-watch" },
+        },
+        {
+            priority = 1306.315789,
+            id = "woven-turnin-96392-farsens-watch",
+            kind = "turnin",
+            text = "Turn in Farsen's Watch to Earthseer Farsen.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96392, state = "completed" } },
+            route = {
+                { mapID = 1426, x = 0.6480, y = 0.5840, label = "Earthseer Farsen", offMapText = "Travel to Earthseer Farsen." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96392-farsens-watch", "woven-gossip-96392-farsens-watch" },
+        },
+        {
+            id = "level-before-woven-accept-96390-nip-em-in-the-bud",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 96390,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1306.578947,
+        },
+        {
+            priority = 1306.842105,
+            id = "woven-accept-96390-nip-em-in-the-bud",
+            kind = "accept",
+            text = "Accept Nip 'Em in the Bud from Earthseer Farsen.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96390, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1426, x = 0.6480, y = 0.5840, label = "Earthseer Farsen", offMapText = "Travel to Earthseer Farsen." },
+            },
+            requiredQuests = {
+                { mode = "any", quests = { 96392 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-96392-farsens-watch" },
+        },
+        {
+            priority = 1307.105263,
+            id = "woven-objective-96390-nip-em-in-the-bud",
+            kind = "objective",
+            text = "Kill Dark Iron Spies at Ironband's Compound until Nip 'Em in the Bud is ready.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96390, state = "complete" } },
+            route = {
+                { mapID = 1426, x = 0.7760, y = 0.5900, label = "Dark Iron Spy", offMapText = "Travel to Dark Iron Spy." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96390-nip-em-in-the-bud" },
+        },
+        {
+            id = "level-before-woven-accept-96391-underground-map",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 96391,
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Dark Iron Map", minCount = 1 } } },
+                { ["not"] = { quest = { id = 96391, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1307.368421,
+        },
+        {
+            priority = 1307.631579,
+            id = "woven-accept-96391-underground-map",
+            kind = "accept",
+            text = "Use the Dark Iron Map to accept Underground Map if you found it during this outing.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96391, state = "activeOrCompleted" } },
+            route = {
+                { mapID = 1426, x = 0.7760, y = 0.5900, label = "Dark Iron Spy", offMapText = "Travel to Dark Iron Spy." },
+            },
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Dark Iron Map", minCount = 1 } } },
+                { ["not"] = { quest = { id = 96391, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            priority = 1307.894737,
+            id = "woven-turnin-96391-underground-map",
+            kind = "turnin",
+            text = "Turn in Underground Map to Earthseer Farsen.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96391, state = "completed" } },
+            route = {
+                { mapID = 1426, x = 0.6480, y = 0.5840, label = "Earthseer Farsen", offMapText = "Travel to Earthseer Farsen." },
+            },
+            requiredQuests = {},
+            excludeWhen = { all = {
+                { ["not"] = { item = { name = "Dark Iron Map", minCount = 1 } } },
+                { ["not"] = { quest = { id = 96391, state = "activeOrCompleted" } } },
+            } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96391-underground-map" },
+        },
+        {
+            priority = 1308.157895,
+            id = "woven-turnin-96390-nip-em-in-the-bud",
+            kind = "turnin",
+            text = "Turn in Nip 'Em in the Bud to Earthseer Farsen.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 7 } },
+                    { level = { min = 9 } },
+                },
+            },
+            complete = { quest = { id = 96390, state = "completed" } },
+            route = {
+                { mapID = 1426, x = 0.6480, y = 0.5840, label = "Earthseer Farsen", offMapText = "Travel to Earthseer Farsen." },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-96390-nip-em-in-the-bud", "woven-objective-96390-nip-em-in-the-bud" },
+        },
+        {
+            id = "level-before-woven-accept-94449-call-of-fire",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94449,
+            priority = 1308.421053,
+        },
+        {
+            priority = 1308.684211,
+            route = {
+                { y = 0.52, mapID = 1426, label = "Ingrid Dunwald", offMapText = "Travel to Ingrid Dunwald.", x = 0.474 },
+            },
+            text = "Accept Call of Fire from Ingrid Dunwald in Kharanos.",
+            id = "woven-accept-94449-call-of-fire",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94449, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1308.947368,
+            route = {
+                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", offMapText = "Travel to Bruegs Kindleborn.", x = 0.876 },
+            },
+            text = "Turn in Call of Fire to Bruegs Kindleborn.",
+            id = "woven-turnin-94449-call-of-fire",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94449, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-94449-call-of-fire" },
+        },
+        {
+            id = "level-before-woven-accept-94465-call-of-fire-loch",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 94465,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1309.210526,
+        },
+        {
+            priority = 1309.473684,
+            route = {
+                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", offMapText = "Travel to Bruegs Kindleborn.", x = 0.876 },
+            },
+            text = "Accept Call of Fire from Bruegs Kindleborn.",
+            id = "woven-accept-94465-call-of-fire-loch",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94465, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 94449 },
+                    conditions = {
+                        all = {
+                            { faction = "Alliance" },
+                            { class = 7 },
+                        },
+                    },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "level-before-accept-419-the-lost-pilot",
+            kind = "note",
+            text = "Reach level 8 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 8 } },
+            requiredLevel = 8,
+            checkpointQuest = 419,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1309.736842,
+        },
+        {
             priority = 1310,
             route = {
                 { y = 0.3919, mapID = 1426, label = "Pilot Hammerfoot", offMapText = "Travel to Pilot Hammerfoot in Dun Morogh.", x = 0.8389 },
@@ -4245,6 +7195,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-417-a-pilot-s-revenge",
+            kind = "note",
+            text = "Reach level 8 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 8 } },
+            requiredLevel = 8,
+            checkpointQuest = 417,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1325,
         },
         {
             priority = 1330,
@@ -4383,6 +7353,51 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 1363.333333,
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", offMapText = "Travel to Braldir Ashmantle.", x = 0.32 },
+            },
+            id = "woven-turnin-94465-call-of-fire-loch",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "woven-accept-94465-call-of-fire-loch" },
+            classAction = "turnin-94465-call-of-fire",
+        },
+        {
+            id = "level-before-accept-414-stout-to-kadrell",
+            kind = "note",
+            text = "Reach level 8 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 8 } },
+            requiredLevel = 8,
+            checkpointQuest = 414,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1366.666667,
+        },
+        {
             priority = 1370,
             route = {
                 { y = 0.4881, mapID = 1426, label = "Mountaineer Barleybrew", offMapText = "Travel to Mountaineer Barleybrew in Dun Morogh.", x = 0.8628 },
@@ -4467,6 +7482,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-267-the-trogg-threat",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 267,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1395,
+        },
+        {
             priority = 1400,
             route = {
                 { y = 0.7367, mapID = 1432, label = "Captain Rugelfuss", offMapText = "Travel to Captain Rugelfuss in Loch Modan.", x = 0.2323 },
@@ -4526,6 +7561,26 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
+            id = "level-before-accept-1339-mountaineer-stormpike-s-task",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 1339,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1415,
+        },
+        {
             priority = 1420,
             text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell.",
             id = "accept-1339-mountaineer-stormpike-s-task",
@@ -4577,6 +7632,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1338-stormpike-s-order",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 1338,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1435,
         },
         {
             priority = 1440,
@@ -4685,6 +7760,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6391-ride-to-ironforge",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6391,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1475,
+        },
+        {
             priority = 1480,
             route = {
                 { y = 0.5095, mapID = 1432, label = "Thorgrum Borrelson", offMapText = "Travel to Thorgrum Borrelson in Loch Modan.", x = 0.3394 },
@@ -4753,6 +7848,187 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            priority = 1491.428571,
+            route = {
+                { y = 0.1, mapID = 1455, label = "High Priestess Mims", offMapText = "Travel to High Priestess Mims.", x = 0.248 },
+            },
+            text = "Turn in Confounding Flash to High Priestess Mims in Ironforge.",
+            id = "woven-turnin-94824-confounding-flash",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94824, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-94824-confounding-flash" },
+        },
+        {
+            id = "level-before-woven-accept-94817-confounding-flash-mims",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 94817,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1492.857143,
+        },
+        {
+            priority = 1494.285714,
+            route = {
+                { y = 0.1, mapID = 1455, label = "High Priestess Mims", offMapText = "Travel to High Priestess Mims.", x = 0.248 },
+            },
+            text = "Accept Confounding Flash from High Priestess Mims in Ironforge.",
+            id = "woven-accept-94817-confounding-flash-mims",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 94817, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 94824 },
+                    conditions = {
+                        all = {
+                            { faction = "Alliance" },
+                            { race = 7 },
+                            { class = 5 },
+                        },
+                    },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1495.714286,
+            route = {
+                { y = 0.1, mapID = 1455, label = "High Priestess Mims", offMapText = "Travel to High Priestess Mims.", x = 0.248 },
+            },
+            id = "woven-turnin-94817-confounding-flash-mims",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "woven-accept-94817-confounding-flash-mims" },
+            classAction = "turnin-94817-confounding-flash",
+        },
+        {
+            priority = 1497.142857,
+            route = {
+                { mapID = 1455, x = 0.7216, y = 0.4888, label = "Misplaced Packages", offMapText = "Travel to Misplaced Packages." },
+            },
+            text = "Read Misplaced Packages to accept Your Package Has Arrived.",
+            id = "accept-97263-verified-pickup",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97263, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 1498.571429,
+            route = {
+                { y = 0.136, mapID = 1455, label = "Eldrun Stormbreaker", offMapText = "Travel to Eldrun Stormbreaker.", x = 0.474 },
+            },
+            text = "Turn in Your Package Has Arrived to Eldrun Stormbreaker in Ironforge if you are carrying Eldrun's package.",
+            id = "woven-turnin-97263-your-package-has-arrived",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97263, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-97263-verified-pickup" },
+        },
+        {
             priority = 1500,
             text = "Turn in Ride to Ironforge to Golnir Bouldertoe.",
             route = {
@@ -4785,6 +8061,26 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-6388-gryth-thurden",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6388,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1505,
         },
         {
             priority = 1510,
@@ -4913,6 +8209,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-6392-return-to-brock",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6392,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1545,
+        },
+        {
             priority = 1550,
             route = {
                 { y = 0.4774, mapID = 1455, label = "Gryth Thurden", offMapText = "Travel to Gryth Thurden in Ironforge.", x = 0.5551 },
@@ -4945,6 +8261,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-6661-deeprun-rat-roundup",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6661,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1555,
         },
         {
             priority = 1560,
@@ -5021,6 +8357,26 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
+            id = "level-before-accept-6662-me-brother-nipsy",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 6662,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1585,
+        },
+        {
             priority = 1590,
             text = "Accept Me Brother, Nipsy from Monty.",
             id = "accept-6662-me-brother-nipsy",
@@ -5081,6 +8437,26 @@ ns:RegisterGuide({
                 },
             },
             useClientText = false,
+        },
+        {
+            id = "level-before-accept-353-stormpike-s-delivery",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 353,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1605,
         },
         {
             priority = 1610,
@@ -5222,6 +8598,30 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1639-bartleby-the-drunk",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1639,
+            requiredQuests = {},
+            alternativeQuests = { 1678, 1683 },
+            useClientText = false,
+            useClientPin = false,
+            priority = 1655,
+        },
+        {
             priority = 1660,
             route = {
                 { y = 0.533, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.771 },
@@ -5284,6 +8684,29 @@ ns:RegisterGuide({
             alternativeQuests = { 1678, 1683 },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1640-beat-bartleby",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1640,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1675,
         },
         {
             priority = 1680,
@@ -5421,6 +8844,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1665-bartleby-s-mug",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1665,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1715,
         },
         {
             priority = 1720,
@@ -5590,6 +9036,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1688-surena-caledon",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1688,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1765,
+        },
+        {
             priority = 1770,
             route = {
                 { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
@@ -5619,6 +9088,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-40-a-fishy-peril",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1775,
         },
         {
             priority = 1780,
@@ -5675,6 +9164,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-35-further-concerns",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 35,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1795,
         },
         {
             priority = 1800,
@@ -5745,6 +9254,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-37-find-the-lost-guards",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 37,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1815,
+        },
+        {
             priority = 1820,
             route = {
                 { y = 0.7218, mapID = 1429, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest.", x = 0.7397 },
@@ -5777,6 +9306,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-52-protect-the-frontier",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 52,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1825,
         },
         {
             priority = 1830,
@@ -5841,6 +9390,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-45-discover-rolf-s-fate",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 45,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1845,
+        },
+        {
             priority = 1850,
             route = {
                 { y = 0.6033, mapID = 1429, label = "Discover Rolf's Fate", offMapText = "Travel to Discover Rolf's Fate.", x = 0.7265 },
@@ -5873,6 +9442,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-5545-a-bundle-of-trouble",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 5 } },
+            requiredLevel = 5,
+            checkpointQuest = 5545,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1855,
         },
         {
             priority = 1860,
@@ -5935,6 +9524,26 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-71-report-to-thomas",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 71,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1875,
         },
         {
             priority = 1880,
@@ -6083,6 +9692,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-83-red-linen-goods",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 83,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1925,
+        },
+        {
             priority = 1930,
             route = {
                 { y = 0.6878, mapID = 1429, label = "Sara Timberlain", offMapText = "Travel to Sara Timberlain in Elwynn Forest.", x = 0.7946 },
@@ -6173,6 +9802,26 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-39-deliver-thomas-report",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 39,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1955,
+        },
+        {
             priority = 1960,
             route = {
                 { y = 0.7218, mapID = 1429, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest.", x = 0.7397 },
@@ -6205,6 +9854,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-109-report-to-gryan-stoutmantle",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 9 } },
+            requiredLevel = 9,
+            checkpointQuest = 109,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 1965,
         },
         {
             priority = 1970,
@@ -6355,6 +10024,26 @@ ns:RegisterGuide({
             },
             dependsOn = {},
             priority = 2010,
+        },
+        {
+            id = "level-before-accept-184-furlbrow-s-deed",
+            kind = "note",
+            text = "Reach level 8 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 8 } },
+            requiredLevel = 8,
+            checkpointQuest = 184,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2015,
         },
         {
             priority = 2020,
@@ -6517,6 +10206,29 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1689-the-binding",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 1689,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2075,
         },
         {
             priority = 2080,
@@ -6726,6 +10438,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1645-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1645,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2135,
+        },
+        {
             priority = 2140,
             route = {
                 { y = 0.1219, mapID = 1455, label = "Tiza Battleforge", offMapText = "Travel to Tiza Battleforge in Ironforge.", x = 0.2764 },
@@ -6774,6 +10509,29 @@ ns:RegisterGuide({
             dependsOn = {},
             priority = 2150,
             classAction = "loot-starter-before-accept-1646-the-tome-of-divinity",
+        },
+        {
+            id = "level-before-accept-1646-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1646,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2155,
         },
         {
             priority = 2160,
@@ -6827,6 +10585,29 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1647-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1647,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2175,
         },
         {
             priority = 2180,
@@ -6898,6 +10679,29 @@ ns:RegisterGuide({
                 },
             },
             useClientText = false,
+        },
+        {
+            id = "level-before-accept-1648-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1648,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2195,
         },
         {
             priority = 2200,
@@ -7002,6 +10806,29 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
+            id = "level-before-accept-1778-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1778,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2225,
+        },
+        {
             priority = 2230,
             text = "Accept The Tome of Divinity from John Turner.",
             id = "accept-1778-the-tome-of-divinity",
@@ -7071,6 +10898,29 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-accept-1779-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1779,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2245,
         },
         {
             priority = 2250,
@@ -7147,6 +10997,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1783-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1783,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2265,
+        },
+        {
             priority = 2270,
             route = {
                 { y = 0.0829, mapID = 1455, label = "Muiredon Battleforge", offMapText = "Travel to Muiredon Battleforge in Ironforge.", x = 0.2353 },
@@ -7184,6 +11057,26 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-accept-418-thelsamar-blood-sausages",
+            kind = "note",
+            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 7 } },
+            requiredLevel = 7,
+            checkpointQuest = 418,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2275,
+        },
+        {
             priority = 2280,
             route = {
                 { y = 0.4928, mapID = 1432, label = "Vidra Hearthstove", offMapText = "Travel to Vidra Hearthstove in Loch Modan.", x = 0.3483 },
@@ -7210,6 +11103,26 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            id = "level-before-accept-416-rat-catching",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 10 } },
+            requiredLevel = 10,
+            checkpointQuest = 416,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2285,
         },
         {
             priority = 2290,
@@ -7605,6 +11518,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1784-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1784,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2425,
+        },
+        {
             priority = 2430,
             route = {
                 { y = 0.5809, mapID = 1426, label = "Narm Faulk", offMapText = "Travel to Narm Faulk in Dun Morogh.", x = 0.7832 },
@@ -7716,6 +11652,29 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-1785-the-tome-of-divinity",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = { level = { min = 12 } },
+            requiredLevel = 12,
+            checkpointQuest = 1785,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            priority = 2455,
+        },
+        {
             priority = 2460,
             route = {
                 { y = 0.0829, mapID = 1455, label = "Muiredon Battleforge", offMapText = "Travel to Muiredon Battleforge in Ironforge.", x = 0.2353 },
@@ -7822,1991 +11781,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            priority = 2510,
-            route = {
-                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm.", x = 0.298 },
-            },
-            text = "Accept Archaic Rune from Sten Stoutarm in Coldridge Valley.",
-            id = "woven-accept-98581-archaic-rune",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 3 },
-                    {
-                        race = { 3 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98581, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2520,
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Read Archaic Rune in your bags. Turn in Archaic Rune to Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-turnin-98581-archaic-rune",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 3 },
-                    {
-                        race = { 3 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98581, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98581-archaic-rune" },
-        },
-        {
-            id = "level-before-woven-accept-94373-call-of-earth",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 94373,
-            priority = 2530,
-        },
-        {
-            priority = 2540,
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Accept Call of Earth from Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-accept-94373-call-of-earth",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94373, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2550,
-            id = "woven-objective-94373-call-of-earth",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = true,
-            dependsOn = { "woven-accept-94373-call-of-earth" },
-            classAction = "objective-94373-call-of-earth",
-        },
-        {
-            priority = 2560,
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Turn in Call of Earth to Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-turnin-94373-call-of-earth",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94373, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-94373-call-of-earth", "woven-objective-94373-call-of-earth" },
-        },
-        {
-            priority = 2570,
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Accept Call of Earth from Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-accept-94374-call-of-earth-shrine",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94374, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 94373 },
-                    conditions = {
-                        all = {
-                            { faction = "Alliance" },
-                            { class = 7 },
-                        },
-                    },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2580,
-            id = "objective-94374-reviewed-mechanics",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = true,
-            dependsOn = { "woven-accept-94374-call-of-earth-shrine" },
-            classAction = "objective-94374-reviewed-mechanics",
-        },
-        {
-            priority = 2590,
-            id = "woven-turnin-94374-call-of-earth-shrine",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = true,
-            dependsOn = { "woven-accept-94374-call-of-earth-shrine", "objective-94374-reviewed-mechanics" },
-            classAction = "turnin-94374-call-of-earth",
-        },
-        {
-            priority = 2600,
-            id = "woven-accept-94375-call-of-earth-return",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = true,
-            dependsOn = {},
-            classAction = "accept-94375-call-of-earth",
-        },
-        {
-            priority = 2610,
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Turn in Call of Earth to Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-turnin-94375-call-of-earth-return",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94375, state = "completed" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 94374 },
-                    conditions = {
-                        all = {
-                            { faction = "Alliance" },
-                            { class = 7 },
-                        },
-                    },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-94375-call-of-earth-return" },
-        },
-        {
-            priority = 2620,
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Accept Earth Sapta from Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-accept-94472-earth-sapta",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94472, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            priority = 2630,
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Bring Teo Hammerstorm the Earth Sapta he asks for. The guide follows the pin in your quest log.",
-            id = "woven-objective-94472-earth-sapta",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 94472, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-94472-earth-sapta" },
-        },
-        {
-            priority = 2640,
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Turn in Earth Sapta to Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-turnin-94472-earth-sapta",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94472, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-94472-earth-sapta", "woven-objective-94472-earth-sapta" },
-        },
-        {
-            id = "level-before-woven-accept-97277-grund-and-gozwin",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 97277,
-            priority = 2650,
-        },
-        {
-            priority = 2660,
-            route = {
-                { y = 0.674, mapID = 1426, label = "Grund Drokda", offMapText = "Travel to Grund Drokda.", x = 0.286 },
-            },
-            text = "Accept Grund and Gozwin from Grund Drokda in Anvilmar.",
-            id = "woven-accept-97277-grund-and-gozwin",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97277, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2670,
-            route = {
-                { y = 0.674, mapID = 1426, label = "Grund Drokda", offMapText = "Travel to Grund Drokda.", x = 0.286 },
-            },
-            text = "Find Grund and Gozwin's camp in the hills northwest of Anvilmar. Recover Gozwin's Mechanic's Log and kill the Snow Leopard Prowler.",
-            id = "woven-objective-97277-grund-and-gozwin",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97277, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97277-grund-and-gozwin" },
-        },
-        {
-            priority = 2680,
-            route = {
-                { y = 0.674, mapID = 1426, label = "Grund Drokda", offMapText = "Travel to Grund Drokda.", x = 0.286 },
-            },
-            text = "Turn in Grund and Gozwin to Grund Drokda in Anvilmar.",
-            id = "woven-turnin-97277-grund-and-gozwin",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97277, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97277-grund-and-gozwin", "woven-objective-97277-grund-and-gozwin" },
-        },
-        {
-            priority = 2690,
-            route = {
-                { y = 0.758, mapID = 1426, label = "Mountaineer Thalos", offMapText = "Travel to Mountaineer Thalos.", x = 0.25 },
-            },
-            text = "Accept The Adventurer from Mountaineer Thalos in Coldridge Pass.",
-            id = "woven-accept-96628-the-adventurer",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96628, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96627, 96630, 96638, 96652, 96656, 96659 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2700,
-            route = {
-                { y = 0.538, mapID = 1426, label = "Eric Brighthammer", offMapText = "Travel to Eric Brighthammer.", x = 0.466 },
-            },
-            text = "Turn in The Adventurer to Eric Brighthammer in Kharanos.",
-            id = "woven-turnin-96628-the-adventurer",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96628, state = "completed" },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 96627, 96630, 96638, 96652, 96656, 96659 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96628-the-adventurer" },
-        },
-        {
-            priority = 2740,
-            route = {
-                { y = 0.52, mapID = 1426, label = "Tognus Flintfire", offMapText = "Travel to Tognus Flintfire.", x = 0.452 },
-            },
-            text = "Accept Flintfire's Shipment from Tognus Flintfire in Kharanos.",
-            id = "woven-accept-98321-flintfires-shipment",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98321, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2750,
-            route = {
-                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
-            },
-            text = "Accept Secure the Mountain from Mountaineer Gretchen.",
-            id = "woven-accept-98319-secure-the-mountain",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98319, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2760,
-            route = {
-                { y = 0.54, mapID = 1426, label = "Grizzled Den", offMapText = "Travel to Grizzled Den.", x = 0.42 },
-            },
-            text = "Find Mountaineer Cornelius in the Grizzled Den.",
-            id = "woven-objective-98319-secure-the-mountain",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98319, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98319-secure-the-mountain" },
-        },
-        {
-            priority = 2770,
-            route = {
-                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
-            },
-            text = "Turn in Secure the Mountain to Mountaineer Gretchen.",
-            id = "woven-turnin-98319-secure-the-mountain",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98319, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98319-secure-the-mountain", "woven-objective-98319-secure-the-mountain" },
-        },
-        {
-            priority = 2780,
-            route = {
-                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
-            },
-            text = "Accept Secure the Mountain from Mountaineer Gretchen.",
-            id = "woven-accept-98323-secure-the-mountain",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98323, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2790,
-            route = {
-                { y = 0.54, mapID = 1426, label = "Grizzled Den", offMapText = "Travel to Grizzled Den.", x = 0.42 },
-            },
-            text = "Collect 8 Flintfire Shipments in the Grizzled Den.",
-            id = "woven-objective-98321-flintfires-shipment",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98321, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98321-flintfires-shipment" },
-        },
-        {
-            priority = 2800,
-            route = {
-                { y = 0.538, mapID = 1426, label = "Senir Whitebeard", offMapText = "Travel to Senir Whitebeard.", x = 0.466 },
-            },
-            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
-            id = "woven-accept-98322-secure-the-mountain",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98322, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2810,
-            route = {
-                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
-            },
-            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
-            id = "woven-turnin-98322-secure-the-mountain",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98322, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98322-secure-the-mountain" },
-        },
-        {
-            priority = 2820,
-            route = {
-                { y = 0.538, mapID = 1426, label = "Senir Whitebeard", offMapText = "Travel to Senir Whitebeard.", x = 0.466 },
-            },
-            text = "Turn in Secure the Mountain to Senir Whitebeard in Kharanos.",
-            id = "woven-turnin-98323-secure-the-mountain",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98323, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98323-secure-the-mountain" },
-        },
-        {
-            priority = 2830,
-            route = {
-                { y = 0.52, mapID = 1426, label = "Tognus Flintfire", offMapText = "Travel to Tognus Flintfire.", x = 0.452 },
-            },
-            text = "Turn in Flintfire's Shipment to Tognus Flintfire in Kharanos.",
-            id = "woven-turnin-98321-flintfires-shipment",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98321, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98321-flintfires-shipment", "woven-objective-98321-flintfires-shipment" },
-        },
-        {
-            id = "level-before-woven-accept-99158-dawn-in-the-mountains",
-            kind = "note",
-            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 5 },
-            },
-            requiredLevel = 5,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 99158,
-            priority = 2840,
-        },
-        {
-            priority = 2850,
-            route = {
-                { y = 0.522, mapID = 1426, label = "Maxan Anvol", offMapText = "Travel to Maxan Anvol.", x = 0.472 },
-            },
-            text = "Accept Dawn in the Mountains from Maxan Anvol in Kharanos.",
-            id = "woven-accept-99158-dawn-in-the-mountains",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99158, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            id = "level-before-woven-accept-94824-confounding-flash",
-            kind = "note",
-            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { class = 5 },
-                    {
-                        class = { 5 },
-                    },
-                    { faction = "Alliance" },
-                    { race = 7 },
-                    {
-                        race = { 7 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 10 },
-            },
-            requiredLevel = 10,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 94824,
-            priority = 2860,
-        },
-        {
-            priority = 2870,
-            route = {
-                { y = 0.522, mapID = 1426, label = "Maxan Anvol", offMapText = "Travel to Maxan Anvol.", x = 0.472 },
-            },
-            text = "Accept Confounding Flash from Maxan Anvol in Kharanos.",
-            id = "woven-accept-94824-confounding-flash",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 5 },
-                    {
-                        class = { 5 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    { race = 7 },
-                    {
-                        race = { 7 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94824, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2880,
-            route = {
-                { y = 0.1, mapID = 1455, label = "High Priestess Mims", offMapText = "Travel to High Priestess Mims.", x = 0.248 },
-            },
-            text = "Turn in Confounding Flash to High Priestess Mims in Ironforge.",
-            id = "woven-turnin-94824-confounding-flash",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 5 },
-                    {
-                        class = { 5 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    { race = 7 },
-                    {
-                        race = { 7 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94824, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-94824-confounding-flash" },
-        },
-        {
-            priority = 2890,
-            route = {
-                { y = 0.1, mapID = 1455, label = "High Priestess Mims", offMapText = "Travel to High Priestess Mims.", x = 0.248 },
-            },
-            text = "Accept Confounding Flash from High Priestess Mims in Ironforge.",
-            id = "woven-accept-94817-confounding-flash-mims",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 5 },
-                    {
-                        class = { 5 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    { race = 7 },
-                    {
-                        race = { 7 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94817, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 94824 },
-                    conditions = {
-                        all = {
-                            { faction = "Alliance" },
-                            { race = 7 },
-                            { class = 5 },
-                        },
-                    },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2900,
-            route = {
-                { y = 0.1, mapID = 1455, label = "High Priestess Mims", offMapText = "Travel to High Priestess Mims.", x = 0.248 },
-            },
-            id = "woven-turnin-94817-confounding-flash-mims",
-            conditions = {
-                all = {
-                    { class = 5 },
-                    {
-                        class = { 5 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    { race = 7 },
-                    {
-                        race = { 7 },
-                    },
-                },
-            },
-            useClientPin = false,
-            dependsOn = { "woven-accept-94817-confounding-flash-mims" },
-            classAction = "turnin-94817-confounding-flash",
-        },
-        {
-            priority = 2910,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Turn in Dawn in the Mountains to Father Gavin.",
-            id = "woven-turnin-99158-dawn-in-the-mountains",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99158, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99158-dawn-in-the-mountains" },
-        },
-        {
-            priority = 2920,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Accept Finding Warmth from Father Gavin.",
-            id = "woven-accept-99159-finding-warmth",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99159, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2930,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Accept Rime's Wrath from Father Gavin.",
-            id = "woven-accept-99160-rimes-wrath",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99160, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2940,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Accept Treacherous Cold from Father Gavin.",
-            id = "woven-accept-99162-treacherous-cold",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99162, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 2950,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Collect 14 pieces of Mostly Dry Firewood.",
-            id = "woven-objective-99159-finding-warmth",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99159, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99159-finding-warmth" },
-        },
-        {
-            priority = 2960,
-            route = {
-                { y = 0.452, mapID = 1426, label = "Minor Ice Elemental", offMapText = "Travel to Minor Ice Elemental.", x = 0.57 },
-            },
-            text = "Destroy 10 minor ice elementals.",
-            id = "woven-objective-99160-rimes-wrath",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99160, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99160-rimes-wrath" },
-        },
-        {
-            priority = 2970,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Collect Stoneanvil's Rifle, Sunhammer's Rifle, and Coalbeard's Rifle.",
-            id = "woven-objective-99162-treacherous-cold",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99162, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99162-treacherous-cold" },
-        },
-        {
-            priority = 2980,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Turn in Finding Warmth to Father Gavin.",
-            id = "woven-turnin-99159-finding-warmth",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99159, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99159-finding-warmth", "woven-objective-99159-finding-warmth" },
-        },
-        {
-            priority = 2990,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Turn in Rime's Wrath to Father Gavin.",
-            id = "woven-turnin-99160-rimes-wrath",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99160, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99160-rimes-wrath", "woven-objective-99160-rimes-wrath" },
-        },
-        {
-            priority = 3000,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Accept the next Rime's Wrath from Father Gavin.",
-            id = "woven-accept-99161-rimes-wrath",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99161, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3010,
-            route = {
-                { y = 0.42, mapID = 1426, label = "Avala", offMapText = "Travel to Avala.", x = 0.582 },
-            },
-            text = "Kill Avala and take Avala's Core.",
-            id = "woven-objective-99161-rimes-wrath",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99161, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99161-rimes-wrath" },
-        },
-        {
-            priority = 3020,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Turn in Rime's Wrath to Father Gavin.",
-            id = "woven-turnin-99161-rimes-wrath",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99161, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99161-rimes-wrath", "woven-objective-99161-rimes-wrath" },
-        },
-        {
-            priority = 3030,
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Turn in Treacherous Cold to Father Gavin.",
-            id = "woven-turnin-99162-treacherous-cold",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99162, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99162-treacherous-cold", "woven-objective-99162-treacherous-cold" },
-        },
-        {
-            priority = 3040,
-            route = {
-                { y = 0.446, mapID = 1426, label = "Gretta Ganter", offMapText = "Travel to Gretta Ganter.", x = 0.314 },
-            },
-            text = "Accept Frosthowl from Gretta Ganter in Brewnall Village.",
-            id = "woven-accept-98326-frosthowl",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98326, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3050,
-            route = {
-                { y = 0.446, mapID = 1426, label = "Frosthowl", offMapText = "Travel to Frosthowl.", x = 0.314 },
-            },
-            text = "Slay Frosthowl and take the Sack of Fish.",
-            id = "woven-objective-98326-frosthowl",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98326, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98326-frosthowl" },
-        },
-        {
-            priority = 3060,
-            route = {
-                { y = 0.446, mapID = 1426, label = "Gretta Ganter", offMapText = "Travel to Gretta Ganter.", x = 0.314 },
-            },
-            text = "Turn in Frosthowl to Gretta Ganter.",
-            id = "woven-turnin-98326-frosthowl",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98326, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98326-frosthowl", "woven-objective-98326-frosthowl" },
-        },
-        {
-            id = "level-before-woven-accept-95212-never-saddle-on-quality",
-            kind = "note",
-            text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 7 },
-            },
-            requiredLevel = 7,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 95212,
-            priority = 3070,
-        },
-        {
-            priority = 3080,
-            route = {
-                { y = 0.498, mapID = 1426, label = "Rudra Amberstill", offMapText = "Travel to Rudra Amberstill.", x = 0.63 },
-            },
-            text = "Accept Never Saddle on Quality from Rudra Amberstill.",
-            id = "woven-accept-95212-never-saddle-on-quality",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95212, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3090,
-            route = {
-                { y = 0.62, mapID = 1426, label = "Elder Snow Leopard", offMapText = "Travel to Elder Snow Leopard.", x = 0.714 },
-            },
-            text = "Collect 6 Pristine Leopard Pelts from Elder Snow Leopards.",
-            id = "woven-objective-95212-never-saddle-on-quality",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95212, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-95212-never-saddle-on-quality" },
-        },
-        {
-            priority = 3100,
-            route = {
-                { y = 0.498, mapID = 1426, label = "Rudra Amberstill", offMapText = "Travel to Rudra Amberstill.", x = 0.63 },
-            },
-            text = "Turn in Never Saddle on Quality to Rudra Amberstill.",
-            id = "woven-turnin-95212-never-saddle-on-quality",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95212, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-95212-never-saddle-on-quality", "woven-objective-95212-never-saddle-on-quality" },
-        },
-        {
-            id = "loot-starter-before-accept-95213-verified-pickup",
-            kind = "note",
-            instructionOnly = true,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            text = "Loot Empty Powder Keg. Keep it for the next pickup.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Empty Powder Keg", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 95213, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-            priority = 3110,
-        },
-        {
-            priority = 3120,
-            text = "Use the Empty Powder Keg to accept Stolen Blasting Powder.",
-            id = "accept-95213-verified-pickup",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95213, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3130,
-            text = "For Stolen Blasting Powder: Bring the Empty Powder Keg to Quarrymaster Thesten at Gol'Bolar Quarry.",
-            id = "objective-95213-quest-work",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95213, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "accept-95213-verified-pickup" },
-        },
-        {
-            priority = 3140,
-            route = {
-                { y = 0.548, mapID = 1426, label = "Quarrymaster Thesten", offMapText = "Travel to Quarrymaster Thesten.", x = 0.69 },
-            },
-            text = "Use the Empty Powder Keg if a trogg drops it, then turn in Stolen Blasting Powder to Quarrymaster Thesten.",
-            id = "woven-turnin-95213-stolen-blasting-powder",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95213, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "objective-95213-quest-work", "accept-95213-verified-pickup" },
-        },
-        {
-            priority = 3150,
-            route = {
-                { y = 0.548, mapID = 1426, label = "Quarrymaster Thesten", offMapText = "Travel to Quarrymaster Thesten.", x = 0.69 },
-            },
-            text = "Accept Stolen Blasting Powder from Quarrymaster Thesten.",
-            id = "woven-accept-95214-stolen-blasting-powder",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95214, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3160,
-            route = {
-                { y = 0.512, mapID = 1426, label = "Rockjaw Ambusher", offMapText = "Travel to Rockjaw Ambusher.", x = 0.738 },
-            },
-            text = "Collect 16 Stolen Blasting Powder from the troggs east of Gol'Bolar Quarry.",
-            id = "woven-objective-95214-stolen-blasting-powder",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95214, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-95214-stolen-blasting-powder" },
-        },
-        {
-            priority = 3170,
-            route = {
-                { y = 0.548, mapID = 1426, label = "Quarrymaster Thesten", offMapText = "Travel to Quarrymaster Thesten.", x = 0.69 },
-            },
-            text = "Turn in Stolen Blasting Powder to Quarrymaster Thesten.",
-            id = "woven-turnin-95214-stolen-blasting-powder",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 7 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 95214, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-95214-stolen-blasting-powder", "woven-objective-95214-stolen-blasting-powder" },
-        },
-        {
-            priority = 3180,
-            route = {
-                { mapID = 1455, x = 0.7216, y = 0.4888, label = "Misplaced Packages", offMapText = "Travel to Misplaced Packages." },
-            },
-            text = "Read Misplaced Packages to accept Your Package Has Arrived.",
-            id = "accept-97263-verified-pickup",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97263, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3190,
-            route = {
-                { y = 0.136, mapID = 1455, label = "Eldrun Stormbreaker", offMapText = "Travel to Eldrun Stormbreaker.", x = 0.474 },
-            },
-            text = "Turn in Your Package Has Arrived to Eldrun Stormbreaker in Ironforge if you are carrying Eldrun's package.",
-            id = "woven-turnin-97263-your-package-has-arrived",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97263, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-97263-verified-pickup" },
-        },
-        {
-            id = "level-before-woven-accept-94449-call-of-fire",
-            kind = "note",
-            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 10 },
-            },
-            requiredLevel = 10,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 94449,
-            priority = 3200,
-        },
-        {
-            priority = 3210,
-            route = {
-                { y = 0.52, mapID = 1426, label = "Ingrid Dunwald", offMapText = "Travel to Ingrid Dunwald.", x = 0.474 },
-            },
-            text = "Accept Call of Fire from Ingrid Dunwald in Kharanos.",
-            id = "woven-accept-94449-call-of-fire",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94449, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3220,
-            route = {
-                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", offMapText = "Travel to Bruegs Kindleborn.", x = 0.876 },
-            },
-            text = "Turn in Call of Fire to Bruegs Kindleborn.",
-            id = "woven-turnin-94449-call-of-fire",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94449, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-94449-call-of-fire" },
-        },
-        {
-            priority = 3230,
-            route = {
-                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", offMapText = "Travel to Bruegs Kindleborn.", x = 0.876 },
-            },
-            text = "Accept Call of Fire from Bruegs Kindleborn.",
-            id = "woven-accept-94465-call-of-fire-loch",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94465, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 94449 },
-                    conditions = {
-                        all = {
-                            { faction = "Alliance" },
-                            { class = 7 },
-                        },
-                    },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 3240,
-            route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", offMapText = "Travel to Braldir Ashmantle.", x = 0.32 },
-            },
-            id = "woven-turnin-94465-call-of-fire-loch",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            dependsOn = { "woven-accept-94465-call-of-fire-loch" },
-            classAction = "turnin-94465-call-of-fire",
         },
     },
     casualSpine = true,
