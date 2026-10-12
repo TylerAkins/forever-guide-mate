@@ -4610,7 +4610,7 @@ do
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 10, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 11, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -4628,8 +4628,9 @@ do
         and taurenGoalIndex["woven-objective-99108-sparring-match"] < taurenGoalIndex["woven-turnin-99108-sparring-match"]
         and taurenGoalIndex["woven-turnin-99108-sparring-match"] < taurenGoalIndex["accept-749-the-ravaged-caravan"],
         "Mulgore turns in The Longwalkers, completes Sparring Match, and then picks up The Ravaged Caravan")
-    Check(DependsOn(chain.sparringAccept, "woven-turnin-98430-the-longwalkers"),
-        "Sparring Match waits for The Longwalkers turn-in")
+    Check(not DependsOn(chain.sparringAccept, "woven-turnin-98430-the-longwalkers")
+        and DependsOn(chain.sparringAccept, "accept-758-thunderhorn-cleansing"),
+        "Sparring Match waits for Thunderhorn Cleansing acceptance without a Longwalkers gate")
     Check(DependsOn(chain.longwalkersTurnin, "turnin-775-journey-into-thunder-bluff")
         and chain.longwalkersTurnin.priority > chain.thunderBluffJourneyTurnin.priority,
         "The Longwalkers turn-in waits for the first Thunder Bluff visit")

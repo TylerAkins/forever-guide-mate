@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 10,
+    revision = 11,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -2850,7 +2850,7 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            dependsOn = { "woven-turnin-98430-the-longwalkers" },
+            dependsOn = { "accept-758-thunderhorn-cleansing" },
         },
         {
             priority = 1382,

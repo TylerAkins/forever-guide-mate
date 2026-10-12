@@ -1,2 +1,2 @@
-## 0.4.6 - 2026-10-12
-- Turn in The Longwalkers during the first Thunder Bluff visit, then complete Sparring Match before accepting The Ravaged Caravan.
+## 0.4.7 - 2026-10-12
+- Accept Thunderhorn Cleansing before starting Sparring Match in the Mulgore route.
