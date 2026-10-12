@@ -4607,14 +4607,11 @@ do
         ravagedCaravanTurnin = ns.Engine:GetGoal(taurenStarter, "turnin-749-the-ravaged-caravan"),
         nextCaravanAccept = ns.Engine:GetGoal(taurenStarter, "accept-751-the-ravaged-caravan"),
         nextCaravanTurnin = ns.Engine:GetGoal(taurenStarter, "turnin-751-the-ravaged-caravan"),
-        firstThunderBluffStop = ns.Engine:GetGoal(taurenStarter, "objective-746-1-prospector-s-pick"),
-        firstThunderBluffReturn = ns.Engine:GetGoal(taurenStarter, "level-before-accept-833-a-sacred-burial"),
-        thunderBluffJourneyTurnin = ns.Engine:GetGoal(taurenStarter, "turnin-775-journey-into-thunder-bluff"),
     }
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 13, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 14, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -4638,13 +4635,11 @@ do
         and chain.thunderhornAccept.priority < chain.sparringAccept.priority
         and chain.sparringAccept.priority < chain.sparringTurnin.priority,
         "Sparring Match follows Thunderhorn Cleansing acceptance without a Longwalkers gate")
-    Check(taurenGoalIndex["objective-746-1-prospector-s-pick"] < taurenGoalIndex["woven-turnin-98430-the-longwalkers"]
-        and taurenGoalIndex["woven-turnin-98430-the-longwalkers"] < taurenGoalIndex["level-before-accept-833-a-sacred-burial"]
-        and taurenGoalIndex["woven-turnin-98430-the-longwalkers"] < taurenGoalIndex["turnin-775-journey-into-thunder-bluff"]
-        and chain.longwalkersTurnin.priority > chain.firstThunderBluffStop.priority
-        and chain.longwalkersTurnin.priority < chain.firstThunderBluffReturn.priority
-        and not DependsOn(chain.longwalkersTurnin, "turnin-775-journey-into-thunder-bluff"),
-        "The Longwalkers turn-in shares the first Thunder Bluff stop and does not add a later return")
+    Check(taurenGoalIndex["turnin-773-rite-of-wisdom"] < taurenGoalIndex["woven-turnin-98430-the-longwalkers"]
+        and taurenGoalIndex["turnin-833-a-sacred-burial"] < taurenGoalIndex["woven-turnin-98430-the-longwalkers"]
+        and taurenGoalIndex["turnin-775-journey-into-thunder-bluff"] < taurenGoalIndex["woven-turnin-98430-the-longwalkers"]
+        and DependsOn(chain.longwalkersTurnin, "turnin-775-journey-into-thunder-bluff"),
+        "The Longwalkers turn-in waits for Rite of Wisdom, A Sacred Burial, and the Journey into Thunder Bluff visit")
     Check(chain.sparringTurnin.priority < chain.ravagedCaravanAccept.priority
         and chain.longwalkersTurnin.priority < chain.ravagedCaravanAccept.priority
         and chain.ravagedCaravanAccept.priority < chain.ravagedCaravanTurnin.priority
