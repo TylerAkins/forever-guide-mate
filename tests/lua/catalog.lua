@@ -15,6 +15,10 @@ for _,q in ipairs({7791,7793,7794,7795,7799,7800,7802,7803,7804,7805,7807,7808,7
 local chapters = {}
 -- These starter guides intentionally combine nearby quest actions into a single outing.
 local intentionalOutingReorders = {
+ ['leveling-era-mulgore'] = {
+  ['accept:749:0:79']=true, ['turnin:749:0:80']=true, ['accept:751:0:80']=true,
+  ['turnin:751:0:119']=true,
+ },
  ['leveling-era-dun-morogh'] = {
   ['turnin:1599:0:47']=true, ['objective:3361:1:49']=true, ['objective:3361:2:50']=true,
   ['objective:3361:3:51']=true, ['objective:182:1:52']=true, ['turnin:182:0:53']=true,

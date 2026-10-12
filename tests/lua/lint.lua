@@ -427,6 +427,11 @@ for _, issue in ipairs(guideData.ClassBranchTurninViolations(ns.guides)) do
         issue.guideID, issue.goalID, issue.detail))
 end
 
+for _, issue in ipairs(guideData.RequiredGoalDependencyViolations(ns.guides)) do
+    Check(false, ("%s %s prerequisite gate: %s"):format(
+        issue.guideID, issue.goalID, issue.detail))
+end
+
 Check(guideData.DetourCoverageFixtureFails(),
     "detour coverage fixture must fail when the detour drops objective and turn-in")
 for _, issue in ipairs(guideData.DetourCoverageViolations(ns.guides)) do

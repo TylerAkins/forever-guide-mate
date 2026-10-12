@@ -506,6 +506,39 @@ function M.GoalDependsOnAll(goal, required)
     return true
 end
 
+M.RequiredGoalDependencies = {
+    {
+        guideID = "leveling-era-mulgore",
+        goalID = "woven-turnin-98430-the-longwalkers",
+        dependencies = { "turnin-775-journey-into-thunder-bluff" },
+    },
+}
+
+function M.RequiredGoalDependencyViolations(guides)
+    local issues = {}
+    for _, rule in ipairs(M.RequiredGoalDependencies) do
+        local guide = guides[rule.guideID]
+        local goal
+        for _, candidate in ipairs(guide and guide.goals or {}) do
+            if candidate.id == rule.goalID then goal = candidate; break end
+        end
+        if not goal then
+            issues[#issues + 1] = {
+                guideID = rule.guideID,
+                goalID = rule.goalID,
+                detail = "goal not found",
+            }
+        elseif not M.GoalDependsOnAll(goal, rule.dependencies) then
+            issues[#issues + 1] = {
+                guideID = rule.guideID,
+                goalID = rule.goalID,
+                detail = "must dependOn every required goal: " .. table.concat(rule.dependencies, ", "),
+            }
+        end
+    end
+    return issues
+end
+
 -- When one class uses a different turn-in goal id for the same unlock, list every branch.
 M.RequiredClassBranchTurnins = {
     {

@@ -4600,11 +4600,13 @@ do
     local chain = {
         longwalkersAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-98430-the-longwalkers"),
         longwalkersTurnin = ns.Engine:GetGoal(taurenStarter, "woven-turnin-98430-the-longwalkers"),
+        thunderhornAccept = ns.Engine:GetGoal(taurenStarter, "accept-758-thunderhorn-cleansing"),
         sparringAccept = ns.Engine:GetGoal(taurenStarter, "woven-accept-99108-sparring-match"),
         sparringTurnin = ns.Engine:GetGoal(taurenStarter, "woven-turnin-99108-sparring-match"),
         ravagedCaravanAccept = ns.Engine:GetGoal(taurenStarter, "accept-749-the-ravaged-caravan"),
         ravagedCaravanTurnin = ns.Engine:GetGoal(taurenStarter, "turnin-749-the-ravaged-caravan"),
         nextCaravanAccept = ns.Engine:GetGoal(taurenStarter, "accept-751-the-ravaged-caravan"),
+        nextCaravanTurnin = ns.Engine:GetGoal(taurenStarter, "turnin-751-the-ravaged-caravan"),
         thunderBluffJourneyTurnin = ns.Engine:GetGoal(taurenStarter, "turnin-775-journey-into-thunder-bluff"),
     }
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
@@ -4623,25 +4625,29 @@ do
         and DependsOn(chain.longwalkersAccept, "objective-745-2-palemane-skinner")
         and DependsOn(chain.longwalkersAccept, "objective-745-3-palemane-poacher"),
         "The Longwalkers pickup also requires every Sharing the Land cave objective")
-    Check(taurenGoalIndex["woven-turnin-98430-the-longwalkers"] < taurenGoalIndex["woven-accept-99108-sparring-match"]
+    Check(taurenGoalIndex["accept-758-thunderhorn-cleansing"] < taurenGoalIndex["woven-accept-99108-sparring-match"]
         and taurenGoalIndex["woven-accept-99108-sparring-match"] < taurenGoalIndex["woven-objective-99108-sparring-match"]
         and taurenGoalIndex["woven-objective-99108-sparring-match"] < taurenGoalIndex["woven-turnin-99108-sparring-match"]
-        and taurenGoalIndex["woven-turnin-99108-sparring-match"] < taurenGoalIndex["accept-749-the-ravaged-caravan"],
-        "Mulgore turns in The Longwalkers, completes Sparring Match, and then picks up The Ravaged Caravan")
+        and taurenGoalIndex["woven-turnin-99108-sparring-match"] < taurenGoalIndex["accept-749-the-ravaged-caravan"]
+        and taurenGoalIndex["woven-turnin-98430-the-longwalkers"] < taurenGoalIndex["accept-749-the-ravaged-caravan"],
+        "Mulgore accepts Thunderhorn Cleansing, completes Sparring Match, and later picks up The Ravaged Caravan")
     Check(not DependsOn(chain.sparringAccept, "woven-turnin-98430-the-longwalkers")
-        and DependsOn(chain.sparringAccept, "accept-758-thunderhorn-cleansing"),
-        "Sparring Match waits for Thunderhorn Cleansing acceptance without a Longwalkers gate")
+        and DependsOn(chain.sparringAccept, "accept-758-thunderhorn-cleansing")
+        and chain.thunderhornAccept.priority < chain.sparringAccept.priority
+        and chain.sparringAccept.priority < chain.sparringTurnin.priority,
+        "Sparring Match follows Thunderhorn Cleansing acceptance without a Longwalkers gate")
     Check(DependsOn(chain.longwalkersTurnin, "turnin-775-journey-into-thunder-bluff")
-        and chain.longwalkersTurnin.priority > chain.thunderBluffJourneyTurnin.priority,
+        and chain.longwalkersTurnin.priority > chain.thunderBluffJourneyTurnin.priority
+        and taurenGoalIndex["turnin-775-journey-into-thunder-bluff"] < taurenGoalIndex["woven-turnin-98430-the-longwalkers"],
         "The Longwalkers turn-in waits for the first Thunder Bluff visit")
-    Check(chain.longwalkersTurnin.priority < chain.sparringAccept.priority
-        and chain.sparringAccept.priority < chain.sparringTurnin.priority
-        and chain.sparringTurnin.priority < chain.ravagedCaravanAccept.priority
+    Check(chain.sparringTurnin.priority < chain.ravagedCaravanAccept.priority
+        and chain.longwalkersTurnin.priority < chain.ravagedCaravanAccept.priority
         and chain.ravagedCaravanAccept.priority < chain.ravagedCaravanTurnin.priority
         and chain.ravagedCaravanTurnin.priority < chain.nextCaravanAccept.priority,
-        "Mulgore schedules Longwalkers, Sparring Match, and The Ravaged Caravan in order")
+        "Mulgore schedules Longwalkers and Sparring Match before The Ravaged Caravan")
     Check(DependsOn(chain.ravagedCaravanAccept, "woven-turnin-99108-sparring-match")
-        and DependsOn(chain.nextCaravanAccept, "turnin-749-the-ravaged-caravan"),
+        and DependsOn(chain.nextCaravanAccept, "turnin-749-the-ravaged-caravan")
+        and taurenGoalIndex["accept-751-the-ravaged-caravan"] < taurenGoalIndex["turnin-751-the-ravaged-caravan"],
         "Ravaged Caravan accepts wait for the prior turn-ins")
 end
 do
