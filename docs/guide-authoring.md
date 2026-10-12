@@ -16,7 +16,7 @@ Dungeon and PvP class quests stay in the dungeon guides. Raid attunements and ra
 
 ## Ordered leveling and class itineraries
 
-All leveling and class guides use `routeMode = "ordered"`. Their `goals` array is the action order. Prerequisites do not choose the next action. Existing guides in other categories retain their scheduler. The new class dungeon prerequisite itinerary also uses ordered execution.
+All leveling and class guides use `routeMode = "ordered"`. Their `goals` array is the action order. Prerequisites, `priority`, and `dependsOn` do not choose the next action. Existing guides in other categories retain their scheduler, which still uses `priority` and `dependsOn`. The new class dungeon prerequisite itinerary also uses ordered execution.
 
 Author pickups, objective outings, intermediate pickups, returns, and turn-ins separately. Keep directions in `text`; the tracker adds live counts separately. Use `questObjective.count` for a verified partial count checkpoint. Before a quest pickup, use `complete.item = { name = "Item", minCount = quantity }` for verified material collection. An item starter instruction may use `instructionOnly = true` with observed bag or quest state so skipping it passes only that instruction. Use an observed level checkpoint before gated work, with the required level in its text. Set `checkpointQuest` to the guarded quest ID and copy verified `alternativeQuests` so completed or excluded quest work does not leave an unrelated level gate. This metadata does not turn the checkpoint into a quest action. Manual confirmation belongs only on unobservable instructions without quest completion conditions. A repeatable quest never reports as turned in, so give its actions an `excludeWhen` condition describing when the reward is no longer needed (for example, the consuming quest is completed or the reward item is in the bags). Ordered routes drop an action while `excludeWhen` is true; other false `conditions` block the route instead.
 
@@ -29,6 +29,18 @@ Define shared class actions in `ClassChains.lua` and reference them with `classA
 Record chapter visits and insertion points in `route-manifest.json`. `route-conversion-audit.json` records the pinned facts, removed imports, and exclusions. Legacy import and append tools refuse to overwrite ordered guides. Update an itinerary through explicit reviewed action positions.
 
 Run `tests/lua/ordered.lua`, `tests/lua/catalog.lua`, and `tests/lua/journeys.lua` with Lua 5.1 in addition to the existing engine, UI, lint, and accept-chain checks. Reference fixtures come from the supplied archive, not the production itinerary. Structural simulations do not establish in-game availability or destination accuracy; record client walkthrough coverage separately.
+
+### Editing an existing route
+
+Use this before moving, re-gating, or retargeting steps in a shipped guide.
+
+1. **Trace execution order.** List the steps around the edit in the order the player meets them: list position, `conditions`, `excludeWhen`, `requiredQuests`, quest state, and `instructionOnly` steps. In scheduler guides, also trace `priority` and `dependsOn`. Do not read the route from priority values alone.
+2. **Map destinations.** Note each step's destination and the visit that reaches it. Mark the first visit to each hub. A turn-in placed before that visit, or after the player leaves, adds a trip. Update the chapter's visits in `docs/route-manifest.json` when a step changes visits.
+3. **Write the sequence and gates separately.** State which accept starts a chain, which turn-in must not gate it, and which later chain waits. Example: Sparring Match is accepted after Palemane Rock without waiting for The Longwalkers turn-in, and The Ravaged Caravan stays after the Sparring Match turn-in in list order.
+4. **Check pins and text.** The route pin and `text` name the intended destination. Add escort or follow-up instructions only when the quest requires them.
+5. **Test behavior.** Assert goal-index order for the changed steps, the `requiredQuests` and `conditions` gates that must hold, and the gates that must stay absent. Use a `journey` in `tests/lua/ordered.lua` for a player-visible sequence. Write expectations from the requested player journey, not from the edited guide, so a test cannot confirm the mistake. Priority comparisons do not test an ordered route.
+6. **Before committing.** Confirm the branch contains current `origin/main` (`git fetch origin && git merge-base --is-ancestor origin/main HEAD`) and review the full diff against it. When ordered actions move or change gates, bump the guide's own `revision` if it is not merged into the Casual route; for a merged Casual chapter, bump the faction's first merged chapter in TOC order (the Casual route copies only that revision). Update release metadata as in [Before you ship](#before-you-ship).
+7. **Pull requests.** Open or update a PR only when asked. Draft the description from the final diff, and show the exact title and body for approval before posting.
 
 ## Quest chains
 
@@ -70,7 +82,7 @@ Use a substring that appears in the quest log text for that objective.
   - Bloodhoof Village and nearby: Innkeeper Kauth 45.9, 64.2; Skorn Whitecloud 46.0, 63.4; Maur Raincaller 46.2, 60.8; Harken Windtotem 47.6, 62.7; Mull Thunderhorn 47.5, 63.6; Ruul Eagletalon 46.5, 64.9; Baine Bloodhoof 46.7, 63.4; Zarlman Two-Moons 46.9, 61.2; Gennia Runetotem 47.5, 63.0; Yaw Sharpmane 46.9, 59.6; Narm Skychaser 47.4, 62.5; Morin Cloudstalker patrols the path near 50.0, 62.6 (look along the path if he is not at the pin); Brave Wildrunner 46.7, 63.8; Krang Stonehoof 48.4, 63.7; Var'jun 46.2, 62.3.
   - Other Mulgore givers: Antur Fallow 39.2, 81.2; Perith Stormhoof 33.1, 65.9; Seer Wiserunner 34.3, 43.3; Lorekeeper Raintotem 57.0, 34.5; Ancestral Spirit 58.3, 30.7.
   - Harken Windtotem's current in-game position is 47.6, 62.7; WCLBox records 47.7, 62.7. Use the in-game position. Mulgore guide pins use these coordinates for the relevant giver.
-- Route Sharing the Land (745) through Palemane Rock alongside The Longwalkers (98430): take 745 from Baine before traveling to Perith, kill its Palemane objectives in the cave, then accept 98430 from Perith and escort him out. Turn it in to Cairne before accepting The Ravaged Caravan, then complete Sparring Match. Use the cave spawn pins for Palemane Tanner and Skinner at 35.6, 63.4 and Palemane Poacher at 30.8, 60.4; the mobs also spawn at southern camps.
+- Route Sharing the Land (745) through Palemane Rock alongside The Longwalkers (98430): take 745 from Baine before traveling to Perith, kill its Palemane objectives in the cave, then accept 98430 from Perith and escort him out. Accept Sparring Match (99108) from Krang Stonehoof in Bloodhoof Village right after accepting Thunderhorn Cleansing; it does not wait for The Longwalkers turn-in. The Ravaged Caravan (749) stays after the Sparring Match turn-in in list order. Turn in The Longwalkers to Cairne at the route's first Thunder Bluff stop, right after using the Prospector's Picks at the Thunder Bluff forge for Dwarven Digging, so it adds no later trip. Use the cave spawn pins for Palemane Tanner and Skinner at 35.6, 63.4 and Palemane Poacher at 30.8, 60.4; the mobs also spawn at southern camps.
 - The **tracker** shows the step’s `text` (the objective). On the map, `Continue toward …` pins are path dots only; they must not read as the step title while you are on that map.
 - Keep **named** destination pins (`Travel to …`, NPC names, mob names). Era routes may still use `Continue toward …` coordinates between them; do not delete those pins to “simplify” a step.
 - If there is **no saved pin**, set `useClientPin = true` and say the guide follows the quest log pin. Do not invent coordinates. The tracker shows the objective summary under the quest title when the client provides it, so the step does not read as only the landmark NPC.
@@ -110,7 +122,7 @@ Lint also compares **every shipped leveling chapter** with every other shipped l
 
 ### Gated accepts
 
-If the client offers quest B only after quest A is turned in, the accept for B must `dependsOn` the `turnin-A-…` step, or `RegisterQuestPrerequisite` must name A and that turn-in step must appear earlier in the same guide. Priority alone does not hold the accept.
+If the client offers quest B only after quest A is turned in, the accept for B must `dependsOn` the `turnin-A-…` step, or `RegisterQuestPrerequisite` must name A and that turn-in step must appear earlier in the same guide. Priority alone does not hold the accept. Those links satisfy lint and scheduler guides; in ordered routes only the accept's list position and `requiredQuests` hold it, so list A in `requiredQuests` too.
 
 ### Accept-only deferral
 
@@ -128,13 +140,13 @@ Casual and dungeon guides support hard **Skip** with a cascade confirm when depe
 
 Many **camp pickup** accepts intentionally have an empty `dependsOn`: the route visits an NPC and several quests are picked up together. That is fine.
 
-An accept must **not** use empty `dependsOn` when the client only offers the quest **after another quest is turned in**. Example: **Nara Wildmane (1490)** only appears after **Hamuul Runetotem (1489)** at Elder Rise. The accept must `dependsOn` the **1489 turn-in** step. Copying a step from a dungeon guide without copying its `dependsOn` chain is a common mistake.
+An accept must **not** use empty `dependsOn` when the client only offers the quest **after another quest is turned in**. Example: **Nara Wildmane (1490)** only appears after **Hamuul Runetotem (1489)** at Elder Rise. The accept must `dependsOn` the **1489 turn-in** step and, on ordered routes, list 1489 in `requiredQuests`. Copying a step from a dungeon guide without copying its `dependsOn` chain is a common mistake.
 
-The engine treats any accept with no `dependsOn` as **always ready** for routing. A bad chain lets the tracker jump to that accept early (especially after reload or stale saved progress).
+In scheduler guides, the engine treats any accept with no `dependsOn` as **always ready** for routing. A bad chain lets the tracker jump to that accept early (especially after reload or stale saved progress).
 
 ### Registered quest prerequisites
 
-`QuestPrerequisites.lua` is the repository-owned quest-chain catalog. Register a verified prerequisite with `ns:RegisterQuestPrerequisite({ quest = ..., mode = "all"|"any", quests = {...}, conditions = ... })`. The engine attaches matching turn-in goals to leveling and Loremaster accepts, validates references and cycles, and routes to missing prerequisites before showing the dependent accept. Dungeon and raid guides follow authored priority. They do not skip ahead to every quest on the player's current map. After the player passes a step, later ready steps come before the route jumps backward. Once an accept, turn-in, or gossip at a pin is done, other ready steps at that same pin come before the route leaves.
+`QuestPrerequisites.lua` is the repository-owned quest-chain catalog. Register a verified prerequisite with `ns:RegisterQuestPrerequisite({ quest = ..., mode = "all"|"any", quests = {...}, conditions = ... })`. For Loremaster and other non-dungeon scheduler guides, the engine attaches matching turn-in goals to accepts, validates references and cycles, and routes to missing prerequisites before showing the dependent accept. Ordered routes do not attach these gates: put the prerequisite in the accept's `requiredQuests` and keep the catalog entry, which lint still checks. Dungeon and raid guides follow authored priority. They do not skip ahead to every quest on the player's current map. After the player passes a step, later ready steps come before the route jumps backward. Once an accept, turn-in, or gossip at a pin is done, other ready steps at that same pin come before the route leaves.
 
 Use `all` when every listed quest must be turned in. Use `any` only for true alternative breadcrumbs where one completed branch unlocks the quest. Conditions belong on the catalog entry when the chain differs by faction, race, or class. Do not copy prerequisite data from another add-on; verify it independently.
 
