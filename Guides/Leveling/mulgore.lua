@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 7,
+    revision = 8,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -8136,7 +8136,7 @@ ns:RegisterGuide({
         {
             priority = 2680,
             route = {
-                { y = 0.643, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Travel to Morin Cloudstalker.", x = 0.548 },
+                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
             },
             text = "Turn in Fizsprocket's Notes to Morin Cloudstalker.",
             id = "woven-turnin-98424-fizsprockets-notes",
@@ -8163,7 +8163,7 @@ ns:RegisterGuide({
         {
             priority = 2690,
             route = {
-                { y = 0.643, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Travel to Morin Cloudstalker.", x = 0.548 },
+                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
             },
             text = "Accept Ceasing Operations from Morin Cloudstalker. This is an elite. Bring a group.",
             id = "woven-accept-98427-ceasing-operations",
@@ -8217,7 +8217,7 @@ ns:RegisterGuide({
         {
             priority = 2710,
             route = {
-                { y = 0.643, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Travel to Morin Cloudstalker.", x = 0.548 },
+                { y = 0.626, mapID = 1412, label = "Morin Cloudstalker", offMapText = "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6.", x = 0.500 },
             },
             text = "Turn in Ceasing Operations to Morin Cloudstalker.",
             id = "woven-turnin-98427-ceasing-operations",

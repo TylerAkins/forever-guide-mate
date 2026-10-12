@@ -4601,7 +4601,7 @@ do
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 7, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 8, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")

@@ -55,7 +55,7 @@ ns:RegisterGuide({
     id = "leveling-mulgore",
     title = "Mulgore (Loremaster)",
     category = "Loremaster Guides",
-    revision = 4,
+    revision = 5,
     conditions = {
         all = {
             { level = { min = 1 } },
@@ -1371,8 +1371,8 @@ ns:RegisterGuide({
             text = "Accept The Ravaged Caravan from Morin Cloudstalker.",
             complete = QuestState(749, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {
@@ -1569,8 +1569,8 @@ ns:RegisterGuide({
             dependsOn = { "objective-749-the-ravaged-caravan-1" },
             complete = QuestState(751, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {
@@ -1647,8 +1647,8 @@ ns:RegisterGuide({
             dependsOn = { "turnin-751-the-ravaged-caravan" },
             complete = QuestState(764, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {
@@ -1836,8 +1836,8 @@ ns:RegisterGuide({
             dependsOn = { "turnin-751-the-ravaged-caravan" },
             complete = QuestState(765, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {
@@ -3315,8 +3315,8 @@ ns:RegisterGuide({
             dependsOn = { "objective-764-the-venture-co-1", "objective-764-the-venture-co-2" },
             complete = QuestState(764, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {
@@ -3333,8 +3333,8 @@ ns:RegisterGuide({
             dependsOn = { "objective-765-supervisor-fizsprocket-1" },
             complete = QuestState(765, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {
@@ -3352,8 +3352,8 @@ ns:RegisterGuide({
             dependsOn = { "objective-98424-fizsprockets-notes-1", "objective-98424-fizsprockets-notes-2", "objective-98424-fizsprockets-notes-3", "objective-98424-fizsprockets-notes-4" },
             complete = QuestState(98424, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {
@@ -3371,8 +3371,8 @@ ns:RegisterGuide({
             dependsOn = { "turnin-98424-fizsprockets-notes" },
             complete = QuestState(98427, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {
@@ -3409,8 +3409,8 @@ ns:RegisterGuide({
             dependsOn = { "objective-98427-ceasing-operations-1" },
             complete = QuestState(98427, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.548, 0.643, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
+                Point(MAP.MULGORE, 0.500, 0.626, "Morin Cloudstalker",
+                    "Morin Cloudstalker patrols this path. Look for him near 50.0, 62.6."),
             },
         },
         {

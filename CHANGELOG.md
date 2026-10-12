@@ -5,6 +5,7 @@ All notable changes to this project are documented here.
 ## 0.4.5 - 2026-10-12
 - Audit Mulgore pickup pins against AllTheThings and current Forever quest markers, and use the in-game positions for Harken Windtotem and Mull Thunderhorn across starter, class, Loremaster, and return-visit guides.
 - Use Blizzard quest POIs for Mulgore objectives when available, including Ambercorn, Well Stone, and Winterhoof Cleansing.
+- Pin Morin Cloudstalker at 50.0, 62.6 and note that he patrols the path.
 - Correct starter-zone quest ordering and cave routing across Durotar, Dun Morogh, Elwynn Forest, Teldrassil, Tirisfal Glades, and Silverpine Forest, including the combined Sharing the Land and The Longwalkers outing in Mulgore.
 
 ## 0.4.4 - 2026-10-11
