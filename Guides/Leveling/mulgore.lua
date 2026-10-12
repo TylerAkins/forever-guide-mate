@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 13,
+    revision = 14,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -3274,36 +3274,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            priority = 975,
-            route = {
-                { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
-            },
-            text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
-            id = "woven-turnin-98430-the-longwalkers",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98430, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {
-                "woven-accept-98430-the-longwalkers",
-                "woven-objective-98430-the-longwalkers",
-            },
-        },
-        {
             id = "level-before-accept-833-a-sacred-burial",
             kind = "note",
             text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
@@ -4519,6 +4489,37 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            priority = 1345,
+            route = {
+                { y = 0.516, mapID = 1456, label = "Cairne Bloodhoof", offMapText = "Travel to Cairne Bloodhoof.", x = 0.598 },
+            },
+            text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
+            id = "woven-turnin-98430-the-longwalkers",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98430, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {
+                "woven-accept-98430-the-longwalkers",
+                "woven-objective-98430-the-longwalkers",
+                "turnin-775-journey-into-thunder-bluff",
+            },
         },
         {
             priority = 1350,

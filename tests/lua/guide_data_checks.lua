@@ -506,6 +506,76 @@ function M.GoalDependsOnAll(goal, required)
     return true
 end
 
+-- Ordered routes follow list position, so each dependency must also come first in the goals list.
+M.RequiredGoalDependencies = {
+    {
+        guideID = "leveling-era-mulgore",
+        goalID = "woven-turnin-98430-the-longwalkers",
+        dependencies = { "turnin-775-journey-into-thunder-bluff" },
+    },
+}
+
+function M.RequiredGoalDependencyViolations(guides, rules)
+    local issues = {}
+    for _, rule in ipairs(rules or M.RequiredGoalDependencies) do
+        local guide = guides[rule.guideID]
+        local index = {}
+        for position, candidate in ipairs(guide and guide.goals or {}) do
+            index[candidate.id] = position
+        end
+        local goal = guide and index[rule.goalID] and guide.goals[index[rule.goalID]]
+        if not goal then
+            issues[#issues + 1] = {
+                guideID = rule.guideID,
+                goalID = rule.goalID,
+                detail = "goal not found",
+            }
+        elseif not M.GoalDependsOnAll(goal, rule.dependencies) then
+            issues[#issues + 1] = {
+                guideID = rule.guideID,
+                goalID = rule.goalID,
+                detail = "must dependOn every required goal: " .. table.concat(rule.dependencies, ", "),
+            }
+        else
+            for _, dependency in ipairs(rule.dependencies) do
+                if not index[dependency] or index[dependency] > index[rule.goalID] then
+                    issues[#issues + 1] = {
+                        guideID = rule.guideID,
+                        goalID = rule.goalID,
+                        detail = "must be listed after " .. dependency,
+                    }
+                end
+            end
+        end
+    end
+    return issues
+end
+
+function M.RequiredGoalDependencyFixtureFails()
+    local rules = {
+        { guideID = "route", goalID = "turnin-2-b", dependencies = { "turnin-1-a" } },
+    }
+    local early = { route = { goals = {
+        { id = "turnin-2-b", dependsOn = { "turnin-1-a" } },
+        { id = "turnin-1-a" },
+    } } }
+    local ungated = { route = { goals = {
+        { id = "turnin-1-a" },
+        { id = "turnin-2-b", dependsOn = {} },
+    } } }
+    local ordered = { route = { goals = {
+        { id = "turnin-1-a" },
+        { id = "turnin-2-b", dependsOn = { "turnin-1-a" } },
+    } } }
+    local earlyIssues = M.RequiredGoalDependencyViolations(early, rules)
+    local ungatedIssues = M.RequiredGoalDependencyViolations(ungated, rules)
+    return #earlyIssues == 1
+        and earlyIssues[1].detail == "must be listed after turnin-1-a"
+        and #ungatedIssues == 1
+        and ungatedIssues[1].detail:find("^must dependOn") ~= nil
+        and #M.RequiredGoalDependencyViolations(ordered, rules) == 0
+end
+
 -- When one class uses a different turn-in goal id for the same unlock, list every branch.
 M.RequiredClassBranchTurnins = {
     {
