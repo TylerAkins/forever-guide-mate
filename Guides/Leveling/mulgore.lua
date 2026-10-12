@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 12,
+    revision = 13,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -3167,7 +3167,7 @@ ns:RegisterGuide({
                 },
             },
             useClientText = false,
-            useClientPin = false,
+            useClientPin = true,
         },
         {
             priority = 950,
@@ -3239,7 +3239,7 @@ ns:RegisterGuide({
             },
             requiredQuests = {},
             useClientText = false,
-            useClientPin = false,
+            useClientPin = true,
             sourceInstructionStep = 95,
             sourceInstructionIndex = 1,
             checkpointQuest = 746,

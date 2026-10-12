@@ -1945,7 +1945,7 @@ ns:RegisterGuide({
                     { level = { min = 3 } },
                 },
             },
-            text = "Drink the Water of the Seers at the tribal fire in Bloodhoof, follow the vision, and turn in Rite of Vision to Seer Wiserunner.",
+            text = "Drink the Water of the Seers at the tribal fire in Bloodhoof, then turn in Rite of Vision to Seer Wiserunner.",
             dependsOn = { "accept-772-rite-of-vision" },
             complete = QuestState(772, "completed"),
             route = {

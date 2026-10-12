@@ -4614,7 +4614,7 @@ do
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 12, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 13, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -6448,6 +6448,27 @@ function TestWaypointProviders()
     Equal(ns.Navigation:QuestDestinationID({ kind = "objective", useClientPin = false,
         complete = { quest = { id = 4921, state = "complete" } } }), nil,
         "authored objective pins keep route navigation")
+    local preparationNote = { kind = "note", instructionOnly = true, useClientPin = true,
+        checkpointQuest = 746, complete = { any = { { item = { name = "Prospector's Pick", minCount = 5 } } } },
+        route = { { mapID = 1412, x = 0.344, y = 0.472, label = "Bael'dun Digsite" } } }
+    Equal(ns.Navigation:QuestDestinationID(preparationNote), 746,
+        "instruction notes can select the checkpoint quest's objective pin")
+    local prepPin = ns.Navigation:GetActiveLeg(preparationNote, { mapID = 1412, x = 0.35, y = 0.48 }, {
+        GetQuestsOnMap = function() return { { questID = 746, x = 0.33, y = 0.46 } } end,
+    })
+    Equal(prepPin and prepPin.x, 0.33, "an instruction note follows its checkpoint quest pin")
+    waypoints:Sync(preparationNote, { mapID = 1412, x = 0.35, y = 0.48 })
+    Equal(trackedQuest, 746, "an instruction note super-tracks its checkpoint quest")
+    local tauren = ns.guides["leveling-era-mulgore"]
+    local riteTurnin, dwarvenPrep
+    for _, goal in ipairs(tauren.goals) do
+        if goal.id == "turnin-772-rite-of-vision" then riteTurnin = goal end
+        if goal.id == "objective-746-1-bael-dun-digger" then dwarvenPrep = goal end
+    end
+    Check(riteTurnin and riteTurnin.useClientPin == true,
+        "Rite of Vision turn-in selects the client turn-in pin")
+    Check(dwarvenPrep and dwarvenPrep.useClientPin == true and dwarvenPrep.checkpointQuest == 746,
+        "Dwarven Digging preparation selects its checkpoint quest objective pin")
     waypoints:Sync(objective, {})
     trackedQuest = 456
     waypoints:Sync(objective, {})

@@ -354,17 +354,17 @@ end
 
 local function QuestID(goal)
     local complete = goal and goal.complete
-    if type(complete) ~= "table" then
-        return nil
+    if type(complete) == "table" then
+        local quest = complete.quest
+        if type(quest) == "table" and type(quest.id) == "number" then
+            return quest.id
+        end
+        local objective = complete.questObjective
+        if type(objective) == "table" and type(objective.id) == "number" then
+            return objective.id
+        end
     end
-    local quest = complete.quest
-    if type(quest) == "table" and type(quest.id) == "number" then
-        return quest.id
-    end
-    local objective = complete.questObjective
-    if type(objective) == "table" and type(objective.id) == "number" then
-        return objective.id
-    end
+    return type(goal) == "table" and type(goal.checkpointQuest) == "number" and goal.checkpointQuest or nil
 end
 
 function Navigation:QuestDestinationID(goal, state)
@@ -404,6 +404,9 @@ function Navigation:QuestDestinationID(goal, state)
         if complete.questObjective or (quest and (quest.state == "complete" or quest.state == "completed")) then
             return questID
         end
+    end
+    if goal.kind == "note" and goal.instructionOnly and goal.checkpointQuest and goal.useClientPin == true then
+        return goal.checkpointQuest
     end
 end
 
