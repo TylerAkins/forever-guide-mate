@@ -1,15 +1,15 @@
 # Starter route audit
 
-This pass covers the Tauren, Orc/Troll, Undead, Human, Dwarf/Gnome, and Night Elf starters. Skyborne actions and the Zephras Isle guide are unchanged. The guides still retain their class travel and later-zone detours; local work now runs on the matching starter-zone visits before those detours.
+This pass covers the Tauren, Orc/Troll, Undead, Human, Dwarf/Gnome, and Night Elf starters. Skyborne actions and the Zephras Isle guide are unchanged. The guides retain class travel and selected next-zone outings. General detours through other starter zones were removed after expanding local quest coverage.
 
 ## Route changes
 
 | Starter | Placement and coverage |
 | --- | --- |
 | Mulgore | Preserve the agreed return after bear form. Collect Wildmane teeth, prowler claws, and Arra'chea's horn on the northern outing; cleanse the last well before the closing Thunder Bluff deliveries. Add 759, 760, 770, and 776. |
-| Durotar | Complete Valley of Trials introductions before Sen'jin, combine the Sen'jin, Echo Isles, Tiragarde, and Thunder Ridge chains with their existing outings, and finish the northern chain before Tirisfal. Add 828, 827, 829, 832, 809, 924, 840, and 842. Dark Storms is available to every class, as required by the Margoz chain. |
-| Tirisfal | Complete Deathknell introductions before Brill, pick up Tomb Weed after Doom Weed and before Balnir, and finish local work before the Durotar detour. Keep the priest's foreign pickup before its Undercity delivery. Add 590, 86784, 372, 408, and the complete 405 → 357 → 366 → 409 → 411 chain. |
-| Elwynn | Complete Northshire introductions before Goldshire, collect mine and lake quests before their outings, and finish the local chains before Westfall and the mountain detours. Add 88, 59, 46, 176, 123, and 147. |
+| Durotar | Complete Valley of Trials introductions before Sen'jin, combine the Sen'jin, Echo Isles, Tiragarde, and Thunder Ridge chains with their existing outings, and finish the northern chain before the main route. Add 828, 827, 829, 832, 809, 924, 840, and 842. Dark Storms is available to every class, as required by the Margoz chain. |
+| Tirisfal | Complete Deathknell introductions before Brill, pick up Tomb Weed after Doom Weed and before Balnir, and finish local work before the main route. Keep the priest's foreign pickup before its Undercity delivery. Add 590, 86784, 372, 408, and the complete 405 → 357 → 366 → 409 → 411 chain. |
+| Elwynn | Complete Northshire introductions before Goldshire, collect mine and lake quests before their outings, and finish the local chains before Westfall and the retained Loch Modan outing. Add 88, 59, 46, 176, 123, and 147. |
 | Dun Morogh | Finish Coldridge introductions before Kharanos. Combine the den, western, ranch, and quarry quests with their existing outings, and make city deliveries during the Ironforge visit. Add 314 and the 96408 → 96392 → 96390 chain, with optional 96391. |
 | Teldrassil | Finish Shadowglen introductions before Dolanaar. Combine the barrow quests and escort, then finish the Oracle, lake, and Temple work before Auberdine. Add 483, 486, 2541, 2561, 87288, 2399, 2498, 2499, 927, and 941. |
 
@@ -44,3 +44,22 @@ The [Prodigal Lich](https://www.wowhead.com/forever/quest=405/the-prodigal-lich)
 Goal-index assertions cover the intended visits, and production-engine journeys cover all six starters. Focused cases cover prerequisite turn-ins and rare-item absence, discovery, consumption, and active follow-up recovery. The original reference fixtures are retained; Tirisfal's home-zone and Durotar outings are checked independently because their relative placement changed.
 
 Simulated journeys do not establish live NPC availability, changed terrain, escort behavior, or group encounter difficulty. Client walkthroughs remain required before treating those observations as verified.
+
+## Starter detour removal
+
+The 0.5.0 routes remove these distinct general quests from each starter. Counts include item-started quests and chain follow-ups; class quests remain.
+
+| Starter | Removed outing | Quests removed |
+| --- | --- | ---: |
+| Orc/Troll | Tirisfal and its Silverpine delivery breadcrumb | 11 |
+| Tauren | Durotar, Echo Isles, Tirisfal, and associated deliveries | 18 |
+| Undead | Durotar and Echo Isles | 16 |
+| Human | Dun Morogh | 8 |
+| Dwarf/Gnome | Elwynn and the isolated Redridge delivery | 12 |
+| Night Elf | Dun Morogh and general Loch Modan, Tram, and Stormwind errands | 9 |
+
+Undead zeppelin instructions now apply only to priests pursuing Touch of Weakness. The later Night Elf Stormpike's Delivery checkpoint and turn-in appear only if that quest is active or completed, preserving delivery for characters who already picked it up. Humans retain their Loch Modan outing, and Dwarves/Gnomes retain their Loch Modan and city class work. Tauren retain bear-form and fire-totem travel.
+
+The main route's zone order is unchanged. These cuts reduce starter repetition; simulated journeys do not establish the resulting XP totals or live level at the handoff.
+
+Tauren druids can enter Casual questing at level 12. The Lessons Anew chain retains its level 14 requirements and now follows the opening Silverpine questing instead of blocking entry. Revision recovery moves a character saved at the old checkpoint to their earliest unfinished applicable step.

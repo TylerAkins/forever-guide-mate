@@ -14,6 +14,50 @@ local function state(race, class, faction, level)
         quests = {}, completedQuests = {}, questLogKnown = true,
         questCompletionKnown = true, professions = {}, professionsKnown = true, items = {} }
 end
+for guideID, quests in pairs(dofile('tests/fixtures/starter_detour_cuts.lua')) do
+    local removed = {}
+    for _, questID in ipairs(quests) do removed[questID] = true end
+    for _, goal in ipairs(ns.guides[guideID].goals) do
+        local questID = ns.Engine:GetGoalQuestID(goal) or goal.checkpointQuest or goal.referenceQuest
+        equal(removed[questID] == true, false, guideID .. ' omits removed detour action ' .. goal.id)
+    end
+end
+for chapter, quests in pairs({
+    durotar = { 1818, 1819, 1820, 1881, 1882, 1478, 1473, 1471 },
+    mulgore = { 1525, 1526, 1527, 1818, 1819, 1820 },
+    ['tirisfal-glades'] = { 5660 },
+    ['elwynn-forest'] = { 416, 418 },
+    ['dun-morogh'] = { 1688, 1689 },
+    teldrassil = { 1638, 1639, 1640, 1665 },
+}) do
+    local kinds = {}
+    for _, goal in ipairs(ns.guides['leveling-era-' .. chapter].goals) do
+        local questID = ns.Engine:GetGoalQuestID(goal)
+        if questID then
+            kinds[questID] = kinds[questID] or {}
+            kinds[questID][goal.kind] = true
+        end
+    end
+    for _, questID in ipairs(quests) do
+        equal(kinds[questID] and kinds[questID].accept, true, chapter .. ' retains pickup ' .. questID)
+        equal(kinds[questID] and kinds[questID].turnin, true, chapter .. ' retains delivery ' .. questID)
+    end
+end
+for _, goalID in ipairs({ 'travel-tirisfal-to-durotar', 'travel-durotar-to-tirisfal' }) do
+    local goal = ns.Engine:GetGoal(ns.guides['leveling-era-tirisfal-glades'], goalID)
+    equal(ns.OrderedRoutes:ExcludedAction(goal, state(5, 1, 'Horde', 13)), true, goalID .. ' excludes non-priests')
+    equal(ns.OrderedRoutes:ExcludedAction(goal, state(5, 5, 'Horde', 13)), false, goalID .. ' retains priest travel')
+end
+do
+    local guide = ns.guides['leveling-casual-alliance']
+    for _, goalID in ipairs({ 'level-before-turnin-353-stormpike-s-delivery', 'turnin-353-stormpike-s-delivery' }) do
+        local goal = ns.Engine:GetGoal(guide, 'leveling-era-alliance-loch-modan:' .. goalID)
+        local snapshot = state(4, 1, 'Alliance', 18)
+        equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), true, goalID .. ' does not require the removed pickup')
+        snapshot.quests[353] = { complete = true, objectives = {} }
+        equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), false, goalID .. ' still supports a quest already in the log')
+    end
+end
 local function select(guideID, snapshot)
     ns.charDB = { selectedGuide = guideID, orderedRoutes = {}, activeGoalByGuide = {} }
     ns.Engine.reviewingGoal = nil
@@ -97,7 +141,32 @@ local function walkAfter(guideID, snapshot, startID, count)
     end
     return seen
 end
--- After bear form, Mulgore's Forever quests finish before the Crossroads turn-ins and Durotar.
+do
+    local guideID = 'leveling-casual-horde'
+    local guide = ns.guides[guideID]
+    local snapshot = state(6, 11, 'Horde', 12)
+    for _, goal in ipairs(ns.guides['leveling-era-mulgore'].goals) do
+        if not ns.OrderedRoutes:ExcludedAction(goal, snapshot) and goal.complete then fulfill(goal.complete, snapshot) end
+    end
+    snapshot.completedQuests[76156] = true
+    equal(ns.EvaluateCondition(guide.conditions, snapshot), true, 'Casual route is available at level 12')
+    snapshot.level = 11
+    equal(ns.EvaluateCondition(guide.conditions, snapshot), false, 'Casual route still requires level 12')
+    snapshot.level = 12
+    local oldGoal = 'leveling-era-horde-silverpine-forest:level-before-woven-class-druid-accept-6126-lessons-anew'
+    local checkpoint, classIndex = ns.Engine:GetGoal(guide, oldGoal)
+    local _, questingIndex = ns.Engine:GetGoal(guide, 'leveling-era-horde-silverpine-forest:accept-435-escorting-erland')
+    equal(checkpoint.requiredLevel, 14, 'Lessons Anew retains its class quest level requirement')
+    equal(questingIndex < classIndex, true, 'Opening Silverpine questing precedes the level 14 class trip')
+    ns.charDB = { selectedGuide = guideID, activeGoalByGuide = { [guideID] = oldGoal }, orderedRoutes = {
+        [guideID] = { revision = guide.revision - 1, cursor = oldGoal, confirmed = {}, skipped = {} },
+    } }
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Refresh(snapshot)
+    equal(signature(ns.Engine.currentGoal), 'accept:435', 'Level 12 Tauren druid resumes questing before Lessons Anew')
+    equal(ns.Engine.status, nil, 'Level 14 class quest does not block Casual entry')
+end
+-- After bear form, Mulgore's local quests finish before the Crossroads handoff.
 local afterBearForm = {
     'woven-accept-97485-traditions-of-the-bluff', 'woven-preparation-97485-bundle-of-herbs',
     'woven-preparation-97485-cedar-twigs', 'woven-preparation-97485-sinew-thread',
@@ -125,12 +194,12 @@ local afterBearForm = {
     'woven-accept-98435-thunderhorns-report',
     'woven-turnin-99082-the-high-chieftain', 'woven-turnin-776-rites-of-the-earthmother', 'woven-turnin-98435-thunderhorns-report',
     'woven-turnin-861-the-hunters-way', 'woven-accept-860-sergra-darkthorn',
-    'turnin-886-the-barrens-oases', 'turnin-6364-return-to-jahan', 'woven-turnin-860-sergra-darkthorn',
-    'accept-791-carry-your-weight' }
+    'turnin-886-the-barrens-oases', 'turnin-6364-return-to-jahan', 'woven-turnin-860-sergra-darkthorn' }
 local walked = walkAfter('leveling-era-mulgore', state(6, 11, 'Horde'), 'turnin-6002-body-and-heart', #afterBearForm)
 for index, goalID in ipairs(afterBearForm) do
     equal(walked[index], goalID, 'Tauren druid after bear form step ' .. index)
 end
+equal(ns.Engine.currentGuide.id, 'leveling-casual-horde', 'Tauren druid continues to the main route without Durotar filler')
 walked = walkAfter('leveling-era-mulgore', state(6, 1, 'Horde'), 'accept-6364-return-to-jahan', 1)
 equal(walked[1], 'woven-accept-97485-traditions-of-the-bluff', 'Tauren warrior starts the Mulgore Forever quests after Tal')
 walked = walkAfter('leveling-era-mulgore', state(6, 11, 'Horde'), 'accept-5928-heeding-the-call', 5)
