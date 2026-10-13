@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 9,
+    revision = 10,
     title = "Zephras Isle",
     category = "Leveling Quest Guides",
     id = "leveling-zephras-isle",

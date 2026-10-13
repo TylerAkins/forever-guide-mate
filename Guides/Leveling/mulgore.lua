@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 19,
+    revision = 20,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -5764,6 +5764,21 @@ ns:RegisterGuide({
             priority = 1500.5,
         },
         {
+            id = "accept-76156-stalk-with-the-earthmother",
+            kind = "accept",
+            conditions = { all = {
+                { faction = "Horde" }, { race = 6 },
+                { class = { 1, 7, 11 } }, { level = { min = 4 } },
+            } },
+            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
+            complete = { quest = { id = 76156, state = "activeOrCompleted" } },
+            route = { { mapID = 1456, x = 0.396, y = 0.656, label = "Boarton Shadetotem", offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." } },
+            dependsOn = {},
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
             priority = 1501.0,
             route = {
                 { y = 0.561, mapID = 1456, label = "Eylah Sunhorn", offMapText = "Travel to Eylah Sunhorn.", x = 0.381 },
@@ -6354,6 +6369,21 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-765-supervisor-fizsprocket" },
+        },
+        {
+            id = "objective-76156-stalk-with-the-earthmother-1",
+            kind = "objective",
+            conditions = { all = {
+                { faction = "Horde" }, { race = 6 },
+                { class = { 1, 7, 11 } }, { level = { min = 4 } },
+            } },
+            text = "Collect 5 Seaforium Mining Charges from the blasting-supply carts while doing Supervisor Fizsprocket. Follow the quest log pin for the carts.",
+            complete = { questObjective = { id = 76156, index = 1, count = 5, text = "Seaforium Mining Charge" } },
+            route = { { mapID = 1412, x = 0.644, y = 0.436, label = "Venture Co. Mine", offMapText = "Travel to the Venture Co. Mine." } },
+            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
         },
         {
             id = "loot-starter-before-woven-accept-98424-fizsprockets-notes",
@@ -7493,6 +7523,21 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-861-the-hunters-way", "woven-objective-861-the-hunters-way" },
+        },
+        {
+            id = "turnin-76156-stalk-with-the-earthmother",
+            kind = "turnin",
+            conditions = { all = {
+                { faction = "Horde" }, { race = 6 },
+                { class = { 1, 7, 11 } }, { level = { min = 4 } },
+            } },
+            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
+            complete = { quest = { id = 76156, state = "completed" } },
+            route = { { mapID = 1456, x = 0.396, y = 0.656, label = "Boarton Shadetotem", offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." } },
+            dependsOn = { "accept-76156-stalk-with-the-earthmother", "objective-76156-stalk-with-the-earthmother-1" },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
             id = "level-before-woven-accept-860-sergra-darkthorn",

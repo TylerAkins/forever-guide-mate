@@ -677,7 +677,7 @@ class ContractTests(unittest.TestCase):
             "Barrens Casual spine should carry Forever woven steps",
         )
         shaman = (ROOT / "Guides/Class/Shaman.lua").read_text(encoding="utf-8")
-        self.assertIn("accept-76156-", shaman)
+        self.assertNotIn("accept-76156-", shaman)
 
 
     def test_compiler_installs_into_wow_addons(self) -> None:

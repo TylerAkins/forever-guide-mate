@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Warrior",
     category = "Class Quests",
     id = "class-warrior",
@@ -1761,103 +1761,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             classAction = "turnin-92532-the-warriors-path",
-        },
-        {
-            id = "level-before-accept-76156-stalk-with-the-earthmother",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    {
-                        class = { 1, 7, 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 6, 8 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 76156,
-            priority = 510,
-        },
-        {
-            priority = 520,
-            route = {
-                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
-            },
-            id = "accept-76156-stalk-with-the-earthmother",
-            conditions = {
-                all = {
-                    {
-                        class = { 1, 7, 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 6, 8 },
-                    },
-                },
-            },
-            useClientPin = false,
-            dependsOn = {},
-            classAction = "accept-76156-stalk-with-the-earthmother",
-        },
-        {
-            route = {
-                { y = 0.436, mapID = 1412, label = "Venture Co. Mine", x = 0.644, offMapText = "Travel to the Venture Co. Mine in Mulgore." },
-            },
-            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
-            id = "objective-76156-stalk-with-the-earthmother-1",
-            useClientPin = false,
-            conditions = {
-                all = {
-                    {
-                        class = { 1, 7, 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 6, 8 },
-                    },
-                },
-            },
-            priority = 530,
-            classAction = "objective-76156-stalk-with-the-earthmother-1",
-        },
-        {
-            priority = 540,
-            route = {
-                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
-            },
-            dependsOn = { "accept-76156-stalk-with-the-earthmother", "objective-76156-stalk-with-the-earthmother-1" },
-            id = "turnin-76156-stalk-with-the-earthmother",
-            conditions = {
-                all = {
-                    {
-                        class = { 1, 7, 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 2, 6, 8 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-76156-stalk-with-the-earthmother",
         },
         {
             id = "level-before-accept-1638-a-warriors-training",

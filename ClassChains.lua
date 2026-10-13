@@ -2795,33 +2795,6 @@ ns.classActions = {
         },
         useClientText = false,
     },
-    ["accept-76156-stalk-with-the-earthmother"] = {
-        text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-        kind = "accept",
-        complete = {
-            quest = { id = 76156, state = "activeOrCompleted" },
-        },
-        requiredQuests = {},
-        useClientText = false,
-    },
-    ["objective-76156-stalk-with-the-earthmother-1"] = {
-        text = "Enter the Venture Company mine southeast of Thunder Bluff. Collect 5 Seaforium Mining Charges from the blasting-supply carts and return to Boarton Shadetotem.",
-        kind = "objective",
-        complete = {
-            questObjective = { id = 76156, index = 1, count = 5, text = "Seaforium Mining Charge" },
-        },
-        requiredQuests = {},
-        useClientText = false,
-    },
-    ["turnin-76156-stalk-with-the-earthmother"] = {
-        text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-        kind = "turnin",
-        complete = {
-            quest = { id = 76156, state = "completed" },
-        },
-        requiredQuests = {},
-        useClientText = false,
-    },
     ["accept-5923-heeding-the-call"] = {
         text = "Accept Heeding the Call from Denatharion in Darnassus. This step is for Night Elves.",
         kind = "accept",
@@ -8828,33 +8801,6 @@ ns.classActions = {
         kind = "turnin",
         complete = {
             quest = { id = 94472, state = "completed" },
-        },
-        requiredQuests = {},
-        useClientText = false,
-    },
-    ["accept-76240-stalk-with-the-earthmother"] = {
-        text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-        kind = "accept",
-        complete = {
-            quest = { id = 76240, state = "activeOrCompleted" },
-        },
-        requiredQuests = {},
-        useClientText = false,
-    },
-    ["objective-76240-stalk-with-the-earthmother-1"] = {
-        text = "Stalk With The Earthmother: Fish Chunks. Buy or catch a Raw Brilliant Smallfish and fillet it in front of Boarton Shadetotem.",
-        kind = "objective",
-        complete = {
-            questObjective = { id = 76240, text = "Fish Chunks", index = 1 },
-        },
-        requiredQuests = {},
-        useClientText = false,
-    },
-    ["turnin-76240-stalk-with-the-earthmother"] = {
-        text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-        kind = "turnin",
-        complete = {
-            quest = { id = 76240, state = "completed" },
         },
         requiredQuests = {},
         useClientText = false,

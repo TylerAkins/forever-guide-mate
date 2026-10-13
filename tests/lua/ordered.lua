@@ -58,6 +58,31 @@ do
         equal(ns.OrderedRoutes:ExcludedAction(goal, snapshot), false, goalID .. ' still supports a quest already in the log')
     end
 end
+do
+    local guide = ns.guides['leveling-era-mulgore']
+    local accept, acceptIndex = ns.Engine:GetGoal(guide, 'accept-76156-stalk-with-the-earthmother')
+    local objective, objectiveIndex = ns.Engine:GetGoal(guide, 'objective-76156-stalk-with-the-earthmother-1')
+    local turnin, turninIndex = ns.Engine:GetGoal(guide, 'turnin-76156-stalk-with-the-earthmother')
+    local _, mineIndex = ns.Engine:GetGoal(guide, 'woven-objective-765-supervisor-fizsprocket')
+    local _, returnIndex = ns.Engine:GetGoal(guide, 'woven-turnin-861-the-hunters-way')
+    equal(acceptIndex < mineIndex, true, 'Mining charges are accepted before Fizsprocket')
+    equal(objectiveIndex, mineIndex + 1, 'Mining charges share the Fizsprocket cave visit')
+    equal(turninIndex, returnIndex + 1, 'Mining charges turn in on the Thunder Bluff return')
+    for _, goal in ipairs({ accept, objective, turnin }) do
+        equal(ns.OrderedRoutes:ExcludedAction(goal, state(6, 1, 'Horde', 10)), false, 'Tauren warrior retains mining charges')
+        equal(ns.OrderedRoutes:ExcludedAction(goal, state(2, 1, 'Horde', 10)), true, 'Orc warrior excludes mining charges')
+        equal(ns.OrderedRoutes:ExcludedAction(goal, state(6, 3, 'Horde', 10)), true, 'Tauren hunter excludes mining charges')
+    end
+    for guideID, candidate in pairs(ns.guides) do
+        for _, goal in ipairs(candidate.goals) do
+            local questID = ns.Engine:GetGoalQuestID(goal) or goal.checkpointQuest
+            equal(questID == 76160 or questID == 76240, false, guideID .. ' omits cone and fish trials')
+            if questID == 76156 then
+                equal(guideID == 'leveling-era-mulgore', true, guideID .. ' keeps mining charges in Tauren Starter only')
+            end
+        end
+    end
+end
 local function select(guideID, snapshot)
     ns.charDB = { selectedGuide = guideID, orderedRoutes = {}, activeGoalByGuide = {} }
     ns.Engine.reviewingGoal = nil
@@ -148,7 +173,6 @@ do
     for _, goal in ipairs(ns.guides['leveling-era-mulgore'].goals) do
         if not ns.OrderedRoutes:ExcludedAction(goal, snapshot) and goal.complete then fulfill(goal.complete, snapshot) end
     end
-    snapshot.completedQuests[76156] = true
     equal(ns.EvaluateCondition(guide.conditions, snapshot), true, 'Casual route is available at level 12')
     snapshot.level = 11
     equal(ns.EvaluateCondition(guide.conditions, snapshot), false, 'Casual route still requires level 12')
@@ -168,7 +192,7 @@ do
 end
 -- After bear form, Mulgore's local quests finish before the Crossroads handoff.
 local afterBearForm = {
-    'woven-accept-97485-traditions-of-the-bluff', 'woven-preparation-97485-bundle-of-herbs',
+    'accept-76156-stalk-with-the-earthmother', 'woven-accept-97485-traditions-of-the-bluff', 'woven-preparation-97485-bundle-of-herbs',
     'woven-preparation-97485-cedar-twigs', 'woven-preparation-97485-sinew-thread',
     'woven-preparation-97485-flint-and-tinder', 'woven-preparation-97485-prepared-incense',
     'woven-objective-97485-traditions-of-the-bluff',
@@ -176,7 +200,7 @@ local afterBearForm = {
     'woven-accept-861-the-hunters-way', 'woven-accept-96130-chakuyak', 'woven-objective-96130-chakuyak',
     'woven-turnin-96130-chakuyak', 'woven-accept-764-the-venture-co', 'woven-accept-765-supervisor-fizsprocket',
     'woven-objective-764-the-venture-co-1', 'woven-objective-764-the-venture-co-2',
-    'woven-objective-765-supervisor-fizsprocket', 'loot-starter-before-woven-accept-98424-fizsprockets-notes',
+    'woven-objective-765-supervisor-fizsprocket', 'objective-76156-stalk-with-the-earthmother-1', 'loot-starter-before-woven-accept-98424-fizsprockets-notes',
     'woven-accept-98424-fizsprockets-notes', 'woven-objective-98424-fizsprockets-notes',
     'woven-objective-98424-fizsprockets-notes-gerenzo', 'woven-objective-98424-fizsprockets-notes-barrens',
     'woven-turnin-99079-longwalker-malah', 'woven-accept-99081-grim-tidings', 'woven-turnin-99081-grim-tidings',
@@ -193,7 +217,7 @@ local afterBearForm = {
     'woven-objective-861-the-hunters-way', 'woven-turnin-760-wildmane-cleansing',
     'woven-accept-98435-thunderhorns-report',
     'woven-turnin-99082-the-high-chieftain', 'woven-turnin-776-rites-of-the-earthmother', 'woven-turnin-98435-thunderhorns-report',
-    'woven-turnin-861-the-hunters-way', 'woven-accept-860-sergra-darkthorn',
+    'woven-turnin-861-the-hunters-way', 'turnin-76156-stalk-with-the-earthmother', 'woven-accept-860-sergra-darkthorn',
     'turnin-886-the-barrens-oases', 'turnin-6364-return-to-jahan', 'woven-turnin-860-sergra-darkthorn' }
 local walked = walkAfter('leveling-era-mulgore', state(6, 11, 'Horde'), 'turnin-6002-body-and-heart', #afterBearForm)
 for index, goalID in ipairs(afterBearForm) do
@@ -201,7 +225,7 @@ for index, goalID in ipairs(afterBearForm) do
 end
 equal(ns.Engine.currentGuide.id, 'leveling-casual-horde', 'Tauren druid continues to the main route without Durotar filler')
 walked = walkAfter('leveling-era-mulgore', state(6, 1, 'Horde'), 'accept-6364-return-to-jahan', 1)
-equal(walked[1], 'woven-accept-97485-traditions-of-the-bluff', 'Tauren warrior starts the Mulgore Forever quests after Tal')
+equal(walked[1], 'accept-76156-stalk-with-the-earthmother', 'Tauren warrior starts the Mulgore Forever quests after Tal')
 walked = walkAfter('leveling-era-mulgore', state(6, 11, 'Horde'), 'accept-5928-heeding-the-call', 5)
 equal(table.concat(walked, ','), table.concat({ 'accept-749-the-ravaged-caravan', 'turnin-749-the-ravaged-caravan',
     'accept-751-the-ravaged-caravan', 'turnin-751-the-ravaged-caravan',
@@ -224,8 +248,8 @@ local function recoverTaurenBefore(targetID, activeQuest)
 end
 local recovered = recoverTaurenBefore('turnin-751-the-ravaged-caravan', 751)
 equal(recovered.id, 'turnin-751-the-ravaged-caravan', 'revision 17 recovers an active caravan quest at Morin before departure')
-recovered = recoverTaurenBefore('woven-accept-97485-traditions-of-the-bluff')
-equal(recovered.id, 'woven-accept-97485-traditions-of-the-bluff', 'revision 17 recovers past bear form at Traditions of the Bluff')
+recovered = recoverTaurenBefore('accept-76156-stalk-with-the-earthmother')
+equal(recovered.id, 'accept-76156-stalk-with-the-earthmother', 'Starter revision recovers past bear form at Boarton')
 for _, goalID in ipairs({ 'woven-accept-764-the-venture-co', 'woven-accept-765-supervisor-fizsprocket' }) do
     local guide = ns.guides['leveling-era-mulgore']
     local accept = ns.Engine:GetGoal(guide, goalID)
