@@ -2,6 +2,7 @@ local _, ns = ...
 
 ns:RegisterQuestPrerequisite({ quest = 759, mode = "any", quests = { 758 } })
 ns:RegisterQuestPrerequisite({ quest = 760, mode = "any", quests = { 759 } })
+ns:RegisterQuestPrerequisite({ quest = 98435, mode = "all", quests = { 760 } })
 ns:RegisterQuestPrerequisite({ quest = 776, mode = "any", quests = { 775 } })
 ns:RegisterQuestPrerequisite({ quest = 828, mode = "any", quests = { 806 } })
 ns:RegisterQuestPrerequisite({ quest = 827, mode = "any", quests = { 828 } })

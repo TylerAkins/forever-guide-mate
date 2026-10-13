@@ -300,6 +300,7 @@ M.SameTitleQuestChains = {
 M.WovenQuestTurninGates = {
     [759] = 758,
     [760] = 759,
+    [98435] = 760,
     [776] = 775,
     [828] = 806,
     [827] = 828,
