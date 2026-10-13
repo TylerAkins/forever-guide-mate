@@ -2,6 +2,9 @@
 
 All notable changes to this project are documented here.
 
+## 0.4.10 - 2026-10-12
+- Complete The Hunter's Way alongside Wildmane Cleansing, then pick up Thunderhorn's Report after turning in Cleansing.
+
 ## 0.4.9 - 2026-10-12
 - Follow the beta vendor and ceremonial-site route for Traditions of the Bluff, and collect Fizsprocket’s Notes from the three marked pages inside the Venture Co. Mine.
 - Complete local quests during their starter-zone visits in Durotar, Tirisfal, Elwynn, Dun Morogh, and Teldrassil before distant detours.

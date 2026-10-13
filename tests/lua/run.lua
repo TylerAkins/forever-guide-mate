@@ -4611,7 +4611,7 @@ do
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 17, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 18, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -4674,12 +4674,24 @@ function TestTaurenStarterMulgoreForeverOrder()
             and Before(goalID, "accept-791-carry-your-weight"),
             goalID .. " finishes before the route returns to the Crossroads and Durotar")
     end
-    Check(taurenGoalIndex["level-before-woven-accept-98435-thunderhorns-report"] == taurenGoalIndex["woven-accept-99082-the-high-chieftain"] + 1
+    Check(taurenGoalIndex["level-before-woven-accept-98435-thunderhorns-report"] == taurenGoalIndex["woven-turnin-760-wildmane-cleansing"] + 1
         and taurenGoalIndex["woven-accept-98435-thunderhorns-report"] == taurenGoalIndex["level-before-woven-accept-98435-thunderhorns-report"] + 1,
-        "Thunderhorn's Report checkpoint and pickup immediately follow The High Chieftain")
+        "Thunderhorn's Report checkpoint and pickup immediately follow the Wildmane Cleansing turn-in")
     Check(Before("woven-accept-99082-the-high-chieftain", "woven-accept-98435-thunderhorns-report")
         and Before("woven-accept-98435-thunderhorns-report", "woven-turnin-99082-the-high-chieftain"),
         "Thunderhorn's Report is picked up from Mull in Bloodhoof before the closing Thunder Bluff stop")
+    Check(Before("woven-accept-760-wildmane-cleansing", "woven-objective-760-wildmane-cleansing")
+        and taurenGoalIndex["woven-objective-861-the-hunters-way"] == taurenGoalIndex["woven-objective-760-wildmane-cleansing"] + 1
+        and Before("woven-objective-861-the-hunters-way", "woven-turnin-760-wildmane-cleansing"),
+        "The Hunter's Way shares the Wildmane Cleansing outing before returning to Bloodhoof")
+    local report = ns.Engine:GetGoal(taurenStarter, "woven-accept-98435-thunderhorns-report")
+    Check(DependsOn(report, "woven-turnin-760-wildmane-cleansing"),
+        "Thunderhorn's Report waits for the Wildmane Cleansing turn-in")
+    local requiresCleansing = false
+    for _, group in ipairs(report.requiredQuests or {}) do
+        if group.mode == "all" and group.quests[1] == 760 then requiresCleansing = true end
+    end
+    Check(requiresCleansing, "Thunderhorn's Report requires observed Wildmane Cleansing completion")
     for _, spec in ipairs({ { 764, "woven-accept-764-the-venture-co", "woven-turnin-764-the-venture-co" },
         { 765, "woven-accept-765-supervisor-fizsprocket", "woven-turnin-765-supervisor-fizsprocket" } }) do
         local accept = ns.Engine:GetGoal(taurenStarter, spec[2])
@@ -4711,7 +4723,7 @@ function TestTaurenStarterMulgoreForeverOrder()
         "The Hunter's Way is accepted from Skorn beside Brave Wildrunner after its level checkpoint")
     Check(Before("woven-accept-861-the-hunters-way", "woven-objective-861-the-hunters-way")
         and Before("woven-objective-759-wildmane-totem", "woven-objective-861-the-hunters-way")
-        and Before("woven-objective-861-the-hunters-way", "woven-turnin-759-wildmane-totem")
+        and Before("woven-objective-861-the-hunters-way", "woven-turnin-760-wildmane-cleansing")
         and Before("woven-objective-861-the-hunters-way", "woven-turnin-99082-the-high-chieftain")
         and Before("woven-turnin-99082-the-high-chieftain", "woven-turnin-861-the-hunters-way")
         and Before("woven-turnin-861-the-hunters-way", "woven-accept-860-sergra-darkthorn")

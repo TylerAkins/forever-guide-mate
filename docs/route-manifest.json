@@ -80150,7 +80150,7 @@
     "nextGuide": null
   },
   "leveling-era-mulgore": {
-    "revision": 17,
+    "revision": 18,
     "visits": [
       {
         "boundary": [
@@ -82432,26 +82432,6 @@
           null
         ],
         "actions": [
-          "level-before-woven-accept-98435-thunderhorns-report"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Mull Thunderhorn"
-        ],
-        "actions": [
-          "woven-accept-98435-thunderhorns-report"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
           "level-before-woven-accept-759-wildmane-totem"
         ]
       },
@@ -82473,16 +82453,6 @@
         ],
         "actions": [
           "woven-objective-759-wildmane-totem"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Flatland Prowler"
-        ],
-        "actions": [
-          "woven-objective-861-the-hunters-way"
         ]
       },
       {
@@ -82569,10 +82539,40 @@
         "boundary": [
           null,
           1412,
+          "Flatland Prowler"
+        ],
+        "actions": [
+          "woven-objective-861-the-hunters-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
           "Mull Thunderhorn"
         ],
         "actions": [
           "woven-turnin-760-wildmane-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98435-thunderhorns-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "woven-accept-98435-thunderhorns-report"
         ]
       },
       {

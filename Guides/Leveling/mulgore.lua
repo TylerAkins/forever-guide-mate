@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 17,
+    revision = 18,
     title = "Tauren Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-mulgore",
@@ -7065,57 +7065,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            id = "level-before-woven-accept-98435-thunderhorns-report",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { race = 6 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 4 },
-            },
-            requiredLevel = 4,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 98435,
-            priority = 1504.335714,
-        },
-        {
-            priority = 1504.371429,
-            route = {
-                { y = 0.636, mapID = 1412, label = "Mull Thunderhorn", offMapText = "Travel to Mull Thunderhorn.", x = 0.475 },
-            },
-            text = "Accept Thunderhorn's Report from Mull Thunderhorn. This step is for tauren.",
-            id = "woven-accept-98435-thunderhorns-report",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 4 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98435, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
             id = "level-before-woven-accept-759-wildmane-totem",
             kind = "note",
             text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
@@ -7176,28 +7125,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-759-wildmane-totem" },
-        },
-        {
-            priority = 1504.428571,
-            id = "woven-objective-861-the-hunters-way",
-            kind = "objective",
-            text = "Kill Flatland Prowlers in northern Mulgore until you have four Flatland Prowler Claws.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { race = { 6 } },
-                    { level = { min = 10 } },
-                },
-            },
-            complete = { questObjective = { id = 861, index = 1, text = "Flatland Prowler Claw" } },
-            route = {
-                { mapID = 1412, x = 0.526, y = 0.128, label = "Flatland Prowler", offMapText = "Travel to Flatland Prowler." },
-            },
-            requiredQuests = {},
-            alternativeQuests = { 844 },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-861-the-hunters-way" },
         },
         {
             priority = 1504.435714,
@@ -7376,6 +7303,28 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-760-wildmane-cleansing" },
         },
         {
+            priority = 1504.489,
+            id = "woven-objective-861-the-hunters-way",
+            kind = "objective",
+            text = "Kill Flatland Prowlers in northern Mulgore until you have four Flatland Prowler Claws.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = { 6 } },
+                    { level = { min = 10 } },
+                },
+            },
+            complete = { questObjective = { id = 861, index = 1, text = "Flatland Prowler Claw" } },
+            route = {
+                { mapID = 1412, x = 0.526, y = 0.128, label = "Flatland Prowler", offMapText = "Travel to Flatland Prowler." },
+            },
+            requiredQuests = {},
+            alternativeQuests = { 844 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-861-the-hunters-way" },
+        },
+        {
             priority = 1504.492857,
             id = "woven-turnin-760-wildmane-cleansing",
             kind = "turnin",
@@ -7395,6 +7344,57 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-760-wildmane-cleansing", "woven-objective-760-wildmane-cleansing" },
+        },
+        {
+            id = "level-before-woven-accept-98435-thunderhorns-report",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98435,
+            priority = 1504.5,
+        },
+        {
+            priority = 1504.6,
+            route = {
+                { y = 0.636, mapID = 1412, label = "Mull Thunderhorn", offMapText = "Travel to Mull Thunderhorn.", x = 0.475 },
+            },
+            text = "Accept Thunderhorn's Report from Mull Thunderhorn. This step is for tauren.",
+            id = "woven-accept-98435-thunderhorns-report",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98435, state = "activeOrCompleted" },
+            },
+            requiredQuests = { { mode = "all", quests = { 760 } } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-turnin-760-wildmane-cleansing" },
         },
         {
             priority = 1504.7,
