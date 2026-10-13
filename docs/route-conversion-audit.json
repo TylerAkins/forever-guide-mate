@@ -14340,5 +14340,29 @@
       "source": "Player confirmation, 2026-10-10"
     },
     "coordinateLimit": "Skywatcher Plateau landmark from existing Muln guides; exact NPC and objective pins use client quest data."
+  },
+  "earthmotherRouteDecision": {
+    "quest": 76156,
+    "guide": "leveling-era-mulgore",
+    "races": [
+      6
+    ],
+    "classes": [
+      1,
+      7,
+      11
+    ],
+    "pickup": "Thunder Bluff before the mine visit",
+    "objective": "Alongside Supervisor Fizsprocket",
+    "turnin": "Later Thunder Bluff return",
+    "omittedQuests": [
+      76160,
+      76240
+    ],
+    "removedFrom": [
+      "Class guides",
+      "Silverpine",
+      "Mulgore Loremaster"
+    ]
   }
 }

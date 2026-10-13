@@ -5589,7 +5589,7 @@
     "nextGuide": null
   },
   "leveling-zephras-isle": {
-    "revision": 9,
+    "revision": 10,
     "visits": [
       {
         "boundary": [
@@ -22256,7 +22256,7 @@
     "nextGuide": null
   },
   "class-druid": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -22457,46 +22457,6 @@
         ],
         "actions": [
           "turnin-92485-a-student-of-nature"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "accept-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Venture Co. Mine"
-        ],
-        "actions": [
-          "objective-76156-stalk-with-the-earthmother-1"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "turnin-76156-stalk-with-the-earthmother"
         ]
       },
       {
@@ -28231,7 +28191,7 @@
     "nextGuide": null
   },
   "class-warrior": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -28713,46 +28673,6 @@
         ],
         "actions": [
           "turnin-92532-the-warriors-path"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "accept-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Venture Co. Mine"
-        ],
-        "actions": [
-          "objective-76156-stalk-with-the-earthmother-1"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "turnin-76156-stalk-with-the-earthmother"
         ]
       },
       {
@@ -34000,7 +33920,7 @@
     "nextGuide": null
   },
   "class-shaman": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -34530,68 +34450,6 @@
           "turnin-94375-call-of-earth",
           "accept-94472-earth-sapta",
           "turnin-94472-earth-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "accept-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Venture Co. Mine"
-        ],
-        "actions": [
-          "objective-76156-stalk-with-the-earthmother-1"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "turnin-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-76240-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "accept-76240-stalk-with-the-earthmother",
-          "objective-76240-stalk-with-the-earthmother-1",
-          "turnin-76240-stalk-with-the-earthmother"
         ]
       },
       {
@@ -71781,7 +71639,7 @@
     "nextGuide": null
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -73059,28 +72917,6 @@
         ],
         "actions": [
           "woven-class-shaman-turnin-97257-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-class-shaman-accept-76240-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-76240-stalk-with-the-earthmother",
-          "woven-class-shaman-objective-76240-stalk-with-the-earthmother-1",
-          "woven-class-shaman-turnin-76240-stalk-with-the-earthmother"
         ]
       },
       {
@@ -74614,46 +74450,6 @@
         ],
         "actions": [
           "woven-class-druid-turnin-94638-strength-and-mercy"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-class-druid-accept-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "woven-class-druid-accept-76156-stalk-with-the-earthmother"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1412,
-          "Venture Co. Mine"
-        ],
-        "actions": [
-          "woven-class-druid-objective-76156-stalk-with-the-earthmother-1"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1456,
-          "Boarton Shadetotem"
-        ],
-        "actions": [
-          "woven-class-druid-turnin-76156-stalk-with-the-earthmother"
         ]
       },
       {
@@ -78383,7 +78179,7 @@
     "nextGuide": null
   },
   "leveling-era-mulgore": {
-    "revision": 19,
+    "revision": 20,
     "visits": [
       {
         "boundary": [
@@ -80197,6 +79993,16 @@
         "boundary": [
           null,
           1456,
+          "Boarton Shadetotem"
+        ],
+        "actions": [
+          "accept-76156-stalk-with-the-earthmother"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
           "Eylah Sunhorn"
         ],
         "actions": [
@@ -80412,6 +80218,16 @@
         ],
         "actions": [
           "woven-objective-765-supervisor-fizsprocket"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Mine"
+        ],
+        "actions": [
+          "objective-76156-stalk-with-the-earthmother-1"
         ]
       },
       {
@@ -80837,6 +80653,16 @@
         ],
         "actions": [
           "woven-turnin-861-the-hunters-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Boarton Shadetotem"
+        ],
+        "actions": [
+          "turnin-76156-stalk-with-the-earthmother"
         ]
       },
       {
