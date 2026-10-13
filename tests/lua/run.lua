@@ -3134,6 +3134,31 @@ function TestQuestAudit()
     Equal(blockedEntry and blockedEntry.quest, 96874, "the routing blocker retains the quest id")
 
     Fresh()
+    ns.charDB.notOffered = {
+        ["old-zinge"] = { guide = "leveling-casual-horde", quest = 1359, npc = "Apothecary Renferrel", text = "Accept Zinge's Delivery." },
+        ["old-quinn"] = { guide = "leveling-casual-horde", quest = 430, npc = "Apothecary Renferrel", text = "Accept Return to Quinn." },
+        [spinalAxe.id] = { guide = "leveling-durotar", quest = 96874, npc = "Ug'thok", text = spinalAxe.text },
+    }
+    local reportAPI = {
+        C_QuestLog = {
+            IsQuestFlaggedCompleted = function(id) return id == 1359 end,
+            GetLogIndexForQuestID = function(id) return id == 430 and 1 or 0 end,
+        },
+    }
+    Equal(#ns.QuestAudit:Lines(reportAPI), 1, "reports omit completed and active quests from earlier guide steps")
+    Equal(ns.charDB.notOffered["old-zinge"], nil, "completed quests are removed from the saved report")
+    Equal(ns.charDB.notOffered["old-quinn"], nil, "accepted quests are removed from the saved report")
+    Equal(#ns.QuestAudit:Lines(reportAPI), 1, "unresolved refusals survive repeated report reads")
+    Equal(#ns.QuestAudit:Lines({}), 1, "missing client APIs retain unresolved reports")
+    Equal(#ns.QuestAudit:Lines({ C_QuestLog = {
+        IsQuestFlaggedCompleted = function() error("not ready") end,
+        GetLogIndexForQuestID = function() error("not ready") end,
+    } }), 1, "failed client queries retain unresolved reports")
+    ns.Engine.state.completedQuests[96874] = true
+    ns.PrintQuestAudit()
+    Equal(#printed, 0, "login prints nothing when all saved refusals have been resolved")
+
+    Fresh()
     ns.QuestAudit:Inspect(API("Ug'thok", { { questID = 96874 } }))
     Equal(ns.charDB.deferred[spinalAxe.id], nil, "a step the giver does offer is left alone")
     Equal(next(ns.charDB.notOffered), nil, "an offered step is not reported")
