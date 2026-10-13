@@ -4611,7 +4611,7 @@ do
     local ambercorn = ns.Engine:GetGoal(taurenStarter, "objective-771-2-ambercorn")
     local wellStone = ns.Engine:GetGoal(taurenStarter, "objective-771-1-well-stone")
     local winterhoof = ns.Engine:GetGoal(taurenStarter, "objective-754-1-winterhoof-cleansing-totem")
-    Equal(taurenStarter.revision, 18, "Mulgore starter guide revision advances with the route correction")
+    Equal(taurenStarter.revision, 19, "Mulgore starter guide revision advances with the route correction")
     Equal(ambercorn.useClientPin, true, "Ambercorn prefers the Blizzard quest POI")
     Equal(wellStone.useClientPin, true, "Well Stone prefers the Blizzard quest POI")
     Equal(winterhoof.useClientPin, true, "Winterhoof Cleansing prefers the Blizzard quest POI")
@@ -4670,9 +4670,8 @@ function TestTaurenStarterMulgoreForeverOrder()
         "woven-turnin-99082-the-high-chieftain",
         "woven-turnin-98435-thunderhorns-report",
     }) do
-        Check(Before(goalID, "turnin-886-the-barrens-oases") and Before(goalID, "turnin-6364-return-to-jahan")
-            and Before(goalID, "accept-791-carry-your-weight"),
-            goalID .. " finishes before the route returns to the Crossroads and Durotar")
+        Check(Before(goalID, "turnin-886-the-barrens-oases") and Before(goalID, "turnin-6364-return-to-jahan"),
+            goalID .. " finishes before the route returns to the Crossroads")
     end
     Check(taurenGoalIndex["level-before-woven-accept-98435-thunderhorns-report"] == taurenGoalIndex["woven-turnin-760-wildmane-cleansing"] + 1
         and taurenGoalIndex["woven-accept-98435-thunderhorns-report"] == taurenGoalIndex["level-before-woven-accept-98435-thunderhorns-report"] + 1,
@@ -4728,8 +4727,7 @@ function TestTaurenStarterMulgoreForeverOrder()
         and Before("woven-turnin-99082-the-high-chieftain", "woven-turnin-861-the-hunters-way")
         and Before("woven-turnin-861-the-hunters-way", "woven-accept-860-sergra-darkthorn")
         and Before("woven-accept-860-sergra-darkthorn", "turnin-886-the-barrens-oases")
-        and Before("turnin-6364-return-to-jahan", "woven-turnin-860-sergra-darkthorn")
-        and Before("woven-turnin-860-sergra-darkthorn", "accept-791-carry-your-weight"),
+        and Before("turnin-6364-return-to-jahan", "woven-turnin-860-sergra-darkthorn"),
         "The Hunter's Way turns in to Melor on the closing Thunder Bluff stop and Sergra waits for the Crossroads")
     Check(hunterAccept and sergraAccept and DependsOn(sergraAccept, "woven-turnin-861-the-hunters-way"),
         "Sergra Darkthorn follows The Hunter's Way turn-in")
@@ -4774,7 +4772,7 @@ do
     local dunMorogh = ns.guides["leveling-era-dun-morogh"]
     local dunMoroghIndex = {}
     for index, goal in ipairs(dunMorogh.goals) do dunMoroghIndex[goal.id] = index end
-    Equal(dunMorogh.revision, 7, "Dun Morogh guide revision advances with the route correction")
+    Equal(dunMorogh.revision, 8, "Dun Morogh guide revision advances with the route correction")
     Check(dunMoroghIndex["objective-182-1-frostmane-troll-whelp"] < dunMoroghIndex["turnin-182-the-troll-cave"]
         and dunMoroghIndex["turnin-182-the-troll-cave"] < dunMoroghIndex["turnin-1599-beginnings"],
         "Dun Morogh completes the troll-cave outing before routing to Alamar")
@@ -4782,14 +4780,14 @@ do
     local tirisfal = ns.guides["leveling-era-tirisfal-glades"]
     local tirisfalIndex = {}
     for index, goal in ipairs(tirisfal.goals) do tirisfalIndex[goal.id] = index end
-    Equal(tirisfal.revision, 7, "Tirisfal guide revision advances with the route correction")
+    Equal(tirisfal.revision, 8, "Tirisfal guide revision advances with the route correction")
     Check(tirisfalIndex["turnin-1470-piercing-the-veil"] < tirisfalIndex["objective-364-1-duskbat"],
         "Tirisfal preserves its Venya turn-in before the Mindless Ones outing")
 
     local teldrassil = ns.guides["leveling-era-teldrassil"]
     local teldrassilIndex = {}
     for index, goal in ipairs(teldrassil.goals) do teldrassilIndex[goal.id] = index end
-    Equal(teldrassil.revision, 7, "Teldrassil guide revision advances with the route correction")
+    Equal(teldrassil.revision, 8, "Teldrassil guide revision advances with the route correction")
     Check(teldrassilIndex["accept-3519-a-friend-in-need"] < teldrassilIndex["turnin-3519-a-friend-in-need"]
         and teldrassilIndex["turnin-3519-a-friend-in-need"] < teldrassilIndex["accept-3521-iverron-s-antidote"]
         and teldrassilIndex["accept-3521-iverron-s-antidote"] < teldrassilIndex["accept-916-webwood-venom"]

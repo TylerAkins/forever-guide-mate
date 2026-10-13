@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-silverpine-forest",
@@ -7653,362 +7653,6 @@ ns:RegisterGuide({
             classAction = "turnin-92485-a-student-of-nature",
         },
         {
-            id = "level-before-woven-class-druid-accept-6126-lessons-anew",
-            kind = "note",
-            text = "Reach level 14 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 14 },
-            },
-            requiredLevel = 14,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 6126,
-            priority = 2850,
-        },
-        {
-            priority = 2860,
-            route = {
-                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
-            },
-            dependsOn = {},
-            id = "woven-class-druid-accept-6126-lessons-anew",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-6126-lessons-anew",
-        },
-        {
-            priority = 2870,
-            route = {
-                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
-            },
-            dependsOn = { "woven-class-druid-accept-6126-lessons-anew" },
-            id = "woven-class-druid-turnin-6126-lessons-anew",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-6126-lessons-anew",
-        },
-        {
-            priority = 2880,
-            route = {
-                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
-            },
-            dependsOn = {},
-            id = "woven-class-druid-accept-6127-the-principal-source",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-6127-the-principal-source",
-        },
-        {
-            priority = 2890,
-            id = "woven-class-druid-objective-6127-quest-work",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = true,
-            dependsOn = { "woven-class-druid-accept-6127-the-principal-source" },
-            classAction = "objective-6127-quest-work",
-        },
-        {
-            priority = 2900,
-            route = {
-                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
-            },
-            dependsOn = { "woven-class-druid-accept-6127-the-principal-source", "woven-class-druid-objective-6127-quest-work" },
-            id = "woven-class-druid-turnin-6127-the-principal-source",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-6127-the-principal-source",
-        },
-        {
-            priority = 2910,
-            route = {
-                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
-            },
-            dependsOn = {},
-            id = "woven-class-druid-accept-6128-gathering-the-cure",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-6128-gathering-the-cure",
-        },
-        {
-            priority = 2920,
-            dependsOn = { "woven-class-druid-accept-6128-gathering-the-cure" },
-            id = "woven-class-druid-objective-6128-gathering-the-cure",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = true,
-            classAction = "objective-6128-gathering-the-cure",
-        },
-        {
-            priority = 2930,
-            route = {
-                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
-            },
-            dependsOn = { "woven-class-druid-accept-6128-gathering-the-cure", "woven-class-druid-objective-6128-gathering-the-cure" },
-            id = "woven-class-druid-turnin-6128-gathering-the-cure",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-6128-gathering-the-cure",
-        },
-        {
-            priority = 2940,
-            route = {
-                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
-            },
-            dependsOn = {},
-            id = "woven-class-druid-accept-6129-curing-the-sick",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-6129-curing-the-sick",
-        },
-        {
-            priority = 2950,
-            id = "woven-class-druid-objective-6129-quest-work",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = true,
-            dependsOn = { "woven-class-druid-accept-6129-curing-the-sick" },
-            classAction = "objective-6129-quest-work",
-        },
-        {
-            priority = 2960,
-            route = {
-                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
-            },
-            dependsOn = { "woven-class-druid-accept-6129-curing-the-sick", "woven-class-druid-objective-6129-quest-work" },
-            id = "woven-class-druid-turnin-6129-curing-the-sick",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-6129-curing-the-sick",
-        },
-        {
-            priority = 2970,
-            route = {
-                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
-            },
-            dependsOn = {},
-            id = "woven-class-druid-accept-6130-power-over-poison",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-6130-power-over-poison",
-        },
-        {
-            priority = 2980,
-            route = {
-                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
-            },
-            dependsOn = { "woven-class-druid-accept-6130-power-over-poison" },
-            id = "woven-class-druid-turnin-6130-power-over-poison",
-            conditions = {
-                all = {
-                    { class = 11 },
-                    {
-                        class = { 11 },
-                    },
-                    { faction = "Horde" },
-                    {
-                        level = { min = 14 },
-                    },
-                    { race = 6 },
-                    {
-                        race = { 6 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-6130-power-over-poison",
-        },
-        {
             priority = 2990,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
@@ -13178,6 +12822,362 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-98299-stop-the-spread", "woven-objective-98299-stop-the-spread" },
+        },
+        {
+            id = "level-before-woven-class-druid-accept-6126-lessons-anew",
+            kind = "note",
+            text = "Reach level 14 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 14 },
+            },
+            requiredLevel = 14,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6126,
+            priority = 4770,
+        },
+        {
+            priority = 4780,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = {},
+            id = "woven-class-druid-accept-6126-lessons-anew",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6126-lessons-anew",
+        },
+        {
+            priority = 4790,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "woven-class-druid-accept-6126-lessons-anew" },
+            id = "woven-class-druid-turnin-6126-lessons-anew",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6126-lessons-anew",
+        },
+        {
+            priority = 4800,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = {},
+            id = "woven-class-druid-accept-6127-the-principal-source",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6127-the-principal-source",
+        },
+        {
+            priority = 4810,
+            id = "woven-class-druid-objective-6127-quest-work",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "woven-class-druid-accept-6127-the-principal-source" },
+            classAction = "objective-6127-quest-work",
+        },
+        {
+            priority = 4820,
+            route = {
+                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
+            },
+            dependsOn = { "woven-class-druid-accept-6127-the-principal-source", "woven-class-druid-objective-6127-quest-work" },
+            id = "woven-class-druid-turnin-6127-the-principal-source",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6127-the-principal-source",
+        },
+        {
+            priority = 4830,
+            route = {
+                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
+            },
+            dependsOn = {},
+            id = "woven-class-druid-accept-6128-gathering-the-cure",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6128-gathering-the-cure",
+        },
+        {
+            priority = 4840,
+            dependsOn = { "woven-class-druid-accept-6128-gathering-the-cure" },
+            id = "woven-class-druid-objective-6128-gathering-the-cure",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-6128-gathering-the-cure",
+        },
+        {
+            priority = 4850,
+            route = {
+                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
+            },
+            dependsOn = { "woven-class-druid-accept-6128-gathering-the-cure", "woven-class-druid-objective-6128-gathering-the-cure" },
+            id = "woven-class-druid-turnin-6128-gathering-the-cure",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6128-gathering-the-cure",
+        },
+        {
+            priority = 4860,
+            route = {
+                { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
+            },
+            dependsOn = {},
+            id = "woven-class-druid-accept-6129-curing-the-sick",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6129-curing-the-sick",
+        },
+        {
+            priority = 4870,
+            id = "woven-class-druid-objective-6129-quest-work",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "woven-class-druid-accept-6129-curing-the-sick" },
+            classAction = "objective-6129-quest-work",
+        },
+        {
+            priority = 4880,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = { "woven-class-druid-accept-6129-curing-the-sick", "woven-class-druid-objective-6129-quest-work" },
+            id = "woven-class-druid-turnin-6129-curing-the-sick",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6129-curing-the-sick",
+        },
+        {
+            priority = 4890,
+            route = {
+                { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
+            },
+            dependsOn = {},
+            id = "woven-class-druid-accept-6130-power-over-poison",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6130-power-over-poison",
+        },
+        {
+            priority = 4900,
+            route = {
+                { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
+            },
+            dependsOn = { "woven-class-druid-accept-6130-power-over-poison" },
+            id = "woven-class-druid-turnin-6130-power-over-poison",
+            conditions = {
+                all = {
+                    { class = 11 },
+                    {
+                        class = { 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 14 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6130-power-over-poison",
         },
     },
     casualSpine = true,

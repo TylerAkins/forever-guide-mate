@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Loch Modan",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-loch-modan",
@@ -67,6 +67,7 @@ ns:RegisterGuide({
         {
             id = "level-before-turnin-353-stormpike-s-delivery",
             kind = "note",
+            excludeWhen = { ["not"] = { quest = { id = 353, state = "activeOrCompleted" } } },
             text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
             conditions = {
                 all = {
@@ -97,6 +98,7 @@ ns:RegisterGuide({
             text = "Turn in Stormpike's Delivery to Mountaineer Stormpike.",
             id = "turnin-353-stormpike-s-delivery",
             kind = "turnin",
+            excludeWhen = { ["not"] = { quest = { id = 353, state = "activeOrCompleted" } } },
             conditions = {
                 all = {
                     { faction = "Alliance" },

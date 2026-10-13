@@ -13,6 +13,11 @@ for quest in pairs(dofile('tests/fixtures/separate_content.lua')) do excluded[qu
 -- Cloth donations and random egg exchanges are optional reputation strategy.
 for _,q in ipairs({7791,7793,7794,7795,7799,7800,7802,7803,7804,7805,7807,7808,7809,7811,7813,7814,7817,7818,7820,7821,7822,7823,7824,7826,7827,7831,7833,7834,7835,7836}) do excluded[q]=true end
 local chapters = {}
+local starterCuts = {}
+for guideID, quests in pairs(dofile('tests/fixtures/starter_detour_cuts.lua')) do
+ starterCuts[guideID] = {}
+ for _, questID in ipairs(quests) do starterCuts[guideID][questID] = true end
+end
 -- These starter guides intentionally combine nearby quest actions into a single outing.
 local intentionalOutingReorders = {
  ['leveling-era-mulgore'] = {
@@ -59,7 +64,7 @@ for id, actions in pairs(expected) do
  local previous, sourceStep, stepFloor = 0, nil, 0
  local outingProgress = {}
  for _,a in ipairs(actions) do
-  if not excluded[a[2]] and not (a[1]=='objective' and a[2]==1009 ) then
+  if not excluded[a[2]] and not (starterCuts[id] and starterCuts[id][a[2]]) and not (a[1]=='objective' and a[2]==1009 ) then
    local signature = table.concat({a[1],a[2] or 0,a[3] or 0,a[4]},':')
    local outing = 'reference'
    if id == 'leveling-era-tirisfal-glades' then
