@@ -167,7 +167,7 @@ function QuestAudit:Inspect(api)
 end
 
 -- Lines a player can read, newest guide step first.
-function QuestAudit:Lines()
+function QuestAudit:Lines(api)
     local report = self:Report()
     local lines = {}
     if not report then return lines end
@@ -176,8 +176,12 @@ function QuestAudit:Lines()
     table.sort(goalIDs)
     for _, goalID in ipairs(goalIDs) do
         local entry = report[goalID]
-        lines[#lines + 1] = ("%s (quest %d, %s): %s"):format(
-            tostring(entry.guide), entry.quest or 0, tostring(entry.npc), tostring(entry.text))
+        if type(entry.quest) == "number" and self:AlreadyTaken(entry.quest, api) then
+            report[goalID] = nil
+        else
+            lines[#lines + 1] = ("%s (quest %d, %s): %s"):format(
+                tostring(entry.guide), entry.quest or 0, tostring(entry.npc), tostring(entry.text))
+        end
     end
     return lines
 end
