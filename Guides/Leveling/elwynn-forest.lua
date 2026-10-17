@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 9,
+    revision = 10,
     title = "Human Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-elwynn-forest",
@@ -157,37 +157,6 @@ ns:RegisterGuide({
             sourceStep = 13,
             useClientPin = false,
             classAction = "turnin-783-a-threat-within",
-        },
-        {
-            route = {
-                { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
-            },
-            text = "Accept A Scribbled Letter from Marshal McBride in Northshire Abbey.",
-            id = "woven-accept-92479-a-scribbled-letter",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 3 },
-                    {
-                        class = { 3 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 1 },
-                    {
-                        race = { 1 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 92479, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
             route = {
@@ -398,6 +367,68 @@ ns:RegisterGuide({
             sourceStep = 20,
             useClientPin = false,
             classAction = "turnin-7-kobold-camp-cleanup",
+        },
+        {
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
+            },
+            text = "Accept A Scribbled Letter from Marshal McBride in Northshire Abbey.",
+            id = "woven-accept-92479-a-scribbled-letter",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 92479, state = "activeOrCompleted" },
+            },
+            requiredQuests = { { mode = "all", quests = { 7 } } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Read Scribbled Letter in your bags. Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
+            route = {
+                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
+            },
+            dependsOn = { "woven-accept-92479-a-scribbled-letter" },
+            id = "woven-turnin-92479-a-scribbled-letter",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 92479, state = "completed" },
+            },
+            requiredQuests = { { mode = "all", quests = { 7 } } },
+            useClientText = false,
+            useClientPin = false,
         },
         {
             route = {
@@ -1519,37 +1550,6 @@ ns:RegisterGuide({
                     conditions = {},
                 },
             },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Read Scribbled Letter in your bags. Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
-            route = {
-                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
-            },
-            dependsOn = { "woven-accept-92479-a-scribbled-letter" },
-            id = "woven-turnin-92479-a-scribbled-letter",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 3 },
-                    {
-                        class = { 3 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 1 },
-                    {
-                        race = { 1 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 92479, state = "completed" },
-            },
-            requiredQuests = {},
             useClientText = false,
             useClientPin = false,
         },

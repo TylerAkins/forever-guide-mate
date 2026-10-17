@@ -18,6 +18,7 @@ for _, classID in ipairs({ 1, 3, 7, 11 }) do
  assert(n.Engine.currentGoal.id == 'accept-747-the-hunt-begins', 'captured Tauren opening')
 end
 
+local repeatableRewards = dofile('tests/fixtures/class_repeatable_rewards.lua')
 local total=0
 local function walk(guideID,race,class,faction)
  n.charDB={selectedGuide=guideID,orderedRoutes={},activeGoalByGuide={}};n.Engine.reviewingGoal=nil
@@ -40,7 +41,15 @@ local function complete(c)
  if not c then return end
  if c.all then for _,a in ipairs(c.all) do complete(a) end
  elseif c.any then complete(c.any[1])
- elseif c.quest then local q=c.quest.id;local st=c.quest.state;if st=='completed' then s.completedQuests[q]=true;s.quests[q]=nil else s.quests[q]=s.quests[q] or {objectives={}};if st=='complete' then s.quests[q].complete=true end end
+ elseif c.quest then
+  local q, st = c.quest.id, c.quest.state
+  if st == 'completed' then
+   if repeatableRewards[q] then s.items[repeatableRewards[q][1]] = 1 else s.completedQuests[q] = true end
+   s.quests[q] = nil
+  else
+   s.quests[q] = s.quests[q] or { objectives = {} }
+   if st == 'complete' then s.quests[q].complete = true end
+  end
  elseif c.questObjective then local q=c.questObjective.id;s.quests[q]=s.quests[q] or {objectives={}};local o=c.questObjective;local index=o.index or (#s.quests[q].objectives+1);s.quests[q].objectives[index]={text=o.text,finished=true,numFulfilled=o.count or 100,numRequired=o.count or 100}
  elseif c.level then s.level=math.max(s.level,c.level.min or 1)
  elseif c.instance then s.instanceID=c.instance;s.inInstance=true

@@ -264,7 +264,7 @@ local starterVisits = {
     { 'durotar', 2, 1, 'turnin-6394-thazz-ril-s-pick', {
         'woven-accept-97279-wayward-weapons', 'woven-objective-97279-wayward-weapons', 'woven-turnin-97279-wayward-weapons' } },
     { 'elwynn-forest', 1, 3, 'turnin-21-skirmish-at-echo-ridge', {
-        'woven-turnin-92479-a-scribbled-letter', 'loot-starter-before-accept-91741-verified-pickup', 'accept-91741-verified-pickup' } },
+        'loot-starter-before-accept-91741-verified-pickup', 'accept-91741-verified-pickup', 'woven-turnin-91741-nibbled-on-book' } },
     { 'dun-morogh', 3, 7, 'turnin-3361-a-refugee-s-quandary', {
         'woven-accept-98581-archaic-rune', 'woven-turnin-98581-archaic-rune' } },
     { 'teldrassil', 4, 1, 'turnin-917-webwood-egg', {
@@ -1192,6 +1192,114 @@ do
     journey('test-finding-warmth', snapshot, { 'accept:99159', 'objective:99159', 'turnin:99159',
         'accept:99160', 'accept:99162', 'objective:99160', 'objective:99162', 'turnin:99160',
         'accept:99161', 'objective:99161', 'turnin:99161', 'turnin:99162' })
+end
+
+do
+    local gates = {
+        ['accept-92479-a-scribbled-letter'] = 7,
+        ['accept-98574-hallowed-memorandum'] = 179,
+        ['accept-98581-archaic-rune'] = 179,
+        ['accept-98576-glyphic-parchment'] = 788,
+        ['accept-98575-tainted-tablet'] = 788,
+        ['accept-94466-call-of-fire'] = 94465,
+        ['accept-94467-call-of-fire'] = 94466,
+        ['accept-94468-call-of-fire'] = 94467,
+    }
+    for id, prior in pairs(gates) do
+        local action = ns.classActions[id]
+        local snapshot = state(3, 7, 'Alliance', 60)
+        equal(ns.OrderedRoutes:Prerequisites(action, snapshot), false, id .. ' waits for its prerequisite')
+        snapshot.completedQuests[prior] = true
+        equal(ns.OrderedRoutes:Prerequisites(action, snapshot), true, id .. ' unlocks after the turn-in')
+    end
+    local research = ns.classActions['accept-97286-research-access']
+    local snapshot = state(1, 8, 'Alliance', 1)
+    equal(ns.OrderedRoutes:Prerequisites(research, snapshot), false, 'Research Access requires a research book')
+    snapshot.completedQuests[78124] = true
+    equal(ns.OrderedRoutes:Prerequisites(research, snapshot), true, 'One research book unlocks Research Access')
+    local delivery = ns.classActions['turnin-97286-research-access']
+    equal(delivery.text:find('Garion Wendell', 1, true) ~= nil, true, 'Alliance research text matches its Stormwind pin')
+    for _, case in ipairs({
+        { 'class-paladin', 'accept-2998-tome-of-divinity', 1642, 1, 2, 'Alliance' },
+        { 'class-hunter', 'accept-6071-the-hunters-path', 6063, 4, 3, 'Alliance' },
+        { 'class-warlock', 'accept-3001-seeking-strahad', 1801, 5, 9, 'Horde' },
+    }) do
+        local action = ns.Engine:GetGoal(ns.guides[case[1]], case[2])
+        snapshot = state(case[4], case[5], case[6], 60)
+        snapshot.completedQuests[case[3]] = true
+        equal(ns.OrderedRoutes:ExcludedAction(action, snapshot), true, case[2] .. ' is unnecessary after its target')
+    end
+    local rewards = dofile('tests/fixtures/class_repeatable_rewards.lua')
+    for id, guide in pairs(ns.guides) do
+        for _, action in ipairs(guide.goals) do
+            local quest = ns.Engine:GetGoalQuestID(action) or action.checkpointQuest
+            equal(quest == 94472 or quest == 94473 or quest == 6701, false, id .. ' omits optional repeatable replacements and reputation work')
+            local reward = rewards[quest]
+            if reward then
+                snapshot = state(3, 2, 'Alliance', 60)
+                snapshot.items[reward[1]] = 1
+                equal(ns.EvaluateCondition(action.excludeWhen, snapshot), true, action.id .. ' stops once the reward is owned')
+                snapshot.items[reward[1]] = nil
+                snapshot.completedQuests[reward[2]] = true
+                equal(ns.EvaluateCondition(action.excludeWhen, snapshot), true, action.id .. ' stops once its consumer is completed')
+                equal(snapshot.completedQuests[quest], nil, 'Item preparation grants no repeatable quest credit')
+            end
+        end
+    end
+    local following = walkAfter('class-warrior', state(1, 1, 'Alliance', 60), 'turnin-7-kobold-camp-cleanup', 2)
+    equal(following[1], 'accept-92479-a-scribbled-letter', 'Human warrior picks up the letter after Kobold Camp Cleanup')
+    equal(following[2], 'turnin-92479-a-scribbled-letter', 'Human warrior delivers the letter on the same visit')
+end
+
+do
+    for _, case in ipairs({
+        { 'class-druid', 'objective-6128-gathering-the-cure', 'objective-28-quest-work', 'turnin-28-trial-of-the-lake', 6, 'Horde', 28 },
+        { 'leveling-casual-horde', 'leveling-era-horde-silverpine-forest:woven-class-druid-objective-6128-gathering-the-cure',
+            'leveling-era-horde-the-barrens-and-stonetalon-mountain:objective-28-1-shrine-bauble',
+            'leveling-era-horde-the-barrens-and-stonetalon-mountain:turnin-28-trial-of-the-lake', 6, 'Horde', 28 },
+        { 'class-druid', 'objective-6123-gathering-the-cure', 'objective-29-quest-work', 'turnin-29-trial-of-the-lake', 4, 'Alliance', 29 },
+    }) do
+        local guide = ns.guides[case[1]]
+        local snapshot = state(case[5], 11, case[6], 16)
+        local cure = case[6] == 'Horde' and 6128 or 6123
+        snapshot.quests[cure] = { complete = false, objectives = {} }
+        ns.charDB = { selectedGuide = guide.id, activeGoalByGuide = {}, orderedRoutes = {
+            [guide.id] = { revision = guide.revision, cursor = case[2], confirmed = {}, skipped = {}, history = {} },
+        } }
+        ns.Engine.reviewingGoal = nil
+        ns.Engine:Refresh(snapshot)
+        equal(ns.Engine.currentGoal.id, case[2], 'Gathering the Cure retains its ordinary position without a running trial')
+        snapshot.quests[case[7]] = { complete = false, objectives = {}, timeLeft = 1200 }
+        ns.Engine:Refresh(snapshot)
+        equal(ns.Engine.currentGoal.id, case[3], 'An active timed trial takes precedence over Gathering the Cure')
+        snapshot.quests[case[7]].timeLeft = nil
+        ns.Engine:Refresh(snapshot)
+        equal(ns.Engine.currentGoal.id, case[3], 'The verified timed trial stays first when remaining seconds are unavailable')
+        snapshot.quests[case[7]] = nil
+        ns.Engine:Refresh(snapshot)
+        equal(ns.Engine.currentGoal.id, case[2], 'Abandoning the trial restores the interrupted action without credit')
+        snapshot.quests[case[7]] = { complete = false, objectives = {} }
+        ns.Engine:Refresh(snapshot)
+        ns.Engine.currentGoal, ns.Engine.currentGuide = nil, nil
+        ns.Engine:Refresh(snapshot)
+        equal(ns.Engine.currentGoal.id, case[3], 'Saved interruption state survives recreating the current selection')
+        snapshot.quests[case[7]].complete = true
+        snapshot.quests[case[7]].objectives = {
+            { finished = true, text = 'Shrine Bauble', numFulfilled = 1, numRequired = 1 },
+            { finished = true, text = 'Shrine Bauble', numFulfilled = 1, numRequired = 1 },
+        }
+        ns.db.autoAdvance = false
+        ns.Engine:Refresh(snapshot)
+        equal(ns.Engine.currentGoal.id, case[3], 'Timed routing preserves the manual advancement preference')
+        ns.db.autoAdvance = true
+        ns.Engine:Refresh(snapshot)
+        equal(ns.Engine.currentGoal.id, case[4], 'Report to Tajarri before resuming other work')
+        snapshot.quests[case[7]] = nil
+        snapshot.completedQuests[case[7]] = true
+        ns.Engine:Refresh(snapshot)
+        equal(ns.Engine.currentGoal.id, case[2], 'The interrupted cure objective resumes after the trial turn-in')
+        equal(snapshot.completedQuests[cure], nil, 'Urgent work does not grant credit for the interrupted cure')
+    end
 end
 
 print('Ordered production journey tests passed: ' .. assertions .. ' assertions')

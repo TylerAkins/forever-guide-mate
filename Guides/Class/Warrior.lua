@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 6,
+    revision = 7,
     title = "Warrior",
     category = "Class Quests",
     id = "class-warrior",
@@ -14,56 +14,6 @@ ns:RegisterGuide({
         },
     },
     goals = {
-        {
-            route = {
-                { y = 0.416, mapID = 1429, label = "Marshal McBride", x = 0.488, offMapText = "Travel to Marshal McBride in Elwynn Forest." },
-            },
-            id = "accept-92479-a-scribbled-letter",
-            conditions = {
-                all = {
-                    { class = 1 },
-                    {
-                        class = { 1 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 1 },
-                    {
-                        race = { 1 },
-                    },
-                },
-            },
-            useClientPin = false,
-            dependsOn = {},
-            classAction = "accept-92479-a-scribbled-letter",
-        },
-        {
-            route = {
-                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", x = 0.512, offMapText = "Travel to Tordrin Sternblade in Elwynn Forest." },
-            },
-            dependsOn = { "accept-92479-a-scribbled-letter" },
-            id = "turnin-92479-a-scribbled-letter",
-            conditions = {
-                all = {
-                    { class = 1 },
-                    {
-                        class = { 1 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 1 },
-                    {
-                        race = { 1 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-92479-a-scribbled-letter",
-        },
         {
             route = {
                 { mapID = 1426, x = 0.2993, y = 0.7120000000000001, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
@@ -720,6 +670,56 @@ ns:RegisterGuide({
             sourceStep = 20,
             useClientPin = false,
             classAction = "turnin-7-kobold-camp-cleanup",
+        },
+        {
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", x = 0.488, offMapText = "Travel to Marshal McBride in Elwynn Forest." },
+            },
+            id = "accept-92479-a-scribbled-letter",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-92479-a-scribbled-letter",
+        },
+        {
+            route = {
+                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", x = 0.512, offMapText = "Travel to Tordrin Sternblade in Elwynn Forest." },
+            },
+            dependsOn = { "accept-92479-a-scribbled-letter" },
+            id = "turnin-92479-a-scribbled-letter",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-92479-a-scribbled-letter",
         },
         {
             route = {

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 10,
+    revision = 11,
     title = "Dwarf & Gnome Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-dun-morogh",
@@ -2125,119 +2125,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-94375-call-of-earth-return" },
-        },
-        {
-            id = "level-before-woven-accept-94472-earth-sapta",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = { level = { min = 4 } },
-            requiredLevel = 4,
-            checkpointQuest = 94472,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Accept Earth Sapta from Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-accept-94472-earth-sapta",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94472, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Bring Teo Hammerstorm the Earth Sapta he asks for. The guide follows the pin in your quest log.",
-            id = "woven-objective-94472-earth-sapta",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 94472, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-94472-earth-sapta" },
-        },
-        {
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Turn in Earth Sapta to Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-turnin-94472-earth-sapta",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94472, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-94472-earth-sapta", "woven-objective-94472-earth-sapta" },
         },
         {
             id = "level-before-woven-accept-97277-grund-and-gozwin",

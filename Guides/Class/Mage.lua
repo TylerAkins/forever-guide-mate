@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Mage",
     category = "Class Quests",
     id = "class-mage",
@@ -14,6 +14,25 @@ ns:RegisterGuide({
         },
     },
     goals = {
+        {
+            id = "handoff-research-book",
+            classAction = "handoff-research-book",
+            conditions = {
+                all = {
+                    { class = 8 },
+                    {
+                        class = { 8 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+        },
         {
             route = {
                 { y = 0.802, mapID = 1453, label = "Garion Wendell", x = 0.378, offMapText = "Travel to Garion Wendell in Stormwind City." },
@@ -61,6 +80,26 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             classAction = "turnin-97286-research-access",
+        },
+        {
+            id = "handoff-788-before-98576",
+            classAction = "handoff-788-before-98576",
+            conditions = {
+                all = {
+                    { class = 8 },
+                    {
+                        class = { 8 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
         },
         {
             route = {

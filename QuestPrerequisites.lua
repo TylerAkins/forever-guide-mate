@@ -1057,3 +1057,11 @@ ns:RegisterQuestPrerequisite({ quest = 99162, mode = "all", quests = { 99159 } }
 ns:RegisterQuestPrerequisite({ quest = 92745, mode = "all", quests = { 92742, 92744 } })
 
 ns:RegisterQuestPrerequisite({ quest = 501, mode = "all", quests = { 499 } })
+
+ns:RegisterQuestPrerequisite({ quest = 92479, mode = "all", quests = { 7 } })
+
+ns:RegisterQuestPrerequisite({ quest = 94466, mode = "all", quests = { 94465 } })
+
+ns:RegisterQuestPrerequisite({ quest = 94467, mode = "all", quests = { 94466 } })
+
+ns:RegisterQuestPrerequisite({ quest = 94468, mode = "all", quests = { 94467 } })

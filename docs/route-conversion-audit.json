@@ -7445,6 +7445,41 @@
       "guide": "leveling-era-horde-hillsbrad-foothills",
       "quest": 98299,
       "reason": "Remove the Prove Your Worth and Arugal's Folly chain, including Stop the Spread, at the user's request because of slow spawns."
+    },
+    {
+      "guide": "class-shaman",
+      "quest": 94472,
+      "reason": "Replacement Sapta is not mandatory after its consuming quest."
+    },
+    {
+      "guide": "class-shaman",
+      "quest": 94473,
+      "reason": "Replacement Sapta is not mandatory after its consuming quest."
+    },
+    {
+      "guide": "leveling-era-dun-morogh",
+      "quest": 94472,
+      "reason": "Replacement Sapta is not mandatory after its consuming quest."
+    },
+    {
+      "guide": "leveling-era-alliance-westfall",
+      "quest": 94473,
+      "reason": "Replacement Sapta is not mandatory after its consuming quest."
+    },
+    {
+      "guide": "class-rogue",
+      "quest": 6701,
+      "reason": "Optional repeatable reputation work is not required for class progression."
+    },
+    {
+      "guide": "leveling-era-horde-the-barrens",
+      "quest": 6701,
+      "reason": "Optional repeatable reputation work is not required for class progression."
+    },
+    {
+      "guide": "leveling-era-alliance-wetlands",
+      "quest": 6701,
+      "reason": "Optional repeatable reputation work is not required for class progression."
     }
   ],
   "routes": {

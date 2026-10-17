@@ -4032,7 +4032,7 @@
     ]
   },
   "class-paladin": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -14205,7 +14205,7 @@
     ]
   },
   "leveling-era-horde-the-barrens": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -14229,46 +14229,6 @@
         ],
         "actions": [
           "woven-class-rogue-turnin-6681-authored-class-prerequisite"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-class-rogue-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "woven-class-rogue-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Gravis Slipknot"
-        ],
-        "actions": [
-          "woven-class-rogue-objective-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "woven-class-rogue-turnin-6701-syndicate-emblems"
         ]
       },
       {
@@ -22227,7 +22187,7 @@
     ]
   },
   "class-druid": {
-    "revision": 6,
+    "revision": 7,
     "visits": [
       {
         "boundary": [
@@ -24537,7 +24497,7 @@
     ]
   },
   "class-mage": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -24546,6 +24506,7 @@
           "Garion Wendell"
         ],
         "actions": [
+          "handoff-research-book",
           "accept-97286-research-access",
           "turnin-97286-research-access"
         ]
@@ -24557,6 +24518,7 @@
           "Gornek"
         ],
         "actions": [
+          "handoff-788-before-98576",
           "accept-98576-glyphic-parchment"
         ]
       },
@@ -28155,28 +28117,8 @@
     ]
   },
   "class-warrior": {
-    "revision": 6,
+    "revision": 7,
     "visits": [
-      {
-        "boundary": [
-          null,
-          1429,
-          "Marshal McBride"
-        ],
-        "actions": [
-          "accept-92479-a-scribbled-letter"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Tordrin Sternblade"
-        ],
-        "actions": [
-          "turnin-92479-a-scribbled-letter"
-        ]
-      },
       {
         "boundary": [
           8,
@@ -28346,6 +28288,26 @@
         ],
         "actions": [
           "turnin-7-kobold-camp-cleanup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "accept-92479-a-scribbled-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Tordrin Sternblade"
+        ],
+        "actions": [
+          "turnin-92479-a-scribbled-letter"
         ]
       },
       {
@@ -33876,7 +33838,7 @@
     ]
   },
   "class-shaman": {
-    "revision": 6,
+    "revision": 7,
     "visits": [
       {
         "boundary": [
@@ -33885,6 +33847,7 @@
           "Sten Stoutarm"
         ],
         "actions": [
+          "handoff-179-before-98581",
           "accept-98581-archaic-rune"
         ]
       },
@@ -34403,9 +34366,7 @@
           "Teo Hammerstorm"
         ],
         "actions": [
-          "turnin-94375-call-of-earth",
-          "accept-94472-earth-sapta",
-          "turnin-94472-earth-sapta"
+          "turnin-94375-call-of-earth"
         ]
       },
       {
@@ -34500,17 +34461,6 @@
         ],
         "actions": [
           "turnin-94468-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "accept-94473-fire-sapta",
-          "turnin-94473-fire-sapta"
         ]
       },
       {
@@ -35348,7 +35298,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 7,
+    "revision": 8,
     "visits": [
       {
         "boundary": [
@@ -36647,133 +36597,11 @@
       {
         "boundary": [
           null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-class-shaman-accept-94473-fire-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94473-fire-sapta",
-          "woven-class-shaman-turnin-94473-fire-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Brazier of the Dormant Flame"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94468-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
           1426,
-          "Bruegs Kindleborn"
+          "Sten Stoutarm"
         ],
         "actions": [
-          "woven-class-shaman-turnin-94468-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94467-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "woven-class-shaman-objective-94467-quest-work"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Brazier of the Dormant Flame"
-        ],
-        "actions": [
-          "woven-class-shaman-turnin-94467-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94466-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "woven-class-shaman-objective-94466-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-turnin-94466-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1455,
-          "Eldrun Stormbreaker"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94449-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1426,
-          "Bruegs Kindleborn"
-        ],
-        "actions": [
-          "woven-class-shaman-turnin-94449-call-of-fire",
-          "woven-class-shaman-accept-94465-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-turnin-94465-call-of-fire"
+          "woven-class-shaman-accept-98581-archaic-rune"
         ]
       },
       {
@@ -36783,8 +36611,7 @@
           "Teo Hammerstorm"
         ],
         "actions": [
-          "woven-class-shaman-accept-94472-earth-sapta",
-          "woven-class-shaman-turnin-94472-earth-sapta",
+          "woven-class-shaman-turnin-98581-archaic-rune",
           "woven-class-shaman-accept-94373-call-of-earth"
         ]
       },
@@ -36834,21 +36661,85 @@
       {
         "boundary": [
           null,
-          1426,
-          "Sten Stoutarm"
+          1455,
+          "Eldrun Stormbreaker"
         ],
         "actions": [
-          "woven-class-shaman-accept-98581-archaic-rune"
+          "woven-class-shaman-accept-94449-call-of-fire"
         ]
       },
       {
         "boundary": [
           null,
           1426,
-          "Teo Hammerstorm"
+          "Bruegs Kindleborn"
         ],
         "actions": [
-          "woven-class-shaman-turnin-98581-archaic-rune"
+          "woven-class-shaman-turnin-94449-call-of-fire",
+          "woven-class-shaman-accept-94465-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Braldir Ashmantle"
+        ],
+        "actions": [
+          "woven-class-shaman-turnin-94465-call-of-fire",
+          "woven-class-shaman-accept-94466-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-class-shaman-objective-94466-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Braldir Ashmantle"
+        ],
+        "actions": [
+          "woven-class-shaman-turnin-94466-call-of-fire",
+          "woven-class-shaman-accept-94467-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-class-shaman-objective-94467-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Brazier of the Dormant Flame"
+        ],
+        "actions": [
+          "woven-class-shaman-turnin-94467-call-of-fire",
+          "woven-class-shaman-accept-94468-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Bruegs Kindleborn"
+        ],
+        "actions": [
+          "woven-class-shaman-turnin-94468-call-of-fire"
         ]
       },
       {
@@ -37428,6 +37319,7 @@
           "Garion Wendell"
         ],
         "actions": [
+          "handoff-research-book",
           "woven-class-mage-accept-97286-research-access",
           "woven-class-mage-turnin-97286-research-access"
         ]
@@ -39376,7 +39268,7 @@
     ]
   },
   "leveling-era-dun-morogh": {
-    "revision": 10,
+    "revision": 11,
     "visits": [
       {
         "boundary": [
@@ -39913,28 +39805,6 @@
         ],
         "actions": [
           "woven-turnin-94375-call-of-earth-return"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-94472-earth-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1426,
-          "Teo Hammerstorm"
-        ],
-        "actions": [
-          "woven-accept-94472-earth-sapta",
-          "woven-objective-94472-earth-sapta",
-          "woven-turnin-94472-earth-sapta"
         ]
       },
       {
@@ -42961,7 +42831,7 @@
     ]
   },
   "class-rogue": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -44230,46 +44100,6 @@
         ],
         "actions": [
           "turnin-6681-authored-class-prerequisite"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Gravis Slipknot"
-        ],
-        "actions": [
-          "objective-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "turnin-6701-syndicate-emblems"
         ]
       },
       {
@@ -45981,7 +45811,7 @@
     ]
   },
   "leveling-era-alliance-wetlands": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -46005,46 +45835,6 @@
         ],
         "actions": [
           "woven-class-rogue-turnin-6681-authored-class-prerequisite"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-class-rogue-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "woven-class-rogue-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Gravis Slipknot"
-        ],
-        "actions": [
-          "woven-class-rogue-objective-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "woven-class-rogue-turnin-6701-syndicate-emblems"
         ]
       },
       {
@@ -65861,7 +65651,7 @@
     ]
   },
   "class-priest": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -65870,6 +65660,7 @@
           "Sten Stoutarm"
         ],
         "actions": [
+          "handoff-179-before-98574",
           "accept-98574-hallowed-memorandum"
         ]
       },
@@ -71451,7 +71242,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 8,
+    "revision": 9,
     "visits": [
       {
         "boundary": [
@@ -75273,7 +75064,7 @@
     ]
   },
   "class-warlock": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -75342,6 +75133,7 @@
           "Gornek"
         ],
         "actions": [
+          "handoff-788-before-98575",
           "accept-98575-tainted-tablet"
         ]
       },
@@ -76798,6 +76590,17 @@
       {
         "boundary": [
           null,
+          1434,
+          "Xizk Goodstitch"
+        ],
+        "actions": [
+          "accept-4785-fine-gold-thread",
+          "turnin-4785-fine-gold-thread"
+        ]
+      },
+      {
+        "boundary": [
+          null,
           null,
           null
         ],
@@ -76812,27 +76615,7 @@
           "Menara Voidrender"
         ],
         "actions": [
-          "turnin-4784-components-for-the-enchanted-gold-bloodrobe"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1434,
-          "Xizk Goodstitch"
-        ],
-        "actions": [
-          "accept-4785-fine-gold-thread",
-          "turnin-4785-fine-gold-thread"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Menara Voidrender"
-        ],
-        "actions": [
+          "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
           "accept-4786-the-completed-robe"
         ]
       },
@@ -87153,7 +86936,7 @@
     ]
   },
   "class-hunter": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -89790,7 +89573,7 @@
     ]
   },
   "leveling-era-elwynn-forest": {
-    "revision": 9,
+    "revision": 10,
     "visits": [
       {
         "boundary": [
@@ -89839,26 +89622,7 @@
           "Marshal McBride"
         ],
         "actions": [
-          "turnin-783-a-threat-within"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Marshal McBride"
-        ],
-        "actions": [
-          "woven-accept-92479-a-scribbled-letter"
-        ]
-      },
-      {
-        "boundary": [
-          13,
-          1429,
-          "Marshal McBride"
-        ],
-        "actions": [
+          "turnin-783-a-threat-within",
           "accept-7-kobold-camp-cleanup"
         ]
       },
@@ -89920,7 +89684,36 @@
           "Marshal McBride"
         ],
         "actions": [
-          "turnin-7-kobold-camp-cleanup",
+          "turnin-7-kobold-camp-cleanup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "woven-accept-92479-a-scribbled-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Tordrin Sternblade"
+        ],
+        "actions": [
+          "woven-turnin-92479-a-scribbled-letter"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
           "accept-15-investigate-echo-ridge"
         ]
       },
@@ -90199,16 +89992,6 @@
         ],
         "actions": [
           "turnin-21-skirmish-at-echo-ridge"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Tordrin Sternblade"
-        ],
-        "actions": [
-          "woven-turnin-92479-a-scribbled-letter"
         ]
       },
       {
