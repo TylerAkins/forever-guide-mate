@@ -56,7 +56,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-elwynn-glades",
     title = "Explore Elwynn Forest",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

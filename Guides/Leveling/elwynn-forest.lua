@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 7,
+    revision = 8,
     title = "Human Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-elwynn-forest",
@@ -15,7 +15,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            priority = 10,
             route = {
                 { y = 0.4265, mapID = 1429, label = "Drusilla La Salle", offMapText = "Travel to Drusilla La Salle in Elwynn Forest.", x = 0.4987 },
             },
@@ -77,7 +76,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.5674, y = 0.43770000000000003, label = "Powers of the Void", offMapText = "Travel to Powers of the Void." },
             },
             sourceStep = 7,
-            priority = 20,
             requiredQuests = {},
             alternativeQuests = { 1599 },
             useClientText = false,
@@ -85,7 +83,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1598-the-stolen-tome" },
         },
         {
-            priority = 30,
             text = "Turn in The Stolen Tome to Drusilla La Salle.",
             route = {
                 { y = 0.4265, mapID = 1429, label = "Drusilla La Salle", offMapText = "Travel to Drusilla La Salle in Elwynn Forest.", x = 0.4987 },
@@ -120,7 +117,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.4295, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
             },
@@ -142,7 +138,6 @@ ns:RegisterGuide({
             classAction = "accept-783-a-threat-within",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -164,7 +159,6 @@ ns:RegisterGuide({
             classAction = "turnin-783-a-threat-within",
         },
         {
-            priority = 55,
             route = {
                 { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
             },
@@ -196,7 +190,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -218,7 +211,6 @@ ns:RegisterGuide({
             classAction = "accept-7-kobold-camp-cleanup",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.4295, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
             },
@@ -252,7 +244,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             text = "Turn in Eagan Peltskinner to Eagan Peltskinner.",
             route = {
                 { y = 0.4016, mapID = 1429, label = "Eagan Peltskinner", offMapText = "Travel to Eagan Peltskinner in Elwynn Forest.", x = 0.4894 },
@@ -286,7 +277,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.4016, mapID = 1429, label = "Eagan Peltskinner", offMapText = "Travel to Eagan Peltskinner in Elwynn Forest.", x = 0.4894 },
             },
@@ -314,7 +304,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Collect 8 Tough Wolf Meat.",
             route = {
                 { y = 0.396, mapID = 1429, label = "Timber Wolf", offMapText = "Travel to Timber Wolf.", x = 0.468 },
@@ -342,7 +331,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.376, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.48 },
             },
@@ -364,7 +352,6 @@ ns:RegisterGuide({
             classAction = "objective-7-1-kobold-vermin",
         },
         {
-            priority = 120,
             text = "Turn in Wolves Across the Border to Eagan Peltskinner.",
             route = {
                 { y = 0.4016, mapID = 1429, label = "Eagan Peltskinner", offMapText = "Travel to Eagan Peltskinner in Elwynn Forest.", x = 0.4894 },
@@ -392,7 +379,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -414,7 +400,6 @@ ns:RegisterGuide({
             classAction = "turnin-7-kobold-camp-cleanup",
         },
         {
-            priority = 140,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -448,7 +433,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-7-kobold-camp-cleanup" },
         },
         {
-            priority = 150,
             text = "Kill 10 Kobold Worker.",
             route = {
                 { y = 0.37, mapID = 1429, label = "Kobold Worker", offMapText = "Travel to Kobold Worker.", x = 0.474 },
@@ -482,7 +466,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Turn in Investigate Echo Ridge to Marshal McBride.",
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
@@ -516,7 +499,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -550,7 +532,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-15-investigate-echo-ridge" },
         },
         {
-            priority = 180,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -587,7 +568,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -624,7 +604,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -661,7 +640,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -698,7 +676,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -735,7 +712,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -772,7 +748,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             text = "Read Simple Letter in your bags. Turn in Simple Letter to Llane Beshere.",
             route = {
                 { y = 0.4228, mapID = 1429, label = "Llane Beshere", offMapText = "Travel to Llane Beshere in Elwynn Forest.", x = 0.5024 },
@@ -809,7 +784,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             text = "Read Consecrated Letter in your bags. Turn in Consecrated Letter to Brother Sammuel.",
             route = {
                 { y = 0.4212, mapID = 1429, label = "Brother Sammuel", offMapText = "Travel to Brother Sammuel in Elwynn Forest.", x = 0.5043 },
@@ -846,7 +820,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             text = "Read Hallowed Letter in your bags. Turn in Hallowed Letter to Priestess Anetta.",
             route = {
                 { y = 0.3949, mapID = 1429, label = "Priestess Anetta", offMapText = "Travel to Priestess Anetta in Elwynn Forest.", x = 0.4981 },
@@ -883,7 +856,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             text = "Read Glyphic Letter in your bags. Turn in Glyphic Letter to Khelden Bremen.",
             route = {
                 { y = 0.3941, mapID = 1429, label = "Khelden Bremen", offMapText = "Travel to Khelden Bremen in Elwynn Forest.", x = 0.4966 },
@@ -939,10 +911,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 18,
-            priority = 280,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.4293, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
             },
@@ -976,7 +946,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             text = "Read Tainted Letter in your bags. Turn in Tainted Letter to Drusilla La Salle.",
             route = {
                 { y = 0.4265, mapID = 1429, label = "Drusilla La Salle", offMapText = "Travel to Drusilla La Salle in Elwynn Forest.", x = 0.4987 },
@@ -1013,7 +982,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             text = "Collect 12 Red Burlap Bandana.",
             route = {
                 { y = 0.47, mapID = 1429, label = "Defias Thug", offMapText = "Travel to Defias Thug.", x = 0.514 },
@@ -1047,7 +1015,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Turn in Brotherhood of Thieves to Deputy Willem.",
             route = {
                 { y = 0.4294, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
@@ -1098,10 +1065,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 325,
         },
         {
-            priority = 330,
             route = {
                 { y = 0.4294, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
             },
@@ -1152,10 +1117,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 335,
         },
         {
-            priority = 340,
             route = {
                 { y = 0.4294, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
             },
@@ -1189,7 +1152,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             text = "Kill 12 Kobold Laborer.",
             route = {
                 { y = 0.3186, mapID = 1429, label = "Kobold Laborer", offMapText = "Travel to Kobold Laborer.", x = 0.4767 },
@@ -1223,7 +1185,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             text = "Turn in Milly Osworth to Milly Osworth.",
             route = {
                 { mapID = 1429, x = 0.5069, y = 0.3935, label = "Milly Osworth", offMapText = "Travel to Milly Osworth in Elwynn Forest." },
@@ -1274,10 +1235,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 365,
         },
         {
-            priority = 370,
             route = {
                 { mapID = 1429, x = 0.5069, y = 0.3935, label = "Milly Osworth", offMapText = "Travel to Milly Osworth in Elwynn Forest." },
             },
@@ -1311,7 +1270,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Read Encrypted Letter in your bags. Turn in Encrypted Letter to Jorik Kerridan.",
             route = {
                 { y = 0.3992, mapID = 1429, label = "Jorik Kerridan", offMapText = "Travel to Jorik Kerridan in Elwynn Forest.", x = 0.5031 },
@@ -1348,7 +1306,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             text = "Collect 1 Garrick's Head.",
             route = {
                 { y = 0.4825, mapID = 1429, label = "Garrick Padfoot", offMapText = "Travel to Garrick Padfoot.", x = 0.5751 },
@@ -1382,7 +1339,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             text = "Collect 8 Milly's Harvest.",
             route = {
                 { y = 0.49, mapID = 1429, label = "Milly's Harvest", offMapText = "Travel to Milly's Harvest.", x = 0.551 },
@@ -1416,7 +1372,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             text = "Turn in Milly's Harvest to Milly Osworth.",
             route = {
                 { y = 0.3935, mapID = 1429, label = "Milly Osworth", offMapText = "Travel to Milly Osworth in Elwynn Forest.", x = 0.5069 },
@@ -1467,10 +1422,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 415,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.3935, mapID = 1429, label = "Milly Osworth", offMapText = "Travel to Milly Osworth in Elwynn Forest.", x = 0.5069 },
             },
@@ -1504,7 +1457,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Turn in Bounty on Garrick Padfoot to Deputy Willem.",
             route = {
                 { y = 0.4294, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
@@ -1538,7 +1490,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             text = "Turn in Skirmish at Echo Ridge to Marshal McBride.",
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
@@ -1573,7 +1524,6 @@ ns:RegisterGuide({
         },
         {
             text = "Read Scribbled Letter in your bags. Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
-            priority = 440.277778,
             route = {
                 { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
             },
@@ -1630,10 +1580,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 440.555556,
         },
         {
-            priority = 440.833333,
             text = "Use the Nibbled-On Book to accept Nibbled-On Book.",
             id = "accept-91741-verified-pickup",
             kind = "accept",
@@ -1657,7 +1605,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 441.111111,
             route = {
                 { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
             },
@@ -1685,7 +1632,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Rascally Rodents from Brother Paxton in Northshire Abbey.",
-            priority = 441.388889,
             route = {
                 { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
             },
@@ -1712,7 +1658,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 8 Stolen Books from the Northshire kobolds.",
-            priority = 441.666667,
             route = {
                 { y = 0.362, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.474 },
             },
@@ -1739,7 +1684,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Rascally Rodents to Brother Paxton.",
-            priority = 441.944444,
             route = {
                 { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
             },
@@ -1766,7 +1710,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Book Inventory from Brother Paxton.",
-            priority = 442.222222,
             route = {
                 { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
             },
@@ -1793,7 +1736,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Book Inventory to Daniel.",
-            priority = 442.5,
             route = {
                 { y = 0.406, mapID = 1429, label = "Daniel", offMapText = "Travel to Daniel.", x = 0.494 },
             },
@@ -1820,7 +1762,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Mining Consultant from Brother Paxton.",
-            priority = 442.777778,
             route = {
                 { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
             },
@@ -1847,7 +1788,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Mining Consultant to Kelsey Fargo outside Echo Ridge Mine.",
-            priority = 443.055556,
             route = {
                 { y = 0.322, mapID = 1429, label = "Kelsey Fargo", offMapText = "Travel to Kelsey Fargo.", x = 0.472 },
             },
@@ -1874,7 +1814,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Big Picture from Kelsey Fargo.",
-            priority = 443.333333,
             route = {
                 { y = 0.322, mapID = 1429, label = "Kelsey Fargo", offMapText = "Travel to Kelsey Fargo.", x = 0.472 },
             },
@@ -1901,7 +1840,6 @@ ns:RegisterGuide({
         },
         {
             text = "Take the Sack of Picture Books from Shinyfinder Narf in Echo Ridge Mine.",
-            priority = 443.611111,
             route = {
                 { y = 0.278, mapID = 1429, label = "Shinyfinder Narf", offMapText = "Travel to Shinyfinder Narf.", x = 0.49 },
             },
@@ -1928,7 +1866,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Big Picture to Marshal McBride.",
-            priority = 443.888889,
             route = {
                 { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
             },
@@ -1955,7 +1892,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Follow That Kobold! from Marshal McBride.",
-            priority = 444.166667,
             route = {
                 { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
             },
@@ -1982,7 +1918,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Follow That Kobold! to Tordrin Sternblade behind the abbey.",
-            priority = 444.444444,
             route = {
                 { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
             },
@@ -2009,7 +1944,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Shhh! We're Hunting Kobolds from Tordrin Sternblade. Use the Kobold Tracking Kit on the tracks.",
-            priority = 444.722222,
             route = {
                 { y = 0.416, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.489 },
             },
@@ -2055,10 +1989,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 96627,
             alternativeQuests = { 96628, 96630, 96638, 96652, 96656, 96659 },
-            priority = 445,
         },
         {
-            priority = 446,
             route = {
                 { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
             },
@@ -2086,7 +2018,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -2142,10 +2073,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5623,
-            priority = 460,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.3949, mapID = 1429, label = "Priestess Anetta", offMapText = "Travel to Priestess Anetta in Elwynn Forest.", x = 0.4981 },
             },
@@ -2176,7 +2105,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Turn in Grape Manifest to Brother Neals.",
             route = {
                 { y = 0.4159, mapID = 1429, label = "Brother Neals", offMapText = "Travel to Brother Neals in Elwynn Forest.", x = 0.4947 },
@@ -2210,7 +2138,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             route = {
                 { y = 0.4774, mapID = 1429, label = "Falkhaan Isenstrider", offMapText = "Travel to Falkhaan Isenstrider in Elwynn Forest.", x = 0.4556 },
             },
@@ -2238,7 +2165,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             text = "Turn in Report to Goldshire to Marshal Dughan.",
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
@@ -2294,13 +2220,11 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 502.5,
             requiredQuests = {},
             useClientText = false,
         },
         {
             text = "Turn in Shhh! We're Hunting Kobolds to Marshal Dughan.",
-            priority = 505,
             route = {
                 { y = 0.658, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan.", x = 0.422 },
             },
@@ -2327,7 +2251,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Book Return from Marshal Dughan.",
-            priority = 507.5,
             route = {
                 { y = 0.658, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan.", x = 0.422 },
             },
@@ -2372,10 +2295,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 62,
-            priority = 510,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
             },
@@ -2420,10 +2341,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 525,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.657, mapID = 1429, label = "William Pestle", offMapText = "Travel to William Pestle in Elwynn Forest.", x = 0.4332 },
             },
@@ -2451,7 +2370,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "Turn in Rest and Relaxation to Innkeeper Farley.",
             route = {
                 { y = 0.6581, mapID = 1429, label = "Innkeeper Farley", offMapText = "Travel to Innkeeper Farley in Elwynn Forest.", x = 0.4377 },
@@ -2480,7 +2398,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Adventurer to Sam Sarsaparilla near Goldshire.",
-            priority = 545,
             route = {
                 { y = 0.632, mapID = 1429, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla.", x = 0.448 },
             },
@@ -2525,11 +2442,9 @@ ns:RegisterGuide({
             alternativeQuests = { 96101, 96604, 96605, 96606, 96607, 96608 },
             useClientText = false,
             useClientPin = false,
-            priority = 545.5,
         },
         {
             text = "Accept The Great Outdoors from Sam Sarsaparilla.",
-            priority = 546,
             route = {
                 { mapID = 1429, x = 0.44799999999999995, y = 0.6344, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla." },
             },
@@ -2556,7 +2471,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 547,
             text = "Type /sit beside Sam Sarsaparilla's Basic Campfire and wait until you receive the Boosted Rest buff.",
             dependsOn = { "woven-accept-96101-the-great-outdoors" },
             id = "woven-objective-96101-the-great-outdoors",
@@ -2585,7 +2499,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Great Outdoors to Sam Sarsaparilla.",
-            priority = 548,
             route = {
                 { mapID = 1429, x = 0.44799999999999995, y = 0.6344, label = "Sam Sarsaparilla", offMapText = "Travel to Sam Sarsaparilla." },
             },
@@ -2612,7 +2525,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Turn in In Favor of the Light to Priestess Josetta.",
             route = {
                 { y = 0.6572, mapID = 1429, label = "Priestess Josetta", offMapText = "Travel to Priestess Josetta in Elwynn Forest.", x = 0.4328 },
@@ -2663,10 +2575,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 555,
         },
         {
-            priority = 560,
             route = {
                 { y = 0.6572, mapID = 1429, label = "Priestess Josetta", offMapText = "Travel to Priestess Josetta in Elwynn Forest.", x = 0.4328 },
             },
@@ -2697,7 +2607,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 570,
             id = "objective-5624-quest-work",
             conditions = {
                 all = {
@@ -2719,7 +2628,6 @@ ns:RegisterGuide({
             classAction = "objective-5624-quest-work",
         },
         {
-            priority = 580,
             text = "Turn in Garments of the Light to Priestess Josetta.",
             route = {
                 { y = 0.6572, mapID = 1429, label = "Priestess Josetta", offMapText = "Travel to Priestess Josetta in Elwynn Forest.", x = 0.4328 },
@@ -2767,10 +2675,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 585,
         },
         {
-            priority = 590,
             route = {
                 { y = 0.6726, mapID = 1429, label = "Remy \"Two Times\"", offMapText = "Travel to Remy \"Two Times\" in Elwynn Forest.", x = 0.4214 },
             },
@@ -2817,10 +2723,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91751,
-            priority = 593.333333,
         },
         {
-            priority = 596.666667,
             route = {
                 { y = 0.622, mapID = 1429, label = "Helene Peltskinner", offMapText = "Travel to Helene Peltskinner.", x = 0.462 },
             },
@@ -2866,10 +2770,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 85,
-            priority = 600,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.8426, mapID = 1429, label = "\"Auntie\" Bernice Stonefield", offMapText = "Travel to \"Auntie\" Bernice Stonefield in Elwynn Forest.", x = 0.3448 },
             },
@@ -2897,7 +2799,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             text = "Turn in Lost Necklace to Billy Maclure.",
             route = {
                 { y = 0.8572, mapID = 1429, label = "Billy Maclure", offMapText = "Travel to Billy Maclure in Elwynn Forest.", x = 0.4313 },
@@ -2942,10 +2843,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 625,
         },
         {
-            priority = 630,
             route = {
                 { y = 0.8572, mapID = 1429, label = "Billy Maclure", offMapText = "Travel to Billy Maclure in Elwynn Forest.", x = 0.4313 },
             },
@@ -2996,10 +2895,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 635,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.8962, mapID = 1429, label = "Maybell Maclure", offMapText = "Travel to Maybell Maclure in Elwynn Forest.", x = 0.4315 },
             },
@@ -3048,7 +2945,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.41859999999999997, y = 0.8712000000000001, label = "Chunk of Boar Meat", offMapText = "Travel to Chunk of Boar Meat." },
             },
             sourceStep = 71,
-            priority = 650,
             requiredQuests = {
                 {
                     mode = "any",
@@ -3061,7 +2957,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-86-pie-for-billy" },
         },
         {
-            priority = 660,
             text = "Turn in Young Lovers to Tommy Joe Stonefield.",
             route = {
                 { y = 0.8599, mapID = 1429, label = "Tommy Joe Stonefield", offMapText = "Travel to Tommy Joe Stonefield in Elwynn Forest.", x = 0.2984 },
@@ -3106,10 +3001,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 665,
         },
         {
-            priority = 670,
             route = {
                 { y = 0.8599, mapID = 1429, label = "Tommy Joe Stonefield", offMapText = "Travel to Tommy Joe Stonefield in Elwynn Forest.", x = 0.2984 },
             },
@@ -3143,7 +3036,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 680,
             text = "Turn in Pie for Billy to \"Auntie\" Bernice Stonefield.",
             route = {
                 { y = 0.8426, mapID = 1429, label = "\"Auntie\" Bernice Stonefield", offMapText = "Travel to \"Auntie\" Bernice Stonefield in Elwynn Forest.", x = 0.3448 },
@@ -3194,10 +3086,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 685,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.8426, mapID = 1429, label = "\"Auntie\" Bernice Stonefield", offMapText = "Travel to \"Auntie\" Bernice Stonefield in Elwynn Forest.", x = 0.3448 },
             },
@@ -3231,7 +3121,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             text = "Turn in Speak with Gramma to Gramma Stonefield.",
             route = {
                 { y = 0.8386, mapID = 1429, label = "Gramma Stonefield", offMapText = "Travel to Gramma Stonefield in Elwynn Forest.", x = 0.3494 },
@@ -3282,10 +3171,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 705,
         },
         {
-            priority = 710,
             route = {
                 { y = 0.8386, mapID = 1429, label = "Gramma Stonefield", offMapText = "Travel to Gramma Stonefield in Elwynn Forest.", x = 0.3494 },
             },
@@ -3319,7 +3206,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 720,
             text = "Turn in Back to Billy to Billy Maclure.",
             route = {
                 { y = 0.8572, mapID = 1429, label = "Billy Maclure", offMapText = "Travel to Billy Maclure in Elwynn Forest.", x = 0.4313 },
@@ -3370,10 +3256,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 725,
         },
         {
-            priority = 730,
             route = {
                 { y = 0.8572, mapID = 1429, label = "Billy Maclure", offMapText = "Travel to Billy Maclure in Elwynn Forest.", x = 0.4313 },
             },
@@ -3422,10 +3306,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 733.333333,
         },
         {
-            priority = 736.666667,
             id = "woven-accept-88-princess-must-die",
             kind = "accept",
             text = "Accept Princess Must Die! from Ma Stonefield.",
@@ -3467,7 +3349,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.3961, y = 0.8020999999999999, label = "Large Candle", offMapText = "Travel to Large Candle." },
             },
             sourceStep = 78,
-            priority = 740,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -3495,7 +3376,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.3961, y = 0.8020999999999999, label = "Gold Dust", offMapText = "Travel to Gold Dust." },
             },
             sourceStep = 78,
-            priority = 750,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -3503,7 +3383,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 6 Lost Books and Fun with Elementals from the Fargodeep kobolds. Use the Book Bag.",
-            priority = 755,
             route = {
                 { y = 0.802, mapID = 1429, label = "Kobold Miner", offMapText = "Travel to Kobold Miner.", x = 0.396 },
             },
@@ -3529,7 +3408,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 760,
             text = "For Goldtooth: Bring Bernice's Necklace to \"Auntie\" Bernice Stonefield at the Stonefield Farm.",
             id = "objective-87-quest-work",
             kind = "objective",
@@ -3560,7 +3438,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-87-goldtooth" },
         },
         {
-            priority = 770,
             text = "Turn in Goldtooth to \"Auntie\" Bernice Stonefield.",
             route = {
                 { y = 0.8425, mapID = 1429, label = "\"Auntie\" Bernice Stonefield", offMapText = "Travel to \"Auntie\" Bernice Stonefield in Elwynn Forest.", x = 0.3449 },
@@ -3594,7 +3471,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 780,
             text = "Turn in Gold Dust Exchange to Remy \"Two Times\".",
             route = {
                 { y = 0.6726, mapID = 1429, label = "Remy \"Two Times\"", offMapText = "Travel to Remy \"Two Times\" in Elwynn Forest.", x = 0.4214 },
@@ -3623,7 +3499,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Book Return to Marshal Dughan.",
-            priority = 783.333333,
             route = {
                 { y = 0.658, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan.", x = 0.422 },
             },
@@ -3650,7 +3525,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Rare Books from Marshal Dughan.",
-            priority = 786.666667,
             route = {
                 { y = 0.658, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan.", x = 0.422 },
             },
@@ -3695,10 +3569,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 40,
-            priority = 790,
         },
         {
-            priority = 800,
             route = {
                 { y = 0.6726, mapID = 1429, label = "Remy \"Two Times\"", offMapText = "Travel to Remy \"Two Times\" in Elwynn Forest.", x = 0.4214 },
             },
@@ -3726,7 +3598,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 810,
             text = "Turn in A Fishy Peril to Marshal Dughan.",
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
@@ -3771,10 +3642,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 815,
         },
         {
-            priority = 820,
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
             },
@@ -3808,7 +3677,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 830,
             text = "Turn in The Fargodeep Mine to Marshal Dughan.",
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
@@ -3853,10 +3721,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 835,
         },
         {
-            priority = 840,
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
             },
@@ -3909,10 +3775,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91723,
-            priority = 841.111111,
         },
         {
-            priority = 842.222222,
             route = {
                 { y = 0.698, mapID = 1429, label = "Hamish Bergwort", offMapText = "Travel to Hamish Bergwort.", x = 0.65 },
             },
@@ -3956,10 +3820,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 843.333333,
         },
         {
-            priority = 844.444444,
             route = {
                 { y = 0.726, mapID = 1429, label = "Blixie Fitzwink", offMapText = "Travel to Blixie Fitzwink.", x = 0.632 },
             },
@@ -4003,10 +3865,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 845.555556,
         },
         {
-            priority = 846.666667,
             route = {
                 { y = 0.638, mapID = 1429, label = "Hagar Lowe", offMapText = "Travel to Hagar Lowe.", x = 0.824 },
             },
@@ -4050,10 +3910,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 847.777778,
         },
         {
-            priority = 848.888889,
             route = {
                 { y = 0.72, mapID = 1429, label = "Ormin Pelford", offMapText = "Travel to Ormin Pelford.", x = 0.764 },
             },
@@ -4080,7 +3938,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 850,
             text = "Turn in Kobold Candles to William Pestle.",
             route = {
                 { y = 0.657, mapID = 1429, label = "William Pestle", offMapText = "Travel to William Pestle in Elwynn Forest.", x = 0.4332 },
@@ -4125,10 +3982,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 855,
         },
         {
-            priority = 860,
             route = {
                 { y = 0.657, mapID = 1429, label = "William Pestle", offMapText = "Travel to William Pestle in Elwynn Forest.", x = 0.4332 },
             },
@@ -4162,7 +4017,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 870,
             text = "Turn in Note to William to William Pestle.",
             route = {
                 { y = 0.657, mapID = 1429, label = "William Pestle", offMapText = "Travel to William Pestle in Elwynn Forest.", x = 0.4332 },
@@ -4213,10 +4067,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 875,
         },
         {
-            priority = 880,
             route = {
                 { y = 0.657, mapID = 1429, label = "William Pestle", offMapText = "Travel to William Pestle in Elwynn Forest.", x = 0.4332 },
             },
@@ -4267,10 +4119,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 882,
         },
         {
-            priority = 884,
             route = {
                 { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
             },
@@ -4314,10 +4164,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 886,
         },
         {
-            priority = 888,
             route = {
                 { y = 0.622, mapID = 1429, label = "Lee Brown", offMapText = "Travel to Lee Brown.", x = 0.474 },
             },
@@ -4344,7 +4192,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 890,
             text = "Collect 4 Crystal Kelp Frond.",
             route = {
                 { y = 0.662, mapID = 1429, label = "Murloc", offMapText = "Travel to Murloc.", x = 0.494 },
@@ -4379,7 +4226,6 @@ ns:RegisterGuide({
         },
         {
             text = "Check the fishing nets at Crystal Lake for 7 Half-Eaten Fish.",
-            priority = 891.428571,
             route = {
                 { y = 0.668, mapID = 1429, label = "Crystal Lake", offMapText = "Travel to Crystal Lake.", x = 0.502 },
             },
@@ -4406,7 +4252,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 6 pieces of shiny junk from the murloc camp.",
-            priority = 892.857143,
             route = {
                 { y = 0.668, mapID = 1429, label = "Murloc camp", offMapText = "Travel to Murloc camp.", x = 0.502 },
             },
@@ -4461,7 +4306,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.7486, y = 0.8626999999999999, label = "Croaky", offMapText = "Travel to Croaky." },
             },
             dependsOn = {},
-            priority = 894.285714,
         },
         {
             id = "level-before-accept-91740-verified-pickup",
@@ -4481,10 +4325,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 895.714286,
         },
         {
-            priority = 897.142857,
             text = "Use the Croaky's Head to accept Croaky's Head.",
             id = "accept-91740-verified-pickup",
             kind = "accept",
@@ -4508,7 +4350,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 898.571429,
             route = {
                 { y = 0.792, mapID = 1429, label = "Merell Ross", offMapText = "Travel to Merell Ross.", x = 0.846 },
             },
@@ -4535,7 +4376,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-91740-verified-pickup" },
         },
         {
-            priority = 900,
             text = "Turn in Further Concerns to Guard Thomas.",
             route = {
                 { mapID = 1429, x = 0.7397, y = 0.7218000000000001, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest." },
@@ -4586,10 +4426,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 905,
         },
         {
-            priority = 910,
             route = {
                 { mapID = 1429, x = 0.7397, y = 0.7218000000000001, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest." },
             },
@@ -4640,10 +4478,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 915,
         },
         {
-            priority = 920,
             route = {
                 { mapID = 1429, x = 0.7397, y = 0.7218000000000001, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest." },
             },
@@ -4671,7 +4507,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 930,
             text = "Turn in Find the Lost Guards.",
             route = {
                 { y = 0.6033, mapID = 1429, label = "Find the Lost Guards", offMapText = "Travel to Find the Lost Guards.", x = 0.7265 },
@@ -4722,10 +4557,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 935,
         },
         {
-            priority = 940,
             route = {
                 { y = 0.6033, mapID = 1429, label = "Discover Rolf's Fate", offMapText = "Travel to Discover Rolf's Fate.", x = 0.7265 },
             },
@@ -4776,10 +4609,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 945,
         },
         {
-            priority = 950,
             route = {
                 { y = 0.6611, mapID = 1429, label = "Supervisor Raelen", offMapText = "Travel to Supervisor Raelen in Elwynn Forest.", x = 0.8138 },
             },
@@ -4807,7 +4638,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 960,
             text = "Collect 8 Bundle of Wood.",
             route = {
                 { y = 0.594, mapID = 1429, label = "Bundle of Wood", offMapText = "Travel to Bundle of Wood.", x = 0.791 },
@@ -4856,7 +4686,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.8140000000000001, y = 0.588, label = "Young Forest Bear", offMapText = "Travel to Young Forest Bear." },
             },
             sourceStep = 101,
-            priority = 970,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -4884,7 +4713,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.8, y = 0.5920000000000001, label = "Prowler", offMapText = "Travel to Prowler." },
             },
             sourceStep = 102,
-            priority = 980,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -4892,7 +4720,6 @@ ns:RegisterGuide({
         },
         {
             text = "Skin wolves for 7 Rough Wolf Pelts. A wolf may drop Elmpaw's Head. Use it if it does.",
-            priority = 982,
             route = {
                 { y = 0.63, mapID = 1429, label = "Gray Forest Wolf", offMapText = "Travel to Gray Forest Wolf.", x = 0.744 },
             },
@@ -4947,7 +4774,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.7101999999999999, y = 0.4146, label = "Elmpaw", offMapText = "Travel to Elmpaw." },
             },
             dependsOn = {},
-            priority = 984,
         },
         {
             id = "level-before-accept-91746-verified-pickup",
@@ -4967,10 +4793,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 986,
         },
         {
-            priority = 988,
             text = "Use the Elmpaw's Head to accept Elmpaw's Head.",
             id = "accept-91746-verified-pickup",
             kind = "accept",
@@ -4994,7 +4818,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 990,
             text = "Turn in Discover Rolf's Fate.",
             route = {
                 { y = 0.5552, mapID = 1429, label = "Discover Rolf's Fate", offMapText = "Travel to Discover Rolf's Fate.", x = 0.798 },
@@ -5045,10 +4868,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 995,
         },
         {
-            priority = 1000,
             route = {
                 { y = 0.5552, mapID = 1429, label = "Report to Thomas", offMapText = "Travel to Report to Thomas.", x = 0.798 },
             },
@@ -5082,7 +4903,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1010,
             text = "Turn in A Bundle of Trouble to Supervisor Raelen.",
             route = {
                 { y = 0.6612, mapID = 1429, label = "Supervisor Raelen", offMapText = "Travel to Supervisor Raelen in Elwynn Forest.", x = 0.8138 },
@@ -5127,10 +4947,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1015,
         },
         {
-            priority = 1020,
             route = {
                 { y = 0.6878, mapID = 1429, label = "Sara Timberlain", offMapText = "Travel to Sara Timberlain in Elwynn Forest.", x = 0.7946 },
             },
@@ -5158,7 +4976,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1030,
             text = "Turn in Protect the Frontier to Guard Thomas.",
             route = {
                 { y = 0.7218, mapID = 1429, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest.", x = 0.7397 },
@@ -5186,7 +5003,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1040,
             text = "Turn in Report to Thomas to Guard Thomas.",
             route = {
                 { y = 0.7218, mapID = 1429, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest.", x = 0.7397 },
@@ -5237,10 +5053,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1045,
         },
         {
-            priority = 1050,
             route = {
                 { y = 0.7218, mapID = 1429, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest.", x = 0.7397 },
             },
@@ -5293,10 +5107,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 109,
-            priority = 1060,
         },
         {
-            priority = 1070,
             route = {
                 { y = 0.7218, mapID = 1429, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest.", x = 0.7397 },
             },
@@ -5324,7 +5136,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1080,
             text = "Collect 6 Red Linen Bandana.",
             route = {
                 { y = 0.764, mapID = 1429, label = "Defias Bandit", offMapText = "Travel to Defias Bandit.", x = 0.702 },
@@ -5352,7 +5163,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1085,
             id = "woven-objective-88-princess-must-die",
             kind = "objective",
             text = "Kill Princess at the Brackwell Pumpkin Patch and loot her Brass Collar.",
@@ -5402,7 +5212,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.3406, y = 0.5559000000000001, label = "Defias Bandit", offMapText = "Travel to Defias Bandit." },
             },
             dependsOn = {},
-            priority = 1090,
         },
         {
             id = "level-before-accept-184-furlbrow-s-deed",
@@ -5422,10 +5231,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1095,
         },
         {
-            priority = 1100,
             text = "Use the Westfall Deed to accept Furlbrow's Deed.",
             id = "accept-184-furlbrow-s-deed",
             kind = "accept",
@@ -5450,7 +5257,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1110,
             text = "Turn in Red Linen Goods to Sara Timberlain.",
             route = {
                 { y = 0.6879, mapID = 1429, label = "Sara Timberlain", offMapText = "Travel to Sara Timberlain in Elwynn Forest.", x = 0.7946 },
@@ -5478,7 +5284,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1120,
             text = "Turn in Collecting Kelp to William Pestle.",
             route = {
                 { y = 0.6571, mapID = 1429, label = "William Pestle", offMapText = "Travel to William Pestle in Elwynn Forest.", x = 0.4332 },
@@ -5529,10 +5334,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1125,
         },
         {
-            priority = 1130,
             route = {
                 { y = 0.6571, mapID = 1429, label = "William Pestle", offMapText = "Travel to William Pestle in Elwynn Forest.", x = 0.4332 },
             },
@@ -5566,7 +5369,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1140,
             text = "Turn in Deliver Thomas' Report to Marshal Dughan.",
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
@@ -5615,10 +5417,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1140.25,
         },
         {
-            priority = 1140.5,
             id = "woven-accept-59-cloth-and-leather-armor",
             kind = "accept",
             text = "Accept Cloth and Leather Armor from Marshal Dughan.",
@@ -5641,7 +5441,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-39-deliver-thomas-report" },
         },
         {
-            priority = 1140.75,
             id = "woven-turnin-59-cloth-and-leather-armor",
             kind = "turnin",
             text = "Turn in Cloth and Leather Armor to Sara Timberlain.",
@@ -5677,10 +5476,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1141,
         },
         {
-            priority = 1141.25,
             id = "woven-accept-46-bounty-on-murlocs",
             kind = "accept",
             text = "Accept Bounty on Murlocs from Guard Thomas.",
@@ -5701,7 +5498,6 @@ ns:RegisterGuide({
             dependsOn = {  },
         },
         {
-            priority = 1141.5,
             id = "woven-objective-46-bounty-on-murlocs",
             kind = "objective",
             text = "Collect Torn Murloc Fins from murlocs in eastern Elwynn until Bounty on Murlocs is ready.",
@@ -5722,7 +5518,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-46-bounty-on-murlocs" },
         },
         {
-            priority = 1141.75,
             id = "woven-turnin-46-bounty-on-murlocs",
             kind = "turnin",
             text = "Turn in Bounty on Murlocs to Guard Thomas.",
@@ -5744,7 +5539,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill 8 Kobold Geomancers in Jasperlode Mine. Disenchant their Crude Wax Effigies if you are on An Enchanting Lesson.",
-            priority = 1142,
             route = {
                 { y = 0.508, mapID = 1429, label = "Kobold Geomancer", offMapText = "Travel to Kobold Geomancer.", x = 0.606 },
             },
@@ -5771,7 +5565,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Delicate Instruments to Hamish Bergwort.",
-            priority = 1142.25,
             route = {
                 { y = 0.698, mapID = 1429, label = "Hamish Bergwort", offMapText = "Travel to Hamish Bergwort.", x = 0.65 },
             },
@@ -5814,11 +5607,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1142.5,
         },
         {
             text = "Accept the next Delicate Instruments from Hamish Bergwort.",
-            priority = 1142.75,
             route = {
                 { y = 0.698, mapID = 1429, label = "Hamish Bergwort", offMapText = "Travel to Hamish Bergwort.", x = 0.65 },
             },
@@ -5845,7 +5636,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 4 Mining Tools from Jasperlode Mine.",
-            priority = 1143,
             route = {
                 { y = 0.508, mapID = 1429, label = "Jasperlode Mine", offMapText = "Travel to Jasperlode Mine.", x = 0.606 },
             },
@@ -5872,7 +5662,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect the Waterlogged Axe, Waterlogged Saw, and Waterlogged Toolbox downstream from Eastvale.",
-            priority = 1143.25,
             route = {
                 { y = 0.72, mapID = 1429, label = "Eastvale river", offMapText = "Travel to Eastvale river.", x = 0.764 },
             },
@@ -5899,7 +5688,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Downstream to Ormin Pelford.",
-            priority = 1143.5,
             route = {
                 { y = 0.72, mapID = 1429, label = "Ormin Pelford", offMapText = "Travel to Ormin Pelford.", x = 0.764 },
             },
@@ -5926,7 +5714,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill 6 Defias Rogue Wizards at Stone Cairn Lake.",
-            priority = 1143.75,
             route = {
                 { y = 0.5548, mapID = 1429, label = "Defias Rogue Wizard", offMapText = "Travel to Defias Rogue Wizard.", x = 0.7968 },
             },
@@ -5953,7 +5740,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 5 Stolen Enchanting Supplies from the gnoll camps around Stone Cairn Lake.",
-            priority = 1144,
             route = {
                 { y = 0.5548, mapID = 1429, label = "Stone Cairn Lake", offMapText = "Travel to Stone Cairn Lake.", x = 0.7968 },
             },
@@ -5980,7 +5766,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Delicate Instruments to Hamish Bergwort.",
-            priority = 1144.25,
             route = {
                 { y = 0.698, mapID = 1429, label = "Hamish Bergwort", offMapText = "Travel to Hamish Bergwort.", x = 0.65 },
             },
@@ -6007,7 +5792,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Stolen Enchanting Supplies to Blixie Fitzwink.",
-            priority = 1144.5,
             route = {
                 { y = 0.726, mapID = 1429, label = "Blixie Fitzwink", offMapText = "Travel to Blixie Fitzwink.", x = 0.632 },
             },
@@ -6034,7 +5818,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Good Steel to Hagar Lowe.",
-            priority = 1144.75,
             route = {
                 { y = 0.638, mapID = 1429, label = "Hagar Lowe", offMapText = "Travel to Hagar Lowe.", x = 0.824 },
             },
@@ -6061,7 +5844,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Rough Wolf Pelts to Helene Peltskinner.",
-            priority = 1145,
             route = {
                 { y = 0.622, mapID = 1429, label = "Helene Peltskinner", offMapText = "Travel to Helene Peltskinner.", x = 0.462 },
             },
@@ -6087,7 +5869,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1145.25,
             route = {
                 { y = 0.622, mapID = 1429, label = "Helene Peltskinner", offMapText = "Travel to Helene Peltskinner.", x = 0.462 },
             },
@@ -6115,7 +5896,6 @@ ns:RegisterGuide({
         },
         {
             text = "Recover Geomancy for Curious Young Wizards and Arcane Explainer from Mother Fang and Geosculptor Yip in Jasperlode Mine.",
-            priority = 1145.5,
             route = {
                 { y = 0.478, mapID = 1429, label = "Mother Fang", offMapText = "Travel to Mother Fang.", x = 0.618 },
             },
@@ -6142,7 +5922,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Rare Books to Brother Paxton in Northshire Abbey.",
-            priority = 1145.75,
             route = {
                 { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
             },
@@ -6169,7 +5948,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in A Net Disaster to Jason Mathers.",
-            priority = 1146,
             route = {
                 { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
             },
@@ -6212,11 +5990,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1146.25,
         },
         {
             text = "Accept Slimy Menace from Jason Mathers. A murloc may drop Croaky's Head. Use it if it does.",
-            priority = 1146.5,
             route = {
                 { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
             },
@@ -6243,7 +6019,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill the murlocs at Crystal Lake.",
-            priority = 1146.75,
             route = {
                 { y = 0.668, mapID = 1429, label = "Murloc", offMapText = "Travel to Murloc.", x = 0.502 },
             },
@@ -6270,7 +6045,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Slimy Menace to Jason Mathers.",
-            priority = 1147,
             route = {
                 { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
             },
@@ -6297,7 +6071,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Bottles and Baubles to Lee Brown.",
-            priority = 1147.25,
             route = {
                 { y = 0.622, mapID = 1429, label = "Lee Brown", offMapText = "Travel to Lee Brown.", x = 0.474 },
             },
@@ -6340,11 +6113,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1147.5,
         },
         {
             text = "Accept A Man About a Murloc from Jason Mathers.",
-            priority = 1147.75,
             route = {
                 { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
             },
@@ -6371,7 +6142,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in A Man About a Murloc to Remy Two Times.",
-            priority = 1148,
             route = {
                 { y = 0.672, mapID = 1429, label = "Remy Two Times", offMapText = "Travel to Remy Two Times.", x = 0.422 },
             },
@@ -6414,11 +6184,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1148.25,
         },
         {
             text = "Accept An Enticing Offer from Remy Two Times.",
-            priority = 1148.5,
             route = {
                 { y = 0.672, mapID = 1429, label = "Remy Two Times", offMapText = "Travel to Remy Two Times.", x = 0.422 },
             },
@@ -6445,7 +6213,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 18 Duskweed Petals and 6 Vials of Animal Blood.",
-            priority = 1148.75,
             route = {
                 { y = 0.69, mapID = 1429, label = "Stonetusk Boar", offMapText = "Travel to Stonetusk Boar.", x = 0.418 },
             },
@@ -6472,7 +6239,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in An Enticing Offer to Remy Two Times.",
-            priority = 1149,
             route = {
                 { y = 0.672, mapID = 1429, label = "Remy Two Times", offMapText = "Travel to Remy Two Times.", x = 0.422 },
             },
@@ -6515,11 +6281,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1149.25,
         },
         {
             text = "Accept Baited for Success from Remy Two Times.",
-            priority = 1149.5,
             route = {
                 { y = 0.672, mapID = 1429, label = "Remy Two Times", offMapText = "Travel to Remy Two Times.", x = 0.422 },
             },
@@ -6546,7 +6310,6 @@ ns:RegisterGuide({
         },
         {
             text = "Return to Jason Mathers.",
-            priority = 1149.75,
             route = {
                 { y = 0.622, mapID = 1429, label = "Jason Mathers", offMapText = "Travel to Jason Mathers.", x = 0.474 },
             },
@@ -6572,7 +6335,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1150,
             text = "Turn in The Jasperlode Mine to Marshal Dughan.",
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
@@ -6623,10 +6385,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1155,
         },
         {
-            priority = 1160,
             route = {
                 { y = 0.6593, mapID = 1429, label = "Marshal Dughan", offMapText = "Travel to Marshal Dughan in Elwynn Forest.", x = 0.4211 },
             },
@@ -6677,10 +6437,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1165,
         },
         {
-            priority = 1170,
             route = {
                 { y = 0.6555, mapID = 1429, label = "Smith Argus", offMapText = "Travel to Smith Argus in Elwynn Forest.", x = 0.4171 },
             },
@@ -6733,10 +6491,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1685,
-            priority = 1180,
         },
         {
-            priority = 1190,
             route = {
                 { y = 0.6627, mapID = 1429, label = "Remen Marcot", offMapText = "Travel to Remen Marcot in Elwynn Forest.", x = 0.4449 },
             },
@@ -6796,10 +6552,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5635,
             alternativeQuests = { 5634, 5636, 5637, 5638, 5639, 5640 },
-            priority = 1200,
         },
         {
-            priority = 1210,
             route = {
                 { y = 0.6572, mapID = 1429, label = "Priestess Josetta", offMapText = "Travel to Priestess Josetta in Elwynn Forest.", x = 0.4328 },
             },
@@ -6856,10 +6610,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2205,
-            priority = 1220,
         },
         {
-            priority = 1230,
             route = {
                 { y = 0.6594, mapID = 1429, label = "Keryn Sylvius", offMapText = "Travel to Keryn Sylvius in Elwynn Forest.", x = 0.4387 },
             },
@@ -6916,10 +6668,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1638,
             alternativeQuests = { 1678, 1683, 1639 },
-            priority = 1240,
         },
         {
-            priority = 1250,
             route = {
                 { y = 0.6577, mapID = 1429, label = "Lyria Du Lac", offMapText = "Travel to Lyria Du Lac in Elwynn Forest.", x = 0.4109 },
             },
@@ -6978,10 +6728,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94774,
-            priority = 1250.555556,
         },
         {
-            priority = 1251.111111,
             route = {
                 { y = 0.656, mapID = 1429, label = "Priestess Josetta", offMapText = "Travel to Priestess Josetta.", x = 0.434 },
             },
@@ -7039,10 +6787,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94792,
-            priority = 1251.666667,
         },
         {
-            priority = 1252.222222,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", offMapText = "Travel to Josephine Carson.", x = 0.412 },
             },
@@ -7097,12 +6843,10 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 1252.777778,
             classAction = "objective-94792-reviewed-mechanics",
         },
         {
             text = "Turn in Taming the Beast to Josephine Carson in Goldshire.",
-            priority = 1253.333333,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", offMapText = "Travel to Josephine Carson.", x = 0.412 },
             },
@@ -7159,11 +6903,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1253.888889,
         },
         {
             text = "Accept Taming the Beast from Josephine Carson in Goldshire.",
-            priority = 1254.444444,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", offMapText = "Travel to Josephine Carson.", x = 0.412 },
             },
@@ -7228,12 +6970,10 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 1255,
             classAction = "objective-94863-reviewed-mechanics",
         },
         {
             text = "Turn in Taming the Beast to Josephine Carson in Goldshire.",
-            priority = 1255.555556,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", offMapText = "Travel to Josephine Carson.", x = 0.412 },
             },
@@ -7301,11 +7041,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1256.111111,
         },
         {
             text = "Accept Taming the Beast from Josephine Carson in Goldshire.",
-            priority = 1256.666667,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", offMapText = "Travel to Josephine Carson.", x = 0.412 },
             },
@@ -7370,12 +7108,10 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 1257.222222,
             classAction = "objective-94864-reviewed-mechanics",
         },
         {
             text = "Turn in Taming the Beast to Josephine Carson in Goldshire.",
-            priority = 1257.777778,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", offMapText = "Travel to Josephine Carson.", x = 0.412 },
             },
@@ -7443,11 +7179,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1258.333333,
         },
         {
             text = "Accept Training the Beast from Josephine Carson in Goldshire.",
-            priority = 1258.888889,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", offMapText = "Travel to Josephine Carson.", x = 0.412 },
             },
@@ -7492,7 +7226,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Training the Beast to Isaac Chan in Goldshire.",
-            priority = 1259.444444,
             route = {
                 { y = 0.664, mapID = 1429, label = "Isaac Chan", offMapText = "Travel to Isaac Chan.", x = 0.418 },
             },
@@ -7536,7 +7269,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1260,
             text = "Turn in The Escape to Maybell Maclure.",
             route = {
                 { y = 0.8962, mapID = 1429, label = "Maybell Maclure", offMapText = "Travel to Maybell Maclure in Elwynn Forest.", x = 0.4315 },
@@ -7570,7 +7302,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1265,
             id = "woven-turnin-88-princess-must-die",
             kind = "turnin",
             text = "Turn in Princess Must Die! to Ma Stonefield.",
@@ -7591,7 +7322,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-88-princess-must-die", "woven-objective-88-princess-must-die" },
         },
         {
-            priority = 1270,
             text = "Turn in Westbrook Garrison Needs Help! to Deputy Rainer.",
             route = {
                 { y = 0.7445, mapID = 1429, label = "Deputy Rainer", offMapText = "Travel to Deputy Rainer in Elwynn Forest.", x = 0.2423 },
@@ -7640,10 +7370,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1272,
         },
         {
-            priority = 1274,
             id = "woven-accept-176-wanted-hogger",
             kind = "accept",
             text = "Accept Wanted:  \"Hogger\" from Wanted Poster.",
@@ -7681,10 +7409,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1276,
         },
         {
-            priority = 1278,
             route = {
                 { y = 0.73, mapID = 1429, label = "Sergeant De Vries", offMapText = "Travel to Sergeant De Vries.", x = 0.24 },
             },
@@ -7712,7 +7438,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect Thunder Applejack for Sergeant De Vries.",
-            priority = 1280,
             route = {
                 { y = 0.73, mapID = 1429, label = "Sergeant De Vries", offMapText = "Travel to Sergeant De Vries.", x = 0.24 },
             },
@@ -7739,7 +7464,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in An Apple Treat to Sergeant De Vries.",
-            priority = 1282,
             route = {
                 { y = 0.73, mapID = 1429, label = "Sergeant De Vries", offMapText = "Travel to Sergeant De Vries.", x = 0.24 },
             },
@@ -7782,10 +7506,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1284,
         },
         {
-            priority = 1286,
             route = {
                 { y = 0.7445, mapID = 1429, label = "Deputy Rainer", offMapText = "Travel to Deputy Rainer in Elwynn Forest.", x = 0.2423 },
             },
@@ -7819,7 +7541,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1288,
             text = "Collect 8 Painted Gnoll Armband.",
             route = {
                 { y = 0.822, mapID = 1429, label = "Riverpaw Runt", offMapText = "Travel to Riverpaw Runt.", x = 0.272 },
@@ -7853,7 +7574,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1290,
             id = "woven-objective-176-wanted-hogger",
             kind = "objective",
             text = "Kill Hogger south of Westbrook Garrison and loot his Huge Gnoll Claw. This is an elite; bring a group.",
@@ -7893,10 +7613,8 @@ ns:RegisterGuide({
             } },
             useClientText = false,
             useClientPin = false,
-            priority = 1292,
         },
         {
-            priority = 1294,
             id = "woven-accept-123-the-collector",
             kind = "accept",
             text = "Use the Gold Pickup Schedule to accept The Collector if you found it during this outing.",
@@ -7921,7 +7639,6 @@ ns:RegisterGuide({
             dependsOn = {  },
         },
         {
-            priority = 1296,
             text = "Turn in Riverpaw Gnoll Bounty to Deputy Rainer.",
             route = {
                 { y = 0.7445, mapID = 1429, label = "Deputy Rainer", offMapText = "Travel to Deputy Rainer in Elwynn Forest.", x = 0.2423 },
@@ -7955,7 +7672,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1298,
             id = "woven-turnin-176-wanted-hogger",
             kind = "turnin",
             text = "Turn in Wanted:  \"Hogger\" to Marshal Dughan.",
@@ -7976,7 +7692,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-176-wanted-hogger", "woven-objective-176-wanted-hogger" },
         },
         {
-            priority = 1300,
             id = "woven-turnin-123-the-collector",
             kind = "turnin",
             text = "Turn in The Collector to Marshal Dughan.",
@@ -8020,10 +7735,8 @@ ns:RegisterGuide({
             } },
             useClientText = false,
             useClientPin = false,
-            priority = 1302,
         },
         {
-            priority = 1304,
             id = "woven-accept-147-manhunt",
             kind = "accept",
             text = "Accept Manhunt from Marshal Dughan.",
@@ -8050,7 +7763,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-turnin-123-the-collector" },
         },
         {
-            priority = 1306,
             id = "woven-objective-147-manhunt",
             kind = "objective",
             text = "Kill Morgan the Collector at Brackwell Pumpkin Patch and loot The Collector's Ring.",
@@ -8075,7 +7787,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-147-manhunt" },
         },
         {
-            priority = 1308,
             id = "woven-turnin-147-manhunt",
             kind = "turnin",
             text = "Turn in Manhunt to Marshal Dughan.",
@@ -8100,7 +7811,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-147-manhunt", "woven-objective-147-manhunt" },
         },
         {
-            priority = 1310,
             text = "Turn in Furlbrow's Deed to Farmer Furlbrow.",
             route = {
                 { y = 0.1936, mapID = 1436, label = "Farmer Furlbrow", offMapText = "Travel to Farmer Furlbrow in Westfall.", x = 0.5996 },
@@ -8145,10 +7855,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1315,
         },
         {
-            priority = 1320,
             route = {
                 { y = 0.1936, mapID = 1436, label = "Farmer Furlbrow", offMapText = "Travel to Farmer Furlbrow in Westfall.", x = 0.5996 },
             },
@@ -8193,10 +7901,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1325,
         },
         {
-            priority = 1330,
             route = {
                 { y = 0.1942, mapID = 1436, label = "Verna Furlbrow", offMapText = "Travel to Verna Furlbrow in Westfall.", x = 0.5992 },
             },
@@ -8241,10 +7947,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1335,
         },
         {
-            priority = 1340,
             route = {
                 { y = 0.1942, mapID = 1436, label = "Verna Furlbrow", offMapText = "Travel to Verna Furlbrow in Westfall.", x = 0.5992 },
             },
@@ -8289,10 +7993,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1345,
         },
         {
-            priority = 1350,
             route = {
                 { y = 0.3122, mapID = 1436, label = "Farmer Saldean", offMapText = "Travel to Farmer Saldean in Westfall.", x = 0.5605 },
             },
@@ -8320,7 +8022,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1360,
             text = "Turn in Westfall Stew to Salma Saldean.",
             route = {
                 { y = 0.3052, mapID = 1436, label = "Salma Saldean", offMapText = "Travel to Salma Saldean in Westfall.", x = 0.5642 },
@@ -8365,10 +8066,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1365,
         },
         {
-            priority = 1370,
             route = {
                 { y = 0.3052, mapID = 1436, label = "Salma Saldean", offMapText = "Travel to Salma Saldean in Westfall.", x = 0.5642 },
             },
@@ -8419,10 +8118,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1375,
         },
         {
-            priority = 1380,
             route = {
                 { y = 0.3052, mapID = 1436, label = "Salma Saldean", offMapText = "Travel to Salma Saldean in Westfall.", x = 0.5642 },
             },
@@ -8450,7 +8147,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1390,
             text = "Turn in Report to Gryan Stoutmantle to Gryan Stoutmantle.",
             route = {
                 { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
@@ -8495,10 +8191,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1395,
         },
         {
-            priority = 1400,
             route = {
                 { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
             },
@@ -8543,10 +8237,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1405,
         },
         {
-            priority = 1410,
             route = {
                 { y = 0.4762, mapID = 1436, label = "Captain Danuvin", offMapText = "Travel to Captain Danuvin in Westfall.", x = 0.5642 },
             },
@@ -8593,10 +8285,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6181,
-            priority = 1420,
         },
         {
-            priority = 1430,
             route = {
                 { y = 0.4717, mapID = 1436, label = "Quartermaster Lewis", offMapText = "Travel to Quartermaster Lewis in Westfall.", x = 0.57 },
             },
@@ -8624,7 +8314,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1440,
             text = "Turn in A Swift Message to Thor.",
             route = {
                 { y = 0.5264, mapID = 1436, label = "Thor", offMapText = "Travel to Thor in Westfall.", x = 0.5656 },
@@ -8669,10 +8358,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1445,
         },
         {
-            priority = 1450,
             route = {
                 { y = 0.5264, mapID = 1436, label = "Thor", offMapText = "Travel to Thor in Westfall.", x = 0.5656 },
             },
@@ -8706,7 +8393,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1460,
             text = "Turn in Shipment to Stormwind to Morgan Pestle.",
             route = {
                 { y = 0.6459, mapID = 1453, label = "Morgan Pestle", offMapText = "Travel to Morgan Pestle in Stormwind City.", x = 0.5621 },
@@ -8762,10 +8448,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1685,
-            priority = 1470,
         },
         {
-            priority = 1480,
             text = "Turn in Gakin's Summons to Gakin the Darkbinder.",
             route = {
                 { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
@@ -8816,10 +8500,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1485,
         },
         {
-            priority = 1490,
             route = {
                 { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -8850,7 +8532,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1500,
             text = "Collect 1 Surena's Choker.",
             route = {
                 { y = 0.8078, mapID = 1429, label = "Surena Caledon", offMapText = "Travel to Surena Caledon.", x = 0.7102 },
@@ -8884,7 +8565,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1510,
             text = "Turn in Surena Caledon to Gakin the Darkbinder.",
             route = {
                 { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
@@ -8941,10 +8621,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1515,
         },
         {
-            priority = 1520,
             route = {
                 { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -8984,7 +8662,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1530,
             text = "Kill Summoned Voidwalker.",
             route = {
                 { y = 0.7746, mapID = 1453, label = "Bloodstone Choker", offMapText = "Travel to Bloodstone Choker.", x = 0.2511 },
@@ -9024,7 +8701,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1540,
             text = "Turn in The Binding to Gakin the Darkbinder.",
             route = {
                 { y = 0.7853, mapID = 1453, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City.", x = 0.2525 },
@@ -9064,7 +8740,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1550,
             text = "Turn in Seek out SI: 7 to Master Mathias Shaw.",
             route = {
                 { y = 0.5984, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
@@ -9095,7 +8770,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1560,
             text = "Turn in Continue to Stormwind to Osric Strang.",
             route = {
                 { y = 0.4724, mapID = 1453, label = "Osric Strang", offMapText = "Travel to Osric Strang in Stormwind City.", x = 0.7432 },
@@ -9146,10 +8820,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1565,
         },
         {
-            priority = 1570,
             route = {
                 { y = 0.612, mapID = 1453, label = "Osric Strang", offMapText = "Travel to Osric Strang in Stormwind City.", x = 0.77 },
             },
@@ -9183,7 +8855,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1580,
             text = "Turn in A Warrior's Training to Harry Burlguard.",
             route = {
                 { y = 0.3726, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.7425 },
@@ -9242,10 +8913,8 @@ ns:RegisterGuide({
             alternativeQuests = { 1678, 1683 },
             useClientText = false,
             useClientPin = false,
-            priority = 1585,
         },
         {
-            priority = 1590,
             route = {
                 { y = 0.533, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.771 },
             },
@@ -9280,7 +8949,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1600,
             text = "Turn in Bartleby the Drunk to Bartleby.",
             route = {
                 { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.7383 },
@@ -9338,10 +9006,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1605,
         },
         {
-            priority = 1610,
             route = {
                 { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
             },
@@ -9404,10 +9070,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1640,
-            priority = 1620,
         },
         {
-            priority = 1630,
             text = "Kill Bartleby.",
             route = {
                 { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby.", x = 0.7383 },
@@ -9444,7 +9108,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1640,
             text = "Turn in Beat Bartleby to Bartleby.",
             route = {
                 { y = 0.3717, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.7383 },
@@ -9507,10 +9170,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1645,
         },
         {
-            priority = 1650,
             route = {
                 { y = 0.525, mapID = 1453, label = "Bartleby", offMapText = "Travel to Bartleby in Stormwind City.", x = 0.768 },
             },
@@ -9550,7 +9211,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1660,
             text = "Turn in Bartleby's Mug to Harry Burlguard.",
             route = {
                 { y = 0.3726, mapID = 1453, label = "Harry Burlguard", offMapText = "Travel to Harry Burlguard in Stormwind City.", x = 0.7425 },
@@ -9590,7 +9250,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1670,
             text = "Turn in Desperate Prayer to High Priestess Laurena.",
             route = {
                 { mapID = 1453, x = 0.3858, y = 0.2605, label = "High Priestess Laurena", offMapText = "Travel to High Priestess Laurena in Stormwind City." },
@@ -9626,7 +9285,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Divine Grace to High Priestess Laurena in the Cathedral of Light.",
-            priority = 1672,
             route = {
                 { y = 0.264, mapID = 1453, label = "High Priestess Laurena", offMapText = "Travel to High Priestess Laurena.", x = 0.388 },
             },
@@ -9679,11 +9337,9 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1674,
         },
         {
             text = "Accept Divine Grace from High Priestess Laurena in the Cathedral of Light.",
-            priority = 1676,
             route = {
                 { y = 0.264, mapID = 1453, label = "High Priestess Laurena", offMapText = "Travel to High Priestess Laurena.", x = 0.388 },
             },
@@ -9726,7 +9382,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1678,
             route = {
                 { y = 0.264, mapID = 1453, label = "High Priestess Laurena", offMapText = "Travel to High Priestess Laurena.", x = 0.388 },
             },
@@ -9752,7 +9407,6 @@ ns:RegisterGuide({
             classAction = "turnin-94773-divine-grace",
         },
         {
-            priority = 1680,
             text = "Turn in Elmore's Task to Grimand Elmore.",
             route = {
                 { y = 0.1207, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.5176 },
@@ -9797,10 +9451,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1685,
         },
         {
-            priority = 1690,
             route = {
                 { y = 0.338, mapID = 1453, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore in Stormwind City.", x = 0.597 },
             },
@@ -9847,10 +9499,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6661,
-            priority = 1700,
         },
         {
-            priority = 1710,
             text = "Accept Deeprun Rat Roundup from Monty.",
             id = "accept-6661-deeprun-rat-roundup",
             kind = "accept",
@@ -9894,7 +9544,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 1720,
             requiredQuests = {},
             useClientText = false,
         },
@@ -9918,13 +9567,11 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 1730,
             sourceStep = 167,
             requiredQuests = {},
             useClientText = false,
         },
         {
-            priority = 1970,
             text = "Turn in Stormpike's Delivery to Mountaineer Stormpike.",
             route = {
                 { y = 0.184, mapID = 1432, label = "Mountaineer Stormpike", offMapText = "Travel to Mountaineer Stormpike in Loch Modan.", x = 0.2476 },
@@ -9969,10 +9616,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1975,
         },
         {
-            priority = 1980,
             route = {
                 { y = 0.4928, mapID = 1432, label = "Vidra Hearthstove", offMapText = "Travel to Vidra Hearthstove in Loch Modan.", x = 0.3483 },
             },
@@ -10017,10 +9662,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1985,
         },
         {
-            priority = 1990,
             text = "Accept Rat Catching from Mountaineer Kadrell.",
             id = "accept-416-rat-catching",
             kind = "accept",
@@ -10062,10 +9705,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1995,
         },
         {
-            priority = 2000,
             text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell.",
             id = "accept-1339-mountaineer-stormpike-s-task",
             kind = "accept",
@@ -10090,7 +9731,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2010,
             text = "Collect 12 Tunnel Rat Ear.",
             route = {
                 { y = 0.45, mapID = 1432, label = "Tunnel Rat Scout", offMapText = "Travel to Tunnel Rat Scout.", x = 0.284 },
@@ -10118,7 +9758,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2020,
             text = "Turn in Mountaineer Stormpike's Task to Mountaineer Stormpike.",
             route = {
                 { y = 0.184, mapID = 1432, label = "Mountaineer Stormpike", offMapText = "Travel to Mountaineer Stormpike in Loch Modan.", x = 0.2476 },
@@ -10163,10 +9802,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2025,
         },
         {
-            priority = 2030,
             route = {
                 { y = 0.184, mapID = 1432, label = "Mountaineer Stormpike", offMapText = "Travel to Mountaineer Stormpike in Loch Modan.", x = 0.2476 },
             },
@@ -10213,13 +9850,11 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 2040,
             sourceStep = 206,
             requiredQuests = {},
             useClientText = false,
         },
         {
-            priority = 2050,
             text = "For Thelsamar Blood Sausages: Bring 3 pieces of Bear Meat, 3 Boar Intestines, and 3 Spider Ichor to Vidra Hearthstove in Thelsamar.",
             id = "objective-418-quest-work",
             kind = "objective",
@@ -10244,7 +9879,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-418-thelsamar-blood-sausages" },
         },
         {
-            priority = 2060,
             text = "Turn in Thelsamar Blood Sausages to Vidra Hearthstove.",
             route = {
                 { y = 0.4928, mapID = 1432, label = "Vidra Hearthstove", offMapText = "Travel to Vidra Hearthstove in Loch Modan.", x = 0.3483 },
@@ -10289,10 +9923,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2065,
         },
         {
-            priority = 2070,
             route = {
                 { y = 0.7312, mapID = 1432, label = "Mountaineer Cobbleflint", offMapText = "Travel to Mountaineer Cobbleflint in Loch Modan.", x = 0.2207 },
             },
@@ -10337,10 +9969,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2075,
         },
         {
-            priority = 2080,
             route = {
                 { y = 0.7367, mapID = 1432, label = "Captain Rugelfuss", offMapText = "Travel to Captain Rugelfuss in Loch Modan.", x = 0.2323 },
             },
@@ -10389,7 +10019,6 @@ ns:RegisterGuide({
                 { mapID = 1432, x = 0.326, y = 0.726, label = "Stonesplinter Trogg", offMapText = "Travel to Stonesplinter Trogg." },
             },
             sourceStep = 211,
-            priority = 2090,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -10417,14 +10046,12 @@ ns:RegisterGuide({
                 { mapID = 1432, x = 0.326, y = 0.726, label = "Stonesplinter Scout", offMapText = "Travel to Stonesplinter Scout." },
             },
             sourceStep = 211,
-            priority = 2100,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-224-in-defense-of-the-king-s-lands" },
         },
         {
-            priority = 2110,
             text = "Turn in In Defense of the King's Lands to Mountaineer Cobbleflint.",
             route = {
                 { mapID = 1432, x = 0.2207, y = 0.7313, label = "Mountaineer Cobbleflint", offMapText = "Travel to Mountaineer Cobbleflint in Loch Modan." },
@@ -10456,7 +10083,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2120,
             text = "For The Trogg Threat: Bring 8 Trogg Stone Teeth to Captain Rugelfuss in the southern guard tower.",
             id = "objective-267-quest-work",
             kind = "objective",
@@ -10481,7 +10107,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-267-the-trogg-threat" },
         },
         {
-            priority = 2130,
             text = "Turn in The Trogg Threat to Captain Rugelfuss.",
             route = {
                 { y = 0.7367, mapID = 1432, label = "Captain Rugelfuss", offMapText = "Travel to Captain Rugelfuss in Loch Modan.", x = 0.2323 },
@@ -10531,10 +10156,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1641,
-            priority = 2140,
         },
         {
-            priority = 2150,
             route = {
                 { mapID = 1453, x = 0.505, y = 0.475, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -10565,7 +10188,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2160,
             text = "Turn in The Tome of Divinity to Duthorian Rall.",
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City.", x = 0.3981 },
@@ -10611,7 +10233,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 2170,
             classAction = "loot-starter-before-accept-1642-the-tome-of-divinity",
         },
         {
@@ -10635,10 +10256,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2175,
         },
         {
-            priority = 2180,
             id = "accept-1642-the-tome-of-divinity",
             conditions = {
                 all = {
@@ -10660,7 +10279,6 @@ ns:RegisterGuide({
             classAction = "accept-1642-the-tome-of-divinity",
         },
         {
-            priority = 2190,
             text = "Turn in The Tome of Divinity to Duthorian Rall.",
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City.", x = 0.3981 },
@@ -10711,10 +10329,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2195,
         },
         {
-            priority = 2200,
             route = {
                 { y = 0.475, mapID = 1453, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City.", x = 0.505 },
             },
@@ -10751,7 +10367,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2210,
             text = "Turn in Stormpike's Order to Furen Longbeard.",
             route = {
                 { y = 0.1655, mapID = 1453, label = "Furen Longbeard", offMapText = "Travel to Furen Longbeard in Stormwind City.", x = 0.5809 },
@@ -10779,7 +10394,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2220,
             text = "Turn in The Tome of Divinity to Stephanie Turner.",
             route = {
                 { y = 0.6174, mapID = 1453, label = "Stephanie Turner", offMapText = "Travel to Stephanie Turner in Stormwind City.", x = 0.5708 },
@@ -10836,10 +10450,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2225,
         },
         {
-            priority = 2230,
             route = {
                 { y = 0.722, mapID = 1453, label = "Stephanie Turner", offMapText = "Travel to Stephanie Turner in Stormwind City.", x = 0.638 },
             },
@@ -10876,7 +10488,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2240,
             text = "For The Tome of Divinity: Bring 10 Linen Cloth to Stephanie Turner in Stormwind.",
             id = "objective-1644-quest-work",
             kind = "objective",
@@ -10910,7 +10521,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1644-the-tome-of-divinity" },
         },
         {
-            priority = 2250,
             text = "Turn in The Tome of Divinity to Stephanie Turner.",
             route = {
                 { y = 0.6174, mapID = 1453, label = "Stephanie Turner", offMapText = "Travel to Stephanie Turner in Stormwind City.", x = 0.5708 },
@@ -10947,7 +10557,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2260,
             text = "Turn in Dungar Longdrink to Dungar Longdrink.",
             route = {
                 { mapID = 1453, x = 0.6627, y = 0.6213000000000001, label = "Dungar Longdrink", offMapText = "Travel to Dungar Longdrink in Stormwind City." },
@@ -10998,10 +10607,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2265,
         },
         {
-            priority = 2270,
             route = {
                 { mapID = 1453, x = 0.71, y = 0.725, label = "Dungar Longdrink", offMapText = "Travel to Dungar Longdrink in Stormwind City." },
             },
@@ -11035,7 +10642,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2280,
             text = "Turn in Return to Lewis to Quartermaster Lewis.",
             route = {
                 { y = 0.4717, mapID = 1436, label = "Quartermaster Lewis", offMapText = "Travel to Quartermaster Lewis in Westfall.", x = 0.57 },

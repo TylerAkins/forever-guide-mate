@@ -473,14 +473,16 @@ ns.Engine:Refresh({ faction = "Alliance", level = 20 })
 Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance dungeon guide")
 ns.Engine:Refresh({ faction = "Horde", level = 1 })
 Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible when the dungeon level is not met")
-ns.Engine:Refresh({ faction = "Horde", level = 9 })
-Equal(ns.UI.tracker.instruction.text, "Accept The Power to Destroy... from Varimathras in the Undercity.",
-    "an eligible dungeon guide still shows its step")
+ns.Engine:Refresh({ faction = "Horde", level = 9, questLogKnown = true, questCompletionKnown = true })
+Check(ns.UI.tracker.instruction.text:find("Accept Searching for the Lost Satchel", 1, true) ~= nil
+    and ns.UI.tracker.instruction.text:find("required level", 1, true) ~= nil,
+    "an eligible dungeon guide keeps its authored pickup while the step level is unmet")
 ns.charDB.activeGoal = nil
 ns.Engine.currentGoal = nil
-ns.Engine:Refresh({ faction = "Horde", level = 13 })
-Equal(ns.UI.tracker.instruction.text, "Accept Searching for the Lost Satchel from Rahauro on Elder Rise.",
-    "at level 13 the satchel accept is ready")
+ns.Engine:Refresh({ faction = "Horde", level = 13, questLogKnown = true, questCompletionKnown = true })
+Check(ns.UI.tracker.instruction.text:find("Accept Searching for the Lost Satchel", 1, true) ~= nil
+    and not ns.UI.tracker.instruction.text:find("Blocked:", 1, true),
+    "at level 13 the authored satchel pickup is ready")
 ns.charDB.selectedGuide = "alliance-only-leveling"
 ns.Engine:Refresh({ faction = "Horde", level = 10 })
 Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance leveling guide")

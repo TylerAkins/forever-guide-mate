@@ -31,10 +31,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-scarlet-monastery-cathedral",
     title = "Scarlet Monastery (Cathedral)",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 40 } },
@@ -45,7 +46,6 @@ ns:RegisterGuide({
         {
             id = "accept-6141-brother-anton",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 34 } } } },
             text = "Accept Brother Anton from Brother Crowley.",
             complete = QuestState(6141, "activeOrCompleted"),
@@ -56,7 +56,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6141-brother-anton",
             kind = "turnin",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 34 } } } },
             text = "Turn in Brother Anton to Brother Anton.",
             dependsOn = { "accept-6141-brother-anton" },
@@ -67,8 +66,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-261-down-the-scarlet-path",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6141 } } },
             kind = "accept",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept Down the Scarlet Path from Brother Anton.",
             dependsOn = { "turnin-6141-brother-anton" },
@@ -79,8 +78,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-261-1-undead-ravager",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6141 } } },
             kind = "objective",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Kill 30 Undead Ravager.",
             dependsOn = { "accept-261-down-the-scarlet-path" },
@@ -91,8 +90,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-261-down-the-scarlet-path",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6141 } } },
             kind = "turnin",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in Down the Scarlet Path to Brother Anton.",
             dependsOn = { "objective-261-1-undead-ravager" },
@@ -103,8 +102,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1052-down-the-scarlet-path",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 261 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 261 } } },
             kind = "accept",
-            priority = 15,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept Down the Scarlet Path from Brother Anton.",
             dependsOn = { "turnin-261-down-the-scarlet-path" },
@@ -115,8 +114,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1052-down-the-scarlet-path",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 261 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 261 } } },
             kind = "turnin",
-            priority = 16,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in Down the Scarlet Path to Raleigh the Devout.",
             dependsOn = { "accept-1052-down-the-scarlet-path" },
@@ -127,8 +126,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1053-in-the-name-of-the-light",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1052 } } },
             kind = "accept",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept In the Name of the Light from Raleigh the Devout.",
             dependsOn = { "turnin-1052-down-the-scarlet-path" },
@@ -140,7 +139,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 19,
             conditions = { level = { min = 40 } },
             text = "Enter Scarlet Monastery - Cathedral with your group.",
             dependsOn = { "accept-6141-brother-anton", "accept-261-down-the-scarlet-path", "accept-1052-down-the-scarlet-path", "accept-1053-in-the-name-of-the-light" },
@@ -149,8 +147,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1053-2-scarlet-commander-mograi",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1052 } } },
             kind = "objective",
-            priority = 23,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Kill Scarlet Commander Mograine.",
             dependsOn = { "accept-1053-in-the-name-of-the-light" },
@@ -159,8 +157,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1053-1-high-inquisitor-whiteman",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1052 } } },
             kind = "objective",
-            priority = 24,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Kill High Inquisitor Whitemane.",
             dependsOn = { "accept-1053-in-the-name-of-the-light" },
@@ -169,8 +167,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1053-in-the-name-of-the-light",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1052 } } },
             kind = "turnin",
-            priority = 27,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in In the Name of the Light to Raleigh the Devout.",
             dependsOn = { "objective-1053-2-scarlet-commander-mograi", "objective-1053-1-high-inquisitor-whiteman" },
@@ -182,7 +180,6 @@ ns:RegisterGuide({
         {
             id = "accept-1048-into-the-scarlet-monastery",
             kind = "accept",
-            priority = 28,
             conditions = { all = { { faction = "Horde" }, { level = { min = 37 } } } },
             text = "Accept Into The Scarlet Monastery from Varimathras.",
             complete = QuestState(1048, "activeOrCompleted"),
@@ -193,7 +190,6 @@ ns:RegisterGuide({
         {
             id = "objective-1048-2-scarlet-commander-mograi",
             kind = "objective",
-            priority = 29,
             conditions = { all = { { faction = "Horde" }, { level = { min = 37 } } } },
             text = "Kill Scarlet Commander Mograine.",
             dependsOn = { "accept-1048-into-the-scarlet-monastery" },
@@ -203,7 +199,6 @@ ns:RegisterGuide({
         {
             id = "objective-1048-1-high-inquisitor-whiteman",
             kind = "objective",
-            priority = 30,
             conditions = { all = { { faction = "Horde" }, { level = { min = 37 } } } },
             text = "Kill High Inquisitor Whitemane.",
             dependsOn = { "accept-1048-into-the-scarlet-monastery" },
@@ -213,7 +208,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1048-into-the-scarlet-monastery",
             kind = "turnin",
-            priority = 31,
             conditions = { all = { { faction = "Horde" }, { level = { min = 37 } } } },
             text = "Turn in Into The Scarlet Monastery to Varimathras.",
             dependsOn = { "objective-1048-2-scarlet-commander-mograi", "objective-1048-1-high-inquisitor-whiteman" },

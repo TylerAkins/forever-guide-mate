@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Hunter",
     category = "Class Quests",
     id = "class-hunter",
@@ -15,7 +15,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            priority = 10,
             route = {
                 { mapID = 1426, x = 0.2993, y = 0.7120000000000001, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
@@ -55,7 +54,6 @@ ns:RegisterGuide({
             classAction = "accept-179-dwarven-outfitters",
         },
         {
-            priority = 20,
             route = {
                 { y = 0.744, mapID = 1426, label = "Ragged Young Wolf", offMapText = "Travel to Ragged Young Wolf.", x = 0.306 },
             },
@@ -95,7 +93,6 @@ ns:RegisterGuide({
             classAction = "objective-179-1-ragged-young-wolf",
         },
         {
-            priority = 30,
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh.", x = 0.2993 },
             },
@@ -135,7 +132,6 @@ ns:RegisterGuide({
             classAction = "turnin-179-dwarven-outfitters",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
@@ -161,7 +157,6 @@ ns:RegisterGuide({
             classAction = "accept-3108-etched-rune",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.674, mapID = 1426, label = "Thorgas Grimson", x = 0.29, offMapText = "Travel to Thorgas Grimson in Dun Morogh." },
             },
@@ -187,7 +182,6 @@ ns:RegisterGuide({
             classAction = "turnin-3108-etched-rune",
         },
         {
-            priority = 60,
             route = {
                 { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
             },
@@ -240,7 +234,6 @@ ns:RegisterGuide({
             classAction = "accept-788-cutting-teeth",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.662, mapID = 1411, label = "Mottled Boar", offMapText = "Travel to Mottled Boar.", x = 0.438 },
             },
@@ -293,7 +286,6 @@ ns:RegisterGuide({
             classAction = "objective-788-1-mottled-boar",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
             },
@@ -346,7 +338,6 @@ ns:RegisterGuide({
             classAction = "turnin-788-cutting-teeth",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
             },
@@ -372,7 +363,6 @@ ns:RegisterGuide({
             classAction = "accept-3082-etched-tablet",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.692, mapID = 1411, label = "Jen'shan", x = 0.428, offMapText = "Travel to Jen'shan in Durotar." },
             },
@@ -398,7 +388,6 @@ ns:RegisterGuide({
             classAction = "turnin-3082-etched-tablet",
         },
         {
-            priority = 110,
             route = {
                 { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
             },
@@ -424,7 +413,6 @@ ns:RegisterGuide({
             classAction = "accept-3087-etched-parchment",
         },
         {
-            priority = 120,
             route = {
                 { y = 0.692, mapID = 1411, label = "Jen'shan", x = 0.428, offMapText = "Travel to Jen'shan in Durotar." },
             },
@@ -453,7 +441,6 @@ ns:RegisterGuide({
             route = {
                 { y = 0.234, mapID = 2521, label = "Ailee Farheart", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
-            priority = 130,
             id = "accept-coming-of-age",
             conditions = {
                 all = {
@@ -483,7 +470,6 @@ ns:RegisterGuide({
             classAction = "accept-coming-of-age",
         },
         {
-            priority = 140,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -516,7 +502,6 @@ ns:RegisterGuide({
             classAction = "turnin-coming-of-age",
         },
         {
-            priority = 150,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
             },
@@ -549,7 +534,6 @@ ns:RegisterGuide({
             classAction = "accept-92461-harmony-in-balance",
         },
         {
-            priority = 160,
             route = {
                 { y = 0.256, mapID = 2521, label = "Juvenile Vuldren", x = 0.432, offMapText = "Travel to Juvenile Vuldren in Zephras Isle." },
             },
@@ -582,7 +566,6 @@ ns:RegisterGuide({
             classAction = "objective-92461-harmony-in-balance",
         },
         {
-            priority = 170,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
             },
@@ -615,7 +598,6 @@ ns:RegisterGuide({
             classAction = "turnin-92461-harmony-in-balance",
         },
         {
-            priority = 180,
             route = {
                 { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.5869 },
             },
@@ -655,7 +637,6 @@ ns:RegisterGuide({
             classAction = "accept-456-the-balance-of-nature",
         },
         {
-            priority = 190,
             route = {
                 { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
             },
@@ -695,7 +676,6 @@ ns:RegisterGuide({
             classAction = "objective-456-1-young-nightsaber",
         },
         {
-            priority = 200,
             route = {
                 { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
             },
@@ -734,7 +714,6 @@ ns:RegisterGuide({
             classAction = "objective-456-1-young-nightsaber-2",
         },
         {
-            priority = 210,
             route = {
                 { y = 0.454, mapID = 1438, label = "Young Thistle Boar", offMapText = "Travel to Young Thistle Boar.", x = 0.582 },
             },
@@ -774,7 +753,6 @@ ns:RegisterGuide({
             classAction = "objective-456-2-young-thistle-boar",
         },
         {
-            priority = 220,
             route = {
                 { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.587 },
             },
@@ -819,7 +797,6 @@ ns:RegisterGuide({
             classAction = "turnin-456-the-balance-of-nature",
         },
         {
-            priority = 230,
             route = {
                 { y = 0.442, mapID = 1438, label = "Conservator Ilthalaine", x = 0.586, offMapText = "Travel to Conservator Ilthalaine in Teldrassil." },
             },
@@ -845,7 +822,6 @@ ns:RegisterGuide({
             classAction = "accept-3117-etched-sigil",
         },
         {
-            priority = 240,
             route = {
                 { y = 0.404, mapID = 1438, label = "Ayanna Everstride", x = 0.586, offMapText = "Travel to Ayanna Everstride in Teldrassil." },
             },
@@ -871,7 +847,6 @@ ns:RegisterGuide({
             classAction = "turnin-3117-etched-sigil",
         },
         {
-            priority = 250,
             route = {
                 { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
@@ -945,7 +920,6 @@ ns:RegisterGuide({
                 { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Meat", offMapText = "Travel to Plainstrider Meat." },
             },
             sourceStep = 12,
-            priority = 260,
             useClientPin = false,
             dependsOn = { "accept-747-the-hunt-begins" },
             classAction = "objective-747-1-plainstrider-meat",
@@ -985,13 +959,11 @@ ns:RegisterGuide({
                 { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Feather", offMapText = "Travel to Plainstrider Feather." },
             },
             sourceStep = 12,
-            priority = 270,
             useClientPin = false,
             dependsOn = { "accept-747-the-hunt-begins" },
             classAction = "objective-747-2-plainstrider-feather",
         },
         {
-            priority = 280,
             route = {
                 { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
@@ -1031,7 +1003,6 @@ ns:RegisterGuide({
             classAction = "turnin-747-the-hunt-begins",
         },
         {
-            priority = 290,
             route = {
                 { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
@@ -1057,7 +1028,6 @@ ns:RegisterGuide({
             classAction = "accept-3092-etched-note",
         },
         {
-            priority = 300,
             route = {
                 { y = 0.764, mapID = 1412, label = "Lanka Farshot", x = 0.440, offMapText = "Travel to Lanka Farshot in Mulgore." },
             },
@@ -1105,10 +1075,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92482,
-            priority = 310,
         },
         {
-            priority = 320,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
             },
@@ -1132,7 +1100,6 @@ ns:RegisterGuide({
             classAction = "accept-92482-the-way-of-the-hunter",
         },
         {
-            priority = 330,
             route = {
                 { y = 0.236, mapID = 2521, label = "Tai'ree Farsight", x = 0.424, offMapText = "Travel to Tai'ree Farsight in Zephras Isle." },
             },
@@ -1180,10 +1147,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6063,
-            priority = 340,
         },
         {
-            priority = 350,
             route = {
                 { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
             },
@@ -1209,7 +1174,6 @@ ns:RegisterGuide({
             classAction = "accept-6063-taming-the-beast",
         },
         {
-            priority = 360,
             id = "objective-6063-quest-work",
             conditions = {
                 all = {
@@ -1232,7 +1196,6 @@ ns:RegisterGuide({
             classAction = "objective-6063-quest-work",
         },
         {
-            priority = 370,
             route = {
                 { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
             },
@@ -1258,7 +1221,6 @@ ns:RegisterGuide({
             classAction = "turnin-6063-taming-the-beast",
         },
         {
-            priority = 380,
             route = {
                 { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
             },
@@ -1284,7 +1246,6 @@ ns:RegisterGuide({
             classAction = "accept-6101-taming-the-beast",
         },
         {
-            priority = 390,
             id = "objective-6101-quest-work",
             conditions = {
                 all = {
@@ -1307,7 +1268,6 @@ ns:RegisterGuide({
             classAction = "objective-6101-quest-work",
         },
         {
-            priority = 400,
             route = {
                 { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
             },
@@ -1333,7 +1293,6 @@ ns:RegisterGuide({
             classAction = "turnin-6101-taming-the-beast",
         },
         {
-            priority = 410,
             route = {
                 { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
             },
@@ -1359,7 +1318,6 @@ ns:RegisterGuide({
             classAction = "accept-6102-taming-the-beast",
         },
         {
-            priority = 420,
             id = "objective-6102-quest-work",
             conditions = {
                 all = {
@@ -1382,7 +1340,6 @@ ns:RegisterGuide({
             classAction = "objective-6102-quest-work",
         },
         {
-            priority = 430,
             route = {
                 { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
             },
@@ -1408,7 +1365,6 @@ ns:RegisterGuide({
             classAction = "turnin-6102-taming-the-beast",
         },
         {
-            priority = 440,
             route = {
                 { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
             },
@@ -1434,7 +1390,6 @@ ns:RegisterGuide({
             classAction = "accept-6103-training-the-beast",
         },
         {
-            priority = 450,
             route = {
                 { y = 0.088, mapID = 1457, label = "Jocaste", x = 0.402, offMapText = "Travel to Jocaste in Darnassus." },
             },
@@ -1482,10 +1437,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94007,
-            priority = 460,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.442, mapID = 2521, label = "Elayaa Easewind", x = 0.452, offMapText = "Travel to Elayaa Easewind in Zephras Isle." },
             },
@@ -1509,7 +1462,6 @@ ns:RegisterGuide({
             classAction = "accept-94007-taming-the-beast",
         },
         {
-            priority = 480,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
             },
@@ -1533,7 +1485,6 @@ ns:RegisterGuide({
             classAction = "turnin-94007-taming-the-beast",
         },
         {
-            priority = 490,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
             },
@@ -1557,7 +1508,6 @@ ns:RegisterGuide({
             classAction = "accept-94978-taming-the-beast",
         },
         {
-            priority = 500,
             id = "objective-94978-quest-work",
             conditions = {
                 all = {
@@ -1578,7 +1528,6 @@ ns:RegisterGuide({
             classAction = "objective-94978-quest-work",
         },
         {
-            priority = 510,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
             },
@@ -1602,7 +1551,6 @@ ns:RegisterGuide({
             classAction = "turnin-94978-taming-the-beast",
         },
         {
-            priority = 520,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
             },
@@ -1626,7 +1574,6 @@ ns:RegisterGuide({
             classAction = "accept-94979-taming-the-beast",
         },
         {
-            priority = 530,
             id = "objective-94979-quest-work",
             conditions = {
                 all = {
@@ -1647,7 +1594,6 @@ ns:RegisterGuide({
             classAction = "objective-94979-quest-work",
         },
         {
-            priority = 540,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
             },
@@ -1671,7 +1617,6 @@ ns:RegisterGuide({
             classAction = "turnin-94979-taming-the-beast",
         },
         {
-            priority = 550,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
             },
@@ -1695,7 +1640,6 @@ ns:RegisterGuide({
             classAction = "accept-94013-taming-the-beast",
         },
         {
-            priority = 560,
             id = "objective-94013-quest-work",
             conditions = {
                 all = {
@@ -1716,7 +1660,6 @@ ns:RegisterGuide({
             classAction = "objective-94013-quest-work",
         },
         {
-            priority = 570,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
             },
@@ -1740,7 +1683,6 @@ ns:RegisterGuide({
             classAction = "turnin-94013-taming-the-beast",
         },
         {
-            priority = 580,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
             },
@@ -1764,7 +1706,6 @@ ns:RegisterGuide({
             classAction = "accept-94050-training-the-beast",
         },
         {
-            priority = 590,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'dora Quickgale", x = 0.596, offMapText = "Travel to Quel'dora Quickgale in Zephras Isle." },
             },
@@ -1814,10 +1755,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94792,
-            priority = 600,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
             },
@@ -1845,7 +1784,6 @@ ns:RegisterGuide({
             classAction = "accept-94792-taming-the-beast",
         },
         {
-            priority = 620,
             dependsOn = { "accept-94792-taming-the-beast" },
             id = "objective-94792-reviewed-mechanics",
             conditions = {
@@ -1870,7 +1808,6 @@ ns:RegisterGuide({
             classAction = "objective-94792-reviewed-mechanics",
         },
         {
-            priority = 630,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
             },
@@ -1898,7 +1835,6 @@ ns:RegisterGuide({
             classAction = "turnin-94792-taming-the-beast",
         },
         {
-            priority = 640,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
             },
@@ -1926,7 +1862,6 @@ ns:RegisterGuide({
             classAction = "accept-94863-taming-the-beast",
         },
         {
-            priority = 650,
             dependsOn = { "accept-94863-taming-the-beast" },
             id = "objective-94863-reviewed-mechanics",
             conditions = {
@@ -1951,7 +1886,6 @@ ns:RegisterGuide({
             classAction = "objective-94863-reviewed-mechanics",
         },
         {
-            priority = 660,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
             },
@@ -1979,7 +1913,6 @@ ns:RegisterGuide({
             classAction = "turnin-94863-taming-the-beast",
         },
         {
-            priority = 670,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
             },
@@ -2007,7 +1940,6 @@ ns:RegisterGuide({
             classAction = "accept-94864-taming-the-beast",
         },
         {
-            priority = 680,
             dependsOn = { "accept-94864-taming-the-beast" },
             id = "objective-94864-reviewed-mechanics",
             conditions = {
@@ -2032,7 +1964,6 @@ ns:RegisterGuide({
             classAction = "objective-94864-reviewed-mechanics",
         },
         {
-            priority = 690,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
             },
@@ -2060,7 +1991,6 @@ ns:RegisterGuide({
             classAction = "turnin-94864-taming-the-beast",
         },
         {
-            priority = 700,
             route = {
                 { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
             },
@@ -2088,7 +2018,6 @@ ns:RegisterGuide({
             classAction = "accept-94793-training-the-beast",
         },
         {
-            priority = 710,
             route = {
                 { y = 0.664, mapID = 1429, label = "Isaac Chan", x = 0.418, offMapText = "Travel to Isaac Chan in Elwynn Forest." },
             },
@@ -2141,10 +2070,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 6065,
             alternativeQuests = { 6066, 6067 },
-            priority = 720,
         },
         {
-            priority = 730,
             route = {
                 { y = 0.878, mapID = 1456, label = "Kary Thunderhorn", x = 0.582, offMapText = "Travel to Kary Thunderhorn in Thunder Bluff." },
             },
@@ -2170,7 +2097,6 @@ ns:RegisterGuide({
             classAction = "accept-6065-the-hunters-path",
         },
         {
-            priority = 740,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2196,7 +2122,6 @@ ns:RegisterGuide({
             classAction = "turnin-6065-the-hunters-path",
         },
         {
-            priority = 750,
             route = {
                 { y = 0.178, mapID = 1454, label = "Sian'dur", x = 0.678, offMapText = "Travel to Sian'dur in Orgrimmar." },
             },
@@ -2222,7 +2147,6 @@ ns:RegisterGuide({
             classAction = "accept-6066-the-hunters-path",
         },
         {
-            priority = 760,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2248,7 +2172,6 @@ ns:RegisterGuide({
             classAction = "turnin-6066-the-hunters-path",
         },
         {
-            priority = 770,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2274,7 +2197,6 @@ ns:RegisterGuide({
             classAction = "accept-6067-the-hunters-path",
         },
         {
-            priority = 780,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2300,7 +2222,6 @@ ns:RegisterGuide({
             classAction = "turnin-6067-the-hunters-path",
         },
         {
-            priority = 790,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2326,7 +2247,6 @@ ns:RegisterGuide({
             classAction = "accept-6061-taming-the-beast",
         },
         {
-            priority = 800,
             id = "objective-6061-quest-work",
             conditions = {
                 all = {
@@ -2349,7 +2269,6 @@ ns:RegisterGuide({
             classAction = "objective-6061-quest-work",
         },
         {
-            priority = 810,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2375,7 +2294,6 @@ ns:RegisterGuide({
             classAction = "turnin-6061-taming-the-beast",
         },
         {
-            priority = 820,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2401,7 +2319,6 @@ ns:RegisterGuide({
             classAction = "accept-6087-taming-the-beast",
         },
         {
-            priority = 830,
             id = "objective-6087-quest-work",
             conditions = {
                 all = {
@@ -2424,7 +2341,6 @@ ns:RegisterGuide({
             classAction = "objective-6087-quest-work",
         },
         {
-            priority = 840,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2450,7 +2366,6 @@ ns:RegisterGuide({
             classAction = "turnin-6087-taming-the-beast",
         },
         {
-            priority = 850,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2476,7 +2391,6 @@ ns:RegisterGuide({
             classAction = "accept-6088-taming-the-beast",
         },
         {
-            priority = 860,
             id = "objective-6088-quest-work",
             conditions = {
                 all = {
@@ -2499,7 +2413,6 @@ ns:RegisterGuide({
             classAction = "objective-6088-quest-work",
         },
         {
-            priority = 870,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2525,7 +2438,6 @@ ns:RegisterGuide({
             classAction = "turnin-6088-taming-the-beast",
         },
         {
-            priority = 880,
             route = {
                 { y = 0.596, mapID = 1412, label = "Yaw Sharpmane", x = 0.469, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
             },
@@ -2551,7 +2463,6 @@ ns:RegisterGuide({
             classAction = "accept-6089-training-the-beast",
         },
         {
-            priority = 890,
             route = {
                 { y = 0.892, mapID = 1456, label = "Holt Thunderhorn", x = 0.574, offMapText = "Travel to Holt Thunderhorn in Thunder Bluff." },
             },
@@ -2601,10 +2512,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 6068,
             alternativeQuests = { 6069, 6070 },
-            priority = 900,
         },
         {
-            priority = 910,
             route = {
                 { y = 0.178, mapID = 1454, label = "Sian'dur", x = 0.678, offMapText = "Travel to Sian'dur in Orgrimmar." },
             },
@@ -2629,7 +2538,6 @@ ns:RegisterGuide({
             classAction = "accept-6068-the-hunters-path",
         },
         {
-            priority = 920,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2654,7 +2562,6 @@ ns:RegisterGuide({
             classAction = "turnin-6068-the-hunters-path",
         },
         {
-            priority = 930,
             route = {
                 { y = 0.742, mapID = 1411, label = "Kali Remik", x = 0.062, offMapText = "Travel to Kali Remik in Durotar." },
             },
@@ -2679,7 +2586,6 @@ ns:RegisterGuide({
             classAction = "accept-6069-the-hunters-path",
         },
         {
-            priority = 940,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2704,7 +2610,6 @@ ns:RegisterGuide({
             classAction = "turnin-6069-the-hunters-path",
         },
         {
-            priority = 950,
             route = {
                 { y = 0.878, mapID = 1456, label = "Kary Thunderhorn", x = 0.582, offMapText = "Travel to Kary Thunderhorn in Thunder Bluff." },
             },
@@ -2729,7 +2634,6 @@ ns:RegisterGuide({
             classAction = "accept-6070-the-hunters-path",
         },
         {
-            priority = 960,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2754,7 +2658,6 @@ ns:RegisterGuide({
             classAction = "turnin-6070-the-hunters-path",
         },
         {
-            priority = 970,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2779,7 +2682,6 @@ ns:RegisterGuide({
             classAction = "accept-6062-taming-the-beast",
         },
         {
-            priority = 980,
             id = "objective-6062-quest-work",
             conditions = {
                 all = {
@@ -2801,7 +2703,6 @@ ns:RegisterGuide({
             classAction = "objective-6062-quest-work",
         },
         {
-            priority = 990,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2826,7 +2727,6 @@ ns:RegisterGuide({
             classAction = "turnin-6062-taming-the-beast",
         },
         {
-            priority = 1000,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2851,7 +2751,6 @@ ns:RegisterGuide({
             classAction = "accept-6083-taming-the-beast",
         },
         {
-            priority = 1010,
             id = "objective-6083-quest-work",
             conditions = {
                 all = {
@@ -2873,7 +2772,6 @@ ns:RegisterGuide({
             classAction = "objective-6083-quest-work",
         },
         {
-            priority = 1020,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2898,7 +2796,6 @@ ns:RegisterGuide({
             classAction = "turnin-6083-taming-the-beast",
         },
         {
-            priority = 1030,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2923,7 +2820,6 @@ ns:RegisterGuide({
             classAction = "accept-6082-taming-the-beast",
         },
         {
-            priority = 1040,
             id = "objective-6082-quest-work",
             conditions = {
                 all = {
@@ -2945,7 +2841,6 @@ ns:RegisterGuide({
             classAction = "objective-6082-quest-work",
         },
         {
-            priority = 1050,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2970,7 +2865,6 @@ ns:RegisterGuide({
             classAction = "turnin-6082-taming-the-beast",
         },
         {
-            priority = 1060,
             route = {
                 { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
@@ -2995,7 +2889,6 @@ ns:RegisterGuide({
             classAction = "accept-6081-training-the-beast",
         },
         {
-            priority = 1070,
             route = {
                 { y = 0.182, mapID = 1454, label = "Ormak Grimshot", x = 0.662, offMapText = "Travel to Ormak Grimshot in Orgrimmar." },
             },
@@ -3020,7 +2913,6 @@ ns:RegisterGuide({
             classAction = "turnin-6081-training-the-beast",
         },
         {
-            priority = 1080,
             route = {
                 { y = 0.088, mapID = 1457, label = "Jocaste", x = 0.402, offMapText = "Travel to Jocaste in Darnassus." },
             },
@@ -3046,7 +2938,6 @@ ns:RegisterGuide({
             classAction = "accept-6071-the-hunters-path",
         },
         {
-            priority = 1090,
             route = {
                 { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
             },
@@ -3097,10 +2988,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 6074,
             alternativeQuests = { 6075, 6076 },
-            priority = 1100,
         },
         {
-            priority = 1110,
             route = {
                 { y = 0.838, mapID = 1455, label = "Olmin Burningbeard", x = 0.706, offMapText = "Travel to Olmin Burningbeard in Ironforge." },
             },
@@ -3126,7 +3015,6 @@ ns:RegisterGuide({
             classAction = "accept-6074-the-hunters-path",
         },
         {
-            priority = 1120,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3152,7 +3040,6 @@ ns:RegisterGuide({
             classAction = "turnin-6074-the-hunters-path",
         },
         {
-            priority = 1130,
             route = {
                 { y = 0.454, mapID = 1426, label = "Tristane Shadowstone", x = 0.306, offMapText = "Travel to Tristane Shadowstone in Dun Morogh." },
             },
@@ -3178,7 +3065,6 @@ ns:RegisterGuide({
             classAction = "accept-6075-the-hunters-path",
         },
         {
-            priority = 1140,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3204,7 +3090,6 @@ ns:RegisterGuide({
             classAction = "turnin-6075-the-hunters-path",
         },
         {
-            priority = 1150,
             route = {
                 { y = 0.364, mapID = 1453, label = "Einris Brightspear", x = 0.676, offMapText = "Travel to Einris Brightspear in Stormwind City." },
             },
@@ -3230,7 +3115,6 @@ ns:RegisterGuide({
             classAction = "accept-6076-the-hunters-path",
         },
         {
-            priority = 1160,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3256,7 +3140,6 @@ ns:RegisterGuide({
             classAction = "turnin-6076-the-hunters-path",
         },
         {
-            priority = 1170,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3282,7 +3165,6 @@ ns:RegisterGuide({
             classAction = "accept-6064-taming-the-beast",
         },
         {
-            priority = 1180,
             id = "objective-6064-quest-work",
             conditions = {
                 all = {
@@ -3305,7 +3187,6 @@ ns:RegisterGuide({
             classAction = "objective-6064-quest-work",
         },
         {
-            priority = 1190,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3331,7 +3212,6 @@ ns:RegisterGuide({
             classAction = "turnin-6064-taming-the-beast",
         },
         {
-            priority = 1200,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3357,7 +3237,6 @@ ns:RegisterGuide({
             classAction = "accept-6084-taming-the-beast",
         },
         {
-            priority = 1210,
             id = "objective-6084-quest-work",
             conditions = {
                 all = {
@@ -3380,7 +3259,6 @@ ns:RegisterGuide({
             classAction = "objective-6084-quest-work",
         },
         {
-            priority = 1220,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3406,7 +3284,6 @@ ns:RegisterGuide({
             classAction = "turnin-6084-taming-the-beast",
         },
         {
-            priority = 1230,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3432,7 +3309,6 @@ ns:RegisterGuide({
             classAction = "accept-6085-taming-the-beast",
         },
         {
-            priority = 1240,
             id = "objective-6085-quest-work",
             conditions = {
                 all = {
@@ -3455,7 +3331,6 @@ ns:RegisterGuide({
             classAction = "objective-6085-quest-work",
         },
         {
-            priority = 1250,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3481,7 +3356,6 @@ ns:RegisterGuide({
             classAction = "turnin-6085-taming-the-beast",
         },
         {
-            priority = 1260,
             route = {
                 { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
             },
@@ -3507,7 +3381,6 @@ ns:RegisterGuide({
             classAction = "accept-6086-training-the-beast",
         },
         {
-            priority = 1270,
             route = {
                 { y = 0.854, mapID = 1455, label = "Belia Thundergranite", x = 0.708, offMapText = "Travel to Belia Thundergranite in Ironforge." },
             },
@@ -3553,10 +3426,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 8151,
-            priority = 1280,
         },
         {
-            priority = 1290,
             route = {
                 { y = 0.15, mapID = 1453, label = "Ulfir Ironbeard", x = 0.62, offMapText = "Travel to Ulfir Ironbeard in Stormwind City." },
             },
@@ -3598,10 +3469,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 8151,
-            priority = 1300,
         },
         {
-            priority = 1310,
             route = {
                 { y = 0.182, mapID = 1454, label = "Ormak Grimshot", x = 0.662, offMapText = "Travel to Ormak Grimshot in Orgrimmar." },
             },
@@ -3642,10 +3511,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 8151,
-            priority = 1320,
         },
         {
-            priority = 1330,
             route = {
                 { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
             },
@@ -3666,7 +3533,6 @@ ns:RegisterGuide({
             classAction = "turnin-8151-the-hunters-charm",
         },
         {
-            priority = 1340,
             route = {
                 { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
             },
@@ -3687,7 +3553,6 @@ ns:RegisterGuide({
             classAction = "accept-8153-courser-antlers",
         },
         {
-            priority = 1350,
             route = {
                 { y = 0.692, mapID = 1447, label = "Mosshoof Courser", x = 0.378, offMapText = "Travel to Mosshoof Courser in Azshara." },
             },
@@ -3708,7 +3573,6 @@ ns:RegisterGuide({
             classAction = "objective-8153-courser-antlers",
         },
         {
-            priority = 1360,
             route = {
                 { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
             },
@@ -3729,7 +3593,6 @@ ns:RegisterGuide({
             classAction = "turnin-8153-courser-antlers",
         },
         {
-            priority = 1370,
             route = {
                 { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
             },
@@ -3750,7 +3613,6 @@ ns:RegisterGuide({
             classAction = "accept-8231-wavethrashing",
         },
         {
-            priority = 1380,
             route = {
                 { y = 0.086, mapID = 1447, label = "Young Wavethrasher", x = 0.654, offMapText = "Travel to Young Wavethrasher in Azshara." },
                 { y = 0.346, mapID = 1447, label = "Wavethrasher", x = 0.712, offMapText = "Travel to Wavethrasher in Azshara." },
@@ -3773,7 +3635,6 @@ ns:RegisterGuide({
             classAction = "objective-8231-wavethrashing",
         },
         {
-            priority = 1390,
             route = {
                 { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
             },
@@ -3806,7 +3667,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 1400,
             classAction = "loot-starter-before-accept-7632-the-ancient-leaf",
         },
         {
@@ -3829,10 +3689,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7632,
-            priority = 1410,
         },
         {
-            priority = 1420,
             id = "accept-7632-the-ancient-leaf",
             conditions = {
                 all = {
@@ -3850,7 +3708,6 @@ ns:RegisterGuide({
             classAction = "accept-7632-the-ancient-leaf",
         },
         {
-            priority = 1430,
             route = {
                 { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -3871,7 +3728,6 @@ ns:RegisterGuide({
             classAction = "turnin-7632-the-ancient-leaf",
         },
         {
-            priority = 1440,
             route = {
                 { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -3892,7 +3748,6 @@ ns:RegisterGuide({
             classAction = "accept-7633-an-introduction",
         },
         {
-            priority = 1450,
             route = {
                 { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -3913,7 +3768,6 @@ ns:RegisterGuide({
             classAction = "turnin-7633-an-introduction",
         },
         {
-            priority = 1460,
             route = {
                 { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -3934,7 +3788,6 @@ ns:RegisterGuide({
             classAction = "accept-7636-stave-of-the-ancients",
         },
         {
-            priority = 1470,
             id = "objective-7636-quest-work",
             conditions = {
                 all = {
@@ -3952,7 +3805,6 @@ ns:RegisterGuide({
             classAction = "objective-7636-quest-work",
         },
         {
-            priority = 1480,
             route = {
                 { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },

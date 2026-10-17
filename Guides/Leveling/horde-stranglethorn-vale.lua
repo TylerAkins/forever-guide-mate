@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-stranglethorn-vale",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 568,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.289, mapID = 1434, label = "Commander Aggro'gosh", offMapText = "Travel to Commander Aggro'gosh in Stranglethorn Vale.", x = 0.3217 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.2773, mapID = 1434, label = "Nimboya", offMapText = "Travel to Nimboya in Stranglethorn Vale.", x = 0.3216 },
             },
@@ -93,7 +90,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { y = 0.2771, mapID = 1434, label = "Kin'weelay", offMapText = "Travel to Kin'weelay in Stranglethorn Vale.", x = 0.3227 },
             },
@@ -133,10 +129,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5762,
-            priority = 50,
         },
         {
-            priority = 60,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary Jr.", offMapText = "Travel to Hemet Nesingwary Jr. in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -161,7 +155,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary Jr.", offMapText = "Travel to Hemet Nesingwary Jr. in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -189,7 +182,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -214,7 +206,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "Turn in Welcome to the Jungle to Hemet Nesingwary Jr..",
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary Jr.", offMapText = "Travel to Hemet Nesingwary Jr. in Stranglethorn Vale.", x = 0.3566 },
@@ -239,7 +230,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary Jr.", offMapText = "Travel to Hemet Nesingwary Jr. in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -270,7 +260,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3561 },
             },
@@ -301,7 +290,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
             },
@@ -332,7 +320,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             text = "Kill 10 Young Stranglethorn Tiger.",
             route = {
                 { y = 0.13, mapID = 1434, label = "Young Stranglethorn Tiger", offMapText = "Travel to Young Stranglethorn Tiger.", x = 0.338 },
@@ -363,7 +350,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 140,
             text = "Turn in Tiger Mastery to Ajeck Rouack.",
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3561 },
@@ -394,7 +380,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3561 },
             },
@@ -443,7 +428,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.4, y = 0.1, label = "Young Panther", offMapText = "Travel to Young Panther." },
             },
             sourceStep = 16,
-            priority = 160,
             requiredQuests = {
                 {
                     mode = "any",
@@ -476,10 +460,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1714,
-            priority = 170,
         },
         {
-            priority = 180,
             route = {
                 { y = 0.668, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.804, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
             },
@@ -501,7 +483,6 @@ ns:RegisterGuide({
             classAction = "accept-1714-essence-of-the-exile",
         },
         {
-            priority = 190,
             dependsOn = { "woven-class-warrior-accept-1714-essence-of-the-exile" },
             id = "woven-class-warrior-objective-1714-essence-of-the-exile",
             conditions = {
@@ -520,7 +501,6 @@ ns:RegisterGuide({
             classAction = "objective-1714-essence-of-the-exile",
         },
         {
-            priority = 200,
             route = {
                 { y = 0.667, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.793, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
             },
@@ -564,7 +544,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1712,
-            priority = 210,
         },
         {
             id = "objective-1712-1-liferoot",
@@ -588,7 +567,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.44, y = 0.11800000000000001, label = "Liferoot", offMapText = "Travel to Liferoot." },
             },
             sourceStep = 17,
-            priority = 220,
             requiredQuests = {
                 {
                     mode = "any",
@@ -613,10 +591,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 605,
-            priority = 230,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.09, mapID = 1434, label = "Crystal Spine Basilisk", offMapText = "Travel to Crystal Spine Basilisk.", x = 0.476 },
             },
@@ -641,7 +617,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Kill 10 Stranglethorn Tiger.",
             route = {
                 { y = 0.128, mapID = 1434, label = "Stranglethorn Tiger", offMapText = "Travel to Stranglethorn Tiger.", x = 0.464 },
@@ -690,14 +665,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.368, y = 0.10400000000000001, label = "Large River Crocolisk Skin", offMapText = "Travel to Large River Crocolisk Skin." },
             },
             sourceStep = 20,
-            priority = 260,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Turn in Tiger Mastery to Ajeck Rouack.",
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3561 },
@@ -728,7 +701,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3561 },
             },
@@ -759,7 +731,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin.",
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
@@ -790,7 +761,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
             },
@@ -821,7 +791,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Kill 10 Elder Stranglethorn Tiger.",
             route = {
                 { y = 0.142, mapID = 1434, label = "Elder Stranglethorn Tiger", offMapText = "Travel to Elder Stranglethorn Tiger.", x = 0.314 },
@@ -852,7 +821,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Kill 10 Panther.",
             route = {
                 { y = 0.164, mapID = 1434, label = "Panther", offMapText = "Travel to Panther.", x = 0.282 },
@@ -901,7 +869,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.27399999999999997, y = 0.14400000000000002, label = "Stranglethorn Raptor", offMapText = "Travel to Stranglethorn Raptor." },
             },
             sourceStep = 25,
-            priority = 330,
             requiredQuests = {
                 {
                     mode = "any",
@@ -914,7 +881,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-194-raptor-mastery" },
         },
         {
-            priority = 340,
             route = {
                 { y = 0.176, mapID = 1434, label = "Crystal Spine Basilisk", offMapText = "Travel to Crystal Spine Basilisk.", x = 0.24 },
             },
@@ -960,7 +926,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.28800000000000003, y = 0.192, label = "Bloodscalp Tusk", offMapText = "Travel to Bloodscalp Tusk." },
             },
             sourceStep = 27,
-            priority = 350,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -985,7 +950,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.28800000000000003, y = 0.192, label = "Bloodscalp Ear", offMapText = "Travel to Bloodscalp Ear." },
             },
             sourceStep = 27,
-            priority = 360,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1013,14 +977,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.28800000000000003, y = 0.192, label = "Bloody Bone Necklace", offMapText = "Travel to Bloody Bone Necklace." },
             },
             sourceStep = 27,
-            priority = 370,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-596-bloody-bone-necklaces" },
         },
         {
-            priority = 380,
             text = "Turn in Raptor Mastery to Hemet Nesingwary Jr..",
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary Jr.", offMapText = "Travel to Hemet Nesingwary Jr. in Stranglethorn Vale.", x = 0.3566 },
@@ -1051,7 +1013,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary Jr.", offMapText = "Travel to Hemet Nesingwary Jr. in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -1082,7 +1043,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             text = "Turn in Tiger Mastery to Ajeck Rouack.",
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3562 },
@@ -1113,7 +1073,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3562 },
             },
@@ -1144,7 +1103,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin.",
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
@@ -1175,7 +1133,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
             },
@@ -1206,7 +1163,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Collect 1 Paw of Sin'Dall.",
             route = {
                 { y = 0.1739, mapID = 1434, label = "Sin'Dall", offMapText = "Travel to Sin'Dall.", x = 0.3221 },
@@ -1237,7 +1193,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Kill 10 Lashtail Raptor.",
             route = {
                 { y = 0.204, mapID = 1434, label = "Lashtail Raptor", offMapText = "Travel to Lashtail Raptor.", x = 0.322 },
@@ -1268,7 +1223,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             text = "Kill 15 Lashtail Raptor.",
             route = {
                 { y = 0.204, mapID = 1434, label = "Lashtail Raptor", offMapText = "Travel to Lashtail Raptor.", x = 0.322 },
@@ -1296,7 +1250,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             text = "Turn in Hunt for Yenniku to Nimboya.",
             route = {
                 { y = 0.2772, mapID = 1434, label = "Nimboya", offMapText = "Travel to Nimboya in Stranglethorn Vale.", x = 0.3216 },
@@ -1324,7 +1277,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { y = 0.2772, mapID = 1434, label = "Nimboya", offMapText = "Travel to Nimboya in Stranglethorn Vale.", x = 0.3216 },
             },
@@ -1358,7 +1310,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             text = "Turn in Bloody Bone Necklaces to Kin'weelay.",
             route = {
                 { y = 0.2771, mapID = 1434, label = "Kin'weelay", offMapText = "Travel to Kin'weelay in Stranglethorn Vale.", x = 0.3227 },
@@ -1386,7 +1337,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.2771, mapID = 1434, label = "Kin'weelay", offMapText = "Travel to Kin'weelay in Stranglethorn Vale.", x = 0.3227 },
             },
@@ -1414,7 +1364,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             text = "Turn in The Defense of Grom'gol to Commander Aggro'gosh.",
             route = {
                 { y = 0.2891, mapID = 1434, label = "Commander Aggro'gosh", offMapText = "Travel to Commander Aggro'gosh in Stranglethorn Vale.", x = 0.3217 },
@@ -1442,7 +1391,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.2891, mapID = 1434, label = "Commander Aggro'gosh", offMapText = "Travel to Commander Aggro'gosh in Stranglethorn Vale.", x = 0.3217 },
             },
@@ -1497,14 +1445,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.2475, y = 0.2284, label = "Tablet Shard", offMapText = "Travel to Tablet Shard." },
             },
             sourceStep = 36,
-            priority = 530,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-629-the-vile-reef" },
         },
         {
-            priority = 540,
             text = "Collect 20 Shrunken Head.",
             route = {
                 { y = 0.152, mapID = 1434, label = "Bloodscalp Headhunter", offMapText = "Travel to Bloodscalp Headhunter.", x = 0.208 },
@@ -1559,7 +1505,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.23399999999999999, y = 0.10800000000000001, label = "Bloodscalp Tusk", offMapText = "Travel to Bloodscalp Tusk." },
             },
             sourceStep = 38,
-            priority = 550,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1572,7 +1517,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "Turn in Headhunting to Nimboya.",
             route = {
                 { y = 0.2773, mapID = 1434, label = "Nimboya", offMapText = "Travel to Nimboya in Stranglethorn Vale.", x = 0.3216 },
@@ -1606,7 +1550,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             text = "Turn in The Vile Reef to Kin'weelay.",
             route = {
                 { y = 0.277, mapID = 1434, label = "Kin'weelay", offMapText = "Travel to Kin'weelay in Stranglethorn Vale.", x = 0.3227 },
@@ -1634,7 +1577,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             route = {
                 { y = 0.2924, mapID = 1434, label = "Far Seer Mok'thardin", offMapText = "Travel to Far Seer Mok'thardin in Stranglethorn Vale.", x = 0.3212 },
             },
@@ -1662,7 +1604,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 590,
             text = "Kill 5 Mosh'Ogg Witch Doctor.",
             route = {
                 { y = 0.308, mapID = 1434, label = "Mosh'Ogg Witch Doctor", offMapText = "Travel to Mosh'Ogg Witch Doctor.", x = 0.354 },
@@ -1696,7 +1637,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 600,
             text = "Kill 10 Mosh'Ogg Brute.",
             route = {
                 { y = 0.308, mapID = 1434, label = "Mosh'Ogg Brute", offMapText = "Travel to Mosh'Ogg Brute.", x = 0.354 },
@@ -1730,7 +1670,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             text = "Collect 1 Pristine Tigress Fang.",
             route = {
                 { y = 0.328, mapID = 1434, label = "Stranglethorn Tigress", offMapText = "Travel to Stranglethorn Tigress.", x = 0.374 },
@@ -1779,7 +1718,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.374, y = 0.32799999999999996, label = "Shadowmaw Claw", offMapText = "Travel to Shadowmaw Claw." },
             },
             sourceStep = 45,
-            priority = 620,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1804,7 +1742,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.374, y = 0.32799999999999996, label = "Shadowmaw Panther", offMapText = "Travel to Shadowmaw Panther." },
             },
             sourceStep = 46,
-            priority = 630,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1817,7 +1754,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-192-panther-mastery" },
         },
         {
-            priority = 640,
             route = {
                 { mapID = 1434, x = 0.4265, y = 0.18350000000000002, label = "Foreman Cozzle", offMapText = "Travel to Foreman Cozzle." },
             },
@@ -1863,7 +1799,6 @@ ns:RegisterGuide({
             rememberPreparation = 1182,
         },
         {
-            priority = 650,
             route = {
                 { mapID = 1434, x = 0.4334, y = 0.2034, label = "Cozzle's Footlocker", offMapText = "Travel to Cozzle's Footlocker." },
             },
@@ -1906,7 +1841,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 213,
-            priority = 660,
         },
         {
             id = "objective-213-1-tumbled-crystal",
@@ -1927,14 +1861,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.442, y = 0.20199999999999999, label = "Tumbled Crystal", offMapText = "Travel to Tumbled Crystal." },
             },
             sourceStep = 49,
-            priority = 670,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 680,
             text = "Turn in Raptor Mastery to Hemet Nesingwary Jr..",
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary Jr.", offMapText = "Travel to Hemet Nesingwary Jr. in Stranglethorn Vale.", x = 0.3566 },
@@ -1965,7 +1897,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary Jr.", offMapText = "Travel to Hemet Nesingwary Jr. in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -1996,7 +1927,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             text = "Turn in Tiger Mastery to Ajeck Rouack.",
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3562 },
@@ -2027,7 +1957,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin.",
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3556 },
@@ -2058,7 +1987,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 720,
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3556 },
             },
@@ -2089,7 +2017,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 730,
             route = {
                 { y = 0.2773, mapID = 1434, label = "Nimboya", offMapText = "Travel to Nimboya in Stranglethorn Vale.", x = 0.3216 },
             },
@@ -2117,7 +2044,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 740,
             text = "Turn in The Defense of Grom'gol to Commander Aggro'gosh.",
             route = {
                 { y = 0.289, mapID = 1434, label = "Commander Aggro'gosh", offMapText = "Travel to Commander Aggro'gosh in Stranglethorn Vale.", x = 0.3217 },
@@ -2155,7 +2081,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 750,
             text = "Turn in Mok'thardin's Enchantment to Far Seer Mok'thardin.",
             route = {
                 { y = 0.2924, mapID = 1434, label = "Far Seer Mok'thardin", offMapText = "Travel to Far Seer Mok'thardin in Stranglethorn Vale.", x = 0.3212 },
@@ -2187,7 +2112,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 760,
             text = "Turn in Goblin Sponsorship to Baron Revilgaz.",
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
@@ -2218,7 +2142,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 770,
             route = {
                 { y = 0.7713, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
             },
@@ -2243,7 +2166,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-189-1-bloodscalp-ear" },
         },
         {
-            priority = 780,
             route = {
                 { y = 0.7713, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
             },
@@ -2268,7 +2190,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-213-1-tumbled-crystal" },
         },
         {
-            priority = 790,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -2293,7 +2214,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 800,
             text = "Turn in Singing Blue Shards to Crank Fizzlebub.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
@@ -2318,7 +2238,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 810,
             route = {
                 { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
             },

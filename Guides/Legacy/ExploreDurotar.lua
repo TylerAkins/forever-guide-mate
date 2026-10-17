@@ -47,7 +47,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-durotar",
     title = "Explore Durotar",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

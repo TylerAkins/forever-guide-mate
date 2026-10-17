@@ -24,16 +24,16 @@ local function Modera()
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-city-of-dalaran",
     title = "City of Dalaran",
     category = "Dungeon Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = { level = { min = 24 } },
     goals = {
         {
             id = "accept-96988-source-of-power",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Accept Source of Power from Doctor Martin Felben in the Apothecarium in Undercity.",
             complete = QuestState(96988, "activeOrCompleted"),
@@ -42,7 +42,6 @@ ns:RegisterGuide({
         {
             id = "accept-96986-the-grave-knight",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Accept The Grave Knight from Melisara in Tarren Mill.",
             complete = QuestState(96986, "activeOrCompleted"),
@@ -51,7 +50,6 @@ ns:RegisterGuide({
         {
             id = "accept-92489-power-overwhelming",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept Power Overwhelming from High Sorcerer Andromath in the Mage Tower in Stormwind.",
             complete = QuestState(92489, "activeOrCompleted"),
@@ -60,7 +58,6 @@ ns:RegisterGuide({
         {
             id = "accept-92456-a-green-sample",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept A Green Sample from Shylamiir in the herbalist shop in the Park in Stormwind.",
             complete = QuestState(92456, "activeOrCompleted"),
@@ -69,16 +66,14 @@ ns:RegisterGuide({
         {
             id = "accept-92432-an-alarming-request",
             kind = "accept",
-            priority = 12,
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             text = "Accept An Alarming Request from Emissary Jacques inside Southshore Town Hall.",
             complete = QuestState(92432, "activeOrCompleted"),
         },
         {
             id = "turnin-92432-an-alarming-request",
             kind = "turnin",
-            priority = 20,
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             text = "Turn in An Alarming Request to Image of Archmage Modera beside Lordamere Lake.",
             dependsOn = { "accept-92432-an-alarming-request" },
             complete = QuestState(92432, "completed"),
@@ -86,8 +81,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-92458-heart-of-disruption",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92432 } } },
             kind = "accept",
-            priority = 21,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept Heart of Disruption from Image of Archmage Modera.",
             dependsOn = { "turnin-92432-an-alarming-request" },
@@ -96,8 +91,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-92457-starving-arcane",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92432 } } },
             kind = "accept",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept Starving Arcane from Image of Archmage Modera.",
             dependsOn = { "turnin-92432-an-alarming-request" },
@@ -107,7 +102,6 @@ ns:RegisterGuide({
         {
             id = "prepare-horde-dalaran-access",
             kind = "note",
-            priority = 23,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Finish the City of Dalaran Attunement guide first to pick up Heart of Disruption and obtain your sewer key.",
             complete = QuestState(96984, "activeOrCompleted"),
@@ -116,7 +110,6 @@ ns:RegisterGuide({
         {
             id = "enter-city-of-dalaran",
             kind = "travel",
-            priority = 30,
             conditions = { level = { min = 24 } },
             text = "Enter the Dalaran sewers beside Lordamere Lake. One keyholder can open the gate for the group. Mark complete once inside.",
             route = Modera(),
@@ -124,7 +117,6 @@ ns:RegisterGuide({
         {
             id = "accept-96987-opportunistic-education",
             kind = "accept",
-            priority = 31,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Inside the sewer entrance, accept Opportunistic Education from Rexxie Copperclutch.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -134,7 +126,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-trash-strategy",
             kind = "note",
-            priority = 32,
             conditions = { level = { min = 24 } },
             text = "Prioritize Mana Phantoms; stop Mana Burn. Use Saturated Remnants' mana-restoring pools. Expect Arcane immunity. Mark complete after reading.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -142,7 +133,6 @@ ns:RegisterGuide({
         {
             id = "objective-96986-the-grave-knight",
             kind = "objective",
-            priority = 40,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Defeat Atrexis the Grave Knight in the sewers. Let the tank secure skeletons before area damage.",
             dependsOn = { "accept-96986-the-grave-knight" },
@@ -152,7 +142,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-atrexis-strategy",
             kind = "confirm",
-            priority = 41,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Atrexis: handle skeletons before area damage. Mark complete after the fight.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -160,7 +149,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-lyn-strategy",
             kind = "note",
-            priority = 42,
             conditions = { level = { min = 24 } },
             text = "Optional Lyn requires Tome of Dalaran at the sewer rune. Remove Curse of Thorns. Mark complete or skip this detour.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -168,7 +156,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-anomaly-strategy",
             kind = "confirm",
-            priority = 43,
             conditions = { level = { min = 24 } },
             text = "Arcane Anomaly: avoid the rotating Focal Blast; stay inside the platform circle. Mark complete after the fight.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -176,7 +163,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-devourer-strategy",
             kind = "confirm",
-            priority = 44,
             conditions = { level = { min = 24 } },
             text = "Mana Devourer: clear nearby enemies first; conserve mana. Mark complete after the fight.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -184,7 +170,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-fel-ancient-strategy",
             kind = "confirm",
-            priority = 45,
             conditions = { level = { min = 24 } },
             text = "Fel Ancient: leave green pools; break roots when trapped in them. Mark complete after the fight.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -192,7 +177,6 @@ ns:RegisterGuide({
         {
             id = "objective-92456-a-green-sample",
             kind = "objective",
-            priority = 46,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Collect a Fel Infused Blossom inside City of Dalaran. Follow the quest log pin.",
             dependsOn = { "accept-92456-a-green-sample" },
@@ -202,7 +186,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-sentinel-strategy",
             kind = "confirm",
-            priority = 47,
             conditions = { level = { min = 24 } },
             text = "Unstable Sentinel: clear Angry Tomes first; move beyond 25 yards for Malfunction. Mark complete after the fight.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -210,7 +193,6 @@ ns:RegisterGuide({
         {
             id = "objective-96988-source-of-power",
             kind = "objective",
-            priority = 48,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Loot 6 Cracked Sentry Cores from Fragmented Sentries inside City of Dalaran.",
             dependsOn = { "accept-96988-source-of-power" },
@@ -220,7 +202,6 @@ ns:RegisterGuide({
         {
             id = "objective-92489-power-overwhelming",
             kind = "objective",
-            priority = 49,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Defeat Arcanic Enigma. Kill Mana Phantoms first; dispel Manamorph and keep healers away from Silence.",
             dependsOn = { "accept-92489-power-overwhelming" },
@@ -230,7 +211,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-enigma-strategy",
             kind = "confirm",
-            priority = 50,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Arcanic Enigma: kill Mana Phantoms first; dispel Manamorph. Healers avoid close-range Silence. Mark complete after the fight.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -238,7 +218,6 @@ ns:RegisterGuide({
         {
             id = "objective-96987-opportunistic-education",
             kind = "objective",
-            priority = 51,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Collect The Founding of Dalaran from the library at the back of the Silver Enclave. Follow the quest log pin.",
             dependsOn = { "accept-96987-opportunistic-education" },
@@ -247,8 +226,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-92457-starving-arcane",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92432 } } },
             kind = "objective",
-            priority = 52,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 Mana Echoes inside City of Dalaran.",
             dependsOn = { "accept-92457-starving-arcane" },
@@ -258,7 +237,6 @@ ns:RegisterGuide({
         {
             id = "dalaran-shade-strategy",
             kind = "confirm",
-            priority = 53,
             conditions = { level = { min = 24 } },
             text = "Shade of the Archmage: spread for Bounding Mana; stay beyond 20 yards for Arcane Explosion. Mark complete after the fight.",
             dependsOn = { "enter-city-of-dalaran" },
@@ -266,7 +244,6 @@ ns:RegisterGuide({
         {
             id = "objective-96984-heart-of-disruption",
             kind = "objective",
-            priority = 54,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Loot the Arcane Mote from Shade of the Archmage. Follow the quest log pin.",
             dependsOn = { "prepare-horde-dalaran-access" },
@@ -275,8 +252,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-92458-heart-of-disruption",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92432 } } },
             kind = "objective",
-            priority = 54,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Loot the Arcane Mote from Shade of the Archmage. Follow the quest log pin.",
             dependsOn = { "accept-92458-heart-of-disruption" },
@@ -286,7 +263,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96987-opportunistic-education",
             kind = "turnin",
-            priority = 60,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Return The Founding of Dalaran to Rexxie Copperclutch near the sewer entrance. Follow the quest log pin.",
             dependsOn = { "objective-96987-opportunistic-education" },
@@ -295,8 +271,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-92457-starving-arcane",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92432 } } },
             kind = "turnin",
-            priority = 61,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Turn in Starving Arcane to Image of Archmage Modera outside the dungeon.",
             dependsOn = { "objective-92457-starving-arcane" },
@@ -305,8 +281,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-92458-heart-of-disruption",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92432 } } },
             kind = "turnin",
-            priority = 62,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Turn in Heart of Disruption to Image of Archmage Modera outside the dungeon.",
             dependsOn = { "objective-92458-heart-of-disruption" },
@@ -315,8 +291,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-92459-friend-of-the-kirin-tor",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92458 } } },
             kind = "accept",
-            priority = 63,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept Friend of the Kirin Tor from Image of Archmage Modera after Heart of Disruption.",
             dependsOn = { "turnin-92458-heart-of-disruption" },
@@ -325,8 +301,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-92459-friend-of-the-kirin-tor",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92458 } } },
             kind = "turnin",
-            priority = 64,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Bring the Arcane Mote to Archmage Celindra in the Violet Citadel in the outdoor city of Dalaran. Follow the quest log pin.",
             dependsOn = { "accept-92459-friend-of-the-kirin-tor" },
@@ -337,7 +313,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96986-the-grave-knight",
             kind = "turnin",
-            priority = 70,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Turn in The Grave Knight to Melisara in Tarren Mill. Follow the quest log pin.",
             dependsOn = { "objective-96986-the-grave-knight" },
@@ -348,7 +323,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96984-heart-of-disruption",
             kind = "turnin",
-            priority = 71,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Turn in Heart of Disruption to Magus Wordeen Voidglare in Tarren Mill.",
             dependsOn = { "objective-96984-heart-of-disruption" },
@@ -357,8 +331,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-97287-shrewd-negotiations",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 96984 } } },
             kind = "accept",
-            priority = 72,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Accept Shrewd Negotiations from Magus Wordeen Voidglare after Heart of Disruption.",
             dependsOn = { "turnin-96984-heart-of-disruption" },
@@ -367,8 +341,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-97287-shrewd-negotiations",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 96984 } } },
             kind = "turnin",
-            priority = 73,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Bring the Arcane Mote to Archmage Celindra in the Violet Citadel in the outdoor city of Dalaran. Follow the quest log pin.",
             dependsOn = { "accept-97287-shrewd-negotiations" },
@@ -379,7 +353,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96988-source-of-power",
             kind = "turnin",
-            priority = 80,
             conditions = { all = { { faction = "Horde" }, { level = { min = 24 } } } },
             text = "Turn in Source of Power to Doctor Martin Felben in the Apothecarium in Undercity. Follow the quest log pin.",
             dependsOn = { "objective-96988-source-of-power", "turnin-97287-shrewd-negotiations" },
@@ -390,7 +363,6 @@ ns:RegisterGuide({
         {
             id = "turnin-92489-power-overwhelming",
             kind = "turnin",
-            priority = 80,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Turn in Power Overwhelming to High Sorcerer Andromath in Stormwind.",
             dependsOn = { "objective-92489-power-overwhelming", "turnin-92459-friend-of-the-kirin-tor" },
@@ -400,7 +372,6 @@ ns:RegisterGuide({
         {
             id = "turnin-92456-a-green-sample",
             kind = "turnin",
-            priority = 81,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Turn in A Green Sample to Shylamiir in the Park in Stormwind. Follow the quest log pin.",
             dependsOn = { "objective-92456-a-green-sample", "turnin-92489-power-overwhelming" },

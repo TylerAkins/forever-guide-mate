@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Paladin",
     category = "Class Quests",
     id = "class-paladin",
@@ -15,7 +15,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            priority = 10,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", x = 0.308, offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades." },
             },
@@ -41,7 +40,6 @@ ns:RegisterGuide({
             classAction = "accept-98601-a-difficult-path",
         },
         {
-            priority = 20,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", x = 0.31, offMapText = "Travel to Aramis Hammerhand in Tirisfal Glades." },
             },
@@ -67,7 +65,6 @@ ns:RegisterGuide({
             classAction = "turnin-98601-a-difficult-path",
         },
         {
-            priority = 30,
             route = {
                 { mapID = 1426, x = 0.2993, y = 0.7120000000000001, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
@@ -107,7 +104,6 @@ ns:RegisterGuide({
             classAction = "accept-179-dwarven-outfitters",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.744, mapID = 1426, label = "Ragged Young Wolf", offMapText = "Travel to Ragged Young Wolf.", x = 0.306 },
             },
@@ -147,7 +143,6 @@ ns:RegisterGuide({
             classAction = "objective-179-1-ragged-young-wolf",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh.", x = 0.2993 },
             },
@@ -187,7 +182,6 @@ ns:RegisterGuide({
             classAction = "turnin-179-dwarven-outfitters",
         },
         {
-            priority = 60,
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
@@ -213,7 +207,6 @@ ns:RegisterGuide({
             classAction = "accept-3107-consecrated-rune",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.682, mapID = 1426, label = "Bromos Grummner", x = 0.288, offMapText = "Travel to Bromos Grummner in Dun Morogh." },
             },
@@ -239,7 +232,6 @@ ns:RegisterGuide({
             classAction = "turnin-3107-consecrated-rune",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.4295, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
             },
@@ -279,7 +271,6 @@ ns:RegisterGuide({
             classAction = "accept-783-a-threat-within",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -319,7 +310,6 @@ ns:RegisterGuide({
             classAction = "turnin-783-a-threat-within",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -359,7 +349,6 @@ ns:RegisterGuide({
             classAction = "accept-7-kobold-camp-cleanup",
         },
         {
-            priority = 110,
             route = {
                 { y = 0.376, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.48 },
             },
@@ -399,7 +388,6 @@ ns:RegisterGuide({
             classAction = "objective-7-1-kobold-vermin",
         },
         {
-            priority = 120,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -439,7 +427,6 @@ ns:RegisterGuide({
             classAction = "turnin-7-kobold-camp-cleanup",
         },
         {
-            priority = 130,
             route = {
                 { y = 0.416, mapID = 1429, label = "Marshal McBride", x = 0.488, offMapText = "Travel to Marshal McBride in Elwynn Forest." },
             },
@@ -465,7 +452,6 @@ ns:RegisterGuide({
             classAction = "accept-3101-consecrated-letter",
         },
         {
-            priority = 140,
             route = {
                 { y = 0.42, mapID = 1429, label = "Brother Sammuel", x = 0.504, offMapText = "Travel to Brother Sammuel in Elwynn Forest." },
             },
@@ -515,10 +501,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 90902,
-            priority = 150,
         },
         {
-            priority = 160,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", x = 0.31, offMapText = "Travel to Aramis Hammerhand in Tirisfal Glades." },
             },
@@ -544,7 +528,6 @@ ns:RegisterGuide({
             classAction = "accept-90902-rediscovering-the-light",
         },
         {
-            priority = 170,
             dependsOn = { "accept-90902-rediscovering-the-light" },
             id = "objective-90902-reviewed-mechanics",
             conditions = {
@@ -567,7 +550,6 @@ ns:RegisterGuide({
             classAction = "objective-90902-reviewed-mechanics",
         },
         {
-            priority = 180,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", x = 0.31, offMapText = "Travel to Aramis Hammerhand in Tirisfal Glades." },
             },
@@ -617,10 +599,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91208,
-            priority = 190,
         },
         {
-            priority = 200,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", x = 0.31, offMapText = "Travel to Aramis Hammerhand in Tirisfal Glades." },
             },
@@ -646,7 +626,6 @@ ns:RegisterGuide({
             classAction = "accept-91208-coming-to-terms",
         },
         {
-            priority = 210,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", x = 0.31, offMapText = "Travel to Aramis Hammerhand in Tirisfal Glades." },
             },
@@ -672,7 +651,6 @@ ns:RegisterGuide({
             classAction = "turnin-91208-coming-to-terms",
         },
         {
-            priority = 220,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", x = 0.31, offMapText = "Travel to Aramis Hammerhand in Tirisfal Glades." },
             },
@@ -698,7 +676,6 @@ ns:RegisterGuide({
             classAction = "accept-91209-continue-your-training",
         },
         {
-            priority = 230,
             route = {
                 { y = 0.526, mapID = 1420, label = "Shari Stilwell", x = 0.602, offMapText = "Travel to Shari Stilwell in Tirisfal Glades." },
             },
@@ -748,10 +725,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91282,
-            priority = 240,
         },
         {
-            priority = 250,
             route = {
                 { y = 0.526, mapID = 1420, label = "Shari Stilwell", x = 0.602, offMapText = "Travel to Shari Stilwell in Tirisfal Glades." },
             },
@@ -777,7 +752,6 @@ ns:RegisterGuide({
             classAction = "accept-91282-a-second-home",
         },
         {
-            priority = 260,
             route = {
                 { y = 0.452, mapID = 1420, label = "Breton Samuels", x = 0.218, offMapText = "Travel to Breton Samuels in Tirisfal Glades." },
             },
@@ -803,7 +777,6 @@ ns:RegisterGuide({
             classAction = "turnin-91282-a-second-home",
         },
         {
-            priority = 270,
             route = {
                 { y = 0.452, mapID = 1420, label = "Breton Samuels", x = 0.218, offMapText = "Travel to Breton Samuels in Tirisfal Glades." },
             },
@@ -829,7 +802,6 @@ ns:RegisterGuide({
             classAction = "accept-91285-murlocs-at-the-gates",
         },
         {
-            priority = 280,
             id = "objective-91285-quest-work",
             conditions = {
                 all = {
@@ -852,7 +824,6 @@ ns:RegisterGuide({
             classAction = "objective-91285-quest-work",
         },
         {
-            priority = 290,
             route = {
                 { y = 0.452, mapID = 1420, label = "Breton Samuels", x = 0.218, offMapText = "Travel to Breton Samuels in Tirisfal Glades." },
             },
@@ -878,7 +849,6 @@ ns:RegisterGuide({
             classAction = "turnin-91285-murlocs-at-the-gates",
         },
         {
-            priority = 300,
             route = {
                 { y = 0.452, mapID = 1420, label = "Breton Samuels", x = 0.218, offMapText = "Travel to Breton Samuels in Tirisfal Glades." },
             },
@@ -904,7 +874,6 @@ ns:RegisterGuide({
             classAction = "accept-91294-touring-the-grounds",
         },
         {
-            priority = 310,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -930,7 +899,6 @@ ns:RegisterGuide({
             classAction = "turnin-91294-touring-the-grounds",
         },
         {
-            priority = 320,
             route = {
                 { y = 0.448, mapID = 1420, label = "Jorin Croge", x = 0.226, offMapText = "Travel to Jorin Croge in Tirisfal Glades." },
             },
@@ -975,11 +943,9 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 330,
             classAction = "objective-91316-making-repairs",
         },
         {
-            priority = 340,
             route = {
                 { y = 0.448, mapID = 1420, label = "Jorin Croge", x = 0.226, offMapText = "Travel to Jorin Croge in Tirisfal Glades." },
             },
@@ -1029,10 +995,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91317,
-            priority = 350,
         },
         {
-            priority = 360,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -1058,7 +1022,6 @@ ns:RegisterGuide({
             classAction = "accept-91317-the-tarnished",
         },
         {
-            priority = 370,
             route = {
                 { y = 0.642, mapID = 1420, label = "Rudolph Gelhardt", x = 0.116, offMapText = "Travel to Rudolph Gelhardt in Tirisfal Glades." },
             },
@@ -1084,7 +1047,6 @@ ns:RegisterGuide({
             classAction = "objective-91317-the-tarnished",
         },
         {
-            priority = 380,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -1110,7 +1072,6 @@ ns:RegisterGuide({
             classAction = "turnin-91317-the-tarnished",
         },
         {
-            priority = 390,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -1136,7 +1097,6 @@ ns:RegisterGuide({
             classAction = "accept-95803-a-token-of-good-faith",
         },
         {
-            priority = 400,
             route = {
                 { y = 0.918, mapID = 1458, label = "Lady Sylvanas Windrunner", x = 0.578, offMapText = "Travel to Lady Sylvanas Windrunner in Undercity." },
             },
@@ -1186,10 +1146,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1641,
-            priority = 410,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1215,7 +1173,6 @@ ns:RegisterGuide({
             classAction = "accept-1641-the-tome-of-divinity",
         },
         {
-            priority = 430,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1258,11 +1215,9 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 440,
             classAction = "loot-starter-before-accept-1642-the-tome-of-divinity",
         },
         {
-            priority = 450,
             dependsOn = { "turnin-1641-the-tome-of-divinity" },
             id = "accept-1642-the-tome-of-divinity",
             conditions = {
@@ -1285,7 +1240,6 @@ ns:RegisterGuide({
             classAction = "accept-1642-the-tome-of-divinity",
         },
         {
-            priority = 460,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1311,7 +1265,6 @@ ns:RegisterGuide({
             classAction = "turnin-1642-the-tome-of-divinity",
         },
         {
-            priority = 470,
             route = {
                 { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1337,7 +1290,6 @@ ns:RegisterGuide({
             classAction = "accept-1643-the-tome-of-divinity",
         },
         {
-            priority = 480,
             route = {
                 { y = 0.618, mapID = 1453, label = "Stephanie Turner", x = 0.57, offMapText = "Travel to Stephanie Turner in Stormwind City." },
             },
@@ -1363,7 +1315,6 @@ ns:RegisterGuide({
             classAction = "turnin-1643-the-tome-of-divinity",
         },
         {
-            priority = 490,
             route = {
                 { y = 0.722, mapID = 1453, label = "Stephanie Turner", x = 0.638, offMapText = "Travel to Stephanie Turner in Stormwind City." },
             },
@@ -1389,7 +1340,6 @@ ns:RegisterGuide({
             classAction = "accept-1644-the-tome-of-divinity",
         },
         {
-            priority = 500,
             route = {
                 { y = 0.618, mapID = 1453, label = "Forlorn Spirit", x = 0.296, offMapText = "Travel to Forlorn Spirit in Stormwind City." },
                 { y = 0.45, mapID = 1453, label = "Old Town Thug", x = 0.7, offMapText = "Travel to Old Town Thug in Stormwind City." },
@@ -1418,7 +1368,6 @@ ns:RegisterGuide({
             classAction = "objective-1644-the-tome-of-divinity",
         },
         {
-            priority = 510,
             route = {
                 { y = 0.618, mapID = 1453, label = "Stephanie Turner", x = 0.57, offMapText = "Travel to Stephanie Turner in Stormwind City." },
             },
@@ -1444,7 +1393,6 @@ ns:RegisterGuide({
             classAction = "turnin-1644-the-tome-of-divinity",
         },
         {
-            priority = 520,
             route = {
                 { y = 0.722, mapID = 1453, label = "Stephanie Turner", x = 0.638, offMapText = "Travel to Stephanie Turner in Stormwind City." },
             },
@@ -1470,7 +1418,6 @@ ns:RegisterGuide({
             classAction = "accept-1780-the-tome-of-divinity",
         },
         {
-            priority = 530,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1496,7 +1443,6 @@ ns:RegisterGuide({
             classAction = "turnin-1780-the-tome-of-divinity",
         },
         {
-            priority = 540,
             route = {
                 { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1522,7 +1468,6 @@ ns:RegisterGuide({
             classAction = "accept-1781-the-tome-of-divinity",
         },
         {
-            priority = 550,
             route = {
                 { y = 0.266, mapID = 1453, label = "Gazin Tenorm", x = 0.386, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
             },
@@ -1548,7 +1493,6 @@ ns:RegisterGuide({
             classAction = "turnin-1781-the-tome-of-divinity",
         },
         {
-            priority = 560,
             route = {
                 { y = 0.449, mapID = 1453, label = "Gazin Tenorm", x = 0.495, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
             },
@@ -1574,7 +1518,6 @@ ns:RegisterGuide({
             classAction = "accept-1786-the-tome-of-divinity",
         },
         {
-            priority = 570,
             id = "objective-1786-quest-work",
             conditions = {
                 all = {
@@ -1597,7 +1540,6 @@ ns:RegisterGuide({
             classAction = "objective-1786-quest-work",
         },
         {
-            priority = 580,
             route = {
                 { y = 0.514, mapID = 1429, label = "Henze Faulk", x = 0.726, offMapText = "Travel to Henze Faulk in Elwynn Forest." },
             },
@@ -1623,7 +1565,6 @@ ns:RegisterGuide({
             classAction = "turnin-1786-the-tome-of-divinity",
         },
         {
-            priority = 590,
             route = {
                 { y = 0.514, mapID = 1429, label = "Henze Faulk", x = 0.726, offMapText = "Travel to Henze Faulk in Elwynn Forest." },
             },
@@ -1649,7 +1590,6 @@ ns:RegisterGuide({
             classAction = "accept-1787-the-tome-of-divinity",
         },
         {
-            priority = 600,
             route = {
                 { y = 0.596, mapID = 1429, label = "Defias Rogue Wizard", x = 0.284, offMapText = "Travel to Defias Rogue Wizard in Elwynn Forest." },
                 { y = 0.87, mapID = 1429, label = "Defias Bodyguard", x = 0.48, offMapText = "Travel to Defias Bodyguard in Elwynn Forest." },
@@ -1676,7 +1616,6 @@ ns:RegisterGuide({
             classAction = "objective-1787-the-tome-of-divinity",
         },
         {
-            priority = 610,
             route = {
                 { y = 0.266, mapID = 1453, label = "Gazin Tenorm", x = 0.386, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
             },
@@ -1702,7 +1641,6 @@ ns:RegisterGuide({
             classAction = "turnin-1787-the-tome-of-divinity",
         },
         {
-            priority = 620,
             route = {
                 { y = 0.449, mapID = 1453, label = "Gazin Tenorm", x = 0.495, offMapText = "Travel to Gazin Tenorm in Stormwind City." },
             },
@@ -1728,7 +1666,6 @@ ns:RegisterGuide({
             classAction = "accept-1788-the-tome-of-divinity",
         },
         {
-            priority = 630,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1779,10 +1716,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 2997,
             alternativeQuests = { 2999, 3000 },
-            priority = 640,
         },
         {
-            priority = 650,
             route = {
                 { y = 0.52, mapID = 1426, label = "Azar Stronghammer", x = 0.476, offMapText = "Travel to Azar Stronghammer in Dun Morogh." },
             },
@@ -1808,7 +1743,6 @@ ns:RegisterGuide({
             classAction = "accept-2997-tome-of-divinity",
         },
         {
-            priority = 660,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -1834,7 +1768,6 @@ ns:RegisterGuide({
             classAction = "turnin-2997-tome-of-divinity",
         },
         {
-            priority = 670,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -1860,7 +1793,6 @@ ns:RegisterGuide({
             classAction = "accept-1645-the-tome-of-divinity",
         },
         {
-            priority = 680,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -1903,11 +1835,9 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 690,
             classAction = "loot-starter-before-accept-1646-the-tome-of-divinity",
         },
         {
-            priority = 700,
             dependsOn = { "turnin-2997-tome-of-divinity" },
             id = "accept-1646-the-tome-of-divinity",
             conditions = {
@@ -1930,7 +1860,6 @@ ns:RegisterGuide({
             classAction = "accept-1646-the-tome-of-divinity",
         },
         {
-            priority = 710,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -1956,7 +1885,6 @@ ns:RegisterGuide({
             classAction = "turnin-1646-the-tome-of-divinity",
         },
         {
-            priority = 720,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -1982,7 +1910,6 @@ ns:RegisterGuide({
             classAction = "accept-1647-the-tome-of-divinity",
         },
         {
-            priority = 730,
             route = {
                 { y = 0.7, mapID = 1455, label = "John Turner", x = 0.278, offMapText = "Travel to John Turner in Ironforge." },
             },
@@ -2008,7 +1935,6 @@ ns:RegisterGuide({
             classAction = "turnin-1647-the-tome-of-divinity",
         },
         {
-            priority = 740,
             route = {
                 { y = 0.7, mapID = 1455, label = "John Turner", x = 0.278, offMapText = "Travel to John Turner in Ironforge." },
             },
@@ -2034,7 +1960,6 @@ ns:RegisterGuide({
             classAction = "accept-1648-the-tome-of-divinity",
         },
         {
-            priority = 750,
             route = {
                 { y = 0.126, mapID = 1455, label = "Cut-throat Mugger", x = 0.518, offMapText = "Travel to Cut-throat Mugger in Ironforge." },
                 { y = 0.124, mapID = 1455, label = "Cut-throat Mugger", x = 0.518, offMapText = "Travel to Cut-throat Mugger in Ironforge." },
@@ -2061,7 +1986,6 @@ ns:RegisterGuide({
             classAction = "objective-1648-the-tome-of-divinity",
         },
         {
-            priority = 760,
             route = {
                 { y = 0.7, mapID = 1455, label = "John Turner", x = 0.278, offMapText = "Travel to John Turner in Ironforge." },
             },
@@ -2087,7 +2011,6 @@ ns:RegisterGuide({
             classAction = "turnin-1648-the-tome-of-divinity",
         },
         {
-            priority = 770,
             route = {
                 { y = 0.7, mapID = 1455, label = "John Turner", x = 0.278, offMapText = "Travel to John Turner in Ironforge." },
             },
@@ -2113,7 +2036,6 @@ ns:RegisterGuide({
             classAction = "accept-1778-the-tome-of-divinity",
         },
         {
-            priority = 780,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -2139,7 +2061,6 @@ ns:RegisterGuide({
             classAction = "turnin-1778-the-tome-of-divinity",
         },
         {
-            priority = 790,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -2165,7 +2086,6 @@ ns:RegisterGuide({
             classAction = "accept-1779-the-tome-of-divinity",
         },
         {
-            priority = 800,
             route = {
                 { y = 0.086, mapID = 1455, label = "Muiredon Battleforge", x = 0.236, offMapText = "Travel to Muiredon Battleforge in Ironforge." },
             },
@@ -2191,7 +2111,6 @@ ns:RegisterGuide({
             classAction = "turnin-1779-the-tome-of-divinity",
         },
         {
-            priority = 810,
             route = {
                 { y = 0.086, mapID = 1455, label = "Muiredon Battleforge", x = 0.236, offMapText = "Travel to Muiredon Battleforge in Ironforge." },
             },
@@ -2217,7 +2136,6 @@ ns:RegisterGuide({
             classAction = "accept-1783-the-tome-of-divinity",
         },
         {
-            priority = 820,
             id = "objective-1783-quest-work",
             conditions = {
                 all = {
@@ -2240,7 +2158,6 @@ ns:RegisterGuide({
             classAction = "objective-1783-quest-work",
         },
         {
-            priority = 830,
             route = {
                 { y = 0.58, mapID = 1426, label = "Narm Faulk", x = 0.782, offMapText = "Travel to Narm Faulk in Dun Morogh." },
             },
@@ -2266,7 +2183,6 @@ ns:RegisterGuide({
             classAction = "turnin-1783-the-tome-of-divinity",
         },
         {
-            priority = 840,
             route = {
                 { y = 0.58, mapID = 1426, label = "Narm Faulk", x = 0.782, offMapText = "Travel to Narm Faulk in Dun Morogh." },
             },
@@ -2292,7 +2208,6 @@ ns:RegisterGuide({
             classAction = "accept-1784-the-tome-of-divinity",
         },
         {
-            priority = 850,
             route = {
                 { y = 0.624, mapID = 1426, label = "Dark Iron Spy", x = 0.778, offMapText = "Travel to Dark Iron Spy in Dun Morogh." },
             },
@@ -2318,7 +2233,6 @@ ns:RegisterGuide({
             classAction = "objective-1784-the-tome-of-divinity",
         },
         {
-            priority = 860,
             route = {
                 { y = 0.086, mapID = 1455, label = "Muiredon Battleforge", x = 0.236, offMapText = "Travel to Muiredon Battleforge in Ironforge." },
             },
@@ -2344,7 +2258,6 @@ ns:RegisterGuide({
             classAction = "turnin-1784-the-tome-of-divinity",
         },
         {
-            priority = 870,
             route = {
                 { y = 0.086, mapID = 1455, label = "Muiredon Battleforge", x = 0.236, offMapText = "Travel to Muiredon Battleforge in Ironforge." },
             },
@@ -2370,7 +2283,6 @@ ns:RegisterGuide({
             classAction = "accept-1785-the-tome-of-divinity",
         },
         {
-            priority = 880,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -2420,10 +2332,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94427,
-            priority = 890,
         },
         {
-            priority = 900,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -2449,7 +2359,6 @@ ns:RegisterGuide({
             classAction = "accept-94427-a-lesson-in-divinity",
         },
         {
-            priority = 910,
             route = {
                 { y = 0.378, mapID = 1458, label = "Tanis Alderwood", x = 0.656, offMapText = "Travel to Tanis Alderwood in Undercity." },
             },
@@ -2475,7 +2384,6 @@ ns:RegisterGuide({
             classAction = "turnin-94427-a-lesson-in-divinity",
         },
         {
-            priority = 920,
             route = {
                 { y = 0.378, mapID = 1458, label = "Tanis Alderwood", x = 0.656, offMapText = "Travel to Tanis Alderwood in Undercity." },
             },
@@ -2501,7 +2409,6 @@ ns:RegisterGuide({
             classAction = "accept-94434-a-lesson-in-divinity",
         },
         {
-            priority = 930,
             dependsOn = { "accept-94434-a-lesson-in-divinity" },
             id = "objective-94434-a-lesson-in-divinity",
             conditions = {
@@ -2524,7 +2431,6 @@ ns:RegisterGuide({
             classAction = "objective-94434-a-lesson-in-divinity",
         },
         {
-            priority = 940,
             route = {
                 { y = 0.378, mapID = 1458, label = "Tanis Alderwood", x = 0.656, offMapText = "Travel to Tanis Alderwood in Undercity." },
             },
@@ -2550,7 +2456,6 @@ ns:RegisterGuide({
             classAction = "turnin-94434-a-lesson-in-divinity",
         },
         {
-            priority = 950,
             route = {
                 { y = 0.378, mapID = 1458, label = "Tanis Alderwood", x = 0.656, offMapText = "Travel to Tanis Alderwood in Undercity." },
             },
@@ -2576,7 +2481,6 @@ ns:RegisterGuide({
             classAction = "accept-94435-a-lesson-in-divinity",
         },
         {
-            priority = 960,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -2602,7 +2506,6 @@ ns:RegisterGuide({
             classAction = "turnin-94435-a-lesson-in-divinity",
         },
         {
-            priority = 970,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -2628,7 +2531,6 @@ ns:RegisterGuide({
             classAction = "accept-94436-a-lesson-in-divinity",
         },
         {
-            priority = 980,
             route = {
                 { y = 0.446, mapID = 1420, label = "Deathguard Billmuth", x = 0.22, offMapText = "Travel to Deathguard Billmuth in Tirisfal Glades." },
             },
@@ -2654,7 +2556,6 @@ ns:RegisterGuide({
             classAction = "turnin-94436-a-lesson-in-divinity",
         },
         {
-            priority = 990,
             route = {
                 { y = 0.446, mapID = 1420, label = "Deathguard Billmuth", x = 0.22, offMapText = "Travel to Deathguard Billmuth in Tirisfal Glades." },
             },
@@ -2680,7 +2581,6 @@ ns:RegisterGuide({
             classAction = "accept-94438-a-lesson-in-divinity",
         },
         {
-            priority = 1000,
             dependsOn = { "accept-94438-a-lesson-in-divinity" },
             id = "objective-94438-reviewed-mechanics",
             conditions = {
@@ -2703,7 +2603,6 @@ ns:RegisterGuide({
             classAction = "objective-94438-reviewed-mechanics",
         },
         {
-            priority = 1010,
             route = {
                 { y = 0.476, mapID = 1420, label = "Deathguard Falgan", x = 0.866, offMapText = "Travel to Deathguard Falgan in Tirisfal Glades." },
             },
@@ -2729,7 +2628,6 @@ ns:RegisterGuide({
             classAction = "turnin-94438-a-lesson-in-divinity",
         },
         {
-            priority = 1020,
             route = {
                 { y = 0.476, mapID = 1420, label = "Deathguard Falgan", x = 0.866, offMapText = "Travel to Deathguard Falgan in Tirisfal Glades." },
             },
@@ -2755,7 +2653,6 @@ ns:RegisterGuide({
             classAction = "accept-94440-a-lesson-in-divinity",
         },
         {
-            priority = 1030,
             dependsOn = { "accept-94440-a-lesson-in-divinity" },
             id = "objective-94440-a-lesson-in-divinity",
             conditions = {
@@ -2778,7 +2675,6 @@ ns:RegisterGuide({
             classAction = "objective-94440-a-lesson-in-divinity",
         },
         {
-            priority = 1040,
             route = {
                 { y = 0.446, mapID = 1420, label = "Deathguard Billmuth", x = 0.22, offMapText = "Travel to Deathguard Billmuth in Tirisfal Glades." },
             },
@@ -2804,7 +2700,6 @@ ns:RegisterGuide({
             classAction = "turnin-94440-a-lesson-in-divinity",
         },
         {
-            priority = 1050,
             route = {
                 { y = 0.446, mapID = 1420, label = "Deathguard Billmuth", x = 0.22, offMapText = "Travel to Deathguard Billmuth in Tirisfal Glades." },
             },
@@ -2830,7 +2725,6 @@ ns:RegisterGuide({
             classAction = "accept-94441-a-lesson-in-divinity",
         },
         {
-            priority = 1060,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -2856,7 +2750,6 @@ ns:RegisterGuide({
             classAction = "turnin-94441-a-lesson-in-divinity",
         },
         {
-            priority = 1070,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -2882,7 +2775,6 @@ ns:RegisterGuide({
             classAction = "accept-1789-the-symbol-of-life",
         },
         {
-            priority = 1080,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -2908,7 +2800,6 @@ ns:RegisterGuide({
             classAction = "turnin-1789-the-symbol-of-life",
         },
         {
-            priority = 1090,
             route = {
                 { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -2934,7 +2825,6 @@ ns:RegisterGuide({
             classAction = "accept-1790-the-symbol-of-life",
         },
         {
-            priority = 1100,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -2960,7 +2850,6 @@ ns:RegisterGuide({
             classAction = "turnin-1790-the-symbol-of-life",
         },
         {
-            priority = 1110,
             route = {
                 { y = 0.66, mapID = 1429, label = "Brother Wilhelm", x = 0.41, offMapText = "Travel to Brother Wilhelm in Elwynn Forest." },
             },
@@ -2986,7 +2875,6 @@ ns:RegisterGuide({
             classAction = "accept-2998-tome-of-divinity",
         },
         {
-            priority = 1120,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -3012,7 +2900,6 @@ ns:RegisterGuide({
             classAction = "turnin-2998-tome-of-divinity",
         },
         {
-            priority = 1130,
             route = {
                 { y = 0.062, mapID = 1455, label = "Brandur Ironhammer", x = 0.234, offMapText = "Travel to Brandur Ironhammer in Ironforge." },
             },
@@ -3038,7 +2925,6 @@ ns:RegisterGuide({
             classAction = "accept-2999-tome-of-divinity",
         },
         {
-            priority = 1140,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -3064,7 +2950,6 @@ ns:RegisterGuide({
             classAction = "turnin-2999-tome-of-divinity",
         },
         {
-            priority = 1150,
             route = {
                 { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -3090,7 +2975,6 @@ ns:RegisterGuide({
             classAction = "accept-3000-tome-of-divinity",
         },
         {
-            priority = 1160,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -3116,7 +3000,6 @@ ns:RegisterGuide({
             classAction = "turnin-3000-tome-of-divinity",
         },
         {
-            priority = 1170,
             route = {
                 { y = 0.062, mapID = 1455, label = "Brandur Ironhammer", x = 0.234, offMapText = "Travel to Brandur Ironhammer in Ironforge." },
             },
@@ -3142,7 +3025,6 @@ ns:RegisterGuide({
             classAction = "accept-3681-tome-of-divinity",
         },
         {
-            priority = 1180,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -3192,10 +3074,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91858,
-            priority = 1190,
         },
         {
-            priority = 1200,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", x = 0.22, offMapText = "Travel to Danitha Morr in Tirisfal Glades." },
             },
@@ -3221,7 +3101,6 @@ ns:RegisterGuide({
             classAction = "accept-91858-diplomatic-incident",
         },
         {
-            priority = 1210,
             route = {
                 { y = 0.41, mapID = 1421, label = "Trevan Rol", x = 0.434, offMapText = "Travel to Trevan Rol in Silverpine Forest." },
             },
@@ -3247,7 +3126,6 @@ ns:RegisterGuide({
             classAction = "turnin-91858-diplomatic-incident",
         },
         {
-            priority = 1220,
             route = {
                 { y = 0.41, mapID = 1421, label = "Trevan Rol", x = 0.434, offMapText = "Travel to Trevan Rol in Silverpine Forest." },
             },
@@ -3273,7 +3151,6 @@ ns:RegisterGuide({
             classAction = "accept-91859-a-curious-pair",
         },
         {
-            priority = 1230,
             route = {
                 { y = 0.418, mapID = 1421, label = "Deathguard Baldren", x = 0.458, offMapText = "Travel to Deathguard Baldren in Silverpine Forest." },
             },
@@ -3299,7 +3176,6 @@ ns:RegisterGuide({
             classAction = "turnin-91859-a-curious-pair",
         },
         {
-            priority = 1240,
             route = {
                 { y = 0.418, mapID = 1421, label = "Deathguard Baldren", x = 0.458, offMapText = "Travel to Deathguard Baldren in Silverpine Forest." },
             },
@@ -3325,7 +3201,6 @@ ns:RegisterGuide({
             classAction = "accept-91860-a-grim-fate",
         },
         {
-            priority = 1250,
             dependsOn = { "accept-91860-a-grim-fate" },
             id = "objective-91860-reviewed-mechanics",
             conditions = {
@@ -3348,7 +3223,6 @@ ns:RegisterGuide({
             classAction = "objective-91860-reviewed-mechanics",
         },
         {
-            priority = 1260,
             route = {
                 { y = 0.418, mapID = 1421, label = "Deathguard Baldren", x = 0.458, offMapText = "Travel to Deathguard Baldren in Silverpine Forest." },
             },
@@ -3374,7 +3248,6 @@ ns:RegisterGuide({
             classAction = "turnin-91860-a-grim-fate",
         },
         {
-            priority = 1270,
             route = {
                 { y = 0.232, mapID = 1421, label = "Lumina Windsinger", x = 0.656, offMapText = "Travel to Lumina Windsinger in Silverpine Forest." },
             },
@@ -3400,7 +3273,6 @@ ns:RegisterGuide({
             classAction = "accept-91862-lumina-windsinger",
         },
         {
-            priority = 1280,
             route = {
                 { y = 0.236, mapID = 1421, label = "Rot Hide Savage", x = 0.656, offMapText = "Travel to Rot Hide Savage in Silverpine Forest." },
                 { y = 0.236, mapID = 1421, label = "Raging Rot Hide", x = 0.658, offMapText = "Travel to Raging Rot Hide in Silverpine Forest." },
@@ -3429,7 +3301,6 @@ ns:RegisterGuide({
             classAction = "objective-91862-lumina-windsinger",
         },
         {
-            priority = 1290,
             route = {
                 { y = 0.232, mapID = 1421, label = "Lumina Windsinger", x = 0.656, offMapText = "Travel to Lumina Windsinger in Silverpine Forest." },
             },
@@ -3455,7 +3326,6 @@ ns:RegisterGuide({
             classAction = "turnin-91862-lumina-windsinger",
         },
         {
-            priority = 1300,
             route = {
                 { y = 0.408, mapID = 1421, label = "Lumina Windsinger", x = 0.432, offMapText = "Travel to Lumina Windsinger in Silverpine Forest." },
             },
@@ -3481,7 +3351,6 @@ ns:RegisterGuide({
             classAction = "accept-95034-the-debt",
         },
         {
-            priority = 1310,
             route = {
                 { y = 0.408, mapID = 1421, label = "Lumina Windsinger", x = 0.432, offMapText = "Travel to Lumina Windsinger in Silverpine Forest." },
             },
@@ -3507,7 +3376,6 @@ ns:RegisterGuide({
             classAction = "turnin-95034-the-debt",
         },
         {
-            priority = 1320,
             route = {
                 { y = 0.232, mapID = 1421, label = "Lumina Windsinger", x = 0.656, offMapText = "Travel to Lumina Windsinger in Silverpine Forest." },
             },
@@ -3533,7 +3401,6 @@ ns:RegisterGuide({
             classAction = "accept-96204-the-windshapers-wrath",
         },
         {
-            priority = 1330,
             dependsOn = { "accept-96204-the-windshapers-wrath" },
             id = "objective-96204-reviewed-mechanics",
             conditions = {
@@ -3556,7 +3423,6 @@ ns:RegisterGuide({
             classAction = "objective-96204-reviewed-mechanics",
         },
         {
-            priority = 1340,
             route = {
                 { y = 0.408, mapID = 1421, label = "Lumina Windsinger", x = 0.432, offMapText = "Travel to Lumina Windsinger in Silverpine Forest." },
             },
@@ -3605,10 +3471,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1794,
-            priority = 1350,
         },
         {
-            priority = 1360,
             route = {
                 { y = 0.064, mapID = 1455, label = "Tiza Battleforge", x = 0.236, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -3633,7 +3497,6 @@ ns:RegisterGuide({
             classAction = "accept-1794-the-tome-of-valor",
         },
         {
-            priority = 1370,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -3658,7 +3521,6 @@ ns:RegisterGuide({
             classAction = "turnin-1794-the-tome-of-valor",
         },
         {
-            priority = 1380,
             route = {
                 { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -3683,7 +3545,6 @@ ns:RegisterGuide({
             classAction = "accept-1793-the-tome-of-valor",
         },
         {
-            priority = 1390,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -3724,11 +3585,9 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 1400,
             classAction = "loot-starter-before-accept-1649-the-tome-of-valor",
         },
         {
-            priority = 1410,
             id = "accept-1649-the-tome-of-valor",
             conditions = {
                 all = {
@@ -3750,7 +3609,6 @@ ns:RegisterGuide({
             classAction = "accept-1649-the-tome-of-valor",
         },
         {
-            priority = 1420,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -3775,7 +3633,6 @@ ns:RegisterGuide({
             classAction = "turnin-1649-the-tome-of-valor",
         },
         {
-            priority = 1430,
             route = {
                 { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -3800,7 +3657,6 @@ ns:RegisterGuide({
             classAction = "accept-1650-the-tome-of-valor",
         },
         {
-            priority = 1440,
             route = {
                 { y = 0.886, mapID = 1436, label = "Daphne Stilwell", x = 0.422, offMapText = "Travel to Daphne Stilwell in Westfall." },
             },
@@ -3825,7 +3681,6 @@ ns:RegisterGuide({
             classAction = "turnin-1650-the-tome-of-valor",
         },
         {
-            priority = 1450,
             route = {
                 { y = 0.886, mapID = 1436, label = "Daphne Stilwell", x = 0.422, offMapText = "Travel to Daphne Stilwell in Westfall." },
             },
@@ -3850,7 +3705,6 @@ ns:RegisterGuide({
             classAction = "accept-1651-the-tome-of-valor",
         },
         {
-            priority = 1460,
             dependsOn = { "accept-1651-the-tome-of-valor" },
             id = "objective-1651-reviewed-mechanics",
             conditions = {
@@ -3872,7 +3726,6 @@ ns:RegisterGuide({
             classAction = "objective-1651-reviewed-mechanics",
         },
         {
-            priority = 1470,
             route = {
                 { y = 0.886, mapID = 1436, label = "Daphne Stilwell", x = 0.422, offMapText = "Travel to Daphne Stilwell in Westfall." },
             },
@@ -3897,7 +3750,6 @@ ns:RegisterGuide({
             classAction = "turnin-1651-the-tome-of-valor",
         },
         {
-            priority = 1480,
             route = {
                 { y = 0.886, mapID = 1436, label = "Daphne Stilwell", x = 0.422, offMapText = "Travel to Daphne Stilwell in Westfall." },
             },
@@ -3922,7 +3774,6 @@ ns:RegisterGuide({
             classAction = "accept-1652-the-tome-of-valor",
         },
         {
-            priority = 1490,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -3947,7 +3798,6 @@ ns:RegisterGuide({
             classAction = "turnin-1652-the-tome-of-valor",
         },
         {
-            priority = 1500,
             route = {
                 { y = 0.45, mapID = 1432, label = "Bailor Stonehand", x = 0.36, offMapText = "Travel to Bailor Stonehand in Loch Modan." },
             },
@@ -3972,7 +3822,6 @@ ns:RegisterGuide({
             classAction = "accept-1655-bailors-ore-shipment",
         },
         {
-            priority = 1510,
             id = "objective-1655-quest-work",
             conditions = {
                 all = {
@@ -3994,7 +3843,6 @@ ns:RegisterGuide({
             classAction = "objective-1655-quest-work",
         },
         {
-            priority = 1520,
             route = {
                 { y = 0.45, mapID = 1432, label = "Bailor Stonehand", x = 0.36, offMapText = "Travel to Bailor Stonehand in Loch Modan." },
             },
@@ -4042,10 +3890,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 95042,
-            priority = 1530,
         },
         {
-            priority = 1540,
             route = {
                 { mapID = 1440, x = 0.118, y = 0.344, label = "Ulric Frostveil", offMapText = "Travel to the Zoram Strand in Ashenvale." },
             },
@@ -4070,7 +3916,6 @@ ns:RegisterGuide({
             classAction = "accept-95042-seeking-the-kor-gem",
         },
         {
-            priority = 1550,
             route = {
                 { mapID = 1440, x = 0.1355, y = 0.1206, label = "Naga at Blackfathom Deeps", offMapText = "Travel north along the Zoram Strand in Ashenvale." },
             },
@@ -4095,7 +3940,6 @@ ns:RegisterGuide({
             classAction = "objective-95042-seeking-the-kor-gem",
         },
         {
-            priority = 1560,
             route = {
                 { mapID = 1440, x = 0.118, y = 0.344, label = "Ulric Frostveil", offMapText = "Travel to the Zoram Strand in Ashenvale." },
             },
@@ -4142,7 +3986,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 95036,
-            priority = 1570,
         },
         {
             id = "handoff-95036-class-dungeon",
@@ -4162,7 +4005,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 1580,
             classAction = "handoff-95036-class-dungeon",
         },
         {
@@ -4190,10 +4032,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 95111,
-            priority = 1590,
         },
         {
-            priority = 1600,
             route = {
                 { y = 0.41, mapID = 1421, label = "Trevan Rol", x = 0.434, offMapText = "Travel to Trevan Rol in Silverpine Forest." },
             },
@@ -4219,7 +4059,6 @@ ns:RegisterGuide({
             classAction = "accept-95111-an-underrated-talent",
         },
         {
-            priority = 1610,
             route = {
                 { y = 0.26, mapID = 1424, label = "Ott", x = 0.604, offMapText = "Travel to Ott in Hillsbrad Foothills." },
             },
@@ -4245,7 +4084,6 @@ ns:RegisterGuide({
             classAction = "turnin-95111-an-underrated-talent",
         },
         {
-            priority = 1620,
             route = {
                 { y = 0.26, mapID = 1424, label = "Ott", x = 0.604, offMapText = "Travel to Ott in Hillsbrad Foothills." },
             },
@@ -4271,7 +4109,6 @@ ns:RegisterGuide({
             classAction = "accept-95125-otts-masterwork",
         },
         {
-            priority = 1630,
             dependsOn = { "accept-95125-otts-masterwork" },
             id = "objective-95125-reviewed-mechanics",
             conditions = {
@@ -4294,7 +4131,6 @@ ns:RegisterGuide({
             classAction = "objective-95125-reviewed-mechanics",
         },
         {
-            priority = 1640,
             route = {
                 { y = 0.26, mapID = 1424, label = "Ott", x = 0.604, offMapText = "Travel to Ott in Hillsbrad Foothills." },
             },
@@ -4320,7 +4156,6 @@ ns:RegisterGuide({
             classAction = "turnin-95125-otts-masterwork",
         },
         {
-            priority = 1650,
             route = {
                 { y = 0.26, mapID = 1424, label = "Ott", x = 0.604, offMapText = "Travel to Ott in Hillsbrad Foothills." },
             },
@@ -4346,7 +4181,6 @@ ns:RegisterGuide({
             classAction = "accept-95126-the-moonsilver-blade",
         },
         {
-            priority = 1660,
             route = {
                 { y = 0.41, mapID = 1421, label = "Trevan Rol", x = 0.434, offMapText = "Travel to Trevan Rol in Silverpine Forest." },
             },
@@ -4372,7 +4206,6 @@ ns:RegisterGuide({
             classAction = "turnin-95126-the-moonsilver-blade",
         },
         {
-            priority = 1670,
             route = {
                 { y = 0.408, mapID = 1421, label = "Lumina Windsinger", x = 0.432, offMapText = "Travel to Lumina Windsinger in Silverpine Forest." },
             },
@@ -4398,7 +4231,6 @@ ns:RegisterGuide({
             classAction = "accept-95140-old-fire-eye",
         },
         {
-            priority = 1680,
             dependsOn = { "accept-95140-old-fire-eye" },
             id = "objective-95140-reviewed-mechanics",
             conditions = {
@@ -4421,7 +4253,6 @@ ns:RegisterGuide({
             classAction = "objective-95140-reviewed-mechanics",
         },
         {
-            priority = 1690,
             route = {
                 { y = 0.408, mapID = 1421, label = "Lumina Windsinger", x = 0.432, offMapText = "Travel to Lumina Windsinger in Silverpine Forest." },
             },
@@ -4471,10 +4302,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1661,
             alternativeQuests = { 4485, 4486 },
-            priority = 1700,
         },
         {
-            priority = 1710,
             route = {
                 { y = 0.475, mapID = 1453, label = "Duthorian Rall", x = 0.505, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -4499,7 +4328,6 @@ ns:RegisterGuide({
             classAction = "accept-1661-the-tome-of-nobility",
         },
         {
-            priority = 1720,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -4524,7 +4352,6 @@ ns:RegisterGuide({
             classAction = "turnin-1661-the-tome-of-nobility",
         },
         {
-            priority = 1730,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -4549,7 +4376,6 @@ ns:RegisterGuide({
             classAction = "accept-4485-the-tome-of-nobility",
         },
         {
-            priority = 1740,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -4574,7 +4400,6 @@ ns:RegisterGuide({
             classAction = "turnin-4485-the-tome-of-nobility",
         },
         {
-            priority = 1750,
             route = {
                 { y = 0.062, mapID = 1455, label = "Brandur Ironhammer", x = 0.234, offMapText = "Travel to Brandur Ironhammer in Ironforge." },
             },
@@ -4599,7 +4424,6 @@ ns:RegisterGuide({
             classAction = "accept-4486-the-tome-of-nobility",
         },
         {
-            priority = 1760,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -4647,10 +4471,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 8415,
-            priority = 1770,
         },
         {
-            priority = 1780,
             route = {
                 { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -4675,7 +4497,6 @@ ns:RegisterGuide({
             classAction = "accept-8415-chillwind-point",
         },
         {
-            priority = 1790,
             route = {
                 { y = 0.84, mapID = 1422, label = "Commander Ashlam Valorfist", x = 0.428, offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands." },
             },
@@ -4700,7 +4521,6 @@ ns:RegisterGuide({
             classAction = "turnin-8415-chillwind-point",
         },
         {
-            priority = 1800,
             route = {
                 { y = 0.84, mapID = 1422, label = "Commander Ashlam Valorfist", x = 0.428, offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands." },
             },
@@ -4725,7 +4545,6 @@ ns:RegisterGuide({
             classAction = "accept-8414-dispelling-evil",
         },
         {
-            priority = 1810,
             route = {
                 { y = 0.55, mapID = 1422, label = "Skeletal Flayer", x = 0.388, offMapText = "Travel to Skeletal Flayer in Western Plaguelands." },
                 { y = 0.544, mapID = 1422, label = "Skeletal Sorcerer", x = 0.38, offMapText = "Travel to Skeletal Sorcerer in Western Plaguelands." },
@@ -4769,7 +4588,6 @@ ns:RegisterGuide({
             classAction = "objective-8414-dispelling-evil",
         },
         {
-            priority = 1820,
             route = {
                 { y = 0.828, mapID = 1422, label = "High Priest Thel'danis", x = 0.52, offMapText = "Travel to High Priest Thel'danis in Western Plaguelands." },
             },
@@ -4794,7 +4612,6 @@ ns:RegisterGuide({
             classAction = "turnin-8414-dispelling-evil",
         },
         {
-            priority = 1830,
             route = {
                 { y = 0.828, mapID = 1422, label = "High Priest Thel'danis", x = 0.52, offMapText = "Travel to High Priest Thel'danis in Western Plaguelands." },
             },
@@ -4819,7 +4636,6 @@ ns:RegisterGuide({
             classAction = "accept-8416-inert-scourgestones",
         },
         {
-            priority = 1840,
             route = {
                 { y = 0.84, mapID = 1422, label = "Commander Ashlam Valorfist", x = 0.428, offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands." },
             },
@@ -4867,10 +4683,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7638,
-            priority = 1850,
         },
         {
-            priority = 1860,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -4895,7 +4709,6 @@ ns:RegisterGuide({
             classAction = "accept-7638-lord-grayson-shadowbreaker",
         },
         {
-            priority = 1870,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -4920,7 +4733,6 @@ ns:RegisterGuide({
             classAction = "turnin-7638-lord-grayson-shadowbreaker",
         },
         {
-            priority = 1880,
             route = {
                 { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -4945,7 +4757,6 @@ ns:RegisterGuide({
             classAction = "accept-7637-emphasis-on-sacrifice",
         },
         {
-            priority = 1890,
             route = {
                 { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
             },
@@ -4970,7 +4781,6 @@ ns:RegisterGuide({
             classAction = "turnin-7637-emphasis-on-sacrifice",
         },
         {
-            priority = 1900,
             route = {
                 { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
             },
@@ -4995,7 +4805,6 @@ ns:RegisterGuide({
             classAction = "accept-7639-to-show-due-judgment",
         },
         {
-            priority = 1910,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -5020,7 +4829,6 @@ ns:RegisterGuide({
             classAction = "turnin-7639-to-show-due-judgment",
         },
         {
-            priority = 1920,
             route = {
                 { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -5045,7 +4853,6 @@ ns:RegisterGuide({
             classAction = "accept-7640-exorcising-terrordale",
         },
         {
-            priority = 1930,
             id = "objective-7640-quest-work",
             conditions = {
                 all = {
@@ -5067,7 +4874,6 @@ ns:RegisterGuide({
             classAction = "objective-7640-quest-work",
         },
         {
-            priority = 1940,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -5092,7 +4898,6 @@ ns:RegisterGuide({
             classAction = "turnin-7640-exorcising-terrordale",
         },
         {
-            priority = 1950,
             route = {
                 { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -5117,7 +4922,6 @@ ns:RegisterGuide({
             classAction = "accept-7641-the-work-of-grimand-elmore",
         },
         {
-            priority = 1960,
             route = {
                 { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
@@ -5142,7 +4946,6 @@ ns:RegisterGuide({
             classAction = "turnin-7641-the-work-of-grimand-elmore",
         },
         {
-            priority = 1970,
             route = {
                 { y = 0.556, mapID = 1424, label = "Merideth Carlson", x = 0.52, offMapText = "Travel to Merideth Carlson in Hillsbrad Foothills." },
             },
@@ -5167,7 +4970,6 @@ ns:RegisterGuide({
             classAction = "accept-7645-manna-enriched-horse-feed",
         },
         {
-            priority = 1980,
             id = "objective-7645-quest-work",
             conditions = {
                 all = {
@@ -5189,7 +4991,6 @@ ns:RegisterGuide({
             classAction = "objective-7645-quest-work",
         },
         {
-            priority = 1990,
             route = {
                 { y = 0.556, mapID = 1424, label = "Merideth Carlson", x = 0.52, offMapText = "Travel to Merideth Carlson in Hillsbrad Foothills." },
             },
@@ -5241,10 +5042,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 7670,
             alternativeQuests = { 7638 },
-            priority = 2000,
         },
         {
-            priority = 2010,
             route = {
                 { y = 0.062, mapID = 1455, label = "Brandur Ironhammer", x = 0.234, offMapText = "Travel to Brandur Ironhammer in Ironforge." },
             },
@@ -5272,7 +5071,6 @@ ns:RegisterGuide({
             classAction = "accept-7670-lord-grayson-shadowbreaker",
         },
         {
-            priority = 2020,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -5322,7 +5120,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7642,
-            priority = 2030,
         },
         {
             id = "handoff-7642-class-dungeon",
@@ -5342,11 +5139,9 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 2040,
             classAction = "handoff-7642-class-dungeon",
         },
         {
-            priority = 2050,
             route = {
                 { y = 0.338, mapID = 1453, label = "Grimand Elmore", x = 0.597, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
@@ -5371,7 +5166,6 @@ ns:RegisterGuide({
             classAction = "accept-7648-grimands-finest-work",
         },
         {
-            priority = 2060,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },

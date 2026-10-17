@@ -52,10 +52,11 @@ local function Stormwind(x, y, label)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-ruins-of-lordaeron",
     title = "Ruins of Lordaeron",
     category = "Dungeon Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { level = { min = 16 } },
@@ -66,7 +67,6 @@ ns:RegisterGuide({
         {
             id = "accept-frightened-request",
             kind = "accept",
-            priority = 9,
             conditions = {
                 all = {
                     HORDE,
@@ -84,7 +84,6 @@ ns:RegisterGuide({
         {
             id = "accept-wrath-of-rathmael",
             kind = "accept",
-            priority = 10,
             conditions = {
                 all = {
                     HORDE,
@@ -102,7 +101,6 @@ ns:RegisterGuide({
         {
             id = "accept-lights-justice",
             kind = "accept",
-            priority = 11,
             conditions = {
                 all = {
                     HORDE,
@@ -117,7 +115,6 @@ ns:RegisterGuide({
         {
             id = "accept-new-plague",
             kind = "accept",
-            priority = 12,
             conditions = {
                 all = {
                     HORDE,
@@ -132,7 +129,6 @@ ns:RegisterGuide({
         {
             id = "enter-ruins-of-lordaeron",
             kind = "travel",
-            priority = 40,
             text = "Enter the Ruins of Lordaeron. Horde: use the portal above the Undercity. Alliance: use the entrance in northern Tirisfal Glades.",
             dependsOn = {
                 "accept-frightened-request",
@@ -154,7 +150,6 @@ ns:RegisterGuide({
         {
             id = "complete-frightened-request",
             kind = "objective",
-            priority = 40,
             conditions = {
                 all = {
                     HORDE,
@@ -168,7 +163,6 @@ ns:RegisterGuide({
         {
             id = "complete-wrath-of-rathmael",
             kind = "objective",
-            priority = 41,
             conditions = {
                 all = {
                     HORDE,
@@ -183,7 +177,6 @@ ns:RegisterGuide({
         {
             id = "complete-lights-justice",
             kind = "objective",
-            priority = 42,
             conditions = {
                 all = {
                     HORDE,
@@ -197,7 +190,6 @@ ns:RegisterGuide({
         {
             id = "complete-new-plague",
             kind = "objective",
-            priority = 39,
             conditions = {
                 all = {
                     HORDE,
@@ -212,7 +204,6 @@ ns:RegisterGuide({
         {
             id = "accept-abominable-creatures",
             kind = "accept",
-            priority = 44,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -226,7 +217,6 @@ ns:RegisterGuide({
         {
             id = "complete-abominable-creatures",
             kind = "objective",
-            priority = 45,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -241,7 +231,6 @@ ns:RegisterGuide({
         {
             id = "accept-unending-torment",
             kind = "accept",
-            priority = 50,
             conditions = {
                 all = {
                     HORDE,
@@ -255,7 +244,6 @@ ns:RegisterGuide({
         {
             id = "accept-crest-horde",
             kind = "accept",
-            priority = 51,
             conditions = {
                 all = {
                     HORDE,
@@ -269,7 +257,6 @@ ns:RegisterGuide({
         {
             id = "accept-crest-alliance",
             kind = "accept",
-            priority = 52,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -283,7 +270,6 @@ ns:RegisterGuide({
         {
             id = "accept-bloodied-insignia",
             kind = "accept",
-            priority = 53,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -297,7 +283,6 @@ ns:RegisterGuide({
         {
             id = "complete-bloodied-insignia",
             kind = "objective",
-            priority = 54,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -311,7 +296,6 @@ ns:RegisterGuide({
         {
             id = "accept-remember-letter",
             kind = "accept",
-            priority = 55,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -325,7 +309,6 @@ ns:RegisterGuide({
         {
             id = "turnin-frightened-request",
             kind = "turnin",
-            priority = 59,
             conditions = {
                 all = {
                     HORDE,
@@ -344,7 +327,6 @@ ns:RegisterGuide({
         {
             id = "turnin-wrath-of-rathmael",
             kind = "turnin",
-            priority = 60,
             conditions = {
                 all = {
                     HORDE,
@@ -363,7 +345,6 @@ ns:RegisterGuide({
         {
             id = "turnin-lights-justice",
             kind = "turnin",
-            priority = 61,
             conditions = {
                 all = {
                     HORDE,
@@ -379,7 +360,6 @@ ns:RegisterGuide({
         {
             id = "turnin-new-plague",
             kind = "turnin",
-            priority = 62,
             conditions = {
                 all = {
                     HORDE,
@@ -395,7 +375,6 @@ ns:RegisterGuide({
         {
             id = "turnin-unending-torment",
             kind = "turnin",
-            priority = 63,
             conditions = {
                 all = {
                     HORDE,
@@ -410,8 +389,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-unending-torment-place",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97288 } } },
             kind = "accept",
-            priority = 64,
             conditions = {
                 all = {
                     HORDE,
@@ -426,8 +405,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-unending-torment-place",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97288 } } },
             kind = "turnin",
-            priority = 65,
             conditions = {
                 all = {
                     HORDE,
@@ -440,8 +419,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-unending-torment-report",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97289 } } },
             kind = "accept",
-            priority = 66,
             conditions = {
                 all = {
                     HORDE,
@@ -454,8 +433,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-unending-torment-report",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97289 } } },
             kind = "turnin",
-            priority = 67,
             conditions = {
                 all = {
                     HORDE,
@@ -470,8 +449,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-unending-torment-reagents",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97290 } } },
             kind = "accept",
-            priority = 68,
             conditions = {
                 all = {
                     HORDE,
@@ -486,8 +465,8 @@ ns:RegisterGuide({
         },
         {
             id = "complete-unending-torment-reagents",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97290 } } },
             kind = "objective",
-            priority = 69,
             conditions = {
                 all = {
                     HORDE,
@@ -508,8 +487,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-unending-torment-reagents",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97290 } } },
             kind = "turnin",
-            priority = 70,
             conditions = {
                 all = {
                     HORDE,
@@ -524,8 +503,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-unending-torment-serum",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97291 } } },
             kind = "accept",
-            priority = 71,
             conditions = {
                 all = {
                     HORDE,
@@ -540,8 +519,8 @@ ns:RegisterGuide({
         },
         {
             id = "complete-unending-torment-serum",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97291 } } },
             kind = "objective",
-            priority = 72,
             conditions = {
                 all = {
                     HORDE,
@@ -554,8 +533,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-unending-torment-serum",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 97291 } } },
             kind = "turnin",
-            priority = 73,
             conditions = {
                 all = {
                     HORDE,
@@ -571,7 +550,6 @@ ns:RegisterGuide({
         {
             id = "turnin-crest-horde",
             kind = "turnin",
-            priority = 74,
             conditions = {
                 all = {
                     HORDE,
@@ -587,7 +565,6 @@ ns:RegisterGuide({
         {
             id = "turnin-abominable-creatures",
             kind = "turnin",
-            priority = 80,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -601,7 +578,6 @@ ns:RegisterGuide({
         {
             id = "turnin-crest-alliance",
             kind = "turnin",
-            priority = 81,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -617,7 +593,6 @@ ns:RegisterGuide({
         {
             id = "turnin-bloodied-insignia",
             kind = "turnin",
-            priority = 82,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -633,7 +608,6 @@ ns:RegisterGuide({
         {
             id = "turnin-remember-letter",
             kind = "turnin",
-            priority = 83,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -648,8 +622,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-remember-duskwood",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92415 } } },
             kind = "accept",
-            priority = 84,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -664,8 +638,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-remember-duskwood",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 92415 } } },
             kind = "turnin",
-            priority = 85,
             conditions = {
                 all = {
                     ALLIANCE,

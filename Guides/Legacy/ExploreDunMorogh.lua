@@ -54,7 +54,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-dun-morogh",
     title = "Explore Dun Morogh",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

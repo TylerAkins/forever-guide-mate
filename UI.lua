@@ -1134,7 +1134,7 @@ function UI:GoalInstruction(engine)
     local state = engine.state or {}
     if engine.currentGuide and engine.currentGuide.routeMode == "ordered" then
         local leg = ns.Navigation:GetActiveLeg(goal, state)
-        if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
+        if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi or leg.complete) then
             return goal.text .. "\n" .. (leg.offMapText or leg.label or "")
         end
         return goal.text

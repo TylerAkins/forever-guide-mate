@@ -12,6 +12,7 @@ import json
 import re
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
+from functools import lru_cache
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -275,6 +276,16 @@ def goal_field(raw: str, key: str) -> str | None:
     return None
 
 
+@lru_cache(maxsize=1)
+def class_action_templates() -> dict[str, str]:
+    text = (ROOT / "ClassChains.lua").read_text(encoding="utf-8")
+    actions = {}
+    for match in re.finditer(r'^    \["([^"\n]+)"\] = \{', text, re.MULTILINE):
+        start = text.index("{", match.start())
+        actions[match.group(1)] = text[start:brace_end(text, start) + 1]
+    return actions
+
+
 def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -> list[Goal]:
     marker = text.find("goals = {")
     if marker < 0:
@@ -285,15 +296,17 @@ def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -
     goals = []
     for raw in split_top_tables(text[open_at + 1 : end]):
         ident = re.search(r'\bid = "([^"]+)"', raw)
-        kind = re.search(r'\bkind = "([^"]+)"', raw)
+        reference = re.search(r'\bclassAction = "([^"]+)"', raw)
+        template = class_action_templates()[reference.group(1)] if reference else ""
+        kind = re.search(r'\bkind = "([^"]+)"', raw) or re.search(r'\bkind = "([^"]+)"', template)
         priority = re.search(r"\bpriority = (\d+(?:\.\d+)?)", raw)
         quest = None
-        body = goal_field(raw, "complete")
+        body = goal_field(raw, "complete") or goal_field(template, "complete")
         if body:
             quest = re.match(r"(?:QuestState|QuestObjective)\(\s*(\d+)", body)
             if body.startswith("{"):
                 quest = re.search(r"\b(?:quest|questObjective)\s*=\s*\{[^{}]*\bid\s*=\s*(\d+)", body)
-        step_text = re.search(r'\btext = "((?:\\.|[^"\\])*)"', raw)
+        step_text = re.search(r'\btext = "((?:\\.|[^"\\])*)"', raw) or re.search(r'\btext = "((?:\\.|[^"\\])*)"', template)
         labels = re.findall(r',\s*"((?:\\.|[^"\\])*)"', raw)
         # Point label is the 4th string-ish arg; grab quoted labels on Point lines.
         point_labels = re.findall(
@@ -302,7 +315,7 @@ def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -
         )
         depends = re.search(r"dependsOn = \{([^}]*)\}", raw)
         dep_ids = re.findall(r'"([^"]+)"', depends.group(1)) if depends else []
-        conditions = extract_step_conditions(raw, constants)
+        conditions = extract_step_conditions(raw if goal_field(raw, "conditions") else template, constants)
         goals.append(
             Goal(
                 raw=raw,

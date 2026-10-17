@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Burning Steppes & Azshara",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-burning-steppes-and-azshara",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4726,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.24, mapID = 1428, label = "Tinkee Steamboil", offMapText = "Travel to Tinkee Steamboil in Burning Steppes.", x = 0.6524 },
             },
@@ -55,7 +53,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.2392, mapID = 1428, label = "Maxwort Uberglint", offMapText = "Travel to Maxwort Uberglint in Burning Steppes.", x = 0.6516 },
             },
@@ -98,7 +95,6 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.5409, y = 0.4073, label = "Tablet Transcript", offMapText = "Travel to Tablet Transcript." },
             },
             sourceStep = 7,
-            priority = 40,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -124,10 +120,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3821,
-            priority = 50,
         },
         {
-            priority = 60,
             route = {
                 { mapID = 1428, x = 0.7979, y = 0.45520000000000005, label = "Sha'ni Proudtusk", offMapText = "Travel to Sha'ni Proudtusk in Burning Steppes." },
             },
@@ -168,10 +162,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4022,
             alternativeQuests = { 4023 },
-            priority = 70,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.3157, mapID = 1428, label = "Cyrus Therepentous", offMapText = "Travel to Cyrus Therepentous in Burning Steppes.", x = 0.9506 },
             },
@@ -203,7 +195,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "For A Taste of Flame: Show Cyrus Therepentous the Black Dragonflight Molt you received from Kalaran Windblade.",
             route = {
                 { mapID = 1428, x = 0.9506, y = 0.3157, label = "Black Dragonflight Molt", offMapText = "Travel to Black Dragonflight Molt." },
@@ -235,7 +226,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4022-a-taste-of-flame" },
         },
         {
-            priority = 100,
             text = "Turn in A Taste of Flame to Cyrus Therepentous.",
             route = {
                 { y = 0.3157, mapID = 1428, label = "Cyrus Therepentous", offMapText = "Travel to Cyrus Therepentous in Burning Steppes.", x = 0.9506 },
@@ -285,14 +275,12 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.914, y = 0.314, label = "Broodling Essence", offMapText = "Travel to Broodling Essence." },
             },
             sourceStep = 13,
-            priority = 110,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4726-broodling-essence" },
         },
         {
-            priority = 120,
             text = "Turn in Broodling Essence to Tinkee Steamboil.",
             route = {
                 { y = 0.2399, mapID = 1428, label = "Tinkee Steamboil", offMapText = "Travel to Tinkee Steamboil in Burning Steppes.", x = 0.6523 },
@@ -317,7 +305,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.2399, mapID = 1428, label = "Tinkee Steamboil", offMapText = "Travel to Tinkee Steamboil in Burning Steppes.", x = 0.6523 },
             },
@@ -348,7 +335,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Turn in Tablet of the Seven to Maxwort Uberglint.",
             route = {
                 { y = 0.2391, mapID = 1428, label = "Maxwort Uberglint", offMapText = "Travel to Maxwort Uberglint in Burning Steppes.", x = 0.6515 },
@@ -373,7 +359,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.3423, mapID = 1454, label = "Belgrom Rockmaul", offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.", x = 0.7523 },
             },
@@ -420,10 +405,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4494,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { mapID = 1454, x = 0.552, y = 0.558, label = "Zilzibin Drumlore", offMapText = "Travel to Zilzibin Drumlore in Orgrimmar." },
             },
@@ -457,7 +440,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.7816, mapID = 1447, label = "Loh'atu", offMapText = "Travel to Loh'atu in Azshara.", x = 0.1137 },
             },
@@ -482,7 +464,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.7816, mapID = 1447, label = "Loh'atu", offMapText = "Travel to Loh'atu in Azshara.", x = 0.1137 },
             },
@@ -507,7 +488,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Kill 6 Highborne Apparition.",
             route = {
                 { y = 0.734, mapID = 1447, label = "Highborne Apparition", offMapText = "Travel to Highborne Apparition.", x = 0.134 },
@@ -532,7 +512,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Kill 6 Highborne Lichling.",
             route = {
                 { y = 0.734, mapID = 1447, label = "Highborne Lichling", offMapText = "Travel to Highborne Lichling.", x = 0.134 },
@@ -557,7 +536,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             text = "Kill 2 Haldarr Trickster.",
             route = {
                 { y = 0.646, mapID = 1447, label = "Haldarr Trickster", offMapText = "Travel to Haldarr Trickster.", x = 0.198 },
@@ -582,7 +560,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             text = "Kill 2 Haldarr Felsworn.",
             route = {
                 { y = 0.646, mapID = 1447, label = "Haldarr Felsworn", offMapText = "Travel to Haldarr Felsworn.", x = 0.198 },
@@ -607,7 +584,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             text = "Kill 6 Haldarr Satyr.",
             route = {
                 { y = 0.646, mapID = 1447, label = "Haldarr Satyr", offMapText = "Travel to Haldarr Satyr.", x = 0.198 },
@@ -632,7 +608,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             text = "Turn in Spiritual Unrest to Loh'atu.",
             route = {
                 { y = 0.7817, mapID = 1447, label = "Loh'atu", offMapText = "Travel to Loh'atu in Azshara.", x = 0.1137 },
@@ -661,7 +636,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             text = "Turn in A Land Filled with Hatred to Loh'atu.",
             route = {
                 { y = 0.7817, mapID = 1447, label = "Loh'atu", offMapText = "Travel to Loh'atu in Azshara.", x = 0.1137 },
@@ -691,7 +665,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             text = "Turn in Betrayed to Ag'tor Bloodfist.",
             route = {
                 { y = 0.5148, mapID = 1447, label = "Ag'tor Bloodfist", offMapText = "Travel to Ag'tor Bloodfist in Azshara.", x = 0.2226 },
@@ -719,7 +692,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.5142, mapID = 1447, label = "Jediga", offMapText = "Travel to Jediga in Azshara.", x = 0.2256 },
             },
@@ -747,7 +719,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Collect 1 Tablet of Markri.",
             route = {
                 { y = 0.546, mapID = 1447, label = "Tablet of Markri", offMapText = "Travel to Tablet of Markri.", x = 0.35 },
@@ -796,7 +767,6 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.35200000000000004, y = 0.5579999999999999, label = "Tablet of Beth'Amara", offMapText = "Travel to Tablet of Beth'Amara." },
             },
             sourceStep = 42,
-            priority = 300,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -824,7 +794,6 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.348, y = 0.5329999999999999, label = "Tablet of Jin'yael", offMapText = "Travel to Tablet of Jin'yael." },
             },
             sourceStep = 43,
-            priority = 310,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -852,14 +821,12 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.348, y = 0.541, label = "Tablet of Sael'hai", offMapText = "Travel to Tablet of Sael'hai." },
             },
             sourceStep = 44,
-            priority = 320,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-3517-stealing-knowledge" },
         },
         {
-            priority = 330,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -911,7 +878,6 @@ ns:RegisterGuide({
             rememberPreparation = 3568,
         },
         {
-            priority = 340,
             route = {
                 { mapID = 1447, x = 0.47700000000000004, y = 0.6104999999999999, label = "Tide pool #1", offMapText = "Travel to Tide pool #1." },
             },
@@ -938,7 +904,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             route = {
                 { mapID = 1447, x = 0.47859999999999997, y = 0.5155, label = "Tide pool #2", offMapText = "Travel to Tide pool #2." },
             },
@@ -966,7 +931,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             route = {
                 { mapID = 1447, x = 0.486, y = 0.48560000000000003, label = "Tide pool #3", offMapText = "Travel to Tide pool #3." },
             },
@@ -994,7 +958,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             route = {
                 { mapID = 1447, x = 0.47409999999999997, y = 0.4628, label = "Tide pool #4", offMapText = "Travel to Tide pool #4." },
             },
@@ -1022,7 +985,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Turn in Stealing Knowledge to Jediga.",
             route = {
                 { mapID = 1447, x = 0.2256, y = 0.5142, label = "Jediga", offMapText = "Travel to Jediga in Azshara." },
@@ -1056,7 +1018,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { mapID = 1447, x = 0.2256, y = 0.5142, label = "Jediga", offMapText = "Travel to Jediga in Azshara." },
             },
@@ -1090,7 +1051,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             route = {
                 { mapID = 1447, x = 0.2256, y = 0.5142, label = "Jediga", offMapText = "Travel to Jediga in Azshara." },
             },
@@ -1124,7 +1084,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             route = {
                 { mapID = 1447, x = 0.2256, y = 0.5142, label = "Jediga", offMapText = "Travel to Jediga in Azshara." },
             },
@@ -1158,7 +1117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             route = {
                 { y = 0.5009, mapID = 1447, label = "Sanath Lim-yo", offMapText = "Travel to Sanath Lim-yo in Azshara.", x = 0.2811 },
             },
@@ -1180,7 +1138,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Turn in Delivery to Archmage Xylem to Archmage Xylem.",
             route = {
                 { y = 0.4052, mapID = 1447, label = "Archmage Xylem", offMapText = "Travel to Archmage Xylem in Azshara.", x = 0.2971 },
@@ -1214,7 +1171,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.4052, mapID = 1447, label = "Archmage Xylem", offMapText = "Travel to Archmage Xylem in Azshara.", x = 0.2971 },
             },
@@ -1248,7 +1204,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             route = {
                 { y = 0.4628, mapID = 1447, label = "Nyrill", offMapText = "Travel to Nyrill in Azshara.", x = 0.2647 },
             },
@@ -1270,7 +1225,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             text = "Turn in Xylem's Payment to Jediga to Jediga.",
             route = {
                 { y = 0.5142, mapID = 1447, label = "Jediga", offMapText = "Travel to Jediga in Azshara.", x = 0.2256 },

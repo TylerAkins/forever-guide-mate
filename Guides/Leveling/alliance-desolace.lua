@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Desolace",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-desolace",
@@ -35,10 +35,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1799,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -60,7 +58,6 @@ ns:RegisterGuide({
             classAction = "accept-1799-fragments-of-the-orb-of-orahil",
         },
         {
-            priority = 30,
             id = "woven-class-warlock-objective-1799-quest-work",
             conditions = {
                 all = {
@@ -79,7 +76,6 @@ ns:RegisterGuide({
             classAction = "objective-1799-quest-work",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -131,10 +127,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4968,
             alternativeQuests = { 4965, 4967, 4969 },
-            priority = 50,
         },
         {
-            priority = 60,
             route = {
                 { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
@@ -162,7 +156,6 @@ ns:RegisterGuide({
             classAction = "accept-4968-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -190,7 +183,6 @@ ns:RegisterGuide({
             classAction = "turnin-4968-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.06, mapID = 1455, label = "Briarthorn", x = 0.502, offMapText = "Travel to Briarthorn in Ironforge." },
             },
@@ -218,7 +210,6 @@ ns:RegisterGuide({
             classAction = "accept-4965-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -246,7 +237,6 @@ ns:RegisterGuide({
             classAction = "turnin-4965-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.352, mapID = 1413, label = "Acolyte Wytula", x = 0.626, offMapText = "Travel to Acolyte Wytula in The Barrens." },
             },
@@ -268,7 +258,6 @@ ns:RegisterGuide({
             classAction = "accept-4962-shard-of-a-felhound",
         },
         {
-            priority = 110,
             id = "woven-class-warlock-objective-4962-quest-work",
             conditions = {
                 all = {
@@ -287,7 +276,6 @@ ns:RegisterGuide({
             classAction = "objective-4962-quest-work",
         },
         {
-            priority = 120,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -309,7 +297,6 @@ ns:RegisterGuide({
             classAction = "turnin-4962-shard-of-a-felhound",
         },
         {
-            priority = 130,
             route = {
                 { y = 0.352, mapID = 1413, label = "Acolyte Magaz", x = 0.626, offMapText = "Travel to Acolyte Magaz in The Barrens." },
             },
@@ -331,7 +318,6 @@ ns:RegisterGuide({
             classAction = "accept-4963-shard-of-an-infernal",
         },
         {
-            priority = 140,
             id = "woven-class-warlock-objective-4963-quest-work",
             conditions = {
                 all = {
@@ -350,7 +336,6 @@ ns:RegisterGuide({
             classAction = "objective-4963-quest-work",
         },
         {
-            priority = 150,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -372,7 +357,6 @@ ns:RegisterGuide({
             classAction = "turnin-4963-shard-of-an-infernal",
         },
         {
-            priority = 160,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -394,7 +378,6 @@ ns:RegisterGuide({
             classAction = "accept-4961-cleansing-of-the-orb-of-orahil",
         },
         {
-            priority = 170,
             id = "woven-class-warlock-objective-4961-quest-work",
             conditions = {
                 all = {
@@ -413,7 +396,6 @@ ns:RegisterGuide({
             classAction = "objective-4961-quest-work",
         },
         {
-            priority = 180,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -438,7 +420,6 @@ ns:RegisterGuide({
             classAction = "turnin-4961-cleansing-of-the-orb-of-orahil",
         },
         {
-            priority = 190,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -460,7 +441,6 @@ ns:RegisterGuide({
             classAction = "accept-4976-returning-the-cleansed-orb",
         },
         {
-            priority = 200,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -482,7 +462,6 @@ ns:RegisterGuide({
             classAction = "turnin-4976-returning-the-cleansed-orb",
         },
         {
-            priority = 210,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -504,7 +483,6 @@ ns:RegisterGuide({
             classAction = "accept-4975-the-completed-orb-of-nohorahil",
         },
         {
-            priority = 220,
             id = "woven-class-warlock-objective-4975-quest-work",
             conditions = {
                 all = {
@@ -523,7 +501,6 @@ ns:RegisterGuide({
             classAction = "objective-4975-quest-work",
         },
         {
-            priority = 230,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -548,7 +525,6 @@ ns:RegisterGuide({
             classAction = "turnin-4975-the-completed-orb-of-nohorahil",
         },
         {
-            priority = 240,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -570,7 +546,6 @@ ns:RegisterGuide({
             classAction = "accept-4964-the-completed-orb-of-darorahil",
         },
         {
-            priority = 250,
             id = "woven-class-warlock-objective-4964-quest-work",
             conditions = {
                 all = {
@@ -589,7 +564,6 @@ ns:RegisterGuide({
             classAction = "objective-4964-quest-work",
         },
         {
-            priority = 260,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -634,10 +608,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1954,
-            priority = 270,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -659,7 +631,6 @@ ns:RegisterGuide({
             classAction = "accept-1954-the-infernal-orb",
         },
         {
-            priority = 290,
             id = "woven-class-mage-objective-1954-quest-work",
             conditions = {
                 all = {
@@ -678,7 +649,6 @@ ns:RegisterGuide({
             classAction = "objective-1954-quest-work",
         },
         {
-            priority = 300,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -700,7 +670,6 @@ ns:RegisterGuide({
             classAction = "turnin-1954-the-infernal-orb",
         },
         {
-            priority = 310,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -722,7 +691,6 @@ ns:RegisterGuide({
             classAction = "accept-1955-the-exorcism",
         },
         {
-            priority = 320,
             id = "woven-class-mage-objective-1955-quest-work",
             conditions = {
                 all = {
@@ -741,7 +709,6 @@ ns:RegisterGuide({
             classAction = "objective-1955-quest-work",
         },
         {
-            priority = 330,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -763,7 +730,6 @@ ns:RegisterGuide({
             classAction = "turnin-1955-the-exorcism",
         },
         {
-            priority = 340,
             route = {
                 { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
@@ -785,7 +751,6 @@ ns:RegisterGuide({
             classAction = "accept-1953-return-to-the-marsh",
         },
         {
-            priority = 350,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -826,10 +791,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1453,
-            priority = 360,
         },
         {
-            priority = 370,
             route = {
                 { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
             },
@@ -857,7 +820,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             route = {
                 { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
             },
@@ -891,7 +853,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             route = {
                 { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
             },
@@ -925,7 +886,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             route = {
                 { y = 0.1087, mapID = 1443, label = "Corporal Melkins", offMapText = "Travel to Corporal Melkins in Desolace.", x = 0.6674 },
             },
@@ -953,7 +913,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             route = {
                 { y = 0.1093, mapID = 1443, label = "Captain Pentigast", offMapText = "Travel to Captain Pentigast in Desolace.", x = 0.6666 },
             },
@@ -981,7 +940,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             route = {
                 { y = 0.1182, mapID = 1443, label = "Vahlarriel Demonslayer", offMapText = "Travel to Vahlarriel Demonslayer in Desolace.", x = 0.6644 },
             },
@@ -1009,7 +967,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Collect 10 Hatefury Claw.",
             route = {
                 { y = 0.158, mapID = 1443, label = "Hatefury Trickster", offMapText = "Travel to Hatefury Trickster.", x = 0.694 },
@@ -1043,7 +1000,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             text = "Collect 10 Hatefury Horn.",
             route = {
                 { y = 0.158, mapID = 1443, label = "Hatefury Horn", offMapText = "Travel to Hatefury Horn.", x = 0.694 },
@@ -1077,7 +1033,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Turn in Reagents for Reclaimers Inc. to Kreldig Ungor.",
             route = {
                 { mapID = 1443, x = 0.662, y = 0.09630000000000001, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace." },
@@ -1115,7 +1070,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { mapID = 1443, x = 0.662, y = 0.09630000000000001, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace." },
             },
@@ -1149,7 +1103,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Turn in Vahlarriel's Search.",
             route = {
                 { y = 0.1783, mapID = 1443, label = "Vahlarriel's Search", offMapText = "Travel to Vahlarriel's Search.", x = 0.5654 },
@@ -1177,7 +1130,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { y = 0.1783, mapID = 1443, label = "Vahlarriel's Search", offMapText = "Travel to Vahlarriel's Search.", x = 0.5654 },
             },
@@ -1223,10 +1175,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5741,
-            priority = 490,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.2717, mapID = 1443, label = "Azore Aldamort", offMapText = "Travel to Azore Aldamort in Desolace.", x = 0.3888 },
             },
@@ -1251,7 +1201,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             text = "Turn in The Karnitol Shipwreck.",
             route = {
                 { y = 0.3045, mapID = 1443, label = "The Karnitol Shipwreck", offMapText = "Travel to The Karnitol Shipwreck.", x = 0.3611 },
@@ -1285,7 +1234,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.3045, mapID = 1443, label = "The Karnitol Shipwreck", offMapText = "Travel to The Karnitol Shipwreck.", x = 0.3611 },
             },
@@ -1319,7 +1267,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             route = {
                 { y = 0.3041, mapID = 1443, label = "Claim Rackmore's Treasure!", offMapText = "Travel to Claim Rackmore's Treasure!.", x = 0.3607 },
             },
@@ -1344,7 +1291,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "Collect 1 Rackmore's Silver Key.",
             route = {
                 { y = 0.302, mapID = 1443, label = "Elixir of Water Breathing", offMapText = "Travel to Elixir of Water Breathing.", x = 0.338 },
@@ -1369,7 +1315,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Turn in The Karnitol Shipwreck to Kreldig Ungor.",
             route = {
                 { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
@@ -1403,7 +1348,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             route = {
                 { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
             },
@@ -1437,7 +1381,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 570,
             text = "Turn in Vahlarriel's Search to Vahlarriel Demonslayer.",
             route = {
                 { y = 0.1182, mapID = 1443, label = "Vahlarriel Demonslayer", offMapText = "Travel to Vahlarriel Demonslayer in Desolace.", x = 0.6644 },
@@ -1471,7 +1414,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             route = {
                 { y = 0.1182, mapID = 1443, label = "Vahlarriel Demonslayer", offMapText = "Travel to Vahlarriel Demonslayer in Desolace.", x = 0.6644 },
             },
@@ -1505,7 +1447,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 590,
             text = "Collect 1 Sceptre of Light.",
             route = {
                 { y = 0.3015, mapID = 1443, label = "Burning Blade Seer", offMapText = "Travel to Burning Blade Seer.", x = 0.5517 },
@@ -1530,7 +1471,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 600,
             text = "Turn in Vahlarriel's Search to Dalinda Malem.",
             route = {
                 { y = 0.2613, mapID = 1443, label = "Dalinda Malem", offMapText = "Travel to Dalinda Malem in Desolace.", x = 0.5486 },
@@ -1564,7 +1504,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.2613, mapID = 1443, label = "Dalinda Malem", offMapText = "Travel to Dalinda Malem in Desolace.", x = 0.5486 },
             },
@@ -1598,7 +1537,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             text = "Collect 1 Tyranis' Pendant.",
             route = {
                 { y = 0.2908, mapID = 1443, label = "Tyranis Malem", offMapText = "Travel to Tyranis Malem.", x = 0.5301 },
@@ -1632,7 +1570,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             text = "Turn in Search for Tyranis to Dalinda Malem.",
             route = {
                 { y = 0.2613, mapID = 1443, label = "Dalinda Malem", offMapText = "Travel to Dalinda Malem in Desolace.", x = 0.5486 },
@@ -1666,7 +1603,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.2613, mapID = 1443, label = "Dalinda Malem", offMapText = "Travel to Dalinda Malem in Desolace.", x = 0.5486 },
             },
@@ -1731,7 +1667,6 @@ ns:RegisterGuide({
             },
             sourceStep = 24,
             dependsOn = { "accept-1440-return-to-vahlarriel" },
-            priority = 650,
         },
         {
             id = "level-before-accept-5501-bone-collector",
@@ -1746,10 +1681,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5501,
-            priority = 660,
         },
         {
-            priority = 670,
             route = {
                 { y = 0.3898, mapID = 1443, label = "Bibbly F'utzbuckle", offMapText = "Travel to Bibbly F'utzbuckle in Desolace.", x = 0.6233 },
             },
@@ -1774,7 +1707,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 680,
             text = "Collect 15 Centaur Ear.",
             route = {
                 { y = 0.692, mapID = 1443, label = "Magram Outrunner", offMapText = "Travel to Magram Outrunner.", x = 0.69 },
@@ -1802,7 +1734,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.6186, mapID = 1443, label = "Smeed Scrabblescrew", offMapText = "Travel to Smeed Scrabblescrew in Desolace.", x = 0.6086 },
             },
@@ -1827,7 +1758,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             text = "Use Kodo Kombobulator.",
             route = {
                 { y = 0.603, mapID = 1443, label = "Kodo Kombobulator", offMapText = "Travel to Kodo Kombobulator.", x = 0.544 },
@@ -1851,7 +1781,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             text = "Turn in Kodo Roundup to Smeed Scrabblescrew.",
             route = {
                 { y = 0.6186, mapID = 1443, label = "Smeed Scrabblescrew", offMapText = "Travel to Smeed Scrabblescrew in Desolace.", x = 0.6086 },
@@ -1897,7 +1826,6 @@ ns:RegisterGuide({
                 { mapID = 1443, x = 0.544, y = 0.603, label = "Aged Kodo Hide", offMapText = "Travel to Aged Kodo Hide." },
             },
             sourceStep = 30,
-            priority = 720,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1928,14 +1856,12 @@ ns:RegisterGuide({
                 { mapID = 1443, x = 0.544, y = 0.603, label = "Kodo Bone", offMapText = "Travel to Kodo Bone." },
             },
             sourceStep = 31,
-            priority = 730,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-5501-bone-collector" },
         },
         {
-            priority = 740,
             text = "For Strange Alliance: Gain a Friendly reputation with the Gelkis, then speak with Uthek the Wise.",
             id = "objective-1382-quest-work",
             kind = "objective",
@@ -1960,7 +1886,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1382-strange-alliance" },
         },
         {
-            priority = 750,
             text = "Turn in Strange Alliance to Uthek the Wise.",
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3623 },
@@ -1988,7 +1913,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 760,
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3623 },
             },
@@ -2022,7 +1946,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 770,
             text = "Turn in Centaur Bounty to Corporal Melkins.",
             route = {
                 { y = 0.1087, mapID = 1443, label = "Corporal Melkins", offMapText = "Travel to Corporal Melkins in Desolace.", x = 0.6674 },
@@ -2050,7 +1973,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 780,
             text = "Turn in Return to Vahlarriel to Vahlarriel Demonslayer.",
             route = {
                 { y = 0.1182, mapID = 1443, label = "Vahlarriel Demonslayer", offMapText = "Travel to Vahlarriel Demonslayer in Desolace.", x = 0.6644 },
@@ -2084,7 +2006,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 790,
             text = "Collect 10 Crude Charm.",
             route = {
                 { y = 0.39, mapID = 1443, label = "Kolkar Ambusher", offMapText = "Travel to Kolkar Ambusher.", x = 0.684 },
@@ -2118,7 +2039,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 800,
             text = "Turn in Bone Collector to Bibbly F'utzbuckle.",
             route = {
                 { y = 0.3898, mapID = 1443, label = "Bibbly F'utzbuckle", offMapText = "Travel to Bibbly F'utzbuckle in Desolace.", x = 0.6233 },
@@ -2143,7 +2063,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 810,
             text = "Turn in Sceptre of Light to Azore Aldamort.",
             route = {
                 { y = 0.2717, mapID = 1443, label = "Azore Aldamort", offMapText = "Travel to Azore Aldamort in Desolace.", x = 0.3889 },
@@ -2168,7 +2087,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 820,
             route = {
                 { y = 0.2717, mapID = 1443, label = "Azore Aldamort", offMapText = "Travel to Azore Aldamort in Desolace.", x = 0.3889 },
             },
@@ -2199,7 +2117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 830,
             text = "Collect 1 Book of the Ancients.",
             route = {
                 { y = 0.0662, mapID = 1443, label = "Lord Kragaru", offMapText = "Travel to Lord Kragaru.", x = 0.2819 },
@@ -2251,7 +2168,6 @@ ns:RegisterGuide({
                 { mapID = 1443, x = 0.284, y = 0.122, label = "Karnitol's Satchel", offMapText = "Travel to Karnitol's Satchel." },
             },
             sourceStep = 40,
-            priority = 840,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2282,14 +2198,12 @@ ns:RegisterGuide({
                 { mapID = 1443, x = 0.292, y = 0.136, label = "Rackmore's Golden Key", offMapText = "Travel to Rackmore's Golden Key." },
             },
             sourceStep = 41,
-            priority = 850,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-6161-claim-rackmore-s-treasure" },
         },
         {
-            priority = 860,
             text = "Turn in Claim Rackmore's Treasure!.",
             route = {
                 { y = 0.087, mapID = 1443, label = "Claim Rackmore's Treasure!", offMapText = "Travel to Claim Rackmore's Treasure!.", x = 0.3 },
@@ -2318,7 +2232,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 870,
             text = "Turn in Book of the Ancients to Azore Aldamort.",
             route = {
                 { mapID = 1443, x = 0.3889, y = 0.2717, label = "Azore Aldamort", offMapText = "Travel to Azore Aldamort in Desolace." },
@@ -2349,7 +2262,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 880,
             text = "Turn in Raid on the Kolkar to Uthek the Wise.",
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
@@ -2383,7 +2295,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 890,
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
             },
@@ -2414,7 +2325,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 900,
             text = "Collect 6 Crudely Dried Meat.",
             route = {
                 { y = 0.753, mapID = 1443, label = "Sack of Meat", offMapText = "Travel to Sack of Meat.", x = 0.709 },
@@ -2445,7 +2355,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 910,
             text = "Turn in Stealing Supplies to Uthek the Wise.",
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
@@ -2476,7 +2385,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 920,
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
             },
@@ -2507,7 +2415,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 930,
             text = "Turn in The Karnitol Shipwreck to Kreldig Ungor.",
             route = {
                 { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
@@ -2541,7 +2448,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 940,
             route = {
                 { y = 0.0963, mapID = 1443, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace.", x = 0.662 },
             },
@@ -2596,7 +2502,6 @@ ns:RegisterGuide({
                 { mapID = 1443, x = 0.6759999999999999, y = 0.18, label = "Scorpashi Venom", offMapText = "Travel to Scorpashi Venom." },
             },
             sourceStep = 50,
-            priority = 950,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2609,7 +2514,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1459-reagents-for-reclaimers-inc" },
         },
         {
-            priority = 960,
             text = "Turn in Reagents for Reclaimers Inc. to Kreldig Ungor.",
             route = {
                 { mapID = 1443, x = 0.662, y = 0.09630000000000001, label = "Kreldig Ungor", offMapText = "Travel to Kreldig Ungor in Desolace." },
@@ -2647,7 +2551,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 970,
             route = {
                 { y = 0.7726, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
             },
@@ -2678,7 +2581,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 980,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -2709,7 +2611,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 990,
             text = "Turn in Delivery to the Gnomes to Fizzle Brassbolts.",
             route = {
                 { y = 0.7712, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
@@ -2740,7 +2641,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1000,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -2771,7 +2671,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1010,
             route = {
                 { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
             },
@@ -2802,7 +2701,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1020,
             route = {
                 { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
             },
@@ -2833,7 +2731,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1030,
             text = "Turn in The Eighteenth Pilot to Razzeric.",
             route = {
                 { y = 0.7609, mapID = 1441, label = "Razzeric", offMapText = "Travel to Razzeric in Thousand Needles.", x = 0.8033 },
@@ -2864,7 +2761,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1040,
             route = {
                 { y = 0.7609, mapID = 1441, label = "Razzeric", offMapText = "Travel to Razzeric in Thousand Needles.", x = 0.8033 },
             },

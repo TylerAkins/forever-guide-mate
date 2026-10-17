@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Blasted Lands",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-blasted-lands",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2581,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
             },
@@ -55,7 +53,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
             },
@@ -80,7 +77,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
             },
@@ -105,7 +101,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.143, mapID = 1419, label = "Bloodmage Lynnore", offMapText = "Travel to Bloodmage Lynnore in Blasted Lands.", x = 0.5064 },
             },
@@ -130,7 +125,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.143, mapID = 1419, label = "Bloodmage Lynnore", offMapText = "Travel to Bloodmage Lynnore in Blasted Lands.", x = 0.5064 },
             },
@@ -155,7 +149,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.3564, mapID = 1419, label = "Kum'isha the Collector", offMapText = "Travel to Kum'isha the Collector in Blasted Lands.", x = 0.518 },
             },
@@ -180,7 +173,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.3564, mapID = 1419, label = "Kum'isha the Collector", offMapText = "Travel to Kum'isha the Collector in Blasted Lands.", x = 0.518 },
             },
@@ -205,7 +197,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "For Everything Counts In Large Amounts: Bring Kum'isha Imperfect Draenethyst Fragments and be rewarded for each one you turn in.",
             id = "objective-3501-quest-work",
             kind = "objective",
@@ -227,7 +218,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3501-everything-counts-in-large-amounts" },
         },
         {
-            priority = 100,
             text = "Turn in Everything Counts In Large Amounts to Kum'isha the Collector.",
             route = {
                 { y = 0.3564, mapID = 1419, label = "Kum'isha the Collector", offMapText = "Travel to Kum'isha the Collector in Blasted Lands.", x = 0.518 },
@@ -252,7 +242,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             text = "For To Serve Kum'isha: In your journeys throughout the Blasted Lands, should you ever come across a Flawless Draenethyst Sphere, take the item back to Kum'isha the Collector. Be warned, this gem is one of the most rare crystals in all of Azeroth. Any creature in these lands could be holding a Flawless Draenethyst Sphere. You will be rewarded for each Flawless Draenethyst Sphere you have collected.",
             id = "objective-2521-quest-work",
             kind = "objective",
@@ -274,7 +263,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2521-to-serve-kum-isha" },
         },
         {
-            priority = 120,
             text = "Turn in To Serve Kum'isha to Kum'isha the Collector.",
             route = {
                 { y = 0.3564, mapID = 1419, label = "Kum'isha the Collector", offMapText = "Travel to Kum'isha the Collector in Blasted Lands.", x = 0.518 },
@@ -299,7 +287,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             text = "For The Basilisk's Bite: Bring ten Basilisk Brains and two Vulture Gizzards to Bloodmage Lynnore.",
             id = "objective-2601-quest-work",
             kind = "objective",
@@ -321,7 +308,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2601-the-basilisk-s-bite" },
         },
         {
-            priority = 140,
             text = "Turn in The Basilisk's Bite to Bloodmage Lynnore.",
             route = {
                 { y = 0.143, mapID = 1419, label = "Bloodmage Lynnore", offMapText = "Travel to Bloodmage Lynnore in Blasted Lands.", x = 0.5064 },
@@ -346,7 +332,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             text = "For Vulture's Vigor: Bring ten Vulture Gizzards and two Snickerfang Jowls to Bloodmage Lynnore.",
             id = "objective-2603-quest-work",
             kind = "objective",
@@ -368,7 +353,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2603-vulture-s-vigor" },
         },
         {
-            priority = 160,
             text = "Turn in Vulture's Vigor to Bloodmage Lynnore.",
             route = {
                 { y = 0.143, mapID = 1419, label = "Bloodmage Lynnore", offMapText = "Travel to Bloodmage Lynnore in Blasted Lands.", x = 0.5064 },
@@ -393,7 +377,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "For Snickerfang Jowls: Bring three Snickerfang Jowls, two Blasted Boar Lungs, and one Scorpok Pincer to Bloodmage Drazial.",
             id = "objective-2581-quest-work",
             kind = "objective",
@@ -415,7 +398,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2581-snickerfang-jowls" },
         },
         {
-            priority = 180,
             text = "Turn in Snickerfang Jowls to Bloodmage Drazial.",
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
@@ -440,7 +422,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             text = "For A Boar's Vitality: Bring three Blasted Boar Lungs, two Scorpok Pincers, and one Basilisk Brain to Bloodmage Drazial.",
             id = "objective-2583-quest-work",
             kind = "objective",
@@ -462,7 +443,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2583-a-boar-s-vitality" },
         },
         {
-            priority = 200,
             text = "Turn in A Boar's Vitality to Bloodmage Drazial.",
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
@@ -487,7 +467,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "For The Decisive Striker: Bring three Scorpok Pincers, two Vulture Gizzards, and one Blasted Boar Lung to Bloodmage Drazial.",
             id = "objective-2585-quest-work",
             kind = "objective",
@@ -509,7 +488,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2585-the-decisive-striker" },
         },
         {
-            priority = 220,
             text = "Turn in The Decisive Striker to Bloodmage Drazial.",
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },

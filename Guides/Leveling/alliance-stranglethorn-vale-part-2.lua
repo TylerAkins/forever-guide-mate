@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-stranglethorn-vale-part-2",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1115,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -61,7 +59,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.7712, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
             },
@@ -105,10 +102,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 601,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
             },
@@ -154,10 +149,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 577,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
             },
@@ -188,7 +181,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.5976, mapID = 1453, label = "Lesser Bloodstone Ore", offMapText = "Travel to Lesser Bloodstone Ore.", x = 0.5362 },
             },
@@ -221,7 +213,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -255,7 +246,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Turn in Favor for Krazek to Krazek.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
@@ -289,7 +279,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -323,7 +312,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.0356, mapID = 1434, label = "Brother Nimetz", offMapText = "Travel to Brother Nimetz in Stranglethorn Vale.", x = 0.3783 },
             },
@@ -357,7 +345,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             route = {
                 { y = 0.0342, mapID = 1434, label = "Private Thorsen", offMapText = "Travel to Private Thorsen in Stranglethorn Vale.", x = 0.3798 },
             },
@@ -385,7 +372,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.0333, mapID = 1434, label = "Sergeant Yohwa", offMapText = "Travel to Sergeant Yohwa in Stranglethorn Vale.", x = 0.3802 },
             },
@@ -419,7 +405,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Turn in Return to Corporal Kaleb to Corporal Kaleb.",
             route = {
                 { y = 0.033, mapID = 1434, label = "Corporal Kaleb", offMapText = "Travel to Corporal Kaleb in Stranglethorn Vale.", x = 0.3774 },
@@ -453,7 +438,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -484,7 +468,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 170,
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3562 },
             },
@@ -515,7 +498,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
             },
@@ -566,10 +548,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1714,
-            priority = 190,
         },
         {
-            priority = 200,
             route = {
                 { y = 0.668, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.804, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
             },
@@ -591,7 +571,6 @@ ns:RegisterGuide({
             classAction = "accept-1714-essence-of-the-exile",
         },
         {
-            priority = 210,
             dependsOn = { "woven-class-warrior-accept-1714-essence-of-the-exile" },
             id = "woven-class-warrior-objective-1714-essence-of-the-exile",
             conditions = {
@@ -610,7 +589,6 @@ ns:RegisterGuide({
             classAction = "objective-1714-essence-of-the-exile",
         },
         {
-            priority = 220,
             route = {
                 { y = 0.667, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.793, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
             },
@@ -654,7 +632,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1712,
-            priority = 230,
         },
         {
             id = "objective-1712-1-liferoot",
@@ -678,7 +655,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.44, y = 0.11800000000000001, label = "Liferoot", offMapText = "Travel to Liferoot." },
             },
             sourceStep = 26,
-            priority = 240,
             requiredQuests = {
                 {
                     mode = "any",
@@ -691,7 +667,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             route = {
                 { mapID = 1434, x = 0.4961, y = 0.0757, label = "The Hidden Key", offMapText = "Travel to The Hidden Key." },
             },
@@ -725,7 +700,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             route = {
                 { mapID = 1434, x = 0.322, y = 0.278, label = "The Spy Revealed!", offMapText = "Travel to The Spy Revealed!." },
             },
@@ -780,7 +754,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.4648, y = 0.0708, label = "Kurzen Headshrinker", offMapText = "Travel to Kurzen Headshrinker." },
             },
             sourceStep = 29,
-            priority = 270,
             requiredQuests = {
                 {
                     mode = "all",
@@ -814,7 +787,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.4648, y = 0.0708, label = "Kurzen Commando", offMapText = "Travel to Kurzen Commando." },
             },
             sourceStep = 30,
-            priority = 280,
             requiredQuests = {
                 {
                     mode = "all",
@@ -827,7 +799,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-574-special-forces" },
         },
         {
-            priority = 290,
             text = "Kill 10 Shadowmaw Panther.",
             route = {
                 { mapID = 1434, x = 0.486, y = 0.222, label = "Shadowmaw Panther", offMapText = "Travel to Shadowmaw Panther." },
@@ -858,7 +829,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             text = "Collect 5 Snapjaw Crocolisk Skin.",
             route = {
                 { y = 0.25, mapID = 1434, label = "Snapjaw Crocolisk", offMapText = "Travel to Snapjaw Crocolisk.", x = 0.404 },
@@ -907,7 +877,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.37200000000000005, y = 0.23600000000000002, label = "Lashtail Raptor", offMapText = "Travel to Lashtail Raptor." },
             },
             sourceStep = 34,
-            priority = 310,
             requiredQuests = {
                 {
                     mode = "any",
@@ -920,7 +889,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-195-raptor-mastery" },
         },
         {
-            priority = 320,
             text = "Collect 1 Paw of Sin'Dall.",
             route = {
                 { y = 0.1739, mapID = 1434, label = "Sin'Dall", offMapText = "Travel to Sin'Dall.", x = 0.3221 },
@@ -972,7 +940,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.2948, y = 0.19149999999999998, label = "The First Troll Legend", offMapText = "Travel to The First Troll Legend." },
             },
             sourceStep = 36,
-            priority = 330,
             requiredQuests = {
                 {
                     mode = "all",
@@ -1006,7 +973,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.2475, y = 0.2284, label = "The Second Troll Legend", offMapText = "Travel to The Second Troll Legend." },
             },
             sourceStep = 37,
-            priority = 340,
             requiredQuests = {
                 {
                     mode = "all",
@@ -1019,7 +985,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-207-kurzen-s-mystery" },
         },
         {
-            priority = 350,
             text = "Collect 6 Water Elemental Bracers.",
             route = {
                 { y = 0.222, mapID = 1434, label = "Lesser Water Elemental", offMapText = "Travel to Lesser Water Elemental.", x = 0.214 },
@@ -1084,7 +1049,6 @@ ns:RegisterGuide({
             },
             sourceStep = 39,
             dependsOn = { "accept-207-kurzen-s-mystery" },
-            priority = 360,
         },
         {
             id = "objective-207-reviewed-3",
@@ -1118,7 +1082,6 @@ ns:RegisterGuide({
             },
             sourceStep = 40,
             dependsOn = { "accept-207-kurzen-s-mystery" },
-            priority = 370,
         },
         {
             id = "objective-189-1-bloodscalp-ear",
@@ -1139,7 +1102,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.24600000000000002, y = 0.114, label = "Bloodscalp Ear", offMapText = "Travel to Bloodscalp Ear." },
             },
             sourceStep = 41,
-            priority = 380,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1167,7 +1129,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.24600000000000002, y = 0.114, label = "Bloodscalp Tusk", offMapText = "Travel to Bloodscalp Tusk." },
             },
             sourceStep = 41,
-            priority = 390,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1180,7 +1141,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             text = "Turn in Raptor Mastery to Hemet Nesingwary.",
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
@@ -1211,7 +1171,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -1242,7 +1201,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             text = "Turn in Tiger Mastery to Ajeck Rouack.",
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3562 },
@@ -1273,7 +1231,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin.",
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
@@ -1304,7 +1261,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
             },
@@ -1335,7 +1291,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             text = "Turn in Kurzen's Mystery to Brother Nimetz.",
             route = {
                 { y = 0.0356, mapID = 1434, label = "Brother Nimetz", offMapText = "Travel to Brother Nimetz in Stranglethorn Vale.", x = 0.3783 },
@@ -1375,7 +1330,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { y = 0.0356, mapID = 1434, label = "Brother Nimetz", offMapText = "Travel to Brother Nimetz in Stranglethorn Vale.", x = 0.3783 },
             },
@@ -1409,7 +1363,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Turn in Special Forces to Lieutenant Doren.",
             route = {
                 { y = 0.0301, mapID = 1434, label = "Lieutenant Doren", offMapText = "Travel to Lieutenant Doren in Stranglethorn Vale.", x = 0.3804 },
@@ -1443,7 +1396,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             text = "Turn in The Spy Revealed! to Lieutenant Doren.",
             route = {
                 { y = 0.0301, mapID = 1434, label = "Lieutenant Doren", offMapText = "Travel to Lieutenant Doren in Stranglethorn Vale.", x = 0.3804 },
@@ -1477,7 +1429,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             route = {
                 { y = 0.0301, mapID = 1434, label = "Lieutenant Doren", offMapText = "Travel to Lieutenant Doren in Stranglethorn Vale.", x = 0.3804 },
             },
@@ -1511,7 +1462,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             text = "Turn in Patrol Schedules to Corporal Sethman.",
             route = {
                 { y = 0.0339, mapID = 1434, label = "Corporal Sethman", offMapText = "Travel to Corporal Sethman in Stranglethorn Vale.", x = 0.3766 },
@@ -1545,7 +1495,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             route = {
                 { y = 0.0339, mapID = 1434, label = "Corporal Sethman", offMapText = "Travel to Corporal Sethman in Stranglethorn Vale.", x = 0.3766 },
             },
@@ -1579,7 +1528,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             text = "Turn in Report to Doren to Lieutenant Doren.",
             route = {
                 { y = 0.0301, mapID = 1434, label = "Lieutenant Doren", offMapText = "Travel to Lieutenant Doren in Stranglethorn Vale.", x = 0.3804 },
@@ -1613,7 +1561,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -1644,7 +1591,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "Turn in Bloodscalp Ears to Kebok.",
             route = {
                 { y = 0.7712, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
@@ -1669,7 +1615,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Turn in Water Elementals to Baron Revilgaz.",
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
@@ -1703,7 +1648,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
             },
@@ -1737,7 +1681,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 570,
             text = "Turn in Some Assembly Required to Drizzlik.",
             route = {
                 { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },

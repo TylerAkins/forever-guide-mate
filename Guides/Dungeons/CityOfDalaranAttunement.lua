@@ -50,10 +50,11 @@ local function TarrenMill(label)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-city-of-dalaran-attunement",
     title = "City of Dalaran Attunement",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 30 } },
@@ -64,7 +65,6 @@ ns:RegisterGuide({
         {
             id = "accept-96988-source-of-power",
             kind = "accept",
-            priority = 5,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Accept Source of Power from Doctor Martin Felben in the Apothecarium in Undercity before heading to Tarren Mill. Its objectives are inside the dungeon.",
             complete = QuestState(96988, "activeOrCompleted"),
@@ -73,7 +73,6 @@ ns:RegisterGuide({
         {
             id = "accept-544-prison-break-in",
             kind = "accept",
-            priority = 10,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Accept Prison Break In from Magus Wordeen Voidglare in Tarren Mill.",
             taxiDestination = "Tarren Mill",
@@ -83,7 +82,6 @@ ns:RegisterGuide({
         {
             id = "accept-93680-key-to-the-city",
             kind = "accept",
-            priority = 11,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Accept Key to the City from Magus Wordeen Voidglare in Tarren Mill.",
             taxiDestination = "Tarren Mill",
@@ -93,7 +91,6 @@ ns:RegisterGuide({
         {
             id = "accept-96986-the-grave-knight",
             kind = "accept",
-            priority = 12,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Accept The Grave Knight from Melisara in Tarren Mill before leaving for Lordamere Internment Camp. Its objectives are inside the dungeon.",
             complete = QuestState(96986, "activeOrCompleted"),
@@ -102,7 +99,6 @@ ns:RegisterGuide({
         {
             id = "objective-544-prison-break-in",
             kind = "objective",
-            priority = 20,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Recover the four Bloodstone artifacts from the Forsaken traitors in Lordamere Internment Camp.",
             dependsOn = { "accept-544-prison-break-in" },
@@ -115,7 +111,6 @@ ns:RegisterGuide({
         {
             id = "objective-93680-grimy-key",
             kind = "objective",
-            priority = 21,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Loot the Grimy Key in Lordamere Internment Camp. The guide follows the quest log pin.",
             dependsOn = { "accept-93680-key-to-the-city" },
@@ -129,7 +124,6 @@ ns:RegisterGuide({
         {
             id = "turnin-544-prison-break-in",
             kind = "turnin",
-            priority = 30,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Turn in Prison Break In to Magus Wordeen Voidglare.",
             dependsOn = { "objective-544-prison-break-in" },
@@ -139,7 +133,6 @@ ns:RegisterGuide({
         {
             id = "turnin-93680-key-to-the-city",
             kind = "turnin",
-            priority = 31,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Turn in Key to the City to Magus Wordeen Voidglare.",
             dependsOn = { "objective-93680-grimy-key" },
@@ -148,8 +141,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-545-dalaran-patrols",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 544 } } },
             kind = "accept",
-            priority = 40,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Accept Dalaran Patrols from Magus Wordeen Voidglare in Tarren Mill.",
             dependsOn = { "turnin-544-prison-break-in" },
@@ -158,8 +151,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-545-dalaran-patrols",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 544 } } },
             kind = "objective",
-            priority = 50,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Kill 6 Dalaran Summoners and 8 Elemental Slaves outside Dalaran.",
             dependsOn = { "accept-545-dalaran-patrols" },
@@ -171,8 +164,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-545-dalaran-patrols",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 544 } } },
             kind = "turnin",
-            priority = 60,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Turn in Dalaran Patrols to Magus Wordeen Voidglare.",
             dependsOn = { "objective-545-dalaran-patrols" },
@@ -181,8 +174,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-92434-blood-in-the-streets",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 545 } }, { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 93680 } } },
             kind = "accept",
-            priority = 70,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Accept Blood in the Streets from Magus Wordeen Voidglare in Tarren Mill.",
             dependsOn = {
@@ -194,8 +187,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-92434-blood-in-the-streets",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 545 } }, { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 93680 } } },
             kind = "objective",
-            priority = 80,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Find a way into Dalaran along Lordamere Lake and meet Image of Archmage Modera.",
             dependsOn = { "accept-92434-blood-in-the-streets" },
@@ -207,8 +200,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-92434-blood-in-the-streets",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 545 } }, { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 93680 } } },
             kind = "turnin",
-            priority = 90,
             conditions = { all = { HORDE, { level = { min = 30 } } } },
             text = "Turn in Blood in the Streets to Image of Archmage Modera.",
             dependsOn = { "objective-92434-blood-in-the-streets" },
@@ -220,8 +213,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-96984-heart-of-disruption",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 92434 } } },
             kind = "accept",
-            priority = 100,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Accept Heart of Disruption from Image of Archmage Modera. Accepting this quest grants the Dalaran Sewer Key.",
             dependsOn = { "turnin-92434-blood-in-the-streets" },
@@ -234,7 +227,6 @@ ns:RegisterGuide({
         {
             id = "confirm-dalaran-sewer-key",
             kind = "confirm",
-            priority = 110,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "You now have the Dalaran Sewer Key. Enter the City of Dalaran dungeon through the sewer entrance. " ..
                 "Alliance characters get the key from Image of Archmage Modera without this chain. " ..

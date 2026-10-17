@@ -59,7 +59,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-silverpine-forest",
     title = "Explore Silverpine Forest",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

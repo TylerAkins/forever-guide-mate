@@ -31,10 +31,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-scarlet-monastery-library",
     title = "Scarlet Monastery (Library)",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 28 } },
@@ -45,7 +46,6 @@ ns:RegisterGuide({
         {
             id = "accept-6141-brother-anton",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 34 } } } },
             text = "Accept Brother Anton from Brother Crowley.",
             complete = QuestState(6141, "activeOrCompleted"),
@@ -56,7 +56,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6141-brother-anton",
             kind = "turnin",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 34 } } } },
             text = "Turn in Brother Anton to Brother Anton.",
             dependsOn = { "accept-6141-brother-anton" },
@@ -67,8 +66,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-261-down-the-scarlet-path",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6141 } } },
             kind = "accept",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept Down the Scarlet Path from Brother Anton.",
             dependsOn = { "turnin-6141-brother-anton" },
@@ -79,8 +78,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-261-1-undead-ravager",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6141 } } },
             kind = "objective",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Kill 30 Undead Ravager.",
             dependsOn = { "accept-261-down-the-scarlet-path" },
@@ -91,8 +90,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-261-down-the-scarlet-path",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6141 } } },
             kind = "turnin",
-            priority = 15,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in Down the Scarlet Path to Brother Anton.",
             dependsOn = { "objective-261-1-undead-ravager" },
@@ -103,8 +102,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1052-down-the-scarlet-path",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 261 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 261 } } },
             kind = "accept",
-            priority = 16,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept Down the Scarlet Path from Brother Anton.",
             dependsOn = { "turnin-261-down-the-scarlet-path" },
@@ -115,8 +114,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1052-down-the-scarlet-path",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 261 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 261 } } },
             kind = "turnin",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in Down the Scarlet Path to Raleigh the Devout.",
             dependsOn = { "accept-1052-down-the-scarlet-path" },
@@ -127,8 +126,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1053-in-the-name-of-the-light",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1052 } } },
             kind = "accept",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept In the Name of the Light from Raleigh the Devout.",
             dependsOn = { "turnin-1052-down-the-scarlet-path" },
@@ -140,7 +139,6 @@ ns:RegisterGuide({
         {
             id = "accept-1050-mythology-of-the-titans",
             kind = "accept",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept Mythology of the Titans from Librarian Mae Paledust.",
             complete = QuestState(1050, "activeOrCompleted"),
@@ -151,7 +149,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 20,
             conditions = { level = { min = 34 } },
             text = "Enter Scarlet Monastery - Library with your group.",
             dependsOn = { "accept-6141-brother-anton", "accept-261-down-the-scarlet-path", "accept-1052-down-the-scarlet-path", "accept-1053-in-the-name-of-the-light", "accept-1050-mythology-of-the-titans" },
@@ -160,8 +157,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1053-4-houndmaster-loksey",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1052 } } },
             kind = "objective",
-            priority = 23,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Kill Houndmaster Loksey in the Library wing and loot proof for In the Name of the Light.",
             dependsOn = { "accept-1053-in-the-name-of-the-light" },
@@ -171,7 +168,6 @@ ns:RegisterGuide({
         {
             id = "objective-1050-1-mythology-of-the-titans",
             kind = "objective",
-            priority = 25,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Loot Mythology of the Titans from a bookshelf in the Scarlet Monastery Library.",
             dependsOn = { "accept-1050-mythology-of-the-titans" },
@@ -180,8 +176,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1053-in-the-name-of-the-light",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1052 } } },
             kind = "turnin",
-            priority = 28,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in In the Name of the Light to Raleigh the Devout.",
             dependsOn = { "objective-1053-4-houndmaster-loksey" },
@@ -193,7 +189,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1050-mythology-of-the-titans",
             kind = "turnin",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in Mythology of the Titans to Librarian Mae Paledust.",
             dependsOn = { "objective-1050-1-mythology-of-the-titans" },
@@ -205,7 +200,6 @@ ns:RegisterGuide({
         {
             id = "accept-1049-compendium-of-the-fallen",
             kind = "accept",
-            priority = 30,
             conditions = { all = { { faction = "Horde" }, { race = { 2, 6, 8 } }, { level = { min = 39 } } } },
             text = "Accept Compendium of the Fallen from Sage Truthseeker.",
             complete = QuestState(1049, "activeOrCompleted"),
@@ -216,7 +210,6 @@ ns:RegisterGuide({
         {
             id = "accept-1149-test-of-faith",
             kind = "accept",
-            priority = 31,
             conditions = { all = { { faction = "Horde" }, { level = { min = 28 } } } },
             text = "Accept Test of Faith from Dorn Plainstalker.",
             complete = QuestState(1149, "activeOrCompleted"),
@@ -227,7 +220,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1149-test-of-faith",
             kind = "turnin",
-            priority = 32,
             conditions = { all = { { faction = "Horde" }, { level = { min = 28 } } } },
             text = "Turn in Test of Faith to Dorn Plainstalker.",
             dependsOn = { "accept-1149-test-of-faith" },
@@ -238,8 +230,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1150-test-of-endurance",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1149 } } },
             kind = "accept",
-            priority = 33,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Accept Test of Endurance from Dorn Plainstalker.",
             dependsOn = { "turnin-1149-test-of-faith" },
@@ -250,8 +242,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1150-1-grenka-s-claw",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1149 } } },
             kind = "objective",
-            priority = 37,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Kill Grenka Bloodscreech in Thousand Needles and loot Grenka's Claw.",
             dependsOn = { "accept-1150-test-of-endurance" },
@@ -262,8 +254,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1150-test-of-endurance",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1149 } } },
             kind = "turnin",
-            priority = 38,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Turn in Test of Endurance to Dorn Plainstalker.",
             dependsOn = { "objective-1150-1-grenka-s-claw" },
@@ -274,8 +266,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1151-test-of-strength",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1150 } } },
             kind = "accept",
-            priority = 39,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Accept Test of Strength from Dorn Plainstalker.",
             dependsOn = { "turnin-1150-test-of-endurance" },
@@ -286,8 +278,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1151-1-fragments-of-rok-alim",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1150 } } },
             kind = "objective",
-            priority = 41,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Collect Fragments of Rok'Alim.",
             dependsOn = { "accept-1151-test-of-strength" },
@@ -296,8 +288,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1151-test-of-strength",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1150 } } },
             kind = "turnin",
-            priority = 42,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Turn in Test of Strength to Dorn Plainstalker.",
             dependsOn = { "objective-1151-1-fragments-of-rok-alim" },
@@ -308,8 +300,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1152-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1151 } } },
             kind = "accept",
-            priority = 43,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept Test of Lore from Dorn Plainstalker.",
             dependsOn = { "turnin-1151-test-of-strength" },
@@ -320,8 +312,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1152-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1151 } } },
             kind = "turnin",
-            priority = 44,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Test of Lore to Braug Dimspirit.",
             dependsOn = { "accept-1152-test-of-lore" },
@@ -332,8 +324,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1154-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1152 } } },
             kind = "accept",
-            priority = 45,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept Test of Lore from Braug Dimspirit.",
             dependsOn = { "turnin-1152-test-of-lore" },
@@ -344,8 +336,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1154-1-legacy-of-the-aspects",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1152 } } },
             kind = "objective",
-            priority = 47,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Loot Legacy of the Aspects from the tome in the Temple of Zul in Ashenvale.",
             dependsOn = { "accept-1154-test-of-lore" },
@@ -356,8 +348,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1154-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1152 } } },
             kind = "turnin",
-            priority = 48,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Test of Lore to Braug Dimspirit.",
             dependsOn = { "objective-1154-1-legacy-of-the-aspects" },
@@ -368,8 +360,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6627-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1154 } } },
             kind = "accept",
-            priority = 49,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept Test of Lore from Braug Dimspirit.",
             dependsOn = { "turnin-1154-test-of-lore" },
@@ -380,8 +372,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6627-1-answer-braug-dimspirit-s",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1154 } } },
             kind = "gossip",
-            priority = 50,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Talk to Braug Dimspirit. 'Neltharion is my answer.' Answer Braug Dimspirit's Question Correctly.",
             dependsOn = { "accept-6627-test-of-lore" },
@@ -392,8 +384,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6627-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1154 } } },
             kind = "turnin",
-            priority = 51,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Test of Lore to Braug Dimspirit.",
             dependsOn = { "objective-6627-1-answer-braug-dimspirit-s" },
@@ -404,8 +396,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1159-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6627 } } },
             kind = "accept",
-            priority = 52,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept Test of Lore from Braug Dimspirit.",
             dependsOn = { "turnin-6627-test-of-lore" },
@@ -416,8 +408,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1159-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6627 } } },
             kind = "turnin",
-            priority = 53,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Test of Lore to Parqual Fintallas.",
             dependsOn = { "accept-1159-test-of-lore" },
@@ -428,8 +420,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1160-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1159 } } },
             kind = "accept",
-            priority = 54,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept Test of Lore from Parqual Fintallas.",
             dependsOn = { "turnin-1159-test-of-lore" },
@@ -441,7 +433,6 @@ ns:RegisterGuide({
         {
             id = "accept-1048-into-the-scarlet-monastery",
             kind = "accept",
-            priority = 55,
             conditions = { all = { { faction = "Horde" }, { level = { min = 37 } } } },
             text = "Accept Into The Scarlet Monastery from Varimathras.",
             complete = QuestState(1048, "activeOrCompleted"),
@@ -452,7 +443,6 @@ ns:RegisterGuide({
         {
             id = "objective-1048-4-houndmaster-loksey",
             kind = "objective",
-            priority = 56,
             conditions = { all = { { faction = "Horde" }, { level = { min = 37 } } } },
             text = "Kill Houndmaster Loksey in the Library wing for Into the Scarlet Monastery.",
             dependsOn = { "accept-1048-into-the-scarlet-monastery" },
@@ -461,8 +451,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1160-1-beginnings-of-the-undead",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1159 } } },
             kind = "objective",
-            priority = 58,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Loot Beginnings of the Undead Threat from a bookshelf in the Scarlet Monastery Library.",
             dependsOn = { "accept-1160-test-of-lore" },
@@ -472,7 +462,6 @@ ns:RegisterGuide({
         {
             id = "objective-1049-1-compendium-of-the-fallen",
             kind = "objective",
-            priority = 60,
             conditions = { all = { { faction = "Horde" }, { race = { 2, 6, 8 } }, { level = { min = 39 } } } },
             text = "Loot the Compendium of the Fallen from a bookshelf in the Scarlet Monastery Library.",
             dependsOn = { "accept-1049-compendium-of-the-fallen" },
@@ -481,8 +470,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1160-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1159 } } },
             kind = "turnin",
-            priority = 62,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Test of Lore to Parqual Fintallas.",
             dependsOn = { "objective-1160-1-beginnings-of-the-undead" },
@@ -493,8 +482,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6628-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1160 } } },
             kind = "accept",
-            priority = 63,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept Test of Lore from Parqual Fintallas.",
             dependsOn = { "turnin-1160-test-of-lore" },
@@ -505,8 +494,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6628-1-answer-parqual-fintallas",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1160 } } },
             kind = "objective",
-            priority = 64,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Answer Parqual Fintallas' Question Correctly.",
             dependsOn = { "accept-6628-test-of-lore" },
@@ -517,8 +506,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6628-test-of-lore",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1160 } } },
             kind = "turnin",
-            priority = 65,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Test of Lore to Parqual Fintallas.",
             dependsOn = { "objective-6628-1-answer-parqual-fintallas" },
@@ -529,8 +518,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1394-final-passage",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6628 } } },
             kind = "accept",
-            priority = 66,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept Final Passage from Parqual Fintallas.",
             dependsOn = { "turnin-6628-test-of-lore" },
@@ -542,7 +531,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1048-into-the-scarlet-monastery",
             kind = "turnin",
-            priority = 67,
             conditions = { all = { { faction = "Horde" }, { level = { min = 37 } } } },
             text = "Turn in Into The Scarlet Monastery to Varimathras.",
             dependsOn = { "objective-1048-4-houndmaster-loksey" },
@@ -554,7 +542,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1049-compendium-of-the-fallen",
             kind = "turnin",
-            priority = 68,
             conditions = { all = { { faction = "Horde" }, { race = { 2, 6, 8 } }, { level = { min = 39 } } } },
             text = "Turn in Compendium of the Fallen to Sage Truthseeker.",
             dependsOn = { "objective-1049-1-compendium-of-the-fallen" },
@@ -565,8 +552,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1394-final-passage",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6628 } } },
             kind = "turnin",
-            priority = 69,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Final Passage to Dorn Plainstalker.",
             dependsOn = { "accept-1394-final-passage" },

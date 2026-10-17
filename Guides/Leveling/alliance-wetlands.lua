@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Wetlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-wetlands",
@@ -34,7 +34,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6681,
-            priority = 10,
         },
         {
             id = "woven-class-rogue-note-6681-elegant-letter",
@@ -51,7 +50,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 20,
             classAction = "note-6681-elegant-letter",
         },
         {
@@ -67,7 +65,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 30,
             classAction = "loot-starter-before-accept-6681-authored-class-prerequisite",
         },
         {
@@ -85,7 +82,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 40,
             classAction = "accept-6681-authored-class-prerequisite",
         },
         {
@@ -103,7 +99,6 @@ ns:RegisterGuide({
             },
             useClientPin = true,
             dependsOn = { "woven-class-rogue-accept-6681-authored-class-prerequisite" },
-            priority = 50,
             classAction = "objective-6681-authored-class-prerequisite",
         },
         {
@@ -127,7 +122,6 @@ ns:RegisterGuide({
                 "woven-class-rogue-accept-6681-authored-class-prerequisite",
                 "woven-class-rogue-objective-6681-authored-class-prerequisite",
             },
-            priority = 60,
             classAction = "turnin-6681-authored-class-prerequisite",
         },
         {
@@ -151,10 +145,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6701,
-            priority = 70,
         },
         {
-            priority = 80,
             route = {
                 {
                     y = 0.2,
@@ -186,7 +178,6 @@ ns:RegisterGuide({
             classAction = "accept-6701-syndicate-emblems",
         },
         {
-            priority = 90,
             route = {
                 {
                     y = 0.414,
@@ -246,7 +237,6 @@ ns:RegisterGuide({
             classAction = "objective-6701-syndicate-emblems",
         },
         {
-            priority = 100,
             route = {
                 {
                     y = 0.2,
@@ -297,10 +287,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 484,
-            priority = 110,
         },
         {
-            priority = 120,
             route = {
                 { y = 0.5571, mapID = 1437, label = "James Halloran", offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851 },
             },
@@ -347,10 +335,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 279,
-            priority = 130,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.5853, mapID = 1437, label = "Karl Boran", offMapText = "Travel to Karl Boran in Wetlands.", x = 0.0831 },
             },
@@ -378,7 +364,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             route = {
                 { y = 0.0562, mapID = 1455, label = "Gerrig Bonegrip", offMapText = "Travel to Gerrig Bonegrip in Ironforge.", x = 0.5083 },
             },
@@ -425,10 +410,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 288,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.5967, mapID = 1437, label = "First Mate Fitzsimmons", offMapText = "Travel to First Mate Fitzsimmons in Wetlands.", x = 0.1089 },
             },
@@ -456,7 +439,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.5967, mapID = 1437, label = "First Mate Fitzsimmons", offMapText = "Travel to First Mate Fitzsimmons in Wetlands.", x = 0.1089 },
             },
@@ -484,7 +466,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.6043, mapID = 1437, label = "Archaeologist Flagongut", offMapText = "Travel to Archaeologist Flagongut in Wetlands.", x = 0.1084 },
             },
@@ -518,7 +499,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             route = {
                 { y = 0.6043, mapID = 1437, label = "Archaeologist Flagongut", offMapText = "Travel to Archaeologist Flagongut in Wetlands.", x = 0.1084 },
             },
@@ -552,7 +532,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             text = "For The Third Fleet: Buy First Mate Fitzsimmons a Flagon of Mead.",
             id = "objective-288-quest-work",
             kind = "objective",
@@ -577,7 +556,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-288-the-third-fleet" },
         },
         {
-            priority = 220,
             text = "Turn in The Third Fleet to First Mate Fitzsimmons.",
             route = {
                 { y = 0.5967, mapID = 1437, label = "First Mate Fitzsimmons", offMapText = "Travel to First Mate Fitzsimmons in Wetlands.", x = 0.1089 },
@@ -605,7 +583,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             route = {
                 { y = 0.5799, mapID = 1437, label = "Sida", offMapText = "Travel to Sida in Wetlands.", x = 0.118 },
             },
@@ -633,7 +610,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             route = {
                 { y = 0.5214, mapID = 1437, label = "Tarrel Rockweaver", offMapText = "Travel to Tarrel Rockweaver in Wetlands.", x = 0.115 },
             },
@@ -661,7 +637,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Collect 1 Gobbler's Head.",
             route = {
                 { y = 0.4038, mapID = 1437, label = "Gobbler", offMapText = "Travel to Gobbler.", x = 0.1799 },
@@ -714,10 +689,8 @@ ns:RegisterGuide({
             },
             sourceStep = 19,
             dependsOn = { "accept-279-claws-from-the-deep" },
-            priority = 260,
         },
         {
-            priority = 270,
             route = {
                 { mapID = 1437, x = 0.3818, y = 0.5089, label = "Ormer Ironbraid", offMapText = "Travel to Ormer Ironbraid in Wetlands." },
             },
@@ -745,7 +718,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 280,
             text = "Turn in In Search of The Excavation Team to Merrin Rockweaver.",
             route = {
                 { y = 0.5234, mapID = 1437, label = "Merrin Rockweaver", offMapText = "Travel to Merrin Rockweaver in Wetlands.", x = 0.3891 },
@@ -773,7 +745,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.5234, mapID = 1437, label = "Merrin Rockweaver", offMapText = "Travel to Merrin Rockweaver in Wetlands.", x = 0.3891 },
             },
@@ -828,7 +799,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.3886, y = 0.5221, label = "Flagongut's Fossil", offMapText = "Travel to Flagongut's Fossil." },
             },
             sourceStep = 22,
-            priority = 300,
             requiredQuests = {
                 {
                     mode = "any",
@@ -841,7 +811,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-943-the-absent-minded-prospector" },
         },
         {
-            priority = 310,
             text = "Kill 10 Mottled Raptor.",
             route = {
                 { mapID = 1437, x = 0.292, y = 0.434, label = "Mottled Raptor", offMapText = "Travel to Mottled Raptor." },
@@ -869,7 +838,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Kill 10 Mottled Screecher.",
             route = {
                 { mapID = 1437, x = 0.292, y = 0.434, label = "Mottled Screecher", offMapText = "Travel to Mottled Screecher." },
@@ -918,7 +886,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.292, y = 0.434, label = "Stone of Relu", offMapText = "Travel to Stone of Relu." },
             },
             sourceStep = 24,
-            priority = 330,
             requiredQuests = {
                 {
                     mode = "any",
@@ -931,7 +898,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-943-the-absent-minded-prospector" },
         },
         {
-            priority = 340,
             text = "Turn in Ormer's Revenge to Ormer Ironbraid.",
             route = {
                 { mapID = 1437, x = 0.3818, y = 0.5089, label = "Ormer Ironbraid", offMapText = "Travel to Ormer Ironbraid in Wetlands." },
@@ -959,7 +925,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             route = {
                 { mapID = 1437, x = 0.4991, y = 0.3937, label = "Einar Stonegrip", offMapText = "Travel to Einar Stonegrip in Wetlands." },
             },
@@ -987,7 +952,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             text = "Turn in The Greenwarden to Rethiel the Greenwarden.",
             route = {
                 { y = 0.4043, mapID = 1437, label = "Rethiel the Greenwarden", offMapText = "Travel to Rethiel the Greenwarden in Wetlands.", x = 0.5634 },
@@ -1015,7 +979,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             route = {
                 { y = 0.4043, mapID = 1437, label = "Rethiel the Greenwarden", offMapText = "Travel to Rethiel the Greenwarden in Wetlands.", x = 0.5634 },
             },
@@ -1043,7 +1006,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Kill 10 Mosshide Mongrel.",
             route = {
                 { y = 0.582, mapID = 1437, label = "Mosshide Mongrel", offMapText = "Travel to Mosshide Mongrel.", x = 0.604 },
@@ -1092,7 +1054,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.636, y = 0.622, label = "Mosshide Gnoll", offMapText = "Travel to Mosshide Gnoll." },
             },
             sourceStep = 29,
-            priority = 390,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1120,14 +1081,12 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.618, y = 0.564, label = "Young Crocolisk Skin", offMapText = "Travel to Young Crocolisk Skin." },
             },
             sourceStep = 30,
-            priority = 400,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-484-young-crocolisk-skins" },
         },
         {
-            priority = 410,
             text = "Turn in Tramping Paws to Rethiel the Greenwarden.",
             route = {
                 { y = 0.4043, mapID = 1437, label = "Rethiel the Greenwarden", offMapText = "Travel to Rethiel the Greenwarden in Wetlands.", x = 0.5634 },
@@ -1155,7 +1114,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.4043, mapID = 1437, label = "Rethiel the Greenwarden", offMapText = "Travel to Rethiel the Greenwarden in Wetlands.", x = 0.5634 },
             },
@@ -1189,7 +1147,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Collect 1 Sida's Bag.",
             route = {
                 { y = 0.286, mapID = 1437, label = "Black Ooze", offMapText = "Travel to Black Ooze.", x = 0.48 },
@@ -1217,7 +1174,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             text = "Turn in The Absent Minded Prospector to Archaeologist Flagongut.",
             route = {
                 { y = 0.6043, mapID = 1437, label = "Archaeologist Flagongut", offMapText = "Travel to Archaeologist Flagongut in Wetlands.", x = 0.1084 },
@@ -1255,7 +1211,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Turn in Digging Through the Ooze to Sida.",
             route = {
                 { y = 0.5799, mapID = 1437, label = "Sida", offMapText = "Travel to Sida in Wetlands.", x = 0.118 },
@@ -1283,7 +1238,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             text = "Turn in In Search of The Excavation Team to Tarrel Rockweaver.",
             route = {
                 { y = 0.5214, mapID = 1437, label = "Tarrel Rockweaver", offMapText = "Travel to Tarrel Rockweaver in Wetlands.", x = 0.115 },
@@ -1317,7 +1271,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             text = "Turn in Young Crocolisk Skins to James Halloran.",
             route = {
                 { y = 0.5571, mapID = 1437, label = "James Halloran", offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851 },
@@ -1345,7 +1298,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             text = "Turn in Daily Delivery to James Halloran.",
             route = {
                 { y = 0.5571, mapID = 1437, label = "James Halloran", offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851 },
@@ -1373,7 +1325,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Turn in Claws from the Deep to Karl Boran.",
             route = {
                 { y = 0.5853, mapID = 1437, label = "Karl Boran", offMapText = "Travel to Karl Boran in Wetlands.", x = 0.0831 },
@@ -1401,7 +1352,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.7457, mapID = 1455, label = "Elixir of Minor Fortitude", offMapText = "Travel to Elixir of Minor Fortitude.", x = 0.2424 },
             },
@@ -1434,7 +1384,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             route = {
                 { y = 0.5188, mapID = 1455, label = "Lomac Gearstrip", offMapText = "Travel to Lomac Gearstrip in Ironforge.", x = 0.7209 },
             },
@@ -1468,7 +1417,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             route = {
                 { y = 0.5188, mapID = 1455, label = "Lomac Gearstrip", offMapText = "Travel to Lomac Gearstrip in Ironforge.", x = 0.7209 },
             },
@@ -1549,10 +1497,8 @@ ns:RegisterGuide({
             instructionOnly = true,
             rememberPreparation = 1073,
             dependsOn = {},
-            priority = 530,
         },
         {
-            priority = 540,
             text = "Turn in Ineptitude + Chemicals = Fun to Lomac Gearstrip.",
             route = {
                 { y = 0.5188, mapID = 1455, label = "Lomac Gearstrip", offMapText = "Travel to Lomac Gearstrip in Ironforge.", x = 0.7209 },
@@ -1608,10 +1554,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1650,
-            priority = 550,
         },
         {
-            priority = 560,
             route = {
                 { mapID = 1453, x = 0.505, y = 0.475, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1670,10 +1614,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2360,
-            priority = 570,
         },
         {
-            priority = 580,
             route = {
                 { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
@@ -1704,7 +1646,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 590,
             route = {
                 { y = 0.8038, mapID = 1453, label = "Collin Mauren", offMapText = "Travel to Collin Mauren in Stormwind City.", x = 0.4309 },
             },
@@ -1760,10 +1701,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1738,
-            priority = 600,
         },
         {
-            priority = 610,
             route = {
                 { mapID = 1440, x = 0.31489999999999996, y = 0.3145, label = "Heartswood", offMapText = "Travel to Heartswood." },
             },
@@ -1788,7 +1727,6 @@ ns:RegisterGuide({
             classAction = "objective-1738-quest-work",
         },
         {
-            priority = 620,
             route = {
                 { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1825,7 +1763,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1738-quest-work" },
         },
         {
-            priority = 630,
             route = {
                 { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1862,7 +1799,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 640,
             text = "Kill Summoned Succubus.",
             route = {
                 { y = 0.7746, mapID = 1453, label = "Heartswood Core", offMapText = "Travel to Heartswood Core.", x = 0.2511 },
@@ -1899,7 +1835,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 650,
             text = "Turn in The Binding to Gakin the Darkbinder.",
             route = {
                 { y = 0.7856, mapID = 1453, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City.", x = 0.2525 },
@@ -1955,10 +1890,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98197,
-            priority = 660,
         },
         {
-            priority = 670,
             route = {
                 { y = 0.568, mapID = 1437, label = "Valstag Ironjaw", offMapText = "Travel to Valstag Ironjaw.", x = 0.1 },
             },
@@ -1985,7 +1918,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 680,
             route = {
                 { y = 0.522, mapID = 1437, label = "Tarrel Rockweaver", offMapText = "Travel to Tarrel Rockweaver.", x = 0.1147 },
             },
@@ -2013,7 +1945,6 @@ ns:RegisterGuide({
         },
         {
             text = "Recover 6 Khaz Modan Timber and 30 Khaz Modan Iron from the water in Menethil Harbor. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 690,
             route = {
                 { y = 0.568, mapID = 1437, label = "Menethil Harbor", offMapText = "Travel to Menethil Harbor.", x = 0.1 },
             },
@@ -2039,7 +1970,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-98197-spoils-of-war" },
         },
         {
-            priority = 700,
             route = {
                 { y = 0.568, mapID = 1437, label = "Valstag Ironjaw", offMapText = "Travel to Valstag Ironjaw.", x = 0.1 },
             },

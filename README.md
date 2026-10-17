@@ -6,16 +6,22 @@ Blizzard Map Pins is the default waypoint provider. Choose optional TomTom under
 
 It does not accept quests, choose rewards, move the character, or take protected gameplay actions. A guide the character cannot use says Ineligible. Coordinates in the shipped guides have not been validated in the Forever client.
 
-Opening a leveling or Loremaster chapter midway resumes a valid saved step or returns to the earliest unfinished eligible route step. After starters, **Forever Casual Route** (Alliance or Horde) is the 1–60 spine: Casual leveling order with Forever quests woven on top, as one flat guide (no zone chapter title). Use **Skip** on Casual or dungeon guides to hard-skip a step and its dependents after a confirm; Loremaster cannot skip. **Sync** resyncs from the quest log and keeps skips; **Reset skips on this guide** in options clears them. Completed quest history comes from the client, and verified quest prerequisites are followed automatically. If a giver does not offer an expected quest and no verified prerequisite is registered, the tracker stops with a diagnostic instead of silently skipping the quest.
+Opening an authored guide midway resumes a valid saved step or returns to the earliest unfinished eligible route step. After starters, **Forever Casual Route** (Alliance or Horde) is the 1–60 spine: Casual leveling order with Forever quests woven on top, as one flat guide (no zone chapter title). Use **Skip** on Casual or dungeon guides to hard-skip a step and its dependents after a confirm; Loremaster cannot skip. **Sync** resyncs from the quest log and keeps skips; **Reset skips on this guide** in options clears them. Completed quest history comes from the client, and verified quest prerequisites are followed automatically. If a giver does not offer an expected quest and no verified prerequisite is registered, the tracker stops with a diagnostic instead of silently skipping the quest.
 
 Quest-step rules are in [docs/guide-authoring.md](docs/guide-authoring.md). Loremaster weave rules are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
+
+All guides except Miscellaneous follow their authored action order. Miscellaneous includes exploration and books. Loremaster currently shows **Coming Soon!**
+
+The leveling route is quest-only. Its reference includes grinding and level-up stops that are intentionally omitted, so matching quest order does not establish sufficient XP at every transition.
 
 ## Guide Types
 
 - Class Quests
 - Dungeon Quests
 - Leveling Quests
-- Loremaster
+- Loremaster (Coming Soon!)
+- Raid Quests
+- Miscellaneous
 
 ## Todo
 

@@ -51,10 +51,11 @@ local function Wetlands(x, y, label)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-excavation-site-wetlands",
     title = "Excavation Site: Wetlands",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 24 } },
@@ -65,7 +66,6 @@ ns:RegisterGuide({
         {
             id = "accept-469-daily-delivery",
             kind = "accept",
-            priority = 10,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Daily Delivery from Einar Stonegrip in The Green Belt. " ..
                 "James Halloran offers Highland Hides after this.",
@@ -75,7 +75,6 @@ ns:RegisterGuide({
         {
             id = "turnin-469-daily-delivery",
             kind = "turnin",
-            priority = 11,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Daily Delivery to James Halloran.",
             dependsOn = { "accept-469-daily-delivery" },
@@ -84,8 +83,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-98815-highland-hides",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 469 } } },
             kind = "accept",
-            priority = 12,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Highland Hides from James Halloran in Menethil Harbor.",
             dependsOn = { "turnin-469-daily-delivery" },
@@ -95,7 +94,6 @@ ns:RegisterGuide({
         {
             id = "accept-95772-songblade-search",
             kind = "accept",
-            priority = 20,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Songblade Search from Dorin Songblade in Lakeshire.",
             complete = QuestState(95772, "activeOrCompleted"),
@@ -107,7 +105,6 @@ ns:RegisterGuide({
         {
             id = "accept-95737-seeking-caitlin",
             kind = "accept",
-            priority = 30,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Seeking Caitlin from Llana in Ashenvale. " ..
                 "This breadcrumb leads to Caitlin Grassman. She also offers Lost in the Thicket Things on her own.",
@@ -119,7 +116,6 @@ ns:RegisterGuide({
         {
             id = "turnin-95737-seeking-caitlin",
             kind = "turnin",
-            priority = 31,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Seeking Caitlin to Caitlin Grassman.",
             dependsOn = { "accept-95737-seeking-caitlin" },
@@ -129,7 +125,6 @@ ns:RegisterGuide({
         {
             id = "accept-95647-lost-in-the-thicket-things",
             kind = "accept",
-            priority = 32,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Lost in the Thicket Things from Caitlin Grassman in Menethil Harbor.",
             complete = QuestState(95647, "activeOrCompleted"),
@@ -138,7 +133,6 @@ ns:RegisterGuide({
         {
             id = "accept-95646-horrors-in-the-highland",
             kind = "accept",
-            priority = 40,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Horrors in the Highland from Rethiel the Greenwarden.",
             complete = QuestState(95646, "activeOrCompleted"),
@@ -147,7 +141,6 @@ ns:RegisterGuide({
         {
             id = "accept-95697-changing-tastes",
             kind = "accept",
-            priority = 50,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Accept Changing Tastes from Borstan in the Drag in Orgrimmar.",
             complete = QuestState(95697, "activeOrCompleted"),
@@ -158,7 +151,6 @@ ns:RegisterGuide({
         {
             id = "accept-95663-dragonmaw-rumors",
             kind = "accept",
-            priority = 60,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Accept Dragonmaw Rumors from Zaruk in Hammerfall.",
             complete = QuestState(95663, "activeOrCompleted"),
@@ -170,7 +162,6 @@ ns:RegisterGuide({
         {
             id = "turnin-95663-dragonmaw-rumors",
             kind = "turnin",
-            priority = 61,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Turn in Dragonmaw Rumors to the Deathstalker Agent in the hills above the Dragonmaw camp.",
             dependsOn = { "accept-95663-dragonmaw-rumors" },
@@ -179,8 +170,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-95682-open-the-maw",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 95663 } } },
             kind = "accept",
-            priority = 62,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Accept Open the Maw from the Deathstalker Agent.",
             dependsOn = { "turnin-95663-dragonmaw-rumors" },
@@ -189,8 +180,8 @@ ns:RegisterGuide({
         },
         {
             id = "enter-excavation-site-wetlands",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 469 } } },
             kind = "travel",
-            priority = 70,
             conditions = {
                 all = {
                     { level = { min = 24 } },
@@ -215,8 +206,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-98815-highland-hides",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 469 } } },
             kind = "objective",
-            priority = 80,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Collect 4 Thicket Raptor Hides. They drop from Shadetooth and the Thicket raptors.",
             dependsOn = { "accept-98815-highland-hides" },
@@ -225,7 +216,6 @@ ns:RegisterGuide({
         {
             id = "turnin-95772-songblade-search",
             kind = "turnin",
-            priority = 81,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Songblade Search to Daewyn Songblade. The guide follows the quest log pin.",
             dependsOn = { "accept-95772-songblade-search" },
@@ -234,8 +224,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-95795-fallen-in-the-fen",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 95772 } } },
             kind = "accept",
-            priority = 82,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Fallen in the Fen after Songblade Search. Wowhead does not list who offers it. " ..
                 "The guide follows the quest log pin.",
@@ -246,7 +236,6 @@ ns:RegisterGuide({
         {
             id = "turnin-95647-lost-in-the-thicket-things",
             kind = "turnin",
-            priority = 83,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Lost in the Thicket Things to Ardin Grassman. The guide follows the quest log pin.",
             dependsOn = { "accept-95647-lost-in-the-thicket-things" },
@@ -255,8 +244,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-95809-heartwoven",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 95647 } } },
             kind = "accept",
-            priority = 84,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Heartwoven from Ardin Grassman. The guide follows the quest log pin.",
             dependsOn = { "turnin-95647-lost-in-the-thicket-things" },
@@ -266,7 +255,6 @@ ns:RegisterGuide({
         {
             id = "objective-95646-horrors-in-the-highland",
             kind = "objective",
-            priority = 85,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Kill the Highland Horror and collect the Horrible Rootcore.",
             dependsOn = { "accept-95646-horrors-in-the-highland" },
@@ -275,7 +263,6 @@ ns:RegisterGuide({
         {
             id = "objective-95697-changing-tastes",
             kind = "objective",
-            priority = 86,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Collect Thicket Raptor Meat. It drops from Shadetooth and the Thicket raptors.",
             dependsOn = { "accept-95697-changing-tastes" },
@@ -283,8 +270,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-95682-open-the-maw",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 95663 } } },
             kind = "objective",
-            priority = 87,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Slay the Dragonmaw Warders and Dragonmaw Saboteurs and take a Dragonmaw Dispatch from a Dragonmaw Thaumaturgist.",
             dependsOn = { "accept-95682-open-the-maw" },
@@ -293,7 +280,6 @@ ns:RegisterGuide({
         {
             id = "accept-95664-elder-knowledge",
             kind = "accept",
-            priority = 90,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Loot the Titan Relic from Relic Guardian and accept Elder Knowledge. " ..
                 "Keep the relic if you still need Earthen Echo. Turning this quest in removes it in the current beta.",
@@ -303,7 +289,6 @@ ns:RegisterGuide({
         {
             id = "accept-95810-lost-relic-carry",
             kind = "accept",
-            priority = 91,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Loot the Titan Relic from Relic Guardian and accept Lost Relic Carry.",
             dependsOn = { "enter-excavation-site-wetlands" },
@@ -311,8 +296,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-98815-highland-hides",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 469 } } },
             kind = "turnin",
-            priority = 100,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Highland Hides to James Halloran.",
             dependsOn = { "objective-98815-highland-hides" },
@@ -321,8 +306,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-95795-fallen-in-the-fen",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 95772 } } },
             kind = "turnin",
-            priority = 101,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Fallen in the Fen to Dorin Songblade.",
             dependsOn = { "accept-95795-fallen-in-the-fen" },
@@ -334,8 +319,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-95809-heartwoven",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 95647 } } },
             kind = "turnin",
-            priority = 102,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Heartwoven to Caitlin Grassman.",
             dependsOn = { "accept-95809-heartwoven" },
@@ -345,7 +330,6 @@ ns:RegisterGuide({
         {
             id = "turnin-95646-horrors-in-the-highland",
             kind = "turnin",
-            priority = 103,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Horrors in the Highland to Rethiel the Greenwarden.",
             dependsOn = { "objective-95646-horrors-in-the-highland" },
@@ -355,7 +339,6 @@ ns:RegisterGuide({
         {
             id = "turnin-95810-lost-relic-carry",
             kind = "turnin",
-            priority = 104,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Lost Relic Carry to Prospector Whelgar.",
             dependsOn = { "accept-95810-lost-relic-carry" },
@@ -364,8 +347,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-98824-prehistoric-prism",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 95810 } } },
             kind = "accept",
-            priority = 105,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Prehistoric Prism from Prospector Whelgar.",
             dependsOn = { "turnin-95810-lost-relic-carry" },
@@ -374,8 +357,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-98824-prehistoric-prism",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 95810 } } },
             kind = "turnin",
-            priority = 106,
             conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Prehistoric Prism to High Explorer Magellas.",
             dependsOn = { "accept-98824-prehistoric-prism" },
@@ -387,8 +370,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-95682-open-the-maw",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 95663 } } },
             kind = "turnin",
-            priority = 110,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Turn in Open the Maw to the Deathstalker Agent.",
             dependsOn = { "objective-95682-open-the-maw" },
@@ -398,7 +381,6 @@ ns:RegisterGuide({
         {
             id = "turnin-95697-changing-tastes",
             kind = "turnin",
-            priority = 111,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Turn in Changing Tastes to Borstan.",
             dependsOn = { "objective-95697-changing-tastes" },
@@ -410,7 +392,6 @@ ns:RegisterGuide({
         {
             id = "turnin-95664-elder-knowledge",
             kind = "turnin",
-            priority = 112,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Turn in Elder Knowledge to Bashana Runetotem on Elder Rise.",
             dependsOn = { "accept-95664-elder-knowledge" },
@@ -422,8 +403,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-98823-earthen-echo",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 95664 } } },
             kind = "accept",
-            priority = 113,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Accept Earthen Echo from Bashana Runetotem. It still requires the Titan Relic.",
             dependsOn = { "turnin-95664-elder-knowledge" },
@@ -435,8 +416,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-98823-earthen-echo",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 95664 } } },
             kind = "turnin",
-            priority = 114,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Turn in Earthen Echo to Muln Earthfury.",
             dependsOn = { "accept-98823-earthen-echo" },

@@ -30,10 +30,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-blackfathom-deeps-raid",
     title = "Blackfathom Deeps Raid",
     category = "Raid Quests",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 25 } },
@@ -44,7 +45,6 @@ ns:RegisterGuide({
         {
             id = "accept-78923-knowledge-in-the-deeps",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept Knowledge in the Deeps from Gerrig Bonegrip.",
             complete = QuestState(78923, "activeOrCompleted"),
@@ -55,7 +55,6 @@ ns:RegisterGuide({
         {
             id = "accept-78925-twilight-falls",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept Twilight Falls from Argent Guard Manados.",
             complete = QuestState(78925, "activeOrCompleted"),
@@ -66,7 +65,6 @@ ns:RegisterGuide({
         {
             id = "accept-78926-researching-the-corruption",
             kind = "accept",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept Researching the Corruption from Gershala Nightwhisper.",
             complete = QuestState(78926, "activeOrCompleted"),
@@ -77,7 +75,6 @@ ns:RegisterGuide({
         {
             id = "objective-78923-1-lorgalis-manuscript",
             kind = "objective",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Collect Lorgalis Manuscript.",
             dependsOn = { "accept-78923-knowledge-in-the-deeps" },
@@ -87,7 +84,6 @@ ns:RegisterGuide({
         {
             id = "accept-78921-blackfathom-villainy",
             kind = "accept",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept Blackfathom Villainy from Argent Guard Thaelrid.",
             complete = QuestState(78921, "activeOrCompleted"),
@@ -95,7 +91,6 @@ ns:RegisterGuide({
         {
             id = "objective-78921-1-head-of-kelris",
             kind = "objective",
-            priority = 20,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Collect Head of Kelris.",
             dependsOn = { "accept-78921-blackfathom-villainy" },
@@ -105,7 +100,6 @@ ns:RegisterGuide({
         {
             id = "accept-78916-heart-of-the-void",
             kind = "accept",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept Heart of the Void.",
             complete = QuestState(78916, "activeOrCompleted"),
@@ -113,7 +107,6 @@ ns:RegisterGuide({
         {
             id = "objective-78925-1-twilight-pendant",
             kind = "objective",
-            priority = 24,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Collect 10 Twilight Pendant.",
             dependsOn = { "accept-78925-twilight-falls" },
@@ -123,7 +116,6 @@ ns:RegisterGuide({
         {
             id = "objective-78926-1-corrupted-brain-stem",
             kind = "objective",
-            priority = 26,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Collect 8 Corrupted Brain Stem.",
             dependsOn = { "accept-78926-researching-the-corruption" },
@@ -133,7 +125,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78916-heart-of-the-void",
             kind = "turnin",
-            priority = 28,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in Heart of the Void to Dawnwatcher Selgorm.",
             dependsOn = { "accept-78916-heart-of-the-void" },
@@ -145,7 +136,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78921-blackfathom-villainy",
             kind = "turnin",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in Blackfathom Villainy to Dawnwatcher Selgorm.",
             dependsOn = { "objective-78921-1-head-of-kelris" },
@@ -157,7 +147,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78925-twilight-falls",
             kind = "turnin",
-            priority = 30,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in Twilight Falls to Argent Guard Manados.",
             dependsOn = { "objective-78925-1-twilight-pendant" },
@@ -169,7 +158,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78926-researching-the-corruption",
             kind = "turnin",
-            priority = 32,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in Researching the Corruption to Gershala Nightwhisper.",
             dependsOn = { "objective-78926-1-corrupted-brain-stem" },
@@ -181,7 +169,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78923-knowledge-in-the-deeps",
             kind = "turnin",
-            priority = 33,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in Knowledge in the Deeps to Gerrig Bonegrip.",
             dependsOn = { "objective-78923-1-lorgalis-manuscript" },
@@ -193,7 +180,6 @@ ns:RegisterGuide({
         {
             id = "accept-78927-allegiance-to-the-old-gods",
             kind = "accept",
-            priority = 34,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Accept Allegiance to the Old Gods from Je'neu Sancrea.",
             complete = QuestState(78927, "activeOrCompleted"),
@@ -204,7 +190,6 @@ ns:RegisterGuide({
         {
             id = "accept-78920-baron-aquanis",
             kind = "accept",
-            priority = 35,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Accept Baron Aquanis.",
             complete = QuestState(78920, "activeOrCompleted"),
@@ -212,7 +197,6 @@ ns:RegisterGuide({
         {
             id = "accept-78922-blackfathom-villainy",
             kind = "accept",
-            priority = 36,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Accept Blackfathom Villainy from Argent Guard Thaelrid.",
             complete = QuestState(78922, "activeOrCompleted"),
@@ -220,7 +204,6 @@ ns:RegisterGuide({
         {
             id = "objective-78927-1-lorgus-jett",
             kind = "objective",
-            priority = 37,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Kill Lorgus Jett.",
             dependsOn = { "accept-78927-allegiance-to-the-old-gods" },
@@ -230,7 +213,6 @@ ns:RegisterGuide({
         {
             id = "objective-78922-1-head-of-kelris",
             kind = "objective",
-            priority = 42,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Collect Head of Kelris.",
             dependsOn = { "accept-78922-blackfathom-villainy" },
@@ -240,7 +222,6 @@ ns:RegisterGuide({
         {
             id = "accept-78917-heart-of-the-void",
             kind = "accept",
-            priority = 43,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Accept Heart of the Void.",
             complete = QuestState(78917, "activeOrCompleted"),
@@ -248,7 +229,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78920-baron-aquanis",
             kind = "turnin",
-            priority = 44,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Turn in Baron Aquanis to Je'neu Sancrea.",
             dependsOn = { "accept-78920-baron-aquanis" },
@@ -260,7 +240,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78927-allegiance-to-the-old-gods",
             kind = "turnin",
-            priority = 45,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Turn in Allegiance to the Old Gods to Je'neu Sancrea.",
             dependsOn = { "objective-78927-1-lorgus-jett" },
@@ -272,7 +251,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78922-blackfathom-villainy",
             kind = "turnin",
-            priority = 46,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Turn in Blackfathom Villainy to Bashana Runetotem.",
             dependsOn = { "objective-78922-1-head-of-kelris" },
@@ -284,7 +262,6 @@ ns:RegisterGuide({
         {
             id = "turnin-78917-heart-of-the-void",
             kind = "turnin",
-            priority = 47,
             conditions = { all = { { faction = "Horde" }, { level = { min = 25 } } } },
             text = "Turn in Heart of the Void to Bashana Runetotem.",
             dependsOn = { "accept-78917-heart-of-the-void" },

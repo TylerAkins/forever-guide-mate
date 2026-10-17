@@ -1,5 +1,7 @@
 # Quest level review
 
+Historical pre-conversion report. See [the current audit](quest-level-audit.md) for pickup minima, conflicts, route placement, and verification limits.
+
 Reviewed October 16, 2026. This is an investigation of the existing 330 failing action checks, not an itinerary change. All authored guide arrays, priorities, and level gates remain unchanged.
 
 ## What the count means

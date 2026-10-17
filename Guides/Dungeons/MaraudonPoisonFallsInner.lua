@@ -17,10 +17,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-maraudon-poison-falls-inner",
     title = "Maraudon (Poison Falls - Inner)",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 48 } },
@@ -31,7 +32,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 11,
             conditions = { level = { min = 48 } },
             text = "Enter Maraudon - Purple with your group.",
             persistCompletion = true,

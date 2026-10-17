@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 10,
+    revision = 11,
     title = "Zephras Isle",
     category = "Leveling Quest Guides",
     id = "leveling-zephras-isle",
@@ -17,7 +17,6 @@ ns:RegisterGuide({
             route = {
                 { y = 0.234, mapID = 2521, label = "Ailee Farheart", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
-            priority = 10,
             id = "accept-coming-of-age",
             conditions = {
                 all = {
@@ -34,7 +33,6 @@ ns:RegisterGuide({
             classAction = "accept-coming-of-age",
         },
         {
-            priority = 20,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -54,7 +52,6 @@ ns:RegisterGuide({
             classAction = "turnin-coming-of-age",
         },
         {
-            priority = 30,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -87,7 +84,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Infestation Investigation from Elatrell Featherlight.",
-            priority = 40,
             route = {
                 { y = 0.248, mapID = 2521, label = "Elatrell Featherlight", offMapText = "Travel to Zephras Isle.", x = 0.434 },
             },
@@ -118,7 +114,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.256, mapID = 2521, label = "Juvenile Vuldren", offMapText = "Travel to Zephras Isle.", x = 0.432 },
             },
@@ -139,7 +134,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 8 Pesky Cirrusflies in Thendal Grove.",
-            priority = 60,
             route = {
                 { y = 0.256, mapID = 2521, label = "Pesky Cirrusfly", offMapText = "Travel to Zephras Isle.", x = 0.45 },
             },
@@ -171,7 +165,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Infestation Investigation to Elatrell Featherlight.",
-            priority = 70,
             route = {
                 { y = 0.248, mapID = 2521, label = "Elatrell Featherlight", offMapText = "Travel to Zephras Isle.", x = 0.434 },
             },
@@ -216,11 +209,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92463,
-            priority = 80,
         },
         {
             text = "Accept The Cirrusfly Queen from Elatrell Featherlight.",
-            priority = 90,
             route = {
                 { y = 0.248, mapID = 2521, label = "Elatrell Featherlight", offMapText = "Travel to Zephras Isle.", x = 0.434 },
             },
@@ -252,7 +243,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Anchors of Zephras from Halaan Hawk-Eye.",
-            priority = 100,
             route = {
                 { y = 0.24, mapID = 2521, label = "Halaan Hawk-Eye", offMapText = "Travel to Zephras Isle.", x = 0.438 },
             },
@@ -277,7 +267,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             text = "Ask Halaan Hawk-Eye to lend you his gift, then view the Anchor Pylon.",
             dependsOn = { "accept-the-anchors-of-zephras" },
             id = "gossip-the-anchors-of-zephras",
@@ -301,7 +290,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Anchors of Zephras to Halaan Hawk-Eye.",
-            priority = 120,
             route = {
                 { y = 0.24, mapID = 2521, label = "Halaan Hawk-Eye", offMapText = "Travel to Zephras Isle.", x = 0.438 },
             },
@@ -327,7 +315,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Falling With Style from Myriaal Mistwake.",
-            priority = 130,
             route = {
                 { y = 0.24, mapID = 2521, label = "Myriaal Mistwake", offMapText = "Travel to Zephras Isle.", x = 0.436 },
             },
@@ -352,7 +339,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -385,7 +371,6 @@ ns:RegisterGuide({
         },
         {
             text = "Jump from the Thendal Grove watchtower, use Walk on Air, and land near Rorian the Dayseeker.",
-            priority = 150,
             route = {
                 { y = 0.24, mapID = 2521, label = "Thendal Grove watchtower ledge", offMapText = "Travel to Zephras Isle.", x = 0.436 },
             },
@@ -411,7 +396,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Falling With Style to Rorian the Dayseeker.",
-            priority = 160,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -437,7 +421,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Elemental Unrest from Rorian the Dayseeker.",
-            priority = 170,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -486,11 +469,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92481,
-            priority = 180,
         },
         {
             text = "Accept A Student of the Arcane from Rorian the Dayseeker.",
-            priority = 190,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -549,11 +530,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92483,
-            priority = 200,
         },
         {
             text = "Accept At Home in the Shadows from Rorian the Dayseeker.",
-            priority = 210,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -610,11 +589,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92482,
-            priority = 220,
         },
         {
             text = "Accept The Way of the Hunter from Rorian the Dayseeker.",
-            priority = 230,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -673,11 +650,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92484,
-            priority = 240,
         },
         {
             text = "Accept Embracing the Elements from Rorian the Dayseeker.",
-            priority = 250,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -736,11 +711,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92532,
-            priority = 260,
         },
         {
             text = "Accept The Warrior's Path from Rorian the Dayseeker.",
-            priority = 270,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -797,11 +770,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92485,
-            priority = 280,
         },
         {
             text = "Accept A Student of Nature from Rorian the Dayseeker.",
-            priority = 290,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -837,7 +808,6 @@ ns:RegisterGuide({
         },
         {
             text = "Read Folded Parchment in your bags. Read the Folded Parchment then speak with Xyton Silverwind in Thendal Grove.",
-            priority = 300,
             route = {
                 { y = 0.234, mapID = 2521, label = "Xyton Silverwind", offMapText = "Travel to Zephras Isle.", x = 0.416 },
             },
@@ -872,7 +842,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             dependsOn = { "accept-a-student-of-the-arcane" },
             id = "objective-92481-reviewed-mechanics",
             conditions = {
@@ -896,7 +865,6 @@ ns:RegisterGuide({
         },
         {
             text = "Examine the Glowing Recall Crystal, then speak with Dorii Brightwhisper in Thendal Grove.",
-            priority = 320,
             route = {
                 { y = 0.236, mapID = 2521, label = "Dorii Brightwhisper", offMapText = "Travel to Zephras Isle.", x = 0.416 },
             },
@@ -933,7 +901,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             dependsOn = { "accept-embracing-the-elements" },
             id = "objective-92484-reviewed-mechanics",
             conditions = {
@@ -957,7 +924,6 @@ ns:RegisterGuide({
         },
         {
             text = "Examine the Humming Recall Crystal then speak with Windshaper Boro in Thendal Grove.",
-            priority = 340,
             route = {
                 { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
@@ -1019,10 +985,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 92466,
             alternativeQuests = { 1516, 1519 },
-            priority = 350,
         },
         {
-            priority = 360,
             route = {
                 { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
@@ -1049,7 +1013,6 @@ ns:RegisterGuide({
         },
         {
             text = "Read Scribbled Note in your bags. Read the Scribbled Note and then speak with Tai'ree Farsight in Thendal Grove.",
-            priority = 370,
             route = {
                 { y = 0.236, mapID = 2521, label = "Tai'ree Farsight", offMapText = "Travel to Zephras Isle.", x = 0.424 },
             },
@@ -1104,11 +1067,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92598,
-            priority = 380,
         },
         {
             text = "Accept The Gift of Skysight from Ventaari Brightwish.",
-            priority = 390,
             route = {
                 { y = 0.244, mapID = 2521, label = "Ventaari Brightwish", offMapText = "Travel to Zephras Isle.", x = 0.426 },
             },
@@ -1136,7 +1097,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Harvesting Windstones from Dalia the Collector.",
-            priority = 400,
             route = {
                 { y = 0.24, mapID = 2521, label = "Dalia the Collector", offMapText = "Travel to Zephras Isle.", x = 0.432 },
             },
@@ -1187,11 +1147,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92597,
-            priority = 410,
         },
         {
             text = "Accept Reading the Ley Lines from Falorne Fallwind.",
-            priority = 420,
             route = {
                 { y = 0.248, mapID = 2521, label = "Falorne Fallwind", offMapText = "Travel to Zephras Isle.", x = 0.432 },
             },
@@ -1225,7 +1183,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 15 Windstone Clusters from Raw Windstones scattered around Thendal Grove.",
-            priority = 430,
             route = {
                 { y = 0.248, mapID = 2521, label = "Raw Windstones around Thendal Grove", offMapText = "Travel to Zephras Isle.", x = 0.434 },
             },
@@ -1257,7 +1214,6 @@ ns:RegisterGuide({
         },
         {
             text = "Destroy the Cirrusfly Queen in Thendal Grove.",
-            priority = 440,
             route = {
                 { y = 0.282, mapID = 2521, label = "Cirrusfly Queen", offMapText = "Travel to Zephras Isle.", x = 0.484 },
             },
@@ -1289,7 +1245,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak to Yala Windwatcher in Thendal Grove.",
-            priority = 450,
             route = {
                 { y = 0.218, mapID = 2521, label = "Yala Windwatcher", offMapText = "Travel to Zephras Isle.", x = 0.472 },
             },
@@ -1315,7 +1270,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Agitators from Yala Windwatcher.",
-            priority = 460,
             route = {
                 { y = 0.218, mapID = 2521, label = "Yala Windwatcher", offMapText = "Travel to Zephras Isle.", x = 0.472 },
             },
@@ -1341,7 +1295,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 6 Roiling Winds in Thendal Grove.",
-            priority = 470,
             route = {
                 { mapID = 2521, x = 0.4447, y = 0.2147, label = "Roiling Winds", offMapText = "Travel to Roiling Winds." },
             },
@@ -1367,7 +1320,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 7 Al'Aketh Converts in Thendal Grove.",
-            priority = 480,
             route = {
                 { mapID = 2521, x = 0.45289999999999997, y = 0.1935, label = "Al'Aketh Convert", offMapText = "Travel to Al'Aketh Convert." },
             },
@@ -1393,7 +1345,6 @@ ns:RegisterGuide({
         },
         {
             text = "Use your Read Ley Line racial at the standing stones northeast of Thendal Village.",
-            priority = 490,
             route = {
                 { y = 0.218, mapID = 2521, label = "Standing stones northeast of Thendal Village", offMapText = "Travel to Zephras Isle.", x = 0.472 },
             },
@@ -1427,7 +1378,6 @@ ns:RegisterGuide({
         },
         {
             text = "Use your Skysight racial at the Elemental Convergence by the standing stones northeast of Thendal Village.",
-            priority = 500,
             route = {
                 { y = 0.218, mapID = 2521, label = "Elemental Convergence at the standing stones", offMapText = "Travel to Zephras Isle.", x = 0.472 },
             },
@@ -1454,7 +1404,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             route = {
                 { y = 0.18, mapID = 2521, label = "Al'Aketh Converts at the standing stones", offMapText = "Travel to Zephras Isle.", x = 0.464 },
             },
@@ -1481,7 +1430,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Agitators to Yala Windwatcher.",
-            priority = 520,
             route = {
                 { y = 0.218, mapID = 2521, label = "Yala Windwatcher", offMapText = "Travel to Zephras Isle.", x = 0.472 },
             },
@@ -1520,11 +1468,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92469,
-            priority = 530,
         },
         {
             text = "Accept Return to Rorian from Yala Windwatcher.",
-            priority = 540,
             route = {
                 { y = 0.218, mapID = 2521, label = "Yala Windwatcher", offMapText = "Travel to Zephras Isle.", x = 0.472 },
             },
@@ -1556,7 +1502,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Harvesting Windstones to Dalia the Collector.",
-            priority = 550,
             route = {
                 { y = 0.24, mapID = 2521, label = "Dalia the Collector", offMapText = "Travel to Zephras Isle.", x = 0.432 },
             },
@@ -1588,7 +1533,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Reading the Ley Lines to Falorne Fallwind.",
-            priority = 560,
             route = {
                 { y = 0.248, mapID = 2521, label = "Falorne Fallwind", offMapText = "Travel to Zephras Isle.", x = 0.432 },
             },
@@ -1622,7 +1566,6 @@ ns:RegisterGuide({
         },
         {
             text = "Read Simple Note in your bags. Read the Simple Note then speak with Akeri Duskblade within the watchtower in Thendal Grove.",
-            priority = 570,
             route = {
                 { y = 0.242, mapID = 2521, label = "Akeri Duskblade", offMapText = "Travel to Zephras Isle.", x = 0.436 },
             },
@@ -1658,7 +1601,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Cirrusfly Queen to Elatrell Featherlight.",
-            priority = 580,
             route = {
                 { y = 0.248, mapID = 2521, label = "Elatrell Featherlight", offMapText = "Travel to Zephras Isle.", x = 0.434 },
             },
@@ -1690,7 +1632,6 @@ ns:RegisterGuide({
         },
         {
             text = "Read Crumpled Note you've been given in your bags. Read the Crumpled Note you've been given, then seek out Blademaster Ren inside the Thendal Village watchtower.",
-            priority = 590,
             route = {
                 { y = 0.242, mapID = 2521, label = "Blademaster Ren", offMapText = "Travel to Zephras Isle.", x = 0.436 },
             },
@@ -1726,7 +1667,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Gift of Skysight to Ventaari Brightwish.",
-            priority = 600,
             route = {
                 { y = 0.244, mapID = 2521, label = "Ventaari Brightwish", offMapText = "Travel to Zephras Isle.", x = 0.426 },
             },
@@ -1754,7 +1694,6 @@ ns:RegisterGuide({
         },
         {
             text = "Bring word of the Al'Aketh to Rorian the Dayseeker in Thendal Grove.",
-            priority = 610,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -1799,11 +1738,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92471,
-            priority = 620,
         },
         {
             text = "Accept Aetheen of the Gales from Rorian the Dayseeker.",
-            priority = 630,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -1829,7 +1766,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Aetheen of the Gales in Thendal Grove.",
-            priority = 640,
             route = {
                 { y = 0.236, mapID = 2521, label = "Aetheen of the Gales", offMapText = "Travel to Zephras Isle.", x = 0.426 },
             },
@@ -1855,7 +1791,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Foul Matriarch from Aetheen of the Gales.",
-            priority = 650,
             route = {
                 { y = 0.236, mapID = 2521, label = "Aetheen of the Gales", offMapText = "Travel to Zephras Isle.", x = 0.426 },
             },
@@ -1886,7 +1821,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 660,
             route = {
                 { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
@@ -1912,7 +1846,6 @@ ns:RegisterGuide({
             classAction = "turnin-call-of-earth",
         },
         {
-            priority = 670,
             route = {
                 { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
@@ -1938,7 +1871,6 @@ ns:RegisterGuide({
             classAction = "accept-call-of-earth-92467",
         },
         {
-            priority = 680,
             route = {
                 { y = 0.24, mapID = 2521, label = "Minor Manifestation of Earth", offMapText = "Travel to Zephras Isle.", x = 0.496 },
             },
@@ -1964,7 +1896,6 @@ ns:RegisterGuide({
             classAction = "objective-92467-earth-sapta",
         },
         {
-            priority = 690,
             route = {
                 { y = 0.24, mapID = 2521, label = "Minor Manifestation of Earth", offMapText = "Travel to Zephras Isle.", x = 0.496 },
             },
@@ -1990,7 +1921,6 @@ ns:RegisterGuide({
             classAction = "turnin-call-of-earth-92467",
         },
         {
-            priority = 700,
             route = {
                 { y = 0.24, mapID = 2521, label = "Minor Manifestation of Earth", offMapText = "Travel to Zephras Isle.", x = 0.496 },
             },
@@ -2016,7 +1946,6 @@ ns:RegisterGuide({
             classAction = "accept-call-of-earth-92468",
         },
         {
-            priority = 710,
             route = {
                 { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
@@ -2043,7 +1972,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Aggressive Encroachment from Valreaa Valewind.",
-            priority = 720,
             route = {
                 { y = 0.25, mapID = 2521, label = "Valreaa Valewind", offMapText = "Travel to Zephras Isle.", x = 0.424 },
             },
@@ -2075,7 +2003,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 6 Scrawny Ursera Claws from Scrawny Ursera in Thendal Grove.",
-            priority = 730,
             route = {
                 { y = 0.246, mapID = 2521, label = "Scrawny Ursera", offMapText = "Travel to Zephras Isle.", x = 0.37 },
             },
@@ -2107,7 +2034,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 8 Ursera Scavengers in Thendal Grove.",
-            priority = 740,
             route = {
                 { mapID = 2521, x = 0.34950000000000003, y = 0.2489, label = "Ursera Scavenger", offMapText = "Travel to Ursera Scavenger." },
             },
@@ -2139,7 +2065,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill Urs'anah, the den mother, and collect her head.",
-            priority = 750,
             route = {
                 { mapID = 2521, x = 0.3565, y = 0.2607, label = "Urs'anah", offMapText = "Travel to Urs'anah." },
             },
@@ -2171,7 +2096,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Foul Matriarch to Aetheen of the Gales.",
-            priority = 760,
             route = {
                 { y = 0.236, mapID = 2521, label = "Aetheen of the Gales", offMapText = "Travel to Zephras Isle.", x = 0.426 },
             },
@@ -2203,7 +2127,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Next Step from Aetheen of the Gales.",
-            priority = 770,
             route = {
                 { y = 0.236, mapID = 2521, label = "Aetheen of the Gales", offMapText = "Travel to Zephras Isle.", x = 0.426 },
             },
@@ -2235,7 +2158,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Adventurer from Aetheen of the Gales.",
-            priority = 780,
             route = {
                 { y = 0.236, mapID = 2521, label = "Aetheen of the Gales", offMapText = "Travel to Zephras Isle.", x = 0.426 },
             },
@@ -2268,7 +2190,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Aggressive Encroachment to Valreaa Valewind.",
-            priority = 790,
             route = {
                 { y = 0.25, mapID = 2521, label = "Valreaa Valewind", offMapText = "Travel to Zephras Isle.", x = 0.424 },
             },
@@ -2300,7 +2221,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Al'Aketh Thugs from Hanaa Nightwind.",
-            priority = 800,
             route = {
                 { y = 0.302, mapID = 2521, label = "Hanaa Nightwind", offMapText = "Travel to Zephras Isle.", x = 0.382 },
             },
@@ -2326,7 +2246,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 6 Al'Aketh Brutes in Thendal Grove.",
-            priority = 810,
             route = {
                 { mapID = 2521, x = 0.3506, y = 0.33659999999999995, label = "Al'Aketh Brute", offMapText = "Travel to Al'Aketh Brute." },
             },
@@ -2352,7 +2271,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 4 Al'Aketh Neophytes in Thendal Grove.",
-            priority = 820,
             route = {
                 { mapID = 2521, x = 0.3505, y = 0.3371, label = "Al'Aketh Neophyte", offMapText = "Travel to Al'Aketh Neophyte." },
             },
@@ -2378,7 +2296,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay Malduko Cloudcrush in Thendal Grove.",
-            priority = 830,
             route = {
                 { mapID = 2521, x = 0.3605, y = 0.3353, label = "Malduko Cloudcrush", offMapText = "Travel to Malduko Cloudcrush." },
             },
@@ -2404,7 +2321,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Al'Aketh Thugs to Hanaa Nightwind.",
-            priority = 840,
             route = {
                 { y = 0.302, mapID = 2521, label = "Hanaa Nightwind", offMapText = "Travel to Zephras Isle.", x = 0.382 },
             },
@@ -2435,7 +2351,6 @@ ns:RegisterGuide({
         },
         {
             text = "Report to Constable Aonda in Shen'dar Village.",
-            priority = 850,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -2486,11 +2401,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 93461,
-            priority = 860,
         },
         {
             text = "Accept Welcome to Shen'dar Village from Constable Aonda.",
-            priority = 870,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -2537,11 +2450,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92514,
-            priority = 880,
         },
         {
             text = "Accept Welcome to Shen'dar Village from Constable Aonda.",
-            priority = 890,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -2569,7 +2480,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Rathiril Sunlance in Shen'dar Village and follow his welcome dialogue.",
-            priority = 900,
             route = {
                 { mapID = 2521, x = 0.4499, y = 0.4628, label = "Rathiril Sunlance", offMapText = "Travel to Rathiril Sunlance." },
             },
@@ -2597,7 +2507,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Coriella Calmbreeze in Shen'dar Village and follow her welcome dialogue.",
-            priority = 910,
             route = {
                 { mapID = 2521, x = 0.4305, y = 0.433, label = "Coriella Calmbreeze", offMapText = "Travel to Coriella Calmbreeze." },
             },
@@ -2625,7 +2534,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Illaya Amberwind in Shen'dar Village and follow her welcome dialogue.",
-            priority = 920,
             route = {
                 { mapID = 2521, x = 0.4353, y = 0.44780000000000003, label = "Illaya Amberwind", offMapText = "Travel to Illaya Amberwind." },
             },
@@ -2653,7 +2561,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Coriella Calmbreeze in Shen'dar Village and follow her welcome dialogue.",
-            priority = 930,
             route = {
                 { mapID = 2521, x = 0.4305, y = 0.433, label = "Coriella Calmbreeze", offMapText = "Travel to Coriella Calmbreeze." },
             },
@@ -2681,7 +2588,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Welcome to Shen'dar Village to Constable Aonda.",
-            priority = 940,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -2713,7 +2619,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The High Order from Rathiril Sunlance.",
-            priority = 950,
             route = {
                 { y = 0.464, mapID = 2521, label = "Rathiril Sunlance", offMapText = "Travel to Zephras Isle.", x = 0.45 },
             },
@@ -2741,7 +2646,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The High Order: Have a seat and speak with Rathiril Sunlance.",
-            priority = 960,
             id = "objective-92596-quest-work",
             kind = "objective",
             conditions = {
@@ -2766,7 +2670,6 @@ ns:RegisterGuide({
         },
         {
             text = "Have a seat and speak with Rathiril Sunlance.",
-            priority = 970,
             route = {
                 { y = 0.464, mapID = 2521, label = "Rathiril Sunlance", offMapText = "Travel to Zephras Isle.", x = 0.45 },
             },
@@ -2794,7 +2697,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept A Magical Affront from Rathiril Sunlance.",
-            priority = 980,
             route = {
                 { y = 0.464, mapID = 2521, label = "Rathiril Sunlance", offMapText = "Travel to Zephras Isle.", x = 0.45 },
             },
@@ -2828,7 +2730,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Welcome to Shen'dar Village to Constable Aonda.",
-            priority = 990,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -2860,7 +2761,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Windshapers from Illaya Amberwind.",
-            priority = 1000,
             route = {
                 { y = 0.448, mapID = 2521, label = "Illaya Amberwind", offMapText = "Travel to Zephras Isle.", x = 0.436 },
             },
@@ -2888,7 +2788,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The Windshapers: Listen to what Illaya Amberwind has to say.",
-            priority = 1010,
             id = "objective-92595-quest-work",
             kind = "objective",
             conditions = {
@@ -2913,7 +2812,6 @@ ns:RegisterGuide({
         },
         {
             text = "Listen to what Illaya Amberwind has to say.",
-            priority = 1020,
             route = {
                 { y = 0.448, mapID = 2521, label = "Illaya Amberwind", offMapText = "Travel to Zephras Isle.", x = 0.436 },
             },
@@ -2941,7 +2839,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Meddlesome Mages from Illaya Amberwind.",
-            priority = 1030,
             route = {
                 { y = 0.448, mapID = 2521, label = "Illaya Amberwind", offMapText = "Travel to Zephras Isle.", x = 0.436 },
             },
@@ -2975,7 +2872,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Criminal Element from Constable Aonda.",
-            priority = 1040,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -3007,7 +2903,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Pilfered Windstones from Teeri Wellwind.",
-            priority = 1050,
             route = {
                 { y = 0.45, mapID = 2521, label = "Teeri Wellwind", offMapText = "Travel to Zephras Isle.", x = 0.444 },
             },
@@ -3039,7 +2934,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Hippogryph Harrassment from Teeri Wellwind.",
-            priority = 1060,
             route = {
                 { y = 0.45, mapID = 2521, label = "Teeri Wellwind", offMapText = "Travel to Zephras Isle.", x = 0.444 },
             },
@@ -3071,7 +2965,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Problem With Prideclaws from Indari Sunseam.",
-            priority = 1070,
             route = {
                 { y = 0.444, mapID = 2521, label = "Indari Sunseam", offMapText = "Travel to Zephras Isle.", x = 0.446 },
             },
@@ -3103,7 +2996,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept A Little Beauty from Taleen Shimmerthread.",
-            priority = 1080,
             route = {
                 { y = 0.442, mapID = 2521, label = "Taleen Shimmerthread", offMapText = "Travel to Zephras Isle.", x = 0.448 },
             },
@@ -3135,7 +3027,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Restocking the Larders from Zerril Softbreeze.",
-            priority = 1090,
             route = {
                 { y = 0.438, mapID = 2521, label = "Zerril Softbreeze", offMapText = "Travel to Zephras Isle.", x = 0.438 },
             },
@@ -3167,7 +3058,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 3 Small Eggs from Galestriders or hippogryphs in Shen'dar Highlands.",
-            priority = 1100,
             route = {
                 { mapID = 2521, x = 0.3577, y = 0.47859999999999997, label = "Small Egg", offMapText = "Travel to Small Egg." },
             },
@@ -3199,7 +3089,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill Galestriders in Shen'dar Highlands and collect 8 Strider Meat.",
-            priority = 1110,
             route = {
                 { mapID = 2521, x = 0.3577, y = 0.47859999999999997, label = "Strider Meat", offMapText = "Travel to Strider Meat." },
             },
@@ -3231,7 +3120,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 10 Prideclaw Pelts from the Prideclaws in Shen'dar Highlands.",
-            priority = 1120,
             route = {
                 { y = 0.456, mapID = 2521, label = "Prideclaw", offMapText = "Travel to Zephras Isle.", x = 0.412 },
             },
@@ -3263,7 +3151,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 6 High Order Apprentices in Shen'dar Highlands.",
-            priority = 1130,
             route = {
                 { y = 0.4, mapID = 2521, label = "High Order Apprentice", offMapText = "Travel to Zephras Isle.", x = 0.46 },
             },
@@ -3297,7 +3184,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill 10 Highlands Bandits in Shen'dar Highlands.",
-            priority = 1140,
             route = {
                 { mapID = 2521, x = 0.4673, y = 0.36619999999999997, label = "Highlands Bandit", offMapText = "Travel to Highlands Bandit." },
             },
@@ -3329,7 +3215,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill \"Badwind\" Bennic, the bandit leader.",
-            priority = 1150,
             route = {
                 { mapID = 2521, x = 0.5062, y = 0.3427, label = "Bennic", offMapText = "Travel to Bennic." },
             },
@@ -3361,7 +3246,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 10 Pilfered Windstones from the Highlands Bandits in the Shen'dar Highlands.",
-            priority = 1160,
             route = {
                 { y = 0.464, mapID = 2521, label = "Captured Bandit", offMapText = "Travel to Zephras Isle.", x = 0.43 },
             },
@@ -3393,7 +3277,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Meddlesome Mages to Illaya Amberwind.",
-            priority = 1170,
             route = {
                 { y = 0.448, mapID = 2521, label = "Illaya Amberwind", offMapText = "Travel to Zephras Isle.", x = 0.436 },
             },
@@ -3427,7 +3310,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept WANTED: Vulgara the Insatiable from the notice in Shen'dar Village.",
-            priority = 1180,
             route = {
                 { y = 0.459, mapID = 2521, label = "Vulgara wanted notice in Shen'dar Village", offMapText = "Travel to Zephras Isle.", x = 0.434 },
             },
@@ -3459,7 +3341,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak to Raan Wildwind near Shen'dar Village.",
-            priority = 1190,
             route = {
                 { y = 0.448, mapID = 2521, label = "Raan Wildwind", offMapText = "Travel to Zephras Isle.", x = 0.416 },
             },
@@ -3492,7 +3373,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Great Outdoors from Raan Wildwind.",
-            priority = 1200,
             route = {
                 { y = 0.448, mapID = 2521, label = "Raan Wildwind", offMapText = "Travel to Zephras Isle.", x = 0.416 },
             },
@@ -3518,7 +3398,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1210,
             text = "Type /sit at Raan Wildwind's campfire and wait until you gain the Boosted Rest buff.",
             dependsOn = { "accept-the-great-outdoors" },
             id = "objective-the-great-outdoors",
@@ -3543,7 +3422,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Great Outdoors to Raan Wildwind.",
-            priority = 1220,
             route = {
                 { y = 0.448, mapID = 2521, label = "Raan Wildwind", offMapText = "Travel to Zephras Isle.", x = 0.416 },
             },
@@ -3570,7 +3448,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Camping 101: Cooking from Raan Wildwind.",
-            priority = 1230,
             route = {
                 { y = 0.448, mapID = 2521, label = "Raan Wildwind", offMapText = "Travel to Zephras Isle.", x = 0.416 },
             },
@@ -3603,7 +3480,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 6 Windshaper Novice Seers in Shen'dar Highlands.",
-            priority = 1240,
             route = {
                 { y = 0.466, mapID = 2521, label = "Windshaper Novice Seer", offMapText = "Travel to Zephras Isle.", x = 0.398 },
             },
@@ -3637,7 +3513,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 8 Hippogryph Youths in Shen'dar Highlands.",
-            priority = 1250,
             route = {
                 { mapID = 2521, x = 0.35, y = 0.5719, label = "Hippogryph Youth", offMapText = "Travel to Hippogryph Youth." },
             },
@@ -3669,7 +3544,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 6 Hippogryph Protectors near their nests.",
-            priority = 1260,
             route = {
                 { mapID = 2521, x = 0.33049999999999996, y = 0.5590999999999999, label = "Hippogryph Protector", offMapText = "Travel to Hippogryph Protector." },
             },
@@ -3701,7 +3575,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay the Hippogryph Matriarch.",
-            priority = 1270,
             route = {
                 { mapID = 2521, x = 0.33039999999999997, y = 0.5463, label = "Hippogryph Matriarch", offMapText = "Travel to Hippogryph Matriarch." },
             },
@@ -3733,7 +3606,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 8 Hippogryph Down feathers around the nesting grounds southwest of Shen'dar Village.",
-            priority = 1280,
             route = {
                 { y = 0.51, mapID = 2521, label = "Hippogryph nesting grounds", offMapText = "Travel to Zephras Isle.", x = 0.378 },
             },
@@ -3765,7 +3637,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill Vulgara the Insatiable in the Shen'dar Highlands and bring her head to Danarii Bellowveil.",
-            priority = 1290,
             route = {
                 { y = 0.452, mapID = 2521, label = "Vulgara wanted notice in Shen'dar Village", offMapText = "Travel to Zephras Isle.", x = 0.452 },
             },
@@ -3797,7 +3668,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Restocking the Larders to Zerril Softbreeze.",
-            priority = 1300,
             route = {
                 { y = 0.438, mapID = 2521, label = "Zerril Softbreeze", offMapText = "Travel to Zephras Isle.", x = 0.438 },
             },
@@ -3833,7 +3703,6 @@ ns:RegisterGuide({
         },
         {
             text = "For Camping 101: Cooking: Speak with Zerril Softbreeze in Shen'dar Village to learn to become a cook.",
-            priority = 1310,
             id = "objective-96646-quest-work",
             kind = "objective",
             conditions = {
@@ -3863,7 +3732,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Zerril Softbreeze in Shen'dar Village to learn to become a cook.",
-            priority = 1320,
             route = {
                 { y = 0.438, mapID = 2521, label = "Zerril Softbreeze", offMapText = "Travel to Zephras Isle.", x = 0.438 },
             },
@@ -3896,7 +3764,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in A Little Beauty to Taleen Shimmerthread.",
-            priority = 1330,
             route = {
                 { y = 0.442, mapID = 2521, label = "Taleen Shimmerthread", offMapText = "Travel to Zephras Isle.", x = 0.448 },
             },
@@ -3928,7 +3795,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Problem With Prideclaws to Indari Sunseam. The reward is a Simple Leather Satchel.",
-            priority = 1340,
             route = {
                 { y = 0.444, mapID = 2521, label = "Indari Sunseam", offMapText = "Travel to Zephras Isle.", x = 0.446 },
             },
@@ -3960,7 +3826,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Hippogryph Harrassment to Teeri Wellwind.",
-            priority = 1350,
             route = {
                 { y = 0.45, mapID = 2521, label = "Teeri Wellwind", offMapText = "Travel to Zephras Isle.", x = 0.444 },
             },
@@ -3997,7 +3862,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Pilfered Windstones to Teeri Wellwind.",
-            priority = 1360,
             route = {
                 { y = 0.45, mapID = 2521, label = "Teeri Wellwind", offMapText = "Travel to Zephras Isle.", x = 0.444 },
             },
@@ -4029,7 +3893,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in WANTED: Vulgara the Insatiable to Danarii Bellowveil.",
-            priority = 1370,
             route = {
                 { y = 0.452, mapID = 2521, label = "Danarii Bellowveil", offMapText = "Travel to Zephras Isle.", x = 0.452 },
             },
@@ -4061,7 +3924,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Criminal Element to Constable Aonda.",
-            priority = 1380,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -4106,11 +3968,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 93036,
-            priority = 1390,
         },
         {
             text = "Accept Infiltrating the Cult from Constable Aonda.",
-            priority = 1400,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -4142,7 +4002,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Sania Silverstream in Shen'dar Village.",
-            priority = 1410,
             route = {
                 { y = 0.454, mapID = 2521, label = "Sania Silverstream", offMapText = "Travel to Zephras Isle.", x = 0.448 },
             },
@@ -4174,7 +4033,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Falaath Village from Sania Silverstream.",
-            priority = 1420,
             route = {
                 { y = 0.454, mapID = 2521, label = "Sania Silverstream", offMapText = "Travel to Zephras Isle.", x = 0.448 },
             },
@@ -4206,7 +4064,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in A Magical Affront to Rathiril Sunlance.",
-            priority = 1430,
             route = {
                 { y = 0.464, mapID = 2521, label = "Rathiril Sunlance", offMapText = "Travel to Zephras Isle.", x = 0.45 },
             },
@@ -4240,7 +4097,6 @@ ns:RegisterGuide({
         },
         {
             text = "Report to Missionary Jasaan near the entrance to Falaath Village.",
-            priority = 1440,
             route = {
                 { y = 0.562, mapID = 2521, label = "Missionary Jasaan", offMapText = "Travel to Zephras Isle.", x = 0.468 },
             },
@@ -4272,7 +4128,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Among the Faithful from Missionary Jasaan.",
-            priority = 1450,
             route = {
                 { y = 0.562, mapID = 2521, label = "Missionary Jasaan", offMapText = "Travel to Zephras Isle.", x = 0.468 },
             },
@@ -4304,7 +4159,6 @@ ns:RegisterGuide({
         },
         {
             text = "For Among the Faithful: Look around Falaath Village to learn about the cult's intentions in the Shen'dar Highlands.",
-            priority = 1460,
             id = "objective-92528-quest-work",
             kind = "objective",
             conditions = {
@@ -4333,7 +4187,6 @@ ns:RegisterGuide({
         },
         {
             text = "Investigate Falaath Village, then return to Constable Aonda.",
-            priority = 1470,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -4365,7 +4218,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Havoc in the Highlands from Constable Aonda.",
-            priority = 1480,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -4397,7 +4249,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Stolen Supplies from Danarii Bellowveil.",
-            priority = 1490,
             route = {
                 { y = 0.452, mapID = 2521, label = "Danarii Bellowveil", offMapText = "Travel to Zephras Isle.", x = 0.452 },
             },
@@ -4429,7 +4280,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 6 Al'Aketh Stormcallers in the ruins of Falaath Village.",
-            priority = 1500,
             route = {
                 { mapID = 2521, x = 0.45409999999999995, y = 0.5474, label = "Al'Aketh Stormcaller", offMapText = "Travel to Al'Aketh Stormcaller." },
             },
@@ -4461,7 +4311,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 4 Living Lightning in Falaath Village.",
-            priority = 1510,
             route = {
                 { mapID = 2521, x = 0.4672, y = 0.5616, label = "Living Lightning", offMapText = "Travel to Living Lightning." },
             },
@@ -4493,7 +4342,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill Commander Cyclas and take his head.",
-            priority = 1520,
             route = {
                 { mapID = 2521, x = 0.5039, y = 0.5696, label = "Cyclas", offMapText = "Travel to Cyclas." },
             },
@@ -4525,7 +4373,6 @@ ns:RegisterGuide({
         },
         {
             text = "For Stolen Supplies: Collect 10 packs of Stolen Shen'dar Supplies from Falaath Village in the Shen'dar Highlands.",
-            priority = 1530,
             id = "objective-92551-quest-work",
             kind = "objective",
             conditions = {
@@ -4554,7 +4401,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 10 packs of Stolen Shen'dar Supplies from Falaath Village in the Shen'dar Highlands.",
-            priority = 1540,
             route = {
                 { y = 0.452, mapID = 2521, label = "Danarii Bellowveil", offMapText = "Travel to Zephras Isle.", x = 0.452 },
             },
@@ -4586,7 +4432,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Havoc in the Highlands to Constable Aonda.",
-            priority = 1550,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -4623,7 +4468,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Western Watch from Constable Aonda.",
-            priority = 1560,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -4655,7 +4499,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The Western Watch: Find Peacekeeper Vaaniel at the western watchtower.",
-            priority = 1570,
             id = "objective-93926-quest-work",
             kind = "objective",
             conditions = {
@@ -4684,7 +4527,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find Peacekeeper Vaaniel at the western watchtower.",
-            priority = 1580,
             route = {
                 { y = 0.62, mapID = 2521, label = "Peacekeeper Vaaniel", offMapText = "Travel to Zephras Isle.", x = 0.424 },
             },
@@ -4716,7 +4558,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept A Last Request from Peacekeeper Vaaniel.",
-            priority = 1590,
             route = {
                 { y = 0.62, mapID = 2521, label = "Peacekeeper Vaaniel", offMapText = "Travel to Zephras Isle.", x = 0.424 },
             },
@@ -4748,7 +4589,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect the Bloody Note beside the dead peacekeeper and read it.",
-            priority = 1600,
             route = {
                 { mapID = 2521, x = 0.42369999999999997, y = 0.6207, label = "Bloody Note", offMapText = "Travel to Bloody Note." },
             },
@@ -4780,7 +4620,6 @@ ns:RegisterGuide({
         },
         {
             text = "Enter the western watchtower and search Raani Windgazer's body for Raani's Lucky Feather.",
-            priority = 1610,
             route = {
                 { mapID = 2521, x = 0.4113, y = 0.6406999999999999, label = "Raani's Lucky Feather", offMapText = "Travel to Raani's Lucky Feather." },
             },
@@ -4812,7 +4651,6 @@ ns:RegisterGuide({
         },
         {
             text = "Search Arvensus Shadowsong's body in the western watchtower for the Shadowsong Family Signet.",
-            priority = 1620,
             route = {
                 { mapID = 2521, x = 0.40979999999999994, y = 0.6409, label = "Shadowsong Family Signet", offMapText = "Travel to Shadowsong Family Signet." },
             },
@@ -4844,7 +4682,6 @@ ns:RegisterGuide({
         },
         {
             text = "Climb to the top of the western watchtower and slay Skypriest Aanders.",
-            priority = 1630,
             route = {
                 { mapID = 2521, x = 0.409, y = 0.642, label = "Skypriest Aanders", offMapText = "Travel to Skypriest Aanders." },
             },
@@ -4876,7 +4713,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in A Last Request to Constable Aonda.",
-            priority = 1640,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -4933,11 +4769,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92701,
-            priority = 1650,
         },
         {
             text = "Accept To Valanaar from Constable Aonda.",
-            priority = 1660,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -4990,11 +4824,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92579,
-            priority = 1670,
         },
         {
             text = "Accept To Valanaar from Constable Aonda.",
-            priority = 1680,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -5041,11 +4873,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 93948,
-            priority = 1690,
         },
         {
             text = "Accept Deliver the Signet from Constable Aonda.",
-            priority = 1700,
             route = {
                 { y = 0.454, mapID = 2521, label = "Constable Aonda", offMapText = "Travel to Zephras Isle.", x = 0.456 },
             },
@@ -5077,7 +4907,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Crab Season from Nyalah Brightfire.",
-            priority = 1710,
             route = {
                 { y = 0.726, mapID = 2521, label = "Nyalah Brightfire", offMapText = "Travel to Zephras Isle.", x = 0.606 },
             },
@@ -5103,7 +4932,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Blood Tithe from Alvarion Windfield.",
-            priority = 1720,
             route = {
                 { y = 0.732, mapID = 2521, label = "Alvarion Windfield", offMapText = "Travel to Zephras Isle.", x = 0.62 },
             },
@@ -5143,11 +4971,9 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 94484,
             alternativeQuests = { 94493 },
-            priority = 1730,
         },
         {
             text = "Accept Unnerving Silence from Lotheluum Starbreeze.",
-            priority = 1740,
             route = {
                 { y = 0.75, mapID = 2521, label = "Lotheluum Starbreeze", offMapText = "Travel to Zephras Isle.", x = 0.64 },
             },
@@ -5174,7 +5000,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Aid For The Refugees from Ealaane Nimbuswalker.",
-            priority = 1750,
             route = {
                 { y = 0.744, mapID = 2521, label = "Ealaane Nimbuswalker", offMapText = "Travel to Zephras Isle.", x = 0.658 },
             },
@@ -5200,7 +5025,6 @@ ns:RegisterGuide({
         },
         {
             text = "Deliver the Shadowsong Family Signet to Talaanis Shadowsong in Valanaar.",
-            priority = 1760,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -5232,7 +5056,6 @@ ns:RegisterGuide({
         },
         {
             text = "Deliver Aonda's Written Report to Valennia Stormfist in Valanaar.",
-            priority = 1770,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -5266,7 +5089,6 @@ ns:RegisterGuide({
         },
         {
             text = "Deliver Aonda's Written Report to Valennia Stormfist in Valanaar.",
-            priority = 1780,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -5300,7 +5122,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Supreme Magister from Valennia Stormfist.",
-            priority = 1790,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -5334,7 +5155,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Grand Skyseer from Valennia Stormfist.",
-            priority = 1800,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -5368,7 +5188,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Bugged from Valennia Stormfist.",
-            priority = 1810,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -5400,7 +5219,6 @@ ns:RegisterGuide({
         },
         {
             text = "Exterminate 8 enchanted skyhoppers in the Gustberry Lowlands.",
-            priority = 1820,
             route = {
                 { y = 0.732, mapID = 2521, label = "Gustberry Lowlands outside Valanaar", offMapText = "Travel to Zephras Isle.", x = 0.62 },
             },
@@ -5432,7 +5250,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find Elaadrin Evengale in Valanaar.",
-            priority = 1830,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -5485,11 +5302,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92709,
-            priority = 1840,
         },
         {
             text = "Accept A Grand Adventure from Elaadrin Evengale.",
-            priority = 1850,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -5523,7 +5338,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Missing Scholar from Dondallion Whisperwind.",
-            priority = 1860,
             route = {
                 { y = 0.798, mapID = 2521, label = "Dondallion Whisperwind", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -5576,11 +5390,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92741,
-            priority = 1870,
         },
         {
             text = "Accept Unwelcome Visitors from Iaadaria Bitterwind.",
-            priority = 1880,
             route = {
                 { y = 0.796, mapID = 2521, label = "Iaadaria Bitterwind", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -5614,7 +5426,6 @@ ns:RegisterGuide({
         },
         {
             text = "For A Grand Adventure: Listen to what Elaadrin Evengale in Valanaar has to say.",
-            priority = 1890,
             id = "objective-92709-quest-work",
             kind = "objective",
             conditions = {
@@ -5645,7 +5456,6 @@ ns:RegisterGuide({
         },
         {
             text = "Listen to what Elaadrin Evengale in Valanaar has to say.",
-            priority = 1900,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -5679,7 +5489,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find Ayessa Dawnsinger in Valanaar.",
-            priority = 1910,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -5732,11 +5541,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92708,
-            priority = 1920,
         },
         {
             text = "Accept A Grand Adventure from Ayessa Dawnsinger.",
-            priority = 1930,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -5770,7 +5577,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Broken Construct from Ayessa Dawnsinger.",
-            priority = 1940,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -5804,7 +5610,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Unwelcome Spirits from Endaria Mistgaze.",
-            priority = 1950,
             route = {
                 { y = 0.782, mapID = 2521, label = "Endaria Mistgaze", offMapText = "Travel to Zephras Isle.", x = 0.582 },
             },
@@ -5838,7 +5643,6 @@ ns:RegisterGuide({
         },
         {
             text = "Gather 10 Wind Hollow Essences in Shadowgale Forest. Wind Hollows can also drop a Rusty Gadget, which starts a quest.",
-            priority = 1960,
             route = {
                 { y = 0.294, mapID = 2521, label = "Wind Hollow", offMapText = "Travel to Zephras Isle.", x = 0.57 },
             },
@@ -5872,7 +5676,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Unwelcome Spirits to Endaria Mistgaze.",
-            priority = 1970,
             route = {
                 { y = 0.782, mapID = 2521, label = "Endaria Mistgaze", offMapText = "Travel to Zephras Isle.", x = 0.582 },
             },
@@ -5906,7 +5709,6 @@ ns:RegisterGuide({
         },
         {
             text = "For A Grand Adventure: Listen to what Ayessa Dawnsinger has to say.",
-            priority = 1980,
             id = "objective-92708-quest-work",
             kind = "objective",
             conditions = {
@@ -5937,7 +5739,6 @@ ns:RegisterGuide({
         },
         {
             text = "Listen to what Ayessa Dawnsinger has to say.",
-            priority = 1990,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -5971,7 +5772,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find Riaani Nightwind on the west side of Valanaar.",
-            priority = 2000,
             route = {
                 { y = 0.73, mapID = 2521, label = "Riaani Nightwind", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -6005,7 +5805,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Broken Construct from Riaani Nightwind.",
-            priority = 2010,
             route = {
                 { y = 0.73, mapID = 2521, label = "Riaani Nightwind", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -6039,7 +5838,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Riaani Nightwind and listen to his explanation of the broken construct.",
-            priority = 2020,
             route = {
                 { mapID = 2521, x = 0.5902000000000001, y = 0.7292000000000001, label = "Riaani Nightwind", offMapText = "Travel to Riaani Nightwind." },
             },
@@ -6073,7 +5871,6 @@ ns:RegisterGuide({
         },
         {
             text = "Open Construct Parts in the southern highlands and collect Crystallized Lightning.",
-            priority = 2030,
             route = {
                 { mapID = 2521, x = 0.514, y = 0.675, label = "Crystallized Lightning", offMapText = "Travel to Crystallized Lightning." },
             },
@@ -6107,7 +5904,6 @@ ns:RegisterGuide({
         },
         {
             text = "Open Construct Parts in the central highlands and collect an Enchanted Gyrozephyr.",
-            priority = 2040,
             route = {
                 { mapID = 2521, x = 0.494, y = 0.46, label = "Enchanted Gyrozephyr", offMapText = "Travel to Enchanted Gyrozephyr." },
             },
@@ -6141,7 +5937,6 @@ ns:RegisterGuide({
         },
         {
             text = "Open Construct Parts in the western lowlands and collect an Air Construct Core.",
-            priority = 2050,
             route = {
                 { mapID = 2521, x = 0.433, y = 0.745, label = "Air Construct Core", offMapText = "Travel to Air Construct Core." },
             },
@@ -6175,7 +5970,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Broken Construct to Riaani Nightwind.",
-            priority = 2060,
             route = {
                 { y = 0.73, mapID = 2521, label = "Riaani Nightwind", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -6215,7 +6009,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Alvarion Windfield and listen to his account.",
-            priority = 2070,
             id = "objective-92679-authored-alvarion-windfield",
             kind = "objective",
             conditions = {
@@ -6241,7 +6034,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find Aamelia Windfield at the Windfield Orchard.",
-            priority = 2080,
             id = "objective-92679-authored-aamelia-windfield",
             kind = "objective",
             conditions = {
@@ -6267,7 +6059,6 @@ ns:RegisterGuide({
         },
         {
             text = "Listen to what Alvarion Windfield has to say and find Aamelia Windfield at the Windfield Orchard.",
-            priority = 2090,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6297,7 +6088,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Make Yourself Useful from Aamelia Windfield.",
-            priority = 2100,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6329,7 +6119,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Ornery Ornery Galestriders from Aamelia Windfield.",
-            priority = 2110,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6361,7 +6150,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Flutterfly Dust from Aamelia Windfield.",
-            priority = 2120,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6393,7 +6181,6 @@ ns:RegisterGuide({
         },
         {
             text = "Gather 7 Lowlands Galestrider Tenderloins from the Ornery Galestriders found throughout the Gustberry Lowlands.",
-            priority = 2130,
             route = {
                 { y = 0.722, mapID = 2521, label = "Ornery Galestrider", offMapText = "Travel to Zephras Isle.", x = 0.532 },
             },
@@ -6425,7 +6212,6 @@ ns:RegisterGuide({
         },
         {
             text = "Gather 10 Ripe Stormapples at the Windfield Orchard.",
-            priority = 2140,
             route = {
                 { mapID = 2521, x = 0.462, y = 0.784, label = "Ripe Stormapple", offMapText = "Travel to Ripe Stormapple." },
             },
@@ -6457,7 +6243,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 5 Hungry Bandits at the Windfield Orchard.",
-            priority = 2150,
             route = {
                 { mapID = 2521, x = 0.45630000000000004, y = 0.8045, label = "Hungry Bandit", offMapText = "Travel to Hungry Bandit." },
             },
@@ -6489,7 +6274,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept What Is My Purpose? from Malfunctioning Cyclone Construct.",
-            priority = 2160,
             route = {
                 { y = 0.782, mapID = 2521, label = "Malfunctioning Cyclone Construct", offMapText = "Travel to Zephras Isle.", x = 0.486 },
             },
@@ -6521,7 +6305,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Make Yourself Useful to Aamelia Windfield.",
-            priority = 2170,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6557,7 +6340,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Ornery Ornery Galestriders to Aamelia Windfield.",
-            priority = 2180,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6589,7 +6371,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Aamelia Windfield about the Malfunctioning Cyclone Construct.",
-            priority = 2190,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6621,7 +6402,6 @@ ns:RegisterGuide({
         },
         {
             text = "For Flutterfly Dust: Gather 5 Flutterfly Dust from the Flutterflies around the Gustberry Lowlands.",
-            priority = 2200,
             id = "objective-92683-quest-work",
             kind = "objective",
             conditions = {
@@ -6650,7 +6430,6 @@ ns:RegisterGuide({
         },
         {
             text = "Gather 5 Flutterfly Dust from the Flutterflies around the Gustberry Lowlands.",
-            priority = 2210,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6682,7 +6461,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Hills Have Eyes from Aamelia Windfield.",
-            priority = 2220,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6714,7 +6492,6 @@ ns:RegisterGuide({
         },
         {
             text = "Loot 7 Blood-Stained Bandit Masks from Highwayman Bandits in the Gustberry Lowlands.",
-            priority = 2230,
             route = {
                 { y = 0.746, mapID = 2521, label = "Bandit Highwayman", offMapText = "Travel to Zephras Isle.", x = 0.438 },
             },
@@ -6746,7 +6523,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Hills Have Eyes to Aamelia Windfield.",
-            priority = 2240,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6778,7 +6554,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Standing Our Ground from Aamelia Windfield.",
-            priority = 2250,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6810,7 +6585,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Aamelia Windfield at the Windfield Orchard when you are ready to confront the bandit leader.",
-            priority = 2260,
             route = {
                 { mapID = 2521, x = 0.467, y = 0.8195, label = "Aamelia Windfield", offMapText = "Travel to Aamelia Windfield." },
             },
@@ -6842,7 +6616,6 @@ ns:RegisterGuide({
         },
         {
             text = "Confront Ferauu the Bludgeon and follow the encounter until you receive quest credit.",
-            priority = 2270,
             route = {
                 { mapID = 2521, x = 0.47509999999999997, y = 0.7839, label = "Ferauu the Bludgeon", offMapText = "Travel to Ferauu the Bludgeon." },
             },
@@ -6874,7 +6647,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Standing Our Ground to Aamelia Windfield.",
-            priority = 2280,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6910,7 +6682,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Deliver the News from Aamelia Windfield.",
-            priority = 2290,
             route = {
                 { y = 0.818, mapID = 2521, label = "Aamelia Windfield", offMapText = "Travel to Zephras Isle.", x = 0.466 },
             },
@@ -6942,7 +6713,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Alvarion Windfield in Valanaar.",
-            priority = 2300,
             route = {
                 { y = 0.732, mapID = 2521, label = "Alvarion Windfield", offMapText = "Travel to Zephras Isle.", x = 0.62 },
             },
@@ -6997,11 +6767,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 97243,
-            priority = 2310,
         },
         {
             text = "Accept Call of Fire from Sessaria Skystride.",
-            priority = 2320,
             route = {
                 { y = 0.784, mapID = 2521, label = "Sessaria Skystride", offMapText = "Travel to Zephras Isle.", x = 0.582 },
             },
@@ -7033,7 +6801,6 @@ ns:RegisterGuide({
         },
         {
             text = "Bring the Torch of Dormant Flame to Olariaan Swiftburn at the Shrine of Flames in the Gustberry Lowlands.",
-            priority = 2330,
             route = {
                 { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", offMapText = "Travel to Zephras Isle.", x = 0.512 },
             },
@@ -7088,11 +6855,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 93791,
-            priority = 2340,
         },
         {
             text = "Accept Speak with Belann from Anathamaas Aetherwind.",
-            priority = 2350,
             route = {
                 { y = 0.804, mapID = 2521, label = "Anathamaas Aetherwind", offMapText = "Travel to Zephras Isle.", x = 0.658 },
             },
@@ -7124,7 +6889,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Belann Windwood in Valanaar.",
-            priority = 2360,
             route = {
                 { y = 0.774, mapID = 2521, label = "Belann Windwood", offMapText = "Travel to Zephras Isle.", x = 0.628 },
             },
@@ -7156,7 +6920,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Boughs in the Wind from Belann Windwood.",
-            priority = 2370,
             route = {
                 { y = 0.774, mapID = 2521, label = "Belann Windwood", offMapText = "Travel to Zephras Isle.", x = 0.628 },
             },
@@ -7194,7 +6957,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find what became of Fillion Flamebreeze on the road west of Valanaar.",
-            priority = 2380,
             route = {
                 { y = 0.654, mapID = 2521, label = "Fillion Flamebreeze's trail", offMapText = "Travel to Zephras Isle.", x = 0.506 },
             },
@@ -7228,7 +6990,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept the next Missing Scholar step where you found Fillion Flamebreeze.",
-            priority = 2390,
             route = {
                 { y = 0.721, mapID = 2521, label = "Fillion Flamebreeze", offMapText = "Travel to Zephras Isle.", x = 0.533 },
             },
@@ -7262,7 +7023,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find Fillion Flamebreeze.",
-            priority = 2400,
             route = {
                 { y = 0.654, mapID = 2521, label = "Fillion Flamebreeze", offMapText = "Travel to Zephras Isle.", x = 0.506 },
             },
@@ -7296,7 +7056,6 @@ ns:RegisterGuide({
         },
         {
             text = "Carry Fillion Flamebreeze to safety while avoiding enemies.",
-            priority = 2410,
             route = {
                 { y = 0.694, mapID = 2521, label = "Carry Fillion Flamebreeze to safety", offMapText = "Travel to Zephras Isle.", x = 0.52 },
             },
@@ -7330,7 +7089,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Missing Scholar to Fillion Flamebreeze.",
-            priority = 2420,
             route = {
                 { y = 0.694, mapID = 2521, label = "Fillion Flamebreeze", offMapText = "Travel to Zephras Isle.", x = 0.52 },
             },
@@ -7368,7 +7126,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Missing Scholar from Fillion Flamebreeze.",
-            priority = 2430,
             route = {
                 { y = 0.694, mapID = 2521, label = "Fillion Flamebreeze", offMapText = "Travel to Zephras Isle.", x = 0.52 },
             },
@@ -7402,7 +7159,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay the Shriekling Matriarch in the Shriekling Den then return its head to Dondallion Whisperwind in Valanaar.",
-            priority = 2440,
             route = {
                 { y = 0.658, mapID = 2521, label = "Shriekling Matriarch", offMapText = "Travel to Zephras Isle.", x = 0.52 },
             },
@@ -7436,7 +7192,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Missing Scholar to Dondallion Whisperwind.",
-            priority = 2450,
             route = {
                 { y = 0.798, mapID = 2521, label = "Dondallion Whisperwind", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -7488,7 +7243,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 99260,
-            priority = 2460,
         },
         {
             id = "accept-99260-fillions-mission",
@@ -7521,7 +7275,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            priority = 2470,
         },
         {
             id = "turnin-99260-fillions-mission",
@@ -7554,11 +7307,9 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            priority = 2480,
         },
         {
             text = "Accept Catching Wind from Elaadrin Evengale.",
-            priority = 2490,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -7592,7 +7343,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 6 pieces of Windsong Crawler Meat.",
-            priority = 2500,
             route = {
                 { y = 0.696, mapID = 2521, label = "Windsong Crawler", offMapText = "Travel to Zephras Isle.", x = 0.512 },
             },
@@ -7618,7 +7368,6 @@ ns:RegisterGuide({
         },
         {
             text = "Take the Index Esoteria to the Overlook Standing Stones in Shen'dar Highlands and use it once there. Protect the Index from harm as it gathers data.",
-            priority = 2510,
             route = {
                 { y = 0.69, mapID = 2521, label = "Index Esoteria", offMapText = "Travel to Zephras Isle.", x = 0.48 },
             },
@@ -7652,7 +7401,6 @@ ns:RegisterGuide({
         },
         {
             text = "Bring Belann Windwood a Wind-Infused Bough from the wind shrine just south of Falaath Village.",
-            priority = 2520,
             route = {
                 { y = 0.562, mapID = 2521, label = "Falaath Village, then the wind shrine just south", offMapText = "Travel to Zephras Isle.", x = 0.468 },
             },
@@ -7690,7 +7438,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Crab Season to Nyalah Brightfire.",
-            priority = 2530,
             route = {
                 { y = 0.726, mapID = 2521, label = "Nyalah Brightfire", offMapText = "Travel to Zephras Isle.", x = 0.606 },
             },
@@ -7716,7 +7463,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Boughs in the Wind to Belann Windwood.",
-            priority = 2540,
             route = {
                 { y = 0.774, mapID = 2521, label = "Belann Windwood", offMapText = "Travel to Zephras Isle.", x = 0.628 },
             },
@@ -7754,7 +7500,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Catching Wind to Elaadrin Evengale.",
-            priority = 2550,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -7788,7 +7533,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Avenged Tenfold from Elaadrin Evengale.",
-            priority = 2560,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -7822,7 +7566,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Bugged to Valennia Stormfist.",
-            priority = 2570,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -7854,7 +7597,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept In Service of Zephras from Elaadrin Evengale.",
-            priority = 2580,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -7888,7 +7630,6 @@ ns:RegisterGuide({
         },
         {
             text = "Report to Valennia Stormfist and let her know that High Order is with them in their fight against the Al'Aketh.",
-            priority = 2590,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -7922,7 +7663,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Broken Construct from Riaani Nightwind.",
-            priority = 2600,
             route = {
                 { y = 0.73, mapID = 2521, label = "Riaani Nightwind", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -7956,7 +7696,6 @@ ns:RegisterGuide({
         },
         {
             text = "Report back to Ayessa Dawnsinger in Valanaar.",
-            priority = 2610,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -7990,7 +7729,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept A Firm Response from Ayessa Dawnsinger.",
-            priority = 2620,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -8024,7 +7762,6 @@ ns:RegisterGuide({
         },
         {
             text = "Confront Belthaan Brightwish along the road to the Shrine of Akir.",
-            priority = 2630,
             route = {
                 { y = 0.57, mapID = 2521, label = "Belathaan Brightwish", offMapText = "Travel to Zephras Isle.", x = 0.598 },
             },
@@ -8058,7 +7795,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in A Firm Response to Ayessa Dawnsinger.",
-            priority = 2640,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -8092,7 +7828,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept In Service of Zephras from Ayessa Dawnsinger.",
-            priority = 2650,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -8126,7 +7861,6 @@ ns:RegisterGuide({
         },
         {
             text = "Report to Valennia Stormfist and let her know that the Windshapers are with them in their fight against the Al'Aketh.",
-            priority = 2660,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -8160,7 +7894,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Tower Defense from Valennia Stormfist.",
-            priority = 2670,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -8197,7 +7930,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 10 Al'Aketh Windstone Charms from Al'Aketh cultists found north of Valanaar at the Gustberry Fields or Shrine of Akir.",
-            priority = 2680,
             route = {
                 { y = 0.654, mapID = 2521, label = "Al'Aketh cultists in the Gustberry Lowlands", offMapText = "Travel to Zephras Isle.", x = 0.65 },
             },
@@ -8231,7 +7963,6 @@ ns:RegisterGuide({
         },
         {
             text = "Report to Yorana Windyreed at the eastern watchtower in the Gustberry Lowlands.",
-            priority = 2690,
             route = {
                 { y = 0.67, mapID = 2521, label = "Yorana Windyreed", offMapText = "Travel to Zephras Isle.", x = 0.696 },
             },
@@ -8263,7 +7994,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Disrupting Logistics from Yorana Windyreed.",
-            priority = 2700,
             route = {
                 { y = 0.67, mapID = 2521, label = "Yorana Windyreed", offMapText = "Travel to Zephras Isle.", x = 0.696 },
             },
@@ -8295,7 +8025,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Breaking the Breaker from Yorana Windyreed.",
-            priority = 2710,
             route = {
                 { y = 0.67, mapID = 2521, label = "Yorana Windyreed", offMapText = "Travel to Zephras Isle.", x = 0.696 },
             },
@@ -8327,7 +8056,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 4 Al'Aketh Healers in the Gustberry Lowlands.",
-            priority = 2720,
             route = {
                 { mapID = 2521, x = 0.6336999999999999, y = 0.6840999999999999, label = "Al'Aketh Healer", offMapText = "Travel to Al'Aketh Healer." },
             },
@@ -8359,7 +8087,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 8 Al'Aketh Brawlers in the Gustberry Lowlands.",
-            priority = 2730,
             route = {
                 { mapID = 2521, x = 0.6376, y = 0.6883, label = "Al'Aketh Brawler", offMapText = "Travel to Al'Aketh Brawler." },
             },
@@ -8391,7 +8118,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay Commander Belguilos in the Gustberry Lowlands.",
-            priority = 2740,
             route = {
                 { y = 0.654, mapID = 2521, label = "Commander Belguilos", offMapText = "Travel to Zephras Isle.", x = 0.656 },
             },
@@ -8423,7 +8149,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Breaking the Breaker to Yorana Windyreed.",
-            priority = 2750,
             route = {
                 { y = 0.67, mapID = 2521, label = "Yorana Windyreed", offMapText = "Travel to Zephras Isle.", x = 0.696 },
             },
@@ -8455,7 +8180,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Disrupting Logistics to Yorana Windyreed.",
-            priority = 2760,
             route = {
                 { y = 0.67, mapID = 2521, label = "Yorana Windyreed", offMapText = "Travel to Zephras Isle.", x = 0.696 },
             },
@@ -8491,7 +8215,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Return to Valanaar from Yorana Windyreed.",
-            priority = 2770,
             route = {
                 { y = 0.67, mapID = 2521, label = "Yorana Windyreed", offMapText = "Travel to Zephras Isle.", x = 0.696 },
             },
@@ -8523,7 +8246,6 @@ ns:RegisterGuide({
         },
         {
             text = "Bring Yorana's Report to Valennia Stormfist in Valanaar.",
-            priority = 2780,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -8555,7 +8277,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The High Elder's Request from Valennia Stormfist.",
-            priority = 2790,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -8587,7 +8308,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Talaanis Shadowsong in Valanaar.",
-            priority = 2800,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -8619,7 +8339,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Turncoat from Talaanis Shadowsong.",
-            priority = 2810,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -8651,7 +8370,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Avenged Tenfold to Elaadrin Evengale.",
-            priority = 2820,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -8685,7 +8403,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The Turncoat: Find the cultist turncoat at the house just inside the highlands northwest of Valanaar.",
-            priority = 2830,
             id = "objective-92643-quest-work",
             kind = "objective",
             conditions = {
@@ -8714,7 +8431,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find the cultist turncoat at the house just inside the highlands northwest of Valanaar.",
-            priority = 2840,
             route = {
                 { y = 0.588, mapID = 2521, label = "Dead Cultist", offMapText = "Travel to Zephras Isle.", x = 0.56 },
             },
@@ -8746,7 +8462,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Al'Aketh Assassins from Fendaal Windstone.",
-            priority = 2850,
             route = {
                 { y = 0.61, mapID = 2521, label = "Fendaal Windstone", offMapText = "Travel to Zephras Isle.", x = 0.568 },
             },
@@ -8772,7 +8487,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill 10 Al'Aketh Assassins in the Shen'dar Highlands.",
-            priority = 2860,
             route = {
                 { y = 0.606, mapID = 2521, label = "Al'Aketh Assassin", offMapText = "Travel to Zephras Isle.", x = 0.56 },
             },
@@ -8798,7 +8512,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Unfortunate News from Dead Cultist.",
-            priority = 2870,
             route = {
                 { y = 0.588, mapID = 2521, label = "Dead Cultist", offMapText = "Travel to Zephras Isle.", x = 0.56 },
             },
@@ -8830,7 +8543,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Al'Aketh Assassins to Fendaal Windstone.",
-            priority = 2880,
             route = {
                 { y = 0.61, mapID = 2521, label = "Fendaal Windstone", offMapText = "Travel to Zephras Isle.", x = 0.568 },
             },
@@ -8856,7 +8568,6 @@ ns:RegisterGuide({
         },
         {
             text = "Deliver the glowing crystal to Talaanis Shadowsong in Valanaar.",
-            priority = 2890,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -8888,7 +8599,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Cult's True Plans from Talaanis Shadowsong.",
-            priority = 2900,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -8920,7 +8630,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The Cult's True Plans: Speak with Talaanis Shadowsong and observe the conversation.",
-            priority = 2910,
             id = "objective-94568-quest-work",
             kind = "objective",
             conditions = {
@@ -8949,7 +8658,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Talaanis Shadowsong and observe the conversation.",
-            priority = 2920,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -9002,11 +8710,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94003,
-            priority = 2930,
         },
         {
             text = "Accept The Skybreaker Bulwark from Seena Skybreaker.",
-            priority = 2940,
             route = {
                 { y = 0.728, mapID = 2521, label = "Seena Skybreaker", offMapText = "Travel to Zephras Isle.", x = 0.598 },
             },
@@ -9036,7 +8742,6 @@ ns:RegisterGuide({
         },
         {
             text = "Reclaim the Skybreaker Bulwark from Zaal Stormshield at the Shrine of Akir.",
-            priority = 2950,
             route = {
                 { y = 0.504, mapID = 2521, label = "Zaal Stormshield", offMapText = "Travel to Zephras Isle.", x = 0.566 },
             },
@@ -9066,7 +8771,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Skybreaker Bulwark to Seena Skybreaker.",
-            priority = 2960,
             route = {
                 { y = 0.728, mapID = 2521, label = "Seena Skybreaker", offMapText = "Travel to Zephras Isle.", x = 0.598 },
             },
@@ -9096,7 +8800,6 @@ ns:RegisterGuide({
         },
         {
             text = "Travel to Shadowgale Forest and collect 8 Shriekling Talons for Iaadaria Bitterwind in Valanaar.",
-            priority = 2970,
             route = {
                 { y = 0.382, mapID = 2521, label = "Shadowgale Shriekling", offMapText = "Travel to Zephras Isle.", x = 0.622 },
             },
@@ -9130,7 +8833,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Strange Hermit from Strange Hermit.",
-            priority = 2980,
             route = {
                 { y = 0.39, mapID = 2521, label = "Strange Hermit", offMapText = "Travel to Zephras Isle.", x = 0.54 },
             },
@@ -9156,7 +8858,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The Strange Hermit: Speak with the Strange Hermit in the Shadowgale Forest and learn more about him.",
-            priority = 2990,
             id = "objective-93159-quest-work",
             kind = "objective",
             conditions = {
@@ -9179,7 +8880,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with the Strange Hermit in the Shadowgale Forest and learn more about him.",
-            priority = 3000,
             route = {
                 { y = 0.39, mapID = 2521, label = "Strange Hermit", offMapText = "Travel to Zephras Isle.", x = 0.54 },
             },
@@ -9205,7 +8905,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Forest's Bounty from Strange Hermit.",
-            priority = 3010,
             route = {
                 { y = 0.39, mapID = 2521, label = "Strange Hermit", offMapText = "Travel to Zephras Isle.", x = 0.54 },
             },
@@ -9237,7 +8936,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Free the Hollows from Strange Hermit.",
-            priority = 3020,
             route = {
                 { y = 0.39, mapID = 2521, label = "Strange Hermit", offMapText = "Travel to Zephras Isle.", x = 0.54 },
             },
@@ -9269,7 +8967,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find and speak with Elegael Thornpaw in the northeastern part of Shadowgale Forest.",
-            priority = 3030,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9296,7 +8993,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Tears of the Lady from Elegael Thornpaw.",
-            priority = 3040,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9328,7 +9024,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Feathers for Binding from Elegael Thornpaw.",
-            priority = 3050,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9360,7 +9055,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Unwanted and Unworthy from Elegael Thornpaw.",
-            priority = 3060,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9392,7 +9086,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 8 Lady's Tear Moss from the bases of trees around Elegael Thornpaw.",
-            priority = 3070,
             route = {
                 { y = 0.392, mapID = 2521, label = "Lady's Tear Moss around Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9424,7 +9117,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 10 Bloodied Heirlooms from Al'Aketh Footsoldiers and Al'Aketh Stormchasers in the Shadowgale Forest.",
-            priority = 3080,
             route = {
                 { y = 0.368, mapID = 2521, label = "Al'Aketh Stormchaser", offMapText = "Travel to Zephras Isle.", x = 0.638 },
             },
@@ -9456,7 +9148,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Mercy Falls on Deaf Ears from Vayn Moongaze.",
-            priority = 3090,
             route = {
                 { y = 0.36, mapID = 2521, label = "Vayn Moongaze", offMapText = "Travel to Zephras Isle.", x = 0.638 },
             },
@@ -9488,7 +9179,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 10 Al'Aketh Cultist's Ears from the Al'Aketh cultists in Shadowgale Forest, the Shine of Akir, or Gustberry Lowlands.",
-            priority = 3100,
             route = {
                 { y = 0.504, mapID = 2521, label = "Zaal Stormshield", offMapText = "Travel to Zephras Isle.", x = 0.566 },
             },
@@ -9520,7 +9210,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Mercy Falls on Deaf Ears to Vayn Moongaze.",
-            priority = 3110,
             route = {
                 { y = 0.36, mapID = 2521, label = "Vayn Moongaze", offMapText = "Travel to Zephras Isle.", x = 0.638 },
             },
@@ -9552,7 +9241,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 20 feathers from the Shadowgale Shrieklings in Shadowgale Forest.",
-            priority = 3120,
             route = {
                 { y = 0.382, mapID = 2521, label = "Shadowgale Shriekling", offMapText = "Travel to Zephras Isle.", x = 0.622 },
             },
@@ -9584,7 +9272,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Tears of the Lady to Elegael Thornpaw.",
-            priority = 3130,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9616,7 +9303,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Unwanted and Unworthy to Elegael Thornpaw.",
-            priority = 3140,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9648,7 +9334,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Feathers for Binding to Elegael Thornpaw.",
-            priority = 3150,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9680,7 +9365,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Ties That Bind from Elegael Thornpaw.",
-            priority = 3160,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9712,7 +9396,6 @@ ns:RegisterGuide({
         },
         {
             text = "Kill Commander Haalien and bring his head to Elegael Thornpaw in the Shadowgale Forest.",
-            priority = 3170,
             route = {
                 { y = 0.362, mapID = 2521, label = "Commander Haalien", offMapText = "Travel to Zephras Isle.", x = 0.654 },
             },
@@ -9744,7 +9427,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Ties That Bind to Elegael Thornpaw.",
-            priority = 3180,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9799,7 +9481,6 @@ ns:RegisterGuide({
                 { mapID = 2521, x = 0.6553, y = 0.3632, label = "Commander Haalien", offMapText = "Travel to Commander Haalien." },
             },
             dependsOn = {},
-            priority = 3190,
         },
         {
             id = "level-before-accept-ripped-missive",
@@ -9816,11 +9497,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94490,
-            priority = 3200,
         },
         {
             text = "Use the Ripped Missive to accept Ripped Missive.",
-            priority = 3210,
             dependsOn = { "turnin-the-ties-that-bind" },
             id = "accept-ripped-missive",
             kind = "accept",
@@ -9849,7 +9528,6 @@ ns:RegisterGuide({
         },
         {
             text = "Bring the Ripped Missive to Elegael Thornpaw in the Shadowgale Forest.",
-            priority = 3220,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -9881,7 +9559,6 @@ ns:RegisterGuide({
         },
         {
             text = "Destroy 10 Wind Hollows in the Ruins of Ban'aethal. They can also drop a Rusty Gadget, which starts a quest.",
-            priority = 3230,
             route = {
                 { y = 0.294, mapID = 2521, label = "Wind Hollow", offMapText = "Travel to Zephras Isle.", x = 0.57 },
             },
@@ -9913,7 +9590,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 8 Abandoned Belongings in the Ruins of Ban'aethal.",
-            priority = 3240,
             route = {
                 { y = 0.294, mapID = 2521, label = "Ruins of Ban'aethal", offMapText = "Travel to Zephras Isle.", x = 0.57 },
             },
@@ -9939,7 +9615,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The Forest's Bounty: Gather 8 Shadowgale Acorns in Shadowgale Forest.",
-            priority = 3250,
             id = "objective-93160-quest-work",
             kind = "objective",
             conditions = {
@@ -9968,7 +9643,6 @@ ns:RegisterGuide({
         },
         {
             text = "Gather 8 Shadowgale Acorns in Shadowgale Forest.",
-            priority = 3260,
             route = {
                 { y = 0.39, mapID = 2521, label = "Strange Hermit", offMapText = "Travel to Zephras Isle.", x = 0.54 },
             },
@@ -10000,7 +9674,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Free the Hollows to Strange Hermit.",
-            priority = 3270,
             route = {
                 { y = 0.39, mapID = 2521, label = "Strange Hermit", offMapText = "Travel to Zephras Isle.", x = 0.54 },
             },
@@ -10032,7 +9705,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Aid For The Refugees to Ealaane Nimbuswalker.",
-            priority = 3280,
             route = {
                 { y = 0.744, mapID = 2521, label = "Ealaane Nimbuswalker", offMapText = "Travel to Zephras Isle.", x = 0.658 },
             },
@@ -10058,7 +9730,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Fate of a Loved One from Ealaane Nimbuswalker.",
-            priority = 3290,
             route = {
                 { y = 0.744, mapID = 2521, label = "Ealaane Nimbuswalker", offMapText = "Travel to Zephras Isle.", x = 0.658 },
             },
@@ -10084,7 +9755,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find Resaan in the Ruins of Ban'aethal.",
-            priority = 3300,
             route = {
                 { y = 0.294, mapID = 2521, label = "Resaan Nimbuswalker", offMapText = "Travel to Zephras Isle.", x = 0.57 },
             },
@@ -10110,7 +9780,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Fate of a Loved One to Ealaane Nimbuswalker.",
-            priority = 3310,
             route = {
                 { y = 0.744, mapID = 2521, label = "Ealaane Nimbuswalker", offMapText = "Travel to Zephras Isle.", x = 0.658 },
             },
@@ -10136,7 +9805,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Unwelcome Visitors to Iaadaria Bitterwind.",
-            priority = 3320,
             route = {
                 { y = 0.796, mapID = 2521, label = "Iaadaria Bitterwind", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -10170,7 +9838,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept A Sacrifice in Vain from Elegael Thornpaw.",
-            priority = 3330,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -10197,7 +9864,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Elegael Thornpaw in the northeastern part of Shadowgale Forest.",
-            priority = 3340,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -10224,7 +9890,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Wounds of Betrayal from Elegael Thornpaw.",
-            priority = 3350,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -10256,7 +9921,6 @@ ns:RegisterGuide({
         },
         {
             text = "Enter the Nightfang Den and heal 7 injured druids.",
-            priority = 3360,
             route = {
                 { mapID = 2521, x = 0.6496, y = 0.34950000000000003, label = "druid", offMapText = "Travel to druid." },
             },
@@ -10288,7 +9952,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find and speak with Jorel Windsinger inside the Nightfang Den.",
-            priority = 3370,
             route = {
                 { mapID = 2521, x = 0.6448, y = 0.34740000000000004, label = "Jorel Windsinger", offMapText = "Travel to Jorel Windsinger." },
             },
@@ -10320,7 +9983,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in The Wounds of Betrayal to Elegael Thornpaw.",
-            priority = 3380,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -10356,7 +10018,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Fate of the Den from Elegael Thornpaw.",
-            priority = 3390,
             route = {
                 { y = 0.392, mapID = 2521, label = "Elegael Thornpaw", offMapText = "Travel to Zephras Isle.", x = 0.616 },
             },
@@ -10388,7 +10049,6 @@ ns:RegisterGuide({
         },
         {
             text = "Give the missive to Lotheluum in Valanaar and tell him what has transpired.",
-            priority = 3400,
             route = {
                 { y = 0.75, mapID = 2521, label = "Lotheluum Starbreeze", offMapText = "Travel to Zephras Isle.", x = 0.64 },
             },
@@ -10441,11 +10101,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94006,
-            priority = 3410,
         },
         {
             text = "Accept The Great Ursera Spirit from Lotheluum Starbreeze.",
-            priority = 3420,
             route = {
                 { y = 0.75, mapID = 2521, label = "Lotheluum Starbreeze", offMapText = "Travel to Zephras Isle.", x = 0.64 },
             },
@@ -10475,7 +10133,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Urs'endris near the falls northeast of Valanaar.",
-            priority = 3430,
             route = {
                 { y = 0.616, mapID = 2521, label = "Urs'endris", offMapText = "Travel to Zephras Isle.", x = 0.698 },
             },
@@ -10505,7 +10162,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Strength and Mercy from Urs'endris.",
-            priority = 3440,
             route = {
                 { y = 0.616, mapID = 2521, label = "Urs'endris", offMapText = "Travel to Zephras Isle.", x = 0.698 },
             },
@@ -10541,7 +10197,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find and kill Ur'endra in the Shen'dar Highlands.",
-            priority = 3450,
             route = {
                 { y = 0.654, mapID = 2521, label = "Ur'endra", offMapText = "Travel to Zephras Isle.", x = 0.54 },
             },
@@ -10577,7 +10232,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Strength and Mercy to Urs'endris.",
-            priority = 3460,
             route = {
                 { y = 0.616, mapID = 2521, label = "Urs'endris", offMapText = "Travel to Zephras Isle.", x = 0.698 },
             },
@@ -10634,11 +10288,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94007,
-            priority = 3470,
         },
         {
             text = "Accept Taming the Beast from Elayaa Easewind.",
-            priority = 3480,
             route = {
                 { y = 0.442, mapID = 2521, label = "Elayaa Easewind", offMapText = "Travel to Zephras Isle.", x = 0.452 },
             },
@@ -10668,7 +10320,6 @@ ns:RegisterGuide({
         },
         {
             text = "Report to Quel'ana Quickgale in Valanaar.",
-            priority = 3490,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -10698,7 +10349,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Taming the Beast from Quel'ana Quickgale.",
-            priority = 3500,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -10727,7 +10377,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 3510,
             id = "objective-94978-quest-work",
             conditions = {
                 all = {
@@ -10749,7 +10398,6 @@ ns:RegisterGuide({
         },
         {
             text = "Use the Taming Rod to tame a Windsong Crawler found near bodies of water.",
-            priority = 3520,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -10779,7 +10427,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Taming the Beast from Quel'ana Quickgale.",
-            priority = 3530,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -10814,7 +10461,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 3540,
             id = "objective-94979-quest-work",
             conditions = {
                 all = {
@@ -10836,7 +10482,6 @@ ns:RegisterGuide({
         },
         {
             text = "Use the Taming Rod to tame an Ornery Galestrider in the Gustberry Lowlands.",
-            priority = 3550,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -10872,7 +10517,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Taming the Beast from Quel'ana Quickgale.",
-            priority = 3560,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -10907,7 +10551,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 3570,
             id = "objective-94013-quest-work",
             conditions = {
                 all = {
@@ -10929,7 +10572,6 @@ ns:RegisterGuide({
         },
         {
             text = "Use the Taming Rod to tame a Vuldren Alpha in the Gustberry Lowlands. Practice your skills, then return the Taming Rod to Quel'ana Quickgale in Valanaar.",
-            priority = 3580,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -10965,7 +10607,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Training the Beast from Quel'ana Quickgale.",
-            priority = 3590,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -11001,7 +10642,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak to Quel'dora Quickgale in Valanaar.",
-            priority = 3600,
             route = {
                 { y = 0.726, mapID = 2521, label = "Quel'dora Quickgale", offMapText = "Travel to Zephras Isle.", x = 0.596 },
             },
@@ -11037,7 +10677,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Call of Fire from Olariaan Swiftburn.",
-            priority = 3610,
             route = {
                 { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", offMapText = "Travel to Zephras Isle.", x = 0.512 },
             },
@@ -11075,7 +10714,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay Skypriest Faladiel in the Gustberry Lowlands and collect Faladiel's Heart.",
-            priority = 3620,
             route = {
                 { y = 0.638, mapID = 2521, label = "Skypriest Faladiel", offMapText = "Travel to Zephras Isle.", x = 0.644 },
             },
@@ -11113,7 +10751,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Call of Fire to Olariaan Swiftburn.",
-            priority = 3630,
             route = {
                 { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", offMapText = "Travel to Zephras Isle.", x = 0.512 },
             },
@@ -11151,7 +10788,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Call of Fire from Olariaan Swiftburn.",
-            priority = 3640,
             route = {
                 { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", offMapText = "Travel to Zephras Isle.", x = 0.512 },
             },
@@ -11189,7 +10825,6 @@ ns:RegisterGuide({
         },
         {
             text = "Find the home of Kuramaa in the Shen'dar Highlands, and defeat the spirit in combat. Bring Kuramaa's Mask to Olariaan Swiftburn in the Gustberry Lowlands when you are victorious.",
-            priority = 3650,
             route = {
                 { y = 0.69, mapID = 2521, label = "Kuramaa", offMapText = "Travel to Zephras Isle.", x = 0.424 },
             },
@@ -11227,7 +10862,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Call of Fire to Olariaan Swiftburn.",
-            priority = 3660,
             route = {
                 { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", offMapText = "Travel to Zephras Isle.", x = 0.512 },
             },
@@ -11265,7 +10899,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Call of Fire from Olariaan Swiftburn.",
-            priority = 3670,
             route = {
                 { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", offMapText = "Travel to Zephras Isle.", x = 0.512 },
             },
@@ -11302,7 +10935,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 3680,
             route = {
                 { mapID = 2521, x = 0.512, y = 0.859, label = "Brazier of Offering", offMapText = "Travel to Brazier of Offering on Zephras Isle." },
             },
@@ -11328,7 +10960,6 @@ ns:RegisterGuide({
             classAction = "objective-97257-quest-work-ritual",
         },
         {
-            priority = 3690,
             route = {
                 { mapID = 2521, x = 0.5835, y = 0.7884, label = "Brazier of Eternal Flame", offMapText = "Travel to Brazier of Eternal Flame on Zephras Isle." },
             },
@@ -11355,7 +10986,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Call of Fire to Sessaria Skystride.",
-            priority = 3700,
             route = {
                 { y = 0.784, mapID = 2521, label = "Sessaria Skystride", offMapText = "Travel to Zephras Isle.", x = 0.582 },
             },
@@ -11397,7 +11027,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Blood for Blood from Ayessa Dawnsinger.",
-            priority = 3710,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -11431,7 +11060,6 @@ ns:RegisterGuide({
         },
         {
             text = "Collect 10 Al'Aketh Windstone Charms from the corpses of Al'Aketh cultists in the Gustberry Lowlands.",
-            priority = 3720,
             route = {
                 { y = 0.654, mapID = 2521, label = "Al'Aketh cultists in the Gustberry Lowlands", offMapText = "Travel to Zephras Isle.", x = 0.65 },
             },
@@ -11465,7 +11093,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Blood for Blood to Ayessa Dawnsinger.",
-            priority = 3730,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -11499,7 +11126,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Desperate Times from Talaanis Shadowsong.",
-            priority = 3740,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -11531,7 +11157,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Valennia Stormfist in Valanaar and follow her instructions.",
-            priority = 3750,
             route = {
                 { mapID = 2521, x = 0.6622, y = 0.7663, label = "Valennia Stormfist", offMapText = "Travel to Valennia Stormfist." },
             },
@@ -11563,7 +11188,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Ayessa Dawnsinger in Valanaar and follow her instructions.",
-            priority = 3760,
             route = {
                 { mapID = 2521, x = 0.5915, y = 0.7973, label = "Ayessa Dawnsinger", offMapText = "Travel to Ayessa Dawnsinger." },
             },
@@ -11595,7 +11219,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Elaadrin Evengale in Valanaar and follow his instructions.",
-            priority = 3770,
             route = {
                 { mapID = 2521, x = 0.6659, y = 0.7992, label = "Elaadrin Evengale", offMapText = "Travel to Elaadrin Evengale." },
             },
@@ -11627,7 +11250,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Desperate Times to Valennia Stormfist.",
-            priority = 3780,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -11664,7 +11286,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Prepare for Battle from Valennia Stormfist.",
-            priority = 3790,
             route = {
                 { y = 0.766, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -11696,7 +11317,6 @@ ns:RegisterGuide({
         },
         {
             text = "For Prepare for Battle: Speak with Valennia Stormfist in the Gustberry Lowlands.",
-            priority = 3800,
             id = "objective-93065-quest-work",
             kind = "objective",
             conditions = {
@@ -11725,7 +11345,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Valennia Stormfist in the Gustberry Lowlands.",
-            priority = 3810,
             route = {
                 { y = 0.71, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.612 },
             },
@@ -11757,7 +11376,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Making Our Move from Valennia Stormfist.",
-            priority = 3820,
             route = {
                 { y = 0.71, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.612 },
             },
@@ -11789,7 +11407,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 8 Al'Aketh Guardians at the Shrine of Akir.",
-            priority = 3830,
             route = {
                 { mapID = 2521, x = 0.5814, y = 0.5104, label = "Al'Aketh Guardian", offMapText = "Travel to Al'Aketh Guardian." },
             },
@@ -11821,7 +11438,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 6 Al'Aketh Spiritcallers at the Shrine of Akir.",
-            priority = 3840,
             route = {
                 { mapID = 2521, x = 0.5891, y = 0.5173, label = "Al'Aketh Spiritcaller", offMapText = "Travel to Al'Aketh Spiritcaller." },
             },
@@ -11853,7 +11469,6 @@ ns:RegisterGuide({
         },
         {
             text = "Slay 6 Al'Aketh Blademasters at the Shrine of Akir.",
-            priority = 3850,
             route = {
                 { mapID = 2521, x = 0.5924, y = 0.5109, label = "Al'Aketh Blademaster", offMapText = "Travel to Al'Aketh Blademaster." },
             },
@@ -11885,7 +11500,6 @@ ns:RegisterGuide({
         },
         {
             text = "Report to Hyusaa Quickbreeze at the Shrine of Akir after defeating the cultists.",
-            priority = 3860,
             route = {
                 { mapID = 2521, x = 0.6377, y = 0.5051, label = "Hyusaa Quickbreeze", offMapText = "Travel to Hyusaa Quickbreeze." },
             },
@@ -11917,7 +11531,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Making Our Move to Hyusaa Quickbreeze.",
-            priority = 3870,
             route = {
                 { y = 0.504, mapID = 2521, label = "Hyusaa Quickbreeze", offMapText = "Travel to Zephras Isle.", x = 0.638 },
             },
@@ -11955,7 +11568,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Inner Sanctum from Hyusaa Quickbreeze.",
-            priority = 3880,
             route = {
                 { y = 0.504, mapID = 2521, label = "Hyusaa Quickbreeze", offMapText = "Travel to Zephras Isle.", x = 0.638 },
             },
@@ -11987,7 +11599,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Valennia Stormfist inside the inner sanctum at the Shrine of Akir.",
-            priority = 3890,
             route = {
                 { y = 0.504, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.652 },
             },
@@ -12019,7 +11630,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Confront Lorthuna from Valennia Stormfist.",
-            priority = 3900,
             route = {
                 { y = 0.504, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.652 },
             },
@@ -12053,7 +11663,6 @@ ns:RegisterGuide({
         },
         {
             text = "Take the portal to the Rohashi Spires overhead and join Elaadrin Evengale and Ayessa Dawnsinger in their confrontation with High Priestess Lorthuna.",
-            priority = 3910,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -12087,7 +11696,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Fate of Zephras from Elaadrin Evengale.",
-            priority = 3920,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -12121,7 +11729,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The Fate of Zephras: Speak with Talaanis Shadowsong in Valanaar.",
-            priority = 3930,
             id = "objective-94369-quest-work",
             kind = "objective",
             conditions = {
@@ -12152,7 +11759,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Talaanis Shadowsong in Valanaar.",
-            priority = 3940,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -12186,7 +11792,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept What Comes Next from Talaanis Shadowsong.",
-            priority = 3950,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -12220,7 +11825,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Elaadrin Evengale when you are prepared to leave Zephras Isle.",
-            priority = 3960,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -12254,7 +11858,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Magical City of Dalaran from Elaadrin Evengale.",
-            priority = 3970,
             route = {
                 { y = 0.798, mapID = 2521, label = "Elaadrin Evengale", offMapText = "Travel to Zephras Isle.", x = 0.666 },
             },
@@ -12288,7 +11891,6 @@ ns:RegisterGuide({
         },
         {
             text = "Take the skycutter from Valanaar to Dalaran and turn in The Magical City of Dalaran to Danaaris Stargale.",
-            priority = 3980,
             route = {
                 { y = 0.562, mapID = 1416, label = "Danaaris Stargale in Dalaran", offMapText = "Take the Valanaar zeppelin toward Dalaran.", x = 0.124 },
             },
@@ -12322,7 +11924,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Confront Lorthuna from Valennia Stormfist.",
-            priority = 3990,
             route = {
                 { y = 0.504, mapID = 2521, label = "Valennia Stormfist", offMapText = "Travel to Zephras Isle.", x = 0.652 },
             },
@@ -12356,7 +11957,6 @@ ns:RegisterGuide({
         },
         {
             text = "Take the portal to the Rohashi Spires overhead and join Elaadrin Evengale and Ayessa Dawnsinger in their confrontation with the High Priestess Lorthuna.",
-            priority = 4000,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -12390,7 +11990,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Fate of Zephras from Ayessa Dawnsinger.",
-            priority = 4010,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -12424,7 +12023,6 @@ ns:RegisterGuide({
         },
         {
             text = "For The Fate of Zephras: Speak with Talaanis Shadowsong in Valanaar.",
-            priority = 4020,
             id = "objective-93836-quest-work",
             kind = "objective",
             conditions = {
@@ -12455,7 +12053,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Talaanis Shadowsong in Valanaar.",
-            priority = 4030,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -12489,7 +12086,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept What Comes Next from Talaanis Shadowsong.",
-            priority = 4040,
             route = {
                 { y = 0.766, mapID = 2521, label = "Talaanis Shadowsong", offMapText = "Travel to Zephras Isle.", x = 0.662 },
             },
@@ -12523,7 +12119,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Ayessa Dawnsinger when you are prepared to leave Zephras Isle.",
-            priority = 4050,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -12557,7 +12152,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept The Earthen Ring from Ayessa Dawnsinger.",
-            priority = 4060,
             route = {
                 { y = 0.796, mapID = 2521, label = "Ayessa Dawnsinger", offMapText = "Travel to Zephras Isle.", x = 0.59 },
             },
@@ -12591,7 +12185,6 @@ ns:RegisterGuide({
         },
         {
             text = "Take the skycutter from Valanaar to Mulgore and turn in The Earthen Ring to Alana Stormwalker.",
-            priority = 4070,
             route = {
                 { y = 0.224, mapID = 1412, label = "Alana Stormwalker in Mulgore", offMapText = "Take the Valanaar zeppelin to Mulgore.", x = 0.334 },
             },
@@ -12644,11 +12237,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 95350,
-            priority = 4080,
         },
         {
             text = "Accept Welcome to Azeroth from Alana Stormwalker.",
-            priority = 4090,
             route = {
                 { y = 0.224, mapID = 1412, label = "Alana Stormwalker in Mulgore", offMapText = "Take the Valanaar zeppelin to Mulgore.", x = 0.334 },
             },
@@ -12676,7 +12267,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Welcome to Azeroth to Thrall in Orgrimmar.",
-            priority = 4100,
             route = {
                 {
                     y = 0.497,
@@ -12713,7 +12303,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Exploring the Horde from Thrall.",
-            priority = 4110,
             route = {
                 { y = 0.378, mapID = 1454, label = "Thrall in the Valley of Wisdom", offMapText = "Travel to Orgrimmar and enter the Valley of Wisdom.", x = 0.32 },
             },
@@ -12747,7 +12336,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Nazgrel in Grommash Hold.",
-            priority = 4120,
             route = {
                 { y = 0.36, mapID = 1454, label = "Nazgrel in Grommash Hold", offMapText = "Travel to Orgrimmar and enter Grommash Hold.", x = 0.324 },
             },
@@ -12781,7 +12369,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Vol'jin in Grommash Hold.",
-            priority = 4130,
             route = {
                 { y = 0.366, mapID = 1454, label = "Vol'jin in Grommash Hold", offMapText = "Travel to Orgrimmar and enter Grommash Hold.", x = 0.342 },
             },
@@ -12815,7 +12402,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Cairne Bloodhoof on the High Rise in Thunder Bluff.",
-            priority = 4140,
             route = {
                 {
                     y = 0.639,
@@ -12860,7 +12446,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Lady Sylvanas Windrunner in the Royal Quarter.",
-            priority = 4150,
             route = {
                 { y = 0.918, mapID = 1458, label = "Lady Sylvanas Windrunner in the Royal Quarter", offMapText = "Take the zeppelin to the Undercity and enter the Royal Quarter.", x = 0.574 },
             },
@@ -12894,7 +12479,6 @@ ns:RegisterGuide({
         },
         {
             text = "Finish Exploring the Horde with Lady Sylvanas Windrunner.",
-            priority = 4160,
             route = {
                 { y = 0.918, mapID = 1458, label = "Lady Sylvanas Windrunner in the Royal Quarter", offMapText = "Take the zeppelin to the Undercity and enter the Royal Quarter.", x = 0.574 },
             },
@@ -12953,11 +12537,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94947,
-            priority = 4170,
         },
         {
             text = "Accept Welcome to Azeroth from Danaaris Stargale in Dalaran.",
-            priority = 4180,
             route = {
                 { y = 0.562, mapID = 1416, label = "Danaaris Stargale in Dalaran", offMapText = "Take the Valanaar zeppelin toward Dalaran.", x = 0.124 },
             },
@@ -13008,11 +12590,9 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94912,
-            priority = 4190,
         },
         {
             text = "Accept Child of Nature from Archmage Ansirem Runeweaver in Dalaran.",
-            priority = 4200,
             route = {
                 { y = 0.562, mapID = 1416, label = "Archmage Ansirem Runeweaver in Dalaran", offMapText = "Take the Valanaar zeppelin toward Dalaran.", x = 0.124 },
             },
@@ -13044,7 +12624,6 @@ ns:RegisterGuide({
         },
         {
             text = "Take the Skyborne Portal to Stormwind.",
-            priority = 4210,
             route = {
                 { y = 0.562, mapID = 1416, label = "Skyborne Portal in Dalaran", offMapText = "Take the Valanaar zeppelin toward Dalaran.", x = 0.124 },
             },
@@ -13072,7 +12651,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Welcome to Azeroth to Bolvar Fordragon in Stormwind Keep.",
-            priority = 4220,
             route = {
                 { y = 0.18, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.78 },
             },
@@ -13100,7 +12678,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Exploring the Alliance from Bolvar Fordragon.",
-            priority = 4230,
             route = {
                 { y = 0.384, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.801 },
             },
@@ -13134,7 +12711,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Journey to Sentinel Hill from Bolvar Fordragon. Westfall turns this in at Sentinel Hill.",
-            priority = 4240,
             route = {
                 { y = 0.384, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.801 },
             },
@@ -13168,7 +12744,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Child of Nature to Sheldras Moontree in Stormwind.",
-            priority = 4250,
             route = {
                 { y = 0.516, mapID = 1453, label = "Sheldras Moontree", offMapText = "Travel to Stormwind.", x = 0.212 },
             },
@@ -13200,7 +12775,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Moonglade from Sheldras Moontree.",
-            priority = 4260,
             route = {
                 { y = 0.516, mapID = 1453, label = "Sheldras Moontree", offMapText = "Travel to Stormwind.", x = 0.212 },
             },
@@ -13232,7 +12806,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Randal Emerson in the southern antechamber of Stormwind Keep.",
-            priority = 4270,
             route = {
                 { y = 0.18, mapID = 1453, label = "Randal Emerson", offMapText = "Travel to Stormwind Keep.", x = 0.78 },
             },
@@ -13266,7 +12839,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with High Tinker Mekkatorque in Tinker Town.",
-            priority = 4280,
             route = {
                 { y = 0.49, mapID = 1455, label = "High Tinker Mekkatorque", offMapText = "Take the Deeprun Tram to Ironforge.", x = 0.688 },
             },
@@ -13300,7 +12872,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with King Magni Bronzebeard in the High Seat.",
-            priority = 4290,
             route = {
                 { y = 0.562, mapID = 1455, label = "King Magni Bronzebeard", offMapText = "Take the Deeprun Tram to Ironforge.", x = 0.391 },
             },
@@ -13334,7 +12905,6 @@ ns:RegisterGuide({
         },
         {
             text = "Speak with Tyrande Whisperwind in the Temple of the Moon.",
-            priority = 4300,
             route = {
                 { y = 0.812, mapID = 1457, label = "Tyrande Whisperwind", offMapText = "Travel to Darnassus.", x = 0.39 },
             },
@@ -13372,7 +12942,6 @@ ns:RegisterGuide({
         },
         {
             text = "Turn in Exploring the Alliance to Bolvar Fordragon.",
-            priority = 4310,
             route = {
                 { y = 0.18, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.78 },
             },
@@ -13411,7 +12980,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 4320,
             route = {
                 { y = 0.306, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Teleport to Moonglade.", x = 0.562 },
             },

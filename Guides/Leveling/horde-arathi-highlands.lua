@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Arathi Highlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-arathi-highlands",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 676,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.4414, mapID = 1417, label = "Boulderfist Enforcer", offMapText = "Travel to Boulderfist Enforcer.", x = 0.3481 },
             },
@@ -86,14 +84,12 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.376, y = 0.434, label = "Boulderfist Ogre", offMapText = "Travel to Boulderfist Ogre." },
             },
             sourceStep = 2,
-            priority = 30,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { mapID = 1417, x = 0.5414, y = 0.38159999999999994, label = "Marcel's Head", offMapText = "Travel to Marcel's Head." },
             },
@@ -121,7 +117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.387, mapID = 1417, label = "Fardel Dabyrie", offMapText = "Travel to Fardel Dabyrie.", x = 0.5654 },
             },
@@ -149,7 +144,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.3608, mapID = 1417, label = "Kenata Dabyrie", offMapText = "Travel to Kenata Dabyrie.", x = 0.5637 },
             },
@@ -189,10 +183,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 642,
-            priority = 70,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.338, mapID = 1417, label = "The Princess Trapped", offMapText = "Travel to The Princess Trapped.", x = 0.6248 },
             },
@@ -217,7 +209,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "Turn in The Hammer May Fall to Drum Fel.",
             route = {
                 { y = 0.3391, mapID = 1417, label = "Drum Fel", offMapText = "Travel to Drum Fel in Arathi Highlands.", x = 0.7424 },
@@ -245,7 +236,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             route = {
                 { y = 0.3391, mapID = 1417, label = "Drum Fel", offMapText = "Travel to Drum Fel in Arathi Highlands.", x = 0.7424 },
             },
@@ -273,7 +263,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.3412, mapID = 1417, label = "Gor'mul", offMapText = "Travel to Gor'mul in Arathi Highlands.", x = 0.7267 },
             },
@@ -301,7 +290,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             text = "Turn in Hammerfall to Tor'gan.",
             route = {
                 { y = 0.3629, mapID = 1417, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471 },
@@ -329,7 +317,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.3629, mapID = 1417, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471 },
             },
@@ -363,7 +350,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.3629, mapID = 1417, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471 },
             },
@@ -391,7 +377,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Collect 10 Bloodstone Amulet.",
             route = {
                 { y = 0.3, mapID = 1417, label = "Syndicate Pathstalker", offMapText = "Travel to Syndicate Pathstalker.", x = 0.334 },
@@ -440,7 +425,6 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.424, y = 0.40399999999999997, label = "Highland Raptor Eye", offMapText = "Travel to Highland Raptor Eye." },
             },
             sourceStep = 12,
-            priority = 160,
             requiredQuests = {
                 {
                     mode = "any",
@@ -453,7 +437,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-672-raising-spirits" },
         },
         {
-            priority = 170,
             text = "Kill 8 Witherbark Witch Doctor.",
             route = {
                 { y = 0.68, mapID = 1417, label = "Witherbark Witch Doctor", offMapText = "Travel to Witherbark Witch Doctor.", x = 0.658 },
@@ -481,7 +464,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             text = "Kill 10 Witherbark Headhunter.",
             route = {
                 { y = 0.68, mapID = 1417, label = "Witherbark Headhunter", offMapText = "Travel to Witherbark Headhunter.", x = 0.658 },
@@ -509,7 +491,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             text = "Kill 10 Witherbark Axe Thrower.",
             route = {
                 { y = 0.68, mapID = 1417, label = "Witherbark Axe Thrower", offMapText = "Travel to Witherbark Axe Thrower.", x = 0.658 },
@@ -537,7 +518,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 200,
             text = "Turn in Foul Magics to Tor'gan.",
             route = {
                 { y = 0.3629, mapID = 1417, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471 },
@@ -565,7 +545,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Turn in Raising Spirits to Tor'gan.",
             route = {
                 { y = 0.3629, mapID = 1417, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471 },
@@ -599,7 +578,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.3629, mapID = 1417, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471 },
             },
@@ -633,7 +611,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "Turn in Raising Spirits to Gor'mul.",
             route = {
                 { y = 0.3412, mapID = 1417, label = "Gor'mul", offMapText = "Travel to Gor'mul in Arathi Highlands.", x = 0.7267 },
@@ -667,7 +644,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.3412, mapID = 1417, label = "Gor'mul", offMapText = "Travel to Gor'mul in Arathi Highlands.", x = 0.7267 },
             },
@@ -701,7 +677,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Turn in Raising Spirits to Tor'gan.",
             route = {
                 { y = 0.3629, mapID = 1417, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471 },
@@ -735,7 +710,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             text = "Turn in Call to Arms to Drum Fel.",
             route = {
                 { y = 0.3391, mapID = 1417, label = "Drum Fel", offMapText = "Travel to Drum Fel in Arathi Highlands.", x = 0.7424 },
@@ -768,7 +742,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             route = {
                 { mapID = 1424, x = 0.64, y = 0.599, label = "Mudsnout Blossoms", offMapText = "Travel to Mudsnout Blossoms." },
             },
@@ -796,7 +769,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 280,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -824,7 +796,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-509-quest-work" },
         },
         {
-            priority = 290,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -858,7 +829,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             text = "Turn in To Steal From Thieves to Genavie Callow.",
             route = {
                 { y = 0.4945, mapID = 1458, label = "Genavie Callow", offMapText = "Travel to Genavie Callow in Undercity.", x = 0.6384 },
@@ -886,7 +856,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             text = "Turn in Elixir of Agony to Master Apothecary Faranell.",
             route = {
                 { mapID = 1458, x = 0.4882, y = 0.6928, label = "Master Apothecary Faranell", offMapText = "Travel to Master Apothecary Faranell in Undercity." },
@@ -920,7 +889,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             route = {
                 { mapID = 1458, x = 0.5624, y = 0.9222, label = "Varimathras", offMapText = "Travel to Varimathras in Undercity." },
             },

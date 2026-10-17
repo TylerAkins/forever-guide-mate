@@ -4,7 +4,7 @@ ns:RegisterGuide({
     id = "dungeons-class-prerequisites",
     title = "Class Dungeon Prerequisites",
     category = "Dungeon Quest Guides",
-    revision = 3,
+    revision = 4,
     routeMode = "ordered",
     goals = {
         {
@@ -30,7 +30,6 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 10,
             dependsOn = {},
         },
         {
@@ -60,7 +59,6 @@ ns:RegisterGuide({
             route = {
                 { mapID = 1421, x = 0.432, y = 0.408, label = "Lumina Windsinger", offMapText = "Travel to Lumina Windsinger." },
             },
-            priority = 20,
             dependsOn = {},
         },
         {
@@ -91,7 +89,6 @@ ns:RegisterGuide({
             route = {
                 { mapID = 1421, x = 0.434, y = 0.41, label = "Trevan Rol", offMapText = "Travel to the Sepulcher in Silverpine Forest." },
             },
-            priority = 30,
         },
         {
             id = "objective-95036-material-2",
@@ -118,7 +115,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = true,
-            priority = 40,
         },
         {
             id = "objective-95036-material-3",
@@ -145,7 +141,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = true,
-            priority = 50,
         },
         {
             id = "accept-95042-moon-kissed-material",
@@ -171,7 +166,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.118, y = 0.344, label = "Ulric Frostveil", offMapText = "Travel to the Zoram Strand in Ashenvale." },
             },
             dependsOn = {},
-            priority = 60,
             classAction = "accept-95042-seeking-the-kor-gem",
         },
         {
@@ -198,7 +192,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.1355, y = 0.1206, label = "Naga at Blackfathom Deeps", offMapText = "Travel north along the Zoram Strand in Ashenvale." },
             },
             dependsOn = { "accept-95042-moon-kissed-material" },
-            priority = 70,
             classAction = "objective-95042-seeking-the-kor-gem",
         },
         {
@@ -225,7 +218,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.118, y = 0.344, label = "Ulric Frostveil", offMapText = "Travel to the Zoram Strand in Ashenvale." },
             },
             dependsOn = { "accept-95042-moon-kissed-material", "objective-95042-moon-kissed-material" },
-            priority = 80,
             classAction = "turnin-95042-seeking-the-kor-gem",
         },
         {
@@ -253,7 +245,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = true,
-            priority = 90,
         },
         {
             id = "turnin-95036-authored-class-prerequisite",
@@ -290,7 +281,6 @@ ns:RegisterGuide({
                 "objective-95036-material-4",
                 "turnin-95042-moon-kissed-material",
             },
-            priority = 100,
         },
         {
             id = "level-before-helper-1951",
@@ -307,7 +297,6 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 110,
             dependsOn = {},
         },
         {
@@ -339,7 +328,6 @@ ns:RegisterGuide({
             route = {
                 { mapID = 1441, x = 0.4782, y = 0.758, label = "Magus Tirth", offMapText = "Travel to Magus Tirth." },
             },
-            priority = 120,
             dependsOn = {},
         },
         {
@@ -369,7 +357,6 @@ ns:RegisterGuide({
             },
             text = "Enter Scarlet Monastery Library with your group. Collect the Rituals of Power book in the Athenaeum beside the doorway. Bring it to Tabetha in Dustwallow Marsh.",
             dependsOn = { "accept-1951-authored-class-prerequisite" },
-            priority = 130,
         },
         {
             id = "turnin-1951-authored-class-prerequisite",
@@ -401,7 +388,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.4606, y = 0.5709, label = "Tabetha", offMapText = "Travel to Tabetha." },
             },
             dependsOn = { "accept-1951-authored-class-prerequisite", "objective-1951-authored-class-prerequisite" },
-            priority = 140,
         },
         {
             id = "level-before-helper-7668",
@@ -427,7 +413,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             alternativeQuests = { 8258 },
-            priority = 150,
             dependsOn = {},
         },
         {
@@ -464,7 +449,6 @@ ns:RegisterGuide({
                 { mapID = 1454, x = 0.386, y = 0.362, label = "Sagorne Creststrider", offMapText = "Travel to Sagorne Creststrider." },
             },
             alternativeQuests = { 8258 },
-            priority = 160,
             dependsOn = {},
         },
         {
@@ -499,7 +483,6 @@ ns:RegisterGuide({
             text = "Collect Darkreaver's Head from Death Knight Darkreaver in Scholomance and bring it to Sagorne Creststrider in Orgrimmar's Valley of Wisdom.",
             dependsOn = { "accept-7668-authored-class-prerequisite" },
             alternativeQuests = { 8258 },
-            priority = 170,
         },
         {
             id = "turnin-7668-authored-class-prerequisite",
@@ -536,7 +519,6 @@ ns:RegisterGuide({
             },
             dependsOn = { "accept-7668-authored-class-prerequisite", "objective-7668-authored-class-prerequisite" },
             alternativeQuests = { 8258 },
-            priority = 180,
         },
         {
             id = "level-before-helper-7581",
@@ -553,7 +535,6 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 190,
             dependsOn = {},
         },
         {
@@ -579,7 +560,6 @@ ns:RegisterGuide({
             route = {
                 { mapID = 1419, x = 0.34, y = 0.502, label = "Daio the Decrepit", offMapText = "Travel to Daio the Decrepit." },
             },
-            priority = 200,
             dependsOn = {},
         },
         {
@@ -603,7 +583,6 @@ ns:RegisterGuide({
             },
             text = "Enter Dire Maul East, the Warpwood Quarter, with your group. Kill Wildspawn Satyr and collect 15 Satyr Blood. Bring it to Daio the Decrepit in the Tainted Scar, Blasted Lands.",
             dependsOn = { "accept-7581-authored-class-prerequisite" },
-            priority = 210,
         },
         {
             id = "turnin-7581-authored-class-prerequisite",
@@ -629,7 +608,6 @@ ns:RegisterGuide({
                 { mapID = 1419, x = 0.34, y = 0.502, label = "Daio the Decrepit", offMapText = "Travel to Daio the Decrepit." },
             },
             dependsOn = { "accept-7581-authored-class-prerequisite", "objective-7581-authored-class-prerequisite" },
-            priority = 220,
         },
         {
             id = "level-before-helper-7642",
@@ -654,7 +632,6 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 230,
             dependsOn = {},
         },
         {
@@ -690,7 +667,6 @@ ns:RegisterGuide({
             route = {
                 { mapID = 1453, x = 0.597, y = 0.338, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore." },
             },
-            priority = 240,
             dependsOn = {},
         },
         {
@@ -724,7 +700,6 @@ ns:RegisterGuide({
             },
             text = "Collect 40 Runecloth, 6 Arcanite Bars, 10 Arthas' Tears and 5 Stratholme Holy Water from Stratholme supply crates. The quest also requires 150 gold. Bring these to Grimand Elmore in Stormwind's Dwarven District.",
             dependsOn = { "accept-7642-authored-class-prerequisite" },
-            priority = 250,
         },
         {
             id = "turnin-7642-authored-class-prerequisite",
@@ -760,7 +735,6 @@ ns:RegisterGuide({
                 { mapID = 1453, x = 0.5174, y = 0.1207, label = "Grimand Elmore", offMapText = "Travel to Grimand Elmore." },
             },
             dependsOn = { "accept-7642-authored-class-prerequisite", "objective-7642-authored-class-prerequisite" },
-            priority = 260,
         },
         {
             id = "level-before-helper-8258",
@@ -786,7 +760,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             alternativeQuests = { 7668 },
-            priority = 270,
             dependsOn = {},
         },
         {
@@ -823,7 +796,6 @@ ns:RegisterGuide({
                 { mapID = 1454, x = 0.386, y = 0.362, label = "Sagorne Creststrider", offMapText = "Travel to Sagorne Creststrider." },
             },
             alternativeQuests = { 7668 },
-            priority = 280,
             dependsOn = {},
         },
         {
@@ -858,7 +830,6 @@ ns:RegisterGuide({
             text = "Enter Scholomance with your group. Use the Divination Scryer in the basement of the Great Ossuary. Defeat the summoned spirits, then Death Knight Darkreaver, and loot Darkreaver's Head.",
             dependsOn = { "accept-8258-authored-class-prerequisite" },
             alternativeQuests = { 7668 },
-            priority = 290,
         },
         {
             id = "turnin-8258-authored-class-prerequisite",
@@ -895,7 +866,6 @@ ns:RegisterGuide({
             },
             dependsOn = { "accept-8258-authored-class-prerequisite", "objective-8258-authored-class-prerequisite" },
             alternativeQuests = { 7668 },
-            priority = 300,
         },
     },
 })

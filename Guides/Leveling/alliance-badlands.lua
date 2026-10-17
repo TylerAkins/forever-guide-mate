@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Badlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-badlands",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 705,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.7467, mapID = 1455, label = "Blue Pearl", offMapText = "Travel to Blue Pearl.", x = 0.2416 },
             },
@@ -73,10 +71,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1467,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.1749, mapID = 1455, label = "Roetten Stonehammer", offMapText = "Travel to Roetten Stonehammer in Ironforge.", x = 0.6791 },
             },
@@ -110,7 +106,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.1174, mapID = 1455, label = "Prospector Stormpike", offMapText = "Travel to Prospector Stormpike in Ironforge.", x = 0.7464 },
             },
@@ -157,10 +152,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2500,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.4938, mapID = 1432, label = "Ghak Healtouch", offMapText = "Travel to Ghak Healtouch in Loch Modan.", x = 0.3707 },
             },
@@ -188,7 +181,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             text = "Turn in Ironband Wants You! to Prospector Ironband.",
             route = {
                 { y = 0.6562, mapID = 1432, label = "Prospector Ironband", offMapText = "Travel to Prospector Ironband in Loch Modan.", x = 0.6593 },
@@ -216,7 +208,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.6562, mapID = 1432, label = "Prospector Ironband", offMapText = "Travel to Prospector Ironband in Loch Modan.", x = 0.6593 },
             },
@@ -244,7 +235,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.434, mapID = 1418, label = "Prospector Ryedol", offMapText = "Travel to Prospector Ryedol in Badlands.", x = 0.5342 },
             },
@@ -272,7 +262,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.4331, mapID = 1418, label = "Sigrun Ironhew", offMapText = "Travel to Sigrun Ironhew in Badlands.", x = 0.538 },
             },
@@ -300,7 +289,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.3393, mapID = 1418, label = "A Sign of Hope", offMapText = "Travel to A Sign of Hope.", x = 0.5303 },
             },
@@ -349,7 +337,6 @@ ns:RegisterGuide({
                 { mapID = 1418, x = 0.514, y = 0.326, label = "Ryedol's Lucky Pick", offMapText = "Travel to Ryedol's Lucky Pick." },
             },
             sourceStep = 15,
-            priority = 130,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -377,14 +364,12 @@ ns:RegisterGuide({
                 { mapID = 1418, x = 0.6661, y = 0.2202, label = "Supply Crate", offMapText = "Travel to Supply Crate." },
             },
             sourceStep = 16,
-            priority = 140,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-718-mirages" },
         },
         {
-            priority = 150,
             text = "Turn in A Dwarf and His Tools to Prospector Ryedol.",
             route = {
                 { y = 0.434, mapID = 1418, label = "Prospector Ryedol", offMapText = "Travel to Prospector Ryedol in Badlands.", x = 0.5342 },
@@ -412,7 +397,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Turn in A Sign of Hope to Prospector Ryedol.",
             route = {
                 { y = 0.434, mapID = 1418, label = "Prospector Ryedol", offMapText = "Travel to Prospector Ryedol in Badlands.", x = 0.5342 },
@@ -440,7 +424,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "Turn in Mirages to Sigrun Ironhew.",
             route = {
                 { y = 0.4331, mapID = 1418, label = "Sigrun Ironhew", offMapText = "Travel to Sigrun Ironhew in Badlands.", x = 0.538 },
@@ -468,7 +451,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             route = {
                 { y = 0.4331, mapID = 1418, label = "Sigrun Ironhew", offMapText = "Travel to Sigrun Ironhew in Badlands.", x = 0.538 },
             },
@@ -502,7 +484,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.5293, mapID = 1418, label = "Rigglefuzz", offMapText = "Travel to Rigglefuzz in Badlands.", x = 0.4239 },
             },
@@ -539,10 +520,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 703,
-            priority = 200,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.5293, mapID = 1418, label = "Rigglefuzz", offMapText = "Travel to Rigglefuzz in Badlands.", x = 0.4239 },
             },
@@ -567,7 +546,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             text = "Turn in Pearl Diving to Rigglefuzz.",
             route = {
                 { y = 0.5293, mapID = 1418, label = "Rigglefuzz", offMapText = "Travel to Rigglefuzz in Badlands.", x = 0.4239 },
@@ -592,7 +570,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             route = {
                 { y = 0.5269, mapID = 1418, label = "Martek the Exiled", offMapText = "Travel to Martek the Exiled in Badlands.", x = 0.4222 },
             },
@@ -623,7 +600,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             route = {
                 { y = 0.5269, mapID = 1418, label = "Martek the Exiled", offMapText = "Travel to Martek the Exiled in Badlands.", x = 0.4222 },
             },
@@ -654,7 +630,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Turn in Find Agmond.",
             route = {
                 { y = 0.6241, mapID = 1418, label = "Find Agmond", offMapText = "Travel to Find Agmond.", x = 0.5089 },
@@ -682,7 +657,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.6241, mapID = 1418, label = "Murdaloc", offMapText = "Travel to Murdaloc.", x = 0.5089 },
             },
@@ -716,7 +690,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Kill Murdaloc.",
             route = {
                 { y = 0.663, mapID = 1418, label = "Murdaloc", offMapText = "Travel to Murdaloc.", x = 0.4963 },
@@ -768,7 +741,6 @@ ns:RegisterGuide({
                 { mapID = 1418, x = 0.504, y = 0.6859999999999999, label = "Indurium Flake", offMapText = "Travel to Indurium Flake." },
             },
             sourceStep = 24,
-            priority = 280,
             requiredQuests = {
                 {
                     mode = "any",
@@ -802,7 +774,6 @@ ns:RegisterGuide({
                 { mapID = 1418, x = 0.504, y = 0.6859999999999999, label = "Stonevault Bonesnapper", offMapText = "Travel to Stonevault Bonesnapper." },
             },
             sourceStep = 25,
-            priority = 290,
             requiredQuests = {
                 {
                     mode = "any",
@@ -815,7 +786,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-739-murdaloc" },
         },
         {
-            priority = 300,
             text = "For Barbecued Buzzard Wings: Bring 4 Buzzard Wings to Rigglefuzz.",
             route = {
                 { mapID = 1418, x = 0.172, y = 0.61, label = "Buzzard Wing", offMapText = "Travel to Buzzard Wing." },
@@ -840,7 +810,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-703-barbecued-buzzard-wings" },
         },
         {
-            priority = 310,
             text = "Turn in Barbecued Buzzard Wings to Rigglefuzz.",
             route = {
                 { y = 0.5293, mapID = 1418, label = "Rigglefuzz", offMapText = "Travel to Rigglefuzz in Badlands.", x = 0.4239 },
@@ -865,7 +834,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Turn in Indurium to Martek the Exiled.",
             route = {
                 { y = 0.527, mapID = 1418, label = "Martek the Exiled", offMapText = "Travel to Martek the Exiled in Badlands.", x = 0.4221 },
@@ -896,7 +864,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             route = {
                 { y = 0.527, mapID = 1418, label = "Martek the Exiled", offMapText = "Travel to Martek the Exiled in Badlands.", x = 0.4221 },
             },
@@ -939,10 +906,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 710,
-            priority = 340,
         },
         {
-            priority = 350,
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
             },
@@ -967,7 +932,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
             },
@@ -992,7 +956,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             text = "For Coolant Heads Prevail: Find Frost Oil and bring it to Lotwil Veriatus in Badlands.",
             id = "objective-713-quest-work",
             kind = "objective",
@@ -1014,7 +977,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-713-coolant-heads-prevail" },
         },
         {
-            priority = 380,
             text = "Turn in Coolant Heads Prevail to Lotwil Veriatus.",
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
@@ -1039,7 +1001,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
             },
@@ -1070,7 +1031,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             text = "For Gyro... What?: Bring a Gyrochronatom to Lotwil Veriatus in the Badlands.",
             id = "objective-714-quest-work",
             kind = "objective",
@@ -1098,7 +1058,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-714-gyro-what" },
         },
         {
-            priority = 410,
             text = "Turn in Gyro... What? to Lotwil Veriatus.",
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
@@ -1129,7 +1088,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.4423, mapID = 1418, label = "Lucien Tosselwrench", offMapText = "Travel to Lucien Tosselwrench in Badlands.", x = 0.2582 },
             },
@@ -1160,7 +1118,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "For Liquid Stone: Bring a Healing Potion and a Lesser Invisibility Potion to Lucien Tosselwrench in the Badlands.",
             id = "objective-715-quest-work",
             kind = "objective",
@@ -1188,7 +1145,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-715-liquid-stone" },
         },
         {
-            priority = 440,
             text = "Turn in Liquid Stone to Lucien Tosselwrench.",
             route = {
                 { y = 0.4423, mapID = 1418, label = "Lucien Tosselwrench", offMapText = "Travel to Lucien Tosselwrench in Badlands.", x = 0.2582 },
@@ -1219,7 +1175,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Collect 10 Small Stone Shard.",
             route = {
                 { y = 0.434, mapID = 1418, label = "Lesser Rock Elemental", offMapText = "Travel to Lesser Rock Elemental.", x = 0.214 },
@@ -1244,7 +1199,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
@@ -1269,7 +1223,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
             },
@@ -1300,7 +1253,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Collect 3 Large Stone Slab.",
             route = {
                 { y = 0.378, mapID = 1418, label = "Rock Elemental", offMapText = "Travel to Rock Elemental.", x = 0.134 },
@@ -1331,7 +1283,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
@@ -1362,7 +1313,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
             },
@@ -1393,7 +1343,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             text = "Collect 5 Bracers of Rock Binding.",
             route = {
                 { y = 0.774, mapID = 1418, label = "Greater Rock Elemental", offMapText = "Travel to Greater Rock Elemental.", x = 0.044 },
@@ -1445,7 +1394,6 @@ ns:RegisterGuide({
                 { mapID = 1418, x = 0.044000000000000004, y = 0.774, label = "Rock Elemental Shard", offMapText = "Travel to Rock Elemental Shard." },
             },
             sourceStep = 39,
-            priority = 520,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1473,7 +1421,6 @@ ns:RegisterGuide({
                 { mapID = 1418, x = 0.124, y = 0.7440000000000001, label = "Scrap Metal", offMapText = "Travel to Scrap Metal." },
             },
             sourceStep = 40,
-            priority = 530,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1507,7 +1454,6 @@ ns:RegisterGuide({
                 { mapID = 1418, x = 0.172, y = 0.61, label = "Buzzard Gizzard", offMapText = "Travel to Buzzard Gizzard." },
             },
             sourceStep = 41,
-            priority = 540,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1535,14 +1481,12 @@ ns:RegisterGuide({
                 { mapID = 1418, x = 0.20800000000000002, y = 0.568, label = "Crag Coyote Fang", offMapText = "Travel to Crag Coyote Fang." },
             },
             sourceStep = 42,
-            priority = 550,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-2500-badlands-reagent-run" },
         },
         {
-            priority = 560,
             text = "Turn in Scrounging to Sigrun Ironhew.",
             route = {
                 { y = 0.4331, mapID = 1418, label = "Sigrun Ironhew", offMapText = "Travel to Sigrun Ironhew in Badlands.", x = 0.538 },
@@ -1576,7 +1520,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
@@ -1607,7 +1550,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
             },
@@ -1638,7 +1580,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 590,
             text = "Turn in This Is Going to Be Hard to Lucien Tosselwrench.",
             route = {
                 { y = 0.4424, mapID = 1418, label = "Lucien Tosselwrench", offMapText = "Travel to Lucien Tosselwrench in Badlands.", x = 0.2582 },
@@ -1669,7 +1610,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 600,
             route = {
                 { y = 0.4424, mapID = 1418, label = "Lucien Tosselwrench", offMapText = "Travel to Lucien Tosselwrench in Badlands.", x = 0.2582 },
             },
@@ -1700,7 +1640,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 610,
             route = {
                 { y = 0.4424, mapID = 1418, label = "Lucien Tosselwrench", offMapText = "Travel to Lucien Tosselwrench in Badlands.", x = 0.2582 },
             },
@@ -1731,7 +1670,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             text = "For Stone Is Better than Cloth: Bring some Patterned Bronze Bracers to Lucien Tosselwrench in the Badlands.",
             id = "objective-716-quest-work",
             kind = "objective",
@@ -1759,7 +1697,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-716-stone-is-better-than-cloth" },
         },
         {
-            priority = 630,
             text = "Turn in Stone Is Better than Cloth to Lucien Tosselwrench.",
             route = {
                 { y = 0.4424, mapID = 1418, label = "Lucien Tosselwrench", offMapText = "Travel to Lucien Tosselwrench in Badlands.", x = 0.2582 },
@@ -1790,7 +1727,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             text = "Turn in This Is Going to Be Hard to Lotwil Veriatus.",
             route = {
                 { y = 0.4486, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
@@ -1821,7 +1757,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 650,
             route = {
                 { y = 0.4486, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
             },
@@ -1852,7 +1787,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             text = "For This Is Going to Be Hard: Defeat the Fam'retor Guardian and bring Lotwil's Shackles of Elemental Binding back to Lotwil Veriatus.",
             id = "objective-778-quest-work",
             kind = "objective",
@@ -1880,7 +1814,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-778-this-is-going-to-be-hard" },
         },
         {
-            priority = 670,
             text = "Turn in This Is Going to Be Hard to Lotwil Veriatus.",
             route = {
                 { y = 0.4487, mapID = 1418, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.2595 },
@@ -1911,7 +1844,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 680,
             text = "Turn in Badlands Reagent Run to Ghak Healtouch.",
             route = {
                 { y = 0.4938, mapID = 1432, label = "Ghak Healtouch", offMapText = "Travel to Ghak Healtouch in Loch Modan.", x = 0.3707 },
@@ -1944,7 +1876,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             text = "Turn in Murdaloc to Prospector Ironband.",
             route = {
                 { y = 0.6562, mapID = 1432, label = "Prospector Ironband", offMapText = "Travel to Prospector Ironband in Loch Modan.", x = 0.6593 },

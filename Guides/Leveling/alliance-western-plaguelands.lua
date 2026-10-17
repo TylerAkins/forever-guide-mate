@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Western Plaguelands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-western-plaguelands",
@@ -35,10 +35,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5066,
             alternativeQuests = { 5090, 5091 },
-            priority = 10,
         },
         {
-            priority = 20,
             text = "Accept A Call to Arms: The Plaguelands! from Crier Goodman in Stormwind City.",
             id = "accept-5066-verified-pickup",
             kind = "accept",
@@ -63,7 +61,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
             },
@@ -92,7 +89,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5066-verified-pickup" },
         },
         {
-            priority = 40,
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
             },
@@ -121,7 +117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             text = "Accept A Call to Arms: The Plaguelands! from Herald Moonstalker in Darnassus.",
             id = "accept-5091-verified-pickup",
             kind = "accept",
@@ -146,7 +141,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
             },
@@ -175,7 +169,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5091-verified-pickup" },
         },
         {
-            priority = 70,
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
             },
@@ -216,10 +209,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5401,
             alternativeQuests = { 5405, 5503 },
-            priority = 80,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.8355, mapID = 1422, label = "Argent Officer Pureheart", offMapText = "Travel to Argent Officer Pureheart in Western Plaguelands.", x = 0.4297 },
             },
@@ -245,7 +236,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Kill 10 Skeletal Flayer.",
             route = {
                 { y = 0.794, mapID = 1422, label = "Skeletal Flayer", offMapText = "Travel to Skeletal Flayer.", x = 0.508 },
@@ -273,7 +263,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             text = "Kill 10 Slavering Ghoul.",
             route = {
                 { y = 0.794, mapID = 1422, label = "Slavering Ghoul", offMapText = "Travel to Slavering Ghoul.", x = 0.508 },
@@ -301,7 +290,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             text = "Turn in Clear the Way to Commander Ashlam Valorfist.",
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
@@ -329,7 +317,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
             },
@@ -363,7 +350,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Turn in The Scourge Cauldrons to High Priestess MacDonnell.",
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
@@ -397,7 +383,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
             },
@@ -431,7 +416,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Collect 1 Felstone Field Cauldron Key.",
             route = {
                 { y = 0.5711, mapID = 1422, label = "Cauldron Lord Bilemaw", offMapText = "Travel to Cauldron Lord Bilemaw.", x = 0.3703 },
@@ -465,7 +449,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "Turn in Target: Felstone Field.",
             route = {
                 { y = 0.5687, mapID = 1422, label = "Target: Felstone Field", offMapText = "Travel to Target: Felstone Field.", x = 0.3719 },
@@ -499,7 +482,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             route = {
                 { y = 0.5687, mapID = 1422, label = "Return to Chillwind Camp", offMapText = "Travel to Chillwind Camp.", x = 0.3719 },
             },
@@ -533,7 +515,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.5405, mapID = 1422, label = "Janice Felstone", offMapText = "Travel to Janice Felstone in Western Plaguelands.", x = 0.384 },
             },
@@ -558,7 +539,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Turn in Better Late Than Never.",
             route = {
                 { y = 0.5524, mapID = 1422, label = "Better Late Than Never", offMapText = "Travel to Better Late Than Never.", x = 0.3873 },
@@ -583,7 +563,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.5524, mapID = 1422, label = "Better Late Than Never", offMapText = "Travel to Better Late Than Never.", x = 0.3873 },
             },
@@ -617,7 +596,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },

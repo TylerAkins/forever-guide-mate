@@ -88,10 +88,14 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install --yes lua5.1
       - name: Engine regressions
         run: lua5.1 tests/lua/run.lua
+      - name: Authored guide contracts
+        run: lua5.1 tests/lua/authored.lua
       - name: Ordered route behavior
         run: lua5.1 tests/lua/ordered.lua
       - name: Catalog and prerequisite coverage
         run: lua5.1 tests/lua/catalog.lua
+      - name: Dungeon and raid itineraries
+        run: FGM_DUNGEONS=1 lua5.1 tests/lua/journeys.lua
       - name: UI behavior
         run: lua5.1 tests/lua/ui.lua
       - name: Guide data lint

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Dustwallow Marsh",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-dustwallow-marsh-part-2",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1166,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.3142, mapID = 1445, label = "Overlord Mok'Morokk", offMapText = "Travel to Overlord Mok'Morokk in Dustwallow Marsh.", x = 0.363 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.3308, mapID = 1445, label = "Draz'Zilb", offMapText = "Travel to Draz'Zilb in Dustwallow Marsh.", x = 0.3715 },
             },
@@ -93,7 +90,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { y = 0.3139, mapID = 1445, label = "Tharg", offMapText = "Travel to Tharg in Dustwallow Marsh.", x = 0.3737 },
             },
@@ -121,7 +117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -158,7 +153,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1187,
-            priority = 60,
         },
         {
             id = "objective-1187-1-seaforium-booster",
@@ -179,7 +173,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.5407, y = 0.5649000000000001, label = "Razzeric's Tweaking", offMapText = "Travel to Razzeric's Tweaking." },
             },
             sourceStep = 5,
-            priority = 70,
             requiredQuests = {
                 {
                     mode = "any",
@@ -192,7 +185,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.604, mapID = 1445, label = "Muckshell Razorclaw", offMapText = "Travel to Muckshell Razorclaw.", x = 0.564 },
             },
@@ -247,7 +239,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.38670000000000004, y = 0.6557999999999999, label = "Mok'Morokk's Grog", offMapText = "Travel to Mok'Morokk's Grog." },
             },
             sourceStep = 8,
-            priority = 90,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -275,7 +266,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.3664, y = 0.6957, label = "Mok'Morokk's Strongbox", offMapText = "Travel to Mok'Morokk's Strongbox." },
             },
             sourceStep = 9,
-            priority = 100,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -303,7 +293,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.3846, y = 0.6596, label = "Firemane Scalebane", offMapText = "Travel to Firemane Scalebane." },
             },
             sourceStep = 10,
-            priority = 110,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -331,7 +320,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.42, y = 0.672, label = "Firemane Ash Tail", offMapText = "Travel to Firemane Ash Tail." },
             },
             sourceStep = 11,
-            priority = 120,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -359,7 +347,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.42, y = 0.672, label = "Firemane Scout", offMapText = "Travel to Firemane Scout." },
             },
             sourceStep = 11,
-            priority = 130,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -387,7 +374,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.41, y = 0.746, label = "Searing Tongue", offMapText = "Travel to Searing Tongue." },
             },
             sourceStep = 12,
-            priority = 140,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -415,14 +401,12 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.41, y = 0.746, label = "Searing Heart", offMapText = "Travel to Searing Heart." },
             },
             sourceStep = 12,
-            priority = 150,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1169-identifying-the-brood" },
         },
         {
-            priority = 160,
             text = "Turn in Identifying the Brood to Draz'Zilb.",
             route = {
                 { y = 0.3308, mapID = 1445, label = "Draz'Zilb", offMapText = "Travel to Draz'Zilb in Dustwallow Marsh.", x = 0.3715 },
@@ -450,7 +434,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.3308, mapID = 1445, label = "Draz'Zilb", offMapText = "Travel to Draz'Zilb in Dustwallow Marsh.", x = 0.3715 },
             },
@@ -484,7 +467,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Turn in Army of the Black Dragon to Tharg.",
             route = {
                 { y = 0.3139, mapID = 1445, label = "Tharg", offMapText = "Travel to Tharg in Dustwallow Marsh.", x = 0.3737 },
@@ -517,7 +499,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             text = "Turn in Overlord Mok'Morokk's Concern to Overlord Mok'Morokk.",
             route = {
                 { y = 0.3142, mapID = 1445, label = "Overlord Mok'Morokk", offMapText = "Travel to Overlord Mok'Morokk in Dustwallow Marsh.", x = 0.363 },
@@ -549,7 +530,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 200,
             text = "Turn in The Brood of Onyxia to Overlord Mok'Morokk.",
             route = {
                 { y = 0.3142, mapID = 1445, label = "Overlord Mok'Morokk", offMapText = "Travel to Overlord Mok'Morokk in Dustwallow Marsh.", x = 0.363 },
@@ -583,7 +563,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.3142, mapID = 1445, label = "Overlord Mok'Morokk", offMapText = "Travel to Overlord Mok'Morokk in Dustwallow Marsh.", x = 0.363 },
             },
@@ -617,7 +596,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             text = "Turn in The Brood of Onyxia to Draz'Zilb.",
             route = {
                 { y = 0.3308, mapID = 1445, label = "Draz'Zilb", offMapText = "Travel to Draz'Zilb in Dustwallow Marsh.", x = 0.3715 },
@@ -651,7 +629,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             text = "Turn in Marg Speaks to Nazeer Bloodpike.",
             route = {
                 { y = 0.3066, mapID = 1445, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh.", x = 0.3521 },
@@ -685,7 +662,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.3066, mapID = 1445, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh.", x = 0.3521 },
             },
@@ -719,7 +695,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Turn in Report to Zor to Zor Lonetree.",
             route = {
                 { y = 0.3838, mapID = 1454, label = "Zor Lonetree", offMapText = "Travel to Zor Lonetree in Orgrimmar.", x = 0.3893 },
@@ -753,7 +728,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.3838, mapID = 1454, label = "Zor Lonetree", offMapText = "Travel to Zor Lonetree in Orgrimmar.", x = 0.3893 },
             },
@@ -787,7 +761,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             route = {
                 { y = 0.3422, mapID = 1454, label = "Belgrom Rockmaul", offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.", x = 0.7522 },
             },

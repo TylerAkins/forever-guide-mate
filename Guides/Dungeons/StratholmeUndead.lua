@@ -27,10 +27,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-stratholme-undead",
     title = "Stratholme - Undead",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -41,7 +42,6 @@ ns:RegisterGuide({
         {
             id = "accept-5382-doctor-theolen-krastinov-the-butcher",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 55 } },
             text = "Accept Doctor Theolen Krastinov, the Butcher from Eva Sarkhoff. 'The pleasure is mine madam. Might I ask what it is that you are doing here?'.",
             complete = QuestState(5382, "activeOrCompleted"),
@@ -52,7 +52,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 11,
             conditions = { level = { min = 55 } },
             text = "Enter Stratholme - Undead with your group.",
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
@@ -62,7 +61,6 @@ ns:RegisterGuide({
         {
             id = "objective-5382-2-burn-the-remains-of-eva",
             kind = "objective",
-            priority = 14,
             conditions = { level = { min = 55 } },
             text = "Burn the Remains of Eva Sarkhoff.",
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
@@ -72,7 +70,6 @@ ns:RegisterGuide({
         {
             id = "objective-5382-3-burn-the-remains-of-luci",
             kind = "objective",
-            priority = 16,
             conditions = { level = { min = 55 } },
             text = "Burn the Remains of Lucien Sarkhoff.",
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
@@ -82,7 +79,6 @@ ns:RegisterGuide({
         {
             id = "objective-5382-1-doctor-theolen-krastinov",
             kind = "objective",
-            priority = 17,
             conditions = { level = { min = 55 } },
             text = "Kill Doctor Theolen Krastinov.",
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
@@ -92,7 +88,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5382-doctor-theolen-krastinov-the-butcher",
             kind = "turnin",
-            priority = 20,
             conditions = { level = { min = 55 } },
             text = "Turn in Doctor Theolen Krastinov, the Butcher to Eva Sarkhoff.",
             dependsOn = { "objective-5382-2-burn-the-remains-of-eva", "objective-5382-3-burn-the-remains-of-luci", "objective-5382-1-doctor-theolen-krastinov" },
@@ -103,8 +98,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5515-krastinov-s-bag-of-horrors",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5382 } } },
             kind = "accept",
-            priority = 21,
             conditions = { level = { min = 55 } },
             text = "Accept Krastinov's Bag of Horrors from Eva Sarkhoff.",
             dependsOn = { "turnin-5382-doctor-theolen-krastinov-the-butcher" },
@@ -115,8 +110,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5515-1-krastinov-s-bag-of-horro",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5382 } } },
             kind = "objective",
-            priority = 23,
             conditions = { level = { min = 55 } },
             text = "Collect Krastinov's Bag of Horrors.",
             dependsOn = { "accept-5515-krastinov-s-bag-of-horrors" },
@@ -125,8 +120,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5515-krastinov-s-bag-of-horrors",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5382 } } },
             kind = "turnin",
-            priority = 24,
             conditions = { level = { min = 55 } },
             text = "Turn in Krastinov's Bag of Horrors to Eva Sarkhoff.",
             dependsOn = { "objective-5515-1-krastinov-s-bag-of-horro" },
@@ -137,8 +132,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5384-kirtonos-the-herald",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5515 } } },
             kind = "accept",
-            priority = 25,
             conditions = { level = { min = 55 } },
             text = "Accept Kirtonos the Herald from Eva Sarkhoff.",
             dependsOn = { "turnin-5515-krastinov-s-bag-of-horrors" },
@@ -149,8 +144,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5384-1-kirtonos-the-herald",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5515 } } },
             kind = "objective",
-            priority = 27,
             conditions = { level = { min = 55 } },
             text = "Kill Kirtonos the Herald.",
             dependsOn = { "accept-5384-kirtonos-the-herald" },
@@ -159,8 +154,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5384-kirtonos-the-herald",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5515 } } },
             kind = "turnin",
-            priority = 28,
             conditions = { level = { min = 55 } },
             text = "Turn in Kirtonos the Herald to Eva Sarkhoff.",
             dependsOn = { "objective-5384-1-kirtonos-the-herald" },
@@ -172,7 +167,6 @@ ns:RegisterGuide({
         {
             id = "accept-5461-the-human-ras-frostwhisper",
             kind = "accept",
-            priority = 30,
             conditions = { level = { min = 57 } },
             text = "Accept The Human, Ras Frostwhisper from Magistrate Marduke.",
             complete = QuestState(5461, "activeOrCompleted"),
@@ -183,7 +177,6 @@ ns:RegisterGuide({
         {
             id = "objective-5461-1-keepsake-of-remembrance",
             kind = "objective",
-            priority = 32,
             conditions = { level = { min = 57 } },
             text = "Collect Keepsake of Remembrance.",
             dependsOn = { "accept-5461-the-human-ras-frostwhisper" },
@@ -195,7 +188,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5461-the-human-ras-frostwhisper",
             kind = "turnin",
-            priority = 33,
             conditions = { level = { min = 57 } },
             text = "Turn in The Human, Ras Frostwhisper to Magistrate Marduke.",
             dependsOn = { "objective-5461-1-keepsake-of-remembrance" },
@@ -206,8 +198,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5462-the-dying-ras-frostwhisper",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5461 } } },
             kind = "accept",
-            priority = 34,
             conditions = { level = { min = 57 } },
             text = "Accept The Dying, Ras Frostwhisper from Magistrate Marduke.",
             dependsOn = { "turnin-5461-the-human-ras-frostwhisper" },
@@ -218,8 +210,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5462-the-dying-ras-frostwhisper",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5461 } } },
             kind = "turnin",
-            priority = 35,
             conditions = { level = { min = 57 } },
             text = "Turn in The Dying, Ras Frostwhisper to Leonid Barthalomew the Revered.",
             dependsOn = { "accept-5462-the-dying-ras-frostwhisper" },
@@ -230,8 +222,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5463-menethil-s-gift",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5462 } } },
             kind = "accept",
-            priority = 36,
             conditions = { level = { min = 57 } },
             text = "Accept Menethil's Gift from Leonid Barthalomew the Revered.",
             dependsOn = { "turnin-5462-the-dying-ras-frostwhisper" },
@@ -243,7 +235,6 @@ ns:RegisterGuide({
         {
             id = "accept-5251-the-archivist",
             kind = "accept",
-            priority = 37,
             conditions = { level = { min = 55 } },
             text = "Accept The Archivist from Duke Nicholas Zverenhoff.",
             complete = QuestState(5251, "activeOrCompleted"),
@@ -254,7 +245,6 @@ ns:RegisterGuide({
         {
             id = "objective-5251-1-archivist-galford",
             kind = "objective",
-            priority = 42,
             conditions = { level = { min = 55 } },
             text = "Slay Archivist Galford.",
             dependsOn = { "accept-5251-the-archivist" },
@@ -264,7 +254,6 @@ ns:RegisterGuide({
         {
             id = "objective-5251-2-burn-the-archive",
             kind = "objective",
-            priority = 44,
             conditions = { level = { min = 55 } },
             text = "Burn the Archive.",
             dependsOn = { "accept-5251-the-archivist" },
@@ -274,7 +263,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5251-the-archivist",
             kind = "turnin",
-            priority = 45,
             conditions = { level = { min = 55 } },
             text = "Turn in The Archivist to Duke Nicholas Zverenhoff.",
             dependsOn = { "objective-5251-1-archivist-galford", "objective-5251-2-burn-the-archive" },
@@ -286,7 +274,6 @@ ns:RegisterGuide({
         {
             id = "accept-5262-the-truth-comes-crashing-down",
             kind = "accept",
-            priority = 47,
             conditions = { level = { min = 55 } },
             text = "Accept The Truth Comes Crashing Down.",
             complete = QuestState(5262, "activeOrCompleted"),
@@ -294,7 +281,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5262-the-truth-comes-crashing-down",
             kind = "turnin",
-            priority = 48,
             conditions = { level = { min = 55 } },
             text = "Turn in The Truth Comes Crashing Down to Duke Nicholas Zverenhoff.",
             dependsOn = { "accept-5262-the-truth-comes-crashing-down" },
@@ -305,8 +291,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5263-above-and-beyond",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5262 } } },
             kind = "accept",
-            priority = 49,
             conditions = { level = { min = 55 } },
             text = "Accept Above and Beyond from Duke Nicholas Zverenhoff.",
             dependsOn = { "turnin-5262-the-truth-comes-crashing-down" },
@@ -318,7 +304,6 @@ ns:RegisterGuide({
         {
             id = "accept-5212-the-flesh-does-not-lie",
             kind = "accept",
-            priority = 50,
             conditions = { level = { min = 55 } },
             text = "Accept The Flesh Does Not Lie from Betina Bigglezink.",
             complete = QuestState(5212, "activeOrCompleted"),
@@ -329,7 +314,6 @@ ns:RegisterGuide({
         {
             id = "accept-5243-houses-of-the-holy",
             kind = "accept",
-            priority = 51,
             conditions = { level = { min = 55 } },
             text = "Accept Houses of the Holy from Leonid Barthalomew the Revered.",
             complete = QuestState(5243, "activeOrCompleted"),
@@ -340,15 +324,14 @@ ns:RegisterGuide({
         {
             id = "accept-5122-the-medallion-of-faith",
             kind = "accept",
-            priority = 54,
             conditions = { level = { min = 55 } },
             text = "Accept The Medallion of Faith from Aurius.",
             complete = QuestState(5122, "activeOrCompleted"),
         },
         {
             id = "objective-5263-1-head-of-baron-rivendare",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5262 } } },
             kind = "objective",
-            priority = 56,
             conditions = { level = { min = 55 } },
             text = "Collect Head of Baron Rivendare.",
             dependsOn = { "accept-5263-above-and-beyond" },
@@ -358,15 +341,14 @@ ns:RegisterGuide({
         {
             id = "accept-5125-aurius-reckoning",
             kind = "accept",
-            priority = 57,
             conditions = { level = { min = 55 } },
             text = "Accept Aurius' Reckoning from Aurius.",
             complete = QuestState(5125, "activeOrCompleted"),
         },
         {
             id = "turnin-5463-menethil-s-gift",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5462 } } },
             kind = "turnin",
-            priority = 59,
             conditions = { level = { min = 57 } },
             text = "Turn in Menethil's Gift.",
             dependsOn = { "accept-5463-menethil-s-gift" },
@@ -375,8 +357,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5464-menethil-s-gift",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5463 } } },
             kind = "accept",
-            priority = 60,
             conditions = { level = { min = 57 } },
             text = "Accept Menethil's Gift.",
             dependsOn = { "turnin-5463-menethil-s-gift" },
@@ -385,7 +367,6 @@ ns:RegisterGuide({
         {
             id = "objective-5212-1-plagued-flesh-sample",
             kind = "objective",
-            priority = 62,
             conditions = { level = { min = 55 } },
             text = "Collect 20 Plagued Flesh Sample.",
             dependsOn = { "accept-5212-the-flesh-does-not-lie" },
@@ -395,7 +376,6 @@ ns:RegisterGuide({
         {
             id = "objective-5243-1-stratholme-holy-water",
             kind = "objective",
-            priority = 64,
             conditions = { level = { min = 55 } },
             text = "Collect 5 Stratholme Holy Water.",
             dependsOn = { "accept-5243-houses-of-the-holy" },
@@ -404,8 +384,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5263-above-and-beyond",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5262 } } },
             kind = "turnin",
-            priority = 65,
             conditions = { level = { min = 55 } },
             text = "Turn in Above and Beyond to Duke Nicholas Zverenhoff.",
             dependsOn = { "objective-5263-1-head-of-baron-rivendare" },
@@ -417,7 +397,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5212-the-flesh-does-not-lie",
             kind = "turnin",
-            priority = 66,
             conditions = { level = { min = 55 } },
             text = "Turn in The Flesh Does Not Lie to Betina Bigglezink.",
             dependsOn = { "objective-5212-1-plagued-flesh-sample" },
@@ -428,8 +407,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5213-the-active-agent",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5212 } } },
             kind = "accept",
-            priority = 67,
             conditions = { level = { min = 55 } },
             text = "Accept The Active Agent from Betina Bigglezink.",
             dependsOn = { "turnin-5212-the-flesh-does-not-lie" },
@@ -440,8 +419,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5464-menethil-s-gift",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5463 } } },
             kind = "turnin",
-            priority = 68,
             conditions = { level = { min = 57 } },
             text = "Turn in Menethil's Gift to Leonid Barthalomew the Revered.",
             dependsOn = { "accept-5464-menethil-s-gift" },
@@ -453,7 +432,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5243-houses-of-the-holy",
             kind = "turnin",
-            priority = 69,
             conditions = { level = { min = 55 } },
             text = "Turn in Houses of the Holy to Leonid Barthalomew the Revered.",
             dependsOn = { "objective-5243-1-stratholme-holy-water" },
@@ -464,8 +442,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5213-1-scourge-data",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5212 } } },
             kind = "objective",
-            priority = 71,
             conditions = { level = { min = 55 } },
             text = "Collect Scourge Data.",
             dependsOn = { "accept-5213-the-active-agent" },
@@ -474,8 +452,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5213-the-active-agent",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5212 } } },
             kind = "turnin",
-            priority = 72,
             conditions = { level = { min = 55 } },
             text = "Turn in The Active Agent to Betina Bigglezink.",
             dependsOn = { "objective-5213-1-scourge-data" },
@@ -487,7 +465,6 @@ ns:RegisterGuide({
         {
             id = "accept-6022-to-kill-with-purpose",
             kind = "accept",
-            priority = 73,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept To Kill With Purpose from Nathanos Blightcaller.",
             complete = QuestState(6022, "activeOrCompleted"),
@@ -498,7 +475,6 @@ ns:RegisterGuide({
         {
             id = "accept-6133-the-ranger-lord-s-behest",
             kind = "accept",
-            priority = 74,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Accept The Ranger Lord's Behest from Nathanos Blightcaller.",
             complete = QuestState(6133, "activeOrCompleted"),
@@ -509,7 +485,6 @@ ns:RegisterGuide({
         {
             id = "accept-6042-un-life-s-little-annoyances",
             kind = "accept",
-            priority = 75,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept Un-Life's Little Annoyances from Nathanos Blightcaller.",
             complete = QuestState(6042, "activeOrCompleted"),
@@ -520,7 +495,6 @@ ns:RegisterGuide({
         {
             id = "objective-6042-1-noxious-plaguebat",
             kind = "objective",
-            priority = 76,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Kill 20 Noxious Plaguebat.",
             dependsOn = { "accept-6042-un-life-s-little-annoyances" },
@@ -532,7 +506,6 @@ ns:RegisterGuide({
         {
             id = "objective-6022-1-coagulated-rot",
             kind = "objective",
-            priority = 77,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Collect Coagulated Rot.",
             dependsOn = { "accept-6022-to-kill-with-purpose" },
@@ -544,7 +517,6 @@ ns:RegisterGuide({
         {
             id = "objective-6042-2-monstrous-plaguebat",
             kind = "objective",
-            priority = 78,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Kill 10 Monstrous Plaguebat.",
             dependsOn = { "accept-6042-un-life-s-little-annoyances" },
@@ -556,7 +528,6 @@ ns:RegisterGuide({
         {
             id = "objective-6133-4-quel-thalas-registry",
             kind = "objective",
-            priority = 80,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Collect Quel'Thalas Registry.",
             dependsOn = { "accept-6133-the-ranger-lord-s-behest" },
@@ -568,7 +539,6 @@ ns:RegisterGuide({
         {
             id = "objective-6133-1-pathstrider",
             kind = "objective",
-            priority = 81,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Kill Pathstrider.",
             dependsOn = { "accept-6133-the-ranger-lord-s-behest" },
@@ -580,7 +550,6 @@ ns:RegisterGuide({
         {
             id = "objective-6133-2-ranger",
             kind = "objective",
-            priority = 82,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Kill Ranger.",
             dependsOn = { "accept-6133-the-ranger-lord-s-behest" },
@@ -592,7 +561,6 @@ ns:RegisterGuide({
         {
             id = "objective-6133-3-woodsman",
             kind = "objective",
-            priority = 83,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Kill Woodsman.",
             dependsOn = { "accept-6133-the-ranger-lord-s-behest" },
@@ -604,7 +572,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6022-to-kill-with-purpose",
             kind = "turnin",
-            priority = 84,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in To Kill With Purpose to Nathanos Blightcaller.",
             dependsOn = { "objective-6022-1-coagulated-rot" },
@@ -616,7 +583,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6133-the-ranger-lord-s-behest",
             kind = "turnin",
-            priority = 85,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Turn in The Ranger Lord's Behest to Nathanos Blightcaller.",
             dependsOn = { "objective-6133-4-quel-thalas-registry", "objective-6133-1-pathstrider", "objective-6133-2-ranger", "objective-6133-3-woodsman" },
@@ -628,7 +594,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6042-un-life-s-little-annoyances",
             kind = "turnin",
-            priority = 86,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in Un-Life's Little Annoyances to Nathanos Blightcaller.",
             dependsOn = { "objective-6042-1-noxious-plaguebat", "objective-6042-2-monstrous-plaguebat" },
@@ -639,8 +604,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6135-duskwing-oh-how-i-hate-thee",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6042 } } },
             kind = "accept",
-            priority = 87,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept Duskwing, Oh How I Hate Thee from Nathanos Blightcaller.",
             dependsOn = { "turnin-6042-un-life-s-little-annoyances" },
@@ -652,7 +617,6 @@ ns:RegisterGuide({
         {
             id = "accept-6136-the-corpulent-one",
             kind = "accept",
-            priority = 88,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept The Corpulent One from Nathanos Blightcaller.",
             complete = QuestState(6136, "activeOrCompleted"),
@@ -662,8 +626,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6135-1-patch-of-duskwing-s-fur",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6042 } } },
             kind = "objective",
-            priority = 90,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Collect Patch of Duskwing's Fur.",
             dependsOn = { "accept-6135-duskwing-oh-how-i-hate-thee" },
@@ -675,7 +639,6 @@ ns:RegisterGuide({
         {
             id = "objective-6136-1-borelgore",
             kind = "objective",
-            priority = 91,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Kill Borelgore.",
             dependsOn = { "accept-6136-the-corpulent-one" },
@@ -684,8 +647,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6135-duskwing-oh-how-i-hate-thee",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6042 } } },
             kind = "turnin",
-            priority = 92,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in Duskwing, Oh How I Hate Thee to Nathanos Blightcaller.",
             dependsOn = { "objective-6135-1-patch-of-duskwing-s-fur" },
@@ -697,7 +660,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6136-the-corpulent-one",
             kind = "turnin",
-            priority = 93,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in The Corpulent One to Nathanos Blightcaller.",
             dependsOn = { "objective-6136-1-borelgore" },
@@ -708,8 +670,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6163-ramstein",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6136 } } },
             kind = "accept",
-            priority = 94,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept Ramstein from Nathanos Blightcaller.",
             dependsOn = { "turnin-6136-the-corpulent-one" },
@@ -720,8 +682,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6163-1-head-of-ramstein-the-gor",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6136 } } },
             kind = "objective",
-            priority = 102,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Collect Head of Ramstein the Gorger.",
             dependsOn = { "accept-6163-ramstein" },
@@ -730,8 +692,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6163-ramstein",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6136 } } },
             kind = "turnin",
-            priority = 103,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in Ramstein to Nathanos Blightcaller.",
             dependsOn = { "objective-6163-1-head-of-ramstein-the-gor" },

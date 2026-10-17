@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Tanaris",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-tanaris-part-2",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 992,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
             },
@@ -81,7 +79,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 30,
         },
         {
             id = "level-before-accept-654-tanaris-field-sampling",
@@ -103,10 +100,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 654,
-            priority = 40,
         },
         {
-            priority = 50,
             text = "Use the Model 4711-FTZ Power Source to accept Tanaris Field Sampling.",
             id = "accept-654-tanaris-field-sampling",
             kind = "accept",
@@ -137,7 +132,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             text = "Use the Untapped Dowsing Widget at the Tanaris insect mound to obtain the Tapped Dowsing Widget. Expect an attack and avoid nearby elite insects.",
             route = {
                 { y = 0.2917, mapID = 1446, label = "Untapped Dowsing Widget", offMapText = "Travel to Untapped Dowsing Widget.", x = 0.3909 },
@@ -183,7 +177,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.532, y = 0.312, label = "Scorpid Hunters", offMapText = "Travel to Scorpid Hunters." },
             },
             sourceStep = 7,
-            priority = 70,
             requiredQuests = {
                 {
                     mode = "any",
@@ -217,7 +210,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.502, y = 0.316, label = "Starving Blisterpaws", offMapText = "Travel to Starving Blisterpaws." },
             },
             sourceStep = 8,
-            priority = 80,
             requiredQuests = {
                 {
                     mode = "any",
@@ -251,7 +243,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.494, y = 0.31, label = "Glasshide Basilisks", offMapText = "Travel to Glasshide Basilisks." },
             },
             sourceStep = 9,
-            priority = 90,
             requiredQuests = {
                 {
                     mode = "any",
@@ -264,7 +255,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-654-tanaris-field-sampling" },
         },
         {
-            priority = 100,
             text = "Turn in Tanaris Field Sampling to Chief Engineer Bilgewhizzle.",
             route = {
                 { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
@@ -303,7 +293,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             text = "Turn in Gadgetzan Water Survey to Senior Surveyor Fizzledowser.",
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },

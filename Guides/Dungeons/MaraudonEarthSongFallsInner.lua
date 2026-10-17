@@ -21,10 +21,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-maraudon-earth-song-falls-inner",
     title = "Maraudon (Earth Song Falls - Inner)",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 48 } },
@@ -35,7 +36,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 12,
             conditions = { level = { min = 48 } },
             text = "Enter Maraudon (Earth Song Falls - Inner) with your group.",
             persistCompletion = true,

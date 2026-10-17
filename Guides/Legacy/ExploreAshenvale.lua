@@ -54,7 +54,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-ashenvale",
     title = "Explore Ashenvale",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

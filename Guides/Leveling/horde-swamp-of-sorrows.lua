@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Swamp of Sorrows",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-swamp-of-sorrows",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2784,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             text = "For Fall From Grace: Listen to the Fallen Hero of the Horde tell his story.",
             id = "objective-2784-quest-work",
             kind = "objective",
@@ -90,7 +87,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2784-fall-from-grace" },
         },
         {
-            priority = 40,
             text = "Turn in Fall From Grace to Fallen Hero of the Horde.",
             route = {
                 { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
@@ -118,7 +114,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
             },
@@ -152,7 +147,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             text = "Turn in The Disgraced One to Dispatch Commander Ruag.",
             route = {
                 { y = 0.5495, mapID = 1435, label = "Dispatch Commander Ruag", offMapText = "Travel to Dispatch Commander Ruag in Swamp of Sorrows.", x = 0.4779 },
@@ -186,7 +180,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.5495, mapID = 1435, label = "Dispatch Commander Ruag", offMapText = "Travel to Dispatch Commander Ruag in Swamp of Sorrows.", x = 0.4779 },
             },
@@ -220,7 +213,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.5479, mapID = 1435, label = "Fel'zerul", offMapText = "Travel to Fel'zerul in Swamp of Sorrows.", x = 0.4793 },
             },
@@ -254,7 +246,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "Turn in The Missing Orders to Bengor.",
             route = {
                 { y = 0.5734, mapID = 1435, label = "Bengor", offMapText = "Travel to Bengor in Swamp of Sorrows.", x = 0.4498 },
@@ -288,7 +279,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             route = {
                 { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132 },
             },
@@ -322,7 +312,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             text = "Collect 6 Sawtooth Snapper Claw.",
             route = {
                 { y = 0.73, mapID = 1435, label = "Sawtooth Snapper", offMapText = "Travel to Sawtooth Snapper.", x = 0.82 },
@@ -356,7 +345,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             text = "Turn in Lack of Surplus to Tok'Kar.",
             route = {
                 { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132 },
@@ -390,7 +378,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132 },
             },
@@ -424,7 +411,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Turn in Threat From the Sea to Katar.",
             route = {
                 { y = 0.8042, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8375 },
@@ -458,7 +444,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.8042, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8375 },
             },
@@ -492,7 +477,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Kill 10 Marsh Murloc.",
             route = {
                 { y = 0.822, mapID = 1435, label = "Marsh Murloc", offMapText = "Travel to Marsh Murloc.", x = 0.852 },
@@ -547,7 +531,6 @@ ns:RegisterGuide({
                 { mapID = 1435, x = 0.86, y = 0.802, label = "Marsh Flesheater", offMapText = "Travel to Marsh Flesheater." },
             },
             sourceStep = 12,
-            priority = 170,
             requiredQuests = {
                 {
                     mode = "any",
@@ -581,7 +564,6 @@ ns:RegisterGuide({
                 { mapID = 1435, x = 0.8640000000000001, y = 0.83, label = "Marsh Inkspewer", offMapText = "Travel to Marsh Inkspewer." },
             },
             sourceStep = 13,
-            priority = 180,
             requiredQuests = {
                 {
                     mode = "any",
@@ -594,7 +576,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1426-threat-from-the-sea" },
         },
         {
-            priority = 190,
             text = "Turn in Threat From the Sea to Katar.",
             route = {
                 { y = 0.8043, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8376 },
@@ -633,7 +614,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 200,
             route = {
                 { y = 0.8043, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8376 },
             },
@@ -667,7 +647,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             text = "Turn in Threat From the Sea to Tok'Kar.",
             route = {
                 { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8131 },
@@ -701,7 +680,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.8041, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8376 },
             },
@@ -735,7 +713,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "Kill 10 Marsh Inkspewer.",
             route = {
                 { y = 0.7654, mapID = 1435, label = "Marsh Inkspewer", offMapText = "Travel to Marsh Inkspewer.", x = 0.6637 },
@@ -769,7 +746,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             text = "Kill 10 Marsh Flesheater.",
             route = {
                 { y = 0.7654, mapID = 1435, label = "Marsh Flesheater", offMapText = "Travel to Marsh Flesheater.", x = 0.6637 },
@@ -803,7 +779,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             text = "Kill 10 Marsh Oracle.",
             route = {
                 { y = 0.7654, mapID = 1435, label = "Marsh Oracle", offMapText = "Travel to Marsh Oracle.", x = 0.6637 },
@@ -837,7 +812,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             text = "Turn in Continued Threat to Katar.",
             route = {
                 { mapID = 1435, x = 0.8375, y = 0.8042, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows." },
@@ -888,10 +862,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1119,
-            priority = 270,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
             },
@@ -922,7 +894,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             route = {
                 { y = 0.4336, mapID = 1444, label = "Witch Doctor Uzer'i", offMapText = "Travel to Witch Doctor Uzer'i in Feralas.", x = 0.7442 },
             },
@@ -956,7 +927,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             route = {
                 { y = 0.4336, mapID = 1444, label = "Witch Doctor Uzer'i", offMapText = "Travel to Witch Doctor Uzer'i in Feralas.", x = 0.7442 },
             },
@@ -1009,10 +979,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3380,
-            priority = 310,
         },
         {
-            priority = 320,
             route = {
                 { y = 0.4336, mapID = 1444, label = "Witch Doctor Uzer'i", offMapText = "Travel to Witch Doctor Uzer'i in Feralas.", x = 0.7442 },
             },

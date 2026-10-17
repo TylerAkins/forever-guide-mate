@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Duskwood & Redridge Mountains",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-duskwood-and-redridge-mountains",
@@ -38,10 +38,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1938,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.876, mapID = 1453, label = "High Sorcerer Andromath", x = 0.487, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
             },
@@ -66,7 +64,6 @@ ns:RegisterGuide({
             classAction = "accept-1938-urs-treatise-on-shadow-magic",
         },
         {
-            priority = 30,
             id = "woven-class-mage-objective-1938-quest-work",
             conditions = {
                 all = {
@@ -88,7 +85,6 @@ ns:RegisterGuide({
             classAction = "objective-1938-quest-work",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.816, mapID = 1453, label = "High Sorcerer Andromath", x = 0.376, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
             },
@@ -113,7 +109,6 @@ ns:RegisterGuide({
             classAction = "turnin-1938-urs-treatise-on-shadow-magic",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.876, mapID = 1453, label = "High Sorcerer Andromath", x = 0.487, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
             },
@@ -138,7 +133,6 @@ ns:RegisterGuide({
             classAction = "accept-1940-pristine-spider-silk",
         },
         {
-            priority = 60,
             id = "woven-class-mage-objective-1940-quest-work",
             conditions = {
                 all = {
@@ -160,7 +154,6 @@ ns:RegisterGuide({
             classAction = "objective-1940-quest-work",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.766, mapID = 1453, label = "Wynne Larson", x = 0.416, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
@@ -185,7 +178,6 @@ ns:RegisterGuide({
             classAction = "turnin-1940-pristine-spider-silk",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.836, mapID = 1453, label = "Wynne Larson", x = 0.52, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
@@ -210,7 +202,6 @@ ns:RegisterGuide({
             classAction = "accept-1942-astral-knot-garment",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.766, mapID = 1453, label = "Wynne Larson", x = 0.416, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
@@ -235,7 +226,6 @@ ns:RegisterGuide({
             classAction = "turnin-1942-astral-knot-garment",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
@@ -260,7 +250,6 @@ ns:RegisterGuide({
             classAction = "accept-1939-high-sorcerer-andromath",
         },
         {
-            priority = 110,
             route = {
                 { y = 0.816, mapID = 1453, label = "High Sorcerer Andromath", x = 0.376, offMapText = "Travel to High Sorcerer Andromath in Stormwind City." },
             },
@@ -304,10 +293,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 66,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7582 },
             },
@@ -335,7 +322,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7582 },
             },
@@ -363,7 +349,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             route = {
                 { y = 0.469, mapID = 1431, label = "Commander Althea Ebonlocke", offMapText = "Travel to Commander Althea Ebonlocke in Duskwood.", x = 0.736 },
             },
@@ -391,7 +376,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Turn in The Legend of Stalvan to Clerk Daltry.",
             route = {
                 { y = 0.4685, mapID = 1431, label = "Clerk Daltry", offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7252 },
@@ -419,7 +403,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.4685, mapID = 1431, label = "Clerk Daltry", offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7252 },
             },
@@ -453,7 +436,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.4869, mapID = 1431, label = "Elaine Carevin", offMapText = "Travel to Elaine Carevin in Duskwood.", x = 0.7533 },
             },
@@ -481,7 +463,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.4869, mapID = 1431, label = "Elaine Carevin", offMapText = "Travel to Elaine Carevin in Duskwood.", x = 0.7533 },
             },
@@ -509,7 +490,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             route = {
                 { y = 0.4869, mapID = 1431, label = "Elaine Carevin", offMapText = "Travel to Elaine Carevin in Duskwood.", x = 0.7533 },
             },
@@ -537,7 +517,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             route = {
                 { y = 0.4802, mapID = 1431, label = "Viktori Prism'Antras", offMapText = "Travel to Viktori Prism'Antras in Duskwood.", x = 0.798 },
             },
@@ -565,7 +544,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             text = "For Look To The Stars: Viktori Prism'Antras of Darkshire wants you to bring him a bronze tube.",
             id = "objective-174-quest-work",
             kind = "objective",
@@ -590,7 +568,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-174-look-to-the-stars" },
         },
         {
-            priority = 230,
             text = "Turn in Look To The Stars to Viktori Prism'Antras.",
             route = {
                 { y = 0.4802, mapID = 1431, label = "Viktori Prism'Antras", offMapText = "Travel to Viktori Prism'Antras in Duskwood.", x = 0.798 },
@@ -618,7 +595,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.4802, mapID = 1431, label = "Viktori Prism'Antras", offMapText = "Travel to Viktori Prism'Antras in Duskwood.", x = 0.798 },
             },
@@ -652,7 +628,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Turn in Look To The Stars to Blind Mary.",
             route = {
                 { y = 0.5909, mapID = 1431, label = "Blind Mary", offMapText = "Travel to Blind Mary in Duskwood.", x = 0.8199 },
@@ -686,7 +661,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.5909, mapID = 1431, label = "Blind Mary", offMapText = "Travel to Blind Mary in Duskwood.", x = 0.8199 },
             },
@@ -720,7 +694,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Collect 1 Mary's Looking Glass.",
             route = {
                 { y = 0.714, mapID = 1431, label = "Insane Ghoul", offMapText = "Travel to Insane Ghoul.", x = 0.8094 },
@@ -775,7 +748,6 @@ ns:RegisterGuide({
                 { mapID = 1431, x = 0.804, y = 0.7020000000000001, label = "Skeleton Finger", offMapText = "Travel to Skeleton Finger." },
             },
             sourceStep = 12,
-            priority = 280,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -803,7 +775,6 @@ ns:RegisterGuide({
                 { mapID = 1431, x = 0.804, y = 0.7020000000000001, label = "Skeletal Mage", offMapText = "Travel to Skeletal Mage." },
             },
             sourceStep = 13,
-            priority = 290,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -831,14 +802,12 @@ ns:RegisterGuide({
                 { mapID = 1431, x = 0.804, y = 0.7020000000000001, label = "Skeletal Warrior", offMapText = "Travel to Skeletal Warrior." },
             },
             sourceStep = 13,
-            priority = 300,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-56-the-night-watch" },
         },
         {
-            priority = 310,
             text = "Turn in Raven Hill to Jitters.",
             route = {
                 { y = 0.5651, mapID = 1431, label = "Jitters", offMapText = "Travel to Jitters in Duskwood.", x = 0.1816 },
@@ -866,7 +835,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             route = {
                 { y = 0.5651, mapID = 1431, label = "Jitters", offMapText = "Travel to Jitters in Duskwood.", x = 0.1816 },
             },
@@ -894,7 +862,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             text = "Turn in Deliveries to Sven to Sven Yorgen.",
             route = {
                 { y = 0.34, mapID = 1431, label = "Sven Yorgen", offMapText = "Travel to Sven Yorgen in Duskwood.", x = 0.0779 },
@@ -922,7 +889,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             route = {
                 { y = 0.34, mapID = 1431, label = "Sven Yorgen", offMapText = "Travel to Sven Yorgen in Duskwood.", x = 0.0779 },
             },
@@ -950,7 +916,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             route = {
                 { y = 0.332, mapID = 1431, label = "Lars", offMapText = "Travel to Lars in Duskwood.", x = 0.0771 },
             },
@@ -978,7 +943,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             text = "Kill 8 Rabid Dire Wolf.",
             route = {
                 { y = 0.286, mapID = 1431, label = "Rabid Dire Wolf", offMapText = "Travel to Rabid Dire Wolf.", x = 0.194 },
@@ -1006,7 +970,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             text = "Kill 12 Starving Dire Wolf.",
             route = {
                 { y = 0.286, mapID = 1431, label = "Starving Dire Wolf", offMapText = "Travel to Starving Dire Wolf.", x = 0.194 },
@@ -1034,7 +997,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             text = "Turn in The Hermit to Abercrombie.",
             route = {
                 { y = 0.3147, mapID = 1431, label = "Abercrombie", offMapText = "Travel to Abercrombie in Duskwood.", x = 0.2811 },
@@ -1062,7 +1024,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.3147, mapID = 1431, label = "Abercrombie", offMapText = "Travel to Abercrombie in Duskwood.", x = 0.2811 },
             },
@@ -1111,14 +1072,12 @@ ns:RegisterGuide({
                 { mapID = 1431, x = 0.32799999999999996, y = 0.35200000000000004, label = "Vial of Spider Venom", offMapText = "Travel to Vial of Spider Venom." },
             },
             sourceStep = 20,
-            priority = 400,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-101-the-totem-of-infliction" },
         },
         {
-            priority = 410,
             text = "Collect 10 Ghoul Fang.",
             route = {
                 { y = 0.3489, mapID = 1431, label = "Flesh Eater", offMapText = "Travel to Flesh Eater.", x = 0.2359 },
@@ -1146,7 +1105,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             text = "Turn in Wolves at Our Heels to Lars.",
             route = {
                 { mapID = 1431, x = 0.0771, y = 0.332, label = "Lars", offMapText = "Travel to Lars in Duskwood." },
@@ -1196,10 +1154,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2360,
-            priority = 430,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.7008, mapID = 1436, label = "Agent Kearnen", offMapText = "Travel to Agent Kearnen in Westfall.", x = 0.6849 },
             },
@@ -1230,7 +1186,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             route = {
                 { y = 0.7008, mapID = 1436, label = "Agent Kearnen", offMapText = "Travel to Agent Kearnen in Westfall.", x = 0.6849 },
             },
@@ -1291,7 +1246,6 @@ ns:RegisterGuide({
                 { mapID = 1436, x = 0.7162999999999999, y = 0.7391, label = "Defias Tower Key", offMapText = "Travel to Defias Tower Key." },
             },
             sourceStep = 25,
-            priority = 460,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1328,7 +1282,6 @@ ns:RegisterGuide({
                 { mapID = 1436, x = 0.7041, y = 0.7393000000000001, label = "Klaven Mortwake's Journal", offMapText = "Travel to Klaven Mortwake's Journal." },
             },
             sourceStep = 26,
-            priority = 470,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1341,7 +1294,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2359-klaven-s-tower" },
         },
         {
-            priority = 480,
             text = "Turn in The Legend of Stalvan.",
             route = {
                 { y = 0.6673, mapID = 1436, label = "The Legend of Stalvan", offMapText = "Travel to The Legend of Stalvan.", x = 0.4151 },
@@ -1375,7 +1327,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             route = {
                 { y = 0.6673, mapID = 1436, label = "The Legend of Stalvan", offMapText = "Travel to The Legend of Stalvan.", x = 0.4151 },
             },
@@ -1431,10 +1382,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1650,
-            priority = 500,
         },
         {
-            priority = 510,
             route = {
                 { mapID = 1436, x = 0.4233, y = 0.8864, label = "Daphne Stilwell", offMapText = "Travel to Daphne Stilwell in Westfall." },
             },
@@ -1471,7 +1420,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             route = {
                 { mapID = 1436, x = 0.4233, y = 0.8864, label = "Daphne Stilwell", offMapText = "Travel to Daphne Stilwell in Westfall." },
             },
@@ -1508,7 +1456,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             dependsOn = { "accept-1651-the-tome-of-valor" },
             id = "objective-1651-reviewed-mechanics",
             conditions = {
@@ -1529,7 +1476,6 @@ ns:RegisterGuide({
             classAction = "objective-1651-reviewed-mechanics",
         },
         {
-            priority = 540,
             text = "Turn in The Tome of Valor to Daphne Stilwell.",
             route = {
                 { y = 0.8909, mapID = 1436, label = "Daphne Stilwell", offMapText = "Travel to Daphne Stilwell in Westfall.", x = 0.4168 },
@@ -1566,7 +1512,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.8909, mapID = 1436, label = "Daphne Stilwell", offMapText = "Travel to Daphne Stilwell in Westfall.", x = 0.4168 },
             },
@@ -1625,10 +1570,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 272,
-            priority = 560,
         },
         {
-            priority = 570,
             route = {
                 { y = 0.4142, mapID = 1450, label = "Half Pendant of Aquatic Agility", offMapText = "Travel to Half Pendant of Aquatic Agility.", x = 0.3592 },
             },
@@ -1665,7 +1608,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 580,
             text = "Turn in Trial of the Sea Lion to Dendrite Starblaze.",
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
@@ -1702,7 +1644,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 590,
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
             },
@@ -1739,7 +1680,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 600,
             text = "Turn in Aquatic Form to Mathrengyl Bearwalker.",
             route = {
                 { y = 0.0839, mapID = 1457, label = "Mathrengyl Bearwalker", offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.", x = 0.3537 },
@@ -1776,7 +1716,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             text = "Turn in Jitters' Growling Gut to Chef Grual.",
             route = {
                 { y = 0.4345, mapID = 1431, label = "Chef Grual", offMapText = "Travel to Chef Grual in Duskwood.", x = 0.7378 },
@@ -1804,7 +1743,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 620,
             route = {
                 { y = 0.4345, mapID = 1431, label = "Chef Grual", offMapText = "Travel to Chef Grual in Duskwood.", x = 0.7378 },
             },
@@ -1838,7 +1776,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 630,
             text = "For Dusky Crab Cakes: Gather 6 Gooey Spider Legs and bring them to Chef Grual in Darkshire.",
             id = "objective-93-quest-work",
             kind = "objective",
@@ -1869,7 +1806,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-93-dusky-crab-cakes" },
         },
         {
-            priority = 640,
             text = "Turn in Dusky Crab Cakes to Chef Grual.",
             route = {
                 { y = 0.4345, mapID = 1431, label = "Chef Grual", offMapText = "Travel to Chef Grual in Duskwood.", x = 0.7378 },
@@ -1903,7 +1839,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 650,
             route = {
                 { y = 0.4345, mapID = 1431, label = "Chef Grual", offMapText = "Travel to Chef Grual in Duskwood.", x = 0.7378 },
             },
@@ -1937,7 +1872,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             text = "Turn in The Night Watch to Commander Althea Ebonlocke.",
             route = {
                 { y = 0.469, mapID = 1431, label = "Commander Althea Ebonlocke", offMapText = "Travel to Commander Althea Ebonlocke in Duskwood.", x = 0.7359 },
@@ -1965,7 +1899,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 670,
             route = {
                 { y = 0.469, mapID = 1431, label = "Commander Althea Ebonlocke", offMapText = "Travel to Commander Althea Ebonlocke in Duskwood.", x = 0.7359 },
             },
@@ -1999,7 +1932,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 680,
             text = "Turn in The Legend of Stalvan to Clerk Daltry.",
             route = {
                 { y = 0.4685, mapID = 1431, label = "Clerk Daltry", offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7252 },
@@ -2033,7 +1965,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.4685, mapID = 1431, label = "Clerk Daltry", offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7252 },
             },
@@ -2067,7 +1998,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             text = "Turn in The Totem of Infliction to Madame Eva.",
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7581 },
@@ -2100,7 +2030,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             text = "Turn in Supplies from Darkshire to Madame Eva.",
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7581 },
@@ -2128,7 +2057,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 720,
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7581 },
             },
@@ -2162,7 +2090,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 730,
             text = "Turn in Look To The Stars to Viktori Prism'Antras.",
             route = {
                 { y = 0.4802, mapID = 1431, label = "Viktori Prism'Antras", offMapText = "Travel to Viktori Prism'Antras in Duskwood.", x = 0.798 },
@@ -2196,7 +2123,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 740,
             text = "Turn in Ghost Hair Thread to Blind Mary.",
             route = {
                 { y = 0.5909, mapID = 1431, label = "Blind Mary", offMapText = "Travel to Blind Mary in Duskwood.", x = 0.8198 },
@@ -2230,7 +2156,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 750,
             route = {
                 { y = 0.5909, mapID = 1431, label = "Blind Mary", offMapText = "Travel to Blind Mary in Duskwood.", x = 0.8198 },
             },
@@ -2264,7 +2189,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 760,
             text = "Turn in Return the Comb to Madame Eva.",
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7581 },
@@ -2298,7 +2222,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 770,
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7581 },
             },
@@ -2332,7 +2255,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 780,
             text = "Turn in Sven's Revenge.",
             route = {
                 { y = 0.777, mapID = 1431, label = "Sven's Revenge", offMapText = "Travel to Sven's Revenge.", x = 0.4986 },
@@ -2360,7 +2282,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 790,
             route = {
                 { y = 0.777, mapID = 1431, label = "Sven's Camp", offMapText = "Travel to Sven's Camp.", x = 0.4986 },
             },
@@ -2394,7 +2315,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 800,
             text = "Turn in Deliver the Thread to Abercrombie.",
             route = {
                 { y = 0.3147, mapID = 1431, label = "Abercrombie", offMapText = "Travel to Abercrombie in Duskwood.", x = 0.2811 },
@@ -2428,7 +2348,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 810,
             route = {
                 { y = 0.3147, mapID = 1431, label = "Abercrombie", offMapText = "Travel to Abercrombie in Duskwood.", x = 0.2811 },
             },
@@ -2462,7 +2381,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 820,
             text = "Turn in Sven's Camp to Sven Yorgen.",
             route = {
                 { y = 0.34, mapID = 1431, label = "Sven Yorgen", offMapText = "Travel to Sven Yorgen in Duskwood.", x = 0.0779 },
@@ -2496,7 +2414,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 830,
             route = {
                 { y = 0.34, mapID = 1431, label = "Sven Yorgen", offMapText = "Travel to Sven Yorgen in Duskwood.", x = 0.0779 },
             },
@@ -2530,7 +2447,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 840,
             text = "Turn in The Legend of Stalvan to Innkeeper Farley.",
             route = {
                 { y = 0.658, mapID = 1429, label = "Innkeeper Farley", offMapText = "Travel to Innkeeper Farley in Elwynn Forest.", x = 0.4377 },
@@ -2564,7 +2480,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 850,
             route = {
                 { y = 0.658, mapID = 1429, label = "Innkeeper Farley", offMapText = "Travel to Innkeeper Farley in Elwynn Forest.", x = 0.4377 },
             },
@@ -2619,7 +2534,6 @@ ns:RegisterGuide({
                 { mapID = 1429, x = 0.4429, y = 0.6581999999999999, label = "An Undelivered Letter", offMapText = "Travel to An Undelivered Letter." },
             },
             sourceStep = 49,
-            priority = 860,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2632,7 +2546,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-70-the-legend-of-stalvan" },
         },
         {
-            priority = 870,
             text = "Turn in The Tome of Valor to Duthorian Rall.",
             route = {
                 { mapID = 1453, x = 0.3981, y = 0.298, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
@@ -2669,7 +2582,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 880,
             text = "Turn in Klaven's Tower to Master Mathias Shaw.",
             route = {
                 { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
@@ -2710,7 +2622,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 890,
             route = {
                 { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
@@ -2747,7 +2658,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 900,
             text = "Turn in The Touch of Zanzil to Doc Mixilpixil.",
             route = {
                 { y = 0.5877, mapID = 1453, label = "Doc Mixilpixil", offMapText = "Travel to Doc Mixilpixil in Stormwind City.", x = 0.7804 },
@@ -2784,7 +2694,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 910,
             route = {
                 { y = 0.699, mapID = 1453, label = "Doc Mixilpixil", offMapText = "Travel to Doc Mixilpixil in Stormwind City.", x = 0.801 },
             },
@@ -2821,7 +2730,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 920,
             dependsOn = { "accept-2608-the-touch-of-zanzil" },
             id = "objective-2608-reviewed-mechanics",
             conditions = {
@@ -2842,7 +2750,6 @@ ns:RegisterGuide({
             classAction = "objective-2608-reviewed-mechanics",
         },
         {
-            priority = 930,
             text = "Turn in The Touch of Zanzil to Doc Mixilpixil.",
             route = {
                 { y = 0.5877, mapID = 1453, label = "Doc Mixilpixil", offMapText = "Travel to Doc Mixilpixil in Stormwind City.", x = 0.7804 },
@@ -2902,10 +2809,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2609,
-            priority = 940,
         },
         {
-            priority = 950,
             route = {
                 { y = 0.699, mapID = 1453, label = "Doc Mixilpixil", x = 0.801, offMapText = "Travel to Doc Mixilpixil in Stormwind City." },
             },
@@ -2930,7 +2835,6 @@ ns:RegisterGuide({
             classAction = "accept-2609-the-touch-of-zanzil",
         },
         {
-            priority = 960,
             dependsOn = { "woven-class-rogue-accept-2609-the-touch-of-zanzil" },
             id = "woven-class-rogue-objective-2609-the-touch-of-zanzil",
             conditions = {
@@ -2952,7 +2856,6 @@ ns:RegisterGuide({
             classAction = "objective-2609-the-touch-of-zanzil",
         },
         {
-            priority = 970,
             route = {
                 { y = 0.59, mapID = 1453, label = "Doc Mixilpixil", x = 0.78, offMapText = "Travel to Doc Mixilpixil in Stormwind City." },
             },
@@ -2980,7 +2883,6 @@ ns:RegisterGuide({
             classAction = "turnin-2609-the-touch-of-zanzil",
         },
         {
-            priority = 980,
             text = "Turn in The Legend of Stalvan to Caretaker Folsom.",
             route = {
                 { y = 0.6193, mapID = 1453, label = "Caretaker Folsom", offMapText = "Travel to Caretaker Folsom in Stormwind City.", x = 0.2958 },
@@ -3014,7 +2916,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 990,
             route = {
                 { y = 0.6193, mapID = 1453, label = "Caretaker Folsom", offMapText = "Travel to Caretaker Folsom in Stormwind City.", x = 0.2958 },
             },
@@ -3048,7 +2949,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1000,
             text = "Turn in The Legend of Stalvan.",
             route = {
                 { y = 0.6158, mapID = 1453, label = "The Legend of Stalvan", offMapText = "Travel to The Legend of Stalvan.", x = 0.2946 },
@@ -3082,7 +2982,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1010,
             route = {
                 { y = 0.6158, mapID = 1453, label = "The Legend of Stalvan", offMapText = "Travel to The Legend of Stalvan.", x = 0.2946 },
             },
@@ -3135,10 +3034,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 335,
-            priority = 1020,
         },
         {
-            priority = 1030,
             route = {
                 { mapID = 1453, x = 0.401, y = 0.853, label = "Zardeth of the Black Claw", offMapText = "Travel to Zardeth of the Black Claw in Stormwind City." },
             },
@@ -3166,7 +3063,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1040,
             route = {
                 { y = 0.49, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris in Redridge Mountains.", x = 0.284 },
             },
@@ -3194,7 +3090,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1050,
             route = {
                 { y = 0.474, mapID = 1433, label = "Dockmaster Baren", offMapText = "Travel to Dockmaster Baren in Redridge Mountains.", x = 0.226 },
             },
@@ -3222,7 +3117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1060,
             route = {
                 { y = 0.474, mapID = 1433, label = "Dockmaster Baren", offMapText = "Travel to Dockmaster Baren in Redridge Mountains.", x = 0.226 },
             },
@@ -3250,7 +3144,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1070,
             route = {
                 { y = 0.463, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.168 },
             },
@@ -3278,7 +3171,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1080,
             text = "Collect 1 Bellygrub's Tusk.",
             route = {
                 { y = 0.4932, mapID = 1433, label = "Bellygrub", offMapText = "Travel to Bellygrub.", x = 0.1568 },
@@ -3306,7 +3198,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1090,
             text = "Turn in An Unwelcome Guest to Martie Jainrose.",
             route = {
                 { y = 0.4633, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.2186 },
@@ -3334,7 +3225,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1100,
             text = "Collect 10 Battleworn Axe.",
             route = {
                 { y = 0.436, mapID = 1433, label = "Blackrock Grunt", offMapText = "Travel to Blackrock Grunt.", x = 0.626 },
@@ -3362,7 +3252,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1110,
             text = "Collect 8 Murloc Fin.",
             route = {
                 { y = 0.5301, mapID = 1433, label = "Murloc Flesheater", offMapText = "Travel to Murloc Flesheater.", x = 0.5593 },
@@ -3390,7 +3279,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1120,
             text = "Collect 10 Spotted Sunfish.",
             route = {
                 { mapID = 1433, x = 0.578, y = 0.514, label = "Spotted Sunfish", offMapText = "Travel to Spotted Sunfish." },
@@ -3418,7 +3306,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1130,
             text = "Turn in Blackrock Menace to Marshal Marris.",
             route = {
                 { y = 0.4897, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris in Redridge Mountains.", x = 0.3351 },
@@ -3446,7 +3333,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1140,
             text = "Turn in Selling Fish to Dockmaster Baren.",
             route = {
                 { y = 0.4738, mapID = 1433, label = "Dockmaster Baren", offMapText = "Travel to Dockmaster Baren in Redridge Mountains.", x = 0.2772 },
@@ -3474,7 +3360,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1150,
             text = "Turn in Murloc Poachers to Dockmaster Baren.",
             route = {
                 { y = 0.4738, mapID = 1433, label = "Dockmaster Baren", offMapText = "Travel to Dockmaster Baren in Redridge Mountains.", x = 0.2772 },
@@ -3502,7 +3387,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1160,
             text = "Turn in The Shadowy Figure to Madame Eva.",
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7581 },
@@ -3536,7 +3420,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1170,
             route = {
                 { y = 0.4529, mapID = 1431, label = "Madame Eva", offMapText = "Travel to Madame Eva in Duskwood.", x = 0.7581 },
             },
@@ -3570,7 +3453,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1180,
             text = "Turn in The Shadowy Search Continues to Clerk Daltry.",
             route = {
                 { y = 0.4685, mapID = 1431, label = "Clerk Daltry", offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7253 },
@@ -3604,7 +3486,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1190,
             route = {
                 { y = 0.4685, mapID = 1431, label = "Clerk Daltry", offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7253 },
             },
@@ -3638,7 +3519,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1200,
             text = "Turn in Zombie Juice to Tavernkeep Smitts.",
             route = {
                 { y = 0.4448, mapID = 1431, label = "Tavernkeep Smitts", offMapText = "Travel to Tavernkeep Smitts in Duskwood.", x = 0.7378 },
@@ -3672,7 +3552,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1210,
             route = {
                 { y = 0.4448, mapID = 1431, label = "Tavernkeep Smitts", offMapText = "Travel to Tavernkeep Smitts in Duskwood.", x = 0.7378 },
             },
@@ -3706,7 +3585,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1220,
             text = "Turn in Inquire at the Inn to Tavernkeep Smitts.",
             route = {
                 { y = 0.4448, mapID = 1431, label = "Tavernkeep Smitts", offMapText = "Travel to Tavernkeep Smitts in Duskwood.", x = 0.7378 },
@@ -3740,7 +3618,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1230,
             route = {
                 { y = 0.4448, mapID = 1431, label = "Tavernkeep Smitts", offMapText = "Travel to Tavernkeep Smitts in Duskwood.", x = 0.7378 },
             },
@@ -3774,7 +3651,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1240,
             text = "Turn in Return to Jitters to Jitters.",
             route = {
                 { y = 0.5652, mapID = 1431, label = "Jitters", offMapText = "Travel to Jitters in Duskwood.", x = 0.1814 },
@@ -3808,7 +3684,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1250,
             text = "Turn in Finding the Shadowy Figure to Jitters.",
             route = {
                 { y = 0.5652, mapID = 1431, label = "Jitters", offMapText = "Travel to Jitters in Duskwood.", x = 0.1814 },
@@ -3842,7 +3717,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1260,
             route = {
                 { y = 0.5652, mapID = 1431, label = "Jitters", offMapText = "Travel to Jitters in Duskwood.", x = 0.1814 },
             },
@@ -3876,7 +3750,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1270,
             text = "Collect 8 Rot Blossom.",
             route = {
                 { y = 0.464, mapID = 1431, label = "Skeletal Fiend", offMapText = "Travel to Skeletal Fiend.", x = 0.176 },
@@ -3931,7 +3804,6 @@ ns:RegisterGuide({
                 { mapID = 1431, x = 0.17600000000000002, y = 0.46399999999999997, label = "Skeletal Fiend", offMapText = "Travel to Skeletal Fiend." },
             },
             sourceStep = 82,
-            priority = 1280,
             requiredQuests = {
                 {
                     mode = "any",
@@ -3965,7 +3837,6 @@ ns:RegisterGuide({
                 { mapID = 1431, x = 0.17600000000000002, y = 0.46399999999999997, label = "Skeletal Horror", offMapText = "Travel to Skeletal Horror." },
             },
             sourceStep = 82,
-            priority = 1290,
             requiredQuests = {
                 {
                     mode = "any",
@@ -3978,7 +3849,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-57-the-night-watch" },
         },
         {
-            priority = 1300,
             text = "Turn in Return to Sven to Sven Yorgen.",
             route = {
                 { y = 0.34, mapID = 1431, label = "Sven Yorgen", offMapText = "Travel to Sven Yorgen in Duskwood.", x = 0.0779 },
@@ -4012,7 +3882,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1310,
             route = {
                 { y = 0.34, mapID = 1431, label = "Sven Yorgen", offMapText = "Travel to Sven Yorgen in Duskwood.", x = 0.0779 },
             },
@@ -4046,7 +3915,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1320,
             text = "Kill 3 Skeletal Warder.",
             route = {
                 { y = 0.3872, mapID = 1431, label = "Skeletal Warder", offMapText = "Travel to Skeletal Warder.", x = 0.1588 },
@@ -4080,7 +3948,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1330,
             text = "Kill 3 Skeletal Healer.",
             route = {
                 { y = 0.3872, mapID = 1431, label = "Skeletal Healer", offMapText = "Travel to Skeletal Healer.", x = 0.1588 },
@@ -4114,7 +3981,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1340,
             text = "Kill 15 Skeletal Raider.",
             route = {
                 { y = 0.3872, mapID = 1431, label = "Skeletal Raider", offMapText = "Travel to Skeletal Raider.", x = 0.1588 },
@@ -4148,7 +4014,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1350,
             text = "Turn in Proving Your Worth to Sven Yorgen.",
             route = {
                 { mapID = 1431, x = 0.0779, y = 0.34, label = "Sven Yorgen", offMapText = "Travel to Sven Yorgen in Duskwood." },
@@ -4187,7 +4052,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1360,
             route = {
                 { mapID = 1431, x = 0.0779, y = 0.34, label = "Sven Yorgen", offMapText = "Travel to Sven Yorgen in Duskwood." },
             },
@@ -4221,7 +4085,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1370,
             text = "Turn in Gather Rot Blossoms to Tavernkeep Smitts.",
             route = {
                 { y = 0.4448, mapID = 1431, label = "Tavernkeep Smitts", offMapText = "Travel to Tavernkeep Smitts in Duskwood.", x = 0.7378 },
@@ -4255,7 +4118,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1380,
             route = {
                 { y = 0.4448, mapID = 1431, label = "Tavernkeep Smitts", offMapText = "Travel to Tavernkeep Smitts in Duskwood.", x = 0.7378 },
             },
@@ -4289,7 +4151,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1390,
             text = "Turn in The Night Watch to Commander Althea Ebonlocke.",
             route = {
                 { y = 0.469, mapID = 1431, label = "Commander Althea Ebonlocke", offMapText = "Travel to Commander Althea Ebonlocke in Duskwood.", x = 0.736 },
@@ -4323,7 +4184,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1400,
             route = {
                 { y = 0.579, mapID = 1433, label = "Guard Howe", offMapText = "Travel to Guard Howe in Redridge Mountains.", x = 0.265 },
             },
@@ -4351,7 +4211,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1410,
             route = {
                 { y = 0.473, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.259 },
             },
@@ -4385,7 +4244,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1420,
             route = {
                 { y = 0.443, mapID = 1433, label = "Bailiff Conacher", offMapText = "Travel to Bailiff Conacher in Redridge Mountains.", x = 0.246 },
             },
@@ -4413,7 +4271,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1430,
             route = {
                 { y = 0.465, mapID = 1433, label = "Wanted: Lieutenant Fangore", offMapText = "Travel to Wanted: Lieutenant Fangore.", x = 0.217 },
             },
@@ -4441,7 +4298,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1440,
             text = "Collect 1 Yowler's Paw.",
             route = {
                 { y = 0.2138, mapID = 1433, label = "Yowler", offMapText = "Travel to Yowler.", x = 0.2765 },
@@ -4475,7 +4331,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1450,
             text = "Collect 1 Fangore's Paw.",
             route = {
                 { y = 0.374, mapID = 1433, label = "Lieutenant Fangore", offMapText = "Travel to Lieutenant Fangore.", x = 0.798 },
@@ -4503,7 +4358,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1460,
             route = {
                 { y = 0.4671, mapID = 1433, label = "A Watchful Eye", offMapText = "Travel to A Watchful Eye.", x = 0.8436 },
             },
@@ -4552,14 +4406,12 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.754, y = 0.426, label = "Shadowhide Pendant", offMapText = "Travel to Shadowhide Pendant." },
             },
             sourceStep = 97,
-            priority = 1470,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-91-solomon-s-law" },
         },
         {
-            priority = 1480,
             text = "Kill 15 Blackrock Champion.",
             route = {
                 { y = 0.0688, mapID = 1433, label = "Blackrock Champion", offMapText = "Travel to Blackrock Champion.", x = 0.3321 },
@@ -4587,7 +4439,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1490,
             route = {
                 { y = 0.126, mapID = 1433, label = "Corporal Keeshan", offMapText = "Travel to Corporal Keeshan in Redridge Mountains.", x = 0.234 },
             },
@@ -4640,10 +4491,8 @@ ns:RegisterGuide({
             },
             sourceStep = 100,
             dependsOn = { "accept-219-missing-in-action" },
-            priority = 1500,
         },
         {
-            priority = 1510,
             text = "Turn in Missing In Action to Marshal Marris.",
             route = {
                 { y = 0.4897, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris in Redridge Mountains.", x = 0.3351 },
@@ -4671,7 +4520,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1520,
             text = "Turn in Howling in the Hills to Verner Osgood.",
             route = {
                 { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
@@ -4705,7 +4553,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1530,
             text = "Turn in Solomon's Law to Bailiff Conacher.",
             route = {
                 { y = 0.4427, mapID = 1433, label = "Bailiff Conacher", offMapText = "Travel to Bailiff Conacher in Redridge Mountains.", x = 0.2971 },
@@ -4733,7 +4580,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1540,
             text = "Turn in Wanted: Lieutenant Fangore to Magistrate Solomon.",
             route = {
                 { y = 0.4446, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
@@ -4761,7 +4607,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1550,
             text = "Turn in Blackrock Bounty to Guard Howe.",
             route = {
                 { y = 0.5786, mapID = 1433, label = "Guard Howe", offMapText = "Travel to Guard Howe in Redridge Mountains.", x = 0.3154 },
@@ -4789,7 +4634,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1560,
             text = "Turn in Seeking Wisdom to Bishop Farthing.",
             route = {
                 { y = 0.279, mapID = 1453, label = "Bishop Farthing", offMapText = "Travel to Bishop Farthing in Stormwind City.", x = 0.3913 },
@@ -4823,7 +4667,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1570,
             route = {
                 { y = 0.279, mapID = 1453, label = "Bishop Farthing", offMapText = "Travel to Bishop Farthing in Stormwind City.", x = 0.3913 },
             },
@@ -4857,7 +4700,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1580,
             route = {
                 { y = 0.479, mapID = 1453, label = "Baros Alexston", offMapText = "Travel to Baros Alexston in Stormwind City.", x = 0.577 },
             },
@@ -4891,7 +4733,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1590,
             text = "Turn in Bazil Thredd to Warden Thelwater.",
             route = {
                 { y = 0.5809, mapID = 1453, label = "Warden Thelwater", offMapText = "Travel to Warden Thelwater in Stormwind City.", x = 0.4111 },
@@ -4944,10 +4785,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98387,
-            priority = 1600,
         },
         {
-            priority = 1610,
             route = {
                 { y = 0.49, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris.", x = 0.284 },
             },
@@ -4974,7 +4813,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1620,
             route = {
                 { y = 0.486, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow.", x = 0.27 },
             },
@@ -5002,7 +4840,6 @@ ns:RegisterGuide({
         },
         {
             text = "Blackrock Blockade: collect 10 Battleworn Axes from the Blackrock camp you are already clearing. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 1630,
             route = {
                 { y = 0.116, mapID = 1433, label = "Blackrock Grunt", offMapText = "Travel to Blackrock Grunt.", x = 0.292 },
             },
@@ -5028,7 +4865,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-98387-blackrock-blockade" },
         },
         {
-            priority = 1640,
             route = {
                 { y = 0.488, mapID = 1433, label = "Marshal Marris", offMapText = "Travel to Marshal Marris.", x = 0.334 },
             },
@@ -5055,7 +4891,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-98387-blackrock-blockade", "woven-objective-98387-blackrock-blockade" },
         },
         {
-            priority = 1650,
             route = {
                 { y = 0.452, mapID = 1433, label = "Greater Tarantula", offMapText = "Travel to Greater Tarantula.", x = 0.52 },
                 { y = 0.408, mapID = 1433, label = "Greater Tarantula", offMapText = "Travel to Greater Tarantula.", x = 0.472 },
@@ -5083,7 +4918,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-98386-althers-mill" },
         },
         {
-            priority = 1660,
             route = {
                 { y = 0.486, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow.", x = 0.322 },
             },
@@ -5110,7 +4944,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-98386-althers-mill", "woven-objective-98386-althers-mill" },
         },
         {
-            priority = 1670,
             route = {
                 { y = 0.476, mapID = 1431, label = "Sirra Von'Indi", offMapText = "Travel to Sirra Von'Indi.", x = 0.726 },
             },
@@ -5163,10 +4996,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 1680,
         },
         {
-            priority = 1690,
             text = "Use the Ira's Dagger to accept Ira's Dagger.",
             id = "woven-accept-96137-iras-dagger",
             kind = "accept",
@@ -5190,60 +5021,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            id = "loot-starter-before-woven-accept-96138-merricks-bow",
-            kind = "note",
-            instructionOnly = true,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            text = "Loot Merrick's Bow from Merrick's Bow. Keep it for the next pickup.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Merrick's Bow", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 96138, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-            priority = 1700,
-        },
-        {
-            priority = 1710,
-            text = "Use the Merrick's Bow to accept Merrick's Bow.",
-            id = "woven-accept-96138-merricks-bow",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 18 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96138, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            priority = 1720,
             route = {
                 { y = 0.358, mapID = 1431, label = "Black Ravager", offMapText = "Travel to Black Ravager.", x = 0.694 },
             },
@@ -5270,7 +5047,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96137-iras-dagger" },
         },
         {
-            priority = 1730,
             route = {
                 { y = 0.79, mapID = 1431, label = "Young Black Ravager", offMapText = "Travel to Young Black Ravager.", x = 0.238 },
             },
@@ -5298,7 +5074,6 @@ ns:RegisterGuide({
         },
         {
             text = "The Valor Family: search Raven Hill. No saved spot for this, so the guide follows the pin in your quest log.",
-            priority = 1740,
             route = {
                 { y = 0.5625, mapID = 1431, label = "Raven Hill", offMapText = "Travel to Raven Hill.", x = 0.1833 },
             },
@@ -5324,35 +5099,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96139-the-valor-family" },
         },
         {
-            priority = 1750,
-            route = {
-                { y = 0.774, mapID = 1431, label = "Splinter Fist Warrior", offMapText = "Travel to Splinter Fist Warrior.", x = 0.342 },
-                { y = 0.738, mapID = 1431, label = "Splinter Fist Taskmaster", offMapText = "Travel to Splinter Fist Taskmaster.", x = 0.34 },
-            },
-            text = "Defeat 8 Splint Fist Warriors and 4 Splint Fist Taskmasters.",
-            id = "woven-objective-96138-merricks-bow",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 18 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96138, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96138-merricks-bow" },
-        },
-        {
-            priority = 1760,
             route = {
                 { y = 0.476, mapID = 1431, label = "Sirra Von'Indi", offMapText = "Travel to Sirra Von'Indi.", x = 0.726 },
             },
@@ -5379,7 +5125,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96139-the-valor-family", "woven-objective-96139-the-valor-family" },
         },
         {
-            priority = 1770,
             route = {
                 { y = 0.476, mapID = 1431, label = "Sirra Von'Indi", offMapText = "Travel to Sirra Von'Indi.", x = 0.726 },
             },
@@ -5408,33 +5153,6 @@ ns:RegisterGuide({
                 "woven-objective-96137-black-ravager",
                 "woven-objective-96137-young-black-ravager",
             },
-        },
-        {
-            priority = 1780,
-            route = {
-                { y = 0.476, mapID = 1431, label = "Sirra Von'Indi", offMapText = "Travel to Sirra Von'Indi.", x = 0.726 },
-            },
-            text = "Turn in Merrick's Bow to Sirra Von'Indi in Darkshire.",
-            id = "woven-turnin-96138-merricks-bow",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 18 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 96138, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-96138-merricks-bow", "woven-objective-96138-merricks-bow" },
         },
     },
     casualSpine = true,

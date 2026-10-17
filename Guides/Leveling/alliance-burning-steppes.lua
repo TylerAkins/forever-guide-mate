@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Burning Steppes",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-burning-steppes",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3702,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { mapID = 1455, x = 0.3837, y = 0.5531, label = "Royal Historian Archesonus", offMapText = "Travel to Royal Historian Archesonus in Ironforge." },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             text = "Speak with Royal Historian Archesonus and tell her you are ready. Follow her account of Thaurissan until the quest is ready to turn in.",
             id = "objective-3702-quest-work",
             kind = "objective",
@@ -90,7 +87,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3702-the-smoldering-ruins-of-thaurissan" },
         },
         {
-            priority = 40,
             text = "Turn in The Smoldering Ruins of Thaurissan to Royal Historian Archesonus.",
             route = {
                 { y = 0.5531, mapID = 1455, label = "Royal Historian Archesonus", offMapText = "Travel to Royal Historian Archesonus in Ironforge.", x = 0.3837 },
@@ -118,7 +114,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.5531, mapID = 1455, label = "Royal Historian Archesonus", offMapText = "Travel to Royal Historian Archesonus in Ironforge.", x = 0.3837 },
             },
@@ -152,7 +147,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.0482, mapID = 1455, label = "Tymor", offMapText = "Travel to Tymor in Ironforge.", x = 0.3097 },
             },
@@ -186,7 +180,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { mapID = 1448, x = 0.41600000000000004, y = 0.716, label = "Filled Cursed Ooze Jar", offMapText = "Travel to Filled Cursed Ooze Jar." },
             },
@@ -214,7 +207,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.2337, mapID = 1455, label = "Laris Geardawdle", offMapText = "Travel to Laris Geardawdle in Ironforge.", x = 0.7577 },
             },
@@ -242,7 +234,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-4512-quest-work" },
         },
         {
-            priority = 90,
             route = {
                 { y = 0.6868, mapID = 1428, label = "Oralius", offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456 },
             },
@@ -276,7 +267,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.6868, mapID = 1428, label = "Oralius", offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456 },
             },
@@ -304,7 +294,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.6894, mapID = 1428, label = "Helendis Riverhorn", offMapText = "Travel to Helendis Riverhorn in Burning Steppes.", x = 0.8582 },
             },
@@ -344,10 +333,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4726,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.24, mapID = 1428, label = "Tinkee Steamboil", offMapText = "Travel to Tinkee Steamboil in Burning Steppes.", x = 0.6524 },
             },
@@ -372,7 +359,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.2392, mapID = 1428, label = "Maxwort Uberglint", offMapText = "Travel to Maxwort Uberglint in Burning Steppes.", x = 0.6516 },
             },
@@ -410,10 +396,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4022,
             alternativeQuests = { 4023 },
-            priority = 150,
         },
         {
-            priority = 160,
             route = {
                 { y = 0.3157, mapID = 1428, label = "Cyrus Therepentous", offMapText = "Travel to Cyrus Therepentous in Burning Steppes.", x = 0.9506 },
             },
@@ -445,7 +429,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 170,
             text = "Collect 1 Black Dragonflight Molt.",
             route = {
                 { y = 0.3157, mapID = 1428, label = "Frenzied Black Drake", offMapText = "Travel to Frenzied Black Drake.", x = 0.9506 },
@@ -477,7 +460,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             text = "Turn in A Taste of Flame to Cyrus Therepentous.",
             route = {
                 { y = 0.3157, mapID = 1428, label = "Cyrus Therepentous", offMapText = "Travel to Cyrus Therepentous in Burning Steppes.", x = 0.9506 },
@@ -527,7 +509,6 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.8859999999999999, y = 0.294, label = "Broodling Essence", offMapText = "Travel to Broodling Essence." },
             },
             sourceStep = 21,
-            priority = 190,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -555,7 +536,6 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.884, y = 0.326, label = "Black Drake", offMapText = "Travel to Black Drake." },
             },
             sourceStep = 22,
-            priority = 200,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -583,7 +563,6 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.9159999999999999, y = 0.474, label = "Black Wyrmkin", offMapText = "Travel to Black Wyrmkin." },
             },
             sourceStep = 23,
-            priority = 210,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -611,7 +590,6 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.9159999999999999, y = 0.474, label = "Black Dragonspawn", offMapText = "Travel to Black Dragonspawn." },
             },
             sourceStep = 23,
-            priority = 220,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -639,7 +617,6 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.904, y = 0.504, label = "Black Broodling", offMapText = "Travel to Black Broodling." },
             },
             sourceStep = 24,
-            priority = 230,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -664,14 +641,12 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.5409, y = 0.4073, label = "Tablet Transcript", offMapText = "Travel to Tablet Transcript." },
             },
             sourceStep = 25,
-            priority = 240,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4296-tablet-of-the-seven" },
         },
         {
-            priority = 250,
             text = "Collect 1 Gor'tesh's Lopped Off Head.",
             route = {
                 { y = 0.5536, mapID = 1428, label = "Gor'tesh", offMapText = "Travel to Gor'tesh.", x = 0.3926 },
@@ -726,14 +701,12 @@ ns:RegisterGuide({
                 { mapID = 1428, x = 0.41200000000000003, y = 0.5660000000000001, label = "Blackrock Medallion", offMapText = "Travel to Blackrock Medallion." },
             },
             sourceStep = 28,
-            priority = 260,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4283-fifty-yep" },
         },
         {
-            priority = 270,
             text = "Turn in Gor'tesh the Brute Lord to Oralius.",
             route = {
                 { mapID = 1428, x = 0.8456, y = 0.6867, label = "Oralius", offMapText = "Travel to Oralius in Burning Steppes." },
@@ -767,7 +740,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             route = {
                 { mapID = 1428, x = 0.8456, y = 0.6867, label = "Oralius", offMapText = "Travel to Oralius in Burning Steppes." },
             },
@@ -801,7 +773,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Turn in FIFTY! YEP! to Oralius.",
             route = {
                 { mapID = 1428, x = 0.8456, y = 0.6867, label = "Oralius", offMapText = "Travel to Oralius in Burning Steppes." },
@@ -829,7 +800,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             text = "Turn in Dragonkin Menace to Helendis Riverhorn.",
             route = {
                 { y = 0.6895, mapID = 1428, label = "Helendis Riverhorn", offMapText = "Travel to Helendis Riverhorn in Burning Steppes.", x = 0.8582 },
@@ -863,7 +833,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             route = {
                 { y = 0.6895, mapID = 1428, label = "Helendis Riverhorn", offMapText = "Travel to Helendis Riverhorn in Burning Steppes.", x = 0.8582 },
             },
@@ -897,7 +866,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 320,
             text = "Turn in The True Masters to Magistrate Solomon.",
             route = {
                 { y = 0.4445, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
@@ -931,7 +899,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             route = {
                 { y = 0.444, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.249 },
             },
@@ -965,7 +932,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
             route = {
                 { mapID = 1453, x = 0.7822, y = 0.17989999999999998, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City." },
@@ -999,7 +965,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             route = {
                 { mapID = 1453, x = 0.7822, y = 0.17989999999999998, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City." },
             },
@@ -1052,10 +1017,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6182,
-            priority = 360,
         },
         {
-            priority = 370,
             route = {
                 { mapID = 1453, x = 0.798, y = 0.386, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City." },
             },
@@ -1083,7 +1046,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Speak with Lady Katrana Prestor in Stormwind Keep. Tell her Highlord Bolvar suggested asking her advice, then follow the conversation. Return to Bolvar after receiving quest credit.",
             id = "objective-4185-quest-work",
             kind = "objective",
@@ -1114,7 +1076,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4185-the-true-masters" },
         },
         {
-            priority = 390,
             text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
             route = {
                 { y = 0.1799, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City.", x = 0.7822 },
@@ -1148,7 +1109,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             route = {
                 { y = 0.1799, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City.", x = 0.7822 },
             },
@@ -1182,7 +1142,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             text = "Turn in The First and the Last to Master Mathias Shaw.",
             route = {
                 { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7579 },
@@ -1210,7 +1169,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
@@ -1244,7 +1202,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Turn in Honor the Dead to Master Mathias Shaw.",
             route = {
                 { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7579 },
@@ -1278,7 +1235,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
@@ -1312,7 +1268,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             route = {
                 { y = 0.3055, mapID = 1453, label = "Royal Factor Bathrilor", offMapText = "Travel to Royal Factor Bathrilor in Stormwind City.", x = 0.4847 },
             },
@@ -1346,7 +1301,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             route = {
                 { y = 0.3055, mapID = 1453, label = "Royal Factor Bathrilor", offMapText = "Travel to Royal Factor Bathrilor in Stormwind City.", x = 0.4847 },
             },
@@ -1399,7 +1353,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 470,
             sourceStep = 39,
             requiredQuests = {
                 {
@@ -1411,7 +1364,6 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
-            priority = 480,
             text = "Use the Good Luck Charm to accept Good Luck Charm.",
             id = "accept-5050-good-luck-charm",
             kind = "accept",
@@ -1439,7 +1391,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             text = "Turn in The True Masters to Magistrate Solomon.",
             route = {
                 { y = 0.4445, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
@@ -1473,7 +1424,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.444, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.249 },
             },
@@ -1507,7 +1457,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             text = "Turn in The True Masters to Marshal Maxwell.",
             route = {
                 { y = 0.6902, mapID = 1428, label = "Marshal Maxwell", offMapText = "Travel to Marshal Maxwell in Burning Steppes.", x = 0.8475 },
@@ -1541,7 +1490,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.6902, mapID = 1428, label = "Marshal Maxwell", offMapText = "Travel to Marshal Maxwell in Burning Steppes.", x = 0.8475 },
             },
@@ -1575,7 +1523,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             text = "Turn in Broodling Essence to Tinkee Steamboil.",
             route = {
                 { y = 0.2399, mapID = 1428, label = "Tinkee Steamboil", offMapText = "Travel to Tinkee Steamboil in Burning Steppes.", x = 0.6523 },
@@ -1600,7 +1547,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 540,
             route = {
                 { y = 0.2399, mapID = 1428, label = "Tinkee Steamboil", offMapText = "Travel to Tinkee Steamboil in Burning Steppes.", x = 0.6523 },
             },
@@ -1631,7 +1577,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 550,
             text = "Turn in Tablet of the Seven to Maxwort Uberglint.",
             route = {
                 { y = 0.2391, mapID = 1428, label = "Maxwort Uberglint", offMapText = "Travel to Maxwort Uberglint in Burning Steppes.", x = 0.6515 },
@@ -1656,7 +1601,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             text = "For Ogre Head On A Stick = Party: Take Gor'tesh's Lopped Off Head and place it at the top of Dreadmaul Rock. Look for a soft dirt mound to plant the pike.",
             id = "objective-3825-quest-work",
             kind = "objective",
@@ -1687,7 +1631,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3825-ogre-head-on-a-stick-party" },
         },
         {
-            priority = 570,
             text = "Turn in Ogre Head On A Stick = Party to Oralius.",
             route = {
                 { mapID = 1428, x = 0.8456, y = 0.6867, label = "Oralius", offMapText = "Travel to Oralius in Burning Steppes." },
@@ -1721,7 +1664,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             text = "Speak with Ragged John in the cave north of Morgan's Vigil. Ask him about Marshal Windsor and follow his full account until the quest is ready to turn in.",
             id = "objective-4224-quest-work",
             kind = "objective",
@@ -1752,7 +1694,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4224-the-true-masters" },
         },
         {
-            priority = 590,
             text = "Turn in The True Masters to Marshal Maxwell.",
             route = {
                 { y = 0.6901, mapID = 1428, label = "Marshal Maxwell", offMapText = "Travel to Marshal Maxwell in Burning Steppes.", x = 0.8474 },

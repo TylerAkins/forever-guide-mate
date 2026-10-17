@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-stranglethorn-vale-part-3",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1477,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.876, mapID = 1453, label = "High Sorcerer Andromath", offMapText = "Travel to High Sorcerer Andromath in Stormwind City.", x = 0.487 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.738, mapID = 1453, label = "Acolyte Dellis", offMapText = "Travel to Acolyte Dellis in Stormwind City.", x = 0.514 },
             },
@@ -111,10 +108,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 209,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.7713, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
             },
@@ -145,7 +140,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.7701, mapID = 1434, label = "Fleet Master Seahorn", offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.", x = 0.2717 },
             },
@@ -176,7 +170,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.7753, mapID = 1434, label = "Catelyn the Blade", offMapText = "Travel to Catelyn the Blade in Stranglethorn Vale.", x = 0.2728 },
             },
@@ -210,7 +203,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.7753, mapID = 1434, label = "Catelyn the Blade", offMapText = "Travel to Catelyn the Blade in Stranglethorn Vale.", x = 0.2728 },
             },
@@ -244,7 +236,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
             },
@@ -275,7 +266,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
             },
@@ -306,7 +296,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
             },
@@ -331,7 +320,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.7707, mapID = 1434, label = "\"Sea Wolf\" MacKinley", offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.", x = 0.2778 },
             },
@@ -356,7 +344,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             route = {
                 { y = 0.7622, mapID = 1434, label = "First Mate Crazz", offMapText = "Travel to First Mate Crazz in Stranglethorn Vale.", x = 0.281 },
             },
@@ -381,7 +368,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
             },
@@ -412,7 +398,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Collect 5 Mistvale Giblets.",
             route = {
                 { mapID = 1434, x = 0.312, y = 0.682, label = "Mistvale Giblets", offMapText = "Travel to Mistvale Giblets." },
@@ -437,7 +422,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Turn in The Bloodsail Buccaneers.",
             route = {
                 { y = 0.6952, mapID = 1434, label = "The Bloodsail Buccaneers", offMapText = "Travel to The Bloodsail Buccaneers.", x = 0.2728 },
@@ -462,7 +446,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.6952, mapID = 1434, label = "The Bloodsail Buccaneers", offMapText = "Travel to The Bloodsail Buccaneers.", x = 0.2728 },
             },
@@ -514,7 +497,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.2738, y = 0.6940999999999999, label = "Catelyn's Blade", offMapText = "Travel to Catelyn's Blade." },
             },
             sourceStep = 19,
-            priority = 180,
             requiredQuests = {
                 {
                     mode = "any",
@@ -527,7 +509,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-610-pretty-boy-duncan" },
         },
         {
-            priority = 190,
             text = "Turn in Scaring Shaky to \"Shaky\" Phillipe.",
             route = {
                 { mapID = 1434, x = 0.26899999999999996, y = 0.7359, label = "\"Shaky\" Phillipe", offMapText = "Travel to \"Shaky\" Phillipe in Stranglethorn Vale." },
@@ -552,7 +533,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 200,
             route = {
                 { mapID = 1434, x = 0.26899999999999996, y = 0.7359, label = "\"Shaky\" Phillipe", offMapText = "Travel to \"Shaky\" Phillipe in Stranglethorn Vale." },
             },
@@ -583,7 +563,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             text = "Turn in The Bloodsail Buccaneers to First Mate Crazz.",
             route = {
                 { y = 0.7621, mapID = 1434, label = "First Mate Crazz", offMapText = "Travel to First Mate Crazz in Stranglethorn Vale.", x = 0.281 },
@@ -614,7 +593,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.7621, mapID = 1434, label = "First Mate Crazz", offMapText = "Travel to First Mate Crazz in Stranglethorn Vale.", x = 0.281 },
             },
@@ -645,7 +623,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "Turn in Return to MacKinley to \"Sea Wolf\" MacKinley.",
             route = {
                 { y = 0.7707, mapID = 1434, label = "\"Sea Wolf\" MacKinley", offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.", x = 0.2778 },
@@ -676,7 +653,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.7707, mapID = 1434, label = "\"Sea Wolf\" MacKinley", offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.", x = 0.2778 },
             },
@@ -707,7 +683,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Turn in \"Pretty Boy\" Duncan to Catelyn the Blade.",
             route = {
                 { y = 0.7753, mapID = 1434, label = "Catelyn the Blade", offMapText = "Travel to Catelyn the Blade in Stranglethorn Vale.", x = 0.2728 },
@@ -741,7 +716,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.7753, mapID = 1434, label = "Catelyn the Blade", offMapText = "Travel to Catelyn the Blade in Stranglethorn Vale.", x = 0.2728 },
             },
@@ -775,7 +749,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Turn in The Bloodsail Buccaneers to Fleet Master Seahorn.",
             route = {
                 { y = 0.7701, mapID = 1434, label = "Fleet Master Seahorn", offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.", x = 0.2717 },
@@ -818,10 +791,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 617,
-            priority = 280,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.7638, mapID = 1434, label = "Privateer Bloads", offMapText = "Travel to Privateer Bloads in Stranglethorn Vale.", x = 0.2676 },
             },
@@ -846,7 +817,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             text = "Collect 10 Akiris Reed.",
             route = {
                 { mapID = 1434, x = 0.244, y = 0.6459999999999999, label = "Akiris Reed", offMapText = "Travel to Akiris Reed." },
@@ -871,7 +841,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             text = "Collect 1 Jon-Jon's Golden Spyglass.",
             route = {
                 { y = 0.5185, mapID = 1434, label = "Jon-Jon the Crow", offMapText = "Travel to Jon-Jon the Crow.", x = 0.3493 },
@@ -902,7 +871,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Collect 1 Maury's Clubbed Foot.",
             route = {
                 { y = 0.5126, mapID = 1434, label = "Maury \"Club Foot\" Wilkins", offMapText = "Travel to Maury \"Club Foot\" Wilkins.", x = 0.3525 },
@@ -961,7 +929,6 @@ ns:RegisterGuide({
             },
             sourceStep = 29,
             dependsOn = { "accept-609-voodoo-dues" },
-            priority = 330,
         },
         {
             id = "objective-621-1-zanzil-s-mixture",
@@ -982,14 +949,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.39799999999999996, y = 0.5720000000000001, label = "Zanzil's Mixture", offMapText = "Travel to Zanzil's Mixture." },
             },
             sourceStep = 30,
-            priority = 340,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-621-zanzil-s-secret" },
         },
         {
-            priority = 350,
             route = {
                 { y = 0.482, mapID = 1434, label = "Jungle Stalker", offMapText = "Travel to Jungle Stalker.", x = 0.272 },
             },
@@ -1020,7 +985,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             text = "Collect 10 Singing Blue Crystal.",
             route = {
                 { y = 0.446, mapID = 1434, label = "Venture Co. Strip Miner", offMapText = "Travel to Venture Co. Strip Miner.", x = 0.414 },
@@ -1051,7 +1015,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             route = {
                 { y = 0.362, mapID = 1434, label = "Skullsplitter Warrior", offMapText = "Travel to Skullsplitter Warrior.", x = 0.422 },
             },
@@ -1085,7 +1048,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Collect 18 Skullsplitter Tusk.",
             route = {
                 { y = 0.362, mapID = 1434, label = "Skullsplitter Tusk", offMapText = "Travel to Skullsplitter Tusk.", x = 0.422 },
@@ -1116,7 +1078,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.2905, mapID = 1434, label = "Bhag'thera", offMapText = "Travel to Bhag'thera.", x = 0.4637 },
             },
@@ -1147,7 +1108,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             text = "Turn in Troll Witchery to Brother Nimetz.",
             route = {
                 { y = 0.0356, mapID = 1434, label = "Brother Nimetz", offMapText = "Travel to Brother Nimetz in Stranglethorn Vale.", x = 0.3783 },
@@ -1181,7 +1141,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin.",
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
@@ -1212,7 +1171,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             text = "Turn in Raptor Mastery to Hemet Nesingwary.",
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
@@ -1243,7 +1201,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -1274,7 +1231,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Collect 1 Elder Crocolisk Skin.",
             route = {
                 { y = 0.224, mapID = 1434, label = "Elder Saltwater Crocolisk", offMapText = "Travel to Elder Saltwater Crocolisk.", x = 0.292 },
@@ -1305,7 +1261,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Collect 1 Stone of the Tides.",
             route = {
                 { y = 0.2358, mapID = 1434, label = "Gazban", offMapText = "Travel to Gazban.", x = 0.2496 },
@@ -1339,7 +1294,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             text = "Turn in Venture Company Mining to Crank Fizzlebub.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
@@ -1370,7 +1324,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             text = "Turn in Zanzil's Secret to Crank Fizzlebub.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
@@ -1395,7 +1348,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { y = 0.7735, mapID = 1434, label = "Deeg", offMapText = "Travel to Deeg in Stranglethorn Vale.", x = 0.2692 },
             },
@@ -1426,7 +1378,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             text = "Turn in Skullsplitter Tusks to Kebok.",
             route = {
                 { y = 0.7713, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
@@ -1457,7 +1408,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.7701, mapID = 1434, label = "Fleet Master Seahorn", offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.", x = 0.2717 },
             },
@@ -1488,7 +1438,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             text = "Turn in The Curse of the Tides to Baron Revilgaz.",
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
@@ -1522,7 +1471,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             text = "Turn in Akiris by the Bundle to Privateer Bloads.",
             route = {
                 { y = 0.7638, mapID = 1434, label = "Privateer Bloads", offMapText = "Travel to Privateer Bloads in Stranglethorn Vale.", x = 0.2676 },
@@ -1547,7 +1495,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.7638, mapID = 1434, label = "Privateer Bloads", offMapText = "Travel to Privateer Bloads in Stranglethorn Vale.", x = 0.2676 },
             },
@@ -1581,7 +1528,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "Turn in Voodoo Dues to \"Sea Wolf\" MacKinley.",
             route = {
                 { y = 0.7707, mapID = 1434, label = "\"Sea Wolf\" MacKinley", offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.", x = 0.2778 },
@@ -1617,7 +1563,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Turn in Excelsior to Drizzlik.",
             route = {
                 { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
@@ -1648,7 +1593,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             route = {
                 { y = 0.759, mapID = 1434, label = "Dizzy One-Eye", offMapText = "Travel to Dizzy One-Eye in Stranglethorn Vale.", x = 0.2859 },
             },
@@ -1697,7 +1641,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.2959, y = 0.8083, label = "Bloodsail Charts", offMapText = "Travel to Bloodsail Charts." },
             },
             sourceStep = 51,
-            priority = 570,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1728,7 +1671,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.2959, y = 0.8079999999999999, label = "Bloodsail Orders", offMapText = "Travel to Bloodsail Orders." },
             },
             sourceStep = 52,
-            priority = 580,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1759,7 +1701,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.27, y = 0.828, label = "Dizzy's Eye", offMapText = "Travel to Dizzy's Eye." },
             },
             sourceStep = 53,
-            priority = 590,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1790,7 +1731,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.27, y = 0.828, label = "Snuff", offMapText = "Travel to Snuff." },
             },
             sourceStep = 53,
-            priority = 600,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1821,7 +1761,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.27, y = 0.828, label = "Bloodsail Swashbuckler", offMapText = "Travel to Bloodsail Swashbuckler." },
             },
             sourceStep = 54,
-            priority = 610,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1834,7 +1773,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-604-the-bloodsail-buccaneers" },
         },
         {
-            priority = 620,
             text = "Turn in Keep An Eye Out to Dizzy One-Eye.",
             route = {
                 { mapID = 1434, x = 0.2859, y = 0.759, label = "Dizzy One-Eye", offMapText = "Travel to Dizzy One-Eye in Stranglethorn Vale." },
@@ -1865,7 +1803,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             text = "Turn in The Bloodsail Buccaneers to Fleet Master Seahorn.",
             route = {
                 { y = 0.7701, mapID = 1434, label = "Fleet Master Seahorn", offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.", x = 0.2717 },
@@ -1901,7 +1838,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             text = "Turn in Up to Snuff to Deeg.",
             route = {
                 { y = 0.7735, mapID = 1434, label = "Deeg", offMapText = "Travel to Deeg in Stranglethorn Vale.", x = 0.2692 },
@@ -1932,7 +1868,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 650,
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -1963,7 +1898,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -1988,7 +1922,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 670,
             text = "For Chapter I: Bring pages 1, 4, 6, and 8 of Nesingwary's The Green Hills of Stranglethorn to Barnil Stonepot in order to complete Chapter I.",
             id = "objective-339-quest-work",
             kind = "objective",
@@ -2010,7 +1943,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-339-chapter-i" },
         },
         {
-            priority = 680,
             text = "Turn in Chapter I to Barnil Stonepot.",
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
@@ -2035,7 +1967,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -2060,7 +1991,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             text = "For Chapter II: Bring pages 10, 11, 14 and 16 of Nesingwary's The Green Hills of Stranglethorn to Barnil Stonepot in order to complete Chapter II.",
             id = "objective-340-quest-work",
             kind = "objective",
@@ -2082,7 +2012,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-340-chapter-ii" },
         },
         {
-            priority = 710,
             text = "Turn in Chapter II to Barnil Stonepot.",
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
@@ -2107,7 +2036,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 720,
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -2132,7 +2060,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 730,
             text = "For Chapter III: Bring pages 18, 20, 21and 24 of Nesingwary's The Green Hills of Stranglethorn to Barnil Stonepot in order to complete Chapter III.",
             id = "objective-341-quest-work",
             kind = "objective",
@@ -2154,7 +2081,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-341-chapter-iii" },
         },
         {
-            priority = 740,
             text = "Turn in Chapter III to Barnil Stonepot.",
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
@@ -2179,7 +2105,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 750,
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -2204,7 +2129,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 760,
             text = "For Chapter IV: Bring pages 25, 26, and 27 of Nesingwary's The Green Hills of Stranglethorn to Barnil Stonepot in order to complete Chapter IV.",
             id = "objective-342-quest-work",
             kind = "objective",
@@ -2226,7 +2150,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-342-chapter-iv" },
         },
         {
-            priority = 770,
             text = "Turn in Chapter IV to Barnil Stonepot.",
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },
@@ -2251,7 +2174,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 780,
             text = "For The Green Hills of Stranglethorn: Collect the missing pages from The Green Hills of Stranglethorn manuscript. Once all four chapters are complete.",
             id = "objective-338-quest-work",
             kind = "objective",
@@ -2279,7 +2201,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-338-the-green-hills-of-stranglethorn" },
         },
         {
-            priority = 790,
             text = "Turn in The Green Hills of Stranglethorn to Barnil Stonepot.",
             route = {
                 { y = 0.1053, mapID = 1434, label = "Barnil Stonepot", offMapText = "Travel to Barnil Stonepot in Stranglethorn Vale.", x = 0.3566 },

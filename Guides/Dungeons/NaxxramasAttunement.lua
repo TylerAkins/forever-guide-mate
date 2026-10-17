@@ -28,10 +28,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-naxxramas-attunement",
     title = "Naxxramas Attunement",
     category = "Raid Quests",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 60 } },
@@ -42,7 +43,6 @@ ns:RegisterGuide({
         {
             id = "accept-9121-the-dread-citadel-naxxramas",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 60 } },
             text = "Accept The Dread Citadel - Naxxramas from Archmage Angela Dosantos.",
             complete = QuestState(9121, "activeOrCompleted"),
@@ -53,7 +53,6 @@ ns:RegisterGuide({
         {
             id = "accept-9122-the-dread-citadel-naxxramas",
             kind = "accept",
-            priority = 11,
             conditions = { level = { min = 60 } },
             text = "Accept The Dread Citadel - Naxxramas from Archmage Angela Dosantos.",
             complete = QuestState(9122, "activeOrCompleted"),
@@ -64,7 +63,6 @@ ns:RegisterGuide({
         {
             id = "accept-9123-the-dread-citadel-naxxramas",
             kind = "accept",
-            priority = 12,
             conditions = { level = { min = 60 } },
             text = "Accept The Dread Citadel - Naxxramas from Archmage Angela Dosantos.",
             complete = QuestState(9123, "activeOrCompleted"),
@@ -75,7 +73,6 @@ ns:RegisterGuide({
         {
             id = "objective-9121-1-arcane-crystal",
             kind = "objective",
-            priority = 13,
             conditions = { level = { min = 60 } },
             text = "Collect 5 Arcane Crystal.",
             dependsOn = { "accept-9121-the-dread-citadel-naxxramas" },
@@ -85,7 +82,6 @@ ns:RegisterGuide({
         {
             id = "objective-9122-1-arcane-crystal",
             kind = "objective",
-            priority = 14,
             conditions = { level = { min = 60 } },
             text = "Collect 3 Arcane Crystal.",
             dependsOn = { "accept-9122-the-dread-citadel-naxxramas" },
@@ -95,7 +91,6 @@ ns:RegisterGuide({
         {
             id = "objective-9121-2-nexus-crystal",
             kind = "objective",
-            priority = 15,
             conditions = { level = { min = 60 } },
             text = "Collect 2 Nexus Crystal.",
             dependsOn = { "accept-9121-the-dread-citadel-naxxramas" },
@@ -105,7 +100,6 @@ ns:RegisterGuide({
         {
             id = "objective-9122-2-nexus-crystal",
             kind = "objective",
-            priority = 16,
             conditions = { level = { min = 60 } },
             text = "Collect 1 Nexus Crystal.",
             dependsOn = { "accept-9122-the-dread-citadel-naxxramas" },
@@ -115,7 +109,6 @@ ns:RegisterGuide({
         {
             id = "objective-9121-3-righteous-orb",
             kind = "objective",
-            priority = 17,
             conditions = { level = { min = 60 } },
             text = "Collect 1 Righteous Orb.",
             dependsOn = { "accept-9121-the-dread-citadel-naxxramas" },
@@ -125,7 +118,6 @@ ns:RegisterGuide({
         {
             id = "objective-9121-4-reach-honored-reputation",
             kind = "objective",
-            priority = 18,
             conditions = { level = { min = 60 } },
             text = "Reach Honored Reputation with the Argent Dawn.",
             dependsOn = { "accept-9121-the-dread-citadel-naxxramas" },
@@ -135,7 +127,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9121-the-dread-citadel-naxxramas",
             kind = "turnin",
-            priority = 19,
             conditions = { level = { min = 60 } },
             text = "Turn in The Dread Citadel - Naxxramas to Archmage Angela Dosantos.",
             dependsOn = { "objective-9121-1-arcane-crystal", "objective-9121-2-nexus-crystal", "objective-9121-3-righteous-orb", "objective-9121-4-reach-honored-reputation" },
@@ -147,7 +138,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9122-the-dread-citadel-naxxramas",
             kind = "turnin",
-            priority = 20,
             conditions = { level = { min = 60 } },
             text = "Turn in The Dread Citadel - Naxxramas to Archmage Angela Dosantos.",
             dependsOn = { "objective-9122-1-arcane-crystal", "objective-9122-2-nexus-crystal" },
@@ -159,7 +149,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9123-the-dread-citadel-naxxramas",
             kind = "turnin",
-            priority = 21,
             conditions = { level = { min = 60 } },
             text = "Turn in The Dread Citadel - Naxxramas to Archmage Angela Dosantos.",
             dependsOn = { "accept-9123-the-dread-citadel-naxxramas" },

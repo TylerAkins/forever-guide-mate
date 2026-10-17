@@ -27,7 +27,7 @@ The jobs test GitHub's checked-out PR merge revision. On `main` and manual runs,
 
 Journeys use the existing `FGM_MATRIX_CLASS` selector in nine independent jobs: classes 1, 2, 3, 4, 5, 7, 8, 9, and 11. Every shard sets `FGM_FULL_MATRIX=1` and runs every race for its class. The existing dungeon handoff cases also run in each shard. Matrix fail-fast is disabled so one failure does not cancel the other coverage.
 
-The Lua job retains all six non-journey suites. The package job retains compilation, install-tree checks, build file selection, and the BigWigs packager dry run. No upload or deployment step was added. Action references are pinned to verified commits; the repository's weekly GitHub Actions Dependabot configuration continues to maintain them.
+The Lua job runs the six existing non-journey suites, authored guide contracts, and dungeon/raid walkthroughs. The package job retains compilation, install-tree checks, build file selection, and the BigWigs packager dry run. No upload or deployment step was added. Action references are pinned to verified commits; the repository's weekly GitHub Actions Dependabot configuration continues to maintain them.
 
 GitHub documents [job outputs](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/pass-job-outputs) and the [`always()` dependency condition](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idneeds) used by the final gate.
 

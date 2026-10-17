@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Thousand Needles",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-thousand-needles",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1153,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.5768, mapID = 1413, label = "Tatternack Steelforge", offMapText = "Travel to Tatternack Steelforge in The Barrens.", x = 0.451 },
             },
@@ -93,10 +91,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1534,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { mapID = 1440, x = 0.33549999999999996, y = 0.6744, label = "Filled Blue Waterskin", offMapText = "Travel to Filled Blue Waterskin." },
             },
@@ -121,7 +117,6 @@ ns:RegisterGuide({
             classAction = "objective-1534-quest-work",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.7741, mapID = 1413, label = "Brine", offMapText = "Travel to Brine in The Barrens.", x = 0.4342 },
             },
@@ -158,7 +153,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1534-quest-work" },
         },
         {
-            priority = 60,
             route = {
                 { y = 0.7741, mapID = 1413, label = "Brine", offMapText = "Travel to Brine in The Barrens.", x = 0.4342 },
             },
@@ -195,7 +189,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.2166, mapID = 1441, label = "Grish Longrunner", offMapText = "Travel to Grish Longrunner in Thousand Needles.", x = 0.3186 },
             },
@@ -223,7 +216,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.2217, mapID = 1441, label = "Brave Moonhorn", offMapText = "Travel to Brave Moonhorn in Thousand Needles.", x = 0.3224 },
             },
@@ -251,7 +243,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.4893, mapID = 1441, label = "Elu", offMapText = "Travel to Elu in Thousand Needles.", x = 0.4493 },
             },
@@ -279,7 +270,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.5029, mapID = 1441, label = "Hagar Lightninghoof", offMapText = "Travel to Hagar Lightninghoof in Thousand Needles.", x = 0.4464 },
             },
@@ -307,7 +297,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             text = "Turn in Message to Freewind Post to Cliffwatcher Longhorn.",
             route = {
                 { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
@@ -335,7 +324,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             route = {
                 { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
             },
@@ -363,7 +351,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             route = {
                 { y = 0.5172, mapID = 1441, label = "Rau Cliffrunner", offMapText = "Travel to Rau Cliffrunner in Thousand Needles.", x = 0.4614 },
             },
@@ -397,7 +384,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.5172, mapID = 1441, label = "Rau Cliffrunner", offMapText = "Travel to Rau Cliffrunner in Thousand Needles.", x = 0.4614 },
             },
@@ -452,7 +438,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.4201, y = 0.3151, label = "Cloven Hoof", offMapText = "Travel to Cloven Hoof." },
             },
             sourceStep = 10,
-            priority = 150,
             requiredQuests = {
                 {
                     mode = "any",
@@ -486,7 +471,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.444, y = 0.402, label = "Galak Windchaser", offMapText = "Travel to Galak Windchaser." },
             },
             sourceStep = 11,
-            priority = 160,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -514,7 +498,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.444, y = 0.402, label = "Galak Wrangler", offMapText = "Travel to Galak Wrangler." },
             },
             sourceStep = 11,
-            priority = 170,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -542,14 +525,12 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.444, y = 0.402, label = "Galak Scout", offMapText = "Travel to Galak Scout." },
             },
             sourceStep = 11,
-            priority = 180,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4841-pacify-the-centaur" },
         },
         {
-            priority = 190,
             route = {
                 { mapID = 1441, x = 0.5394, y = 0.41479999999999995, label = "Dorn Plainstalker", offMapText = "Travel to Dorn Plainstalker in Thousand Needles." },
             },
@@ -577,7 +558,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Turn in Test of Faith to Dorn Plainstalker.",
             route = {
                 { y = 0.4148, mapID = 1441, label = "Dorn Plainstalker", offMapText = "Travel to Dorn Plainstalker in Thousand Needles.", x = 0.5394 },
@@ -626,7 +606,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.5635, y = 0.5036, label = "Alien Egg", offMapText = "Travel to Alien Egg." },
             },
             sourceStep = 16,
-            priority = 210,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -654,7 +633,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.512, y = 0.508, label = "Unrefined Ore Sample", offMapText = "Travel to Unrefined Ore Sample." },
             },
             sourceStep = 17,
-            priority = 220,
             requiredQuests = {
                 {
                     mode = "any",
@@ -667,7 +645,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1153-a-new-ore-sample" },
         },
         {
-            priority = 230,
             text = "Turn in Alien Egg to Hagar Lightninghoof.",
             route = {
                 { mapID = 1441, x = 0.4464, y = 0.5029, label = "Hagar Lightninghoof", offMapText = "Travel to Hagar Lightninghoof in Thousand Needles." },
@@ -695,7 +672,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             route = {
                 { mapID = 1441, x = 0.4464, y = 0.5029, label = "Hagar Lightninghoof", offMapText = "Travel to Hagar Lightninghoof in Thousand Needles." },
             },
@@ -729,7 +705,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Turn in Pacify the Centaur to Cliffwatcher Longhorn.",
             route = {
                 { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
@@ -762,7 +737,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             text = "Turn in The Sacred Flame to Rau Cliffrunner.",
             route = {
                 { y = 0.5171, mapID = 1441, label = "Rau Cliffrunner", offMapText = "Travel to Rau Cliffrunner in Thousand Needles.", x = 0.4614 },
@@ -796,7 +770,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             route = {
                 { mapID = 1441, x = 0.1789, y = 0.4057, label = "Pao'ka Swiftmountain", offMapText = "Travel to Pao'ka Swiftmountain in Thousand Needles." },
             },
@@ -824,7 +797,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 280,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -849,7 +821,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Turn in Homeward Bound to Motega Firemane.",
             route = {
                 { y = 0.3235, mapID = 1441, label = "Motega Firemane", offMapText = "Travel to Motega Firemane in Thousand Needles.", x = 0.2155 },
@@ -877,7 +848,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             text = "Turn in Serpent Wild to Motega Firemane.",
             route = {
                 { y = 0.3235, mapID = 1441, label = "Motega Firemane", offMapText = "Travel to Motega Firemane in Thousand Needles.", x = 0.2155 },
@@ -911,7 +881,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             route = {
                 { y = 0.3235, mapID = 1441, label = "Motega Firemane", offMapText = "Travel to Motega Firemane in Thousand Needles.", x = 0.2155 },
             },
@@ -971,10 +940,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 320,
         },
         {
-            priority = 330,
             text = "Use the Assassination Note to accept Assassination Plot.",
             id = "accept-4881-assassination-plot",
             kind = "accept",
@@ -1025,7 +992,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 340,
         },
         {
             id = "accept-4881-assassination-plot-2",
@@ -1046,14 +1012,12 @@ ns:RegisterGuide({
                 quest = { id = 4881, state = "activeOrCompleted" },
             },
             sourceStep = 28,
-            priority = 350,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 360,
             text = "Turn in Assassination Plot to Kanati Greycloud.",
             route = {
                 { y = 0.321, mapID = 1441, label = "Kanati Greycloud", offMapText = "Travel to Kanati Greycloud in Thousand Needles.", x = 0.2121 },
@@ -1081,7 +1045,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             route = {
                 { y = 0.321, mapID = 1441, label = "Kanati Greycloud", offMapText = "Travel to Kanati Greycloud in Thousand Needles.", x = 0.2121 },
             },
@@ -1115,7 +1078,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "For Protect Kanati Greycloud: Protect Kanati Greycloud from the centaur attack.",
             id = "objective-4966-quest-work",
             kind = "objective",
@@ -1146,7 +1108,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4966-protect-kanati-greycloud" },
         },
         {
-            priority = 390,
             text = "Turn in Protect Kanati Greycloud to Kanati Greycloud.",
             route = {
                 { y = 0.321, mapID = 1441, label = "Kanati Greycloud", offMapText = "Travel to Kanati Greycloud in Thousand Needles.", x = 0.2121 },
@@ -1180,7 +1141,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             text = "Collect 10 Incendia Agave.",
             route = {
                 { y = 0.341, mapID = 1441, label = "Incendia Agave", offMapText = "Travel to Incendia Agave.", x = 0.336 },
@@ -1214,7 +1174,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             text = "Turn in Steelsnap to Melor Stonehoof.",
             route = {
                 { y = 0.809, mapID = 1456, label = "Melor Stonehoof", offMapText = "Travel to Melor Stonehoof in Thunder Bluff.", x = 0.6153 },
@@ -1261,10 +1220,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1136,
-            priority = 420,
         },
         {
-            priority = 430,
             route = {
                 { y = 0.809, mapID = 1456, label = "Melor Stonehoof", offMapText = "Travel to Melor Stonehoof in Thunder Bluff.", x = 0.6153 },
             },
@@ -1298,7 +1255,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Turn in Sacred Fire to Magatha Grimtotem.",
             route = {
                 { y = 0.3092, mapID = 1456, label = "Magatha Grimtotem", offMapText = "Travel to Magatha Grimtotem in Thunder Bluff.", x = 0.6986 },
@@ -1332,7 +1288,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             route = {
                 { y = 0.3092, mapID = 1456, label = "Magatha Grimtotem", offMapText = "Travel to Magatha Grimtotem in Thunder Bluff.", x = 0.6986 },
             },
@@ -1366,7 +1321,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             text = "Turn in A New Ore Sample to Tatternack Steelforge.",
             route = {
                 { y = 0.5768, mapID = 1413, label = "Tatternack Steelforge", offMapText = "Travel to Tatternack Steelforge in The Barrens.", x = 0.451 },
@@ -1400,7 +1354,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             text = "For Wind Rider: Bring 10 Highperch Wyvern Eggs to Elu in Freewind Post.",
             id = "objective-4767-quest-work",
             kind = "objective",
@@ -1425,7 +1378,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4767-wind-rider" },
         },
         {
-            priority = 480,
             text = "Turn in Wind Rider to Elu.",
             route = {
                 { y = 0.4893, mapID = 1441, label = "Elu", offMapText = "Travel to Elu in Thousand Needles.", x = 0.4493 },
@@ -1453,7 +1405,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             route = {
                 { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
             },
@@ -1487,7 +1438,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             route = {
                 { y = 0.5084, mapID = 1441, label = "Wanted - Arnak Grimtotem", offMapText = "Travel to Wanted - Arnak Grimtotem.", x = 0.46 },
             },
@@ -1536,7 +1486,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.3378, y = 0.3997, label = "Secret Note #2", offMapText = "Travel to Secret Note #2." },
             },
             sourceStep = 42,
-            priority = 510,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1570,7 +1519,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.318, y = 0.3259, label = "Secret Note #1", offMapText = "Travel to Secret Note #1." },
             },
             sourceStep = 43,
-            priority = 520,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1583,7 +1531,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5064-grimtotem-spying" },
         },
         {
-            priority = 530,
             text = "Collect 1 Arikara Serpent Skin.",
             route = {
                 { y = 0.3554, mapID = 1441, label = "Arikara", offMapText = "Travel to Arikara.", x = 0.3829 },
@@ -1617,7 +1564,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 540,
             text = "Collect 1 Arnak's Hoof.",
             route = {
                 { y = 0.2685, mapID = 1441, label = "Arnak Grimtotem", offMapText = "Travel to Arnak Grimtotem.", x = 0.3808 },
@@ -1645,7 +1591,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.2659, mapID = 1441, label = "Lakota Windsong", offMapText = "Travel to Lakota Windsong in Thousand Needles.", x = 0.3799 },
             },
@@ -1673,7 +1618,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "Turn in Arikara to Motega Firemane.",
             route = {
                 { y = 0.3235, mapID = 1441, label = "Motega Firemane", offMapText = "Travel to Motega Firemane in Thousand Needles.", x = 0.2155 },
@@ -1707,7 +1651,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             route = {
                 { y = 0.3255, mapID = 1441, label = "Wizlo Bearingshiner", offMapText = "Travel to Wizlo Bearingshiner in Thousand Needles.", x = 0.2143 },
             },
@@ -1735,7 +1678,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 580,
             text = "Collect 1 Hypercapacitor Gizmo.",
             route = {
                 { y = 0.2454, mapID = 1441, label = "Enraged Panther", offMapText = "Travel to Enraged Panther.", x = 0.2279 },
@@ -1763,7 +1705,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 590,
             text = "Turn in Hypercapacitor Gizmo to Wizlo Bearingshiner.",
             route = {
                 { y = 0.3255, mapID = 1441, label = "Wizlo Bearingshiner", offMapText = "Travel to Wizlo Bearingshiner in Thousand Needles.", x = 0.2143 },
@@ -1791,7 +1732,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 600,
             text = "Turn in Grimtotem Spying to Cliffwatcher Longhorn.",
             route = {
                 { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
@@ -1825,7 +1765,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             text = "Turn in Wanted - Arnak Grimtotem to Cliffwatcher Longhorn.",
             route = {
                 { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
@@ -1853,7 +1792,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 620,
             text = "Turn in Free at Last to Thalia Amberhide.",
             route = {
                 { y = 0.5161, mapID = 1441, label = "Thalia Amberhide", offMapText = "Travel to Thalia Amberhide in Thousand Needles.", x = 0.4597 },
@@ -1893,10 +1831,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1111,
-            priority = 630,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -1940,10 +1876,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1718,
-            priority = 650,
         },
         {
-            priority = 660,
             route = {
                 { y = 0.8737, mapID = 1456, label = "Torm Ragetotem", offMapText = "Travel to Torm Ragetotem in Thunder Bluff.", x = 0.5724 },
             },
@@ -1990,10 +1924,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1145,
-            priority = 670,
         },
         {
-            priority = 680,
             route = {
                 { mapID = 1413, x = 0.5107, y = 0.2963, label = "Korran", offMapText = "Travel to Korran in The Barrens." },
             },
@@ -2021,7 +1953,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 690,
             text = "Turn in Wharfmaster Dizzywig to Wharfmaster Dizzywig.",
             route = {
                 { y = 0.3845, mapID = 1413, label = "Wharfmaster Dizzywig", offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.", x = 0.6335 },
@@ -2046,7 +1977,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 700,
             route = {
                 { y = 0.3845, mapID = 1413, label = "Wharfmaster Dizzywig", offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.", x = 0.6335 },
             },
@@ -2077,7 +2007,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 710,
             text = "Turn in Call of Water to Islen Waterseer.",
             route = {
                 { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
@@ -2114,7 +2043,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 720,
             route = {
                 { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
             },
@@ -2151,7 +2079,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 730,
             text = "Turn in The Islander to Klannoc Macleod.",
             route = {
                 { y = 0.4917, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.6862 },
@@ -2179,7 +2106,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 740,
             route = {
                 { y = 0.49, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.666 },
             },
@@ -2213,7 +2139,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 750,
             text = "Kill Big Will.",
             route = {
                 { y = 0.4872, mapID = 1413, label = "Affray Challenger", offMapText = "Travel to Affray Challenger.", x = 0.6861 },
@@ -2247,7 +2172,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 760,
             text = "Turn in The Affray to Klannoc Macleod.",
             route = {
                 { y = 0.4917, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.6862 },
@@ -2281,7 +2205,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 770,
             route = {
                 { y = 0.4917, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.6862 },
             },
@@ -2334,10 +2257,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1431,
-            priority = 780,
         },
         {
-            priority = 790,
             route = {
                 { y = 0.5043, mapID = 1454, label = "Craven Drok", offMapText = "Travel to Craven Drok in Orgrimmar.", x = 0.4676 },
             },
@@ -2388,10 +2309,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1531,
             alternativeQuests = { 1532 },
-            priority = 800,
         },
         {
-            priority = 810,
             route = {
                 { y = 0.3773, mapID = 1454, label = "Searn Firewarder", offMapText = "Travel to Searn Firewarder in Orgrimmar.", x = 0.3796 },
             },
@@ -2423,7 +2342,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 820,
             text = "Turn in The Swarm Grows to Belgrom Rockmaul.",
             route = {
                 { y = 0.3423, mapID = 1454, label = "Belgrom Rockmaul", offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.", x = 0.7523 },
@@ -2451,7 +2369,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 830,
             route = {
                 { y = 0.3423, mapID = 1454, label = "Belgrom Rockmaul", offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.", x = 0.7523 },
             },
@@ -2485,7 +2402,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 840,
             text = "Turn in Alliance Relations to Keldran.",
             route = {
                 { y = 0.5263, mapID = 1454, label = "Keldran", offMapText = "Travel to Keldran in Orgrimmar.", x = 0.2256 },
@@ -2513,7 +2429,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 850,
             route = {
                 { y = 0.5263, mapID = 1454, label = "Keldran", offMapText = "Travel to Keldran in Orgrimmar.", x = 0.2256 },
             },

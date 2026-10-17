@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Stranglethorn Vale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-stranglethorn-vale",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1180,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.7356, mapID = 1434, label = "Wharfmaster Lozgil", offMapText = "Travel to Wharfmaster Lozgil in Stranglethorn Vale.", x = 0.2635 },
             },
@@ -61,7 +59,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.7356, mapID = 1434, label = "Wharfmaster Lozgil", offMapText = "Travel to Wharfmaster Lozgil in Stranglethorn Vale.", x = 0.2635 },
             },
@@ -111,10 +108,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1040,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.7408, mapID = 1434, label = "Caravaneer Ruzzgot", offMapText = "Travel to Caravaneer Ruzzgot in Stranglethorn Vale.", x = 0.2737 },
             },
@@ -148,7 +143,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.7408, mapID = 1434, label = "Caravaneer Ruzzgot", offMapText = "Travel to Caravaneer Ruzzgot in Stranglethorn Vale.", x = 0.2737 },
             },
@@ -194,10 +188,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 605,
-            priority = 70,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
             },
@@ -222,7 +214,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -266,10 +257,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 198,
-            priority = 100,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -316,10 +305,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 616,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -359,10 +346,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 213,
-            priority = 140,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.7712, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
             },
@@ -387,7 +372,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Turn in Goblin Sponsorship to Baron Revilgaz.",
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
@@ -418,7 +402,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
             },
@@ -449,7 +432,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Turn in The Haunted Isle to Baron Revilgaz.",
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
@@ -477,7 +459,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
             },
@@ -511,7 +492,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             route = {
                 { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
             },
@@ -536,7 +516,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             text = "Turn in Supplies to Private Thorsen to Private Thorsen.",
             route = {
                 { y = 0.0342, mapID = 1434, label = "Private Thorsen", offMapText = "Travel to Private Thorsen in Stranglethorn Vale.", x = 0.3798 },
@@ -564,7 +543,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.0333, mapID = 1434, label = "Sergeant Yohwa", offMapText = "Travel to Sergeant Yohwa in Stranglethorn Vale.", x = 0.3802 },
             },
@@ -592,7 +570,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             route = {
                 { y = 0.0333, mapID = 1434, label = "Sergeant Yohwa", offMapText = "Travel to Sergeant Yohwa in Stranglethorn Vale.", x = 0.3802 },
             },
@@ -620,7 +597,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             route = {
                 { y = 0.0301, mapID = 1434, label = "Lieutenant Doren", offMapText = "Travel to Lieutenant Doren in Stranglethorn Vale.", x = 0.3804 },
             },
@@ -654,7 +630,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -679,7 +654,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3561 },
             },
@@ -710,7 +684,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
             },
@@ -762,14 +735,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.441, y = 0.0956, label = "Venom Fern Extract", offMapText = "Travel to Venom Fern Extract." },
             },
             sourceStep = 22,
-            priority = 280,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-204-bad-medicine" },
         },
         {
-            priority = 290,
             text = "Turn in Bookie Herod.",
             route = {
                 { y = 0.0937, mapID = 1434, label = "Bookie Herod", offMapText = "Travel to Bookie Herod.", x = 0.4367 },
@@ -803,7 +774,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.0937, mapID = 1434, label = "The Hidden Key", offMapText = "Travel to The Hidden Key.", x = 0.4367 },
             },
@@ -858,7 +828,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.44, y = 0.11800000000000001, label = "Jungle Remedy", offMapText = "Travel to Jungle Remedy." },
             },
             sourceStep = 24,
-            priority = 310,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -886,14 +855,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.44, y = 0.11800000000000001, label = "Kurzen Jungle Fighter", offMapText = "Travel to Kurzen Jungle Fighter." },
             },
             sourceStep = 25,
-            priority = 320,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-203-the-second-rebellion" },
         },
         {
-            priority = 330,
             text = "Collect 10 Singing Crystal Shard.",
             route = {
                 { y = 0.09, mapID = 1434, label = "Crystal Spine Basilisk", offMapText = "Travel to Crystal Spine Basilisk.", x = 0.476 },
@@ -918,7 +885,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             text = "Kill 10 Stranglethorn Tiger.",
             route = {
                 { y = 0.128, mapID = 1434, label = "Stranglethorn Tiger", offMapText = "Travel to Stranglethorn Tiger.", x = 0.464 },
@@ -949,7 +915,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             text = "Kill Foreman Cozzle at the top of the Venture Co. platform and loot Cozzle's Key.",
             route = {
                 { mapID = 1434, x = 0.4265, y = 0.18350000000000002, label = "Foreman Cozzle", offMapText = "Travel to Foreman Cozzle." },
@@ -995,7 +960,6 @@ ns:RegisterGuide({
             rememberPreparation = 1182,
         },
         {
-            priority = 360,
             text = "Use Cozzle's Key to open his footlocker inside the nearby building. Collect the Fuel Regulator Blueprints.",
             route = {
                 { mapID = 1434, x = 0.4334, y = 0.2034, label = "Cozzle's Footlocker", offMapText = "Travel to Cozzle's Footlocker." },
@@ -1044,14 +1008,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.442, y = 0.20199999999999999, label = "Tumbled Crystal", offMapText = "Travel to Tumbled Crystal." },
             },
             sourceStep = 31,
-            priority = 370,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-213-hostile-takeover" },
         },
         {
-            priority = 380,
             text = "Turn in The Second Rebellion to Sergeant Yohwa.",
             route = {
                 { y = 0.0333, mapID = 1434, label = "Sergeant Yohwa", offMapText = "Travel to Sergeant Yohwa in Stranglethorn Vale.", x = 0.3802 },
@@ -1079,7 +1041,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             text = "Turn in Bad Medicine to Sergeant Yohwa.",
             route = {
                 { y = 0.0333, mapID = 1434, label = "Sergeant Yohwa", offMapText = "Travel to Sergeant Yohwa in Stranglethorn Vale.", x = 0.3802 },
@@ -1107,7 +1068,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             route = {
                 { y = 0.033, mapID = 1434, label = "Corporal Kaleb", offMapText = "Travel to Corporal Kaleb in Stranglethorn Vale.", x = 0.3774 },
             },
@@ -1153,14 +1113,12 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.368, y = 0.10400000000000001, label = "Large River Crocolisk Skin", offMapText = "Travel to Large River Crocolisk Skin." },
             },
             sourceStep = 35,
-            priority = 410,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-575-supply-and-demand" },
         },
         {
-            priority = 420,
             text = "Turn in Tiger Mastery to Ajeck Rouack.",
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3561 },
@@ -1191,7 +1149,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3561 },
             },
@@ -1222,7 +1179,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
             },
@@ -1253,7 +1209,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             text = "Kill 10 Elder Stranglethorn Tiger.",
             route = {
                 { y = 0.142, mapID = 1434, label = "Elder Stranglethorn Tiger", offMapText = "Travel to Elder Stranglethorn Tiger.", x = 0.314 },
@@ -1284,7 +1239,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             text = "Kill 10 Panther.",
             route = {
                 { y = 0.164, mapID = 1434, label = "Panther", offMapText = "Travel to Panther.", x = 0.282 },
@@ -1333,7 +1287,6 @@ ns:RegisterGuide({
                 { mapID = 1434, x = 0.27399999999999997, y = 0.14400000000000002, label = "Stranglethorn Raptor", offMapText = "Travel to Stranglethorn Raptor." },
             },
             sourceStep = 40,
-            priority = 470,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1346,7 +1299,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-194-raptor-mastery" },
         },
         {
-            priority = 480,
             text = "Collect 10 Singing Crystal Shard.",
             route = {
                 { y = 0.176, mapID = 1434, label = "Crystal Spine Basilisk", offMapText = "Travel to Crystal Spine Basilisk.", x = 0.24 },
@@ -1371,7 +1323,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Turn in Raptor Mastery to Hemet Nesingwary.",
             route = {
                 { y = 0.1081, mapID = 1434, label = "Hemet Nesingwary", offMapText = "Travel to Hemet Nesingwary in Stranglethorn Vale.", x = 0.3566 },
@@ -1402,7 +1353,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             text = "Turn in Tiger Mastery to Ajeck Rouack.",
             route = {
                 { y = 0.1062, mapID = 1434, label = "Ajeck Rouack", offMapText = "Travel to Ajeck Rouack in Stranglethorn Vale.", x = 0.3562 },
@@ -1433,7 +1383,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin.",
             route = {
                 { y = 0.1055, mapID = 1434, label = "Sir S. J. Erlgadin", offMapText = "Travel to Sir S. J. Erlgadin in Stranglethorn Vale.", x = 0.3555 },
@@ -1464,7 +1413,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             text = "Turn in Singing Blue Shards to Crank Fizzlebub.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
@@ -1493,7 +1441,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             text = "Turn in Investigate the Camp to Krazek.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
@@ -1518,7 +1465,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 540,
             text = "Turn in Krazek's Cookery to Krazek.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
@@ -1546,7 +1492,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Turn in Hostile Takeover to Kebok.",
             route = {
                 { y = 0.7712, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
@@ -1571,7 +1516,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             text = "Turn in The Stone of the Tides to Baron Revilgaz.",
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
@@ -1605,7 +1549,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             text = "Turn in Goblin Sponsorship to Baron Revilgaz.",
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
@@ -1636,7 +1579,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
             },
@@ -1667,7 +1609,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 590,
             text = "Turn in Supply and Demand to Drizzlik.",
             route = {
                 { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
@@ -1692,7 +1633,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 600,
             text = "Turn in The Caravan Road to Clerk Daltry.",
             route = {
                 { y = 0.4686, mapID = 1431, label = "Clerk Daltry", offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7253 },
@@ -1726,7 +1666,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.4686, mapID = 1431, label = "Clerk Daltry", offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7253 },
             },
@@ -1760,7 +1699,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             text = "Turn in The Carevin Family to Jonathan Carevin.",
             route = {
                 { y = 0.4902, mapID = 1431, label = "Jonathan Carevin", offMapText = "Travel to Jonathan Carevin in Duskwood.", x = 0.7532 },
@@ -1794,7 +1732,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             route = {
                 { y = 0.4902, mapID = 1431, label = "Jonathan Carevin", offMapText = "Travel to Jonathan Carevin in Duskwood.", x = 0.7532 },
             },
@@ -1828,7 +1765,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 640,
             text = "For The Scythe of Elune: Look for signs of the Scythe of Elune.",
             id = "objective-1043-quest-work",
             kind = "objective",
@@ -1859,7 +1795,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1043-the-scythe-of-elune" },
         },
         {
-            priority = 650,
             text = "Turn in The Scythe of Elune to Jonathan Carevin.",
             route = {
                 { mapID = 1431, x = 0.7532, y = 0.4902, label = "Jonathan Carevin", offMapText = "Travel to Jonathan Carevin in Duskwood." },
@@ -1893,7 +1828,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 660,
             route = {
                 { mapID = 1453, x = 0.726, y = 0.15869999999999998, label = "Major Samuelson", offMapText = "Travel to Major Samuelson in Stormwind City." },
             },
@@ -1927,7 +1861,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 670,
             route = {
                 { y = 0.1749, mapID = 1455, label = "Roetten Stonehammer", offMapText = "Travel to Roetten Stonehammer in Ironforge.", x = 0.6791 },
             },
@@ -1977,10 +1910,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1758,
-            priority = 680,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.0942, mapID = 1455, label = "Krom Stoutarm", offMapText = "Travel to Krom Stoutarm in Ironforge.", x = 0.7421 },
             },
@@ -2037,10 +1968,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1802,
-            priority = 700,
         },
         {
-            priority = 710,
             route = {
                 { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
             },
@@ -2068,7 +1997,6 @@ ns:RegisterGuide({
             classAction = "accept-1802-tome-of-the-cabal",
         },
         {
-            priority = 720,
             id = "woven-class-warlock-objective-1802-book-1",
             conditions = {
                 all = {
@@ -2096,7 +2024,6 @@ ns:RegisterGuide({
             classAction = "objective-1802-book-1",
         },
         {
-            priority = 730,
             id = "woven-class-warlock-objective-1802-book-2",
             conditions = {
                 all = {
@@ -2124,7 +2051,6 @@ ns:RegisterGuide({
             classAction = "objective-1802-book-2",
         },
         {
-            priority = 740,
             route = {
                 { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
             },
@@ -2156,7 +2082,6 @@ ns:RegisterGuide({
             classAction = "turnin-1802-tome-of-the-cabal",
         },
         {
-            priority = 750,
             route = {
                 { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
             },
@@ -2184,7 +2109,6 @@ ns:RegisterGuide({
             classAction = "accept-1804-tome-of-the-cabal",
         },
         {
-            priority = 760,
             id = "woven-class-warlock-objective-1804-quest-work",
             conditions = {
                 all = {
@@ -2209,7 +2133,6 @@ ns:RegisterGuide({
             classAction = "objective-1804-quest-work",
         },
         {
-            priority = 770,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -2260,10 +2183,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1795,
-            priority = 780,
         },
         {
-            priority = 790,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -2288,7 +2209,6 @@ ns:RegisterGuide({
             classAction = "accept-1795-the-binding",
         },
         {
-            priority = 800,
             id = "woven-class-warlock-objective-1795-quest-work",
             conditions = {
                 all = {
@@ -2310,7 +2230,6 @@ ns:RegisterGuide({
             classAction = "objective-1795-quest-work",
         },
         {
-            priority = 810,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -2354,10 +2273,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1791,
-            priority = 820,
         },
         {
-            priority = 830,
             route = {
                 { y = 0.6692, mapID = 1416, label = "Bath'rah the Windwatcher", offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains.", x = 0.805 },
             },
@@ -2391,7 +2308,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 840,
             route = {
                 { y = 0.6692, mapID = 1416, label = "Bath'rah the Windwatcher", offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains.", x = 0.805 },
             },

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Tanaris",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-tanaris-part-2",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1691,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
             },
@@ -61,7 +59,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.2702, mapID = 1446, label = "WANTED: Caliph Scorpidsting", offMapText = "Travel to WANTED: Caliph Scorpidsting.", x = 0.5184 },
             },
@@ -86,7 +83,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { y = 0.2702, mapID = 1446, label = "WANTED: Andre Firebeard", offMapText = "Travel to WANTED: Andre Firebeard.", x = 0.5184 },
             },
@@ -111,7 +107,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
             },
@@ -161,10 +156,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3445,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.4593, mapID = 1446, label = "Marvon Rivetseeker", offMapText = "Travel to Marvon Rivetseeker in Tanaris.", x = 0.5271 },
             },
@@ -204,10 +197,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3161,
-            priority = 80,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.4593, mapID = 1446, label = "Marvon Rivetseeker", offMapText = "Travel to Marvon Rivetseeker in Tanaris.", x = 0.5271 },
             },
@@ -248,7 +239,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 100,
             sourceStep = 6,
             requiredQuests = {},
             useClientText = false,
@@ -272,7 +262,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.608, y = 0.366, label = "Wastewander Assassin", offMapText = "Travel to Wastewander Assassin." },
             },
             sourceStep = 7,
-            priority = 110,
             requiredQuests = {
                 {
                     mode = "any",
@@ -303,7 +292,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.608, y = 0.366, label = "Wastewander Rogue", offMapText = "Travel to Wastewander Rogue." },
             },
             sourceStep = 7,
-            priority = 120,
             requiredQuests = {
                 {
                     mode = "any",
@@ -334,7 +322,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.608, y = 0.366, label = "Wastewander Shadow Mage", offMapText = "Travel to Wastewander Shadow Mage." },
             },
             sourceStep = 7,
-            priority = 130,
             requiredQuests = {
                 {
                     mode = "any",
@@ -365,14 +352,12 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.7219, y = 0.4677, label = "Stoley's Shipment", offMapText = "Travel to Stoley's Shipment." },
             },
             sourceStep = 9,
-            priority = 140,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Collect 1 Firebeard's Head.",
             route = {
                 { y = 0.4714, mapID = 1446, label = "Andre Firebeard", offMapText = "Travel to Andre Firebeard.", x = 0.7337 },
@@ -397,7 +382,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             route = {
                 { y = 0.466, mapID = 1446, label = "Southsea Pirate", offMapText = "Travel to Southsea Pirate.", x = 0.738 },
             },
@@ -440,10 +424,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 170,
         },
         {
-            priority = 180,
             text = "Use the Ship Schedule to accept Ship Schedules.",
             id = "accept-2876-ship-schedules",
             kind = "accept",
@@ -484,10 +466,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 190,
         },
         {
-            priority = 200,
             text = "Use the OOX-17/TN Distress Beacon to accept Find OOX-17/TN!.",
             id = "accept-351-find-oox-17-tn",
             kind = "accept",
@@ -527,7 +507,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.738, y = 0.466, label = "Southsea Pirate Hat", offMapText = "Travel to Southsea Pirate Hat." },
             },
             sourceStep = 13,
-            priority = 210,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -552,7 +531,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.738, y = 0.466, label = "Southsea Pirate", offMapText = "Travel to Southsea Pirate." },
             },
             sourceStep = 14,
-            priority = 220,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -577,7 +555,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.738, y = 0.466, label = "Southsea Freebooter", offMapText = "Travel to Southsea Freebooter." },
             },
             sourceStep = 14,
-            priority = 230,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -602,7 +579,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.73, y = 0.478, label = "Southsea Dock Worker", offMapText = "Travel to Southsea Dock Worker." },
             },
             sourceStep = 15,
-            priority = 240,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -627,14 +603,12 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.7440000000000001, y = 0.452, label = "Southsea Swashbuckler", offMapText = "Travel to Southsea Swashbuckler." },
             },
             sourceStep = 16,
-            priority = 250,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 260,
             text = "Turn in WANTED: Andre Firebeard to Security Chief Bilgewhizzle.",
             route = {
                 { mapID = 1446, x = 0.6706, y = 0.2389, label = "Security Chief Bilgewhizzle", offMapText = "Travel to Security Chief Bilgewhizzle in Tanaris." },
@@ -659,7 +633,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             route = {
                 { mapID = 1446, x = 0.6706, y = 0.2389, label = "Security Chief Bilgewhizzle", offMapText = "Travel to Security Chief Bilgewhizzle in Tanaris." },
             },
@@ -689,7 +662,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 280,
             text = "Turn in Ship Schedules to Security Chief Bilgewhizzle.",
             route = {
                 { mapID = 1446, x = 0.6706, y = 0.2389, label = "Security Chief Bilgewhizzle", offMapText = "Travel to Security Chief Bilgewhizzle in Tanaris." },
@@ -714,7 +686,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.2397, mapID = 1446, label = "Stoley", offMapText = "Travel to Stoley in Tanaris.", x = 0.6711 },
             },
@@ -739,7 +710,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-2873-1-stoley-s-shipment" },
         },
         {
-            priority = 300,
             route = {
                 { y = 0.2397, mapID = 1446, label = "Stoley", offMapText = "Travel to Stoley in Tanaris.", x = 0.6711 },
             },
@@ -770,7 +740,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             route = {
                 { y = 0.2227, mapID = 1446, label = "Haughty Modiste", offMapText = "Travel to Haughty Modiste in Tanaris.", x = 0.6656 },
             },
@@ -795,7 +764,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-8365-1-southsea-pirate-hat" },
         },
         {
-            priority = 320,
             text = "Kill a Vale Screecher in Feralas, then use Yeh'kinya's Bramble on its corpse. Speak with the spirit that appears. Repeat until you have 3 Screecher Spirits.",
             id = "objective-3520-quest-work",
             kind = "objective",
@@ -817,7 +785,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             route = {
                 { y = 0.2236, mapID = 1446, label = "Yeh'kinya", offMapText = "Travel to Yeh'kinya in Tanaris.", x = 0.6699 },
             },
@@ -842,7 +809,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-3520-quest-work" },
         },
         {
-            priority = 340,
             text = "Turn in Find OOX-17/TN! to Homing Robot OOX-17/TN.",
             route = {
                 { y = 0.6472, mapID = 1446, label = "Homing Robot OOX-17/TN", offMapText = "Travel to Homing Robot OOX-17/TN in Tanaris.", x = 0.6023 },
@@ -885,7 +851,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.5597, y = 0.7118000000000001, label = "Scrimshank's Surveying Gear", offMapText = "Travel to Scrimshank's Surveying Gear." },
             },
             sourceStep = 22,
-            priority = 350,
             requiredQuests = {
                 {
                     mode = "any",
@@ -898,7 +863,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-10-the-scrimshank-redemption" },
         },
         {
-            priority = 360,
             text = "Turn in WANTED: Caliph Scorpidsting to Chief Engineer Bilgewhizzle.",
             route = {
                 { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
@@ -923,7 +887,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             text = "Turn in More Wastewander Justice to Chief Engineer Bilgewhizzle.",
             route = {
                 { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
@@ -959,7 +922,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             route = {
                 { y = 0.2891, mapID = 1446, label = "Red Power Crystal", offMapText = "Travel to Red Power Crystal.", x = 0.523 },
             },
@@ -989,10 +951,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2605,
-            priority = 390,
         },
         {
-            priority = 400,
             route = {
                 { y = 0.2866, mapID = 1446, label = "Marin Noggenfogger", offMapText = "Travel to Marin Noggenfogger in Tanaris.", x = 0.5181 },
             },
@@ -1017,7 +977,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             text = "Turn in The Scrimshank Redemption to Senior Surveyor Fizzledowser.",
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
@@ -1048,7 +1007,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
             },
@@ -1079,7 +1037,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Turn in Insect Part Analysis to Alchemist Pestlezugg.",
             route = {
                 { y = 0.2696, mapID = 1446, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris.", x = 0.5089 },
@@ -1110,7 +1067,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.2696, mapID = 1446, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris.", x = 0.5089 },
             },
@@ -1153,10 +1109,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3362,
-            priority = 450,
         },
         {
-            priority = 460,
             route = {
                 { y = 0.2676, mapID = 1446, label = "Tran'rek", offMapText = "Travel to Tran'rek in Tanaris.", x = 0.5157 },
             },
@@ -1181,7 +1135,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             route = {
                 { y = 0.274, mapID = 1446, label = "Andi Lynn", offMapText = "Travel to Andi Lynn in Tanaris.", x = 0.5282 },
             },
@@ -1206,7 +1159,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Turn in Insect Part Analysis to Senior Surveyor Fizzledowser.",
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
@@ -1237,7 +1189,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Kill Gor'marok the Ravager.",
             route = {
                 { y = 0.5781, mapID = 1446, label = "Gor'marok the Ravager", offMapText = "Travel to Gor'marok the Ravager.", x = 0.415 },
@@ -1280,7 +1231,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.40399999999999997, y = 0.56, label = "Dunemaul Brute", offMapText = "Travel to Dunemaul Brute." },
             },
             sourceStep = 33,
-            priority = 500,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1305,7 +1255,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.40399999999999997, y = 0.56, label = "Dunemaul Enforcer", offMapText = "Travel to Dunemaul Enforcer." },
             },
             sourceStep = 33,
-            priority = 510,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1330,14 +1279,12 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.40299999999999997, y = 0.6890000000000001, label = "Gahz'ridian Ornament", offMapText = "Travel to Gahz'ridian Ornament." },
             },
             sourceStep = 34,
-            priority = 520,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-3161-gahz-ridian" },
         },
         {
-            priority = 530,
             text = "Collect 1 Laden Dew Gland.",
             route = {
                 { y = 0.668, mapID = 1446, label = "Thistleshrub Dew Collector", offMapText = "Travel to Thistleshrub Dew Collector.", x = 0.298 },
@@ -1380,7 +1327,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.298, y = 0.6679999999999999, label = "Gnarled Thistleshrub", offMapText = "Travel to Gnarled Thistleshrub." },
             },
             sourceStep = 36,
-            priority = 540,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1405,7 +1351,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.298, y = 0.6679999999999999, label = "Thistleshrub Rootshaper", offMapText = "Travel to Thistleshrub Rootshaper." },
             },
             sourceStep = 36,
-            priority = 550,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,

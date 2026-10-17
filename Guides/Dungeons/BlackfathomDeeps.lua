@@ -28,10 +28,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-blackfathom-deeps",
     title = "Blackfathom Deeps",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 20 } },
@@ -42,7 +43,6 @@ ns:RegisterGuide({
         {
             id = "accept-3765-the-corruption-abroad",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } } } },
             text = "Accept The Corruption Abroad from Argos Nightwhisper.",
             complete = QuestState(3765, "activeOrCompleted"),
@@ -53,7 +53,6 @@ ns:RegisterGuide({
         {
             id = "accept-971-knowledge-in-the-deeps",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept Knowledge in the Deeps from Gerrig Bonegrip.",
             complete = QuestState(971, "activeOrCompleted"),
@@ -64,7 +63,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3765-the-corruption-abroad",
             kind = "turnin",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } } } },
             text = "Turn in The Corruption Abroad to Gershala Nightwhisper.",
             dependsOn = { "accept-3765-the-corruption-abroad" },
@@ -75,8 +73,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1275-researching-the-corruption",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 3765 } } },
             kind = "accept",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Accept Researching the Corruption from Gershala Nightwhisper.",
             dependsOn = { "turnin-3765-the-corruption-abroad" },
@@ -88,7 +86,6 @@ ns:RegisterGuide({
         {
             id = "accept-1199-twilight-falls",
             kind = "accept",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Accept Twilight Falls from Argent Guard Manados.",
             complete = QuestState(1199, "activeOrCompleted"),
@@ -99,7 +96,6 @@ ns:RegisterGuide({
         {
             id = "accept-1198-in-search-of-thaelrid",
             kind = "accept",
-            priority = 15,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Accept In Search of Thaelrid from Dawnwatcher Shaedlass.",
             complete = QuestState(1198, "activeOrCompleted"),
@@ -110,7 +106,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 16,
             conditions = { level = { min = 20 } },
             text = "Enter Blackfathom Deeps with your group.",
             dependsOn = { "accept-3765-the-corruption-abroad", "accept-971-knowledge-in-the-deeps", "accept-1275-researching-the-corruption", "accept-1199-twilight-falls", "accept-1198-in-search-of-thaelrid" },
@@ -120,7 +115,6 @@ ns:RegisterGuide({
         {
             id = "objective-971-1-lorgalis-manuscript",
             kind = "objective",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Inside Blackfathom Deeps, loot the Lorgalis Manuscript from the book on the ground.",
             dependsOn = { "accept-971-knowledge-in-the-deeps" },
@@ -130,7 +124,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1198-in-search-of-thaelrid",
             kind = "turnin",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Turn in In Search of Thaelrid to Argent Guard Thaelrid.",
             dependsOn = { "accept-1198-in-search-of-thaelrid" },
@@ -139,8 +132,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1200-blackfathom-villainy",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1198 } } },
             kind = "accept",
-            priority = 20,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Accept Blackfathom Villainy from Argent Guard Thaelrid.",
             dependsOn = { "turnin-1198-in-search-of-thaelrid" },
@@ -148,8 +141,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1200-1-head-of-kelris",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1198 } } },
             kind = "objective",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Kill Twilight Lord Kelris and loot the Head of Kelris.",
             dependsOn = { "accept-1200-blackfathom-villainy" },
@@ -159,7 +152,6 @@ ns:RegisterGuide({
         {
             id = "objective-1199-1-twilight-pendant",
             kind = "objective",
-            priority = 24,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Kill Twilight Acolyte, Twilight Reaver, Twilight Aquamancer, and Twilight " ..
                 "Elementalist inside Blackfathom Deeps until you loot 10 Twilight Pendant.",
@@ -169,8 +161,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-1275-1-corrupted-brain-stem",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 3765 } } },
             kind = "objective",
-            priority = 26,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Kill naga and satyr inside Blackfathom Deeps until you loot 8 Corrupted Brain Stem.",
             dependsOn = { "accept-1275-researching-the-corruption" },
@@ -179,8 +171,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1275-researching-the-corruption",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 3765 } } },
             kind = "turnin",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Turn in Researching the Corruption to Gershala Nightwhisper.",
             dependsOn = { "objective-1275-1-corrupted-brain-stem" },
@@ -192,7 +184,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1199-twilight-falls",
             kind = "turnin",
-            priority = 30,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Turn in Twilight Falls to Argent Guard Manados.",
             dependsOn = { "objective-1199-1-twilight-pendant" },
@@ -203,8 +194,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-1200-blackfathom-villainy",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 1198 } } },
             kind = "turnin",
-            priority = 31,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } } } },
             text = "Turn in Blackfathom Villainy to Dawnwatcher Selgorm.",
             dependsOn = { "objective-1200-1-head-of-kelris" },
@@ -216,7 +207,6 @@ ns:RegisterGuide({
         {
             id = "turnin-971-knowledge-in-the-deeps",
             kind = "turnin",
-            priority = 32,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Turn in Knowledge in the Deeps to Gerrig Bonegrip.",
             dependsOn = { "objective-971-1-lorgalis-manuscript" },
@@ -228,7 +218,6 @@ ns:RegisterGuide({
         {
             id = "accept-6563-the-essence-of-aku-mai",
             kind = "accept",
-            priority = 34,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept The Essence of Aku'Mai from Je'neu Sancrea.",
             complete = QuestState(6563, "activeOrCompleted"),
@@ -239,7 +228,6 @@ ns:RegisterGuide({
         {
             id = "accept-6921-amongst-the-ruins",
             kind = "accept",
-            priority = 35,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Accept Amongst the Ruins from Je'neu Sancrea.",
             complete = QuestState(6921, "activeOrCompleted"),
@@ -250,7 +238,6 @@ ns:RegisterGuide({
         {
             id = "accept-6564-allegience-to-the-old-gods",
             kind = "accept",
-            priority = 37,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Kill Blackfathom Tide Priestess in the underwater cave on the Zoram Strand " ..
                 "until a Damp Note drops. Use the note to accept Allegiance to the Old Gods. " ..
@@ -264,7 +251,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6564-allegience-to-the-old-gods",
             kind = "turnin",
-            priority = 38,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Allegiance to the Old Gods to Je'neu Sancrea at Zoram'gar Outpost.",
             dependsOn = { "accept-6564-allegience-to-the-old-gods" },
@@ -275,8 +261,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6565-allegiance-to-the-old-gods",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6564 } } },
             kind = "accept",
-            priority = 39,
             conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
             text = "Accept Allegiance to the Old Gods from Je'neu Sancrea (kill Lorgus Jett inside BFD).",
             dependsOn = { "turnin-6564-allegience-to-the-old-gods" },
@@ -288,7 +274,6 @@ ns:RegisterGuide({
         {
             id = "objective-6563-1-sapphire-of-aku-mai",
             kind = "objective",
-            priority = 41,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Loot 20 Sapphire of Aku'Mai from the light-blue crystals on the cavern walls " ..
                 "in the tunnels before the Blackfathom Deeps instance portal.",
@@ -302,7 +287,6 @@ ns:RegisterGuide({
         {
             id = "accept-6561-blackfathom-villainy",
             kind = "accept",
-            priority = 42,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Inside Blackfathom Deeps, find Argent Guard Thaelrid in the underwater cave " ..
                 "off The Pool of Ask'ar and accept Blackfathom Villainy.",
@@ -311,8 +295,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6565-1-lorgus-jett",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6564 } } },
             kind = "objective",
-            priority = 43,
             conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
             text = "Inside Blackfathom Deeps, kill Lorgus Jett (optional mini-boss on the west " ..
                 "side of the Pool of Ask'ar paths).",
@@ -323,7 +307,6 @@ ns:RegisterGuide({
         {
             id = "accept-6922-baron-aquanis",
             kind = "accept",
-            priority = 46,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Inside BFD at the Moonshrine Ruins, click the underwater Fathom Stone to loot " ..
                 "the Fathom Core for Amongst the Ruins. Baron Aquanis spawns; kill him for a " ..
@@ -334,7 +317,6 @@ ns:RegisterGuide({
         {
             id = "objective-6561-1-head-of-kelris",
             kind = "objective",
-            priority = 52,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Kill Twilight Lord Kelris and loot the Head of Kelris.",
             dependsOn = { "accept-6561-blackfathom-villainy" },
@@ -344,7 +326,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6563-the-essence-of-aku-mai",
             kind = "turnin",
-            priority = 53,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in The Essence of Aku'Mai to Je'neu Sancrea.",
             dependsOn = { "objective-6563-1-sapphire-of-aku-mai" },
@@ -355,8 +336,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6565-allegiance-to-the-old-gods",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6564 } } },
             kind = "turnin",
-            priority = 54,
             conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
             text = "Turn in Allegiance to the Old Gods to Je'neu Sancrea.",
             dependsOn = { "objective-6565-1-lorgus-jett" },
@@ -368,7 +349,6 @@ ns:RegisterGuide({
         {
             id = "objective-6921-amongst-the-ruins",
             kind = "objective",
-            priority = 47,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Inside BFD, click the underwater Fathom Stone in the Moonshrine Ruins " ..
                 "(under the walkway before Kelris) and loot the Fathom Core.",
@@ -379,7 +359,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6921-amongst-the-ruins",
             kind = "turnin",
-            priority = 55,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Amongst the Ruins to Je'neu Sancrea.",
             dependsOn = { "objective-6921-amongst-the-ruins" },
@@ -391,7 +370,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6922-baron-aquanis",
             kind = "turnin",
-            priority = 56,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Baron Aquanis to Je'neu Sancrea.",
             dependsOn = { "accept-6922-baron-aquanis" },
@@ -403,7 +381,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6561-blackfathom-villainy",
             kind = "turnin",
-            priority = 57,
             conditions = { all = { { faction = "Horde" }, { level = { min = 26 } } } },
             text = "Turn in Blackfathom Villainy to Bashana Runetotem.",
             dependsOn = { "objective-6561-1-head-of-kelris" },

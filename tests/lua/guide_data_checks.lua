@@ -490,10 +490,7 @@ function M.OrphanAcceptHints(guide, guideID)
 end
 
 -- Era leveling chapters that must keep accept turn-in gates aligned with Loremaster.
-M.EraLoremasterPairs = {
-    ["leveling-era-durotar"] = "leveling-durotar",
-    ["leveling-era-mulgore"] = "leveling-mulgore",
-}
+M.EraLoremasterPairs = {}
 
 function M.GateDependencies(goal)
     local gates = {}
@@ -618,11 +615,6 @@ M.RequiredClassBranchTurnins = {
     {
         guideID = "leveling-era-durotar",
         goalID = "accept-5441-lazy-peons",
-        turnins = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
-    },
-    {
-        guideID = "leveling-durotar",
-        goalID = "accept-794-burning-blade-medallion",
         turnins = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
     },
 }
@@ -1300,8 +1292,9 @@ end
 function M.ItemStartQuestObjectiveViolations(guides)
     local issues = {}
     for guideID, guide in pairs(guides or {}) do
-        local useAccepts = {}
-        for _, goal in ipairs(guide.goals or {}) do
+        local useAccepts, positions = {}, {}
+        for index, goal in ipairs(guide.goals or {}) do
+            positions[goal.id] = index
             if goal.kind == "accept" and type(goal.text) == "string"
                 and goal.text:match("^Use the .+ to accept") then
                 local questID = M.AcceptQuestIDFromGoal(goal)
@@ -1317,9 +1310,9 @@ function M.ItemStartQuestObjectiveViolations(guides)
             local spec = type(complete) == "table" and complete.questObjective or nil
             local questID = type(spec) == "table" and spec.id or nil
             if questID and useAccepts[questID] then
-                local goalPriority = type(goal.priority) == "number" and goal.priority or 0
+                local goalPriority = guide.routeMode == "ordered" and positions[goal.id] or goal.priority or 0
                 for _, accept in ipairs(useAccepts[questID]) do
-                    local acceptPriority = type(accept.priority) == "number" and accept.priority or 0
+                    local acceptPriority = guide.routeMode == "ordered" and positions[accept.id] or accept.priority or 0
                     if goalPriority <= acceptPriority then
                         issues[#issues + 1] = {
                             guideID = guideID,

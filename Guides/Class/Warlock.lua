@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Warlock",
     category = "Class Quests",
     id = "class-warlock",
@@ -15,7 +15,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            priority = 10,
             route = {
                 { y = 0.426, mapID = 1429, label = "Drusilla La Salle", x = 0.498, offMapText = "Travel to Drusilla La Salle in Elwynn Forest." },
             },
@@ -43,7 +42,6 @@ ns:RegisterGuide({
             classAction = "accept-1598-the-stolen-tome",
         },
         {
-            priority = 20,
             route = {
                 { mapID = 1429, x = 0.5674, y = 0.43770000000000003, label = "Powers of the Void", offMapText = "Travel to Powers of the Void." },
             },
@@ -71,7 +69,6 @@ ns:RegisterGuide({
             classAction = "objective-1598-quest-work",
         },
         {
-            priority = 30,
             route = {
                 { y = 0.426, mapID = 1429, label = "Drusilla La Salle", x = 0.498, offMapText = "Travel to Drusilla La Salle in Elwynn Forest." },
             },
@@ -99,7 +96,6 @@ ns:RegisterGuide({
             classAction = "turnin-1598-the-stolen-tome",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.662, mapID = 1426, label = "Alamar Grimm", x = 0.286, offMapText = "Travel to Alamar Grimm in Dun Morogh." },
             },
@@ -127,7 +123,6 @@ ns:RegisterGuide({
             classAction = "accept-1599-beginnings",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.794, mapID = 1426, label = "Frostmane Novice", x = 0.304, offMapText = "Travel to Frostmane Novice in Dun Morogh." },
             },
@@ -155,7 +150,6 @@ ns:RegisterGuide({
             classAction = "objective-1599-beginnings",
         },
         {
-            priority = 60,
             route = {
                 { y = 0.662, mapID = 1426, label = "Alamar Grimm", x = 0.286, offMapText = "Travel to Alamar Grimm in Dun Morogh." },
             },
@@ -183,7 +177,6 @@ ns:RegisterGuide({
             classAction = "turnin-1599-beginnings",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
             },
@@ -209,7 +202,6 @@ ns:RegisterGuide({
             classAction = "accept-98575-tainted-tablet",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.684, mapID = 1411, label = "Nartok", x = 0.406, offMapText = "Travel to Nartok in Durotar." },
             },
@@ -235,7 +227,6 @@ ns:RegisterGuide({
             classAction = "turnin-98575-tainted-tablet",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.69, mapID = 1411, label = "Ruzan", x = 0.426, offMapText = "Travel to Ruzan in Durotar." },
             },
@@ -257,7 +248,6 @@ ns:RegisterGuide({
             classAction = "accept-1485-vile-familiars",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.55, mapID = 1411, label = "Vile Familiar", x = 0.452, offMapText = "Travel to Vile Familiar in Durotar." },
             },
@@ -279,7 +269,6 @@ ns:RegisterGuide({
             classAction = "objective-1485-vile-familiars",
         },
         {
-            priority = 110,
             route = {
                 { y = 0.69, mapID = 1411, label = "Ruzan", x = 0.426, offMapText = "Travel to Ruzan in Durotar." },
             },
@@ -301,7 +290,6 @@ ns:RegisterGuide({
             classAction = "turnin-1485-vile-familiars",
         },
         {
-            priority = 120,
             route = {
                 { y = 0.662, mapID = 1420, label = "Venya Marthand", x = 0.31, offMapText = "Travel to Venya Marthand in Tirisfal Glades." },
             },
@@ -329,7 +317,6 @@ ns:RegisterGuide({
             classAction = "accept-1470-piercing-the-veil",
         },
         {
-            priority = 130,
             route = {
                 { y = 0.632, mapID = 1420, label = "Rattlecage Skeleton", x = 0.33, offMapText = "Travel to Rattlecage Skeleton in Tirisfal Glades." },
             },
@@ -357,7 +344,6 @@ ns:RegisterGuide({
             classAction = "objective-1470-piercing-the-veil",
         },
         {
-            priority = 140,
             route = {
                 { y = 0.662, mapID = 1420, label = "Venya Marthand", x = 0.31, offMapText = "Travel to Venya Marthand in Tirisfal Glades." },
             },
@@ -385,7 +371,6 @@ ns:RegisterGuide({
             classAction = "turnin-1470-piercing-the-veil",
         },
         {
-            priority = 150,
             route = {
                 { y = 0.69, mapID = 1411, label = "Ruzan", x = 0.426, offMapText = "Travel to Ruzan in Durotar." },
             },
@@ -413,7 +398,6 @@ ns:RegisterGuide({
             classAction = "accept-1499-vile-familiars",
         },
         {
-            priority = 160,
             route = {
                 { y = 0.69, mapID = 1411, label = "Zureetha Fargaze", x = 0.428, offMapText = "Travel to Zureetha Fargaze in Durotar." },
             },
@@ -441,7 +425,6 @@ ns:RegisterGuide({
             classAction = "turnin-1499-vile-familiars",
         },
         {
-            priority = 170,
             route = {
                 { mapID = 1426, x = 0.2993, y = 0.7120000000000001, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
@@ -481,7 +464,6 @@ ns:RegisterGuide({
             classAction = "accept-179-dwarven-outfitters",
         },
         {
-            priority = 180,
             route = {
                 { y = 0.744, mapID = 1426, label = "Ragged Young Wolf", offMapText = "Travel to Ragged Young Wolf.", x = 0.306 },
             },
@@ -521,7 +503,6 @@ ns:RegisterGuide({
             classAction = "objective-179-1-ragged-young-wolf",
         },
         {
-            priority = 190,
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh.", x = 0.2993 },
             },
@@ -561,7 +542,6 @@ ns:RegisterGuide({
             classAction = "turnin-179-dwarven-outfitters",
         },
         {
-            priority = 200,
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
@@ -587,7 +567,6 @@ ns:RegisterGuide({
             classAction = "accept-3115-tainted-memorandum",
         },
         {
-            priority = 210,
             route = {
                 { y = 0.662, mapID = 1426, label = "Alamar Grimm", x = 0.286, offMapText = "Travel to Alamar Grimm in Dun Morogh." },
             },
@@ -613,7 +592,6 @@ ns:RegisterGuide({
             classAction = "turnin-3115-tainted-memorandum",
         },
         {
-            priority = 220,
             route = {
                 { y = 0.4295, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
             },
@@ -653,7 +631,6 @@ ns:RegisterGuide({
             classAction = "accept-783-a-threat-within",
         },
         {
-            priority = 230,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -693,7 +670,6 @@ ns:RegisterGuide({
             classAction = "turnin-783-a-threat-within",
         },
         {
-            priority = 240,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -733,7 +709,6 @@ ns:RegisterGuide({
             classAction = "accept-7-kobold-camp-cleanup",
         },
         {
-            priority = 250,
             route = {
                 { y = 0.376, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.48 },
             },
@@ -773,7 +748,6 @@ ns:RegisterGuide({
             classAction = "objective-7-1-kobold-vermin",
         },
         {
-            priority = 260,
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -813,7 +787,6 @@ ns:RegisterGuide({
             classAction = "turnin-7-kobold-camp-cleanup",
         },
         {
-            priority = 270,
             route = {
                 { y = 0.416, mapID = 1429, label = "Marshal McBride", x = 0.488, offMapText = "Travel to Marshal McBride in Elwynn Forest." },
             },
@@ -839,7 +812,6 @@ ns:RegisterGuide({
             classAction = "accept-3105-tainted-letter",
         },
         {
-            priority = 280,
             route = {
                 { y = 0.426, mapID = 1429, label = "Drusilla La Salle", x = 0.498, offMapText = "Travel to Drusilla La Salle in Elwynn Forest." },
             },
@@ -865,7 +837,6 @@ ns:RegisterGuide({
             classAction = "turnin-3105-tainted-letter",
         },
         {
-            priority = 290,
             route = {
                 { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
             },
@@ -905,7 +876,6 @@ ns:RegisterGuide({
             classAction = "accept-788-cutting-teeth",
         },
         {
-            priority = 300,
             route = {
                 { y = 0.662, mapID = 1411, label = "Mottled Boar", offMapText = "Travel to Mottled Boar.", x = 0.438 },
             },
@@ -945,7 +915,6 @@ ns:RegisterGuide({
             classAction = "objective-788-1-mottled-boar",
         },
         {
-            priority = 310,
             route = {
                 { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
             },
@@ -985,7 +954,6 @@ ns:RegisterGuide({
             classAction = "turnin-788-cutting-teeth",
         },
         {
-            priority = 320,
             route = {
                 { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
             },
@@ -1011,7 +979,6 @@ ns:RegisterGuide({
             classAction = "accept-3090-tainted-parchment",
         },
         {
-            priority = 330,
             route = {
                 { y = 0.684, mapID = 1411, label = "Nartok", x = 0.406, offMapText = "Travel to Nartok in Durotar." },
             },
@@ -1037,7 +1004,6 @@ ns:RegisterGuide({
             classAction = "turnin-3090-tainted-parchment",
         },
         {
-            priority = 340,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -1077,7 +1043,6 @@ ns:RegisterGuide({
             classAction = "accept-364-the-mindless-ones",
         },
         {
-            priority = 350,
             route = {
                 { mapID = 1420, x = 0.326, y = 0.634, label = "Mindless Zombie", offMapText = "Travel to Mindless Zombie." },
             },
@@ -1151,13 +1116,11 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.326, y = 0.634, label = "Wretched Zombie", offMapText = "Travel to Wretched Zombie." },
             },
             sourceStep = 13,
-            priority = 360,
             useClientPin = false,
             dependsOn = { "accept-364-the-mindless-ones" },
             classAction = "objective-364-2-wretched-zombie",
         },
         {
-            priority = 370,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -1197,7 +1160,6 @@ ns:RegisterGuide({
             classAction = "turnin-364-the-mindless-ones",
         },
         {
-            priority = 380,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", x = 0.308, offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades." },
             },
@@ -1223,7 +1185,6 @@ ns:RegisterGuide({
             classAction = "accept-3099-tainted-scroll",
         },
         {
-            priority = 390,
             route = {
                 { y = 0.662, mapID = 1420, label = "Maximillion", x = 0.308, offMapText = "Travel to Maximillion in Tirisfal Glades." },
             },
@@ -1276,10 +1237,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1715,
             alternativeQuests = { 1688 },
-            priority = 400,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.096, mapID = 1455, label = "Lago Blackwrench", x = 0.476, offMapText = "Travel to Lago Blackwrench in Ironforge." },
             },
@@ -1307,7 +1266,6 @@ ns:RegisterGuide({
             classAction = "accept-1715-the-slaughtered-lamb",
         },
         {
-            priority = 420,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1335,7 +1293,6 @@ ns:RegisterGuide({
             classAction = "turnin-1715-the-slaughtered-lamb",
         },
         {
-            priority = 430,
             route = {
                 { y = 0.662, mapID = 1429, label = "Remen Marcot", x = 0.444, offMapText = "Travel to Remen Marcot in Elwynn Forest." },
             },
@@ -1363,7 +1320,6 @@ ns:RegisterGuide({
             classAction = "accept-1685-gakins-summons",
         },
         {
-            priority = 440,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1391,7 +1347,6 @@ ns:RegisterGuide({
             classAction = "turnin-1685-gakins-summons",
         },
         {
-            priority = 450,
             route = {
                 { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1419,7 +1374,6 @@ ns:RegisterGuide({
             classAction = "accept-1688-surena-caledon",
         },
         {
-            priority = 460,
             route = {
                 { mapID = 1429, x = 0.7101999999999999, y = 0.8078, label = "Surena's Choker", offMapText = "Travel to Surena's Choker." },
             },
@@ -1447,7 +1401,6 @@ ns:RegisterGuide({
             classAction = "objective-1688-quest-work",
         },
         {
-            priority = 470,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1475,7 +1428,6 @@ ns:RegisterGuide({
             classAction = "turnin-1688-surena-caledon",
         },
         {
-            priority = 480,
             route = {
                 { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1503,7 +1455,6 @@ ns:RegisterGuide({
             classAction = "accept-1689-the-binding",
         },
         {
-            priority = 490,
             route = {
                 { mapID = 1453, x = 0.2511, y = 0.7746, label = "Summoned Voidwalker", offMapText = "Travel to Summoned Voidwalker." },
             },
@@ -1531,7 +1482,6 @@ ns:RegisterGuide({
             classAction = "objective-1689-quest-work",
         },
         {
-            priority = 500,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1585,10 +1535,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1478,
-            priority = 510,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.526, mapID = 1420, label = "Ageron Kargal", x = 0.616, offMapText = "Travel to Ageron Kargal in Tirisfal Glades." },
             },
@@ -1616,7 +1564,6 @@ ns:RegisterGuide({
             classAction = "accept-1478-halgars-summons",
         },
         {
-            priority = 530,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -1668,10 +1615,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1473,
-            priority = 540,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -1697,7 +1642,6 @@ ns:RegisterGuide({
             classAction = "accept-1473-creature-of-the-void",
         },
         {
-            priority = 560,
             route = {
                 { mapID = 1420, x = 0.5106, y = 0.6757, label = "Egalin's Grimoire", offMapText = "Travel to Egalin's Grimoire." },
             },
@@ -1723,7 +1667,6 @@ ns:RegisterGuide({
             classAction = "objective-1473-quest-work",
         },
         {
-            priority = 570,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -1749,7 +1692,6 @@ ns:RegisterGuide({
             classAction = "turnin-1473-creature-of-the-void",
         },
         {
-            priority = 580,
             route = {
                 { y = 0.412, mapID = 1411, label = "Ophek", x = 0.542, offMapText = "Travel to Ophek in Durotar." },
             },
@@ -1777,7 +1719,6 @@ ns:RegisterGuide({
             classAction = "accept-1506-ganruls-summons",
         },
         {
-            priority = 590,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -1829,10 +1770,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1501,
-            priority = 600,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -1858,7 +1797,6 @@ ns:RegisterGuide({
             classAction = "accept-1501-creature-of-the-void",
         },
         {
-            priority = 620,
             id = "objective-1501-quest-work",
             conditions = {
                 all = {
@@ -1881,7 +1819,6 @@ ns:RegisterGuide({
             classAction = "objective-1501-quest-work",
         },
         {
-            priority = 630,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -1907,7 +1844,6 @@ ns:RegisterGuide({
             classAction = "turnin-1501-creature-of-the-void",
         },
         {
-            priority = 640,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -1933,7 +1869,6 @@ ns:RegisterGuide({
             classAction = "accept-1504-the-binding",
         },
         {
-            priority = 650,
             id = "objective-1504-quest-work",
             conditions = {
                 all = {
@@ -1956,7 +1891,6 @@ ns:RegisterGuide({
             classAction = "objective-1504-quest-work",
         },
         {
-            priority = 660,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -1982,7 +1916,6 @@ ns:RegisterGuide({
             classAction = "turnin-1504-the-binding",
         },
         {
-            priority = 670,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -2008,7 +1941,6 @@ ns:RegisterGuide({
             classAction = "accept-1471-the-binding",
         },
         {
-            priority = 680,
             route = {
                 { mapID = 1458, x = 0.8662000000000001, y = 0.271, label = "Summoned Voidwalker", offMapText = "Travel to Summoned Voidwalker." },
             },
@@ -2034,7 +1966,6 @@ ns:RegisterGuide({
             classAction = "objective-1471-quest-work",
         },
         {
-            priority = 690,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -2087,10 +2018,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1717,
             alternativeQuests = { 1716 },
-            priority = 700,
         },
         {
-            priority = 710,
             route = {
                 { y = 0.096, mapID = 1455, label = "Lago Blackwrench", x = 0.476, offMapText = "Travel to Lago Blackwrench in Ironforge." },
             },
@@ -2118,7 +2047,6 @@ ns:RegisterGuide({
             classAction = "accept-1717-gakins-summons",
         },
         {
-            priority = 720,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -2146,7 +2074,6 @@ ns:RegisterGuide({
             classAction = "turnin-1717-gakins-summons",
         },
         {
-            priority = 730,
             route = {
                 { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -2174,7 +2101,6 @@ ns:RegisterGuide({
             classAction = "accept-1716-devourer-of-souls",
         },
         {
-            priority = 740,
             route = {
                 { y = 0.57, mapID = 1413, label = "Takar the Seer", x = 0.492, offMapText = "Travel to Takar the Seer in The Barrens." },
             },
@@ -2202,7 +2128,6 @@ ns:RegisterGuide({
             classAction = "turnin-1716-devourer-of-souls",
         },
         {
-            priority = 750,
             route = {
                 { y = 0.57, mapID = 1413, label = "Takar the Seer", x = 0.492, offMapText = "Travel to Takar the Seer in The Barrens." },
             },
@@ -2230,7 +2155,6 @@ ns:RegisterGuide({
             classAction = "accept-1738-heartswood",
         },
         {
-            priority = 760,
             route = {
                 { mapID = 1440, x = 0.31489999999999996, y = 0.3145, label = "Heartswood", offMapText = "Travel to Heartswood." },
             },
@@ -2258,7 +2182,6 @@ ns:RegisterGuide({
             classAction = "objective-1738-quest-work",
         },
         {
-            priority = 770,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -2286,7 +2209,6 @@ ns:RegisterGuide({
             classAction = "turnin-1738-heartswood",
         },
         {
-            priority = 780,
             route = {
                 { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -2314,7 +2236,6 @@ ns:RegisterGuide({
             classAction = "accept-1739-the-binding",
         },
         {
-            priority = 790,
             route = {
                 { mapID = 1453, x = 0.2511, y = 0.7746, label = "Summoned Succubus", offMapText = "Travel to Summoned Succubus." },
             },
@@ -2342,7 +2263,6 @@ ns:RegisterGuide({
             classAction = "objective-1739-quest-work",
         },
         {
-            priority = 800,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -2370,7 +2290,6 @@ ns:RegisterGuide({
             classAction = "turnin-1739-the-binding",
         },
         {
-            priority = 810,
             route = {
                 { y = 0.57, mapID = 1413, label = "Takar the Seer", x = 0.492, offMapText = "Travel to Takar the Seer in The Barrens." },
             },
@@ -2398,7 +2317,6 @@ ns:RegisterGuide({
             classAction = "accept-65602-what-is-love",
         },
         {
-            priority = 820,
             id = "objective-65602-quest-work",
             conditions = {
                 all = {
@@ -2423,7 +2341,6 @@ ns:RegisterGuide({
             classAction = "objective-65602-quest-work",
         },
         {
-            priority = 830,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -2451,7 +2368,6 @@ ns:RegisterGuide({
             classAction = "turnin-65602-what-is-love",
         },
         {
-            priority = 840,
             route = {
                 { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -2479,7 +2395,6 @@ ns:RegisterGuide({
             classAction = "accept-65603-the-binding",
         },
         {
-            priority = 850,
             id = "objective-65603-quest-work",
             conditions = {
                 all = {
@@ -2504,7 +2419,6 @@ ns:RegisterGuide({
             classAction = "objective-65603-quest-work",
         },
         {
-            priority = 860,
             route = {
                 { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -2559,10 +2473,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1507,
             alternativeQuests = { 1472 },
-            priority = 870,
         },
         {
-            priority = 880,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -2590,7 +2502,6 @@ ns:RegisterGuide({
             classAction = "accept-1507-devourer-of-souls",
         },
         {
-            priority = 890,
             route = {
                 { y = 0.466, mapID = 1454, label = "Cazul", x = 0.472, offMapText = "Travel to Cazul in Orgrimmar." },
             },
@@ -2618,7 +2529,6 @@ ns:RegisterGuide({
             classAction = "turnin-1507-devourer-of-souls",
         },
         {
-            priority = 900,
             route = {
                 { y = 0.466, mapID = 1454, label = "Cazul", x = 0.472, offMapText = "Travel to Cazul in Orgrimmar." },
             },
@@ -2646,7 +2556,6 @@ ns:RegisterGuide({
             classAction = "accept-65601-love-hurts",
         },
         {
-            priority = 910,
             route = {
                 { y = 0.5, mapID = 1454, label = "Magar", x = 0.634, offMapText = "Travel to Magar in Orgrimmar." },
             },
@@ -2674,7 +2583,6 @@ ns:RegisterGuide({
             classAction = "turnin-65601-love-hurts",
         },
         {
-            priority = 920,
             route = {
                 { y = 0.5, mapID = 1454, label = "Magar", x = 0.634, offMapText = "Travel to Magar in Orgrimmar." },
             },
@@ -2702,7 +2610,6 @@ ns:RegisterGuide({
             classAction = "accept-65610-wish-you-were-here",
         },
         {
-            priority = 930,
             id = "objective-65610-quest-work",
             conditions = {
                 all = {
@@ -2727,7 +2634,6 @@ ns:RegisterGuide({
             classAction = "objective-65610-quest-work",
         },
         {
-            priority = 940,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -2755,7 +2661,6 @@ ns:RegisterGuide({
             classAction = "turnin-65610-wish-you-were-here",
         },
         {
-            priority = 950,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -2783,7 +2688,6 @@ ns:RegisterGuide({
             classAction = "accept-65604-the-binding",
         },
         {
-            priority = 960,
             id = "objective-65604-quest-work",
             conditions = {
                 all = {
@@ -2808,7 +2712,6 @@ ns:RegisterGuide({
             classAction = "objective-65604-quest-work",
         },
         {
-            priority = 970,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -2836,7 +2739,6 @@ ns:RegisterGuide({
             classAction = "turnin-65604-the-binding",
         },
         {
-            priority = 980,
             route = {
                 { y = 0.466, mapID = 1454, label = "Cazul", x = 0.472, offMapText = "Travel to Cazul in Orgrimmar." },
             },
@@ -2864,7 +2766,6 @@ ns:RegisterGuide({
             classAction = "accept-1508-blind-cazul",
         },
         {
-            priority = 990,
             route = {
                 { y = 0.596, mapID = 1454, label = "Zankaja", x = 0.37, offMapText = "Travel to Zankaja in Orgrimmar." },
             },
@@ -2892,7 +2793,6 @@ ns:RegisterGuide({
             classAction = "turnin-1508-blind-cazul",
         },
         {
-            priority = 1000,
             route = {
                 { y = 0.596, mapID = 1454, label = "Zankaja", x = 0.37, offMapText = "Travel to Zankaja in Orgrimmar." },
             },
@@ -2920,7 +2820,6 @@ ns:RegisterGuide({
             classAction = "accept-1509-news-of-dogran",
         },
         {
-            priority = 1010,
             route = {
                 { y = 0.302, mapID = 1413, label = "Gazrog", x = 0.518, offMapText = "Travel to Gazrog in The Barrens." },
             },
@@ -2948,7 +2847,6 @@ ns:RegisterGuide({
             classAction = "turnin-1509-news-of-dogran",
         },
         {
-            priority = 1020,
             route = {
                 { y = 0.302, mapID = 1413, label = "Gazrog", x = 0.518, offMapText = "Travel to Gazrog in The Barrens." },
             },
@@ -2976,7 +2874,6 @@ ns:RegisterGuide({
             classAction = "accept-1510-news-of-dogran",
         },
         {
-            priority = 1030,
             route = {
                 { y = 0.95, mapID = 1442, label = "Ken'zigla", x = 0.732, offMapText = "Travel to Ken'zigla in Stonetalon Mountains." },
             },
@@ -3004,7 +2901,6 @@ ns:RegisterGuide({
             classAction = "turnin-1510-news-of-dogran",
         },
         {
-            priority = 1040,
             route = {
                 { y = 0.95, mapID = 1442, label = "Ken'zigla", x = 0.732, offMapText = "Travel to Ken'zigla in Stonetalon Mountains." },
             },
@@ -3032,7 +2928,6 @@ ns:RegisterGuide({
             classAction = "accept-1511-kenziglas-draught",
         },
         {
-            priority = 1050,
             route = {
                 { y = 0.592, mapID = 1413, label = "Grunt Logmar", x = 0.446, offMapText = "Travel to Grunt Logmar in The Barrens." },
             },
@@ -3060,7 +2955,6 @@ ns:RegisterGuide({
             classAction = "turnin-1511-kenziglas-draught",
         },
         {
-            priority = 1060,
             route = {
                 { y = 0.592, mapID = 1413, label = "Grunt Logmar", x = 0.446, offMapText = "Travel to Grunt Logmar in The Barrens." },
             },
@@ -3088,7 +2982,6 @@ ns:RegisterGuide({
             classAction = "accept-1515-dograns-captivity",
         },
         {
-            priority = 1070,
             route = {
                 { y = 0.478, mapID = 1413, label = "Grunt Dogran", x = 0.432, offMapText = "Travel to Grunt Dogran in The Barrens." },
             },
@@ -3116,7 +3009,6 @@ ns:RegisterGuide({
             classAction = "turnin-1515-dograns-captivity",
         },
         {
-            priority = 1080,
             route = {
                 { y = 0.478, mapID = 1413, label = "Grunt Dogran", x = 0.432, offMapText = "Travel to Grunt Dogran in The Barrens." },
             },
@@ -3144,7 +3036,6 @@ ns:RegisterGuide({
             classAction = "accept-1512-loves-gift",
         },
         {
-            priority = 1090,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -3172,7 +3063,6 @@ ns:RegisterGuide({
             classAction = "turnin-1512-loves-gift",
         },
         {
-            priority = 1100,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -3200,7 +3090,6 @@ ns:RegisterGuide({
             classAction = "accept-1513-the-binding",
         },
         {
-            priority = 1110,
             route = {
                 { mapID = 1454, x = 0.49450000000000005, y = 0.5003, label = "Summoned Succubus", offMapText = "Travel to Summoned Succubus." },
             },
@@ -3228,7 +3117,6 @@ ns:RegisterGuide({
             classAction = "objective-1513-quest-work",
         },
         {
-            priority = 1120,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -3256,7 +3144,6 @@ ns:RegisterGuide({
             classAction = "turnin-1513-the-binding",
         },
         {
-            priority = 1130,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -3284,7 +3171,6 @@ ns:RegisterGuide({
             classAction = "accept-1472-devourer-of-souls",
         },
         {
-            priority = 1140,
             route = {
                 { y = 0.148, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
             },
@@ -3312,7 +3198,6 @@ ns:RegisterGuide({
             classAction = "turnin-1472-devourer-of-souls",
         },
         {
-            priority = 1150,
             route = {
                 { y = 0.256, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
             },
@@ -3340,7 +3225,6 @@ ns:RegisterGuide({
             classAction = "accept-65593-hearts-of-the-lovers",
         },
         {
-            priority = 1160,
             id = "objective-65593-quest-work",
             conditions = {
                 all = {
@@ -3365,7 +3249,6 @@ ns:RegisterGuide({
             classAction = "objective-65593-quest-work",
         },
         {
-            priority = 1170,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -3393,7 +3276,6 @@ ns:RegisterGuide({
             classAction = "turnin-65593-hearts-of-the-lovers",
         },
         {
-            priority = 1180,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -3421,7 +3303,6 @@ ns:RegisterGuide({
             classAction = "accept-65597-the-binding",
         },
         {
-            priority = 1190,
             id = "objective-65597-quest-work",
             conditions = {
                 all = {
@@ -3446,7 +3327,6 @@ ns:RegisterGuide({
             classAction = "objective-65597-quest-work",
         },
         {
-            priority = 1200,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -3474,7 +3354,6 @@ ns:RegisterGuide({
             classAction = "turnin-65597-the-binding",
         },
         {
-            priority = 1210,
             route = {
                 { y = 0.148, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
             },
@@ -3502,7 +3381,6 @@ ns:RegisterGuide({
             classAction = "accept-1476-hearts-of-the-pure",
         },
         {
-            priority = 1220,
             id = "objective-1476-quest-work",
             conditions = {
                 all = {
@@ -3527,7 +3405,6 @@ ns:RegisterGuide({
             classAction = "objective-1476-quest-work",
         },
         {
-            priority = 1230,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -3555,7 +3432,6 @@ ns:RegisterGuide({
             classAction = "turnin-1476-hearts-of-the-pure",
         },
         {
-            priority = 1240,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -3583,7 +3459,6 @@ ns:RegisterGuide({
             classAction = "accept-1474-the-binding",
         },
         {
-            priority = 1250,
             id = "objective-1474-quest-work",
             conditions = {
                 all = {
@@ -3608,7 +3483,6 @@ ns:RegisterGuide({
             classAction = "objective-1474-quest-work",
         },
         {
-            priority = 1260,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -3662,10 +3536,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1798,
-            priority = 1270,
         },
         {
-            priority = 1280,
             route = {
                 { y = 0.852, mapID = 1453, label = "Gakin the Darkbinder", x = 0.392, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -3693,7 +3565,6 @@ ns:RegisterGuide({
             classAction = "accept-1798-seeking-strahad",
         },
         {
-            priority = 1290,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -3721,7 +3592,6 @@ ns:RegisterGuide({
             classAction = "turnin-1798-seeking-strahad",
         },
         {
-            priority = 1300,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -3749,7 +3619,6 @@ ns:RegisterGuide({
             classAction = "accept-1758-tome-of-the-cabal",
         },
         {
-            priority = 1310,
             route = {
                 { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
             },
@@ -3777,7 +3646,6 @@ ns:RegisterGuide({
             classAction = "turnin-1758-tome-of-the-cabal",
         },
         {
-            priority = 1320,
             route = {
                 { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
             },
@@ -3805,7 +3673,6 @@ ns:RegisterGuide({
             classAction = "accept-1802-tome-of-the-cabal",
         },
         {
-            priority = 1330,
             id = "objective-1802-book-1",
             conditions = {
                 all = {
@@ -3833,7 +3700,6 @@ ns:RegisterGuide({
             classAction = "objective-1802-book-1",
         },
         {
-            priority = 1340,
             id = "objective-1802-book-2",
             conditions = {
                 all = {
@@ -3861,7 +3727,6 @@ ns:RegisterGuide({
             classAction = "objective-1802-book-2",
         },
         {
-            priority = 1350,
             route = {
                 { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
             },
@@ -3889,7 +3754,6 @@ ns:RegisterGuide({
             classAction = "turnin-1802-tome-of-the-cabal",
         },
         {
-            priority = 1360,
             route = {
                 { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
             },
@@ -3917,7 +3781,6 @@ ns:RegisterGuide({
             classAction = "accept-1804-tome-of-the-cabal",
         },
         {
-            priority = 1370,
             id = "objective-1804-quest-work",
             conditions = {
                 all = {
@@ -3942,7 +3805,6 @@ ns:RegisterGuide({
             classAction = "objective-1804-quest-work",
         },
         {
-            priority = 1380,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -3996,10 +3858,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2996,
-            priority = 1390,
         },
         {
-            priority = 1400,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -4027,7 +3887,6 @@ ns:RegisterGuide({
             classAction = "accept-2996-seeking-strahad",
         },
         {
-            priority = 1410,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -4055,7 +3914,6 @@ ns:RegisterGuide({
             classAction = "turnin-2996-seeking-strahad",
         },
         {
-            priority = 1420,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -4083,7 +3941,6 @@ ns:RegisterGuide({
             classAction = "accept-1801-tome-of-the-cabal",
         },
         {
-            priority = 1430,
             route = {
                 { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
             },
@@ -4111,7 +3968,6 @@ ns:RegisterGuide({
             classAction = "turnin-1801-tome-of-the-cabal",
         },
         {
-            priority = 1440,
             route = {
                 { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
             },
@@ -4139,7 +3995,6 @@ ns:RegisterGuide({
             classAction = "accept-1803-tome-of-the-cabal",
         },
         {
-            priority = 1450,
             id = "objective-1803-book-1",
             conditions = {
                 all = {
@@ -4167,7 +4022,6 @@ ns:RegisterGuide({
             classAction = "objective-1803-book-1",
         },
         {
-            priority = 1460,
             id = "objective-1803-book-2",
             conditions = {
                 all = {
@@ -4195,7 +4049,6 @@ ns:RegisterGuide({
             classAction = "objective-1803-book-2",
         },
         {
-            priority = 1470,
             route = {
                 { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
             },
@@ -4223,7 +4076,6 @@ ns:RegisterGuide({
             classAction = "turnin-1803-tome-of-the-cabal",
         },
         {
-            priority = 1480,
             route = {
                 { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
             },
@@ -4251,7 +4103,6 @@ ns:RegisterGuide({
             classAction = "accept-1805-tome-of-the-cabal",
         },
         {
-            priority = 1490,
             id = "objective-1805-quest-work",
             conditions = {
                 all = {
@@ -4276,7 +4127,6 @@ ns:RegisterGuide({
             classAction = "objective-1805-quest-work",
         },
         {
-            priority = 1500,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -4326,10 +4176,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1795,
-            priority = 1510,
         },
         {
-            priority = 1520,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -4353,7 +4201,6 @@ ns:RegisterGuide({
             classAction = "accept-1795-the-binding",
         },
         {
-            priority = 1530,
             id = "objective-1795-quest-work",
             conditions = {
                 all = {
@@ -4374,7 +4221,6 @@ ns:RegisterGuide({
             classAction = "objective-1795-quest-work",
         },
         {
-            priority = 1540,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -4398,7 +4244,6 @@ ns:RegisterGuide({
             classAction = "turnin-1795-the-binding",
         },
         {
-            priority = 1550,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -4426,7 +4271,6 @@ ns:RegisterGuide({
             classAction = "accept-3001-seeking-strahad",
         },
         {
-            priority = 1560,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -4481,10 +4325,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4736,
             alternativeQuests = { 4737, 4738, 4739 },
-            priority = 1570,
         },
         {
-            priority = 1580,
             route = {
                 { y = 0.06, mapID = 1455, label = "Briarthorn", x = 0.502, offMapText = "Travel to Briarthorn in Ironforge." },
             },
@@ -4512,7 +4354,6 @@ ns:RegisterGuide({
             classAction = "accept-4736-in-search-of-menara-voidrender",
         },
         {
-            priority = 1590,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -4567,10 +4408,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4737,
             alternativeQuests = { 4736, 4738, 4739 },
-            priority = 1600,
         },
         {
-            priority = 1610,
             route = {
                 { y = 0.456, mapID = 1454, label = "Zevrost", x = 0.484, offMapText = "Travel to Zevrost in Orgrimmar." },
             },
@@ -4598,7 +4437,6 @@ ns:RegisterGuide({
             classAction = "accept-4737-in-search-of-menara-voidrender",
         },
         {
-            priority = 1620,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -4626,7 +4464,6 @@ ns:RegisterGuide({
             classAction = "turnin-4737-in-search-of-menara-voidrender",
         },
         {
-            priority = 1630,
             route = {
                 { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
@@ -4654,7 +4491,6 @@ ns:RegisterGuide({
             classAction = "accept-4738-in-search-of-menara-voidrender",
         },
         {
-            priority = 1640,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -4682,7 +4518,6 @@ ns:RegisterGuide({
             classAction = "turnin-4738-in-search-of-menara-voidrender",
         },
         {
-            priority = 1650,
             route = {
                 { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
             },
@@ -4710,7 +4545,6 @@ ns:RegisterGuide({
             classAction = "accept-4739-in-search-of-menara-voidrender",
         },
         {
-            priority = 1660,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -4757,10 +4591,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1796,
-            priority = 1670,
         },
         {
-            priority = 1680,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -4781,7 +4613,6 @@ ns:RegisterGuide({
             classAction = "accept-1796-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1690,
             id = "objective-1796-quest-work",
             conditions = {
                 all = {
@@ -4799,7 +4630,6 @@ ns:RegisterGuide({
             classAction = "objective-1796-quest-work",
         },
         {
-            priority = 1700,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -4820,7 +4650,6 @@ ns:RegisterGuide({
             classAction = "turnin-1796-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1710,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -4841,7 +4670,6 @@ ns:RegisterGuide({
             classAction = "accept-4781-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1720,
             route = {
                 {
                     y = 0.587,
@@ -5293,7 +5121,6 @@ ns:RegisterGuide({
             classAction = "objective-4781-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1730,
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -5317,7 +5144,6 @@ ns:RegisterGuide({
             classAction = "turnin-4781-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1740,
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -5338,7 +5164,6 @@ ns:RegisterGuide({
             classAction = "accept-4782-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1750,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5359,7 +5184,6 @@ ns:RegisterGuide({
             classAction = "turnin-4782-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1760,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5380,7 +5204,6 @@ ns:RegisterGuide({
             classAction = "accept-4783-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1770,
             id = "objective-4783-quest-work",
             conditions = {
                 all = {
@@ -5398,7 +5221,6 @@ ns:RegisterGuide({
             classAction = "objective-4783-quest-work",
         },
         {
-            priority = 1780,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5419,7 +5241,6 @@ ns:RegisterGuide({
             classAction = "turnin-4783-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1790,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5440,7 +5261,6 @@ ns:RegisterGuide({
             classAction = "accept-4784-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1800,
             id = "objective-4784-quest-work",
             conditions = {
                 all = {
@@ -5458,7 +5278,6 @@ ns:RegisterGuide({
             classAction = "objective-4784-quest-work",
         },
         {
-            priority = 1810,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5479,7 +5298,6 @@ ns:RegisterGuide({
             classAction = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 1820,
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -5500,7 +5318,6 @@ ns:RegisterGuide({
             classAction = "accept-4785-fine-gold-thread",
         },
         {
-            priority = 1830,
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -5521,7 +5338,6 @@ ns:RegisterGuide({
             classAction = "turnin-4785-fine-gold-thread",
         },
         {
-            priority = 1840,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5542,7 +5358,6 @@ ns:RegisterGuide({
             classAction = "accept-4786-the-completed-robe",
         },
         {
-            priority = 1850,
             id = "objective-4786-quest-work",
             conditions = {
                 all = {
@@ -5560,7 +5375,6 @@ ns:RegisterGuide({
             classAction = "objective-4786-quest-work",
         },
         {
-            priority = 1860,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5601,10 +5415,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4962,
             alternativeQuests = { 4963 },
-            priority = 1870,
         },
         {
-            priority = 1880,
             route = {
                 { y = 0.352, mapID = 1413, label = "Acolyte Wytula", x = 0.626, offMapText = "Travel to Acolyte Wytula in The Barrens." },
             },
@@ -5625,7 +5437,6 @@ ns:RegisterGuide({
             classAction = "accept-4962-shard-of-a-felhound",
         },
         {
-            priority = 1890,
             id = "objective-4962-quest-work",
             conditions = {
                 all = {
@@ -5643,7 +5454,6 @@ ns:RegisterGuide({
             classAction = "objective-4962-quest-work",
         },
         {
-            priority = 1900,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5664,7 +5474,6 @@ ns:RegisterGuide({
             classAction = "turnin-4962-shard-of-a-felhound",
         },
         {
-            priority = 1910,
             route = {
                 { y = 0.352, mapID = 1413, label = "Acolyte Magaz", x = 0.626, offMapText = "Travel to Acolyte Magaz in The Barrens." },
             },
@@ -5685,7 +5494,6 @@ ns:RegisterGuide({
             classAction = "accept-4963-shard-of-an-infernal",
         },
         {
-            priority = 1920,
             id = "objective-4963-quest-work",
             conditions = {
                 all = {
@@ -5703,7 +5511,6 @@ ns:RegisterGuide({
             classAction = "objective-4963-quest-work",
         },
         {
-            priority = 1930,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5751,10 +5558,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4965,
             alternativeQuests = { 4967, 4968, 4969 },
-            priority = 1940,
         },
         {
-            priority = 1950,
             route = {
                 { y = 0.06, mapID = 1455, label = "Briarthorn", x = 0.502, offMapText = "Travel to Briarthorn in Ironforge." },
             },
@@ -5782,7 +5587,6 @@ ns:RegisterGuide({
             classAction = "accept-4965-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 1960,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5837,10 +5641,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4967,
             alternativeQuests = { 4965, 4968, 4969 },
-            priority = 1970,
         },
         {
-            priority = 1980,
             route = {
                 { y = 0.456, mapID = 1454, label = "Zevrost", x = 0.484, offMapText = "Travel to Zevrost in Orgrimmar." },
             },
@@ -5868,7 +5670,6 @@ ns:RegisterGuide({
             classAction = "accept-4967-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 1990,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5896,7 +5697,6 @@ ns:RegisterGuide({
             classAction = "turnin-4967-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 2000,
             route = {
                 { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
@@ -5924,7 +5724,6 @@ ns:RegisterGuide({
             classAction = "accept-4968-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 2010,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -5952,7 +5751,6 @@ ns:RegisterGuide({
             classAction = "turnin-4968-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 2020,
             route = {
                 { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
             },
@@ -5980,7 +5778,6 @@ ns:RegisterGuide({
             classAction = "accept-4969-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 2030,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -6008,7 +5805,6 @@ ns:RegisterGuide({
             classAction = "turnin-4969-knowledge-of-the-orb-of-orahil",
         },
         {
-            priority = 2040,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -6029,7 +5825,6 @@ ns:RegisterGuide({
             classAction = "accept-1799-fragments-of-the-orb-of-orahil",
         },
         {
-            priority = 2050,
             id = "objective-1799-quest-work",
             conditions = {
                 all = {
@@ -6047,7 +5842,6 @@ ns:RegisterGuide({
             classAction = "objective-1799-quest-work",
         },
         {
-            priority = 2060,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -6068,7 +5862,6 @@ ns:RegisterGuide({
             classAction = "turnin-1799-fragments-of-the-orb-of-orahil",
         },
         {
-            priority = 2070,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -6089,7 +5882,6 @@ ns:RegisterGuide({
             classAction = "accept-4961-cleansing-of-the-orb-of-orahil",
         },
         {
-            priority = 2080,
             id = "objective-4961-quest-work",
             conditions = {
                 all = {
@@ -6107,7 +5899,6 @@ ns:RegisterGuide({
             classAction = "objective-4961-quest-work",
         },
         {
-            priority = 2090,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -6128,7 +5919,6 @@ ns:RegisterGuide({
             classAction = "turnin-4961-cleansing-of-the-orb-of-orahil",
         },
         {
-            priority = 2100,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -6149,7 +5939,6 @@ ns:RegisterGuide({
             classAction = "accept-4976-returning-the-cleansed-orb",
         },
         {
-            priority = 2110,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -6170,7 +5959,6 @@ ns:RegisterGuide({
             classAction = "turnin-4976-returning-the-cleansed-orb",
         },
         {
-            priority = 2120,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -6191,7 +5979,6 @@ ns:RegisterGuide({
             classAction = "accept-4964-the-completed-orb-of-darorahil",
         },
         {
-            priority = 2130,
             id = "objective-4964-quest-work",
             conditions = {
                 all = {
@@ -6209,7 +5996,6 @@ ns:RegisterGuide({
             classAction = "objective-4964-quest-work",
         },
         {
-            priority = 2140,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -6230,7 +6016,6 @@ ns:RegisterGuide({
             classAction = "turnin-4964-the-completed-orb-of-darorahil",
         },
         {
-            priority = 2150,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -6251,7 +6036,6 @@ ns:RegisterGuide({
             classAction = "accept-4975-the-completed-orb-of-nohorahil",
         },
         {
-            priority = 2160,
             id = "objective-4975-quest-work",
             conditions = {
                 all = {
@@ -6269,7 +6053,6 @@ ns:RegisterGuide({
             classAction = "objective-4975-quest-work",
         },
         {
-            priority = 2170,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -6317,10 +6100,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4487,
             alternativeQuests = { 3631, 4488, 4489 },
-            priority = 2180,
         },
         {
-            priority = 2190,
             route = {
                 { y = 0.06, mapID = 1455, label = "Briarthorn", x = 0.502, offMapText = "Travel to Briarthorn in Ironforge." },
             },
@@ -6348,7 +6129,6 @@ ns:RegisterGuide({
             classAction = "accept-4487-summon-felsteed",
         },
         {
-            priority = 2200,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -6376,7 +6156,6 @@ ns:RegisterGuide({
             classAction = "turnin-4487-summon-felsteed",
         },
         {
-            priority = 2210,
             route = {
                 { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
@@ -6404,7 +6183,6 @@ ns:RegisterGuide({
             classAction = "accept-4488-summon-felsteed",
         },
         {
-            priority = 2220,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -6459,10 +6237,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 3631,
             alternativeQuests = { 4487, 4488, 4489 },
-            priority = 2230,
         },
         {
-            priority = 2240,
             route = {
                 { y = 0.456, mapID = 1454, label = "Zevrost", x = 0.484, offMapText = "Travel to Zevrost in Orgrimmar." },
             },
@@ -6490,7 +6266,6 @@ ns:RegisterGuide({
             classAction = "accept-3631-summon-felsteed",
         },
         {
-            priority = 2250,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -6518,7 +6293,6 @@ ns:RegisterGuide({
             classAction = "turnin-3631-summon-felsteed",
         },
         {
-            priority = 2260,
             route = {
                 { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
             },
@@ -6546,7 +6320,6 @@ ns:RegisterGuide({
             classAction = "accept-4489-summon-felsteed",
         },
         {
-            priority = 2270,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -6605,10 +6378,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4490,
-            priority = 2280,
         },
         {
-            priority = 2290,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -6641,7 +6412,6 @@ ns:RegisterGuide({
             classAction = "accept-4490-summon-felsteed",
         },
         {
-            priority = 2300,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -6693,10 +6463,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7601,
-            priority = 2310,
         },
         {
-            priority = 2320,
             route = {
                 { y = 0.448, mapID = 1448, label = "Niby the Almighty", x = 0.414, offMapText = "Travel to Niby the Almighty in Felwood." },
             },
@@ -6717,7 +6485,6 @@ ns:RegisterGuide({
             classAction = "accept-7601-what-niby-commands",
         },
         {
-            priority = 2330,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -6738,7 +6505,6 @@ ns:RegisterGuide({
             classAction = "turnin-7601-what-niby-commands",
         },
         {
-            priority = 2340,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -6759,7 +6525,6 @@ ns:RegisterGuide({
             classAction = "accept-7602-flawless-fel-essence",
         },
         {
-            priority = 2350,
             dependsOn = { "accept-7602-flawless-fel-essence" },
             id = "objective-7602-flawless-fel-essence",
             conditions = {
@@ -6777,7 +6542,6 @@ ns:RegisterGuide({
             classAction = "objective-7602-flawless-fel-essence",
         },
         {
-            priority = 2360,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -6819,10 +6583,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 8419,
             alternativeQuests = { 8420 },
-            priority = 2370,
         },
         {
-            priority = 2380,
             route = {
                 { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.284, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
@@ -6865,10 +6627,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 8419,
             alternativeQuests = { 8420 },
-            priority = 2390,
         },
         {
-            priority = 2400,
             route = {
                 { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
             },
@@ -6890,7 +6650,6 @@ ns:RegisterGuide({
             classAction = "accept-8419-an-imps-request-horde",
         },
         {
-            priority = 2410,
             id = "objective-8419-quest-work",
             conditions = {
                 all = {
@@ -6908,7 +6667,6 @@ ns:RegisterGuide({
             classAction = "objective-8419-quest-work",
         },
         {
-            priority = 2420,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -6929,7 +6687,6 @@ ns:RegisterGuide({
             classAction = "turnin-8419-an-imps-request",
         },
         {
-            priority = 2430,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -6950,7 +6707,6 @@ ns:RegisterGuide({
             classAction = "accept-8420-hot-and-itchy",
         },
         {
-            priority = 2440,
             route = {
                 { y = 0.666, mapID = 1448, label = "Jadefire Rogue", x = 0.334, offMapText = "Travel to Jadefire Rogue in Felwood." },
                 { y = 0.19, mapID = 1448, label = "Jadefire Trickster", x = 0.41, offMapText = "Travel to Jadefire Trickster in Felwood." },
@@ -6985,7 +6741,6 @@ ns:RegisterGuide({
             classAction = "objective-8420-hot-and-itchy",
         },
         {
-            priority = 2450,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -7006,7 +6761,6 @@ ns:RegisterGuide({
             classAction = "turnin-8420-hot-and-itchy",
         },
         {
-            priority = 2460,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -7027,7 +6781,6 @@ ns:RegisterGuide({
             classAction = "accept-8421-the-wrong-stuff",
         },
         {
-            priority = 2470,
             route = {
                 { y = 0.564, mapID = 1448, label = "Tainted Ooze", x = 0.4, offMapText = "Travel to Tainted Ooze in Felwood." },
                 { y = 0.146, mapID = 1448, label = "Irontree Wanderer", x = 0.494, offMapText = "Travel to Irontree Wanderer in Felwood." },
@@ -7051,7 +6804,6 @@ ns:RegisterGuide({
             classAction = "objective-8421-the-wrong-stuff",
         },
         {
-            priority = 2480,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -7072,7 +6824,6 @@ ns:RegisterGuide({
             classAction = "turnin-8421-the-wrong-stuff",
         },
         {
-            priority = 2490,
             route = {
                 { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
             },
@@ -7093,7 +6844,6 @@ ns:RegisterGuide({
             classAction = "accept-7603-kroshius-infernal-core",
         },
         {
-            priority = 2500,
             dependsOn = { "accept-7603-kroshius-infernal-core" },
             id = "objective-7603-kroshius-infernal-core",
             conditions = {
@@ -7111,7 +6861,6 @@ ns:RegisterGuide({
             classAction = "objective-7603-kroshius-infernal-core",
         },
         {
-            priority = 2510,
             route = {
                 { y = 0.448, mapID = 1448, label = "Niby the Almighty", x = 0.414, offMapText = "Travel to Niby the Almighty in Felwood." },
             },
@@ -7152,10 +6901,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7562,
-            priority = 2520,
         },
         {
-            priority = 2530,
             route = {
                 { y = 0.776, mapID = 1453, label = "Spackle Thornberry", x = 0.258, offMapText = "Travel to Spackle Thornberry in Stormwind City." },
             },
@@ -7197,10 +6944,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7562,
-            priority = 2540,
         },
         {
-            priority = 2550,
             route = {
                 { y = 0.158, mapID = 1458, label = "Martha Strain", x = 0.858, offMapText = "Travel to Martha Strain in Undercity." },
             },
@@ -7241,10 +6986,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7562,
-            priority = 2560,
         },
         {
-            priority = 2570,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -7265,7 +7008,6 @@ ns:RegisterGuide({
             classAction = "turnin-7562-morzul-bloodbringer",
         },
         {
-            priority = 2580,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -7286,7 +7028,6 @@ ns:RegisterGuide({
             classAction = "accept-7563-rage-of-blood",
         },
         {
-            priority = 2590,
             id = "objective-7563-quest-work",
             conditions = {
                 all = {
@@ -7304,7 +7045,6 @@ ns:RegisterGuide({
             classAction = "objective-7563-quest-work",
         },
         {
-            priority = 2600,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -7325,7 +7065,6 @@ ns:RegisterGuide({
             classAction = "turnin-7563-rage-of-blood",
         },
         {
-            priority = 2610,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -7346,7 +7085,6 @@ ns:RegisterGuide({
             classAction = "accept-7564-wildeyes",
         },
         {
-            priority = 2620,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -7367,7 +7105,6 @@ ns:RegisterGuide({
             classAction = "turnin-7564-wildeyes",
         },
         {
-            priority = 2630,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -7388,7 +7125,6 @@ ns:RegisterGuide({
             classAction = "accept-7623-lord-banehollow",
         },
         {
-            priority = 2640,
             dependsOn = { "accept-7623-lord-banehollow" },
             id = "objective-7623-reviewed-mechanics",
             conditions = {
@@ -7406,7 +7142,6 @@ ns:RegisterGuide({
             classAction = "objective-7623-reviewed-mechanics",
         },
         {
-            priority = 2650,
             route = {
                 { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
             },
@@ -7427,7 +7162,6 @@ ns:RegisterGuide({
             classAction = "turnin-7623-lord-banehollow",
         },
         {
-            priority = 2660,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -7448,7 +7182,6 @@ ns:RegisterGuide({
             classAction = "accept-7626-bell-of-dethmoora",
         },
         {
-            priority = 2670,
             dependsOn = { "accept-7626-bell-of-dethmoora" },
             id = "objective-7626-bell-of-dethmoora",
             conditions = {
@@ -7466,7 +7199,6 @@ ns:RegisterGuide({
             classAction = "objective-7626-bell-of-dethmoora",
         },
         {
-            priority = 2680,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -7487,7 +7219,6 @@ ns:RegisterGuide({
             classAction = "turnin-7626-bell-of-dethmoora",
         },
         {
-            priority = 2690,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -7508,7 +7239,6 @@ ns:RegisterGuide({
             classAction = "accept-7627-wheel-of-the-black-march",
         },
         {
-            priority = 2700,
             dependsOn = { "accept-7627-wheel-of-the-black-march" },
             id = "objective-7627-wheel-of-the-black-march",
             conditions = {
@@ -7526,7 +7256,6 @@ ns:RegisterGuide({
             classAction = "objective-7627-wheel-of-the-black-march",
         },
         {
-            priority = 2710,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -7547,7 +7276,6 @@ ns:RegisterGuide({
             classAction = "turnin-7627-wheel-of-the-black-march",
         },
         {
-            priority = 2720,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -7568,7 +7296,6 @@ ns:RegisterGuide({
             classAction = "accept-7628-doomsday-candle",
         },
         {
-            priority = 2730,
             dependsOn = { "accept-7628-doomsday-candle" },
             id = "objective-7628-doomsday-candle",
             conditions = {
@@ -7586,7 +7313,6 @@ ns:RegisterGuide({
             classAction = "objective-7628-doomsday-candle",
         },
         {
-            priority = 2740,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -7607,7 +7333,6 @@ ns:RegisterGuide({
             classAction = "turnin-7628-doomsday-candle",
         },
         {
-            priority = 2750,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -7628,7 +7353,6 @@ ns:RegisterGuide({
             classAction = "accept-7630-arcanite",
         },
         {
-            priority = 2760,
             id = "objective-7630-quest-work",
             conditions = {
                 all = {
@@ -7646,7 +7370,6 @@ ns:RegisterGuide({
             classAction = "objective-7630-quest-work",
         },
         {
-            priority = 2770,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -7667,7 +7390,6 @@ ns:RegisterGuide({
             classAction = "turnin-7630-arcanite",
         },
         {
-            priority = 2780,
             route = {
                 { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
             },
@@ -7688,7 +7410,6 @@ ns:RegisterGuide({
             classAction = "accept-7624-ulathek-the-traitor",
         },
         {
-            priority = 2790,
             route = {
                 { y = 0.484, mapID = 1448, label = "Ulathek", x = 0.406, offMapText = "Travel to Ulathek in Felwood." },
             },
@@ -7709,7 +7430,6 @@ ns:RegisterGuide({
             classAction = "objective-7624-ulathek-the-traitor",
         },
         {
-            priority = 2800,
             route = {
                 { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
             },
@@ -7730,7 +7450,6 @@ ns:RegisterGuide({
             classAction = "turnin-7624-ulathek-the-traitor",
         },
         {
-            priority = 2810,
             route = {
                 { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
             },
@@ -7751,7 +7470,6 @@ ns:RegisterGuide({
             classAction = "accept-7625-xorothian-stardust",
         },
         {
-            priority = 2820,
             id = "objective-7625-quest-work",
             conditions = {
                 all = {
@@ -7769,7 +7487,6 @@ ns:RegisterGuide({
             classAction = "objective-7625-quest-work",
         },
         {
-            priority = 2830,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -7790,7 +7507,6 @@ ns:RegisterGuide({
             classAction = "turnin-7625-xorothian-stardust",
         },
         {
-            priority = 2840,
             route = {
                 { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
             },
@@ -7811,7 +7527,6 @@ ns:RegisterGuide({
             classAction = "accept-7582-the-prisons-casing",
         },
         {
-            priority = 2850,
             id = "objective-7582-quest-work",
             conditions = {
                 all = {
@@ -7829,7 +7544,6 @@ ns:RegisterGuide({
             classAction = "objective-7582-quest-work",
         },
         {
-            priority = 2860,
             route = {
                 { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
             },
@@ -7864,7 +7578,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7581,
-            priority = 2870,
         },
         {
             id = "handoff-7581-class-dungeon",
@@ -7880,11 +7593,9 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 2880,
             classAction = "handoff-7581-class-dungeon",
         },
         {
-            priority = 2890,
             route = {
                 { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
             },
@@ -7905,7 +7616,6 @@ ns:RegisterGuide({
             classAction = "accept-7583-suppression",
         },
         {
-            priority = 2900,
             id = "objective-7583-quest-work",
             conditions = {
                 all = {
@@ -7923,7 +7633,6 @@ ns:RegisterGuide({
             classAction = "objective-7583-quest-work",
         },
         {
-            priority = 2910,
             route = {
                 { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
             },

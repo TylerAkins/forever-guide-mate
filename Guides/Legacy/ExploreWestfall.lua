@@ -50,7 +50,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-westfall",
     title = "Explore Westfall",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

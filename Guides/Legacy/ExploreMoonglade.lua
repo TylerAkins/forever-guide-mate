@@ -45,7 +45,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-moonglade",
     title = "Explore Moonglade",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

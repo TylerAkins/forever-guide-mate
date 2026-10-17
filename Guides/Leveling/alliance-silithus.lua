@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Silithus",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-silithus",
@@ -28,7 +28,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 10,
             classAction = "loot-starter-before-accept-7632-the-ancient-leaf",
         },
         {
@@ -52,10 +51,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7632,
-            priority = 20,
         },
         {
-            priority = 30,
             id = "woven-class-hunter-accept-7632-the-ancient-leaf",
             conditions = {
                 all = {
@@ -74,7 +71,6 @@ ns:RegisterGuide({
             classAction = "accept-7632-the-ancient-leaf",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -96,7 +92,6 @@ ns:RegisterGuide({
             classAction = "turnin-7632-the-ancient-leaf",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -118,7 +113,6 @@ ns:RegisterGuide({
             classAction = "accept-7636-stave-of-the-ancients",
         },
         {
-            priority = 60,
             id = "woven-class-hunter-objective-7636-quest-work",
             conditions = {
                 all = {
@@ -137,7 +131,6 @@ ns:RegisterGuide({
             classAction = "objective-7636-quest-work",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -159,7 +152,6 @@ ns:RegisterGuide({
             classAction = "turnin-7636-stave-of-the-ancients",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.2448, mapID = 1448, label = "Vartrus the Ancient", x = 0.47, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -181,7 +173,6 @@ ns:RegisterGuide({
             classAction = "accept-7633-an-introduction",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
             },
@@ -222,7 +213,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7581,
-            priority = 100,
         },
         {
             id = "woven-class-warlock-handoff-7581-class-dungeon",
@@ -239,7 +229,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 110,
             classAction = "handoff-7581-class-dungeon",
         },
         {
@@ -263,10 +252,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7582,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
             },
@@ -288,7 +275,6 @@ ns:RegisterGuide({
             classAction = "accept-7582-the-prisons-casing",
         },
         {
-            priority = 140,
             id = "woven-class-warlock-objective-7582-quest-work",
             conditions = {
                 all = {
@@ -307,7 +293,6 @@ ns:RegisterGuide({
             classAction = "objective-7582-quest-work",
         },
         {
-            priority = 150,
             route = {
                 { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
             },
@@ -329,7 +314,6 @@ ns:RegisterGuide({
             classAction = "turnin-7582-the-prisons-casing",
         },
         {
-            priority = 160,
             route = {
                 { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
             },
@@ -351,7 +335,6 @@ ns:RegisterGuide({
             classAction = "accept-7583-suppression",
         },
         {
-            priority = 170,
             id = "woven-class-warlock-objective-7583-quest-work",
             conditions = {
                 all = {
@@ -370,7 +353,6 @@ ns:RegisterGuide({
             classAction = "objective-7583-quest-work",
         },
         {
-            priority = 180,
             route = {
                 { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
             },
@@ -392,7 +374,6 @@ ns:RegisterGuide({
             classAction = "turnin-7583-suppression",
         },
         {
-            priority = 190,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -414,7 +395,6 @@ ns:RegisterGuide({
             classAction = "accept-7623-lord-banehollow",
         },
         {
-            priority = 200,
             dependsOn = { "woven-class-warlock-accept-7623-lord-banehollow" },
             id = "woven-class-warlock-objective-7623-reviewed-mechanics",
             conditions = {
@@ -433,7 +413,6 @@ ns:RegisterGuide({
             classAction = "objective-7623-reviewed-mechanics",
         },
         {
-            priority = 210,
             route = {
                 { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
             },
@@ -458,7 +437,6 @@ ns:RegisterGuide({
             classAction = "turnin-7623-lord-banehollow",
         },
         {
-            priority = 220,
             route = {
                 { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
             },
@@ -480,7 +458,6 @@ ns:RegisterGuide({
             classAction = "accept-7624-ulathek-the-traitor",
         },
         {
-            priority = 230,
             route = {
                 { y = 0.484, mapID = 1448, label = "Ulathek", x = 0.406, offMapText = "Travel to Ulathek in Felwood." },
             },
@@ -502,7 +479,6 @@ ns:RegisterGuide({
             classAction = "objective-7624-ulathek-the-traitor",
         },
         {
-            priority = 240,
             route = {
                 { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
             },
@@ -527,7 +503,6 @@ ns:RegisterGuide({
             classAction = "turnin-7624-ulathek-the-traitor",
         },
         {
-            priority = 250,
             route = {
                 { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
             },
@@ -549,7 +524,6 @@ ns:RegisterGuide({
             classAction = "accept-7625-xorothian-stardust",
         },
         {
-            priority = 260,
             id = "woven-class-warlock-objective-7625-quest-work",
             conditions = {
                 all = {
@@ -568,7 +542,6 @@ ns:RegisterGuide({
             classAction = "objective-7625-quest-work",
         },
         {
-            priority = 270,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -590,7 +563,6 @@ ns:RegisterGuide({
             classAction = "turnin-7625-xorothian-stardust",
         },
         {
-            priority = 280,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -612,7 +584,6 @@ ns:RegisterGuide({
             classAction = "accept-7563-rage-of-blood",
         },
         {
-            priority = 290,
             id = "woven-class-warlock-objective-7563-quest-work",
             conditions = {
                 all = {
@@ -631,7 +602,6 @@ ns:RegisterGuide({
             classAction = "objective-7563-quest-work",
         },
         {
-            priority = 300,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -653,7 +623,6 @@ ns:RegisterGuide({
             classAction = "turnin-7563-rage-of-blood",
         },
         {
-            priority = 310,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -675,7 +644,6 @@ ns:RegisterGuide({
             classAction = "accept-7564-wildeyes",
         },
         {
-            priority = 320,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -697,7 +665,6 @@ ns:RegisterGuide({
             classAction = "turnin-7564-wildeyes",
         },
         {
-            priority = 330,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -719,7 +686,6 @@ ns:RegisterGuide({
             classAction = "accept-7628-doomsday-candle",
         },
         {
-            priority = 340,
             dependsOn = { "woven-class-warlock-accept-7628-doomsday-candle" },
             id = "woven-class-warlock-objective-7628-doomsday-candle",
             conditions = {
@@ -738,7 +704,6 @@ ns:RegisterGuide({
             classAction = "objective-7628-doomsday-candle",
         },
         {
-            priority = 350,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -760,7 +725,6 @@ ns:RegisterGuide({
             classAction = "turnin-7628-doomsday-candle",
         },
         {
-            priority = 360,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -782,7 +746,6 @@ ns:RegisterGuide({
             classAction = "accept-7627-wheel-of-the-black-march",
         },
         {
-            priority = 370,
             dependsOn = { "woven-class-warlock-accept-7627-wheel-of-the-black-march" },
             id = "woven-class-warlock-objective-7627-wheel-of-the-black-march",
             conditions = {
@@ -801,7 +764,6 @@ ns:RegisterGuide({
             classAction = "objective-7627-wheel-of-the-black-march",
         },
         {
-            priority = 380,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -826,7 +788,6 @@ ns:RegisterGuide({
             classAction = "turnin-7627-wheel-of-the-black-march",
         },
         {
-            priority = 390,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -848,7 +809,6 @@ ns:RegisterGuide({
             classAction = "accept-7626-bell-of-dethmoora",
         },
         {
-            priority = 400,
             dependsOn = { "woven-class-warlock-accept-7626-bell-of-dethmoora" },
             id = "woven-class-warlock-objective-7626-bell-of-dethmoora",
             conditions = {
@@ -867,7 +827,6 @@ ns:RegisterGuide({
             classAction = "objective-7626-bell-of-dethmoora",
         },
         {
-            priority = 410,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -892,7 +851,6 @@ ns:RegisterGuide({
             classAction = "turnin-7626-bell-of-dethmoora",
         },
         {
-            priority = 420,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -914,7 +872,6 @@ ns:RegisterGuide({
             classAction = "accept-7630-arcanite",
         },
         {
-            priority = 430,
             id = "woven-class-warlock-objective-7630-quest-work",
             conditions = {
                 all = {
@@ -933,7 +890,6 @@ ns:RegisterGuide({
             classAction = "objective-7630-quest-work",
         },
         {
-            priority = 440,
             route = {
                 { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
             },
@@ -955,7 +911,6 @@ ns:RegisterGuide({
             classAction = "turnin-7630-arcanite",
         },
         {
-            priority = 450,
             route = {
                 { y = 0.776, mapID = 1453, label = "Spackle Thornberry", x = 0.258, offMapText = "Travel to Spackle Thornberry in Stormwind City." },
             },
@@ -977,7 +932,6 @@ ns:RegisterGuide({
             classAction = "accept-7562-morzul-bloodbringer",
         },
         {
-            priority = 460,
             route = {
                 { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
             },
@@ -1019,10 +973,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7622,
-            priority = 470,
         },
         {
-            priority = 480,
             route = {
                 { y = 0.184, mapID = 1423, label = "Eris Havenfire", x = 0.208, offMapText = "Travel to Eris Havenfire in Eastern Plaguelands." },
             },
@@ -1044,7 +996,6 @@ ns:RegisterGuide({
             classAction = "accept-7622-the-balance-of-light-and-shadow",
         },
         {
-            priority = 490,
             dependsOn = { "woven-class-priest-accept-7622-the-balance-of-light-and-shadow" },
             id = "woven-class-priest-objective-7622-reviewed-mechanics",
             conditions = {
@@ -1063,7 +1014,6 @@ ns:RegisterGuide({
             classAction = "objective-7622-reviewed-mechanics",
         },
         {
-            priority = 500,
             route = {
                 { y = 0.184, mapID = 1423, label = "Eris Havenfire", x = 0.208, offMapText = "Travel to Eris Havenfire in Eastern Plaguelands." },
             },
@@ -1088,7 +1038,6 @@ ns:RegisterGuide({
             classAction = "turnin-7622-the-balance-of-light-and-shadow",
         },
         {
-            priority = 510,
             route = {
                 { y = 0.184, mapID = 1423, label = "Eris Havenfire", x = 0.208, offMapText = "Travel to Eris Havenfire in Eastern Plaguelands." },
             },
@@ -1110,7 +1059,6 @@ ns:RegisterGuide({
             classAction = "accept-7621-a-warning",
         },
         {
-            priority = 520,
             route = {
                 { y = 0.184, mapID = 1423, label = "Eris Havenfire", x = 0.208, offMapText = "Travel to Eris Havenfire in Eastern Plaguelands." },
             },
@@ -1152,10 +1100,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 9362,
-            priority = 530,
         },
         {
-            priority = 540,
             route = {
                 { y = 0.402, mapID = 1447, label = "Archmage Xylem", x = 0.292, offMapText = "Travel to Archmage Xylem in Azshara." },
             },
@@ -1177,7 +1123,6 @@ ns:RegisterGuide({
             classAction = "accept-9362-warlord-krellian",
         },
         {
-            priority = 550,
             route = {
                 { y = 0.53, mapID = 1447, label = "Warlord Krellian", x = 0.404, offMapText = "Travel to Warlord Krellian in Azshara." },
                 { y = 0.484, mapID = 1447, label = "Scalebeard", x = 0.544, offMapText = "Travel to Scalebeard in Azshara." },
@@ -1200,7 +1145,6 @@ ns:RegisterGuide({
             classAction = "objective-9362-warlord-krellian",
         },
         {
-            priority = 560,
             route = {
                 { y = 0.402, mapID = 1447, label = "Archmage Xylem", x = 0.292, offMapText = "Travel to Archmage Xylem in Azshara." },
             },
@@ -1222,7 +1166,6 @@ ns:RegisterGuide({
             classAction = "turnin-9362-warlord-krellian",
         },
         {
-            priority = 570,
             route = {
                 { y = 0.402, mapID = 1447, label = "Archmage Xylem", x = 0.292, offMapText = "Travel to Archmage Xylem in Azshara." },
             },
@@ -1244,7 +1187,6 @@ ns:RegisterGuide({
             classAction = "accept-9364-fragmented-magic",
         },
         {
-            priority = 580,
             id = "woven-class-mage-objective-9364-quest-work",
             conditions = {
                 all = {
@@ -1263,7 +1205,6 @@ ns:RegisterGuide({
             classAction = "objective-9364-quest-work",
         },
         {
-            priority = 590,
             route = {
                 { y = 0.402, mapID = 1447, label = "Archmage Xylem", x = 0.292, offMapText = "Travel to Archmage Xylem in Azshara." },
             },
@@ -1312,10 +1253,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 7670,
             alternativeQuests = { 7638 },
-            priority = 600,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.062, mapID = 1455, label = "Brandur Ironhammer", x = 0.234, offMapText = "Travel to Brandur Ironhammer in Ironforge." },
             },
@@ -1343,7 +1282,6 @@ ns:RegisterGuide({
             classAction = "accept-7670-lord-grayson-shadowbreaker",
         },
         {
-            priority = 620,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -1394,10 +1332,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7645,
-            priority = 630,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.556, mapID = 1424, label = "Merideth Carlson", x = 0.52, offMapText = "Travel to Merideth Carlson in Hillsbrad Foothills." },
             },
@@ -1422,7 +1358,6 @@ ns:RegisterGuide({
             classAction = "accept-7645-manna-enriched-horse-feed",
         },
         {
-            priority = 650,
             id = "woven-class-paladin-objective-7645-quest-work",
             conditions = {
                 all = {
@@ -1444,7 +1379,6 @@ ns:RegisterGuide({
             classAction = "objective-7645-quest-work",
         },
         {
-            priority = 660,
             route = {
                 { y = 0.556, mapID = 1424, label = "Merideth Carlson", x = 0.52, offMapText = "Travel to Merideth Carlson in Hillsbrad Foothills." },
             },
@@ -1472,7 +1406,6 @@ ns:RegisterGuide({
             classAction = "turnin-7645-manna-enriched-horse-feed",
         },
         {
-            priority = 670,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1497,7 +1430,6 @@ ns:RegisterGuide({
             classAction = "accept-7638-lord-grayson-shadowbreaker",
         },
         {
-            priority = 680,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -1522,7 +1454,6 @@ ns:RegisterGuide({
             classAction = "turnin-7638-lord-grayson-shadowbreaker",
         },
         {
-            priority = 690,
             route = {
                 { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -1547,7 +1478,6 @@ ns:RegisterGuide({
             classAction = "accept-7637-emphasis-on-sacrifice",
         },
         {
-            priority = 700,
             route = {
                 { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
             },
@@ -1572,7 +1502,6 @@ ns:RegisterGuide({
             classAction = "turnin-7637-emphasis-on-sacrifice",
         },
         {
-            priority = 710,
             route = {
                 { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
             },
@@ -1597,7 +1526,6 @@ ns:RegisterGuide({
             classAction = "accept-7639-to-show-due-judgment",
         },
         {
-            priority = 720,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -1622,7 +1550,6 @@ ns:RegisterGuide({
             classAction = "turnin-7639-to-show-due-judgment",
         },
         {
-            priority = 730,
             route = {
                 { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -1647,7 +1574,6 @@ ns:RegisterGuide({
             classAction = "accept-7640-exorcising-terrordale",
         },
         {
-            priority = 740,
             id = "woven-class-paladin-objective-7640-quest-work",
             conditions = {
                 all = {
@@ -1669,7 +1595,6 @@ ns:RegisterGuide({
             classAction = "objective-7640-quest-work",
         },
         {
-            priority = 750,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -1694,7 +1619,6 @@ ns:RegisterGuide({
             classAction = "turnin-7640-exorcising-terrordale",
         },
         {
-            priority = 760,
             route = {
                 { y = 0.5, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.486, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -1719,7 +1643,6 @@ ns:RegisterGuide({
             classAction = "accept-7641-the-work-of-grimand-elmore",
         },
         {
-            priority = 770,
             route = {
                 { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
@@ -1766,7 +1689,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7642,
-            priority = 780,
         },
         {
             id = "woven-class-paladin-handoff-7642-class-dungeon",
@@ -1786,11 +1708,9 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 790,
             classAction = "handoff-7642-class-dungeon",
         },
         {
-            priority = 800,
             route = {
                 { y = 0.338, mapID = 1453, label = "Grimand Elmore", x = 0.597, offMapText = "Travel to Grimand Elmore in Stormwind City." },
             },
@@ -1815,7 +1735,6 @@ ns:RegisterGuide({
             classAction = "accept-7648-grimands-finest-work",
         },
         {
-            priority = 810,
             route = {
                 { y = 0.33, mapID = 1453, label = "Lord Grayson Shadowbreaker", x = 0.372, offMapText = "Travel to Lord Grayson Shadowbreaker in Stormwind City." },
             },
@@ -1852,10 +1771,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1124,
-            priority = 820,
         },
         {
-            priority = 830,
             route = {
                 { y = 0.1893, mapID = 1451, label = "Layo Starstrike", offMapText = "Travel to Layo Starstrike in Silithus.", x = 0.8187 },
             },
@@ -1886,7 +1803,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 840,
             route = {
                 { y = 0.1893, mapID = 1451, label = "Layo Starstrike", offMapText = "Travel to Layo Starstrike in Silithus.", x = 0.8187 },
             },
@@ -1917,7 +1833,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 850,
             route = {
                 { y = 0.3858, mapID = 1451, label = "Beetix Ficklespragg", offMapText = "Travel to Beetix Ficklespragg in Silithus.", x = 0.5171 },
             },
@@ -1961,10 +1876,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 8275,
-            priority = 860,
         },
         {
-            priority = 870,
             route = {
                 { y = 0.3829, mapID = 1451, label = "Windcaller Proudhorn", offMapText = "Travel to Windcaller Proudhorn in Silithus.", x = 0.5115 },
             },
@@ -1992,7 +1905,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 880,
             route = {
                 { y = 0.3829, mapID = 1451, label = "Windcaller Proudhorn", offMapText = "Travel to Windcaller Proudhorn in Silithus.", x = 0.5115 },
             },
@@ -2017,7 +1929,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 890,
             route = {
                 { y = 0.3746, mapID = 1451, label = "Geologist Larksbane", offMapText = "Travel to Geologist Larksbane in Silithus.", x = 0.4967 },
             },
@@ -2054,10 +1965,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 8318,
-            priority = 900,
         },
         {
-            priority = 910,
             route = {
                 { y = 0.3778, mapID = 1451, label = "Bor Wildmane", offMapText = "Travel to Bor Wildmane in Silithus.", x = 0.4857 },
             },
@@ -2094,10 +2003,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 8304,
-            priority = 920,
         },
         {
-            priority = 930,
             route = {
                 { y = 0.3418, mapID = 1451, label = "Commander Mar'alith", offMapText = "Travel to Commander Mar'alith in Silithus.", x = 0.4919 },
             },
@@ -2140,7 +2047,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.6323, y = 0.5535, label = "Reliquary of Purity", offMapText = "Travel to Reliquary of Purity." },
             },
             sourceStep = 8,
-            priority = 940,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -2165,7 +2071,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.608, y = 0.494, label = "Tortured Druid", offMapText = "Travel to Tortured Druid." },
             },
             sourceStep = 9,
-            priority = 950,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2196,7 +2101,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.608, y = 0.494, label = "Tortured Sentinel", offMapText = "Travel to Tortured Sentinel." },
             },
             sourceStep = 9,
-            priority = 960,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2228,10 +2132,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 970,
         },
         {
-            priority = 980,
             text = "Use the Brann Bronzebeard's Lost Letter to accept Brann Bronzebeard's Lost Letter.",
             id = "accept-8308-brann-bronzebeard-s-lost-letter",
             kind = "accept",
@@ -2253,7 +2155,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 990,
             text = "Turn in The Spirits of Southwind to Layo Starstrike.",
             route = {
                 { y = 0.1893, mapID = 1451, label = "Layo Starstrike", offMapText = "Travel to Layo Starstrike in Silithus.", x = 0.8187 },
@@ -2306,7 +2207,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.55, y = 0.34600000000000003, label = "Stonelash Scorpid Stinger", offMapText = "Travel to Stonelash Scorpid Stinger." },
             },
             sourceStep = 12,
-            priority = 1000,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -2331,7 +2231,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.55, y = 0.34600000000000003, label = "Sand Skitterer Fang", offMapText = "Travel to Sand Skitterer Fang." },
             },
             sourceStep = 13,
-            priority = 1010,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -2356,14 +2255,12 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.55, y = 0.34600000000000003, label = "Dredge Striker", offMapText = "Travel to Dredge Striker." },
             },
             sourceStep = 14,
-            priority = 1020,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-8280-securing-the-supply-lines" },
         },
         {
-            priority = 1030,
             text = "Turn in Deadly Desert Venom to Beetix Ficklespragg.",
             route = {
                 { y = 0.3858, mapID = 1451, label = "Beetix Ficklespragg", offMapText = "Travel to Beetix Ficklespragg in Silithus.", x = 0.5171 },
@@ -2392,7 +2289,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1040,
             route = {
                 { y = 0.3858, mapID = 1451, label = "Beetix Ficklespragg", offMapText = "Travel to Beetix Ficklespragg in Silithus.", x = 0.5171 },
             },
@@ -2423,7 +2319,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1050,
             text = "Turn in Securing the Supply Lines to Windcaller Proudhorn.",
             route = {
                 { y = 0.3829, mapID = 1451, label = "Windcaller Proudhorn", offMapText = "Travel to Windcaller Proudhorn in Silithus.", x = 0.5115 },
@@ -2448,7 +2343,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1060,
             route = {
                 { y = 0.3829, mapID = 1451, label = "Windcaller Proudhorn", offMapText = "Travel to Windcaller Proudhorn in Silithus.", x = 0.5115 },
             },
@@ -2479,7 +2373,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1070,
             text = "Collect 8 Twilight Tablet Fragment.",
             route = {
                 { y = 0.158, mapID = 1451, label = "Twilight Tablet Fragment", offMapText = "Travel to Twilight Tablet Fragment.", x = 0.264 },
@@ -2504,7 +2397,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1080,
             text = "Turn in The Twilight Mystery to Geologist Larksbane.",
             route = {
                 { y = 0.3746, mapID = 1451, label = "Geologist Larksbane", offMapText = "Travel to Geologist Larksbane in Silithus.", x = 0.4968 },
@@ -2529,7 +2421,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1090,
             route = {
                 { y = 0.3746, mapID = 1451, label = "Geologist Larksbane", offMapText = "Travel to Geologist Larksbane in Silithus.", x = 0.4968 },
             },
@@ -2560,7 +2451,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1100,
             text = "Turn in The Deserter to Hermit Ortell.",
             route = {
                 { y = 0.6976, mapID = 1451, label = "Hermit Ortell", offMapText = "Travel to Hermit Ortell in Silithus.", x = 0.6719 },
@@ -2591,7 +2481,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1110,
             route = {
                 { y = 0.6976, mapID = 1451, label = "Hermit Ortell", offMapText = "Travel to Hermit Ortell in Silithus.", x = 0.6719 },
             },
@@ -2622,7 +2511,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1120,
             text = "Collect 1 Twilight Lexicon - Chapter 2.",
             route = {
                 { y = 0.862, mapID = 1451, label = "Twilight Keeper Exeter", offMapText = "Travel to Twilight Keeper Exeter.", x = 0.154 },
@@ -2671,7 +2559,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.36200000000000004, y = 0.816, label = "Stonelash Flayer Stinger", offMapText = "Travel to Stonelash Flayer Stinger." },
             },
             sourceStep = 23,
-            priority = 1130,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2702,7 +2589,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.36200000000000004, y = 0.816, label = "Rock Stalker Fang", offMapText = "Travel to Rock Stalker Fang." },
             },
             sourceStep = 24,
-            priority = 1140,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2715,7 +2601,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-8278-noggle-s-last-hope" },
         },
         {
-            priority = 1150,
             text = "Collect 1 Twilight Lexicon - Chapter 3.",
             route = {
                 { y = 0.4199, mapID = 1451, label = "Twilight Keeper Havunth", offMapText = "Travel to Twilight Keeper Havunth.", x = 0.4043 },
@@ -2746,7 +2631,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1160,
             text = "Collect 1 Twilight Lexicon - Chapter 1.",
             route = {
                 { y = 0.3633, mapID = 1451, label = "Twilight Keeper Mayna", offMapText = "Travel to Twilight Keeper Mayna.", x = 0.2662 },
@@ -2795,14 +2679,12 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.262, y = 0.35600000000000004, label = "Encrypted Twilight Text", offMapText = "Travel to Encrypted Twilight Text." },
             },
             sourceStep = 27,
-            priority = 1170,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-8318-secret-communication" },
         },
         {
-            priority = 1180,
             text = "Turn in The Twilight Lexicon to Hermit Ortell.",
             route = {
                 { y = 0.6976, mapID = 1451, label = "Hermit Ortell", offMapText = "Travel to Hermit Ortell in Silithus.", x = 0.6719 },
@@ -2838,7 +2720,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1190,
             route = {
                 { y = 0.6976, mapID = 1451, label = "Hermit Ortell", offMapText = "Travel to Hermit Ortell in Silithus.", x = 0.6719 },
             },
@@ -2887,7 +2768,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.564, y = 0.602, label = "Stonelash Pincer Stinger", offMapText = "Travel to Stonelash Pincer Stinger." },
             },
             sourceStep = 30,
-            priority = 1200,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2918,7 +2798,6 @@ ns:RegisterGuide({
                 { mapID = 1451, x = 0.564, y = 0.602, label = "Dredge Crusher", offMapText = "Travel to Dredge Crusher." },
             },
             sourceStep = 31,
-            priority = 1210,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2931,7 +2810,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-8281-stepping-up-security" },
         },
         {
-            priority = 1220,
             text = "Turn in Stepping Up Security to Windcaller Proudhorn.",
             route = {
                 { y = 0.3829, mapID = 1451, label = "Windcaller Proudhorn", offMapText = "Travel to Windcaller Proudhorn in Silithus.", x = 0.5115 },
@@ -2962,7 +2840,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1230,
             text = "Turn in Noggle's Last Hope to Beetix Ficklespragg.",
             route = {
                 { y = 0.3858, mapID = 1451, label = "Beetix Ficklespragg", offMapText = "Travel to Beetix Ficklespragg in Silithus.", x = 0.5171 },
@@ -2998,7 +2875,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1240,
             text = "Turn in A Terrible Purpose to Commander Mar'alith.",
             route = {
                 { y = 0.3418, mapID = 1451, label = "Commander Mar'alith", offMapText = "Travel to Commander Mar'alith in Silithus.", x = 0.4919 },
@@ -3051,7 +2927,6 @@ ns:RegisterGuide({
             },
             sourceStep = 20,
             dependsOn = { "accept-8304-dearest-natalia" },
-            priority = 1250,
         },
         {
             id = "objective-8304-question-1",
@@ -3076,10 +2951,8 @@ ns:RegisterGuide({
             },
             sourceStep = 21,
             dependsOn = { "accept-8304-dearest-natalia" },
-            priority = 1260,
         },
         {
-            priority = 1270,
             text = "Turn in Dearest Natalia to Commander Mar'alith.",
             route = {
                 { y = 0.3418, mapID = 1451, label = "Commander Mar'alith", offMapText = "Travel to Commander Mar'alith in Silithus.", x = 0.4919 },
@@ -3104,7 +2977,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1280,
             text = "Turn in Secret Communication to Bor Wildmane.",
             route = {
                 { y = 0.3778, mapID = 1451, label = "Bor Wildmane", offMapText = "Travel to Bor Wildmane in Silithus.", x = 0.4858 },
@@ -3129,7 +3001,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1290,
             text = "For Are We There, Yeti?: Take Umi's Mechanical Yeti and scare her friends with it: Legacki in Everlook (Winterspring) Sprinkle in Gadgetzan (Tanaris) Quixxil in Marshal's Refuge (Un'Goro Crater) When you are done, bring the Mechanical Yeti back to Umi.",
             id = "objective-5163-quest-work",
             kind = "objective",
@@ -3157,7 +3028,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1300,
             route = {
                 { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
             },
@@ -3188,7 +3058,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-5163-quest-work" },
         },
         {
-            priority = 1310,
             route = {
                 { y = 0.4508, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
             },
@@ -3225,7 +3094,6 @@ ns:RegisterGuide({
             useClientPin = false,
             requiredQuests = {},
             dependsOn = {},
-            priority = 1320,
         },
     },
     casualSpine = true,

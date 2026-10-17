@@ -58,7 +58,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-mulgore",
     title = "Explore Mulgore",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

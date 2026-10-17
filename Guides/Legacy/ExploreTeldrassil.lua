@@ -56,7 +56,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-teldrassil",
     title = "Explore Teldrassil",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

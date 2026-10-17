@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Dustwallow Marsh",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-dustwallow-marsh",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1201,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.3066, mapID = 1445, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh.", x = 0.3521 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.4763, mapID = 1445, label = "Suspicious Hoofprints", offMapText = "Travel to Suspicious Hoofprints.", x = 0.297 },
             },
@@ -93,7 +90,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { y = 0.4824, mapID = 1445, label = "Lieutenant Paval Reethe", offMapText = "Travel to Lieutenant Paval Reethe.", x = 0.2983 },
             },
@@ -121,7 +117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.4859, mapID = 1445, label = "The Black Shield", offMapText = "Travel to The Black Shield.", x = 0.2963 },
             },
@@ -161,10 +156,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1177,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.3825, mapID = 1445, label = "Mudcrush Durtfeet", offMapText = "Travel to Mudcrush Durtfeet in Dustwallow Marsh.", x = 0.3515 },
             },
@@ -189,7 +182,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             text = "Turn in Suspicious Hoofprints to Krog.",
             route = {
                 { y = 0.3188, mapID = 1445, label = "Krog", offMapText = "Travel to Krog in Dustwallow Marsh.", x = 0.3642 },
@@ -217,7 +209,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 90,
             text = "Turn in Lieutenant Paval Reethe to Krog.",
             route = {
                 { y = 0.3188, mapID = 1445, label = "Krog", offMapText = "Travel to Krog in Dustwallow Marsh.", x = 0.3642 },
@@ -245,7 +236,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             text = "Turn in The Black Shield to Krog.",
             route = {
                 { y = 0.3188, mapID = 1445, label = "Krog", offMapText = "Travel to Krog in Dustwallow Marsh.", x = 0.3642 },
@@ -273,7 +263,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.3188, mapID = 1445, label = "Krog", offMapText = "Travel to Krog in Dustwallow Marsh.", x = 0.3642 },
             },
@@ -307,7 +296,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             text = "Turn in The Black Shield to Do'gol.",
             route = {
                 { y = 0.308, mapID = 1445, label = "Do'gol", offMapText = "Travel to Do'gol in Dustwallow Marsh.", x = 0.3653 },
@@ -341,7 +329,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.308, mapID = 1445, label = "Do'gol", offMapText = "Travel to Do'gol in Dustwallow Marsh.", x = 0.3653 },
             },
@@ -375,7 +362,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Kill 9 Theramore Infiltrator.",
             route = {
                 { y = 0.334, mapID = 1445, label = "Theramore Infiltrator", offMapText = "Travel to Theramore Infiltrator.", x = 0.38 },
@@ -403,7 +389,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.1752, mapID = 1445, label = "\"Stinky\" Ignatz", offMapText = "Travel to \"Stinky\" Ignatz in Dustwallow Marsh.", x = 0.4688 },
             },
@@ -431,7 +416,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5544 },
             },
@@ -456,7 +440,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 170,
             text = "For Soothing Spices: Bring 3 Soothing Spices to \"Swamp Eye\" Jarl in Dustwallow Marsh.",
             id = "objective-1218-quest-work",
             kind = "objective",
@@ -478,7 +461,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1218-soothing-spices" },
         },
         {
-            priority = 180,
             text = "Turn in Soothing Spices to \"Swamp Eye\" Jarl.",
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5544 },
@@ -503,7 +485,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.2593, mapID = 1445, label = "The Lost Report", offMapText = "Travel to The Lost Report.", x = 0.5544 },
             },
@@ -531,7 +512,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Collect 12 Mirefin Head.",
             route = {
                 { y = 0.2137, mapID = 1445, label = "Mirefin Coastrunner", offMapText = "Travel to Mirefin Coastrunner.", x = 0.5783 },
@@ -556,7 +536,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5544 },
             },
@@ -608,7 +587,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.516, y = 0.252, label = "Acidic Venom Sac", offMapText = "Travel to Acidic Venom Sac." },
             },
             sourceStep = 22,
-            priority = 220,
             requiredQuests = {
                 {
                     mode = "any",
@@ -621,7 +599,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1322-the-black-shield" },
         },
         {
-            priority = 230,
             text = "Collect 40 Unpopped Darkmist Eye.",
             route = {
                 { y = 0.2276, mapID = 1445, label = "Darkmist Silkspinner", offMapText = "Travel to Darkmist Silkspinner.", x = 0.3322 },
@@ -652,7 +629,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             text = "Turn in Theramore Spies to Nazeer Bloodpike.",
             route = {
                 { mapID = 1445, x = 0.3521, y = 0.3066, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh." },
@@ -680,7 +656,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             route = {
                 { mapID = 1445, x = 0.3521, y = 0.3066, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh." },
             },
@@ -714,7 +689,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             text = "Turn in The Lost Report to Nazeer Bloodpike.",
             route = {
                 { mapID = 1445, x = 0.3521, y = 0.3066, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh." },
@@ -742,7 +716,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             text = "Turn in The Black Shield to Do'gol.",
             route = {
                 { y = 0.308, mapID = 1445, label = "Do'gol", offMapText = "Travel to Do'gol in Dustwallow Marsh.", x = 0.3653 },
@@ -776,7 +749,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.308, mapID = 1445, label = "Do'gol", offMapText = "Travel to Do'gol in Dustwallow Marsh.", x = 0.3653 },
             },
@@ -810,7 +782,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Turn in The Black Shield to Krog.",
             route = {
                 { y = 0.3188, mapID = 1445, label = "Krog", offMapText = "Travel to Krog in Dustwallow Marsh.", x = 0.3642 },
@@ -844,7 +815,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.3669, mapID = 1445, label = "Ogron", offMapText = "Travel to Ogron in Dustwallow Marsh.", x = 0.4096 },
             },
@@ -878,7 +848,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Turn in Hungry! to Mudcrush Durtfeet.",
             route = {
                 { y = 0.3825, mapID = 1445, label = "Mudcrush Durtfeet", offMapText = "Travel to Mudcrush Durtfeet in Dustwallow Marsh.", x = 0.3515 },
@@ -903,7 +872,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Turn in Questioning Reethe to Krog.",
             route = {
                 { y = 0.3188, mapID = 1445, label = "Krog", offMapText = "Travel to Krog in Dustwallow Marsh.", x = 0.3642 },
@@ -937,7 +905,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             route = {
                 { y = 0.3188, mapID = 1445, label = "Krog", offMapText = "Travel to Krog in Dustwallow Marsh.", x = 0.3642 },
             },
@@ -971,7 +938,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             text = "Turn in Jarl Needs Eyes to \"Swamp Eye\" Jarl.",
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5543 },
@@ -1002,7 +968,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5543 },
             },
@@ -1033,7 +998,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             text = "For Jarl Needs a Blade: Bring a Moonsteel Broadsword to Jarl in Dustwallow Marsh.",
             id = "objective-1203-quest-work",
             kind = "objective",
@@ -1061,7 +1025,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1203-jarl-needs-a-blade" },
         },
         {
-            priority = 370,
             text = "Turn in Jarl Needs a Blade to \"Swamp Eye\" Jarl.",
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5544 },
@@ -1092,7 +1055,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             route = {
                 { y = 0.2593, mapID = 1445, label = "The Severed Head", offMapText = "Travel to The Severed Head.", x = 0.5544 },
             },
@@ -1126,7 +1088,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             text = "Collect 1 Captain's Documents.",
             route = {
                 { y = 0.5118, mapID = 1445, label = "Captain's Footlocker", offMapText = "Travel to Captain's Footlocker.", x = 0.7153 },
@@ -1160,7 +1121,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             text = "Turn in The Theramore Docks to Nazeer Bloodpike.",
             route = {
                 { y = 0.3066, mapID = 1445, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh.", x = 0.3521 },
@@ -1194,7 +1154,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             text = "Turn in The Severed Head to Nazeer Bloodpike.",
             route = {
                 { y = 0.3066, mapID = 1445, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh.", x = 0.3521 },
@@ -1228,7 +1187,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.3066, mapID = 1445, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh.", x = 0.3521 },
             },
@@ -1281,10 +1239,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 232,
-            priority = 430,
         },
         {
-            priority = 440,
             route = {
                 { mapID = 1458, x = 0.5013000000000001, y = 0.6799, label = "Apothecary Zinge", offMapText = "Travel to Apothecary Zinge in Undercity." },
             },
@@ -1312,7 +1268,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             text = "Turn in Errand for Apothecary Zinge to Alessandro Luca.",
             route = {
                 { mapID = 1458, x = 0.5861999999999999, y = 0.5467, label = "Alessandro Luca", offMapText = "Travel to Alessandro Luca in Undercity." },
@@ -1340,7 +1295,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { mapID = 1458, x = 0.5861999999999999, y = 0.5467, label = "Alessandro Luca", offMapText = "Travel to Alessandro Luca in Undercity." },
             },
@@ -1374,7 +1328,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Turn in Errand for Apothecary Zinge to Apothecary Zinge.",
             route = {
                 { mapID = 1458, x = 0.5013000000000001, y = 0.6799, label = "Apothecary Zinge", offMapText = "Travel to Apothecary Zinge in Undercity." },
@@ -1408,7 +1361,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { mapID = 1458, x = 0.5013000000000001, y = 0.6799, label = "Apothecary Zinge", offMapText = "Travel to Apothecary Zinge in Undercity." },
             },
@@ -1462,10 +1414,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1714,
-            priority = 490,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.3582, mapID = 1458, label = "Thundering Charm", offMapText = "Travel to Thundering Charm.", x = 0.6439 },
             },
@@ -1495,7 +1445,6 @@ ns:RegisterGuide({
             contextQuest = 1714,
         },
         {
-            priority = 510,
             route = {
                 { y = 0.3582, mapID = 1458, label = "Blue Pearl", offMapText = "Travel to Blue Pearl.", x = 0.6439 },
             },
@@ -1513,7 +1462,6 @@ ns:RegisterGuide({
             referenceQuest = 705,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.316, mapID = 1417, label = "Cresting Exile", offMapText = "Travel to Cresting Exile.", x = 0.662 },
             },
@@ -1543,7 +1491,6 @@ ns:RegisterGuide({
             contextQuest = 1714,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.526, mapID = 1417, label = "Thundering Exile", offMapText = "Travel to Thundering Exile.", x = 0.522 },
             },
@@ -1573,7 +1520,6 @@ ns:RegisterGuide({
             contextQuest = 1714,
         },
         {
-            priority = 540,
             route = {
                 { y = 0.304, mapID = 1417, label = "Burning Exile", offMapText = "Travel to Burning Exile.", x = 0.244 },
             },

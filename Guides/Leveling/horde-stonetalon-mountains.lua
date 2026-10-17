@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Stonetalon Mountains",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-stonetalon-mountains",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1087,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.6042, mapID = 1442, label = "Braelyn Firehand", offMapText = "Travel to Braelyn Firehand in Stonetalon Mountains.", x = 0.4594 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.5838, mapID = 1442, label = "Tammra Windfield", offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.", x = 0.4746 },
             },
@@ -112,10 +109,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5881,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.6115, mapID = 1442, label = "Maggran Earthbinder", offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.", x = 0.472 },
             },
@@ -143,7 +138,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.6115, mapID = 1442, label = "Maggran Earthbinder", offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.", x = 0.472 },
             },
@@ -171,7 +165,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { mapID = 1442, x = 0.47369999999999995, y = 0.6429, label = "Tsunaman", offMapText = "Travel to Tsunaman in Stonetalon Mountains." },
             },
@@ -211,10 +204,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1096,
-            priority = 80,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.626, mapID = 1442, label = "Ziz Fizziks", offMapText = "Travel to Ziz Fizziks in Stonetalon Mountains.", x = 0.5899 },
             },
@@ -245,7 +236,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.4548, mapID = 1442, label = "Toxic Fogger", offMapText = "Travel to Toxic Fogger.", x = 0.6652 },
             },
@@ -278,7 +268,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             text = "For Gerenzo Wrenchwhistle: Bring Gerenzo Wrenchwhistle's Mechanical Arm to Ziz Fizziks in the Stonetalon Mountains.",
             id = "objective-1096-quest-work",
             kind = "objective",
@@ -306,7 +295,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1096-gerenzo-wrenchwhistle" },
         },
         {
-            priority = 120,
             text = "Turn in Gerenzo Wrenchwhistle to Ziz Fizziks.",
             route = {
                 { y = 0.626, mapID = 1442, label = "Ziz Fizziks", offMapText = "Travel to Ziz Fizziks in Stonetalon Mountains.", x = 0.5899 },
@@ -337,7 +325,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             text = "Collect 10 Incendrites.",
             route = {
                 { mapID = 1442, x = 0.44799999999999995, y = 0.434, label = "Incendrites", offMapText = "Travel to Incendrites." },
@@ -365,7 +352,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.382, mapID = 1442, label = "Antlered Courser", offMapText = "Travel to Antlered Courser.", x = 0.464 },
             },
@@ -414,14 +400,12 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.41, y = 0.122, label = "Fey Dragon Scale", offMapText = "Travel to Fey Dragon Scale." },
             },
             sourceStep = 11,
-            priority = 150,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Kill Burning Ravager.",
             route = {
                 { y = 0.434, mapID = 1442, label = "Burning Ravager", offMapText = "Travel to Burning Ravager.", x = 0.448 },
@@ -469,7 +453,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.354, y = 0.17800000000000002, label = "Stonetalon Sap", offMapText = "Travel to Stonetalon Sap." },
             },
             sourceStep = 12,
-            priority = 170,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -497,7 +480,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.314, y = 0.13, label = "Twilight Whisker", offMapText = "Travel to Twilight Whisker." },
             },
             sourceStep = 13,
-            priority = 180,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -525,7 +507,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.35200000000000004, y = 0.136, label = "Son of Cenarius", offMapText = "Travel to Son of Cenarius." },
             },
             sourceStep = 14,
-            priority = 190,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -553,7 +534,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.35200000000000004, y = 0.136, label = "Daughter of Cenarius", offMapText = "Travel to Daughter of Cenarius." },
             },
             sourceStep = 14,
-            priority = 200,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -581,7 +561,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.35200000000000004, y = 0.136, label = "Cenarion Botanist", offMapText = "Travel to Cenarion Botanist." },
             },
             sourceStep = 14,
-            priority = 210,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -609,7 +588,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.467, y = 0.374, label = "Gaea Seed", offMapText = "Travel to Gaea Seed." },
             },
             sourceStep = 15,
-            priority = 220,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -637,7 +615,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.326, y = 0.616, label = "Bloodfury Harpy", offMapText = "Travel to Bloodfury Harpy." },
             },
             sourceStep = 17,
-            priority = 230,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -665,7 +642,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.322, y = 0.638, label = "Bloodfury Ambusher", offMapText = "Travel to Bloodfury Ambusher." },
             },
             sourceStep = 18,
-            priority = 240,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -693,7 +669,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.344, y = 0.674, label = "Bloodfury Slayer", offMapText = "Travel to Bloodfury Slayer." },
             },
             sourceStep = 19,
-            priority = 250,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -721,14 +696,12 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.344, y = 0.674, label = "Bloodfury Roguefeather", offMapText = "Travel to Bloodfury Roguefeather." },
             },
             sourceStep = 20,
-            priority = 260,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-6282-harpies-threaten" },
         },
         {
-            priority = 270,
             text = "Turn in Elemental War to Tsunaman.",
             route = {
                 { mapID = 1442, x = 0.47369999999999995, y = 0.6429, label = "Tsunaman", offMapText = "Travel to Tsunaman in Stonetalon Mountains." },
@@ -756,7 +729,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             text = "Turn in Harpies Threaten to Maggran Earthbinder.",
             route = {
                 { y = 0.6114, mapID = 1442, label = "Maggran Earthbinder", offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.", x = 0.4719 },
@@ -790,7 +762,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 290,
             text = "Turn in Cycle of Rebirth to Tammra Windfield.",
             route = {
                 { y = 0.5838, mapID = 1442, label = "Tammra Windfield", offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.", x = 0.4746 },
@@ -818,7 +789,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.5838, mapID = 1442, label = "Tammra Windfield", offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.", x = 0.4746 },
             },
@@ -852,7 +822,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Turn in Cenarius' Legacy to Braelyn Firehand.",
             route = {
                 { y = 0.6042, mapID = 1442, label = "Braelyn Firehand", offMapText = "Travel to Braelyn Firehand in Stonetalon Mountains.", x = 0.4594 },
@@ -885,7 +854,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Follow the path into the Charred Vale. Plant Gaea Seeds in 10 Gaea Dirt Mounds scattered around the vale.",
             id = "objective-6381-quest-work",
             kind = "objective",
@@ -919,7 +887,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 330,
             text = "Turn in New Life to Tammra Windfield.",
             route = {
                 { mapID = 1442, x = 0.4746, y = 0.5838, label = "Tammra Windfield", offMapText = "Travel to Tammra Windfield in Stonetalon Mountains." },
@@ -953,7 +920,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             text = "Turn in Jin'Zil's Forest Magic to Witch Doctor Jin'Zil.",
             route = {
                 { y = 0.9794, mapID = 1442, label = "Witch Doctor Jin'Zil", offMapText = "Travel to Witch Doctor Jin'Zil in Stonetalon Mountains.", x = 0.7454 },
@@ -986,7 +952,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             route = {
                 { mapID = 1442, x = 0.7066, y = 0.5611999999999999, label = "XT-9", offMapText = "Travel to XT-9." },
             },
@@ -1019,7 +984,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             route = {
                 { mapID = 1442, x = 0.6731999999999999, y = 0.4658, label = "XT-4", offMapText = "Travel to XT-4." },
             },
@@ -1052,7 +1016,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             route = {
                 { mapID = 1413, x = 0.35259999999999997, y = 0.2788, label = "Seereth Stonebreak", offMapText = "Travel to Seereth Stonebreak in The Barrens." },
             },
@@ -1084,82 +1047,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "objective-1068-2-authored-XT-9", "objective-1068-1-authored-XT-4" },
-        },
-        {
-            id = "level-before-woven-objective-97538-pigments-for-paints",
-            kind = "note",
-            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 20 },
-            },
-            requiredLevel = 20,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 97538,
-            priority = 380,
-        },
-        {
-            text = "Collect 30 Mirkweed Pods in Mirkfallon Lake. No saved spot for the pods, so the guide follows the pin in your quest log.",
-            priority = 390,
-            route = {
-                { y = 0.41, mapID = 1442, label = "Mirkfallon Lake", offMapText = "Travel to Mirkfallon Lake.", x = 0.48 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 20 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            id = "woven-objective-97538-pigments-for-paints",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 97538, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = {},
-        },
-        {
-            priority = 400,
-            route = {
-                { y = 0.474, mapID = 1456, label = "Tah Winterhoof", offMapText = "Travel to Tah Winterhoof.", x = 0.54 },
-            },
-            text = "Turn in Pigments for Paints to Tah Winterhoof in Thunder Bluff.",
-            id = "woven-turnin-97538-pigments-for-paints",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 20 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97538, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-objective-97538-pigments-for-paints" },
         },
     },
     casualSpine = true,

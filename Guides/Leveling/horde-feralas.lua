@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Feralas",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-feralas",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2987,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.443, mapID = 1444, label = "Orwin Gizzmick", offMapText = "Travel to Orwin Gizzmick in Feralas.", x = 0.757 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.4274, mapID = 1444, label = "Krueg Skullsplitter", offMapText = "Travel to Krueg Skullsplitter in Feralas.", x = 0.7594 },
             },
@@ -112,10 +109,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2862,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
             },
@@ -162,10 +157,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2822,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.4291, mapID = 1444, label = "Jangdor Swiftstrider", offMapText = "Travel to Jangdor Swiftstrider in Feralas.", x = 0.7443 },
             },
@@ -193,7 +186,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
             },
@@ -221,7 +213,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.446, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.742 },
             },
@@ -249,7 +240,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Collect 10 Woodpaw Gnoll Mane.",
             route = {
                 { y = 0.398, mapID = 1444, label = "Woodpaw Mongrel", offMapText = "Travel to Woodpaw Mongrel.", x = 0.73 },
@@ -277,7 +267,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.3515, mapID = 1444, label = "Gordunni Scroll", offMapText = "Travel to Gordunni Scroll.", x = 0.75 },
             },
@@ -330,10 +319,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 120,
         },
         {
-            priority = 130,
             text = "Use the Gordunni Scroll to accept The Gordunni Scroll.",
             id = "accept-2978-the-gordunni-scroll",
             kind = "accept",
@@ -379,7 +366,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.767, y = 0.33799999999999997, label = "Gordunni Cobalt", offMapText = "Travel to Gordunni Cobalt." },
             },
             sourceStep = 9,
-            priority = 140,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -407,7 +393,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.767, y = 0.33799999999999997, label = "Gordunni Brute", offMapText = "Travel to Gordunni Brute." },
             },
             sourceStep = 10,
-            priority = 150,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -435,7 +420,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.767, y = 0.33799999999999997, label = "Gordunni Ogre", offMapText = "Travel to Gordunni Ogre." },
             },
             sourceStep = 10,
-            priority = 160,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -463,14 +447,12 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.767, y = 0.33799999999999997, label = "Gordunni Ogre Mage", offMapText = "Travel to Gordunni Ogre Mage." },
             },
             sourceStep = 10,
-            priority = 170,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-2975-the-ogres-of-feralas" },
         },
         {
-            priority = 180,
             text = "Turn in War on the Woodpaw to Hadoken Swiftstrider.",
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
@@ -498,7 +480,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
             },
@@ -532,7 +513,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Turn in Gordunni Cobalt to Orwin Gizzmick.",
             route = {
                 { y = 0.4431, mapID = 1444, label = "Orwin Gizzmick", offMapText = "Travel to Orwin Gizzmick in Feralas.", x = 0.757 },
@@ -560,7 +540,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Turn in The Ogres of Feralas to Rok Orhan.",
             route = {
                 { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
@@ -593,7 +572,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.446, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.742 },
             },
@@ -627,7 +605,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "Turn in The Gordunni Scroll to Rok Orhan.",
             route = {
                 { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
@@ -655,7 +632,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.446, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.742 },
             },
@@ -689,7 +665,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Collect 10 Iridescent Sprite Darter Wing.",
             route = {
                 { y = 0.468, mapID = 1444, label = "Sprite Darter", offMapText = "Travel to Sprite Darter.", x = 0.694 },
@@ -717,7 +692,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             text = "Kill 5 Woodpaw Alpha.",
             route = {
                 { y = 0.542, mapID = 1444, label = "Woodpaw Alpha", offMapText = "Travel to Woodpaw Alpha.", x = 0.686 },
@@ -751,7 +725,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             text = "Turn in Alpha Strike to Hadoken Swiftstrider.",
             route = {
                 { y = 0.4246, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
@@ -785,7 +758,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.4246, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
             },
@@ -819,7 +791,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Turn in A New Cloak's Sheen to Krueg Skullsplitter.",
             route = {
                 { y = 0.4274, mapID = 1444, label = "Krueg Skullsplitter", offMapText = "Travel to Krueg Skullsplitter in Feralas.", x = 0.7594 },
@@ -847,7 +818,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.4274, mapID = 1444, label = "Krueg Skullsplitter", offMapText = "Travel to Krueg Skullsplitter in Feralas.", x = 0.7594 },
             },
@@ -881,7 +851,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Turn in Woodpaw Investigation.",
             route = {
                 { y = 0.5592, mapID = 1444, label = "Woodpaw Investigation", offMapText = "Travel to Woodpaw Investigation.", x = 0.7163 },
@@ -915,7 +884,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             route = {
                 { y = 0.5592, mapID = 1444, label = "The Battle Plans", offMapText = "Travel to The Battle Plans.", x = 0.7163 },
             },
@@ -949,7 +917,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             text = "Collect 20 Grimtotem Horn.",
             route = {
                 { y = 0.464, mapID = 1444, label = "Grimtotem Shaman", offMapText = "Travel to Grimtotem Shaman.", x = 0.674 },
@@ -983,7 +950,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             text = "Turn in The Battle Plans to Hadoken Swiftstrider.",
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
@@ -1017,7 +983,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
             },
@@ -1051,7 +1016,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
             },
@@ -1085,7 +1049,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             text = "Turn in A Grim Discovery to Krueg Skullsplitter.",
             route = {
                 { y = 0.4274, mapID = 1444, label = "Krueg Skullsplitter", offMapText = "Travel to Krueg Skullsplitter in Feralas.", x = 0.7594 },
@@ -1119,7 +1082,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             route = {
                 { y = 0.4274, mapID = 1444, label = "Krueg Skullsplitter", offMapText = "Travel to Krueg Skullsplitter in Feralas.", x = 0.7594 },
             },
@@ -1153,7 +1115,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             text = "Collect 1 Stinglasher's Glands.",
             route = {
                 { y = 0.616, mapID = 1444, label = "Stinglasher", offMapText = "Travel to Stinglasher.", x = 0.756 },
@@ -1208,7 +1169,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.754, y = 0.612, label = "Zukk'ash Carapace", offMapText = "Travel to Zukk'ash Carapace." },
             },
             sourceStep = 29,
-            priority = 400,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1221,7 +1181,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-7730-zukk-ash-infestation" },
         },
         {
-            priority = 410,
             text = "Kill 5 Gordunni Mauler.",
             route = {
                 { y = 0.544, mapID = 1444, label = "Gordunni Mauler", offMapText = "Travel to Gordunni Mauler.", x = 0.618 },
@@ -1255,7 +1214,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.6445, mapID = 1444, label = "Frayfeather Hippogryph", offMapText = "Travel to Frayfeather Hippogryph.", x = 0.5699 },
             },
@@ -1286,7 +1244,6 @@ ns:RegisterGuide({
             referenceQuest = 7842,
         },
         {
-            priority = 430,
             text = "Collect 1 Gordunni Orb.",
             route = {
                 { y = 0.676, mapID = 1444, label = "Gordunni Mage-Lord", offMapText = "Travel to Gordunni Mage-Lord.", x = 0.584 },
@@ -1341,7 +1298,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.604, y = 0.68, label = "Gordunni Shaman", offMapText = "Travel to Gordunni Shaman." },
             },
             sourceStep = 36,
-            priority = 440,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1375,7 +1331,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.5820000000000001, y = 0.664, label = "Gordunni Warlock", offMapText = "Travel to Gordunni Warlock." },
             },
             sourceStep = 37,
-            priority = 450,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1388,7 +1343,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2980-the-ogres-of-feralas" },
         },
         {
-            priority = 460,
             text = "Collect 10 Thick Yeti Hide.",
             route = {
                 { y = 0.574, mapID = 1444, label = "Feral Scar Yeti", offMapText = "Travel to Feral Scar Yeti.", x = 0.554 },
@@ -1435,7 +1389,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 470,
         },
         {
             id = "level-before-accept-2766-find-oox-22-fe",
@@ -1450,10 +1403,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2766,
-            priority = 480,
         },
         {
-            priority = 490,
             text = "Use the OOX-22/FE Distress Beacon to accept Find OOX-22/FE!.",
             id = "accept-2766-find-oox-22-fe",
             kind = "accept",
@@ -1475,7 +1426,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             text = "Turn in Find OOX-22/FE! to Homing Robot OOX-22/FE.",
             route = {
                 { mapID = 1444, x = 0.5335, y = 0.557, label = "Homing Robot OOX-22/FE", offMapText = "Travel to Homing Robot OOX-22/FE in Feralas." },
@@ -1500,7 +1450,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             route = {
                 { y = 0.4336, mapID = 1444, label = "Witch Doctor Uzer'i", offMapText = "Travel to Witch Doctor Uzer'i in Feralas.", x = 0.7442 },
             },
@@ -1528,7 +1477,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             text = "Turn in The Mark of Quality to Jangdor Swiftstrider.",
             route = {
                 { y = 0.4291, mapID = 1444, label = "Jangdor Swiftstrider", offMapText = "Travel to Jangdor Swiftstrider in Feralas.", x = 0.7443 },
@@ -1556,7 +1504,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             text = "Turn in Zukk'ash Infestation to Hadoken Swiftstrider.",
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
@@ -1590,7 +1537,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 540,
             text = "Turn in Stinglasher to Hadoken Swiftstrider.",
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
@@ -1624,7 +1570,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.4247, mapID = 1444, label = "Hadoken Swiftstrider", offMapText = "Travel to Hadoken Swiftstrider in Feralas.", x = 0.7491 },
             },
@@ -1658,7 +1603,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "Turn in The Ogres of Feralas to Rok Orhan.",
             route = {
                 { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
@@ -1697,7 +1641,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             text = "Turn in Dark Ceremony to Rok Orhan.",
             route = {
                 { y = 0.436, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756 },
@@ -1731,7 +1674,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             route = {
                 { y = 0.446, mapID = 1444, label = "Rok Orhan", offMapText = "Travel to Rok Orhan in Feralas.", x = 0.742 },
             },
@@ -1765,7 +1707,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 590,
             text = "For Deadmire: Bring Deadmire's Tooth to Melor in Thunder Bluff.",
             id = "objective-1205-quest-work",
             kind = "objective",
@@ -1790,7 +1731,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 600,
             route = {
                 { y = 0.8091, mapID = 1456, label = "Melor Stonehoof", offMapText = "Travel to Melor Stonehoof in Thunder Bluff.", x = 0.6154 },
             },
@@ -1818,7 +1758,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1205-quest-work" },
         },
         {
-            priority = 610,
             text = "Turn in The Gordunni Orb to Uthel'nay.",
             route = {
                 { y = 0.8624, mapID = 1454, label = "Uthel'nay", offMapText = "Travel to Uthel'nay in Orgrimmar.", x = 0.3916 },
@@ -1852,7 +1791,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 620,
             text = "Turn in A Strange Request to Neeru Fireblade.",
             route = {
                 { y = 0.5059, mapID = 1454, label = "Neeru Fireblade", offMapText = "Travel to Neeru Fireblade in Orgrimmar.", x = 0.4949 },
@@ -1880,7 +1818,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             route = {
                 { y = 0.5059, mapID = 1454, label = "Neeru Fireblade", offMapText = "Travel to Neeru Fireblade in Orgrimmar.", x = 0.4949 },
             },
@@ -1914,7 +1851,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 640,
             text = "Turn in A Grim Discovery to Belgrom Rockmaul.",
             route = {
                 { y = 0.3424, mapID = 1454, label = "Belgrom Rockmaul", offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.", x = 0.7523 },
@@ -1948,7 +1884,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 650,
             text = "Turn in Zukk'ash Report to Zilzibin Drumlore.",
             route = {
                 { mapID = 1454, x = 0.5628, y = 0.4667, label = "Zilzibin Drumlore", offMapText = "Travel to Zilzibin Drumlore in Orgrimmar." },

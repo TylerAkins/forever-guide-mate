@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "The Hinterlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-the-hinterlands",
@@ -15,7 +15,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            priority = 10,
             route = {
                 { y = 0.6286, mapID = 1454, label = "Red Power Crystal", offMapText = "Travel to Red Power Crystal.", x = 0.5569 },
             },
@@ -52,10 +51,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7842,
-            priority = 20,
         },
         {
-            priority = 30,
             route = {
                 { y = 0.6912, mapID = 1454, label = "Long Elegant Feather", offMapText = "Travel to Long Elegant Feather.", x = 0.4958 },
             },
@@ -88,7 +85,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { y = 0.3285, mapID = 1458, label = "Oran Snakewrithe", offMapText = "Travel to Oran Snakewrithe in Undercity.", x = 0.7306 },
             },
@@ -116,7 +112,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { mapID = 1458, x = 0.5014, y = 0.6797, label = "Apothecary Zinge", offMapText = "Travel to Apothecary Zinge in Undercity." },
             },
@@ -150,7 +145,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.587, mapID = 1425, label = "Venom Bottles", offMapText = "Travel to Venom Bottles.", x = 0.236 },
             },
@@ -178,7 +172,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { mapID = 1425, x = 0.2671, y = 0.48590000000000005, label = "Gilveradin Sunchaser", offMapText = "Travel to Gilveradin Sunchaser in The Hinterlands." },
             },
@@ -212,7 +205,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { mapID = 1425, x = 0.2671, y = 0.48590000000000005, label = "Gilveradin Sunchaser", offMapText = "Travel to Gilveradin Sunchaser in The Hinterlands." },
             },
@@ -258,7 +250,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2641,
-            priority = 90,
         },
         {
             id = "objective-2641-1-violet-tragan",
@@ -279,7 +270,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.4104, y = 0.5979, label = "Violet Tragan", offMapText = "Travel to Violet Tragan." },
             },
             sourceStep = 10,
-            priority = 100,
             requiredQuests = {
                 {
                     mode = "any",
@@ -292,7 +282,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { mapID = 1425, x = 0.7723, y = 0.8012, label = "Smith Slagtree", offMapText = "Travel to Smith Slagtree in The Hinterlands." },
             },
@@ -320,7 +309,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.8138, mapID = 1425, label = "Lard", offMapText = "Travel to Lard in The Hinterlands.", x = 0.7814 },
             },
@@ -348,7 +336,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             route = {
                 { y = 0.8153, mapID = 1425, label = "Katoom the Angler", offMapText = "Travel to Katoom the Angler in The Hinterlands.", x = 0.8033 },
             },
@@ -376,7 +363,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Collect 1 Lard's Lunch.",
             route = {
                 { y = 0.4122, mapID = 1425, label = "Vilebranch Kidnapper", offMapText = "Travel to Vilebranch Kidnapper.", x = 0.8447 },
@@ -422,7 +408,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.774, y = 0.703, label = "Pupellyverbos Port", offMapText = "Travel to Pupellyverbos Port." },
             },
             sourceStep = 16,
-            priority = 150,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -450,14 +435,12 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.782, y = 0.682, label = "Saltwater Snapjaw", offMapText = "Travel to Saltwater Snapjaw." },
             },
             sourceStep = 17,
-            priority = 160,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-7815-snapjaws-mon" },
         },
         {
-            priority = 170,
             text = "Turn in Lard Lost His Lunch to Lard.",
             route = {
                 { y = 0.8138, mapID = 1425, label = "Lard", offMapText = "Travel to Lard in The Hinterlands.", x = 0.7814 },
@@ -485,7 +468,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             text = "Turn in Snapjaws, Mon! to Katoom the Angler.",
             route = {
                 { y = 0.8153, mapID = 1425, label = "Katoom the Angler", offMapText = "Travel to Katoom the Angler in The Hinterlands.", x = 0.8033 },
@@ -513,7 +495,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.7952, mapID = 1425, label = "Huntsman Markhor", offMapText = "Travel to Huntsman Markhor in The Hinterlands.", x = 0.7916 },
             },
@@ -541,7 +522,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             route = {
                 { y = 0.7952, mapID = 1425, label = "Huntsman Markhor", offMapText = "Travel to Huntsman Markhor in The Hinterlands.", x = 0.7916 },
             },
@@ -569,7 +549,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             route = {
                 { y = 0.7952, mapID = 1425, label = "Huntsman Markhor", offMapText = "Travel to Huntsman Markhor in The Hinterlands.", x = 0.7916 },
             },
@@ -597,7 +576,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             route = {
                 { y = 0.7909, mapID = 1425, label = "Otho Moji'ko", offMapText = "Travel to Otho Moji'ko in The Hinterlands.", x = 0.794 },
             },
@@ -625,7 +603,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             route = {
                 { y = 0.7824, mapID = 1425, label = "Mystic Yayo'jin", offMapText = "Travel to Mystic Yayo'jin in The Hinterlands.", x = 0.788 },
             },
@@ -674,14 +651,12 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.602, y = 0.506, label = "Skylord Plume", offMapText = "Travel to Skylord Plume." },
             },
             sourceStep = 24,
-            priority = 240,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-7830-avenging-the-fallen" },
         },
         {
-            priority = 250,
             text = "Collect 10 Hinterlands Honey Ripple.",
             route = {
                 { y = 0.3888, mapID = 1425, label = "Hinterlands Honey Ripple", offMapText = "Travel to Hinterlands Honey Ripple.", x = 0.5746 },
@@ -715,7 +690,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             text = "Kill 15 Silvermane Howler.",
             route = {
                 { mapID = 1425, x = 0.466, y = 0.536, label = "Silvermane Howler", offMapText = "Travel to Silvermane Howler." },
@@ -764,7 +738,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.46799999999999997, y = 0.632, label = "Vilebranch Soothsayer", offMapText = "Travel to Vilebranch Soothsayer." },
             },
             sourceStep = 27,
-            priority = 270,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -792,7 +765,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.456, y = 0.634, label = "Vilebranch Scalper", offMapText = "Travel to Vilebranch Scalper." },
             },
             sourceStep = 28,
-            priority = 280,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -820,7 +792,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.518, y = 0.494, label = "Silvermane Stalker", offMapText = "Travel to Silvermane Stalker." },
             },
             sourceStep = 29,
-            priority = 290,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -848,7 +819,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.574, y = 0.504, label = "Wildkin Muisek", offMapText = "Travel to Wildkin Muisek." },
             },
             sourceStep = 30,
-            priority = 300,
             requiredQuests = {
                 {
                     mode = "any",
@@ -882,14 +852,12 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.574, y = 0.504, label = "Savage Owlbeast", offMapText = "Travel to Savage Owlbeast." },
             },
             sourceStep = 31,
-            priority = 310,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-7829-hunt-the-savages" },
         },
         {
-            priority = 320,
             route = {
                 { y = 0.4697, mapID = 1425, label = "Rin'ji", offMapText = "Travel to Rin'ji in The Hinterlands.", x = 0.3073 },
             },
@@ -938,7 +906,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.31739999999999996, y = 0.494, label = "Highvale Marksman", offMapText = "Travel to Highvale Marksman." },
             },
             sourceStep = 37,
-            priority = 330,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -966,7 +933,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.322, y = 0.51, label = "Highvale Outrunner", offMapText = "Travel to Highvale Outrunner." },
             },
             sourceStep = 38,
-            priority = 340,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -994,7 +960,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.324, y = 0.504, label = "Highvale Ranger", offMapText = "Travel to Highvale Ranger." },
             },
             sourceStep = 39,
-            priority = 350,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1022,7 +987,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.322, y = 0.506, label = "Highvale Scout", offMapText = "Travel to Highvale Scout." },
             },
             sourceStep = 40,
-            priority = 360,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1048,10 +1012,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 370,
         },
         {
-            priority = 380,
             text = "Use the OOX-09/HL Distress Beacon to accept Find OOX-09/HL!.",
             id = "accept-485-find-oox-09-hl",
             kind = "accept",
@@ -1073,7 +1035,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             text = "Turn in Find OOX-09/HL! to Homing Robot OOX-09/HL.",
             route = {
                 { y = 0.3766, mapID = 1425, label = "Homing Robot OOX-09/HL", offMapText = "Travel to Homing Robot OOX-09/HL in The Hinterlands.", x = 0.4935 },
@@ -1098,7 +1059,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             text = "Turn in Rin'ji is Trapped!.",
             route = {
                 { y = 0.5901, mapID = 1425, label = "Rin'ji is Trapped!", offMapText = "Travel to Rin'ji is Trapped!.", x = 0.863 },
@@ -1126,7 +1086,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.5901, mapID = 1425, label = "Rin'ji's Secret", offMapText = "Travel to Rin'ji's Secret.", x = 0.863 },
             },
@@ -1160,7 +1119,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             text = "For Vilebranch Hooligans: Smith Slagtree at Revantusk Village in the Hinterlands wants you to find Slagtree's Lost Tools.",
             id = "objective-7839-quest-work",
             kind = "objective",
@@ -1185,7 +1143,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-7839-vilebranch-hooligans" },
         },
         {
-            priority = 430,
             text = "Turn in Vilebranch Hooligans to Smith Slagtree.",
             route = {
                 { y = 0.8012, mapID = 1425, label = "Smith Slagtree", offMapText = "Travel to Smith Slagtree in The Hinterlands.", x = 0.7724 },
@@ -1213,7 +1170,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             text = "Turn in Cannibalistic Cousins to Mystic Yayo'jin.",
             route = {
                 { y = 0.7825, mapID = 1425, label = "Mystic Yayo'jin", offMapText = "Travel to Mystic Yayo'jin in The Hinterlands.", x = 0.788 },
@@ -1245,7 +1201,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Turn in Message to the Wildhammer to Otho Moji'ko.",
             route = {
                 { y = 0.7908, mapID = 1425, label = "Otho Moji'ko", offMapText = "Travel to Otho Moji'ko in The Hinterlands.", x = 0.794 },
@@ -1279,7 +1234,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { y = 0.7908, mapID = 1425, label = "Otho Moji'ko", offMapText = "Travel to Otho Moji'ko in The Hinterlands.", x = 0.794 },
             },
@@ -1313,7 +1267,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Turn in Another Message to the Wildhammer to Otho Moji'ko.",
             route = {
                 { y = 0.7908, mapID = 1425, label = "Otho Moji'ko", offMapText = "Travel to Otho Moji'ko in The Hinterlands.", x = 0.794 },
@@ -1347,7 +1300,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { y = 0.7908, mapID = 1425, label = "Otho Moji'ko", offMapText = "Travel to Otho Moji'ko in The Hinterlands.", x = 0.794 },
             },
@@ -1381,7 +1333,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             text = "Turn in Stalking the Stalkers to Huntsman Markhor.",
             route = {
                 { y = 0.7953, mapID = 1425, label = "Huntsman Markhor", offMapText = "Travel to Huntsman Markhor in The Hinterlands.", x = 0.7916 },
@@ -1413,7 +1364,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             text = "Turn in Hunt the Savages to Huntsman Markhor.",
             route = {
                 { y = 0.7953, mapID = 1425, label = "Huntsman Markhor", offMapText = "Travel to Huntsman Markhor in The Hinterlands.", x = 0.7916 },
@@ -1441,7 +1391,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             text = "Turn in Avenging the Fallen to Huntsman Markhor.",
             route = {
                 { y = 0.7953, mapID = 1425, label = "Huntsman Markhor", offMapText = "Travel to Huntsman Markhor in The Hinterlands.", x = 0.7916 },
@@ -1469,7 +1418,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             text = "Turn in Venom Bottles to Apothecary Lydon.",
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
@@ -1497,7 +1445,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -1531,7 +1478,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "Use Final Message to the Wildhammer.",
             route = {
                 { y = 0.4803, mapID = 1425, label = "Final Message to the Wildhammer", offMapText = "Travel to Final Message to the Wildhammer.", x = 0.1439 },
@@ -1564,7 +1510,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Turn in A Sticky Situation to Gilveradin Sunchaser.",
             route = {
                 { mapID = 1425, x = 0.2671, y = 0.48590000000000005, label = "Gilveradin Sunchaser", offMapText = "Travel to Gilveradin Sunchaser in The Hinterlands." },
@@ -1598,7 +1543,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             route = {
                 { mapID = 1425, x = 0.2671, y = 0.48590000000000005, label = "Gilveradin Sunchaser", offMapText = "Travel to Gilveradin Sunchaser in The Hinterlands." },
             },
@@ -1632,7 +1576,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 570,
             route = {
                 { mapID = 1425, x = 0.3375, y = 0.7521, label = "Atal'ai Exile", offMapText = "Travel to Atal'ai Exile in The Hinterlands." },
             },
@@ -1666,7 +1609,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 580,
             route = {
                 { mapID = 1425, x = 0.3375, y = 0.7521, label = "Atal'ai Exile", offMapText = "Travel to Atal'ai Exile in The Hinterlands." },
             },
@@ -1721,7 +1663,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.342, y = 0.67, label = "Undamaged Venom Sac", offMapText = "Travel to Undamaged Venom Sac." },
             },
             sourceStep = 55,
-            priority = 590,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1734,7 +1675,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2934-undamaged-venom-sac" },
         },
         {
-            priority = 600,
             text = "Turn in Find OOX-09/HL!.",
             route = {
                 { y = 0.6419, mapID = 1425, label = "Find OOX-09/HL!", offMapText = "Travel to Find OOX-09/HL!.", x = 0.358 },
@@ -1758,7 +1698,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             text = "Turn in The Final Message to the Wildhammer to Otho Moji'ko.",
             route = {
                 { mapID = 1425, x = 0.7938, y = 0.7908, label = "Otho Moji'ko", offMapText = "Travel to Otho Moji'ko in The Hinterlands." },
@@ -1792,7 +1731,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 620,
             text = "Turn in Undamaged Venom Sac to Apothecary Lydon.",
             route = {
                 { mapID = 1424, x = 0.6144, y = 0.1907, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills." },
@@ -1826,7 +1764,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             text = "Open the Highvale Records and burn them.",
             id = "objective-2995-1-authored-Highvale-Records",
             kind = "objective",
@@ -1853,7 +1790,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 640,
             text = "Open the Highvale Notes and burn them.",
             id = "objective-2995-2-authored-Highvale-Notes",
             kind = "objective",
@@ -1880,7 +1816,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 650,
             text = "Open the Highvale Report and burn it.",
             id = "objective-2995-3-authored-Highvale-Report",
             kind = "objective",
@@ -1907,7 +1842,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 660,
             text = "Turn in Lines of Communication to Oran Snakewrithe.",
             route = {
                 { y = 0.3285, mapID = 1458, label = "Oran Snakewrithe", offMapText = "Travel to Oran Snakewrithe in Undercity.", x = 0.7307 },
@@ -1940,7 +1874,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 670,
             text = "Turn in Rin'ji's Secret to Oran Snakewrithe.",
             route = {
                 { y = 0.3285, mapID = 1458, label = "Oran Snakewrithe", offMapText = "Travel to Oran Snakewrithe in Undercity.", x = 0.7307 },
@@ -1974,7 +1907,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 680,
             route = {
                 { y = 0.3285, mapID = 1458, label = "Oran Snakewrithe", offMapText = "Travel to Oran Snakewrithe in Undercity.", x = 0.7307 },
             },
@@ -2027,10 +1959,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3568,
-            priority = 690,
         },
         {
-            priority = 700,
             route = {
                 { mapID = 1458, x = 0.476, y = 0.73, label = "Chemist Cuely", offMapText = "Travel to Chemist Cuely in Undercity." },
             },
@@ -2058,7 +1988,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 710,
             route = {
                 { y = 0.2687, mapID = 1446, label = "Sprinkle", offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106 },
             },
@@ -2089,7 +2018,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-2641-1-violet-tragan" },
         },
         {
-            priority = 720,
             route = {
                 { y = 0.2687, mapID = 1446, label = "Sprinkle", offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106 },
             },
@@ -2120,7 +2048,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 730,
             text = "Turn in Delivery for Marin to Marin Noggenfogger.",
             route = {
                 { y = 0.2866, mapID = 1446, label = "Marin Noggenfogger", offMapText = "Travel to Marin Noggenfogger in Tanaris.", x = 0.5181 },
@@ -2151,7 +2078,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 740,
             route = {
                 { y = 0.2866, mapID = 1446, label = "Marin Noggenfogger", offMapText = "Travel to Marin Noggenfogger in Tanaris.", x = 0.5181 },
             },
@@ -2182,7 +2108,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 750,
             text = "Turn in Noggenfogger Elixir to Marin Noggenfogger.",
             route = {
                 { y = 0.2866, mapID = 1446, label = "Marin Noggenfogger", offMapText = "Travel to Marin Noggenfogger in Tanaris.", x = 0.5181 },

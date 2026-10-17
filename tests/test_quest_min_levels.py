@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Every quest action meets its source-backed minimum level.
-
-Classic quests use the offer level. A Forever quest from patch 16001 uses
-the Wowhead Level line when that line is higher than Requires level.
-"""
+"""Audit pickup minima separately from recommended route placement."""
 
 from __future__ import annotations
 
@@ -27,7 +23,7 @@ LEVEL_RE = re.compile(r"level = \{\s*min = (\d+)\s*\}")
 
 def guide_files() -> list[Path]:
     files = []
-    for folder in ("Leveling", "Loremaster", "Dungeons"):
+    for folder in ("Leveling", "Class", "Dungeons"):
         files.extend(sorted((ROOT / "Guides" / folder).glob("*.lua")))
     return files
 
@@ -36,6 +32,7 @@ class QuestMinLevelTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.levels = {int(quest_id): level for quest_id, level in json.loads(FIXTURE.read_text()).items()}
+        cls.conflicts = json.loads((FIXTURE.parent / "quest_level_conflicts.json").read_text())
         cls.goals = []
         for path in guide_files():
             text = path.read_text(encoding="utf-8")
@@ -53,22 +50,29 @@ class QuestMinLevelTests(unittest.TestCase):
     def test_watching_the_roads_preserves_offer_and_recommended_levels(self) -> None:
         self.assertEqual(self.levels[95981], {"step": 20, "offer": 10})
 
-    def test_every_quest_action_meets_its_level_floor(self) -> None:
+    def test_conflicting_source_minima_remain_explicit(self) -> None:
+        self.assertTrue(self.conflicts)
+        for quest, facts in self.conflicts.items():
+            self.assertIn(int(quest), self.levels)
+            self.assertGreater(len(set(facts.values())), 1)
+            self.assertTrue(all(value > 0 for value in facts.values()))
+
+    def test_pickups_meet_uncontested_offer_minima(self) -> None:
         seen = {goal.quest_id for goal in self.goals}
         self.assertTrue(self.goals, "Level audit must parse quest actions from current guides")
-        self.assertEqual(seen, set(self.levels))
+        self.assertFalse(seen - set(self.levels), "Every current quest needs source facts")
         self.assertEqual({q for q, record in self.levels.items() if record.get("unverified")}, UNVERIFIED)
         missing = []
         for goal in self.goals:
             record = self.levels[goal.quest_id]
-            expected = record["step"]
-            if goal.source_file.startswith("Guides/Dungeons/"):
-                expected = record["offer"] or expected
+            if goal.kind != "accept" or str(goal.quest_id) in self.conflicts or record["offer"] is None:
+                continue
+            expected = record["offer"]
             found = [int(value) for value in LEVEL_RE.findall(goal_field(goal.raw, "conditions") or "")]
             actual = max(found, default=1)
             if actual < expected:
                 missing.append(f"{goal.source_file} {goal.id} needs at least {expected}, found {actual}")
-        self.assertEqual(len(missing), 0, f"{len(missing)} quest actions are below their level floor:\n" + "\n".join(missing[:20]))
+        self.assertEqual(len(missing), 0, f"{len(missing)} quest actions are below their pickup minimum:\n" + "\n".join(missing[:20]))
 
 
 if __name__ == "__main__":

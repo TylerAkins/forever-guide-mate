@@ -248,6 +248,11 @@ class ChapterCeilingTests(unittest.TestCase):
 
 
 class QuestParsingTests(unittest.TestCase):
+    def test_shared_class_action_defaults_are_visible_to_audits(self):
+        text = 'ns:RegisterGuide({ goals = { { id = "start", classAction = "accept-747-the-hunt-begins" } } })'
+        goals = parse_goals(text, "guide", "Guides/Leveling/mulgore.lua", None)
+        self.assertEqual((goals[0].kind, goals[0].quest_id), ("accept", 747))
+
     def test_route_checkpoint_completion_does_not_hide_goal_quest(self):
         text = """ns:RegisterGuide({ goals = {
             { id = "delivery", kind = "turnin",

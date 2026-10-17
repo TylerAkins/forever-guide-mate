@@ -14,9 +14,9 @@ Use the pinned quest's applicability, including its prerequisites. Some Horde pa
 
 Dungeon and PvP class quests stay in the dungeon guides. Raid attunements and raid quest routes use `category = "Raid Quests"`. A quest with no giver, objectives, and turn-in is named in the class guide header. Revisit it when the database records those. Do not invent a giver or a coordinate. Starter chapters still weave class quests whose givers are already on that route. The full chain stays in the class guide.
 
-## Ordered leveling and class itineraries
+## Authored itineraries
 
-All leveling and class guides use `routeMode = "ordered"`. Their `goals` array is the action order. Prerequisites, `priority`, and `dependsOn` do not choose the next action. Existing guides in other categories retain their scheduler, which still uses `priority` and `dependsOn`. The new class dungeon prerequisite itinerary also uses ordered execution.
+All guides except Miscellaneous use `routeMode = "ordered"`. Their `goals` array is the action order. Do not put `priority` on these guides or their actions. Prerequisites and `dependsOn` do not choose the next action. Miscellaneous retains its priority scheduler for books and exploration. Exploration guide IDs stay unchanged after moving from Legacy Points.
 
 Author pickups, objective outings, intermediate pickups, returns, and turn-ins separately. Keep directions in `text`; the tracker adds live counts separately. Use `questObjective.count` for a verified partial count checkpoint. Before a quest pickup, use `complete.item = { name = "Item", minCount = quantity }` for verified material collection. An item starter instruction may use `instructionOnly = true` with observed bag or quest state so skipping it passes only that instruction. Use an observed level checkpoint before gated work, with the required level in its text. Set `checkpointQuest` to the guarded quest ID and copy verified `alternativeQuests` so completed or excluded quest work does not leave an unrelated level gate. This metadata does not turn the checkpoint into a quest action. Manual confirmation belongs only on unobservable instructions without quest completion conditions. A repeatable quest never reports as turned in, so give its actions an `excludeWhen` condition describing when the reward is no longer needed (for example, the consuming quest is completed or the reward item is in the bags). Ordered routes drop an action while `excludeWhen` is true; other false `conditions` block the route instead.
 
@@ -24,11 +24,15 @@ For preparation that consumes an intermediate item during an active quest, set `
 
 `requiredQuests` contains verified prerequisite groups with `mode`, `quests`, and optional `conditions`. Ordered routes have no soft prerequisite exceptions. Unknown state, unavailable pickups, missing active quests, and unmet requirements block the current action. Explicit quest skips cascade through these groups within the selected guide; they never grant observed quest completion.
 
-Define shared class actions in `ClassChains.lua` and reference them with `classAction`. Each itinerary keeps its own action ID, conditions, destination, and position. Keep dungeon prerequisites in the Dungeon library with an observed completion handoff from the class route. The Class Dungeon Prerequisites itinerary follows those actions in order; existing dungeon guides retain their scheduling behavior.
+Define shared class actions in `ClassChains.lua` and reference them with `classAction`. Each itinerary keeps its own action ID, conditions, destination, and position. Keep dungeon prerequisites in the Dungeon library with an observed completion handoff from the class route. Dungeon and raid guides include their outdoor pickups, instance work, subsequent runs, and returns in array order. Observed instance-entry instructions remain completed after leaving the instance. Direct repeatable hand-ins that never enter the quest log use explicit instructions; confirming those instructions grants no quest completion.
+
+The route remains quest-only: the supplied reference includes grind and level-up instructions that are intentionally not imported. Simulations verify order and observed progress, not sufficient XP. Do not add isolated level gates as a substitute for a suitable zone visit.
+
+Loremaster currently contains only the ordered “Coming Soon!” placeholder. The old Durotar and Mulgore guide selections migrate to it; their saved completion ledgers remain archived.
 
 Record chapter visits and insertion points in `route-manifest.json`. `route-conversion-audit.json` records the pinned facts, removed imports, and exclusions. Legacy import and append tools refuse to overwrite ordered guides. Update an itinerary through explicit reviewed action positions.
 
-Run `tests/lua/ordered.lua`, `tests/lua/catalog.lua`, and `tests/lua/journeys.lua` with Lua 5.1 in addition to the existing engine, UI, lint, and accept-chain checks. Reference fixtures come from the supplied archive, not the production itinerary. Structural simulations do not establish in-game availability or destination accuracy; record client walkthrough coverage separately.
+Run `tests/lua/authored.lua`, `tests/lua/ordered.lua`, `tests/lua/catalog.lua`, and `tests/lua/journeys.lua` with Lua 5.1 in addition to the existing engine, UI, lint, and accept-chain checks. Reference fixtures come from the supplied archive, not the production itinerary. Structural simulations do not establish in-game availability or destination accuracy; record client walkthrough coverage separately.
 
 ### Editing an existing route
 
@@ -110,7 +114,7 @@ Leveling chapters use zone/faction slugs under `Guides/Leveling/` (for example `
 ## `dependsOn` and conditions
 
 - Put faction, class, race, and level gates on **every** step of a quest, not only the accept.
-- When wow-database has `detail.questie.fields` for that quest, a positive `questLevel` is the level gate and a positive `requiredLevel` is the offer level. `0` and `-1` leave the existing Wowhead number. `detail.requirements.allOf` registers as mode `all`. `anyOf` registers as mode `any`. Register the chain in `QuestPrerequisites.lua` only when the prerequisite turn-in is already earlier in that guide.
+- Keep offer minima separate from recommended quest levels. A recommendation informs placement within a suitable visit, not an automatic gate on every action. The local export includes ATT level fields under `detail.questie.fields`; that adapter name does not prove a Questie source. Review disagreements between exported and Wowhead offer minima before changing gates. `0` and `-1` do not replace positive source values. `detail.requirements.allOf` registers as mode `all`. `anyOf` registers as mode `any`. Register the chain in `QuestPrerequisites.lua` only when the prerequisite turn-in is already earlier in that guide.
 - A handoff step depends on the previous turn-in. A turn-in depends on all objective steps for that quest.
 - Do not point `dependsOn` at a step the player has not reached yet unless that is intentional gating.
 
@@ -146,7 +150,7 @@ In scheduler guides, the engine treats any accept with no `dependsOn` as **alway
 
 ### Registered quest prerequisites
 
-`QuestPrerequisites.lua` is the repository-owned quest-chain catalog. Register a verified prerequisite with `ns:RegisterQuestPrerequisite({ quest = ..., mode = "all"|"any", quests = {...}, conditions = ... })`. For Loremaster and other non-dungeon scheduler guides, the engine attaches matching turn-in goals to accepts, validates references and cycles, and routes to missing prerequisites before showing the dependent accept. Ordered routes do not attach these gates: put the prerequisite in the accept's `requiredQuests` and keep the catalog entry, which lint still checks. Dungeon and raid guides follow authored priority. They do not skip ahead to every quest on the player's current map. After the player passes a step, later ready steps come before the route jumps backward. Once an accept, turn-in, or gossip at a pin is done, other ready steps at that same pin come before the route leaves.
+`QuestPrerequisites.lua` is the repository-owned quest-chain catalog. Register a verified prerequisite with `ns:RegisterQuestPrerequisite({ quest = ..., mode = "all"|"any", quests = {...}, conditions = ... })`. For scheduler guides, the engine attaches matching turn-in goals to accepts and validates references and cycles. Ordered routes do not attach these gates: put the prerequisite in the accept's `requiredQuests` and keep the catalog entry, which lint still checks. Dungeon and raid guides follow their array order. A later pickup on the current map does not preempt the current action.
 
 Use `all` when every listed quest must be turned in. Use `any` only for true alternative breadcrumbs where one completed branch unlocks the quest. Conditions belong on the catalog entry when the chain differs by faction, race, or class. Do not copy prerequisite data from another add-on; verify it independently.
 
@@ -164,7 +168,7 @@ dependsOn = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
 
 Do **not** rely on `RegisterQuestPrerequisite` `mode = "any"` alone for this pattern: the skipped branch still counts as done for warlocks.
 
-CI enforces known class-branch gates (`tests/lua/guide_data_checks.lua`) and keeps Era leveling accepts aligned with Loremaster turn-in gates for Durotar and Mulgore.
+CI enforces known class-branch gates (`tests/lua/guide_data_checks.lua`).
 
 ## Data checks beyond CI
 
@@ -172,7 +176,7 @@ CI enforces known class-branch gates (`tests/lua/guide_data_checks.lua`) and kee
 |--------|---------|----------------|
 | CI lint | `lua5.1 tests/lua/lint.lua` | Wrong objective quest ids, mismatched conditions, incomplete turn-in dependencies, registered prerequisite errors, and more |
 | Chain audit | `lua5.1 tests/lua/audit_accept_chains.lua` | Enforces registered prerequisite references (same rules as lint, quick standalone pass) |
-| Era vs Loremaster accept gates | part of `lua5.1 tests/lua/lint.lua` | Era chapter accept must match Loremaster `dependsOn` when Loremaster gates on a prior turn-in or objective |
+| Authored contracts | `lua5.1 tests/lua/authored.lua` | Category placement, priority removal, prerequisite pickup order, and retired Loremaster selection migration |
 | Class-branch turn-ins | part of `lua5.1 tests/lua/lint.lua` | Curated dual `dependsOn` rules (e.g. Burning Blade Medallion and Lazy Peons vs 792 and 1499) |
 | Quest giver audit | in game on gossip | Rewinds through a registered prerequisite or blocks with a diagnostic; it never silently skips (see `QuestAudit.lua`) |
 
@@ -198,9 +202,11 @@ If a giver does not offer an accept, do not add a skip workaround. Register and 
 ```sh
 python3 -m unittest discover -s tests
 lua5.1 tests/lua/run.lua
+lua5.1 tests/lua/authored.lua
 lua5.1 tests/lua/ordered.lua
 lua5.1 tests/lua/catalog.lua
 FGM_FULL_MATRIX=1 lua5.1 tests/lua/journeys.lua
+FGM_DUNGEONS=1 lua5.1 tests/lua/journeys.lua
 lua5.1 tests/lua/ui.lua
 lua5.1 tests/lua/lint.lua
 lua5.1 tests/lua/audit_accept_chains.lua

@@ -51,10 +51,11 @@ local function Stormwind(x, y, label)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-the-deadmines",
     title = "The Deadmines",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -63,9 +64,537 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "accept-red-silk-bandanas",
+            route = {
+                { y = 0.5298, mapID = 1436, label = "Scout Galiaan", offMapText = "Travel to Scout Galiaan in Westfall.", x = 0.5398 },
+            },
+            text = "Accept Red Leather Bandanas from Scout Galiaan.",
+            id = "prerequisite-accept-153-red-leather-bandanas",
             kind = "accept",
-            priority = 10,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 153, state = "activeOrCompleted" },
+            },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            text = "Collect 15 Red Leather Bandana.",
+            route = {
+                { y = 0.454, mapID = 1436, label = "Defias Trapper", offMapText = "Travel to Defias Trapper.", x = 0.484 },
+            },
+            dependsOn = { "prerequisite-accept-153-red-leather-bandanas" },
+            id = "prerequisite-objective-153-1-defias-trapper",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 153, text = "Defias Trapper", index = 1, count = 15 },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in Red Leather Bandanas to Scout Galiaan.",
+            route = {
+                { y = 0.5298, mapID = 1436, label = "Scout Galiaan", offMapText = "Travel to Scout Galiaan in Westfall.", x = 0.5398 },
+            },
+            dependsOn = { "prerequisite-accept-153-red-leather-bandanas", "prerequisite-objective-153-1-defias-trapper" },
+            id = "prerequisite-turnin-153-red-leather-bandanas",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 153, state = "completed" },
+            },
+            sourceStep = 28,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            text = "Accept The Defias Brotherhood from Gryan Stoutmantle.",
+            id = "prerequisite-accept-65-the-defias-brotherhood",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 65, state = "activeOrCompleted" },
+            },
+            sourceStep = 26,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            route = {
+                { y = 0.4535, mapID = 1433, label = "Wiley the Black", offMapText = "Travel to Wiley the Black in Redridge Mountains.", x = 0.2648 },
+            },
+            text = "Turn in The Defias Brotherhood to Wiley the Black.",
+            id = "prerequisite-turnin-65-the-defias-brotherhood",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 65, state = "completed" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            route = {
+                { y = 0.453, mapID = 1433, label = "Wiley the Black", offMapText = "Travel to Wiley the Black in Redridge Mountains.", x = 0.214 },
+            },
+            text = "Accept The Defias Brotherhood from Wiley the Black.",
+            id = "prerequisite-accept-132-the-defias-brotherhood",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 132, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 65 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "prerequisite-turnin-65-the-defias-brotherhood" },
+        },
+        {
+            text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "prerequisite-accept-132-the-defias-brotherhood" },
+            id = "prerequisite-turnin-132-the-defias-brotherhood",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 132, state = "completed" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 65 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            text = "Accept The Defias Brotherhood from Gryan Stoutmantle.",
+            id = "prerequisite-accept-135-the-defias-brotherhood",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 135, state = "activeOrCompleted" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 132 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "prerequisite-turnin-132-the-defias-brotherhood" },
+        },
+        {
+            text = "Turn in The Defias Brotherhood to Master Mathias Shaw.",
+            route = {
+                { y = 0.5984, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
+            },
+            dependsOn = { "prerequisite-accept-135-the-defias-brotherhood" },
+            id = "prerequisite-turnin-135-the-defias-brotherhood",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 135, state = "completed" },
+            },
+            sourceStep = 16,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 132 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
+            },
+            text = "Accept The Defias Brotherhood from Master Mathias Shaw.",
+            id = "prerequisite-accept-141-the-defias-brotherhood",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 141, state = "activeOrCompleted" },
+            },
+            sourceStep = 16,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 135 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "prerequisite-turnin-135-the-defias-brotherhood" },
+        },
+        {
+            text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "prerequisite-accept-141-the-defias-brotherhood" },
+            id = "prerequisite-turnin-141-the-defias-brotherhood",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 141, state = "completed" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 135 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            text = "Accept The Defias Brotherhood from Gryan Stoutmantle.",
+            id = "prerequisite-accept-142-the-defias-brotherhood",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 142, state = "activeOrCompleted" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 141 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "prerequisite-turnin-141-the-defias-brotherhood" },
+        },
+        {
+            dependsOn = { "prerequisite-accept-142-the-defias-brotherhood" },
+            id = "prerequisite-objective-142-1-defias-messenger",
+            text = "Collect 1 A Mysterious Message.",
+            useClientPin = true,
+            complete = {
+                questObjective = { id = 142, text = "Defias Messenger", index = 1, count = 1 },
+            },
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 19,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 141 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+        },
+        {
+            text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "prerequisite-accept-142-the-defias-brotherhood", "prerequisite-objective-142-1-defias-messenger" },
+            id = "prerequisite-turnin-142-the-defias-brotherhood",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 142, state = "completed" },
+            },
+            sourceStep = 24,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 141 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.475, mapID = 1436, label = "The Defias Traitor", offMapText = "Travel to The Defias Traitor in Westfall.", x = 0.5568 },
+            },
+            text = "Accept The Defias Brotherhood from The Defias Traitor.",
+            id = "prerequisite-accept-155-the-defias-brotherhood",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 155, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 142 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "prerequisite-turnin-142-the-defias-brotherhood" },
+        },
+        {
+            id = "prerequisite-objective-155-reviewed-escort",
+            kind = "objective",
+            text = "Follow and protect the Defias Traitor until he reveals the entrance to the Deadmines.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 142 },
+                    conditions = {},
+                },
+            },
+            complete = {
+                quest = { id = 155, state = "complete" },
+            },
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1436, x = 0.4255, y = 0.7156999999999999, label = "Escort destination", offMapText = "Travel to Escort destination." },
+            },
+            sourceStep = 26,
+            dependsOn = { "prerequisite-accept-155-the-defias-brotherhood" },
+        },
+        {
+            text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "prerequisite-accept-155-the-defias-brotherhood", "prerequisite-objective-155-reviewed-escort" },
+            id = "prerequisite-turnin-155-the-defias-brotherhood",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 155, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 142 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            id = "accept-red-silk-bandanas",
+            requiredQuests = { { mode = "all", quests = { 153, 155 } } },
+            kind = "accept",
             conditions = {
                 all = {
                     ALLIANCE,
@@ -79,8 +608,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-defias-brotherhood",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 155 } } },
             kind = "accept",
-            priority = 11,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -97,7 +626,6 @@ ns:RegisterGuide({
         {
             id = "accept-collecting-memories",
             kind = "accept",
-            priority = 12,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -112,7 +640,6 @@ ns:RegisterGuide({
         {
             id = "accept-oh-brother",
             kind = "accept",
-            priority = 13,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -127,7 +654,6 @@ ns:RegisterGuide({
         {
             id = "accept-underground-assault",
             kind = "accept",
-            priority = 14,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -142,7 +668,6 @@ ns:RegisterGuide({
         {
             id = "enter-deadmines",
             kind = "travel",
-            priority = 40,
             conditions = ALLIANCE,
             text = "Enter the Deadmines through the Defias Hideout in Moonbrook. The instance portal is at the bottom of the mine.",
             dependsOn = {
@@ -158,8 +683,8 @@ ns:RegisterGuide({
         },
         {
             id = "complete-red-silk-bandanas",
+            requiredQuests = { { mode = "all", quests = { 153, 155 } } },
             kind = "objective",
-            priority = 41,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -173,7 +698,6 @@ ns:RegisterGuide({
         {
             id = "complete-collecting-memories",
             kind = "objective",
-            priority = 42,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -187,7 +711,6 @@ ns:RegisterGuide({
         {
             id = "complete-oh-brother",
             kind = "objective",
-            priority = 43,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -201,7 +724,6 @@ ns:RegisterGuide({
         {
             id = "complete-underground-assault",
             kind = "objective",
-            priority = 44,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -215,8 +737,8 @@ ns:RegisterGuide({
         },
         {
             id = "complete-defias-brotherhood",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 155 } } },
             kind = "objective",
-            priority = 45,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -231,8 +753,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-red-silk-bandanas",
+            requiredQuests = { { mode = "all", quests = { 153, 155 } } },
             kind = "turnin",
-            priority = 60,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -247,8 +769,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-defias-brotherhood",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 155 } } },
             kind = "turnin",
-            priority = 61,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -265,7 +787,6 @@ ns:RegisterGuide({
         {
             id = "turnin-collecting-memories",
             kind = "turnin",
-            priority = 62,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -281,7 +802,6 @@ ns:RegisterGuide({
         {
             id = "turnin-oh-brother",
             kind = "turnin",
-            priority = 63,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -297,7 +817,6 @@ ns:RegisterGuide({
         {
             id = "turnin-underground-assault",
             kind = "turnin",
-            priority = 64,
             conditions = {
                 all = {
                     ALLIANCE,

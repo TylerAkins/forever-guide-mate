@@ -32,10 +32,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-gnomeregan",
     title = "Gnomeregan",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 25 } },
@@ -46,7 +47,6 @@ ns:RegisterGuide({
         {
             id = "accept-2923-tinkmaster-overspark",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Accept Tinkmaster Overspark from Brother Sarno.",
             complete = QuestState(2923, "activeOrCompleted"),
@@ -57,7 +57,6 @@ ns:RegisterGuide({
         {
             id = "accept-2928-gyrodrillmatic-excavationators",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Accept Gyrodrillmatic Excavationators from Shoni the Shilent.",
             complete = QuestState(2928, "activeOrCompleted"),
@@ -68,7 +67,6 @@ ns:RegisterGuide({
         {
             id = "accept-2925-klockmort-s-essentials",
             kind = "accept",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Accept Klockmort's Essentials from Mathiel.",
             complete = QuestState(2925, "activeOrCompleted"),
@@ -79,7 +77,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2925-klockmort-s-essentials",
             kind = "turnin",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             text = "Turn in Klockmort's Essentials to Klockmort Spannerspan.",
             dependsOn = { "accept-2925-klockmort-s-essentials" },
@@ -90,8 +87,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2924-essential-artificials",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2925 } } },
             kind = "accept",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Accept Essential Artificials from Klockmort Spannerspan.",
             dependsOn = { "turnin-2925-klockmort-s-essentials" },
@@ -103,7 +100,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2923-tinkmaster-overspark",
             kind = "turnin",
-            priority = 15,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Turn in Tinkmaster Overspark to Tinkmaster Overspark.",
             dependsOn = { "accept-2923-tinkmaster-overspark" },
@@ -114,8 +110,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2922-save-techbot-s-brain",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2923 } } },
             kind = "accept",
-            priority = 16,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Accept Save Techbot's Brain! from Tinkmaster Overspark.",
             dependsOn = { "turnin-2923-tinkmaster-overspark" },
@@ -127,7 +123,6 @@ ns:RegisterGuide({
         {
             id = "accept-2927-the-day-after",
             kind = "accept",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Accept The Day After from Gnoarn.",
             complete = QuestState(2927, "activeOrCompleted"),
@@ -138,7 +133,6 @@ ns:RegisterGuide({
         {
             id = "accept-2930-data-rescue",
             kind = "accept",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Accept Data Rescue from Master Mechanic Castpipe.",
             complete = QuestState(2930, "activeOrCompleted"),
@@ -149,7 +143,6 @@ ns:RegisterGuide({
         {
             id = "accept-2929-the-grand-betrayal",
             kind = "accept",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Accept The Grand Betrayal from High Tinker Mekkatorque.",
             complete = QuestState(2929, "activeOrCompleted"),
@@ -160,7 +153,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2927-the-day-after",
             kind = "turnin",
-            priority = 20,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Turn in The Day After to Ozzie Togglevolt.",
             dependsOn = { "accept-2927-the-day-after" },
@@ -171,8 +163,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2926-gnogaine",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2927 } } },
             kind = "accept",
-            priority = 21,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Accept Gnogaine from Ozzie Togglevolt.",
             dependsOn = { "turnin-2927-the-day-after" },
@@ -184,7 +176,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 22,
             conditions = { level = { min = 25 } },
             text = "Enter Gnomeregan with your group.",
             dependsOn = { "accept-2923-tinkmaster-overspark", "accept-2928-gyrodrillmatic-excavationators", "accept-2925-klockmort-s-essentials", "accept-2924-essential-artificials", "accept-2922-save-techbot-s-brain", "accept-2927-the-day-after", "accept-2930-data-rescue", "accept-2929-the-grand-betrayal", "accept-2926-gnogaine" },
@@ -193,8 +184,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2922-1-techbot-s-memory-core",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2923 } } },
             kind = "objective",
-            priority = 25,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Kill Techbot in the Workshop and loot Techbot's Memory Core.",
             dependsOn = { "accept-2922-save-techbot-s-brain" },
@@ -203,8 +194,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2926-1-full-leaden-collection-p",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2927 } } },
             kind = "objective",
-            priority = 27,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Use the Empty Leaden Collection Phial on Irradiated Slimes or Horrors in Gnomeregan until it fills.",
             dependsOn = { "accept-2926-gnogaine" },
@@ -213,8 +204,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2926-gnogaine",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2927 } } },
             kind = "turnin",
-            priority = 28,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Turn in Gnogaine to Ozzie Togglevolt.",
             dependsOn = { "objective-2926-1-full-leaden-collection-p" },
@@ -225,8 +216,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2962-the-only-cure-is-more-green-glow",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2926 } } },
             kind = "accept",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } } } },
             text = "Accept The Only Cure is More Green Glow from Ozzie Togglevolt.",
             dependsOn = { "turnin-2926-gnogaine" },
@@ -237,8 +228,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2962-1-high-potency-radioactive",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2926 } } },
             kind = "objective",
-            priority = 33,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } } } },
             text = "Use the Leaden Collection Phial on high-level irradiated slimes in the irradiated rooms until you collect High Potency Radioactive Fallout.",
             dependsOn = { "accept-2962-the-only-cure-is-more-green-glow" },
@@ -248,7 +239,6 @@ ns:RegisterGuide({
         {
             id = "objective-2930-1-prismatic-punch-card",
             kind = "objective",
-            priority = 37,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Loot the Prismatic Punch Card from the Dimensional Vault terminal in Gnomeregan.",
             dependsOn = { "accept-2930-data-rescue" },
@@ -258,7 +248,6 @@ ns:RegisterGuide({
         {
             id = "objective-2928-1-robo-mechanical-guts",
             kind = "objective",
-            priority = 39,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Kill leper gnomes and mechanized guards in Gnomeregan until you loot 24 Robo-mechanical Guts.",
             dependsOn = { "accept-2928-gyrodrillmatic-excavationators" },
@@ -267,8 +256,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2924-1-essential-artificial",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2925 } } },
             kind = "objective",
-            priority = 41,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Kill mechanized units in Gnomeregan until you loot 12 Essential Artificial.",
             dependsOn = { "accept-2924-essential-artificials" },
@@ -278,7 +267,6 @@ ns:RegisterGuide({
         {
             id = "objective-2929-1-mekgineer-thermaplugg",
             kind = "objective",
-            priority = 42,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Kill Mekgineer Thermaplugg in the final chamber and loot proof of the betrayal for The Grand Betrayal.",
             dependsOn = { "accept-2929-the-grand-betrayal" },
@@ -287,8 +275,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2924-essential-artificials",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2925 } } },
             kind = "turnin",
-            priority = 45,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Turn in Essential Artificials to Klockmort Spannerspan.",
             dependsOn = { "objective-2924-1-essential-artificial" },
@@ -299,8 +287,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2922-save-techbot-s-brain",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2923 } } },
             kind = "turnin",
-            priority = 46,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Turn in Save Techbot's Brain! to Tinkmaster Overspark.",
             dependsOn = { "objective-2922-1-techbot-s-memory-core" },
@@ -312,7 +300,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2930-data-rescue",
             kind = "turnin",
-            priority = 47,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Turn in Data Rescue to Master Mechanic Castpipe.",
             dependsOn = { "objective-2930-1-prismatic-punch-card" },
@@ -324,7 +311,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2929-the-grand-betrayal",
             kind = "turnin",
-            priority = 48,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Turn in The Grand Betrayal to High Tinker Mekkatorque.",
             dependsOn = { "objective-2929-1-mekgineer-thermaplugg" },
@@ -335,8 +321,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2962-the-only-cure-is-more-green-glow",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2926 } } },
             kind = "turnin",
-            priority = 49,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } } } },
             text = "Turn in The Only Cure is More Green Glow to Ozzie Togglevolt.",
             dependsOn = { "objective-2962-1-high-potency-radioactive" },
@@ -348,7 +334,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2928-gyrodrillmatic-excavationators",
             kind = "turnin",
-            priority = 50,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } } } },
             text = "Turn in Gyrodrillmatic Excavationators to Shoni the Shilent.",
             dependsOn = { "objective-2928-1-robo-mechanical-guts" },
@@ -360,7 +345,6 @@ ns:RegisterGuide({
         {
             id = "accept-2841-rig-wars",
             kind = "accept",
-            priority = 51,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Accept Rig Wars from Nogg.",
             complete = QuestState(2841, "activeOrCompleted"),
@@ -371,7 +355,6 @@ ns:RegisterGuide({
         {
             id = "accept-2842-chief-engineer-scooty",
             kind = "accept",
-            priority = 52,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Accept Chief Engineer Scooty from Sovik.",
             complete = QuestState(2842, "activeOrCompleted"),
@@ -382,7 +365,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2842-chief-engineer-scooty",
             kind = "turnin",
-            priority = 53,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Turn in Chief Engineer Scooty to Scooty.",
             dependsOn = { "accept-2842-chief-engineer-scooty" },
@@ -393,8 +375,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2843-gnomer-gooooone",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2842 } } },
             kind = "accept",
-            priority = 54,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Accept Gnomer-gooooone! from Scooty.",
             dependsOn = { "turnin-2842-chief-engineer-scooty" },
@@ -405,8 +387,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2843-1-wait-for-scooty-to-calib",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2842 } } },
             kind = "objective",
-            priority = 55,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Wait for Scooty to Calibrate the Goblin Transponder.",
             dependsOn = { "accept-2843-gnomer-gooooone" },
@@ -415,8 +397,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2843-gnomer-gooooone",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2842 } } },
             kind = "turnin",
-            priority = 56,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Turn in Gnomer-gooooone! to Scooty.",
             dependsOn = { "objective-2843-1-wait-for-scooty-to-calib" },
@@ -428,7 +410,6 @@ ns:RegisterGuide({
         {
             id = "objective-2841-2-thermaplugg-s-safe-combi",
             kind = "objective",
-            priority = 60,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Kill Mekgineer Thermaplugg and loot Thermaplugg's Safe Combination.",
             dependsOn = { "accept-2841-rig-wars" },
@@ -438,7 +419,6 @@ ns:RegisterGuide({
         {
             id = "objective-2841-1-rig-blueprints",
             kind = "objective",
-            priority = 62,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Loot the Rig Blueprints from the plans in Gnomeregan's upper halls.",
             dependsOn = { "accept-2841-rig-wars" },
@@ -448,7 +428,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2841-rig-wars",
             kind = "turnin",
-            priority = 63,
             conditions = { all = { { faction = "Horde" }, { level = { min = 33 } } } },
             text = "Turn in Rig Wars to Nogg.",
             dependsOn = { "objective-2841-2-thermaplugg-s-safe-combi", "objective-2841-1-rig-blueprints" },

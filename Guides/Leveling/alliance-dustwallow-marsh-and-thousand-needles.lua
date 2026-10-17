@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Dustwallow Marsh & Thousand Needles",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1135,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.4515, mapID = 1445, label = "Fiora Longears", offMapText = "Travel to Fiora Longears in Dustwallow Marsh.", x = 0.6646 },
             },
@@ -84,10 +82,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1282,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.4607, mapID = 1445, label = "Guard Byron", offMapText = "Travel to Guard Byron in Dustwallow Marsh.", x = 0.6616 },
             },
@@ -115,7 +111,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.4824, mapID = 1445, label = "Clerk Lendry", offMapText = "Travel to Clerk Lendry in Dustwallow Marsh.", x = 0.6788 },
             },
@@ -143,7 +138,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.4871, mapID = 1445, label = "Commander Samaul", offMapText = "Travel to Commander Samaul in Dustwallow Marsh.", x = 0.6802 },
             },
@@ -177,7 +171,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.4871, mapID = 1445, label = "Commander Samaul", offMapText = "Travel to Commander Samaul in Dustwallow Marsh.", x = 0.6802 },
             },
@@ -211,7 +204,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             text = "Turn in They Call Him Smiling Jim to Captain Garran Vimes.",
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6822 },
@@ -239,7 +231,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 90,
             text = "Turn in The Missing Diplomat to Archmage Tervosh.",
             route = {
                 { y = 0.4125, mapID = 1445, label = "Archmage Tervosh", offMapText = "Travel to Archmage Tervosh in Dustwallow Marsh.", x = 0.5966 },
@@ -273,7 +264,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             route = {
                 { y = 0.493, mapID = 1445, label = "Archmage Tervosh", offMapText = "Travel to Archmage Tervosh in Dustwallow Marsh.", x = 0.664 },
             },
@@ -307,7 +297,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             text = "Turn in The Missing Diplomat to Archmage Tervosh.",
             route = {
                 { y = 0.4926, mapID = 1445, label = "Archmage Tervosh", offMapText = "Travel to Archmage Tervosh in Dustwallow Marsh.", x = 0.6642 },
@@ -362,7 +351,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.6642, y = 0.4926, label = "Archmage Tervosh", offMapText = "Travel to Archmage Tervosh in Dustwallow Marsh." },
             },
             sourceStep = 11,
-            priority = 120,
             requiredQuests = {
                 {
                     mode = "any",
@@ -387,10 +375,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1218,
-            priority = 130,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5544 },
             },
@@ -415,7 +401,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "For Soothing Spices: Bring 3 Soothing Spices to \"Swamp Eye\" Jarl in Dustwallow Marsh.",
             id = "objective-1218-quest-work",
             kind = "objective",
@@ -437,7 +422,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1218-soothing-spices" },
         },
         {
-            priority = 160,
             text = "Turn in Soothing Spices to \"Swamp Eye\" Jarl.",
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5544 },
@@ -462,7 +446,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.2593, mapID = 1445, label = "The Orc Report", offMapText = "Travel to The Orc Report.", x = 0.5544 },
             },
@@ -490,7 +473,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Turn in The Missing Diplomat to Private Hendel.",
             route = {
                 { y = 0.2464, mapID = 1445, label = "Private Hendel", offMapText = "Travel to Private Hendel in Dustwallow Marsh.", x = 0.4522 },
@@ -524,7 +506,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.2464, mapID = 1445, label = "Private Hendel", offMapText = "Travel to Private Hendel in Dustwallow Marsh.", x = 0.4522 },
             },
@@ -558,7 +539,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Kill Private Hendel.",
             route = {
                 { y = 0.2464, mapID = 1445, label = "Private Hendel", offMapText = "Travel to Private Hendel.", x = 0.4522 },
@@ -591,7 +571,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Turn in The Missing Diplomat to Archmage Tervosh.",
             route = {
                 { y = 0.243, mapID = 1445, label = "Archmage Tervosh", offMapText = "Travel to Archmage Tervosh in Dustwallow Marsh.", x = 0.4519 },
@@ -625,7 +604,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.2424, mapID = 1445, label = "Lady Jaina Proudmoore", offMapText = "Travel to Lady Jaina Proudmoore in Dustwallow Marsh.", x = 0.4522 },
             },
@@ -671,10 +649,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1177,
-            priority = 230,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.3825, mapID = 1445, label = "Mudcrush Durtfeet", offMapText = "Travel to Mudcrush Durtfeet in Dustwallow Marsh.", x = 0.3515 },
             },
@@ -699,7 +675,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             route = {
                 { y = 0.4763, mapID = 1445, label = "Suspicious Hoofprints", offMapText = "Travel to Suspicious Hoofprints.", x = 0.297 },
             },
@@ -733,7 +708,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             route = {
                 { y = 0.4824, mapID = 1445, label = "Lieutenant Paval Reethe", offMapText = "Travel to Lieutenant Paval Reethe.", x = 0.2983 },
             },
@@ -767,7 +741,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             route = {
                 { y = 0.4859, mapID = 1445, label = "The Black Shield", offMapText = "Travel to The Black Shield.", x = 0.2963 },
             },
@@ -827,10 +800,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 280,
         },
         {
-            priority = 290,
             text = "Use the Henrig Lonebrow's Journal to accept Lonebrow's Journal.",
             id = "accept-1100-lonebrow-s-journal",
             kind = "accept",
@@ -855,7 +826,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             text = "Turn in Lonebrow's Journal to Falfindel Waywarder.",
             route = {
                 { y = 0.4656, mapID = 1444, label = "Falfindel Waywarder", offMapText = "Travel to Falfindel Waywarder in Feralas.", x = 0.8964 },
@@ -883,7 +853,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             route = {
                 { y = 0.4656, mapID = 1444, label = "Falfindel Waywarder", offMapText = "Travel to Falfindel Waywarder in Feralas.", x = 0.8964 },
             },
@@ -917,7 +886,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 320,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -942,7 +910,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             route = {
                 { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
             },
@@ -967,7 +934,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             route = {
                 { y = 0.7712, mapID = 1441, label = "Wizzle Brassbolts", offMapText = "Travel to Wizzle Brassbolts in Thousand Needles.", x = 0.7814 },
             },
@@ -995,7 +961,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             route = {
                 { y = 0.7712, mapID = 1441, label = "Wizzle Brassbolts", offMapText = "Travel to Wizzle Brassbolts in Thousand Needles.", x = 0.7814 },
             },
@@ -1020,7 +985,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             route = {
                 { y = 0.7589, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
             },
@@ -1045,7 +1009,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             route = {
                 { y = 0.7795, mapID = 1441, label = "Trackmaster Zherin", offMapText = "Travel to Trackmaster Zherin in Thousand Needles.", x = 0.8164 },
             },
@@ -1070,7 +1033,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Kill 6 Saltstone Gazer.",
             route = {
                 { y = 0.88, mapID = 1441, label = "Saltstone Gazer", offMapText = "Travel to Saltstone Gazer.", x = 0.774 },
@@ -1095,7 +1057,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             text = "Collect 10 Hollow Vulture Bone.",
             route = {
                 { y = 0.66, mapID = 1441, label = "Salt Flats Scavenger", offMapText = "Travel to Salt Flats Scavenger.", x = 0.88 },
@@ -1138,7 +1099,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.828, y = 0.552, label = "Hardened Tortoise Shell", offMapText = "Travel to Hardened Tortoise Shell." },
             },
             sourceStep = 36,
-            priority = 400,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1163,7 +1123,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.8240000000000001, y = 0.6, label = "Salty Scorpid Venom", offMapText = "Travel to Salty Scorpid Venom." },
             },
             sourceStep = 37,
-            priority = 410,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1188,7 +1147,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.784, y = 0.59, label = "Saltstone Basilisk", offMapText = "Travel to Saltstone Basilisk." },
             },
             sourceStep = 38,
-            priority = 420,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1213,7 +1171,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.7879999999999999, y = 0.868, label = "Saltstone Crystalhide", offMapText = "Travel to Saltstone Crystalhide." },
             },
             sourceStep = 39,
-            priority = 430,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1238,14 +1195,12 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.83, y = 0.6459999999999999, label = "Rocket Car Parts", offMapText = "Travel to Rocket Car Parts." },
             },
             sourceStep = 40,
-            priority = 440,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1110-rocket-car-parts" },
         },
         {
-            priority = 450,
             text = "Turn in Rocket Car Parts to Kravel Koalbeard.",
             route = {
                 { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
@@ -1270,7 +1225,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -1295,7 +1249,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -1320,7 +1273,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Turn in Salt Flat Venom to Fizzle Brassbolts.",
             route = {
                 { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
@@ -1345,7 +1297,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Turn in Hardened Shells to Wizzle Brassbolts.",
             route = {
                 { y = 0.7712, mapID = 1441, label = "Wizzle Brassbolts", offMapText = "Travel to Wizzle Brassbolts in Thousand Needles.", x = 0.7814 },
@@ -1370,7 +1321,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             text = "Turn in Load Lightening to Pozzik.",
             route = {
                 { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
@@ -1395,7 +1345,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             route = {
                 { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
             },
@@ -1426,7 +1375,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             text = "Turn in A Bump in the Road to Trackmaster Zherin.",
             route = {
                 { y = 0.7795, mapID = 1441, label = "Trackmaster Zherin", offMapText = "Travel to Trackmaster Zherin in Thousand Needles.", x = 0.8163 },
@@ -1456,7 +1404,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             text = "For Highperch Venom: Bring 10 Highperch Venom Sacs to Fiora Longears in Theramore.",
             id = "objective-1135-quest-work",
             kind = "objective",
@@ -1481,7 +1428,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1135-highperch-venom" },
         },
         {
-            priority = 540,
             text = "Turn in Highperch Venom to Fiora Longears.",
             route = {
                 { y = 0.4515, mapID = 1445, label = "Fiora Longears", offMapText = "Travel to Fiora Longears in Dustwallow Marsh.", x = 0.6646 },
@@ -1509,7 +1455,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Turn in The Orc Report to Theramore Lieutenant.",
             route = {
                 { y = 0.4713, mapID = 1445, label = "Theramore Lieutenant", offMapText = "Travel to Theramore Lieutenant in Dustwallow Marsh.", x = 0.6507 },
@@ -1537,7 +1482,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             route = {
                 { y = 0.4713, mapID = 1445, label = "Theramore Lieutenant", offMapText = "Travel to Theramore Lieutenant in Dustwallow Marsh.", x = 0.6507 },
             },
@@ -1571,7 +1515,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 570,
             text = "Turn in Captain Vimes to Captain Garran Vimes.",
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
@@ -1605,7 +1548,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             text = "Turn in Lieutenant Paval Reethe to Captain Garran Vimes.",
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
@@ -1639,7 +1581,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 590,
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
             },
@@ -1673,7 +1614,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 600,
             text = "Turn in The Black Shield to Captain Garran Vimes.",
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
@@ -1707,7 +1647,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
             },
@@ -1741,7 +1680,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             text = "Turn in Suspicious Hoofprints to Captain Garran Vimes.",
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
@@ -1775,7 +1713,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             text = "Turn in Lieutenant Paval Reethe to Adjutant Tesoran.",
             route = {
                 { y = 0.4811, mapID = 1445, label = "Adjutant Tesoran", offMapText = "Travel to Adjutant Tesoran in Dustwallow Marsh.", x = 0.6805 },
@@ -1809,7 +1746,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.4811, mapID = 1445, label = "Adjutant Tesoran", offMapText = "Travel to Adjutant Tesoran in Dustwallow Marsh.", x = 0.6805 },
             },
@@ -1843,7 +1779,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 650,
             text = "Turn in Daelin's Men to Captain Garran Vimes.",
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
@@ -1877,7 +1812,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 660,
             text = "Turn in The Black Shield to Caz Twosprocket.",
             route = {
                 { y = 0.5043, mapID = 1445, label = "Caz Twosprocket", offMapText = "Travel to Caz Twosprocket in Dustwallow Marsh.", x = 0.6475 },
@@ -1911,7 +1845,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 670,
             route = {
                 { y = 0.5043, mapID = 1445, label = "Caz Twosprocket", offMapText = "Travel to Caz Twosprocket in Dustwallow Marsh.", x = 0.6475 },
             },
@@ -1945,7 +1878,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 680,
             text = "Turn in The Black Shield to Captain Garran Vimes.",
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
@@ -1979,7 +1911,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             text = "Turn in Goblin Sponsorship to Gazlowe.",
             route = {
                 { y = 0.3623, mapID = 1413, label = "Gazlowe", offMapText = "Travel to Gazlowe in The Barrens.", x = 0.6268 },
@@ -2010,7 +1941,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 700,
             route = {
                 { y = 0.3623, mapID = 1413, label = "Gazlowe", offMapText = "Travel to Gazlowe in The Barrens.", x = 0.6268 },
             },
@@ -2063,10 +1993,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1798,
-            priority = 710,
         },
         {
-            priority = 720,
             route = {
                 { y = 0.355, mapID = 1413, label = "Strahad Farsan", offMapText = "Travel to Strahad Farsan in The Barrens.", x = 0.6263 },
             },
@@ -2097,7 +2025,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 730,
             route = {
                 { y = 0.355, mapID = 1413, label = "Strahad Farsan", offMapText = "Travel to Strahad Farsan in The Barrens.", x = 0.6263 },
             },
@@ -2147,10 +2074,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1718,
-            priority = 740,
         },
         {
-            priority = 750,
             route = {
                 { y = 0.4917, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.6862 },
             },
@@ -2178,7 +2103,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 760,
             route = {
                 { y = 0.49, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.666 },
             },
@@ -2212,7 +2136,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 770,
             text = "Kill Big Will.",
             route = {
                 { y = 0.4872, mapID = 1413, label = "Affray Challenger", offMapText = "Travel to Affray Challenger.", x = 0.6861 },
@@ -2246,7 +2169,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 780,
             text = "Turn in The Affray to Klannoc Macleod.",
             route = {
                 { y = 0.4917, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.6862 },
@@ -2280,7 +2202,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 790,
             route = {
                 { y = 0.4917, mapID = 1413, label = "Klannoc Macleod", offMapText = "Travel to Klannoc Macleod in The Barrens.", x = 0.6862 },
             },
@@ -2314,7 +2235,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 800,
             text = "Turn in Wharfmaster Dizzywig to Wharfmaster Dizzywig.",
             route = {
                 { y = 0.3845, mapID = 1413, label = "Wharfmaster Dizzywig", offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.", x = 0.6335 },
@@ -2339,7 +2259,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 810,
             route = {
                 { y = 0.3845, mapID = 1413, label = "Wharfmaster Dizzywig", offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.", x = 0.6335 },
             },
@@ -2370,7 +2289,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 820,
             route = {
                 { y = 0.3845, mapID = 1413, label = "Wharfmaster Dizzywig", offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.", x = 0.6335 },
             },
@@ -2404,7 +2322,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 830,
             route = {
                 { y = 0.3845, mapID = 1413, label = "Wharfmaster Dizzywig", offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.", x = 0.6335 },
             },
