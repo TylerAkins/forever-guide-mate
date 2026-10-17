@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Feralas & Tanaris",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-feralas-and-tanaris",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3022,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.2691, mapID = 1446, label = "Curgle Cranklehop", offMapText = "Travel to Curgle Cranklehop in Tanaris.", x = 0.5235 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.4271, mapID = 1444, label = "Pratt McGrubben", offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063 },
             },
@@ -93,7 +90,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { y = 0.4617, mapID = 1444, label = "Latronicus Moonspear", offMapText = "Travel to Latronicus Moonspear in Feralas.", x = 0.3038 },
             },
@@ -121,7 +117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.4617, mapID = 1444, label = "Shandris Feathermoon", offMapText = "Travel to Shandris Feathermoon in Feralas.", x = 0.3028 },
             },
@@ -149,7 +144,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.455, mapID = 1444, label = "Troyas Moonbreeze", offMapText = "Travel to Troyas Moonbreeze in Feralas.", x = 0.3178 },
             },
@@ -177,7 +171,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.4561, mapID = 1444, label = "Angelas Moonbreeze", offMapText = "Travel to Angelas Moonbreeze in Feralas.", x = 0.3183 },
             },
@@ -205,7 +198,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             text = "Turn in The Missing Courier to Ginro Hearthkindle.",
             route = {
                 { y = 0.4513, mapID = 1444, label = "Ginro Hearthkindle", offMapText = "Travel to Ginro Hearthkindle in Feralas.", x = 0.3186 },
@@ -233,7 +225,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.4513, mapID = 1444, label = "Ginro Hearthkindle", offMapText = "Travel to Ginro Hearthkindle in Feralas.", x = 0.3186 },
             },
@@ -267,7 +258,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Turn in The Ruins of Solarsal.",
             route = {
                 { y = 0.5234, mapID = 1444, label = "The Ruins of Solarsal", offMapText = "Travel to The Ruins of Solarsal.", x = 0.2632 },
@@ -295,7 +285,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.5234, mapID = 1444, label = "Return to Feathermoon Stronghold", offMapText = "Travel to Feathermoon Stronghold.", x = 0.2632 },
             },
@@ -329,7 +318,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             text = "Turn in Return to Feathermoon Stronghold to Shandris Feathermoon.",
             route = {
                 { y = 0.4617, mapID = 1444, label = "Shandris Feathermoon", offMapText = "Travel to Shandris Feathermoon in Feralas.", x = 0.3028 },
@@ -363,7 +351,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.4617, mapID = 1444, label = "Shandris Feathermoon", offMapText = "Travel to Shandris Feathermoon in Feralas.", x = 0.3028 },
             },
@@ -397,7 +384,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Turn in Against the Hatecrest to Latronicus Moonspear.",
             route = {
                 { y = 0.4617, mapID = 1444, label = "Latronicus Moonspear", offMapText = "Travel to Latronicus Moonspear in Feralas.", x = 0.3038 },
@@ -431,7 +417,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.4617, mapID = 1444, label = "Latronicus Moonspear", offMapText = "Travel to Latronicus Moonspear in Feralas.", x = 0.3038 },
             },
@@ -465,7 +450,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Collect 10 Hatecrest Naga Scale.",
             route = {
                 { y = 0.536, mapID = 1444, label = "Hatecrest Screamer", offMapText = "Travel to Hatecrest Screamer.", x = 0.29 },
@@ -499,7 +483,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "Turn in Against the Hatecrest to Latronicus Moonspear.",
             route = {
                 { y = 0.4617, mapID = 1444, label = "Latronicus Moonspear", offMapText = "Travel to Latronicus Moonspear in Feralas.", x = 0.3038 },
@@ -533,7 +516,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             route = {
                 { y = 0.4617, mapID = 1444, label = "Latronicus Moonspear", offMapText = "Travel to Latronicus Moonspear in Feralas.", x = 0.3038 },
             },
@@ -567,7 +549,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             text = "Collect 1 Mysterious Relic.",
             route = {
                 { mapID = 1444, x = 0.2849, y = 0.7045, label = "Mysterious Relic", offMapText = "Travel to Mysterious Relic." },
@@ -620,7 +601,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 200,
         },
         {
             id = "level-before-accept-2766-find-oox-22-fe",
@@ -635,10 +615,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2766,
-            priority = 210,
         },
         {
-            priority = 220,
             text = "Use the OOX-22/FE Distress Beacon to accept Find OOX-22/FE!.",
             id = "accept-2766-find-oox-22-fe",
             kind = "accept",
@@ -660,7 +638,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "Turn in The Missing Courier.",
             route = {
                 { mapID = 1444, x = 0.4545, y = 0.6496999999999999, label = "The Missing Courier", offMapText = "Travel to The Missing Courier." },
@@ -694,7 +671,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             route = {
                 { mapID = 1444, x = 0.4545, y = 0.6496999999999999, label = "Boat Wreckage", offMapText = "Travel to Boat Wreckage." },
             },
@@ -728,7 +704,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Turn in Boat Wreckage to Ginro Hearthkindle.",
             route = {
                 { y = 0.4513, mapID = 1444, label = "Ginro Hearthkindle", offMapText = "Travel to Ginro Hearthkindle in Feralas.", x = 0.3186 },
@@ -762,7 +737,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.4513, mapID = 1444, label = "Ginro Hearthkindle", offMapText = "Travel to Ginro Hearthkindle in Feralas.", x = 0.3186 },
             },
@@ -796,7 +770,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Turn in The Knife Revealed to Quintis Jonespyre.",
             route = {
                 { y = 0.4379, mapID = 1444, label = "Quintis Jonespyre", offMapText = "Travel to Quintis Jonespyre in Feralas.", x = 0.3245 },
@@ -830,7 +803,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.4379, mapID = 1444, label = "Quintis Jonespyre", offMapText = "Travel to Quintis Jonespyre in Feralas.", x = 0.3245 },
             },
@@ -864,7 +836,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Turn in Psychometric Reading to Ginro Hearthkindle.",
             route = {
                 { y = 0.4513, mapID = 1444, label = "Ginro Hearthkindle", offMapText = "Travel to Ginro Hearthkindle in Feralas.", x = 0.3186 },
@@ -898,7 +869,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.4513, mapID = 1444, label = "Ginro Hearthkindle", offMapText = "Travel to Ginro Hearthkindle in Feralas.", x = 0.3186 },
             },
@@ -932,7 +902,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Turn in Against Lord Shalzaru to Latronicus Moonspear.",
             route = {
                 { y = 0.4617, mapID = 1444, label = "Latronicus Moonspear", offMapText = "Travel to Latronicus Moonspear in Feralas.", x = 0.3038 },
@@ -966,7 +935,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             route = {
                 { y = 0.4617, mapID = 1444, label = "Latronicus Moonspear", offMapText = "Travel to Latronicus Moonspear in Feralas.", x = 0.3038 },
             },
@@ -1000,7 +968,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             text = "Turn in Delivering the Relic to Vestia Moonspear.",
             route = {
                 { y = 0.4506, mapID = 1444, label = "Vestia Moonspear", offMapText = "Travel to Vestia Moonspear in Feralas.", x = 0.3008 },
@@ -1034,7 +1001,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             route = {
                 { y = 0.37, mapID = 1444, label = "Vale Screecher", offMapText = "Travel to Vale Screecher.", x = 0.432 },
             },
@@ -1058,7 +1024,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             text = "Turn in Screecher Spirits to Yeh'kinya.",
             route = {
                 { y = 0.2236, mapID = 1446, label = "Yeh'kinya", offMapText = "Travel to Yeh'kinya in Tanaris.", x = 0.6699 },
@@ -1083,7 +1048,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             text = "Turn in Find OOX-22/FE! to Homing Robot OOX-22/FE.",
             route = {
                 { mapID = 1444, x = 0.5335, y = 0.557, label = "Homing Robot OOX-22/FE", offMapText = "Travel to Homing Robot OOX-22/FE in Feralas." },
@@ -1129,14 +1093,12 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.5539999999999999, y = 0.574, label = "Thick Yeti Hide", offMapText = "Travel to Thick Yeti Hide." },
             },
             sourceStep = 50,
-            priority = 370,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-2821-the-mark-of-quality" },
         },
         {
-            priority = 380,
             text = "Kill 8 Gordunni Shaman.",
             route = {
                 { y = 0.68, mapID = 1444, label = "Gordunni Shaman", offMapText = "Travel to Gordunni Shaman.", x = 0.604 },
@@ -1164,7 +1126,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             text = "Kill 8 Gordunni Brute.",
             route = {
                 { y = 0.588, mapID = 1444, label = "Gordunni Brute", offMapText = "Travel to Gordunni Brute.", x = 0.604 },
@@ -1213,7 +1174,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.604, y = 0.57, label = "Gordunni Warlock", offMapText = "Travel to Gordunni Warlock." },
             },
             sourceStep = 54,
-            priority = 400,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1241,7 +1201,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.59, y = 0.618, label = "Groddoc Liver", offMapText = "Travel to Groddoc Liver." },
             },
             sourceStep = 55,
-            priority = 410,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1275,7 +1234,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.59, y = 0.618, label = "Ironfur Liver", offMapText = "Travel to Ironfur Liver." },
             },
             sourceStep = 56,
-            priority = 420,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1288,7 +1246,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             route = {
                 { mapID = 1444, x = 0.6594, y = 0.45649999999999996, label = "Kindal Moonweaver", offMapText = "Travel to Kindal Moonweaver in Feralas." },
             },
@@ -1341,10 +1298,8 @@ ns:RegisterGuide({
             },
             sourceStep = 59,
             dependsOn = { "accept-2969-freedom-for-all-creatures" },
-            priority = 440,
         },
         {
-            priority = 450,
             text = "Turn in Freedom for All Creatures to Kindal Moonweaver.",
             route = {
                 { mapID = 1444, x = 0.6594, y = 0.45649999999999996, label = "Kindal Moonweaver", offMapText = "Travel to Kindal Moonweaver in Feralas." },
@@ -1372,7 +1327,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { y = 0.4561, mapID = 1444, label = "Jer'kai Moonweaver", offMapText = "Travel to Jer'kai Moonweaver in Feralas.", x = 0.6595 },
             },
@@ -1406,7 +1360,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Kill 6 Grimtotem Shaman.",
             route = {
                 { y = 0.464, mapID = 1444, label = "Grimtotem Shaman", offMapText = "Travel to Grimtotem Shaman.", x = 0.674 },
@@ -1440,7 +1393,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             text = "Kill 10 Grimtotem Raider.",
             route = {
                 { y = 0.464, mapID = 1444, label = "Grimtotem Raider", offMapText = "Travel to Grimtotem Raider.", x = 0.674 },
@@ -1474,7 +1426,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Kill 12 Grimtotem Naturalist.",
             route = {
                 { y = 0.464, mapID = 1444, label = "Grimtotem Naturalist", offMapText = "Travel to Grimtotem Naturalist.", x = 0.674 },
@@ -1508,7 +1459,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             text = "Turn in Doling Justice to Jer'kai Moonweaver.",
             route = {
                 { mapID = 1444, x = 0.6595, y = 0.4561, label = "Jer'kai Moonweaver", offMapText = "Travel to Jer'kai Moonweaver in Feralas." },
@@ -1547,7 +1497,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             route = {
                 { mapID = 1444, x = 0.6595, y = 0.4561, label = "Jer'kai Moonweaver", offMapText = "Travel to Jer'kai Moonweaver in Feralas." },
             },
@@ -1581,7 +1530,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             text = "Turn in The Woodpaw Gnolls.",
             route = {
                 { y = 0.5631, mapID = 1444, label = "The Woodpaw Gnolls", offMapText = "Travel to The Woodpaw Gnolls.", x = 0.7331 },
@@ -1615,7 +1563,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.5631, mapID = 1444, label = "The Writhing Deep", offMapText = "Travel to The Writhing Deep.", x = 0.7331 },
             },
@@ -1675,10 +1622,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 540,
         },
         {
-            priority = 550,
             text = "Use the Undelivered Parcel to accept Thalanaar Delivery.",
             id = "accept-4281-thalanaar-delivery",
             kind = "accept",
@@ -1709,7 +1654,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "Turn in The Writhing Deep.",
             route = {
                 { mapID = 1444, x = 0.7208, y = 0.6375, label = "The Writhing Deep", offMapText = "Travel to The Writhing Deep." },
@@ -1743,7 +1687,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             route = {
                 { mapID = 1444, x = 0.7208, y = 0.6375, label = "Freed from the Hive", offMapText = "Travel to Freed from the Hive." },
             },
@@ -1777,7 +1720,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 580,
             text = "Turn in The Mark of Quality to Pratt McGrubben.",
             route = {
                 { y = 0.4271, mapID = 1444, label = "Pratt McGrubben", offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063 },
@@ -1805,7 +1747,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 590,
             text = "Turn in The High Wilderness to Angelas Moonbreeze.",
             route = {
                 { y = 0.4561, mapID = 1444, label = "Angelas Moonbreeze", offMapText = "Travel to Angelas Moonbreeze in Feralas.", x = 0.3183 },
@@ -1857,10 +1798,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3445,
-            priority = 600,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.4561, mapID = 1444, label = "Angelas Moonbreeze", offMapText = "Travel to Angelas Moonbreeze in Feralas.", x = 0.3183 },
             },
@@ -1888,7 +1827,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             text = "Turn in Freed from the Hive to Ginro Hearthkindle.",
             route = {
                 { y = 0.4513, mapID = 1444, label = "Ginro Hearthkindle", offMapText = "Travel to Ginro Hearthkindle in Feralas.", x = 0.3186 },
@@ -1922,7 +1860,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             route = {
                 { y = 0.4513, mapID = 1444, label = "Ginro Hearthkindle", offMapText = "Travel to Ginro Hearthkindle in Feralas.", x = 0.3186 },
             },
@@ -1956,7 +1893,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 640,
             text = "Turn in A Hero's Welcome to Shandris Feathermoon.",
             route = {
                 { y = 0.4617, mapID = 1444, label = "Shandris Feathermoon", offMapText = "Travel to Shandris Feathermoon in Feralas.", x = 0.3028 },
@@ -1990,7 +1926,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 650,
             route = {
                 { y = 0.4617, mapID = 1444, label = "Shandris Feathermoon", offMapText = "Travel to Shandris Feathermoon in Feralas.", x = 0.3028 },
             },
@@ -2024,7 +1959,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             text = "Turn in Handle With Care to Erelas Ambersky.",
             route = {
                 { y = 0.9205, mapID = 1438, label = "Erelas Ambersky", offMapText = "Travel to Erelas Ambersky in Teldrassil.", x = 0.555 },
@@ -2052,7 +1986,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 670,
             route = {
                 { y = 0.9205, mapID = 1438, label = "Erelas Ambersky", offMapText = "Travel to Erelas Ambersky in Teldrassil.", x = 0.555 },
             },
@@ -2080,7 +2013,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 680,
             text = "Turn in In Search of Knowledge to Daryn Lightwind.",
             route = {
                 { y = 0.9223, mapID = 1438, label = "Daryn Lightwind", offMapText = "Travel to Daryn Lightwind in Teldrassil.", x = 0.5541 },
@@ -2108,7 +2040,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.9146, mapID = 1438, label = "Feralas: A History", offMapText = "Travel to Feralas: A History.", x = 0.5522 },
             },
@@ -2142,7 +2073,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             text = "Turn in Feralas: A History to Daryn Lightwind.",
             route = {
                 { y = 0.9223, mapID = 1438, label = "Daryn Lightwind", offMapText = "Travel to Daryn Lightwind in Teldrassil.", x = 0.5541 },
@@ -2176,7 +2106,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             route = {
                 { y = 0.9223, mapID = 1438, label = "Daryn Lightwind", offMapText = "Travel to Daryn Lightwind in Teldrassil.", x = 0.5541 },
             },
@@ -2210,7 +2139,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 720,
             route = {
                 { y = 0.5405, mapID = 1457, label = "Red Power Crystal", offMapText = "Travel to Red Power Crystal.", x = 0.5624 },
             },
@@ -2228,7 +2156,6 @@ ns:RegisterGuide({
             referenceQuest = 4284,
         },
         {
-            priority = 730,
             text = "Turn in Rise of the Silithid to Gracina Spiritmight.",
             route = {
                 { y = 0.8562, mapID = 1457, label = "Gracina Spiritmight", offMapText = "Travel to Gracina Spiritmight in Darnassus.", x = 0.4185 },
@@ -2262,7 +2189,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 740,
             text = "Turn in Doling Justice to Tyrande Whisperwind.",
             route = {
                 { y = 0.8159, mapID = 1457, label = "Tyrande Whisperwind", offMapText = "Travel to Tyrande Whisperwind in Darnassus.", x = 0.391 },
@@ -2296,7 +2222,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 750,
             text = "Turn in Thalanaar Delivery to Falfindel Waywarder.",
             route = {
                 { y = 0.4657, mapID = 1444, label = "Falfindel Waywarder", offMapText = "Travel to Falfindel Waywarder in Feralas.", x = 0.8964 },
@@ -2330,7 +2255,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 760,
             text = "Turn in The Borrower to Curgle Cranklehop.",
             route = {
                 { y = 0.269, mapID = 1446, label = "Curgle Cranklehop", offMapText = "Travel to Curgle Cranklehop in Tanaris.", x = 0.5236 },
@@ -2364,7 +2288,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 770,
             route = {
                 { y = 0.269, mapID = 1446, label = "Curgle Cranklehop", offMapText = "Travel to Curgle Cranklehop in Tanaris.", x = 0.5236 },
             },
@@ -2398,7 +2321,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 780,
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
             },
@@ -2423,7 +2345,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 790,
             text = "Use the Untapped Dowsing Widget at the Tanaris insect mound to obtain the Tapped Dowsing Widget. Expect an attack and avoid nearby elite insects.",
             route = {
                 { y = 0.2917, mapID = 1446, label = "Untapped Dowsing Widget", offMapText = "Travel to Untapped Dowsing Widget.", x = 0.3909 },
@@ -2448,7 +2369,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 800,
             text = "Turn in Gadgetzan Water Survey to Senior Surveyor Fizzledowser.",
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
@@ -2473,7 +2393,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 810,
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
             },
@@ -2504,7 +2423,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 820,
             text = "Collect 5 Centipaar Insect Parts.",
             route = {
                 { y = 0.4, mapID = 1446, label = "Centipaar Wasp", offMapText = "Travel to Centipaar Wasp.", x = 0.36 },
@@ -2535,7 +2453,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 830,
             text = "Turn in Noxious Lair Investigation to Alchemist Pestlezugg.",
             route = {
                 { y = 0.2696, mapID = 1446, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris.", x = 0.5089 },
@@ -2566,7 +2483,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 840,
             route = {
                 { y = 0.2891, mapID = 1446, label = "Roc Gizzard", offMapText = "Travel to Roc Gizzard.", x = 0.523 },
             },

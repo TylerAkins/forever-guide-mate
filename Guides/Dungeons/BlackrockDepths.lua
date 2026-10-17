@@ -39,10 +39,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-blackrock-depths",
     title = "Blackrock Depths",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 52 } },
@@ -53,7 +54,6 @@ ns:RegisterGuide({
         {
             id = "accept-4324-yuka-screwspigot",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 48 } },
             text = "Accept Yuka Screwspigot from Yorba Screwspigot.",
             complete = QuestState(4324, "activeOrCompleted"),
@@ -64,7 +64,6 @@ ns:RegisterGuide({
         {
             id = "accept-3702-the-smoldering-ruins-of-thaurissan",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The Smoldering Ruins of Thaurissan from Royal Historian Archesonus.",
             complete = QuestState(3702, "activeOrCompleted"),
@@ -75,7 +74,6 @@ ns:RegisterGuide({
         {
             id = "objective-3702-1-hear-the-story-of-thauri",
             kind = "gossip",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Talk to Royal Historian Archesonus. 'I am ready to listen.' Hear the Story of Thaurissan.",
             dependsOn = { "accept-3702-the-smoldering-ruins-of-thaurissan" },
@@ -87,7 +85,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3702-the-smoldering-ruins-of-thaurissan",
             kind = "turnin",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The Smoldering Ruins of Thaurissan to Royal Historian Archesonus.",
             dependsOn = { "objective-3702-1-hear-the-story-of-thauri" },
@@ -98,8 +95,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3701-the-smoldering-ruins-of-thaurissan",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 3702 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 3702 } } },
             kind = "accept",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Accept The Smoldering Ruins of Thaurissan from Royal Historian Archesonus.",
             dependsOn = { "turnin-3702-the-smoldering-ruins-of-thaurissan" },
@@ -111,7 +108,6 @@ ns:RegisterGuide({
         {
             id = "accept-4128-ragnar-thunderbrew",
             kind = "accept",
-            priority = 15,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Ragnar Thunderbrew from Enohar Thunderbrew.",
             complete = QuestState(4128, "activeOrCompleted"),
@@ -122,7 +118,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4128-ragnar-thunderbrew",
             kind = "turnin",
-            priority = 16,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Ragnar Thunderbrew to Ragnar Thunderbrew.",
             dependsOn = { "accept-4128-ragnar-thunderbrew" },
@@ -133,8 +128,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4126-hurley-blackbreath",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4128 } } },
             kind = "accept",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Hurley Blackbreath from Ragnar Thunderbrew.",
             dependsOn = { "turnin-4128-ragnar-thunderbrew" },
@@ -146,7 +141,6 @@ ns:RegisterGuide({
         {
             id = "accept-4286-the-good-stuff",
             kind = "accept",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept The Good Stuff from Oralius.",
             complete = QuestState(4286, "activeOrCompleted"),
@@ -157,7 +151,6 @@ ns:RegisterGuide({
         {
             id = "accept-4182-dragonkin-menace",
             kind = "accept",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept Dragonkin Menace from Helendis Riverhorn.",
             complete = QuestState(4182, "activeOrCompleted"),
@@ -168,7 +161,6 @@ ns:RegisterGuide({
         {
             id = "accept-4262-overmaster-pyron",
             kind = "accept",
-            priority = 20,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Accept Overmaster Pyron from Jalinda Sprig.",
             complete = QuestState(4262, "activeOrCompleted"),
@@ -179,7 +171,6 @@ ns:RegisterGuide({
         {
             id = "objective-4182-3-black-drake",
             kind = "objective",
-            priority = 21,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Kill Black Drake.",
             dependsOn = { "accept-4182-dragonkin-menace" },
@@ -191,7 +182,6 @@ ns:RegisterGuide({
         {
             id = "objective-4182-4-black-wyrmkin",
             kind = "objective",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Kill 4 Black Wyrmkin.",
             dependsOn = { "accept-4182-dragonkin-menace" },
@@ -203,7 +193,6 @@ ns:RegisterGuide({
         {
             id = "objective-4182-2-black-dragonspawn",
             kind = "objective",
-            priority = 23,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Kill 10 Black Dragonspawn.",
             dependsOn = { "accept-4182-dragonkin-menace" },
@@ -215,7 +204,6 @@ ns:RegisterGuide({
         {
             id = "objective-4182-1-black-broodling",
             kind = "objective",
-            priority = 24,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Kill 15 Black Broodling.",
             dependsOn = { "accept-4182-dragonkin-menace" },
@@ -226,8 +214,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3701-1-pieces-of-information",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 3702 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 3702 } } },
             kind = "objective",
-            priority = 26,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Recover 12 Pieces of Information.",
             dependsOn = { "accept-3701-the-smoldering-ruins-of-thaurissan" },
@@ -239,7 +227,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4182-dragonkin-menace",
             kind = "turnin",
-            priority = 27,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in Dragonkin Menace to Helendis Riverhorn.",
             dependsOn = { "objective-4182-3-black-drake", "objective-4182-4-black-wyrmkin", "objective-4182-2-black-dragonspawn", "objective-4182-1-black-broodling" },
@@ -250,8 +237,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4183-the-true-masters",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4182 } } },
             kind = "accept",
-            priority = 28,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Helendis Riverhorn.",
             dependsOn = { "turnin-4182-dragonkin-menace" },
@@ -262,8 +249,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3701-the-smoldering-ruins-of-thaurissan",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 3702 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 3702 } } },
             kind = "turnin",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Turn in The Smoldering Ruins of Thaurissan to Royal Historian Archesonus.",
             dependsOn = { "objective-3701-1-pieces-of-information" },
@@ -275,7 +262,6 @@ ns:RegisterGuide({
         {
             id = "accept-4341-kharan-mighthammer",
             kind = "accept",
-            priority = 30,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Kharan Mighthammer from King Magni Bronzebeard.",
             complete = QuestState(4341, "activeOrCompleted"),
@@ -285,8 +271,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4183-the-true-masters",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4182 } } },
             kind = "turnin",
-            priority = 31,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Magistrate Solomon.",
             dependsOn = { "accept-4183-the-true-masters" },
@@ -297,8 +283,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4184-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4183 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4183 } } },
             kind = "accept",
-            priority = 32,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Magistrate Solomon.",
             dependsOn = { "turnin-4183-the-true-masters" },
@@ -309,8 +295,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4184-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4183 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4183 } } },
             kind = "turnin",
-            priority = 33,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
             dependsOn = { "accept-4184-the-true-masters" },
@@ -321,8 +307,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4185-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4184 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4184 } } },
             kind = "accept",
-            priority = 34,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Highlord Bolvar Fordragon.",
             dependsOn = { "turnin-4184-the-true-masters" },
@@ -333,8 +319,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4185-1-seek-advice-from-lady-pr",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4184 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4184 } } },
             kind = "gossip",
-            priority = 35,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Talk to Lady Katrana Prestor. 'Pardon the intrusion, Lady Prestor, but Highlord Bolvar suggested that I seek your advice.' Seek Advice from Lady Prestor.",
             dependsOn = { "accept-4185-the-true-masters" },
@@ -345,8 +331,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4185-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4184 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4184 } } },
             kind = "turnin",
-            priority = 36,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
             dependsOn = { "objective-4185-1-seek-advice-from-lady-pr" },
@@ -357,8 +343,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4186-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4185 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4185 } } },
             kind = "accept",
-            priority = 37,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Highlord Bolvar Fordragon.",
             dependsOn = { "turnin-4185-the-true-masters" },
@@ -369,8 +355,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4186-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4185 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4185 } } },
             kind = "turnin",
-            priority = 38,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Magistrate Solomon.",
             dependsOn = { "accept-4186-the-true-masters" },
@@ -381,8 +367,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4223-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4186 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4186 } } },
             kind = "accept",
-            priority = 39,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Magistrate Solomon.",
             dependsOn = { "turnin-4186-the-true-masters" },
@@ -393,8 +379,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4223-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4186 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4186 } } },
             kind = "turnin",
-            priority = 40,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Marshal Maxwell.",
             dependsOn = { "accept-4223-the-true-masters" },
@@ -405,8 +391,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4224-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4223 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4223 } } },
             kind = "accept",
-            priority = 41,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Marshal Maxwell.",
             dependsOn = { "turnin-4223-the-true-masters" },
@@ -417,8 +403,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4224-1-listen-to-ragged-john-s",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4223 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4223 } } },
             kind = "gossip",
-            priority = 42,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Talk to Ragged John. 'Official business, John. I need some information about Marshal Windsor. Tell me about the last time you saw him.' Listen to Ragged John's Story.",
             dependsOn = { "accept-4224-the-true-masters" },
@@ -429,8 +415,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4224-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4223 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4223 } } },
             kind = "turnin",
-            priority = 43,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Marshal Maxwell.",
             dependsOn = { "objective-4224-1-listen-to-ragged-john-s" },
@@ -441,8 +427,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4241-marshal-windsor",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4224 } } },
             kind = "accept",
-            priority = 44,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Accept Marshal Windsor from Marshal Maxwell.",
             dependsOn = { "turnin-4224-the-true-masters" },
@@ -454,7 +440,6 @@ ns:RegisterGuide({
         {
             id = "accept-3441-divine-retribution",
             kind = "accept",
-            priority = 45,
             conditions = { level = { min = 51 } },
             text = "Accept Divine Retribution from Kalaran Windblade.",
             complete = QuestState(3441, "activeOrCompleted"),
@@ -465,7 +450,6 @@ ns:RegisterGuide({
         {
             id = "objective-3441-1-listen-to-kalaran-s-stor",
             kind = "gossip",
-            priority = 46,
             conditions = { level = { min = 51 } },
             text = "Talk to Kalaran Windblade. 'Tell me what drives this vengeance?' Listen to Kalaran's Story.",
             dependsOn = { "accept-3441-divine-retribution" },
@@ -477,7 +461,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3441-divine-retribution",
             kind = "turnin",
-            priority = 47,
             conditions = { level = { min = 51 } },
             text = "Turn in Divine Retribution to Kalaran Windblade.",
             dependsOn = { "objective-3441-1-listen-to-kalaran-s-stor" },
@@ -488,8 +471,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3442-the-flawless-flame",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3441 } } },
             kind = "accept",
-            priority = 48,
             conditions = { level = { min = 51 } },
             text = "Accept The Flawless Flame from Kalaran Windblade.",
             dependsOn = { "turnin-3441-divine-retribution" },
@@ -500,8 +483,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3442-2-golem-oil",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3441 } } },
             kind = "objective",
-            priority = 50,
             conditions = { level = { min = 51 } },
             text = "Collect 4 Golem Oil.",
             dependsOn = { "accept-3442-the-flawless-flame" },
@@ -512,8 +495,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3442-1-heart-of-flame",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3441 } } },
             kind = "objective",
-            priority = 52,
             conditions = { level = { min = 51 } },
             text = "Collect 4 Heart of Flame.",
             dependsOn = { "accept-3442-the-flawless-flame" },
@@ -524,8 +507,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3442-the-flawless-flame",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3441 } } },
             kind = "turnin",
-            priority = 53,
             conditions = { level = { min = 51 } },
             text = "Turn in The Flawless Flame to Kalaran Windblade.",
             dependsOn = { "objective-3442-2-golem-oil", "objective-3442-1-heart-of-flame" },
@@ -536,8 +519,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3443-forging-the-shaft",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3442 } } },
             kind = "accept",
-            priority = 54,
             conditions = { level = { min = 51 } },
             text = "Accept Forging the Shaft from Kalaran Windblade.",
             dependsOn = { "turnin-3442-the-flawless-flame" },
@@ -548,8 +531,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3443-1-thorium-plated-dagger",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3442 } } },
             kind = "objective",
-            priority = 56,
             conditions = { level = { min = 51 } },
             text = "Collect 8 Thorium Plated Dagger.",
             dependsOn = { "accept-3443-forging-the-shaft" },
@@ -560,8 +543,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3443-forging-the-shaft",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3442 } } },
             kind = "turnin",
-            priority = 57,
             conditions = { level = { min = 51 } },
             text = "Turn in Forging the Shaft to Kalaran Windblade.",
             dependsOn = { "objective-3443-1-thorium-plated-dagger" },
@@ -572,8 +555,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3452-the-flame-s-casing",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3443 } } },
             kind = "accept",
-            priority = 58,
             conditions = { level = { min = 51 } },
             text = "Accept The Flame's Casing from Kalaran Windblade.",
             dependsOn = { "turnin-3443-forging-the-shaft" },
@@ -584,8 +567,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3452-1-symbol-of-ragnaros",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3443 } } },
             kind = "objective",
-            priority = 60,
             conditions = { level = { min = 51 } },
             text = "Collect Symbol of Ragnaros.",
             dependsOn = { "accept-3452-the-flame-s-casing" },
@@ -596,8 +579,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3452-the-flame-s-casing",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3443 } } },
             kind = "turnin",
-            priority = 61,
             conditions = { level = { min = 51 } },
             text = "Turn in The Flame's Casing to Kalaran Windblade.",
             dependsOn = { "objective-3452-1-symbol-of-ragnaros" },
@@ -608,8 +591,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3453-the-torch-of-retribution",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3452 } } },
             kind = "accept",
-            priority = 62,
             conditions = { level = { min = 51 } },
             text = "Accept The Torch of Retribution from Kalaran Windblade.",
             dependsOn = { "turnin-3452-the-flame-s-casing" },
@@ -620,8 +603,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3453-1-witness-the-creation-of",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3452 } } },
             kind = "objective",
-            priority = 63,
             conditions = { level = { min = 51 } },
             text = "Witness the Creation of the Torch.",
             dependsOn = { "accept-3453-the-torch-of-retribution" },
@@ -632,8 +615,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3453-the-torch-of-retribution",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3452 } } },
             kind = "turnin",
-            priority = 64,
             conditions = { level = { min = 51 } },
             text = "Turn in The Torch of Retribution to Kalaran Windblade.",
             dependsOn = { "objective-3453-1-witness-the-creation-of" },
@@ -644,8 +627,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3454-the-torch-of-retribution",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 3453 } }, { conditions = {  }, mode = "all", quests = { 3453 } } },
             kind = "accept",
-            priority = 65,
             conditions = { level = { min = 51 } },
             text = "Accept The Torch of Retribution from Kalaran Windblade.",
             dependsOn = { "turnin-3453-the-torch-of-retribution" },
@@ -656,8 +639,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3454-the-torch-of-retribution",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 3453 } }, { conditions = {  }, mode = "all", quests = { 3453 } } },
             kind = "turnin",
-            priority = 67,
             conditions = { level = { min = 51 } },
             text = "Turn in The Torch of Retribution.",
             dependsOn = { "accept-3454-the-torch-of-retribution" },
@@ -669,7 +652,6 @@ ns:RegisterGuide({
         {
             id = "accept-3462-squire-maltrake",
             kind = "accept",
-            priority = 68,
             conditions = { level = { min = 51 } },
             text = "Accept Squire Maltrake from Kalaran Windblade.",
             complete = QuestState(3462, "activeOrCompleted"),
@@ -680,7 +662,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3462-squire-maltrake",
             kind = "turnin",
-            priority = 69,
             conditions = { level = { min = 51 } },
             text = "Turn in Squire Maltrake to Squire Maltrake.",
             dependsOn = { "accept-3462-squire-maltrake" },
@@ -691,8 +672,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3463-set-them-ablaze",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3462 } } },
             kind = "accept",
-            priority = 70,
             conditions = { level = { min = 51 } },
             text = "Accept Set Them Ablaze! from Squire Maltrake.",
             dependsOn = { "turnin-3462-squire-maltrake" },
@@ -703,8 +684,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3463-4-set-the-northern-tower-a",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3462 } } },
             kind = "objective",
-            priority = 72,
             conditions = { level = { min = 51 } },
             text = "Set the Northern Tower Ablaze.",
             dependsOn = { "accept-3463-set-them-ablaze" },
@@ -715,8 +696,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3463-1-set-the-western-tower-ab",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3462 } } },
             kind = "objective",
-            priority = 73,
             conditions = { level = { min = 51 } },
             text = "Set the Western Tower Ablaze.",
             dependsOn = { "accept-3463-set-them-ablaze" },
@@ -727,8 +708,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3463-2-set-the-southern-tower-a",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3462 } } },
             kind = "objective",
-            priority = 74,
             conditions = { level = { min = 51 } },
             text = "Set the Southern Tower Ablaze.",
             dependsOn = { "accept-3463-set-them-ablaze" },
@@ -739,8 +720,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3463-3-set-the-eastern-tower-ab",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3462 } } },
             kind = "objective",
-            priority = 75,
             conditions = { level = { min = 51 } },
             text = "Set the Eastern Tower Ablaze.",
             dependsOn = { "accept-3463-set-them-ablaze" },
@@ -751,8 +732,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3463-set-them-ablaze",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3462 } } },
             kind = "turnin",
-            priority = 76,
             conditions = { level = { min = 51 } },
             text = "Turn in Set Them Ablaze! to Squire Maltrake.",
             dependsOn = { "objective-3463-4-set-the-northern-tower-a", "objective-3463-1-set-the-western-tower-ab", "objective-3463-2-set-the-southern-tower-a", "objective-3463-3-set-the-eastern-tower-ab" },
@@ -764,7 +745,6 @@ ns:RegisterGuide({
         {
             id = "accept-3481-trinkets",
             kind = "accept",
-            priority = 78,
             conditions = { level = { min = 51 } },
             text = "Accept Trinkets.",
             complete = QuestState(3481, "activeOrCompleted"),
@@ -775,7 +755,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3481-trinkets",
             kind = "turnin",
-            priority = 79,
             conditions = { level = { min = 51 } },
             text = "Turn in Trinkets.",
             dependsOn = { "accept-3481-trinkets" },
@@ -787,7 +766,6 @@ ns:RegisterGuide({
         {
             id = "accept-4123-the-heart-of-the-mountain",
             kind = "accept",
-            priority = 80,
             conditions = { level = { min = 50 } },
             text = "Accept The Heart of the Mountain from Maxwort Uberglint.",
             complete = QuestState(4123, "activeOrCompleted"),
@@ -798,7 +776,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4324-yuka-screwspigot",
             kind = "turnin",
-            priority = 81,
             conditions = { level = { min = 48 } },
             text = "Turn in Yuka Screwspigot to Yuka Screwspigot.",
             dependsOn = { "accept-4324-yuka-screwspigot" },
@@ -809,8 +786,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4136-ribbly-screwspigot",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4324 } } },
             kind = "accept",
-            priority = 82,
             conditions = { level = { min = 48 } },
             text = "Accept Ribbly Screwspigot from Yuka Screwspigot.",
             dependsOn = { "turnin-4324-yuka-screwspigot" },
@@ -822,7 +799,6 @@ ns:RegisterGuide({
         {
             id = "accept-4022-a-taste-of-flame",
             kind = "accept",
-            priority = 83,
             conditions = { level = { min = 56 } },
             text = "Accept A Taste of Flame from Cyrus Therepentous.",
             complete = QuestState(4022, "activeOrCompleted"),
@@ -833,7 +809,6 @@ ns:RegisterGuide({
         {
             id = "objective-4022-1-black-dragonflight-molt",
             kind = "objective",
-            priority = 84,
             conditions = { level = { min = 56 } },
             text = "Collect Black Dragonflight Molt.",
             dependsOn = { "accept-4022-a-taste-of-flame" },
@@ -843,7 +818,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4022-a-taste-of-flame",
             kind = "turnin",
-            priority = 85,
             conditions = { level = { min = 56 } },
             text = "Turn in A Taste of Flame to Cyrus Therepentous.",
             dependsOn = { "objective-4022-1-black-dragonflight-molt" },
@@ -854,8 +828,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4024-a-taste-of-flame",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4022 } } },
             kind = "accept",
-            priority = 86,
             conditions = { level = { min = 52 } },
             text = "Accept A Taste of Flame from Cyrus Therepentous.",
             dependsOn = { "turnin-4022-a-taste-of-flame" },
@@ -867,7 +841,6 @@ ns:RegisterGuide({
         {
             id = "accept-3801-dark-iron-legacy",
             kind = "accept",
-            priority = 87,
             conditions = { level = { min = 48 } },
             text = "Accept Dark Iron Legacy from Franclorn Forgewright.",
             complete = QuestState(3801, "activeOrCompleted"),
@@ -875,7 +848,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3801-dark-iron-legacy",
             kind = "turnin",
-            priority = 88,
             conditions = { level = { min = 48 } },
             text = "Turn in Dark Iron Legacy to Franclorn Forgewright.",
             dependsOn = { "accept-3801-dark-iron-legacy" },
@@ -884,8 +856,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3802-dark-iron-legacy",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3801 } } },
             kind = "accept",
-            priority = 89,
             conditions = { level = { min = 48 } },
             text = "Accept Dark Iron Legacy from Franclorn Forgewright.",
             dependsOn = { "turnin-3801-dark-iron-legacy" },
@@ -894,7 +866,6 @@ ns:RegisterGuide({
         {
             id = "objective-4262-1-overmaster-pyron",
             kind = "objective",
-            priority = 90,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Kill Overmaster Pyron.",
             dependsOn = { "accept-4262-overmaster-pyron" },
@@ -906,7 +877,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 91,
             conditions = { level = { min = 52 } },
             text = "Enter Blackrock Depths with your group.",
             dependsOn = { "accept-4324-yuka-screwspigot", "accept-3702-the-smoldering-ruins-of-thaurissan", "accept-3701-the-smoldering-ruins-of-thaurissan", "accept-4128-ragnar-thunderbrew", "accept-4126-hurley-blackbreath", "accept-4286-the-good-stuff", "accept-4182-dragonkin-menace", "accept-4262-overmaster-pyron", "accept-4183-the-true-masters", "accept-4341-kharan-mighthammer", "accept-4184-the-true-masters", "accept-4185-the-true-masters", "accept-4186-the-true-masters", "accept-4223-the-true-masters", "accept-4224-the-true-masters", "accept-4241-marshal-windsor", "accept-3441-divine-retribution", "accept-3442-the-flawless-flame", "accept-3443-forging-the-shaft", "accept-3452-the-flame-s-casing", "accept-3453-the-torch-of-retribution", "accept-3454-the-torch-of-retribution", "accept-3462-squire-maltrake", "accept-3463-set-them-ablaze", "accept-3481-trinkets", "accept-4123-the-heart-of-the-mountain", "accept-4136-ribbly-screwspigot", "accept-4022-a-taste-of-flame", "accept-4024-a-taste-of-flame", "accept-3801-dark-iron-legacy", "accept-3802-dark-iron-legacy" },
@@ -919,7 +889,6 @@ ns:RegisterGuide({
         {
             id = "accept-4264-a-crumpled-up-note",
             kind = "accept",
-            priority = 93,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept A Crumpled Up Note.",
             complete = QuestState(4264, "activeOrCompleted"),
@@ -927,7 +896,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4341-kharan-mighthammer",
             kind = "turnin",
-            priority = 96,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Kharan Mighthammer to Kharan Mighthammer.",
             dependsOn = { "accept-4341-kharan-mighthammer" },
@@ -936,8 +904,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4342-kharan-s-tale",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4341 } } },
             kind = "accept",
-            priority = 97,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Kharan's Tale from Kharan Mighthammer.",
             dependsOn = { "turnin-4341-kharan-mighthammer" },
@@ -945,8 +913,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4342-1-hear-kharan-s-tale",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4341 } } },
             kind = "gossip",
-            priority = 98,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Talk to Kharan Mighthammer. 'All is not lost, Kharan!' Hear Kharan's Tale.",
             dependsOn = { "accept-4342-kharan-s-tale" },
@@ -955,8 +923,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4342-kharan-s-tale",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4341 } } },
             kind = "turnin",
-            priority = 99,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Kharan's Tale to Kharan Mighthammer.",
             dependsOn = { "objective-4342-1-hear-kharan-s-tale" },
@@ -965,8 +933,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4361-the-bearer-of-bad-news",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4342 } } },
             kind = "accept",
-            priority = 100,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept The Bearer of Bad News from Kharan Mighthammer.",
             dependsOn = { "turnin-4342-kharan-s-tale" },
@@ -974,8 +942,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4241-marshal-windsor",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4224 } } },
             kind = "turnin",
-            priority = 101,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Turn in Marshal Windsor to Marshal Windsor.",
             dependsOn = { "accept-4241-marshal-windsor" },
@@ -985,7 +953,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4264-a-crumpled-up-note",
             kind = "turnin",
-            priority = 102,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in A Crumpled Up Note to Marshal Windsor.",
             dependsOn = { "accept-4264-a-crumpled-up-note" },
@@ -994,8 +961,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4242-abandoned-hope",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4264 } } },
             kind = "accept",
-            priority = 103,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Accept Abandoned Hope from Marshal Windsor.",
             dependsOn = { "turnin-4264-a-crumpled-up-note" },
@@ -1004,15 +971,14 @@ ns:RegisterGuide({
         {
             id = "accept-4282-a-shred-of-hope",
             kind = "accept",
-            priority = 104,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept A Shred of Hope from Marshal Windsor.",
             complete = QuestState(4282, "activeOrCompleted"),
         },
         {
             id = "objective-3802-1-ironfel",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3801 } } },
             kind = "objective",
-            priority = 106,
             conditions = { level = { min = 48 } },
             text = "Collect Ironfel.",
             dependsOn = { "accept-3802-dark-iron-legacy" },
@@ -1021,8 +987,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3802-dark-iron-legacy",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3801 } } },
             kind = "turnin",
-            priority = 108,
             conditions = { level = { min = 48 } },
             text = "Turn in Dark Iron Legacy.",
             dependsOn = { "objective-3802-1-ironfel" },
@@ -1031,8 +997,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4024-1-encased-fiery-essence",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4022 } } },
             kind = "objective",
-            priority = 110,
             conditions = { level = { min = 52 } },
             text = "Collect Encased Fiery Essence.",
             dependsOn = { "accept-4024-a-taste-of-flame" },
@@ -1042,7 +1008,6 @@ ns:RegisterGuide({
         {
             id = "objective-4282-1-marshal-windsor-s-lost-i",
             kind = "objective",
-            priority = 112,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Collect Marshal Windsor's Lost Information.",
             dependsOn = { "accept-4282-a-shred-of-hope" },
@@ -1052,7 +1017,6 @@ ns:RegisterGuide({
         {
             id = "objective-4282-2-marshal-windsor-s-lost-i",
             kind = "objective",
-            priority = 114,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Collect Marshal Windsor's Lost Information.",
             dependsOn = { "accept-4282-a-shred-of-hope" },
@@ -1062,15 +1026,14 @@ ns:RegisterGuide({
         {
             id = "accept-4201-the-love-potion",
             kind = "accept",
-            priority = 115,
             conditions = { level = { min = 50 } },
             text = "Accept The Love Potion from Mistress Nagmara.",
             complete = QuestState(4201, "activeOrCompleted"),
         },
         {
             id = "objective-4136-1-ribbly-s-head",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4324 } } },
             kind = "gossip",
-            priority = 117,
             conditions = { level = { min = 48 } },
             text = "Talk to Ribbly Screwspigot. 'Your family says hello, Ribbly. And they want your head!' Collect Ribbly's Head.",
             dependsOn = { "accept-4136-ribbly-screwspigot" },
@@ -1079,8 +1042,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4126-1-lost-thunderbrew-recipe",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4128 } } },
             kind = "objective",
-            priority = 120,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Collect Lost Thunderbrew Recipe.",
             dependsOn = { "accept-4126-hurley-blackbreath" },
@@ -1090,7 +1053,6 @@ ns:RegisterGuide({
         {
             id = "objective-4123-1-the-heart-of-the-mountai",
             kind = "objective",
-            priority = 124,
             conditions = { level = { min = 50 } },
             text = "Collect The Heart of the Mountain.",
             dependsOn = { "accept-4123-the-heart-of-the-mountain" },
@@ -1100,7 +1062,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4282-a-shred-of-hope",
             kind = "turnin",
-            priority = 125,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in A Shred of Hope to Marshal Windsor.",
             dependsOn = { "objective-4282-1-marshal-windsor-s-lost-i", "objective-4282-2-marshal-windsor-s-lost-i" },
@@ -1109,8 +1070,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4322-jail-break",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4282 } } },
             kind = "accept",
-            priority = 126,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Jail Break! from Marshal Windsor.",
             dependsOn = { "turnin-4282-a-shred-of-hope" },
@@ -1118,8 +1079,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4322-1-help-marshal-windsor-esc",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4282 } } },
             kind = "objective",
-            priority = 127,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Help Marshal Windsor Escape the Blackrock Depths.",
             dependsOn = { "accept-4322-jail-break" },
@@ -1129,7 +1090,6 @@ ns:RegisterGuide({
         {
             id = "objective-4286-1-dark-iron-fanny-pack",
             kind = "objective",
-            priority = 128,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Collect 20 Dark Iron Fanny Pack.",
             dependsOn = { "accept-4286-the-good-stuff" },
@@ -1138,8 +1098,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4322-jail-break",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4282 } } },
             kind = "turnin",
-            priority = 131,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Jail Break! to Marshal Maxwell.",
             dependsOn = { "objective-4322-1-help-marshal-windsor-esc" },
@@ -1150,8 +1110,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4242-abandoned-hope",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4264 } } },
             kind = "turnin",
-            priority = 132,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Turn in Abandoned Hope to Marshal Maxwell.",
             dependsOn = { "accept-4242-abandoned-hope" },
@@ -1163,7 +1123,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4286-the-good-stuff",
             kind = "turnin",
-            priority = 133,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in The Good Stuff to Oralius.",
             dependsOn = { "objective-4286-1-dark-iron-fanny-pack" },
@@ -1175,7 +1134,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4262-overmaster-pyron",
             kind = "turnin",
-            priority = 134,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Turn in Overmaster Pyron to Jalinda Sprig.",
             dependsOn = { "objective-4262-1-overmaster-pyron" },
@@ -1186,8 +1144,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4263-incendius",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4262 } } },
             kind = "accept",
-            priority = 135,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Accept Incendius! from Jalinda Sprig.",
             dependsOn = { "turnin-4262-overmaster-pyron" },
@@ -1198,8 +1156,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4361-the-bearer-of-bad-news",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4342 } } },
             kind = "turnin",
-            priority = 136,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in The Bearer of Bad News to King Magni Bronzebeard.",
             dependsOn = { "accept-4361-the-bearer-of-bad-news" },
@@ -1210,8 +1168,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4362-the-fate-of-the-kingdom",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4361 } } },
             kind = "accept",
-            priority = 137,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept The Fate of the Kingdom from King Magni Bronzebeard.",
             dependsOn = { "turnin-4361-the-bearer-of-bad-news" },
@@ -1222,8 +1180,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4126-hurley-blackbreath",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4128 } } },
             kind = "turnin",
-            priority = 138,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Hurley Blackbreath to Ragnar Thunderbrew.",
             dependsOn = { "objective-4126-1-lost-thunderbrew-recipe" },
@@ -1235,7 +1193,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4123-the-heart-of-the-mountain",
             kind = "turnin",
-            priority = 139,
             conditions = { level = { min = 50 } },
             text = "Turn in The Heart of the Mountain to Maxwort Uberglint.",
             dependsOn = { "objective-4123-1-the-heart-of-the-mountai" },
@@ -1246,8 +1203,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4136-ribbly-screwspigot",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4324 } } },
             kind = "turnin",
-            priority = 140,
             conditions = { level = { min = 48 } },
             text = "Turn in Ribbly Screwspigot to Yuka Screwspigot.",
             dependsOn = { "objective-4136-1-ribbly-s-head" },
@@ -1258,8 +1215,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4024-a-taste-of-flame",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4022 } } },
             kind = "turnin",
-            priority = 141,
             conditions = { level = { min = 52 } },
             text = "Turn in A Taste of Flame to Cyrus Therepentous.",
             dependsOn = { "objective-4024-1-encased-fiery-essence" },
@@ -1271,7 +1228,6 @@ ns:RegisterGuide({
         {
             id = "objective-4201-1-gromsblood",
             kind = "objective",
-            priority = 142,
             conditions = { level = { min = 50 } },
             text = "Collect 4 Gromsblood.",
             dependsOn = { "accept-4201-the-love-potion" },
@@ -1281,7 +1237,6 @@ ns:RegisterGuide({
         {
             id = "objective-4201-2-giant-silver-vein",
             kind = "objective",
-            priority = 144,
             conditions = { level = { min = 50 } },
             text = "Collect 10 Giant Silver Vein.",
             dependsOn = { "accept-4201-the-love-potion" },
@@ -1293,7 +1248,6 @@ ns:RegisterGuide({
         {
             id = "objective-4201-3-nagmara-s-filled-vial",
             kind = "objective",
-            priority = 145,
             conditions = { level = { min = 50 } },
             text = "Collect Nagmara's Filled Vial.",
             dependsOn = { "accept-4201-the-love-potion" },
@@ -1304,8 +1258,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4263-1-lord-incendius",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4262 } } },
             kind = "objective",
-            priority = 146,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Kill Lord Incendius.",
             dependsOn = { "accept-4263-incendius" },
@@ -1315,7 +1269,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4201-the-love-potion",
             kind = "turnin",
-            priority = 147,
             conditions = { level = { min = 50 } },
             text = "Turn in The Love Potion to Mistress Nagmara.",
             dependsOn = { "objective-4201-1-gromsblood", "objective-4201-2-giant-silver-vein", "objective-4201-3-nagmara-s-filled-vial" },
@@ -1324,8 +1277,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4362-1-emperor-dagran-thaurissa",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4361 } } },
             kind = "objective",
-            priority = 149,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Slay Emperor Dagran Thaurissan.",
             dependsOn = { "accept-4362-the-fate-of-the-kingdom" },
@@ -1334,8 +1287,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4362-the-fate-of-the-kingdom",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4361 } } },
             kind = "turnin",
-            priority = 150,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in The Fate of the Kingdom to Princess Moira Bronzebeard.",
             dependsOn = { "objective-4362-1-emperor-dagran-thaurissa" },
@@ -1344,8 +1297,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4363-the-princess-s-surprise",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4362 } } },
             kind = "accept",
-            priority = 151,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept The Princess's Surprise from Princess Moira Bronzebeard.",
             dependsOn = { "turnin-4362-the-fate-of-the-kingdom" },
@@ -1353,8 +1306,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4263-incendius",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4262 } } },
             kind = "turnin",
-            priority = 152,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Turn in Incendius! to Jalinda Sprig.",
             dependsOn = { "objective-4263-1-lord-incendius" },
@@ -1365,8 +1318,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4363-the-princess-s-surprise",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4362 } } },
             kind = "turnin",
-            priority = 153,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in The Princess's Surprise to King Magni Bronzebeard.",
             dependsOn = { "accept-4363-the-princess-s-surprise" },
@@ -1378,7 +1331,6 @@ ns:RegisterGuide({
         {
             id = "accept-4133-vivian-lagrave",
             kind = "accept",
-            priority = 154,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Accept Vivian Lagrave from Apothecary Zinge.",
             complete = QuestState(4133, "activeOrCompleted"),
@@ -1389,7 +1341,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4133-vivian-lagrave",
             kind = "turnin",
-            priority = 155,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Turn in Vivian Lagrave to Shadowmage Vivian Lagrave.",
             dependsOn = { "accept-4133-vivian-lagrave" },
@@ -1400,8 +1351,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4134-lost-thunderbrew-recipe",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4133 } } },
             kind = "accept",
-            priority = 156,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Accept Lost Thunderbrew Recipe from Shadowmage Vivian Lagrave.",
             dependsOn = { "turnin-4133-vivian-lagrave" },
@@ -1413,7 +1364,6 @@ ns:RegisterGuide({
         {
             id = "accept-3906-disharmony-of-flame",
             kind = "accept",
-            priority = 157,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept Disharmony of Flame from Thunderheart.",
             complete = QuestState(3906, "activeOrCompleted"),
@@ -1424,7 +1374,6 @@ ns:RegisterGuide({
         {
             id = "accept-4081-kill-on-sight-dark-iron-dwarves",
             kind = "accept",
-            priority = 159,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept KILL ON SIGHT: Dark Iron Dwarves.",
             complete = QuestState(4081, "activeOrCompleted"),
@@ -1435,7 +1384,6 @@ ns:RegisterGuide({
         {
             id = "accept-4061-the-rise-of-the-machines",
             kind = "accept",
-            priority = 160,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Accept The Rise of the Machines from Hierophant Theodora Mulvadania.",
             complete = QuestState(4061, "activeOrCompleted"),
@@ -1446,7 +1394,6 @@ ns:RegisterGuide({
         {
             id = "objective-4061-1-fractured-elemental-shar",
             kind = "objective",
-            priority = 161,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Collect 10 Fractured Elemental Shard.",
             dependsOn = { "accept-4061-the-rise-of-the-machines" },
@@ -1458,7 +1405,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4061-the-rise-of-the-machines",
             kind = "turnin",
-            priority = 162,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Turn in The Rise of the Machines to Hierophant Theodora Mulvadania.",
             dependsOn = { "objective-4061-1-fractured-elemental-shar" },
@@ -1469,8 +1415,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4062-the-rise-of-the-machines",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4061 } } },
             kind = "accept",
-            priority = 163,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Accept The Rise of the Machines from Hierophant Theodora Mulvadania.",
             dependsOn = { "turnin-4061-the-rise-of-the-machines" },
@@ -1481,8 +1427,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4062-the-rise-of-the-machines",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4061 } } },
             kind = "turnin",
-            priority = 164,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Turn in The Rise of the Machines to Lotwil Veriatus.",
             dependsOn = { "accept-4062-the-rise-of-the-machines" },
@@ -1493,8 +1439,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4063-the-rise-of-the-machines",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4062 } } },
             kind = "accept",
-            priority = 165,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Accept The Rise of the Machines from Lotwil Veriatus.",
             dependsOn = { "turnin-4062-the-rise-of-the-machines" },
@@ -1506,7 +1452,6 @@ ns:RegisterGuide({
         {
             id = "objective-3906-1-overmaster-pyron",
             kind = "objective",
-            priority = 166,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Kill Overmaster Pyron.",
             dependsOn = { "accept-3906-disharmony-of-flame" },
@@ -1517,8 +1462,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4063-1-head-of-argelmach",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4062 } } },
             kind = "objective",
-            priority = 170,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Collect Head of Argelmach.",
             dependsOn = { "accept-4063-the-rise-of-the-machines" },
@@ -1527,8 +1472,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4134-1-lost-thunderbrew-recipe",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4133 } } },
             kind = "objective",
-            priority = 171,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Collect Lost Thunderbrew Recipe.",
             dependsOn = { "accept-4134-lost-thunderbrew-recipe" },
@@ -1537,8 +1482,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4063-2-intact-elemental-core",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4062 } } },
             kind = "objective",
-            priority = 172,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Collect 10 Intact Elemental Core.",
             dependsOn = { "accept-4063-the-rise-of-the-machines" },
@@ -1548,7 +1493,6 @@ ns:RegisterGuide({
         {
             id = "objective-4081-1-anvilrage-guardsman",
             kind = "objective",
-            priority = 173,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Kill 15 Anvilrage Guardsman.",
             dependsOn = { "accept-4081-kill-on-sight-dark-iron-dwarves" },
@@ -1558,7 +1502,6 @@ ns:RegisterGuide({
         {
             id = "objective-4081-2-anvilrage-warden",
             kind = "objective",
-            priority = 174,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Kill 10 Anvilrage Warden.",
             dependsOn = { "accept-4081-kill-on-sight-dark-iron-dwarves" },
@@ -1568,7 +1511,6 @@ ns:RegisterGuide({
         {
             id = "objective-4081-3-anvilrage-footman",
             kind = "objective",
-            priority = 175,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Kill 5 Anvilrage Footman.",
             dependsOn = { "accept-4081-kill-on-sight-dark-iron-dwarves" },
@@ -1578,7 +1520,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3906-disharmony-of-flame",
             kind = "turnin",
-            priority = 176,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in Disharmony of Flame to Thunderheart.",
             dependsOn = { "objective-3906-1-overmaster-pyron" },
@@ -1589,8 +1530,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3907-disharmony-of-fire",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3906 } } },
             kind = "accept",
-            priority = 177,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept Disharmony of Fire from Thunderheart.",
             dependsOn = { "turnin-3906-disharmony-of-flame" },
@@ -1601,8 +1542,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4134-lost-thunderbrew-recipe",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4133 } } },
             kind = "turnin",
-            priority = 178,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Turn in Lost Thunderbrew Recipe to Shadowmage Vivian Lagrave.",
             dependsOn = { "objective-4134-1-lost-thunderbrew-recipe" },
@@ -1614,7 +1555,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4081-kill-on-sight-dark-iron-dwarves",
             kind = "turnin",
-            priority = 179,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in KILL ON SIGHT: Dark Iron Dwarves to Warlord Goretooth.",
             dependsOn = { "objective-4081-1-anvilrage-guardsman", "objective-4081-2-anvilrage-warden", "objective-4081-3-anvilrage-footman" },
@@ -1626,7 +1566,6 @@ ns:RegisterGuide({
         {
             id = "accept-4082-kill-on-sight-high-ranking-dark-iron-offic",
             kind = "accept",
-            priority = 181,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Accept KILL ON SIGHT: High Ranking Dark Iron Officials.",
             complete = QuestState(4082, "activeOrCompleted"),
@@ -1636,8 +1575,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4063-the-rise-of-the-machines",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4062 } } },
             kind = "turnin",
-            priority = 182,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Turn in The Rise of the Machines to Lotwil Veriatus.",
             dependsOn = { "objective-4063-1-head-of-argelmach", "objective-4063-2-intact-elemental-core" },
@@ -1648,8 +1587,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3907-1-lord-incendius",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3906 } } },
             kind = "objective",
-            priority = 183,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Kill Lord Incendius.",
             dependsOn = { "accept-3907-disharmony-of-fire" },
@@ -1658,8 +1597,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3907-2-tablet-of-kurniya",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3906 } } },
             kind = "objective",
-            priority = 185,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Collect Tablet of Kurniya.",
             dependsOn = { "accept-3907-disharmony-of-fire" },
@@ -1669,7 +1608,6 @@ ns:RegisterGuide({
         {
             id = "objective-4082-1-anvilrage-medic",
             kind = "objective",
-            priority = 186,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Kill 10 Anvilrage Medic.",
             dependsOn = { "accept-4082-kill-on-sight-high-ranking-dark-iron-offic" },
@@ -1679,7 +1617,6 @@ ns:RegisterGuide({
         {
             id = "objective-4082-2-anvilrage-soldier",
             kind = "objective",
-            priority = 187,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Kill 10 Anvilrage Soldier.",
             dependsOn = { "accept-4082-kill-on-sight-high-ranking-dark-iron-offic" },
@@ -1689,7 +1626,6 @@ ns:RegisterGuide({
         {
             id = "objective-4082-3-anvilrage-officer",
             kind = "objective",
-            priority = 188,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Kill 10 Anvilrage Officer.",
             dependsOn = { "accept-4082-kill-on-sight-high-ranking-dark-iron-offic" },
@@ -1698,8 +1634,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3907-disharmony-of-fire",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3906 } } },
             kind = "turnin",
-            priority = 189,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in Disharmony of Fire to Thunderheart.",
             dependsOn = { "objective-3907-1-lord-incendius", "objective-3907-2-tablet-of-kurniya" },
@@ -1711,7 +1647,6 @@ ns:RegisterGuide({
         {
             id = "accept-3981-commander-gor-shak",
             kind = "accept",
-            priority = 190,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept Commander Gor'shak from Galamav the Marksman.",
             complete = QuestState(3981, "activeOrCompleted"),
@@ -1722,7 +1657,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4082-kill-on-sight-high-ranking-dark-iron-offic",
             kind = "turnin",
-            priority = 191,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Turn in KILL ON SIGHT: High Ranking Dark Iron Officials to Warlord Goretooth.",
             dependsOn = { "objective-4082-1-anvilrage-medic", "objective-4082-2-anvilrage-soldier", "objective-4082-3-anvilrage-officer" },
@@ -1734,7 +1668,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3981-commander-gor-shak",
             kind = "turnin",
-            priority = 192,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in Commander Gor'shak to Commander Gor'shak.",
             dependsOn = { "accept-3981-commander-gor-shak" },
@@ -1743,8 +1676,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3982-what-is-going-on",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3981 } } },
             kind = "accept",
-            priority = 193,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept What Is Going On? from Commander Gor'shak.",
             dependsOn = { "turnin-3981-commander-gor-shak" },
@@ -1752,8 +1685,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3982-1-survive-the-onslaught",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3981 } } },
             kind = "objective",
-            priority = 195,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Survive the Onslaught.",
             dependsOn = { "accept-3982-what-is-going-on" },
@@ -1762,8 +1695,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3982-what-is-going-on",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3981 } } },
             kind = "turnin",
-            priority = 196,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in What Is Going On? to Commander Gor'shak.",
             dependsOn = { "objective-3982-1-survive-the-onslaught" },
@@ -1772,8 +1705,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4001-what-is-going-on",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3982 } } },
             kind = "accept",
-            priority = 197,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept What Is Going On? from Commander Gor'shak.",
             dependsOn = { "turnin-3982-what-is-going-on" },
@@ -1781,8 +1714,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4001-1-information-from-kharan",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3982 } } },
             kind = "gossip",
-            priority = 198,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Talk to Kharan Mighthammer. 'I need to know where the princess are, Kharan!' Gather Information from Kharan.",
             dependsOn = { "accept-4001-what-is-going-on" },
@@ -1791,8 +1724,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4001-what-is-going-on",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 3982 } } },
             kind = "turnin",
-            priority = 199,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in What Is Going On? to Thrall.",
             dependsOn = { "objective-4001-1-information-from-kharan" },
@@ -1803,8 +1736,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4002-the-eastern-kingdom",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4001 } } },
             kind = "accept",
-            priority = 200,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept The Eastern Kingdom from Thrall.",
             dependsOn = { "turnin-4001-what-is-going-on" },
@@ -1815,8 +1748,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4002-the-eastern-kingdom",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4001 } } },
             kind = "turnin",
-            priority = 201,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in The Eastern Kingdom to Thrall.",
             dependsOn = { "accept-4002-the-eastern-kingdom" },
@@ -1827,8 +1760,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4003-the-royal-rescue",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4002 } } },
             kind = "accept",
-            priority = 202,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept The Royal Rescue from Thrall.",
             dependsOn = { "turnin-4002-the-eastern-kingdom" },
@@ -1839,8 +1772,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4003-1-emperor-dagran-thaurissa",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4002 } } },
             kind = "objective",
-            priority = 207,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Slay Emperor Dagran Thaurissan.",
             dependsOn = { "accept-4003-the-royal-rescue" },
@@ -1849,8 +1782,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4003-the-royal-rescue",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4002 } } },
             kind = "turnin",
-            priority = 208,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in The Royal Rescue to Princess Moira Bronzebeard.",
             dependsOn = { "objective-4003-1-emperor-dagran-thaurissa" },
@@ -1859,8 +1792,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4004-the-princess-saved",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4003 } } },
             kind = "accept",
-            priority = 209,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept The Princess Saved? from Princess Moira Bronzebeard.",
             dependsOn = { "turnin-4003-the-royal-rescue" },
@@ -1868,8 +1801,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4004-the-princess-saved",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4003 } } },
             kind = "turnin",
-            priority = 210,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in The Princess Saved? to Thrall.",
             dependsOn = { "accept-4004-the-princess-saved" },

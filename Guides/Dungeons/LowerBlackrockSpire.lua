@@ -32,10 +32,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-lower-blackrock-spire",
     title = "Lower Blackrock Spire",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 57 } },
@@ -46,7 +47,6 @@ ns:RegisterGuide({
         {
             id = "accept-3520-screecher-spirits",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 49 } },
             text = "Accept Screecher Spirits from Yeh'kinya.",
             complete = QuestState(3520, "activeOrCompleted"),
@@ -57,7 +57,6 @@ ns:RegisterGuide({
         {
             id = "objective-3520-1-screecher-spirits",
             kind = "objective",
-            priority = 12,
             conditions = { level = { min = 49 } },
             text = "Collect 3 Screecher Spirits.",
             dependsOn = { "accept-3520-screecher-spirits" },
@@ -69,7 +68,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3520-screecher-spirits",
             kind = "turnin",
-            priority = 13,
             conditions = { level = { min = 49 } },
             text = "Turn in Screecher Spirits to Yeh'kinya.",
             dependsOn = { "objective-3520-1-screecher-spirits" },
@@ -80,8 +78,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3527-the-prophecy-of-mosh-aru",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3520 } } },
             kind = "accept",
-            priority = 14,
             conditions = { level = { min = 46 } },
             text = "Accept The Prophecy of Mosh'aru from Yeh'kinya.",
             dependsOn = { "turnin-3520-screecher-spirits" },
@@ -93,7 +91,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 15,
             conditions = { level = { min = 57 } },
             text = "Enter Temple Of Atal'Hakkar with your group.",
             dependsOn = { "accept-3520-screecher-spirits", "accept-3527-the-prophecy-of-mosh-aru" },
@@ -102,8 +99,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3527-1-first-mosh-aru-tablet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3520 } } },
             kind = "objective",
-            priority = 17,
             conditions = { level = { min = 46 } },
             text = "Collect First Mosh'aru Tablet.",
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
@@ -112,8 +109,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3527-2-second-mosh-aru-tablet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3520 } } },
             kind = "objective",
-            priority = 19,
             conditions = { level = { min = 46 } },
             text = "Collect Second Mosh'aru Tablet.",
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
@@ -122,8 +119,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3527-the-prophecy-of-mosh-aru",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3520 } } },
             kind = "turnin",
-            priority = 22,
             conditions = { level = { min = 46 } },
             text = "Turn in The Prophecy of Mosh'aru to Yeh'kinya.",
             dependsOn = { "objective-3527-1-first-mosh-aru-tablet", "objective-3527-2-second-mosh-aru-tablet" },
@@ -134,8 +131,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4787-the-ancient-egg",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3527 } } },
             kind = "accept",
-            priority = 23,
             conditions = { level = { min = 40 } },
             text = "Accept The Ancient Egg from Yeh'kinya.",
             dependsOn = { "turnin-3527-the-prophecy-of-mosh-aru" },
@@ -146,8 +143,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4787-1-ancient-egg",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3527 } } },
             kind = "objective",
-            priority = 25,
             conditions = { level = { min = 40 } },
             text = "Collect Ancient Egg.",
             dependsOn = { "accept-4787-the-ancient-egg" },
@@ -158,8 +155,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4787-the-ancient-egg",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3527 } } },
             kind = "turnin",
-            priority = 26,
             conditions = { level = { min = 40 } },
             text = "Turn in The Ancient Egg to Yeh'kinya.",
             dependsOn = { "objective-4787-1-ancient-egg" },
@@ -170,8 +167,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3528-the-god-hakkar",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4787 } } },
             kind = "accept",
-            priority = 27,
             conditions = { level = { min = 40 } },
             text = "Accept The God Hakkar from Yeh'kinya.",
             dependsOn = { "turnin-4787-the-ancient-egg" },
@@ -182,8 +179,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3528-1-fill-the-egg-of-hakkar",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4787 } } },
             kind = "objective",
-            priority = 32,
             conditions = { level = { min = 40 } },
             text = "Fill the Egg of Hakkar.",
             dependsOn = { "accept-3528-the-god-hakkar" },
@@ -192,8 +189,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3528-the-god-hakkar",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4787 } } },
             kind = "turnin",
-            priority = 33,
             conditions = { level = { min = 40 } },
             text = "Turn in The God Hakkar to Yeh'kinya.",
             dependsOn = { "objective-3528-1-fill-the-egg-of-hakkar" },
@@ -205,7 +202,6 @@ ns:RegisterGuide({
         {
             id = "accept-5065-the-lost-tablets-of-mosh-aru",
             kind = "accept",
-            priority = 34,
             conditions = { level = { min = 40 } },
             text = "Accept The Lost Tablets of Mosh'aru from Prospector Ironboot.",
             complete = QuestState(5065, "activeOrCompleted"),
@@ -216,7 +212,6 @@ ns:RegisterGuide({
         {
             id = "objective-5065-2-fourth-mosh-aru-tablet",
             kind = "objective",
-            priority = 36,
             conditions = { level = { min = 40 } },
             text = "Collect Fourth Mosh'aru Tablet.",
             dependsOn = { "accept-5065-the-lost-tablets-of-mosh-aru" },
@@ -228,7 +223,6 @@ ns:RegisterGuide({
         {
             id = "objective-5065-1-third-mosh-aru-tablet",
             kind = "objective",
-            priority = 38,
             conditions = { level = { min = 40 } },
             text = "Collect Third Mosh'aru Tablet.",
             dependsOn = { "accept-5065-the-lost-tablets-of-mosh-aru" },
@@ -240,7 +234,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5065-the-lost-tablets-of-mosh-aru",
             kind = "turnin",
-            priority = 39,
             conditions = { level = { min = 40 } },
             text = "Turn in The Lost Tablets of Mosh'aru to Prospector Ironboot.",
             dependsOn = { "objective-5065-2-fourth-mosh-aru-tablet", "objective-5065-1-third-mosh-aru-tablet" },
@@ -251,8 +244,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4788-the-final-tablets",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5065 } } },
             kind = "accept",
-            priority = 40,
             conditions = { level = { min = 40 } },
             text = "Accept The Final Tablets from Prospector Ironboot.",
             dependsOn = { "turnin-5065-the-lost-tablets-of-mosh-aru" },
@@ -264,7 +257,6 @@ ns:RegisterGuide({
         {
             id = "accept-4701-put-her-down",
             kind = "accept",
-            priority = 41,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Accept Put Her Down from Helendis Riverhorn.",
             complete = QuestState(4701, "activeOrCompleted"),
@@ -275,7 +267,6 @@ ns:RegisterGuide({
         {
             id = "accept-4866-mother-s-milk",
             kind = "accept",
-            priority = 42,
             conditions = { level = { min = 55 } },
             text = "Accept Mother's Milk from Ragged John.",
             complete = QuestState(4866, "activeOrCompleted"),
@@ -286,7 +277,6 @@ ns:RegisterGuide({
         {
             id = "accept-4729-kibler-s-exotic-pets",
             kind = "accept",
-            priority = 43,
             conditions = { level = { min = 55 } },
             text = "Accept Kibler's Exotic Pets from Kibler.",
             complete = QuestState(4729, "activeOrCompleted"),
@@ -297,7 +287,6 @@ ns:RegisterGuide({
         {
             id = "accept-4862-en-ay-es-tee-why",
             kind = "accept",
-            priority = 44,
             conditions = { level = { min = 55 } },
             text = "Accept En-Ay-Es-Tee-Why from Kibler.",
             complete = QuestState(4862, "activeOrCompleted"),
@@ -308,7 +297,6 @@ ns:RegisterGuide({
         {
             id = "accept-4867-urok-doomhowl",
             kind = "accept",
-            priority = 45,
             conditions = { level = { min = 55 } },
             text = "Accept Urok Doomhowl from Warosh.",
             complete = QuestState(4867, "activeOrCompleted"),
@@ -316,7 +304,6 @@ ns:RegisterGuide({
         {
             id = "accept-5001-bijou-s-belongings",
             kind = "accept",
-            priority = 47,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Accept Bijou's Belongings from Bijou.",
             complete = QuestState(5001, "activeOrCompleted"),
@@ -324,7 +311,6 @@ ns:RegisterGuide({
         {
             id = "objective-5001-1-bijou-s-belongings",
             kind = "objective",
-            priority = 49,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Collect Bijou's Belongings.",
             dependsOn = { "accept-5001-bijou-s-belongings" },
@@ -334,7 +320,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5001-bijou-s-belongings",
             kind = "turnin",
-            priority = 50,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Turn in Bijou's Belongings to Bijou.",
             dependsOn = { "objective-5001-1-bijou-s-belongings" },
@@ -343,8 +328,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5002-message-to-maxwell",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5001 } } },
             kind = "accept",
-            priority = 51,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Accept Message to Maxwell from Bijou.",
             dependsOn = { "turnin-5001-bijou-s-belongings" },
@@ -352,8 +337,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5002-message-to-maxwell",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5001 } } },
             kind = "turnin",
-            priority = 52,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Turn in Message to Maxwell to Marshal Maxwell.",
             dependsOn = { "accept-5002-message-to-maxwell" },
@@ -364,8 +349,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5081-maxwell-s-mission",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5002 } } },
             kind = "accept",
-            priority = 53,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Accept Maxwell's Mission from Marshal Maxwell.",
             dependsOn = { "turnin-5002-message-to-maxwell" },
@@ -377,15 +362,14 @@ ns:RegisterGuide({
         {
             id = "accept-4742-seal-of-ascension",
             kind = "accept",
-            priority = 55,
             conditions = { level = { min = 57 } },
             text = "Accept Seal of Ascension from Vaelan. 'As you wish, Vaelan.'.",
             complete = QuestState(4742, "activeOrCompleted"),
         },
         {
             id = "objective-4788-1-fifth-mosh-aru-tablet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5065 } } },
             kind = "objective",
-            priority = 57,
             conditions = { level = { min = 40 } },
             text = "Collect Fifth Mosh'aru Tablet.",
             dependsOn = { "accept-4788-the-final-tablets" },
@@ -394,8 +378,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5081-1-war-master-voone",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5002 } } },
             kind = "objective",
-            priority = 58,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Kill War Master Voone.",
             dependsOn = { "accept-5081-maxwell-s-mission" },
@@ -405,7 +389,6 @@ ns:RegisterGuide({
         {
             id = "objective-4742-2-gemstone-of-smolderthorn",
             kind = "objective",
-            priority = 60,
             conditions = { level = { min = 57 } },
             text = "Collect Gemstone of Smolderthorn.",
             dependsOn = { "accept-4742-seal-of-ascension" },
@@ -414,8 +397,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4788-2-sixth-mosh-aru-tablet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5065 } } },
             kind = "objective",
-            priority = 62,
             conditions = { level = { min = 40 } },
             text = "Collect Sixth Mosh'aru Tablet.",
             dependsOn = { "accept-4788-the-final-tablets" },
@@ -424,8 +407,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5081-2-highlord-omokk",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5002 } } },
             kind = "objective",
-            priority = 63,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Kill Highlord Omokk.",
             dependsOn = { "accept-5081-maxwell-s-mission" },
@@ -435,7 +418,6 @@ ns:RegisterGuide({
         {
             id = "objective-4742-1-gemstone-of-spirestone",
             kind = "objective",
-            priority = 65,
             conditions = { level = { min = 57 } },
             text = "Collect Gemstone of Spirestone.",
             dependsOn = { "accept-4742-seal-of-ascension" },
@@ -445,7 +427,6 @@ ns:RegisterGuide({
         {
             id = "objective-4862-1-spire-spider-egg",
             kind = "objective",
-            priority = 68,
             conditions = { level = { min = 55 } },
             text = "Collect 15 Spire Spider Egg.",
             dependsOn = { "accept-4862-en-ay-es-tee-why" },
@@ -455,7 +436,6 @@ ns:RegisterGuide({
         {
             id = "objective-4867-1-warosh-s-mojo",
             kind = "objective",
-            priority = 70,
             conditions = { level = { min = 55 } },
             text = "Collect Warosh's Mojo.",
             dependsOn = { "accept-4867-urok-doomhowl" },
@@ -465,7 +445,6 @@ ns:RegisterGuide({
         {
             id = "objective-4729-1-capture-a-caged-worg-pup",
             kind = "objective",
-            priority = 71,
             conditions = { level = { min = 55 } },
             text = "Capture a Caged Worg Pup.",
             dependsOn = { "accept-4729-kibler-s-exotic-pets" },
@@ -475,7 +454,6 @@ ns:RegisterGuide({
         {
             id = "objective-4701-1-halycon",
             kind = "objective",
-            priority = 72,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Kill Halycon.",
             dependsOn = { "accept-4701-put-her-down" },
@@ -484,8 +462,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5081-3-overlord-wyrmthalak",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5002 } } },
             kind = "objective",
-            priority = 73,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Kill Overlord Wyrmthalak.",
             dependsOn = { "accept-5081-maxwell-s-mission" },
@@ -495,7 +473,6 @@ ns:RegisterGuide({
         {
             id = "objective-4742-3-gemstone-of-bloodaxe",
             kind = "objective",
-            priority = 75,
             conditions = { level = { min = 57 } },
             text = "Collect Gemstone of Bloodaxe.",
             dependsOn = { "accept-4742-seal-of-ascension" },
@@ -505,7 +482,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4867-urok-doomhowl",
             kind = "turnin",
-            priority = 76,
             conditions = { level = { min = 55 } },
             text = "Turn in Urok Doomhowl to Warosh.",
             dependsOn = { "objective-4867-1-warosh-s-mojo" },
@@ -515,7 +491,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4742-seal-of-ascension",
             kind = "turnin",
-            priority = 77,
             conditions = { level = { min = 57 } },
             text = "Turn in Seal of Ascension to Vaelan.",
             dependsOn = { "objective-4742-2-gemstone-of-smolderthorn", "objective-4742-1-gemstone-of-spirestone", "objective-4742-3-gemstone-of-bloodaxe" },
@@ -524,8 +499,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5081-maxwell-s-mission",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5002 } } },
             kind = "turnin",
-            priority = 78,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Turn in Maxwell's Mission to Marshal Maxwell.",
             dependsOn = { "objective-5081-1-war-master-voone", "objective-5081-2-highlord-omokk", "objective-5081-3-overlord-wyrmthalak" },
@@ -537,7 +512,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4701-put-her-down",
             kind = "turnin",
-            priority = 79,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Turn in Put Her Down to Helendis Riverhorn.",
             dependsOn = { "objective-4701-1-halycon" },
@@ -549,7 +523,6 @@ ns:RegisterGuide({
         {
             id = "objective-4866-1-return-to-ragged-john",
             kind = "objective",
-            priority = 80,
             conditions = { level = { min = 55 } },
             text = "Return to Ragged John.",
             dependsOn = { "accept-4866-mother-s-milk" },
@@ -561,7 +534,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4866-mother-s-milk",
             kind = "turnin",
-            priority = 81,
             conditions = { level = { min = 55 } },
             text = "Turn in Mother's Milk to Ragged John.",
             dependsOn = { "objective-4866-1-return-to-ragged-john" },
@@ -573,7 +545,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4729-kibler-s-exotic-pets",
             kind = "turnin",
-            priority = 82,
             conditions = { level = { min = 55 } },
             text = "Turn in Kibler's Exotic Pets to Kibler.",
             dependsOn = { "objective-4729-1-capture-a-caged-worg-pup" },
@@ -585,7 +556,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4862-en-ay-es-tee-why",
             kind = "turnin",
-            priority = 83,
             conditions = { level = { min = 55 } },
             text = "Turn in En-Ay-Es-Tee-Why to Kibler.",
             dependsOn = { "objective-4862-1-spire-spider-egg" },
@@ -596,8 +566,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4788-the-final-tablets",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5065 } } },
             kind = "turnin",
-            priority = 84,
             conditions = { level = { min = 40 } },
             text = "Turn in The Final Tablets to Prospector Ironboot.",
             dependsOn = { "objective-4788-1-fifth-mosh-aru-tablet", "objective-4788-2-sixth-mosh-aru-tablet" },
@@ -609,7 +579,6 @@ ns:RegisterGuide({
         {
             id = "accept-4903-warlord-s-command",
             kind = "accept",
-            priority = 85,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Warlord's Command.",
             complete = QuestState(4903, "activeOrCompleted"),
@@ -617,7 +586,6 @@ ns:RegisterGuide({
         {
             id = "accept-4981-operative-bijou",
             kind = "accept",
-            priority = 86,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Operative Bijou from Lexlort.",
             complete = QuestState(4981, "activeOrCompleted"),
@@ -628,7 +596,6 @@ ns:RegisterGuide({
         {
             id = "accept-4724-the-pack-mistress",
             kind = "accept",
-            priority = 87,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept The Pack Mistress from Galamav the Marksman.",
             complete = QuestState(4724, "activeOrCompleted"),
@@ -639,7 +606,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4981-operative-bijou",
             kind = "turnin",
-            priority = 88,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Operative Bijou to Bijou.",
             dependsOn = { "accept-4981-operative-bijou" },
@@ -648,8 +614,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4982-bijou-s-belongings",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4981 } } },
             kind = "accept",
-            priority = 89,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Bijou's Belongings from Bijou.",
             dependsOn = { "turnin-4981-operative-bijou" },
@@ -657,8 +623,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4982-1-bijou-s-belongings",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4981 } } },
             kind = "objective",
-            priority = 90,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect Bijou's Belongings.",
             dependsOn = { "accept-4982-bijou-s-belongings" },
@@ -667,8 +633,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4982-bijou-s-belongings",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4981 } } },
             kind = "turnin",
-            priority = 91,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Bijou's Belongings to Bijou.",
             dependsOn = { "objective-4982-1-bijou-s-belongings" },
@@ -677,8 +643,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4983-bijou-s-reconnaissance-report",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4982 } } },
             kind = "accept",
-            priority = 92,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Bijou's Reconnaissance Report from Bijou.",
             dependsOn = { "turnin-4982-bijou-s-belongings" },
@@ -687,7 +653,6 @@ ns:RegisterGuide({
         {
             id = "objective-4903-3-war-master-voone",
             kind = "objective",
-            priority = 93,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Kill War Master Voone.",
             dependsOn = { "accept-4903-warlord-s-command" },
@@ -697,7 +662,6 @@ ns:RegisterGuide({
         {
             id = "objective-4903-2-highlord-omokk",
             kind = "objective",
-            priority = 95,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Kill Highlord Omokk.",
             dependsOn = { "accept-4903-warlord-s-command" },
@@ -707,7 +671,6 @@ ns:RegisterGuide({
         {
             id = "objective-4724-1-halycon",
             kind = "objective",
-            priority = 100,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Kill Halycon.",
             dependsOn = { "accept-4724-the-pack-mistress" },
@@ -717,7 +680,6 @@ ns:RegisterGuide({
         {
             id = "objective-4903-1-overlord-wyrmthalak",
             kind = "objective",
-            priority = 101,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Kill Overlord Wyrmthalak.",
             dependsOn = { "accept-4903-warlord-s-command" },
@@ -727,7 +689,6 @@ ns:RegisterGuide({
         {
             id = "objective-4903-4-important-blackrock-docu",
             kind = "objective",
-            priority = 106,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect Important Blackrock Documents.",
             dependsOn = { "accept-4903-warlord-s-command" },
@@ -737,7 +698,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4903-warlord-s-command",
             kind = "turnin",
-            priority = 107,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Warlord's Command to Warlord Goretooth.",
             dependsOn = { "objective-4903-3-war-master-voone", "objective-4903-2-highlord-omokk", "objective-4903-1-overlord-wyrmthalak", "objective-4903-4-important-blackrock-docu" },
@@ -748,8 +708,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4983-bijou-s-reconnaissance-report",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4982 } } },
             kind = "turnin",
-            priority = 108,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Bijou's Reconnaissance Report to Lexlort.",
             dependsOn = { "accept-4983-bijou-s-reconnaissance-report" },
@@ -761,7 +721,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4724-the-pack-mistress",
             kind = "turnin",
-            priority = 109,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in The Pack Mistress to Galamav the Marksman.",
             dependsOn = { "objective-4724-1-halycon" },

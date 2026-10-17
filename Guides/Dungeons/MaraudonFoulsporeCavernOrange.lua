@@ -17,10 +17,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-maraudon-foulspore-cavern-orange",
     title = "Maraudon (Foulspore Cavern - Orange)",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 45 } },
@@ -31,7 +32,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 11,
             conditions = { level = { min = 45 } },
             text = "Enter Maraudon (Foulspore Cavern - Orange) with your group.",
             persistCompletion = true,

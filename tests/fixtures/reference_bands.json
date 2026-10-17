@@ -1,0 +1,338 @@
+{
+  "leveling-era-elwynn-forest": {
+    "min": 1,
+    "max": 13
+  },
+  "leveling-era-dun-morogh": {
+    "min": 1,
+    "max": 13
+  },
+  "leveling-era-teldrassil": {
+    "min": 1,
+    "max": 13
+  },
+  "leveling-era-alliance-westfall": {
+    "min": 13,
+    "max": 15
+  },
+  "leveling-era-alliance-darkshore": {
+    "min": 15,
+    "max": 18
+  },
+  "leveling-era-alliance-loch-modan": {
+    "min": 18,
+    "max": 19
+  },
+  "leveling-era-alliance-redridge-and-westfall": {
+    "min": 19,
+    "max": 20
+  },
+  "leveling-era-alliance-darkshore-part-2": {
+    "min": 20,
+    "max": 21
+  },
+  "leveling-era-alliance-ashenvale-and-stonetalon-mountains": {
+    "min": 21,
+    "max": 24
+  },
+  "leveling-era-alliance-wetlands": {
+    "min": 24,
+    "max": 25
+  },
+  "leveling-era-alliance-duskwood-and-redridge-mountains": {
+    "min": 25,
+    "max": 27
+  },
+  "leveling-era-alliance-wetlands-part-2": {
+    "min": 27,
+    "max": 29
+  },
+  "leveling-era-alliance-stonetalon-mountains-and-ashenvale": {
+    "min": 29,
+    "max": 30
+  },
+  "leveling-era-alliance-duskwood-and-stranglethorn-vale": {
+    "min": 30,
+    "max": 32
+  },
+  "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands": {
+    "min": 32,
+    "max": 33
+  },
+  "leveling-era-alliance-dustwallow-marsh-and-thousand-needles": {
+    "min": 33,
+    "max": 34
+  },
+  "leveling-era-alliance-stranglethorn-vale": {
+    "min": 34,
+    "max": 35
+  },
+  "leveling-era-alliance-desolace": {
+    "min": 35,
+    "max": 37
+  },
+  "leveling-era-alliance-stranglethorn-vale-part-2": {
+    "min": 37,
+    "max": 38
+  },
+  "leveling-era-alliance-swamp-of-sorrows": {
+    "min": 38,
+    "max": 39
+  },
+  "leveling-era-alliance-arathi-highlands-and-alterac-mountains": {
+    "min": 39,
+    "max": 40
+  },
+  "leveling-era-alliance-dustwallow-marsh": {
+    "min": 40,
+    "max": 40
+  },
+  "leveling-era-alliance-desolace-part-2": {
+    "min": 40,
+    "max": 41
+  },
+  "leveling-era-alliance-badlands": {
+    "min": 41,
+    "max": 42
+  },
+  "leveling-era-alliance-stranglethorn-vale-part-3": {
+    "min": 42,
+    "max": 43
+  },
+  "leveling-era-alliance-swamp-of-sorrows-part-2": {
+    "min": 43,
+    "max": 43
+  },
+  "leveling-era-alliance-tanaris": {
+    "min": 43,
+    "max": 44
+  },
+  "leveling-era-alliance-feralas-and-tanaris": {
+    "min": 44,
+    "max": 48
+  },
+  "leveling-era-alliance-the-hinterlands": {
+    "min": 48,
+    "max": 49
+  },
+  "leveling-era-alliance-tanaris-part-2": {
+    "min": 49,
+    "max": 49
+  },
+  "leveling-era-alliance-ungoro-crater": {
+    "min": 49,
+    "max": 50
+  },
+  "leveling-era-alliance-stranglethorn-vale-part-4": {
+    "min": 50,
+    "max": 50
+  },
+  "leveling-era-alliance-searing-gorge": {
+    "min": 50,
+    "max": 51
+  },
+  "leveling-era-alliance-blasted-lands-and-burning-steppes": {
+    "min": 51,
+    "max": 51
+  },
+  "leveling-era-alliance-western-plaguelands": {
+    "min": 51,
+    "max": 52
+  },
+  "leveling-era-alliance-azshara-and-felwood": {
+    "min": 52,
+    "max": 52
+  },
+  "leveling-era-alliance-feralas-and-azshara": {
+    "min": 52,
+    "max": 53
+  },
+  "leveling-era-alliance-ungoro-crater-part-2": {
+    "min": 53,
+    "max": 54
+  },
+  "leveling-era-alliance-winterspring-and-felwood": {
+    "min": 54,
+    "max": 56
+  },
+  "leveling-era-alliance-burning-steppes": {
+    "min": 56,
+    "max": 57
+  },
+  "leveling-era-alliance-western-and-eastern-plaguelands": {
+    "min": 57,
+    "max": 58
+  },
+  "leveling-era-alliance-winterspring": {
+    "min": 58,
+    "max": 59
+  },
+  "leveling-era-alliance-silithus": {
+    "min": 59,
+    "max": 60
+  },
+  "leveling-era-tirisfal-glades": {
+    "min": 1,
+    "max": 13
+  },
+  "leveling-era-mulgore": {
+    "min": 1,
+    "max": 13
+  },
+  "leveling-era-durotar": {
+    "min": 1,
+    "max": 13
+  },
+  "leveling-era-horde-silverpine-forest": {
+    "min": 13,
+    "max": 15
+  },
+  "leveling-era-horde-the-barrens-and-stonetalon-mountain": {
+    "min": 15,
+    "max": 21
+  },
+  "leveling-era-horde-ashenvale": {
+    "min": 21,
+    "max": 22
+  },
+  "leveling-era-horde-hillsbrad-foothills": {
+    "min": 22,
+    "max": 24
+  },
+  "leveling-era-horde-the-barrens": {
+    "min": 24,
+    "max": 25
+  },
+  "leveling-era-horde-stonetalon-mountains": {
+    "min": 25,
+    "max": 26
+  },
+  "leveling-era-horde-ashenvale-part-2": {
+    "min": 26,
+    "max": 28
+  },
+  "leveling-era-horde-thousand-needles": {
+    "min": 28,
+    "max": 30
+  },
+  "leveling-era-horde-hillsbrad-foothills-part-2": {
+    "min": 30,
+    "max": 32
+  },
+  "leveling-era-horde-arathi-highlands": {
+    "min": 32,
+    "max": 33
+  },
+  "leveling-era-horde-thousand-needles-part-2": {
+    "min": 33,
+    "max": 34
+  },
+  "leveling-era-horde-desolace": {
+    "min": 34,
+    "max": 36
+  },
+  "leveling-era-horde-stranglethorn-vale": {
+    "min": 36,
+    "max": 37
+  },
+  "leveling-era-horde-dustwallow-marsh": {
+    "min": 37,
+    "max": 38
+  },
+  "leveling-era-horde-alterac-mountains-and-arathi-highlands": {
+    "min": 38,
+    "max": 39
+  },
+  "leveling-era-horde-badlands": {
+    "min": 39,
+    "max": 40
+  },
+  "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows": {
+    "min": 40,
+    "max": 41
+  },
+  "leveling-era-horde-desolace-part-2": {
+    "min": 41,
+    "max": 41
+  },
+  "leveling-era-horde-tanaris": {
+    "min": 41,
+    "max": 42
+  },
+  "leveling-era-horde-dustwallow-marsh-part-2": {
+    "min": 42,
+    "max": 42
+  },
+  "leveling-era-horde-tanaris-part-2": {
+    "min": 42,
+    "max": 43
+  },
+  "leveling-era-horde-feralas": {
+    "min": 43,
+    "max": 44
+  },
+  "leveling-era-horde-stranglethorn-vale-part-2": {
+    "min": 44,
+    "max": 45
+  },
+  "leveling-era-horde-swamp-of-sorrows": {
+    "min": 45,
+    "max": 46
+  },
+  "leveling-era-horde-tanaris-and-dustwallow-marsh": {
+    "min": 46,
+    "max": 48
+  },
+  "leveling-era-horde-the-hinterlands": {
+    "min": 48,
+    "max": 49
+  },
+  "leveling-era-horde-feralas-and-ungoro-crater": {
+    "min": 49,
+    "max": 50
+  },
+  "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2": {
+    "min": 50,
+    "max": 50
+  },
+  "leveling-era-horde-blasted-lands": {
+    "min": 50,
+    "max": 51
+  },
+  "leveling-era-horde-searing-gorge": {
+    "min": 51,
+    "max": 51
+  },
+  "leveling-era-horde-burning-steppes-and-azshara": {
+    "min": 51,
+    "max": 52
+  },
+  "leveling-era-horde-felwood-and-winterspring": {
+    "min": 52,
+    "max": 53
+  },
+  "leveling-era-horde-ungoro-crater": {
+    "min": 53,
+    "max": 54
+  },
+  "leveling-era-horde-azshara": {
+    "min": 54,
+    "max": 54
+  },
+  "leveling-era-horde-felwood-and-winterspring-part-2": {
+    "min": 54,
+    "max": 56
+  },
+  "leveling-era-horde-western-and-eastern-plaguelands": {
+    "min": 56,
+    "max": 58
+  },
+  "leveling-era-horde-winterspring": {
+    "min": 58,
+    "max": 59
+  },
+  "leveling-era-horde-silithus": {
+    "min": 59,
+    "max": 60
+  }
+}

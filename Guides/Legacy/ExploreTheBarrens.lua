@@ -70,7 +70,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-the-barrens",
     title = "Explore The Barrens",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

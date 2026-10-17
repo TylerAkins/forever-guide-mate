@@ -48,7 +48,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-hillsbrad-foothills",
     title = "Explore Hillsbrad Foothills",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

@@ -33,10 +33,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-tier-0-5-dungeon-gear-questline",
     title = "Tier 0.5 Dungeon Gear Questline",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 58 } },
@@ -47,7 +48,6 @@ ns:RegisterGuide({
         {
             id = "accept-8906-an-earnest-proposition",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Deliana.",
             complete = QuestState(8906, "activeOrCompleted"),
@@ -58,7 +58,6 @@ ns:RegisterGuide({
         {
             id = "accept-8905-an-earnest-proposition-goto-ironforge-0-43",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition |goto Ironforge/0 43.49,52.58 from Deliana.",
             complete = QuestState(8905, "activeOrCompleted"),
@@ -66,7 +65,6 @@ ns:RegisterGuide({
         {
             id = "accept-8907-an-earnest-proposition",
             kind = "accept",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Deliana.",
             complete = QuestState(8907, "activeOrCompleted"),
@@ -77,7 +75,6 @@ ns:RegisterGuide({
         {
             id = "accept-8908-an-earnest-proposition",
             kind = "accept",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Deliana.",
             complete = QuestState(8908, "activeOrCompleted"),
@@ -88,7 +85,6 @@ ns:RegisterGuide({
         {
             id = "accept-8909-an-earnest-proposition",
             kind = "accept",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Deliana.",
             complete = QuestState(8909, "activeOrCompleted"),
@@ -99,7 +95,6 @@ ns:RegisterGuide({
         {
             id = "accept-8910-an-earnest-proposition",
             kind = "accept",
-            priority = 15,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Deliana.",
             complete = QuestState(8910, "activeOrCompleted"),
@@ -110,7 +105,6 @@ ns:RegisterGuide({
         {
             id = "accept-8911-an-earnest-proposition",
             kind = "accept",
-            priority = 16,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Deliana.",
             complete = QuestState(8911, "activeOrCompleted"),
@@ -121,7 +115,6 @@ ns:RegisterGuide({
         {
             id = "accept-8912-an-earnest-proposition",
             kind = "accept",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Deliana.",
             complete = QuestState(8912, "activeOrCompleted"),
@@ -132,7 +125,6 @@ ns:RegisterGuide({
         {
             id = "objective-8906-2-beaststalker-s-bindings",
             kind = "objective",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalker's Bindings.",
             dependsOn = { "accept-8906-an-earnest-proposition" },
@@ -142,7 +134,6 @@ ns:RegisterGuide({
         {
             id = "objective-8907-2-magister-s-bindings",
             kind = "objective",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magister's Bindings.",
             dependsOn = { "accept-8907-an-earnest-proposition" },
@@ -152,7 +143,6 @@ ns:RegisterGuide({
         {
             id = "objective-8905-2-wildheart-bracers",
             kind = "objective",
-            priority = 20,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Bracers.",
             dependsOn = { "accept-8905-an-earnest-proposition-goto-ironforge-0-43" },
@@ -162,7 +152,6 @@ ns:RegisterGuide({
         {
             id = "objective-8912-2-bracers-of-valor",
             kind = "objective",
-            priority = 21,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Bracers of Valor.",
             dependsOn = { "accept-8912-an-earnest-proposition" },
@@ -172,7 +161,6 @@ ns:RegisterGuide({
         {
             id = "objective-8909-2-devout-bracers",
             kind = "objective",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Bracers.",
             dependsOn = { "accept-8909-an-earnest-proposition" },
@@ -182,7 +170,6 @@ ns:RegisterGuide({
         {
             id = "objective-8911-2-dreadmist-bracers",
             kind = "objective",
-            priority = 23,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Bracers.",
             dependsOn = { "accept-8911-an-earnest-proposition" },
@@ -192,7 +179,6 @@ ns:RegisterGuide({
         {
             id = "objective-8908-2-lightforge-bracers",
             kind = "objective",
-            priority = 24,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Bracers.",
             dependsOn = { "accept-8908-an-earnest-proposition" },
@@ -202,7 +188,6 @@ ns:RegisterGuide({
         {
             id = "objective-8910-2-shadowcraft-bracers",
             kind = "objective",
-            priority = 25,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Bracers.",
             dependsOn = { "accept-8910-an-earnest-proposition" },
@@ -212,7 +197,6 @@ ns:RegisterGuide({
         {
             id = "objective-8908-1-winterspring-blood-sampl",
             kind = "objective",
-            priority = 27,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8908-an-earnest-proposition" },
@@ -222,7 +206,6 @@ ns:RegisterGuide({
         {
             id = "objective-8905-1-winterspring-blood-sampl",
             kind = "objective",
-            priority = 28,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8905-an-earnest-proposition-goto-ironforge-0-43" },
@@ -232,7 +215,6 @@ ns:RegisterGuide({
         {
             id = "objective-8907-1-winterspring-blood-sampl",
             kind = "objective",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8907-an-earnest-proposition" },
@@ -242,7 +224,6 @@ ns:RegisterGuide({
         {
             id = "objective-8906-1-winterspring-blood-sampl",
             kind = "objective",
-            priority = 30,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8906-an-earnest-proposition" },
@@ -252,7 +233,6 @@ ns:RegisterGuide({
         {
             id = "objective-8908-1-winterspring-blood-sampl-2",
             kind = "objective",
-            priority = 31,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8908-an-earnest-proposition" },
@@ -262,7 +242,6 @@ ns:RegisterGuide({
         {
             id = "objective-8911-1-winterspring-blood-sampl",
             kind = "objective",
-            priority = 32,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8911-an-earnest-proposition" },
@@ -272,7 +251,6 @@ ns:RegisterGuide({
         {
             id = "objective-8909-1-winterspring-blood-sampl",
             kind = "objective",
-            priority = 33,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8909-an-earnest-proposition" },
@@ -282,7 +260,6 @@ ns:RegisterGuide({
         {
             id = "objective-8912-1-winterspring-blood-sampl",
             kind = "objective",
-            priority = 34,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8912-an-earnest-proposition" },
@@ -292,7 +269,6 @@ ns:RegisterGuide({
         {
             id = "objective-8910-1-winterspring-blood-sampl",
             kind = "objective",
-            priority = 35,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 15 Winterspring Blood Sample.",
             dependsOn = { "accept-8910-an-earnest-proposition" },
@@ -302,7 +278,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8906-an-earnest-proposition",
             kind = "turnin",
-            priority = 36,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Deliana.",
             dependsOn = { "objective-8906-2-beaststalker-s-bindings", "objective-8906-1-winterspring-blood-sampl" },
@@ -314,7 +289,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8905-an-earnest-proposition-goto-ironforge-0-43",
             kind = "turnin",
-            priority = 37,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition |goto Ironforge/0 43.49,52.58 to Deliana.",
             dependsOn = { "objective-8905-2-wildheart-bracers", "objective-8905-1-winterspring-blood-sampl" },
@@ -324,7 +298,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8907-an-earnest-proposition",
             kind = "turnin",
-            priority = 38,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Deliana.",
             dependsOn = { "objective-8907-2-magister-s-bindings", "objective-8907-1-winterspring-blood-sampl" },
@@ -336,7 +309,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8908-an-earnest-proposition",
             kind = "turnin",
-            priority = 39,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Deliana.",
             dependsOn = { "objective-8908-2-lightforge-bracers", "objective-8908-1-winterspring-blood-sampl", "objective-8908-1-winterspring-blood-sampl-2" },
@@ -348,7 +320,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8909-an-earnest-proposition",
             kind = "turnin",
-            priority = 40,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Deliana.",
             dependsOn = { "objective-8909-2-devout-bracers", "objective-8909-1-winterspring-blood-sampl" },
@@ -360,7 +331,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8910-an-earnest-proposition",
             kind = "turnin",
-            priority = 41,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Deliana.",
             dependsOn = { "objective-8910-2-shadowcraft-bracers", "objective-8910-1-winterspring-blood-sampl" },
@@ -372,7 +342,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8911-an-earnest-proposition",
             kind = "turnin",
-            priority = 42,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Deliana.",
             dependsOn = { "objective-8911-2-dreadmist-bracers", "objective-8911-1-winterspring-blood-sampl" },
@@ -384,7 +353,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8912-an-earnest-proposition",
             kind = "turnin",
-            priority = 43,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Deliana.",
             dependsOn = { "objective-8912-2-bracers-of-valor", "objective-8912-1-winterspring-blood-sampl" },
@@ -395,8 +363,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8922-a-supernatural-device",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8912 } } },
             kind = "accept",
-            priority = 44,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Accept A Supernatural Device from Deliana.",
             dependsOn = { "turnin-8912-an-earnest-proposition" },
@@ -407,8 +375,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8922-1-delicate-arcanite-conver",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8912 } } },
             kind = "objective",
-            priority = 45,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Collect 1 Delicate Arcanite Converter.",
             dependsOn = { "accept-8922-a-supernatural-device" },
@@ -417,8 +385,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8922-2-greater-eternal-essence",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8912 } } },
             kind = "objective",
-            priority = 46,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Collect 4 Greater Eternal Essence.",
             dependsOn = { "accept-8922-a-supernatural-device" },
@@ -427,8 +395,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8922-3-stonescale-oil",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8912 } } },
             kind = "objective",
-            priority = 47,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Collect 10 Stonescale Oil.",
             dependsOn = { "accept-8922-a-supernatural-device" },
@@ -437,8 +405,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8922-a-supernatural-device",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8912 } } },
             kind = "turnin",
-            priority = 48,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Turn in A Supernatural Device to Mux Manascrambler.",
             dependsOn = { "objective-8922-1-delicate-arcanite-conver", "objective-8922-2-greater-eternal-essence", "objective-8922-3-stonescale-oil" },
@@ -449,8 +417,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8921-the-ectoplasmic-distiller",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8922 } } },
             kind = "accept",
-            priority = 49,
             conditions = { level = { min = 58 } },
             text = "Accept The Ectoplasmic Distiller from Mux Manascrambler.",
             dependsOn = { "turnin-8922-a-supernatural-device" },
@@ -461,8 +429,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8921-4-volcanic-ash",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8922 } } },
             kind = "objective",
-            priority = 51,
             conditions = { level = { min = 58 } },
             text = "Collect 25 Volcanic Ash.",
             dependsOn = { "accept-8921-the-ectoplasmic-distiller" },
@@ -471,8 +439,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8921-the-ectoplasmic-distiller",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8922 } } },
             kind = "turnin",
-            priority = 52,
             conditions = { level = { min = 58 } },
             text = "Turn in The Ectoplasmic Distiller to Mux Manascrambler.",
             dependsOn = { "objective-8921-4-volcanic-ash" },
@@ -483,8 +451,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8924-hunting-for-ectoplasm",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8921 } } },
             kind = "accept",
-            priority = 53,
             conditions = { level = { min = 58 } },
             text = "Accept Hunting For Ectoplasm from Mux Manascrambler.",
             dependsOn = { "turnin-8921-the-ectoplasmic-distiller" },
@@ -495,8 +463,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8924-hunting-for-ectoplasm",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8921 } } },
             kind = "turnin",
-            priority = 60,
             conditions = { level = { min = 58 } },
             text = "Turn in Hunting For Ectoplasm to Mux Manascrambler.",
             dependsOn = { "accept-8924-hunting-for-ectoplasm" },
@@ -507,8 +475,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8925-a-portable-power-source",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8924 } } },
             kind = "accept",
-            priority = 61,
             conditions = { level = { min = 58 } },
             text = "Accept A Portable Power Source from Mux Manascrambler.",
             dependsOn = { "turnin-8924-hunting-for-ectoplasm" },
@@ -519,8 +487,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8925-a-portable-power-source",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8924 } } },
             kind = "turnin",
-            priority = 63,
             conditions = { level = { min = 58 } },
             text = "Turn in A Portable Power Source to Mux Manascrambler.",
             dependsOn = { "accept-8925-a-portable-power-source" },
@@ -531,8 +499,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8928-a-shifty-merchant",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8925 } } },
             kind = "accept",
-            priority = 64,
             conditions = { level = { min = 58 } },
             text = "Accept A Shifty Merchant from Mux Manascrambler.",
             dependsOn = { "turnin-8925-a-portable-power-source" },
@@ -543,8 +511,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8928-1-buy-1-fel-elemental-rod",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8925 } } },
             kind = "objective",
-            priority = 65,
             conditions = { level = { min = 58 } },
             text = "Buy 1 Fel Elemental Rod.",
             dependsOn = { "accept-8928-a-shifty-merchant" },
@@ -555,8 +523,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8928-a-shifty-merchant",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8925 } } },
             kind = "turnin",
-            priority = 66,
             conditions = { level = { min = 58 } },
             text = "Turn in A Shifty Merchant to Mux Manascrambler.",
             dependsOn = { "objective-8928-1-buy-1-fel-elemental-rod" },
@@ -567,8 +535,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8977-return-to-deliana",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8928 } } },
             kind = "accept",
-            priority = 67,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Accept Return To Deliana from Mux Manascrambler.",
             dependsOn = { "turnin-8928-a-shifty-merchant" },
@@ -579,8 +547,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8977-return-to-deliana",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8928 } } },
             kind = "turnin",
-            priority = 68,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Turn in Return To Deliana to Deliana.",
             dependsOn = { "accept-8977-return-to-deliana" },
@@ -591,8 +559,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8926-just-compensation",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8977 } } },
             kind = "accept",
-            priority = 69,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Deliana.",
             dependsOn = { "turnin-8977-return-to-deliana" },
@@ -604,7 +572,6 @@ ns:RegisterGuide({
         {
             id = "accept-8931-just-compensation",
             kind = "accept",
-            priority = 70,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Deliana.",
             complete = QuestState(8931, "activeOrCompleted"),
@@ -615,7 +582,6 @@ ns:RegisterGuide({
         {
             id = "accept-8932-just-compensation",
             kind = "accept",
-            priority = 71,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Deliana.",
             complete = QuestState(8932, "activeOrCompleted"),
@@ -626,7 +592,6 @@ ns:RegisterGuide({
         {
             id = "accept-8933-just-compensation",
             kind = "accept",
-            priority = 72,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Deliana.",
             complete = QuestState(8933, "activeOrCompleted"),
@@ -637,7 +602,6 @@ ns:RegisterGuide({
         {
             id = "accept-8934-just-compensation",
             kind = "accept",
-            priority = 73,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Deliana.",
             complete = QuestState(8934, "activeOrCompleted"),
@@ -648,7 +612,6 @@ ns:RegisterGuide({
         {
             id = "accept-8935-just-compensation",
             kind = "accept",
-            priority = 74,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Deliana.",
             complete = QuestState(8935, "activeOrCompleted"),
@@ -659,7 +622,6 @@ ns:RegisterGuide({
         {
             id = "accept-8936-just-compensation",
             kind = "accept",
-            priority = 75,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Deliana.",
             complete = QuestState(8936, "activeOrCompleted"),
@@ -670,7 +632,6 @@ ns:RegisterGuide({
         {
             id = "accept-8937-just-compensation",
             kind = "accept",
-            priority = 76,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Deliana.",
             complete = QuestState(8937, "activeOrCompleted"),
@@ -681,7 +642,6 @@ ns:RegisterGuide({
         {
             id = "objective-8931-2-beaststalkers-gloves",
             kind = "objective",
-            priority = 77,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Gloves.",
             dependsOn = { "accept-8931-just-compensation" },
@@ -691,7 +651,6 @@ ns:RegisterGuide({
         {
             id = "objective-8931-1-beaststalkers-belt",
             kind = "objective",
-            priority = 78,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Belt.",
             dependsOn = { "accept-8931-just-compensation" },
@@ -701,7 +660,6 @@ ns:RegisterGuide({
         {
             id = "objective-8932-1-magisters-belt",
             kind = "objective",
-            priority = 79,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Belt.",
             dependsOn = { "accept-8932-just-compensation" },
@@ -711,7 +669,6 @@ ns:RegisterGuide({
         {
             id = "objective-8932-2-magisters-gloves",
             kind = "objective",
-            priority = 80,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Gloves.",
             dependsOn = { "accept-8932-just-compensation" },
@@ -720,8 +677,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8926-1-wildheart-belt",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8977 } } },
             kind = "objective",
-            priority = 81,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Belt.",
             dependsOn = { "accept-8926-just-compensation" },
@@ -730,8 +687,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8926-2-wildheart-gloves",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8977 } } },
             kind = "objective",
-            priority = 82,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Gloves.",
             dependsOn = { "accept-8926-just-compensation" },
@@ -741,7 +698,6 @@ ns:RegisterGuide({
         {
             id = "objective-8937-1-belt-of-valor",
             kind = "objective",
-            priority = 83,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Belt Of Valor.",
             dependsOn = { "accept-8937-just-compensation" },
@@ -751,7 +707,6 @@ ns:RegisterGuide({
         {
             id = "objective-8937-2-gauntlets-of-valor",
             kind = "objective",
-            priority = 84,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Gauntlets Of Valor.",
             dependsOn = { "accept-8937-just-compensation" },
@@ -761,7 +716,6 @@ ns:RegisterGuide({
         {
             id = "objective-8934-1-devout-belt",
             kind = "objective",
-            priority = 85,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Belt.",
             dependsOn = { "accept-8934-just-compensation" },
@@ -771,7 +725,6 @@ ns:RegisterGuide({
         {
             id = "objective-8934-2-devout-gloves",
             kind = "objective",
-            priority = 86,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Gloves.",
             dependsOn = { "accept-8934-just-compensation" },
@@ -781,7 +734,6 @@ ns:RegisterGuide({
         {
             id = "objective-8936-1-dreadmist-belt",
             kind = "objective",
-            priority = 87,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Belt.",
             dependsOn = { "accept-8936-just-compensation" },
@@ -791,7 +743,6 @@ ns:RegisterGuide({
         {
             id = "objective-8936-2-dreadmist-wraps",
             kind = "objective",
-            priority = 88,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Wraps.",
             dependsOn = { "accept-8936-just-compensation" },
@@ -801,7 +752,6 @@ ns:RegisterGuide({
         {
             id = "objective-8933-1-lightforge-belt",
             kind = "objective",
-            priority = 89,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Belt.",
             dependsOn = { "accept-8933-just-compensation" },
@@ -811,7 +761,6 @@ ns:RegisterGuide({
         {
             id = "objective-8933-2-lightforge-gauntlets",
             kind = "objective",
-            priority = 90,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Gauntlets.",
             dependsOn = { "accept-8933-just-compensation" },
@@ -821,7 +770,6 @@ ns:RegisterGuide({
         {
             id = "objective-8935-1-shadowcraft-belt",
             kind = "objective",
-            priority = 91,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Belt.",
             dependsOn = { "accept-8935-just-compensation" },
@@ -831,7 +779,6 @@ ns:RegisterGuide({
         {
             id = "objective-8935-2-shadowcraft-gloves",
             kind = "objective",
-            priority = 92,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Gloves.",
             dependsOn = { "accept-8935-just-compensation" },
@@ -840,8 +787,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8926-just-compensation",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8977 } } },
             kind = "turnin",
-            priority = 93,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Deliana.",
             dependsOn = { "objective-8926-1-wildheart-belt", "objective-8926-2-wildheart-gloves" },
@@ -853,7 +800,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8931-just-compensation",
             kind = "turnin",
-            priority = 94,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Deliana.",
             dependsOn = { "objective-8931-2-beaststalkers-gloves", "objective-8931-1-beaststalkers-belt" },
@@ -865,7 +811,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8932-just-compensation",
             kind = "turnin",
-            priority = 95,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Deliana.",
             dependsOn = { "objective-8932-1-magisters-belt", "objective-8932-2-magisters-gloves" },
@@ -877,7 +822,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8933-just-compensation",
             kind = "turnin",
-            priority = 96,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Deliana.",
             dependsOn = { "objective-8933-1-lightforge-belt", "objective-8933-2-lightforge-gauntlets" },
@@ -889,7 +833,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8934-just-compensation",
             kind = "turnin",
-            priority = 97,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Deliana.",
             dependsOn = { "objective-8934-1-devout-belt", "objective-8934-2-devout-gloves" },
@@ -901,7 +844,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8935-just-compensation",
             kind = "turnin",
-            priority = 98,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Deliana.",
             dependsOn = { "objective-8935-1-shadowcraft-belt", "objective-8935-2-shadowcraft-gloves" },
@@ -913,7 +855,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8936-just-compensation",
             kind = "turnin",
-            priority = 99,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Deliana.",
             dependsOn = { "objective-8936-1-dreadmist-belt", "objective-8936-2-dreadmist-wraps" },
@@ -925,7 +866,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8937-just-compensation",
             kind = "turnin",
-            priority = 100,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Deliana.",
             dependsOn = { "objective-8937-1-belt-of-valor", "objective-8937-2-gauntlets-of-valor" },
@@ -936,8 +876,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8929-in-search-of-anthion",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8937 } } },
             kind = "accept",
-            priority = 101,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Accept In Search Of Anthion from Deliana.",
             dependsOn = { "turnin-8937-just-compensation" },
@@ -947,69 +887,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-8947-1-dark-iron-bar",
-            kind = "objective",
-            priority = 102,
-            conditions = { level = { min = 58 } },
-            text = "Collect 3 Dark Iron Bar.",
-            dependsOn = { "accept-8947-anthion-s-strange-request" },
-            complete = QuestObjective(8947, 1, "Dark Iron Bar"),
-            useClientPin = true,
-        },
-        {
-            id = "objective-8947-2-enchanted-leather",
-            kind = "objective",
-            priority = 103,
-            conditions = { level = { min = 58 } },
-            text = "Collect 20 Enchanted Leather.",
-            dependsOn = { "accept-8947-anthion-s-strange-request" },
-            complete = QuestObjective(8947, 2, "Enchanted Leather"),
-            useClientPin = true,
-        },
-        {
-            id = "objective-8947-3-mooncloth",
-            kind = "objective",
-            priority = 104,
-            conditions = { level = { min = 58 } },
-            text = "Collect 3 Mooncloth.",
-            dependsOn = { "accept-8947-anthion-s-strange-request" },
-            complete = QuestObjective(8947, 3, "Mooncloth"),
-            useClientPin = true,
-        },
-        {
-            id = "objective-8947-4-cured-rugged-hide",
-            kind = "objective",
-            priority = 105,
-            conditions = { level = { min = 58 } },
-            text = "Collect 4 Cured Rugged Hide.",
-            dependsOn = { "accept-8947-anthion-s-strange-request" },
-            complete = QuestObjective(8947, 4, "Cured Rugged Hide"),
-            useClientPin = true,
-        },
-        {
-            id = "objective-8950-3-large-brilliant-shard",
-            kind = "objective",
-            priority = 106,
-            conditions = { level = { min = 58 } },
-            text = "Collect 8 Large Brilliant Shard.",
-            dependsOn = { "accept-8950-the-instigators-enchantment" },
-            complete = QuestObjective(8950, 3, "Large Brilliant Shard"),
-            useClientPin = true,
-        },
-        {
-            id = "objective-8950-2-dark-rune",
-            kind = "objective",
-            priority = 107,
-            conditions = { level = { min = 58 } },
-            text = "Collect 4 Dark Rune.",
-            dependsOn = { "accept-8950-the-instigators-enchantment" },
-            complete = QuestObjective(8950, 2, "Dark Rune"),
-            useClientPin = true,
-        },
-        {
             id = "turnin-8929-in-search-of-anthion",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8937 } } },
             kind = "turnin",
-            priority = 108,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Turn in In Search Of Anthion to Anthion Harmon.",
             dependsOn = { "accept-8929-in-search-of-anthion" },
@@ -1020,8 +900,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8945-dead-mans-plea",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8929 } } },
             kind = "accept",
-            priority = 109,
             conditions = { level = { min = 58 } },
             text = "Accept Dead Mans Plea from Anthion Harmon.",
             dependsOn = { "turnin-8929-in-search-of-anthion" },
@@ -1032,8 +912,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8945-dead-mans-plea",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8929 } } },
             kind = "turnin",
-            priority = 110,
             conditions = { level = { min = 58 } },
             text = "Turn in Dead Mans Plea to Ysida Harmon.",
             dependsOn = { "accept-8945-dead-mans-plea" },
@@ -1042,8 +922,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8946-proof-of-life",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8945 } } },
             kind = "accept",
-            priority = 111,
             conditions = { level = { min = 58 } },
             text = "Accept Proof Of Life from Ysida Harmon.",
             dependsOn = { "turnin-8945-dead-mans-plea" },
@@ -1051,8 +931,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8946-proof-of-life",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8945 } } },
             kind = "turnin",
-            priority = 112,
             conditions = { level = { min = 58 } },
             text = "Turn in Proof Of Life to Anthion Harmon.",
             dependsOn = { "accept-8946-proof-of-life" },
@@ -1063,8 +943,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8947-anthion-s-strange-request",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8946 } } },
             kind = "accept",
-            priority = 113,
             conditions = { level = { min = 58 } },
             text = "Accept Anthion's Strange Request from Anthion Harmon.",
             dependsOn = { "turnin-8946-proof-of-life" },
@@ -1074,9 +954,49 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-8947-1-dark-iron-bar",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8946 } } },
+            kind = "objective",
+            conditions = { level = { min = 58 } },
+            text = "Collect 3 Dark Iron Bar.",
+            dependsOn = { "accept-8947-anthion-s-strange-request" },
+            complete = QuestObjective(8947, 1, "Dark Iron Bar"),
+            useClientPin = true,
+        },
+        {
+            id = "objective-8947-2-enchanted-leather",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8946 } } },
+            kind = "objective",
+            conditions = { level = { min = 58 } },
+            text = "Collect 20 Enchanted Leather.",
+            dependsOn = { "accept-8947-anthion-s-strange-request" },
+            complete = QuestObjective(8947, 2, "Enchanted Leather"),
+            useClientPin = true,
+        },
+        {
+            id = "objective-8947-3-mooncloth",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8946 } } },
+            kind = "objective",
+            conditions = { level = { min = 58 } },
+            text = "Collect 3 Mooncloth.",
+            dependsOn = { "accept-8947-anthion-s-strange-request" },
+            complete = QuestObjective(8947, 3, "Mooncloth"),
+            useClientPin = true,
+        },
+        {
+            id = "objective-8947-4-cured-rugged-hide",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8946 } } },
+            kind = "objective",
+            conditions = { level = { min = 58 } },
+            text = "Collect 4 Cured Rugged Hide.",
+            dependsOn = { "accept-8947-anthion-s-strange-request" },
+            complete = QuestObjective(8947, 4, "Cured Rugged Hide"),
+            useClientPin = true,
+        },
+        {
             id = "turnin-8947-anthion-s-strange-request",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8946 } } },
             kind = "turnin",
-            priority = 114,
             conditions = { level = { min = 58 } },
             text = "Turn in Anthion's Strange Request to Anthion Harmon.",
             dependsOn = { "objective-8947-1-dark-iron-bar", "objective-8947-2-enchanted-leather", "objective-8947-3-mooncloth", "objective-8947-4-cured-rugged-hide" },
@@ -1087,8 +1007,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8948-anthion-s-old-friend",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8947 } } },
             kind = "accept",
-            priority = 115,
             conditions = { level = { min = 58 } },
             text = "Accept Anthion's Old Friend from Anthion Harmon.",
             dependsOn = { "turnin-8947-anthion-s-strange-request" },
@@ -1099,8 +1019,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8948-anthion-s-old-friend",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8947 } } },
             kind = "turnin",
-            priority = 116,
             conditions = { level = { min = 58 } },
             text = "Turn in Anthion's Old Friend to Falrin Treeshaper.",
             dependsOn = { "accept-8948-anthion-s-old-friend" },
@@ -1109,8 +1029,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8949-falrins-vendetta",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8948 } } },
             kind = "accept",
-            priority = 117,
             conditions = { level = { min = 58 } },
             text = "Accept Falrins Vendetta from Falrin Treeshaper.",
             dependsOn = { "turnin-8948-anthion-s-old-friend" },
@@ -1118,8 +1038,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8949-falrins-vendetta",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8948 } } },
             kind = "turnin",
-            priority = 119,
             conditions = { level = { min = 58 } },
             text = "Turn in Falrins Vendetta to Falrin Treeshaper.",
             dependsOn = { "accept-8949-falrins-vendetta" },
@@ -1128,17 +1048,37 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8950-the-instigators-enchantment",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8949 } } },
             kind = "accept",
-            priority = 120,
             conditions = { level = { min = 58 } },
             text = "Accept The Instigators Enchantment from Falrin Treeshaper.",
             dependsOn = { "turnin-8949-falrins-vendetta" },
             complete = QuestState(8950, "activeOrCompleted"),
         },
         {
-            id = "objective-8950-1-jeering-spectres-essence",
+            id = "objective-8950-3-large-brilliant-shard",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8949 } } },
             kind = "objective",
-            priority = 125,
+            conditions = { level = { min = 58 } },
+            text = "Collect 8 Large Brilliant Shard.",
+            dependsOn = { "accept-8950-the-instigators-enchantment" },
+            complete = QuestObjective(8950, 3, "Large Brilliant Shard"),
+            useClientPin = true,
+        },
+        {
+            id = "objective-8950-2-dark-rune",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8949 } } },
+            kind = "objective",
+            conditions = { level = { min = 58 } },
+            text = "Collect 4 Dark Rune.",
+            dependsOn = { "accept-8950-the-instigators-enchantment" },
+            complete = QuestObjective(8950, 2, "Dark Rune"),
+            useClientPin = true,
+        },
+        {
+            id = "objective-8950-1-jeering-spectres-essence",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8949 } } },
+            kind = "objective",
             conditions = { level = { min = 58 } },
             text = "Collect 1 Jeering Spectres Essence.",
             dependsOn = { "accept-8950-the-instigators-enchantment" },
@@ -1147,8 +1087,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8950-the-instigators-enchantment",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8949 } } },
             kind = "turnin",
-            priority = 126,
             conditions = { level = { min = 58 } },
             text = "Turn in The Instigators Enchantment to Falrin Treeshaper.",
             dependsOn = { "objective-8950-3-large-brilliant-shard", "objective-8950-2-dark-rune", "objective-8950-1-jeering-spectres-essence" },
@@ -1157,26 +1097,27 @@ ns:RegisterGuide({
         },
         {
             id = "accept-9015-the-challenge",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8950 } } },
             kind = "accept",
-            priority = 127,
             conditions = { level = { min = 58 } },
             text = "Accept The Challenge from Falrin Treeshaper.",
             dependsOn = { "turnin-8950-the-instigators-enchantment" },
             complete = QuestState(9015, "activeOrCompleted"),
         },
         {
-            id = "objective-9025-1-theldren-s-team-defeated",
+            id = "objective-9015-1-theldren-s-team-defeated",
+            dependsOn = { "accept-9015-the-challenge" },
+            requiredQuests = { { mode = "all", quests = { 8950 } } },
             kind = "objective",
-            priority = 128,
-            conditions = { all = { { faction = "Alliance" } } },
+            conditions = { level = { min = 58 } },
             text = "Theldren's Team Defeated.",
-            complete = QuestState(9025, "complete"),
+            complete = QuestState(9015, "complete"),
             useClientPin = true,
         },
         {
             id = "objective-9015-2-top-piece-of-lord-valtha",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8950 } } },
             kind = "objective",
-            priority = 129,
             conditions = { level = { min = 58 } },
             text = "Collect 1 Top Piece Of Lord Valthalaks Amulet.",
             dependsOn = { "accept-9015-the-challenge" },
@@ -1185,8 +1126,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-9015-the-challenge",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8950 } } },
             kind = "turnin",
-            priority = 130,
             conditions = { level = { min = 58 } },
             text = "Turn in The Challenge to Anthion Harmon.",
             dependsOn = { "objective-9015-2-top-piece-of-lord-valtha" },
@@ -1197,8 +1138,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8953-anthions-parting-words",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 9015 } } },
             kind = "accept",
-            priority = 131,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             dependsOn = { "turnin-9015-the-challenge" },
@@ -1210,7 +1151,6 @@ ns:RegisterGuide({
         {
             id = "accept-8951-anthions-parting-words",
             kind = "accept",
-            priority = 132,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(8951, "activeOrCompleted"),
@@ -1221,7 +1161,6 @@ ns:RegisterGuide({
         {
             id = "accept-8952-anthions-parting-words",
             kind = "accept",
-            priority = 133,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(8952, "activeOrCompleted"),
@@ -1232,7 +1171,6 @@ ns:RegisterGuide({
         {
             id = "accept-8954-anthions-parting-words",
             kind = "accept",
-            priority = 134,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(8954, "activeOrCompleted"),
@@ -1243,7 +1181,6 @@ ns:RegisterGuide({
         {
             id = "accept-8955-anthions-parting-words",
             kind = "accept",
-            priority = 135,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(8955, "activeOrCompleted"),
@@ -1254,7 +1191,6 @@ ns:RegisterGuide({
         {
             id = "accept-8956-anthions-parting-words",
             kind = "accept",
-            priority = 136,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(8956, "activeOrCompleted"),
@@ -1265,7 +1201,6 @@ ns:RegisterGuide({
         {
             id = "accept-8958-anthions-parting-words",
             kind = "accept",
-            priority = 137,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(8958, "activeOrCompleted"),
@@ -1276,7 +1211,6 @@ ns:RegisterGuide({
         {
             id = "accept-8959-anthions-parting-words",
             kind = "accept",
-            priority = 138,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(8959, "activeOrCompleted"),
@@ -1286,8 +1220,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8953-1-magisters-boots",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 9015 } } },
             kind = "objective",
-            priority = 139,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Boots.",
             dependsOn = { "accept-8953-anthions-parting-words" },
@@ -1296,8 +1230,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8953-2-magisters-leggings",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 9015 } } },
             kind = "objective",
-            priority = 140,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Leggings.",
             dependsOn = { "accept-8953-anthions-parting-words" },
@@ -1306,8 +1240,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8953-3-magisters-mantle",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 9015 } } },
             kind = "objective",
-            priority = 141,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Mantle.",
             dependsOn = { "accept-8953-anthions-parting-words" },
@@ -1317,7 +1251,6 @@ ns:RegisterGuide({
         {
             id = "objective-8951-1-wildheart-boots",
             kind = "objective",
-            priority = 142,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Boots.",
             dependsOn = { "accept-8951-anthions-parting-words" },
@@ -1327,7 +1260,6 @@ ns:RegisterGuide({
         {
             id = "objective-8951-2-wildheart-kilt",
             kind = "objective",
-            priority = 143,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Kilt.",
             dependsOn = { "accept-8951-anthions-parting-words" },
@@ -1337,7 +1269,6 @@ ns:RegisterGuide({
         {
             id = "objective-8951-3-wildheart-spaulders",
             kind = "objective",
-            priority = 144,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Spaulders.",
             dependsOn = { "accept-8951-anthions-parting-words" },
@@ -1347,7 +1278,6 @@ ns:RegisterGuide({
         {
             id = "objective-8952-1-beaststalkers-boots",
             kind = "objective",
-            priority = 145,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Boots.",
             dependsOn = { "accept-8952-anthions-parting-words" },
@@ -1357,7 +1287,6 @@ ns:RegisterGuide({
         {
             id = "objective-8952-2-beaststalkers-pants",
             kind = "objective",
-            priority = 146,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Pants.",
             dependsOn = { "accept-8952-anthions-parting-words" },
@@ -1367,7 +1296,6 @@ ns:RegisterGuide({
         {
             id = "objective-8952-3-beaststalkers-mantle",
             kind = "objective",
-            priority = 147,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Mantle.",
             dependsOn = { "accept-8952-anthions-parting-words" },
@@ -1377,7 +1305,6 @@ ns:RegisterGuide({
         {
             id = "objective-8954-1-lightforge-boots",
             kind = "objective",
-            priority = 148,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Boots.",
             dependsOn = { "accept-8954-anthions-parting-words" },
@@ -1387,7 +1314,6 @@ ns:RegisterGuide({
         {
             id = "objective-8954-2-lightforge-legplates",
             kind = "objective",
-            priority = 149,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Legplates.",
             dependsOn = { "accept-8954-anthions-parting-words" },
@@ -1397,7 +1323,6 @@ ns:RegisterGuide({
         {
             id = "objective-8954-3-lightforge-spaulders",
             kind = "objective",
-            priority = 150,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Spaulders.",
             dependsOn = { "accept-8954-anthions-parting-words" },
@@ -1407,7 +1332,6 @@ ns:RegisterGuide({
         {
             id = "objective-8955-1-devout-sandals",
             kind = "objective",
-            priority = 151,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Sandals.",
             dependsOn = { "accept-8955-anthions-parting-words" },
@@ -1417,7 +1341,6 @@ ns:RegisterGuide({
         {
             id = "objective-8955-2-devout-skirt",
             kind = "objective",
-            priority = 152,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Skirt.",
             dependsOn = { "accept-8955-anthions-parting-words" },
@@ -1427,7 +1350,6 @@ ns:RegisterGuide({
         {
             id = "objective-8955-3-devout-mantle",
             kind = "objective",
-            priority = 153,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Mantle.",
             dependsOn = { "accept-8955-anthions-parting-words" },
@@ -1437,7 +1359,6 @@ ns:RegisterGuide({
         {
             id = "objective-8956-1-shadowcraft-boots",
             kind = "objective",
-            priority = 154,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Boots.",
             dependsOn = { "accept-8956-anthions-parting-words" },
@@ -1447,7 +1368,6 @@ ns:RegisterGuide({
         {
             id = "objective-8956-2-shadowcraft-pants",
             kind = "objective",
-            priority = 155,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Pants.",
             dependsOn = { "accept-8956-anthions-parting-words" },
@@ -1457,7 +1377,6 @@ ns:RegisterGuide({
         {
             id = "objective-8956-3-shadowcraft-spaulders",
             kind = "objective",
-            priority = 156,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Spaulders.",
             dependsOn = { "accept-8956-anthions-parting-words" },
@@ -1467,7 +1386,6 @@ ns:RegisterGuide({
         {
             id = "objective-8958-1-dreadmist-sandals",
             kind = "objective",
-            priority = 157,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Leggings.",
             dependsOn = { "accept-8958-anthions-parting-words" },
@@ -1477,7 +1395,6 @@ ns:RegisterGuide({
         {
             id = "objective-8958-2-dreadmist-mantle",
             kind = "objective",
-            priority = 158,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Mantle.",
             dependsOn = { "accept-8958-anthions-parting-words" },
@@ -1487,7 +1404,6 @@ ns:RegisterGuide({
         {
             id = "objective-8959-1-boots-of-valor",
             kind = "objective",
-            priority = 159,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Boots of Valor.",
             dependsOn = { "accept-8959-anthions-parting-words" },
@@ -1497,7 +1413,6 @@ ns:RegisterGuide({
         {
             id = "objective-8959-2-legplates-of-valor",
             kind = "objective",
-            priority = 160,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Legplates of Valor.",
             dependsOn = { "accept-8959-anthions-parting-words" },
@@ -1507,7 +1422,6 @@ ns:RegisterGuide({
         {
             id = "objective-8959-3-spaulders-of-valor",
             kind = "objective",
-            priority = 161,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Spaulders of Valor.",
             dependsOn = { "accept-8959-anthions-parting-words" },
@@ -1516,8 +1430,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8953-anthions-parting-words",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 9015 } } },
             kind = "turnin",
-            priority = 162,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Deliana.",
             dependsOn = { "objective-8953-1-magisters-boots", "objective-8953-2-magisters-leggings", "objective-8953-3-magisters-mantle" },
@@ -1529,7 +1443,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8951-anthions-parting-words",
             kind = "turnin",
-            priority = 163,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Deliana.",
             dependsOn = { "objective-8951-1-wildheart-boots", "objective-8951-2-wildheart-kilt", "objective-8951-3-wildheart-spaulders" },
@@ -1541,7 +1454,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8952-anthions-parting-words",
             kind = "turnin",
-            priority = 164,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Deliana.",
             dependsOn = { "objective-8952-1-beaststalkers-boots", "objective-8952-2-beaststalkers-pants", "objective-8952-3-beaststalkers-mantle" },
@@ -1553,7 +1465,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8954-anthions-parting-words",
             kind = "turnin",
-            priority = 165,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Deliana.",
             dependsOn = { "objective-8954-1-lightforge-boots", "objective-8954-2-lightforge-legplates", "objective-8954-3-lightforge-spaulders" },
@@ -1565,7 +1476,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8955-anthions-parting-words",
             kind = "turnin",
-            priority = 166,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Deliana.",
             dependsOn = { "objective-8955-1-devout-sandals", "objective-8955-2-devout-skirt", "objective-8955-3-devout-mantle" },
@@ -1577,7 +1487,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8956-anthions-parting-words",
             kind = "turnin",
-            priority = 167,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Deliana.",
             dependsOn = { "objective-8956-1-shadowcraft-boots", "objective-8956-2-shadowcraft-pants", "objective-8956-3-shadowcraft-spaulders" },
@@ -1589,7 +1498,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8958-anthions-parting-words",
             kind = "turnin",
-            priority = 168,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Deliana.",
             dependsOn = { "objective-8958-1-dreadmist-sandals", "objective-8958-2-dreadmist-mantle" },
@@ -1601,7 +1509,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8959-anthions-parting-words",
             kind = "turnin",
-            priority = 169,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Deliana.",
             dependsOn = { "objective-8959-1-boots-of-valor", "objective-8959-2-legplates-of-valor", "objective-8959-3-spaulders-of-valor" },
@@ -1612,8 +1519,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8960-bodleys-unfortunate-fate",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8959 } } },
             kind = "accept",
-            priority = 170,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Accept Bodleys Unfortunate Fate from Deliana.",
             dependsOn = { "turnin-8959-anthions-parting-words" },
@@ -1623,9 +1530,52 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-8994-2-flask-of-supreme-power",
+            id = "accept-8990-the-right-piece-of-lord-valthalaks-amulet",
+            kind = "accept",
+            conditions = { level = { min = 58 } },
+            text = "Accept The Right Piece Of Lord Valthalaks Amulet from Bodley.",
+            complete = QuestState(8990, "activeOrCompleted"),
+        },
+        {
+            id = "objective-8990-1-isalien",
             kind = "objective",
-            priority = 171,
+            conditions = { level = { min = 58 } },
+            text = "Kill Isalien.",
+            dependsOn = { "accept-8990-the-right-piece-of-lord-valthalaks-amulet" },
+            complete = QuestObjective(8990, 1, "Isalien"),
+            useClientPin = true,
+        },
+        {
+            id = "objective-8990-2-right-piece-of-lord-valt",
+            kind = "objective",
+            conditions = { level = { min = 58 } },
+            text = "Collect Right Piece Of Lord Valthalaks Amulet.",
+            dependsOn = { "accept-8990-the-right-piece-of-lord-valthalaks-amulet" },
+            complete = QuestObjective(8990, 2, "Right Piece Of Lord Valthalaks Amulet"),
+            useClientPin = true,
+        },
+        {
+            id = "turnin-8990-the-right-piece-of-lord-valthalaks-amulet",
+            kind = "turnin",
+            conditions = { level = { min = 58 } },
+            text = "Turn in The Right Piece Of Lord Valthalaks Amulet to Bodley.",
+            dependsOn = { "objective-8990-1-isalien", "objective-8990-2-right-piece-of-lord-valt" },
+            complete = QuestState(8990, "completed"),
+            useClientPin = true,
+        },
+        {
+            id = "accept-8994-final-preparations",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8990 } } },
+            kind = "accept",
+            conditions = { level = { min = 58 } },
+            text = "Accept Final Preparations from Bodley.",
+            dependsOn = { "turnin-8990-the-right-piece-of-lord-valthalaks-amulet" },
+            complete = QuestState(8994, "activeOrCompleted"),
+        },
+        {
+            id = "objective-8994-2-flask-of-supreme-power",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8990 } } },
+            kind = "objective",
             conditions = { level = { min = 58 } },
             text = "Collect 1 Flask Of Supreme Power.",
             dependsOn = { "accept-8994-final-preparations" },
@@ -1634,8 +1584,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8960-bodleys-unfortunate-fate",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, { class = 1 }, {  } } }, mode = "all", quests = { 8959 } } },
             kind = "turnin",
-            priority = 172,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Turn in Bodleys Unfortunate Fate to Bodley.",
             dependsOn = { "accept-8960-bodleys-unfortunate-fate" },
@@ -1644,8 +1594,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8961-three-kings-of-flame",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8960 } } },
             kind = "accept",
-            priority = 173,
             conditions = { level = { min = 58 } },
             text = "Accept Three Kings Of Flame from Bodley.",
             dependsOn = { "turnin-8960-bodleys-unfortunate-fate" },
@@ -1653,8 +1603,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8961-1-incendicite-of-incendius",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8960 } } },
             kind = "objective",
-            priority = 175,
             conditions = { level = { min = 58 } },
             text = "Collect Incendicite Of Incendius.",
             dependsOn = { "accept-8961-three-kings-of-flame" },
@@ -1663,8 +1613,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8961-2-ember-of-emberseer",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8960 } } },
             kind = "objective",
-            priority = 177,
             conditions = { level = { min = 58 } },
             text = "Collect Ember Of Emberseer.",
             dependsOn = { "accept-8961-three-kings-of-flame" },
@@ -1673,8 +1623,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8961-3-cinder-of-cynders",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8960 } } },
             kind = "objective",
-            priority = 179,
             conditions = { level = { min = 58 } },
             text = "Collect Cinder Of Cynders.",
             dependsOn = { "accept-8961-three-kings-of-flame" },
@@ -1685,8 +1635,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8961-4-buy-hallowed-brazier",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8960 } } },
             kind = "objective",
-            priority = 180,
             conditions = { level = { min = 58 } },
             text = "Buy Hallowed Brazier.",
             dependsOn = { "accept-8961-three-kings-of-flame" },
@@ -1695,8 +1645,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8961-three-kings-of-flame",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8960 } } },
             kind = "turnin",
-            priority = 181,
             conditions = { level = { min = 58 } },
             text = "Turn in Three Kings Of Flame to Bodley.",
             dependsOn = { "objective-8961-1-incendicite-of-incendius", "objective-8961-2-ember-of-emberseer", "objective-8961-3-cinder-of-cynders", "objective-8961-4-buy-hallowed-brazier" },
@@ -1705,8 +1655,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8964-components-of-importance",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8961 } } },
             kind = "accept",
-            priority = 182,
             conditions = { level = { min = 58 } },
             text = "Accept Components Of Importance from Bodley.",
             dependsOn = { "turnin-8961-three-kings-of-flame" },
@@ -1715,7 +1665,6 @@ ns:RegisterGuide({
         {
             id = "accept-8965-components-of-importance",
             kind = "accept",
-            priority = 183,
             conditions = { level = { min = 58 } },
             text = "Accept Components Of Importance from Bodley.",
             complete = QuestState(8965, "activeOrCompleted"),
@@ -1723,7 +1672,6 @@ ns:RegisterGuide({
         {
             id = "accept-8962-components-of-importance",
             kind = "accept",
-            priority = 184,
             conditions = { level = { min = 58 } },
             text = "Accept Components Of Importance from Bodley.",
             complete = QuestState(8962, "activeOrCompleted"),
@@ -1731,15 +1679,14 @@ ns:RegisterGuide({
         {
             id = "accept-8963-components-of-importance",
             kind = "accept",
-            priority = 185,
             conditions = { level = { min = 58 } },
             text = "Accept Components Of Importance from Bodley.",
             complete = QuestState(8963, "activeOrCompleted"),
         },
         {
             id = "objective-8964-1-brilliant-sword-of-zealo",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8961 } } },
             kind = "objective",
-            priority = 187,
             conditions = { level = { min = 58 } },
             text = "Collect Brilliant Sword Of Zealotry.",
             dependsOn = { "accept-8964-components-of-importance" },
@@ -1751,7 +1698,6 @@ ns:RegisterGuide({
         {
             id = "objective-8965-1-soul-ashes-of-the-banish",
             kind = "objective",
-            priority = 189,
             conditions = { level = { min = 58 } },
             text = "Collect Soul Ashes Of The Banished.",
             dependsOn = { "accept-8965-components-of-importance" },
@@ -1763,7 +1709,6 @@ ns:RegisterGuide({
         {
             id = "objective-8962-1-druidical-remains",
             kind = "objective",
-            priority = 191,
             conditions = { level = { min = 58 } },
             text = "Collect Druidical Remains.",
             dependsOn = { "accept-8962-components-of-importance" },
@@ -1775,7 +1720,6 @@ ns:RegisterGuide({
         {
             id = "objective-8963-1-starbreeze-village-relic",
             kind = "objective",
-            priority = 194,
             conditions = { level = { min = 58 } },
             text = "Collect Starbreeze Village Relic.",
             dependsOn = { "accept-8963-components-of-importance" },
@@ -1786,8 +1730,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8964-components-of-importance",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8961 } } },
             kind = "turnin",
-            priority = 195,
             conditions = { level = { min = 58 } },
             text = "Turn in Components Of Importance to Bodley.",
             dependsOn = { "objective-8964-1-brilliant-sword-of-zealo" },
@@ -1797,7 +1741,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8965-components-of-importance",
             kind = "turnin",
-            priority = 196,
             conditions = { level = { min = 58 } },
             text = "Turn in Components Of Importance to Bodley.",
             dependsOn = { "objective-8965-1-soul-ashes-of-the-banish" },
@@ -1807,7 +1750,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8962-components-of-importance",
             kind = "turnin",
-            priority = 197,
             conditions = { level = { min = 58 } },
             text = "Turn in Components Of Importance to Bodley.",
             dependsOn = { "objective-8962-1-druidical-remains" },
@@ -1817,7 +1759,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8963-components-of-importance",
             kind = "turnin",
-            priority = 198,
             conditions = { level = { min = 58 } },
             text = "Turn in Components Of Importance to Bodley.",
             dependsOn = { "objective-8963-1-starbreeze-village-relic" },
@@ -1826,8 +1767,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8968-the-left-piece-of-lord-valthalaks-amulet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8963 } } },
             kind = "accept",
-            priority = 199,
             conditions = { level = { min = 58 } },
             text = "Accept The Left Piece Of Lord Valthalaks Amulet from Bodley.",
             dependsOn = { "turnin-8963-components-of-importance" },
@@ -1836,7 +1777,6 @@ ns:RegisterGuide({
         {
             id = "accept-8969-the-left-piece-of-lord-valthalaks-amulet",
             kind = "accept",
-            priority = 200,
             conditions = { level = { min = 58 } },
             text = "Accept The Left Piece Of Lord Valthalaks Amulet from Bodley.",
             complete = QuestState(8969, "activeOrCompleted"),
@@ -1844,7 +1784,6 @@ ns:RegisterGuide({
         {
             id = "accept-8966-the-left-piece-of-lord-valthalaks-amulet",
             kind = "accept",
-            priority = 201,
             conditions = { level = { min = 58 } },
             text = "Accept The Left Piece Of Lord Valthalaks Amulet from Bodley.",
             complete = QuestState(8966, "activeOrCompleted"),
@@ -1852,15 +1791,14 @@ ns:RegisterGuide({
         {
             id = "accept-8967-the-left-piece-of-lord-valthalaks-amulet",
             kind = "accept",
-            priority = 202,
             conditions = { level = { min = 58 } },
             text = "Accept The Left Piece Of Lord Valthalaks Amulet from Bodley.",
             complete = QuestState(8967, "activeOrCompleted"),
         },
         {
             id = "objective-8968-1-jarien",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8963 } } },
             kind = "objective",
-            priority = 203,
             conditions = { level = { min = 58 } },
             text = "Kill Jarien.",
             dependsOn = { "accept-8968-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1869,8 +1807,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8968-2-sothos",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8963 } } },
             kind = "objective",
-            priority = 204,
             conditions = { level = { min = 58 } },
             text = "Kill Sothos.",
             dependsOn = { "accept-8968-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1879,8 +1817,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8968-3-left-piece-of-lord-valth",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8963 } } },
             kind = "objective",
-            priority = 205,
             conditions = { level = { min = 58 } },
             text = "Collect Left Piece Of Lord Valthalaks Amulet.",
             dependsOn = { "accept-8968-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1890,7 +1828,6 @@ ns:RegisterGuide({
         {
             id = "objective-8969-1-kormok",
             kind = "objective",
-            priority = 206,
             conditions = { level = { min = 58 } },
             text = "Kill Kormok.",
             dependsOn = { "accept-8969-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1900,7 +1837,6 @@ ns:RegisterGuide({
         {
             id = "objective-8969-2-left-piece-of-lord-valth",
             kind = "objective",
-            priority = 207,
             conditions = { level = { min = 58 } },
             text = "Collect Left Piece Of Lord Valthalaks Amulet.",
             dependsOn = { "accept-8969-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1910,7 +1846,6 @@ ns:RegisterGuide({
         {
             id = "objective-8966-1-mor-grayhoof",
             kind = "objective",
-            priority = 208,
             conditions = { level = { min = 58 } },
             text = "Kill Mor Grayhoof.",
             dependsOn = { "accept-8966-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1920,7 +1855,6 @@ ns:RegisterGuide({
         {
             id = "objective-8966-2-left-piece-of-lord-valth",
             kind = "objective",
-            priority = 209,
             conditions = { level = { min = 58 } },
             text = "Collect Left Piece Of Lord Valthalaks Amulet.",
             dependsOn = { "accept-8966-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1930,7 +1864,6 @@ ns:RegisterGuide({
         {
             id = "objective-8967-1-isalien",
             kind = "objective",
-            priority = 210,
             conditions = { level = { min = 58 } },
             text = "Kill Isalien.",
             dependsOn = { "accept-8967-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1940,7 +1873,6 @@ ns:RegisterGuide({
         {
             id = "objective-8967-2-left-piece-of-lord-valth",
             kind = "objective",
-            priority = 211,
             conditions = { level = { min = 58 } },
             text = "Collect Left Piece Of Lord Valthalaks Amulet.",
             dependsOn = { "accept-8967-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1949,8 +1881,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8968-the-left-piece-of-lord-valthalaks-amulet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8963 } } },
             kind = "turnin",
-            priority = 212,
             conditions = { level = { min = 58 } },
             text = "Turn in The Left Piece Of Lord Valthalaks Amulet to Bodley.",
             dependsOn = { "objective-8968-1-jarien", "objective-8968-2-sothos", "objective-8968-3-left-piece-of-lord-valth" },
@@ -1960,7 +1892,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8969-the-left-piece-of-lord-valthalaks-amulet",
             kind = "turnin",
-            priority = 213,
             conditions = { level = { min = 58 } },
             text = "Turn in The Left Piece Of Lord Valthalaks Amulet to Bodley.",
             dependsOn = { "objective-8969-1-kormok", "objective-8969-2-left-piece-of-lord-valth" },
@@ -1970,7 +1901,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8966-the-left-piece-of-lord-valthalaks-amulet",
             kind = "turnin",
-            priority = 214,
             conditions = { level = { min = 58 } },
             text = "Turn in The Left Piece Of Lord Valthalaks Amulet to Bodley.",
             dependsOn = { "objective-8966-1-mor-grayhoof", "objective-8966-2-left-piece-of-lord-valth" },
@@ -1980,7 +1910,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8967-the-left-piece-of-lord-valthalaks-amulet",
             kind = "turnin",
-            priority = 215,
             conditions = { level = { min = 58 } },
             text = "Turn in The Left Piece Of Lord Valthalaks Amulet to Bodley.",
             dependsOn = { "objective-8967-1-isalien", "objective-8967-2-left-piece-of-lord-valth" },
@@ -1989,8 +1918,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8970-i-see-alcaz-island-in-your-future",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8967 } } },
             kind = "accept",
-            priority = 216,
             conditions = { level = { min = 58 } },
             text = "Accept I See Alcaz Island In Your Future from Bodley.",
             dependsOn = { "turnin-8967-the-left-piece-of-lord-valthalaks-amulet" },
@@ -1998,8 +1927,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8970-i-see-alcaz-island-in-your-future",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8967 } } },
             kind = "turnin",
-            priority = 218,
             conditions = { level = { min = 58 } },
             text = "Turn in I See Alcaz Island In Your Future to Bodley.",
             dependsOn = { "accept-8970-i-see-alcaz-island-in-your-future" },
@@ -2008,8 +1937,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8985-more-components-of-importance",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8970 } } },
             kind = "accept",
-            priority = 219,
             conditions = { level = { min = 58 } },
             text = "Accept More Components Of Importance from Bodley.",
             dependsOn = { "turnin-8970-i-see-alcaz-island-in-your-future" },
@@ -2018,7 +1947,6 @@ ns:RegisterGuide({
         {
             id = "accept-8986-more-components-of-importance",
             kind = "accept",
-            priority = 220,
             conditions = { level = { min = 58 } },
             text = "Accept More Components Of Importance from Bodley.",
             complete = QuestState(8986, "activeOrCompleted"),
@@ -2026,7 +1954,6 @@ ns:RegisterGuide({
         {
             id = "accept-8988-more-components-of-importance",
             kind = "accept",
-            priority = 221,
             conditions = { level = { min = 58 } },
             text = "Accept More Components Of Importance from Bodley.",
             complete = QuestState(8988, "activeOrCompleted"),
@@ -2034,7 +1961,6 @@ ns:RegisterGuide({
         {
             id = "accept-8987-more-components-of-importance",
             kind = "accept",
-            priority = 222,
             conditions = { level = { min = 58 } },
             text = "Accept More Components Of Importance from Bodley.",
             complete = QuestState(8987, "activeOrCompleted"),
@@ -2042,7 +1968,6 @@ ns:RegisterGuide({
         {
             id = "objective-8987-1-brilliant-sword-of-zealo",
             kind = "objective",
-            priority = 223,
             conditions = { level = { min = 58 } },
             text = "Collect Brilliant Sword Of Zealotry.",
             dependsOn = { "accept-8987-more-components-of-importance" },
@@ -2054,7 +1979,6 @@ ns:RegisterGuide({
         {
             id = "objective-8988-1-soul-ashes-of-the-banish",
             kind = "objective",
-            priority = 224,
             conditions = { level = { min = 58 } },
             text = "Collect Soul Ashes Of The Banished.",
             dependsOn = { "accept-8988-more-components-of-importance" },
@@ -2066,7 +1990,6 @@ ns:RegisterGuide({
         {
             id = "objective-8986-1-druidical-remains",
             kind = "objective",
-            priority = 225,
             conditions = { level = { min = 58 } },
             text = "Collect Druidical Remains.",
             dependsOn = { "accept-8986-more-components-of-importance" },
@@ -2077,8 +2000,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8985-1-starbreeze-village-relic",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8970 } } },
             kind = "objective",
-            priority = 226,
             conditions = { level = { min = 58 } },
             text = "Collect Starbreeze Village Relic.",
             dependsOn = { "accept-8985-more-components-of-importance" },
@@ -2089,8 +2012,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8985-more-components-of-importance",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8970 } } },
             kind = "turnin",
-            priority = 227,
             conditions = { level = { min = 58 } },
             text = "Turn in More Components Of Importance to Bodley.",
             dependsOn = { "objective-8985-1-starbreeze-village-relic" },
@@ -2100,7 +2023,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8986-more-components-of-importance",
             kind = "turnin",
-            priority = 228,
             conditions = { level = { min = 58 } },
             text = "Turn in More Components Of Importance to Bodley.",
             dependsOn = { "objective-8986-1-druidical-remains" },
@@ -2110,7 +2032,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8988-more-components-of-importance",
             kind = "turnin",
-            priority = 229,
             conditions = { level = { min = 58 } },
             text = "Turn in More Components Of Importance to Bodley.",
             dependsOn = { "objective-8988-1-soul-ashes-of-the-banish" },
@@ -2120,7 +2041,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8987-more-components-of-importance",
             kind = "turnin",
-            priority = 230,
             conditions = { level = { min = 58 } },
             text = "Turn in More Components Of Importance to Bodley.",
             dependsOn = { "objective-8987-1-brilliant-sword-of-zealo" },
@@ -2129,8 +2049,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8991-the-right-piece-of-lord-valthalaks-amulet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8987 } } },
             kind = "accept",
-            priority = 231,
             conditions = { level = { min = 58 } },
             text = "Accept The Right Piece Of Lord Valthalaks Amulet from Bodley.",
             dependsOn = { "turnin-8987-more-components-of-importance" },
@@ -2139,7 +2059,6 @@ ns:RegisterGuide({
         {
             id = "accept-8992-the-right-piece-of-lord-valthalaks-amulet",
             kind = "accept",
-            priority = 232,
             conditions = { level = { min = 58 } },
             text = "Accept The Right Piece Of Lord Valthalaks Amulet from Bodley.",
             complete = QuestState(8992, "activeOrCompleted"),
@@ -2147,23 +2066,14 @@ ns:RegisterGuide({
         {
             id = "accept-8989-the-right-piece-of-lord-valthalaks-amulet",
             kind = "accept",
-            priority = 233,
             conditions = { level = { min = 58 } },
             text = "Accept The Right Piece Of Lord Valthalaks Amulet from Bodley.",
             complete = QuestState(8989, "activeOrCompleted"),
         },
         {
-            id = "accept-8990-the-right-piece-of-lord-valthalaks-amulet",
-            kind = "accept",
-            priority = 234,
-            conditions = { level = { min = 58 } },
-            text = "Accept The Right Piece Of Lord Valthalaks Amulet from Bodley.",
-            complete = QuestState(8990, "activeOrCompleted"),
-        },
-        {
             id = "objective-8991-1-jarien",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8987 } } },
             kind = "objective",
-            priority = 235,
             conditions = { level = { min = 58 } },
             text = "Kill Jarien.",
             dependsOn = { "accept-8991-the-right-piece-of-lord-valthalaks-amulet" },
@@ -2172,8 +2082,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8991-2-sothos",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8987 } } },
             kind = "objective",
-            priority = 236,
             conditions = { level = { min = 58 } },
             text = "Kill Sothos.",
             dependsOn = { "accept-8991-the-right-piece-of-lord-valthalaks-amulet" },
@@ -2182,8 +2092,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8991-3-right-piece-of-lord-valt",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8987 } } },
             kind = "objective",
-            priority = 237,
             conditions = { level = { min = 58 } },
             text = "Collect Right Piece Of Lord Valthalaks Amulet.",
             dependsOn = { "accept-8991-the-right-piece-of-lord-valthalaks-amulet" },
@@ -2193,7 +2103,6 @@ ns:RegisterGuide({
         {
             id = "objective-8992-1-kormok",
             kind = "objective",
-            priority = 238,
             conditions = { level = { min = 58 } },
             text = "Kill Kormok.",
             dependsOn = { "accept-8992-the-right-piece-of-lord-valthalaks-amulet" },
@@ -2203,7 +2112,6 @@ ns:RegisterGuide({
         {
             id = "objective-8992-2-right-piece-of-lord-valt",
             kind = "objective",
-            priority = 239,
             conditions = { level = { min = 58 } },
             text = "Collect Right Piece Of Lord Valthalaks Amulet.",
             dependsOn = { "accept-8992-the-right-piece-of-lord-valthalaks-amulet" },
@@ -2213,7 +2121,6 @@ ns:RegisterGuide({
         {
             id = "objective-8989-1-mor-grayhoof",
             kind = "objective",
-            priority = 240,
             conditions = { level = { min = 58 } },
             text = "Kill Mor Grayhoof.",
             dependsOn = { "accept-8989-the-right-piece-of-lord-valthalaks-amulet" },
@@ -2223,7 +2130,6 @@ ns:RegisterGuide({
         {
             id = "objective-8989-2-right-piece-of-lord-valt",
             kind = "objective",
-            priority = 241,
             conditions = { level = { min = 58 } },
             text = "Collect Right Piece Of Lord Valthalaks Amulet.",
             dependsOn = { "accept-8989-the-right-piece-of-lord-valthalaks-amulet" },
@@ -2231,29 +2137,9 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "objective-8990-1-isalien",
-            kind = "objective",
-            priority = 242,
-            conditions = { level = { min = 58 } },
-            text = "Kill Isalien.",
-            dependsOn = { "accept-8990-the-right-piece-of-lord-valthalaks-amulet" },
-            complete = QuestObjective(8990, 1, "Isalien"),
-            useClientPin = true,
-        },
-        {
-            id = "objective-8990-2-right-piece-of-lord-valt",
-            kind = "objective",
-            priority = 243,
-            conditions = { level = { min = 58 } },
-            text = "Collect Right Piece Of Lord Valthalaks Amulet.",
-            dependsOn = { "accept-8990-the-right-piece-of-lord-valthalaks-amulet" },
-            complete = QuestObjective(8990, 2, "Right Piece Of Lord Valthalaks Amulet"),
-            useClientPin = true,
-        },
-        {
             id = "turnin-8991-the-right-piece-of-lord-valthalaks-amulet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8987 } } },
             kind = "turnin",
-            priority = 244,
             conditions = { level = { min = 58 } },
             text = "Turn in The Right Piece Of Lord Valthalaks Amulet to Bodley.",
             dependsOn = { "objective-8991-1-jarien", "objective-8991-2-sothos", "objective-8991-3-right-piece-of-lord-valt" },
@@ -2263,7 +2149,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8992-the-right-piece-of-lord-valthalaks-amulet",
             kind = "turnin",
-            priority = 245,
             conditions = { level = { min = 58 } },
             text = "Turn in The Right Piece Of Lord Valthalaks Amulet to Bodley.",
             dependsOn = { "objective-8992-1-kormok", "objective-8992-2-right-piece-of-lord-valt" },
@@ -2273,7 +2158,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8989-the-right-piece-of-lord-valthalaks-amulet",
             kind = "turnin",
-            priority = 246,
             conditions = { level = { min = 58 } },
             text = "Turn in The Right Piece Of Lord Valthalaks Amulet to Bodley.",
             dependsOn = { "objective-8989-1-mor-grayhoof", "objective-8989-2-right-piece-of-lord-valt" },
@@ -2281,28 +2165,9 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "turnin-8990-the-right-piece-of-lord-valthalaks-amulet",
-            kind = "turnin",
-            priority = 247,
-            conditions = { level = { min = 58 } },
-            text = "Turn in The Right Piece Of Lord Valthalaks Amulet to Bodley.",
-            dependsOn = { "objective-8990-1-isalien", "objective-8990-2-right-piece-of-lord-valt" },
-            complete = QuestState(8990, "completed"),
-            useClientPin = true,
-        },
-        {
-            id = "accept-8994-final-preparations",
-            kind = "accept",
-            priority = 248,
-            conditions = { level = { min = 58 } },
-            text = "Accept Final Preparations from Bodley.",
-            dependsOn = { "turnin-8990-the-right-piece-of-lord-valthalaks-amulet" },
-            complete = QuestState(8994, "activeOrCompleted"),
-        },
-        {
             id = "objective-8994-1-blackrock-bracer",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8990 } } },
             kind = "objective",
-            priority = 250,
             conditions = { level = { min = 58 } },
             text = "Collect 40 Blackrock Bracer.",
             dependsOn = { "accept-8994-final-preparations" },
@@ -2311,8 +2176,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8994-final-preparations",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8990 } } },
             kind = "turnin",
-            priority = 251,
             conditions = { level = { min = 58 } },
             text = "Turn in Final Preparations to Bodley.",
             dependsOn = { "objective-8994-2-flask-of-supreme-power", "objective-8994-1-blackrock-bracer" },
@@ -2321,8 +2186,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8995-mea-culpa-lord-valthalak",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8994 } } },
             kind = "accept",
-            priority = 252,
             conditions = { level = { min = 58 } },
             text = "Accept Mea Culpa Lord Valthalak from Bodley.",
             dependsOn = { "turnin-8994-final-preparations" },
@@ -2330,8 +2195,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8995-1-lord-valthalak",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8994 } } },
             kind = "objective",
-            priority = 253,
             conditions = { level = { min = 58 } },
             text = "Kill Lord Valthalak.",
             dependsOn = { "accept-8995-mea-culpa-lord-valthalak" },
@@ -2340,8 +2205,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8995-2-lord-valthalaks-amulet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8994 } } },
             kind = "objective",
-            priority = 254,
             conditions = { level = { min = 58 } },
             text = "Collect Lord Valthalaks Amulet.",
             dependsOn = { "accept-8995-mea-culpa-lord-valthalak" },
@@ -2350,8 +2215,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8995-mea-culpa-lord-valthalak",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8994 } } },
             kind = "turnin",
-            priority = 255,
             conditions = { level = { min = 58 } },
             text = "Turn in Mea Culpa Lord Valthalak.",
             dependsOn = { "objective-8995-1-lord-valthalak", "objective-8995-2-lord-valthalaks-amulet" },
@@ -2360,8 +2225,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8996-return-to-bodley",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8995 } } },
             kind = "accept",
-            priority = 256,
             conditions = { level = { min = 58 } },
             text = "Accept Return To Bodley.",
             dependsOn = { "turnin-8995-mea-culpa-lord-valthalak" },
@@ -2369,8 +2234,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8996-return-to-bodley",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8995 } } },
             kind = "turnin",
-            priority = 257,
             conditions = { level = { min = 58 } },
             text = "Turn in Return To Bodley to Bodley.",
             dependsOn = { "accept-8996-return-to-bodley" },
@@ -2379,8 +2244,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8997-back-to-the-beginning",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8996 } } },
             kind = "accept",
-            priority = 258,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Accept Back To The Beginning from Bodley.",
             dependsOn = { "turnin-8996-return-to-bodley" },
@@ -2388,8 +2253,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8997-back-to-the-beginning",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 8996 } } },
             kind = "turnin",
-            priority = 259,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             text = "Turn in Back To The Beginning to Deliana.",
             dependsOn = { "accept-8997-back-to-the-beginning" },
@@ -2400,8 +2265,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-9000-saving-the-best-for-last",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8997 } } },
             kind = "accept",
-            priority = 260,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Deliana.",
             dependsOn = { "turnin-8997-back-to-the-beginning" },
@@ -2413,7 +2278,6 @@ ns:RegisterGuide({
         {
             id = "accept-8999-saving-the-best-for-last",
             kind = "accept",
-            priority = 261,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Deliana.",
             complete = QuestState(8999, "activeOrCompleted"),
@@ -2424,7 +2288,6 @@ ns:RegisterGuide({
         {
             id = "accept-9001-saving-the-best-for-last",
             kind = "accept",
-            priority = 262,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Deliana.",
             complete = QuestState(9001, "activeOrCompleted"),
@@ -2435,7 +2298,6 @@ ns:RegisterGuide({
         {
             id = "accept-9002-saving-the-best-for-last",
             kind = "accept",
-            priority = 263,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Deliana.",
             complete = QuestState(9002, "activeOrCompleted"),
@@ -2446,7 +2308,6 @@ ns:RegisterGuide({
         {
             id = "accept-9003-saving-the-best-for-last",
             kind = "accept",
-            priority = 264,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Deliana.",
             complete = QuestState(9003, "activeOrCompleted"),
@@ -2457,7 +2318,6 @@ ns:RegisterGuide({
         {
             id = "accept-9004-saving-the-best-for-last",
             kind = "accept",
-            priority = 265,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Deliana.",
             complete = QuestState(9004, "activeOrCompleted"),
@@ -2468,7 +2328,6 @@ ns:RegisterGuide({
         {
             id = "accept-9005-saving-the-best-for-last",
             kind = "accept",
-            priority = 266,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Deliana.",
             complete = QuestState(9005, "activeOrCompleted"),
@@ -2479,7 +2338,6 @@ ns:RegisterGuide({
         {
             id = "accept-9006-saving-the-best-for-last",
             kind = "accept",
-            priority = 267,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Deliana.",
             complete = QuestState(9006, "activeOrCompleted"),
@@ -2489,8 +2347,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-9000-2-beaststalkers-tunic",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8997 } } },
             kind = "objective",
-            priority = 268,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Tunic.",
             dependsOn = { "accept-9000-saving-the-best-for-last" },
@@ -2499,8 +2357,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-9000-1-beaststalkers-cap",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8997 } } },
             kind = "objective",
-            priority = 269,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Cap.",
             dependsOn = { "accept-9000-saving-the-best-for-last" },
@@ -2510,7 +2368,6 @@ ns:RegisterGuide({
         {
             id = "objective-9001-1-magisters-crown",
             kind = "objective",
-            priority = 270,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Crown.",
             dependsOn = { "accept-9001-saving-the-best-for-last" },
@@ -2520,7 +2377,6 @@ ns:RegisterGuide({
         {
             id = "objective-9001-2-magisters-robes",
             kind = "objective",
-            priority = 271,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Robes.",
             dependsOn = { "accept-9001-saving-the-best-for-last" },
@@ -2530,7 +2386,6 @@ ns:RegisterGuide({
         {
             id = "objective-8999-1-wildheart-cowl",
             kind = "objective",
-            priority = 272,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Cowl.",
             dependsOn = { "accept-8999-saving-the-best-for-last" },
@@ -2540,7 +2395,6 @@ ns:RegisterGuide({
         {
             id = "objective-8999-2-wildheart-vest",
             kind = "objective",
-            priority = 273,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Vest.",
             dependsOn = { "accept-8999-saving-the-best-for-last" },
@@ -2550,7 +2404,6 @@ ns:RegisterGuide({
         {
             id = "objective-9006-2-breastplate-of-valor",
             kind = "objective",
-            priority = 274,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Breastplate of Valor.",
             dependsOn = { "accept-9006-saving-the-best-for-last" },
@@ -2560,7 +2413,6 @@ ns:RegisterGuide({
         {
             id = "objective-9005-1-helm-of-valor",
             kind = "objective",
-            priority = 275,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Helm of Valor.",
             dependsOn = { "accept-9005-saving-the-best-for-last" },
@@ -2570,7 +2422,6 @@ ns:RegisterGuide({
         {
             id = "objective-9003-1-devout-crown",
             kind = "objective",
-            priority = 276,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Crown.",
             dependsOn = { "accept-9003-saving-the-best-for-last" },
@@ -2580,7 +2431,6 @@ ns:RegisterGuide({
         {
             id = "objective-9003-2-devout-robe",
             kind = "objective",
-            priority = 277,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Robe.",
             dependsOn = { "accept-9003-saving-the-best-for-last" },
@@ -2590,7 +2440,6 @@ ns:RegisterGuide({
         {
             id = "objective-9005-1-dreadmist-mask",
             kind = "objective",
-            priority = 278,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Mask.",
             dependsOn = { "accept-9005-saving-the-best-for-last" },
@@ -2600,7 +2449,6 @@ ns:RegisterGuide({
         {
             id = "objective-9005-2-dreadmist-robe",
             kind = "objective",
-            priority = 279,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Robe.",
             dependsOn = { "accept-9005-saving-the-best-for-last" },
@@ -2610,7 +2458,6 @@ ns:RegisterGuide({
         {
             id = "objective-9002-1-lightforge-helm",
             kind = "objective",
-            priority = 280,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Helm.",
             dependsOn = { "accept-9002-saving-the-best-for-last" },
@@ -2620,7 +2467,6 @@ ns:RegisterGuide({
         {
             id = "objective-9002-2-lightforge-breastplate",
             kind = "objective",
-            priority = 281,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Breastplate.",
             dependsOn = { "accept-9002-saving-the-best-for-last" },
@@ -2630,7 +2476,6 @@ ns:RegisterGuide({
         {
             id = "objective-9004-1-shadowcraft-cap",
             kind = "objective",
-            priority = 282,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Cap.",
             dependsOn = { "accept-9004-saving-the-best-for-last" },
@@ -2640,7 +2485,6 @@ ns:RegisterGuide({
         {
             id = "objective-9004-2-shadowcraft-tunic",
             kind = "objective",
-            priority = 283,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Tunic.",
             dependsOn = { "accept-9004-saving-the-best-for-last" },
@@ -2649,8 +2493,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-9000-saving-the-best-for-last",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 8997 } } },
             kind = "turnin",
-            priority = 284,
             conditions = { all = { { faction = "Alliance" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Deliana.",
             dependsOn = { "objective-9000-2-beaststalkers-tunic", "objective-9000-1-beaststalkers-cap" },
@@ -2662,7 +2506,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8999-saving-the-best-for-last",
             kind = "turnin",
-            priority = 285,
             conditions = { all = { { faction = "Alliance" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Deliana.",
             dependsOn = { "objective-8999-1-wildheart-cowl", "objective-8999-2-wildheart-vest" },
@@ -2674,7 +2517,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9001-saving-the-best-for-last",
             kind = "turnin",
-            priority = 286,
             conditions = { all = { { faction = "Alliance" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Deliana.",
             dependsOn = { "objective-9001-1-magisters-crown", "objective-9001-2-magisters-robes" },
@@ -2686,7 +2528,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9002-saving-the-best-for-last",
             kind = "turnin",
-            priority = 287,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Deliana.",
             dependsOn = { "objective-9002-1-lightforge-helm", "objective-9002-2-lightforge-breastplate" },
@@ -2698,7 +2539,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9003-saving-the-best-for-last",
             kind = "turnin",
-            priority = 288,
             conditions = { all = { { faction = "Alliance" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Deliana.",
             dependsOn = { "objective-9003-1-devout-crown", "objective-9003-2-devout-robe" },
@@ -2710,7 +2550,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9004-saving-the-best-for-last",
             kind = "turnin",
-            priority = 289,
             conditions = { all = { { faction = "Alliance" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Deliana.",
             dependsOn = { "objective-9004-1-shadowcraft-cap", "objective-9004-2-shadowcraft-tunic" },
@@ -2722,7 +2561,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9005-saving-the-best-for-last",
             kind = "turnin",
-            priority = 290,
             conditions = { all = { { faction = "Alliance" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Deliana.",
             dependsOn = { "objective-9005-1-helm-of-valor", "objective-9005-1-dreadmist-mask", "objective-9005-2-dreadmist-robe" },
@@ -2734,7 +2572,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9006-saving-the-best-for-last",
             kind = "turnin",
-            priority = 291,
             conditions = { all = { { faction = "Alliance" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Deliana.",
             dependsOn = { "objective-9006-2-breastplate-of-valor" },
@@ -2746,7 +2583,6 @@ ns:RegisterGuide({
         {
             id = "accept-8914-an-earnest-proposition",
             kind = "accept",
-            priority = 292,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Mokvar.",
             complete = QuestState(8914, "activeOrCompleted"),
@@ -2757,7 +2593,6 @@ ns:RegisterGuide({
         {
             id = "accept-8913-an-earnest-proposition",
             kind = "accept",
-            priority = 293,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Mokvar.",
             complete = QuestState(8913, "activeOrCompleted"),
@@ -2768,7 +2603,6 @@ ns:RegisterGuide({
         {
             id = "accept-8915-an-earnest-proposition",
             kind = "accept",
-            priority = 294,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Mokvar.",
             complete = QuestState(8915, "activeOrCompleted"),
@@ -2779,7 +2613,6 @@ ns:RegisterGuide({
         {
             id = "accept-8916-an-earnest-proposition",
             kind = "accept",
-            priority = 295,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Mokvar.",
             complete = QuestState(8916, "activeOrCompleted"),
@@ -2790,7 +2623,6 @@ ns:RegisterGuide({
         {
             id = "accept-8917-an-earnest-proposition",
             kind = "accept",
-            priority = 296,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Mokvar.",
             complete = QuestState(8917, "activeOrCompleted"),
@@ -2801,7 +2633,6 @@ ns:RegisterGuide({
         {
             id = "accept-8918-an-earnest-proposition",
             kind = "accept",
-            priority = 297,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Mokvar.",
             complete = QuestState(8918, "activeOrCompleted"),
@@ -2812,7 +2643,6 @@ ns:RegisterGuide({
         {
             id = "accept-8919-an-earnest-proposition",
             kind = "accept",
-            priority = 298,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Mokvar.",
             complete = QuestState(8919, "activeOrCompleted"),
@@ -2823,7 +2653,6 @@ ns:RegisterGuide({
         {
             id = "accept-8920-an-earnest-proposition",
             kind = "accept",
-            priority = 299,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Accept An Earnest Proposition from Mokvar.",
             complete = QuestState(8920, "activeOrCompleted"),
@@ -2834,7 +2663,6 @@ ns:RegisterGuide({
         {
             id = "objective-8914-2-beaststalker-s-bindings",
             kind = "objective",
-            priority = 300,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalker's Bindings.",
             dependsOn = { "accept-8914-an-earnest-proposition" },
@@ -2844,7 +2672,6 @@ ns:RegisterGuide({
         {
             id = "objective-8915-2-magister-s-bindings",
             kind = "objective",
-            priority = 301,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magister's Bindings.",
             dependsOn = { "accept-8915-an-earnest-proposition" },
@@ -2854,7 +2681,6 @@ ns:RegisterGuide({
         {
             id = "objective-8913-2-wildheart-bracers",
             kind = "objective",
-            priority = 302,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Bracers.",
             dependsOn = { "accept-8913-an-earnest-proposition" },
@@ -2864,7 +2690,6 @@ ns:RegisterGuide({
         {
             id = "objective-8920-2-bracers-of-valor",
             kind = "objective",
-            priority = 303,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Bracers of Valor.",
             dependsOn = { "accept-8920-an-earnest-proposition" },
@@ -2874,7 +2699,6 @@ ns:RegisterGuide({
         {
             id = "objective-8916-2-devout-bracers",
             kind = "objective",
-            priority = 304,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Bracers.",
             dependsOn = { "accept-8916-an-earnest-proposition" },
@@ -2884,7 +2708,6 @@ ns:RegisterGuide({
         {
             id = "objective-8919-2-dreadmist-bracers",
             kind = "objective",
-            priority = 305,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Bracers.",
             dependsOn = { "accept-8919-an-earnest-proposition" },
@@ -2894,7 +2717,6 @@ ns:RegisterGuide({
         {
             id = "objective-8917-2-shadowcraft-bracers",
             kind = "objective",
-            priority = 306,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Bracers.",
             dependsOn = { "accept-8917-an-earnest-proposition" },
@@ -2904,7 +2726,6 @@ ns:RegisterGuide({
         {
             id = "objective-8918-2-bindings-of-elements",
             kind = "objective",
-            priority = 307,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 1 Bindings of Elements.",
             dependsOn = { "accept-8918-an-earnest-proposition" },
@@ -2914,7 +2735,6 @@ ns:RegisterGuide({
         {
             id = "objective-8914-1-silithus-venom-sample",
             kind = "objective",
-            priority = 309,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 15 Silithus Venom Sample.",
             dependsOn = { "accept-8914-an-earnest-proposition" },
@@ -2924,7 +2744,6 @@ ns:RegisterGuide({
         {
             id = "objective-8915-1-silithus-venom-sample",
             kind = "objective",
-            priority = 310,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 15 Silithus Venom Sample.",
             dependsOn = { "accept-8915-an-earnest-proposition" },
@@ -2934,7 +2753,6 @@ ns:RegisterGuide({
         {
             id = "objective-8913-1-silithus-venom-sample",
             kind = "objective",
-            priority = 311,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 15 Silithus Venom Sample.",
             dependsOn = { "accept-8913-an-earnest-proposition" },
@@ -2944,7 +2762,6 @@ ns:RegisterGuide({
         {
             id = "objective-8920-1-silithus-venom-sample",
             kind = "objective",
-            priority = 312,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 15 Silithus Venom Sample.",
             dependsOn = { "accept-8920-an-earnest-proposition" },
@@ -2954,7 +2771,6 @@ ns:RegisterGuide({
         {
             id = "objective-8916-1-silithus-venom-sample",
             kind = "objective",
-            priority = 313,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 15 Silithus Venom Sample.",
             dependsOn = { "accept-8916-an-earnest-proposition" },
@@ -2964,7 +2780,6 @@ ns:RegisterGuide({
         {
             id = "objective-8919-1-silithus-venom-sample",
             kind = "objective",
-            priority = 314,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 15 Silithus Venom Sample.",
             dependsOn = { "accept-8919-an-earnest-proposition" },
@@ -2974,7 +2789,6 @@ ns:RegisterGuide({
         {
             id = "objective-8917-1-silithus-venom-sample",
             kind = "objective",
-            priority = 315,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 15 Silithus Venom Sample.",
             dependsOn = { "accept-8917-an-earnest-proposition" },
@@ -2984,7 +2798,6 @@ ns:RegisterGuide({
         {
             id = "objective-8918-1-silithus-venom-sample",
             kind = "objective",
-            priority = 316,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 15 Silithus Venom Sample.",
             dependsOn = { "accept-8918-an-earnest-proposition" },
@@ -2994,7 +2807,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8914-an-earnest-proposition",
             kind = "turnin",
-            priority = 317,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Mokvar.",
             dependsOn = { "objective-8914-2-beaststalker-s-bindings", "objective-8914-1-silithus-venom-sample" },
@@ -3006,7 +2818,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8913-an-earnest-proposition",
             kind = "turnin",
-            priority = 318,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Mokvar.",
             dependsOn = { "objective-8913-2-wildheart-bracers", "objective-8913-1-silithus-venom-sample" },
@@ -3018,7 +2829,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8915-an-earnest-proposition",
             kind = "turnin",
-            priority = 319,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Mokvar.",
             dependsOn = { "objective-8915-2-magister-s-bindings", "objective-8915-1-silithus-venom-sample" },
@@ -3030,7 +2840,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8916-an-earnest-proposition",
             kind = "turnin",
-            priority = 320,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Mokvar.",
             dependsOn = { "objective-8916-2-devout-bracers", "objective-8916-1-silithus-venom-sample" },
@@ -3042,7 +2851,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8917-an-earnest-proposition",
             kind = "turnin",
-            priority = 321,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Mokvar.",
             dependsOn = { "objective-8917-2-shadowcraft-bracers", "objective-8917-1-silithus-venom-sample" },
@@ -3054,7 +2862,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8918-an-earnest-proposition",
             kind = "turnin",
-            priority = 322,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Mokvar.",
             dependsOn = { "objective-8918-2-bindings-of-elements", "objective-8918-1-silithus-venom-sample" },
@@ -3066,7 +2873,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8919-an-earnest-proposition",
             kind = "turnin",
-            priority = 323,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Mokvar.",
             dependsOn = { "objective-8919-2-dreadmist-bracers", "objective-8919-1-silithus-venom-sample" },
@@ -3078,7 +2884,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8920-an-earnest-proposition",
             kind = "turnin",
-            priority = 324,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Turn in An Earnest Proposition to Mokvar.",
             dependsOn = { "objective-8920-2-bracers-of-valor", "objective-8920-1-silithus-venom-sample" },
@@ -3089,8 +2894,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8923-a-supernatural-device",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 8920 } } },
             kind = "accept",
-            priority = 325,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Accept A Supernatural Device from Mokvar.",
             dependsOn = { "turnin-8920-an-earnest-proposition" },
@@ -3101,8 +2906,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8923-1-delicate-arcanite-conver",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 8920 } } },
             kind = "objective",
-            priority = 326,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Collect 1 Delicate Arcanite Converter.",
             dependsOn = { "accept-8923-a-supernatural-device" },
@@ -3111,8 +2916,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8923-2-greater-eternal-essence",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 8920 } } },
             kind = "objective",
-            priority = 327,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Collect 4 Greater Eternal Essence.",
             dependsOn = { "accept-8923-a-supernatural-device" },
@@ -3121,8 +2926,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8923-3-stonescale-oil",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 8920 } } },
             kind = "objective",
-            priority = 328,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Collect 10 Stonescale Oil.",
             dependsOn = { "accept-8923-a-supernatural-device" },
@@ -3131,8 +2936,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8923-a-supernatural-device",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 8920 } } },
             kind = "turnin",
-            priority = 329,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Turn in A Supernatural Device to Mux Manascrambler.",
             dependsOn = { "objective-8923-1-delicate-arcanite-conver", "objective-8923-2-greater-eternal-essence", "objective-8923-3-stonescale-oil" },
@@ -3143,8 +2948,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8978-return-to-mokvar",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8923 } } },
             kind = "accept",
-            priority = 330,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Accept Return To Mokvar from Mux Manascrambler.",
             dependsOn = { "turnin-8923-a-supernatural-device" },
@@ -3155,8 +2960,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8978-return-to-mokvar",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8923 } } },
             kind = "turnin",
-            priority = 331,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Turn in Return To Mokvar to Mokvar.",
             dependsOn = { "accept-8978-return-to-mokvar" },
@@ -3167,8 +2972,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8927-just-compensation",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8978 } } },
             kind = "accept",
-            priority = 332,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Mokvar.",
             dependsOn = { "turnin-8978-return-to-mokvar" },
@@ -3180,7 +2985,6 @@ ns:RegisterGuide({
         {
             id = "accept-8938-just-compensation",
             kind = "accept",
-            priority = 333,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Mokvar.",
             complete = QuestState(8938, "activeOrCompleted"),
@@ -3191,7 +2995,6 @@ ns:RegisterGuide({
         {
             id = "accept-8939-just-compensation",
             kind = "accept",
-            priority = 334,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Mokvar.",
             complete = QuestState(8939, "activeOrCompleted"),
@@ -3202,7 +3005,6 @@ ns:RegisterGuide({
         {
             id = "accept-8942-just-compensation",
             kind = "accept",
-            priority = 335,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Mokvar.",
             complete = QuestState(8942, "activeOrCompleted"),
@@ -3213,7 +3015,6 @@ ns:RegisterGuide({
         {
             id = "accept-8940-just-compensation",
             kind = "accept",
-            priority = 336,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Mokvar.",
             complete = QuestState(8940, "activeOrCompleted"),
@@ -3224,7 +3025,6 @@ ns:RegisterGuide({
         {
             id = "accept-8941-just-compensation",
             kind = "accept",
-            priority = 337,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Mokvar.",
             complete = QuestState(8941, "activeOrCompleted"),
@@ -3235,7 +3035,6 @@ ns:RegisterGuide({
         {
             id = "accept-8943-just-compensation",
             kind = "accept",
-            priority = 338,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Mokvar.",
             complete = QuestState(8943, "activeOrCompleted"),
@@ -3246,7 +3045,6 @@ ns:RegisterGuide({
         {
             id = "accept-8944-just-compensation",
             kind = "accept",
-            priority = 339,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Accept Just Compensation from Mokvar.",
             complete = QuestState(8944, "activeOrCompleted"),
@@ -3257,7 +3055,6 @@ ns:RegisterGuide({
         {
             id = "objective-8938-2-beaststalkers-gloves",
             kind = "objective",
-            priority = 340,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Gloves.",
             dependsOn = { "accept-8938-just-compensation" },
@@ -3267,7 +3064,6 @@ ns:RegisterGuide({
         {
             id = "objective-8938-1-beaststalkers-belt",
             kind = "objective",
-            priority = 341,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Belt.",
             dependsOn = { "accept-8938-just-compensation" },
@@ -3277,7 +3073,6 @@ ns:RegisterGuide({
         {
             id = "objective-8939-1-magisters-belt",
             kind = "objective",
-            priority = 342,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Belt.",
             dependsOn = { "accept-8939-just-compensation" },
@@ -3287,7 +3082,6 @@ ns:RegisterGuide({
         {
             id = "objective-8939-2-magisters-gloves",
             kind = "objective",
-            priority = 343,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Gloves.",
             dependsOn = { "accept-8939-just-compensation" },
@@ -3296,8 +3090,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8927-1-wildheart-belt",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8978 } } },
             kind = "objective",
-            priority = 344,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Belt.",
             dependsOn = { "accept-8927-just-compensation" },
@@ -3306,8 +3100,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-8927-2-wildheart-gloves",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8978 } } },
             kind = "objective",
-            priority = 345,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Gloves.",
             dependsOn = { "accept-8927-just-compensation" },
@@ -3317,7 +3111,6 @@ ns:RegisterGuide({
         {
             id = "objective-8944-1-belt-of-valor",
             kind = "objective",
-            priority = 346,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Belt Of Valor.",
             dependsOn = { "accept-8944-just-compensation" },
@@ -3327,7 +3120,6 @@ ns:RegisterGuide({
         {
             id = "objective-8944-2-gauntlets-of-valor",
             kind = "objective",
-            priority = 347,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Gauntlets Of Valor.",
             dependsOn = { "accept-8944-just-compensation" },
@@ -3337,7 +3129,6 @@ ns:RegisterGuide({
         {
             id = "objective-8940-1-devout-belt",
             kind = "objective",
-            priority = 348,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Belt.",
             dependsOn = { "accept-8940-just-compensation" },
@@ -3347,7 +3138,6 @@ ns:RegisterGuide({
         {
             id = "objective-8940-2-devout-gloves",
             kind = "objective",
-            priority = 349,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Gloves.",
             dependsOn = { "accept-8940-just-compensation" },
@@ -3357,7 +3147,6 @@ ns:RegisterGuide({
         {
             id = "objective-8943-1-dreadmist-belt",
             kind = "objective",
-            priority = 350,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Belt.",
             dependsOn = { "accept-8943-just-compensation" },
@@ -3367,7 +3156,6 @@ ns:RegisterGuide({
         {
             id = "objective-8943-2-dreadmist-wraps",
             kind = "objective",
-            priority = 351,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Wraps.",
             dependsOn = { "accept-8943-just-compensation" },
@@ -3377,7 +3165,6 @@ ns:RegisterGuide({
         {
             id = "objective-8942-1-cord-of-elements",
             kind = "objective",
-            priority = 352,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 1 Cord of Elements.",
             dependsOn = { "accept-8942-just-compensation" },
@@ -3387,7 +3174,6 @@ ns:RegisterGuide({
         {
             id = "objective-8942-2-gauntlets-of-elements",
             kind = "objective",
-            priority = 353,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 1 Gauntlets of Elements.",
             dependsOn = { "accept-8942-just-compensation" },
@@ -3397,7 +3183,6 @@ ns:RegisterGuide({
         {
             id = "objective-8941-1-shadowcraft-belt",
             kind = "objective",
-            priority = 354,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Belt.",
             dependsOn = { "accept-8941-just-compensation" },
@@ -3407,7 +3192,6 @@ ns:RegisterGuide({
         {
             id = "objective-8941-2-shadowcraft-gloves",
             kind = "objective",
-            priority = 355,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Gloves.",
             dependsOn = { "accept-8941-just-compensation" },
@@ -3416,8 +3200,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8927-just-compensation",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8978 } } },
             kind = "turnin",
-            priority = 356,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Mokvar.",
             dependsOn = { "objective-8927-1-wildheart-belt", "objective-8927-2-wildheart-gloves" },
@@ -3429,7 +3213,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8938-just-compensation",
             kind = "turnin",
-            priority = 357,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Mokvar.",
             dependsOn = { "objective-8938-2-beaststalkers-gloves", "objective-8938-1-beaststalkers-belt" },
@@ -3441,7 +3224,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8939-just-compensation",
             kind = "turnin",
-            priority = 358,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Mokvar.",
             dependsOn = { "objective-8939-1-magisters-belt", "objective-8939-2-magisters-gloves" },
@@ -3453,7 +3235,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8942-just-compensation",
             kind = "turnin",
-            priority = 359,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Mokvar.",
             dependsOn = { "objective-8942-1-cord-of-elements", "objective-8942-2-gauntlets-of-elements" },
@@ -3465,7 +3246,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8940-just-compensation",
             kind = "turnin",
-            priority = 360,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Mokvar.",
             dependsOn = { "objective-8940-1-devout-belt", "objective-8940-2-devout-gloves" },
@@ -3477,7 +3257,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8941-just-compensation",
             kind = "turnin",
-            priority = 361,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Mokvar.",
             dependsOn = { "objective-8941-1-shadowcraft-belt", "objective-8941-2-shadowcraft-gloves" },
@@ -3489,7 +3268,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8943-just-compensation",
             kind = "turnin",
-            priority = 362,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Mokvar.",
             dependsOn = { "objective-8943-1-dreadmist-belt", "objective-8943-2-dreadmist-wraps" },
@@ -3501,7 +3279,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8944-just-compensation",
             kind = "turnin",
-            priority = 363,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Turn in Just Compensation to Mokvar.",
             dependsOn = { "objective-8944-1-belt-of-valor", "objective-8944-2-gauntlets-of-valor" },
@@ -3512,8 +3289,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8930-in-search-of-anthion",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 8944 } } },
             kind = "accept",
-            priority = 364,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Accept In Search Of Anthion from Mokvar.",
             dependsOn = { "turnin-8944-just-compensation" },
@@ -3524,8 +3301,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8930-in-search-of-anthion",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 8944 } } },
             kind = "turnin",
-            priority = 365,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Turn in In Search Of Anthion to Anthion Harmon.",
             dependsOn = { "accept-8930-in-search-of-anthion" },
@@ -3536,8 +3313,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-9018-anthions-parting-words",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8930 } } },
             kind = "accept",
-            priority = 366,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             dependsOn = { "turnin-8930-in-search-of-anthion" },
@@ -3549,7 +3326,6 @@ ns:RegisterGuide({
         {
             id = "accept-9016-anthions-parting-words",
             kind = "accept",
-            priority = 367,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(9016, "activeOrCompleted"),
@@ -3560,7 +3336,6 @@ ns:RegisterGuide({
         {
             id = "accept-9017-anthions-parting-words",
             kind = "accept",
-            priority = 368,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(9017, "activeOrCompleted"),
@@ -3571,7 +3346,6 @@ ns:RegisterGuide({
         {
             id = "accept-8957-anthions-parting-words",
             kind = "accept",
-            priority = 369,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(8957, "activeOrCompleted"),
@@ -3582,7 +3356,6 @@ ns:RegisterGuide({
         {
             id = "accept-9019-anthions-parting-words",
             kind = "accept",
-            priority = 370,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(9019, "activeOrCompleted"),
@@ -3593,7 +3366,6 @@ ns:RegisterGuide({
         {
             id = "accept-9020-anthions-parting-words",
             kind = "accept",
-            priority = 371,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(9020, "activeOrCompleted"),
@@ -3604,7 +3376,6 @@ ns:RegisterGuide({
         {
             id = "accept-9021-anthions-parting-words",
             kind = "accept",
-            priority = 372,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(9021, "activeOrCompleted"),
@@ -3615,7 +3386,6 @@ ns:RegisterGuide({
         {
             id = "accept-9022-anthions-parting-words",
             kind = "accept",
-            priority = 373,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Accept Anthions Parting Words from Anthion Harmon.",
             complete = QuestState(9022, "activeOrCompleted"),
@@ -3625,8 +3395,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-9018-1-magisters-boots",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8930 } } },
             kind = "objective",
-            priority = 374,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Boots.",
             dependsOn = { "accept-9018-anthions-parting-words" },
@@ -3635,8 +3405,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-9018-2-magisters-leggings",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8930 } } },
             kind = "objective",
-            priority = 375,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Leggings.",
             dependsOn = { "accept-9018-anthions-parting-words" },
@@ -3645,8 +3415,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-9018-3-magisters-mantle",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8930 } } },
             kind = "objective",
-            priority = 376,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Mantle.",
             dependsOn = { "accept-9018-anthions-parting-words" },
@@ -3656,7 +3426,6 @@ ns:RegisterGuide({
         {
             id = "objective-9016-1-wildheart-boots",
             kind = "objective",
-            priority = 377,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Boots.",
             dependsOn = { "accept-9016-anthions-parting-words" },
@@ -3666,7 +3435,6 @@ ns:RegisterGuide({
         {
             id = "objective-9016-2-wildheart-kilt",
             kind = "objective",
-            priority = 378,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Kilt.",
             dependsOn = { "accept-9016-anthions-parting-words" },
@@ -3676,7 +3444,6 @@ ns:RegisterGuide({
         {
             id = "objective-9016-3-wildheart-spaulders",
             kind = "objective",
-            priority = 379,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Spaulders.",
             dependsOn = { "accept-9016-anthions-parting-words" },
@@ -3686,7 +3453,6 @@ ns:RegisterGuide({
         {
             id = "objective-9017-1-beaststalkers-boots",
             kind = "objective",
-            priority = 380,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Boots.",
             dependsOn = { "accept-9017-anthions-parting-words" },
@@ -3696,7 +3462,6 @@ ns:RegisterGuide({
         {
             id = "objective-9017-2-beaststalkers-pants",
             kind = "objective",
-            priority = 381,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Pants.",
             dependsOn = { "accept-9017-anthions-parting-words" },
@@ -3706,7 +3471,6 @@ ns:RegisterGuide({
         {
             id = "objective-9017-3-beaststalkers-mantle",
             kind = "objective",
-            priority = 382,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Mantle.",
             dependsOn = { "accept-9017-anthions-parting-words" },
@@ -3716,7 +3480,6 @@ ns:RegisterGuide({
         {
             id = "objective-8957-1-boots-of-elements",
             kind = "objective",
-            priority = 383,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 1 Boots of Elements.",
             dependsOn = { "accept-8957-anthions-parting-words" },
@@ -3726,7 +3489,6 @@ ns:RegisterGuide({
         {
             id = "objective-8957-2-kilt-of-elements",
             kind = "objective",
-            priority = 384,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 1 Kilt Of Elements.",
             dependsOn = { "accept-8957-anthions-parting-words" },
@@ -3736,7 +3498,6 @@ ns:RegisterGuide({
         {
             id = "objective-8957-3-pauldrons-of-elements",
             kind = "objective",
-            priority = 385,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 1 Pauldrons of Elements.",
             dependsOn = { "accept-8957-anthions-parting-words" },
@@ -3746,7 +3507,6 @@ ns:RegisterGuide({
         {
             id = "objective-9019-1-devout-sandals",
             kind = "objective",
-            priority = 386,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Sandals.",
             dependsOn = { "accept-9019-anthions-parting-words" },
@@ -3756,7 +3516,6 @@ ns:RegisterGuide({
         {
             id = "objective-9019-2-devout-skirt",
             kind = "objective",
-            priority = 387,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Skirt.",
             dependsOn = { "accept-9019-anthions-parting-words" },
@@ -3766,7 +3525,6 @@ ns:RegisterGuide({
         {
             id = "objective-9019-3-devout-mantle",
             kind = "objective",
-            priority = 388,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Mantle.",
             dependsOn = { "accept-9019-anthions-parting-words" },
@@ -3776,7 +3534,6 @@ ns:RegisterGuide({
         {
             id = "objective-9020-1-shadowcraft-boots",
             kind = "objective",
-            priority = 389,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Boots.",
             dependsOn = { "accept-9020-anthions-parting-words" },
@@ -3786,7 +3543,6 @@ ns:RegisterGuide({
         {
             id = "objective-9020-2-shadowcraft-pants",
             kind = "objective",
-            priority = 390,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Pants.",
             dependsOn = { "accept-9020-anthions-parting-words" },
@@ -3796,7 +3552,6 @@ ns:RegisterGuide({
         {
             id = "objective-9020-3-shadowcraft-spaulders",
             kind = "objective",
-            priority = 391,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Spaulders.",
             dependsOn = { "accept-9020-anthions-parting-words" },
@@ -3806,7 +3561,6 @@ ns:RegisterGuide({
         {
             id = "objective-9021-1-dreadmist-sandals",
             kind = "objective",
-            priority = 392,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Leggings.",
             dependsOn = { "accept-9021-anthions-parting-words" },
@@ -3816,7 +3570,6 @@ ns:RegisterGuide({
         {
             id = "objective-9021-2-dreadmist-mantle",
             kind = "objective",
-            priority = 393,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Mantle.",
             dependsOn = { "accept-9021-anthions-parting-words" },
@@ -3826,7 +3579,6 @@ ns:RegisterGuide({
         {
             id = "objective-9022-1-boots-of-valor",
             kind = "objective",
-            priority = 394,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Boots of Valor.",
             dependsOn = { "accept-9022-anthions-parting-words" },
@@ -3836,7 +3588,6 @@ ns:RegisterGuide({
         {
             id = "objective-9022-2-legplates-of-valor",
             kind = "objective",
-            priority = 395,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Legplates of Valor.",
             dependsOn = { "accept-9022-anthions-parting-words" },
@@ -3846,7 +3597,6 @@ ns:RegisterGuide({
         {
             id = "objective-9022-3-spaulders-of-valor",
             kind = "objective",
-            priority = 396,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Spaulders of Valor.",
             dependsOn = { "accept-9022-anthions-parting-words" },
@@ -3855,8 +3605,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-9018-anthions-parting-words",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8930 } } },
             kind = "turnin",
-            priority = 397,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Mokvar.",
             dependsOn = { "objective-9018-1-magisters-boots", "objective-9018-2-magisters-leggings", "objective-9018-3-magisters-mantle" },
@@ -3868,7 +3618,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9016-anthions-parting-words",
             kind = "turnin",
-            priority = 398,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Mokvar.",
             dependsOn = { "objective-9016-1-wildheart-boots", "objective-9016-2-wildheart-kilt", "objective-9016-3-wildheart-spaulders" },
@@ -3880,7 +3629,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9017-anthions-parting-words",
             kind = "turnin",
-            priority = 399,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Mokvar.",
             dependsOn = { "objective-9017-1-beaststalkers-boots", "objective-9017-2-beaststalkers-pants", "objective-9017-3-beaststalkers-mantle" },
@@ -3892,7 +3640,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8957-anthions-parting-words",
             kind = "turnin",
-            priority = 400,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Mokvar.",
             dependsOn = { "objective-8957-1-boots-of-elements", "objective-8957-2-kilt-of-elements", "objective-8957-3-pauldrons-of-elements" },
@@ -3904,7 +3651,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9019-anthions-parting-words",
             kind = "turnin",
-            priority = 401,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Mokvar.",
             dependsOn = { "objective-9019-1-devout-sandals", "objective-9019-2-devout-skirt", "objective-9019-3-devout-mantle" },
@@ -3916,7 +3662,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9020-anthions-parting-words",
             kind = "turnin",
-            priority = 402,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Mokvar.",
             dependsOn = { "objective-9020-1-shadowcraft-boots", "objective-9020-2-shadowcraft-pants", "objective-9020-3-shadowcraft-spaulders" },
@@ -3928,7 +3673,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9021-anthions-parting-words",
             kind = "turnin",
-            priority = 403,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Mokvar.",
             dependsOn = { "objective-9021-1-dreadmist-sandals", "objective-9021-2-dreadmist-mantle" },
@@ -3940,7 +3684,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9022-anthions-parting-words",
             kind = "turnin",
-            priority = 404,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Turn in Anthions Parting Words to Mokvar.",
             dependsOn = { "objective-9022-1-boots-of-valor", "objective-9022-2-legplates-of-valor", "objective-9022-3-spaulders-of-valor" },
@@ -3951,8 +3694,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-9032-bodleys-unfortunate-fate",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 9022 } } },
             kind = "accept",
-            priority = 405,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Accept Bodleys Unfortunate Fate from Mokvar.",
             dependsOn = { "turnin-9022-anthions-parting-words" },
@@ -3963,8 +3706,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-9032-bodleys-unfortunate-fate",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, { class = 1 }, {  } } }, mode = "all", quests = { 9022 } } },
             kind = "turnin",
-            priority = 406,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Turn in Bodleys Unfortunate Fate to Bodley.",
             dependsOn = { "accept-9032-bodleys-unfortunate-fate" },
@@ -3973,8 +3716,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-8998-back-to-the-beginning",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 9032 } } },
             kind = "accept",
-            priority = 409,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Accept Back To The Beginning from Bodley.",
             dependsOn = { "turnin-9032-bodleys-unfortunate-fate" },
@@ -3982,8 +3725,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-8998-back-to-the-beginning",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 9032 } } },
             kind = "turnin",
-            priority = 410,
             conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             text = "Turn in Back To The Beginning to Mokvar.",
             dependsOn = { "accept-8998-back-to-the-beginning" },
@@ -3994,8 +3737,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-9008-saving-the-best-for-last",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8998 } } },
             kind = "accept",
-            priority = 411,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Mokvar.",
             dependsOn = { "turnin-8998-back-to-the-beginning" },
@@ -4007,7 +3750,6 @@ ns:RegisterGuide({
         {
             id = "accept-9007-saving-the-best-for-last",
             kind = "accept",
-            priority = 412,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Mokvar.",
             complete = QuestState(9007, "activeOrCompleted"),
@@ -4018,7 +3760,6 @@ ns:RegisterGuide({
         {
             id = "accept-9014-saving-the-best-for-last",
             kind = "accept",
-            priority = 413,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Mokvar.",
             complete = QuestState(9014, "activeOrCompleted"),
@@ -4029,7 +3770,6 @@ ns:RegisterGuide({
         {
             id = "accept-9011-saving-the-best-for-last",
             kind = "accept",
-            priority = 414,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Mokvar.",
             complete = QuestState(9011, "activeOrCompleted"),
@@ -4040,7 +3780,6 @@ ns:RegisterGuide({
         {
             id = "accept-9009-saving-the-best-for-last",
             kind = "accept",
-            priority = 415,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Mokvar.",
             complete = QuestState(9009, "activeOrCompleted"),
@@ -4051,7 +3790,6 @@ ns:RegisterGuide({
         {
             id = "accept-9010-saving-the-best-for-last",
             kind = "accept",
-            priority = 416,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Mokvar.",
             complete = QuestState(9010, "activeOrCompleted"),
@@ -4062,7 +3800,6 @@ ns:RegisterGuide({
         {
             id = "accept-9012-saving-the-best-for-last",
             kind = "accept",
-            priority = 417,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Mokvar.",
             complete = QuestState(9012, "activeOrCompleted"),
@@ -4073,7 +3810,6 @@ ns:RegisterGuide({
         {
             id = "accept-9013-saving-the-best-for-last",
             kind = "accept",
-            priority = 418,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Accept Saving The Best For Last from Mokvar.",
             complete = QuestState(9013, "activeOrCompleted"),
@@ -4083,8 +3819,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-9008-2-beaststalkers-tunic",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8998 } } },
             kind = "objective",
-            priority = 419,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Tunic.",
             dependsOn = { "accept-9008-saving-the-best-for-last" },
@@ -4093,8 +3829,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-9008-1-beaststalkers-cap",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8998 } } },
             kind = "objective",
-            priority = 420,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Collect 1 Beaststalkers Cap.",
             dependsOn = { "accept-9008-saving-the-best-for-last" },
@@ -4104,7 +3840,6 @@ ns:RegisterGuide({
         {
             id = "objective-9014-1-magisters-crown",
             kind = "objective",
-            priority = 421,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Crown.",
             dependsOn = { "accept-9014-saving-the-best-for-last" },
@@ -4114,7 +3849,6 @@ ns:RegisterGuide({
         {
             id = "objective-9014-2-magisters-robes",
             kind = "objective",
-            priority = 422,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Collect 1 Magisters Robes.",
             dependsOn = { "accept-9014-saving-the-best-for-last" },
@@ -4124,7 +3858,6 @@ ns:RegisterGuide({
         {
             id = "objective-9007-1-wildheart-cowl",
             kind = "objective",
-            priority = 423,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Cowl.",
             dependsOn = { "accept-9007-saving-the-best-for-last" },
@@ -4134,7 +3867,6 @@ ns:RegisterGuide({
         {
             id = "objective-9007-2-wildheart-vest",
             kind = "objective",
-            priority = 424,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Collect 1 Wildheart Vest.",
             dependsOn = { "accept-9007-saving-the-best-for-last" },
@@ -4144,7 +3876,6 @@ ns:RegisterGuide({
         {
             id = "objective-9013-2-breastplate-of-valor",
             kind = "objective",
-            priority = 425,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Collect 1 Breastplate of Valor.",
             dependsOn = { "accept-9013-saving-the-best-for-last" },
@@ -4154,7 +3885,6 @@ ns:RegisterGuide({
         {
             id = "objective-9009-1-devout-crown",
             kind = "objective",
-            priority = 427,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Crown.",
             dependsOn = { "accept-9009-saving-the-best-for-last" },
@@ -4164,7 +3894,6 @@ ns:RegisterGuide({
         {
             id = "objective-9009-2-devout-robe",
             kind = "objective",
-            priority = 428,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Collect 1 Devout Robe.",
             dependsOn = { "accept-9009-saving-the-best-for-last" },
@@ -4174,7 +3903,6 @@ ns:RegisterGuide({
         {
             id = "objective-9012-1-dreadmist-mask",
             kind = "objective",
-            priority = 429,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Mask.",
             dependsOn = { "accept-9012-saving-the-best-for-last" },
@@ -4184,7 +3912,6 @@ ns:RegisterGuide({
         {
             id = "objective-9012-2-dreadmist-robe",
             kind = "objective",
-            priority = 430,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Collect 1 Dreadmist Robe.",
             dependsOn = { "accept-9012-saving-the-best-for-last" },
@@ -4194,7 +3921,6 @@ ns:RegisterGuide({
         {
             id = "objective-9011-1-coif-of-elements",
             kind = "objective",
-            priority = 431,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 1 Coif of Elements.",
             dependsOn = { "accept-9011-saving-the-best-for-last" },
@@ -4204,7 +3930,6 @@ ns:RegisterGuide({
         {
             id = "objective-9011-2-lightforge-breastplate",
             kind = "objective",
-            priority = 432,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Collect 1 Lightforge Breastplate.",
             dependsOn = { "accept-9011-saving-the-best-for-last" },
@@ -4214,7 +3939,6 @@ ns:RegisterGuide({
         {
             id = "objective-9010-1-shadowcraft-cap",
             kind = "objective",
-            priority = 433,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Cap.",
             dependsOn = { "accept-9010-saving-the-best-for-last" },
@@ -4224,7 +3948,6 @@ ns:RegisterGuide({
         {
             id = "objective-9010-2-shadowcraft-tunic",
             kind = "objective",
-            priority = 434,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Collect 1 Shadowcraft Tunic.",
             dependsOn = { "accept-9010-saving-the-best-for-last" },
@@ -4233,8 +3956,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-9008-saving-the-best-for-last",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 8998 } } },
             kind = "turnin",
-            priority = 435,
             conditions = { all = { { faction = "Horde" }, { class = 3 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Mokvar.",
             dependsOn = { "objective-9008-2-beaststalkers-tunic", "objective-9008-1-beaststalkers-cap" },
@@ -4246,7 +3969,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9007-saving-the-best-for-last",
             kind = "turnin",
-            priority = 436,
             conditions = { all = { { faction = "Horde" }, { class = 11 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Mokvar.",
             dependsOn = { "objective-9007-1-wildheart-cowl", "objective-9007-2-wildheart-vest" },
@@ -4258,7 +3980,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9014-saving-the-best-for-last",
             kind = "turnin",
-            priority = 437,
             conditions = { all = { { faction = "Horde" }, { class = 8 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Mokvar.",
             dependsOn = { "objective-9014-1-magisters-crown", "objective-9014-2-magisters-robes" },
@@ -4270,7 +3991,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9011-saving-the-best-for-last",
             kind = "turnin",
-            priority = 438,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Mokvar.",
             dependsOn = { "objective-9011-1-coif-of-elements", "objective-9011-2-lightforge-breastplate" },
@@ -4282,7 +4002,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9009-saving-the-best-for-last",
             kind = "turnin",
-            priority = 439,
             conditions = { all = { { faction = "Horde" }, { class = 5 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Mokvar.",
             dependsOn = { "objective-9009-1-devout-crown", "objective-9009-2-devout-robe" },
@@ -4294,7 +4013,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9010-saving-the-best-for-last",
             kind = "turnin",
-            priority = 440,
             conditions = { all = { { faction = "Horde" }, { class = 4 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Mokvar.",
             dependsOn = { "objective-9010-1-shadowcraft-cap", "objective-9010-2-shadowcraft-tunic" },
@@ -4306,7 +4024,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9012-saving-the-best-for-last",
             kind = "turnin",
-            priority = 441,
             conditions = { all = { { faction = "Horde" }, { class = 9 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Mokvar.",
             dependsOn = { "objective-9012-1-dreadmist-mask", "objective-9012-2-dreadmist-robe" },
@@ -4318,7 +4035,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9013-saving-the-best-for-last",
             kind = "turnin",
-            priority = 442,
             conditions = { all = { { faction = "Horde" }, { class = 1 }, { level = { min = 58 } } } },
             text = "Turn in Saving The Best For Last to Mokvar.",
             dependsOn = { "objective-9013-2-breastplate-of-valor" },

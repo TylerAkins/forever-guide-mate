@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Azshara",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-azshara",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3505,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.5148, mapID = 1447, label = "Ag'tor Bloodfist", offMapText = "Travel to Ag'tor Bloodfist in Azshara.", x = 0.2226 },
             },
@@ -90,10 +88,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3562,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.5142, mapID = 1447, label = "Jediga", offMapText = "Travel to Jediga in Azshara.", x = 0.2256 },
             },
@@ -127,7 +123,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.5142, mapID = 1447, label = "Jediga", offMapText = "Travel to Jediga in Azshara.", x = 0.2256 },
             },
@@ -161,7 +156,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.5142, mapID = 1447, label = "Jediga", offMapText = "Travel to Jediga in Azshara.", x = 0.2256 },
             },
@@ -207,10 +201,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3601,
-            priority = 70,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.2182, mapID = 1447, label = "Kim'jael", offMapText = "Travel to Kim'jael in Azshara.", x = 0.5345 },
             },
@@ -235,7 +227,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "Kill 10 Blood Elf Reclaimer.",
             route = {
                 { y = 0.274, mapID = 1447, label = "Blood Elf Reclaimer", offMapText = "Travel to Blood Elf Reclaimer.", x = 0.552 },
@@ -269,7 +260,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             text = "Kill 10 Blood Elf Surveyor.",
             route = {
                 { y = 0.274, mapID = 1447, label = "Blood Elf Surveyor", offMapText = "Travel to Blood Elf Surveyor.", x = 0.552 },
@@ -303,7 +293,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             text = "Turn in Betrayed.",
             route = {
                 { y = 0.313, mapID = 1447, label = "Betrayed", offMapText = "Travel to Betrayed.", x = 0.5951 },
@@ -337,7 +326,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             route = {
                 { y = 0.313, mapID = 1447, label = "Betrayed", offMapText = "Travel to Betrayed.", x = 0.5951 },
             },
@@ -371,7 +359,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             text = "Collect 1 Head of Magus Rimtori.",
             route = {
                 { y = 0.3152, mapID = 1447, label = "Blood Elf Defender", offMapText = "Travel to Blood Elf Defender.", x = 0.5955 },
@@ -423,7 +410,6 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.561, y = 0.301, label = "Kim'Jael's Compass", offMapText = "Travel to Kim'Jael's Compass." },
             },
             sourceStep = 8,
-            priority = 140,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -448,7 +434,6 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.561, y = 0.301, label = "Kim'Jael's Scope", offMapText = "Travel to Kim'Jael's Scope." },
             },
             sourceStep = 8,
-            priority = 150,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -473,7 +458,6 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.561, y = 0.301, label = "Kim'Jael's Stuffed Chicken", offMapText = "Travel to Kim'Jael's Stuffed Chicken." },
             },
             sourceStep = 8,
-            priority = 160,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -498,14 +482,12 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.561, y = 0.301, label = "Kim'Jael's Wizzlegoober", offMapText = "Travel to Kim'Jael's Wizzlegoober." },
             },
             sourceStep = 8,
-            priority = 170,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-3601-kim-jael-indeed" },
         },
         {
-            priority = 180,
             text = "Turn in Kim'jael Indeed! to Kim'jael.",
             route = {
                 { y = 0.2182, mapID = 1447, label = "Kim'jael", offMapText = "Travel to Kim'jael in Azshara.", x = 0.5345 },
@@ -536,7 +518,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.2182, mapID = 1447, label = "Kim'jael", offMapText = "Travel to Kim'jael in Azshara.", x = 0.5345 },
             },
@@ -567,7 +548,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Collect 1 Some Rune.",
             route = {
                 { y = 0.422, mapID = 1447, label = "Spitelash Siren", offMapText = "Travel to Spitelash Siren.", x = 0.48 },
@@ -598,7 +578,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Turn in Kim'jael's \"Missing\" Equipment to Kim'jael.",
             route = {
                 { mapID = 1447, x = 0.5345, y = 0.2182, label = "Kim'jael", offMapText = "Travel to Kim'jael in Azshara." },
@@ -629,7 +608,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             text = "Turn in Betrayed to Ag'tor Bloodfist.",
             route = {
                 { y = 0.5148, mapID = 1447, label = "Ag'tor Bloodfist", offMapText = "Travel to Ag'tor Bloodfist in Azshara.", x = 0.2226 },
@@ -663,7 +641,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             route = {
                 { y = 0.5148, mapID = 1447, label = "Ag'tor Bloodfist", offMapText = "Travel to Ag'tor Bloodfist in Azshara.", x = 0.2226 },
             },

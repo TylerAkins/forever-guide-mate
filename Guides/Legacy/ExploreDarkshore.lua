@@ -53,7 +53,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-darkshore",
     title = "Explore Darkshore",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

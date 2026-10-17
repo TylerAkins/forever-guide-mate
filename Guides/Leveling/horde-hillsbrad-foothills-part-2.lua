@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Hillsbrad Foothills",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-hillsbrad-foothills-part-2",
@@ -35,10 +35,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1796,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -60,7 +58,6 @@ ns:RegisterGuide({
             classAction = "accept-1796-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 30,
             id = "woven-class-warlock-objective-1796-quest-work",
             conditions = {
                 all = {
@@ -79,7 +76,6 @@ ns:RegisterGuide({
             classAction = "objective-1796-quest-work",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -104,7 +100,6 @@ ns:RegisterGuide({
             classAction = "turnin-1796-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -126,7 +121,6 @@ ns:RegisterGuide({
             classAction = "accept-4781-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 60,
             route = {
                 {
                     y = 0.587,
@@ -579,7 +573,6 @@ ns:RegisterGuide({
             classAction = "objective-4781-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -604,7 +597,6 @@ ns:RegisterGuide({
             classAction = "turnin-4781-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -626,7 +618,6 @@ ns:RegisterGuide({
             classAction = "accept-4782-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -648,7 +639,6 @@ ns:RegisterGuide({
             classAction = "turnin-4782-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -670,7 +660,6 @@ ns:RegisterGuide({
             classAction = "accept-4783-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 110,
             id = "woven-class-warlock-objective-4783-quest-work",
             conditions = {
                 all = {
@@ -689,7 +678,6 @@ ns:RegisterGuide({
             classAction = "objective-4783-quest-work",
         },
         {
-            priority = 120,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -714,7 +702,6 @@ ns:RegisterGuide({
             classAction = "turnin-4783-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 130,
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -736,7 +723,6 @@ ns:RegisterGuide({
             classAction = "accept-4785-fine-gold-thread",
         },
         {
-            priority = 140,
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -758,7 +744,6 @@ ns:RegisterGuide({
             classAction = "turnin-4785-fine-gold-thread",
         },
         {
-            priority = 150,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -780,7 +765,6 @@ ns:RegisterGuide({
             classAction = "accept-4784-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 160,
             id = "woven-class-warlock-objective-4784-quest-work",
             conditions = {
                 all = {
@@ -799,7 +783,6 @@ ns:RegisterGuide({
             classAction = "objective-4784-quest-work",
         },
         {
-            priority = 170,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -824,7 +807,6 @@ ns:RegisterGuide({
             classAction = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            priority = 180,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -846,7 +828,6 @@ ns:RegisterGuide({
             classAction = "accept-4786-the-completed-robe",
         },
         {
-            priority = 190,
             id = "woven-class-warlock-objective-4786-quest-work",
             conditions = {
                 all = {
@@ -865,7 +846,6 @@ ns:RegisterGuide({
             classAction = "objective-4786-quest-work",
         },
         {
-            priority = 200,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -914,10 +894,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4739,
             alternativeQuests = { 4736, 4737, 4738 },
-            priority = 210,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
             },
@@ -945,7 +923,6 @@ ns:RegisterGuide({
             classAction = "accept-4739-in-search-of-menara-voidrender",
         },
         {
-            priority = 230,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -973,7 +950,6 @@ ns:RegisterGuide({
             classAction = "turnin-4739-in-search-of-menara-voidrender",
         },
         {
-            priority = 240,
             route = {
                 { y = 0.456, mapID = 1454, label = "Zevrost", x = 0.484, offMapText = "Travel to Zevrost in Orgrimmar." },
             },
@@ -1001,7 +977,6 @@ ns:RegisterGuide({
             classAction = "accept-4737-in-search-of-menara-voidrender",
         },
         {
-            priority = 250,
             route = {
                 { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
             },
@@ -1029,7 +1004,6 @@ ns:RegisterGuide({
             classAction = "turnin-4737-in-search-of-menara-voidrender",
         },
         {
-            priority = 260,
             route = {
                 { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
             },
@@ -1057,7 +1031,6 @@ ns:RegisterGuide({
             classAction = "accept-3001-seeking-strahad",
         },
         {
-            priority = 270,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -1085,7 +1058,6 @@ ns:RegisterGuide({
             classAction = "turnin-3001-seeking-strahad",
         },
         {
-            priority = 280,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -1113,7 +1085,6 @@ ns:RegisterGuide({
             classAction = "accept-1801-tome-of-the-cabal",
         },
         {
-            priority = 290,
             route = {
                 { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
             },
@@ -1141,7 +1112,6 @@ ns:RegisterGuide({
             classAction = "turnin-1801-tome-of-the-cabal",
         },
         {
-            priority = 300,
             route = {
                 { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
             },
@@ -1169,7 +1139,6 @@ ns:RegisterGuide({
             classAction = "accept-1803-tome-of-the-cabal",
         },
         {
-            priority = 310,
             id = "woven-class-warlock-objective-1803-book-1",
             conditions = {
                 all = {
@@ -1197,7 +1166,6 @@ ns:RegisterGuide({
             classAction = "objective-1803-book-1",
         },
         {
-            priority = 320,
             id = "woven-class-warlock-objective-1803-book-2",
             conditions = {
                 all = {
@@ -1225,7 +1193,6 @@ ns:RegisterGuide({
             classAction = "objective-1803-book-2",
         },
         {
-            priority = 330,
             route = {
                 { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
             },
@@ -1257,7 +1224,6 @@ ns:RegisterGuide({
             classAction = "turnin-1803-tome-of-the-cabal",
         },
         {
-            priority = 340,
             route = {
                 { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
             },
@@ -1285,7 +1251,6 @@ ns:RegisterGuide({
             classAction = "accept-1805-tome-of-the-cabal",
         },
         {
-            priority = 350,
             id = "woven-class-warlock-objective-1805-quest-work",
             conditions = {
                 all = {
@@ -1310,7 +1275,6 @@ ns:RegisterGuide({
             classAction = "objective-1805-quest-work",
         },
         {
-            priority = 360,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -1361,10 +1325,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1795,
-            priority = 370,
         },
         {
-            priority = 380,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -1389,7 +1351,6 @@ ns:RegisterGuide({
             classAction = "accept-1795-the-binding",
         },
         {
-            priority = 390,
             id = "woven-class-warlock-objective-1795-quest-work",
             conditions = {
                 all = {
@@ -1411,7 +1372,6 @@ ns:RegisterGuide({
             classAction = "objective-1795-quest-work",
         },
         {
-            priority = 400,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -1436,7 +1396,6 @@ ns:RegisterGuide({
             classAction = "turnin-1795-the-binding",
         },
         {
-            priority = 410,
             route = {
                 { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
             },
@@ -1464,7 +1423,6 @@ ns:RegisterGuide({
             classAction = "accept-2996-seeking-strahad",
         },
         {
-            priority = 420,
             route = {
                 { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
             },
@@ -1519,10 +1477,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1532,
             alternativeQuests = { 1531 },
-            priority = 430,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.21, mapID = 1456, label = "Xanis Flameweaver", x = 0.252, offMapText = "Travel to Xanis Flameweaver in Thunder Bluff." },
             },
@@ -1550,7 +1506,6 @@ ns:RegisterGuide({
             classAction = "accept-1532-call-of-air",
         },
         {
-            priority = 450,
             route = {
                 { y = 0.428, mapID = 1441, label = "Prate Cloudseer", x = 0.536, offMapText = "Travel to Prate Cloudseer in Thousand Needles." },
             },
@@ -1598,10 +1553,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1947,
-            priority = 460,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.102, mapID = 1458, label = "Anastasia Hartwell", x = 0.85, offMapText = "Travel to Anastasia Hartwell in Undercity." },
             },
@@ -1623,7 +1576,6 @@ ns:RegisterGuide({
             classAction = "accept-1947-journey-to-the-marsh-horde",
         },
         {
-            priority = 480,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -1645,7 +1597,6 @@ ns:RegisterGuide({
             classAction = "turnin-1947-journey-to-the-marsh",
         },
         {
-            priority = 490,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -1667,7 +1618,6 @@ ns:RegisterGuide({
             classAction = "accept-1948-items-of-power",
         },
         {
-            priority = 500,
             dependsOn = { "woven-class-mage-accept-1948-items-of-power" },
             id = "woven-class-mage-objective-1948-items-of-power",
             conditions = {
@@ -1686,7 +1636,6 @@ ns:RegisterGuide({
             classAction = "objective-1948-items-of-power",
         },
         {
-            priority = 510,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -1708,7 +1657,6 @@ ns:RegisterGuide({
             classAction = "turnin-1948-items-of-power",
         },
         {
-            priority = 520,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -1730,7 +1678,6 @@ ns:RegisterGuide({
             classAction = "accept-1949-hidden-secrets",
         },
         {
-            priority = 530,
             route = {
                 { y = 0.758, mapID = 1441, label = "Magus Tirth", x = 0.782, offMapText = "Travel to Magus Tirth in Thousand Needles." },
             },
@@ -1752,7 +1699,6 @@ ns:RegisterGuide({
             classAction = "turnin-1949-hidden-secrets",
         },
         {
-            priority = 540,
             route = {
                 { y = 0.758, mapID = 1441, label = "Magus Tirth", x = 0.782, offMapText = "Travel to Magus Tirth in Thousand Needles." },
             },
@@ -1774,7 +1720,6 @@ ns:RegisterGuide({
             classAction = "accept-1950-get-the-scoop",
         },
         {
-            priority = 550,
             id = "woven-class-mage-objective-1950-quest-work",
             conditions = {
                 all = {
@@ -1793,7 +1738,6 @@ ns:RegisterGuide({
             classAction = "objective-1950-quest-work",
         },
         {
-            priority = 560,
             route = {
                 { y = 0.758, mapID = 1441, label = "Magus Tirth", x = 0.782, offMapText = "Travel to Magus Tirth in Thousand Needles." },
             },
@@ -1834,7 +1778,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1951,
-            priority = 570,
         },
         {
             id = "woven-class-mage-handoff-1951-class-dungeon",
@@ -1851,11 +1794,9 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 580,
             classAction = "handoff-1951-class-dungeon",
         },
         {
-            priority = 590,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -1877,7 +1818,6 @@ ns:RegisterGuide({
             classAction = "accept-1952-mages-wand",
         },
         {
-            priority = 600,
             route = {
                 { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
@@ -1918,10 +1858,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1164,
-            priority = 610,
         },
         {
-            priority = 620,
             route = {
                 { y = 0.4945, mapID = 1458, label = "Genavie Callow", offMapText = "Travel to Genavie Callow in Undercity.", x = 0.6383 },
             },
@@ -1971,10 +1909,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 63,
-            priority = 630,
         },
         {
-            priority = 640,
             route = {
                 { mapID = 1421, x = 0.38280000000000003, y = 0.4456, label = "Corrupt Manifestation's Bracers", offMapText = "Travel to Corrupt Manifestation's Bracers." },
             },
@@ -2011,7 +1947,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 650,
             text = "Turn in Call of Water.",
             route = {
                 { y = 0.4456, mapID = 1421, label = "Call of Water", offMapText = "Travel to Call of Water.", x = 0.3828 },
@@ -2048,7 +1983,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 660,
             route = {
                 { y = 0.4456, mapID = 1421, label = "Call of Water", offMapText = "Travel to Call of Water.", x = 0.3828 },
             },
@@ -2085,7 +2019,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 670,
             text = "Turn in Call of Water to Minor Manifestation of Water.",
             route = {
                 { y = 0.4462, mapID = 1421, label = "Minor Manifestation of Water", offMapText = "Travel to Minor Manifestation of Water in Silverpine Forest.", x = 0.3875 },
@@ -2122,7 +2055,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 680,
             route = {
                 { y = 0.4462, mapID = 1421, label = "Minor Manifestation of Water", offMapText = "Travel to Minor Manifestation of Water in Silverpine Forest.", x = 0.3875 },
             },
@@ -2159,7 +2091,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 690,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -2187,7 +2118,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             route = {
                 { mapID = 1424, x = 0.3201, y = 0.4545, label = "Shipment of Iron", offMapText = "Travel to Shipment of Iron." },
             },
@@ -2221,7 +2151,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 710,
             route = {
                 { y = 0.2045, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
             },
@@ -2255,7 +2184,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-529-quest-work" },
         },
         {
-            priority = 720,
             route = {
                 { y = 0.2045, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
             },
@@ -2308,10 +2236,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7321,
-            priority = 730,
         },
         {
-            priority = 740,
             route = {
                 { y = 0.1904, mapID = 1424, label = "Christoph Jeffcoat", offMapText = "Travel to Christoph Jeffcoat in Hillsbrad Foothills.", x = 0.6229 },
             },
@@ -2358,10 +2284,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 533,
-            priority = 750,
         },
         {
-            priority = 760,
             route = {
                 { y = 0.2065, mapID = 1424, label = "Krusk", offMapText = "Travel to Krusk in Hillsbrad Foothills.", x = 0.6324 },
             },
@@ -2395,7 +2319,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 770,
             route = {
                 { y = 0.1966, mapID = 1424, label = "Novice Thaivand", offMapText = "Travel to Novice Thaivand in Hillsbrad Foothills.", x = 0.6388 },
             },
@@ -2442,10 +2365,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1791,
-            priority = 780,
         },
         {
-            priority = 790,
             route = {
                 { y = 0.6692, mapID = 1416, label = "Bath'rah the Windwatcher", offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains.", x = 0.805 },
             },
@@ -2479,7 +2400,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 800,
             route = {
                 { y = 0.6692, mapID = 1416, label = "Bath'rah the Windwatcher", offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains.", x = 0.805 },
             },
@@ -2534,14 +2454,12 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.6779999999999999, y = 0.212, label = "Turtle Meat", offMapText = "Travel to Turtle Meat." },
             },
             sourceStep = 15,
-            priority = 810,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-7321-soothing-turtle-bisque" },
         },
         {
-            priority = 820,
             text = "Turn in Soothing Turtle Bisque to Christoph Jeffcoat.",
             route = {
                 { y = 0.1904, mapID = 1424, label = "Christoph Jeffcoat", offMapText = "Travel to Christoph Jeffcoat in Hillsbrad Foothills.", x = 0.6229 },
@@ -2588,10 +2506,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 544,
-            priority = 830,
         },
         {
-            priority = 840,
             route = {
                 { y = 0.2084, mapID = 1424, label = "Magus Wordeen Voidglare", offMapText = "Travel to Magus Wordeen Voidglare in Hillsbrad Foothills.", x = 0.616 },
             },
@@ -2619,7 +2535,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 850,
             route = {
                 { y = 0.2093, mapID = 1424, label = "Keeper Bel'varil", offMapText = "Travel to Keeper Bel'varil in Hillsbrad Foothills.", x = 0.615 },
             },
@@ -2647,7 +2562,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 860,
             text = "Collect 1 Helcular's Rod.",
             route = {
                 { y = 0.3183, mapID = 1424, label = "Cave Yeti", offMapText = "Travel to Cave Yeti.", x = 0.4618 },
@@ -2675,7 +2589,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 870,
             route = {
                 { mapID = 1424, x = 0.2981, y = 0.4242, label = "Clerk Horrace Whitesteed", offMapText = "Travel to Clerk Horrace Whitesteed." },
             },
@@ -2703,7 +2616,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 880,
             text = "Kill Magistrate Burnside.",
             route = {
                 { y = 0.4164, mapID = 1424, label = "Magistrate Burnside", offMapText = "Travel to Magistrate Burnside.", x = 0.2967 },
@@ -2758,7 +2670,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.2952, y = 0.4153, label = "Hillsbrad Town Registry", offMapText = "Travel to Hillsbrad Town Registry." },
             },
             sourceStep = 25,
-            priority = 890,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2792,7 +2703,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.302, y = 0.42200000000000004, label = "Hillsbrad Councilman", offMapText = "Travel to Hillsbrad Councilman." },
             },
             sourceStep = 26,
-            priority = 900,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2805,7 +2715,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-532-battle-of-hillsbrad" },
         },
         {
-            priority = 910,
             text = "Turn in Battle of Hillsbrad to High Executor Darthalia.",
             route = {
                 { y = 0.2045, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -2844,7 +2753,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 920,
             route = {
                 { y = 0.2045, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
             },
@@ -2878,7 +2786,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 930,
             text = "Turn in Helcular's Revenge to Novice Thaivand.",
             route = {
                 { y = 0.1966, mapID = 1424, label = "Novice Thaivand", offMapText = "Travel to Novice Thaivand in Hillsbrad Foothills.", x = 0.6388 },
@@ -2906,7 +2813,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 940,
             route = {
                 { y = 0.1966, mapID = 1424, label = "Novice Thaivand", offMapText = "Travel to Novice Thaivand in Hillsbrad Foothills.", x = 0.6388 },
             },
@@ -2940,7 +2846,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 950,
             text = "Kill Foreman Bonds.",
             route = {
                 { mapID = 1424, x = 0.3121, y = 0.5600999999999999, label = "Foreman Bonds", offMapText = "Travel to Foreman Bonds." },
@@ -2974,7 +2879,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 960,
             route = {
                 { y = 0.5862, mapID = 1424, label = "Miner Hackett", offMapText = "Travel to Miner Hackett.", x = 0.3112 },
             },
@@ -3023,7 +2927,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.298, y = 0.546, label = "Hillsbrad Miner", offMapText = "Travel to Hillsbrad Miner." },
             },
             sourceStep = 33,
-            priority = 970,
             requiredQuests = {
                 {
                     mode = "any",
@@ -3057,7 +2960,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.298, y = 0.546, label = "Hillsbrad Human Skull", offMapText = "Travel to Hillsbrad Human Skull." },
             },
             sourceStep = 34,
-            priority = 980,
             requiredQuests = {
                 {
                     mode = "any",
@@ -3070,7 +2972,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 990,
             text = "Collect 1 Bloodstone Marble.",
             route = {
                 { y = 0.8408, mapID = 1416, label = "Ricter", offMapText = "Travel to Ricter.", x = 0.202 },
@@ -3098,7 +2999,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1000,
             text = "Collect 1 Bloodstone Shard.",
             route = {
                 { y = 0.8635, mapID = 1416, label = "Alina", offMapText = "Travel to Alina.", x = 0.2035 },
@@ -3126,7 +3026,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1010,
             text = "Collect 1 Bloodstone Wedge.",
             route = {
                 { y = 0.8613, mapID = 1416, label = "Dermot", offMapText = "Travel to Dermot.", x = 0.2001 },
@@ -3154,7 +3053,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1020,
             text = "Collect 1 Bloodstone Oval.",
             route = {
                 { y = 0.832, mapID = 1416, label = "Kegan Darkmar", offMapText = "Travel to Kegan Darkmar.", x = 0.1778 },
@@ -3203,14 +3101,12 @@ ns:RegisterGuide({
                 { mapID = 1416, x = 0.20199999999999999, y = 0.8240000000000001, label = "Worn Stone Token", offMapText = "Travel to Worn Stone Token." },
             },
             sourceStep = 40,
-            priority = 1030,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-556-stone-tokens" },
         },
         {
-            priority = 1040,
             text = "Collect 1 Syndicate Missive.",
             route = {
                 { y = 0.828, mapID = 1416, label = "Syndicate Footpad", offMapText = "Travel to Syndicate Footpad.", x = 0.476 },
@@ -3244,7 +3140,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1050,
             text = "Turn in Prison Break In to Magus Wordeen Voidglare.",
             route = {
                 { y = 0.2084, mapID = 1424, label = "Magus Wordeen Voidglare", offMapText = "Travel to Magus Wordeen Voidglare in Hillsbrad Foothills.", x = 0.616 },
@@ -3278,7 +3173,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1060,
             text = "Turn in Stone Tokens to Keeper Bel'varil.",
             route = {
                 { y = 0.2094, mapID = 1424, label = "Keeper Bel'varil", offMapText = "Travel to Keeper Bel'varil in Hillsbrad Foothills.", x = 0.615 },
@@ -3306,7 +3200,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1070,
             route = {
                 { y = 0.1958, mapID = 1424, label = "Tallow", offMapText = "Travel to Tallow in Hillsbrad Foothills.", x = 0.6187 },
             },
@@ -3334,7 +3227,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1080,
             route = {
                 { y = 0.197, mapID = 1424, label = "Deathguard Samsa", offMapText = "Travel to Deathguard Samsa in Hillsbrad Foothills.", x = 0.6211 },
             },
@@ -3368,7 +3260,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-546-1-hillsbrad-human-skull" },
         },
         {
-            priority = 1090,
             text = "Turn in Battle of Hillsbrad to High Executor Darthalia.",
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -3421,10 +3312,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 541,
-            priority = 1100,
         },
         {
-            priority = 1110,
             text = "Accept Battle of Hillsbrad from High Executor Darthalia in Tarren Mill.",
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -3457,7 +3346,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1120,
             text = "Travel to Dun Garok in southeastern Hillsbrad Foothills with a group. Kill 8 Mountaineers, 4 Riflemen, 2 Priests and Captain Ironhill.",
             dependsOn = { "accept-541-battle-of-hillsbrad" },
             id = "objective-541-battle-of-hillsbrad",
@@ -3487,7 +3375,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            priority = 1130,
             text = "Turn in Battle of Hillsbrad to High Executor Darthalia in Tarren Mill.",
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -3520,7 +3407,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1140,
             text = "Accept Battle of Hillsbrad from High Executor Darthalia in Tarren Mill. Report to Varimathras in the Undercity.",
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -3553,7 +3439,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1150,
             text = "Turn in Dangerous! to High Executor Darthalia.",
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -3581,7 +3466,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1160,
             text = "Turn in Infiltration to Krusk.",
             route = {
                 { y = 0.2065, mapID = 1424, label = "Krusk", offMapText = "Travel to Krusk in Hillsbrad Foothills.", x = 0.6324 },
@@ -3615,7 +3499,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1170,
             text = "Charge Helcular's Rod at the Flame of Veraz inside the yeti cave.",
             id = "objective-553-2-authored-Flame-of-Veraz",
             kind = "objective",
@@ -3648,7 +3531,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 1180,
             text = "Charge Helcular's Rod at the Flame of Azel inside the yeti cave.",
             id = "objective-553-1-authored-Flame-of-Azel",
             kind = "objective",
@@ -3681,7 +3563,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 1190,
             text = "Charge Helcular's Rod at the Flame of Uzel inside Frostmaw's cave. Then take the charged rod to Helcular's grave in Southshore.",
             id = "objective-553-3-authored-Flame-of-Uzel",
             kind = "objective",
@@ -3714,7 +3595,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 1200,
             text = "Turn in Helcular's Revenge.",
             route = {
                 { mapID = 1424, x = 0.5278, y = 0.5338, label = "Helcular's Revenge", offMapText = "Travel to Helcular's Revenge." },
@@ -3753,7 +3633,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1210,
             text = "Collect 6 Mudsnout Blossoms.",
             route = {
                 { y = 0.599, mapID = 1424, label = "Mudsnout Blossoms", offMapText = "Travel to Mudsnout Blossoms.", x = 0.64 },

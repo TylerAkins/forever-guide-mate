@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Ashenvale",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-ashenvale-part-2",
@@ -38,10 +38,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1944,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.858, mapID = 1454, label = "Deino", x = 0.384, offMapText = "Travel to Deino in Orgrimmar." },
             },
@@ -66,7 +64,6 @@ ns:RegisterGuide({
             classAction = "accept-1944-waters-of-xavian",
         },
         {
-            priority = 30,
             id = "woven-class-mage-objective-1944-quest-work",
             conditions = {
                 all = {
@@ -88,7 +85,6 @@ ns:RegisterGuide({
             classAction = "objective-1944-quest-work",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.858, mapID = 1454, label = "Deino", x = 0.384, offMapText = "Travel to Deino in Orgrimmar." },
             },
@@ -113,7 +109,6 @@ ns:RegisterGuide({
             classAction = "turnin-1944-waters-of-xavian",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.858, mapID = 1454, label = "Deino", x = 0.384, offMapText = "Travel to Deino in Orgrimmar." },
             },
@@ -138,7 +133,6 @@ ns:RegisterGuide({
             classAction = "accept-1945-laughing-sisters",
         },
         {
-            priority = 60,
             id = "woven-class-mage-objective-1945-quest-work",
             conditions = {
                 all = {
@@ -160,7 +154,6 @@ ns:RegisterGuide({
             classAction = "objective-1945-quest-work",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.316, mapID = 1413, label = "Kil'hala", x = 0.522, offMapText = "Travel to Kil'hala in The Barrens." },
             },
@@ -185,7 +178,6 @@ ns:RegisterGuide({
             classAction = "turnin-1945-laughing-sisters",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.316, mapID = 1413, label = "Kil'hala", x = 0.522, offMapText = "Travel to Kil'hala in The Barrens." },
             },
@@ -210,7 +202,6 @@ ns:RegisterGuide({
             classAction = "accept-1946-nether-lace-garment",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.316, mapID = 1413, label = "Kil'hala", x = 0.522, offMapText = "Travel to Kil'hala in The Barrens." },
             },
@@ -235,7 +226,6 @@ ns:RegisterGuide({
             classAction = "turnin-1946-nether-lace-garment",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.102, mapID = 1458, label = "Anastasia Hartwell", x = 0.85, offMapText = "Travel to Anastasia Hartwell in Undercity." },
             },
@@ -260,7 +250,6 @@ ns:RegisterGuide({
             classAction = "accept-1943-speak-with-deino",
         },
         {
-            priority = 110,
             route = {
                 { y = 0.858, mapID = 1454, label = "Deino", x = 0.384, offMapText = "Travel to Deino in Orgrimmar." },
             },
@@ -304,10 +293,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6541,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.3087, mapID = 1413, label = "Thork", offMapText = "Travel to Thork in The Barrens.", x = 0.515 },
             },
@@ -335,7 +322,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Turn in Report to Kadrak to Kadrak.",
             route = {
                 { y = 0.0542, mapID = 1413, label = "Kadrak", offMapText = "Travel to Kadrak in The Barrens.", x = 0.4812 },
@@ -382,10 +368,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6504,
-            priority = 150,
         },
         {
-            priority = 160,
             route = {
                 { y = 0.7115, mapID = 1440, label = "Gurda Ragescar", offMapText = "Travel to Gurda Ragescar in Ashenvale.", x = 0.7 },
             },
@@ -432,7 +416,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 170,
             sourceStep = 6,
             requiredQuests = {},
             useClientText = false,
@@ -457,7 +440,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 180,
             sourceStep = 7,
             requiredQuests = {},
             useClientText = false,
@@ -482,13 +464,11 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 190,
             sourceStep = 8,
             requiredQuests = {},
             useClientText = false,
         },
         {
-            priority = 200,
             text = "Turn in The Lost Pages to Gurda Ragescar.",
             route = {
                 { y = 0.7115, mapID = 1440, label = "Gurda Ragescar", offMapText = "Travel to Gurda Ragescar in Ashenvale.", x = 0.7 },
@@ -521,7 +501,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.6812, mapID = 1440, label = "Kuray'bin", offMapText = "Travel to Kuray'bin in Ashenvale.", x = 0.711 },
             },
@@ -549,7 +528,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             route = {
                 { y = 0.6146, mapID = 1440, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale.", x = 0.7378 },
             },
@@ -604,7 +582,6 @@ ns:RegisterGuide({
             route = {
                 { mapID = 1454, x = 0.466, y = 0.646, label = "Warcaller Gorlach", offMapText = "Travel to Warcaller Gorlach." },
             },
-            priority = 230,
             requiredQuests = {},
             alternativeQuests = { 742, 6382 },
             useClientText = false,
@@ -633,7 +610,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.7378, y = 0.6146, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale." },
             },
             sourceStep = 12,
-            priority = 240,
             requiredQuests = {},
             alternativeQuests = { 742, 6382 },
             useClientText = false,
@@ -658,7 +634,6 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 742, state = "activeOrCompleted" },
             },
-            priority = 250,
             requiredQuests = {},
             alternativeQuests = { 235, 6382 },
             useClientText = false,
@@ -687,7 +662,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.7378, y = 0.6146, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale." },
             },
             sourceStep = 12,
-            priority = 260,
             requiredQuests = {},
             alternativeQuests = { 235, 6382 },
             useClientText = false,
@@ -695,7 +669,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-742-verified-pickup" },
         },
         {
-            priority = 270,
             text = "Accept The Ashenvale Hunt from Senani Thunderheart.",
             route = {
                 { y = 0.6146, mapID = 1440, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale.", x = 0.7378 },
@@ -723,7 +696,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             text = "Turn in The Ashenvale Hunt to Senani Thunderheart.",
             route = {
                 { y = 0.6146, mapID = 1440, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale.", x = 0.7378 },
@@ -751,7 +723,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.6001, mapID = 1440, label = "Mastok Wrilehiss", offMapText = "Travel to Mastok Wrilehiss in Ashenvale.", x = 0.7367 },
             },
@@ -779,7 +750,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             route = {
                 { y = 0.6148, mapID = 1440, label = "Pixel", offMapText = "Travel to Pixel in Ashenvale.", x = 0.7306 },
             },
@@ -807,7 +777,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Kill 9 Ashenvale Outrunner.",
             route = {
                 { y = 0.702, mapID = 1440, label = "Ashenvale Outrunner", offMapText = "Travel to Ashenvale Outrunner.", x = 0.728 },
@@ -835,7 +804,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             route = {
                 { y = 0.753, mapID = 1440, label = "Torek", offMapText = "Travel to Torek in Ashenvale.", x = 0.6834 },
             },
@@ -889,10 +857,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 330,
         },
         {
-            priority = 340,
             text = "Use the Shadumbra's Head to accept Shadumbra's Head.",
             id = "accept-24-shadumbra-s-head",
             kind = "accept",
@@ -923,7 +889,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             route = {
                 { y = 0.345, mapID = 1440, label = "Ruul Snowhoof", offMapText = "Travel to Ruul Snowhoof in Ashenvale.", x = 0.4149 },
             },
@@ -972,7 +937,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.396, y = 0.364, label = "Thistlefur Avenger", offMapText = "Travel to Thistlefur Avenger." },
             },
             sourceStep = 32,
-            priority = 360,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1000,7 +964,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.396, y = 0.364, label = "Thistlefur Shaman", offMapText = "Travel to Thistlefur Shaman." },
             },
             sourceStep = 32,
-            priority = 370,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1029,10 +992,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1534,
-            priority = 380,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.6744, mapID = 1440, label = "Empty Blue Waterskin", offMapText = "Travel to Empty Blue Waterskin.", x = 0.3355 },
             },
@@ -1095,10 +1056,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 400,
         },
         {
-            priority = 410,
             text = "Use the Ursangous's Paw to accept Ursangous's Paw.",
             id = "accept-23-ursangous-s-paw",
             kind = "accept",
@@ -1155,10 +1114,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 420,
         },
         {
-            priority = 430,
             text = "Use the Befouled Water Globe to accept The Befouled Element.",
             id = "accept-1918-the-befouled-element",
             kind = "accept",
@@ -1204,14 +1161,12 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.496, y = 0.6920000000000001, label = "Befouled Water Elemental", offMapText = "Travel to Befouled Water Elemental." },
             },
             sourceStep = 38,
-            priority = 440,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-25-stonetalon-standstill" },
         },
         {
-            priority = 450,
             route = {
                 { y = 0.729, mapID = 1440, label = "Etched Phial", offMapText = "Travel to Etched Phial.", x = 0.602 },
             },
@@ -1239,7 +1194,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             text = "Turn in Ashenvale Outrunners to Kuray'bin.",
             route = {
                 { mapID = 1440, x = 0.7111, y = 0.6812, label = "Kuray'bin", offMapText = "Travel to Kuray'bin in Ashenvale." },
@@ -1267,7 +1221,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             text = "Turn in Torek's Assault to Ertog Ragetusk.",
             route = {
                 { y = 0.6247, mapID = 1440, label = "Ertog Ragetusk", offMapText = "Travel to Ertog Ragetusk in Ashenvale.", x = 0.7303 },
@@ -1295,7 +1248,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             text = "Turn in Shadumbra's Head to Senani Thunderheart.",
             route = {
                 { y = 0.6146, mapID = 1440, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale.", x = 0.7378 },
@@ -1329,7 +1281,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Turn in Ursangous's Paw to Senani Thunderheart.",
             route = {
                 { y = 0.6146, mapID = 1440, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale.", x = 0.7378 },
@@ -1363,7 +1314,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             text = "Turn in Freedom to Ruul to Yama Snowhoof.",
             route = {
                 { y = 0.6092, mapID = 1440, label = "Yama Snowhoof", offMapText = "Travel to Yama Snowhoof in Ashenvale.", x = 0.7411 },
@@ -1391,7 +1341,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             text = "Turn in Stonetalon Standstill to Mastok Wrilehiss.",
             route = {
                 { y = 0.6, mapID = 1440, label = "Mastok Wrilehiss", offMapText = "Travel to Mastok Wrilehiss in Ashenvale.", x = 0.7367 },
@@ -1419,7 +1368,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             text = "Turn in The Befouled Element to Mastok Wrilehiss.",
             route = {
                 { y = 0.6, mapID = 1440, label = "Mastok Wrilehiss", offMapText = "Travel to Mastok Wrilehiss in Ashenvale.", x = 0.7367 },
@@ -1447,7 +1395,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.6, mapID = 1440, label = "Mastok Wrilehiss", offMapText = "Travel to Mastok Wrilehiss in Ashenvale.", x = 0.7367 },
             },
@@ -1481,7 +1428,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "For Satyr Horns: Collect 16 Satyr Horns for Pixel in Splintertree Post.",
             id = "objective-6441-quest-work",
             kind = "objective",
@@ -1506,7 +1452,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-6441-satyr-horns" },
         },
         {
-            priority = 550,
             text = "Turn in Satyr Horns to Pixel.",
             route = {
                 { y = 0.6148, mapID = 1440, label = "Pixel", offMapText = "Travel to Pixel in Ashenvale.", x = 0.7306 },
@@ -1534,7 +1479,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             text = "Turn in Je'neu of the Earthen Ring to Je'neu Sancrea.",
             route = {
                 { y = 0.3429, mapID = 1440, label = "Je'neu Sancrea", offMapText = "Travel to Je'neu Sancrea in Ashenvale.", x = 0.1156 },
@@ -1568,7 +1512,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             text = "For Troll Charm: Bring 8 Troll Charms to Mitsuwa at the Zoram'gar Outpost.",
             id = "objective-6462-quest-work",
             kind = "objective",
@@ -1593,7 +1536,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 580,
             route = {
                 { y = 0.3485, mapID = 1440, label = "Mitsuwa", offMapText = "Travel to Mitsuwa in Ashenvale.", x = 0.1165 },
             },
@@ -1621,7 +1563,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-6462-quest-work" },
         },
         {
-            priority = 590,
             route = {
                 { y = 0.3454, mapID = 1440, label = "Karang Amakkar", offMapText = "Travel to Karang Amakkar in Ashenvale.", x = 0.119 },
             },
@@ -1649,7 +1590,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-216-1-thistlefur-avenger", "objective-216-2-thistlefur-shaman" },
         },
         {
-            priority = 600,
             route = {
                 { y = 0.3463, mapID = 1440, label = "Muglash", offMapText = "Travel to Muglash in Ashenvale.", x = 0.1206 },
             },
@@ -1677,7 +1617,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 610,
             text = "Turn in Vorsha the Lasher to Warsong Runner.",
             route = {
                 { y = 0.3421, mapID = 1440, label = "Warsong Runner", offMapText = "Travel to Warsong Runner in Ashenvale.", x = 0.1222 },
@@ -1731,10 +1670,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 620,
         },
         {
-            priority = 630,
             text = "Use the Sharptalon's Claw to accept Sharptalon's Claw.",
             id = "accept-2-sharptalon-s-claw",
             kind = "accept",
@@ -1765,7 +1702,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 640,
             text = "Turn in Sharptalon's Claw to Senani Thunderheart.",
             route = {
                 { y = 0.6146, mapID = 1440, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale.", x = 0.7378 },
@@ -1799,7 +1735,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 650,
             route = {
                 { y = 0.6146, mapID = 1440, label = "Senani Thunderheart", offMapText = "Travel to Senani Thunderheart in Ashenvale.", x = 0.7378 },
             },
@@ -1833,7 +1768,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             route = {
                 { mapID = 1456, x = 0.2281, y = 0.2089, label = "Apothecary Zamah", offMapText = "Travel to Apothecary Zamah in Thunder Bluff." },
             },
@@ -1867,7 +1801,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 670,
             text = "Turn in The Sacred Flame to Zangen Stonehoof.",
             route = {
                 { y = 0.508, mapID = 1456, label = "Zangen Stonehoof", offMapText = "Travel to Zangen Stonehoof in Thunder Bluff.", x = 0.551 },
@@ -1895,7 +1828,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 680,
             route = {
                 { y = 0.508, mapID = 1456, label = "Zangen Stonehoof", offMapText = "Travel to Zangen Stonehoof in Thunder Bluff.", x = 0.551 },
             },
@@ -1929,7 +1861,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 690,
             route = {
                 { y = 0.8092, mapID = 1456, label = "Melor Stonehoof", offMapText = "Travel to Melor Stonehoof in Thunder Bluff.", x = 0.6154 },
             },

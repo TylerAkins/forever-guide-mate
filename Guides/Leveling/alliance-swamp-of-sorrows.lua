@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Swamp of Sorrows",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-swamp-of-sorrows",
@@ -37,10 +37,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1260,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { mapID = 1453, x = 0.518, y = 0.937, label = "Angus Stern", offMapText = "Travel to Angus Stern in Stormwind City." },
             },
@@ -93,10 +91,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1363,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.743, mapID = 1453, label = "Mazen Mac'Nadir", offMapText = "Travel to Mazen Mac'Nadir in Stormwind City.", x = 0.518 },
             },
@@ -127,7 +123,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             text = "Turn in Mazen's Behest to Acolyte Dellis.",
             route = {
                 { y = 0.6383, mapID = 1453, label = "Acolyte Dellis", offMapText = "Travel to Acolyte Dellis in Stormwind City.", x = 0.4097 },
@@ -158,7 +153,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 60,
             text = "Accept Mazen's Behest from Acolyte Dellis.",
             route = {
                 { y = 0.738, mapID = 1453, label = "Acolyte Dellis", offMapText = "Travel to Acolyte Dellis in Stormwind City.", x = 0.514 },
@@ -214,7 +208,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1363,
-            priority = 70,
         },
         {
             id = "accept-1363-mazen-s-behest-2",
@@ -238,7 +231,6 @@ ns:RegisterGuide({
                 { mapID = 1453, x = 0.518, y = 0.743, label = "Mazen Mac'Nadir", offMapText = "Travel to Mazen Mac'Nadir in Stormwind City." },
             },
             sourceStep = 5,
-            priority = 80,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -266,7 +258,6 @@ ns:RegisterGuide({
                 { mapID = 1453, x = 0.4097, y = 0.6383, label = "Acolyte Dellis", offMapText = "Travel to Acolyte Dellis in Stormwind City." },
             },
             sourceStep = 6,
-            priority = 90,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -294,7 +285,6 @@ ns:RegisterGuide({
                 { mapID = 1453, x = 0.518, y = 0.937, label = "Angus Stern", offMapText = "Travel to Angus Stern in Stormwind City." },
             },
             sourceStep = 7,
-            priority = 100,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -320,10 +310,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1448,
-            priority = 110,
         },
         {
-            priority = 120,
             route = {
                 { y = 0.2066, mapID = 1453, label = "Brohann Caskbelly", offMapText = "Travel to Brohann Caskbelly in Stormwind City.", x = 0.6433 },
             },
@@ -363,10 +351,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1116,
-            priority = 130,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.574, mapID = 1435, label = "Adolescent Whelp", offMapText = "Travel to Adolescent Whelp.", x = 0.124 },
             },
@@ -397,7 +383,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             route = {
                 { y = 0.5983, mapID = 1435, label = "Watcher Biggs", offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.", x = 0.2674 },
             },
@@ -444,10 +429,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 160,
         },
         {
-            priority = 170,
             text = "Use the Noboru's Cudgel to accept Noboru the Cudgel.",
             id = "accept-1392-noboru-the-cudgel",
             kind = "accept",
@@ -469,7 +452,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Turn in Noboru the Cudgel to Magtoor.",
             route = {
                 { y = 0.314, mapID = 1435, label = "Magtoor", offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599 },
@@ -494,7 +476,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.314, mapID = 1435, label = "Magtoor", offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599 },
             },
@@ -519,7 +500,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             route = {
                 { y = 0.584, mapID = 1435, label = "Adolescent Whelp", offMapText = "Travel to Adolescent Whelp.", x = 0.168 },
             },
@@ -571,7 +551,6 @@ ns:RegisterGuide({
                 { mapID = 1435, x = 0.24600000000000002, y = 0.524, label = "Young Sawtooth Crocolisk", offMapText = "Travel to Young Sawtooth Crocolisk." },
             },
             sourceStep = 23,
-            priority = 210,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -599,7 +578,6 @@ ns:RegisterGuide({
                 { mapID = 1435, x = 0.254, y = 0.49200000000000005, label = "Sorrow Spinner", offMapText = "Travel to Sorrow Spinner." },
             },
             sourceStep = 24,
-            priority = 220,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -627,14 +605,12 @@ ns:RegisterGuide({
                 { mapID = 1435, x = 0.264, y = 0.474, label = "Swamp Jaguar", offMapText = "Travel to Swamp Jaguar." },
             },
             sourceStep = 25,
-            priority = 230,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1396-encroaching-wildlife" },
         },
         {
-            priority = 240,
             text = "Turn in Encroaching Wildlife to Watcher Biggs.",
             route = {
                 { y = 0.5983, mapID = 1435, label = "Watcher Biggs", offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.", x = 0.2674 },
@@ -667,7 +643,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             route = {
                 { y = 0.5983, mapID = 1435, label = "Watcher Biggs", offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.", x = 0.2674 },
             },
@@ -701,7 +676,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             route = {
                 { y = 0.2325, mapID = 1435, label = "Ongeku", offMapText = "Travel to Ongeku.", x = 0.6131 },
             },
@@ -732,7 +706,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Collect 1 Wizards' Reagents.",
             route = {
                 { y = 0.1834, mapID = 1435, label = "Caravan Chest", offMapText = "Travel to Caravan Chest.", x = 0.6446 },
@@ -766,7 +739,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.1823, mapID = 1435, label = "Galen Goodward", offMapText = "Travel to Galen Goodward in Swamp of Sorrows.", x = 0.6541 },
             },
@@ -813,7 +785,6 @@ ns:RegisterGuide({
             },
             sourceStep = 30,
             dependsOn = { "accept-1393-galen-s-escape" },
-            priority = 290,
         },
         {
             id = "objective-1389-1-draenethyst-crystal",
@@ -834,14 +805,12 @@ ns:RegisterGuide({
                 { mapID = 1435, x = 0.55, y = 0.302, label = "Draenethyst Crystal", offMapText = "Travel to Draenethyst Crystal." },
             },
             sourceStep = 31,
-            priority = 300,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1389-draenethyst-crystals" },
         },
         {
-            priority = 310,
             text = "Turn in Galen's Escape.",
             route = {
                 { y = 0.3976, mapID = 1435, label = "Galen's Escape", offMapText = "Travel to Galen's Escape.", x = 0.4781 },
@@ -866,7 +835,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Turn in Draenethyst Crystals to Magtoor.",
             route = {
                 { y = 0.314, mapID = 1435, label = "Magtoor", offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599 },
@@ -891,7 +859,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             text = "Turn in The Lost Caravan to Watcher Biggs.",
             route = {
                 { y = 0.5983, mapID = 1435, label = "Watcher Biggs", offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.", x = 0.2674 },
@@ -925,7 +892,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             text = "Turn in Dream Dust in the Swamp to Krazek.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
@@ -956,7 +922,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -987,7 +952,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             text = "Turn in In Search of The Temple to Brohann Caskbelly.",
             route = {
                 { y = 0.2066, mapID = 1453, label = "Brohann Caskbelly", offMapText = "Travel to Brohann Caskbelly in Stormwind City.", x = 0.6433 },
@@ -1015,7 +979,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             route = {
                 { y = 0.2066, mapID = 1453, label = "Brohann Caskbelly", offMapText = "Travel to Brohann Caskbelly in Stormwind City.", x = 0.6433 },
             },
@@ -1049,7 +1012,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             route = {
                 { y = 0.1749, mapID = 1455, label = "Roetten Stonehammer", offMapText = "Travel to Roetten Stonehammer in Ironforge.", x = 0.6791 },
             },
@@ -1083,7 +1045,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             route = {
                 { y = 0.1174, mapID = 1455, label = "Prospector Stormpike", offMapText = "Travel to Prospector Stormpike in Ironforge.", x = 0.7464 },
             },
@@ -1137,10 +1098,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1712,
-            priority = 400,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.7467, mapID = 1455, label = "Liferoot", offMapText = "Travel to Liferoot.", x = 0.2416 },
             },
@@ -1174,7 +1133,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             route = {
                 { y = 0.7467, mapID = 1455, label = "Thundering Charm", offMapText = "Travel to Thundering Charm.", x = 0.2416 },
             },

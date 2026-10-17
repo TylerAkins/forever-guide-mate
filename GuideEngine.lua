@@ -830,9 +830,6 @@ local function BuildCasualGuide(faction, sources)
     local segments = {}
     local goals = {}
     local segmentByID = {}
-    -- Each source chapter keeps its own priority space (10, 20, …). Remap onto
-    -- one increasing spine so later zones cannot sort ahead of earlier ones.
-    local routePriority = 0
     for _, source in ipairs(sources) do
         local _, levelMin = GuideFactionAndLevel(source)
         local segment = {
@@ -845,15 +842,8 @@ local function BuildCasualGuide(faction, sources)
             goals = {},
             gate = source.conditions,
         }
-        local maxLocal = 0
-        for _, goal in ipairs(source.goals or {}) do
-            local localPriority = type(goal.priority) == "number" and goal.priority or 0
-            if localPriority > maxLocal then maxLocal = localPriority end
-        end
         for _, goal in ipairs(source.goals or {}) do
             local copy = CopyEraGoal(goal, segment, source.conditions)
-            local localPriority = type(goal.priority) == "number" and goal.priority or 0
-            copy.priority = routePriority + localPriority
             for _, leg in ipairs(copy.route or {}) do
                 if type(leg.mapID) == "number" then
                     segment.maps[leg.mapID] = (segment.maps[leg.mapID] or 0) + 1
@@ -862,7 +852,6 @@ local function BuildCasualGuide(faction, sources)
             segment.goals[#segment.goals + 1] = copy
             goals[#goals + 1] = copy
         end
-        routePriority = routePriority + maxLocal + 1000
         segmentByID[segment.id] = segment
         segments[#segments + 1] = segment
     end

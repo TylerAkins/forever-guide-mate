@@ -78,6 +78,14 @@ class StepLevelTests(unittest.TestCase):
         self.assertEqual(step_level(record), 18)
         self.assertEqual(offer_level(record), 12)
 
+    def test_questie_offer_without_quest_level_preserves_forever_recommendation(self):
+        record = {
+            "list": {"level": 20, "reqlevel": 10, "firstseenpatch": 16001},
+            "detail": {"questie": {"fields": {"requiredLevel": 10}}},
+        }
+        self.assertEqual(step_level(record), 20)
+        self.assertEqual(offer_level(record), 10)
+
     def test_questie_zero_keeps_the_wowhead_level(self):
         record = {
             "list": {"level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0},
@@ -237,6 +245,47 @@ class ChapterCeilingTests(unittest.TestCase):
         levels = {6282: 26, 86576: 26}
         placed = place_woven([opener, trinkets], {86576}, levels, ceiling=26)
         self.assertEqual([goal.id for goal in placed], ["accept-harpies", "accept-trinkets"])
+
+
+class QuestParsingTests(unittest.TestCase):
+    def test_shared_class_action_defaults_are_visible_to_audits(self):
+        text = 'ns:RegisterGuide({ goals = { { id = "start", classAction = "accept-747-the-hunt-begins" } } })'
+        goals = parse_goals(text, "guide", "Guides/Leveling/mulgore.lua", None)
+        self.assertEqual((goals[0].kind, goals[0].quest_id), ("accept", 747))
+
+    def test_route_checkpoint_completion_does_not_hide_goal_quest(self):
+        text = """ns:RegisterGuide({ goals = {
+            { id = "delivery", kind = "turnin",
+              route = { { complete = { map = 1454 } } },
+              complete = { quest = { id = 95350, state = "completed" } } },
+        } })"""
+        goals = parse_goals(text, "guide", "test.lua", None)
+        self.assertEqual([goal.quest_id for goal in goals], [95350])
+
+    def test_reads_current_completion_tables_without_using_prerequisite_ids(self):
+        text = '''
+        ns:RegisterGuide({ goals = {
+            { id = "pickup", kind = "accept", conditions = { quest = { id = 479, state = "completed" } },
+              complete = { quest = { id = 95981, state = "activeOrCompleted" } } },
+            { id = "combat", kind = "objective", complete = {
+                questObjective = { id = 95981, index = 1 } } },
+            { id = "delivery", kind = "turnin", complete = { quest = { id = 95981, state = "completed" } } },
+            { id = "note", kind = "note", checkpointQuest = 95981, complete = { level = { min = 20 } } },
+        } })
+        '''
+        goals = parse_goals(text, "guide", "fixture.lua", None)
+        self.assertEqual([95981, 95981, 95981, None], [goal.quest_id for goal in goals])
+
+    def test_legacy_helpers_and_nonquest_completion_remain_supported(self):
+        text = '''
+        ns:RegisterGuide({ goals = {
+            { id = "pickup", complete = QuestState(99, "activeOrCompleted") },
+            { id = "combat", complete = QuestObjective(99, 1, "Shackle") },
+            { id = "item", complete = { item = { id = 95981, minCount = 1 } } },
+        } })
+        '''
+        goals = parse_goals(text, "guide", "fixture.lua", None)
+        self.assertEqual([99, 99, None], [goal.quest_id for goal in goals])
 
 
 class PriorityTests(unittest.TestCase):

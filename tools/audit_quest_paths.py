@@ -17,6 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
+from quest_database import load_quest_records
+
 from weave_loremaster import (  # noqa: E402
     FOREVER_PATCH,
     Goal,
@@ -179,109 +181,6 @@ def catalog_quest(quest_id: int, record: dict | None) -> CatalogQuest:
         step_level=step_level(record) if record else None,
         record_found=record is not None,
     )
-
-
-def normalize_export_quest(quest: dict) -> dict:
-    """Map schema v2 quest bodies onto the catalog record shape."""
-    quest_id = int(quest["id"])
-    quest_level = quest.get("questLevel") if isinstance(quest.get("questLevel"), int) else None
-    required_level = quest.get("requiredLevel") if isinstance(quest.get("requiredLevel"), int) else None
-    required_classes = quest.get("requiredClasses") if isinstance(quest.get("requiredClasses"), list) else []
-    fields = {
-        key: quest[key]
-        for key in (
-            "name",
-            "questLevel",
-            "requiredLevel",
-            "preQuestGroup",
-            "preQuestSingle",
-            "exclusiveTo",
-            "breadcrumbs",
-            "breadcrumbForQuestId",
-            "nextQuestInChain",
-            "requiredClasses",
-            "requiredRaces",
-            "requiredSkill",
-        )
-        if key in quest and quest[key] is not None
-    }
-    return {
-        "id": quest_id,
-        "list": {
-            "id": quest_id,
-            "level": quest_level,
-            "reqlevel": required_level,
-            "firstseenpatch": FOREVER_PATCH if quest_id >= 90000 else None,
-            "name": quest.get("name") if isinstance(quest.get("name"), str) else "",
-            "reqclass": 1 if required_classes else 0,
-        },
-        "minLevel": required_level,
-        "classes": [item for item in required_classes if isinstance(item, int)],
-        "detail": {
-            "requirements": {
-                "allOf": _ints(quest.get("preQuestGroup")),
-                "anyOf": _ints(quest.get("preQuestSingle")),
-                "exclusiveTo": _ints(quest.get("exclusiveTo")),
-                "breadcrumbs": _ints(quest.get("breadcrumbs")),
-                "nextQuestInChain": quest.get("nextQuestInChain"),
-            },
-            "questie": {"fields": fields},
-        },
-    }
-
-
-def load_export_records(database_root: Path) -> dict[int, dict]:
-    quests_dir = database_root / "export" / "forever" / "quests"
-    paths = sorted(quests_dir.glob("*.json"))
-    print(f"reading {len(paths)} schema v2 shards from {quests_dir}", flush=True)
-    records: dict[int, dict] = {}
-    for path in paths:
-        bundle = json.loads(path.read_text(encoding="utf-8"))
-        quests = bundle.get("quests")
-        if not isinstance(quests, dict):
-            continue
-        for quest in quests.values():
-            if not isinstance(quest, dict) or not isinstance(quest.get("id"), int):
-                continue
-            records[quest["id"]] = normalize_export_quest(quest)
-    print(f"loaded {len(records)} exported quests", flush=True)
-    return records
-
-
-def load_compiled_records(database_root: Path) -> dict[int, dict]:
-    export_quests = database_root / "export" / "forever" / "quests"
-    if export_quests.is_dir():
-        return load_export_records(database_root)
-
-    compiled = database_root / "data" / "forever" / "compiled"
-    records: dict[int, dict] = {}
-    if not compiled.is_dir():
-        raise SystemExit(
-            f"no wow-database export at {export_quests} and no compiled forever data at {compiled}"
-        )
-    paths = sorted(compiled.rglob("*.json"))
-    print(f"reading {len(paths)} compiled bundles from {compiled}", flush=True)
-    for path in paths:
-        bundle = json.loads(path.read_text(encoding="utf-8"))
-        quests = bundle.get("quests")
-        if not isinstance(quests, dict):
-            continue
-        for key, quest in quests.items():
-            if not isinstance(quest, dict):
-                continue
-            quest_id = int(key)
-            index = quest.get("index") if isinstance(quest.get("index"), dict) else {}
-            record = records.get(quest_id, {})
-            merged = {
-                "id": quest_id,
-                "list": index.get("list") if isinstance(index.get("list"), dict) else record.get("list"),
-                "minLevel": index.get("minLevel", record.get("minLevel")),
-                "classes": index.get("classes", record.get("classes")),
-                "detail": quest.get("detail") if isinstance(quest.get("detail"), dict) else record.get("detail"),
-            }
-            records[quest_id] = merged
-    print(f"loaded {len(records)} compiled quests", flush=True)
-    return records
 
 
 def parse_registered_prereqs(text: str) -> dict[int, Requirement]:
@@ -563,7 +462,7 @@ def main() -> None:
         help="only print prerequisite / missing-record findings",
     )
     args = parser.parse_args()
-    records = load_compiled_records(args.database)
+    records = load_quest_records(args.database)
     goals = load_guide_goals(ROOT)
     print(f"parsed {len(goals)} guide steps", flush=True)
     registered = parse_registered_prereqs((ROOT / "QuestPrerequisites.lua").read_text(encoding="utf-8"))

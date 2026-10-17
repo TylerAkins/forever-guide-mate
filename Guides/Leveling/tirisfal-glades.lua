@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 8,
+    revision = 9,
     title = "Undead Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-tirisfal-glades",
@@ -15,7 +15,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            priority = 10,
             route = {
                 { y = 0.7165, mapID = 1420, label = "Undertaker Mordo", offMapText = "Travel to Undertaker Mordo in Tirisfal Glades.", x = 0.3022 },
             },
@@ -43,7 +42,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 20,
             text = "Turn in Rude Awakening to Shadow Priest Sarvis.",
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
@@ -71,7 +69,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 30,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -93,7 +90,6 @@ ns:RegisterGuide({
             classAction = "accept-364-the-mindless-ones",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.6641, mapID = 1420, label = "Venya Marthand", offMapText = "Travel to Venya Marthand in Tirisfal Glades.", x = 0.3098 },
             },
@@ -128,7 +124,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             text = "Collect 3 Rattlecage Skull.",
             route = {
                 { y = 0.626, mapID = 1420, label = "Rattlecage Skeleton", offMapText = "Travel to Rattlecage Skeleton.", x = 0.322 },
@@ -163,7 +158,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 60,
             text = "Turn in Piercing the Veil to Venya Marthand.",
             route = {
                 { y = 0.6641, mapID = 1420, label = "Venya Marthand", offMapText = "Travel to Venya Marthand in Tirisfal Glades.", x = 0.3098 },
@@ -198,7 +192,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 70,
             route = {
                 { mapID = 1420, x = 0.326, y = 0.634, label = "Mindless Zombie", offMapText = "Travel to Mindless Zombie." },
             },
@@ -236,13 +229,11 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.326, y = 0.634, label = "Wretched Zombie", offMapText = "Travel to Wretched Zombie." },
             },
             sourceStep = 13,
-            priority = 80,
             useClientPin = false,
             dependsOn = { "accept-364-the-mindless-ones" },
             classAction = "objective-364-2-wretched-zombie",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -264,7 +255,6 @@ ns:RegisterGuide({
             classAction = "turnin-364-the-mindless-ones",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -301,7 +291,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-364-the-mindless-ones" },
         },
         {
-            priority = 110,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -338,7 +327,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-364-the-mindless-ones" },
         },
         {
-            priority = 120,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -375,7 +363,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -412,7 +399,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -449,7 +435,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
             },
@@ -483,7 +468,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 151,
             route = {
                 { y = 0.6617, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis.", x = 0.3086 },
             },
@@ -534,10 +518,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 376,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.6605, mapID = 1420, label = "Novice Elreth", offMapText = "Travel to Novice Elreth in Tirisfal Glades.", x = 0.3086 },
             },
@@ -565,7 +547,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 175,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
             },
@@ -616,10 +597,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98389,
-            priority = 176.666667,
         },
         {
-            priority = 178.333333,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
             },
@@ -646,7 +625,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Read Glyphic Scroll in your bags. Turn in Glyphic Scroll to Isabella.",
             route = {
                 { y = 0.6606, mapID = 1420, label = "Isabella", offMapText = "Travel to Isabella in Tirisfal Glades.", x = 0.3094 },
@@ -683,7 +661,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             text = "Read Tainted Scroll in your bags. Turn in Tainted Scroll to Maximillion.",
             route = {
                 { y = 0.6634, mapID = 1420, label = "Maximillion", offMapText = "Travel to Maximillion in Tirisfal Glades.", x = 0.3091 },
@@ -720,7 +697,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 200,
             text = "Read Hallowed Scroll in your bags. Turn in Hallowed Scroll to Dark Cleric Duesten.",
             route = {
                 { y = 0.6603, mapID = 1420, label = "Dark Cleric Duesten", offMapText = "Travel to Dark Cleric Duesten in Tirisfal Glades.", x = 0.3111 },
@@ -757,7 +733,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Kill 12 Rattlecage Skeleton.",
             route = {
                 { y = 0.626, mapID = 1420, label = "Rattlecage Skeleton", offMapText = "Travel to Rattlecage Skeleton.", x = 0.322 },
@@ -812,7 +787,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.314, y = 0.584, label = "Scavenger Paw", offMapText = "Travel to Scavenger Paw." },
             },
             sourceStep = 22,
-            priority = 220,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -840,14 +814,12 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.314, y = 0.584, label = "Duskbat Wing", offMapText = "Travel to Duskbat Wing." },
             },
             sourceStep = 23,
-            priority = 230,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-376-the-damned" },
         },
         {
-            priority = 240,
             text = "Turn in The Damned to Novice Elreth.",
             route = {
                 { y = 0.6605, mapID = 1420, label = "Novice Elreth", offMapText = "Travel to Novice Elreth in Tirisfal Glades.", x = 0.3086 },
@@ -894,10 +866,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6395,
-            priority = 250,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.6605, mapID = 1420, label = "Novice Elreth", offMapText = "Travel to Novice Elreth in Tirisfal Glades.", x = 0.3086 },
             },
@@ -931,7 +901,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Turn in Rattling the Rattlecages to Shadow Priest Sarvis.",
             route = {
                 { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3083 },
@@ -982,10 +951,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 275,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.6601, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren in Tirisfal Glades.", x = 0.3215 },
             },
@@ -1019,7 +986,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Read Simple Scroll in your bags. Turn in Simple Scroll to Dannal Stern.",
             route = {
                 { y = 0.6556, mapID = 1420, label = "Dannal Stern", offMapText = "Travel to Dannal Stern in Tirisfal Glades.", x = 0.3269 },
@@ -1056,7 +1022,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             text = "Read Encrypted Scroll in your bags. Turn in Encrypted Scroll to David Trias.",
             route = {
                 { y = 0.6565, mapID = 1420, label = "David Trias", offMapText = "Travel to David Trias in Tirisfal Glades.", x = 0.3253 },
@@ -1110,10 +1075,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 305,
         },
         {
-            priority = 310,
             route = {
                 { y = 0.656, mapID = 1420, label = "Deathguard Saltain", offMapText = "Travel to Deathguard Saltain in Tirisfal Glades.", x = 0.3161 },
             },
@@ -1147,7 +1110,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 320,
             text = "Collect 6 Scavenged Goods.",
             route = {
                 { y = 0.659, mapID = 1420, label = "Scavenged Goods", offMapText = "Travel to Scavenged Goods.", x = 0.336 },
@@ -1181,7 +1143,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             text = "Kill 10 Young Night Web Spider.",
             route = {
                 { y = 0.596, mapID = 1420, label = "Young Night Web Spider", offMapText = "Travel to Young Night Web Spider.", x = 0.292 },
@@ -1215,7 +1176,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             text = "Kill 8 Night Web Spider.",
             route = {
                 { y = 0.5941, mapID = 1420, label = "Night Web Spider", offMapText = "Travel to Night Web Spider.", x = 0.2684 },
@@ -1249,7 +1209,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 345,
             route = {
                 { y = 0.594, mapID = 1420, label = "Webbed Forsaken", offMapText = "Travel to Webbed Forsaken.", x = 0.266 },
             },
@@ -1276,7 +1235,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-98389-a-light-in-the-darkness" },
         },
         {
-            priority = 350,
             text = "Turn in Scavenging Deathknell to Deathguard Saltain.",
             route = {
                 { mapID = 1420, x = 0.3161, y = 0.6559999999999999, label = "Deathguard Saltain", offMapText = "Travel to Deathguard Saltain in Tirisfal Glades." },
@@ -1310,7 +1268,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             text = "Turn in Night Web's Hollow to Executor Arren.",
             route = {
                 { y = 0.6601, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren in Tirisfal Glades.", x = 0.3215 },
@@ -1344,7 +1301,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 362.5,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
             },
@@ -1391,7 +1347,6 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 96656,
             alternativeQuests = { 96627, 96628, 96630, 96638, 96652, 96659 },
-            priority = 365,
         },
         {
             id = "level-before-accept-381-the-scarlet-crusade",
@@ -1411,10 +1366,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 367.5,
         },
         {
-            priority = 370,
             route = {
                 { y = 0.6601, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren in Tirisfal Glades.", x = 0.3215 },
             },
@@ -1448,7 +1401,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 371,
             route = {
                 { y = 0.66, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren.", x = 0.32 },
             },
@@ -1476,7 +1428,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Collect 12 Scarlet Armband.",
             route = {
                 { y = 0.658, mapID = 1420, label = "Scarlet Convert", offMapText = "Travel to Scarlet Convert.", x = 0.354 },
@@ -1510,7 +1461,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             text = "Kill Samuel Fipps.",
             route = {
                 { y = 0.6157, mapID = 1420, label = "Samuel Fipps", offMapText = "Travel to Samuel Fipps.", x = 0.3668 },
@@ -1543,7 +1493,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             text = "Turn in Marla's Last Wish to Novice Elreth.",
             route = {
                 { y = 0.6605, mapID = 1420, label = "Novice Elreth", offMapText = "Travel to Novice Elreth in Tirisfal Glades.", x = 0.3086 },
@@ -1599,10 +1548,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5651,
-            priority = 410,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.6603, mapID = 1420, label = "Dark Cleric Duesten", offMapText = "Travel to Dark Cleric Duesten in Tirisfal Glades.", x = 0.3111 },
             },
@@ -1633,7 +1580,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Turn in The Scarlet Crusade to Executor Arren.",
             route = {
                 { y = 0.6601, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren in Tirisfal Glades.", x = 0.3215 },
@@ -1684,10 +1630,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 435,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.6601, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren in Tirisfal Glades.", x = 0.3215 },
             },
@@ -1721,7 +1665,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             text = "Collect 1 Scarlet Crusade Documents.",
             route = {
                 { y = 0.688, mapID = 1420, label = "Meven Korgal", offMapText = "Travel to Meven Korgal.", x = 0.3651 },
@@ -1755,7 +1698,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             text = "Turn in The Red Messenger to Executor Arren.",
             route = {
                 { y = 0.6601, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren in Tirisfal Glades.", x = 0.3215 },
@@ -1813,10 +1755,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 90902,
-            priority = 460.769231,
         },
         {
-            priority = 461.538462,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
             },
@@ -1848,7 +1788,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 462.307692,
             id = "woven-objective-90902-rediscovering-the-light",
             conditions = {
                 all = {
@@ -1871,7 +1810,6 @@ ns:RegisterGuide({
             classAction = "objective-90902-reviewed-mechanics",
         },
         {
-            priority = 463.076923,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
             },
@@ -1927,10 +1865,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91208,
-            priority = 463.846154,
         },
         {
-            priority = 464.615385,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
             },
@@ -1962,7 +1898,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 465.384615,
             route = {
                 { y = 0.638, mapID = 1420, label = "Frightened Paladin", offMapText = "Travel to Frightened Paladin.", x = 0.276 },
             },
@@ -1994,7 +1929,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-91208-coming-to-terms" },
         },
         {
-            priority = 466.153846,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
             },
@@ -2048,10 +1982,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 466.923077,
         },
         {
-            priority = 467.692308,
             route = {
                 { y = 0.662, mapID = 1420, label = "Aramis Hammerhand", offMapText = "Travel to Aramis Hammerhand.", x = 0.31 },
             },
@@ -2095,7 +2027,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 468.461538,
             route = {
                 { y = 0.526, mapID = 1420, label = "Shari Stilwell", offMapText = "Travel to Shari Stilwell.", x = 0.602 },
             },
@@ -2156,10 +2087,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 469.230769,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.6601, mapID = 1420, label = "Executor Arren", offMapText = "Travel to Executor Arren in Tirisfal Glades.", x = 0.3215 },
             },
@@ -2193,7 +2122,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             route = {
                 { y = 0.5679, mapID = 1420, label = "Calvin Montague", offMapText = "Travel to Calvin Montague in Tirisfal Glades.", x = 0.3823 },
             },
@@ -2240,10 +2168,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 365,
-            priority = 490,
         },
         {
-            priority = 495,
             route = {
                 { y = 0.554, mapID = 1420, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton.", x = 0.572 },
             },
@@ -2289,10 +2215,8 @@ ns:RegisterGuide({
             alternativeQuests = { 95998, 96604, 96605, 96606, 96607, 96608 },
             useClientText = false,
             useClientPin = false,
-            priority = 495.5,
         },
         {
-            priority = 496,
             route = {
                 { mapID = 1420, x = 0.5722999999999999, y = 0.5547, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton." },
             },
@@ -2320,7 +2244,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 497,
             text = "Type /sit beside Eleanor Shackleton's Basic Campfire and wait until you receive the Boosted Rest buff.",
             id = "woven-objective-96607-the-great-outdoors",
             kind = "objective",
@@ -2348,7 +2271,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 498,
             route = {
                 { mapID = 1420, x = 0.5722999999999999, y = 0.5547, label = "Eleanor Shackleton", offMapText = "Travel to Eleanor Shackleton." },
             },
@@ -2376,7 +2298,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96607-the-great-outdoors", "woven-objective-96607-the-great-outdoors" },
         },
         {
-            priority = 500,
             route = {
                 { y = 0.5416, mapID = 1420, label = "Deathguard Simmer", offMapText = "Travel to Deathguard Simmer in Tirisfal Glades.", x = 0.4091 },
             },
@@ -2423,10 +2344,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5481,
-            priority = 510,
         },
         {
-            priority = 520,
             text = "Accept Gordo's Task from Gordo.",
             id = "accept-5481-gordo-s-task",
             kind = "accept",
@@ -2468,10 +2387,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 525,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.5144, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades.", x = 0.582 },
             },
@@ -2518,10 +2435,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 367,
-            priority = 540,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
             },
@@ -2549,7 +2464,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "Turn in Vital Intelligence to Executor Zygand.",
             route = {
                 { y = 0.5176, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand in Tirisfal Glades.", x = 0.6059 },
@@ -2598,10 +2512,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 561,
         },
         {
-            priority = 562,
             id = "woven-accept-86784-sticks-and-bones",
             kind = "accept",
             text = "Accept Sticks and Bones from Deathguard Bartholomew.",
@@ -2622,7 +2534,6 @@ ns:RegisterGuide({
             dependsOn = {  },
         },
         {
-            priority = 563,
             id = "woven-objective-86784-sticks-and-bones",
             kind = "objective",
             text = "Gather Dry Branches around Brill until Sticks and Bones is ready.",
@@ -2643,7 +2554,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-86784-sticks-and-bones" },
         },
         {
-            priority = 564,
             id = "woven-turnin-86784-sticks-and-bones",
             kind = "turnin",
             text = "Turn in Sticks and Bones to Eleanor Shackleton.",
@@ -2681,10 +2591,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 565,
         },
         {
-            priority = 566,
             route = {
                 { y = 0.518, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand.", x = 0.606 },
             },
@@ -2730,10 +2638,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 95314,
-            priority = 567,
         },
         {
-            priority = 568,
             route = {
                 { y = 0.522, mapID = 1420, label = "Carolai Anise", offMapText = "Travel to Carolai Anise.", x = 0.594 },
             },
@@ -2777,10 +2683,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 569,
         },
         {
-            priority = 570,
             route = {
                 { y = 0.5176, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand in Tirisfal Glades.", x = 0.6059 },
             },
@@ -2808,7 +2712,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 580,
             text = "Turn in A Rogue's Deal to Innkeeper Renee.",
             route = {
                 { y = 0.5205, mapID = 1420, label = "Innkeeper Renee", offMapText = "Travel to Innkeeper Renee in Tirisfal Glades.", x = 0.6171 },
@@ -2836,7 +2739,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 582.5,
             id = "woven-accept-590-a-rogues-deal",
             kind = "accept",
             text = "Accept A Rogue's Deal from Calvin Montague.",
@@ -2859,7 +2761,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-8-a-rogue-s-deal" },
         },
         {
-            priority = 585,
             id = "woven-objective-590-a-rogues-deal",
             kind = "objective",
             text = "Speak to Calvin Montague and defeat him when he challenges you.",
@@ -2880,7 +2781,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-590-a-rogues-deal" },
         },
         {
-            priority = 587.5,
             id = "woven-turnin-590-a-rogues-deal",
             kind = "turnin",
             text = "Turn in A Rogue's Deal to Calvin Montague.",
@@ -2901,7 +2801,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-590-a-rogues-deal", "woven-objective-590-a-rogues-deal" },
         },
         {
-            priority = 590,
             text = "Turn in In Favor of Darkness to Dark Cleric Beryl.",
             route = {
                 { y = 0.5219, mapID = 1420, label = "Dark Cleric Beryl", offMapText = "Travel to Dark Cleric Beryl in Tirisfal Glades.", x = 0.6157 },
@@ -2952,10 +2851,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 595,
         },
         {
-            priority = 600,
             route = {
                 { y = 0.5219, mapID = 1420, label = "Dark Cleric Beryl", offMapText = "Travel to Dark Cleric Beryl in Tirisfal Glades.", x = 0.6157 },
             },
@@ -2986,7 +2883,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 610,
             id = "objective-5650-quest-work",
             conditions = {
                 all = {
@@ -3008,7 +2904,6 @@ ns:RegisterGuide({
             classAction = "objective-5650-quest-work",
         },
         {
-            priority = 620,
             text = "Turn in Garments of Darkness to Dark Cleric Beryl.",
             route = {
                 { y = 0.5219, mapID = 1420, label = "Dark Cleric Beryl", offMapText = "Travel to Dark Cleric Beryl in Tirisfal Glades.", x = 0.6157 },
@@ -3039,7 +2934,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             text = "Collect 5 Darkhound Blood.",
             route = {
                 { y = 0.532, mapID = 1420, label = "Decrepit Darkhound", offMapText = "Travel to Decrepit Darkhound.", x = 0.644 },
@@ -3067,7 +2961,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             text = "Turn in A New Plague to Apothecary Johaan.",
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
@@ -3112,10 +3005,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 645,
         },
         {
-            priority = 650,
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
             },
@@ -3149,7 +3040,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             text = "Collect 7 Putrid Claw.",
             route = {
                 { y = 0.54, mapID = 1420, label = "Ravaged Corpse", offMapText = "Travel to Ravaged Corpse.", x = 0.532 },
@@ -3198,14 +3088,12 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.5, y = 0.564, label = "Gloom Weed", offMapText = "Travel to Gloom Weed." },
             },
             sourceStep = 76,
-            priority = 670,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-5481-gordo-s-task" },
         },
         {
-            priority = 680,
             text = "Collect 10 Tirisfal Pumpkin.",
             route = {
                 { y = 0.512, mapID = 1420, label = "Tirisfal Pumpkin", offMapText = "Travel to Tirisfal Pumpkin.", x = 0.363 },
@@ -3233,7 +3121,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             text = "Kill 10 Scarlet Warrior.",
             route = {
                 { y = 0.504, mapID = 1420, label = "Scarlet Warrior", offMapText = "Travel to Scarlet Warrior.", x = 0.328 },
@@ -3261,7 +3148,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 700,
             text = "Turn in At War With The Scarlet Crusade to Executor Zygand.",
             route = {
                 { y = 0.5176, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand in Tirisfal Glades.", x = 0.6059 },
@@ -3289,7 +3175,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 701.25,
             route = {
                 { y = 0.518, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand.", x = 0.606 },
             },
@@ -3316,7 +3201,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99134-discipline" },
         },
         {
-            priority = 702.5,
             route = {
                 { y = 0.518, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand.", x = 0.606 },
             },
@@ -3360,10 +3244,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 703.75,
         },
         {
-            priority = 705,
             route = {
                 { y = 0.518, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand.", x = 0.606 },
             },
@@ -3390,7 +3272,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 706.25,
             route = {
                 { y = 0.514, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger.", x = 0.582 },
             },
@@ -3417,7 +3298,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99141-patience" },
         },
         {
-            priority = 707.5,
             route = {
                 { y = 0.518, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand.", x = 0.606 },
             },
@@ -3461,10 +3341,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 708.75,
         },
         {
-            priority = 710,
             route = {
                 { y = 0.5176, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand in Tirisfal Glades.", x = 0.6059 },
             },
@@ -3498,7 +3376,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 720,
             text = "Turn in Fields of Grief to Apothecary Johaan.",
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
@@ -3543,10 +3420,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 725,
         },
         {
-            priority = 730,
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
             },
@@ -3580,7 +3455,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 740,
             text = "Turn in A Putrid Task to Deathguard Dillinger.",
             route = {
                 { y = 0.5145, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades.", x = 0.582 },
@@ -3625,10 +3499,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 745,
         },
         {
-            priority = 750,
             route = {
                 { y = 0.5145, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades.", x = 0.582 },
             },
@@ -3681,7 +3553,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 760,
             sourceStep = 83,
             requiredQuests = {},
             useClientText = false,
@@ -3704,10 +3575,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 765,
         },
         {
-            priority = 770,
             text = "Accept Doom Weed from Junior Apothecary Holland.",
             id = "accept-5482-doom-weed",
             kind = "accept",
@@ -3738,7 +3607,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 780,
             text = "Turn in Fields of Grief to Captured Scarlet Zealot.",
             route = {
                 { y = 0.5129, mapID = 1420, label = "Captured Scarlet Zealot", offMapText = "Travel to Captured Scarlet Zealot in Tirisfal Glades.", x = 0.6197 },
@@ -3795,10 +3663,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1818,
             alternativeQuests = { 1498 },
-            priority = 1390,
         },
         {
-            priority = 1400,
             route = {
                 { y = 0.5254, mapID = 1420, label = "Austil de Mon", offMapText = "Travel to Austil de Mon in Tirisfal Glades.", x = 0.6185 },
             },
@@ -3849,10 +3715,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 354,
-            priority = 1410,
         },
         {
-            priority = 1420,
             route = {
                 { y = 0.5229, mapID = 1420, label = "Coleman Farthing", offMapText = "Travel to Coleman Farthing in Tirisfal Glades.", x = 0.6172 },
             },
@@ -3897,10 +3761,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1425,
         },
         {
-            priority = 1430,
             route = {
                 { y = 0.5229, mapID = 1420, label = "Coleman Farthing", offMapText = "Travel to Coleman Farthing in Tirisfal Glades.", x = 0.6172 },
             },
@@ -3951,10 +3813,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1881,
             alternativeQuests = { 1884 },
-            priority = 1440,
         },
         {
-            priority = 1450,
             route = {
                 { y = 0.5247, mapID = 1420, label = "Cain Firesong", offMapText = "Travel to Cain Firesong in Tirisfal Glades.", x = 0.6197 },
             },
@@ -4003,10 +3863,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1455,
         },
         {
-            priority = 1460,
             route = {
                 { y = 0.5273, mapID = 1420, label = "Gretchen Dedmar", offMapText = "Travel to Gretchen Dedmar in Tirisfal Glades.", x = 0.6189 },
             },
@@ -4056,10 +3914,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1478,
-            priority = 1470,
         },
         {
-            priority = 1480,
             route = {
                 { y = 0.5268, mapID = 1420, label = "Ageron Kargal", offMapText = "Travel to Ageron Kargal in Tirisfal Glades.", x = 0.6162 },
             },
@@ -4113,10 +3969,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1885,
             alternativeQuests = { 1859 },
-            priority = 1490,
         },
         {
-            priority = 1500,
             route = {
                 { y = 0.52, mapID = 1420, label = "Marion Call", offMapText = "Travel to Marion Call in Tirisfal Glades.", x = 0.6175 },
             },
@@ -4165,10 +4019,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1505,
         },
         {
-            priority = 1510,
             route = {
                 { y = 0.5201, mapID = 1420, label = "Deathguard Burgess", offMapText = "Travel to Deathguard Burgess in Tirisfal Glades.", x = 0.6093 },
             },
@@ -4219,10 +4071,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1515,
         },
         {
-            priority = 1520,
             route = {
                 { y = 0.5084, mapID = 1420, label = "Magistrate Sevren", offMapText = "Travel to Magistrate Sevren in Tirisfal Glades.", x = 0.6126 },
             },
@@ -4267,10 +4117,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1525,
         },
         {
-            priority = 1530,
             route = {
                 { y = 0.5152, mapID = 1420, label = "Wanted: Maggot Eye", offMapText = "Travel to Wanted: Maggot Eye.", x = 0.6073 },
             },
@@ -4298,7 +4146,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1540,
             text = "Turn in Speak with Dillinger to Deathguard Dillinger.",
             route = {
                 { y = 0.5145, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades.", x = 0.582 },
@@ -4351,10 +4198,8 @@ ns:RegisterGuide({
             alternativeQuests = { 1498 },
             useClientText = false,
             useClientPin = false,
-            priority = 1545,
         },
         {
-            priority = 1550,
             route = {
                 { y = 0.5145, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades.", x = 0.582 },
             },
@@ -4386,7 +4231,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1560,
             text = "Kill Ulag the Cleaver.",
             route = {
                 { y = 0.4851, mapID = 1420, label = "Mausoleum Trigger", offMapText = "Travel to Mausoleum Trigger.", x = 0.5916 },
@@ -4418,7 +4262,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1570,
             text = "Turn in Ulag the Cleaver to Deathguard Dillinger.",
             route = {
                 { y = 0.5145, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades.", x = 0.582 },
@@ -4470,10 +4313,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1575,
         },
         {
-            priority = 1580,
             route = {
                 { y = 0.5145, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades.", x = 0.582 },
             },
@@ -4510,7 +4351,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1590,
             text = "Turn in Speak with Coleman to Coleman Farthing.",
             route = {
                 { y = 0.5229, mapID = 1420, label = "Coleman Farthing", offMapText = "Travel to Coleman Farthing in Tirisfal Glades.", x = 0.6172 },
@@ -4547,7 +4387,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1600,
             text = "Turn in Halgar's Summons to Carendin Halgar.",
             route = {
                 { y = 0.2601, mapID = 1458, label = "Carendin Halgar", offMapText = "Travel to Carendin Halgar in Undercity.", x = 0.8504 },
@@ -4600,10 +4439,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1473,
-            priority = 1610,
         },
         {
-            priority = 1620,
             route = {
                 { y = 0.2601, mapID = 1458, label = "Carendin Halgar", offMapText = "Travel to Carendin Halgar in Undercity.", x = 0.8504 },
             },
@@ -4634,7 +4471,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1630,
             text = "Turn in Mennet Carkad to Mennet Carkad.",
             route = {
                 { y = 0.6911, mapID = 1458, label = "Mennet Carkad", offMapText = "Travel to Mennet Carkad in Undercity.", x = 0.8351 },
@@ -4686,10 +4522,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1635,
         },
         {
-            priority = 1640,
             route = {
                 { y = 0.6911, mapID = 1458, label = "Mennet Carkad", offMapText = "Travel to Mennet Carkad in Undercity.", x = 0.8351 },
             },
@@ -4720,7 +4554,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1660,
             text = "Turn in Speak with Anastasia to Anastasia Hartwell.",
             route = {
                 { y = 0.1003, mapID = 1458, label = "Anastasia Hartwell", offMapText = "Travel to Anastasia Hartwell in Undercity.", x = 0.8514 },
@@ -4773,10 +4606,8 @@ ns:RegisterGuide({
             alternativeQuests = { 1884 },
             useClientText = false,
             useClientPin = false,
-            priority = 1665,
         },
         {
-            priority = 1670,
             route = {
                 { y = 0.1003, mapID = 1458, label = "Anastasia Hartwell", offMapText = "Travel to Anastasia Hartwell in Undercity.", x = 0.8514 },
             },
@@ -4808,7 +4639,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1680,
             text = "Kill Captain Perrine.",
             route = {
                 { y = 0.678, mapID = 1420, label = "Captain Perrine", offMapText = "Travel to Captain Perrine.", x = 0.5113 },
@@ -4866,7 +4696,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.5106, y = 0.6757, label = "Egalin's Grimoire", offMapText = "Travel to Egalin's Grimoire." },
             },
             sourceStep = 180,
-            priority = 1690,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -4894,7 +4723,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.534, y = 0.654, label = "Scarlet Insignia Ring", offMapText = "Travel to Scarlet Insignia Ring." },
             },
             sourceStep = 181,
-            priority = 1700,
             requiredQuests = {
                 {
                     mode = "any",
@@ -4928,7 +4756,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.534, y = 0.654, label = "Scarlet Zealot", offMapText = "Travel to Scarlet Zealot." },
             },
             sourceStep = 182,
-            priority = 1710,
             requiredQuests = {
                 {
                     mode = "any",
@@ -4962,7 +4789,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.534, y = 0.654, label = "Scarlet Missionary", offMapText = "Travel to Scarlet Missionary." },
             },
             sourceStep = 182,
-            priority = 1720,
             requiredQuests = {
                 {
                     mode = "any",
@@ -4975,7 +4801,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-370-at-war-with-the-scarlet-crusade" },
         },
         {
-            priority = 1730,
             text = "Turn in Creature of the Void to Carendin Halgar.",
             route = {
                 { y = 0.2601, mapID = 1458, label = "Carendin Halgar", offMapText = "Travel to Carendin Halgar in Undercity.", x = 0.8504 },
@@ -5026,10 +4851,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1735,
         },
         {
-            priority = 1740,
             route = {
                 { y = 0.2601, mapID = 1458, label = "Carendin Halgar", offMapText = "Travel to Carendin Halgar in Undercity.", x = 0.8504 },
             },
@@ -5066,7 +4889,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1750,
             text = "Kill Summoned Voidwalker.",
             route = {
                 { y = 0.271, mapID = 1458, label = "Runes of Summoning", offMapText = "Travel to Runes of Summoning.", x = 0.8662 },
@@ -5103,7 +4925,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1760,
             text = "Turn in The Binding to Carendin Halgar.",
             route = {
                 { y = 0.2601, mapID = 1458, label = "Carendin Halgar", offMapText = "Travel to Carendin Halgar in Undercity.", x = 0.8504 },
@@ -5140,7 +4961,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1770,
             text = "Collect 5 Duskbat Pelt.",
             route = {
                 { y = 0.544, mapID = 1420, label = "Greater Duskbat", offMapText = "Travel to Greater Duskbat.", x = 0.584 },
@@ -5168,7 +4988,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1780,
             text = "Collect 1 Devlin's Remains.",
             route = {
                 { y = 0.416, mapID = 1420, label = "Devlin Agamand", offMapText = "Travel to Devlin Agamand.", x = 0.474 },
@@ -5196,7 +5015,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1790,
             text = "Collect 1 Nissa's Remains.",
             route = {
                 { y = 0.3602, mapID = 1420, label = "Nissa Agamand", offMapText = "Travel to Nissa Agamand.", x = 0.4954 },
@@ -5224,7 +5042,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1800,
             text = "Collect 1 Gregor's Remains.",
             route = {
                 { y = 0.306, mapID = 1420, label = "Gregor Agamand", offMapText = "Travel to Gregor Agamand.", x = 0.464 },
@@ -5252,7 +5069,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1810,
             text = "Collect 1 Thurman's Remains.",
             route = {
                 { y = 0.342, mapID = 1420, label = "Thurman Agamand", offMapText = "Travel to Thurman Agamand.", x = 0.434 },
@@ -5301,7 +5117,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.484, y = 0.358, label = "Notched Rib", offMapText = "Travel to Notched Rib." },
             },
             sourceStep = 191,
-            priority = 1820,
             requiredQuests = {
                 {
                     mode = "any",
@@ -5335,7 +5150,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.48, y = 0.376, label = "Blackened Skull", offMapText = "Travel to Blackened Skull." },
             },
             sourceStep = 192,
-            priority = 1830,
             requiredQuests = {
                 {
                     mode = "any",
@@ -5377,7 +5191,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.616, y = 0.526, label = "Darkeye Bonecaster", offMapText = "Travel to Darkeye Bonecaster." },
             },
             dependsOn = {},
-            priority = 1840,
         },
         {
             id = "level-before-accept-361-a-letter-undelivered",
@@ -5397,10 +5210,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1845,
         },
         {
-            priority = 1850,
             text = "Use the A Letter to Yvette to accept A Letter Undelivered.",
             id = "accept-361-a-letter-undelivered",
             kind = "accept",
@@ -5425,7 +5236,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1860,
             text = "Collect 1 Maggot Eye's Paw.",
             route = {
                 { mapID = 1420, x = 0.5866, y = 0.30760000000000004, label = "Maggot Eye's Paw", offMapText = "Travel to Maggot Eye's Paw." },
@@ -5453,7 +5263,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1870,
             text = "Collect 5 Vile Fin Scale.",
             route = {
                 { y = 0.288, mapID = 1420, label = "Vile Fin Puddlejumper", offMapText = "Travel to Vile Fin Puddlejumper.", x = 0.624 },
@@ -5508,14 +5317,12 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.594, y = 0.336, label = "Rot Hide Mongrel", offMapText = "Travel to Rot Hide Mongrel." },
             },
             sourceStep = 196,
-            priority = 1880,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-358-graverobbers" },
         },
         {
-            priority = 1890,
             text = "Kill 8 Rot Hide Graverobber.",
             route = {
                 { y = 0.4234, mapID = 1420, label = "Rot Hide Graverobber", offMapText = "Travel to Rot Hide Graverobber.", x = 0.5537 },
@@ -5564,7 +5371,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.578, y = 0.384, label = "Doom Weed", offMapText = "Travel to Doom Weed." },
             },
             sourceStep = 198,
-            priority = 1900,
             requiredQuests = {
                 {
                     mode = "any",
@@ -5598,7 +5404,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.5820000000000001, y = 0.41200000000000003, label = "Embalming Ichor", offMapText = "Travel to Embalming Ichor." },
             },
             sourceStep = 199,
-            priority = 1910,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -5624,7 +5429,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 1920,
             sourceStep = 200,
             requiredQuests = {
                 {
@@ -5653,10 +5457,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1923.333333,
         },
         {
-            priority = 1926.666667,
             route = {
                 { y = 0.49, mapID = 1420, label = "Junior Apothecary Holland", offMapText = "Travel to Junior Apothecary Holland.", x = 0.576 },
             },
@@ -5689,7 +5491,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1930,
             text = "Turn in The Mills Overrun to Deathguard Dillinger.",
             route = {
                 { y = 0.5145, mapID = 1420, label = "Deathguard Dillinger", offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades.", x = 0.582 },
@@ -5723,7 +5524,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1940,
             text = "Turn in A New Plague to Apothecary Johaan.",
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
@@ -5774,10 +5574,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1945,
         },
         {
-            priority = 1950,
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
             },
@@ -5811,7 +5609,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1960,
             text = "Turn in At War With The Scarlet Crusade to Executor Zygand.",
             route = {
                 { y = 0.5176, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand in Tirisfal Glades.", x = 0.6059 },
@@ -5867,10 +5664,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1965,
         },
         {
-            priority = 1970,
             route = {
                 { y = 0.5176, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand in Tirisfal Glades.", x = 0.6059 },
             },
@@ -5904,7 +5699,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1980,
             text = "Turn in Wanted: Maggot Eye to Executor Zygand.",
             route = {
                 { y = 0.5176, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand in Tirisfal Glades.", x = 0.6059 },
@@ -5932,7 +5726,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1990,
             text = "Turn in Graverobbers to Magistrate Sevren.",
             route = {
                 { y = 0.5084, mapID = 1420, label = "Magistrate Sevren", offMapText = "Travel to Magistrate Sevren in Tirisfal Glades.", x = 0.6126 },
@@ -5980,10 +5773,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1990.526316,
         },
         {
-            priority = 1991.052632,
             id = "woven-accept-405-the-prodigal-lich",
             kind = "accept",
             text = "Accept The Prodigal Lich from Magistrate Sevren.",
@@ -6006,7 +5797,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-358-graverobbers" },
         },
         {
-            priority = 1991.578947,
             id = "woven-turnin-405-the-prodigal-lich",
             kind = "turnin",
             text = "Turn in The Prodigal Lich to Bethor Iceshard.",
@@ -6042,10 +5832,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1992.105263,
         },
         {
-            priority = 1992.631579,
             id = "woven-accept-357-the-lichs-identity",
             kind = "accept",
             text = "Accept The Lich's Identity from Bethor Iceshard.",
@@ -6068,7 +5856,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-turnin-405-the-prodigal-lich" },
         },
         {
-            priority = 1993.157895,
             id = "woven-objective-357-the-lichs-identity",
             kind = "objective",
             text = "Retrieve the Lich's Spellbook from Gunther's island.",
@@ -6089,7 +5876,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-357-the-lichs-identity" },
         },
         {
-            priority = 1993.684211,
             id = "woven-turnin-357-the-lichs-identity",
             kind = "turnin",
             text = "Turn in The Lich's Identity to Bethor Iceshard.",
@@ -6125,10 +5911,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1994.210526,
         },
         {
-            priority = 1994.736842,
             id = "woven-accept-366-return-the-book",
             kind = "accept",
             text = "Accept Return the Book from Bethor Iceshard.",
@@ -6151,7 +5935,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-turnin-357-the-lichs-identity" },
         },
         {
-            priority = 1995.263158,
             id = "woven-turnin-366-return-the-book",
             kind = "turnin",
             text = "Turn in Return the Book to Gunther Arcanus.",
@@ -6187,10 +5970,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1995.789474,
         },
         {
-            priority = 1996.315789,
             id = "woven-accept-409-proving-allegiance",
             kind = "accept",
             text = "Accept Proving Allegiance from Gunther Arcanus.",
@@ -6213,7 +5994,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-turnin-366-return-the-book" },
         },
         {
-            priority = 1996.842105,
             id = "woven-objective-409-proving-allegiance",
             kind = "objective",
             text = "Take a Candle of Beckoning from the crate beside Gunther. Use it at Lillith's Dinner Table on the island to summon and defeat Lillith Nefara.",
@@ -6234,7 +6014,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-409-proving-allegiance" },
         },
         {
-            priority = 1997.368421,
             id = "woven-turnin-409-proving-allegiance",
             kind = "turnin",
             text = "Turn in Proving Allegiance to Gunther Arcanus.",
@@ -6270,10 +6049,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1997.894737,
         },
         {
-            priority = 1998.421053,
             id = "woven-accept-411-the-prodigal-lich-returns",
             kind = "accept",
             text = "Accept The Prodigal Lich Returns from Gunther Arcanus.",
@@ -6296,7 +6073,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-turnin-409-proving-allegiance" },
         },
         {
-            priority = 1998.947368,
             id = "woven-turnin-411-the-prodigal-lich-returns",
             kind = "turnin",
             text = "Turn in The Prodigal Lich Returns to Bethor Iceshard.",
@@ -6334,10 +6110,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 1999.473684,
         },
         {
-            priority = 2000,
             route = {
                 { y = 0.5084, mapID = 1420, label = "Magistrate Sevren", offMapText = "Travel to Magistrate Sevren in Tirisfal Glades.", x = 0.6126 },
             },
@@ -6371,7 +6145,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2010,
             text = "Turn in Proof of Demise to Deathguard Burgess.",
             route = {
                 { y = 0.5201, mapID = 1420, label = "Deathguard Burgess", offMapText = "Travel to Deathguard Burgess in Tirisfal Glades.", x = 0.6093 },
@@ -6405,7 +6178,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2020,
             text = "Turn in A Letter Undelivered to Yvette Farthing.",
             route = {
                 { y = 0.526, mapID = 1420, label = "Yvette Farthing", offMapText = "Travel to Yvette Farthing in Tirisfal Glades.", x = 0.6158 },
@@ -6433,7 +6205,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2030,
             text = "Turn in Deaths in the Family to Coleman Farthing.",
             route = {
                 { y = 0.5229, mapID = 1420, label = "Coleman Farthing", offMapText = "Travel to Coleman Farthing in Tirisfal Glades.", x = 0.6172 },
@@ -6466,7 +6237,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2040,
             text = "Turn in The Haunted Mills to Coleman Farthing.",
             route = {
                 { y = 0.5229, mapID = 1420, label = "Coleman Farthing", offMapText = "Travel to Coleman Farthing in Tirisfal Glades.", x = 0.6172 },
@@ -6511,10 +6281,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2045,
         },
         {
-            priority = 2050,
             route = {
                 { y = 0.5229, mapID = 1420, label = "Coleman Farthing", offMapText = "Travel to Coleman Farthing in Tirisfal Glades.", x = 0.6172 },
             },
@@ -6548,7 +6316,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2060,
             text = "Turn in The Chill of Death to Gretchen Dedmar.",
             route = {
                 { y = 0.5273, mapID = 1420, label = "Gretchen Dedmar", offMapText = "Travel to Gretchen Dedmar in Tirisfal Glades.", x = 0.6189 },
@@ -6576,7 +6343,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2070,
             text = "Turn in Forsaken Duties to Deathguard Linnea.",
             route = {
                 { y = 0.6025, mapID = 1420, label = "Deathguard Linnea", offMapText = "Travel to Deathguard Linnea in Tirisfal Glades.", x = 0.6549 },
@@ -6627,10 +6393,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2075,
         },
         {
-            priority = 2080,
             route = {
                 { y = 0.6025, mapID = 1420, label = "Deathguard Linnea", offMapText = "Travel to Deathguard Linnea in Tirisfal Glades.", x = 0.6549 },
             },
@@ -6681,10 +6445,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2085,
         },
         {
-            priority = 2090,
             route = {
                 { y = 0.6025, mapID = 1420, label = "Deathguard Linnea", offMapText = "Travel to Deathguard Linnea in Tirisfal Glades.", x = 0.6549 },
             },
@@ -6729,10 +6491,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2093.333333,
         },
         {
-            priority = 2096.666667,
             route = {
                 { y = 0.6, mapID = 1420, label = "Shelene Rhobart", offMapText = "Travel to Shelene Rhobart.", x = 0.654 },
             },
@@ -6783,7 +6543,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.7694, y = 0.6238, label = "Balnir Snapdragons", offMapText = "Travel to Balnir Snapdragons." },
             },
             sourceStep = 217,
-            priority = 2100,
             requiredQuests = {},
             alternativeQuests = { 1884 },
             useClientText = false,
@@ -6791,7 +6550,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1882-the-balnir-farmstead" },
         },
         {
-            priority = 2105,
             route = {
                 { y = 0.6, mapID = 1420, label = "Balnir Farmstead", offMapText = "Travel to Balnir Farmstead.", x = 0.75 },
             },
@@ -6845,7 +6603,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.7554000000000001, y = 0.6085, label = "Bleeding Horror", offMapText = "Travel to Bleeding Horror." },
             },
             sourceStep = 218,
-            priority = 2110,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -6873,14 +6630,12 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.7554000000000001, y = 0.6085, label = "Wandering Spirit", offMapText = "Travel to Wandering Spirit." },
             },
             sourceStep = 218,
-            priority = 2120,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-356-rear-guard-patrol" },
         },
         {
-            priority = 2125,
             route = {
                 { y = 0.6, mapID = 1420, label = "Shelene Rhobart", offMapText = "Travel to Shelene Rhobart.", x = 0.654 },
             },
@@ -6907,7 +6662,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-97558-hides-for-the-forsaken" },
         },
         {
-            priority = 2130,
             text = "Kill Captain Vachon.",
             route = {
                 { y = 0.5613, mapID = 1420, label = "Captain Vachon", offMapText = "Travel to Captain Vachon.", x = 0.7882 },
@@ -6962,7 +6716,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.7959999999999999, y = 0.5579999999999999, label = "Scarlet Friar", offMapText = "Travel to Scarlet Friar." },
             },
             sourceStep = 220,
-            priority = 2140,
             requiredQuests = {
                 {
                     mode = "any",
@@ -6975,7 +6728,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-371-at-war-with-the-scarlet-crusade" },
         },
         {
-            priority = 2150,
             text = "Collect 4 Vicious Night Web Spider Venom.",
             route = {
                 { y = 0.514, mapID = 1420, label = "Vicious Night Web Spider", offMapText = "Travel to Vicious Night Web Spider.", x = 0.834 },
@@ -7009,7 +6761,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2160,
             text = "Turn in Rear Guard Patrol to Deathguard Linnea.",
             route = {
                 { y = 0.6025, mapID = 1420, label = "Deathguard Linnea", offMapText = "Travel to Deathguard Linnea in Tirisfal Glades.", x = 0.6549 },
@@ -7054,10 +6805,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2161.666667,
         },
         {
-            priority = 2163.333333,
             route = {
                 { y = 0.602, mapID = 1420, label = "Deathguard Linnea", offMapText = "Travel to Deathguard Linnea.", x = 0.654 },
             },
@@ -7090,7 +6839,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2165,
             route = {
                 { y = 0.442, mapID = 1420, label = "Riptear", offMapText = "Travel to Riptear.", x = 0.828 },
             },
@@ -7123,7 +6871,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99156-rear-guard-patrol" },
         },
         {
-            priority = 2166.666667,
             route = {
                 { y = 0.602, mapID = 1420, label = "Deathguard Linnea", offMapText = "Travel to Deathguard Linnea.", x = 0.654 },
             },
@@ -7156,7 +6903,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99156-rear-guard-patrol", "woven-objective-99156-rear-guard-patrol" },
         },
         {
-            priority = 2168.333333,
             route = {
                 { y = 0.6, mapID = 1420, label = "Shelene Rhobart", offMapText = "Travel to Shelene Rhobart.", x = 0.654 },
             },
@@ -7183,7 +6929,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-97558-hides-for-the-forsaken", "woven-objective-97558-hides-for-the-forsaken" },
         },
         {
-            priority = 2170,
             text = "Turn in Speak with Sevren to Magistrate Sevren.",
             route = {
                 { y = 0.5084, mapID = 1420, label = "Magistrate Sevren", offMapText = "Travel to Magistrate Sevren in Tirisfal Glades.", x = 0.6126 },
@@ -7232,10 +6977,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2172,
         },
         {
-            priority = 2174,
             id = "woven-accept-408-the-family-crypt",
             kind = "accept",
             text = "Accept The Family Crypt from Magistrate Sevren.",
@@ -7258,7 +7001,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-355-speak-with-sevren" },
         },
         {
-            priority = 2176,
             id = "woven-objective-408-the-family-crypt",
             kind = "objective",
             text = "Enter the Agamand Family Crypt, kill Wailing and Rotting Ancestors, and loot Captain Dargol's skull. Bring a group if needed.",
@@ -7279,7 +7021,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-408-the-family-crypt" },
         },
         {
-            priority = 2178,
             id = "woven-turnin-408-the-family-crypt",
             kind = "turnin",
             text = "Turn in The Family Crypt to Magistrate Sevren.",
@@ -7300,7 +7041,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-408-the-family-crypt", "woven-objective-408-the-family-crypt" },
         },
         {
-            priority = 2180,
             text = "Turn in Return to the Magistrate to Magistrate Sevren.",
             route = {
                 { y = 0.5084, mapID = 1420, label = "Magistrate Sevren", offMapText = "Travel to Magistrate Sevren in Tirisfal Glades.", x = 0.6126 },
@@ -7334,7 +7074,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2190,
             text = "Turn in At War With The Scarlet Crusade to Executor Zygand.",
             route = {
                 { y = 0.5177, mapID = 1420, label = "Executor Zygand", offMapText = "Travel to Executor Zygand in Tirisfal Glades.", x = 0.6058 },
@@ -7387,10 +7126,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2192,
         },
         {
-            priority = 2194,
             id = "woven-accept-372-at-war-with-the-scarlet-crusade",
             kind = "accept",
             text = "Accept At War With The Scarlet Crusade from Executor Zygand.",
@@ -7413,7 +7150,6 @@ ns:RegisterGuide({
             dependsOn = { "turnin-371-at-war-with-the-scarlet-crusade" },
         },
         {
-            priority = 2196,
             id = "woven-objective-372-at-war-with-the-scarlet-crusade",
             kind = "objective",
             text = "Kill Captain Melrache and his Scarlet Bodyguards at the northeastern Scarlet watchpost.",
@@ -7434,7 +7170,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-372-at-war-with-the-scarlet-crusade" },
         },
         {
-            priority = 2198,
             id = "woven-turnin-372-at-war-with-the-scarlet-crusade",
             kind = "turnin",
             text = "Turn in At War With The Scarlet Crusade to Executor Zygand.",
@@ -7455,7 +7190,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-372-at-war-with-the-scarlet-crusade", "woven-objective-372-at-war-with-the-scarlet-crusade" },
         },
         {
-            priority = 2200,
             text = "Turn in A New Plague to Apothecary Johaan.",
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
@@ -7506,10 +7240,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2205,
         },
         {
-            priority = 2210,
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
             },
@@ -7562,10 +7294,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 445,
-            priority = 2220,
         },
         {
-            priority = 2230,
             route = {
                 { y = 0.524, mapID = 1420, label = "Apothecary Johaan", offMapText = "Travel to Apothecary Johaan in Tirisfal Glades.", x = 0.5945 },
             },
@@ -7593,7 +7323,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2240,
             text = "Turn in A New Plague to Captured Mountaineer.",
             route = {
                 { y = 0.514, mapID = 1420, label = "Captured Mountaineer", offMapText = "Travel to Captured Mountaineer in Tirisfal Glades.", x = 0.6194 },
@@ -7627,7 +7356,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 2245,
             route = {
                 { y = 0.49, mapID = 1420, label = "Junior Apothecary Holland", offMapText = "Travel to Junior Apothecary Holland.", x = 0.576 },
             },
@@ -7660,7 +7388,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99142-tomb-weed", "woven-objective-99142-tomb-weed" },
         },
         {
-            priority = 2250,
             text = "Turn in The Balnir Farmstead to Anastasia Hartwell.",
             route = {
                 { y = 0.1003, mapID = 1458, label = "Anastasia Hartwell", offMapText = "Travel to Anastasia Hartwell in Undercity.", x = 0.8514 },
@@ -7714,13 +7441,11 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 2260,
             sourceStep = 229,
             requiredQuests = {},
             useClientText = false,
         },
         {
-            priority = 2260.0625,
             route = {
                 { y = 0.66, mapID = 1420, label = "Shadowvale", offMapText = "Travel to Shadowvale.", x = 0.11 },
             },
@@ -7764,10 +7489,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2260.125,
         },
         {
-            priority = 2260.1875,
             route = {
                 { y = 0.48, mapID = 1420, label = "Bareth Dawnstone", offMapText = "Travel to Bareth Dawnstone.", x = 0.34 },
             },
@@ -7794,7 +7517,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2260.25,
             route = {
                 { y = 0.48, mapID = 1420, label = "Bareth Dawnstone", offMapText = "Travel to Bareth Dawnstone.", x = 0.34 },
             },
@@ -7821,7 +7543,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99144-seeking-refuge" },
         },
         {
-            priority = 2260.3125,
             route = {
                 { y = 0.526, mapID = 1420, label = "Shari Stilwell", offMapText = "Travel to Shari Stilwell.", x = 0.602 },
             },
@@ -7848,7 +7569,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99144-seeking-refuge", "woven-objective-99144-seeking-refuge" },
         },
         {
-            priority = 2260.375,
             route = {
                 { y = 0.522, mapID = 1420, label = "Carolai Anise", offMapText = "Travel to Carolai Anise.", x = 0.594 },
             },
@@ -7899,10 +7619,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91282,
-            priority = 2260.4375,
         },
         {
-            priority = 2260.5,
             route = {
                 { y = 0.526, mapID = 1420, label = "Shari Stilwell", offMapText = "Travel to Shari Stilwell.", x = 0.602 },
             },
@@ -7946,7 +7664,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2260.5625,
             route = {
                 { y = 0.452, mapID = 1420, label = "Breton Samuels", offMapText = "Travel to Breton Samuels.", x = 0.218 },
             },
@@ -8012,10 +7729,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2260.625,
         },
         {
-            priority = 2260.6875,
             route = {
                 { y = 0.452, mapID = 1420, label = "Breton Samuels", offMapText = "Travel to Breton Samuels.", x = 0.218 },
             },
@@ -8059,7 +7774,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2260.75,
             route = {
                 { y = 0.582, mapID = 1420, label = "Vile Fin Seer", offMapText = "Travel to Vile Fin Seer.", x = 0.172 },
             },
@@ -8103,7 +7817,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-91285-murlocs-at-the-gates" },
         },
         {
-            priority = 2260.8125,
             route = {
                 { y = 0.452, mapID = 1420, label = "Breton Samuels", offMapText = "Travel to Breton Samuels.", x = 0.218 },
             },
@@ -8169,10 +7882,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2260.875,
         },
         {
-            priority = 2260.9375,
             route = {
                 { y = 0.452, mapID = 1420, label = "Breton Samuels", offMapText = "Travel to Breton Samuels.", x = 0.218 },
             },
@@ -8216,7 +7927,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2261,
             route = {
                 { y = 0.472, mapID = 1420, label = "Hilda the Breaker", offMapText = "Travel to Hilda the Breaker.", x = 0.22 },
             },
@@ -8260,7 +7970,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-91294-touring-the-grounds" },
         },
         {
-            priority = 2261.0625,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", offMapText = "Travel to Danitha Morr.", x = 0.22 },
             },
@@ -8326,10 +8035,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2261.125,
         },
         {
-            priority = 2261.1875,
             route = {
                 { y = 0.448, mapID = 1420, label = "Jorin Croge", offMapText = "Travel to Jorin Croge.", x = 0.226 },
             },
@@ -8385,10 +8092,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 91317,
-            priority = 2261.25,
         },
         {
-            priority = 2261.3125,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", offMapText = "Travel to Danitha Morr.", x = 0.22 },
             },
@@ -8448,14 +8153,12 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 2261.375,
             id = "woven-objective-91316-making-repairs",
             useClientPin = true,
             dependsOn = { "woven-accept-91316-making-repairs" },
             classAction = "objective-91316-making-repairs",
         },
         {
-            priority = 2261.4375,
             route = {
                 { y = 0.642, mapID = 1420, label = "Rudolph Gelhardt", offMapText = "Travel to Rudolph Gelhardt.", x = 0.116 },
             },
@@ -8499,7 +8202,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-91317-the-tarnished" },
         },
         {
-            priority = 2261.5,
             route = {
                 { y = 0.448, mapID = 1420, label = "Jorin Croge", offMapText = "Travel to Jorin Croge.", x = 0.226 },
             },
@@ -8531,7 +8233,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-91316-making-repairs", "woven-objective-91316-making-repairs" },
         },
         {
-            priority = 2261.5625,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", offMapText = "Travel to Danitha Morr.", x = 0.22 },
             },
@@ -8597,10 +8298,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2261.625,
         },
         {
-            priority = 2261.6875,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", offMapText = "Travel to Danitha Morr.", x = 0.22 },
             },
@@ -8644,7 +8343,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2261.75,
             route = {
                 { y = 0.918, mapID = 1458, label = "Lady Sylvanas Windrunner", offMapText = "Travel to Lady Sylvanas Windrunner.", x = 0.578 },
             },
@@ -8712,10 +8410,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94427,
-            priority = 2261.8125,
         },
         {
-            priority = 2261.875,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", offMapText = "Travel to Danitha Morr.", x = 0.22 },
             },
@@ -8759,7 +8455,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2261.9375,
             route = {
                 { y = 0.378, mapID = 1458, label = "Tanis Alderwood", offMapText = "Travel to Tanis Alderwood.", x = 0.656 },
             },
@@ -8825,10 +8520,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2262,
         },
         {
-            priority = 2262.0625,
             route = {
                 { y = 0.378, mapID = 1458, label = "Tanis Alderwood", offMapText = "Travel to Tanis Alderwood.", x = 0.656 },
             },
@@ -8888,14 +8581,12 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 2262.125,
             id = "woven-objective-94434-a-lesson-in-divinity-undercity",
             useClientPin = true,
             dependsOn = { "woven-accept-94434-a-lesson-in-divinity-undercity" },
             classAction = "objective-94434-a-lesson-in-divinity",
         },
         {
-            priority = 2262.1875,
             route = {
                 { y = 0.378, mapID = 1458, label = "Tanis Alderwood", offMapText = "Travel to Tanis Alderwood.", x = 0.656 },
             },
@@ -8964,10 +8655,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2262.25,
         },
         {
-            priority = 2262.3125,
             route = {
                 { y = 0.378, mapID = 1458, label = "Tanis Alderwood", offMapText = "Travel to Tanis Alderwood.", x = 0.656 },
             },
@@ -9011,7 +8700,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2262.375,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", offMapText = "Travel to Danitha Morr.", x = 0.22 },
             },
@@ -9077,10 +8765,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2262.4375,
         },
         {
-            priority = 2262.5,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", offMapText = "Travel to Danitha Morr.", x = 0.22 },
             },
@@ -9124,7 +8810,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2262.5625,
             route = {
                 { y = 0.446, mapID = 1420, label = "Deathguard Billmuth", offMapText = "Travel to Deathguard Billmuth.", x = 0.22 },
             },
@@ -9190,10 +8875,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2262.625,
         },
         {
-            priority = 2262.6875,
             route = {
                 { y = 0.446, mapID = 1420, label = "Deathguard Billmuth", offMapText = "Travel to Deathguard Billmuth.", x = 0.22 },
             },
@@ -9237,7 +8920,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2262.75,
             id = "objective-94438-reviewed-mechanics",
             conditions = {
                 all = {
@@ -9260,7 +8942,6 @@ ns:RegisterGuide({
             classAction = "objective-94438-reviewed-mechanics",
         },
         {
-            priority = 2262.8125,
             route = {
                 { y = 0.476, mapID = 1420, label = "Deathguard Falgan", offMapText = "Travel to Deathguard Falgan.", x = 0.866 },
             },
@@ -9326,10 +9007,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2262.875,
         },
         {
-            priority = 2262.9375,
             route = {
                 { y = 0.476, mapID = 1420, label = "Deathguard Falgan", offMapText = "Travel to Deathguard Falgan.", x = 0.866 },
             },
@@ -9373,7 +9052,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2263,
             id = "woven-objective-94440-a-lesson-in-divinity-scarlets",
             conditions = {
                 all = {
@@ -9396,7 +9074,6 @@ ns:RegisterGuide({
             classAction = "objective-94440-a-lesson-in-divinity",
         },
         {
-            priority = 2263.0625,
             route = {
                 { y = 0.446, mapID = 1420, label = "Deathguard Billmuth", offMapText = "Travel to Deathguard Billmuth.", x = 0.22 },
             },
@@ -9462,10 +9139,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2263.125,
         },
         {
-            priority = 2263.1875,
             route = {
                 { y = 0.446, mapID = 1420, label = "Deathguard Billmuth", offMapText = "Travel to Deathguard Billmuth.", x = 0.22 },
             },
@@ -9509,7 +9184,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2263.25,
             route = {
                 { y = 0.446, mapID = 1420, label = "Danitha Morr", offMapText = "Travel to Danitha Morr.", x = 0.22 },
             },
@@ -9572,10 +9246,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 96895,
-            priority = 2263.3125,
         },
         {
-            priority = 2263.375,
             route = {
                 { y = 0.534, mapID = 1420, label = "Deathguard Terrence", offMapText = "Travel to Deathguard Terrence.", x = 0.614 },
             },
@@ -9602,7 +9274,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2263.4375,
             route = {
                 { y = 0.61, mapID = 1420, label = "Hadric Harlson", offMapText = "Travel to Hadric Harlson.", x = 0.658 },
             },
@@ -9646,10 +9317,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2263.5,
         },
         {
-            priority = 2263.5625,
             route = {
                 { y = 0.448, mapID = 1420, label = "Leonid Barthalomew the Revered", offMapText = "Travel to Leonid Barthalomew the Revered.", x = 0.22 },
             },
@@ -9676,7 +9345,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2263.625,
             route = {
                 { y = 0.448, mapID = 1420, label = "Leonid Barthalomew the Revered", offMapText = "Travel to Leonid Barthalomew the Revered.", x = 0.22 },
             },
@@ -9703,7 +9371,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96896-a-righteous-cause" },
         },
         {
-            priority = 2263.6875,
             route = {
                 { y = 0.448, mapID = 1420, label = "Leonid Barthalomew the Revered", offMapText = "Travel to Leonid Barthalomew the Revered.", x = 0.22 },
             },
@@ -9747,10 +9414,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2263.75,
         },
         {
-            priority = 2263.8125,
             route = {
                 { y = 0.61, mapID = 1420, label = "Hadric Harlson", offMapText = "Travel to Hadric Harlson.", x = 0.658 },
             },
@@ -9794,10 +9459,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2263.875,
         },
         {
-            priority = 2263.9375,
             route = {
                 { y = 0.61, mapID = 1420, label = "Hadric Harlson", offMapText = "Travel to Hadric Harlson.", x = 0.658 },
             },
@@ -9824,7 +9487,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2264,
             route = {
                 { y = 0.654, mapID = 1420, label = "Dark Neophyte", offMapText = "Travel to Dark Neophyte.", x = 0.666 },
             },
@@ -9851,7 +9513,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96897-the-cult-of-the-damned" },
         },
         {
-            priority = 2264.0625,
             route = {
                 { y = 0.654, mapID = 1420, label = "Dark Neophyte", offMapText = "Travel to Dark Neophyte.", x = 0.666 },
             },
@@ -9878,7 +9539,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96898-remnants-of-war" },
         },
         {
-            priority = 2264.125,
             route = {
                 { y = 0.61, mapID = 1420, label = "Hadric Harlson", offMapText = "Travel to Hadric Harlson.", x = 0.658 },
             },
@@ -9905,7 +9565,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-96897-the-cult-of-the-damned", "woven-objective-96897-the-cult-of-the-damned" },
         },
         {
-            priority = 2264.1875,
             route = {
                 { y = 0.61, mapID = 1420, label = "Hadric Harlson", offMapText = "Travel to Hadric Harlson.", x = 0.658 },
             },
@@ -9949,10 +9608,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2264.25,
         },
         {
-            priority = 2264.3125,
             route = {
                 { y = 0.61, mapID = 1420, label = "Hadric Harlson", offMapText = "Travel to Hadric Harlson.", x = 0.658 },
             },
@@ -9979,7 +9636,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2264.375,
             route = {
                 { y = 0.448, mapID = 1420, label = "Leonid Barthalomew the Revered", offMapText = "Travel to Leonid Barthalomew the Revered.", x = 0.22 },
             },
@@ -10023,10 +9679,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2264.4375,
         },
         {
-            priority = 2264.5,
             route = {
                 { y = 0.472, mapID = 1420, label = "Hilda the Breaker", offMapText = "Travel to Hilda the Breaker.", x = 0.22 },
             },
@@ -10076,10 +9730,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2264.5625,
         },
         {
-            priority = 2264.625,
             route = {
                 { y = 0.464, mapID = 1420, label = "Ephram Barbaro", offMapText = "Travel to Ephram Barbaro.", x = 0.202 },
             },
@@ -10112,7 +9764,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2264.6875,
             route = {
                 { y = 0.65, mapID = 1420, label = "Shadowvale cellars", offMapText = "Travel to the burned house entrance to the Shadowvale cellars.", x = 0.13 },
                 { y = 0.694, mapID = 1420, label = "Shadowvale cellars", offMapText = "Travel into the Shadowvale cellars.", x = 0.097 },
@@ -10146,7 +9797,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99152-as-above-so-below" },
         },
         {
-            priority = 2264.75,
             route = {
                 { y = 0.65, mapID = 1420, label = "Shadowvale cellars", offMapText = "Travel to the burned house entrance to the Shadowvale cellars.", x = 0.13 },
                 { y = 0.694, mapID = 1420, label = "Glowing Crystal Fragment", offMapText = "Travel to the Glowing Crystal Fragment.", x = 0.097 },
@@ -10180,7 +9830,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99153-the-one-that-got-away" },
         },
         {
-            priority = 2264.8125,
             route = {
                 { y = 0.472, mapID = 1420, label = "Hilda the Breaker", offMapText = "Travel to Hilda the Breaker.", x = 0.22 },
             },
@@ -10213,7 +9862,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-99152-as-above-so-below", "woven-objective-99152-as-above-so-below" },
         },
         {
-            priority = 2264.875,
             route = {
                 { y = 0.464, mapID = 1420, label = "Ephram Barbaro", offMapText = "Travel to Ephram Barbaro.", x = 0.202 },
             },
@@ -10263,10 +9911,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2264.9375,
         },
         {
-            priority = 2265,
             route = {
                 { y = 0.448, mapID = 1420, label = "Leonid Barthalomew the Revered", offMapText = "Travel to Leonid Barthalomew the Revered.", x = 0.22 },
             },
@@ -10293,7 +9939,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2265.0625,
             route = {
                 { y = 0.47, mapID = 1458, label = "Glix Xizzix", offMapText = "Travel to Glix Xizzix.", x = 0.698 },
             },
@@ -10349,7 +9994,6 @@ ns:RegisterGuide({
                 { mapID = 1420, x = 0.0857, y = 0.5958, label = "Whispering Horror", offMapText = "Travel to Whispering Horror." },
             },
             dependsOn = {},
-            priority = 2265.125,
         },
         {
             id = "level-before-accept-95328-verified-pickup",
@@ -10369,10 +10013,8 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-            priority = 2265.1875,
         },
         {
-            priority = 2265.25,
             text = "Use the Whispering Horror Residue to accept Whispering Horror Residue.",
             id = "accept-95328-verified-pickup",
             kind = "accept",
@@ -10396,7 +10038,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 2265.3125,
             text = "For Whispering Horror Residue: Deliver Whispering Horror Residue to Father Lankester in the War Quarter of Undercity.",
             id = "objective-95328-quest-work",
             kind = "objective",
@@ -10420,7 +10061,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-95328-verified-pickup" },
         },
         {
-            priority = 2265.375,
             route = {
                 { y = 0.156, mapID = 1458, label = "Father Lankester", offMapText = "Travel to Father Lankester.", x = 0.496 },
             },
@@ -10459,7 +10099,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 2265.4375,
         },
         {
             id = "level-before-accept-5660-touch-of-weakness",
@@ -10485,10 +10124,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5660,
             alternativeQuests = { 5658, 5661, 5662, 5663 },
-            priority = 2268.875,
         },
         {
-            priority = 2268.9375,
             route = {
                 { y = 0.4293, mapID = 1411, label = "Tai'jin", offMapText = "Travel to Tai'jin in Durotar.", x = 0.5426 },
             },
@@ -10532,10 +10169,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 2269.875,
         },
         {
-            priority = 2269.9375,
             text = "Turn in Touch of Weakness to Aelthalyste.",
             route = {
                 { y = 0.1712, mapID = 1458, label = "Aelthalyste", offMapText = "Travel to Aelthalyste in Undercity.", x = 0.4926 },

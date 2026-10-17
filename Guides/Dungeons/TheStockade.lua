@@ -28,10 +28,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-the-stockade",
     title = "The Stockade",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -42,7 +43,6 @@ ns:RegisterGuide({
         {
             id = "accept-303-the-dark-iron-war",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept The Dark Iron War from Motley Garmason.",
             complete = QuestState(303, "activeOrCompleted"),
@@ -53,7 +53,6 @@ ns:RegisterGuide({
         {
             id = "objective-303-1-dark-iron-dwarf",
             kind = "objective",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill 15 Dark Iron Dwarf.",
             dependsOn = { "accept-303-the-dark-iron-war" },
@@ -65,7 +64,6 @@ ns:RegisterGuide({
         {
             id = "objective-303-2-dark-iron-tunneler",
             kind = "objective",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill 5 Dark Iron Tunneler.",
             dependsOn = { "accept-303-the-dark-iron-war" },
@@ -77,7 +75,6 @@ ns:RegisterGuide({
         {
             id = "objective-303-3-dark-iron-saboteur",
             kind = "objective",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill 5 Dark Iron Saboteur.",
             dependsOn = { "accept-303-the-dark-iron-war" },
@@ -89,7 +86,6 @@ ns:RegisterGuide({
         {
             id = "objective-303-4-dark-iron-demolitionist",
             kind = "objective",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill 5 Dark Iron Demolitionist.",
             dependsOn = { "accept-303-the-dark-iron-war" },
@@ -101,7 +97,6 @@ ns:RegisterGuide({
         {
             id = "turnin-303-the-dark-iron-war",
             kind = "turnin",
-            priority = 15,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in The Dark Iron War to Motley Garmason.",
             dependsOn = { "objective-303-1-dark-iron-dwarf", "objective-303-2-dark-iron-tunneler", "objective-303-3-dark-iron-saboteur", "objective-303-4-dark-iron-demolitionist" },
@@ -112,8 +107,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-378-the-fury-runs-deep",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 303 } } },
             kind = "accept",
-            priority = 16,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 22 } } } },
             text = "Accept The Fury Runs Deep from Motley Garmason.",
             dependsOn = { "turnin-303-the-dark-iron-war" },
@@ -125,7 +120,6 @@ ns:RegisterGuide({
         {
             id = "accept-386-what-comes-around",
             kind = "accept",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept What Comes Around from Guard Berton.",
             complete = QuestState(386, "activeOrCompleted"),
@@ -136,7 +130,6 @@ ns:RegisterGuide({
         {
             id = "accept-377-crime-and-punishment",
             kind = "accept",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept Crime and Punishment from Councilman Millstipe.",
             complete = QuestState(377, "activeOrCompleted"),
@@ -147,7 +140,6 @@ ns:RegisterGuide({
         {
             id = "accept-388-the-color-of-blood",
             kind = "accept",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept The Color of Blood from Nikova Raskol.",
             complete = QuestState(388, "activeOrCompleted"),
@@ -158,7 +150,6 @@ ns:RegisterGuide({
         {
             id = "accept-373-the-unsent-letter",
             kind = "accept",
-            priority = 21,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
             text = "Inside The Stockade, loot An Unsent Letter from the inmates until one drops. " ..
                 "Use the letter to accept The Unsent Letter.",
@@ -168,7 +159,6 @@ ns:RegisterGuide({
         {
             id = "turnin-373-the-unsent-letter",
             kind = "turnin",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
             text = "Turn in The Unsent Letter to Baros Alexston.",
             dependsOn = { "accept-373-the-unsent-letter" },
@@ -179,8 +169,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-389-bazil-thredd",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 373 } } },
             kind = "accept",
-            priority = 23,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept Bazil Thredd from Baros Alexston.",
             dependsOn = { "turnin-373-the-unsent-letter" },
@@ -191,8 +181,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-389-bazil-thredd",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 373 } } },
             kind = "turnin",
-            priority = 24,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in Bazil Thredd to Warden Thelwater.",
             dependsOn = { "accept-389-bazil-thredd" },
@@ -203,8 +193,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-391-the-stockade-riots",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 389 } } },
             kind = "accept",
-            priority = 25,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept The Stockade Riots from Warden Thelwater.",
             dependsOn = { "turnin-389-bazil-thredd" },
@@ -216,7 +206,6 @@ ns:RegisterGuide({
         {
             id = "accept-387-quell-the-uprising",
             kind = "accept",
-            priority = 26,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Accept Quell The Uprising from Warden Thelwater.",
             complete = QuestState(387, "activeOrCompleted"),
@@ -227,7 +216,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 27,
             conditions = { level = { min = 25 } },
             text = "Enter Stockade with your group.",
             dependsOn = { "accept-303-the-dark-iron-war", "accept-378-the-fury-runs-deep", "accept-386-what-comes-around", "accept-377-crime-and-punishment", "accept-388-the-color-of-blood", "accept-373-the-unsent-letter", "accept-389-bazil-thredd", "accept-391-the-stockade-riots", "accept-387-quell-the-uprising" },
@@ -237,7 +225,6 @@ ns:RegisterGuide({
         {
             id = "objective-386-1-head-of-targorr",
             kind = "objective",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill Targorr the Dormant and loot his head.",
             dependsOn = { "accept-386-what-comes-around" },
@@ -246,8 +233,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-378-1-head-of-deepfury",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 303 } } },
             kind = "objective",
-            priority = 31,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 22 } } } },
             text = "Kill Kam Deepfury and loot the Head of Deepfury.",
             dependsOn = { "accept-378-the-fury-runs-deep" },
@@ -256,8 +243,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-391-1-head-of-bazil-thredd",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 389 } } },
             kind = "objective",
-            priority = 34,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill Bazil Thredd and loot his head.",
             dependsOn = { "accept-391-the-stockade-riots" },
@@ -267,7 +254,6 @@ ns:RegisterGuide({
         {
             id = "objective-377-1-hand-of-dextren-ward",
             kind = "objective",
-            priority = 37,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill Dextren Ward and loot his hand.",
             dependsOn = { "accept-377-crime-and-punishment" },
@@ -277,7 +263,6 @@ ns:RegisterGuide({
         {
             id = "objective-387-1-defias-prisoner",
             kind = "objective",
-            priority = 38,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill 10 Defias Prisoner.",
             dependsOn = { "accept-387-quell-the-uprising" },
@@ -287,7 +272,6 @@ ns:RegisterGuide({
         {
             id = "objective-387-2-defias-convict",
             kind = "objective",
-            priority = 39,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill 8 Defias Convict.",
             dependsOn = { "accept-387-quell-the-uprising" },
@@ -297,7 +281,6 @@ ns:RegisterGuide({
         {
             id = "objective-387-3-defias-insurgent",
             kind = "objective",
-            priority = 40,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill 8 Defias Insurgent.",
             dependsOn = { "accept-387-quell-the-uprising" },
@@ -307,7 +290,6 @@ ns:RegisterGuide({
         {
             id = "objective-388-1-red-wool-bandana",
             kind = "objective",
-            priority = 42,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Kill Defias prisoners in The Stockade until you loot 10 Red Wool Bandana.",
             dependsOn = { "accept-388-the-color-of-blood" },
@@ -316,8 +298,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-391-the-stockade-riots",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 389 } } },
             kind = "turnin",
-            priority = 43,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in The Stockade Riots to Warden Thelwater.",
             dependsOn = { "objective-391-1-head-of-bazil-thredd" },
@@ -329,7 +311,6 @@ ns:RegisterGuide({
         {
             id = "turnin-387-quell-the-uprising",
             kind = "turnin",
-            priority = 44,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in Quell The Uprising to Warden Thelwater.",
             dependsOn = { "objective-387-1-defias-prisoner", "objective-387-2-defias-convict", "objective-387-3-defias-insurgent" },
@@ -341,7 +322,6 @@ ns:RegisterGuide({
         {
             id = "turnin-388-the-color-of-blood",
             kind = "turnin",
-            priority = 45,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in The Color of Blood to Nikova Raskol.",
             dependsOn = { "objective-388-1-red-wool-bandana" },
@@ -353,7 +333,6 @@ ns:RegisterGuide({
         {
             id = "turnin-377-crime-and-punishment",
             kind = "turnin",
-            priority = 46,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in Crime and Punishment to Councilman Millstipe.",
             dependsOn = { "objective-377-1-hand-of-dextren-ward" },
@@ -365,7 +344,6 @@ ns:RegisterGuide({
         {
             id = "turnin-386-what-comes-around",
             kind = "turnin",
-            priority = 47,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
             text = "Turn in What Comes Around to Guard Berton.",
             dependsOn = { "objective-386-1-head-of-targorr" },
@@ -376,8 +354,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-378-the-fury-runs-deep",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 303 } } },
             kind = "turnin",
-            priority = 48,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 22 } } } },
             text = "Turn in The Fury Runs Deep to Motley Garmason.",
             dependsOn = { "objective-378-1-head-of-deepfury" },

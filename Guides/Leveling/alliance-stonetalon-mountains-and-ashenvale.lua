@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Stonetalon Mountains & Ashenvale",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1057,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.081, mapID = 1442, label = "Keeper Albagorm", offMapText = "Travel to Keeper Albagorm in Stonetalon Mountains.", x = 0.371 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             text = "Kill 7 Bloodfury Harpy.",
             route = {
                 { y = 0.616, mapID = 1442, label = "Bloodfury Harpy", offMapText = "Travel to Bloodfury Harpy.", x = 0.326 },
@@ -114,7 +111,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.322, y = 0.638, label = "Bloodfury Ambusher", offMapText = "Travel to Bloodfury Ambusher." },
             },
             sourceStep = 4,
-            priority = 40,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -142,7 +138,6 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.344, y = 0.674, label = "Bloodfury Slayer", offMapText = "Travel to Bloodfury Slayer." },
             },
             sourceStep = 5,
-            priority = 50,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -170,14 +165,12 @@ ns:RegisterGuide({
                 { mapID = 1442, x = 0.344, y = 0.674, label = "Bloodfury Roguefeather", offMapText = "Travel to Bloodfury Roguefeather." },
             },
             sourceStep = 6,
-            priority = 60,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1057-reclaiming-the-charred-vale" },
         },
         {
-            priority = 70,
             text = "Turn in Reclaiming the Charred Vale to Keeper Albagorm.",
             route = {
                 { y = 0.081, mapID = 1442, label = "Keeper Albagorm", offMapText = "Travel to Keeper Albagorm in Stonetalon Mountains.", x = 0.371 },
@@ -211,7 +204,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.081, mapID = 1442, label = "Keeper Albagorm", offMapText = "Travel to Keeper Albagorm in Stonetalon Mountains.", x = 0.371 },
             },
@@ -245,7 +237,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.387, mapID = 1440, label = "Delgren the Purifier", offMapText = "Travel to Delgren the Purifier in Ashenvale.", x = 0.262 },
             },
@@ -298,10 +289,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1022,
-            priority = 100,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.5298, mapID = 1440, label = "Sentinel Melyria Frostshadow", offMapText = "Travel to Sentinel Melyria Frostshadow in Ashenvale.", x = 0.2223 },
             },
@@ -348,10 +337,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1021,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.5335, mapID = 1440, label = "Illiyana", offMapText = "Travel to Illiyana in Ashenvale.", x = 0.2173 },
             },
@@ -379,7 +366,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.4884, mapID = 1440, label = "Shindrell Swiftfire", offMapText = "Travel to Shindrell Swiftfire in Ashenvale.", x = 0.3467 },
             },
@@ -407,7 +393,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             route = {
                 { y = 0.4958, mapID = 1440, label = "Raene Wolfrunner", offMapText = "Travel to Raene Wolfrunner in Ashenvale.", x = 0.3662 },
             },
@@ -441,7 +426,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             route = {
                 { y = 0.5179, mapID = 1440, label = "Pelturas Whitemoon", offMapText = "Travel to Pelturas Whitemoon in Ashenvale.", x = 0.3737 },
             },
@@ -475,7 +459,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 170,
             text = "Turn in Raene's Cleansing to Shael'dryn.",
             route = {
                 { mapID = 1440, x = 0.5354, y = 0.4629, label = "Shael'dryn", offMapText = "Travel to Shael'dryn in Ashenvale." },
@@ -509,7 +492,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             route = {
                 { mapID = 1440, x = 0.5354, y = 0.4629, label = "Shael'dryn", offMapText = "Travel to Shael'dryn in Ashenvale." },
             },
@@ -543,7 +525,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             text = "Kill Withered Ancients and Crazed Ancients east of Astranaar and loot 1 Wooden Key.",
             route = {
                 { mapID = 1440, x = 0.626, y = 0.46799999999999997, label = "Ancients", offMapText = "Travel to Ancients." },
@@ -592,7 +573,6 @@ ns:RegisterGuide({
             rememberPreparation = 1026,
         },
         {
-            priority = 200,
             text = "Use the Wooden Key to open the Worn Chest and collect 1 Iron Shaft.",
             route = {
                 { mapID = 1440, x = 0.5440999999999999, y = 0.3539, label = "Worn Chest", offMapText = "Travel to Worn Chest." },
@@ -625,7 +605,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Turn in Vile Satyr! Dryads in Danger! to Anilia.",
             route = {
                 { mapID = 1440, x = 0.7831999999999999, y = 0.4482, label = "Anilia", offMapText = "Travel to Anilia in Ashenvale." },
@@ -653,7 +632,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { mapID = 1440, x = 0.7831999999999999, y = 0.4482, label = "Anilia", offMapText = "Travel to Anilia in Ashenvale." },
             },
@@ -687,7 +665,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "Collect 1 Branch of Cenarius.",
             route = {
                 { y = 0.4242, mapID = 1440, label = "Geltharis", offMapText = "Travel to Geltharis.", x = 0.78 },
@@ -721,7 +698,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             text = "Turn in Kayneth Stillwind to Kayneth Stillwind.",
             route = {
                 { y = 0.4471, mapID = 1440, label = "Kayneth Stillwind", offMapText = "Travel to Kayneth Stillwind in Ashenvale.", x = 0.8524 },
@@ -749,7 +725,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             route = {
                 { y = 0.4471, mapID = 1440, label = "Kayneth Stillwind", offMapText = "Travel to Kayneth Stillwind in Ashenvale.", x = 0.8524 },
             },
@@ -777,7 +752,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             text = "For The Howling Vale: Go to the Howling Vale and study the Tome of Mel'Thandris.",
             id = "objective-1022-quest-work",
             kind = "objective",
@@ -802,7 +776,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1022-the-howling-vale" },
         },
         {
-            priority = 270,
             text = "Turn in The Howling Vale to Sentinel Melyria Frostshadow.",
             route = {
                 { y = 0.5298, mapID = 1440, label = "Sentinel Melyria Frostshadow", offMapText = "Travel to Sentinel Melyria Frostshadow in Ashenvale.", x = 0.2223 },
@@ -830,7 +803,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.5298, mapID = 1440, label = "Sentinel Melyria Frostshadow", offMapText = "Travel to Sentinel Melyria Frostshadow in Ashenvale.", x = 0.2223 },
             },
@@ -864,7 +836,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Turn in The Branch of Cenarius to Illiyana.",
             route = {
                 { y = 0.5335, mapID = 1440, label = "Illiyana", offMapText = "Travel to Illiyana in Ashenvale.", x = 0.2173 },
@@ -898,7 +869,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.5335, mapID = 1440, label = "Illiyana", offMapText = "Travel to Illiyana in Ashenvale.", x = 0.2173 },
             },
@@ -932,7 +902,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Turn in Raene's Cleansing to Shael'dryn.",
             route = {
                 { mapID = 1440, x = 0.5354, y = 0.4629, label = "Shael'dryn", offMapText = "Travel to Shael'dryn in Ashenvale." },
@@ -966,7 +935,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             route = {
                 { mapID = 1440, x = 0.5354, y = 0.4629, label = "Shael'dryn", offMapText = "Travel to Shael'dryn in Ashenvale." },
             },
@@ -1000,7 +968,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             text = "Collect 1 Fallen Moonstone.",
             route = {
                 { y = 0.8219, mapID = 1440, label = "Shadethicket Oracle", offMapText = "Travel to Shadethicket Oracle.", x = 0.6668 },
@@ -1034,7 +1001,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             text = "Collect 1 Iron Pommel.",
             route = {
                 { y = 0.758, mapID = 1440, label = "Rotting Slime", offMapText = "Travel to Rotting Slime.", x = 0.694 },
@@ -1089,14 +1055,12 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.7529, y = 0.7222, label = "Bottle of Disease", offMapText = "Travel to Bottle of Disease." },
             },
             sourceStep = 31,
-            priority = 350,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1011-forsaken-diseases" },
         },
         {
-            priority = 360,
             text = "Turn in Forsaken Diseases to Kayneth Stillwind.",
             route = {
                 { y = 0.4471, mapID = 1440, label = "Kayneth Stillwind", offMapText = "Travel to Kayneth Stillwind in Ashenvale.", x = 0.8524 },
@@ -1155,7 +1119,6 @@ ns:RegisterGuide({
             },
             sourceStep = 34,
             dependsOn = { "accept-1140-the-tower-of-althalaxx" },
-            priority = 370,
         },
         {
             id = "objective-1032-1-satyr-horns",
@@ -1179,7 +1142,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.6859999999999999, y = 0.534, label = "Satyr Horns", offMapText = "Travel to Satyr Horns." },
             },
             sourceStep = 35,
-            priority = 380,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1192,7 +1154,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1032-satyr-slaying" },
         },
         {
-            priority = 390,
             text = "Click Circle of Imprisonment.",
             route = {
                 { y = 0.4858, mapID = 1440, label = "Circle of Imprisonment", offMapText = "Travel to Circle of Imprisonment.", x = 0.816 },
@@ -1225,7 +1186,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             text = "Turn in Raene's Cleansing to Shael'dryn.",
             route = {
                 { mapID = 1440, x = 0.5354, y = 0.4621, label = "Shael'dryn", offMapText = "Travel to Shael'dryn in Ashenvale." },
@@ -1259,7 +1219,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.4621, mapID = 1440, label = "Shael'dryn", offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354 },
             },
@@ -1293,7 +1252,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             text = "Turn in Raene's Cleansing.",
             route = {
                 { mapID = 1440, x = 0.5638000000000001, y = 0.49229999999999996, label = "Raene's Cleansing", offMapText = "Travel to Raene's Cleansing." },
@@ -1327,7 +1285,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             route = {
                 { mapID = 1440, x = 0.5638000000000001, y = 0.49229999999999996, label = "Raene's Cleansing", offMapText = "Travel to Raene's Cleansing." },
             },
@@ -1361,7 +1318,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Turn in Raene's Cleansing to Shael'dryn.",
             route = {
                 { mapID = 1440, x = 0.5354, y = 0.4621, label = "Shael'dryn", offMapText = "Travel to Shael'dryn in Ashenvale." },
@@ -1395,7 +1351,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             route = {
                 { mapID = 1440, x = 0.5354, y = 0.4621, label = "Shael'dryn", offMapText = "Travel to Shael'dryn in Ashenvale." },
             },
@@ -1429,7 +1384,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             text = "Turn in Fallen Sky Lake to Pelturas Whitemoon.",
             route = {
                 { y = 0.5179, mapID = 1440, label = "Pelturas Whitemoon", offMapText = "Travel to Pelturas Whitemoon in Ashenvale.", x = 0.3736 },
@@ -1463,7 +1417,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             text = "Turn in Raene's Cleansing to Raene Wolfrunner.",
             route = {
                 { y = 0.4958, mapID = 1440, label = "Raene Wolfrunner", offMapText = "Travel to Raene Wolfrunner in Ashenvale.", x = 0.3662 },
@@ -1497,7 +1450,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { y = 0.4958, mapID = 1440, label = "Raene Wolfrunner", offMapText = "Travel to Raene Wolfrunner in Ashenvale.", x = 0.3662 },
             },
@@ -1531,7 +1483,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             text = "Use Dartol's Rod of Transformation here to enter Furbolg Form before speaking with Krolg.",
             route = {
                 { mapID = 1440, x = 0.5367000000000001, y = 0.7397, label = "Furbolg transformation point", offMapText = "Travel to Furbolg transformation point." },
@@ -1563,7 +1514,6 @@ ns:RegisterGuide({
             checkpointQuest = 1030,
         },
         {
-            priority = 500,
             text = "Use Dartol's Rod of Transformation to enter Furbolg Form, then speak with Krolg and turn in Raene's Cleansing.",
             route = {
                 { mapID = 1440, x = 0.5085000000000001, y = 0.7506999999999999, label = "Krolg", offMapText = "Travel to Krolg." },
@@ -1597,7 +1547,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             route = {
                 { y = 0.7507, mapID = 1440, label = "Krolg", offMapText = "Travel to Krolg in Ashenvale.", x = 0.5085 },
             },
@@ -1631,7 +1580,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             text = "Kill Ran Bloodtooth at Bloodtooth Camp. Loot his skull and keep it for the following quest.",
             route = {
                 { mapID = 1440, x = 0.5474, y = 0.7961, label = "Ran Bloodtooth", offMapText = "Travel to Ran Bloodtooth." },
@@ -1685,7 +1633,6 @@ ns:RegisterGuide({
                 { mapID = 1440, x = 0.544, y = 0.794, label = "Bloodtooth Guard", offMapText = "Travel to Bloodtooth Guard." },
             },
             sourceStep = 48,
-            priority = 530,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1698,7 +1645,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1045-raene-s-cleansing" },
         },
         {
-            priority = 540,
             text = "Use Dartol's Rod of Transformation to enter Furbolg Form, then speak with Krolg and turn in Raene's Cleansing.",
             route = {
                 { mapID = 1440, x = 0.5085000000000001, y = 0.7506999999999999, label = "Krolg", offMapText = "Travel to Krolg." },
@@ -1736,7 +1682,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.7507, mapID = 1440, label = "Krolg", offMapText = "Travel to Krolg in Ashenvale.", x = 0.5085 },
             },
@@ -1770,7 +1715,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "For Raene's Cleansing: Bring Ran Bloodtooth's Skull and Dartol's Rod of Transformation to Raene Wolfrunner in Astranaar.",
             id = "objective-1046-quest-work",
             kind = "objective",
@@ -1801,7 +1745,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1046-raene-s-cleansing" },
         },
         {
-            priority = 570,
             text = "Turn in Raene's Cleansing to Raene Wolfrunner.",
             route = {
                 { y = 0.4958, mapID = 1440, label = "Raene Wolfrunner", offMapText = "Travel to Raene Wolfrunner in Ashenvale.", x = 0.3662 },
@@ -1835,7 +1778,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             text = "Turn in Satyr Slaying! to Illiyana.",
             route = {
                 { y = 0.5334, mapID = 1440, label = "Illiyana", offMapText = "Travel to Illiyana in Ashenvale.", x = 0.2173 },
@@ -1869,7 +1811,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 590,
             text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
             route = {
                 { y = 0.387, mapID = 1440, label = "Delgren the Purifier", offMapText = "Travel to Delgren the Purifier in Ashenvale.", x = 0.2619 },
@@ -1903,7 +1844,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 600,
             text = "Turn in Velinde Starsong to Thyn'tel Bladeweaver.",
             route = {
                 { y = 0.3919, mapID = 1457, label = "Thyn'tel Bladeweaver", offMapText = "Travel to Thyn'tel Bladeweaver in Darnassus.", x = 0.6178 },
@@ -1937,7 +1877,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.3919, mapID = 1457, label = "Thyn'tel Bladeweaver", offMapText = "Travel to Thyn'tel Bladeweaver in Darnassus.", x = 0.6178 },
             },
@@ -1992,7 +1931,6 @@ ns:RegisterGuide({
                 { mapID = 1457, x = 0.6229, y = 0.8323999999999999, label = "Velinde's Journal", offMapText = "Travel to Velinde's Journal." },
             },
             sourceStep = 59,
-            priority = 620,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2005,7 +1943,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1038-velinde-s-effects" },
         },
         {
-            priority = 630,
             text = "Turn in Velinde's Effects to Thyn'tel Bladeweaver.",
             route = {
                 { y = 0.3919, mapID = 1457, label = "Thyn'tel Bladeweaver", offMapText = "Travel to Thyn'tel Bladeweaver in Darnassus.", x = 0.6178 },
@@ -2039,7 +1976,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.3919, mapID = 1457, label = "Thyn'tel Bladeweaver", offMapText = "Travel to Thyn'tel Bladeweaver in Darnassus.", x = 0.6178 },
             },
@@ -2073,7 +2009,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 650,
             route = {
                 { y = 0.6729, mapID = 1455, label = "Sara Balloo", offMapText = "Travel to Sara Balloo in Ironforge.", x = 0.6348 },
             },
@@ -2101,7 +2036,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             route = {
                 { y = 0.6729, mapID = 1455, label = "Sara Balloo", offMapText = "Travel to Sara Balloo in Ironforge.", x = 0.6348 },
             },
@@ -2135,7 +2069,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 670,
             text = "Turn in Sara Balloo's Plea to King Magni Bronzebeard.",
             route = {
                 { mapID = 1455, x = 0.3911, y = 0.5617, label = "King Magni Bronzebeard", offMapText = "Travel to King Magni Bronzebeard in Ironforge." },
@@ -2169,7 +2102,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 680,
             route = {
                 { mapID = 1455, x = 0.3911, y = 0.5617, label = "King Magni Bronzebeard", offMapText = "Travel to King Magni Bronzebeard in Ironforge." },
             },
@@ -2203,7 +2135,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 690,
             text = "Turn in A King's Tribute to Grand Mason Marblesten.",
             route = {
                 { y = 0.8802, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.3903 },
@@ -2237,7 +2168,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 700,
             route = {
                 { y = 0.87, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.386 },
             },
@@ -2290,10 +2220,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1179,
-            priority = 710,
         },
         {
-            priority = 720,
             route = {
                 { y = 0.9401, mapID = 1455, label = "Pilot Longbeard", offMapText = "Travel to Pilot Longbeard in Ironforge.", x = 0.7273 },
             },

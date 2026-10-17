@@ -24,10 +24,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-dire-maul-east",
     title = "Dire Maul East",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 56 } },
@@ -38,7 +39,6 @@ ns:RegisterGuide({
         {
             id = "accept-5527-a-reliquary-of-purity",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 59 } },
             text = "Accept A Reliquary of Purity from Rabine Saturna.",
             complete = QuestState(5527, "activeOrCompleted"),
@@ -49,7 +49,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5527-a-reliquary-of-purity",
             kind = "turnin",
-            priority = 12,
             conditions = { level = { min = 59 } },
             text = "Turn in A Reliquary of Purity to Rabine Saturna.",
             dependsOn = { "accept-5527-a-reliquary-of-purity" },
@@ -60,8 +59,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5526-shards-of-the-felvine",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5527 } } },
             kind = "accept",
-            priority = 13,
             conditions = { level = { min = 56 } },
             text = "Accept Shards of the Felvine from Rabine Saturna.",
             dependsOn = { "turnin-5527-a-reliquary-of-purity" },
@@ -73,7 +72,6 @@ ns:RegisterGuide({
         {
             id = "accept-7488-lethtendris-s-web",
             kind = "accept",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
             text = "Accept Lethtendris's Web from Latronicus Moonspear.",
             complete = QuestState(7488, "activeOrCompleted"),
@@ -84,7 +82,6 @@ ns:RegisterGuide({
         {
             id = "accept-7441-pusillin-and-the-elder-azj-tordin",
             kind = "accept",
-            priority = 15,
             conditions = { level = { min = 54 } },
             text = "Accept Pusillin and the Elder Azj'Tordin from Azj'Tordin.",
             complete = QuestState(7441, "activeOrCompleted"),
@@ -95,7 +92,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 16,
             conditions = { level = { min = 56 } },
             text = "Enter Dire Maul - East with your group.",
             dependsOn = { "accept-5527-a-reliquary-of-purity", "accept-5526-shards-of-the-felvine", "accept-7488-lethtendris-s-web", "accept-7441-pusillin-and-the-elder-azj-tordin" },
@@ -105,7 +101,6 @@ ns:RegisterGuide({
         {
             id = "objective-7441-1-book-of-incantations",
             kind = "gossip",
-            priority = 22,
             conditions = { level = { min = 54 } },
             text = "Talk to Pusillin. 'Prepare to meet your maker.' Collect Book of Incantations.",
             dependsOn = { "accept-7441-pusillin-and-the-elder-azj-tordin" },
@@ -115,7 +110,6 @@ ns:RegisterGuide({
         {
             id = "objective-7488-1-lethtendris-s-web",
             kind = "objective",
-            priority = 24,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
             text = "Collect Lethtendris's Web.",
             dependsOn = { "accept-7488-lethtendris-s-web" },
@@ -124,8 +118,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5526-1-seal-the-reliquary-of-pu",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5527 } } },
             kind = "objective",
-            priority = 30,
             conditions = { level = { min = 56 } },
             text = "Seal the Reliquary of Purity.",
             dependsOn = { "accept-5526-shards-of-the-felvine" },
@@ -135,7 +129,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7488-lethtendris-s-web",
             kind = "turnin",
-            priority = 32,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
             text = "Turn in Lethtendris's Web to Latronicus Moonspear.",
             dependsOn = { "objective-7488-1-lethtendris-s-web" },
@@ -147,7 +140,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7441-pusillin-and-the-elder-azj-tordin",
             kind = "turnin",
-            priority = 33,
             conditions = { level = { min = 54 } },
             text = "Turn in Pusillin and the Elder Azj'Tordin to Azj'Tordin.",
             dependsOn = { "objective-7441-1-book-of-incantations" },
@@ -158,8 +150,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5526-shards-of-the-felvine",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5527 } } },
             kind = "turnin",
-            priority = 34,
             conditions = { level = { min = 56 } },
             text = "Turn in Shards of the Felvine to Rabine Saturna.",
             dependsOn = { "objective-5526-1-seal-the-reliquary-of-pu" },
@@ -171,7 +163,6 @@ ns:RegisterGuide({
         {
             id = "accept-7489-lethtendris-s-web",
             kind = "accept",
-            priority = 35,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Accept Lethtendris's Web from Talo Thornhoof.",
             complete = QuestState(7489, "activeOrCompleted"),
@@ -182,7 +173,6 @@ ns:RegisterGuide({
         {
             id = "objective-7489-1-lethtendris-s-web",
             kind = "objective",
-            priority = 36,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Collect Lethtendris's Web.",
             dependsOn = { "accept-7489-lethtendris-s-web" },
@@ -192,7 +182,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7489-lethtendris-s-web",
             kind = "turnin",
-            priority = 38,
             conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             text = "Turn in Lethtendris's Web to Talo Thornhoof.",
             dependsOn = { "objective-7489-1-lethtendris-s-web" },

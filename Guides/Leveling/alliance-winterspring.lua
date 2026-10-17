@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Winterspring",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-winterspring",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4808,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
             },
@@ -61,7 +59,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
             },
@@ -104,10 +101,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3783,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
             },
@@ -132,7 +127,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             text = "Collect 10 Thick Yeti Fur.",
             route = {
                 { y = 0.4175, mapID = 1452, label = "Ice Thistle Yeti", offMapText = "Travel to Ice Thistle Yeti.", x = 0.6765 },
@@ -157,7 +151,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 70,
             text = "Turn in Are We There, Yeti? to Umi Rumplesnicker.",
             route = {
                 { mapID = 1452, x = 0.6088, y = 0.3762, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring." },
@@ -182,7 +175,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 80,
             route = {
                 { mapID = 1452, x = 0.6088, y = 0.3762, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring." },
             },
@@ -213,7 +205,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "Collect 2 Pristine Yeti Horn.",
             route = {
                 { y = 0.4175, mapID = 1452, label = "Ice Thistle Matriarch", offMapText = "Travel to Ice Thistle Matriarch.", x = 0.6765 },
@@ -244,7 +235,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             route = {
                 { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Shaman", offMapText = "Travel to Winterfall Shaman." },
             },
@@ -269,7 +259,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Den Watcher", offMapText = "Travel to Winterfall Den Watcher." },
             },
@@ -294,7 +283,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Ursa", offMapText = "Travel to Winterfall Ursa." },
             },
@@ -337,7 +325,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.64, y = 0.302, label = "Uncracked Chillwind Horn", offMapText = "Travel to Uncracked Chillwind Horn." },
             },
             sourceStep = 14,
-            priority = 130,
             requiredQuests = {
                 {
                     mode = "any",
@@ -350,7 +337,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4809-chillwind-horns" },
         },
         {
-            priority = 140,
             text = "Turn in Are We There, Yeti? to Umi Rumplesnicker.",
             route = {
                 { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
@@ -381,7 +367,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
             },
@@ -412,7 +397,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Use Umi's Mechanical Yeti on Legacki to scare her.",
             route = {
                 { mapID = 1452, x = 0.6154, y = 0.3862, label = "Legacki", offMapText = "Travel to Legacki." },
@@ -442,7 +426,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "Turn in Chillwind Horns to Felnok Steelspring.",
             route = {
                 { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
@@ -473,7 +456,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             route = {
                 { y = 0.3697, mapID = 1452, label = "Silvery Claws", offMapText = "Travel to Silvery Claws.", x = 0.6146 },
             },
@@ -503,7 +485,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             text = "Turn in Winterfall Activity to Salfa.",
             route = {
                 { y = 0.345, mapID = 1452, label = "Salfa", offMapText = "Travel to Salfa in Winterspring.", x = 0.2774 },
@@ -551,10 +532,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6762,
-            priority = 200,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
             },
@@ -600,10 +579,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1124,
-            priority = 220,
         },
         {
-            priority = 230,
             route = {
                 { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
             },
@@ -646,10 +623,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5527,
-            priority = 240,
         },
         {
-            priority = 250,
             route = {
                 { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
             },
@@ -674,7 +649,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             text = "Turn in Silver Heart to Eridan Bluewind.",
             route = {
                 { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
@@ -705,7 +679,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             route = {
                 { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
             },
@@ -736,7 +709,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 280,
             route = {
                 { y = 0.0843, mapID = 1457, label = "Mathrengyl Bearwalker", offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.", x = 0.3538 },
             },
@@ -770,7 +742,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Use Umi's Mechanical Yeti on Sprinkle to scare her.",
             route = {
                 { mapID = 1446, x = 0.5106, y = 0.2687, label = "Sprinkle", offMapText = "Travel to Sprinkle." },
@@ -833,7 +804,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 300,
             route = {
                 { mapID = 1446, x = 0.7042, y = 0.499, label = "Silver Totem of Aquementas", offMapText = "Travel to Silver Totem of Aquementas." },
             },
@@ -852,7 +822,6 @@ ns:RegisterGuide({
             rememberPreparation = 4005,
         },
         {
-            priority = 310,
             text = "Enter Lost Rigger Cove through the tunnel at Tanaris 68.62,41.46. Use the Book of Aquor at the stone circle with Eridan's materials in your bags. Let Aquementas finish speaking, defeat him and obtain the Silver Totem of Aquementas.",
             route = {
                 { mapID = 1446, x = 0.7042, y = 0.499, label = "Aquementas stone circle", offMapText = "Travel to Aquementas stone circle." },
@@ -882,7 +851,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Enter the cave at Marshal's Refuge in Un'Goro Crater and turn in Aquementas to J.D. Collie.",
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie at Marshal's Refuge", offMapText = "Travel to J.D. Collie at Marshal's Refuge." },
@@ -913,7 +881,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
             },
@@ -944,7 +911,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             text = "Turn in Linken's Adventure to Linken.",
             route = {
                 { mapID = 1449, x = 0.44659999999999994, y = 0.081, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater." },
@@ -975,7 +941,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             text = "Use Umi's Mechanical Yeti on Quixxil to scare him.",
             route = {
                 { mapID = 1449, x = 0.43670000000000003, y = 0.09380000000000001, label = "Quixxil", offMapText = "Travel to Quixxil." },

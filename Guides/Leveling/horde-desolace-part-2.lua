@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Desolace",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-desolace-part-2",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5581,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.6822, mapID = 1443, label = "Taiga Wisemane", offMapText = "Travel to Taiga Wisemane in Desolace.", x = 0.2581 },
             },
@@ -83,10 +81,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1373,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { mapID = 1435, x = 0.6131, y = 0.2325, label = "Draenethyst Shard", offMapText = "Travel to Draenethyst Shard." },
             },
@@ -117,7 +113,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
             },
@@ -148,7 +143,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1373-quest-work" },
         },
         {
-            priority = 60,
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
             },
@@ -191,10 +185,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6134,
-            priority = 70,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.6182, mapID = 1443, label = "Hornizz Brimbuzzle", offMapText = "Travel to Hornizz Brimbuzzle in Desolace.", x = 0.4783 },
             },
@@ -219,7 +211,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { mapID = 1443, x = 0.5257000000000001, y = 0.5438000000000001, label = "Takata Steelblade", offMapText = "Travel to Takata Steelblade in Desolace." },
             },
@@ -253,7 +244,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Kill Demon Portal Guardian.",
             route = {
                 { y = 0.7914, mapID = 1443, label = "Demon Portal Guardian", offMapText = "Travel to Demon Portal Guardian.", x = 0.539 },
@@ -286,7 +276,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             text = "Kill Jugkar Grim'rod.",
             route = {
                 { y = 0.7776, mapID = 1443, label = "Jugkar Grim'rod", offMapText = "Travel to Jugkar Grim'rod.", x = 0.5591 },
@@ -320,7 +309,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             text = "Kill Lord Azrethoc.",
             route = {
                 { y = 0.7776, mapID = 1443, label = "Lord Azrethoc", offMapText = "Travel to Lord Azrethoc.", x = 0.5602 },
@@ -354,7 +342,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             text = "Use the Crate of Ghost Magnets beside the large bones in southern Desolace. Kill the Magrami Spectres it attracts and collect 8 Ghost-o-plasm. Pull them away from the magnet before they become hostile.",
             route = {
                 { y = 0.9127, mapID = 1443, label = "Crate of Ghost Magnets", offMapText = "Travel to Crate of Ghost Magnets.", x = 0.6381 },
@@ -379,7 +366,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 140,
             text = "Collect 1 Khan Jehn's Head.",
             route = {
                 { y = 0.8008, mapID = 1443, label = "Khan Jehn", offMapText = "Travel to Khan Jehn.", x = 0.6639 },
@@ -410,7 +396,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             text = "Turn in The Corrupter to Takata Steelblade.",
             route = {
                 { mapID = 1443, x = 0.5257000000000001, y = 0.5438000000000001, label = "Takata Steelblade", offMapText = "Travel to Takata Steelblade in Desolace." },
@@ -444,7 +429,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Turn in Ghost-o-plasm Round Up to Hornizz Brimbuzzle.",
             route = {
                 { y = 0.6182, mapID = 1443, label = "Hornizz Brimbuzzle", offMapText = "Travel to Hornizz Brimbuzzle in Desolace.", x = 0.4783 },
@@ -469,7 +453,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "Turn in Khan Jehn to Uthek the Wise.",
             route = {
                 { y = 0.7925, mapID = 1443, label = "Uthek the Wise", offMapText = "Travel to Uthek the Wise in Desolace.", x = 0.3622 },
@@ -500,7 +483,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             text = "Turn in Portals of the Legion to Taiga Wisemane.",
             route = {
                 { mapID = 1443, x = 0.2581, y = 0.6822, label = "Taiga Wisemane", offMapText = "Travel to Taiga Wisemane in Desolace." },

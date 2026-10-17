@@ -60,7 +60,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-tirisfal-glades",
     title = "Explore Tirisfal Glades",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

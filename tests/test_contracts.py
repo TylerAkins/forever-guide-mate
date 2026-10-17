@@ -90,8 +90,7 @@ REQUIRED_FILES = (
     "Guides/Dungeons/DireMaulNorthTribute.lua",
     "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
     "Guides/Leveling/zephras-isle.lua",
-    "Guides/Loremaster/Durotar.lua",
-    "Guides/Loremaster/Mulgore.lua",
+    "Guides/Loremaster/ComingSoon.lua",
     "Guides/Leveling/tirisfal-glades.lua",
     "Guides/Leveling/mulgore.lua",
     "Guides/Leveling/durotar.lua",
@@ -349,8 +348,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/DireMaulNorthTribute.lua",
                 "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
                 "Guides/Leveling/zephras-isle.lua",
-                "Guides/Loremaster/Durotar.lua",
-                "Guides/Loremaster/Mulgore.lua",
+                "Guides/Loremaster/ComingSoon.lua",
             )
         )
         for term in forbidden:
@@ -464,67 +462,15 @@ class ContractTests(unittest.TestCase):
         self.assertRegex(guide, r'race\s*=\s*\{[^}]*\b96\b')
         self.assertNotIn("97963", guide)
 
-    def test_durotar_guide_is_loremaster_without_dungeons(self) -> None:
-        guide = (ROOT / "Guides/Loremaster/Durotar.lua").read_text(encoding="utf-8")
-        goals = guide.split("goals = {", 1)[-1]
-        for quest_id in (4641, 788, 794, 837, 831, 924, 99052, 840, 5726, 5727):
-            self.assertIn(f"QuestState({quest_id},", goals)
-        for omitted_id in (787, 5843, 807, 810, 814, 820, 5722, 5723):
-            self.assertNotIn(f"QuestState({omitted_id},", goals)
-            self.assertNotIn(f"QuestObjective({omitted_id},", goals)
-        self.assertIn('id = "leveling-durotar"', guide)
-        self.assertIn('category = "Loremaster Guides"', guide)
-        self.assertIn("level = { min = 1 }", guide)
-        self.assertIn('{ faction = "Horde" }', guide)
-        self.assertIn("This is an elite. Bring a group.", guide)
-        self.assertIn("BLACKSMITHING = 164", guide)
-        self.assertIn("LEATHERWORKING = 165", guide)
-        self.assertIn("ENCHANTING = 333", guide)
-        for goal_id, skill in (
-            ("accept-96873-a-pain-in-the-neck", "SKILL.ENCHANTING"),
-            ("accept-96874-this-is-spinal-axe", "SKILL.BLACKSMITHING"),
-            ("accept-96875-beasts-of-thunder-ridge", "SKILL.LEATHERWORKING"),
-        ):
-            block = goals.split(f'id = "{goal_id}"', 1)[1].split("route = {", 1)[0]
-            self.assertIn(f"profession = {{ skillLineID = {skill} }}", block)
-        self.assertIn('id = "objective-837-encroachment-1"', guide)
-        self.assertIn('id = "objective-837-encroachment-4"', guide)
-        self.assertIn("DUROTAR = 1411", guide)
-        rules = (ROOT / ".cursor/skills/zone-loremaster-guide/SKILL.md").read_text(encoding="utf-8")
-        self.assertIn("This is an elite. Bring a group.", rules)
-        self.assertIn("activeOrCompleted", rules)
-        self.assertIn('category = "Loremaster Guides"', rules)
-        self.assertIn("leveling route", rules)
-        self.assertIn("Zephras Isle", rules)
-        self.assertIn("woven", rules)
-
-    def test_mulgore_guide_is_loremaster_without_dungeons(self) -> None:
-        guide = (ROOT / "Guides/Loremaster/Mulgore.lua").read_text(encoding="utf-8")
-        goals = guide.split("goals = {", 1)[-1]
-        for quest_id in (752, 747, 748, 754, 745, 772, 98427, 854):
-            self.assertIn(f"QuestState({quest_id},", goals)
-        for omitted_id in (774, 5844, 99196):
-            self.assertNotIn(f"QuestState({omitted_id},", goals)
-            self.assertNotIn(f"QuestObjective({omitted_id},", goals)
-        self.assertIn('id = "leveling-mulgore"', guide)
-        self.assertIn('category = "Loremaster Guides"', guide)
-        self.assertIn("level = { min = 1 }", guide)
-        self.assertIn('{ faction = "Horde" }', guide)
-        self.assertIn("{ race = 6 }", guide)
-        self.assertIn("{ class = 7 }", guide)
-        self.assertIn("This is an elite. Bring a group.", guide)
-        self.assertIn('id = "objective-745-sharing-the-land-1"', guide)
-        self.assertIn('id = "objective-745-sharing-the-land-3"', guide)
-        self.assertIn("MULGORE = 1412", guide)
-
-    def test_loremaster_routes_follow_leveling_and_keep_zone_quests(self) -> None:
-        durotar = (ROOT / "Guides/Loremaster/Durotar.lua").read_text(encoding="utf-8")
-        goals = durotar.split("goals = {", 1)[-1]
-        self.assertIn("QuestState(1485,", goals)
-        self.assertIn("QuestState(924,", goals)
-        self.assertIn("follows the leveling route", durotar)
-        mulgore = (ROOT / "Guides/Loremaster/Mulgore.lua").read_text(encoding="utf-8")
-        self.assertIn("leveling route", mulgore)
+    def test_loremaster_is_a_single_authored_placeholder(self) -> None:
+        files = sorted((ROOT / "Guides/Loremaster").glob("*.lua"))
+        self.assertEqual([path.name for path in files], ["ComingSoon.lua"])
+        guide = files[0].read_text(encoding="utf-8")
+        self.assertIn('title = "Coming Soon!"', guide)
+        self.assertIn('text = "Coming Soon!"', guide)
+        self.assertIn('routeMode = "ordered"', guide)
+        self.assertNotIn('priority =', guide)
+        self.assertNotIn('QuestState(', guide)
 
     def test_era_leveling_guides_are_horde_routes(self) -> None:
         horde_files = (

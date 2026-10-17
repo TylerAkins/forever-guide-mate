@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Western & Eastern Plaguelands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-western-and-eastern-plaguelands",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3701,
-            priority = 10,
         },
         {
-            priority = 20,
             text = "For The Smoldering Ruins of Thaurissan: Venture to the Ruins of Thaurissan in the Burning Steppes and recover information from the Thaurissan Relics.",
             id = "objective-3701-quest-work",
             kind = "objective",
@@ -68,7 +66,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { mapID = 1455, x = 0.3837, y = 0.5531, label = "Royal Historian Archesonus", offMapText = "Travel to Royal Historian Archesonus in Ironforge." },
             },
@@ -102,7 +99,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-3701-quest-work" },
         },
         {
-            priority = 40,
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
             },
@@ -136,7 +132,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
             },
@@ -170,7 +165,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.8355, mapID = 1422, label = "Argent Officer Pureheart", offMapText = "Travel to Argent Officer Pureheart in Western Plaguelands.", x = 0.4297 },
             },
@@ -217,10 +211,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6184,
-            priority = 70,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.8451, mapID = 1422, label = "Flint Shadowmore", offMapText = "Travel to Flint Shadowmore in Western Plaguelands.", x = 0.4361 },
             },
@@ -267,10 +259,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5142,
             alternativeQuests = { 5601 },
-            priority = 90,
         },
         {
-            priority = 100,
             route = {
                 { y = 0.7852, mapID = 1422, label = "Marlene Redpath", offMapText = "Travel to Marlene Redpath in Western Plaguelands.", x = 0.4913 },
             },
@@ -296,7 +286,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             text = "Use Beacon Torch.",
             route = {
                 { y = 0.711, mapID = 1422, label = "Beacon Torch", offMapText = "Travel to Beacon Torch.", x = 0.467 },
@@ -341,10 +330,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4984,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.6467, mapID = 1422, label = "Mulgris Deepriver", offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.", x = 0.5372 },
             },
@@ -387,14 +374,12 @@ ns:RegisterGuide({
                 { mapID = 1422, x = 0.442, y = 0.596, label = "Diseased Wolf", offMapText = "Travel to Diseased Wolf." },
             },
             sourceStep = 15,
-            priority = 140,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4984-the-wildlife-suffers-too" },
         },
         {
-            priority = 150,
             text = "Use Beacon Torch.",
             route = {
                 { y = 0.6337, mapID = 1422, label = "Beacon Torch", offMapText = "Travel to Beacon Torch.", x = 0.4422 },
@@ -439,10 +424,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5058,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.5067, mapID = 1422, label = "Mrs. Dalson's Diary", offMapText = "Travel to Mrs. Dalson's Diary.", x = 0.4779 },
             },
@@ -467,7 +450,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.4927, mapID = 1422, label = "Wandering Skeleton", offMapText = "Travel to Wandering Skeleton.", x = 0.4834 },
             },
@@ -491,7 +473,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.4971, mapID = 1422, label = "Farmer Dalson", offMapText = "Travel to Farmer Dalson.", x = 0.4811 },
             },
@@ -515,7 +496,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             route = {
                 { y = 0.4965, mapID = 1422, label = "Locked Away", offMapText = "Travel to Locked Away.", x = 0.4737 },
             },
@@ -540,7 +520,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             text = "Collect 1 Dalson's Tears Cauldron Key.",
             route = {
                 { y = 0.5238, mapID = 1422, label = "Cauldron Lord Malvinious", offMapText = "Travel to Cauldron Lord Malvinious.", x = 0.4618 },
@@ -574,7 +553,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             text = "Turn in Target: Dalson's Tears.",
             route = {
                 { y = 0.5202, mapID = 1422, label = "Target: Dalson's Tears", offMapText = "Travel to Target: Dalson's Tears.", x = 0.4618 },
@@ -608,7 +586,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             route = {
                 { y = 0.5202, mapID = 1422, label = "Return to Chillwind Camp", offMapText = "Travel to Chillwind Camp.", x = 0.4618 },
             },
@@ -642,7 +619,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             route = {
                 { y = 0.5405, mapID = 1422, label = "Janice Felstone", offMapText = "Travel to Janice Felstone in Western Plaguelands.", x = 0.384 },
             },
@@ -673,7 +649,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             route = {
                 { y = 0.5405, mapID = 1422, label = "Janice Felstone", offMapText = "Travel to Janice Felstone in Western Plaguelands.", x = 0.384 },
             },
@@ -704,7 +679,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             text = "Kill Jabbering Ghouls around the ruined fields of Andorhal. Loot the Good Luck Other-Half-Charm, then use it to assemble the Good Luck Charm.",
             route = {
                 { mapID = 1422, x = 0.37799999999999995, y = 0.5760000000000001, label = "Jabbering Ghouls", offMapText = "Travel to Jabbering Ghouls." },
@@ -735,7 +709,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             text = "Turn in Two Halves Become One to Janice Felstone.",
             route = {
                 { y = 0.5405, mapID = 1422, label = "Janice Felstone", offMapText = "Travel to Janice Felstone in Western Plaguelands.", x = 0.384 },
@@ -766,7 +739,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             text = "Use Beacon Torch.",
             route = {
                 { y = 0.6627, mapID = 1422, label = "Beacon Torch", offMapText = "Travel to Beacon Torch.", x = 0.4244 },
@@ -799,7 +771,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 290,
             text = "Use Beacon Torch.",
             route = {
                 { y = 0.7152, mapID = 1422, label = "Beacon Torch", offMapText = "Travel to Beacon Torch.", x = 0.4013 },
@@ -832,7 +803,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             text = "Turn in All Along the Watchtowers to Commander Ashlam Valorfist.",
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
@@ -872,7 +842,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
             },
@@ -906,7 +875,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 320,
             text = "Turn in Scholomance to Alchemist Arbington.",
             route = {
                 { y = 0.8377, mapID = 1422, label = "Alchemist Arbington", offMapText = "Travel to Alchemist Arbington in Western Plaguelands.", x = 0.4266 },
@@ -940,7 +908,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
@@ -974,7 +941,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
             },
@@ -1008,7 +974,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             route = {
                 { y = 0.8484, mapID = 1422, label = "Nathaniel Dumah", offMapText = "Travel to Nathaniel Dumah in Western Plaguelands.", x = 0.4342 },
             },
@@ -1036,7 +1001,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             route = {
                 { y = 0.8451, mapID = 1422, label = "Flint Shadowmore", offMapText = "Travel to Flint Shadowmore in Western Plaguelands.", x = 0.4361 },
             },
@@ -1070,7 +1034,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             text = "Collect 1 Writhing Haunt Cauldron Key.",
             route = {
                 { y = 0.6606, mapID = 1422, label = "Cauldron Lord Razarch", offMapText = "Travel to Cauldron Lord Razarch.", x = 0.5302 },
@@ -1104,7 +1067,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             text = "Turn in Target: Writhing Haunt.",
             route = {
                 { y = 0.6572, mapID = 1422, label = "Target: Writhing Haunt", offMapText = "Travel to Target: Writhing Haunt.", x = 0.5302 },
@@ -1138,7 +1100,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.6572, mapID = 1422, label = "Return to Chillwind Camp", offMapText = "Travel to Chillwind Camp.", x = 0.5302 },
             },
@@ -1172,7 +1133,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             text = "Turn in The Wildlife Suffers Too to Mulgris Deepriver.",
             route = {
                 { y = 0.6467, mapID = 1422, label = "Mulgris Deepriver", offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.", x = 0.5372 },
@@ -1197,7 +1157,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.6467, mapID = 1422, label = "Mulgris Deepriver", offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.", x = 0.5372 },
             },
@@ -1228,7 +1187,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             route = {
                 { y = 0.437, mapID = 1423, label = "Tirion Fordring", offMapText = "Travel to Tirion Fordring in Eastern Plaguelands.", x = 0.0756 },
             },
@@ -1253,7 +1211,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             route = {
                 { y = 0.437, mapID = 1423, label = "Tirion Fordring", offMapText = "Travel to Tirion Fordring in Eastern Plaguelands.", x = 0.0756 },
             },
@@ -1278,7 +1235,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             route = {
                 { y = 0.437, mapID = 1423, label = "Tirion Fordring", offMapText = "Travel to Tirion Fordring in Eastern Plaguelands.", x = 0.0756 },
             },
@@ -1324,7 +1280,6 @@ ns:RegisterGuide({
                 { mapID = 1423, x = 0.28809999999999997, y = 0.7487999999999999, label = "SI:7 Insignia (Turyen)", offMapText = "Travel to SI:7 Insignia (Turyen)." },
             },
             sourceStep = 37,
-            priority = 450,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1358,7 +1313,6 @@ ns:RegisterGuide({
                 { mapID = 1423, x = 0.2716, y = 0.7497, label = "SI:7 Insignia (Fredo)", offMapText = "Travel to SI:7 Insignia (Fredo)." },
             },
             sourceStep = 39,
-            priority = 460,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1392,7 +1346,6 @@ ns:RegisterGuide({
                 { mapID = 1423, x = 0.28809999999999997, y = 0.7985, label = "SI:7 Insignia (Rutger)", offMapText = "Travel to SI:7 Insignia (Rutger)." },
             },
             sourceStep = 40,
-            priority = 470,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1405,7 +1358,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-6185-the-eastern-plagues" },
         },
         {
-            priority = 480,
             text = "Turn in Little Pamela to Pamela Redpath.",
             route = {
                 { y = 0.908, mapID = 1423, label = "Pamela Redpath", offMapText = "Travel to Pamela Redpath in Eastern Plaguelands.", x = 0.3645 },
@@ -1431,7 +1383,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             route = {
                 { y = 0.908, mapID = 1423, label = "Pamela Redpath", offMapText = "Travel to Pamela Redpath in Eastern Plaguelands.", x = 0.3645 },
             },
@@ -1456,7 +1407,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             text = "Search the ruined houses of Darrowshire for Pamela's Doll's Head, Left Side and Right Side. Spirits attack when you take the pieces.",
             route = {
                 { mapID = 1423, x = 0.381, y = 0.9229999999999999, label = "Darrowshire houses", offMapText = "Travel to Darrowshire houses." },
@@ -1518,7 +1468,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 510,
             requiredQuests = {},
             useClientText = false,
             route = {
@@ -1526,7 +1475,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 520,
             text = "Turn in Pamela's Doll to Pamela Redpath.",
             route = {
                 { y = 0.908, mapID = 1423, label = "Pamela Redpath", offMapText = "Travel to Pamela Redpath in Eastern Plaguelands.", x = 0.3645 },
@@ -1555,7 +1503,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.908, mapID = 1423, label = "Pamela Redpath", offMapText = "Travel to Pamela Redpath in Eastern Plaguelands.", x = 0.3645 },
             },
@@ -1586,7 +1533,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             route = {
                 { y = 0.908, mapID = 1423, label = "Pamela Redpath", offMapText = "Travel to Pamela Redpath in Eastern Plaguelands.", x = 0.3645 },
             },
@@ -1635,7 +1581,6 @@ ns:RegisterGuide({
                 { mapID = 1423, x = 0.402, y = 0.836, label = "Slab of Carrion Worm Meat", offMapText = "Travel to Slab of Carrion Worm Meat." },
             },
             sourceStep = 47,
-            priority = 550,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1660,7 +1605,6 @@ ns:RegisterGuide({
                 { mapID = 1423, x = 0.402, y = 0.836, label = "Plaguehound Runt", offMapText = "Travel to Plaguehound Runt." },
             },
             sourceStep = 48,
-            priority = 560,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1685,14 +1629,12 @@ ns:RegisterGuide({
                 { mapID = 1423, x = 0.402, y = 0.836, label = "Plaguebat", offMapText = "Travel to Plaguebat." },
             },
             sourceStep = 48,
-            priority = 570,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-5543-blood-tinged-skies" },
         },
         {
-            priority = 580,
             text = "Kill 5 Plaguehound.",
             route = {
                 { y = 0.756, mapID = 1423, label = "Plaguehound", offMapText = "Travel to Plaguehound.", x = 0.68 },
@@ -1717,7 +1659,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 590,
             route = {
                 { y = 0.6377, mapID = 1423, label = "Caretaker Alen", offMapText = "Travel to Caretaker Alen in Eastern Plaguelands.", x = 0.7954 },
             },
@@ -1754,10 +1695,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5281,
-            priority = 600,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.6377, mapID = 1423, label = "Caretaker Alen", offMapText = "Travel to Caretaker Alen in Eastern Plaguelands.", x = 0.7954 },
             },
@@ -1782,7 +1721,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             route = {
                 { y = 0.5982, mapID = 1423, label = "Duke Nicholas Zverenhoff", offMapText = "Travel to Duke Nicholas Zverenhoff in Eastern Plaguelands.", x = 0.8143 },
             },
@@ -1807,7 +1745,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 630,
             text = "Turn in Uncle Carlin to Carlin Redpath.",
             route = {
                 { y = 0.5977, mapID = 1423, label = "Carlin Redpath", offMapText = "Travel to Carlin Redpath in Eastern Plaguelands.", x = 0.8152 },
@@ -1838,7 +1775,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.5977, mapID = 1423, label = "Carlin Redpath", offMapText = "Travel to Carlin Redpath in Eastern Plaguelands.", x = 0.8152 },
             },
@@ -1863,7 +1799,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 650,
             route = {
                 { mapID = 1452, x = 0.5088, y = 0.4171, label = "Second Relic Fragment", offMapText = "Travel to Second Relic Fragment." },
             },
@@ -1897,7 +1832,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             route = {
                 { y = 0.22, mapID = 1423, label = "Aurora Skycaller", offMapText = "Travel to Aurora Skycaller in Eastern Plaguelands.", x = 0.5351 },
             },
@@ -1931,7 +1865,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-5245-quest-work" },
         },
         {
-            priority = 670,
             text = "Collect 100 Plagueland Termites.",
             route = {
                 { y = 0.341, mapID = 1423, label = "Large Termite Mound", offMapText = "Travel to Large Termite Mound.", x = 0.459 },
@@ -1959,7 +1892,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 680,
             text = "Turn in The Restless Souls to Egan.",
             route = {
                 { y = 0.3374, mapID = 1423, label = "Egan", offMapText = "Travel to Egan in Eastern Plaguelands.", x = 0.1445 },
@@ -1984,7 +1916,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.3348, mapID = 1423, label = "Augustus the Touched", offMapText = "Travel to Augustus the Touched in Eastern Plaguelands.", x = 0.1445 },
             },
@@ -2027,14 +1958,12 @@ ns:RegisterGuide({
                 { mapID = 1423, x = 0.1743, y = 0.3109, label = "Augustus' Receipt Book", offMapText = "Travel to Augustus' Receipt Book." },
             },
             sourceStep = 60,
-            priority = 700,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-6164-augustus-receipt-book" },
         },
         {
-            priority = 710,
             text = "Turn in Augustus' Receipt Book to Augustus the Touched.",
             route = {
                 { y = 0.3348, mapID = 1423, label = "Augustus the Touched", offMapText = "Travel to Augustus the Touched in Eastern Plaguelands.", x = 0.1445 },
@@ -2077,14 +2006,12 @@ ns:RegisterGuide({
                 { mapID = 1423, x = 0.45, y = 0.386, label = "Frenzied Plaguehound", offMapText = "Travel to Frenzied Plaguehound." },
             },
             sourceStep = 62,
-            priority = 720,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-5542-demon-dogs" },
         },
         {
-            priority = 730,
             text = "Collect 1 Zaeldarr's Head.",
             route = {
                 { y = 0.8548, mapID = 1423, label = "Zaeldarr the Outcast", offMapText = "Travel to Zaeldarr the Outcast.", x = 0.2786 },
@@ -2109,7 +2036,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 740,
             text = "Turn in Demon Dogs to Tirion Fordring.",
             route = {
                 { y = 0.437, mapID = 1423, label = "Tirion Fordring", offMapText = "Travel to Tirion Fordring in Eastern Plaguelands.", x = 0.0757 },
@@ -2139,7 +2065,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 750,
             text = "Turn in Blood Tinged Skies to Tirion Fordring.",
             route = {
                 { y = 0.437, mapID = 1423, label = "Tirion Fordring", offMapText = "Travel to Tirion Fordring in Eastern Plaguelands.", x = 0.0757 },
@@ -2164,7 +2089,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 760,
             text = "Turn in Carrion Grubbage to Tirion Fordring.",
             route = {
                 { y = 0.437, mapID = 1423, label = "Tirion Fordring", offMapText = "Travel to Tirion Fordring in Eastern Plaguelands.", x = 0.0757 },
@@ -2189,7 +2113,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 770,
             route = {
                 { y = 0.437, mapID = 1423, label = "Tirion Fordring", offMapText = "Travel to Tirion Fordring in Eastern Plaguelands.", x = 0.0757 },
             },
@@ -2220,7 +2143,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 780,
             text = "Speak with Tirion Fordring and tell him you are ready to hear his tale. Follow the conversation until the quest is ready to turn in.",
             id = "objective-5742-quest-work",
             kind = "objective",
@@ -2248,7 +2170,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5742-redemption" },
         },
         {
-            priority = 790,
             text = "Turn in Redemption to Tirion Fordring.",
             route = {
                 { y = 0.437, mapID = 1423, label = "Tirion Fordring", offMapText = "Travel to Tirion Fordring in Eastern Plaguelands.", x = 0.0757 },
@@ -2279,7 +2200,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 800,
             text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
@@ -2313,7 +2233,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 810,
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
             },
@@ -2347,7 +2266,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 820,
             route = {
                 { y = 0.8377, mapID = 1422, label = "Alchemist Arbington", offMapText = "Travel to Alchemist Arbington in Western Plaguelands.", x = 0.4266 },
             },
@@ -2381,7 +2299,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 830,
             text = "Turn in The Eastern Plagues to Flint Shadowmore.",
             route = {
                 { y = 0.8451, mapID = 1422, label = "Flint Shadowmore", offMapText = "Travel to Flint Shadowmore in Western Plaguelands.", x = 0.4361 },
@@ -2420,7 +2337,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 840,
             route = {
                 { y = 0.8451, mapID = 1422, label = "Flint Shadowmore", offMapText = "Travel to Flint Shadowmore in Western Plaguelands.", x = 0.4361 },
             },
@@ -2454,7 +2370,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 850,
             text = "Turn in A Plague Upon Thee to Nathaniel Dumah.",
             route = {
                 { y = 0.8484, mapID = 1422, label = "Nathaniel Dumah", offMapText = "Travel to Nathaniel Dumah in Western Plaguelands.", x = 0.4342 },
@@ -2482,7 +2397,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 860,
             route = {
                 { y = 0.8484, mapID = 1422, label = "Nathaniel Dumah", offMapText = "Travel to Nathaniel Dumah in Western Plaguelands.", x = 0.4342 },
             },
@@ -2516,7 +2430,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 870,
             text = "Turn in Auntie Marlene to Marlene Redpath.",
             route = {
                 { y = 0.7852, mapID = 1422, label = "Marlene Redpath", offMapText = "Travel to Marlene Redpath in Western Plaguelands.", x = 0.4913 },
@@ -2547,7 +2460,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 880,
             route = {
                 { y = 0.7852, mapID = 1422, label = "Marlene Redpath", offMapText = "Travel to Marlene Redpath in Western Plaguelands.", x = 0.4913 },
             },
@@ -2596,7 +2508,6 @@ ns:RegisterGuide({
                 { mapID = 1422, x = 0.4968, y = 0.7676999999999999, label = "Joseph's Wedding Ring", offMapText = "Travel to Joseph's Wedding Ring." },
             },
             sourceStep = 75,
-            priority = 890,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2630,7 +2541,6 @@ ns:RegisterGuide({
                 { mapID = 1422, x = 0.508, y = 0.794, label = "Skeletal Fragments", offMapText = "Travel to Skeletal Fragments." },
             },
             sourceStep = 76,
-            priority = 900,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2643,7 +2553,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5537-skeletal-fragments" },
         },
         {
-            priority = 910,
             text = "Turn in A Strange Historian to Chromie.",
             route = {
                 { y = 0.6676, mapID = 1422, label = "Chromie", offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945 },
@@ -2674,7 +2583,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 920,
             route = {
                 { y = 0.6676, mapID = 1422, label = "Chromie", offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945 },
             },
@@ -2705,7 +2613,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 930,
             route = {
                 { y = 0.6676, mapID = 1422, label = "Chromie", offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945 },
             },
@@ -2748,7 +2655,6 @@ ns:RegisterGuide({
                 { mapID = 1422, x = 0.43520000000000003, y = 0.6955, label = "Annals of Darrowshire", offMapText = "Travel to Annals of Darrowshire." },
             },
             sourceStep = 79,
-            priority = 940,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2761,7 +2667,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5154-the-annals-of-darrowshire" },
         },
         {
-            priority = 950,
             text = "Use the Temporal Displacer beside the ruined silos in Andorhal to reveal Temporal Parasites. Kill 10 Temporal Parasites.",
             route = {
                 { y = 0.63, mapID = 1422, label = "Temporal Displacer", offMapText = "Travel to Temporal Displacer.", x = 0.45 },
@@ -2786,7 +2691,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 960,
             text = "Turn in The Annals of Darrowshire to Chromie.",
             route = {
                 { y = 0.6676, mapID = 1422, label = "Chromie", offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945 },
@@ -2817,7 +2721,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 970,
             route = {
                 { y = 0.6676, mapID = 1422, label = "Chromie", offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945 },
             },
@@ -2848,7 +2751,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 980,
             text = "Turn in A Matter of Time to Chromie.",
             route = {
                 { y = 0.6676, mapID = 1422, label = "Chromie", offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945 },
@@ -2873,7 +2775,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 990,
             route = {
                 { y = 0.6676, mapID = 1422, label = "Chromie", offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945 },
             },
@@ -2922,7 +2823,6 @@ ns:RegisterGuide({
                 { mapID = 1422, x = 0.423, y = 0.688, label = "Andorhal Watch", offMapText = "Travel to Andorhal Watch." },
             },
             sourceStep = 83,
-            priority = 1000,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2935,7 +2835,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4972-counting-out-time" },
         },
         {
-            priority = 1010,
             text = "Turn in Counting Out Time to Chromie.",
             route = {
                 { y = 0.6676, mapID = 1422, label = "Chromie", offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945 },
@@ -2966,7 +2865,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1020,
             text = "Turn in Skeletal Fragments to Alchemist Arbington.",
             route = {
                 { y = 0.8377, mapID = 1422, label = "Alchemist Arbington", offMapText = "Travel to Alchemist Arbington in Western Plaguelands.", x = 0.4266 },
@@ -3000,7 +2898,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1030,
             text = "Turn in Brother Carlin to Carlin Redpath.",
             route = {
                 { y = 0.5976, mapID = 1423, label = "Carlin Redpath", offMapText = "Travel to Carlin Redpath in Eastern Plaguelands.", x = 0.8152 },
@@ -3031,7 +2928,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1040,
             route = {
                 { y = 0.5976, mapID = 1423, label = "Carlin Redpath", offMapText = "Travel to Carlin Redpath in Eastern Plaguelands.", x = 0.8152 },
             },
@@ -3062,7 +2958,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1050,
             text = "Kill Cannibal Ghouls, Diseased Flayers and Gibbering Ghouls in Eastern Plaguelands. Speak with the Darrowshire Spirits that appear at their corpses to free them. Continue until the quest log reports enough freed spirits.",
             id = "objective-5211-quest-work",
             kind = "objective",
@@ -3087,7 +2982,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 1060,
             text = "Turn in Defenders of Darrowshire to Carlin Redpath.",
             route = {
                 { y = 0.5976, mapID = 1423, label = "Carlin Redpath", offMapText = "Travel to Carlin Redpath in Eastern Plaguelands.", x = 0.8152 },
@@ -3112,7 +3006,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1070,
             text = "Turn in Zaeldarr the Outcast to Caretaker Alen.",
             route = {
                 { y = 0.6377, mapID = 1423, label = "Caretaker Alen", offMapText = "Travel to Caretaker Alen in Eastern Plaguelands.", x = 0.7954 },
@@ -3137,7 +3030,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1080,
             text = "Collect 1 Skull of Horgus.",
             route = {
                 { y = 0.4993, mapID = 1423, label = "Horgus' Skull", offMapText = "Travel to Horgus' Skull.", x = 0.5111 },
@@ -3168,7 +3060,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1090,
             text = "Collect 1 Shattered Sword of Marduk.",
             route = {
                 { y = 0.6576, mapID = 1423, label = "Shattered Sword of Marduk", offMapText = "Travel to Shattered Sword of Marduk.", x = 0.5391 },
@@ -3199,7 +3090,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1100,
             text = "Collect 1 Gahrron's Withering Cauldron Key.",
             route = {
                 { y = 0.5875, mapID = 1422, label = "Cauldron Lord Soulwrath", offMapText = "Travel to Cauldron Lord Soulwrath.", x = 0.6278 },
@@ -3233,7 +3123,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1110,
             text = "Turn in Target: Gahrron's Withering.",
             route = {
                 { y = 0.5857, mapID = 1422, label = "Target: Gahrron's Withering", offMapText = "Travel to Target: Gahrron's Withering.", x = 0.6256 },
@@ -3267,7 +3156,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1120,
             route = {
                 { y = 0.5857, mapID = 1422, label = "Return to Chillwind Point", offMapText = "Travel to Chillwind Point.", x = 0.6256 },
             },
@@ -3319,7 +3207,6 @@ ns:RegisterGuide({
                 { mapID = 1422, x = 0.598, y = 0.602, label = "Diseased Grizzly", offMapText = "Travel to Diseased Grizzly." },
             },
             sourceStep = 93,
-            priority = 1130,
             requiredQuests = {
                 {
                     mode = "any",
@@ -3332,7 +3219,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4985-the-wildlife-suffers-too" },
         },
         {
-            priority = 1140,
             text = "Turn in The Wildlife Suffers Too to Mulgris Deepriver.",
             route = {
                 { y = 0.6467, mapID = 1422, label = "Mulgris Deepriver", offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.", x = 0.5372 },
@@ -3363,7 +3249,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1150,
             route = {
                 { y = 0.6467, mapID = 1422, label = "Mulgris Deepriver", offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.", x = 0.5372 },
             },
@@ -3397,7 +3282,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1160,
             text = "Turn in A Plague Upon Thee.",
             route = {
                 { y = 0.32, mapID = 1422, label = "A Plague Upon Thee", offMapText = "Travel to A Plague Upon Thee.", x = 0.4835 },
@@ -3431,7 +3315,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1170,
             route = {
                 { y = 0.32, mapID = 1422, label = "A Plague Upon Thee", offMapText = "Travel to A Plague Upon Thee.", x = 0.4835 },
             },
@@ -3465,7 +3348,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1180,
             route = {
                 { y = 0.2806, mapID = 1422, label = "Kirsta Deepshadow", offMapText = "Travel to Kirsta Deepshadow in Western Plaguelands.", x = 0.5192 },
             },
@@ -3490,7 +3372,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1190,
             text = "Kill 2 Scarlet Mage.",
             route = {
                 { y = 0.4112, mapID = 1422, label = "Scarlet Mage", offMapText = "Travel to Scarlet Mage.", x = 0.5047 },
@@ -3515,7 +3396,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1200,
             text = "Kill 2 Scarlet Knight.",
             route = {
                 { y = 0.4112, mapID = 1422, label = "Scarlet Knight", offMapText = "Travel to Scarlet Knight.", x = 0.5047 },
@@ -3540,7 +3420,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1210,
             text = "Kill 2 Scarlet Medic.",
             route = {
                 { y = 0.446, mapID = 1422, label = "Scarlet Medic", offMapText = "Travel to Scarlet Medic.", x = 0.516 },
@@ -3565,7 +3444,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1220,
             text = "Kill 2 Scarlet Hunter.",
             route = {
                 { y = 0.446, mapID = 1422, label = "Scarlet Hunter", offMapText = "Travel to Scarlet Hunter.", x = 0.516 },
@@ -3590,7 +3468,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1230,
             text = "Turn in Unfinished Business to Kirsta Deepshadow.",
             route = {
                 { y = 0.2806, mapID = 1422, label = "Kirsta Deepshadow", offMapText = "Travel to Kirsta Deepshadow in Western Plaguelands.", x = 0.5192 },
@@ -3621,7 +3498,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1240,
             route = {
                 { y = 0.2806, mapID = 1422, label = "Kirsta Deepshadow", offMapText = "Travel to Kirsta Deepshadow in Western Plaguelands.", x = 0.5192 },
             },
@@ -3652,7 +3528,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1250,
             text = "Kill Huntsman Radley.",
             route = {
                 { y = 0.3609, mapID = 1422, label = "Huntsman Radley", offMapText = "Travel to Huntsman Radley.", x = 0.5783 },
@@ -3683,7 +3558,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1260,
             text = "Kill Cavalier Durgen.",
             route = {
                 { y = 0.2365, mapID = 1422, label = "Cavalier Durgen", offMapText = "Travel to Cavalier Durgen.", x = 0.5471 },
@@ -3714,7 +3588,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1270,
             text = "Turn in Unfinished Business to Kirsta Deepshadow.",
             route = {
                 { y = 0.2806, mapID = 1422, label = "Kirsta Deepshadow", offMapText = "Travel to Kirsta Deepshadow in Western Plaguelands.", x = 0.5192 },
@@ -3745,7 +3618,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1280,
             text = "Turn in Villains of Darrowshire to Carlin Redpath.",
             route = {
                 { y = 0.5976, mapID = 1423, label = "Carlin Redpath", offMapText = "Travel to Carlin Redpath in Eastern Plaguelands.", x = 0.8152 },
@@ -3780,7 +3652,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1290,
             text = "Turn in A Plague Upon Thee to Nathaniel Dumah.",
             route = {
                 { y = 0.8483, mapID = 1422, label = "Nathaniel Dumah", offMapText = "Travel to Nathaniel Dumah in Western Plaguelands.", x = 0.4342 },
@@ -3814,7 +3685,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1300,
             text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
             route = {
                 { y = 0.845, mapID = 1422, label = "High Priestess MacDonnell", offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.", x = 0.4297 },
@@ -3848,7 +3718,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1310,
             route = {
                 { y = 0.8403, mapID = 1422, label = "Commander Ashlam Valorfist", offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.", x = 0.427 },
             },
@@ -3882,7 +3751,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1320,
             route = {
                 { y = 0.4732, mapID = 1455, label = "Cenarion Emissary Jademoon", offMapText = "Travel to Cenarion Emissary Jademoon in Ironforge.", x = 0.5854 },
             },
@@ -3910,7 +3778,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1330,
             text = "Turn in The Blightcaller Cometh to Highlord Bolvar Fordragon.",
             route = {
                 { mapID = 1453, x = 0.7822, y = 0.17980000000000002, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City." },

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Searing Gorge",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-searing-gorge",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3821,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.4807, mapID = 1418, label = "Thal'trak Proudtusk", offMapText = "Travel to Thal'trak Proudtusk in Badlands.", x = 0.0336 },
             },
@@ -77,10 +75,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4449,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.6224, mapID = 1427, label = "Caught!", offMapText = "Travel to Caught!.", x = 0.6554 },
             },
@@ -105,7 +101,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             text = "Kill 8 Dark Iron Geologist.",
             route = {
                 { y = 0.614, mapID = 1427, label = "Dark Iron Geologist", offMapText = "Travel to Dark Iron Geologist.", x = 0.634 },
@@ -141,7 +136,6 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.634, y = 0.614, label = "Silk Cloth", offMapText = "Travel to Silk Cloth." },
             },
             sourceStep = 4,
-            priority = 60,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -149,7 +143,6 @@ ns:RegisterGuide({
             referenceQuest = 4449,
         },
         {
-            priority = 70,
             text = "Turn in Caught!.",
             route = {
                 { y = 0.6224, mapID = 1427, label = "Caught!", offMapText = "Travel to Caught!.", x = 0.6554 },
@@ -174,7 +167,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 80,
             route = {
                 { mapID = 1427, x = 0.39049999999999996, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
             },
@@ -199,7 +191,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "For Divine Retribution: Listen as Kalaran Windblade tells his story.",
             id = "objective-3441-quest-work",
             kind = "objective",
@@ -221,7 +212,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3441-divine-retribution" },
         },
         {
-            priority = 100,
             text = "Turn in Divine Retribution to Velarok Windblade.",
             route = {
                 { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
@@ -246,7 +236,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
             },
@@ -289,10 +278,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7728,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.2653, mapID = 1427, label = "STOLEN: Smithing Tuyere and Lookout's Spyglass", offMapText = "Travel to STOLEN: Smithing Tuyere and Lookout's Spyglass.", x = 0.3763 },
             },
@@ -317,7 +304,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.2653, mapID = 1427, label = "JOB OPPORTUNITY: Culling the Competition", offMapText = "Travel to JOB OPPORTUNITY: Culling the Competition.", x = 0.3763 },
             },
@@ -342,7 +328,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             route = {
                 { y = 0.278, mapID = 1427, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge.", x = 0.3857 },
             },
@@ -367,7 +352,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             route = {
                 { y = 0.278, mapID = 1427, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge.", x = 0.3857 },
             },
@@ -392,7 +376,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 170,
             route = {
                 { y = 0.278, mapID = 1427, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge.", x = 0.3857 },
             },
@@ -417,7 +400,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Collect 1 Smithing Tuyere.",
             route = {
                 { y = 0.494, mapID = 1427, label = "Dark Iron Steamsmith", offMapText = "Travel to Dark Iron Steamsmith.", x = 0.392 },
@@ -460,7 +442,6 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.42579999999999996, y = 0.3858, label = "Heart of Flame", offMapText = "Travel to Heart of Flame." },
             },
             sourceStep = 13,
-            priority = 190,
             requiredQuests = {
                 {
                     mode = "any",
@@ -491,7 +472,6 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.392, y = 0.434, label = "Golem Oil", offMapText = "Travel to Golem Oil." },
             },
             sourceStep = 14,
-            priority = 200,
             requiredQuests = {
                 {
                     mode = "any",
@@ -504,7 +484,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3442-the-flawless-flame" },
         },
         {
-            priority = 210,
             text = "Turn in The Flawless Flame to Velarok Windblade.",
             route = {
                 { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
@@ -535,7 +514,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
             },
@@ -566,7 +544,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "Kill 20 Incendosaur.",
             route = {
                 { mapID = 1427, x = 0.514, y = 0.36, label = "Incendosaur", offMapText = "Travel to Incendosaur." },
@@ -610,10 +587,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 240,
         },
         {
-            priority = 250,
             text = "Use the Grimesilt Outhouse Key to accept The Key to Freedom.",
             id = "accept-4451-the-key-to-freedom",
             kind = "accept",
@@ -653,7 +628,6 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.446, y = 0.374, label = "Thorium Plated Dagger", offMapText = "Travel to Thorium Plated Dagger." },
             },
             sourceStep = 21,
-            priority = 260,
             requiredQuests = {
                 {
                     mode = "any",
@@ -684,7 +658,6 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.446, y = 0.374, label = "Dark Iron Taskmaster", offMapText = "Travel to Dark Iron Taskmaster." },
             },
             sourceStep = 22,
-            priority = 270,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -709,14 +682,12 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.446, y = 0.374, label = "Dark Iron Slaver", offMapText = "Travel to Dark Iron Slaver." },
             },
             sourceStep = 22,
-            priority = 280,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-7729-job-opportunity-culling-the-competition" },
         },
         {
-            priority = 290,
             text = "Turn in Forging the Shaft to Velarok Windblade.",
             route = {
                 { mapID = 1427, x = 0.3906, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
@@ -747,7 +718,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             route = {
                 { mapID = 1427, x = 0.3906, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
             },
@@ -778,7 +748,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Collect 1 Symbol of Ragnaros.",
             route = {
                 { y = 0.364, mapID = 1427, label = "Twilight Dark Shaman", offMapText = "Travel to Twilight Dark Shaman.", x = 0.25 },
@@ -809,7 +778,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Turn in The Flame's Casing to Velarok Windblade.",
             route = {
                 { mapID = 1427, x = 0.39049999999999996, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
@@ -840,7 +808,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             route = {
                 { mapID = 1427, x = 0.39049999999999996, y = 0.3899, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge." },
             },
@@ -871,7 +838,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             text = "For The Torch of Retribution: Wait for Kalaran Windblade to complete the Torch of Retribution.",
             id = "objective-3453-quest-work",
             kind = "objective",
@@ -899,7 +865,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3453-the-torch-of-retribution" },
         },
         {
-            priority = 350,
             text = "Turn in The Torch of Retribution to Velarok Windblade.",
             route = {
                 { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
@@ -930,7 +895,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             route = {
                 { y = 0.3899, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
             },
@@ -961,7 +925,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             text = "Turn in The Torch of Retribution.",
             route = {
                 { y = 0.3906, mapID = 1427, label = "The Torch of Retribution", offMapText = "Travel to The Torch of Retribution.", x = 0.3906 },
@@ -992,7 +955,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             route = {
                 { y = 0.39, mapID = 1427, label = "Velarok Windblade", offMapText = "Travel to Velarok Windblade in Searing Gorge.", x = 0.3905 },
             },
@@ -1023,7 +985,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             text = "Turn in Squire Maltrake to Squire Maltrake.",
             route = {
                 { y = 0.3899, mapID = 1427, label = "Squire Maltrake", offMapText = "Travel to Squire Maltrake in Searing Gorge.", x = 0.3916 },
@@ -1054,7 +1015,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             route = {
                 { y = 0.3899, mapID = 1427, label = "Squire Maltrake", offMapText = "Travel to Squire Maltrake in Searing Gorge.", x = 0.3916 },
             },
@@ -1085,7 +1045,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             text = "Turn in The Key to Freedom.",
             route = {
                 { y = 0.6223, mapID = 1427, label = "The Key to Freedom", offMapText = "Travel to The Key to Freedom.", x = 0.6553 },
@@ -1110,7 +1069,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             text = "Climb the northern sentry tower. Equip the Torch of Retribution and light its Sentry Brazier. Reequip your normal weapon afterward.",
             id = "objective-3463-4-authored-Northern-Tower",
             kind = "objective",
@@ -1140,7 +1098,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 430,
             text = "Climb the western sentry tower. Equip the Torch of Retribution and light its Sentry Brazier. Reequip your normal weapon afterward.",
             id = "objective-3463-1-authored-Western-Tower",
             kind = "objective",
@@ -1170,7 +1127,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 440,
             text = "Climb the southern sentry tower. Equip the Torch of Retribution and light its Sentry Brazier. Reequip your normal weapon afterward.",
             id = "objective-3463-2-authored-Southern-Tower",
             kind = "objective",
@@ -1200,7 +1156,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 450,
             text = "Cross the hanging bridge at Searing Gorge 52.48,57.95 and climb the eastern sentry tower. Equip the Torch of Retribution and light its Sentry Brazier. Reequip your normal weapon afterward.",
             id = "objective-3463-3-authored-Eastern-Tower",
             kind = "objective",
@@ -1230,7 +1185,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 460,
             text = "Turn in Set Them Ablaze! to Squire Maltrake.",
             route = {
                 { mapID = 1427, x = 0.3917, y = 0.39, label = "Squire Maltrake", offMapText = "Travel to Squire Maltrake in Searing Gorge." },
@@ -1267,7 +1221,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.3899, mapID = 1427, label = "Trinkets..", offMapText = "Travel to Trinkets....", x = 0.3886 },
             },
@@ -1298,7 +1251,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Turn in Trinkets...",
             route = {
                 { y = 0.3899, mapID = 1427, label = "Trinkets..", offMapText = "Travel to Trinkets....", x = 0.3886 },
@@ -1347,14 +1299,12 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.332, y = 0.536, label = "Lookout's Spyglass", offMapText = "Travel to Lookout's Spyglass." },
             },
             sourceStep = 45,
-            priority = 490,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-7728-stolen-smithing-tuyere-and-lookout-s-spy" },
         },
         {
-            priority = 500,
             conditions = { faction = "Horde" },
             text = "Open the Hoard of the Black Dragonflight from Kalaran Windblade to obtain the Black Dragonflight Molt. Keep it for Cyrus Therepentous.",
             id = "open-objective-4022-1-hoard-of-the-black-dragonflight",
@@ -1394,7 +1344,6 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.326, y = 0.426, label = "Greater Lava Spider", offMapText = "Travel to Greater Lava Spider." },
             },
             sourceStep = 46,
-            priority = 510,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1419,14 +1368,12 @@ ns:RegisterGuide({
                 { mapID = 1427, x = 0.392, y = 0.434, label = "Heavy War Golem", offMapText = "Travel to Heavy War Golem." },
             },
             sourceStep = 47,
-            priority = 520,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-7723-curse-these-fat-fingers" },
         },
         {
-            priority = 530,
             text = "Turn in Curse These Fat Fingers to Hansel Heavyhands.",
             route = {
                 { mapID = 1427, x = 0.3859, y = 0.2781, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge." },
@@ -1451,7 +1398,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 540,
             text = "Turn in Fiery Menace! to Hansel Heavyhands.",
             route = {
                 { mapID = 1427, x = 0.3859, y = 0.2781, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge." },
@@ -1476,7 +1422,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Turn in Incendosaurs? Whateverosaur is More Like It to Hansel Heavyhands.",
             route = {
                 { mapID = 1427, x = 0.3859, y = 0.2781, label = "Hansel Heavyhands", offMapText = "Travel to Hansel Heavyhands in Searing Gorge." },
@@ -1501,7 +1446,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             text = "Turn in STOLEN: Smithing Tuyere and Lookout's Spyglass to Taskmaster Scrange.",
             route = {
                 { y = 0.2751, mapID = 1427, label = "Taskmaster Scrange", offMapText = "Travel to Taskmaster Scrange in Searing Gorge.", x = 0.3898 },
@@ -1530,7 +1474,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             text = "Turn in JOB OPPORTUNITY: Culling the Competition to Taskmaster Scrange.",
             route = {
                 { y = 0.2751, mapID = 1427, label = "Taskmaster Scrange", offMapText = "Travel to Taskmaster Scrange in Searing Gorge.", x = 0.3898 },

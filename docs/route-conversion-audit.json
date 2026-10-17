@@ -14364,5 +14364,30 @@
       "Silverpine",
       "Mulgore Loremaster"
     ]
+  },
+  "reviewedAdditions": {
+    "moved": [
+      {
+        "quests": [
+          95981,
+          98298,
+          98299
+        ],
+        "from": "leveling-era-horde-silverpine-forest",
+        "to": "leveling-era-horde-hillsbrad-foothills",
+        "after": "accept-493-journey-to-hillsbrad-foothills",
+        "before": "accept-494-time-to-strike"
+      }
+    ],
+    "omitted": [
+      96138,
+      97538,
+      92747,
+      96391
+    ],
+    "removedEarlyCopy": {
+      "98407": "Retained in the later alliance-redridge-and-westfall chapter"
+    },
+    "pacing": "Quest-only. Reference grind and level-up instructions remain omitted; XP sufficiency is unverified."
   }
 }

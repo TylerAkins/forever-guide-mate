@@ -674,7 +674,6 @@ def emit_guide(guide: ParsedGuide, *, era: bool = False) -> str:
 
     used_ids: set[str] = set()
     goals_lua: list[str] = []
-    priority = 10
     accept_by_quest: dict[int, str] = {}
     objectives_by_quest: dict[int, list[str]] = {}
 
@@ -727,14 +726,12 @@ def emit_guide(guide: ParsedGuide, *, era: bool = False) -> str:
             "        {\n"
             f'            id = "{gid}",\n'
             f'            kind = "{goal.kind}",\n'
-            f"            priority = {priority},\n"
             f"            conditions = {emit_conditions(goal, guide.faction, guide.level_min)},\n"
             f'            text = "{lua_string(goal.text)}",\n'
             f"            complete = {complete},{depends}\n"
             f"            route = {route},\n"
             "        },"
         )
-        priority += 10
 
     map_lines = "\n".join(f"    {key} = {mid}," for key, mid in sorted(maps.items(), key=lambda kv: kv[1]))
     header = (
@@ -769,6 +766,7 @@ def emit_guide(guide: ParsedGuide, *, era: bool = False) -> str:
         f'    title = "{lua_string(display)}",\n'
         '    category = "Leveling Quest Guides",\n'
         "    revision = 1,\n"
+        '    routeMode = "ordered",\n'
         "    casualSpine = true,\n"
         "    conditions = {\n"
         "        all = {\n"

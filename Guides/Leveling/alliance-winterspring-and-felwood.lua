@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Winterspring & Felwood",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-winterspring-and-felwood",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5882,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.126, mapID = 1448, label = "Deadwood Den Watcher", offMapText = "Travel to Deadwood Den Watcher.", x = 0.624 },
             },
@@ -82,10 +80,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5159,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.8211, mapID = 1448, label = "Greta Mosshoof", offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121 },
             },
@@ -116,7 +112,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.8211, mapID = 1448, label = "Greta Mosshoof", offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121 },
             },
@@ -166,10 +161,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4441,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { mapID = 1457, x = 0.3951, y = 0.8392000000000001, label = "Vial of Blessed Water", offMapText = "Travel to Vial of Blessed Water." },
             },
@@ -203,7 +196,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
             },
@@ -237,7 +229,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-4441-quest-work" },
         },
         {
-            priority = 90,
             route = {
                 { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
             },
@@ -271,7 +262,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Turn in Purified! to Eridan Bluewind.",
             route = {
                 { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
@@ -305,7 +295,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.8683, mapID = 1448, label = "Arathandris Silversky", offMapText = "Travel to Arathandris Silversky in Felwood.", x = 0.5415 },
             },
@@ -358,7 +347,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 120,
         },
         {
             id = "level-before-accept-5202-a-strange-red-key",
@@ -373,10 +361,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5202,
-            priority = 130,
         },
         {
-            priority = 140,
             text = "Use the Blood Red Key to accept A Strange Red Key.",
             id = "accept-5202-a-strange-red-key",
             kind = "accept",
@@ -398,7 +384,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Turn in A Strange Red Key to Captured Arko'narin.",
             route = {
                 { y = 0.555, mapID = 1448, label = "Captured Arko'narin", offMapText = "Travel to Captured Arko'narin in Felwood.", x = 0.3621 },
@@ -423,7 +408,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             route = {
                 { y = 0.0813, mapID = 1448, label = "Nafien", offMapText = "Travel to Nafien in Felwood.", x = 0.6477 },
             },
@@ -466,7 +450,6 @@ ns:RegisterGuide({
                 { mapID = 1448, x = 0.636, y = 0.096, label = "Deadwood Den Watcher", offMapText = "Travel to Deadwood Den Watcher." },
             },
             sourceStep = 17,
-            priority = 170,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -491,7 +474,6 @@ ns:RegisterGuide({
                 { mapID = 1448, x = 0.636, y = 0.096, label = "Deadwood Avenger", offMapText = "Travel to Deadwood Avenger." },
             },
             sourceStep = 17,
-            priority = 180,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -516,14 +498,12 @@ ns:RegisterGuide({
                 { mapID = 1448, x = 0.636, y = 0.096, label = "Deadwood Shaman", offMapText = "Travel to Deadwood Shaman." },
             },
             sourceStep = 17,
-            priority = 190,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-8461-deadwood-of-the-north" },
         },
         {
-            priority = 200,
             text = "Turn in Deadwood of the North to Nafien.",
             route = {
                 { y = 0.0813, mapID = 1448, label = "Nafien", offMapText = "Travel to Nafien in Felwood.", x = 0.6477 },
@@ -553,7 +533,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.0813, mapID = 1448, label = "Nafien", offMapText = "Travel to Nafien in Felwood.", x = 0.6477 },
             },
@@ -584,7 +563,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             text = "Turn in Speak to Salfa to Salfa.",
             route = {
                 { y = 0.345, mapID = 1452, label = "Salfa", offMapText = "Travel to Salfa in Winterspring.", x = 0.2774 },
@@ -615,7 +593,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             route = {
                 { mapID = 1444, x = 0.4512, y = 0.2557, label = "Videre Elixir", offMapText = "Travel to Videre Elixir." },
             },
@@ -646,7 +623,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -677,7 +653,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-3909-quest-work" },
         },
         {
-            priority = 250,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -720,10 +695,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 980,
-            priority = 260,
         },
         {
-            priority = 270,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -766,10 +739,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5082,
-            priority = 280,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -813,10 +784,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 300,
         },
         {
-            priority = 310,
             text = "Use the Empty Firewater Flask to accept Winterfall Firewater.",
             id = "accept-5083-winterfall-firewater",
             kind = "accept",
@@ -856,7 +825,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.3, y = 0.354, label = "Winterfall Totemic", offMapText = "Travel to Winterfall Totemic." },
             },
             sourceStep = 22,
-            priority = 320,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -881,7 +849,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.3, y = 0.354, label = "Winterfall Pathfinder", offMapText = "Travel to Winterfall Pathfinder." },
             },
             sourceStep = 22,
-            priority = 330,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -906,14 +873,12 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.3, y = 0.354, label = "Winterfall Den Watcher", offMapText = "Travel to Winterfall Den Watcher." },
             },
             sourceStep = 22,
-            priority = 340,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-5082-threat-of-the-winterfall" },
         },
         {
-            priority = 350,
             text = "Turn in Threat of the Winterfall to Donova Snowden.",
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
@@ -943,7 +908,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             text = "Turn in Winterfall Firewater to Donova Snowden.",
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
@@ -968,7 +932,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -999,7 +962,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Turn in Falling to Corruption.",
             route = {
                 { y = 0.0587, mapID = 1448, label = "Falling to Corruption", offMapText = "Travel to Falling to Corruption.", x = 0.602 },
@@ -1030,7 +992,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.0587, mapID = 1448, label = "Mystery Goo", offMapText = "Travel to Mystery Goo.", x = 0.602 },
             },
@@ -1061,7 +1022,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             text = "Turn in Mystery Goo to Donova Snowden.",
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
@@ -1092,7 +1052,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -1123,7 +1082,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             text = "Drink the Videre Elixir in the graveyard outside Gadgetzan. It kills you. Release your spirit and remain a ghost while you seek Gaeriyan; do not resurrect until you have spoken with him.",
             route = {
                 { y = 0.2873, mapID = 1446, label = "Videre Elixir", offMapText = "Travel to Videre Elixir.", x = 0.5403 },
@@ -1153,7 +1111,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             text = "Turn in Meet at the Grave to Gaeriyan.",
             route = {
                 { y = 0.2339, mapID = 1446, label = "Gaeriyan", offMapText = "Travel to Gaeriyan in Tanaris.", x = 0.5398 },
@@ -1184,7 +1141,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.2339, mapID = 1446, label = "Gaeriyan", offMapText = "Travel to Gaeriyan in Tanaris.", x = 0.5398 },
             },
@@ -1215,7 +1171,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             text = "Turn in A Grave Situation.",
             route = {
                 { y = 0.2906, mapID = 1446, label = "A Grave Situation", offMapText = "Travel to A Grave Situation.", x = 0.5382 },
@@ -1246,7 +1201,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { y = 0.2906, mapID = 1446, label = "Linken's Sword", offMapText = "Travel to Linken's Sword.", x = 0.5382 },
             },
@@ -1277,7 +1231,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Turn in Linken's Sword to Linken.",
             route = {
                 { y = 0.081, mapID = 1449, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466 },
@@ -1308,7 +1261,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { y = 0.081, mapID = 1449, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466 },
             },
@@ -1339,7 +1291,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             text = "Turn in A Gnome's Assistance to J.D. Collie.",
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
@@ -1370,7 +1321,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.027, mapID = 1449, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192 },
             },
@@ -1401,7 +1351,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             text = "Enter Shadow Hold through the cave at Felwood 35.41,58.69. Douse the Brazier of Pain on the upper level with the Purified Moon Well Water.",
             id = "objective-5165-1-authored-Brazier-of-Pain",
             kind = "objective",
@@ -1431,7 +1380,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 520,
             text = "Douse the Brazier of Hatred on the upper level with the Purified Moon Well Water.",
             id = "objective-5165-4-authored-Brazier-of-Hatred",
             kind = "objective",
@@ -1461,7 +1409,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 530,
             text = "Go around the floor opening at Felwood 38.25,54.06 and follow the passage down. Douse the Brazier of Suffering on the lower level.",
             id = "objective-5165-3-authored-Brazier-of-Suffering",
             kind = "objective",
@@ -1491,7 +1438,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 540,
             text = "Douse the Brazier of Malice on the lower level with the Purified Moon Well Water.",
             id = "objective-5165-2-authored-Brazier-of-Malice",
             kind = "objective",
@@ -1521,7 +1467,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 550,
             text = "Turn in Dousing the Flames of Protection to Greta Mosshoof.",
             route = {
                 { mapID = 1448, x = 0.5121, y = 0.8210999999999999, label = "Greta Mosshoof", offMapText = "Travel to Greta Mosshoof in Felwood." },
@@ -1558,7 +1503,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             text = "Turn in Linken's Memory to Eridan Bluewind.",
             route = {
                 { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
@@ -1589,7 +1533,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             route = {
                 { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
             },
@@ -1620,7 +1563,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 580,
             text = "Collect 1 Irontree Heart.",
             route = {
                 { y = 0.234, mapID = 1448, label = "Irontree Stomper", offMapText = "Travel to Irontree Stomper.", x = 0.452 },
@@ -1669,7 +1611,6 @@ ns:RegisterGuide({
                 { mapID = 1448, x = 0.474, y = 0.23399999999999999, label = "Toxic Horror Droplet", offMapText = "Travel to Toxic Horror Droplet." },
             },
             sourceStep = 39,
-            priority = 590,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1700,7 +1641,6 @@ ns:RegisterGuide({
                 { mapID = 1448, x = 0.524, y = 0.272, label = "Silvery Claws", offMapText = "Travel to Silvery Claws." },
             },
             sourceStep = 40,
-            priority = 600,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1713,7 +1653,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4084-silver-heart" },
         },
         {
-            priority = 610,
             text = "Turn in Toxic Horrors to Donova Snowden.",
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
@@ -1744,7 +1683,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 620,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -1775,7 +1713,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 630,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -1822,7 +1759,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 640,
             sourceStep = 42,
             requiredQuests = {
                 {
@@ -1854,10 +1790,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5250,
             alternativeQuests = { 5249 },
-            priority = 650,
         },
         {
-            priority = 660,
             route = {
                 { y = 0.3039, mapID = 1452, label = "Wynd Nightchaser", offMapText = "Travel to Wynd Nightchaser in Winterspring.", x = 0.5197 },
             },
@@ -1886,7 +1820,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 670,
             route = {
                 { y = 0.3039, mapID = 1452, label = "Wynd Nightchaser", offMapText = "Travel to Wynd Nightchaser in Winterspring.", x = 0.5197 },
             },
@@ -1914,7 +1847,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 680,
             text = "Turn in The Ruins of Kel'Theril to Jaron Stoneshaper.",
             route = {
                 { y = 0.3043, mapID = 1452, label = "Jaron Stoneshaper", offMapText = "Travel to Jaron Stoneshaper in Winterspring.", x = 0.5214 },
@@ -1942,7 +1874,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.3043, mapID = 1452, label = "Jaron Stoneshaper", offMapText = "Travel to Jaron Stoneshaper in Winterspring.", x = 0.5214 },
             },
@@ -1976,7 +1907,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             route = {
                 { y = 0.3043, mapID = 1452, label = "Jaron Stoneshaper", offMapText = "Travel to Jaron Stoneshaper in Winterspring.", x = 0.5214 },
             },
@@ -2025,7 +1955,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.5088, y = 0.4171, label = "Second Relic Fragment", offMapText = "Travel to Second Relic Fragment." },
             },
             sourceStep = 45,
-            priority = 710,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2059,7 +1988,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.5242, y = 0.415, label = "Fourth Relic Fragment", offMapText = "Travel to Fourth Relic Fragment." },
             },
             sourceStep = 46,
-            priority = 720,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2093,7 +2021,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.5331, y = 0.4343, label = "Third Relic Fragment", offMapText = "Travel to Third Relic Fragment." },
             },
             sourceStep = 47,
-            priority = 730,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2127,7 +2054,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.5514, y = 0.42979999999999996, label = "First Relic Fragment", offMapText = "Travel to First Relic Fragment." },
             },
             sourceStep = 48,
-            priority = 740,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2140,7 +2066,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5245-troubled-spirits-of-kel-theril" },
         },
         {
-            priority = 750,
             route = {
                 { y = 0.3897, mapID = 1452, label = "Gregor Greystone", offMapText = "Travel to Gregor Greystone in Winterspring.", x = 0.6135 },
             },
@@ -2168,7 +2093,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 760,
             route = {
                 { y = 0.3897, mapID = 1452, label = "Gregor Greystone", offMapText = "Travel to Gregor Greystone in Winterspring.", x = 0.6135 },
             },
@@ -2193,7 +2117,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 770,
             text = "Turn in Enraged Wildkin.",
             route = {
                 { y = 0.5978, mapID = 1452, label = "Enraged Wildkin", offMapText = "Travel to Enraged Wildkin.", x = 0.59 },
@@ -2221,7 +2144,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 780,
             route = {
                 { y = 0.5978, mapID = 1452, label = "Enraged Wildkin", offMapText = "Travel to Enraged Wildkin.", x = 0.59 },
             },
@@ -2255,7 +2177,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 790,
             text = "Turn in Enraged Wildkin.",
             route = {
                 { y = 0.6068, mapID = 1452, label = "Enraged Wildkin", offMapText = "Travel to Enraged Wildkin.", x = 0.6141 },
@@ -2289,7 +2210,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 800,
             route = {
                 { y = 0.6068, mapID = 1452, label = "Enraged Wildkin", offMapText = "Travel to Enraged Wildkin.", x = 0.6141 },
             },
@@ -2344,7 +2264,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.6139, y = 0.6073, label = "Jaron's Supplies", offMapText = "Travel to Jaron's Supplies." },
             },
             sourceStep = 54,
-            priority = 810,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2357,7 +2276,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4864-enraged-wildkin" },
         },
         {
-            priority = 820,
             route = {
                 { y = 0.5947, mapID = 1452, label = "Ranshalla", offMapText = "Travel to Ranshalla in Winterspring.", x = 0.6307 },
             },
@@ -2391,7 +2309,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 830,
             route = {
                 { y = 0.5947, mapID = 1452, label = "Ranshalla", offMapText = "Travel to Ranshalla in Winterspring.", x = 0.6307 },
             },
@@ -2456,7 +2373,6 @@ ns:RegisterGuide({
             },
             sourceStep = 56,
             dependsOn = { "accept-4901-guardians-of-the-altar" },
-            priority = 840,
         },
         {
             id = "objective-4864-2-blue-feathered-amulet",
@@ -2480,7 +2396,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.634, y = 0.5920000000000001, label = "Blue-feathered Amulet", offMapText = "Travel to Blue-feathered Amulet." },
             },
             sourceStep = 57,
-            priority = 850,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2493,7 +2408,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4864-enraged-wildkin" },
         },
         {
-            priority = 860,
             text = "Turn in Enraged Wildkin to Jaron Stoneshaper.",
             route = {
                 { y = 0.3043, mapID = 1452, label = "Jaron Stoneshaper", offMapText = "Travel to Jaron Stoneshaper in Winterspring.", x = 0.5214 },
@@ -2527,7 +2441,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 870,
             text = "Turn in Strange Sources to Donova Snowden.",
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
@@ -2558,7 +2471,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 880,
             text = "Turn in Winterfall Runners to Donova Snowden.",
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
@@ -2589,7 +2501,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 890,
             route = {
                 { y = 0.345, mapID = 1452, label = "Salfa", offMapText = "Travel to Salfa in Winterspring.", x = 0.2774 },
             },
@@ -2633,10 +2544,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 900,
         },
         {
-            priority = 910,
             text = "Use the Deadwood Ritual Totem to accept Deadwood Ritual Totem.",
             id = "accept-8470-deadwood-ritual-totem",
             kind = "accept",
@@ -2658,7 +2567,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 920,
             route = {
                 { y = 0.0813, mapID = 1448, label = "Nafien", offMapText = "Travel to Nafien in Felwood.", x = 0.6477 },
             },
@@ -2708,10 +2616,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 930,
         },
         {
-            priority = 940,
             text = "Use the Winterfall Ritual Totem to accept Winterfall Ritual Totem.",
             id = "accept-8471-winterfall-ritual-totem",
             kind = "accept",
@@ -2733,7 +2639,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 950,
             text = "Reach Neutral reputation with Timbermaw Hold before speaking with the furbolgs inside the hold.",
             id = "objective-8470-quest-work",
             kind = "objective",
@@ -2755,7 +2660,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-8470-deadwood-ritual-totem" },
         },
         {
-            priority = 960,
             text = "Turn in Deadwood Ritual Totem to Kernda.",
             route = {
                 { y = 0.0348, mapID = 1448, label = "Kernda", offMapText = "Travel to Kernda in Felwood.", x = 0.6549 },
@@ -2780,7 +2684,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 970,
             text = "Turn in Winterfall Ritual Totem to Kernda.",
             route = {
                 { y = 0.0348, mapID = 1448, label = "Kernda", offMapText = "Travel to Kernda in Felwood.", x = 0.6549 },
@@ -2805,7 +2708,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 980,
             text = "Turn in Guardians of the Altar to Erelas Ambersky.",
             route = {
                 { y = 0.9205, mapID = 1438, label = "Erelas Ambersky", offMapText = "Travel to Erelas Ambersky in Teldrassil.", x = 0.555 },
@@ -2839,7 +2741,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 990,
             route = {
                 { y = 0.9205, mapID = 1438, label = "Erelas Ambersky", offMapText = "Travel to Erelas Ambersky in Teldrassil.", x = 0.555 },
             },
@@ -2873,7 +2774,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1000,
             route = {
                 { y = 0.4199, mapID = 1457, label = "Filled Cursed Ooze Jar", offMapText = "Travel to Filled Cursed Ooze Jar.", x = 0.396 },
             },
@@ -2900,7 +2800,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1010,
             text = "Turn in Wildkin of Elune to Arch Druid Fandral Staghelm.",
             route = {
                 { y = 0.0925, mapID = 1457, label = "Arch Druid Fandral Staghelm", offMapText = "Travel to Arch Druid Fandral Staghelm in Darnassus.", x = 0.3482 },

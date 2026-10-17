@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stamp a level gate onto every guide step.
+"""Preview legacy level stamps; explicit writes refuse ordered guides.
 
 When the local wow-database checkout has a Questie overlay, a positive
 questLevel is the step level and a positive requiredLevel is the offer
@@ -12,22 +12,17 @@ level. Steps for a quest share that gate. A minimum of 1 is not written.
 
 from __future__ import annotations
 
-import json
+import argparse
 import re
 import sys
-import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from weave_loremaster import offer_level, parse_goals, replace_goals, set_min_level, step_level
+from quest_database import load_min_levels
+from weave_loremaster import parse_goals, replace_goals, set_min_level
 
 ROOT = Path(__file__).resolve().parents[1]
-INDEX_URL = (
-    "https://raw.githubusercontent.com/TylerAkins/wow-database/main/"
-    "data/forever/raw/quest_index.json"
-)
-FIXTURE = ROOT / "tests" / "fixtures" / "quest_min_levels.json"
 GUIDE_ROOTS = ("Guides/Leveling", "Guides/Loremaster", "Guides/Dungeons", "Guides/Class")
 
 SOLE_LEVEL = re.compile(r"\n[ \t]*conditions = \{ level = \{ min = \d+ \} \},")
@@ -49,53 +44,6 @@ def named_gate(indent: str, name: str, level: int) -> str:
         f"{indent}    }},\n"
         f"{indent}}},"
     )
-
-
-def overlay_compiled_details(data: dict, database_root: Path) -> None:
-    compiled = database_root / "data" / "forever" / "compiled"
-    if not compiled.is_dir():
-        return
-    for path in sorted(compiled.rglob("*.json")):
-        bundle = json.loads(path.read_text(encoding="utf-8"))
-        quests = bundle.get("quests")
-        if not isinstance(quests, dict):
-            continue
-        for key, quest in quests.items():
-            if not isinstance(quest, dict):
-                continue
-            base = data.get(str(key))
-            if not isinstance(base, dict):
-                base = {}
-            merged = dict(base)
-            detail = quest.get("detail")
-            if isinstance(detail, dict):
-                merged["detail"] = detail
-            index = quest.get("index")
-            if isinstance(index, dict) and isinstance(index.get("list"), dict) and "list" not in merged:
-                merged["list"] = index["list"]
-            data[str(key)] = merged
-
-
-def load_min_levels(index_path: Path | None = None, database_root: Path | None = None) -> dict[int, int]:
-    if index_path is None:
-        index_path = Path("/tmp/quest_index.json")
-        if not index_path.exists():
-            request = urllib.request.Request(INDEX_URL, headers={"User-Agent": "ForeverGuideMate"})
-            index_path.write_bytes(urllib.request.urlopen(request, timeout=60).read())
-    data = json.loads(index_path.read_text(encoding="utf-8"))
-    if database_root is not None:
-        overlay_compiled_details(data, database_root)
-    levels: dict[int, int] = {}
-    for key, quest in data.items():
-        if not isinstance(quest, dict):
-            continue
-        chosen = step_level(quest)
-        offered = offer_level(quest)
-        if isinstance(chosen, int) and chosen > 0:
-            levels[int(key)] = {"step": chosen, "offer": offered or chosen}
-        elif isinstance(offered, int) and offered > 0:
-            levels[int(key)] = {"step": offered, "offer": offered}
-    return levels
 
 
 def strip_level_gate(raw: str) -> str:
@@ -132,11 +80,18 @@ def guide_files() -> list[Path]:
     return files
 
 
-def apply(levels: dict[int, dict[str, int]]) -> tuple[dict[int, int], list[str]]:
+def apply(levels: dict[int, dict[str, int]], *, write: bool = False) -> tuple[dict[int, int], list[str]]:
     used: dict[int, int] = {}
     missing: list[str] = []
-    for path in guide_files():
-        text = path.read_text(encoding="utf-8")
+    sources = [(path, path.read_text(encoding="utf-8")) for path in guide_files()]
+    if write:
+        ordered = [
+            str(path.relative_to(ROOT)) for path, text in sources
+            if re.search(r"\brouteMode\s*=\s*(['\"])ordered\1", text)
+        ]
+        if ordered:
+            raise ValueError("Cannot bulk-stamp ordered guides; edit their itinerary explicitly: " + ", ".join(ordered))
+    for path, text in sources:
         goals = parse_goals(text, "guide", str(path.relative_to(ROOT)), None)
         if not goals:
             continue
@@ -166,32 +121,27 @@ def apply(levels: dict[int, dict[str, int]]) -> tuple[dict[int, int], list[str]]
                 goal.raw = updated
                 changed = True
         if changed:
-            rendered = ",\n        ".join(goal.raw for goal in goals)
-            path.write_text(replace_goals(text, rendered), encoding="utf-8")
+            if write:
+                rendered = ",\n        ".join(goal.raw for goal in goals)
+                path.write_text(replace_goals(text, rendered), encoding="utf-8")
+            else:
+                print(f"Would update {path.relative_to(ROOT)}")
     return used, missing
 
 
 def main() -> None:
-    sibling = ROOT.parent / "wow-database"
-    database_root = sibling if (sibling / "data" / "forever" / "compiled").is_dir() else None
-    index_path = None
-    if database_root is not None:
-        local_index = database_root / "data" / "forever" / "raw" / "quest_index.json"
-        if local_index.is_file():
-            index_path = local_index
-    levels = load_min_levels(index_path=index_path, database_root=database_root)
-    used, missing = apply(levels)
-    FIXTURE.parent.mkdir(parents=True, exist_ok=True)
-    FIXTURE.write_text(
-        json.dumps({str(quest_id): level for quest_id, level in sorted(used.items())}, indent=2)
-        + "\n",
-        encoding="utf-8",
-    )
-    print(f"stamped {len(used)} quests into {FIXTURE.relative_to(ROOT)}")
-    if missing:
-        print(f"{len(missing)} guide steps need a level check:")
-        for line in missing:
-            print(" ", line)
+    parser = argparse.ArgumentParser(description="Preview legacy quest level stamps without changing guides or fixtures.")
+    parser.add_argument("--database", type=Path, default=ROOT.parent / "wow-database")
+    parser.add_argument("--write", action="store_true", help="Write legacy guides; refuses ordered guides before any writes")
+    args = parser.parse_args()
+    levels = load_min_levels(database_root=args.database)
+    try:
+        used, missing = apply(levels, write=args.write)
+    except ValueError as error:
+        parser.error(str(error))
+    print(f"Checked {len(used)} quests. Test expectations were not modified.")
+    for line in missing:
+        print("Review:", line)
 
 
 if __name__ == "__main__":

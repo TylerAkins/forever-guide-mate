@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Hillsbrad Foothills & Arathi Highlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 565,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.5553, mapID = 1424, label = "Bartolo Ginsetti", offMapText = "Travel to Bartolo Ginsetti in Hillsbrad Foothills.", x = 0.4943 },
             },
@@ -84,10 +82,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 564,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.5596, mapID = 1424, label = "Darren Malvew", offMapText = "Travel to Darren Malvew in Hillsbrad Foothills.", x = 0.5242 },
             },
@@ -115,7 +111,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.5709, mapID = 1424, label = "Loremaster Dibbs", offMapText = "Travel to Loremaster Dibbs in Hillsbrad Foothills.", x = 0.5057 },
             },
@@ -149,7 +144,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
             },
@@ -177,7 +171,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.5868, mapID = 1424, label = "Chef Jessen", offMapText = "Travel to Chef Jessen in Hillsbrad Foothills.", x = 0.5189 },
             },
@@ -205,7 +198,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             text = "For Soothing Turtle Bisque: Bring 10 pieces of Turtle Meat and some Soothing Spices to Chef Jessen in Southshore. Keep 10 Turtle Meat for the later quest pickup.",
             id = "collect-before-pickup-objective-555-quest-work",
             kind = "note",
@@ -269,10 +261,8 @@ ns:RegisterGuide({
             instructionOnly = true,
             rememberPreparation = 555,
             dependsOn = {},
-            priority = 90,
         },
         {
-            priority = 100,
             text = "Turn in Soothing Turtle Bisque to Chef Jessen.",
             route = {
                 { y = 0.5868, mapID = 1424, label = "Chef Jessen", offMapText = "Travel to Chef Jessen in Hillsbrad Foothills.", x = 0.5189 },
@@ -300,7 +290,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             text = "Kill 10 Torn Fin Tidehunter.",
             route = {
                 { y = 0.646, mapID = 1424, label = "Torn Fin Tidehunter", offMapText = "Travel to Torn Fin Tidehunter.", x = 0.476 },
@@ -328,7 +317,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             text = "Kill 10 Torn Fin Oracle.",
             route = {
                 { y = 0.646, mapID = 1424, label = "Torn Fin Oracle", offMapText = "Travel to Torn Fin Oracle.", x = 0.476 },
@@ -356,7 +344,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             text = "Turn in Down the Coast to Lieutenant Farren Orinelle.",
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
@@ -384,7 +371,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
             },
@@ -418,7 +404,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Collect 10 Murloc Head.",
             route = {
                 { y = 0.646, mapID = 1424, label = "Torn Fin Tidehunter", offMapText = "Travel to Torn Fin Tidehunter.", x = 0.476 },
@@ -452,7 +437,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Turn in Farren's Proof to Lieutenant Farren Orinelle.",
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
@@ -486,7 +470,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
             },
@@ -520,7 +503,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Turn in Farren's Proof to Marshal Redpath.",
             route = {
                 { y = 0.5873, mapID = 1424, label = "Marshal Redpath", offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.", x = 0.4948 },
@@ -554,7 +536,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.5873, mapID = 1424, label = "Marshal Redpath", offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.", x = 0.4948 },
             },
@@ -588,7 +569,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Turn in Farren's Proof to Lieutenant Farren Orinelle.",
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
@@ -622,7 +602,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
             },
@@ -656,7 +635,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             text = "Kill 10 Daggerspine Shorehunter.",
             route = {
                 { y = 0.644, mapID = 1424, label = "Daggerspine Shorehunter", offMapText = "Travel to Daggerspine Shorehunter.", x = 0.55 },
@@ -690,7 +668,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             text = "Kill 10 Daggerspine Siren.",
             route = {
                 { y = 0.644, mapID = 1424, label = "Daggerspine Siren", offMapText = "Travel to Daggerspine Siren.", x = 0.55 },
@@ -724,7 +701,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             text = "Turn in Stormwind Ho! to Lieutenant Farren Orinelle.",
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
@@ -758,7 +734,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             route = {
                 { y = 0.5905, mapID = 1424, label = "Phin Odelic", offMapText = "Travel to Phin Odelic in Hillsbrad Foothills.", x = 0.5034 },
             },
@@ -786,7 +761,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             route = {
                 { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
             },
@@ -814,7 +788,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             route = {
                 { y = 0.3183, mapID = 1424, label = "Alterac Granite", offMapText = "Travel to Alterac Granite.", x = 0.4618 },
             },
@@ -869,14 +842,12 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.4618, y = 0.31829999999999997, label = "Yeti Fur", offMapText = "Travel to Yeti Fur." },
             },
             sourceStep = 20,
-            priority = 280,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
         },
         {
-            priority = 290,
             route = {
                 { mapID = 1416, x = 0.583, y = 0.68, label = "Foreboding Plans", offMapText = "Travel to Foreboding Plans." },
             },
@@ -904,7 +875,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             route = {
                 { mapID = 1416, x = 0.583, y = 0.68, label = "Encrypted Letter", offMapText = "Travel to Encrypted Letter." },
             },
@@ -953,7 +923,6 @@ ns:RegisterGuide({
                 { mapID = 1416, x = 0.578, y = 0.664, label = "Syndicate Thief", offMapText = "Travel to Syndicate Thief." },
             },
             sourceStep = 23,
-            priority = 310,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -981,7 +950,6 @@ ns:RegisterGuide({
                 { mapID = 1416, x = 0.578, y = 0.664, label = "Syndicate Footpad", offMapText = "Travel to Syndicate Footpad." },
             },
             sourceStep = 23,
-            priority = 320,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1009,7 +977,6 @@ ns:RegisterGuide({
                 { mapID = 1416, x = 0.446, y = 0.79, label = "Mountain Lion", offMapText = "Travel to Mountain Lion." },
             },
             sourceStep = 24,
-            priority = 330,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1037,14 +1004,12 @@ ns:RegisterGuide({
                 { mapID = 1416, x = 0.446, y = 0.79, label = "Hulking Mountain Lion", offMapText = "Travel to Hulking Mountain Lion." },
             },
             sourceStep = 24,
-            priority = 340,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-564-costly-menace" },
         },
         {
-            priority = 350,
             route = {
                 { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
             },
@@ -1078,7 +1043,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             text = "Turn in Foreboding Plans to Magistrate Henry Maleb.",
             route = {
                 { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
@@ -1106,7 +1070,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             text = "Turn in Syndicate Assassins to Magistrate Henry Maleb.",
             route = {
                 { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
@@ -1134,7 +1097,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             text = "Turn in Encrypted Letter to Loremaster Dibbs.",
             route = {
                 { y = 0.5709, mapID = 1424, label = "Loremaster Dibbs", offMapText = "Travel to Loremaster Dibbs in Hillsbrad Foothills.", x = 0.5057 },
@@ -1162,7 +1124,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.5709, mapID = 1424, label = "Loremaster Dibbs", offMapText = "Travel to Loremaster Dibbs in Hillsbrad Foothills.", x = 0.5057 },
             },
@@ -1196,7 +1157,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             text = "Turn in Costly Menace to Darren Malvew.",
             route = {
                 { y = 0.5596, mapID = 1424, label = "Darren Malvew", offMapText = "Travel to Darren Malvew in Hillsbrad Foothills.", x = 0.5242 },
@@ -1248,7 +1208,6 @@ ns:RegisterGuide({
                 { mapID = 1453, x = 0.5361, y = 0.5976, label = "Auctioneer Jaxon", offMapText = "Travel to Auctioneer Jaxon." },
             },
             dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
-            priority = 410,
         },
         {
             id = "objective-565-reviewed-2",
@@ -1276,7 +1235,6 @@ ns:RegisterGuide({
             },
             sourceStep = 29,
             dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
-            priority = 420,
         },
         {
             id = "objective-565-reviewed-3",
@@ -1303,10 +1261,8 @@ ns:RegisterGuide({
                 { mapID = 1453, x = 0.5361, y = 0.5976, label = "Auctioneer Jaxon", offMapText = "Travel to Auctioneer Jaxon." },
             },
             dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
-            priority = 430,
         },
         {
-            priority = 440,
             text = "Turn in Bartolo's Yeti Fur Cloak to Bartolo Ginsetti.",
             route = {
                 { y = 0.5553, mapID = 1424, label = "Bartolo Ginsetti", offMapText = "Travel to Bartolo Ginsetti in Hillsbrad Foothills.", x = 0.4943 },
@@ -1340,7 +1296,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             route = {
                 { y = 0.4755, mapID = 1417, label = "Captain Nials", offMapText = "Travel to Captain Nials in Arathi Highlands.", x = 0.4583 },
             },
@@ -1368,7 +1323,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             text = "Turn in Hints of a New Plague? to Quae.",
             route = {
                 { y = 0.5385, mapID = 1417, label = "Quae", offMapText = "Travel to Quae in Arathi Highlands.", x = 0.6019 },
@@ -1396,7 +1350,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.5385, mapID = 1417, label = "Quae", offMapText = "Travel to Quae in Arathi Highlands.", x = 0.6019 },
             },
@@ -1430,7 +1383,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Kill 6 Syndicate Mercenary.",
             route = {
                 { y = 0.3, mapID = 1417, label = "Syndicate Mercenary", offMapText = "Travel to Syndicate Mercenary.", x = 0.334 },
@@ -1458,7 +1410,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Kill 10 Syndicate Highwayman.",
             route = {
                 { y = 0.3, mapID = 1417, label = "Syndicate Highwayman", offMapText = "Travel to Syndicate Highwayman.", x = 0.334 },
@@ -1486,7 +1437,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             text = "Turn in Northfold Manor to Captain Nials.",
             route = {
                 { y = 0.4755, mapID = 1417, label = "Captain Nials", offMapText = "Travel to Captain Nials in Arathi Highlands.", x = 0.4583 },
@@ -1514,7 +1464,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             text = "Turn in Letter to Stormpike to Prospector Stormpike.",
             route = {
                 { y = 0.1173, mapID = 1455, label = "Prospector Stormpike", offMapText = "Travel to Prospector Stormpike in Ironforge.", x = 0.7464 },
@@ -1548,7 +1497,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             text = "Turn in A King's Tribute to Grand Mason Marblesten.",
             route = {
                 { y = 0.8805, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.3904 },
@@ -1582,7 +1530,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.87, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.386 },
             },
@@ -1616,7 +1563,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "Turn in A King's Tribute to King Magni Bronzebeard.",
             route = {
                 { mapID = 1455, x = 0.3909, y = 0.562, label = "King Magni Bronzebeard", offMapText = "Travel to King Magni Bronzebeard in Ironforge." },

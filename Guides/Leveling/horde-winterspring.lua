@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Winterspring",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-winterspring",
@@ -41,10 +41,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7667,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.484, mapID = 1454, label = "Sagorne Creststrider", x = 0.392, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
             },
@@ -72,7 +70,6 @@ ns:RegisterGuide({
             classAction = "accept-7667-material-assistance",
         },
         {
-            priority = 30,
             dependsOn = { "woven-class-shaman-accept-7667-material-assistance" },
             id = "woven-class-shaman-objective-7667-material-assistance",
             conditions = {
@@ -97,7 +94,6 @@ ns:RegisterGuide({
             classAction = "objective-7667-material-assistance",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.362, mapID = 1454, label = "Sagorne Creststrider", x = 0.386, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
             },
@@ -140,10 +136,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 977,
-            priority = 50,
         },
         {
-            priority = 60,
             route = {
                 { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
             },
@@ -174,7 +168,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             text = "Collect 2 Pristine Yeti Horn.",
             route = {
                 { y = 0.4175, mapID = 1452, label = "Ice Thistle Matriarch", offMapText = "Travel to Ice Thistle Matriarch.", x = 0.6765 },
@@ -224,10 +217,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 80,
         },
         {
-            priority = 90,
             text = "Use the Winterfall Ritual Totem to accept Winterfall Ritual Totem.",
             id = "accept-8471-winterfall-ritual-totem",
             kind = "accept",
@@ -267,7 +258,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Shaman", offMapText = "Travel to Winterfall Shaman." },
             },
             sourceStep = 10,
-            priority = 100,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -292,7 +282,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Den Watcher", offMapText = "Travel to Winterfall Den Watcher." },
             },
             sourceStep = 10,
-            priority = 110,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -317,7 +306,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Ursa", offMapText = "Travel to Winterfall Ursa." },
             },
             sourceStep = 10,
-            priority = 120,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -343,10 +331,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4741,
-            priority = 130,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.234, mapID = 1452, label = "Moontouched Owlbeast", offMapText = "Travel to Moontouched Owlbeast.", x = 0.634 },
             },
@@ -380,7 +366,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Turn in Are We There, Yeti? to Umi Rumplesnicker.",
             route = {
                 { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
@@ -411,7 +396,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Turn in Chillwind Horns to Felnok Steelspring.",
             route = {
                 { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
@@ -442,7 +426,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "Turn in Wild Guardians to Trull Failbane.",
             route = {
                 { y = 0.5279, mapID = 1448, label = "Trull Failbane", offMapText = "Travel to Trull Failbane in Felwood.", x = 0.3473 },
@@ -476,7 +459,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             route = {
                 { y = 0.5279, mapID = 1448, label = "Trull Failbane", offMapText = "Travel to Trull Failbane in Felwood.", x = 0.3473 },
             },
@@ -536,10 +518,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 190,
         },
         {
-            priority = 200,
             text = "Use the Blue-feathered Necklace to accept Guarding Secrets.",
             id = "accept-4882-guarding-secrets",
             kind = "accept",
@@ -591,7 +571,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.634, y = 0.23399999999999999, label = "Berserk Owlbeast", offMapText = "Travel to Berserk Owlbeast." },
             },
             sourceStep = 16,
-            priority = 210,
             requiredQuests = {
                 {
                     mode = "any",
@@ -622,7 +601,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.64, y = 0.302, label = "Uncracked Chillwind Horn", offMapText = "Travel to Uncracked Chillwind Horn." },
             },
             sourceStep = 17,
-            priority = 220,
             requiredQuests = {
                 {
                     mode = "any",
@@ -635,7 +613,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             route = {
                 { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
             },
@@ -666,7 +643,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             text = "Use Umi's Mechanical Yeti on Legacki to scare her.",
             route = {
                 { mapID = 1452, x = 0.6154, y = 0.3862, label = "Legacki", offMapText = "Travel to Legacki." },
@@ -696,7 +672,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             route = {
                 { y = 0.345, mapID = 1452, label = "Salfa", offMapText = "Travel to Salfa in Winterspring.", x = 0.2774 },
             },
@@ -725,7 +700,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 260,
             text = "Turn in Winterfall Ritual Totem to Kernda.",
             route = {
                 { y = 0.0348, mapID = 1448, label = "Kernda", offMapText = "Travel to Kernda in Felwood.", x = 0.6549 },
@@ -769,10 +743,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1123,
-            priority = 270,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
             },
@@ -818,10 +790,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1124,
-            priority = 290,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
             },
@@ -864,10 +834,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5527,
-            priority = 310,
         },
         {
-            priority = 320,
             route = {
                 { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
             },
@@ -892,7 +860,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             route = {
                 { y = 0.0813, mapID = 1448, label = "Nafien", offMapText = "Travel to Nafien in Felwood.", x = 0.6477 },
             },
@@ -923,7 +890,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             text = "Reach Neutral reputation with Timbermaw Hold before speaking with the furbolgs inside the hold.",
             id = "objective-8470-quest-work",
             kind = "objective",
@@ -945,7 +911,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             route = {
                 { y = 0.0348, mapID = 1448, label = "Kernda", offMapText = "Travel to Kernda in Felwood.", x = 0.6549 },
             },
@@ -970,7 +935,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-8470-quest-work" },
         },
         {
-            priority = 360,
             route = {
                 { y = 0.096, mapID = 1448, label = "Deadwood Den Watcher", offMapText = "Travel to Deadwood Den Watcher.", x = 0.636 },
             },
@@ -994,7 +958,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             route = {
                 { y = 0.0281, mapID = 1448, label = "Meilosh", offMapText = "Travel to Meilosh in Felwood.", x = 0.6569 },
             },
@@ -1019,7 +982,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Turn in Runecloth to Meilosh.",
             route = {
                 { y = 0.0281, mapID = 1448, label = "Meilosh", offMapText = "Travel to Meilosh in Felwood.", x = 0.6569 },
@@ -1044,7 +1006,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             text = "Turn in Wild Guardians to Trull Failbane.",
             route = {
                 { y = 0.5279, mapID = 1448, label = "Trull Failbane", offMapText = "Travel to Trull Failbane in Felwood.", x = 0.3473 },
@@ -1078,7 +1039,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             text = "Turn in Guarding Secrets to Trull Failbane.",
             route = {
                 { y = 0.5279, mapID = 1448, label = "Trull Failbane", offMapText = "Travel to Trull Failbane in Felwood.", x = 0.3473 },
@@ -1112,7 +1072,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.5279, mapID = 1448, label = "Trull Failbane", offMapText = "Travel to Trull Failbane in Felwood.", x = 0.3473 },
             },
@@ -1146,7 +1105,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             text = "Turn in Guarding Secrets to Nara Wildmane.",
             route = {
                 { y = 0.3161, mapID = 1456, label = "Nara Wildmane", offMapText = "Travel to Nara Wildmane in Thunder Bluff.", x = 0.7565 },
@@ -1180,7 +1138,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             route = {
                 { y = 0.3161, mapID = 1456, label = "Nara Wildmane", offMapText = "Travel to Nara Wildmane in Thunder Bluff.", x = 0.7565 },
             },
@@ -1214,7 +1171,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Use Umi's Mechanical Yeti on Sprinkle to scare her.",
             route = {
                 { mapID = 1446, x = 0.5106, y = 0.2687, label = "Sprinkle", offMapText = "Travel to Sprinkle." },
@@ -1244,7 +1200,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1296,7 +1251,6 @@ ns:RegisterGuide({
             rememberPreparation = 4005,
         },
         {
-            priority = 460,
             route = {
                 { mapID = 1446, x = 0.7042, y = 0.499, label = "Aquementas stone circle", offMapText = "Travel to Aquementas stone circle." },
             },
@@ -1326,7 +1280,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Enter the cave at Marshal's Refuge in Un'Goro Crater and turn in Aquementas to J.D. Collie.",
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie at Marshal's Refuge", offMapText = "Travel to J.D. Collie at Marshal's Refuge." },
@@ -1357,7 +1310,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
             },
@@ -1388,7 +1340,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             text = "Turn in Linken's Adventure to Linken.",
             route = {
                 { mapID = 1449, x = 0.44659999999999994, y = 0.081, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater." },
@@ -1419,7 +1370,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             text = "Use Umi's Mechanical Yeti on Quixxil to scare him.",
             route = {
                 { mapID = 1449, x = 0.43670000000000003, y = 0.09380000000000001, label = "Quixxil", offMapText = "Travel to Quixxil." },

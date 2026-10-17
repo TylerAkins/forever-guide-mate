@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "The Hinterlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-the-hinterlands",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2988,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { mapID = 1446, x = 0.4991, y = 0.35159999999999997, label = "Roc Gizzard", offMapText = "Travel to Roc Gizzard." },
             },
@@ -99,7 +96,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { mapID = 1425, x = 0.26940000000000003, y = 0.48590000000000005, label = "Rhapsody Shindigger", offMapText = "Travel to Rhapsody Shindigger in The Hinterlands." },
             },
@@ -133,7 +129,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1452-quest-work" },
         },
         {
-            priority = 50,
             route = {
                 { y = 0.4859, mapID = 1425, label = "Rhapsody Shindigger", offMapText = "Travel to Rhapsody Shindigger in The Hinterlands.", x = 0.2694 },
             },
@@ -167,7 +162,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.4456, mapID = 1425, label = "Fraggar Thundermantle", offMapText = "Travel to Fraggar Thundermantle in The Hinterlands.", x = 0.1483 },
             },
@@ -195,7 +189,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             text = "For Troll Necklace Bounty: Bring 5 Troll Tribal Necklaces to Fraggar Thundermantle in Aerie Peak.",
             id = "objective-2880-quest-work",
             kind = "objective",
@@ -220,7 +213,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2880-troll-necklace-bounty" },
         },
         {
-            priority = 80,
             text = "Turn in Troll Necklace Bounty to Fraggar Thundermantle.",
             route = {
                 { y = 0.4456, mapID = 1425, label = "Fraggar Thundermantle", offMapText = "Travel to Fraggar Thundermantle in The Hinterlands.", x = 0.1483 },
@@ -248,7 +240,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.4456, mapID = 1425, label = "Fraggar Thundermantle", offMapText = "Travel to Fraggar Thundermantle in The Hinterlands.", x = 0.1483 },
             },
@@ -276,7 +267,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "For Witherbark Cages: Check the cages at the two Witherbark villages.",
             id = "objective-2988-quest-work",
             kind = "objective",
@@ -301,7 +291,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2988-witherbark-cages" },
         },
         {
-            priority = 110,
             text = "Turn in Witherbark Cages to Gryphon Master Talonaxe.",
             route = {
                 { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
@@ -329,7 +318,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             route = {
                 { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
             },
@@ -382,7 +370,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3661,
-            priority = 130,
         },
         {
             id = "objective-3661-1-wildkin-feather",
@@ -406,14 +393,12 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.22899999999999998, y = 0.5489999999999999, label = "Wildkin Feather", offMapText = "Travel to Wildkin Feather." },
             },
             sourceStep = 11,
-            priority = 140,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Kill 10 Green Sludge.",
             route = {
                 { y = 0.426, mapID = 1425, label = "Green Sludge", offMapText = "Travel to Green Sludge.", x = 0.486 },
@@ -441,7 +426,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Kill 10 Jade Ooze.",
             route = {
                 { y = 0.426, mapID = 1425, label = "Jade Ooze", offMapText = "Travel to Jade Ooze.", x = 0.486 },
@@ -488,7 +472,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 170,
         },
         {
             id = "level-before-accept-485-find-oox-09-hl",
@@ -503,10 +486,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 485,
-            priority = 180,
         },
         {
-            priority = 190,
             text = "Use the OOX-09/HL Distress Beacon to accept Find OOX-09/HL!.",
             id = "accept-485-find-oox-09-hl",
             kind = "accept",
@@ -528,7 +509,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Turn in Find OOX-09/HL! to Homing Robot OOX-09/HL.",
             route = {
                 { y = 0.3766, mapID = 1425, label = "Homing Robot OOX-09/HL", offMapText = "Travel to Homing Robot OOX-09/HL in The Hinterlands.", x = 0.4935 },
@@ -571,7 +551,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.778, y = 0.654, label = "Pupellyverbos Port", offMapText = "Travel to Pupellyverbos Port." },
             },
             sourceStep = 20,
-            priority = 210,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,

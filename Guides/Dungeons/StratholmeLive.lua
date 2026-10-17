@@ -26,10 +26,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-stratholme-live",
     title = "Stratholme - Live",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 55 } },
@@ -40,7 +41,6 @@ ns:RegisterGuide({
         {
             id = "accept-5214-the-great-fras-siabi",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 55 } },
             text = "Accept The Great Fras Siabi from Smokey LaRue.",
             complete = QuestState(5214, "activeOrCompleted"),
@@ -51,7 +51,6 @@ ns:RegisterGuide({
         {
             id = "accept-5251-the-archivist",
             kind = "accept",
-            priority = 11,
             conditions = { level = { min = 55 } },
             text = "Accept The Archivist from Duke Nicholas Zverenhoff.",
             complete = QuestState(5251, "activeOrCompleted"),
@@ -62,7 +61,6 @@ ns:RegisterGuide({
         {
             id = "accept-5281-the-restless-souls",
             kind = "accept",
-            priority = 12,
             conditions = { level = { min = 57 } },
             text = "Accept The Restless Souls from Caretaker Alen.",
             complete = QuestState(5281, "activeOrCompleted"),
@@ -73,7 +71,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5281-the-restless-souls",
             kind = "turnin",
-            priority = 13,
             conditions = { level = { min = 57 } },
             text = "Turn in The Restless Souls to Egan.",
             dependsOn = { "accept-5281-the-restless-souls" },
@@ -84,8 +81,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5282-the-restless-souls",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5281 } } },
             kind = "accept",
-            priority = 14,
             conditions = { level = { min = 55 } },
             text = "Accept The Restless Souls from Egan.",
             dependsOn = { "turnin-5281-the-restless-souls" },
@@ -97,7 +94,6 @@ ns:RegisterGuide({
         {
             id = "accept-5542-demon-dogs",
             kind = "accept",
-            priority = 15,
             conditions = { level = { min = 57 } },
             text = "Accept Demon Dogs from Tirion Fordring.",
             complete = QuestState(5542, "activeOrCompleted"),
@@ -108,7 +104,6 @@ ns:RegisterGuide({
         {
             id = "accept-5543-blood-tinged-skies",
             kind = "accept",
-            priority = 16,
             conditions = { level = { min = 57 } },
             text = "Accept Blood Tinged Skies from Tirion Fordring.",
             complete = QuestState(5543, "activeOrCompleted"),
@@ -119,7 +114,6 @@ ns:RegisterGuide({
         {
             id = "accept-5544-carrion-grubbage",
             kind = "accept",
-            priority = 17,
             conditions = { level = { min = 57 } },
             text = "Accept Carrion Grubbage from Tirion Fordring.",
             complete = QuestState(5544, "activeOrCompleted"),
@@ -130,7 +124,6 @@ ns:RegisterGuide({
         {
             id = "objective-5543-1-plaguebat",
             kind = "objective",
-            priority = 18,
             conditions = { level = { min = 57 } },
             text = "Kill 30 Plaguebat.",
             dependsOn = { "accept-5543-blood-tinged-skies" },
@@ -142,7 +135,6 @@ ns:RegisterGuide({
         {
             id = "objective-5542-1-plaguehound-runt",
             kind = "objective",
-            priority = 19,
             conditions = { level = { min = 57 } },
             text = "Kill 20 Plaguehound Runt.",
             dependsOn = { "accept-5542-demon-dogs" },
@@ -154,7 +146,6 @@ ns:RegisterGuide({
         {
             id = "objective-5544-1-slab-of-carrion-worm-mea",
             kind = "objective",
-            priority = 21,
             conditions = { level = { min = 57 } },
             text = "Collect 15 Slab of Carrion Worm Meat.",
             dependsOn = { "accept-5544-carrion-grubbage" },
@@ -166,7 +157,6 @@ ns:RegisterGuide({
         {
             id = "objective-5542-2-plaguehound",
             kind = "objective",
-            priority = 22,
             conditions = { level = { min = 57 } },
             text = "Kill 5 Plaguehound.",
             dependsOn = { "accept-5542-demon-dogs" },
@@ -178,7 +168,6 @@ ns:RegisterGuide({
         {
             id = "objective-5542-3-frenzied-plaguehound",
             kind = "objective",
-            priority = 23,
             conditions = { level = { min = 57 } },
             text = "Kill 5 Frenzied Plaguehound.",
             dependsOn = { "accept-5542-demon-dogs" },
@@ -190,7 +179,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5542-demon-dogs",
             kind = "turnin",
-            priority = 24,
             conditions = { level = { min = 57 } },
             text = "Turn in Demon Dogs to Tirion Fordring.",
             dependsOn = { "objective-5542-1-plaguehound-runt", "objective-5542-2-plaguehound", "objective-5542-3-frenzied-plaguehound" },
@@ -202,7 +190,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5543-blood-tinged-skies",
             kind = "turnin",
-            priority = 25,
             conditions = { level = { min = 57 } },
             text = "Turn in Blood Tinged Skies to Tirion Fordring.",
             dependsOn = { "objective-5543-1-plaguebat" },
@@ -214,7 +201,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5544-carrion-grubbage",
             kind = "turnin",
-            priority = 26,
             conditions = { level = { min = 57 } },
             text = "Turn in Carrion Grubbage to Tirion Fordring.",
             dependsOn = { "objective-5544-1-slab-of-carrion-worm-mea" },
@@ -225,8 +211,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5742-redemption",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5544 } } },
             kind = "accept",
-            priority = 27,
             conditions = { level = { min = 57 } },
             text = "Accept Redemption from Tirion Fordring.",
             dependsOn = { "turnin-5544-carrion-grubbage" },
@@ -237,8 +223,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5742-1-listen-to-tirion-s-tale",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5544 } } },
             kind = "gossip",
-            priority = 28,
             conditions = { level = { min = 57 } },
             text = "Talk to Tirion Fordring. 'I am ready to hear your tale, Tirion.' Listen to Tirion's Tale.",
             dependsOn = { "accept-5742-redemption" },
@@ -249,8 +235,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5742-redemption",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5544 } } },
             kind = "turnin",
-            priority = 29,
             conditions = { level = { min = 57 } },
             text = "Turn in Redemption to Tirion Fordring.",
             dependsOn = { "objective-5742-1-listen-to-tirion-s-tale" },
@@ -261,8 +247,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5781-of-forgotten-memories",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5742 } } },
             kind = "accept",
-            priority = 30,
             conditions = { level = { min = 52 } },
             text = "Accept Of Forgotten Memories from Tirion Fordring.",
             dependsOn = { "turnin-5742-redemption" },
@@ -273,8 +259,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5781-1-taelan-s-hammer",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5742 } } },
             kind = "objective",
-            priority = 33,
             conditions = { level = { min = 52 } },
             text = "Collect Taelan's Hammer.",
             dependsOn = { "accept-5781-of-forgotten-memories" },
@@ -285,8 +271,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5781-of-forgotten-memories",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5742 } } },
             kind = "turnin",
-            priority = 34,
             conditions = { level = { min = 52 } },
             text = "Turn in Of Forgotten Memories to Tirion Fordring.",
             dependsOn = { "objective-5781-1-taelan-s-hammer" },
@@ -297,8 +283,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5845-of-lost-honor",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5781 } } },
             kind = "accept",
-            priority = 35,
             conditions = { level = { min = 52 } },
             text = "Accept Of Lost Honor from Tirion Fordring.",
             dependsOn = { "turnin-5781-of-forgotten-memories" },
@@ -309,8 +295,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5845-1-symbol-of-lost-honor",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5781 } } },
             kind = "objective",
-            priority = 37,
             conditions = { level = { min = 52 } },
             text = "Collect Symbol of Lost Honor.",
             dependsOn = { "accept-5845-of-lost-honor" },
@@ -321,8 +307,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5845-of-lost-honor",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5781 } } },
             kind = "turnin",
-            priority = 38,
             conditions = { level = { min = 52 } },
             text = "Turn in Of Lost Honor to Tirion Fordring.",
             dependsOn = { "objective-5845-1-symbol-of-lost-honor" },
@@ -333,8 +319,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5846-of-love-and-family",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5845 } } },
             kind = "accept",
-            priority = 39,
             conditions = { level = { min = 52 } },
             text = "Accept Of Love and Family from Tirion Fordring.",
             dependsOn = { "turnin-5845-of-lost-honor" },
@@ -345,8 +331,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5846-of-love-and-family",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5845 } } },
             kind = "turnin",
-            priority = 40,
             conditions = { level = { min = 52 } },
             text = "Turn in Of Love and Family to Artist Renfray.",
             dependsOn = { "accept-5846-of-love-and-family" },
@@ -357,8 +343,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5848-of-love-and-family",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5846 } } },
             kind = "accept",
-            priority = 41,
             conditions = { level = { min = 52 } },
             text = "Accept Of Love and Family from Artist Renfray.",
             dependsOn = { "turnin-5846-of-love-and-family" },
@@ -370,7 +356,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 42,
             conditions = { level = { min = 55 } },
             text = "Enter Stratholme - Undead with your group.",
             dependsOn = { "accept-5214-the-great-fras-siabi", "accept-5251-the-archivist", "accept-5281-the-restless-souls", "accept-5282-the-restless-souls", "accept-5542-demon-dogs", "accept-5543-blood-tinged-skies", "accept-5544-carrion-grubbage", "accept-5742-redemption", "accept-5781-of-forgotten-memories", "accept-5845-of-lost-honor", "accept-5846-of-love-and-family", "accept-5848-of-love-and-family" },
@@ -380,7 +365,6 @@ ns:RegisterGuide({
         {
             id = "objective-5214-1-siabi-s-premium-tobacco",
             kind = "objective",
-            priority = 45,
             conditions = { level = { min = 55 } },
             text = "Collect Siabi's Premium Tobacco.",
             dependsOn = { "accept-5214-the-great-fras-siabi" },
@@ -390,7 +374,6 @@ ns:RegisterGuide({
         {
             id = "objective-5251-1-archivist-galford",
             kind = "objective",
-            priority = 50,
             conditions = { level = { min = 55 } },
             text = "Slay Archivist Galford.",
             dependsOn = { "accept-5251-the-archivist" },
@@ -399,8 +382,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5848-1-of-love-and-family",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5846 } } },
             kind = "objective",
-            priority = 52,
             conditions = { level = { min = 52 } },
             text = "Collect Of Love and Family.",
             dependsOn = { "accept-5848-of-love-and-family" },
@@ -410,7 +393,6 @@ ns:RegisterGuide({
         {
             id = "objective-5251-2-burn-the-archive",
             kind = "objective",
-            priority = 54,
             conditions = { level = { min = 55 } },
             text = "Burn the Archive.",
             dependsOn = { "accept-5251-the-archivist" },
@@ -419,8 +401,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5282-1-free-15-souls",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5281 } } },
             kind = "objective",
-            priority = 55,
             conditions = { level = { min = 55 } },
             text = "Free 15 Souls.",
             dependsOn = { "accept-5282-the-restless-souls" },
@@ -430,15 +412,14 @@ ns:RegisterGuide({
         {
             id = "accept-5122-the-medallion-of-faith",
             kind = "accept",
-            priority = 60,
             conditions = { level = { min = 55 } },
             text = "Accept The Medallion of Faith from Aurius.",
             complete = QuestState(5122, "activeOrCompleted"),
         },
         {
             id = "turnin-5282-the-restless-souls",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5281 } } },
             kind = "turnin",
-            priority = 61,
             conditions = { level = { min = 55 } },
             text = "Turn in The Restless Souls to Egan.",
             dependsOn = { "objective-5282-1-free-15-souls" },
@@ -447,8 +428,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5848-of-love-and-family",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5846 } } },
             kind = "turnin",
-            priority = 62,
             conditions = { level = { min = 52 } },
             text = "Turn in Of Love and Family to Tirion Fordring.",
             dependsOn = { "objective-5848-1-of-love-and-family" },
@@ -460,7 +441,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5214-the-great-fras-siabi",
             kind = "turnin",
-            priority = 63,
             conditions = { level = { min = 55 } },
             text = "Turn in The Great Fras Siabi to Smokey LaRue.",
             dependsOn = { "objective-5214-1-siabi-s-premium-tobacco" },
@@ -472,7 +452,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5251-the-archivist",
             kind = "turnin",
-            priority = 64,
             conditions = { level = { min = 55 } },
             text = "Turn in The Archivist to Duke Nicholas Zverenhoff.",
             dependsOn = { "objective-5251-1-archivist-galford", "objective-5251-2-burn-the-archive" },
@@ -484,7 +463,6 @@ ns:RegisterGuide({
         {
             id = "accept-5262-the-truth-comes-crashing-down",
             kind = "accept",
-            priority = 66,
             conditions = { level = { min = 55 } },
             text = "Accept The Truth Comes Crashing Down.",
             complete = QuestState(5262, "activeOrCompleted"),
@@ -492,7 +470,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5262-the-truth-comes-crashing-down",
             kind = "turnin",
-            priority = 67,
             conditions = { level = { min = 55 } },
             text = "Turn in The Truth Comes Crashing Down to Duke Nicholas Zverenhoff.",
             dependsOn = { "accept-5262-the-truth-comes-crashing-down" },

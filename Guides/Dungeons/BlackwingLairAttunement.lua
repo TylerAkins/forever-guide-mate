@@ -20,10 +20,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-blackwing-lair-attunement",
     title = "Blackwing Lair Attunement",
     category = "Raid Quests",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 55 } },
@@ -34,7 +35,6 @@ ns:RegisterGuide({
         {
             id = "accept-7761-blackhand-s-command",
             kind = "accept",
-            priority = 11,
             conditions = { level = { min = 55 } },
             text = "Accept Blackhand's Command.",
             complete = QuestState(7761, "activeOrCompleted"),
@@ -42,7 +42,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 12,
             conditions = { level = { min = 55 } },
             text = "Enter Blackrock Spire with your group.",
             dependsOn = { "accept-7761-blackhand-s-command" },
@@ -50,7 +49,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7761-blackhand-s-command",
             kind = "turnin",
-            priority = 15,
             conditions = { level = { min = 55 } },
             text = "Turn in Blackhand's Command.",
             dependsOn = { "accept-7761-blackhand-s-command" },

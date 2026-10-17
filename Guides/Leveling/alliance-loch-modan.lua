@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Loch Modan",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-loch-modan",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 436,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.4739, mapID = 1432, label = "Jern Hornhelm", offMapText = "Travel to Jern Hornhelm in Loch Modan.", x = 0.3724 },
             },
@@ -88,10 +86,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 353,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.1839, mapID = 1432, label = "Mountaineer Stormpike", offMapText = "Travel to Mountaineer Stormpike in Loch Modan.", x = 0.2476 },
             },
@@ -123,7 +119,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.1839, mapID = 1432, label = "Mountaineer Stormpike", offMapText = "Travel to Mountaineer Stormpike in Loch Modan.", x = 0.2476 },
             },
@@ -151,7 +146,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             text = "Collect 4 Miners' Gear.",
             route = {
                 { y = 0.1886, mapID = 1432, label = "Miners' League Crates", offMapText = "Travel to Miners' League Crates.", x = 0.3548 },
@@ -179,7 +173,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 70,
             text = "Turn in Filthy Paws to Mountaineer Stormpike.",
             route = {
                 { mapID = 1432, x = 0.24760000000000001, y = 0.1839, label = "Mountaineer Stormpike", offMapText = "Travel to Mountaineer Stormpike in Loch Modan." },
@@ -226,10 +219,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 250,
-            priority = 80,
         },
         {
-            priority = 90,
             route = {
                 { mapID = 1432, x = 0.46049999999999996, y = 0.1362, label = "Chief Engineer Hinderweir VII", offMapText = "Travel to Chief Engineer Hinderweir VII in Loch Modan." },
             },
@@ -257,7 +248,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Turn in A Dark Threat Looms.",
             route = {
                 { y = 0.1324, mapID = 1432, label = "A Dark Threat Looms", offMapText = "Travel to A Dark Threat Looms.", x = 0.5605 },
@@ -285,7 +275,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.1324, mapID = 1432, label = "A Dark Threat Looms", offMapText = "Travel to A Dark Threat Looms.", x = 0.5605 },
             },
@@ -319,7 +308,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             text = "Turn in A Dark Threat Looms to Chief Engineer Hinderweir VII.",
             route = {
                 { mapID = 1432, x = 0.46049999999999996, y = 0.1362, label = "Chief Engineer Hinderweir VII", offMapText = "Travel to Chief Engineer Hinderweir VII in Loch Modan." },
@@ -353,7 +341,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.6166, mapID = 1432, label = "Marek Ironheart", offMapText = "Travel to Marek Ironheart in Loch Modan.", x = 0.8175 },
             },
@@ -381,7 +368,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Collect 6 Crocolisk Skin.",
             route = {
                 { y = 0.396, mapID = 1432, label = "Loch Crocolisk", offMapText = "Travel to Loch Crocolisk.", x = 0.566 },
@@ -409,7 +395,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             text = "Collect 5 Crocolisk Meat.",
             route = {
                 { y = 0.396, mapID = 1432, label = "Crocolisk Meat", offMapText = "Travel to Crocolisk Meat.", x = 0.566 },
@@ -437,7 +422,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Turn in Crocolisk Hunting to Marek Ironheart.",
             route = {
                 { y = 0.6166, mapID = 1432, label = "Marek Ironheart", offMapText = "Travel to Marek Ironheart in Loch Modan.", x = 0.8175 },
@@ -465,7 +449,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "Turn in Ironband's Excavation to Magmar Fellhew.",
             route = {
                 { y = 0.6665, mapID = 1432, label = "Magmar Fellhew", offMapText = "Travel to Magmar Fellhew in Loch Modan.", x = 0.649 },
@@ -493,7 +476,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 180,
             route = {
                 { y = 0.6665, mapID = 1432, label = "Magmar Fellhew", offMapText = "Travel to Magmar Fellhew in Loch Modan.", x = 0.649 },
             },
@@ -521,7 +503,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.6562, mapID = 1432, label = "Prospector Ironband", offMapText = "Travel to Prospector Ironband in Loch Modan.", x = 0.6593 },
             },
@@ -549,7 +530,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Collect 8 Carved Stone Idol.",
             route = {
                 { y = 0.6315, mapID = 1432, label = "Berserk Trogg", offMapText = "Travel to Berserk Trogg.", x = 0.6794 },
@@ -577,7 +557,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Turn in Gathering Idols to Magmar Fellhew.",
             route = {
                 { y = 0.6665, mapID = 1432, label = "Magmar Fellhew", offMapText = "Travel to Magmar Fellhew in Loch Modan.", x = 0.649 },
@@ -605,7 +584,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             text = "Turn in Excavation Progress Report to Jern Hornhelm.",
             route = {
                 { y = 0.4739, mapID = 1432, label = "Jern Hornhelm", offMapText = "Travel to Jern Hornhelm in Loch Modan.", x = 0.3724 },
@@ -633,7 +611,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             route = {
                 { y = 0.4739, mapID = 1432, label = "Jern Hornhelm", offMapText = "Travel to Jern Hornhelm in Loch Modan.", x = 0.3724 },
             },
@@ -667,7 +644,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             text = "Turn in Report to Ironforge to Prospector Stormpike.",
             route = {
                 { y = 0.1172, mapID = 1455, label = "Prospector Stormpike", offMapText = "Travel to Prospector Stormpike in Ironforge.", x = 0.7465 },

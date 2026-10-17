@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Dustwallow Marsh",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-dustwallow-marsh",
@@ -39,10 +39,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4486,
             alternativeQuests = { 1661, 4485 },
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.062, mapID = 1455, label = "Brandur Ironhammer", x = 0.234, offMapText = "Travel to Brandur Ironhammer in Ironforge." },
             },
@@ -67,7 +65,6 @@ ns:RegisterGuide({
             classAction = "accept-4486-the-tome-of-nobility",
         },
         {
-            priority = 30,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -92,7 +89,6 @@ ns:RegisterGuide({
             classAction = "turnin-4486-the-tome-of-nobility",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.12, mapID = 1455, label = "Tiza Battleforge", x = 0.274, offMapText = "Travel to Tiza Battleforge in Ironforge." },
             },
@@ -117,7 +113,6 @@ ns:RegisterGuide({
             classAction = "accept-4485-the-tome-of-nobility",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", x = 0.4, offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -165,10 +160,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1661,
             alternativeQuests = { 4485, 4486 },
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { mapID = 1453, x = 0.505, y = 0.475, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -200,7 +193,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             text = "Turn in The Tome of Nobility to Duthorian Rall.",
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City.", x = 0.3981 },
@@ -251,10 +243,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 700,
-            priority = 90,
         },
         {
-            priority = 100,
             route = {
                 { mapID = 1455, x = 0.3909, y = 0.562, label = "King Magni Bronzebeard", offMapText = "Travel to King Magni Bronzebeard in Ironforge." },
             },
@@ -311,10 +301,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4487,
             alternativeQuests = { 3631, 4488, 4489 },
-            priority = 110,
         },
         {
-            priority = 120,
             route = {
                 { y = 0.355, mapID = 1413, label = "Strahad Farsan", offMapText = "Travel to Strahad Farsan in The Barrens.", x = 0.6263 },
             },
@@ -373,10 +361,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4488,
             alternativeQuests = { 3631, 4487, 4489 },
-            priority = 130,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.846, mapID = 1453, label = "Demisette Cloyce", x = 0.396, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
             },
@@ -404,7 +390,6 @@ ns:RegisterGuide({
             classAction = "accept-4488-summon-felsteed",
         },
         {
-            priority = 150,
             route = {
                 { y = 0.355, mapID = 1413, label = "Strahad Farsan", offMapText = "Travel to Strahad Farsan in The Barrens.", x = 0.6263 },
             },
@@ -455,10 +440,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4490,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.355, mapID = 1413, label = "Strahad Farsan", offMapText = "Travel to Strahad Farsan in The Barrens.", x = 0.6263 },
             },
@@ -492,7 +475,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Turn in Summon Felsteed to Strahad Farsan.",
             route = {
                 { y = 0.355, mapID = 1413, label = "Strahad Farsan", offMapText = "Travel to Strahad Farsan in The Barrens.", x = 0.6263 },
@@ -545,10 +527,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1286,
-            priority = 190,
         },
         {
-            priority = 200,
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },
             },
@@ -601,10 +581,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1260,
-            priority = 210,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.4547, mapID = 1445, label = "Morgan Stern", offMapText = "Travel to Morgan Stern in Dustwallow Marsh.", x = 0.6633 },
             },
@@ -632,7 +610,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             route = {
                 { y = 0.4547, mapID = 1445, label = "Morgan Stern", offMapText = "Travel to Morgan Stern in Dustwallow Marsh.", x = 0.6633 },
             },
@@ -660,7 +637,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             text = "Collect 8 Forked Mudrock Tongue.",
             route = {
                 { y = 0.426, mapID = 1445, label = "Mudrock Spikeshell", offMapText = "Travel to Mudrock Spikeshell.", x = 0.646 },
@@ -700,10 +676,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1177,
-            priority = 250,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.176, mapID = 1445, label = "Mirefin Coastrunner", offMapText = "Travel to Mirefin Coastrunner.", x = 0.586 },
             },
@@ -728,7 +702,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5544 },
             },
@@ -759,7 +732,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 280,
             route = {
                 { y = 0.1752, mapID = 1445, label = "\"Stinky\" Ignatz", offMapText = "Travel to \"Stinky\" Ignatz in Dustwallow Marsh.", x = 0.4689 },
             },
@@ -812,10 +784,8 @@ ns:RegisterGuide({
             },
             sourceStep = 22,
             dependsOn = { "accept-1222-stinky-s-escape" },
-            priority = 290,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.2464, mapID = 1445, label = "Private Hendel", offMapText = "Travel to Private Hendel in Dustwallow Marsh.", x = 0.4522 },
             },
@@ -849,7 +819,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "Kill Private Hendel.",
             route = {
                 { y = 0.2464, mapID = 1445, label = "Private Hendel", offMapText = "Travel to Private Hendel.", x = 0.4522 },
@@ -882,7 +851,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Turn in The Missing Diplomat to Archmage Tervosh.",
             route = {
                 { y = 0.243, mapID = 1445, label = "Archmage Tervosh", offMapText = "Travel to Archmage Tervosh in Dustwallow Marsh.", x = 0.4519 },
@@ -916,7 +884,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             route = {
                 { y = 0.2424, mapID = 1445, label = "Lady Jaina Proudmoore", offMapText = "Travel to Lady Jaina Proudmoore in Dustwallow Marsh.", x = 0.4522 },
             },
@@ -950,7 +917,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             text = "Collect 40 Unpopped Darkmist Eye.",
             route = {
                 { y = 0.2276, mapID = 1445, label = "Darkmist Silkspinner", offMapText = "Travel to Darkmist Silkspinner.", x = 0.3322 },
@@ -981,7 +947,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             text = "Turn in Jarl Needs Eyes to \"Swamp Eye\" Jarl.",
             route = {
                 { mapID = 1445, x = 0.5544, y = 0.2627, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh." },
@@ -1012,7 +977,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             route = {
                 { mapID = 1445, x = 0.5544, y = 0.2627, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh." },
             },
@@ -1043,7 +1007,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             text = "For Jarl Needs a Blade: Bring a Moonsteel Broadsword to Jarl in Dustwallow Marsh.",
             id = "objective-1203-quest-work",
             kind = "objective",
@@ -1071,7 +1034,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1203-jarl-needs-a-blade" },
         },
         {
-            priority = 380,
             text = "Turn in Jarl Needs a Blade to \"Swamp Eye\" Jarl.",
             route = {
                 { y = 0.2627, mapID = 1445, label = "\"Swamp Eye\" Jarl", offMapText = "Travel to \"Swamp Eye\" Jarl in Dustwallow Marsh.", x = 0.5544 },
@@ -1102,7 +1064,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             text = "Turn in Hungry! to Mudcrush Durtfeet.",
             route = {
                 { y = 0.3826, mapID = 1445, label = "Mudcrush Durtfeet", offMapText = "Travel to Mudcrush Durtfeet in Dustwallow Marsh.", x = 0.3515 },
@@ -1127,7 +1088,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             text = "Turn in The Deserters.",
             route = {
                 { y = 0.543, mapID = 1445, label = "The Deserters", offMapText = "Travel to The Deserters.", x = 0.3609 },
@@ -1161,7 +1121,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.543, mapID = 1445, label = "The Deserters", offMapText = "Travel to The Deserters.", x = 0.3609 },
             },
@@ -1213,7 +1172,6 @@ ns:RegisterGuide({
                 { mapID = 1445, x = 0.5407, y = 0.5649000000000001, label = "Razzeric's Tweaking", offMapText = "Travel to Razzeric's Tweaking." },
             },
             sourceStep = 33,
-            priority = 420,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1226,7 +1184,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Turn in Mudrock Soup and Bugs to Morgan Stern.",
             route = {
                 { y = 0.4547, mapID = 1445, label = "Morgan Stern", offMapText = "Travel to Morgan Stern in Dustwallow Marsh.", x = 0.6634 },
@@ -1254,7 +1211,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.4547, mapID = 1445, label = "Morgan Stern", offMapText = "Travel to Morgan Stern in Dustwallow Marsh.", x = 0.6634 },
             },
@@ -1288,7 +1244,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             text = "Turn in Stinky's Escape to Morgan Stern.",
             route = {
                 { y = 0.4547, mapID = 1445, label = "Morgan Stern", offMapText = "Travel to Morgan Stern in Dustwallow Marsh.", x = 0.6634 },
@@ -1316,7 +1271,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             text = "Turn in The Deserters to Captain Garran Vimes.",
             route = {
                 { y = 0.4862, mapID = 1445, label = "Captain Garran Vimes", offMapText = "Travel to Captain Garran Vimes in Dustwallow Marsh.", x = 0.6821 },

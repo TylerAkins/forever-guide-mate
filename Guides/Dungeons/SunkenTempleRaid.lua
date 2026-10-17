@@ -45,10 +45,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-sunken-temple-raid",
     title = "Sunken Temple Raid",
     category = "Raid Quests",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 25 } },
@@ -59,7 +60,6 @@ ns:RegisterGuide({
         {
             id = "accept-8250-magecraft",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 50 } },
             text = "Accept Magecraft from Maginor Dumas.",
             complete = QuestState(8250, "activeOrCompleted"),
@@ -70,7 +70,6 @@ ns:RegisterGuide({
         {
             id = "accept-8415-chillwind-point",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Chillwind Point from Lord Grayson Shadowbreaker.",
             complete = QuestState(8415, "activeOrCompleted"),
@@ -81,7 +80,6 @@ ns:RegisterGuide({
         {
             id = "accept-8254-cenarion-aid",
             kind = "accept",
-            priority = 12,
             conditions = { level = { min = 50 } },
             text = "Accept Cenarion Aid from Brother Joshua.",
             complete = QuestState(8254, "activeOrCompleted"),
@@ -92,7 +90,6 @@ ns:RegisterGuide({
         {
             id = "accept-8233-a-simple-request",
             kind = "accept",
-            priority = 13,
             conditions = { level = { min = 50 } },
             text = "Accept A Simple Request from Lord Tony Romano.",
             complete = QuestState(8233, "activeOrCompleted"),
@@ -103,7 +100,6 @@ ns:RegisterGuide({
         {
             id = "accept-8419-an-imp-s-request",
             kind = "accept",
-            priority = 14,
             conditions = { level = { min = 50 } },
             text = "Accept An Imp's Request from Demisette Cloyce.",
             complete = QuestState(8419, "activeOrCompleted"),
@@ -114,7 +110,6 @@ ns:RegisterGuide({
         {
             id = "accept-8417-a-troubled-spirit",
             kind = "accept",
-            priority = 15,
             conditions = { level = { min = 50 } },
             text = "Accept A Troubled Spirit from Wu Shen.",
             complete = QuestState(8417, "activeOrCompleted"),
@@ -125,7 +120,6 @@ ns:RegisterGuide({
         {
             id = "accept-9063-torwa-pathfinder-goto-darnassus-35-38-8-41",
             kind = "accept",
-            priority = 16,
             conditions = { level = { min = 50 } },
             text = "Accept Torwa Pathfinder|goto Darnassus 35.38,8.41 from Mathrengyl Bearwalker.",
             complete = QuestState(9063, "activeOrCompleted"),
@@ -136,7 +130,6 @@ ns:RegisterGuide({
         {
             id = "accept-8151-the-hunter-s-charm",
             kind = "accept",
-            priority = 17,
             conditions = { level = { min = 50 } },
             text = "Accept The Hunter's Charm from Ormak Grimshot.",
             complete = QuestState(8151, "activeOrCompleted"),
@@ -147,7 +140,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9063-torwa-pathfinder",
             kind = "turnin",
-            priority = 18,
             conditions = { level = { min = 50 } },
             text = "Turn in Torwa Pathfinder to Torwa Pathfinder.",
             dependsOn = { "accept-9063-torwa-pathfinder-goto-darnassus-35-38-8-41" },
@@ -159,7 +151,6 @@ ns:RegisterGuide({
         {
             id = "accept-9052-bloodpetal-poison",
             kind = "accept",
-            priority = 19,
             conditions = { level = { min = 50 } },
             text = "Accept Bloodpetal Poison from Torwa Pathfinder.",
             dependsOn = { "turnin-9063-torwa-pathfinder" },
@@ -171,7 +162,6 @@ ns:RegisterGuide({
         {
             id = "objective-9052-1-gorishi-sting",
             kind = "objective",
-            priority = 21,
             conditions = { level = { min = 50 } },
             text = "Collect 8 Gorishi Sting.",
             dependsOn = { "accept-9052-bloodpetal-poison" },
@@ -183,7 +173,6 @@ ns:RegisterGuide({
         {
             id = "objective-9052-2-bloodcap",
             kind = "objective",
-            priority = 23,
             conditions = { level = { min = 50 } },
             text = "Collect 8 Bloodcap.",
             dependsOn = { "accept-9052-bloodpetal-poison" },
@@ -195,7 +184,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9052-bloodpetal-poison",
             kind = "turnin",
-            priority = 24,
             conditions = { level = { min = 50 } },
             text = "Turn in Bloodpetal Poison to Torwa Pathfinder.",
             dependsOn = { "objective-9052-1-gorishi-sting", "objective-9052-2-bloodcap" },
@@ -207,7 +195,6 @@ ns:RegisterGuide({
         {
             id = "accept-9051-toxic-test",
             kind = "accept",
-            priority = 25,
             conditions = { level = { min = 50 } },
             text = "Accept Toxic Test from Torwa Pathfinder.",
             dependsOn = { "turnin-9052-bloodpetal-poison" },
@@ -219,7 +206,6 @@ ns:RegisterGuide({
         {
             id = "objective-9051-1-stab-a-devilsaur-with-th",
             kind = "objective",
-            priority = 26,
             conditions = { level = { min = 50 } },
             text = "Stab a Devilsaur with the Barb.",
             dependsOn = { "accept-9051-toxic-test" },
@@ -231,7 +217,6 @@ ns:RegisterGuide({
         {
             id = "turnin-9051-toxic-test",
             kind = "turnin",
-            priority = 27,
             conditions = { level = { min = 50 } },
             text = "Turn in Toxic Test to Torwa Pathfinder.",
             dependsOn = { "objective-9051-1-stab-a-devilsaur-with-th" },
@@ -243,7 +228,6 @@ ns:RegisterGuide({
         {
             id = "accept-9053-a-better-ingredient",
             kind = "accept",
-            priority = 28,
             conditions = { all = { { race = 4 }, { class = 11 }, { level = { min = 50 } } } },
             text = "Accept A Better Ingredient from Torwa Pathfinder.",
             dependsOn = { "turnin-9051-toxic-test" },
@@ -255,7 +239,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8151-the-hunter-s-charm",
             kind = "turnin",
-            priority = 29,
             conditions = { level = { min = 50 } },
             text = "Turn in The Hunter's Charm to Ogtinc.",
             dependsOn = { "accept-8151-the-hunter-s-charm" },
@@ -267,7 +250,6 @@ ns:RegisterGuide({
         {
             id = "accept-8153-courser-antlers",
             kind = "accept",
-            priority = 30,
             conditions = { level = { min = 50 } },
             text = "Accept Courser Antlers from Ogtinc.",
             dependsOn = { "turnin-8151-the-hunter-s-charm" },
@@ -279,7 +261,6 @@ ns:RegisterGuide({
         {
             id = "objective-8153-1-perfect-courser-antler",
             kind = "objective",
-            priority = 32,
             conditions = { level = { min = 50 } },
             text = "Collect 2 Perfect Courser Antler.",
             dependsOn = { "accept-8153-courser-antlers" },
@@ -291,7 +272,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8153-courser-antlers",
             kind = "turnin",
-            priority = 33,
             conditions = { level = { min = 50 } },
             text = "Turn in Courser Antlers to Ogtinc.",
             dependsOn = { "objective-8153-1-perfect-courser-antler" },
@@ -303,7 +283,6 @@ ns:RegisterGuide({
         {
             id = "accept-8231-wavethrashing",
             kind = "accept",
-            priority = 34,
             conditions = { level = { min = 50 } },
             text = "Accept Wavethrashing from Ogtinc.",
             dependsOn = { "turnin-8153-courser-antlers" },
@@ -315,7 +294,6 @@ ns:RegisterGuide({
         {
             id = "objective-8231-1-wavethrasher-scale",
             kind = "objective",
-            priority = 36,
             conditions = { level = { min = 50 } },
             text = "Collect 6 Wavethrasher Scale.",
             dependsOn = { "accept-8231-wavethrashing" },
@@ -327,7 +305,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8231-wavethrashing",
             kind = "turnin",
-            priority = 37,
             conditions = { level = { min = 50 } },
             text = "Turn in Wavethrashing to Ogtinc.",
             dependsOn = { "objective-8231-1-wavethrasher-scale" },
@@ -339,7 +316,6 @@ ns:RegisterGuide({
         {
             id = "accept-8232-the-green-drake",
             kind = "accept",
-            priority = 38,
             conditions = { all = { { class = 3 }, { level = { min = 50 } } } },
             text = "Accept The Green Drake from Ogtinc.",
             dependsOn = { "turnin-8231-wavethrashing" },
@@ -351,7 +327,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8250-magecraft",
             kind = "turnin",
-            priority = 39,
             conditions = { level = { min = 50 } },
             text = "Turn in Magecraft to Sanath Lim-yo.",
             dependsOn = { "accept-8250-magecraft" },
@@ -363,7 +338,6 @@ ns:RegisterGuide({
         {
             id = "accept-8251-magic-dust",
             kind = "accept",
-            priority = 40,
             conditions = { level = { min = 50 } },
             text = "Accept Magic Dust from Archmage Xylem.",
             complete = QuestState(8251, "activeOrCompleted"),
@@ -374,7 +348,6 @@ ns:RegisterGuide({
         {
             id = "objective-8251-1-glittering-dust",
             kind = "objective",
-            priority = 42,
             conditions = { level = { min = 50 } },
             text = "Collect 10 Glittering Dust.",
             dependsOn = { "accept-8251-magic-dust" },
@@ -386,7 +359,6 @@ ns:RegisterGuide({
         {
             id = "accept-3503-meeting-with-the-master",
             kind = "accept",
-            priority = 43,
             conditions = { level = { min = 51 } },
             text = "Accept Meeting with the Master from Sanath Lim-yo.",
             complete = QuestState(3503, "activeOrCompleted"),
@@ -397,7 +369,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8251-magic-dust",
             kind = "turnin",
-            priority = 44,
             conditions = { level = { min = 50 } },
             text = "Turn in Magic Dust to Archmage Xylem.",
             dependsOn = { "objective-8251-1-glittering-dust" },
@@ -409,7 +380,6 @@ ns:RegisterGuide({
         {
             id = "accept-8252-the-siren-s-coral",
             kind = "accept",
-            priority = 45,
             conditions = { level = { min = 50 } },
             text = "Accept The Siren's Coral from Archmage Xylem.",
             dependsOn = { "turnin-8251-magic-dust" },
@@ -421,7 +391,6 @@ ns:RegisterGuide({
         {
             id = "objective-8252-1-enchanted-coral",
             kind = "objective",
-            priority = 47,
             conditions = { level = { min = 50 } },
             text = "Collect 6 Enchanted Coral.",
             dependsOn = { "accept-8252-the-siren-s-coral" },
@@ -433,7 +402,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8252-the-siren-s-coral",
             kind = "turnin",
-            priority = 48,
             conditions = { level = { min = 50 } },
             text = "Turn in The Siren's Coral to Archmage Xylem.",
             dependsOn = { "objective-8252-1-enchanted-coral" },
@@ -445,7 +413,6 @@ ns:RegisterGuide({
         {
             id = "accept-8253-destroy-morphaz",
             kind = "accept",
-            priority = 49,
             conditions = { all = { { class = 8 }, { level = { min = 50 } } } },
             text = "Accept Destroy Morphaz from Archmage Xylem.",
             dependsOn = { "turnin-8252-the-siren-s-coral" },
@@ -457,7 +424,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8415-chillwind-point",
             kind = "turnin",
-            priority = 50,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Chillwind Point to Commander Ashlam Valorfist.",
             dependsOn = { "accept-8415-chillwind-point" },
@@ -469,7 +435,6 @@ ns:RegisterGuide({
         {
             id = "accept-8414-dispelling-evil",
             kind = "accept",
-            priority = 51,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Dispelling Evil from Commander Ashlam Valorfist.",
             dependsOn = { "turnin-8415-chillwind-point" },
@@ -481,7 +446,6 @@ ns:RegisterGuide({
         {
             id = "objective-8414-1-minion-s-scourgestone",
             kind = "objective",
-            priority = 53,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Collect 20 Minion's Scourgestone.",
             dependsOn = { "accept-8414-dispelling-evil" },
@@ -493,7 +457,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8414-dispelling-evil",
             kind = "turnin",
-            priority = 54,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Dispelling Evil to High Priest Thel'danis.",
             dependsOn = { "objective-8414-1-minion-s-scourgestone" },
@@ -505,7 +468,6 @@ ns:RegisterGuide({
         {
             id = "accept-8416-inert-scourgestones",
             kind = "accept",
-            priority = 55,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Inert Scourgestones from High Priest Thel'danis.",
             dependsOn = { "turnin-8414-dispelling-evil" },
@@ -517,7 +479,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8416-inert-scourgestones",
             kind = "turnin",
-            priority = 56,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Inert Scourgestones to Commander Ashlam Valorfist.",
             dependsOn = { "accept-8416-inert-scourgestones" },
@@ -529,7 +490,6 @@ ns:RegisterGuide({
         {
             id = "accept-8418-forging-the-mightstone",
             kind = "accept",
-            priority = 57,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 50 } } } },
             text = "Accept Forging the Mightstone from Commander Ashlam Valorfist.",
             dependsOn = { "turnin-8416-inert-scourgestones" },
@@ -541,7 +501,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8254-cenarion-aid",
             kind = "turnin",
-            priority = 58,
             conditions = { level = { min = 50 } },
             text = "Turn in Cenarion Aid to Ogtinc.",
             dependsOn = { "accept-8254-cenarion-aid" },
@@ -553,7 +512,6 @@ ns:RegisterGuide({
         {
             id = "accept-8255-of-coursers-we-know",
             kind = "accept",
-            priority = 59,
             conditions = { level = { min = 50 } },
             text = "Accept Of Coursers We know from Ogtinc.",
             dependsOn = { "turnin-8254-cenarion-aid" },
@@ -565,7 +523,6 @@ ns:RegisterGuide({
         {
             id = "objective-8255-1-healthy-courser-gland",
             kind = "objective",
-            priority = 60,
             conditions = { level = { min = 50 } },
             text = "Collect 4 Healthy Courser Gland.",
             dependsOn = { "accept-8255-of-coursers-we-know" },
@@ -577,7 +534,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8255-of-coursers-we-know",
             kind = "turnin",
-            priority = 61,
             conditions = { level = { min = 50 } },
             text = "Turn in Of Coursers We know to Ogtinc.",
             dependsOn = { "objective-8255-1-healthy-courser-gland" },
@@ -589,7 +545,6 @@ ns:RegisterGuide({
         {
             id = "accept-8256-the-ichor-of-undeath",
             kind = "accept",
-            priority = 62,
             conditions = { level = { min = 50 } },
             text = "Accept The Ichor of Undeath from Ogtinc.",
             dependsOn = { "turnin-8255-of-coursers-we-know" },
@@ -601,7 +556,6 @@ ns:RegisterGuide({
         {
             id = "objective-8256-1-ichor-of-undeath",
             kind = "objective",
-            priority = 64,
             conditions = { level = { min = 50 } },
             text = "Collect Ichor of Undeath.",
             dependsOn = { "accept-8256-the-ichor-of-undeath" },
@@ -613,7 +567,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8256-the-ichor-of-undeath",
             kind = "turnin",
-            priority = 65,
             conditions = { level = { min = 50 } },
             text = "Turn in The Ichor of Undeath to Ogtinc.",
             dependsOn = { "objective-8256-1-ichor-of-undeath" },
@@ -625,7 +578,6 @@ ns:RegisterGuide({
         {
             id = "accept-8257-blood-of-morphaz",
             kind = "accept",
-            priority = 66,
             conditions = { all = { { class = 5 }, { level = { min = 50 } } } },
             text = "Accept Blood of Morphaz from Ogtinc.",
             dependsOn = { "turnin-8256-the-ichor-of-undeath" },
@@ -637,7 +589,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8233-a-simple-request",
             kind = "turnin",
-            priority = 67,
             conditions = { level = { min = 50 } },
             text = "Turn in A Simple Request to Lord Jorach Ravenholdt.",
             dependsOn = { "accept-8233-a-simple-request" },
@@ -649,7 +600,6 @@ ns:RegisterGuide({
         {
             id = "accept-8234-sealed-azure-bag",
             kind = "accept",
-            priority = 68,
             conditions = { level = { min = 50 } },
             text = "Accept Sealed Azure Bag from Lord Jorach Ravenholdt.",
             dependsOn = { "turnin-8233-a-simple-request" },
@@ -661,7 +611,6 @@ ns:RegisterGuide({
         {
             id = "objective-8234-1-sealed-azure-bag",
             kind = "objective",
-            priority = 70,
             conditions = { level = { min = 50 } },
             text = "Collect Sealed Azure Bag.",
             dependsOn = { "accept-8234-sealed-azure-bag" },
@@ -673,7 +622,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8234-sealed-azure-bag",
             kind = "turnin",
-            priority = 71,
             conditions = { level = { min = 50 } },
             text = "Turn in Sealed Azure Bag to Archmage Xylem.",
             dependsOn = { "objective-8234-1-sealed-azure-bag" },
@@ -685,7 +633,6 @@ ns:RegisterGuide({
         {
             id = "accept-8235-encoded-fragments",
             kind = "accept",
-            priority = 72,
             conditions = { level = { min = 50 } },
             text = "Accept Encoded Fragments from Archmage Xylem.",
             dependsOn = { "turnin-8234-sealed-azure-bag" },
@@ -697,7 +644,6 @@ ns:RegisterGuide({
         {
             id = "accept-3421-return-trip",
             kind = "accept",
-            priority = 73,
             conditions = { level = { min = 51 } },
             text = "Accept Return Trip from Nyrill.",
             complete = QuestState(3421, "activeOrCompleted"),
@@ -708,7 +654,6 @@ ns:RegisterGuide({
         {
             id = "objective-8235-1-encoded-fragment",
             kind = "objective",
-            priority = 75,
             conditions = { level = { min = 50 } },
             text = "Collect 10 Encoded Fragment.",
             dependsOn = { "accept-8235-encoded-fragments" },
@@ -720,7 +665,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8235-encoded-fragments",
             kind = "turnin",
-            priority = 76,
             conditions = { level = { min = 50 } },
             text = "Turn in Encoded Fragments to Archmage Xylem.",
             dependsOn = { "objective-8235-1-encoded-fragment" },
@@ -732,7 +676,6 @@ ns:RegisterGuide({
         {
             id = "accept-8236-the-azure-key",
             kind = "accept",
-            priority = 77,
             conditions = { all = { { class = 4 }, { level = { min = 50 } } } },
             text = "Accept The Azure Key from Archmage Xylem.",
             dependsOn = { "turnin-8235-encoded-fragments" },
@@ -744,7 +687,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8419-an-imp-s-request",
             kind = "turnin",
-            priority = 78,
             conditions = { level = { min = 50 } },
             text = "Turn in An Imp's Request to Impsy.",
             dependsOn = { "accept-8419-an-imp-s-request" },
@@ -756,7 +698,6 @@ ns:RegisterGuide({
         {
             id = "accept-8421-the-wrong-stuff",
             kind = "accept",
-            priority = 79,
             conditions = { level = { min = 50 } },
             text = "Accept The Wrong Stuff from Impsy.",
             dependsOn = { "turnin-8419-an-imp-s-request" },
@@ -768,7 +709,6 @@ ns:RegisterGuide({
         {
             id = "objective-8421-2-bloodvenom-essence",
             kind = "objective",
-            priority = 81,
             conditions = { level = { min = 50 } },
             text = "Collect 4 Bloodvenom Essence.",
             dependsOn = { "accept-8421-the-wrong-stuff" },
@@ -780,7 +720,6 @@ ns:RegisterGuide({
         {
             id = "objective-8421-1-rotting-wood",
             kind = "objective",
-            priority = 82,
             conditions = { level = { min = 50 } },
             text = "Collect 10 Rotting Wood.",
             dependsOn = { "accept-8421-the-wrong-stuff" },
@@ -792,7 +731,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8421-the-wrong-stuff",
             kind = "turnin",
-            priority = 83,
             conditions = { level = { min = 50 } },
             text = "Turn in The Wrong Stuff to Impsy.",
             dependsOn = { "objective-8421-2-bloodvenom-essence", "objective-8421-1-rotting-wood" },
@@ -804,7 +742,6 @@ ns:RegisterGuide({
         {
             id = "accept-8422-trolls-of-a-feather",
             kind = "accept",
-            priority = 84,
             conditions = { all = { { class = 9 }, { level = { min = 50 } } } },
             text = "Accept Trolls of a Feather from Impsy.",
             dependsOn = { "turnin-8421-the-wrong-stuff" },
@@ -816,7 +753,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8417-a-troubled-spirit",
             kind = "turnin",
-            priority = 85,
             conditions = { level = { min = 50 } },
             text = "Turn in A Troubled Spirit to Fallen Hero of the Horde.",
             dependsOn = { "accept-8417-a-troubled-spirit" },
@@ -828,7 +764,6 @@ ns:RegisterGuide({
         {
             id = "accept-8423-warrior-kinship",
             kind = "accept",
-            priority = 86,
             conditions = { level = { min = 50 } },
             text = "Accept Warrior Kinship from Fallen Hero of the Horde.",
             dependsOn = { "turnin-8417-a-troubled-spirit" },
@@ -840,7 +775,6 @@ ns:RegisterGuide({
         {
             id = "objective-8423-1-helboar",
             kind = "objective",
-            priority = 87,
             conditions = { level = { min = 50 } },
             text = "Kill 7 Helboar.",
             dependsOn = { "accept-8423-warrior-kinship" },
@@ -852,7 +786,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8423-warrior-kinship",
             kind = "turnin",
-            priority = 88,
             conditions = { level = { min = 50 } },
             text = "Turn in Warrior Kinship to Fallen Hero of the Horde.",
             dependsOn = { "objective-8423-1-helboar" },
@@ -864,7 +797,6 @@ ns:RegisterGuide({
         {
             id = "accept-8424-war-on-the-shadowsworn",
             kind = "accept",
-            priority = 89,
             conditions = { level = { min = 50 } },
             text = "Accept War on the Shadowsworn from Fallen Hero of the Horde.",
             dependsOn = { "turnin-8423-warrior-kinship" },
@@ -876,7 +808,6 @@ ns:RegisterGuide({
         {
             id = "objective-8424-1-shadowsworn-adept",
             kind = "objective",
-            priority = 90,
             conditions = { level = { min = 50 } },
             text = "Kill 20 Shadowsworn Adept.",
             dependsOn = { "accept-8424-war-on-the-shadowsworn" },
@@ -888,7 +819,6 @@ ns:RegisterGuide({
         {
             id = "objective-8424-2-shadowsworn-cultist",
             kind = "objective",
-            priority = 91,
             conditions = { level = { min = 50 } },
             text = "Kill 10 Shadowsworn Cultist.",
             dependsOn = { "accept-8424-war-on-the-shadowsworn" },
@@ -900,7 +830,6 @@ ns:RegisterGuide({
         {
             id = "objective-8424-3-shadowsworn-thug",
             kind = "objective",
-            priority = 92,
             conditions = { level = { min = 50 } },
             text = "Kill 20 Shadowsworn Thug.",
             dependsOn = { "accept-8424-war-on-the-shadowsworn" },
@@ -912,7 +841,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8424-war-on-the-shadowsworn",
             kind = "turnin",
-            priority = 93,
             conditions = { level = { min = 50 } },
             text = "Turn in War on the Shadowsworn to Fallen Hero of the Horde.",
             dependsOn = { "objective-8424-1-shadowsworn-adept", "objective-8424-2-shadowsworn-cultist", "objective-8424-3-shadowsworn-thug" },
@@ -924,7 +852,6 @@ ns:RegisterGuide({
         {
             id = "accept-8425-voodoo-feathers",
             kind = "accept",
-            priority = 94,
             conditions = { all = { { class = 1 }, { level = { min = 50 } } } },
             text = "Accept Voodoo Feathers from Fallen Hero of the Horde.",
             dependsOn = { "turnin-8424-war-on-the-shadowsworn" },
@@ -936,7 +863,6 @@ ns:RegisterGuide({
         {
             id = "accept-1448-in-search-of-the-temple",
             kind = "accept",
-            priority = 95,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
             text = "Accept In Search of The Temple from Brohann Caskbelly.",
             complete = QuestState(1448, "activeOrCompleted"),
@@ -947,7 +873,6 @@ ns:RegisterGuide({
         {
             id = "objective-1448-1-search-for-the-temple-of",
             kind = "objective",
-            priority = 96,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
             text = "Search for the Temple of Atal'Hakkar.",
             dependsOn = { "accept-1448-in-search-of-the-temple" },
@@ -959,7 +884,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1448-in-search-of-the-temple",
             kind = "turnin",
-            priority = 97,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
             text = "Turn in In Search of The Temple to Brohann Caskbelly.",
             dependsOn = { "objective-1448-1-search-for-the-temple-of" },
@@ -971,7 +895,6 @@ ns:RegisterGuide({
         {
             id = "accept-1449-to-the-hinterlands",
             kind = "accept",
-            priority = 98,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Accept To The Hinterlands from Brohann Caskbelly.",
             dependsOn = { "turnin-1448-in-search-of-the-temple" },
@@ -983,7 +906,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1449-to-the-hinterlands",
             kind = "turnin",
-            priority = 99,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Turn in To The Hinterlands to Falstad Wildhammer.",
             dependsOn = { "accept-1449-to-the-hinterlands" },
@@ -995,7 +917,6 @@ ns:RegisterGuide({
         {
             id = "accept-1450-gryphon-master-talonaxe",
             kind = "accept",
-            priority = 100,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Accept Gryphon Master Talonaxe from Falstad Wildhammer.",
             dependsOn = { "turnin-1449-to-the-hinterlands" },
@@ -1007,7 +928,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1450-gryphon-master-talonaxe",
             kind = "turnin",
-            priority = 101,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Turn in Gryphon Master Talonaxe to Gryphon Master Talonaxe.",
             dependsOn = { "accept-1450-gryphon-master-talonaxe" },
@@ -1019,7 +939,6 @@ ns:RegisterGuide({
         {
             id = "accept-1451-rhapsody-shindigger",
             kind = "accept",
-            priority = 102,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Accept Rhapsody Shindigger from Gryphon Master Talonaxe.",
             dependsOn = { "turnin-1450-gryphon-master-talonaxe" },
@@ -1031,7 +950,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1451-rhapsody-shindigger",
             kind = "turnin",
-            priority = 103,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Turn in Rhapsody Shindigger to Rhapsody Shindigger.",
             dependsOn = { "accept-1451-rhapsody-shindigger" },
@@ -1043,7 +961,6 @@ ns:RegisterGuide({
         {
             id = "accept-1452-rhapsody-s-kalimdor-kocktail",
             kind = "accept",
-            priority = 104,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Accept Rhapsody's Kalimdor Kocktail from Rhapsody Shindigger.",
             dependsOn = { "turnin-1451-rhapsody-shindigger" },
@@ -1055,7 +972,6 @@ ns:RegisterGuide({
         {
             id = "objective-1452-1-roc-gizzard",
             kind = "objective",
-            priority = 106,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Collect 3 Roc Gizzard.",
             dependsOn = { "accept-1452-rhapsody-s-kalimdor-kocktail" },
@@ -1067,7 +983,6 @@ ns:RegisterGuide({
         {
             id = "accept-3445-the-sunken-temple",
             kind = "accept",
-            priority = 107,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Accept The Sunken Temple from Angelas Moonbreeze.",
             complete = QuestState(3445, "activeOrCompleted"),
@@ -1078,7 +993,6 @@ ns:RegisterGuide({
         {
             id = "objective-1452-2-ironfur-liver",
             kind = "objective",
-            priority = 109,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Collect 3 Ironfur Liver.",
             dependsOn = { "accept-1452-rhapsody-s-kalimdor-kocktail" },
@@ -1090,7 +1004,6 @@ ns:RegisterGuide({
         {
             id = "objective-1452-3-groddoc-liver",
             kind = "objective",
-            priority = 111,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Collect 3 Groddoc Liver.",
             dependsOn = { "accept-1452-rhapsody-s-kalimdor-kocktail" },
@@ -1102,7 +1015,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1452-rhapsody-s-kalimdor-kocktail",
             kind = "turnin",
-            priority = 112,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Turn in Rhapsody's Kalimdor Kocktail to Rhapsody Shindigger.",
             dependsOn = { "objective-1452-1-roc-gizzard", "objective-1452-2-ironfur-liver", "objective-1452-3-groddoc-liver" },
@@ -1114,7 +1026,6 @@ ns:RegisterGuide({
         {
             id = "accept-1469-rhapsody-s-tale",
             kind = "accept",
-            priority = 113,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Rhapsody's Tale from Rhapsody Shindigger.",
             dependsOn = { "turnin-1452-rhapsody-s-kalimdor-kocktail" },
@@ -1126,7 +1037,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1469-rhapsody-s-tale",
             kind = "turnin",
-            priority = 114,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Rhapsody's Tale to Brohann Caskbelly.",
             dependsOn = { "accept-1469-rhapsody-s-tale" },
@@ -1138,7 +1048,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3445-the-sunken-temple",
             kind = "turnin",
-            priority = 116,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Turn in The Sunken Temple to Marvon Rivetseeker.",
             dependsOn = { "accept-3445-the-sunken-temple" },
@@ -1150,7 +1059,6 @@ ns:RegisterGuide({
         {
             id = "accept-3444-the-stone-circle",
             kind = "accept",
-            priority = 117,
             conditions = { level = { min = 53 } },
             text = "Accept The Stone Circle from Marvon Rivetseeker.",
             dependsOn = { "turnin-3445-the-sunken-temple" },
@@ -1162,7 +1070,6 @@ ns:RegisterGuide({
         {
             id = "objective-3444-1-stone-circle",
             kind = "objective",
-            priority = 119,
             conditions = { level = { min = 53 } },
             text = "Collect Stone Circle.",
             dependsOn = { "accept-3444-the-stone-circle" },
@@ -1174,7 +1081,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3444-the-stone-circle",
             kind = "turnin",
-            priority = 120,
             conditions = { level = { min = 53 } },
             text = "Turn in The Stone Circle to Marvon Rivetseeker.",
             dependsOn = { "objective-3444-1-stone-circle" },
@@ -1186,7 +1092,6 @@ ns:RegisterGuide({
         {
             id = "accept-3446-into-the-depths",
             kind = "accept",
-            priority = 121,
             conditions = { level = { min = 46 } },
             text = "Accept Into the Depths from Marvon Rivetseeker.",
             dependsOn = { "turnin-3444-the-stone-circle" },
@@ -1198,7 +1103,6 @@ ns:RegisterGuide({
         {
             id = "accept-3520-screecher-spirits",
             kind = "accept",
-            priority = 122,
             conditions = { level = { min = 49 } },
             text = "Accept Screecher Spirits from Yeh'kinya.",
             complete = QuestState(3520, "activeOrCompleted"),
@@ -1209,7 +1113,6 @@ ns:RegisterGuide({
         {
             id = "objective-3520-1-screecher-spirits",
             kind = "objective",
-            priority = 124,
             conditions = { level = { min = 49 } },
             text = "Collect 3 Screecher Spirits.",
             dependsOn = { "accept-3520-screecher-spirits" },
@@ -1221,7 +1124,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3520-screecher-spirits",
             kind = "turnin",
-            priority = 125,
             conditions = { level = { min = 49 } },
             text = "Turn in Screecher Spirits to Yeh'kinya.",
             dependsOn = { "objective-3520-1-screecher-spirits" },
@@ -1233,7 +1135,6 @@ ns:RegisterGuide({
         {
             id = "accept-3527-the-prophecy-of-mosh-aru",
             kind = "accept",
-            priority = 126,
             conditions = { level = { min = 46 } },
             text = "Accept The Prophecy of Mosh'aru from Yeh'kinya.",
             dependsOn = { "turnin-3520-screecher-spirits" },
@@ -1245,7 +1146,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 127,
             conditions = { level = { min = 25 } },
             text = "Enter Zul'Farrak with your group.",
             dependsOn = { "accept-8250-magecraft", "accept-8415-chillwind-point", "accept-8254-cenarion-aid", "accept-8233-a-simple-request", "accept-8419-an-imp-s-request", "accept-8417-a-troubled-spirit", "accept-9063-torwa-pathfinder-goto-darnassus-35-38-8-41", "accept-8151-the-hunter-s-charm", "accept-9052-bloodpetal-poison", "accept-9051-toxic-test", "accept-9053-a-better-ingredient", "accept-8153-courser-antlers", "accept-8231-wavethrashing", "accept-8232-the-green-drake", "accept-8251-magic-dust", "accept-3503-meeting-with-the-master", "accept-8252-the-siren-s-coral", "accept-8253-destroy-morphaz", "accept-8414-dispelling-evil", "accept-8416-inert-scourgestones", "accept-8418-forging-the-mightstone", "accept-8255-of-coursers-we-know", "accept-8256-the-ichor-of-undeath", "accept-8257-blood-of-morphaz", "accept-8234-sealed-azure-bag", "accept-8235-encoded-fragments", "accept-3421-return-trip", "accept-8236-the-azure-key", "accept-8421-the-wrong-stuff", "accept-8422-trolls-of-a-feather", "accept-8423-warrior-kinship", "accept-8424-war-on-the-shadowsworn", "accept-8425-voodoo-feathers", "accept-1448-in-search-of-the-temple", "accept-1449-to-the-hinterlands", "accept-1450-gryphon-master-talonaxe", "accept-1451-rhapsody-shindigger", "accept-1452-rhapsody-s-kalimdor-kocktail", "accept-3445-the-sunken-temple", "accept-1469-rhapsody-s-tale", "accept-3444-the-stone-circle", "accept-3446-into-the-depths", "accept-3520-screecher-spirits", "accept-3527-the-prophecy-of-mosh-aru" },
@@ -1255,7 +1155,6 @@ ns:RegisterGuide({
         {
             id = "objective-3527-1-first-mosh-aru-tablet",
             kind = "objective",
-            priority = 129,
             conditions = { level = { min = 46 } },
             text = "Collect First Mosh'aru Tablet.",
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
@@ -1265,7 +1164,6 @@ ns:RegisterGuide({
         {
             id = "objective-3527-2-second-mosh-aru-tablet",
             kind = "objective",
-            priority = 131,
             conditions = { level = { min = 46 } },
             text = "Collect Second Mosh'aru Tablet.",
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
@@ -1275,7 +1173,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3527-the-prophecy-of-mosh-aru",
             kind = "turnin",
-            priority = 134,
             conditions = { level = { min = 46 } },
             text = "Turn in The Prophecy of Mosh'aru to Yeh'kinya.",
             dependsOn = { "objective-3527-1-first-mosh-aru-tablet", "objective-3527-2-second-mosh-aru-tablet" },
@@ -1285,7 +1182,6 @@ ns:RegisterGuide({
         {
             id = "accept-4787-the-ancient-egg",
             kind = "accept",
-            priority = 135,
             conditions = { level = { min = 40 } },
             text = "Accept The Ancient Egg from Yeh'kinya.",
             dependsOn = { "turnin-3527-the-prophecy-of-mosh-aru" },
@@ -1294,7 +1190,6 @@ ns:RegisterGuide({
         {
             id = "objective-4787-1-ancient-egg",
             kind = "objective",
-            priority = 138,
             conditions = { level = { min = 40 } },
             text = "Collect Ancient Egg.",
             dependsOn = { "accept-4787-the-ancient-egg" },
@@ -1306,7 +1201,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4787-the-ancient-egg",
             kind = "turnin",
-            priority = 139,
             conditions = { level = { min = 40 } },
             text = "Turn in The Ancient Egg to Yeh'kinya.",
             dependsOn = { "objective-4787-1-ancient-egg" },
@@ -1318,7 +1212,6 @@ ns:RegisterGuide({
         {
             id = "accept-4141-muigin-and-larion",
             kind = "accept",
-            priority = 141,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Accept Muigin and Larion from Muigin.",
             complete = QuestState(4141, "activeOrCompleted"),
@@ -1329,7 +1222,6 @@ ns:RegisterGuide({
         {
             id = "objective-4141-1-bloodpetal",
             kind = "objective",
-            priority = 143,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Collect 15 Bloodpetal.",
             dependsOn = { "accept-4141-muigin-and-larion" },
@@ -1341,7 +1233,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4141-muigin-and-larion",
             kind = "turnin",
-            priority = 144,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Turn in Muigin and Larion to Muigin.",
             dependsOn = { "objective-4141-1-bloodpetal" },
@@ -1353,7 +1244,6 @@ ns:RegisterGuide({
         {
             id = "accept-4142-a-visit-to-gregan",
             kind = "accept",
-            priority = 145,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 52 } } } },
             text = "Accept A Visit to Gregan from Muigin.",
             dependsOn = { "turnin-4141-muigin-and-larion" },
@@ -1365,7 +1255,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4142-a-visit-to-gregan",
             kind = "turnin",
-            priority = 146,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 52 } } } },
             text = "Turn in A Visit to Gregan to Gregan Brewspewer.",
             dependsOn = { "accept-4142-a-visit-to-gregan" },
@@ -1377,7 +1266,6 @@ ns:RegisterGuide({
         {
             id = "objective-9053-1-putrid-vine",
             kind = "objective",
-            priority = 152,
             conditions = { all = { { race = 4 }, { class = 11 }, { level = { min = 50 } } } },
             text = "Collect Putrid Vine.",
             dependsOn = { "accept-9053-a-better-ingredient" },
@@ -1387,7 +1275,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3446-into-the-depths",
             kind = "turnin",
-            priority = 154,
             conditions = { level = { min = 46 } },
             text = "Turn in Into the Depths.",
             dependsOn = { "accept-3446-into-the-depths" },
@@ -1397,7 +1284,6 @@ ns:RegisterGuide({
         {
             id = "accept-3447-secret-of-the-circle",
             kind = "accept",
-            priority = 155,
             conditions = { level = { min = 46 } },
             text = "Accept Secret of the Circle.",
             dependsOn = { "turnin-3446-into-the-depths" },
@@ -1406,7 +1292,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3447-secret-of-the-circle",
             kind = "turnin",
-            priority = 157,
             conditions = { level = { min = 46 } },
             text = "Turn in Secret of the Circle.",
             dependsOn = { "accept-3447-secret-of-the-circle" },
@@ -1416,7 +1301,6 @@ ns:RegisterGuide({
         {
             id = "objective-8418-1-amber-voodoo-feather",
             kind = "objective",
-            priority = 159,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 50 } } } },
             text = "Collect 2 Amber Voodoo Feather.",
             dependsOn = { "accept-8418-forging-the-mightstone" },
@@ -1426,7 +1310,6 @@ ns:RegisterGuide({
         {
             id = "objective-8422-1-amber-voodoo-feather",
             kind = "objective",
-            priority = 160,
             conditions = { all = { { class = 9 }, { level = { min = 50 } } } },
             text = "Collect 2 Amber Voodoo Feather.",
             dependsOn = { "accept-8422-trolls-of-a-feather" },
@@ -1436,7 +1319,6 @@ ns:RegisterGuide({
         {
             id = "objective-8425-1-amber-voodoo-feather",
             kind = "objective",
-            priority = 161,
             conditions = { all = { { class = 1 }, { level = { min = 50 } } } },
             text = "Collect 2 Amber Voodoo Feather.",
             dependsOn = { "accept-8425-voodoo-feathers" },
@@ -1446,7 +1328,6 @@ ns:RegisterGuide({
         {
             id = "objective-8418-2-blue-voodoo-feather",
             kind = "objective",
-            priority = 162,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 50 } } } },
             text = "Collect 2 Blue Voodoo Feather.",
             dependsOn = { "accept-8418-forging-the-mightstone" },
@@ -1456,7 +1337,6 @@ ns:RegisterGuide({
         {
             id = "objective-8422-2-blue-voodoo-feather",
             kind = "objective",
-            priority = 163,
             conditions = { all = { { class = 9 }, { level = { min = 50 } } } },
             text = "Collect 2 Blue Voodoo Feather.",
             dependsOn = { "accept-8422-trolls-of-a-feather" },
@@ -1466,7 +1346,6 @@ ns:RegisterGuide({
         {
             id = "objective-8425-2-blue-voodoo-feather",
             kind = "objective",
-            priority = 164,
             conditions = { all = { { class = 1 }, { level = { min = 50 } } } },
             text = "Collect 2 Blue Voodoo Feather.",
             dependsOn = { "accept-8425-voodoo-feathers" },
@@ -1476,7 +1355,6 @@ ns:RegisterGuide({
         {
             id = "objective-8418-3-green-voodoo-feather",
             kind = "objective",
-            priority = 165,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 50 } } } },
             text = "Collect 2 Green Voodoo Feather.",
             dependsOn = { "accept-8418-forging-the-mightstone" },
@@ -1486,7 +1364,6 @@ ns:RegisterGuide({
         {
             id = "objective-8422-3-green-voodoo-feather",
             kind = "objective",
-            priority = 166,
             conditions = { all = { { class = 9 }, { level = { min = 50 } } } },
             text = "Collect 2 Green Voodoo Feather.",
             dependsOn = { "accept-8422-trolls-of-a-feather" },
@@ -1496,7 +1373,6 @@ ns:RegisterGuide({
         {
             id = "objective-8425-3-green-voodoo-feather",
             kind = "objective",
-            priority = 167,
             conditions = { all = { { class = 1 }, { level = { min = 50 } } } },
             text = "Collect 2 Green Voodoo Feather.",
             dependsOn = { "accept-8425-voodoo-feathers" },
@@ -1506,7 +1382,6 @@ ns:RegisterGuide({
         {
             id = "objective-8232-1-tooth-of-morphaz",
             kind = "objective",
-            priority = 171,
             conditions = { all = { { class = 3 }, { level = { min = 50 } } } },
             text = "Collect Tooth of Morphaz.",
             dependsOn = { "accept-8232-the-green-drake" },
@@ -1516,7 +1391,6 @@ ns:RegisterGuide({
         {
             id = "objective-8253-1-arcane-shard",
             kind = "objective",
-            priority = 172,
             conditions = { all = { { class = 8 }, { level = { min = 50 } } } },
             text = "Collect Arcane Shard.",
             dependsOn = { "accept-8253-destroy-morphaz" },
@@ -1526,7 +1400,6 @@ ns:RegisterGuide({
         {
             id = "objective-8257-1-blood-of-morphaz",
             kind = "objective",
-            priority = 173,
             conditions = { all = { { class = 5 }, { level = { min = 50 } } } },
             text = "Collect Blood of Morphaz.",
             dependsOn = { "accept-8257-blood-of-morphaz" },
@@ -1536,7 +1409,6 @@ ns:RegisterGuide({
         {
             id = "objective-8236-1-azure-key",
             kind = "objective",
-            priority = 174,
             conditions = { all = { { class = 4 }, { level = { min = 50 } } } },
             text = "Collect Azure Key.",
             dependsOn = { "accept-8236-the-azure-key" },
@@ -1546,16 +1418,23 @@ ns:RegisterGuide({
         {
             id = "objective-1445-1-fetish-of-hakkar",
             kind = "objective",
-            priority = 183,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
             text = "Collect 20 Fetish of Hakkar.",
             complete = QuestState(1445, "complete"),
             useClientPin = true,
         },
         {
+            id = "objective-9053-1-putrid-vine-2",
+            kind = "objective",
+            conditions = { all = { { race = 4 }, { class = 11 }, { level = { min = 50 } } } },
+            text = "Collect Putrid Vine.",
+            dependsOn = { "accept-9053-a-better-ingredient" },
+            complete = QuestState(9053, "complete"),
+            useClientPin = true,
+        },
+        {
             id = "turnin-9053-a-better-ingredient",
             kind = "turnin",
-            priority = 191,
             conditions = { all = { { race = 4 }, { class = 11 }, { level = { min = 50 } } } },
             text = "Turn in A Better Ingredient to Torwa Pathfinder.",
             dependsOn = { "objective-9053-1-putrid-vine", "objective-9053-1-putrid-vine-2" },
@@ -1567,7 +1446,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8232-the-green-drake",
             kind = "turnin",
-            priority = 192,
             conditions = { all = { { class = 3 }, { level = { min = 50 } } } },
             text = "Turn in The Green Drake to Ogtinc.",
             dependsOn = { "objective-8232-1-tooth-of-morphaz" },
@@ -1579,7 +1457,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8253-destroy-morphaz",
             kind = "turnin",
-            priority = 193,
             conditions = { all = { { class = 8 }, { level = { min = 50 } } } },
             text = "Turn in Destroy Morphaz to Archmage Xylem.",
             dependsOn = { "objective-8253-1-arcane-shard" },
@@ -1591,7 +1468,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8418-forging-the-mightstone",
             kind = "turnin",
-            priority = 194,
             conditions = { all = { { faction = "Alliance" }, { class = 2 }, { level = { min = 50 } } } },
             text = "Turn in Forging the Mightstone to Commander Ashlam Valorfist.",
             dependsOn = { "objective-8418-1-amber-voodoo-feather", "objective-8418-2-blue-voodoo-feather", "objective-8418-3-green-voodoo-feather" },
@@ -1603,7 +1479,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8257-blood-of-morphaz",
             kind = "turnin",
-            priority = 195,
             conditions = { all = { { class = 5 }, { level = { min = 50 } } } },
             text = "Turn in Blood of Morphaz to Greta Mosshoof.",
             dependsOn = { "objective-8257-1-blood-of-morphaz" },
@@ -1615,7 +1490,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8236-the-azure-key-goto-alterac-mountains-86-03",
             kind = "turnin",
-            priority = 196,
             conditions = { all = { { class = 4 }, { level = { min = 50 } } } },
             text = "Turn in The Azure Key|goto Alterac Mountains 86.03,78.88 to Lord Jorach Ravenholdt.",
             dependsOn = { "objective-8236-1-azure-key" },
@@ -1625,7 +1499,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8422-trolls-of-a-feather",
             kind = "turnin",
-            priority = 197,
             conditions = { all = { { class = 9 }, { level = { min = 50 } } } },
             text = "Turn in Trolls of a Feather to Impsy.",
             dependsOn = { "objective-8422-1-amber-voodoo-feather", "objective-8422-2-blue-voodoo-feather", "objective-8422-3-green-voodoo-feather" },
@@ -1637,7 +1510,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8425-voodoo-feathers",
             kind = "turnin",
-            priority = 198,
             conditions = { all = { { class = 1 }, { level = { min = 50 } } } },
             text = "Turn in Voodoo Feathers to Fallen Hero of the Horde.",
             dependsOn = { "objective-8425-1-amber-voodoo-feather", "objective-8425-2-blue-voodoo-feather", "objective-8425-3-green-voodoo-feather" },
@@ -1649,7 +1521,6 @@ ns:RegisterGuide({
         {
             id = "accept-8410-elemental-mastery",
             kind = "accept",
-            priority = 199,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Accept Elemental Mastery from Beram Skychaser.",
             complete = QuestState(8410, "activeOrCompleted"),
@@ -1660,7 +1531,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8410-elemental-mastery",
             kind = "turnin",
-            priority = 201,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Turn in Elemental Mastery to Bath'rah the Windwatcher.",
             dependsOn = { "accept-8410-elemental-mastery" },
@@ -1672,7 +1542,6 @@ ns:RegisterGuide({
         {
             id = "accept-8412-spirit-totem",
             kind = "accept",
-            priority = 202,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Accept Spirit Totem from Bath'rah the Windwatcher.",
             dependsOn = { "turnin-8410-elemental-mastery" },
@@ -1684,7 +1553,6 @@ ns:RegisterGuide({
         {
             id = "objective-8412-1-bloodshot-spider-eye",
             kind = "objective",
-            priority = 203,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Collect 8 Bloodshot Spider Eye.",
             dependsOn = { "accept-8412-spirit-totem" },
@@ -1696,7 +1564,6 @@ ns:RegisterGuide({
         {
             id = "objective-8412-2-thick-black-claw",
             kind = "objective",
-            priority = 204,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Collect 8 Thick Black Claw.",
             dependsOn = { "accept-8412-spirit-totem" },
@@ -1708,7 +1575,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8412-spirit-totem",
             kind = "turnin",
-            priority = 205,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Turn in Spirit Totem to Bath'rah the Windwatcher.",
             dependsOn = { "objective-8412-1-bloodshot-spider-eye", "objective-8412-2-thick-black-claw" },
@@ -1720,7 +1586,6 @@ ns:RegisterGuide({
         {
             id = "accept-8413-da-voodoo",
             kind = "accept",
-            priority = 206,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 50 } } } },
             text = "Accept Da Voodoo from Bath'rah the Windwatcher.",
             dependsOn = { "turnin-8412-spirit-totem" },
@@ -1732,7 +1597,6 @@ ns:RegisterGuide({
         {
             id = "accept-3380-the-sunken-temple",
             kind = "accept",
-            priority = 207,
             conditions = { all = { { faction = "Horde" }, { level = { min = 46 } } } },
             text = "Accept The Sunken Temple from Witch Doctor Uzer'i.",
             complete = QuestState(3380, "activeOrCompleted"),
@@ -1743,7 +1607,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3380-the-sunken-temple",
             kind = "turnin",
-            priority = 208,
             conditions = { all = { { faction = "Horde" }, { level = { min = 46 } } } },
             text = "Turn in The Sunken Temple to Marvon Rivetseeker.",
             dependsOn = { "accept-3380-the-sunken-temple" },
@@ -1755,7 +1618,6 @@ ns:RegisterGuide({
         {
             id = "accept-1424-pool-of-tears",
             kind = "accept",
-            priority = 209,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Accept Pool of Tears from Fel'zerul.",
             complete = QuestState(1424, "activeOrCompleted"),
@@ -1766,7 +1628,6 @@ ns:RegisterGuide({
         {
             id = "objective-1424-1-atal-ai-artifact",
             kind = "objective",
-            priority = 211,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Collect 10 Atal'ai Artifact.",
             dependsOn = { "accept-1424-pool-of-tears" },
@@ -1778,7 +1639,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1424-pool-of-tears",
             kind = "turnin",
-            priority = 212,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Turn in Pool of Tears to Fel'zerul.",
             dependsOn = { "objective-1424-1-atal-ai-artifact" },
@@ -1790,7 +1650,6 @@ ns:RegisterGuide({
         {
             id = "accept-1429-the-atal-ai-exile",
             kind = "accept",
-            priority = 213,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept The Atal'ai Exile from Fel'zerul.",
             dependsOn = { "turnin-1424-pool-of-tears" },
@@ -1802,7 +1661,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1429-the-atal-ai-exile",
             kind = "turnin",
-            priority = 214,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in The Atal'ai Exile to Atal'ai Exile.",
             dependsOn = { "accept-1429-the-atal-ai-exile" },
@@ -1814,7 +1672,6 @@ ns:RegisterGuide({
         {
             id = "accept-1444-return-to-fel-zerul",
             kind = "accept",
-            priority = 215,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Accept Return to Fel'Zerul from Atal'ai Exile.",
             dependsOn = { "turnin-1429-the-atal-ai-exile" },
@@ -1826,7 +1683,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1444-return-to-fel-zerul",
             kind = "turnin",
-            priority = 216,
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             text = "Turn in Return to Fel'Zerul to Fel'zerul.",
             dependsOn = { "accept-1444-return-to-fel-zerul" },
@@ -1838,7 +1694,6 @@ ns:RegisterGuide({
         {
             id = "accept-4145-larion-and-muigin",
             kind = "accept",
-            priority = 218,
             conditions = { all = { { faction = "Horde" }, { level = { min = 53 } } } },
             text = "Accept Larion and Muigin from Larion.",
             complete = QuestState(4145, "activeOrCompleted"),
@@ -1849,7 +1704,6 @@ ns:RegisterGuide({
         {
             id = "objective-4145-3-bloodpetal-flayer",
             kind = "objective",
-            priority = 219,
             conditions = { all = { { faction = "Horde" }, { level = { min = 53 } } } },
             text = "Kill 5 Bloodpetal Flayer.",
             dependsOn = { "accept-4145-larion-and-muigin" },
@@ -1861,7 +1715,6 @@ ns:RegisterGuide({
         {
             id = "objective-4145-4-bloodpetal-thresher",
             kind = "objective",
-            priority = 220,
             conditions = { all = { { faction = "Horde" }, { level = { min = 53 } } } },
             text = "Kill 5 Bloodpetal Thresher.",
             dependsOn = { "accept-4145-larion-and-muigin" },
@@ -1873,7 +1726,6 @@ ns:RegisterGuide({
         {
             id = "objective-4145-1-bloodpetal-lasher",
             kind = "objective",
-            priority = 221,
             conditions = { all = { { faction = "Horde" }, { level = { min = 53 } } } },
             text = "Kill 5 Bloodpetal Lasher.",
             dependsOn = { "accept-4145-larion-and-muigin" },
@@ -1885,7 +1737,6 @@ ns:RegisterGuide({
         {
             id = "objective-4145-2-bloodpetal-trapper",
             kind = "objective",
-            priority = 222,
             conditions = { all = { { faction = "Horde" }, { level = { min = 53 } } } },
             text = "Kill 5 Bloodpetal Trapper.",
             dependsOn = { "accept-4145-larion-and-muigin" },
@@ -1897,7 +1748,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4145-larion-and-muigin",
             kind = "turnin",
-            priority = 223,
             conditions = { all = { { faction = "Horde" }, { level = { min = 53 } } } },
             text = "Turn in Larion and Muigin to Larion.",
             dependsOn = { "objective-4145-3-bloodpetal-flayer", "objective-4145-4-bloodpetal-thresher", "objective-4145-1-bloodpetal-lasher", "objective-4145-2-bloodpetal-trapper" },
@@ -1909,7 +1759,6 @@ ns:RegisterGuide({
         {
             id = "accept-4147-marvon-s-workshop",
             kind = "accept",
-            priority = 224,
             conditions = { all = { { faction = "Horde" }, { level = { min = 53 } } } },
             text = "Accept Marvon's Workshop from Larion.",
             dependsOn = { "turnin-4145-larion-and-muigin" },
@@ -1921,7 +1770,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4147-marvon-s-workshop",
             kind = "turnin",
-            priority = 225,
             conditions = { all = { { faction = "Horde" }, { level = { min = 53 } } } },
             text = "Turn in Marvon's Workshop to Liv Rizzlefix.",
             dependsOn = { "accept-4147-marvon-s-workshop" },
@@ -1931,19 +1779,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-9053-1-putrid-vine-2",
-            kind = "objective",
-            priority = 227,
-            conditions = { all = { { race = 4 }, { class = 11 }, { level = { min = 50 } } } },
-            text = "Collect Putrid Vine.",
-            dependsOn = { "accept-9053-a-better-ingredient" },
-            complete = QuestState(9053, "complete"),
-            useClientPin = true,
-        },
-        {
             id = "objective-8413-1-amber-voodoo-feather",
             kind = "objective",
-            priority = 229,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 50 } } } },
             text = "Collect 2 Amber Voodoo Feather.",
             dependsOn = { "accept-8413-da-voodoo" },
@@ -1953,7 +1790,6 @@ ns:RegisterGuide({
         {
             id = "objective-8413-2-blue-voodoo-feather",
             kind = "objective",
-            priority = 230,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 50 } } } },
             text = "Collect 2 Blue Voodoo Feather.",
             dependsOn = { "accept-8413-da-voodoo" },
@@ -1963,7 +1799,6 @@ ns:RegisterGuide({
         {
             id = "objective-8413-3-green-voodoo-feather",
             kind = "objective",
-            priority = 231,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 50 } } } },
             text = "Collect 2 Green Voodoo Feather.",
             dependsOn = { "accept-8413-da-voodoo" },
@@ -1973,7 +1808,6 @@ ns:RegisterGuide({
         {
             id = "turnin-8413-da-voodoo",
             kind = "turnin",
-            priority = 238,
             conditions = { all = { { faction = "Horde" }, { class = 7 }, { level = { min = 50 } } } },
             text = "Turn in Da Voodoo to Bath'rah the Windwatcher.",
             dependsOn = { "objective-8413-1-amber-voodoo-feather", "objective-8413-2-blue-voodoo-feather", "objective-8413-3-green-voodoo-feather" },

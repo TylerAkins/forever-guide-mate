@@ -49,7 +49,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-duskwood",
     title = "Explore Duskwood",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

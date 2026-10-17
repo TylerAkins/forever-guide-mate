@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Wetlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-wetlands-part-2",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 281,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.5853, mapID = 1437, label = "Karl Boran", offMapText = "Travel to Karl Boran in Wetlands.", x = 0.0831 },
             },
@@ -71,7 +69,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.5571, mapID = 1437, label = "James Halloran", offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851 },
             },
@@ -124,10 +121,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 289,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.5967, mapID = 1437, label = "First Mate Fitzsimmons", offMapText = "Travel to First Mate Fitzsimmons in Wetlands.", x = 0.1089 },
             },
@@ -161,7 +156,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.6059, mapID = 1437, label = "Glorin Steelbrow", offMapText = "Travel to Glorin Steelbrow in Wetlands.", x = 0.1059 },
             },
@@ -214,10 +208,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 472,
-            priority = 70,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.559, mapID = 1437, label = "Harlo Barnaby", offMapText = "Travel to Harlo Barnaby in Wetlands.", x = 0.1085 },
             },
@@ -245,7 +237,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.5749, mapID = 1437, label = "Captain Stoutfist", offMapText = "Travel to Captain Stoutfist in Wetlands.", x = 0.0986 },
             },
@@ -273,7 +264,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Turn in Reclaiming Goods.",
             route = {
                 { y = 0.4138, mapID = 1437, label = "Reclaiming Goods", offMapText = "Travel to Reclaiming Goods.", x = 0.1351 },
@@ -307,7 +297,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.4138, mapID = 1437, label = "The Search Continues", offMapText = "Travel to The Search Continues.", x = 0.1351 },
             },
@@ -341,7 +330,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             text = "Turn in The Search Continues.",
             route = {
                 { y = 0.3821, mapID = 1437, label = "The Search Continues", offMapText = "Travel to The Search Continues.", x = 0.1361 },
@@ -375,7 +363,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.3821, mapID = 1437, label = "Search More Hovels", offMapText = "Travel to Search More Hovels.", x = 0.1361 },
             },
@@ -409,7 +396,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Turn in Search More Hovels.",
             route = {
                 { y = 0.3481, mapID = 1437, label = "Search More Hovels", offMapText = "Travel to Search More Hovels.", x = 0.1395 },
@@ -443,7 +429,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.3481, mapID = 1437, label = "Return the Statuette", offMapText = "Travel to Return the Statuette.", x = 0.1395 },
             },
@@ -477,7 +462,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Collect 1 Snellig's Snuffbox.",
             route = {
                 { y = 0.3001, mapID = 1437, label = "First Mate Snellig", offMapText = "Travel to First Mate Snellig.", x = 0.1408 },
@@ -532,7 +516,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.138, y = 0.29600000000000004, label = "Cursed Marine", offMapText = "Travel to Cursed Marine." },
             },
             sourceStep = 12,
-            priority = 170,
             requiredQuests = {
                 {
                     mode = "any",
@@ -566,7 +549,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.138, y = 0.29600000000000004, label = "Cursed Sailor", offMapText = "Travel to Cursed Sailor." },
             },
             sourceStep = 12,
-            priority = 180,
             requiredQuests = {
                 {
                     mode = "any",
@@ -579,7 +561,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-289-the-cursed-crew" },
         },
         {
-            priority = 190,
             text = "Collect 6 Giant Crocolisk Skin.",
             route = {
                 { y = 0.274, mapID = 1437, label = "Giant Wetlands Crocolisk", offMapText = "Travel to Giant Wetlands Crocolisk.", x = 0.164 },
@@ -613,7 +594,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 200,
             route = {
                 { y = 0.284, mapID = 1437, label = "Mosshide Brute", offMapText = "Travel to Mosshide Brute.", x = 0.304 },
             },
@@ -647,7 +627,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             route = {
                 { mapID = 1437, x = 0.3818, y = 0.5089, label = "Ormer Ironbraid", offMapText = "Travel to Ormer Ironbraid in Wetlands." },
             },
@@ -681,7 +660,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             route = {
                 { y = 0.5239, mapID = 1437, label = "Prospector Whelgar", offMapText = "Travel to Prospector Whelgar in Wetlands.", x = 0.3881 },
             },
@@ -730,7 +708,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.35200000000000004, y = 0.486, label = "Mottled Scytheclaw", offMapText = "Travel to Mottled Scytheclaw." },
             },
             sourceStep = 17,
-            priority = 230,
             requiredQuests = {
                 {
                     mode = "any",
@@ -764,7 +741,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.35200000000000004, y = 0.486, label = "Mottled Razormaw", offMapText = "Travel to Mottled Razormaw." },
             },
             sourceStep = 17,
-            priority = 240,
             requiredQuests = {
                 {
                     mode = "any",
@@ -777,7 +753,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-295-ormer-s-revenge" },
         },
         {
-            priority = 250,
             text = "Turn in Ormer's Revenge to Ormer Ironbraid.",
             route = {
                 { mapID = 1437, x = 0.3818, y = 0.5089, label = "Ormer Ironbraid", offMapText = "Travel to Ormer Ironbraid in Wetlands." },
@@ -811,7 +786,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             route = {
                 { mapID = 1437, x = 0.3818, y = 0.5089, label = "Ormer Ironbraid", offMapText = "Travel to Ormer Ironbraid in Wetlands." },
             },
@@ -866,7 +840,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.3447, y = 0.4604, label = "Neru Fragment", offMapText = "Travel to Neru Fragment." },
             },
             sourceStep = 20,
-            priority = 270,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -894,7 +867,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.35600000000000004, y = 0.479, label = "Golm Fragment", offMapText = "Travel to Golm Fragment." },
             },
             sourceStep = 21,
-            priority = 280,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -922,7 +894,6 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.35600000000000004, y = 0.479, label = "Modr Fragment", offMapText = "Travel to Modr Fragment." },
             },
             sourceStep = 22,
-            priority = 290,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -950,14 +921,12 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.35600000000000004, y = 0.479, label = "Ados Fragment", offMapText = "Travel to Ados Fragment." },
             },
             sourceStep = 23,
-            priority = 300,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-299-uncovering-the-past" },
         },
         {
-            priority = 310,
             text = "For Ormer's Revenge: Ormer Ironbraid at the Whelgar Excavation Site wants you to kill Sarltooth and return to him with one of his talons once the task is fulfilled.",
             id = "objective-296-quest-work",
             kind = "objective",
@@ -988,7 +957,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-296-ormer-s-revenge" },
         },
         {
-            priority = 320,
             text = "Turn in Ormer's Revenge to Ormer Ironbraid.",
             route = {
                 { mapID = 1437, x = 0.3818, y = 0.5089, label = "Ormer Ironbraid", offMapText = "Travel to Ormer Ironbraid in Wetlands." },
@@ -1022,7 +990,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             text = "Turn in Uncovering the Past to Prospector Whelgar.",
             route = {
                 { y = 0.5239, mapID = 1437, label = "Prospector Whelgar", offMapText = "Travel to Prospector Whelgar in Wetlands.", x = 0.3881 },
@@ -1056,7 +1023,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             text = "Collect 8 Dragonmaw War Banner.",
             route = {
                 { mapID = 1437, x = 0.41, y = 0.396, label = "Dragonmaw War Banner", offMapText = "Travel to Dragonmaw War Banner." },
@@ -1084,7 +1050,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             text = "Turn in Fire Taboo to Rethiel the Greenwarden.",
             route = {
                 { y = 0.404, mapID = 1437, label = "Rethiel the Greenwarden", offMapText = "Travel to Rethiel the Greenwarden in Wetlands.", x = 0.5637 },
@@ -1118,7 +1083,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             route = {
                 { y = 0.404, mapID = 1437, label = "Rethiel the Greenwarden", offMapText = "Travel to Rethiel the Greenwarden in Wetlands.", x = 0.5637 },
             },
@@ -1173,14 +1137,12 @@ ns:RegisterGuide({
                 { mapID = 1437, x = 0.6476000000000001, y = 0.7529, label = "Musquash Root", offMapText = "Travel to Musquash Root." },
             },
             sourceStep = 28,
-            priority = 370,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Turn in The Cursed Crew to First Mate Fitzsimmons.",
             route = {
                 { y = 0.5967, mapID = 1437, label = "First Mate Fitzsimmons", offMapText = "Travel to First Mate Fitzsimmons in Wetlands.", x = 0.1089 },
@@ -1219,7 +1181,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.5967, mapID = 1437, label = "First Mate Fitzsimmons", offMapText = "Travel to First Mate Fitzsimmons in Wetlands.", x = 0.1089 },
             },
@@ -1253,7 +1214,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             text = "Turn in Return the Statuette to Karl Boran.",
             route = {
                 { y = 0.5854, mapID = 1437, label = "Karl Boran", offMapText = "Travel to Karl Boran in Wetlands.", x = 0.0831 },
@@ -1287,7 +1247,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             text = "Turn in Apprentice's Duties to James Halloran.",
             route = {
                 { y = 0.5571, mapID = 1437, label = "James Halloran", offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851 },
@@ -1321,7 +1280,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             text = "Turn in War Banners to Captain Stoutfist.",
             route = {
                 { y = 0.5749, mapID = 1437, label = "Captain Stoutfist", offMapText = "Travel to Captain Stoutfist in Wetlands.", x = 0.0986 },
@@ -1349,7 +1307,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             route = {
                 { y = 0.5749, mapID = 1437, label = "Captain Stoutfist", offMapText = "Travel to Captain Stoutfist in Wetlands.", x = 0.0986 },
             },
@@ -1383,7 +1340,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Collect 1 Intrepid Strongbox Key.",
             route = {
                 { y = 0.2361, mapID = 1437, label = "Captain Halyndor", offMapText = "Travel to Captain Halyndor.", x = 0.1545 },
@@ -1417,7 +1373,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Turn in Lifting the Curse.",
             route = {
                 { y = 0.2402, mapID = 1437, label = "Lifting the Curse", offMapText = "Travel to Lifting the Curse.", x = 0.1437 },
@@ -1451,7 +1406,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { y = 0.2402, mapID = 1437, label = "The Eye of Paleth", offMapText = "Travel to The Eye of Paleth.", x = 0.1437 },
             },
@@ -1485,7 +1439,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Kill 12 Fen Creeper.",
             route = {
                 { y = 0.469, mapID = 1437, label = "Fen Creeper", offMapText = "Travel to Fen Creeper.", x = 0.474 },
@@ -1519,7 +1472,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             text = "Turn in Nek'rosh's Gambit.",
             route = {
                 { y = 0.469, mapID = 1437, label = "Nek'rosh's Gambit", offMapText = "Travel to Nek'rosh's Gambit.", x = 0.474 },
@@ -1553,7 +1505,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Kill 12 Fen Creeper.",
             route = {
                 { y = 0.352, mapID = 1437, label = "Fen Creeper", offMapText = "Travel to Fen Creeper.", x = 0.464 },
@@ -1587,7 +1538,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             text = "Turn in Blisters on The Land to Rethiel the Greenwarden.",
             route = {
                 { y = 0.404, mapID = 1437, label = "Rethiel the Greenwarden", offMapText = "Travel to Rethiel the Greenwarden in Wetlands.", x = 0.5637 },
@@ -1640,10 +1590,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 631,
-            priority = 510,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.1821, mapID = 1437, label = "Rhag Garmason", offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992 },
             },
@@ -1671,7 +1619,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             text = "Turn in Fall of Dun Modr to Longbraid the Grim.",
             route = {
                 { y = 0.1826, mapID = 1437, label = "Longbraid the Grim", offMapText = "Travel to Longbraid the Grim in Wetlands.", x = 0.498 },
@@ -1699,7 +1646,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 540,
             text = "Turn in The Thandol Span.",
             route = {
                 { y = 0.0811, mapID = 1437, label = "The Thandol Span", offMapText = "Travel to The Thandol Span.", x = 0.5136 },
@@ -1727,7 +1673,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.0811, mapID = 1437, label = "The Thandol Span", offMapText = "Travel to The Thandol Span.", x = 0.5136 },
             },
@@ -1761,7 +1706,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "Turn in The Thandol Span to Rhag Garmason.",
             route = {
                 { y = 0.1822, mapID = 1437, label = "Rhag Garmason", offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992 },
@@ -1795,7 +1739,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             route = {
                 { y = 0.1822, mapID = 1437, label = "Rhag Garmason", offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992 },
             },
@@ -1855,10 +1798,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 580,
         },
         {
-            priority = 590,
             text = "Use the Waterlogged Envelope to accept Sully Balloo's Letter.",
             id = "accept-637-sully-balloo-s-letter",
             kind = "accept",
@@ -1883,7 +1824,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 600,
             text = "For The Thandol Span: Destroy the cache of explosives.",
             id = "objective-633-quest-work",
             kind = "objective",
@@ -1914,7 +1854,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-633-the-thandol-span" },
         },
         {
-            priority = 610,
             text = "Turn in The Thandol Span to Rhag Garmason.",
             route = {
                 { y = 0.1822, mapID = 1437, label = "Rhag Garmason", offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992 },
@@ -1948,7 +1887,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 620,
             route = {
                 { y = 0.1822, mapID = 1437, label = "Rhag Garmason", offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992 },
             },
@@ -1982,7 +1920,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 630,
             text = "Turn in Plea To The Alliance to Captain Nials.",
             route = {
                 { y = 0.4755, mapID = 1417, label = "Captain Nials", offMapText = "Travel to Captain Nials in Arathi Highlands.", x = 0.4583 },
@@ -2016,7 +1953,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.57, mapID = 1424, label = "Snapjaw", offMapText = "Travel to Snapjaw.", x = 0.552 },
             },
@@ -2041,7 +1977,6 @@ ns:RegisterGuide({
             referenceQuest = 555,
         },
         {
-            priority = 650,
             text = "Turn in The Eye of Paleth to Glorin Steelbrow.",
             route = {
                 { y = 0.6059, mapID = 1437, label = "Glorin Steelbrow", offMapText = "Travel to Glorin Steelbrow in Wetlands.", x = 0.1058 },
@@ -2075,7 +2010,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 660,
             route = {
                 { y = 0.6059, mapID = 1437, label = "Glorin Steelbrow", offMapText = "Travel to Glorin Steelbrow in Wetlands.", x = 0.1058 },
             },
@@ -2109,7 +2043,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 670,
             route = {
                 { y = 0.6059, mapID = 1437, label = "Glorin Steelbrow", offMapText = "Travel to Glorin Steelbrow in Wetlands.", x = 0.1058 },
             },
@@ -2143,7 +2076,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 680,
             text = "Turn in Lightforge Iron.",
             route = {
                 { y = 0.6417, mapID = 1437, label = "Lightforge Iron", offMapText = "Travel to Lightforge Iron.", x = 0.121 },
@@ -2177,7 +2109,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.6417, mapID = 1437, label = "The Lost Ingots", offMapText = "Travel to The Lost Ingots.", x = 0.121 },
             },
@@ -2211,7 +2142,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             text = "Collect 5 Lightforge Ingot.",
             route = {
                 { y = 0.632, mapID = 1437, label = "Bluegill Raider", offMapText = "Travel to Bluegill Raider.", x = 0.118 },
@@ -2245,7 +2175,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             text = "Turn in The Lost Ingots to Glorin Steelbrow.",
             route = {
                 { y = 0.6059, mapID = 1437, label = "Glorin Steelbrow", offMapText = "Travel to Glorin Steelbrow in Wetlands.", x = 0.1059 },
@@ -2279,7 +2208,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 720,
             route = {
                 { y = 0.6059, mapID = 1437, label = "Glorin Steelbrow", offMapText = "Travel to Glorin Steelbrow in Wetlands.", x = 0.1059 },
             },

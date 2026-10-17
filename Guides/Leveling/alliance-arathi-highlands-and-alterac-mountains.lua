@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Arathi Highlands & Alterac Mountains",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 658,
-            priority = 10,
         },
         {
-            priority = 20,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -68,7 +66,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.4775, mapID = 1417, label = "Apprentice Kryten", offMapText = "Travel to Apprentice Kryten in Arathi Highlands.", x = 0.462 },
             },
@@ -108,10 +105,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 642,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.338, mapID = 1417, label = "The Princess Trapped", offMapText = "Travel to The Princess Trapped.", x = 0.625 },
             },
@@ -136,7 +131,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             text = "Collect 12 Mote of Myzrael.",
             route = {
                 { y = 0.442, mapID = 1417, label = "Drywhisker Kobold", offMapText = "Travel to Drywhisker Kobold.", x = 0.76 },
@@ -161,7 +155,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 70,
             text = "Turn in The Princess Trapped.",
             route = {
                 { mapID = 1417, x = 0.8431000000000001, y = 0.30920000000000003, label = "The Princess Trapped", offMapText = "Travel to The Princess Trapped." },
@@ -186,7 +179,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 80,
             route = {
                 { mapID = 1417, x = 0.8431000000000001, y = 0.30920000000000003, label = "Stones of Binding", offMapText = "Travel to Stones of Binding." },
             },
@@ -235,7 +227,6 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.6675, y = 0.2975, label = "Cresting Key", offMapText = "Travel to Cresting Key." },
             },
             sourceStep = 6,
-            priority = 90,
             requiredQuests = {
                 {
                     mode = "any",
@@ -248,7 +239,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-651-stones-of-binding" },
         },
         {
-            priority = 100,
             text = "Collect 1 Shadow Hunter Knife.",
             route = {
                 { y = 0.7518, mapID = 1417, label = "Witherbark Shadow Hunter", offMapText = "Travel to Witherbark Shadow Hunter.", x = 0.6832 },
@@ -297,7 +287,6 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.6579999999999999, y = 0.68, label = "Witherbark Medicine Pouch", offMapText = "Travel to Witherbark Medicine Pouch." },
             },
             sourceStep = 9,
-            priority = 110,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -325,14 +314,12 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.6579999999999999, y = 0.68, label = "Witherbark Tusk", offMapText = "Travel to Witherbark Tusk." },
             },
             sourceStep = 10,
-            priority = 120,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-691-worth-its-weight-in-gold" },
         },
         {
-            priority = 130,
             text = "Turn in Hints of a New Plague? to Quae.",
             route = {
                 { y = 0.5385, mapID = 1417, label = "Quae", offMapText = "Travel to Quae in Arathi Highlands.", x = 0.6019 },
@@ -366,7 +353,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.5385, mapID = 1417, label = "Quae", offMapText = "Travel to Quae in Arathi Highlands.", x = 0.6019 },
             },
@@ -400,7 +386,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Turn in Hints of a New Plague? to Kinelory.",
             route = {
                 { y = 0.5392, mapID = 1417, label = "Kinelory", offMapText = "Travel to Kinelory in Arathi Highlands.", x = 0.6024 },
@@ -434,7 +419,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             route = {
                 { y = 0.5392, mapID = 1417, label = "Kinelory", offMapText = "Travel to Kinelory in Arathi Highlands.", x = 0.6024 },
             },
@@ -499,10 +483,8 @@ ns:RegisterGuide({
             },
             sourceStep = 13,
             dependsOn = { "accept-660-hints-of-a-new-plague" },
-            priority = 170,
         },
         {
-            priority = 180,
             text = "Turn in Hints of a New Plague? to Quae.",
             route = {
                 { y = 0.5385, mapID = 1417, label = "Quae", offMapText = "Travel to Quae in Arathi Highlands.", x = 0.6019 },
@@ -536,7 +518,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.5385, mapID = 1417, label = "Quae", offMapText = "Travel to Quae in Arathi Highlands.", x = 0.6019 },
             },
@@ -588,7 +569,6 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.5204, y = 0.5077, label = "Thundering Key", offMapText = "Travel to Thundering Key." },
             },
             sourceStep = 15,
-            priority = 200,
             requiredQuests = {
                 {
                     mode = "any",
@@ -601,7 +581,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-651-stones-of-binding" },
         },
         {
-            priority = 210,
             text = "Turn in Worth Its Weight in Gold to Apprentice Kryten.",
             route = {
                 { y = 0.4775, mapID = 1417, label = "Apprentice Kryten", offMapText = "Travel to Apprentice Kryten in Arathi Highlands.", x = 0.462 },
@@ -634,7 +613,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             text = "Turn in Hints of a New Plague? to Phin Odelic.",
             route = {
                 { y = 0.5904, mapID = 1424, label = "Phin Odelic", offMapText = "Travel to Phin Odelic in Hillsbrad Foothills.", x = 0.5034 },
@@ -668,7 +646,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             route = {
                 { y = 0.5873, mapID = 1424, label = "Marshal Redpath", offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.", x = 0.4948 },
             },
@@ -696,7 +673,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             route = {
                 { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
             },
@@ -730,7 +706,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             route = {
                 { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
             },
@@ -764,7 +739,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             route = {
                 { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
             },
@@ -817,10 +791,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 602,
-            priority = 270,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.7849, mapID = 1416, label = "Archmage Ansirem Runeweaver", offMapText = "Travel to Archmage Ansirem Runeweaver in Alterac Mountains.", x = 0.1884 },
             },
@@ -854,7 +826,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             route = {
                 { y = 0.7849, mapID = 1416, label = "Archmage Ansirem Runeweaver", offMapText = "Travel to Archmage Ansirem Runeweaver in Alterac Mountains.", x = 0.1884 },
             },
@@ -888,7 +859,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             text = "Collect 1 Head of Nagaz.",
             route = {
                 { y = 0.1431, mapID = 1416, label = "Nagaz", offMapText = "Travel to Nagaz.", x = 0.3922 },
@@ -948,10 +918,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 310,
         },
         {
-            priority = 320,
             text = "Use the Ensorcelled Parchment to accept The Ensorcelled Parchment.",
             id = "accept-551-the-ensorcelled-parchment",
             kind = "accept",
@@ -976,7 +944,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             text = "Kill 4 Argus Shadow Mage.",
             route = {
                 { y = 0.438, mapID = 1416, label = "Argus Shadow Mage", offMapText = "Travel to Argus Shadow Mage.", x = 0.634 },
@@ -1031,7 +998,6 @@ ns:RegisterGuide({
                 { mapID = 1416, x = 0.622, y = 0.456, label = "Alterac Signet Ring", offMapText = "Travel to Alterac Signet Ring." },
             },
             sourceStep = 27,
-            priority = 340,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1044,7 +1010,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-512-noble-deaths" },
         },
         {
-            priority = 350,
             text = "Collect 9 Dirty Knucklebones.",
             route = {
                 { y = 0.524, mapID = 1416, label = "Crushridge Ogre", offMapText = "Travel to Crushridge Ogre.", x = 0.544 },
@@ -1072,7 +1037,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             text = "Turn in Crushridge Bounty to Marshal Redpath.",
             route = {
                 { y = 0.5873, mapID = 1424, label = "Marshal Redpath", offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.", x = 0.4948 },
@@ -1100,7 +1064,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             text = "Turn in Dark Council to Magistrate Henry Maleb.",
             route = {
                 { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
@@ -1134,7 +1097,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             text = "Turn in Noble Deaths to Magistrate Henry Maleb.",
             route = {
                 { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
@@ -1168,7 +1130,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             text = "Turn in The Ensorcelled Parchment to Loremaster Dibbs.",
             route = {
                 { y = 0.5709, mapID = 1424, label = "Loremaster Dibbs", offMapText = "Travel to Loremaster Dibbs in Hillsbrad Foothills.", x = 0.5057 },
@@ -1215,10 +1176,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1449,
-            priority = 400,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.4676, mapID = 1425, label = "Falstad Wildhammer", offMapText = "Travel to Falstad Wildhammer in The Hinterlands.", x = 0.1181 },
             },
@@ -1252,7 +1211,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             route = {
                 { y = 0.4676, mapID = 1425, label = "Falstad Wildhammer", offMapText = "Travel to Falstad Wildhammer in The Hinterlands.", x = 0.1181 },
             },
@@ -1286,7 +1244,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             text = "Turn in Gryphon Master Talonaxe to Gryphon Master Talonaxe.",
             route = {
                 { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
@@ -1320,7 +1277,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
             },
@@ -1354,7 +1310,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             text = "Turn in Rhapsody Shindigger to Rhapsody Shindigger.",
             route = {
                 { mapID = 1425, x = 0.26940000000000003, y = 0.48590000000000005, label = "Rhapsody Shindigger", offMapText = "Travel to Rhapsody Shindigger in The Hinterlands." },
@@ -1388,7 +1343,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             route = {
                 { mapID = 1425, x = 0.26940000000000003, y = 0.48590000000000005, label = "Rhapsody Shindigger", offMapText = "Travel to Rhapsody Shindigger in The Hinterlands." },
             },
@@ -1422,7 +1376,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             route = {
                 { y = 0.4701, mapID = 1417, label = "Skuerto", offMapText = "Travel to Skuerto in Arathi Highlands.", x = 0.4665 },
             },
@@ -1456,7 +1409,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Collect 1 Trelane's Wand of Invocation.",
             route = {
                 { mapID = 1417, x = 0.5475, y = 0.8187000000000001, label = "Trelane's Wand of Invocation", offMapText = "Travel to Trelane's Wand of Invocation." },
@@ -1490,7 +1442,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             text = "Turn in Wand over Fist to Skuerto.",
             route = {
                 { mapID = 1417, x = 0.46649999999999997, y = 0.47009999999999996, label = "Skuerto", offMapText = "Travel to Skuerto in Arathi Highlands." },
@@ -1542,7 +1493,6 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.2545, y = 0.3016, label = "Burning Key", offMapText = "Travel to Burning Key." },
             },
             sourceStep = 40,
-            priority = 500,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1574,7 +1524,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1712,
-            priority = 510,
         },
         {
             id = "objective-1712-3-essence-of-the-exile",
@@ -1598,7 +1547,6 @@ ns:RegisterGuide({
                 { mapID = 1416, x = 0.7931999999999999, y = 0.6681, label = "Essence of the Exile", offMapText = "Travel to Essence of the Exile." },
             },
             sourceStep = 43,
-            priority = 520,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1611,7 +1559,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             route = {
                 { y = 0.6692, mapID = 1416, label = "Bath'rah the Windwatcher", offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains.", x = 0.805 },
             },
@@ -1645,7 +1592,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1712-3-essence-of-the-exile" },
         },
         {
-            priority = 540,
             route = {
                 { y = 0.6692, mapID = 1416, label = "Bath'rah the Windwatcher", offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains.", x = 0.805 },
             },
@@ -1679,7 +1625,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 550,
             text = "For The Summoning: Bring the Whirlwind Heart to Bath'rah Windwatcher.",
             id = "objective-1713-quest-work",
             kind = "objective",
@@ -1710,7 +1655,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1713-the-summoning" },
         },
         {
-            priority = 560,
             text = "Turn in The Summoning to Bath'rah the Windwatcher.",
             route = {
                 { y = 0.6692, mapID = 1416, label = "Bath'rah the Windwatcher", offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains.", x = 0.805 },
@@ -1744,7 +1688,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             route = {
                 { y = 0.6692, mapID = 1416, label = "Bath'rah the Windwatcher", offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains.", x = 0.805 },
             },
@@ -1798,10 +1741,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1792,
-            priority = 580,
         },
         {
-            priority = 590,
             route = {
                 { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
             },
@@ -1823,7 +1764,6 @@ ns:RegisterGuide({
             classAction = "turnin-1792-whirlwind-weapon",
         },
         {
-            priority = 600,
             text = "Turn in Stones of Binding.",
             route = {
                 { y = 0.5737, mapID = 1417, label = "Stones of Binding", offMapText = "Travel to Stones of Binding.", x = 0.3619 },
@@ -1871,10 +1811,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 663,
-            priority = 610,
         },
         {
-            priority = 620,
             route = {
                 { mapID = 1417, x = 0.3178, y = 0.8270000000000001, label = "Lolo the Lookout", offMapText = "Travel to Lolo the Lookout in Arathi Highlands." },
             },
@@ -1899,7 +1837,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 630,
             text = "Turn in Land Ho! to Shakes O'Breen.",
             route = {
                 { y = 0.8138, mapID = 1417, label = "Shakes O'Breen", offMapText = "Travel to Shakes O'Breen in Arathi Highlands.", x = 0.3228 },
@@ -1924,7 +1861,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.8147, mapID = 1417, label = "First Mate Nilzlix", offMapText = "Travel to First Mate Nilzlix in Arathi Highlands.", x = 0.3277 },
             },
@@ -1955,7 +1891,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 650,
             route = {
                 { y = 0.8079, mapID = 1417, label = "Captain Steelgut", offMapText = "Travel to Captain Steelgut in Arathi Highlands.", x = 0.34 },
             },
@@ -1986,7 +1921,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             route = {
                 { y = 0.8055, mapID = 1417, label = "Professor Phizzlethorpe", offMapText = "Travel to Professor Phizzlethorpe in Arathi Highlands.", x = 0.3387 },
             },
@@ -2045,10 +1979,8 @@ ns:RegisterGuide({
             },
             sourceStep = 54,
             dependsOn = { "accept-665-sunken-treasure" },
-            priority = 670,
         },
         {
-            priority = 680,
             text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
             route = {
                 { y = 0.8045, mapID = 1417, label = "Doctor Draxlegauge", offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.", x = 0.3386 },
@@ -2079,7 +2011,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.8045, mapID = 1417, label = "Doctor Draxlegauge", offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.", x = 0.3386 },
             },
@@ -2110,7 +2041,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             text = "Collect 1 Maiden's Folly Log.",
             route = {
                 { y = 0.851, mapID = 1417, label = "Elixir of Water Breathing", offMapText = "Travel to Elixir of Water Breathing.", x = 0.2341 },
@@ -2141,7 +2071,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             text = "Collect 1 Maiden's Folly Charts.",
             route = {
                 { y = 0.8451, mapID = 1417, label = "Elixir of Water Breathing", offMapText = "Travel to Elixir of Water Breathing.", x = 0.2304 },
@@ -2172,7 +2101,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 720,
             text = "Collect 1 Spirit of Silverpine Charts.",
             route = {
                 { y = 0.856, mapID = 1417, label = "Elixir of Water Breathing", offMapText = "Travel to Elixir of Water Breathing.", x = 0.2045 },
@@ -2203,7 +2131,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 730,
             text = "Collect 1 Spirit of Silverpine Log.",
             route = {
                 { y = 0.851, mapID = 1417, label = "Elixir of Water Breathing", offMapText = "Travel to Elixir of Water Breathing.", x = 0.2065 },
@@ -2252,7 +2179,6 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.23600000000000002, y = 0.8740000000000001, label = "Elven Gem", offMapText = "Travel to Elven Gem." },
             },
             sourceStep = 60,
-            priority = 740,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2283,7 +2209,6 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.192, y = 0.84, label = "Daggerspine Sorceress", offMapText = "Travel to Daggerspine Sorceress." },
             },
             sourceStep = 62,
-            priority = 750,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2314,7 +2239,6 @@ ns:RegisterGuide({
                 { mapID = 1417, x = 0.192, y = 0.84, label = "Daggerspine Raider", offMapText = "Travel to Daggerspine Raider." },
             },
             sourceStep = 62,
-            priority = 760,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2327,7 +2251,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-664-drowned-sorrows" },
         },
         {
-            priority = 770,
             text = "Turn in Deep Sea Salvage to First Mate Nilzlix.",
             route = {
                 { y = 0.8148, mapID = 1417, label = "First Mate Nilzlix", offMapText = "Travel to First Mate Nilzlix in Arathi Highlands.", x = 0.328 },
@@ -2364,7 +2287,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 780,
             text = "Turn in Drowned Sorrows to Captain Steelgut.",
             route = {
                 { y = 0.8079, mapID = 1417, label = "Captain Steelgut", offMapText = "Travel to Captain Steelgut in Arathi Highlands.", x = 0.34 },
@@ -2395,7 +2317,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 790,
             text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
             route = {
                 { y = 0.8045, mapID = 1417, label = "Doctor Draxlegauge", offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.", x = 0.3385 },
@@ -2426,7 +2347,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 800,
             route = {
                 { y = 0.8045, mapID = 1417, label = "Doctor Draxlegauge", offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.", x = 0.3385 },
             },
@@ -2457,7 +2377,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 810,
             text = "Turn in Sunken Treasure to Shakes O'Breen.",
             route = {
                 { y = 0.8138, mapID = 1417, label = "Shakes O'Breen", offMapText = "Travel to Shakes O'Breen in Arathi Highlands.", x = 0.3229 },
@@ -2488,7 +2407,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 820,
             route = {
                 { y = 0.8138, mapID = 1417, label = "Shakes O'Breen", offMapText = "Travel to Shakes O'Breen in Arathi Highlands.", x = 0.3229 },
             },
@@ -2519,7 +2437,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 830,
             route = {
                 { y = 0.5709, mapID = 1424, label = "Loremaster Dibbs", offMapText = "Travel to Loremaster Dibbs in Hillsbrad Foothills.", x = 0.5057 },
             },
@@ -2553,7 +2470,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 840,
             text = "Turn in Stormpike's Deciphering to Prospector Stormpike.",
             route = {
                 { y = 0.1174, mapID = 1455, label = "Prospector Stormpike", offMapText = "Travel to Prospector Stormpike in Ironforge.", x = 0.7464 },
@@ -2610,10 +2526,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 4487,
             alternativeQuests = { 3631, 4488, 4489 },
-            priority = 850,
         },
         {
-            priority = 860,
             route = {
                 { y = 0.0566, mapID = 1455, label = "Briarthorn", offMapText = "Travel to Briarthorn in Ironforge.", x = 0.5035 },
             },

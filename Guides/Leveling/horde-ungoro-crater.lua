@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Un'Goro Crater",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-ungoro-crater",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4494,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.2696, mapID = 1446, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris.", x = 0.5089 },
             },
@@ -83,10 +81,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4496,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.2696, mapID = 1446, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris.", x = 0.5089 },
             },
@@ -117,7 +113,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.0872, mapID = 1449, label = "Larion", offMapText = "Travel to Larion in Un'Goro Crater.", x = 0.4554 },
             },
@@ -145,7 +140,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.0714, mapID = 1449, label = "Williden Marshal", offMapText = "Travel to Williden Marshal in Un'Goro Crater.", x = 0.4395 },
             },
@@ -170,7 +164,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.0724, mapID = 1449, label = "Hol'anyee Marshal", offMapText = "Travel to Hol'anyee Marshal in Un'Goro Crater.", x = 0.4389 },
             },
@@ -195,7 +188,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.0742, mapID = 1449, label = "Spark Nilminer", offMapText = "Travel to Spark Nilminer in Un'Goro Crater.", x = 0.435 },
             },
@@ -220,7 +212,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
             },
@@ -251,7 +242,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { mapID = 1449, x = 0.4355, y = 0.0842, label = "Beware of Pterrordax", offMapText = "Travel to Beware of Pterrordax." },
             },
@@ -276,7 +266,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.085, mapID = 1449, label = "Spraggle Frock", offMapText = "Travel to Spraggle Frock in Un'Goro Crater.", x = 0.4362 },
             },
@@ -301,7 +290,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.1159, mapID = 1449, label = "Shizzle", offMapText = "Travel to Shizzle in Un'Goro Crater.", x = 0.4424 },
             },
@@ -326,7 +314,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             text = "Kill 10 Pterrordax.",
             route = {
                 { y = 0.098, mapID = 1449, label = "Pterrordax", offMapText = "Travel to Pterrordax.", x = 0.56 },
@@ -372,14 +359,12 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.5579999999999999, y = 0.16, label = "Bloodpetal Flayer", offMapText = "Travel to Bloodpetal Flayer." },
             },
             sourceStep = 11,
-            priority = 140,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4145-larion-and-muigin" },
         },
         {
-            priority = 150,
             route = {
                 { y = 0.1636, mapID = 1449, label = "Un'Goro Gorilla", offMapText = "Travel to Un'Goro Gorilla.", x = 0.6423 },
             },
@@ -422,7 +407,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.6423000000000001, y = 0.1636, label = "Un'Goro Stomper Pelt", offMapText = "Travel to Un'Goro Stomper Pelt." },
             },
             sourceStep = 13,
-            priority = 160,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -447,7 +431,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.6423000000000001, y = 0.1636, label = "Un'Goro Thunderer Pelt", offMapText = "Travel to Un'Goro Thunderer Pelt." },
             },
             sourceStep = 14,
-            priority = 170,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -472,7 +455,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.6851, y = 0.3654, label = "Crate of Foodstuffs", offMapText = "Travel to Crate of Foodstuffs." },
             },
             sourceStep = 15,
-            priority = 180,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -500,7 +482,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.6759999999999999, y = 0.34600000000000003, label = "Bloodpetal Thresher", offMapText = "Travel to Bloodpetal Thresher." },
             },
             sourceStep = 16,
-            priority = 190,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -528,14 +509,12 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.6759999999999999, y = 0.34600000000000003, label = "Bloodpetal Lasher", offMapText = "Travel to Bloodpetal Lasher." },
             },
             sourceStep = 16,
-            priority = 200,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4145-larion-and-muigin" },
         },
         {
-            priority = 210,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -584,7 +563,6 @@ ns:RegisterGuide({
             rememberPreparation = 4292,
         },
         {
-            priority = 220,
             route = {
                 { mapID = 1449, x = 0.7992, y = 0.499, label = "Lar'korwi bait site", offMapText = "Travel to Lar'korwi bait site." },
             },
@@ -614,7 +592,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "Turn in The Apes of Un'Goro to Torwa Pathfinder.",
             route = {
                 { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
@@ -643,7 +620,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             text = "Turn in The Bait for Lar'korwi to Torwa Pathfinder.",
             route = {
                 { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
@@ -674,7 +650,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             route = {
                 { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
             },
@@ -705,7 +680,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 260,
             text = "Kill 10 Pterrordax.",
             route = {
                 { y = 0.864, mapID = 1449, label = "Pterrordax", offMapText = "Travel to Pterrordax.", x = 0.58 },
@@ -730,7 +704,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             text = "Enter the Slithering Scar cave in southern Un'Goro Crater. Use the Unused Scraping Vial inside the hive to collect a Hive Wall Sample.",
             route = {
                 { mapID = 1449, x = 0.4874, y = 0.8521, label = "Hive Wall Sample", offMapText = "Travel to Hive Wall Sample." },
@@ -773,7 +746,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.49950000000000006, y = 0.8170000000000001, label = "Gorishi Scent Gland", offMapText = "Travel to Gorishi Scent Gland." },
             },
             sourceStep = 22,
-            priority = 280,
             requiredQuests = {
                 {
                     mode = "any",
@@ -804,7 +776,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.3847, y = 0.6611, label = "Research Equipment", offMapText = "Travel to Research Equipment." },
             },
             sourceStep = 23,
-            priority = 290,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -823,10 +794,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 974,
-            priority = 300,
         },
         {
-            priority = 310,
             route = {
                 { y = 0.5043, mapID = 1449, label = "Krakle", offMapText = "Travel to Krakle in Un'Goro Crater.", x = 0.3093 },
             },
@@ -851,7 +820,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 320,
             text = "For Finding the Source: Krakle in Un'Goro Crater wants you to find the hottest area of Fire Plume Ridge. Whenever you find a hot spot, right click the thermometer to check the temperature. Keep looking until you find the hottest one.",
             id = "objective-974-quest-work",
             kind = "objective",
@@ -873,7 +841,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-974-finding-the-source" },
         },
         {
-            priority = 330,
             text = "Turn in Finding the Source to Krakle.",
             route = {
                 { y = 0.5043, mapID = 1449, label = "Krakle", offMapText = "Travel to Krakle in Un'Goro Crater.", x = 0.3093 },
@@ -898,7 +865,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             route = {
                 { y = 0.5043, mapID = 1449, label = "Krakle", offMapText = "Travel to Krakle in Un'Goro Crater.", x = 0.3093 },
             },
@@ -950,7 +916,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.348, y = 0.4, label = "Bloodpetal Trapper", offMapText = "Travel to Bloodpetal Trapper." },
             },
             sourceStep = 28,
-            priority = 350,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -975,7 +940,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.348, y = 0.4, label = "Dinosaur Bone", offMapText = "Travel to Dinosaur Bone." },
             },
             sourceStep = 29,
-            priority = 360,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1000,7 +964,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.348, y = 0.4, label = "Webbed Diemetradon Scale", offMapText = "Travel to Webbed Diemetradon Scale." },
             },
             sourceStep = 29,
-            priority = 370,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1025,7 +988,6 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.348, y = 0.396, label = "Webbed Pterrordax Scale", offMapText = "Travel to Webbed Pterrordax Scale." },
             },
             sourceStep = 30,
-            priority = 380,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1050,14 +1012,12 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.348, y = 0.396, label = "Frenzied Pterrordax", offMapText = "Travel to Frenzied Pterrordax." },
             },
             sourceStep = 31,
-            priority = 390,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4501-beware-of-pterrordax" },
         },
         {
-            priority = 400,
             text = "Turn in Lost! to Ringo.",
             route = {
                 { y = 0.4985, mapID = 1449, label = "Ringo", offMapText = "Travel to Ringo in Un'Goro Crater.", x = 0.519 },
@@ -1082,7 +1042,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.4985, mapID = 1449, label = "Ringo", offMapText = "Travel to Ringo in Un'Goro Crater.", x = 0.519 },
             },
@@ -1113,7 +1072,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             route = {
                 { mapID = 1449, x = 0.4362, y = 0.0851, label = "A Little Help From My Friends", offMapText = "Travel to A Little Help From My Friends." },
             },
@@ -1143,7 +1101,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4491-a-little-help-from-my-friends" },
         },
         {
-            priority = 430,
             text = "Turn in A Little Help From My Friends to Spraggle Frock.",
             route = {
                 { y = 0.0851, mapID = 1449, label = "Spraggle Frock", offMapText = "Travel to Spraggle Frock in Un'Goro Crater.", x = 0.4362 },
@@ -1174,7 +1131,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             text = "Turn in Beware of Pterrordax to Spraggle Frock.",
             route = {
                 { y = 0.0851, mapID = 1449, label = "Spraggle Frock", offMapText = "Travel to Spraggle Frock in Un'Goro Crater.", x = 0.4362 },
@@ -1204,7 +1160,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Turn in Roll the Bones to Spark Nilminer.",
             route = {
                 { y = 0.0743, mapID = 1449, label = "Spark Nilminer", offMapText = "Travel to Spark Nilminer in Un'Goro Crater.", x = 0.435 },
@@ -1229,7 +1184,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 460,
             text = "Discover and examine the Western Crystal Pylon in western Un'Goro Crater.",
             id = "objective-4288-quest-work",
             kind = "objective",
@@ -1260,7 +1214,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 470,
             text = "Turn in The Western Pylon to J.D. Collie.",
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
@@ -1291,7 +1244,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
             },
@@ -1322,7 +1274,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
             },
@@ -1353,7 +1304,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             text = "Turn in Alien Ecology to Hol'anyee Marshal.",
             route = {
                 { y = 0.0679, mapID = 1449, label = "Hol'anyee Marshal", offMapText = "Travel to Hol'anyee Marshal in Un'Goro Crater.", x = 0.4347 },
@@ -1378,7 +1328,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 510,
             text = "Turn in Expedition Salvation to Williden Marshal.",
             route = {
                 { y = 0.0714, mapID = 1449, label = "Williden Marshal", offMapText = "Travel to Williden Marshal in Un'Goro Crater.", x = 0.4395 },
@@ -1407,7 +1356,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             text = "Turn in Larion and Muigin to Larion.",
             route = {
                 { y = 0.0872, mapID = 1449, label = "Larion", offMapText = "Travel to Larion in Un'Goro Crater.", x = 0.4554 },
@@ -1441,7 +1389,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 530,
             route = {
                 { y = 0.0872, mapID = 1449, label = "Larion", offMapText = "Travel to Larion in Un'Goro Crater.", x = 0.4554 },
             },
@@ -1475,7 +1422,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "Turn in Shizzle's Flyer to Shizzle.",
             route = {
                 { y = 0.1159, mapID = 1449, label = "Shizzle", offMapText = "Travel to Shizzle in Un'Goro Crater.", x = 0.4423 },
@@ -1504,7 +1450,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.1345, mapID = 1449, label = "Karna Remtravel", offMapText = "Travel to Karna Remtravel in Un'Goro Crater.", x = 0.4638 },
             },
@@ -1529,7 +1474,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "Collect 1 U'cha's Pelt.",
             route = {
                 { mapID = 1449, x = 0.6815000000000001, y = 0.1258, label = "U'cha's Pelt", offMapText = "Travel to U'cha's Pelt." },
@@ -1560,7 +1504,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             text = "Turn in Chasing A-Me 01 to A-Me 01.",
             route = {
                 { mapID = 1449, x = 0.6765000000000001, y = 0.16760000000000003, label = "A-Me 01", offMapText = "Travel to A-Me 01 in Un'Goro Crater." },
@@ -1585,7 +1528,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             route = {
                 { mapID = 1449, x = 0.6765000000000001, y = 0.16760000000000003, label = "A-Me 01", offMapText = "Travel to A-Me 01 in Un'Goro Crater." },
             },
@@ -1616,7 +1558,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 590,
             text = "For Chasing A-Me 01: Find a Mithril Casing and return to A-Me 01 in Un'Goro Crater.",
             id = "objective-4244-quest-work",
             kind = "objective",
@@ -1644,7 +1585,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4244-chasing-a-me-01" },
         },
         {
-            priority = 600,
             text = "Turn in Chasing A-Me 01 to A-Me 01.",
             route = {
                 { y = 0.1676, mapID = 1449, label = "A-Me 01", offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765 },
@@ -1675,7 +1615,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.1676, mapID = 1449, label = "A-Me 01", offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765 },
             },
@@ -1706,7 +1645,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             text = "Turn in Chasing A-Me 01 to Karna Remtravel.",
             route = {
                 { y = 0.1345, mapID = 1449, label = "Karna Remtravel", offMapText = "Travel to Karna Remtravel in Un'Goro Crater.", x = 0.4638 },
@@ -1737,7 +1675,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             text = "Turn in The Mighty U'cha to Torwa Pathfinder.",
             route = {
                 { y = 0.7596, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7163 },
@@ -1768,7 +1705,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 640,
             text = "Discover and examine the Northern Crystal Pylon in northern Un'Goro Crater.",
             id = "objective-4285-quest-work",
             kind = "objective",
@@ -1799,7 +1735,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 650,
             text = "Turn in The Northern Pylon to J.D. Collie.",
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
@@ -1830,7 +1765,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 660,
             text = "Discover and examine the Eastern Crystal Pylon in eastern Un'Goro Crater.",
             id = "objective-4287-quest-work",
             kind = "objective",
@@ -1861,7 +1795,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 670,
             text = "Turn in The Eastern Pylon to J.D. Collie.",
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
@@ -1892,7 +1825,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 680,
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
             },
@@ -1923,7 +1855,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 690,
             text = "Turn in Making Sense of It to J.D. Collie.",
             route = {
                 { y = 0.027, mapID = 1449, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192 },
@@ -1954,7 +1885,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 700,
             text = "Turn in Bungle in the Jungle to Alchemist Pestlezugg.",
             route = {
                 { mapID = 1446, x = 0.5089, y = 0.2696, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris." },
@@ -1985,7 +1915,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             route = {
                 { mapID = 1448, x = 0.52, y = 0.16, label = "Angerclaw Grizzly", offMapText = "Travel to Angerclaw Grizzly." },
             },
@@ -2013,7 +1942,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 720,
             route = {
                 { y = 0.4383, mapID = 1444, label = "Talo Thornhoof", offMapText = "Travel to Talo Thornhoof in Feralas.", x = 0.7618 },
             },
@@ -2041,7 +1969,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-4120-quest-work" },
         },
         {
-            priority = 730,
             route = {
                 { mapID = 1444, x = 0.4512, y = 0.2557, label = "Videre Elixir", offMapText = "Travel to Videre Elixir." },
             },
@@ -2072,7 +1999,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 740,
             route = {
                 { y = 0.6472, mapID = 1456, label = "Innkeeper Pala", offMapText = "Travel to Innkeeper Pala in Thunder Bluff.", x = 0.4582 },
             },
@@ -2121,10 +2047,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1000,
             alternativeQuests = { 1004, 1018 },
-            priority = 750,
         },
         {
-            priority = 760,
             text = "Accept The New Frontier from Bluff Runner Windstrider.",
             id = "accept-1000-the-new-frontier",
             kind = "accept",
@@ -2150,7 +2074,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 770,
             route = {
                 { y = 0.309, mapID = 1456, label = "Magatha Grimtotem", offMapText = "Travel to Magatha Grimtotem in Thunder Bluff.", x = 0.6984 },
             },
@@ -2184,7 +2107,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 780,
             route = {
                 { y = 0.309, mapID = 1456, label = "Magatha Grimtotem", offMapText = "Travel to Magatha Grimtotem in Thunder Bluff.", x = 0.6984 },
             },
@@ -2218,7 +2140,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 790,
             text = "Turn in Assisting Arch Druid Runetotem to Arch Druid Hamuul Runetotem.",
             route = {
                 { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
@@ -2247,7 +2168,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 800,
             route = {
                 { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
             },
@@ -2275,7 +2195,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 810,
             text = "Turn in The New Frontier to Arch Druid Hamuul Runetotem.",
             route = {
                 { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
@@ -2304,7 +2223,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 820,
             route = {
                 { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
             },
@@ -2338,7 +2256,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 830,
             text = "For Un'Goro Soil: Bring 20 Un'Goro Soil samples to Ghede on the Elder Rise of Thunder Bluff.",
             id = "objective-3761-quest-work",
             kind = "objective",
@@ -2363,7 +2280,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3761-un-goro-soil" },
         },
         {
-            priority = 840,
             text = "Turn in Un'Goro Soil to Ghede.",
             route = {
                 { y = 0.2198, mapID = 1456, label = "Ghede", offMapText = "Travel to Ghede in Thunder Bluff.", x = 0.7745 },
@@ -2391,7 +2307,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 850,
             route = {
                 { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
             },
@@ -2425,7 +2340,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 860,
             text = "Turn in Morrowgrain Research to Bashana Runetotem.",
             route = {
                 { y = 0.3418, mapID = 1456, label = "Bashana Runetotem", offMapText = "Travel to Bashana Runetotem in Thunder Bluff.", x = 0.7106 },
@@ -2459,7 +2373,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 870,
             text = "Turn in Marvon's Workshop to Liv Rizzlefix.",
             route = {
                 { y = 0.3873, mapID = 1413, label = "Liv Rizzlefix", offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245 },
@@ -2493,7 +2406,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 880,
             text = "For Volcanic Activity: Collect 9 samples of Un'Goro Ash from the fire elementals around the volcano in Un'Goro Crater.",
             id = "objective-4502-quest-work",
             kind = "objective",
@@ -2515,7 +2427,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 890,
             route = {
                 { y = 0.3873, mapID = 1413, label = "Liv Rizzlefix", offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245 },
             },
@@ -2540,7 +2451,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-4502-quest-work" },
         },
         {
-            priority = 900,
             route = {
                 { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
             },
@@ -2571,7 +2481,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 910,
             route = {
                 { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
             },

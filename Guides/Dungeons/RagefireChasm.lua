@@ -32,10 +32,11 @@ local function Point(mapID, x, y, label, offMapText, complete, flightTo)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-ragefire-chasm-horde",
     title = "Ragefire Chasm",
     category = "Dungeon Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -46,7 +47,6 @@ ns:RegisterGuide({
         {
             id = "accept-searching-satchel",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 13 } },
             text = "Accept Searching for the Lost Satchel from Rahauro on Elder Rise.",
             taxiDestination = "Thunder Bluff",
@@ -72,7 +72,6 @@ ns:RegisterGuide({
         {
             id = "accept-testing-strength",
             kind = "accept",
-            priority = 11,
             conditions = { level = { min = 13 } },
             text = "Accept Testing an Enemy's Strength from Rahauro.",
             complete = QuestState(5723, "activeOrCompleted"),
@@ -84,7 +83,6 @@ ns:RegisterGuide({
         {
             id = "accept-power-destroy",
             kind = "accept",
-            priority = 20,
             conditions = { level = { min = 9 } },
             text = "Accept The Power to Destroy... from Varimathras in the Undercity.",
             complete = QuestState(5725, "activeOrCompleted"),
@@ -102,7 +100,6 @@ ns:RegisterGuide({
         {
             id = "accept-hidden-enemies-1",
             kind = "accept",
-            priority = 30,
             conditions = { level = { min = 13 } },
             text = "Accept Hidden Enemies from Thrall in Orgrimmar.",
             complete = QuestState(5726, "activeOrCompleted"),
@@ -114,7 +111,6 @@ ns:RegisterGuide({
         {
             id = "recover-lieutenants-insignia",
             kind = "objective",
-            priority = 31,
             conditions = { level = { min = 13 } },
             text = "Recover a Lieutenant's Insignia from the Burning Blade in Skull Rock.",
             dependsOn = { "accept-hidden-enemies-1" },
@@ -127,7 +123,6 @@ ns:RegisterGuide({
         {
             id = "turnin-hidden-enemies-1",
             kind = "turnin",
-            priority = 32,
             conditions = { level = { min = 13 } },
             text = "Return the Lieutenant's Insignia to Thrall.",
             dependsOn = { "recover-lieutenants-insignia" },
@@ -139,8 +134,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-hidden-enemies-2",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 5726 } }, { conditions = {  }, mode = "all", quests = { 5726 } } },
             kind = "accept",
-            priority = 33,
             conditions = { level = { min = 13 } },
             text = "Accept Hidden Enemies from Thrall.",
             dependsOn = { "turnin-hidden-enemies-1" },
@@ -151,8 +146,8 @@ ns:RegisterGuide({
         },
         {
             id = "gauge-neeru",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 5726 } }, { conditions = {  }, mode = "all", quests = { 5726 } } },
             kind = "gossip",
-            priority = 34,
             conditions = { level = { min = 13 } },
             text = "Show the insignia to Neeru Fireblade and exhaust his dialogue.",
             dependsOn = { "accept-hidden-enemies-2" },
@@ -164,7 +159,6 @@ ns:RegisterGuide({
         {
             id = "accept-slaying-beast",
             kind = "accept",
-            priority = 34.5,
             conditions = { level = { min = 13 } },
             text = "Accept Slaying the Beast from Neeru Fireblade.",
             dependsOn = { "gauge-neeru" },
@@ -175,8 +169,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-hidden-enemies-2",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 5726 } }, { conditions = {  }, mode = "all", quests = { 5726 } } },
             kind = "turnin",
-            priority = 35,
             conditions = { level = { min = 13 } },
             text = "Turn in Hidden Enemies to Thrall.",
             dependsOn = { "gauge-neeru" },
@@ -187,8 +181,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-hidden-enemies-3",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 5727 } }, { conditions = {  }, mode = "all", quests = { 5727 } } },
             kind = "accept",
-            priority = 36,
             conditions = { level = { min = 13 } },
             text = "Accept the next Hidden Enemies from Thrall. This step is the Ragefire Chasm kill quest.",
             dependsOn = { "turnin-hidden-enemies-2" },
@@ -200,7 +194,6 @@ ns:RegisterGuide({
         {
             id = "enter-ragefire-chasm",
             kind = "travel",
-            priority = 40,
             text = "Enter Ragefire Chasm from the Cleft of Shadow.",
             dependsOn = {
                 "accept-searching-satchel",
@@ -219,7 +212,6 @@ ns:RegisterGuide({
         {
             id = "complete-testing-strength",
             kind = "objective",
-            priority = 41,
             conditions = { level = { min = 13 } },
             text = "Defeat 8 Ragefire Troggs and 8 Ragefire Shamans.",
             dependsOn = { "accept-hidden-enemies-3", "accept-slaying-beast", "enter-ragefire-chasm" },
@@ -228,7 +220,6 @@ ns:RegisterGuide({
         {
             id = "find-maur-grimtotem",
             kind = "objective",
-            priority = 42,
             conditions = { level = { min = 13 } },
             text = "Find Maur Grimtotem in the side cave beyond the first trogg room.",
             dependsOn = { "accept-hidden-enemies-3", "accept-slaying-beast", "enter-ragefire-chasm" },
@@ -237,7 +228,6 @@ ns:RegisterGuide({
         {
             id = "turnin-searching-satchel",
             kind = "turnin",
-            priority = 43,
             conditions = { level = { min = 13 } },
             text = "Turn in Searching for the Lost Satchel to Maur Grimtotem inside RFC.",
             dependsOn = { "find-maur-grimtotem" },
@@ -245,8 +235,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-returning-satchel",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5722 } } },
             kind = "accept",
-            priority = 44,
             conditions = { level = { min = 13 } },
             text = "Accept Returning the Lost Satchel from Maur Grimtotem.",
             dependsOn = { "turnin-searching-satchel" },
@@ -255,7 +245,6 @@ ns:RegisterGuide({
         {
             id = "complete-slaying-beast",
             kind = "objective",
-            priority = 45,
             conditions = { level = { min = 13 } },
             text = "Slay Taragaman the Hungerer and loot his heart. " ..
                 "Keep him off the platform edge so Uppercut does not knock the tank into the lava. Ranged stay out of Fire Nova.",
@@ -265,7 +254,6 @@ ns:RegisterGuide({
         {
             id = "complete-power-destroy",
             kind = "objective",
-            priority = 46,
             conditions = { level = { min = 9 } },
             text = "Kill Searing Blade cultists in Ragefire Chasm until you loot Spells of Shadow and Incantations from the Nether.",
             dependsOn = { "accept-hidden-enemies-3", "accept-slaying-beast", "enter-ragefire-chasm" },
@@ -273,8 +261,8 @@ ns:RegisterGuide({
         },
         {
             id = "complete-hidden-enemies-3",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 5727 } }, { conditions = {  }, mode = "all", quests = { 5727 } } },
             kind = "objective",
-            priority = 47,
             conditions = { level = { min = 13 } },
             text = "Slay Jergosh the Invoker, then Bazzalan. " ..
                 "Crowd-control one of Jergosh's guards and kill the adds first. " ..
@@ -285,7 +273,6 @@ ns:RegisterGuide({
         {
             id = "turnin-slaying-beast",
             kind = "turnin",
-            priority = 50,
             conditions = { level = { min = 13 } },
             text = "Return Taragaman's heart to Neeru Fireblade.",
             dependsOn = { "complete-slaying-beast" },
@@ -296,8 +283,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-hidden-enemies-3",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 5727 } }, { conditions = {  }, mode = "all", quests = { 5727 } } },
             kind = "turnin",
-            priority = 51,
             conditions = { level = { min = 13 } },
             text = "Report the defeat of Bazzalan and Jergosh to Thrall.",
             dependsOn = { "complete-hidden-enemies-3" },
@@ -308,8 +295,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-hidden-enemies-4",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5728 } } },
             kind = "accept",
-            priority = 52,
             conditions = { level = { min = 9 } },
             text = "Accept Hidden Enemies from Thrall.",
             dependsOn = { "turnin-hidden-enemies-3" },
@@ -320,8 +307,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-hidden-enemies-4",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5728 } } },
             kind = "turnin",
-            priority = 53,
             conditions = { level = { min = 9 } },
             text = "Speak with Neeru Fireblade about the Searing Blade leaders.",
             dependsOn = { "accept-hidden-enemies-4" },
@@ -332,8 +319,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-hidden-enemies-5",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5729 } } },
             kind = "accept",
-            priority = 54,
             conditions = { level = { min = 9 } },
             text = "Accept Hidden Enemies from Neeru Fireblade.",
             dependsOn = { "turnin-hidden-enemies-4" },
@@ -344,8 +331,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-hidden-enemies-5",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5729 } } },
             kind = "turnin",
-            priority = 55,
             conditions = { level = { min = 9 } },
             text = "Deliver Neeru's message to Thrall and finish Hidden Enemies.",
             dependsOn = { "accept-hidden-enemies-5" },
@@ -357,7 +344,6 @@ ns:RegisterGuide({
         {
             id = "turnin-testing-strength",
             kind = "turnin",
-            priority = 60,
             conditions = { level = { min = 13 } },
             text = "Return to Rahauro in Thunder Bluff to turn in Testing an Enemy's Strength.",
             dependsOn = { "complete-testing-strength" },
@@ -372,8 +358,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-returning-satchel",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5722 } } },
             kind = "turnin",
-            priority = 61,
             conditions = { level = { min = 13 } },
             text = "Return the Grimtotem Satchel to Rahauro in Thunder Bluff.",
             dependsOn = { "accept-returning-satchel" },
@@ -389,7 +375,6 @@ ns:RegisterGuide({
         {
             id = "turnin-power-destroy",
             kind = "turnin",
-            priority = 70,
             conditions = { level = { min = 9 } },
             text = "Return both recovered books to Varimathras in the Undercity.",
             dependsOn = { "complete-power-destroy" },

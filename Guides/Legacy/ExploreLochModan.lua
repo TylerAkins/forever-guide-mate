@@ -47,7 +47,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-loch-modan",
     title = "Explore Loch Modan",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

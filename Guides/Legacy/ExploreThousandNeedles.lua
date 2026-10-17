@@ -53,7 +53,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-thousand-needles",
     title = "Explore Thousand Needles",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

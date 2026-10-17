@@ -34,10 +34,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-zul-farrak",
     title = "Zul'Farrak",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 40 } },
@@ -48,7 +49,6 @@ ns:RegisterGuide({
         {
             id = "accept-2988-witherbark-cages",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Accept Witherbark Cages from Gryphon Master Talonaxe.",
             complete = QuestState(2988, "activeOrCompleted"),
@@ -59,7 +59,6 @@ ns:RegisterGuide({
         {
             id = "objective-2988-1-check-the-first-cage",
             kind = "objective",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Check the First Witherbark Cage east of the Altar of Zul in the Hinterlands.",
             dependsOn = { "accept-2988-witherbark-cages" },
@@ -71,7 +70,6 @@ ns:RegisterGuide({
         {
             id = "objective-2988-2-check-the-second-cage",
             kind = "objective",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Check the Second Witherbark Cage by the river in the Hinterlands.",
             dependsOn = { "accept-2988-witherbark-cages" },
@@ -83,7 +81,6 @@ ns:RegisterGuide({
         {
             id = "objective-2988-3-check-the-third-cage",
             kind = "objective",
-            priority = 16,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Check the Third Witherbark Cage at the Quel'Danil Lodge in the Hinterlands.",
             dependsOn = { "accept-2988-witherbark-cages" },
@@ -95,7 +92,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2988-witherbark-cages",
             kind = "turnin",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Turn in Witherbark Cages to Gryphon Master Talonaxe.",
             dependsOn = { "objective-2988-1-check-the-first-cage", "objective-2988-2-check-the-second-cage", "objective-2988-3-check-the-third-cage" },
@@ -106,8 +102,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2989-the-altar-of-zul",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2988 } } },
             kind = "accept",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Accept The Altar of Zul from Gryphon Master Talonaxe.",
             dependsOn = { "turnin-2988-witherbark-cages" },
@@ -118,8 +114,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2989-1-search-the-altar-of-zul",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2988 } } },
             kind = "objective",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Search the Altar of Zul in the Hinterlands for clues to the missing trolls.",
             dependsOn = { "accept-2989-the-altar-of-zul" },
@@ -130,8 +126,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2989-the-altar-of-zul",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2988 } } },
             kind = "turnin",
-            priority = 20,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Turn in The Altar of Zul to Gryphon Master Talonaxe.",
             dependsOn = { "objective-2989-1-search-the-altar-of-zul" },
@@ -142,8 +138,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2990-thadius-grimshade",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2989 } } },
             kind = "accept",
-            priority = 21,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept Thadius Grimshade from Gryphon Master Talonaxe.",
             dependsOn = { "turnin-2989-the-altar-of-zul" },
@@ -154,8 +150,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2990-thadius-grimshade",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2989 } } },
             kind = "turnin",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in Thadius Grimshade to Thadius Grimshade.",
             dependsOn = { "accept-2990-thadius-grimshade" },
@@ -166,8 +162,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2991-nekrum-s-medallion",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2990 } } },
             kind = "accept",
-            priority = 23,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Accept Nekrum's Medallion from Thadius Grimshade.",
             dependsOn = { "turnin-2990-thadius-grimshade" },
@@ -179,7 +175,6 @@ ns:RegisterGuide({
         {
             id = "accept-2846-tiara-of-the-deep",
             kind = "accept",
-            priority = 25,
             conditions = { level = { min = 46 } },
             text = "Accept Tiara of the Deep from Tabetha.",
             complete = QuestState(2846, "activeOrCompleted"),
@@ -195,7 +190,6 @@ ns:RegisterGuide({
         {
             id = "accept-2770-gahz-rilla",
             kind = "accept",
-            priority = 26,
             conditions = { level = { min = 40 } },
             text = "Accept Gahz'rilla from Wizzle Brassbolts.",
             complete = QuestState(2770, "activeOrCompleted"),
@@ -206,7 +200,6 @@ ns:RegisterGuide({
         {
             id = "accept-3520-screecher-spirits",
             kind = "accept",
-            priority = 27,
             conditions = { level = { min = 49 } },
             text = "Accept Screecher Spirits from Yeh'kinya.",
             complete = QuestState(3520, "activeOrCompleted"),
@@ -217,7 +210,6 @@ ns:RegisterGuide({
         {
             id = "objective-3520-1-screecher-spirits",
             kind = "objective",
-            priority = 29,
             conditions = { level = { min = 49 } },
             text = "Use Yeh'kinya's Bramble on 3 Screecher spirits in Feralas when they die to capture their spirits.",
             dependsOn = { "accept-3520-screecher-spirits" },
@@ -229,7 +221,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3520-screecher-spirits",
             kind = "turnin",
-            priority = 30,
             conditions = { level = { min = 49 } },
             text = "Turn in Screecher Spirits to Yeh'kinya.",
             dependsOn = { "objective-3520-1-screecher-spirits" },
@@ -240,8 +231,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-3527-the-prophecy-of-mosh-aru",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3520 } } },
             kind = "accept",
-            priority = 31,
             conditions = { level = { min = 46 } },
             text = "Accept The Prophecy of Mosh'aru from Yeh'kinya.",
             dependsOn = { "turnin-3520-screecher-spirits" },
@@ -253,7 +244,6 @@ ns:RegisterGuide({
         {
             id = "accept-2768-divino-matic-rod",
             kind = "accept",
-            priority = 32,
             conditions = { level = { min = 46 } },
             text = "Accept Divino-matic Rod from Chief Engineer Bilgewhizzle.",
             complete = QuestState(2768, "activeOrCompleted"),
@@ -264,7 +254,6 @@ ns:RegisterGuide({
         {
             id = "accept-2865-scarab-shells",
             kind = "accept",
-            priority = 33,
             conditions = { level = { min = 46 } },
             text = "Accept Scarab Shells from Tran'rek.",
             complete = QuestState(2865, "activeOrCompleted"),
@@ -275,7 +264,6 @@ ns:RegisterGuide({
         {
             id = "accept-3042-troll-temper",
             kind = "accept",
-            priority = 34,
             conditions = { level = { min = 46 } },
             text = "Accept Troll Temper from Trenton Lighthammer.",
             complete = QuestState(3042, "activeOrCompleted"),
@@ -286,7 +274,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 35,
             conditions = { level = { min = 40 } },
             text = "Enter Zul'Farrak with your group.",
             dependsOn = { "accept-2988-witherbark-cages", "accept-2989-the-altar-of-zul", "accept-2990-thadius-grimshade", "accept-2991-nekrum-s-medallion", "accept-2846-tiara-of-the-deep", "accept-2770-gahz-rilla", "accept-3520-screecher-spirits", "accept-3527-the-prophecy-of-mosh-aru", "accept-2768-divino-matic-rod", "accept-2865-scarab-shells", "accept-3042-troll-temper" },
@@ -295,8 +282,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3527-1-first-mosh-aru-tablet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3520 } } },
             kind = "objective",
-            priority = 37,
             conditions = { level = { min = 46 } },
             text = "Loot the First Mosh'aru Tablet from Theka the Martyr's pit in Zul'Farrak.",
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
@@ -305,8 +292,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2991-1-nekrum-s-medallion",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2990 } } },
             kind = "objective",
-            priority = 41,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Kill Nekrum Gutchewer and loot Nekrum's Medallion.",
             dependsOn = { "accept-2991-nekrum-s-medallion" },
@@ -316,7 +303,6 @@ ns:RegisterGuide({
         {
             id = "objective-2768-1-divino-matic-rod",
             kind = "objective",
-            priority = 43,
             conditions = { level = { min = 46 } },
             text = "Kill Sergeant Bly and loot the Divino-matic Rod.",
             dependsOn = { "accept-2768-divino-matic-rod" },
@@ -326,7 +312,6 @@ ns:RegisterGuide({
         {
             id = "objective-2846-1-tiara-of-the-deep",
             kind = "objective",
-            priority = 45,
             conditions = { level = { min = 46 } },
             text = "Kill Hydromancer Velratha and loot the Tiara of the Deep.",
             dependsOn = { "accept-2846-tiara-of-the-deep" },
@@ -335,8 +320,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-3527-2-second-mosh-aru-tablet",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3520 } } },
             kind = "objective",
-            priority = 46,
             conditions = { level = { min = 46 } },
             text = "Loot the Second Mosh'aru Tablet from the troll altar near Antu'sul in Zul'Farrak.",
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
@@ -346,7 +331,6 @@ ns:RegisterGuide({
         {
             id = "objective-2770-1-gahz-rilla-s-electrified",
             kind = "objective",
-            priority = 48,
             conditions = { level = { min = 40 } },
             text = "Use the Mallet of Zul'Farrak on the Gong, then kill Gahz'rilla and loot Gahz'rilla's Electrified Scale.",
             dependsOn = { "accept-2770-gahz-rilla" },
@@ -356,7 +340,6 @@ ns:RegisterGuide({
         {
             id = "objective-2865-1-uncracked-scarab-shell",
             kind = "objective",
-            priority = 50,
             conditions = { level = { min = 46 } },
             text = "Kill Scarabs in Zul'Farrak until you loot 5 Uncracked Scarab Shell.",
             dependsOn = { "accept-2865-scarab-shells" },
@@ -366,7 +349,6 @@ ns:RegisterGuide({
         {
             id = "objective-3042-1-troll-temper",
             kind = "objective",
-            priority = 52,
             conditions = { level = { min = 46 } },
             text = "Kill trolls in Zul'Farrak until you loot 20 Troll Temper.",
             dependsOn = { "accept-3042-troll-temper" },
@@ -375,8 +357,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-3527-the-prophecy-of-mosh-aru",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 3520 } } },
             kind = "turnin",
-            priority = 55,
             conditions = { level = { min = 46 } },
             text = "Turn in The Prophecy of Mosh'aru to Yeh'kinya.",
             dependsOn = { "objective-3527-1-first-mosh-aru-tablet", "objective-3527-2-second-mosh-aru-tablet" },
@@ -388,7 +370,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2768-divino-matic-rod",
             kind = "turnin",
-            priority = 56,
             conditions = { level = { min = 46 } },
             text = "Turn in Divino-matic Rod to Chief Engineer Bilgewhizzle.",
             dependsOn = { "objective-2768-1-divino-matic-rod" },
@@ -400,7 +381,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2865-scarab-shells",
             kind = "turnin",
-            priority = 57,
             conditions = { level = { min = 46 } },
             text = "Turn in Scarab Shells to Tran'rek.",
             dependsOn = { "objective-2865-1-uncracked-scarab-shell" },
@@ -412,7 +392,6 @@ ns:RegisterGuide({
         {
             id = "turnin-3042-troll-temper",
             kind = "turnin",
-            priority = 58,
             conditions = { level = { min = 46 } },
             text = "Turn in Troll Temper to Trenton Lighthammer.",
             dependsOn = { "objective-3042-1-troll-temper" },
@@ -424,7 +403,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2770-gahz-rilla",
             kind = "turnin",
-            priority = 59,
             conditions = { level = { min = 40 } },
             text = "Turn in Gahz'rilla to Wizzle Brassbolts.",
             dependsOn = { "objective-2770-1-gahz-rilla-s-electrified" },
@@ -436,7 +414,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2846-tiara-of-the-deep",
             kind = "turnin",
-            priority = 60,
             conditions = { level = { min = 46 } },
             text = "Turn in Tiara of the Deep to Tabetha.",
             dependsOn = { "objective-2846-1-tiara-of-the-deep" },
@@ -447,8 +424,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2991-nekrum-s-medallion",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 2990 } } },
             kind = "turnin",
-            priority = 61,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             text = "Turn in Nekrum's Medallion to Thadius Grimshade.",
             dependsOn = { "objective-2991-1-nekrum-s-medallion" },
@@ -460,7 +437,6 @@ ns:RegisterGuide({
         {
             id = "accept-2933-venom-bottles",
             kind = "accept",
-            priority = 63,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Loot Venom Bottles from the Revantusk troll camp in the Hinterlands. " ..
                 "Use them to accept Venom Bottles.",
@@ -472,7 +448,6 @@ ns:RegisterGuide({
         {
             id = "turnin-2933-venom-bottles",
             kind = "turnin",
-            priority = 64,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in Venom Bottles to Apothecary Lydon.",
             dependsOn = { "accept-2933-venom-bottles" },
@@ -488,8 +463,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2934-undamaged-venom-sac",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2933 } } },
             kind = "accept",
-            priority = 65,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Accept Undamaged Venom Sac from Apothecary Lydon.",
             dependsOn = { "turnin-2933-venom-bottles" },
@@ -500,8 +475,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2934-1-undamaged-venom-sac",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2933 } } },
             kind = "objective",
-            priority = 67,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Kill Venomtip Scorpids in the Hinterlands until you loot an Undamaged Venom Sac.",
             dependsOn = { "accept-2934-undamaged-venom-sac" },
@@ -512,8 +487,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2934-undamaged-venom-sac",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2933 } } },
             kind = "turnin",
-            priority = 68,
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             text = "Turn in Undamaged Venom Sac to Apothecary Lydon.",
             dependsOn = { "objective-2934-1-undamaged-venom-sac" },
@@ -524,8 +499,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2935-consult-master-gadrin",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2934 } } },
             kind = "accept",
-            priority = 69,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Accept Consult Master Gadrin from Apothecary Lydon.",
             dependsOn = { "turnin-2934-undamaged-venom-sac" },
@@ -536,8 +511,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2935-consult-master-gadrin",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2934 } } },
             kind = "turnin",
-            priority = 70,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Turn in Consult Master Gadrin to Master Gadrin.",
             dependsOn = { "accept-2935-consult-master-gadrin" },
@@ -548,8 +523,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-2936-the-spider-god",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2935 } } },
             kind = "accept",
-            priority = 71,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Accept The Spider God from Master Gadrin.",
             dependsOn = { "turnin-2935-consult-master-gadrin" },
@@ -560,8 +535,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-2936-1-the-spider-god-s-name",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2935 } } },
             kind = "objective",
-            priority = 74,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Inside Zul'Farrak, read the Spider God tablet at the troll altar to learn the Spider God's name.",
             dependsOn = { "accept-2936-the-spider-god" },
@@ -570,8 +545,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-2936-the-spider-god",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 2935 } } },
             kind = "turnin",
-            priority = 79,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Turn in The Spider God to Master Gadrin.",
             dependsOn = { "objective-2936-1-the-spider-god-s-name" },

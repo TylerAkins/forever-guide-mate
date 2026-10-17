@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Felwood & Winterspring",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-felwood-and-winterspring",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5155,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.8211, mapID = 1448, label = "Greta Mosshoof", offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121 },
             },
@@ -55,7 +53,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.8162, mapID = 1448, label = "Taronn Redfeather", offMapText = "Travel to Taronn Redfeather in Felwood.", x = 0.5089 },
             },
@@ -80,7 +77,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             route = {
                 { y = 0.8501, mapID = 1448, label = "Grazle", offMapText = "Travel to Grazle in Felwood.", x = 0.5093 },
             },
@@ -105,7 +101,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             text = "Kill 6 Deadwood Warrior.",
             route = {
                 { y = 0.892, mapID = 1448, label = "Deadwood Warrior", offMapText = "Travel to Deadwood Warrior.", x = 0.484 },
@@ -130,7 +125,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 60,
             text = "Kill 6 Deadwood Pathfinder.",
             route = {
                 { y = 0.892, mapID = 1448, label = "Deadwood Pathfinder", offMapText = "Travel to Deadwood Pathfinder.", x = 0.484 },
@@ -155,7 +149,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 70,
             text = "Kill 6 Deadwood Gardener.",
             route = {
                 { y = 0.892, mapID = 1448, label = "Deadwood Gardener", offMapText = "Travel to Deadwood Gardener.", x = 0.484 },
@@ -180,7 +173,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 80,
             text = "Turn in Timbermaw Ally to Grazle.",
             route = {
                 { y = 0.8502, mapID = 1448, label = "Grazle", offMapText = "Travel to Grazle in Felwood.", x = 0.5093 },
@@ -210,7 +202,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.8502, mapID = 1448, label = "Grazle", offMapText = "Travel to Grazle in Felwood.", x = 0.5093 },
             },
@@ -260,10 +251,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4102,
-            priority = 100,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.8298, mapID = 1448, label = "Maybess Riverbreeze", offMapText = "Travel to Maybess Riverbreeze in Felwood.", x = 0.4668 },
             },
@@ -291,7 +280,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             text = "Kill 4 Jaedenar Hound.",
             route = {
                 { y = 0.576, mapID = 1448, label = "Jaedenar Hound", offMapText = "Travel to Jaedenar Hound.", x = 0.404 },
@@ -316,7 +304,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             text = "Kill 4 Jaedenar Guardian.",
             route = {
                 { y = 0.576, mapID = 1448, label = "Jaedenar Guardian", offMapText = "Travel to Jaedenar Guardian.", x = 0.404 },
@@ -341,7 +328,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 140,
             text = "Kill 6 Jaedenar Adept.",
             route = {
                 { y = 0.576, mapID = 1448, label = "Jaedenar Adept", offMapText = "Travel to Jaedenar Adept.", x = 0.404 },
@@ -366,7 +352,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             text = "Kill 6 Jaedenar Cultist.",
             route = {
                 { y = 0.576, mapID = 1448, label = "Jaedenar Cultist", offMapText = "Travel to Jaedenar Cultist.", x = 0.404 },
@@ -410,10 +395,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4505,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { mapID = 1448, x = 0.3421, y = 0.5234000000000001, label = "Winna Hazzard", offMapText = "Travel to Winna Hazzard in Felwood." },
             },
@@ -441,7 +424,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.5273, mapID = 1448, label = "Dreka'Sur", offMapText = "Travel to Dreka'Sur in Felwood.", x = 0.348 },
             },
@@ -469,7 +451,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             text = "Use the Hardened Flasket at the corrupt moonwell to obtain a Filled Flasket. Watch for stealthed enemies.",
             route = {
                 { mapID = 1448, x = 0.32409999999999994, y = 0.6658, label = "Well of Corruption", offMapText = "Travel to Well of Corruption." },
@@ -497,7 +478,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 200,
             text = "Collect 1 Overlord Ror's Claw.",
             route = {
                 { y = 0.9427, mapID = 1448, label = "Overlord Ror", offMapText = "Travel to Overlord Ror.", x = 0.4823 },
@@ -525,7 +505,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Turn in Forces of Jaedenar to Greta Mosshoof.",
             route = {
                 { y = 0.8211, mapID = 1448, label = "Greta Mosshoof", offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121 },
@@ -556,7 +535,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.8211, mapID = 1448, label = "Greta Mosshoof", offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121 },
             },
@@ -605,7 +583,6 @@ ns:RegisterGuide({
                 { mapID = 1448, x = 0.426, y = 0.414, label = "Entropic Beast", offMapText = "Travel to Entropic Beast." },
             },
             sourceStep = 20,
-            priority = 230,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -630,14 +607,12 @@ ns:RegisterGuide({
                 { mapID = 1448, x = 0.426, y = 0.414, label = "Entropic Horror", offMapText = "Travel to Entropic Horror." },
             },
             sourceStep = 20,
-            priority = 240,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-5156-verifying-the-corruption" },
         },
         {
-            priority = 250,
             text = "Collect 15 Blood Amber.",
             route = {
                 { y = 0.1685, mapID = 1448, label = "Warpwood Moss Flayer", offMapText = "Travel to Warpwood Moss Flayer.", x = 0.5578 },
@@ -665,7 +640,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             route = {
                 { mapID = 1448, x = 0.52, y = 0.16, label = "Angerclaw Grizzly", offMapText = "Travel to Angerclaw Grizzly." },
             },
@@ -693,7 +667,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             route = {
                 { mapID = 1448, x = 0.52, y = 0.16, label = "Felpaw Ravager", offMapText = "Travel to Felpaw Ravager." },
             },
@@ -721,7 +694,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 280,
             text = "Turn in Speak to Nafien to Nafien.",
             route = {
                 { y = 0.0813, mapID = 1448, label = "Nafien", offMapText = "Travel to Nafien in Felwood.", x = 0.6477 },
@@ -764,10 +736,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5082,
-            priority = 290,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -792,7 +762,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -842,10 +811,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 320,
         },
         {
-            priority = 330,
             text = "Use the Empty Firewater Flask to accept Winterfall Firewater.",
             id = "accept-5083-winterfall-firewater",
             kind = "accept",
@@ -885,7 +852,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.3, y = 0.354, label = "Winterfall Totemic", offMapText = "Travel to Winterfall Totemic." },
             },
             sourceStep = 26,
-            priority = 340,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -910,7 +876,6 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.3, y = 0.354, label = "Winterfall Pathfinder", offMapText = "Travel to Winterfall Pathfinder." },
             },
             sourceStep = 26,
-            priority = 350,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -935,14 +900,12 @@ ns:RegisterGuide({
                 { mapID = 1452, x = 0.3, y = 0.354, label = "Winterfall Den Watcher", offMapText = "Travel to Winterfall Den Watcher." },
             },
             sourceStep = 26,
-            priority = 360,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-5082-threat-of-the-winterfall" },
         },
         {
-            priority = 370,
             text = "Turn in Threat of the Winterfall to Donova Snowden.",
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
@@ -972,7 +935,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             text = "Turn in Winterfall Firewater to Donova Snowden.",
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
@@ -997,7 +959,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -1028,7 +989,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             route = {
                 { y = 0.4516, mapID = 1452, label = "Donova Snowden", offMapText = "Travel to Donova Snowden in Winterspring.", x = 0.3127 },
             },
@@ -1059,7 +1019,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             route = {
                 { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
             },
@@ -1090,7 +1049,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             text = "Turn in A Husband's Last Battle to Dreka'Sur.",
             route = {
                 { y = 0.5273, mapID = 1448, label = "Dreka'Sur", offMapText = "Travel to Dreka'Sur in Felwood.", x = 0.348 },
@@ -1118,7 +1076,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             text = "Turn in Well of Corruption to Winna Hazzard.",
             route = {
                 { y = 0.5234, mapID = 1448, label = "Winna Hazzard", offMapText = "Travel to Winna Hazzard in Felwood.", x = 0.3421 },
@@ -1146,7 +1103,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             text = "Turn in Cleansing Felwood to Maybess Riverbreeze.",
             route = {
                 { y = 0.8307, mapID = 1448, label = "Maybess Riverbreeze", offMapText = "Travel to Maybess Riverbreeze in Felwood.", x = 0.4672 },
@@ -1174,7 +1130,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Follow the path into Jaedenar. Use the Empty Canteen at the corrupted moonwell to obtain Corrupt Moonwell Water.",
             id = "objective-5157-quest-work",
             kind = "objective",
@@ -1205,7 +1160,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 460,
             text = "Turn in Collection of the Corrupt Water to Greta Mosshoof.",
             route = {
                 { y = 0.8211, mapID = 1448, label = "Greta Mosshoof", offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121 },
@@ -1236,7 +1190,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.8211, mapID = 1448, label = "Greta Mosshoof", offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121 },
             },
@@ -1267,7 +1220,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Turn in Verifying the Corruption to Taronn Redfeather.",
             route = {
                 { y = 0.8162, mapID = 1448, label = "Taronn Redfeather", offMapText = "Travel to Taronn Redfeather in Felwood.", x = 0.5089 },
@@ -1292,7 +1244,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             route = {
                 { y = 0.3409, mapID = 1454, label = "Jes'rimon", offMapText = "Travel to Jes'rimon in Orgrimmar.", x = 0.5551 },
             },
@@ -1326,7 +1277,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             route = {
                 { y = 0.3409, mapID = 1454, label = "Jes'rimon", offMapText = "Travel to Jes'rimon in Orgrimmar.", x = 0.5551 },
             },

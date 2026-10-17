@@ -523,7 +523,7 @@ function Navigation:InvalidateClientPins()
 end
 
 function Navigation:ClientPin(goal, mapID, api, state)
-    if not goal or goal.useClientPin ~= true then
+    if not goal or (goal.useClientPin ~= true and not self:QuestDestinationID(goal, state)) then
         return nil
     end
     local questID = QuestID(goal)
@@ -534,16 +534,21 @@ function Navigation:ClientPin(goal, mapID, api, state)
     if questLog == nil then
         questLog = C_QuestLog
     end
-    if type(questLog) ~= "table" or type(questLog.GetQuestsOnMap) ~= "function" then
+    if type(questLog) ~= "table" then
         return nil
     end
+    if not self.deferClientPins and type(questLog.GetNextWaypoint) == "function" then
+        local ok, pinMap, x, y = pcall(questLog.GetNextWaypoint, questID)
+        if ok and type(pinMap) == "number" and pinMap > 0 then
+            x, y = PlainCoord(x), PlainCoord(y)
+            if x and y then return pinMap, x, y end
+        end
+    end
+    if type(questLog.GetQuestsOnMap) ~= "function" then return nil end
     local cacheKey = PinToken(questLog) .. ":" .. tostring(mapID) .. ":" .. ObjectiveKey(state, questID)
         .. PlayerPinBucket(state)
     local cached = pinCache[cacheKey]
     if cached ~= nil then
-        if cached == false then
-            return nil
-        end
         return cached.mapID, cached.x, cached.y
     end
     if self.deferClientPins then
@@ -560,20 +565,12 @@ function Navigation:ClientPin(goal, mapID, api, state)
         pinCacheCount = pinCacheCount + 1
         return pinMap, x, y
     end
-    if pinCacheCount > 32 then
-        pinCache = {}
-        pinCacheCount = 0
-    end
-    pinCache[cacheKey] = false
-    pinCacheCount = pinCacheCount + 1
+    -- POIs can arrive after the quest log. Retry misses on the next refresh.
 end
 
 function Navigation:ApplyClientPin(goal, leg, api, state)
     if not leg then
         return nil
-    end
-    if not goal or goal.useClientPin ~= true then
-        return leg
     end
     local pinMap, x, y = self:ClientPin(goal, leg.mapID, api, state)
     if not x then
@@ -620,7 +617,19 @@ local function BreadcrumbPassed(route, index, state)
 end
 
 function Navigation:GetActiveLeg(goal, state, api)
-    if goal and goal.useClientPin == true and (type(goal.route) ~= "table" or #goal.route == 0) then
+    if self:QuestDestinationID(goal, state) then
+        local route = goal.route
+        local destination = route and route[#route]
+        local pinMap, x, y = self:ClientPin(goal, destination and destination.mapID or (state and state.mapID), api, state)
+        if x then
+            local leg = { mapID = pinMap, x = x, y = y,
+                label = destination and destination.label or "Quest log pin",
+                offMapText = destination and destination.offMapText or "Travel to the pin in your quest log." }
+            return leg, self:NearPin(state, leg, api) and leg.label or leg.offMapText
+        end
+    end
+    if goal and (goal.useClientPin == true or self:QuestDestinationID(goal, state))
+        and (type(goal.route) ~= "table" or #goal.route == 0) then
         local pinMap, x, y = self:ClientPin(goal, state and state.mapID, api, state)
         if x then
             return {

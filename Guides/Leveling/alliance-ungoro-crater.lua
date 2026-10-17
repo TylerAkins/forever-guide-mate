@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Un'Goro Crater",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-ungoro-crater",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4289,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.7596, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
             },
@@ -67,10 +65,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4290,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.7596, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
             },
@@ -95,7 +91,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.685, mapID = 1449, label = "It's a Secret to Everybody", offMapText = "Travel to It's a Secret to Everybody.", x = 0.6302 },
             },
@@ -120,7 +115,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             text = "Turn in It's a Secret to Everybody.",
             route = {
                 { y = 0.6902, mapID = 1449, label = "It's a Secret to Everybody", offMapText = "Travel to It's a Secret to Everybody.", x = 0.6312 },
@@ -145,7 +139,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.6902, mapID = 1449, label = "It's a Secret to Everybody", offMapText = "Travel to It's a Secret to Everybody.", x = 0.6312 },
             },
@@ -194,14 +187,12 @@ ns:RegisterGuide({
                 { mapID = 1449, x = 0.6875, y = 0.5666, label = "Piece of Threshadon Carcass", offMapText = "Travel to Piece of Threshadon Carcass." },
             },
             sourceStep = 5,
-            priority = 80,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4290-the-fare-of-lar-korwi" },
         },
         {
-            priority = 90,
             text = "Turn in The Fare of Lar'korwi to Torwa Pathfinder.",
             route = {
                 { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
@@ -226,7 +217,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             route = {
                 { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
             },
@@ -257,7 +247,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             text = "Collect 2 Ravasaur Pheromone Gland.",
             route = {
                 { y = 0.73, mapID = 1449, label = "Lar'korwi Mate", offMapText = "Travel to Lar'korwi Mate.", x = 0.672 },
@@ -288,7 +277,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             text = "Turn in The Scent of Lar'korwi to Torwa Pathfinder.",
             route = {
                 { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7163 },
@@ -319,7 +307,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7163 },
             },
@@ -369,10 +356,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 140,
         },
         {
-            priority = 150,
             text = "Use the A Mangled Journal to accept Williden's Journal.",
             id = "accept-3884-williden-s-journal",
             kind = "accept",
@@ -410,7 +395,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 160,
             sourceStep = 11,
             requiredQuests = {
                 {
@@ -437,7 +421,6 @@ ns:RegisterGuide({
                 questObjective = { id = 3845, index = 2, text = "Curled Map Parchment", count = 1 },
             },
             sourceStep = 11,
-            priority = 170,
             requiredQuests = {
                 {
                     mode = "any",
@@ -465,7 +448,6 @@ ns:RegisterGuide({
                 questObjective = { id = 3845, index = 3, text = "Lion-headed Key", count = 1 },
             },
             sourceStep = 11,
-            priority = 180,
             requiredQuests = {
                 {
                     mode = "any",
@@ -478,7 +460,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3845-it-s-a-secret-to-everybody" },
         },
         {
-            priority = 190,
             text = "Turn in It's a Secret to Everybody to Linken.",
             route = {
                 { y = 0.0811, mapID = 1449, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466 },
@@ -514,7 +495,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 200,
             route = {
                 { y = 0.0811, mapID = 1449, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466 },
             },
@@ -545,7 +525,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             text = "Turn in Williden's Journal to Williden Marshal.",
             route = {
                 { y = 0.0714, mapID = 1449, label = "Williden Marshal", offMapText = "Travel to Williden Marshal in Un'Goro Crater.", x = 0.4395 },
@@ -570,7 +549,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
             },
@@ -595,7 +573,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             text = "For Crystals of Power: Collect 7 Power Crystals of each color: red, blue, yellow, and green.",
             id = "objective-4284-quest-work",
             kind = "objective",
@@ -617,7 +594,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4284-crystals-of-power" },
         },
         {
-            priority = 240,
             text = "Turn in Crystals of Power to J.D. Collie.",
             route = {
                 { y = 0.027, mapID = 1449, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192 },
@@ -661,10 +637,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4141,
-            priority = 250,
         },
         {
-            priority = 260,
             route = {
                 { mapID = 1449, x = 0.4294, y = 0.0964, label = "Muigin", offMapText = "Travel to Muigin in Un'Goro Crater." },
             },
@@ -692,7 +666,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Collect 15 Bloodpetal.",
             route = {
                 { y = 0.352, mapID = 1449, label = "Bloodpetal Flayer", offMapText = "Travel to Bloodpetal Flayer.", x = 0.692 },
@@ -720,7 +693,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             text = "Turn in Muigin and Larion to Muigin.",
             route = {
                 { y = 0.0964, mapID = 1449, label = "Muigin", offMapText = "Travel to Muigin in Un'Goro Crater.", x = 0.4294 },
@@ -748,7 +720,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.0964, mapID = 1449, label = "Muigin", offMapText = "Travel to Muigin in Un'Goro Crater.", x = 0.4294 },
             },
@@ -782,7 +753,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             route = {
                 { mapID = 1446, x = 0.298, y = 0.6679999999999999, label = "Laden Dew Gland", offMapText = "Travel to Laden Dew Gland." },
             },
@@ -807,7 +777,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             route = {
                 { y = 0.2866, mapID = 1446, label = "Marin Noggenfogger", offMapText = "Travel to Marin Noggenfogger in Tanaris.", x = 0.5181 },
             },
@@ -832,7 +801,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-2605-quest-work" },
         },
         {
-            priority = 320,
             route = {
                 { y = 0.2866, mapID = 1446, label = "Marin Noggenfogger", offMapText = "Travel to Marin Noggenfogger in Tanaris.", x = 0.5181 },
             },
@@ -863,7 +831,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 330,
             route = {
                 { y = 0.2892, mapID = 1446, label = "Pupellyverbos Port", offMapText = "Travel to Pupellyverbos Port.", x = 0.523 },
             },
@@ -887,7 +854,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             route = {
                 { mapID = 1446, x = 0.415, y = 0.5781000000000001, label = "Gor'marok the Ravager", offMapText = "Travel to Gor'marok the Ravager." },
             },
@@ -912,7 +878,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             route = {
                 { y = 0.274, mapID = 1446, label = "Andi Lynn", offMapText = "Travel to Andi Lynn in Tanaris.", x = 0.5282 },
             },
@@ -937,7 +902,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-5863-quest-work" },
         },
         {
-            priority = 360,
             route = {
                 { mapID = 1446, x = 0.298, y = 0.6679999999999999, label = "Gnarled Thistleshrub", offMapText = "Travel to Gnarled Thistleshrub." },
             },
@@ -962,7 +926,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             route = {
                 { y = 0.2676, mapID = 1446, label = "Tran'rek", offMapText = "Travel to Tran'rek in Tanaris.", x = 0.5157 },
             },
@@ -987,7 +950,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-3362-quest-work" },
         },
         {
-            priority = 380,
             text = "Turn in In Good Taste to Sprinkle.",
             route = {
                 { y = 0.2687, mapID = 1446, label = "Sprinkle", offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106 },
@@ -1018,7 +980,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.2687, mapID = 1446, label = "Sprinkle", offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106 },
             },
@@ -1049,7 +1010,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             route = {
                 { y = 0.2748, mapID = 1446, label = "Senior Surveyor Fizzledowser", offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.", x = 0.5021 },
             },
@@ -1083,7 +1043,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             route = {
                 { mapID = 1446, x = 0.40299999999999997, y = 0.6890000000000001, label = "Gahz'ridian Ornament", offMapText = "Travel to Gahz'ridian Ornament." },
             },
@@ -1108,7 +1067,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             route = {
                 { y = 0.4593, mapID = 1446, label = "Marvon Rivetseeker", offMapText = "Travel to Marvon Rivetseeker in Tanaris.", x = 0.5271 },
             },
@@ -1133,7 +1091,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-3161-quest-work" },
         },
         {
-            priority = 430,
             route = {
                 { y = 0.4593, mapID = 1446, label = "Marvon Rivetseeker", offMapText = "Travel to Marvon Rivetseeker in Tanaris.", x = 0.5271 },
             },

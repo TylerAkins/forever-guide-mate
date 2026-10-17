@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Hillsbrad Foothills",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-hillsbrad-foothills",
@@ -38,10 +38,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5644,
             alternativeQuests = { 5646, 5679 },
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.1712, mapID = 1458, label = "Aelthalyste", offMapText = "Travel to Aelthalyste in Undercity.", x = 0.4926 },
             },
@@ -92,10 +90,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 264,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { mapID = 1421, x = 0.44179999999999997, y = 0.4267, label = "Until Death Do Us Part", offMapText = "Travel to Until Death Do Us Part." },
             },
@@ -123,7 +119,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.4199, mapID = 1421, label = "Mura Runetotem", offMapText = "Travel to Mura Runetotem in Silverpine Forest.", x = 0.4291 },
             },
@@ -176,10 +171,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 493,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.4087, mapID = 1421, label = "Apothecary Renferrel", offMapText = "Travel to Apothecary Renferrel in Silverpine Forest.", x = 0.428 },
             },
@@ -207,7 +200,296 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
+            text = "Accept Watching the Roads from Shadow Priest Allister in the Sepulcher.",
+            route = {
+                { y = 0.41, mapID = 1421, label = "Shadow Priest Allister", offMapText = "Travel to Shadow Priest Allister.", x = 0.44 },
+            },
+
+            id = "woven-accept-95981-watching-the-roads",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95981, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 479 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.746, mapID = 1421, label = "Dalaran Watcher", offMapText = "Travel to Dalaran Watcher.", x = 0.604 },
+                { y = 0.652, mapID = 1421, label = "Dalaran Wizard", offMapText = "Travel to Dalaran Wizard.", x = 0.632 },
+            },
+            text = "Watching the Roads: slay 8 Dalaran Watchers and 8 Dalaran Wizards in Ambermill.",
+            id = "woven-objective-95981-watching-the-roads",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95981, state = "complete" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 479 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-95981-watching-the-roads" },
+        },
+        {
+            route = {
+                { y = 0.41, mapID = 1421, label = "Shadow Priest Allister", offMapText = "Travel to Shadow Priest Allister.", x = 0.44 },
+            },
+            text = "Turn in Watching the Roads to Shadow Priest Allister in the Sepulcher.",
+            id = "woven-turnin-95981-watching-the-roads",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 95981, state = "completed" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 479 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-95981-watching-the-roads", "woven-objective-95981-watching-the-roads" },
+        },
+        {
+            text = "Accept Arugal's Folly from Dalar Dawnweaver in the Sepulcher.",
+            route = {
+                { y = 0.398, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.442 },
+            },
+
+            id = "woven-accept-98298-arugals-folly",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98298, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 99 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.74, mapID = 1421, label = "Moonrage Bloodhowler", offMapText = "Travel to Moonrage Bloodhowler.", x = 0.5 },
+            },
+            text = "Arugal's Folly: bring 6 Worgen Bits from Moonrage Bloodhowlers.",
+            id = "woven-objective-98298-arugals-folly",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98298, state = "complete" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 99 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98298-arugals-folly" },
+        },
+        {
+            route = {
+                { y = 0.398, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.442 },
+            },
+            text = "Turn in Arugal's Folly to Dalar Dawnweaver in the Sepulcher.",
+            id = "woven-turnin-98298-arugals-folly",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98298, state = "completed" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 99 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98298-arugals-folly", "woven-objective-98298-arugals-folly" },
+        },
+        {
+            route = {
+                { y = 0.398, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.442 },
+            },
+            text = "Accept Stop the Spread from Dalar Dawnweaver in the Sepulcher.",
+            id = "woven-accept-98299-stop-the-spread",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98299, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 98298 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+
+        },
+        {
+            route = {
+                { y = 0.832, mapID = 1421, label = "Sickly Refugee", offMapText = "Travel to Sickly Refugee.", x = 0.454 },
+                { y = 0.864, mapID = 1421, label = "Haggard Refugee", offMapText = "Travel to Haggard Refugee.", x = 0.462 },
+            },
+            text = "Stop the Spread: slay 5 Sickly Refugees and 5 Haggard Refugees by the Greymane Wall.",
+            id = "woven-objective-98299-stop-the-spread",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98299, state = "complete" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 98298 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98299-stop-the-spread" },
+        },
+        {
+            route = {
+                { y = 0.398, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.442 },
+            },
+            text = "Turn in Stop the Spread to Dalar Dawnweaver in the Sepulcher.",
+            id = "woven-turnin-98299-stop-the-spread",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98299, state = "completed" },
+            },
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 98298 },
+                    conditions = { faction = "Horde" },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98299-stop-the-spread", "woven-objective-98299-stop-the-spread" },
+        },
+        {
             route = {
                 { y = 0.474, mapID = 1424, label = "Deathstalker Lesh", offMapText = "Travel to Deathstalker Lesh in Hillsbrad Foothills.", x = 0.2078 },
             },
@@ -235,7 +517,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "Turn in Journey to Hillsbrad Foothills to Apothecary Lydon.",
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
@@ -263,7 +544,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 100,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -297,7 +577,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -331,7 +610,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -371,7 +649,6 @@ ns:RegisterGuide({
                 },
             },
             text = "Collect 10 Gray Bear Tongues and Creeper Ichor from spiders around Tarren Mill. Follow the quest log pin; the Ichor can take many kills to drop.",
-            priority = 130,
             dependsOn = { "accept-496-elixir-of-suffering" },
             id = "objective-496-elixir-of-suffering",
             kind = "objective",
@@ -402,10 +679,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 501,
-            priority = 140,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -455,10 +730,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2479,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.1919, mapID = 1424, label = "Serge Hinott", offMapText = "Travel to Serge Hinott in Hillsbrad Foothills.", x = 0.6163 },
             },
@@ -495,7 +768,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.1919, mapID = 1424, label = "Serge Hinott", offMapText = "Travel to Serge Hinott in Hillsbrad Foothills.", x = 0.6163 },
             },
@@ -532,7 +804,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             dependsOn = { "accept-2480-hinott-s-assistance" },
             id = "objective-2480-reviewed-mechanics",
             conditions = {
@@ -553,7 +824,6 @@ ns:RegisterGuide({
             classAction = "objective-2480-reviewed-mechanics",
         },
         {
-            priority = 200,
             text = "Turn in Hinott's Assistance to Serge Hinott.",
             route = {
                 { y = 0.1897, mapID = 1424, label = "Serge Hinott", offMapText = "Travel to Serge Hinott in Hillsbrad Foothills.", x = 0.6158 },
@@ -590,7 +860,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "Turn in Time To Strike to High Executor Darthalia.",
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -618,7 +887,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 220,
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
             },
@@ -646,7 +914,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             route = {
                 { y = 0.1969, mapID = 1424, label = "Dangerous!", offMapText = "Travel to Dangerous!.", x = 0.6255 },
             },
@@ -674,7 +941,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             route = {
                 { y = 0.2074, mapID = 1424, label = "WANTED: Syndicate Personnel", offMapText = "Travel to WANTED: Syndicate Personnel.", x = 0.6262 },
             },
@@ -702,7 +968,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             route = {
                 { y = 0.2066, mapID = 1424, label = "Krusk", offMapText = "Travel to Krusk in Hillsbrad Foothills.", x = 0.6323 },
             },
@@ -752,10 +1017,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1536,
-            priority = 260,
         },
         {
-            priority = 270,
             route = {
                 { y = 0.2075, mapID = 1424, label = "Empty Red Waterskin", offMapText = "Travel to Empty Red Waterskin.", x = 0.6215 },
             },
@@ -792,7 +1055,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 280,
             text = "Kill Jailor Marlgen as he patrols Durnholde Keep and loot the Burnished Gold Key.",
             route = {
                 { mapID = 1424, x = 0.7879999999999999, y = 0.42, label = "Jailor Marlgen", offMapText = "Travel to Jailor Marlgen." },
@@ -833,7 +1095,6 @@ ns:RegisterGuide({
             rememberPreparation = 498,
         },
         {
-            priority = 290,
             text = "Use the Burnished Gold Key on Tog'thar's locked ball and chain to free him.",
             route = {
                 { mapID = 1424, x = 0.7979, y = 0.39659999999999995, label = "Tog'thar", offMapText = "Travel to Tog'thar." },
@@ -881,7 +1142,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.784, y = 0.434, label = "Vial of Innocent Blood", offMapText = "Travel to Vial of Innocent Blood." },
             },
             sourceStep = 28,
-            priority = 300,
             requiredQuests = {
                 {
                     mode = "any",
@@ -894,7 +1154,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1066-blood-of-innocents" },
         },
         {
-            priority = 310,
             text = "Kill Jailor Eston as he patrols Durnholde Keep and loot the Dull Iron Key.",
             route = {
                 { mapID = 1424, x = 0.7959999999999999, y = 0.4183, label = "Jailor Eston", offMapText = "Travel to Jailor Eston." },
@@ -956,14 +1215,12 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.768, y = 0.43, label = "Syndicate Rogue", offMapText = "Travel to Syndicate Rogue." },
             },
             sourceStep = 29,
-            priority = 320,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-549-wanted-syndicate-personnel" },
         },
         {
-            priority = 330,
             text = "Enter the building and use the Dull Iron Key on Drull's locked ball and chain to free him.",
             route = {
                 { mapID = 1424, x = 0.7533, y = 0.415, label = "Drull", offMapText = "Travel to Drull." },
@@ -1011,7 +1268,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.768, y = 0.43, label = "Syndicate Watchman", offMapText = "Travel to Syndicate Watchman." },
             },
             sourceStep = 29,
-            priority = 340,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1039,7 +1295,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.628, y = 0.342, label = "Creeper Ichor", offMapText = "Travel to Creeper Ichor." },
             },
             sourceStep = 31,
-            priority = 350,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1067,14 +1322,12 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.628, y = 0.342, label = "Gray Bear Tongue", offMapText = "Travel to Gray Bear Tongue." },
             },
             sourceStep = 32,
-            priority = 360,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-496-elixir-of-suffering" },
         },
         {
-            priority = 370,
             text = "Turn in Blood of Innocents to Apothecary Lydon.",
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
@@ -1108,7 +1361,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             text = "Turn in Elixir of Suffering to Apothecary Lydon.",
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
@@ -1142,7 +1394,6 @@ ns:RegisterGuide({
         },
         {
             text = "Accept Elixir of Suffering from Apothecary Lydon.",
-            priority = 390,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -1175,7 +1426,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -1209,7 +1459,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             text = "Turn in Elixir of Suffering to Umpi.",
             route = {
                 { y = 0.192, mapID = 1424, label = "Umpi", offMapText = "Travel to Umpi in Hillsbrad Foothills.", x = 0.6152 },
@@ -1243,7 +1492,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 420,
             text = "Turn in WANTED: Syndicate Personnel to High Executor Darthalia.",
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -1275,7 +1523,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             text = "Turn in The Rescue to Krusk.",
             route = {
                 { y = 0.206, mapID = 1424, label = "Krusk", offMapText = "Travel to Krusk in Hillsbrad Foothills.", x = 0.6323 },
@@ -1309,7 +1556,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             text = "Kill Farmer Getz.",
             route = {
                 { y = 0.3944, mapID = 1424, label = "Farmer Getz", offMapText = "Travel to Farmer Getz.", x = 0.3674 },
@@ -1337,7 +1583,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             text = "Kill Farmer Ray.",
             route = {
                 { y = 0.3542, mapID = 1424, label = "Farmer Ray", offMapText = "Travel to Farmer Ray.", x = 0.3368 },
@@ -1386,7 +1631,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.33399999999999996, y = 0.408, label = "Hillsbrad Farmer", offMapText = "Travel to Hillsbrad Farmer." },
             },
             sourceStep = 40,
-            priority = 460,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1414,7 +1658,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.33399999999999996, y = 0.408, label = "Hillsbrad Farmhand", offMapText = "Travel to Hillsbrad Farmhand." },
             },
             sourceStep = 40,
-            priority = 470,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1442,14 +1685,12 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.418, y = 0.376, label = "Mountain Lion Blood", offMapText = "Travel to Mountain Lion Blood." },
             },
             sourceStep = 41,
-            priority = 480,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-501-elixir-of-pain" },
         },
         {
-            priority = 490,
             text = "Turn in Elixir of Pain to Apothecary Lydon.",
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
@@ -1477,7 +1718,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
             },
@@ -1511,7 +1751,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             text = "Turn in Battle of Hillsbrad to High Executor Darthalia.",
             route = {
                 { y = 0.2045, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -1545,7 +1784,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.2045, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
             },
@@ -1579,7 +1817,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             route = {
                 { y = 0.1968, mapID = 1424, label = "Deathguard Samsa", offMapText = "Travel to Deathguard Samsa in Hillsbrad Foothills.", x = 0.6213 },
             },
@@ -1613,7 +1850,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 540,
             text = "Turn in Elixir of Pain to Stanley.",
             route = {
                 { y = 0.3532, mapID = 1424, label = "Stanley", offMapText = "Travel to Stanley in Hillsbrad Foothills.", x = 0.3266 },
@@ -1647,7 +1883,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 550,
             text = "Kill Farmer Kalaba.",
             route = {
                 { y = 0.458, mapID = 1424, label = "Farmer Kalaba", offMapText = "Travel to Farmer Kalaba.", x = 0.344 },
@@ -1693,7 +1928,6 @@ ns:RegisterGuide({
                 questObjective = { id = 567, index = 2, text = "Citizen Wilkes" },
             },
             sourceStep = 47,
-            priority = 560,
             requiredQuests = {},
             useClientText = false,
             useClientPin = true,
@@ -1721,7 +1955,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.33799999999999997, y = 0.46799999999999997, label = "Hillsbrad Peasant", offMapText = "Travel to Hillsbrad Peasant." },
             },
             sourceStep = 48,
-            priority = 570,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1734,7 +1967,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-528-battle-of-hillsbrad" },
         },
         {
-            priority = 580,
             text = "Turn in Battle of Hillsbrad to High Executor Darthalia.",
             route = {
                 { y = 0.2045, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -1768,7 +2000,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 590,
             route = {
                 { y = 0.2045, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
             },
@@ -1823,7 +2054,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.3201, y = 0.4545, label = "Shipment of Iron", offMapText = "Travel to Shipment of Iron." },
             },
             sourceStep = 52,
-            priority = 600,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1857,7 +2087,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.32409999999999994, y = 0.4481, label = "Blacksmith Verringtan", offMapText = "Travel to Blacksmith Verringtan." },
             },
             sourceStep = 53,
-            priority = 610,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1891,7 +2120,6 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.32409999999999994, y = 0.4481, label = "Hillsbrad Apprentice Blacksmith", offMapText = "Travel to Hillsbrad Apprentice Blacksmith." },
             },
             sourceStep = 54,
-            priority = 620,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1926,10 +2154,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 30,
-            priority = 630,
         },
         {
-            priority = 640,
             route = {
                 { y = 0.4142, mapID = 1450, label = "Half Pendant of Aquatic Agility", offMapText = "Travel to Half Pendant of Aquatic Agility.", x = 0.3592 },
             },
@@ -1966,7 +2192,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 650,
             text = "Turn in Trial of the Sea Lion to Dendrite Starblaze.",
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
@@ -2003,7 +2228,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 660,
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
             },
@@ -2058,7 +2282,6 @@ ns:RegisterGuide({
                 questObjective = { id = 546, index = 1, text = "Hillsbrad Human Skull", count = 30 },
             },
             sourceStep = 69,
-            priority = 670,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2095,10 +2318,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 95111,
-            priority = 680,
         },
         {
-            priority = 690,
             route = {
                 { y = 0.41, mapID = 1421, label = "Trevan Rol", offMapText = "Travel to Trevan Rol.", x = 0.434 },
             },
@@ -2130,7 +2351,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 700,
             route = {
                 { y = 0.26, mapID = 1424, label = "Ott", offMapText = "Travel to Ott.", x = 0.604 },
             },
@@ -2162,7 +2382,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-95111-an-underrated-talent" },
         },
         {
-            priority = 710,
             route = {
                 { y = 0.26, mapID = 1424, label = "Ott", offMapText = "Travel to Ott.", x = 0.604 },
             },
@@ -2206,7 +2425,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 720,
             id = "woven-objective-95125-ott-s-masterwork",
             conditions = {
                 all = {
@@ -2229,7 +2447,6 @@ ns:RegisterGuide({
             classAction = "objective-95125-reviewed-mechanics",
         },
         {
-            priority = 730,
             route = {
                 { y = 0.26, mapID = 1424, label = "Ott", offMapText = "Travel to Ott.", x = 0.604 },
             },

@@ -9,7 +9,7 @@ ns:RegisterGuide({
     id = "leveling-era-horde-mulgore-part-2",
     title = "Mulgore (Part 2)",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     routeMode = "ordered",
     casualSpine = true,
     conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
@@ -17,7 +17,6 @@ ns:RegisterGuide({
         {
             id = "level-before-96259",
             kind = "note",
-            priority = 10,
             conditions = { all = { { faction = "Horde" } } },
             text = "Reach level 30 before continuing this Mulgore return visit.",
             complete = { level = { min = 30 } },
@@ -28,7 +27,6 @@ ns:RegisterGuide({
         {
             id = "accept-96259-defending-the-dead",
             kind = "accept",
-            priority = 20,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Defending the Dead from Muln Earthfury at Skywatcher Plateau.",
             complete = { quest = { id = 96259, state = "activeOrCompleted" } },
@@ -38,7 +36,6 @@ ns:RegisterGuide({
         {
             id = "accept-96241-talkin-bout-toxins-mon",
             kind = "accept",
-            priority = 30,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Talkin' bout Toxins, Mon from Mazu'kon at Skywatcher Plateau.",
             complete = { quest = { id = 96241, state = "activeOrCompleted" } },
@@ -48,7 +45,6 @@ ns:RegisterGuide({
         {
             id = "accept-96260-stronger-than-steel",
             kind = "accept",
-            priority = 40,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Stronger than Steel from Yorn Grimtotem at Skywatcher Plateau.",
             complete = { quest = { id = 96260, state = "activeOrCompleted" } },
@@ -58,7 +54,6 @@ ns:RegisterGuide({
         {
             id = "level-before-96261",
             kind = "note",
-            priority = 50,
             conditions = { all = { { faction = "Horde" } } },
             text = "Reach level 31 before continuing this Mulgore return visit.",
             complete = { level = { min = 31 } },
@@ -69,7 +64,6 @@ ns:RegisterGuide({
         {
             id = "accept-96261-the-broodmother",
             kind = "accept",
-            priority = 60,
             conditions = { all = { { faction = "Horde" }, { level = { min = 31 } } } },
             text = "Accept The Broodmother from Muln Earthfury at Skywatcher Plateau. This is an elite quest; bring allies.",
             complete = { quest = { id = 96261, state = "activeOrCompleted" } },
@@ -79,7 +73,6 @@ ns:RegisterGuide({
         {
             id = "accept-96774-ancient-gurubashi-idol",
             kind = "accept",
-            priority = 70,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Accept Ancient Gurubashi Idol from Mazu'kon at Skywatcher Plateau. Keep it for the Drowned City dungeon guide.",
             complete = { quest = { id = 96774, state = "activeOrCompleted" } },
@@ -89,7 +82,6 @@ ns:RegisterGuide({
         {
             id = "objective-96259-defending-the-dead",
             kind = "objective",
-            priority = 80,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Kill 10 Gloomrise Hatchlings and 5 Gloomrise Soldiers at Gloomrise northwest of Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "accept-96259-defending-the-dead" },
@@ -100,7 +92,6 @@ ns:RegisterGuide({
         {
             id = "objective-96241-talkin-bout-toxins-mon",
             kind = "objective",
-            priority = 90,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Use the provided Toxin Extractor on Gnawed Corpses at Gloomrise to gather 5 Gloomrise Toxin Samples. Follow the quest log pin.",
             dependsOn = { "accept-96241-talkin-bout-toxins-mon" },
@@ -111,7 +102,6 @@ ns:RegisterGuide({
         {
             id = "objective-96260-stronger-than-steel",
             kind = "objective",
-            priority = 100,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Loot 3 Crystalline Silk from Gloomrise Spinners while clearing Gloomrise. Follow the quest log pin.",
             dependsOn = { "accept-96260-stronger-than-steel" },
@@ -122,7 +112,6 @@ ns:RegisterGuide({
         {
             id = "objective-96261-the-broodmother",
             kind = "objective",
-            priority = 110,
             conditions = { all = { { faction = "Horde" }, { level = { min = 31 } } } },
             text = "Kill Broodmother Valraxx at Gloomrise with allies, then loot her body for Bloody Parchment. Follow the quest log pin.",
             dependsOn = { "accept-96261-the-broodmother" },
@@ -133,7 +122,6 @@ ns:RegisterGuide({
         {
             id = "collect-bloody-parchment",
             kind = "note",
-            priority = 120,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Loot Bloody Parchment from Broodmother Valraxx before leaving Gloomrise.",
             dependsOn = { "objective-96261-the-broodmother" },
@@ -145,7 +133,6 @@ ns:RegisterGuide({
         {
             id = "accept-96294-a-darker-truth",
             kind = "accept",
-            priority = 130,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Use the Bloody Parchment to accept A Darker Truth before returning to Skywatcher Plateau.",
             dependsOn = { "collect-bloody-parchment" },
@@ -155,7 +142,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96259-defending-the-dead",
             kind = "turnin",
-            priority = 140,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Turn in Defending the Dead to Muln Earthfury at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96259-defending-the-dead" },
@@ -167,7 +153,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96241-talkin-bout-toxins-mon",
             kind = "turnin",
-            priority = 150,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Turn in Talkin' bout Toxins, Mon to Mazu'kon at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96241-talkin-bout-toxins-mon" },
@@ -179,7 +164,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96260-stronger-than-steel",
             kind = "turnin",
-            priority = 160,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Turn in Stronger than Steel to Yorn Grimtotem at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96260-stronger-than-steel" },
@@ -191,7 +175,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96261-the-broodmother",
             kind = "turnin",
-            priority = 170,
             conditions = { all = { { faction = "Horde" }, { level = { min = 31 } } } },
             text = "Turn in The Broodmother to Muln Earthfury at Skywatcher Plateau. Follow the quest log pin.",
             dependsOn = { "objective-96261-the-broodmother" },
@@ -203,7 +186,6 @@ ns:RegisterGuide({
         {
             id = "turnin-96294-a-darker-truth",
             kind = "turnin",
-            priority = 180,
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             text = "Bring Bloody Parchment to Muln Earthfury at Skywatcher Plateau to turn in A Darker Truth.",
             dependsOn = { "accept-96294-a-darker-truth" },

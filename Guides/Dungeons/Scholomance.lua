@@ -35,10 +35,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-scholomance",
     title = "Scholomance",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 50 } },
@@ -49,7 +50,6 @@ ns:RegisterGuide({
         {
             id = "accept-5091-a-call-to-arms-the-plaguelands",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Accept A Call to Arms: The Plaguelands! from Crier Goodman.",
             complete = QuestState(5091, "activeOrCompleted"),
@@ -57,7 +57,6 @@ ns:RegisterGuide({
         {
             id = "accept-4726-broodling-essence",
             kind = "accept",
-            priority = 11,
             conditions = { level = { min = 56 } },
             text = "Accept Broodling Essence from Tinkee Steamboil.",
             complete = QuestState(4726, "activeOrCompleted"),
@@ -68,7 +67,6 @@ ns:RegisterGuide({
         {
             id = "objective-4726-1-broodling-essence",
             kind = "objective",
-            priority = 14,
             conditions = { level = { min = 56 } },
             text = "Collect 8 Broodling Essence.",
             dependsOn = { "accept-4726-broodling-essence" },
@@ -80,7 +78,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4726-broodling-essence",
             kind = "turnin",
-            priority = 15,
             conditions = { level = { min = 56 } },
             text = "Turn in Broodling Essence to Tinkee Steamboil.",
             dependsOn = { "objective-4726-1-broodling-essence" },
@@ -91,8 +88,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4808-felnok-steelspring",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4726 } } },
             kind = "accept",
-            priority = 16,
             conditions = { level = { min = 58 } },
             text = "Accept Felnok Steelspring from Tinkee Steamboil.",
             dependsOn = { "turnin-4726-broodling-essence" },
@@ -103,8 +100,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4808-felnok-steelspring",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4726 } } },
             kind = "turnin",
-            priority = 17,
             conditions = { level = { min = 58 } },
             text = "Turn in Felnok Steelspring to Felnok Steelspring.",
             dependsOn = { "accept-4808-felnok-steelspring" },
@@ -115,8 +112,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4809-chillwind-horns",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4808 } } },
             kind = "accept",
-            priority = 18,
             conditions = { level = { min = 58 } },
             text = "Accept Chillwind Horns from Felnok Steelspring.",
             dependsOn = { "turnin-4808-felnok-steelspring" },
@@ -127,8 +124,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4809-1-uncracked-chillwind-horn",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4808 } } },
             kind = "objective",
-            priority = 20,
             conditions = { level = { min = 58 } },
             text = "Collect 8 Uncracked Chillwind Horn.",
             dependsOn = { "accept-4809-chillwind-horns" },
@@ -139,8 +136,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4809-chillwind-horns",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4808 } } },
             kind = "turnin",
-            priority = 21,
             conditions = { level = { min = 58 } },
             text = "Turn in Chillwind Horns to Felnok Steelspring.",
             dependsOn = { "objective-4809-1-uncracked-chillwind-horn" },
@@ -151,8 +148,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4810-return-to-tinkee",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4809 } } },
             kind = "accept",
-            priority = 22,
             conditions = { level = { min = 50 } },
             text = "Accept Return to Tinkee from Felnok Steelspring.",
             dependsOn = { "turnin-4809-chillwind-horns" },
@@ -163,8 +160,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4810-return-to-tinkee",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4809 } } },
             kind = "turnin",
-            priority = 23,
             conditions = { level = { min = 50 } },
             text = "Turn in Return to Tinkee to Tinkee Steamboil.",
             dependsOn = { "accept-4810-return-to-tinkee" },
@@ -176,7 +173,6 @@ ns:RegisterGuide({
         {
             id = "accept-4907-tinkee-steamboil",
             kind = "accept",
-            priority = 24,
             conditions = { level = { min = 57 } },
             text = "Accept Tinkee Steamboil from Felnok Steelspring.",
             complete = QuestState(4907, "activeOrCompleted"),
@@ -187,7 +183,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4907-tinkee-steamboil",
             kind = "turnin",
-            priority = 25,
             conditions = { level = { min = 57 } },
             text = "Turn in Tinkee Steamboil to Tinkee Steamboil.",
             dependsOn = { "accept-4907-tinkee-steamboil" },
@@ -198,8 +193,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4734-egg-freezing",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4907 } } },
             kind = "accept",
-            priority = 26,
             conditions = { level = { min = 57 } },
             text = "Accept Egg Freezing from Tinkee Steamboil.",
             dependsOn = { "turnin-4907-tinkee-steamboil" },
@@ -211,7 +206,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 27,
             conditions = { level = { min = 50 } },
             text = "Enter Stratholme - Undead with your group.",
             dependsOn = { "accept-5091-a-call-to-arms-the-plaguelands", "accept-4726-broodling-essence", "accept-4808-felnok-steelspring", "accept-4809-chillwind-horns", "accept-4810-return-to-tinkee", "accept-4907-tinkee-steamboil", "accept-4734-egg-freezing" },
@@ -220,8 +214,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4734-1-test-the-eggscilloscope",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4907 } } },
             kind = "objective",
-            priority = 28,
             conditions = { level = { min = 57 } },
             text = "Test the Eggscilloscope Prototype.",
             dependsOn = { "accept-4734-egg-freezing" },
@@ -230,8 +224,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4734-egg-freezing",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4907 } } },
             kind = "turnin",
-            priority = 31,
             conditions = { level = { min = 57 } },
             text = "Turn in Egg Freezing to Tinkee Steamboil.",
             dependsOn = { "objective-4734-1-test-the-eggscilloscope" },
@@ -242,8 +236,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4735-egg-collection",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4734 } } },
             kind = "accept",
-            priority = 32,
             conditions = { level = { min = 57 } },
             text = "Accept Egg Collection from Tinkee Steamboil.",
             dependsOn = { "turnin-4734-egg-freezing" },
@@ -254,8 +248,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4735-1-collected-dragon-egg",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4734 } } },
             kind = "objective",
-            priority = 33,
             conditions = { level = { min = 57 } },
             text = "Collect 8 Collected Dragon Egg.",
             dependsOn = { "accept-4735-egg-collection" },
@@ -264,8 +258,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4735-egg-collection",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4734 } } },
             kind = "turnin",
-            priority = 34,
             conditions = { level = { min = 57 } },
             text = "Turn in Egg Collection to Tinkee Steamboil.",
             dependsOn = { "objective-4735-1-collected-dragon-egg" },
@@ -276,8 +270,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5522-leonid-barthalomew",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4735 } } },
             kind = "accept",
-            priority = 35,
             conditions = { level = { min = 57 } },
             text = "Accept Leonid Barthalomew from Tinkee Steamboil.",
             dependsOn = { "turnin-4735-egg-collection" },
@@ -288,8 +282,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5522-leonid-barthalomew",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 4735 } } },
             kind = "turnin",
-            priority = 36,
             conditions = { level = { min = 57 } },
             text = "Turn in Leonid Barthalomew to Leonid Barthalomew the Revered.",
             dependsOn = { "accept-5522-leonid-barthalomew" },
@@ -300,8 +294,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5531-betina-bigglezink",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5522 } } },
             kind = "accept",
-            priority = 37,
             conditions = { level = { min = 57 } },
             text = "Accept Betina Bigglezink from Leonid Barthalomew the Revered.",
             dependsOn = { "turnin-5522-leonid-barthalomew" },
@@ -312,8 +306,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5531-betina-bigglezink",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5522 } } },
             kind = "turnin",
-            priority = 38,
             conditions = { level = { min = 57 } },
             text = "Turn in Betina Bigglezink to Betina Bigglezink.",
             dependsOn = { "accept-5531-betina-bigglezink" },
@@ -324,8 +318,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5529-plagued-hatchlings",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5531 } } },
             kind = "accept",
-            priority = 39,
             conditions = { level = { min = 55 } },
             text = "Accept Plagued Hatchlings from Betina Bigglezink.",
             dependsOn = { "turnin-5531-betina-bigglezink" },
@@ -337,7 +331,6 @@ ns:RegisterGuide({
         {
             id = "accept-4771-dawn-s-gambit",
             kind = "accept",
-            priority = 40,
             conditions = { level = { min = 57 } },
             text = "Accept Dawn's Gambit from Betina Bigglezink.",
             complete = QuestState(4771, "activeOrCompleted"),
@@ -348,7 +341,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5091-a-call-to-arms-the-plaguelands",
             kind = "turnin",
-            priority = 41,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Turn in A Call to Arms: The Plaguelands! to Commander Ashlam Valorfist.",
             dependsOn = { "accept-5091-a-call-to-arms-the-plaguelands" },
@@ -359,8 +351,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5092-clear-the-way",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5091 } } },
             kind = "accept",
-            priority = 42,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Accept Clear the Way from Commander Ashlam Valorfist.",
             dependsOn = { "turnin-5091-a-call-to-arms-the-plaguelands" },
@@ -371,8 +363,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5092-1-skeletal-flayer",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5091 } } },
             kind = "objective",
-            priority = 43,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Kill 10 Skeletal Flayer.",
             dependsOn = { "accept-5092-clear-the-way" },
@@ -383,8 +375,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5092-2-slavering-ghoul",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5091 } } },
             kind = "objective",
-            priority = 44,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Kill 10 Slavering Ghoul.",
             dependsOn = { "accept-5092-clear-the-way" },
@@ -395,8 +387,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5092-clear-the-way",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5091 } } },
             kind = "turnin",
-            priority = 45,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             text = "Turn in Clear the Way to Commander Ashlam Valorfist.",
             dependsOn = { "objective-5092-1-skeletal-flayer", "objective-5092-2-slavering-ghoul" },
@@ -407,8 +399,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5097-all-along-the-watchtowers",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5092 } } },
             kind = "accept",
-            priority = 46,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Accept All Along the Watchtowers from Commander Ashlam Valorfist.",
             dependsOn = { "turnin-5092-clear-the-way" },
@@ -419,8 +411,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5097-4-mark-tower-four",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5092 } } },
             kind = "objective",
-            priority = 47,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Mark Tower Four.",
             dependsOn = { "accept-5097-all-along-the-watchtowers" },
@@ -431,8 +423,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5097-1-mark-tower-one",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5092 } } },
             kind = "objective",
-            priority = 48,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Mark Tower One.",
             dependsOn = { "accept-5097-all-along-the-watchtowers" },
@@ -443,8 +435,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5097-2-mark-tower-two",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5092 } } },
             kind = "objective",
-            priority = 49,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Mark Tower Two.",
             dependsOn = { "accept-5097-all-along-the-watchtowers" },
@@ -455,8 +447,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5097-3-mark-tower-three",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5092 } } },
             kind = "objective",
-            priority = 50,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Mark Tower Three.",
             dependsOn = { "accept-5097-all-along-the-watchtowers" },
@@ -467,8 +459,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5097-all-along-the-watchtowers",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5092 } } },
             kind = "turnin",
-            priority = 51,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Turn in All Along the Watchtowers to Commander Ashlam Valorfist.",
             dependsOn = { "objective-5097-4-mark-tower-four", "objective-5097-1-mark-tower-one", "objective-5097-2-mark-tower-two", "objective-5097-3-mark-tower-three" },
@@ -480,7 +472,6 @@ ns:RegisterGuide({
         {
             id = "accept-5533-scholomance",
             kind = "accept",
-            priority = 53,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Accept Scholomance from Commander Ashlam Valorfist.",
             complete = QuestState(5533, "activeOrCompleted"),
@@ -491,7 +482,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5533-scholomance",
             kind = "turnin",
-            priority = 54,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Turn in Scholomance to Alchemist Arbington.",
             dependsOn = { "accept-5533-scholomance" },
@@ -502,8 +492,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5537-skeletal-fragments",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5533 } } },
             kind = "accept",
-            priority = 55,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Accept Skeletal Fragments from Alchemist Arbington.",
             dependsOn = { "turnin-5533-scholomance" },
@@ -514,8 +504,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5537-1-skeletal-fragments",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5533 } } },
             kind = "objective",
-            priority = 57,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Collect 15 Skeletal Fragments.",
             dependsOn = { "accept-5537-skeletal-fragments" },
@@ -526,8 +516,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5537-skeletal-fragments",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5533 } } },
             kind = "turnin",
-            priority = 58,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 57 } } } },
             text = "Turn in Skeletal Fragments to Alchemist Arbington.",
             dependsOn = { "objective-5537-1-skeletal-fragments" },
@@ -538,8 +528,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5538-mold-rhymes-with",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5537 } } },
             kind = "accept",
-            priority = 59,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Accept Mold Rhymes With from Alchemist Arbington.",
             dependsOn = { "turnin-5537-skeletal-fragments" },
@@ -550,8 +540,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5538-mold-rhymes-with",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5537 } } },
             kind = "turnin",
-            priority = 60,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Turn in Mold Rhymes With to Krinkle Goodsteel.",
             dependsOn = { "accept-5538-mold-rhymes-with" },
@@ -562,8 +552,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5801-fire-plume-forged",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5538 } } },
             kind = "accept",
-            priority = 61,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Accept Fire Plume Forged from Krinkle Goodsteel.",
             dependsOn = { "turnin-5538-mold-rhymes-with" },
@@ -574,8 +564,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5801-1-unfinished-skeleton-key",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5538 } } },
             kind = "objective",
-            priority = 62,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Collect Unfinished Skeleton Key.",
             dependsOn = { "accept-5801-fire-plume-forged" },
@@ -586,8 +576,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5801-fire-plume-forged",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5538 } } },
             kind = "turnin",
-            priority = 63,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Turn in Fire Plume Forged to Alchemist Arbington.",
             dependsOn = { "objective-5801-1-unfinished-skeleton-key" },
@@ -598,8 +588,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5803-araj-s-scarab",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5801 } } },
             kind = "accept",
-            priority = 64,
             conditions = { all = { { level = { min = 55 } }, { faction = "Alliance" } } },
             text = "Accept Araj's Scarab from Alchemist Arbington.",
             dependsOn = { "turnin-5801-fire-plume-forged" },
@@ -610,8 +600,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5803-1-araj-s-scarab",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5801 } } },
             kind = "objective",
-            priority = 67,
             conditions = { all = { { level = { min = 55 } }, { faction = "Alliance" } } },
             text = "Collect Araj's Scarab.",
             dependsOn = { "accept-5803-araj-s-scarab" },
@@ -622,8 +612,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5803-araj-s-scarab",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 5801 } } },
             kind = "turnin",
-            priority = 68,
             conditions = { all = { { level = { min = 55 } }, { faction = "Alliance" } } },
             text = "Turn in Araj's Scarab to talk Alchemist Arbington.",
             dependsOn = { "objective-5803-1-araj-s-scarab" },
@@ -635,7 +625,6 @@ ns:RegisterGuide({
         {
             id = "accept-5505-the-key-to-scholomance",
             kind = "accept",
-            priority = 69,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } } } },
             text = "Accept The Key to Scholomance from Commander Ashlam Valorfist.",
             complete = QuestState(5505, "activeOrCompleted"),
@@ -646,7 +635,6 @@ ns:RegisterGuide({
         {
             id = "accept-5343-barov-family-fortune",
             kind = "accept",
-            priority = 70,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 52 } } } },
             text = "Accept Barov Family Fortune from Weldon Barov.",
             complete = QuestState(5343, "activeOrCompleted"),
@@ -657,7 +645,6 @@ ns:RegisterGuide({
         {
             id = "accept-5382-doctor-theolen-krastinov-the-butcher",
             kind = "accept",
-            priority = 71,
             conditions = { level = { min = 55 } },
             text = "Accept Doctor Theolen Krastinov, the Butcher from Eva Sarkhoff. 'The pleasure is mine madam. Might I ask what it is that you are doing here?'.",
             complete = QuestState(5382, "activeOrCompleted"),
@@ -668,7 +655,6 @@ ns:RegisterGuide({
         {
             id = "objective-5343-3-the-deed-to-southshore",
             kind = "objective",
-            priority = 73,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 52 } } } },
             text = "Collect The Deed to Southshore.",
             dependsOn = { "accept-5343-barov-family-fortune" },
@@ -678,7 +664,6 @@ ns:RegisterGuide({
         {
             id = "objective-5343-4-the-deed-to-tarren-mill",
             kind = "objective",
-            priority = 75,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 52 } } } },
             text = "Collect The Deed to Tarren Mill.",
             dependsOn = { "accept-5343-barov-family-fortune" },
@@ -687,8 +672,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5529-1-plagued-hatchling",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5531 } } },
             kind = "objective",
-            priority = 76,
             conditions = { level = { min = 55 } },
             text = "Kill 20 Plagued Hatchling.",
             dependsOn = { "accept-5529-plagued-hatchlings" },
@@ -698,7 +683,6 @@ ns:RegisterGuide({
         {
             id = "objective-4771-1-place-the-dawn-s-gmabit",
             kind = "objective",
-            priority = 78,
             conditions = { level = { min = 57 } },
             text = "Place the Dawn's Gmabit.",
             dependsOn = { "accept-4771-dawn-s-gambit" },
@@ -708,7 +692,6 @@ ns:RegisterGuide({
         {
             id = "objective-4771-2-vectus",
             kind = "objective",
-            priority = 80,
             conditions = { level = { min = 57 } },
             text = "Slay Vectus.",
             dependsOn = { "accept-4771-dawn-s-gambit" },
@@ -718,7 +701,6 @@ ns:RegisterGuide({
         {
             id = "objective-5343-1-the-deed-to-brill",
             kind = "objective",
-            priority = 82,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 52 } } } },
             text = "Collect The Deed to Brill.",
             dependsOn = { "accept-5343-barov-family-fortune" },
@@ -728,7 +710,6 @@ ns:RegisterGuide({
         {
             id = "objective-5382-2-burn-the-remains-of-eva",
             kind = "objective",
-            priority = 84,
             conditions = { level = { min = 55 } },
             text = "Burn the Remains of Eva Sarkhoff.",
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
@@ -738,7 +719,6 @@ ns:RegisterGuide({
         {
             id = "objective-5382-3-burn-the-remains-of-luci",
             kind = "objective",
-            priority = 86,
             conditions = { level = { min = 55 } },
             text = "Burn the Remains of Lucien Sarkhoff.",
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
@@ -748,7 +728,6 @@ ns:RegisterGuide({
         {
             id = "objective-5382-1-doctor-theolen-krastinov",
             kind = "objective",
-            priority = 87,
             conditions = { level = { min = 55 } },
             text = "Kill Doctor Theolen Krastinov.",
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
@@ -758,7 +737,6 @@ ns:RegisterGuide({
         {
             id = "objective-5343-2-the-deed-to-caer-darrow",
             kind = "objective",
-            priority = 89,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 52 } } } },
             text = "Collect The Deed to Caer Darrow.",
             dependsOn = { "accept-5343-barov-family-fortune" },
@@ -768,7 +746,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5382-doctor-theolen-krastinov-the-butcher",
             kind = "turnin",
-            priority = 90,
             conditions = { level = { min = 55 } },
             text = "Turn in Doctor Theolen Krastinov, the Butcher to Eva Sarkhoff.",
             dependsOn = { "objective-5382-2-burn-the-remains-of-eva", "objective-5382-3-burn-the-remains-of-luci", "objective-5382-1-doctor-theolen-krastinov" },
@@ -779,8 +756,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5515-krastinov-s-bag-of-horrors",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5382 } } },
             kind = "accept",
-            priority = 91,
             conditions = { level = { min = 55 } },
             text = "Accept Krastinov's Bag of Horrors from Eva Sarkhoff.",
             dependsOn = { "turnin-5382-doctor-theolen-krastinov-the-butcher" },
@@ -792,7 +769,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5343-barov-family-fortune",
             kind = "turnin",
-            priority = 92,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 52 } } } },
             text = "Turn in Barov Family Fortune to Weldon Barov.",
             dependsOn = { "objective-5343-3-the-deed-to-southshore", "objective-5343-4-the-deed-to-tarren-mill", "objective-5343-1-the-deed-to-brill", "objective-5343-2-the-deed-to-caer-darrow" },
@@ -803,8 +779,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5529-plagued-hatchlings",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5531 } } },
             kind = "turnin",
-            priority = 93,
             conditions = { level = { min = 55 } },
             text = "Turn in Plagued Hatchlings to Betina Bigglezink.",
             dependsOn = { "objective-5529-1-plagued-hatchling" },
@@ -816,7 +792,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4771-dawn-s-gambit",
             kind = "turnin",
-            priority = 94,
             conditions = { level = { min = 57 } },
             text = "Turn in Dawn's Gambit to Betina Bigglezink.",
             dependsOn = { "objective-4771-1-place-the-dawn-s-gmabit", "objective-4771-2-vectus" },
@@ -827,8 +802,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5515-1-krastinov-s-bag-of-horro",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5382 } } },
             kind = "objective",
-            priority = 96,
             conditions = { level = { min = 55 } },
             text = "Collect Krastinov's Bag of Horrors.",
             dependsOn = { "accept-5515-krastinov-s-bag-of-horrors" },
@@ -838,15 +813,14 @@ ns:RegisterGuide({
         {
             id = "accept-5582-healthy-dragon-scale",
             kind = "accept",
-            priority = 98,
             conditions = { level = { min = 55 } },
             text = "Accept Healthy Dragon Scale.",
             complete = QuestState(5582, "activeOrCompleted"),
         },
         {
             id = "turnin-5515-krastinov-s-bag-of-horrors",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5382 } } },
             kind = "turnin",
-            priority = 99,
             conditions = { level = { min = 55 } },
             text = "Turn in Krastinov's Bag of Horrors to Eva Sarkhoff.",
             dependsOn = { "objective-5515-1-krastinov-s-bag-of-horro" },
@@ -857,8 +831,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5384-kirtonos-the-herald",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5515 } } },
             kind = "accept",
-            priority = 100,
             conditions = { level = { min = 55 } },
             text = "Accept Kirtonos the Herald from Eva Sarkhoff.",
             dependsOn = { "turnin-5515-krastinov-s-bag-of-horrors" },
@@ -870,7 +844,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5582-healthy-dragon-scale",
             kind = "turnin",
-            priority = 101,
             conditions = { level = { min = 55 } },
             text = "Turn in Healthy Dragon Scale to Betina Bigglezink.",
             dependsOn = { "accept-5582-healthy-dragon-scale" },
@@ -881,8 +854,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5384-1-kirtonos-the-herald",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5515 } } },
             kind = "objective",
-            priority = 103,
             conditions = { level = { min = 55 } },
             text = "Kill Kirtonos the Herald.",
             dependsOn = { "accept-5384-kirtonos-the-herald" },
@@ -891,8 +864,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5384-kirtonos-the-herald",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5515 } } },
             kind = "turnin",
-            priority = 104,
             conditions = { level = { min = 55 } },
             text = "Turn in Kirtonos the Herald to Eva Sarkhoff.",
             dependsOn = { "objective-5384-1-kirtonos-the-herald" },
@@ -904,7 +877,6 @@ ns:RegisterGuide({
         {
             id = "accept-5461-the-human-ras-frostwhisper",
             kind = "accept",
-            priority = 106,
             conditions = { level = { min = 57 } },
             text = "Accept The Human, Ras Frostwhisper from Magistrate Marduke.",
             complete = QuestState(5461, "activeOrCompleted"),
@@ -915,7 +887,6 @@ ns:RegisterGuide({
         {
             id = "objective-5461-1-keepsake-of-remembrance",
             kind = "objective",
-            priority = 108,
             conditions = { level = { min = 57 } },
             text = "Collect Keepsake of Remembrance.",
             dependsOn = { "accept-5461-the-human-ras-frostwhisper" },
@@ -927,7 +898,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5461-the-human-ras-frostwhisper",
             kind = "turnin",
-            priority = 109,
             conditions = { level = { min = 57 } },
             text = "Turn in The Human, Ras Frostwhisper to Magistrate Marduke.",
             dependsOn = { "objective-5461-1-keepsake-of-remembrance" },
@@ -938,8 +908,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5462-the-dying-ras-frostwhisper",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5461 } } },
             kind = "accept",
-            priority = 110,
             conditions = { level = { min = 57 } },
             text = "Accept The Dying, Ras Frostwhisper from Magistrate Marduke.",
             dependsOn = { "turnin-5461-the-human-ras-frostwhisper" },
@@ -950,8 +920,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5462-the-dying-ras-frostwhisper",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5461 } } },
             kind = "turnin",
-            priority = 111,
             conditions = { level = { min = 57 } },
             text = "Turn in The Dying, Ras Frostwhisper to Leonid Barthalomew the Revered.",
             dependsOn = { "accept-5462-the-dying-ras-frostwhisper" },
@@ -962,8 +932,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5463-menethil-s-gift",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5462 } } },
             kind = "accept",
-            priority = 112,
             conditions = { level = { min = 57 } },
             text = "Accept Menethil's Gift from Leonid Barthalomew the Revered.",
             dependsOn = { "turnin-5462-the-dying-ras-frostwhisper" },
@@ -974,8 +944,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5463-menethil-s-gift",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5462 } } },
             kind = "turnin",
-            priority = 115,
             conditions = { level = { min = 57 } },
             text = "Turn in Menethil's Gift to Leonid Barthalomew the Revered.",
             dependsOn = { "accept-5463-menethil-s-gift" },
@@ -986,8 +956,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5464-menethil-s-gift",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5463 } } },
             kind = "accept",
-            priority = 116,
             conditions = { level = { min = 57 } },
             text = "Accept Menethil's Gift.",
             dependsOn = { "turnin-5463-menethil-s-gift" },
@@ -995,8 +965,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5465-soulbound-keepsake",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5463 } } },
             kind = "accept",
-            priority = 117,
             conditions = { level = { min = 57 } },
             text = "Accept Soulbound Keepsake from Leonid Barthalomew the Revered.",
             dependsOn = { "turnin-5463-menethil-s-gift" },
@@ -1007,8 +977,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5465-soulbound-keepsake",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5463 } } },
             kind = "turnin",
-            priority = 118,
             conditions = { level = { min = 57 } },
             text = "Turn in Soulbound Keepsake to Magistrate Marduke.",
             dependsOn = { "accept-5465-soulbound-keepsake" },
@@ -1019,8 +989,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5466-the-lich-ras-frostwhisper",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5465 } } },
             kind = "accept",
-            priority = 119,
             conditions = { level = { min = 57 } },
             text = "Accept The Lich, Ras Frostwhisper from Magistrate Marduke.",
             dependsOn = { "turnin-5465-soulbound-keepsake" },
@@ -1031,8 +1001,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5466-1-human-head-of-ras-frostw",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5465 } } },
             kind = "objective",
-            priority = 121,
             conditions = { level = { min = 57 } },
             text = "Collect Human Head of Ras Frostwhisper.",
             dependsOn = { "accept-5466-the-lich-ras-frostwhisper" },
@@ -1041,8 +1011,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5466-the-lich-ras-frostwhisper",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5465 } } },
             kind = "turnin",
-            priority = 122,
             conditions = { level = { min = 57 } },
             text = "Turn in The Lich, Ras Frostwhisper to Magistrate Marduke.",
             dependsOn = { "objective-5466-1-human-head-of-ras-frostw" },
@@ -1054,7 +1024,6 @@ ns:RegisterGuide({
         {
             id = "accept-5094-a-call-to-arms-the-plaguelands",
             kind = "accept",
-            priority = 123,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept A Call to Arms: The Plaguelands! from Harbinger Balthazad.",
             complete = QuestState(5094, "activeOrCompleted"),
@@ -1065,7 +1034,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5094-a-call-to-arms-the-plaguelands",
             kind = "turnin",
-            priority = 124,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in A Call to Arms: The Plaguelands! to High Executor Derrington.",
             dependsOn = { "accept-5094-a-call-to-arms-the-plaguelands" },
@@ -1076,8 +1044,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5096-scarlet-diversions",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5094 } } },
             kind = "accept",
-            priority = 125,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept Scarlet Diversions from High Executor Derrington.",
             dependsOn = { "turnin-5094-a-call-to-arms-the-plaguelands" },
@@ -1088,8 +1056,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5096-1-destroy-the-command-tent",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5094 } } },
             kind = "objective",
-            priority = 128,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Destroy the Command Tent and Plant the Scourge Banner in the Camp.",
             dependsOn = { "accept-5096-scarlet-diversions" },
@@ -1100,8 +1068,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5096-scarlet-diversions",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5094 } } },
             kind = "turnin",
-            priority = 129,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in Scarlet Diversions to High Executor Derrington.",
             dependsOn = { "objective-5096-1-destroy-the-command-tent" },
@@ -1112,8 +1080,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5098-all-along-the-watchtowers",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5096 } } },
             kind = "accept",
-            priority = 130,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept All Along the Watchtowers from High Executor Derrington.",
             dependsOn = { "turnin-5096-scarlet-diversions" },
@@ -1124,8 +1092,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5098-4-mark-tower-four",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5096 } } },
             kind = "objective",
-            priority = 131,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Mark Tower Four.",
             dependsOn = { "accept-5098-all-along-the-watchtowers" },
@@ -1136,8 +1104,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5098-1-mark-tower-one",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5096 } } },
             kind = "objective",
-            priority = 132,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Mark Tower One.",
             dependsOn = { "accept-5098-all-along-the-watchtowers" },
@@ -1148,8 +1116,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5098-2-mark-tower-two",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5096 } } },
             kind = "objective",
-            priority = 133,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Mark Tower Two.",
             dependsOn = { "accept-5098-all-along-the-watchtowers" },
@@ -1160,8 +1128,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5098-3-mark-tower-three",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5096 } } },
             kind = "objective",
-            priority = 134,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Mark Tower Three.",
             dependsOn = { "accept-5098-all-along-the-watchtowers" },
@@ -1172,8 +1140,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5098-all-along-the-watchtowers",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5096 } } },
             kind = "turnin",
-            priority = 135,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in All Along the Watchtowers to High Executor Derrington.",
             dependsOn = { "objective-5098-4-mark-tower-four", "objective-5098-1-mark-tower-one", "objective-5098-2-mark-tower-two", "objective-5098-3-mark-tower-three" },
@@ -1185,7 +1153,6 @@ ns:RegisterGuide({
         {
             id = "accept-838-scholomance",
             kind = "accept",
-            priority = 136,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept Scholomance from High Executor Derrington.",
             complete = QuestState(838, "activeOrCompleted"),
@@ -1196,7 +1163,6 @@ ns:RegisterGuide({
         {
             id = "turnin-838-scholomance",
             kind = "turnin",
-            priority = 137,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in Scholomance to Apothecary Dithers.",
             dependsOn = { "accept-838-scholomance" },
@@ -1207,8 +1173,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-964-skeletal-fragments",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 838 } } },
             kind = "accept",
-            priority = 138,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Accept Skeletal Fragments from Apothecary Dithers.",
             dependsOn = { "turnin-838-scholomance" },
@@ -1219,8 +1185,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-964-1-skeletal-fragments",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 838 } } },
             kind = "objective",
-            priority = 139,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Collect 15 Skeletal Fragments.",
             dependsOn = { "accept-964-skeletal-fragments" },
@@ -1231,8 +1197,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-964-skeletal-fragments",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 838 } } },
             kind = "turnin",
-            priority = 140,
             conditions = { all = { { faction = "Horde" }, { level = { min = 56 } } } },
             text = "Turn in Skeletal Fragments to Apothecary Dithers.",
             dependsOn = { "objective-964-1-skeletal-fragments" },
@@ -1243,8 +1209,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5514-mold-rhymes-with",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 964 } } },
             kind = "accept",
-            priority = 141,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Mold Rhymes With from Apothecary Dithers.",
             dependsOn = { "turnin-964-skeletal-fragments" },
@@ -1255,8 +1221,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5514-mold-rhymes-with",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 964 } } },
             kind = "turnin",
-            priority = 142,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Mold Rhymes With to Krinkle Goodsteel.",
             dependsOn = { "accept-5514-mold-rhymes-with" },
@@ -1267,8 +1233,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-5802-fire-plume-forged",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5514 } } },
             kind = "accept",
-            priority = 143,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Fire Plume Forged from Krinkle Goodsteel.",
             dependsOn = { "turnin-5514-mold-rhymes-with" },
@@ -1279,8 +1245,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-5802-1-unfinished-skeleton-key",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 5514 } } },
             kind = "objective",
-            priority = 144,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect Unfinished Skeleton Key.",
             dependsOn = { "accept-5802-fire-plume-forged" },
@@ -1292,7 +1258,6 @@ ns:RegisterGuide({
         {
             id = "accept-5511-the-key-to-scholomance",
             kind = "accept",
-            priority = 145,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept The Key to Scholomance from High Executor Derrington.",
             complete = QuestState(5511, "activeOrCompleted"),
@@ -1303,7 +1268,6 @@ ns:RegisterGuide({
         {
             id = "accept-5341-barov-family-fortune",
             kind = "accept",
-            priority = 146,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Accept Barov Family Fortune from Alexi Barov.",
             complete = QuestState(5341, "activeOrCompleted"),
@@ -1314,7 +1278,6 @@ ns:RegisterGuide({
         {
             id = "objective-5341-3-the-deed-to-southshore",
             kind = "objective",
-            priority = 147,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Collect The Deed to Southshore.",
             dependsOn = { "accept-5341-barov-family-fortune" },
@@ -1324,7 +1287,6 @@ ns:RegisterGuide({
         {
             id = "objective-5341-4-the-deed-to-tarren-mill",
             kind = "objective",
-            priority = 148,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Collect The Deed to Tarren Mill.",
             dependsOn = { "accept-5341-barov-family-fortune" },
@@ -1334,7 +1296,6 @@ ns:RegisterGuide({
         {
             id = "objective-5341-1-the-deed-to-brill",
             kind = "objective",
-            priority = 150,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Collect The Deed to Brill.",
             dependsOn = { "accept-5341-barov-family-fortune" },
@@ -1344,7 +1305,6 @@ ns:RegisterGuide({
         {
             id = "objective-5341-2-the-deed-to-caer-darrow",
             kind = "objective",
-            priority = 151,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Collect The Deed to Caer Darrow.",
             dependsOn = { "accept-5341-barov-family-fortune" },
@@ -1354,7 +1314,6 @@ ns:RegisterGuide({
         {
             id = "turnin-5341-barov-family-fortune",
             kind = "turnin",
-            priority = 152,
             conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             text = "Turn in Barov Family Fortune to Alexi Barov.",
             dependsOn = { "objective-5341-3-the-deed-to-southshore", "objective-5341-4-the-deed-to-tarren-mill", "objective-5341-1-the-deed-to-brill", "objective-5341-2-the-deed-to-caer-darrow" },
@@ -1365,8 +1324,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-5464-menethil-s-gift",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 5463 } } },
             kind = "turnin",
-            priority = 155,
             conditions = { level = { min = 57 } },
             text = "Turn in Menethil's Gift to Leonid Barthalomew the Revered.",
             dependsOn = { "accept-5464-menethil-s-gift" },

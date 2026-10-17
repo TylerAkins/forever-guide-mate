@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Blasted Lands & Burning Steppes",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-blasted-lands-and-burning-steppes",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2783,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.1929, mapID = 1419, label = "Ambassador Ardalan", offMapText = "Travel to Ambassador Ardalan in Blasted Lands.", x = 0.6757 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             text = "Turn in Petty Squabbles to Fallen Hero of the Horde.",
             route = {
                 { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
@@ -105,10 +102,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2801,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
             },
@@ -139,7 +134,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             text = "Speak with the Fallen Hero of the Horde and ask him to continue his story. Follow the conversation until the quest is ready to turn in.",
             id = "objective-2801-quest-work",
             kind = "objective",
@@ -167,7 +161,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2801-a-tale-of-sorrow" },
         },
         {
-            priority = 70,
             text = "Turn in A Tale of Sorrow to Fallen Hero of the Horde.",
             route = {
                 { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
@@ -198,7 +191,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
             },
@@ -223,7 +215,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
             },
@@ -248,7 +239,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
             },
@@ -273,7 +263,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.143, mapID = 1419, label = "Bloodmage Lynnore", offMapText = "Travel to Bloodmage Lynnore in Blasted Lands.", x = 0.5064 },
             },
@@ -298,7 +287,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.143, mapID = 1419, label = "Bloodmage Lynnore", offMapText = "Travel to Bloodmage Lynnore in Blasted Lands.", x = 0.5064 },
             },
@@ -323,7 +311,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             route = {
                 { y = 0.3564, mapID = 1419, label = "Kum'isha the Collector", offMapText = "Travel to Kum'isha the Collector in Blasted Lands.", x = 0.518 },
             },
@@ -348,7 +335,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.3564, mapID = 1419, label = "Kum'isha the Collector", offMapText = "Travel to Kum'isha the Collector in Blasted Lands.", x = 0.518 },
             },
@@ -373,7 +359,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "For Everything Counts In Large Amounts: Bring Kum'isha Imperfect Draenethyst Fragments and be rewarded for each one you turn in.",
             id = "objective-3501-quest-work",
             kind = "objective",
@@ -395,7 +380,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3501-everything-counts-in-large-amounts" },
         },
         {
-            priority = 160,
             text = "Turn in Everything Counts In Large Amounts to Kum'isha the Collector.",
             route = {
                 { y = 0.3564, mapID = 1419, label = "Kum'isha the Collector", offMapText = "Travel to Kum'isha the Collector in Blasted Lands.", x = 0.518 },
@@ -420,7 +404,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             text = "For To Serve Kum'isha: In your journeys throughout the Blasted Lands, should you ever come across a Flawless Draenethyst Sphere, take the item back to Kum'isha the Collector. Be warned, this gem is one of the most rare crystals in all of Azeroth. Any creature in these lands could be holding a Flawless Draenethyst Sphere. You will be rewarded for each Flawless Draenethyst Sphere you have collected.",
             id = "objective-2521-quest-work",
             kind = "objective",
@@ -442,7 +425,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2521-to-serve-kum-isha" },
         },
         {
-            priority = 180,
             text = "Turn in To Serve Kum'isha to Kum'isha the Collector.",
             route = {
                 { y = 0.3564, mapID = 1419, label = "Kum'isha the Collector", offMapText = "Travel to Kum'isha the Collector in Blasted Lands.", x = 0.518 },
@@ -467,7 +449,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             text = "For The Basilisk's Bite: Bring ten Basilisk Brains and two Vulture Gizzards to Bloodmage Lynnore.",
             id = "objective-2601-quest-work",
             kind = "objective",
@@ -489,7 +470,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2601-the-basilisk-s-bite" },
         },
         {
-            priority = 200,
             text = "Turn in The Basilisk's Bite to Bloodmage Lynnore.",
             route = {
                 { y = 0.143, mapID = 1419, label = "Bloodmage Lynnore", offMapText = "Travel to Bloodmage Lynnore in Blasted Lands.", x = 0.5064 },
@@ -514,7 +494,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             text = "For Vulture's Vigor: Bring ten Vulture Gizzards and two Snickerfang Jowls to Bloodmage Lynnore.",
             id = "objective-2603-quest-work",
             kind = "objective",
@@ -536,7 +515,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2603-vulture-s-vigor" },
         },
         {
-            priority = 220,
             text = "Turn in Vulture's Vigor to Bloodmage Lynnore.",
             route = {
                 { y = 0.143, mapID = 1419, label = "Bloodmage Lynnore", offMapText = "Travel to Bloodmage Lynnore in Blasted Lands.", x = 0.5064 },
@@ -561,7 +539,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             text = "For Snickerfang Jowls: Bring three Snickerfang Jowls, two Blasted Boar Lungs, and one Scorpok Pincer to Bloodmage Drazial.",
             id = "objective-2581-quest-work",
             kind = "objective",
@@ -583,7 +560,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2581-snickerfang-jowls" },
         },
         {
-            priority = 240,
             text = "Turn in Snickerfang Jowls to Bloodmage Drazial.",
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
@@ -608,7 +584,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             text = "For A Boar's Vitality: Bring three Blasted Boar Lungs, two Scorpok Pincers, and one Basilisk Brain to Bloodmage Drazial.",
             id = "objective-2583-quest-work",
             kind = "objective",
@@ -630,7 +605,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2583-a-boar-s-vitality" },
         },
         {
-            priority = 260,
             text = "Turn in A Boar's Vitality to Bloodmage Drazial.",
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
@@ -655,7 +629,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 270,
             text = "For The Decisive Striker: Bring three Scorpok Pincers, two Vulture Gizzards, and one Blasted Boar Lung to Bloodmage Drazial.",
             id = "objective-2585-quest-work",
             kind = "objective",
@@ -677,7 +650,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2585-the-decisive-striker" },
         },
         {
-            priority = 280,
             text = "Turn in The Decisive Striker to Bloodmage Drazial.",
             route = {
                 { y = 0.1421, mapID = 1419, label = "Bloodmage Drazial", offMapText = "Travel to Bloodmage Drazial in Blasted Lands.", x = 0.5055 },
@@ -702,7 +674,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.6868, mapID = 1428, label = "Oralius", offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456 },
             },
@@ -730,7 +701,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             text = "Kill 7 Firegut Ogre.",
             route = {
                 { y = 0.5, mapID = 1428, label = "Firegut Ogre", offMapText = "Travel to Firegut Ogre.", x = 0.756 },
@@ -758,7 +728,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             text = "Kill 7 Firegut Brute.",
             route = {
                 { y = 0.5, mapID = 1428, label = "Firegut Brute", offMapText = "Travel to Firegut Brute.", x = 0.756 },
@@ -786,7 +755,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Kill 15 Firegut Ogre Mage.",
             route = {
                 { y = 0.5, mapID = 1428, label = "Firegut Ogre Mage", offMapText = "Travel to Firegut Ogre Mage.", x = 0.756 },
@@ -814,7 +782,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             text = "Turn in Extinguish the Firegut to Oralius.",
             route = {
                 { mapID = 1428, x = 0.8456, y = 0.6868000000000001, label = "Oralius", offMapText = "Travel to Oralius in Burning Steppes." },
@@ -847,7 +814,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 340,
             route = {
                 { y = 0.2337, mapID = 1455, label = "Laris Geardawdle", offMapText = "Travel to Laris Geardawdle in Ironforge.", x = 0.7577 },
             },
@@ -875,7 +841,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 350,
             route = {
                 { y = 0.148, mapID = 1455, label = "Curator Thorius", offMapText = "Travel to Curator Thorius in Ironforge.", x = 0.712 },
             },
@@ -909,7 +874,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 360,
             route = {
                 { y = 0.148, mapID = 1455, label = "Curator Thorius", offMapText = "Travel to Curator Thorius in Ironforge.", x = 0.712 },
             },
@@ -943,7 +907,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             route = {
                 { y = 0.162, mapID = 1455, label = "Curator Thorius", offMapText = "Travel to Curator Thorius in Ironforge.", x = 0.714 },
             },
@@ -977,7 +940,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             route = {
                 { y = 0.1184, mapID = 1455, label = "Historian Karnik", offMapText = "Travel to Historian Karnik in Ironforge.", x = 0.7755 },
             },
@@ -1005,7 +967,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             text = "Turn in Passing the Burden to Tymor.",
             route = {
                 { y = 0.0481, mapID = 1455, label = "Tymor", offMapText = "Travel to Tymor in Ironforge.", x = 0.3097 },
@@ -1033,7 +994,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 400,
             route = {
                 { y = 0.0481, mapID = 1455, label = "Tymor", offMapText = "Travel to Tymor in Ironforge.", x = 0.3097 },
             },
@@ -1067,7 +1027,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 410,
             route = {
                 { y = 0.0481, mapID = 1455, label = "Tymor", offMapText = "Travel to Tymor in Ironforge.", x = 0.3097 },
             },
@@ -1095,7 +1054,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             route = {
                 { y = 0.5146, mapID = 1455, label = "Innkeeper Firebrew", offMapText = "Travel to Innkeeper Firebrew in Ironforge.", x = 0.1815 },
             },
@@ -1124,7 +1082,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             route = {
                 { y = 0.6014, mapID = 1455, label = "Wildkin Feather", offMapText = "Travel to Wildkin Feather.", x = 0.3592 },
             },
@@ -1151,7 +1108,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Turn in An Easy Pickup to Xiggs Fuselighter.",
             route = {
                 { y = 0.9457, mapID = 1455, label = "Xiggs Fuselighter", offMapText = "Travel to Xiggs Fuselighter in Ironforge.", x = 0.7087 },
@@ -1179,7 +1135,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             route = {
                 { y = 0.9457, mapID = 1455, label = "Xiggs Fuselighter", offMapText = "Travel to Xiggs Fuselighter in Ironforge.", x = 0.7087 },
             },
@@ -1213,7 +1168,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             text = "Turn in Signal for Pickup to Xiggs Fuselighter.",
             route = {
                 { y = 0.9457, mapID = 1455, label = "Xiggs Fuselighter", offMapText = "Travel to Xiggs Fuselighter in Ironforge.", x = 0.7087 },
@@ -1247,7 +1201,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             text = "Accept A Call to Arms: The Plaguelands! from Courier Hammerfall.",
             id = "accept-5090-a-call-to-arms-the-plaguelands",
             kind = "accept",
@@ -1273,7 +1226,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             text = "Turn in At Last! to Mountaineer Pebblebitty.",
             route = {
                 { y = 0.84, mapID = 1432, label = "Mountaineer Pebblebitty", offMapText = "Travel to Mountaineer Pebblebitty in Loch Modan.", x = 0.1819 },
@@ -1307,7 +1259,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             route = {
                 { y = 0.4448, mapID = 1425, label = "Gryphon Master Talonaxe", offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.", x = 0.0976 },
             },
@@ -1341,7 +1292,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             route = {
                 { mapID = 1425, x = 0.486, y = 0.426, label = "Green Sludge", offMapText = "Travel to Green Sludge." },
             },
@@ -1369,7 +1319,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             route = {
                 { y = 0.4456, mapID = 1425, label = "Fraggar Thundermantle", offMapText = "Travel to Fraggar Thundermantle in The Hinterlands.", x = 0.1483 },
             },
@@ -1415,7 +1364,6 @@ ns:RegisterGuide({
                 { mapID = 1425, x = 0.41009999999999996, y = 0.5977, label = "Violet Tragan", offMapText = "Travel to Violet Tragan." },
             },
             sourceStep = 49,
-            priority = 520,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1428,7 +1376,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             route = {
                 { y = 0.4681, mapID = 1425, label = "Cortello's Riddle", offMapText = "Travel to Cortello's Riddle.", x = 0.8081 },
             },

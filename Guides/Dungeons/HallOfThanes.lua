@@ -48,10 +48,11 @@ local function Ironforge(x, y, label)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-hall-of-thanes",
     title = "Hall of Thanes",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -62,7 +63,6 @@ ns:RegisterGuide({
         {
             id = "accept-underground-map",
             kind = "accept",
-            priority = 10,
             conditions = { level = { min = 9 } },
             text = "Loot the Dark Iron Map from the Dark Iron spies in southeast Dun Morogh " ..
                 "and accept Underground Map.",
@@ -73,7 +73,6 @@ ns:RegisterGuide({
         {
             id = "turnin-underground-map",
             kind = "turnin",
-            priority = 11,
             conditions = { level = { min = 9 } },
             text = "Bring the Dark Iron Map to Earthseer Farsen above Gol'Bolar Quarry.",
             dependsOn = { "accept-underground-map" },
@@ -83,8 +82,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-old-ironforge-incursion",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 96391 } } },
             kind = "accept",
-            priority = 12,
             conditions = { level = { min = 9 } },
             text = "Accept Old Ironforge Incursion from Earthseer Farsen. " ..
                 "He offers it after Underground Map. The head goes to King Magni Bronzebeard.",
@@ -96,7 +95,6 @@ ns:RegisterGuide({
         {
             id = "accept-restless-dead",
             kind = "accept",
-            priority = 13,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -111,7 +109,6 @@ ns:RegisterGuide({
         {
             id = "accept-important-heirlooms",
             kind = "accept",
-            priority = 14,
             conditions = { level = { min = 10 } },
             text = "Accept Important Heirlooms from Thom Filch by the bridge into the Hall of Thanes.",
             taxiDestination = "Ironforge",
@@ -121,7 +118,6 @@ ns:RegisterGuide({
         {
             id = "enter-hall-of-thanes",
             kind = "travel",
-            priority = 40,
             conditions = { level = { min = 10 } },
             text = "Enter the Hall of Thanes from the cobwebbed corridor left of the High Seat. Follow it down past the lava bridge.",
             dependsOn = {
@@ -144,7 +140,6 @@ ns:RegisterGuide({
         {
             id = "accept-ancient-grudge",
             kind = "accept",
-            priority = 41,
             conditions = { level = { min = 10 } },
             text = "Accept An Ancient Grudge from the Ghostly Attendant in Anvilmar's Rest, after the first room.",
             dependsOn = { "enter-hall-of-thanes" },
@@ -153,7 +148,6 @@ ns:RegisterGuide({
         {
             id = "complete-restless-dead",
             kind = "objective",
-            priority = 42,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -168,7 +162,6 @@ ns:RegisterGuide({
         {
             id = "complete-important-heirlooms",
             kind = "objective",
-            priority = 43,
             conditions = { level = { min = 10 } },
             text = "Loot 8 Dwarven Heirlooms from the vaults and reliquaries in the Hall of Thanes. " ..
                 "The Reliquary of Kings has enough for the group.",
@@ -178,7 +171,6 @@ ns:RegisterGuide({
         {
             id = "complete-ancient-grudge",
             kind = "objective",
-            priority = 44,
             conditions = { level = { min = 10 } },
             text = "Put Faldrim Anvilmar to rest in Anvilmar's Rest. He patrols that room. " ..
                 "Interrupt Mind Blast. Anvilmar's Curse slows the tank's attacks.",
@@ -187,8 +179,8 @@ ns:RegisterGuide({
         },
         {
             id = "complete-old-ironforge-incursion",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 96391 } } },
             kind = "objective",
-            priority = 45,
             conditions = { level = { min = 9 } },
             text = "Take Durgen Dirgehammer's Head in the Reliquary of Kings. " ..
                 "Clear the Dark Iron on the edges first. Kill his two Lesser Stone Golems before him. He fears and applies Rend. " ..
@@ -201,7 +193,6 @@ ns:RegisterGuide({
         {
             id = "accept-treaty-of-understanding",
             kind = "accept",
-            priority = 46,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -215,7 +206,6 @@ ns:RegisterGuide({
         {
             id = "turnin-ancient-grudge",
             kind = "turnin",
-            priority = 50,
             conditions = { level = { min = 10 } },
             text = "Finish An Ancient Grudge with the Ghostly Attendant.",
             dependsOn = { "complete-ancient-grudge" },
@@ -224,7 +214,6 @@ ns:RegisterGuide({
         {
             id = "turnin-restless-dead",
             kind = "turnin",
-            priority = 60,
             conditions = {
                 all = {
                     ALLIANCE,
@@ -240,7 +229,6 @@ ns:RegisterGuide({
         {
             id = "turnin-important-heirlooms",
             kind = "turnin",
-            priority = 61,
             conditions = { level = { min = 10 } },
             text = "Bring the Dwarven Heirlooms back to Thom Filch.",
             dependsOn = { "complete-important-heirlooms" },
@@ -250,8 +238,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-old-ironforge-incursion",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 96391 } } },
             kind = "turnin",
-            priority = 62,
             conditions = { level = { min = 9 } },
             text = "Bring Durgen Dirgehammer's Head to King Magni Bronzebeard and give him Farsen's regards.",
             dependsOn = { "complete-old-ironforge-incursion" },
@@ -262,7 +250,6 @@ ns:RegisterGuide({
         {
             id = "turnin-treaty-of-understanding",
             kind = "turnin",
-            priority = 63,
             conditions = {
                 all = {
                     ALLIANCE,

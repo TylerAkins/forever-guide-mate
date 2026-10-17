@@ -142,7 +142,11 @@ function Ordered:Done(guide, goal, state)
         end
         if active and storage.observedInstructions[goal.id] then return true end
     end
-    if self:Observed(goal, state) then return true end
+    if self:Observed(goal, state) then
+        if goal.kind == "travel" and not Engine:GetGoalQuestID(goal) then storage.confirmed[goal.id] = true end
+        return true
+    end
+    if goal.kind == "travel" and storage.confirmed[goal.id] then return true end
     if not Engine:GetGoalQuestID(goal) and not goal.complete then return storage.confirmed[goal.id] == true end
     return false
 end
@@ -349,6 +353,13 @@ function Engine:Refresh(state)
         end
     end
     self.currentGuide, self.state, self.currentSegment = guide, state, nil
+    if ns.EvaluateCondition(guide.conditions, state or {}) == false then
+        self.currentGoal, self.status = nil, "Guide requirements are not met."
+        if ns.UI then ns.UI:Update(self) end
+        if ns.MapPins then ns.MapPins:Refresh() end
+        if ns.TomTomWaypoints then ns.TomTomWaypoints:Sync(nil, state) end
+        return
+    end
     Ordered:Update(self, state or {})
 end
 

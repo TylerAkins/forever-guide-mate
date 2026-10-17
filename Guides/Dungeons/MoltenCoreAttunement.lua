@@ -20,10 +20,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-molten-core-attunement",
     title = "Molten Core Attunement",
     category = "Raid Quests",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 55 } },
@@ -34,7 +35,6 @@ ns:RegisterGuide({
         {
             id = "enter-blackrock-depths",
             kind = "travel",
-            priority = 11,
             conditions = { level = { min = 55 } },
             text = "Enter Blackrock Depths with your group. " ..
                 "The short path to Lord Incendius is the locked door on the left, through the Detention Block, " ..

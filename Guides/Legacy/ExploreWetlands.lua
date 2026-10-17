@@ -51,7 +51,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-wetlands",
     title = "Explore Wetlands",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

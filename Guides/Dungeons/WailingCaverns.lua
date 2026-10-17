@@ -62,10 +62,11 @@ local function ThunderBluffRoute(x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-wailing-caverns",
     title = "Wailing Caverns",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 15 } },
@@ -74,9 +75,280 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "accept-hamuul-runetotem",
+            route = {
+                { y = 0.3193, mapID = 1413, label = "Tonga Runetotem", offMapText = "Travel to Tonga Runetotem in The Barrens.", x = 0.5226 },
+            },
+            text = "Accept The Forgotten Pools from Tonga Runetotem.",
+            id = "prerequisite-accept-870-the-forgotten-pools",
             kind = "accept",
-            priority = 10,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 870, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            id = "prerequisite-objective-870-forgotten-pools",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Explore the waters of the Forgotten Pools northwest of the Crossroads. Swim down to the bubbling fissure.",
+            dependsOn = { "prerequisite-accept-870-the-forgotten-pools" },
+            complete = QuestState(870, "complete"),
+            useClientPin = true,
+        },
+        {
+            text = "Turn in The Forgotten Pools to Tonga Runetotem.",
+            route = {
+                { y = 0.3193, mapID = 1413, label = "Tonga Runetotem", offMapText = "Travel to Tonga Runetotem in The Barrens.", x = 0.5226 },
+            },
+            dependsOn = { "prerequisite-accept-870-the-forgotten-pools", "prerequisite-objective-870-forgotten-pools" },
+            id = "prerequisite-turnin-870-the-forgotten-pools",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 870, state = "completed" },
+            },
+            sourceStep = 70,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.3193, mapID = 1413, label = "Tonga Runetotem", offMapText = "Travel to Tonga Runetotem in The Barrens.", x = 0.5226 },
+            },
+            text = "Accept The Stagnant Oasis from Tonga Runetotem.",
+            id = "prerequisite-accept-877-the-stagnant-oasis",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 877, state = "activeOrCompleted" },
+            },
+            sourceStep = 70,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 870 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "prerequisite-turnin-870-the-forgotten-pools" },
+        },
+        {
+            text = "Swim down to the Bubbling Fissure at the Stagnant Oasis and interact with it to test the Dried Seeds.",
+            id = "prerequisite-objective-877-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 877, index = 1, count = 1 },
+            },
+            sourceStep = 130,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 870 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "prerequisite-accept-877-the-stagnant-oasis" },
+            route = {
+                { mapID = 1413, x = 0.5561, y = 0.4274, label = "The Stagnant Oasis", offMapText = "Travel to The Stagnant Oasis." },
+            },
+        },
+        {
+            text = "Turn in The Stagnant Oasis to Tonga Runetotem.",
+            route = {
+                { y = 0.3193, mapID = 1413, label = "Tonga Runetotem", offMapText = "Travel to Tonga Runetotem in The Barrens.", x = 0.5226 },
+            },
+            dependsOn = { "prerequisite-accept-877-the-stagnant-oasis", "prerequisite-objective-877-quest-work" },
+            id = "prerequisite-turnin-877-the-stagnant-oasis",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 877, state = "completed" },
+            },
+            sourceStep = 130,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 870 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.3193, mapID = 1413, label = "Tonga Runetotem", offMapText = "Travel to Tonga Runetotem in The Barrens.", x = 0.5226 },
+            },
+            text = "Accept Altered Beings from Tonga Runetotem.",
+            id = "prerequisite-accept-880-altered-beings",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 880, state = "activeOrCompleted" },
+            },
+            sourceStep = 130,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 877 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "prerequisite-turnin-877-the-stagnant-oasis" },
+        },
+        {
+            text = "Collect 8 Altered Snapjaw Shell.",
+            route = {
+                { y = 0.427, mapID = 1413, label = "Oasis Snapjaw", offMapText = "Travel to Oasis Snapjaw.", x = 0.5553 },
+            },
+            dependsOn = { "prerequisite-accept-880-altered-beings" },
+            id = "prerequisite-objective-880-1-oasis-snapjaw",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 880, text = "Oasis Snapjaw", index = 1, count = 8 },
+            },
+            sourceStep = 162,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 877 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in Altered Beings to Tonga Runetotem.",
+            route = {
+                { y = 0.3193, mapID = 1413, label = "Tonga Runetotem", offMapText = "Travel to Tonga Runetotem in The Barrens.", x = 0.5226 },
+            },
+            dependsOn = { "prerequisite-accept-880-altered-beings", "prerequisite-objective-880-1-oasis-snapjaw" },
+            id = "prerequisite-turnin-880-altered-beings",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 880, state = "completed" },
+            },
+            sourceStep = 175,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 877 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            id = "accept-hamuul-runetotem",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 880 } } },
+            kind = "accept",
             conditions = {
                 all = {
                     HORDE,
@@ -94,8 +366,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-hamuul-runetotem",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 880 } } },
             kind = "turnin",
-            priority = 11,
             conditions = {
                 all = {
                     HORDE,
@@ -111,8 +383,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-nara-wildmane",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 1489 } }, { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1489 } } },
             kind = "accept",
-            priority = 12,
             conditions = {
                 all = {
                     HORDE,
@@ -128,8 +400,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-nara-wildmane",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 1489 } }, { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1489 } } },
             kind = "turnin",
-            priority = 13,
             conditions = {
                 all = {
                     HORDE,
@@ -145,8 +417,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-leaders-of-the-fang",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1490 } } },
             kind = "accept",
-            priority = 14,
             conditions = {
                 all = {
                     HORDE,
@@ -163,7 +435,6 @@ ns:RegisterGuide({
         {
             id = "accept-serpentbloom",
             kind = "accept",
-            priority = 15,
             conditions = {
                 all = {
                     HORDE,
@@ -180,7 +451,6 @@ ns:RegisterGuide({
         {
             id = "accept-smart-drinks",
             kind = "accept",
-            priority = 20,
             conditions = { level = { min = 15 } },
             text = "Accept Smart Drinks from Mebok Mizzyrix in Ratchet.",
             taxiDestination = "Ratchet",
@@ -193,7 +463,6 @@ ns:RegisterGuide({
         {
             id = "accept-trouble-at-the-docks",
             kind = "accept",
-            priority = 21,
             conditions = { level = { min = 15 } },
             text = "Accept Trouble at the Docks from Crane Operator Bigglefuzz in Ratchet.",
             taxiDestination = "Ratchet",
@@ -206,7 +475,6 @@ ns:RegisterGuide({
         {
             id = "accept-deviate-hides",
             kind = "accept",
-            priority = 22,
             conditions = { level = { min = 15 } },
             text = "Accept Deviate Hides from Nalpak in the cave above the Wailing Caverns portal.",
             complete = QuestState(1486, "activeOrCompleted"),
@@ -218,7 +486,6 @@ ns:RegisterGuide({
         {
             id = "accept-deviate-eradication",
             kind = "accept",
-            priority = 23,
             conditions = { level = { min = 15 } },
             text = "Accept Deviate Eradication from Ebru in the same cave.",
             complete = QuestState(1487, "activeOrCompleted"),
@@ -230,7 +497,6 @@ ns:RegisterGuide({
         {
             id = "enter-wailing-caverns",
             kind = "travel",
-            priority = 40,
             text = "Enter Wailing Caverns through the portal below Nalpak and Ebru.",
             dependsOn = {
                 "accept-hamuul-runetotem",
@@ -254,7 +520,6 @@ ns:RegisterGuide({
         {
             id = "complete-deviate-eradication",
             kind = "objective",
-            priority = 41,
             conditions = { level = { min = 15 } },
             text = "Slay 7 Deviate Ravagers, 7 Deviate Vipers, 7 Deviate Shamblers, and 7 Deviate Dreadfangs.",
             dependsOn = { "enter-wailing-caverns" },
@@ -263,7 +528,6 @@ ns:RegisterGuide({
         {
             id = "complete-deviate-hides",
             kind = "objective",
-            priority = 42,
             conditions = { level = { min = 15 } },
             text = "Kill deviate beasts inside Wailing Caverns until you loot 20 Deviate Hides.",
             dependsOn = { "enter-wailing-caverns" },
@@ -272,7 +536,6 @@ ns:RegisterGuide({
         {
             id = "complete-smart-drinks",
             kind = "objective",
-            priority = 43,
             conditions = { level = { min = 15 } },
             text = "Collect 6 Wailing Essences from the ectoplasmic creatures.",
             dependsOn = { "enter-wailing-caverns" },
@@ -281,7 +544,6 @@ ns:RegisterGuide({
         {
             id = "complete-trouble-at-the-docks",
             kind = "objective",
-            priority = 44,
             conditions = { level = { min = 15 } },
             text = "Recover the 99-Year-Old Port from Mad Magglish.",
             dependsOn = { "enter-wailing-caverns" },
@@ -290,7 +552,6 @@ ns:RegisterGuide({
         {
             id = "complete-serpentbloom",
             kind = "objective",
-            priority = 45,
             conditions = {
                 all = {
                     HORDE,
@@ -303,8 +564,8 @@ ns:RegisterGuide({
         },
         {
             id = "complete-leaders-of-the-fang",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1490 } } },
             kind = "objective",
-            priority = 46,
             conditions = {
                 all = {
                     HORDE,
@@ -318,7 +579,6 @@ ns:RegisterGuide({
         {
             id = "accept-glowing-shard",
             kind = "accept",
-            priority = 55,
             text = "Use the Glowing Shard dropped by Mutanus the Devourer to accept The Glowing Shard.",
             dependsOn = { "enter-wailing-caverns" },
             complete = EitherQuest("activeOrCompleted", 6981, 3366),
@@ -326,7 +586,6 @@ ns:RegisterGuide({
         {
             id = "speak-about-glowing-shard",
             kind = "objective",
-            priority = 56,
             text = "Ask Sputtervalve in Ratchet about the Glowing Shard.",
             dependsOn = { "accept-glowing-shard" },
             taxiDestination = "Ratchet",
@@ -339,7 +598,6 @@ ns:RegisterGuide({
         {
             id = "turnin-glowing-shard",
             kind = "turnin",
-            priority = 57,
             text = "Deliver the Glowing Shard to Falla Sagewind outside Wailing Caverns.",
             dependsOn = { "speak-about-glowing-shard" },
             complete = EitherQuest("completed", 6981, 3366),
@@ -351,7 +609,6 @@ ns:RegisterGuide({
         {
             id = "turnin-deviate-hides",
             kind = "turnin",
-            priority = 60,
             conditions = { level = { min = 15 } },
             text = "Bring the Deviate Hides back to Nalpak.",
             dependsOn = { "complete-deviate-hides" },
@@ -364,7 +621,6 @@ ns:RegisterGuide({
         {
             id = "turnin-deviate-eradication",
             kind = "turnin",
-            priority = 61,
             conditions = { level = { min = 15 } },
             text = "Return to Ebru and turn in Deviate Eradication.",
             dependsOn = { "complete-deviate-eradication" },
@@ -377,7 +633,6 @@ ns:RegisterGuide({
         {
             id = "turnin-smart-drinks",
             kind = "turnin",
-            priority = 62,
             conditions = { level = { min = 15 } },
             text = "Bring the Wailing Essences to Mebok Mizzyrix in Ratchet.",
             dependsOn = { "complete-smart-drinks" },
@@ -391,7 +646,6 @@ ns:RegisterGuide({
         {
             id = "turnin-trouble-at-the-docks",
             kind = "turnin",
-            priority = 63,
             conditions = { level = { min = 15 } },
             text = "Return the 99-Year-Old Port to Crane Operator Bigglefuzz in Ratchet.",
             dependsOn = { "complete-trouble-at-the-docks" },
@@ -405,7 +659,6 @@ ns:RegisterGuide({
         {
             id = "turnin-serpentbloom",
             kind = "turnin",
-            priority = 70,
             conditions = {
                 all = {
                     HORDE,
@@ -421,8 +674,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-leaders-of-the-fang",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 1490 } } },
             kind = "turnin",
-            priority = 71,
             conditions = {
                 all = {
                     HORDE,

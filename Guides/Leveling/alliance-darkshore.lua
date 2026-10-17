@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Darkshore",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-darkshore",
@@ -38,10 +38,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2300,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.658, mapID = 1429, label = "Keryn Sylvius", x = 0.438, offMapText = "Travel to Keryn Sylvius in Elwynn Forest." },
             },
@@ -66,7 +64,6 @@ ns:RegisterGuide({
             classAction = "accept-2300-si-7",
         },
         {
-            priority = 30,
             route = {
                 { y = 0.602, mapID = 1453, label = "Renzik \"The Shiv\"", x = 0.758, offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City." },
             },
@@ -91,7 +88,6 @@ ns:RegisterGuide({
             classAction = "turnin-2300-si-7",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.148, mapID = 1455, label = "Hulfdan Blackbeard", x = 0.516, offMapText = "Travel to Hulfdan Blackbeard in Ironforge." },
             },
@@ -116,7 +112,6 @@ ns:RegisterGuide({
             classAction = "accept-2298-kingly-shakedown",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.602, mapID = 1453, label = "Renzik \"The Shiv\"", x = 0.758, offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City." },
             },
@@ -141,7 +136,6 @@ ns:RegisterGuide({
             classAction = "turnin-2298-kingly-shakedown",
         },
         {
-            priority = 60,
             route = {
                 { y = 0.526, mapID = 1426, label = "Hogral Bakkan", x = 0.476, offMapText = "Travel to Hogral Bakkan in Dun Morogh." },
             },
@@ -166,7 +160,6 @@ ns:RegisterGuide({
             classAction = "accept-2299-to-hulfdan",
         },
         {
-            priority = 70,
             route = {
                 { y = 0.148, mapID = 1455, label = "Hulfdan Blackbeard", x = 0.516, offMapText = "Travel to Hulfdan Blackbeard in Ironforge." },
             },
@@ -191,7 +184,6 @@ ns:RegisterGuide({
             classAction = "turnin-2299-to-hulfdan",
         },
         {
-            priority = 80,
             route = {
                 { y = 0.256, mapID = 1457, label = "Erion Shadewhisper", x = 0.346, offMapText = "Travel to Erion Shadewhisper in Darnassus." },
             },
@@ -216,7 +208,6 @@ ns:RegisterGuide({
             classAction = "accept-2260-erions-behest",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.602, mapID = 1453, label = "Renzik \"The Shiv\"", x = 0.758, offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City." },
             },
@@ -241,7 +232,6 @@ ns:RegisterGuide({
             classAction = "turnin-2260-erions-behest",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.6, mapID = 1438, label = "Jannok Breezesong", x = 0.562, offMapText = "Travel to Jannok Breezesong in Teldrassil." },
             },
@@ -266,7 +256,6 @@ ns:RegisterGuide({
             classAction = "accept-2259-erion-shadewhisper",
         },
         {
-            priority = 110,
             route = {
                 { y = 0.256, mapID = 1457, label = "Erion Shadewhisper", x = 0.346, offMapText = "Travel to Erion Shadewhisper in Darnassus." },
             },
@@ -314,10 +303,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1920,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
@@ -342,7 +329,6 @@ ns:RegisterGuide({
             classAction = "accept-1920-investigate-the-blue-recluse",
         },
         {
-            priority = 140,
             id = "woven-class-mage-objective-1920-quest-work",
             conditions = {
                 all = {
@@ -364,7 +350,6 @@ ns:RegisterGuide({
             classAction = "objective-1920-quest-work",
         },
         {
-            priority = 150,
             route = {
                 { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
@@ -389,7 +374,6 @@ ns:RegisterGuide({
             classAction = "turnin-1920-investigate-the-blue-recluse",
         },
         {
-            priority = 160,
             route = {
                 { y = 0.858, mapID = 1453, label = "Jennea Cannon", x = 0.495, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
@@ -414,7 +398,6 @@ ns:RegisterGuide({
             classAction = "accept-1921-gathering-materials",
         },
         {
-            priority = 170,
             dependsOn = { "woven-class-mage-accept-1921-gathering-materials" },
             id = "woven-class-mage-objective-1921-gathering-materials",
             conditions = {
@@ -436,7 +419,6 @@ ns:RegisterGuide({
             classAction = "objective-1921-gathering-materials",
         },
         {
-            priority = 180,
             route = {
                 { y = 0.766, mapID = 1453, label = "Wynne Larson", x = 0.416, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
@@ -461,7 +443,6 @@ ns:RegisterGuide({
             classAction = "turnin-1921-gathering-materials",
         },
         {
-            priority = 190,
             route = {
                 { y = 0.836, mapID = 1453, label = "Wynne Larson", x = 0.52, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
@@ -486,7 +467,6 @@ ns:RegisterGuide({
             classAction = "accept-1941-manaweave-robe",
         },
         {
-            priority = 200,
             route = {
                 { y = 0.766, mapID = 1453, label = "Wynne Larson", x = 0.416, offMapText = "Travel to Wynne Larson in Stormwind City." },
             },
@@ -511,7 +491,6 @@ ns:RegisterGuide({
             classAction = "turnin-1941-manaweave-robe",
         },
         {
-            priority = 210,
             route = {
                 { y = 0.084, mapID = 1455, label = "Dink", x = 0.268, offMapText = "Travel to Dink in Ironforge." },
             },
@@ -536,7 +515,6 @@ ns:RegisterGuide({
             classAction = "accept-1919-report-to-jennea",
         },
         {
-            priority = 220,
             route = {
                 { y = 0.794, mapID = 1453, label = "Jennea Cannon", x = 0.386, offMapText = "Travel to Jennea Cannon in Stormwind City." },
             },
@@ -580,10 +558,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 983,
-            priority = 230,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.4414, mapID = 1439, label = "Wizbang Cranktoggle", offMapText = "Travel to Wizbang Cranktoggle in Darkshore.", x = 0.3698 },
             },
@@ -630,10 +606,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2118,
-            priority = 250,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.4342, mapID = 1439, label = "Tharnariun Treetender", offMapText = "Travel to Tharnariun Treetender in Darkshore.", x = 0.3884 },
             },
@@ -661,7 +635,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             route = {
                 { y = 0.4348, mapID = 1439, label = "Terenthis", offMapText = "Travel to Terenthis in Darkshore.", x = 0.3937 },
             },
@@ -708,10 +681,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3524,
-            priority = 280,
         },
         {
-            priority = 290,
             route = {
                 { y = 0.4559, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
             },
@@ -739,7 +710,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 300,
             route = {
                 { y = 0.4493, mapID = 1439, label = "Gubber Blump", offMapText = "Travel to Gubber Blump in Darkshore.", x = 0.361 },
             },
@@ -767,7 +737,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 310,
             text = "For The Family and the Fishing Pole: Catch 6 Darkshore Grouper for Gubber Blump in Auberdine. Keep 6 Darkshore Grouper for the later quest pickup.",
             id = "collect-before-pickup-objective-1141-quest-work",
             kind = "note",
@@ -790,7 +759,6 @@ ns:RegisterGuide({
             referenceQuest = 1141,
         },
         {
-            priority = 320,
             text = "Turn in The Family and the Fishing Pole to Gubber Blump.",
             route = {
                 { y = 0.4493, mapID = 1439, label = "Gubber Blump", offMapText = "Travel to Gubber Blump in Darkshore.", x = 0.361 },
@@ -839,14 +807,12 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.3639, y = 0.5088, label = "Sea Creature Bones", offMapText = "Travel to Sea Creature Bones." },
             },
             sourceStep = 12,
-            priority = 330,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-3524-washed-ashore" },
         },
         {
-            priority = 340,
             text = "Find a living Rabid Thistle Bear in southern Darkshore. Do not attack it. Use Tharnariun's Hope to capture it. If the trap is lost, ask Tharnariun Treetender for another.",
             route = {
                 { mapID = 1439, x = 0.38, y = 0.524, label = "Rabid Thistle Bears", offMapText = "Travel to Rabid Thistle Bears." },
@@ -894,14 +860,12 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.376, y = 0.534, label = "Crawler Leg", offMapText = "Travel to Crawler Leg." },
             },
             sourceStep = 13,
-            priority = 350,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-983-buzzbox-827" },
         },
         {
-            priority = 360,
             text = "Turn in Buzzbox 827.",
             route = {
                 { y = 0.4626, mapID = 1439, label = "Buzzbox 827", offMapText = "Travel to Buzzbox 827.", x = 0.3666 },
@@ -929,7 +893,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             route = {
                 { y = 0.4626, mapID = 1439, label = "Buzzbox 411", offMapText = "Travel to Buzzbox 411.", x = 0.3666 },
             },
@@ -963,7 +926,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 380,
             text = "Turn in Washed Ashore to Gwennyth Bly'Leggonde.",
             route = {
                 { y = 0.4559, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
@@ -991,7 +953,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.4559, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
             },
@@ -1025,7 +986,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             route = {
                 { y = 0.4371, mapID = 1439, label = "Cerellean Whiteclaw", offMapText = "Travel to Cerellean Whiteclaw in Darkshore.", x = 0.3574 },
             },
@@ -1074,7 +1034,6 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.3187, y = 0.4632, label = "Sea Turtle Remains", offMapText = "Travel to Sea Turtle Remains." },
             },
             sourceStep = 21,
-            priority = 410,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1108,7 +1067,6 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.32, y = 0.434, label = "Thresher Eye", offMapText = "Travel to Thresher Eye." },
             },
             sourceStep = 22,
-            priority = 420,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1121,7 +1079,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1001-buzzbox-411" },
         },
         {
-            priority = 430,
             text = "Turn in Washed Ashore to Gwennyth Bly'Leggonde.",
             route = {
                 { y = 0.4559, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
@@ -1155,7 +1112,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 440,
             text = "Turn in Plagued Lands to Tharnariun Treetender.",
             route = {
                 { y = 0.4342, mapID = 1439, label = "Tharnariun Treetender", offMapText = "Travel to Tharnariun Treetender in Darkshore.", x = 0.3884 },
@@ -1183,7 +1139,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             route = {
                 { y = 0.4342, mapID = 1439, label = "Tharnariun Treetender", offMapText = "Travel to Tharnariun Treetender in Darkshore.", x = 0.3884 },
             },
@@ -1217,7 +1172,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             text = "Turn in How Big a Threat? to Terenthis.",
             route = {
                 { y = 0.4348, mapID = 1439, label = "Terenthis", offMapText = "Travel to Terenthis in Darkshore.", x = 0.3937 },
@@ -1245,7 +1199,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 470,
             route = {
                 { y = 0.4348, mapID = 1439, label = "Terenthis", offMapText = "Travel to Terenthis in Darkshore.", x = 0.3937 },
             },
@@ -1279,7 +1232,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 480,
             route = {
                 { y = 0.4348, mapID = 1439, label = "Terenthis", offMapText = "Travel to Terenthis in Darkshore.", x = 0.3937 },
             },
@@ -1313,7 +1265,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             text = "Turn in Thundris Windweaver to Thundris Windweaver.",
             route = {
                 { y = 0.4013, mapID = 1439, label = "Thundris Windweaver", offMapText = "Travel to Thundris Windweaver in Darkshore.", x = 0.374 },
@@ -1347,7 +1298,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.4013, mapID = 1439, label = "Thundris Windweaver", offMapText = "Travel to Thundris Windweaver in Darkshore.", x = 0.374 },
             },
@@ -1381,7 +1331,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             route = {
                 { y = 0.4013, mapID = 1439, label = "Thundris Windweaver", offMapText = "Travel to Thundris Windweaver in Darkshore.", x = 0.374 },
             },
@@ -1409,7 +1358,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             route = {
                 { y = 0.4013, mapID = 1439, label = "Thundris Windweaver", offMapText = "Travel to Thundris Windweaver in Darkshore.", x = 0.374 },
             },
@@ -1456,10 +1404,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4811,
-            priority = 530,
         },
         {
-            priority = 540,
             route = {
                 { y = 0.4339, mapID = 1439, label = "Sentinel Glynda Nal'Shea", offMapText = "Travel to Sentinel Glynda Nal'Shea in Darkshore.", x = 0.377 },
             },
@@ -1487,7 +1433,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 550,
             text = "Turn in Bashal'Aran to Asterion.",
             route = {
                 { y = 0.3629, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
@@ -1515,7 +1460,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             route = {
                 { y = 0.3629, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
             },
@@ -1549,7 +1493,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 570,
             text = "Collect 8 Grell Earring.",
             route = {
                 { y = 0.368, mapID = 1439, label = "Wild Grell", offMapText = "Travel to Wild Grell.", x = 0.458 },
@@ -1583,7 +1526,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 580,
             text = "Turn in Bashal'Aran to Asterion.",
             route = {
                 { y = 0.3629, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
@@ -1617,7 +1559,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 590,
             route = {
                 { y = 0.3629, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
             },
@@ -1651,7 +1592,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 600,
             text = "Collect 1 Ancient Moonstone Seal.",
             route = {
                 { y = 0.378, mapID = 1439, label = "Deth'ryll Satyr", offMapText = "Travel to Deth'ryll Satyr.", x = 0.458 },
@@ -1685,7 +1625,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             text = "Turn in Bashal'Aran to Asterion.",
             route = {
                 { y = 0.363, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
@@ -1719,7 +1658,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 620,
             route = {
                 { y = 0.363, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
             },
@@ -1753,7 +1691,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 630,
             route = {
                 { y = 0.3155, mapID = 1439, label = "Beached Sea Creature", offMapText = "Travel to Beached Sea Creature.", x = 0.4188 },
             },
@@ -1787,7 +1724,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 640,
             text = "Turn in Buzzbox 411.",
             route = {
                 { y = 0.2864, mapID = 1439, label = "Buzzbox 411", offMapText = "Travel to Buzzbox 411.", x = 0.4196 },
@@ -1821,7 +1757,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 650,
             route = {
                 { y = 0.2864, mapID = 1439, label = "Buzzbox 323", offMapText = "Travel to Buzzbox 323.", x = 0.4196 },
             },
@@ -1855,7 +1790,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 660,
             route = {
                 { y = 0.2064, mapID = 1439, label = "Beached Sea Turtle", offMapText = "Travel to Beached Sea Turtle.", x = 0.4421 },
             },
@@ -1910,7 +1844,6 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.484, y = 0.31, label = "Moonstalker Fang", offMapText = "Travel to Moonstalker Fang." },
             },
             sourceStep = 40,
-            priority = 670,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1944,7 +1877,6 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.506, y = 0.304, label = "Rabid Thistle Bear", offMapText = "Travel to Rabid Thistle Bear." },
             },
             sourceStep = 41,
-            priority = 680,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1957,7 +1889,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2138-cleansing-of-the-infected" },
         },
         {
-            priority = 690,
             text = "Turn in Buzzbox 323.",
             route = {
                 { y = 0.2458, mapID = 1439, label = "Buzzbox 323", offMapText = "Travel to Buzzbox 323.", x = 0.5128 },
@@ -1991,7 +1922,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 700,
             text = "Use the Empty Sampling Tube in the water below the Cliffspring River waterfall to collect a river sample.",
             route = {
                 { y = 0.255, mapID = 1439, label = "Empty Sampling Tube", offMapText = "Travel to Empty Sampling Tube.", x = 0.5084 },
@@ -2025,7 +1955,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             route = {
                 { y = 0.1815, mapID = 1439, label = "Beached Sea Turtle", offMapText = "Travel to Beached Sea Turtle.", x = 0.5309 },
             },
@@ -2081,10 +2010,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 26,
-            priority = 720,
         },
         {
-            priority = 730,
             route = {
                 { y = 0.0839, mapID = 1457, label = "Mathrengyl Bearwalker", offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.", x = 0.3537 },
             },
@@ -2137,10 +2064,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6121,
-            priority = 740,
         },
         {
-            priority = 750,
             route = {
                 { y = 0.0839, mapID = 1457, label = "Mathrengyl Bearwalker", offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.", x = 0.3537 },
             },
@@ -2171,7 +2096,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 760,
             text = "Turn in A Lesson to Learn to Dendrite Starblaze.",
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
@@ -2202,7 +2126,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 770,
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
             },
@@ -2239,7 +2162,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 780,
             text = "Turn in Lessons Anew to Dendrite Starblaze.",
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
@@ -2270,7 +2192,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 790,
             route = {
                 { y = 0.3064, mapID = 1450, label = "Dendrite Starblaze", offMapText = "Travel to Dendrite Starblaze in Moonglade.", x = 0.5621 },
             },
@@ -2330,10 +2251,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 29,
-            priority = 800,
         },
         {
-            priority = 810,
             text = "Use Shrine Bauble.",
             route = {
                 { y = 0.4138, mapID = 1450, label = "Shrine Bauble", offMapText = "Travel to Shrine Bauble.", x = 0.3592 },
@@ -2370,7 +2289,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 820,
             text = "Turn in Trial of the Lake to Tajarri.",
             route = {
                 { y = 0.4011, mapID = 1450, label = "Tajarri", offMapText = "Travel to Tajarri in Moonglade.", x = 0.3651 },
@@ -2407,7 +2325,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 830,
             route = {
                 { y = 0.4011, mapID = 1450, label = "Tajarri", offMapText = "Travel to Tajarri in Moonglade.", x = 0.3651 },
             },
@@ -2444,7 +2361,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 840,
             text = "Turn in Beached Sea Creature to Gwennyth Bly'Leggonde.",
             route = {
                 { y = 0.456, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
@@ -2478,7 +2394,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 850,
             text = "Turn in Beached Sea Turtle to Gwennyth Bly'Leggonde.",
             route = {
                 { y = 0.456, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
@@ -2512,7 +2427,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 860,
             text = "Turn in Beached Sea Turtle to Gwennyth Bly'Leggonde.",
             route = {
                 { y = 0.456, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
@@ -2546,7 +2460,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 870,
             text = "For The Red Crystal: Travel east of Auberdine and look for a large, red crystal along Darkshore's eastern mountain range. Report back what you find to Sentinel Glynda Nal'Shea in Auberdine.",
             id = "objective-4811-quest-work",
             kind = "objective",
@@ -2571,7 +2484,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4811-the-red-crystal" },
         },
         {
-            priority = 880,
             text = "Turn in The Red Crystal to Sentinel Glynda Nal'Shea.",
             route = {
                 { y = 0.4339, mapID = 1439, label = "Sentinel Glynda Nal'Shea", offMapText = "Travel to Sentinel Glynda Nal'Shea in Darkshore.", x = 0.3771 },
@@ -2599,7 +2511,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 890,
             route = {
                 { y = 0.4339, mapID = 1439, label = "Sentinel Glynda Nal'Shea", offMapText = "Travel to Sentinel Glynda Nal'Shea in Darkshore.", x = 0.3771 },
             },
@@ -2633,7 +2544,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 900,
             text = "Use the Empty Water Tube at the Auberdine moonwell to collect a Moonwell Water Tube.",
             route = {
                 { y = 0.4405, mapID = 1439, label = "Empty Water Tube", offMapText = "Travel to Empty Water Tube.", x = 0.3779 },
@@ -2667,7 +2577,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 910,
             route = {
                 { y = 0.4066, mapID = 1439, label = "Alanndarian Nightsong", offMapText = "Travel to Alanndarian Nightsong in Darkshore.", x = 0.3769 },
             },
@@ -2695,7 +2604,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 920,
             text = "For Easy Strider Living: Bring back 5 Strider Meat to Alanndarian Nightsong in Auberdine.",
             id = "objective-2178-quest-work",
             kind = "objective",
@@ -2720,7 +2628,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2178-easy-strider-living" },
         },
         {
-            priority = 930,
             text = "Turn in Easy Strider Living to Alanndarian Nightsong.",
             route = {
                 { y = 0.4066, mapID = 1439, label = "Alanndarian Nightsong", offMapText = "Travel to Alanndarian Nightsong in Darkshore.", x = 0.3769 },
@@ -2748,7 +2655,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 940,
             text = "Turn in The Cliffspring River to Thundris Windweaver.",
             route = {
                 { y = 0.4013, mapID = 1439, label = "Thundris Windweaver", offMapText = "Travel to Thundris Windweaver in Darkshore.", x = 0.374 },
@@ -2782,7 +2688,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 950,
             text = "Turn in Cleansing of the Infected to Tharnariun Treetender.",
             route = {
                 { y = 0.4341, mapID = 1439, label = "Tharnariun Treetender", offMapText = "Travel to Tharnariun Treetender in Darkshore.", x = 0.3884 },
@@ -2816,7 +2721,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 960,
             text = "Turn in As Water Cascades.",
             route = {
                 { y = 0.4866, mapID = 1439, label = "As Water Cascades", offMapText = "Travel to As Water Cascades.", x = 0.4732 },
@@ -2850,7 +2754,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 970,
             route = {
                 { y = 0.4866, mapID = 1439, label = "The Fragments Within", offMapText = "Travel to The Fragments Within.", x = 0.4732 },
             },
@@ -2884,7 +2787,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 980,
             route = {
                 { y = 0.5973, mapID = 1439, label = "Sentinel Tysha Moonblade", offMapText = "Travel to Sentinel Tysha Moonblade in Darkshore.", x = 0.403 },
             },
@@ -2933,7 +2835,6 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.424, y = 0.604, label = "Anaya's Pendant", offMapText = "Travel to Anaya's Pendant." },
             },
             sourceStep = 69,
-            priority = 990,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -2961,14 +2862,12 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.414, y = 0.604, label = "Highborne Relic", offMapText = "Travel to Highborne Relic." },
             },
             sourceStep = 70,
-            priority = 1000,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-958-tools-of-the-highborne" },
         },
         {
-            priority = 1010,
             text = "For The Fall of Ameth'Aran: Study the tablets which tell of Ameth'Aran and of its fall.",
             id = "objective-953-quest-work",
             kind = "objective",
@@ -2993,7 +2892,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-953-the-fall-of-ameth-aran" },
         },
         {
-            priority = 1020,
             text = "Turn in The Fall of Ameth'Aran to Sentinel Tysha Moonblade.",
             route = {
                 { y = 0.5973, mapID = 1439, label = "Sentinel Tysha Moonblade", offMapText = "Travel to Sentinel Tysha Moonblade in Darkshore.", x = 0.403 },
@@ -3021,7 +2919,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1030,
             route = {
                 { y = 0.7086, mapID = 1439, label = "Beached Sea Creature", offMapText = "Travel to Beached Sea Creature.", x = 0.3606 },
             },
@@ -3055,7 +2952,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1040,
             route = {
                 { y = 0.6216, mapID = 1439, label = "Beached Sea Turtle", offMapText = "Travel to Beached Sea Turtle.", x = 0.3714 },
             },
@@ -3089,7 +2985,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1050,
             text = "Kill 5 Blackwood Windtalker.",
             route = {
                 { y = 0.53, mapID = 1439, label = "Blackwood Windtalker", offMapText = "Travel to Blackwood Windtalker.", x = 0.396 },
@@ -3123,7 +3018,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1060,
             text = "Kill 8 Blackwood Pathfinder.",
             route = {
                 { y = 0.53, mapID = 1439, label = "Blackwood Pathfinder", offMapText = "Travel to Blackwood Pathfinder.", x = 0.396 },
@@ -3157,7 +3051,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1070,
             text = "Turn in Beached Sea Creature to Gwennyth Bly'Leggonde.",
             route = {
                 { y = 0.456, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
@@ -3191,7 +3084,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1080,
             text = "Turn in Beached Sea Turtle to Gwennyth Bly'Leggonde.",
             route = {
                 { y = 0.456, mapID = 1439, label = "Gwennyth Bly'Leggonde", offMapText = "Travel to Gwennyth Bly'Leggonde in Darkshore.", x = 0.3662 },
@@ -3244,10 +3136,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1138,
-            priority = 1090,
         },
         {
-            priority = 1100,
             route = {
                 { y = 0.4493, mapID = 1439, label = "Gubber Blump", offMapText = "Travel to Gubber Blump in Darkshore.", x = 0.3609 },
             },
@@ -3275,7 +3165,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1110,
             text = "Turn in For Love Eternal to Cerellean Whiteclaw.",
             route = {
                 { y = 0.4371, mapID = 1439, label = "Cerellean Whiteclaw", offMapText = "Travel to Cerellean Whiteclaw in Darkshore.", x = 0.3574 },
@@ -3303,7 +3192,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1120,
             text = "Turn in The Fragments Within to Sentinel Glynda Nal'Shea.",
             route = {
                 { y = 0.4339, mapID = 1439, label = "Sentinel Glynda Nal'Shea", offMapText = "Travel to Sentinel Glynda Nal'Shea in Darkshore.", x = 0.3771 },
@@ -3337,7 +3225,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1130,
             text = "Turn in How Big a Threat? to Terenthis.",
             route = {
                 { y = 0.4348, mapID = 1439, label = "Terenthis", offMapText = "Travel to Terenthis in Darkshore.", x = 0.3937 },
@@ -3371,7 +3258,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1140,
             route = {
                 { y = 0.4355, mapID = 1439, label = "Sentinel Elissa Starbreeze", offMapText = "Travel to Sentinel Elissa Starbreeze in Darkshore.", x = 0.3905 },
             },
@@ -3399,7 +3285,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1150,
             route = {
                 { y = 0.4117, mapID = 1439, label = "Gorbold Steelhand", offMapText = "Travel to Gorbold Steelhand in Darkshore.", x = 0.3811 },
             },
@@ -3427,7 +3312,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1160,
             text = "Turn in Tools of the Highborne to Thundris Windweaver.",
             route = {
                 { y = 0.4013, mapID = 1439, label = "Thundris Windweaver", offMapText = "Travel to Thundris Windweaver in Darkshore.", x = 0.374 },
@@ -3455,7 +3339,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1170,
             text = "For Bashal'Aran: Destroy the Ancient Moonstone Seal at the ancient flame in Ameth'Aran.",
             id = "objective-957-quest-work",
             kind = "objective",
@@ -3486,7 +3369,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-957-bashal-aran" },
         },
         {
-            priority = 1180,
             text = "Turn in Bashal'Aran to Asterion.",
             route = {
                 { y = 0.363, mapID = 1439, label = "Asterion", offMapText = "Travel to Asterion in Darkshore.", x = 0.4417 },
@@ -3541,7 +3423,6 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.3824, y = 0.28800000000000003, label = "Silver Dawning's Lockbox", offMapText = "Travel to Silver Dawning's Lockbox." },
             },
             sourceStep = 84,
-            priority = 1190,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -3569,7 +3450,6 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.39630000000000004, y = 0.2746, label = "Mist Veil's Lockbox", offMapText = "Travel to Mist Veil's Lockbox." },
             },
             sourceStep = 85,
-            priority = 1200,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -3597,14 +3477,12 @@ ns:RegisterGuide({
                 { mapID = 1439, x = 0.45399999999999996, y = 0.204, label = "Fine Crab Chunks", offMapText = "Travel to Fine Crab Chunks." },
             },
             sourceStep = 87,
-            priority = 1210,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1138-fruit-of-the-sea" },
         },
         {
-            priority = 1220,
             text = "Turn in The Tower of Althalaxx to Balthule Shadowstrike.",
             route = {
                 { y = 0.2489, mapID = 1439, label = "Balthule Shadowstrike", offMapText = "Travel to Balthule Shadowstrike in Darkshore.", x = 0.5497 },
@@ -3632,7 +3510,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1230,
             route = {
                 { y = 0.2489, mapID = 1439, label = "Balthule Shadowstrike", offMapText = "Travel to Balthule Shadowstrike in Darkshore.", x = 0.5497 },
             },
@@ -3666,7 +3543,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1240,
             text = "Collect 4 Worn Parchment.",
             route = {
                 { y = 0.276, mapID = 1439, label = "Dark Strand Fanatic", offMapText = "Travel to Dark Strand Fanatic.", x = 0.55 },
@@ -3700,7 +3576,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1250,
             text = "Turn in The Tower of Althalaxx to Balthule Shadowstrike.",
             route = {
                 { y = 0.2489, mapID = 1439, label = "Balthule Shadowstrike", offMapText = "Travel to Balthule Shadowstrike in Darkshore.", x = 0.5497 },
@@ -3734,7 +3609,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1260,
             route = {
                 { y = 0.2489, mapID = 1439, label = "Balthule Shadowstrike", offMapText = "Travel to Balthule Shadowstrike in Darkshore.", x = 0.5497 },
             },
@@ -3768,7 +3642,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1270,
             text = "Turn in Fruit of the Sea to Gubber Blump.",
             route = {
                 { y = 0.4493, mapID = 1439, label = "Gubber Blump", offMapText = "Travel to Gubber Blump in Darkshore.", x = 0.361 },
@@ -3796,7 +3669,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 1280,
             text = "Turn in Deep Ocean, Vast Sea to Gorbold Steelhand.",
             route = {
                 { y = 0.4117, mapID = 1439, label = "Gorbold Steelhand", offMapText = "Travel to Gorbold Steelhand in Darkshore.", x = 0.3811 },
@@ -3847,10 +3719,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98025,
-            priority = 1290,
         },
         {
-            priority = 1300,
             route = {
                 { y = 0.442, mapID = 1439, label = "WANTED: Jai'vhanel", offMapText = "Travel to WANTED: Jai'vhanel.", x = 0.372 },
             },
@@ -3877,7 +3747,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 1310,
             route = {
                 { y = 0.582, mapID = 1439, label = "Jai'vhanel", offMapText = "Travel to Jai'vhanel.", x = 0.45 },
             },
@@ -3904,7 +3773,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-98025-wanted-jaivhanel" },
         },
         {
-            priority = 1320,
             route = {
                 { y = 0.434, mapID = 1439, label = "Sentinel Glynda Nal'Shea", offMapText = "Travel to Sentinel Glynda Nal'Shea.", x = 0.376 },
             },

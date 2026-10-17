@@ -22,10 +22,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-shadowfang-keep",
     title = "Shadowfang Keep",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -36,7 +37,6 @@ ns:RegisterGuide({
         {
             id = "accept-1013-the-book-of-ur",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Horde" }, { level = { min = 22 } } } },
             text = "Accept The Book of Ur from Keeper Bel'dugur.",
             complete = QuestState(1013, "activeOrCompleted"),
@@ -47,7 +47,6 @@ ns:RegisterGuide({
         {
             id = "accept-1014-arugal-must-die",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Horde" }, { level = { min = 22 } } } },
             text = "Accept Arugal Must Die from Dalar Dawnweaver.",
             complete = QuestState(1014, "activeOrCompleted"),
@@ -58,7 +57,6 @@ ns:RegisterGuide({
         {
             id = "accept-1098-deathstalkers-in-shadowfang",
             kind = "accept",
-            priority = 12,
             conditions = { all = { { faction = "Horde" }, { level = { min = 22 } } } },
             text = "Accept Deathstalkers in Shadowfang from High Executor Hadrec.",
             complete = QuestState(1098, "activeOrCompleted"),
@@ -69,7 +67,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 13,
             conditions = { level = { min = 18 } },
             text = "Enter Shadowfang Keep with your group.",
             dependsOn = { "accept-1013-the-book-of-ur", "accept-1014-arugal-must-die", "accept-1098-deathstalkers-in-shadowfang" },
@@ -79,7 +76,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1098-deathstalkers-in-shadowfang",
             kind = "turnin",
-            priority = 16,
             conditions = { all = { { faction = "Horde" }, { level = { min = 22 } } } },
             text = "Turn in Deathstalkers in Shadowfang to Deathstalker Vincent. 'Please unlock the courtyard door.'.",
             dependsOn = { "accept-1098-deathstalkers-in-shadowfang" },
@@ -89,7 +85,6 @@ ns:RegisterGuide({
         {
             id = "objective-1013-1-the-book-of-ur",
             kind = "objective",
-            priority = 25,
             conditions = { all = { { faction = "Horde" }, { level = { min = 22 } } } },
             text = "Inside Shadowfang Keep, loot The Book of Ur from the bookshelf in the chamber after Fenrus the Devourer.",
             dependsOn = { "accept-1013-the-book-of-ur" },
@@ -99,7 +94,6 @@ ns:RegisterGuide({
         {
             id = "objective-1014-1-head-of-arugal",
             kind = "objective",
-            priority = 28,
             conditions = { all = { { faction = "Horde" }, { level = { min = 22 } } } },
             text = "Kill Archmage Arugal at the top of the keep and loot the Head of Arugal.",
             dependsOn = { "accept-1014-arugal-must-die" },
@@ -109,7 +103,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1014-arugal-must-die",
             kind = "turnin",
-            priority = 31,
             conditions = { all = { { faction = "Horde" }, { level = { min = 22 } } } },
             text = "Turn in Arugal Must Die to Dalar Dawnweaver.",
             dependsOn = { "objective-1014-1-head-of-arugal" },
@@ -121,7 +114,6 @@ ns:RegisterGuide({
         {
             id = "turnin-1013-the-book-of-ur",
             kind = "turnin",
-            priority = 32,
             conditions = { all = { { faction = "Horde" }, { level = { min = 22 } } } },
             text = "Turn in The Book of Ur to Keeper Bel'dugur.",
             dependsOn = { "objective-1013-1-the-book-of-ur" },

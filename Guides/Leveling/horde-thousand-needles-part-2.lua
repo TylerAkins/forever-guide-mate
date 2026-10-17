@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Thousand Needles",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-thousand-needles-part-2",
@@ -38,10 +38,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 1531,
             alternativeQuests = { 1532 },
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { mapID = 1441, x = 0.5354, y = 0.4265, label = "Prate Cloudseer", offMapText = "Travel to Prate Cloudseer in Thousand Needles." },
             },
@@ -92,10 +90,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1146,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.6394, mapID = 1441, label = "Moktar Krin", offMapText = "Travel to Moktar Krin in Thousand Needles.", x = 0.6758 },
             },
@@ -129,7 +125,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.6394, mapID = 1441, label = "Moktar Krin", offMapText = "Travel to Moktar Krin in Thousand Needles.", x = 0.6758 },
             },
@@ -175,10 +170,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1112,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
             },
@@ -209,7 +202,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -234,7 +226,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -265,7 +256,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             text = "Turn in Delivery to the Gnomes to Fizzle Brassbolts.",
             route = {
                 { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
@@ -296,7 +286,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 110,
             route = {
                 { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
             },
@@ -321,7 +310,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 120,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -352,7 +340,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             route = {
                 { y = 0.7712, mapID = 1441, label = "Wizzle Brassbolts", offMapText = "Travel to Wizzle Brassbolts in Thousand Needles.", x = 0.7814 },
             },
@@ -377,7 +364,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             route = {
                 { y = 0.7589, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
             },
@@ -402,7 +388,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             route = {
                 { y = 0.7795, mapID = 1441, label = "Trackmaster Zherin", offMapText = "Travel to Trackmaster Zherin in Thousand Needles.", x = 0.8164 },
             },
@@ -427,7 +412,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             text = "Kill 5 Silithid Invader.",
             route = {
                 { y = 0.8618, mapID = 1441, label = "Silithid Invader", offMapText = "Travel to Silithid Invader.", x = 0.6632 },
@@ -482,7 +466,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.7020000000000001, y = 0.826, label = "Silithid Searcher", offMapText = "Travel to Silithid Searcher." },
             },
             sourceStep = 13,
-            priority = 170,
             requiredQuests = {
                 {
                     mode = "any",
@@ -521,10 +504,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 180,
         },
         {
-            priority = 190,
             text = "Use the Cracked Silithid Carapace to accept Parts of the Swarm.",
             id = "accept-1148-parts-of-the-swarm",
             kind = "accept",
@@ -576,7 +557,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.7, y = 0.846, label = "Silithid Hive Drone", offMapText = "Travel to Silithid Hive Drone." },
             },
             sourceStep = 15,
-            priority = 200,
             requiredQuests = {
                 {
                     mode = "any",
@@ -610,7 +590,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.7020000000000001, y = 0.826, label = "Silithid Heart", offMapText = "Travel to Silithid Heart." },
             },
             sourceStep = 16,
-            priority = 210,
             requiredQuests = {
                 {
                     mode = "any",
@@ -644,7 +623,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.7020000000000001, y = 0.826, label = "Intact Silithid Carapace", offMapText = "Travel to Intact Silithid Carapace." },
             },
             sourceStep = 16,
-            priority = 220,
             requiredQuests = {
                 {
                     mode = "any",
@@ -678,7 +656,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.7020000000000001, y = 0.826, label = "Silithid Talon", offMapText = "Travel to Silithid Talon." },
             },
             sourceStep = 16,
-            priority = 230,
             requiredQuests = {
                 {
                     mode = "any",
@@ -691,7 +668,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1148-parts-of-the-swarm" },
         },
         {
-            priority = 240,
             text = "Kill 6 Saltstone Gazer.",
             route = {
                 { mapID = 1441, x = 0.774, y = 0.88, label = "Saltstone Gazer", offMapText = "Travel to Saltstone Gazer." },
@@ -716,7 +692,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 250,
             text = "Collect 10 Hollow Vulture Bone.",
             route = {
                 { y = 0.66, mapID = 1441, label = "Salt Flats Scavenger", offMapText = "Travel to Salt Flats Scavenger.", x = 0.88 },
@@ -759,7 +734,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.828, y = 0.552, label = "Hardened Tortoise Shell", offMapText = "Travel to Hardened Tortoise Shell." },
             },
             sourceStep = 19,
-            priority = 260,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -784,7 +758,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.8240000000000001, y = 0.6, label = "Salty Scorpid Venom", offMapText = "Travel to Salty Scorpid Venom." },
             },
             sourceStep = 20,
-            priority = 270,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -809,7 +782,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.784, y = 0.59, label = "Saltstone Basilisk", offMapText = "Travel to Saltstone Basilisk." },
             },
             sourceStep = 21,
-            priority = 280,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -834,7 +806,6 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.7879999999999999, y = 0.868, label = "Saltstone Crystalhide", offMapText = "Travel to Saltstone Crystalhide." },
             },
             sourceStep = 22,
-            priority = 290,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -859,14 +830,12 @@ ns:RegisterGuide({
                 { mapID = 1441, x = 0.83, y = 0.6459999999999999, label = "Rocket Car Parts", offMapText = "Travel to Rocket Car Parts." },
             },
             sourceStep = 23,
-            priority = 300,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1110-rocket-car-parts" },
         },
         {
-            priority = 310,
             text = "Turn in The Swarm Grows to Moktar Krin.",
             route = {
                 { y = 0.6394, mapID = 1441, label = "Moktar Krin", offMapText = "Travel to Moktar Krin in Thousand Needles.", x = 0.6758 },
@@ -905,7 +874,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Turn in Rocket Car Parts to Kravel Koalbeard.",
             route = {
                 { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
@@ -930,7 +898,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -955,7 +922,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             text = "Turn in Salt Flat Venom to Fizzle Brassbolts.",
             route = {
                 { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
@@ -980,7 +946,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 350,
             text = "Turn in Hardened Shells to Wizzle Brassbolts.",
             route = {
                 { y = 0.7712, mapID = 1441, label = "Wizzle Brassbolts", offMapText = "Travel to Wizzle Brassbolts in Thousand Needles.", x = 0.7814 },
@@ -1005,7 +970,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             route = {
                 { y = 0.7712, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
             },
@@ -1036,7 +1000,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             text = "Turn in Load Lightening to Pozzik.",
             route = {
                 { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
@@ -1061,7 +1024,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             route = {
                 { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
             },
@@ -1092,7 +1054,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             text = "Turn in A Bump in the Road to Trackmaster Zherin.",
             route = {
                 { y = 0.7795, mapID = 1441, label = "Trackmaster Zherin", offMapText = "Travel to Trackmaster Zherin in Thousand Needles.", x = 0.8163 },
@@ -1141,10 +1102,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5361,
-            priority = 400,
         },
         {
-            priority = 410,
             route = {
                 { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
             },
@@ -1172,7 +1131,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 420,
             text = "Turn in Parts of the Swarm to Korran.",
             route = {
                 { y = 0.2963, mapID = 1413, label = "Korran", offMapText = "Travel to Korran in The Barrens.", x = 0.5107 },
@@ -1211,7 +1169,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 430,
             route = {
                 { y = 0.2963, mapID = 1413, label = "Korran", offMapText = "Travel to Korran in The Barrens.", x = 0.5107 },
             },
@@ -1245,7 +1202,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Turn in Goblin Sponsorship to Gazlowe.",
             route = {
                 { y = 0.3623, mapID = 1413, label = "Gazlowe", offMapText = "Travel to Gazlowe in The Barrens.", x = 0.6268 },
@@ -1276,7 +1232,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 450,
             route = {
                 { y = 0.3623, mapID = 1413, label = "Gazlowe", offMapText = "Travel to Gazlowe in The Barrens.", x = 0.6268 },
             },
@@ -1307,7 +1262,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 460,
             route = {
                 { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
             },
@@ -1344,7 +1298,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 470,
             text = "Turn in Goblin Sponsorship to Wharfmaster Lozgil.",
             route = {
                 { y = 0.7356, mapID = 1434, label = "Wharfmaster Lozgil", offMapText = "Travel to Wharfmaster Lozgil in Stranglethorn Vale.", x = 0.2634 },
@@ -1375,7 +1328,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 480,
             route = {
                 { y = 0.7356, mapID = 1434, label = "Wharfmaster Lozgil", offMapText = "Travel to Wharfmaster Lozgil in Stranglethorn Vale.", x = 0.2634 },
             },
@@ -1406,7 +1358,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 490,
             route = {
                 { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
             },
@@ -1431,7 +1382,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
             },
@@ -1456,7 +1406,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             text = "Turn in The Rumormonger to Krazek.",
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
@@ -1487,7 +1436,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 520,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
             },
@@ -1512,7 +1460,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             route = {
                 { y = 0.7712, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
             },
@@ -1549,10 +1496,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 213,
-            priority = 540,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.7712, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
             },
@@ -1577,7 +1522,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 560,
             text = "Turn in Goblin Sponsorship to Baron Revilgaz.",
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
@@ -1608,7 +1552,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             route = {
                 { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
             },
@@ -1639,7 +1582,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 580,
             text = "Turn in Parts of the Swarm to Belgrom Rockmaul.",
             route = {
                 { y = 0.3424, mapID = 1454, label = "Belgrom Rockmaul", offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.", x = 0.7523 },

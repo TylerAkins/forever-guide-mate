@@ -30,10 +30,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-maraudon",
     title = "Maraudon",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 45 } },
@@ -44,7 +45,6 @@ ns:RegisterGuide({
         {
             id = "accept-7070-shadowshard-fragments",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Accept Shadowshard Fragments from Archmage Tervosh.",
             complete = QuestState(7070, "activeOrCompleted"),
@@ -55,7 +55,6 @@ ns:RegisterGuide({
         {
             id = "accept-7041-vyletongue-corruption",
             kind = "accept",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Accept Vyletongue Corruption from Talendria.",
             complete = QuestState(7041, "activeOrCompleted"),
@@ -66,7 +65,6 @@ ns:RegisterGuide({
         {
             id = "accept-7065-corruption-of-earth-and-seed",
             kind = "accept",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Accept Corruption of Earth and Seed from Keeper Marandis.",
             complete = QuestState(7065, "activeOrCompleted"),
@@ -77,7 +75,6 @@ ns:RegisterGuide({
         {
             id = "accept-7028-twisted-evils",
             kind = "accept",
-            priority = 13,
             conditions = { level = { min = 49 } },
             text = "Accept Twisted Evils from Willow.",
             complete = QuestState(7028, "activeOrCompleted"),
@@ -88,7 +85,6 @@ ns:RegisterGuide({
         {
             id = "accept-7067-the-pariah-s-instructions",
             kind = "accept",
-            priority = 14,
             conditions = { level = { min = 49 } },
             text = "Accept The Pariah's Instructions from Centuar Pariah.",
             complete = QuestState(7067, "activeOrCompleted"),
@@ -99,7 +95,6 @@ ns:RegisterGuide({
         {
             id = "objective-7070-1-shadowshard-fragment",
             kind = "objective",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Kill rock elementals in Maraudon until you loot 10 Shadowshard Fragment.",
             dependsOn = { "accept-7070-shadowshard-fragments" },
@@ -111,7 +106,6 @@ ns:RegisterGuide({
         {
             id = "accept-7044-legend-of-maraudon-goto-desolace-38-76-58",
             kind = "accept",
-            priority = 21,
             conditions = { level = { min = 49 } },
             text = "Accept Legend of Maraudon |goto Desolace 38.76,58.13 from CavindraCavindra.",
             complete = QuestState(7044, "activeOrCompleted"),
@@ -124,7 +118,6 @@ ns:RegisterGuide({
         {
             id = "objective-7041-2-filled-cerulean-vial",
             kind = "objective",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Fill the Cerulean Vial at the orange pool in Maraudon.",
             dependsOn = { "accept-7041-vyletongue-corruption" },
@@ -136,7 +129,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 24,
             conditions = { level = { min = 45 } },
             text = "Enter Maraudon (Foulspore Cavern - Orange) with your group.",
             dependsOn = { "accept-7070-shadowshard-fragments", "accept-7041-vyletongue-corruption", "accept-7065-corruption-of-earth-and-seed", "accept-7028-twisted-evils", "accept-7067-the-pariah-s-instructions", "accept-7044-legend-of-maraudon-goto-desolace-38-76-58" },
@@ -149,7 +141,6 @@ ns:RegisterGuide({
         {
             id = "objective-7044-2-celebrian-rod",
             kind = "objective",
-            priority = 26,
             conditions = { level = { min = 49 } },
             text = "Kill Lord Vyletongue and loot the Celebrian Rod.",
             dependsOn = { "accept-7044-legend-of-maraudon-goto-desolace-38-76-58" },
@@ -159,7 +150,6 @@ ns:RegisterGuide({
         {
             id = "objective-7041-1-heal-8-vylestem-vines",
             kind = "objective",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Heal 8 Vylestem Vines.",
             dependsOn = { "accept-7041-vyletongue-corruption" },
@@ -169,7 +159,6 @@ ns:RegisterGuide({
         {
             id = "objective-7067-1-amulet-of-union",
             kind = "objective",
-            priority = 33,
             conditions = { level = { min = 49 } },
             text = "Loot the Amulet of Union from the chest after you kill Princess Theradras.",
             dependsOn = { "accept-7067-the-pariah-s-instructions" },
@@ -179,7 +168,6 @@ ns:RegisterGuide({
         {
             id = "objective-7044-1-celebrian-diamond",
             kind = "objective",
-            priority = 35,
             conditions = { level = { min = 49 } },
             text = "Kill Princess Theradras and loot the Celebrian Diamond.",
             dependsOn = { "accept-7044-legend-of-maraudon-goto-desolace-38-76-58" },
@@ -189,7 +177,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7044-legend-of-maraudon",
             kind = "turnin",
-            priority = 37,
             conditions = { level = { min = 49 } },
             text = "Turn in Legend of Maraudon to Celebras the Redeemed.",
             dependsOn = { "objective-7044-2-celebrian-rod", "objective-7044-1-celebrian-diamond" },
@@ -198,8 +185,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-7046-the-scepter-of-celebras",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 7044 } } },
             kind = "accept",
-            priority = 38,
             conditions = { level = { min = 49 } },
             text = "Accept The Scepter of Celebras from Celebras the Redeemed.",
             dependsOn = { "turnin-7044-legend-of-maraudon" },
@@ -207,8 +194,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-7046-1-create-the-scepter-of-ce",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 7044 } } },
             kind = "objective",
-            priority = 40,
             conditions = { level = { min = 49 } },
             text = "Create the Scepter of Celebras.",
             dependsOn = { "accept-7046-the-scepter-of-celebras" },
@@ -217,8 +204,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-7046-the-scepter-of-celebras",
+            requiredQuests = { { conditions = {  }, mode = "all", quests = { 7044 } } },
             kind = "turnin",
-            priority = 41,
             conditions = { level = { min = 49 } },
             text = "Turn in The Scepter of Celebras to Celebras the Redeemed.",
             dependsOn = { "objective-7046-1-create-the-scepter-of-ce" },
@@ -228,7 +215,6 @@ ns:RegisterGuide({
         {
             id = "objective-7065-1-princess-theradras",
             kind = "objective",
-            priority = 42,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Kill Princess Theradras.",
             dependsOn = { "accept-7065-corruption-of-earth-and-seed" },
@@ -238,7 +224,6 @@ ns:RegisterGuide({
         {
             id = "accept-7066-seed-of-life",
             kind = "accept",
-            priority = 43,
             conditions = { level = { min = 58 } },
             text = "Accept Seed of Life from Zaetar's Spirit.",
             complete = QuestState(7066, "activeOrCompleted"),
@@ -246,7 +231,6 @@ ns:RegisterGuide({
         {
             id = "objective-7028-1-theradric-crystal-carvin",
             kind = "objective",
-            priority = 45,
             conditions = { level = { min = 49 } },
             text = "Kill centaur in Maraudon until you loot 15 Theradric Crystal Carving.",
             dependsOn = { "accept-7028-twisted-evils" },
@@ -256,7 +240,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7067-the-pariah-s-instructions",
             kind = "turnin",
-            priority = 46,
             conditions = { level = { min = 49 } },
             text = "Turn in The Pariah's Instructions to Centuar Pariah.",
             dependsOn = { "objective-7067-1-amulet-of-union" },
@@ -268,7 +251,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7028-twisted-evils",
             kind = "turnin",
-            priority = 47,
             conditions = { level = { min = 49 } },
             text = "Turn in Twisted Evils to Willow.",
             dependsOn = { "objective-7028-1-theradric-crystal-carvin" },
@@ -280,7 +262,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7041-vyletongue-corruption",
             kind = "turnin",
-            priority = 48,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Turn in Vyletongue Corruption to Talendria.",
             dependsOn = { "objective-7041-2-filled-cerulean-vial", "objective-7041-1-heal-8-vylestem-vines" },
@@ -292,7 +273,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7065-corruption-of-earth-and-seed",
             kind = "turnin",
-            priority = 49,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             text = "Turn in Corruption of Earth and Seed to Keeper Marandis.",
             dependsOn = { "objective-7065-1-princess-theradras" },
@@ -304,7 +284,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7070-shadowshard-fragments",
             kind = "turnin",
-            priority = 50,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             text = "Turn in Shadowshard Fragments to Archmage Tervosh.",
             dependsOn = { "objective-7070-1-shadowshard-fragment" },
@@ -316,7 +295,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7066-seed-of-life",
             kind = "turnin",
-            priority = 51,
             conditions = { level = { min = 58 } },
             text = "Turn in Seed of Life to Keeper Remulos.",
             dependsOn = { "accept-7066-seed-of-life" },
@@ -328,7 +306,6 @@ ns:RegisterGuide({
         {
             id = "accept-7068-shadowshard-fragments",
             kind = "accept",
-            priority = 52,
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } } } },
             text = "Accept Shadowshard Fragments from Uthel'nay.",
             complete = QuestState(7068, "activeOrCompleted"),
@@ -339,7 +316,6 @@ ns:RegisterGuide({
         {
             id = "accept-7029-vyletongue-corruption",
             kind = "accept",
-            priority = 53,
             conditions = { all = { { faction = "Horde" }, { level = { min = 49 } } } },
             text = "Accept Vyletongue Corruption from Vark Battlescar.",
             complete = QuestState(7029, "activeOrCompleted"),
@@ -350,7 +326,6 @@ ns:RegisterGuide({
         {
             id = "accept-7064-corruption-of-earth-and-seed",
             kind = "accept",
-            priority = 54,
             conditions = { all = { { faction = "Horde" }, { level = { min = 49 } } } },
             text = "Accept Corruption of Earth and Seed from Selendra.",
             complete = QuestState(7064, "activeOrCompleted"),
@@ -361,7 +336,6 @@ ns:RegisterGuide({
         {
             id = "objective-7068-1-shadowshard-fragment",
             kind = "objective",
-            priority = 55,
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } } } },
             text = "Kill rock elementals in Maraudon until you loot 10 Shadowshard Fragment.",
             dependsOn = { "accept-7068-shadowshard-fragments" },
@@ -373,7 +347,6 @@ ns:RegisterGuide({
         {
             id = "objective-7029-2-filled-cerulean-vial",
             kind = "objective",
-            priority = 56,
             conditions = { all = { { faction = "Horde" }, { level = { min = 49 } } } },
             text = "Fill the Cerulean Vial at the orange pool in Maraudon.",
             dependsOn = { "accept-7029-vyletongue-corruption" },
@@ -385,7 +358,6 @@ ns:RegisterGuide({
         {
             id = "objective-7029-1-heal-8-vylestem-vines",
             kind = "objective",
-            priority = 57,
             conditions = { all = { { faction = "Horde" }, { level = { min = 49 } } } },
             text = "Heal 8 Vylestem Vines.",
             dependsOn = { "accept-7029-vyletongue-corruption" },
@@ -395,7 +367,6 @@ ns:RegisterGuide({
         {
             id = "objective-7064-1-princess-theradras",
             kind = "objective",
-            priority = 58,
             conditions = { all = { { faction = "Horde" }, { level = { min = 49 } } } },
             text = "Kill Princess Theradras.",
             dependsOn = { "accept-7064-corruption-of-earth-and-seed" },
@@ -405,7 +376,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7068-shadowshard-fragments",
             kind = "turnin",
-            priority = 59,
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } } } },
             text = "Turn in Shadowshard Fragments to Uthel'nay.",
             dependsOn = { "objective-7068-1-shadowshard-fragment" },
@@ -417,7 +387,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7029-vyletongue-corruption",
             kind = "turnin",
-            priority = 60,
             conditions = { all = { { faction = "Horde" }, { level = { min = 49 } } } },
             text = "Turn in Vyletongue Corruption to Vark Battlescar.",
             dependsOn = { "objective-7029-2-filled-cerulean-vial", "objective-7029-1-heal-8-vylestem-vines" },
@@ -429,7 +398,6 @@ ns:RegisterGuide({
         {
             id = "turnin-7064-corruption-of-earth-and-seed",
             kind = "turnin",
-            priority = 61,
             conditions = { all = { { faction = "Horde" }, { level = { min = 49 } } } },
             text = "Turn in Corruption of Earth and Seed to Selendra.",
             dependsOn = { "objective-7064-1-princess-theradras" },

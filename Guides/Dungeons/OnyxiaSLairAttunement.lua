@@ -38,10 +38,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-onyxia-s-lair-attunement",
     title = "Onyxia's Lair Attunement",
     category = "Raid Quests",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { level = { min = 48 } },
@@ -52,7 +53,6 @@ ns:RegisterGuide({
         {
             id = "accept-4182-dragonkin-menace",
             kind = "accept",
-            priority = 10,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept Dragonkin Menace from Helendis Riverhorn.",
             complete = QuestState(4182, "activeOrCompleted"),
@@ -63,7 +63,6 @@ ns:RegisterGuide({
         {
             id = "objective-4182-1-black-broodling",
             kind = "objective",
-            priority = 11,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Kill 15 Black Broodling.",
             dependsOn = { "accept-4182-dragonkin-menace" },
@@ -75,7 +74,6 @@ ns:RegisterGuide({
         {
             id = "objective-4182-2-black-dragonspawn",
             kind = "objective",
-            priority = 12,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Kill 10 Black Dragonspawn.",
             dependsOn = { "accept-4182-dragonkin-menace" },
@@ -87,7 +85,6 @@ ns:RegisterGuide({
         {
             id = "objective-4182-3-black-drake",
             kind = "objective",
-            priority = 13,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Kill 1 Black Drake.",
             dependsOn = { "accept-4182-dragonkin-menace" },
@@ -99,7 +96,6 @@ ns:RegisterGuide({
         {
             id = "objective-4182-4-black-wyrmkin",
             kind = "objective",
-            priority = 14,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Kill 4 Black Wyrmkin.",
             dependsOn = { "accept-4182-dragonkin-menace" },
@@ -111,7 +107,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4182-dragonkin-menace",
             kind = "turnin",
-            priority = 15,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in Dragonkin Menace to Helendis Riverhorn.",
             dependsOn = { "objective-4182-1-black-broodling", "objective-4182-2-black-dragonspawn", "objective-4182-3-black-drake", "objective-4182-4-black-wyrmkin" },
@@ -122,8 +117,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4183-the-true-masters",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4182 } } },
             kind = "accept",
-            priority = 16,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Helendis Riverhorn.",
             dependsOn = { "turnin-4182-dragonkin-menace" },
@@ -134,8 +129,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4183-the-true-masters",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4182 } } },
             kind = "turnin",
-            priority = 17,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Magistrate Solomon.",
             dependsOn = { "accept-4183-the-true-masters" },
@@ -146,8 +141,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4184-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4183 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4183 } } },
             kind = "accept",
-            priority = 18,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Magistrate Solomon.",
             dependsOn = { "turnin-4183-the-true-masters" },
@@ -158,8 +153,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4184-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4183 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4183 } } },
             kind = "turnin",
-            priority = 19,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
             dependsOn = { "accept-4184-the-true-masters" },
@@ -170,8 +165,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4185-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4184 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4184 } } },
             kind = "accept",
-            priority = 20,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Highlord Bolvar Fordragon.",
             dependsOn = { "turnin-4184-the-true-masters" },
@@ -182,8 +177,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4185-1-receive-advice-from-lady",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4184 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4184 } } },
             kind = "gossip",
-            priority = 21,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Talk to Lady Katrana Prestor. 'Pardon the intrusion, Lady Prestor, but Highlord Bolvar suggested that I seek your advice.' Receive Advice From Lady Prestor.",
             dependsOn = { "accept-4185-the-true-masters" },
@@ -194,8 +189,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4185-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4184 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4184 } } },
             kind = "turnin",
-            priority = 22,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
             dependsOn = { "objective-4185-1-receive-advice-from-lady" },
@@ -206,8 +201,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4186-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4185 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4185 } } },
             kind = "accept",
-            priority = 23,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Highlord Bolvar Fordragon.",
             dependsOn = { "turnin-4185-the-true-masters" },
@@ -218,8 +213,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4186-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4185 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4185 } } },
             kind = "turnin",
-            priority = 24,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Magistrate Solomon.",
             dependsOn = { "accept-4186-the-true-masters" },
@@ -230,8 +225,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4223-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4186 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4186 } } },
             kind = "accept",
-            priority = 25,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Magistrate Solomon.",
             dependsOn = { "turnin-4186-the-true-masters" },
@@ -242,8 +237,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4223-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4186 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4186 } } },
             kind = "turnin",
-            priority = 26,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Marshal Maxwell.",
             dependsOn = { "accept-4223-the-true-masters" },
@@ -254,8 +249,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4224-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4223 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4223 } } },
             kind = "accept",
-            priority = 27,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Accept The True Masters from Marshal Maxwell.",
             dependsOn = { "turnin-4223-the-true-masters" },
@@ -266,8 +261,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4224-1-hear-ragged-john-s-story",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4223 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4223 } } },
             kind = "gossip",
-            priority = 28,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Talk to Ragged John. 'Official business, John. I need some information about Marshal Windsor. Tell me about the last time you saw him.' Hear Ragged John's Story.",
             dependsOn = { "accept-4224-the-true-masters" },
@@ -278,8 +273,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4224-the-true-masters",
+            requiredQuests = { { conditions = {  }, mode = "any", quests = { 4223 } }, { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4223 } } },
             kind = "turnin",
-            priority = 29,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } } } },
             text = "Turn in The True Masters to Marshal Maxwell.",
             dependsOn = { "objective-4224-1-hear-ragged-john-s-story" },
@@ -290,8 +285,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4241-marshal-windsor",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4224 } } },
             kind = "accept",
-            priority = 30,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Accept Marshal Windsor from Marshal Maxwell.",
             dependsOn = { "turnin-4224-the-true-masters" },
@@ -303,7 +298,6 @@ ns:RegisterGuide({
         {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 31,
             conditions = { level = { min = 48 } },
             text = "Enter Blackrock Depths with your group.",
             dependsOn = { "accept-4182-dragonkin-menace", "accept-4183-the-true-masters", "accept-4184-the-true-masters", "accept-4185-the-true-masters", "accept-4186-the-true-masters", "accept-4223-the-true-masters", "accept-4224-the-true-masters", "accept-4241-marshal-windsor" },
@@ -313,8 +307,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4241-marshal-windsor",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4224 } } },
             kind = "turnin",
-            priority = 33,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Turn in Marshal Windsor to Marshal Windsor.",
             dependsOn = { "accept-4241-marshal-windsor" },
@@ -323,8 +317,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4242-abandoned-hope",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4241 } } },
             kind = "accept",
-            priority = 34,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Accept Abandoned Hope from Marshal Windsor.",
             dependsOn = { "turnin-4241-marshal-windsor" },
@@ -332,8 +326,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4242-abandoned-hope",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4241 } } },
             kind = "turnin",
-            priority = 35,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             text = "Turn in Abandoned Hope to Marshal Maxwell.",
             dependsOn = { "accept-4242-abandoned-hope" },
@@ -345,7 +339,6 @@ ns:RegisterGuide({
         {
             id = "accept-4264-a-crumpled-up-note",
             kind = "accept",
-            priority = 38,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept A Crumpled Up Note.",
             complete = QuestState(4264, "activeOrCompleted"),
@@ -353,7 +346,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4264-a-crumpled-up-note",
             kind = "turnin",
-            priority = 39,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in A Crumpled Up Note to Marshal Windsor.",
             dependsOn = { "accept-4264-a-crumpled-up-note" },
@@ -362,8 +354,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4282-a-shred-of-hope",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4264 } } },
             kind = "accept",
-            priority = 40,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept A Shred of Hope from Marshal Windsor.",
             dependsOn = { "turnin-4264-a-crumpled-up-note" },
@@ -371,8 +363,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4282-1-marshal-windsor-s-lost-i",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4264 } } },
             kind = "objective",
-            priority = 42,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Collect Marshal Windsor's Lost Information.",
             dependsOn = { "accept-4282-a-shred-of-hope" },
@@ -381,8 +373,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4282-2-marshal-windsor-s-lost-i",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4264 } } },
             kind = "objective",
-            priority = 44,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Collect Marshal Windsor's Lost Information.",
             dependsOn = { "accept-4282-a-shred-of-hope" },
@@ -391,8 +383,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4282-a-shred-of-hope",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4264 } } },
             kind = "turnin",
-            priority = 45,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in A Shred of Hope to Marshal Windsor.",
             dependsOn = { "objective-4282-1-marshal-windsor-s-lost-i", "objective-4282-2-marshal-windsor-s-lost-i" },
@@ -401,8 +393,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4322-jail-break",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4282 } } },
             kind = "accept",
-            priority = 46,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Jail Break! from Marshal Windsor.",
             dependsOn = { "turnin-4282-a-shred-of-hope" },
@@ -410,8 +402,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4322-1-jail-break",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4282 } } },
             kind = "objective",
-            priority = 47,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Jail Break!",
             dependsOn = { "accept-4322-jail-break" },
@@ -420,8 +412,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4322-jail-break",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4282 } } },
             kind = "turnin",
-            priority = 48,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Jail Break! to Marshal Maxwell.",
             dependsOn = { "objective-4322-1-jail-break" },
@@ -432,8 +424,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6402-stormwind-rendezvous",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4322 } } },
             kind = "accept",
-            priority = 49,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Stormwind Rendezvous from Marshal Maxwell.",
             dependsOn = { "turnin-4322-jail-break" },
@@ -444,8 +436,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6402-stormwind-rendezvous",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 4322 } } },
             kind = "turnin",
-            priority = 50,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Stormwind Rendezvous to Reginald Windsor.",
             dependsOn = { "accept-6402-stormwind-rendezvous" },
@@ -457,8 +449,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6403-the-great-masquerade",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6402 } } },
             kind = "accept",
-            priority = 51,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept The Great Masquerade from Reginald Windsor.",
             dependsOn = { "turnin-6402-stormwind-rendezvous" },
@@ -469,8 +461,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6403-1-complete-reginald-windso",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6402 } } },
             kind = "objective",
-            priority = 53,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Complete Reginald Windsor's March.",
             dependsOn = { "accept-6403-the-great-masquerade" },
@@ -481,8 +473,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6403-the-great-masquerade",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6402 } } },
             kind = "turnin",
-            priority = 54,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in The Great Masquerade to Highlord Bolvar Fordragon.",
             dependsOn = { "objective-6403-1-complete-reginald-windso" },
@@ -493,8 +485,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6501-the-dragon-s-eye",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6403 } } },
             kind = "accept",
-            priority = 55,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept The Dragon's Eye from Highlord Bolvar Fordragon.",
             dependsOn = { "turnin-6403-the-great-masquerade" },
@@ -505,8 +497,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6501-the-dragon-s-eye",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6403 } } },
             kind = "turnin",
-            priority = 56,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in The Dragon's Eye to Haleh.",
             dependsOn = { "accept-6501-the-dragon-s-eye" },
@@ -517,8 +509,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6502-drakefire-amulet",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6501 } } },
             kind = "accept",
-            priority = 57,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept Drakefire Amulet from Haleh.",
             dependsOn = { "turnin-6501-the-dragon-s-eye" },
@@ -529,8 +521,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6502-1-blood-of-the-black-drago",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6501 } } },
             kind = "objective",
-            priority = 59,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Collect Blood of the Black Dragon Champion.",
             dependsOn = { "accept-6502-drakefire-amulet" },
@@ -539,8 +531,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6502-drakefire-amulet",
+            requiredQuests = { { conditions = { all = { { faction = "Alliance" }, {  } } }, mode = "all", quests = { 6501 } } },
             kind = "turnin",
-            priority = 60,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Turn in Drakefire Amulet to Haleh.",
             dependsOn = { "objective-6502-1-blood-of-the-black-drago" },
@@ -552,7 +544,6 @@ ns:RegisterGuide({
         {
             id = "accept-4903-warlord-s-command",
             kind = "accept",
-            priority = 62,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Warlord's Command.",
             complete = QuestState(4903, "activeOrCompleted"),
@@ -560,7 +551,6 @@ ns:RegisterGuide({
         {
             id = "objective-4903-2-highlord-omokk",
             kind = "objective",
-            priority = 63,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Kill Highlord Omokk.",
             dependsOn = { "accept-4903-warlord-s-command" },
@@ -570,7 +560,6 @@ ns:RegisterGuide({
         {
             id = "objective-4903-3-war-master-voone",
             kind = "objective",
-            priority = 64,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Kill War Master Voone.",
             dependsOn = { "accept-4903-warlord-s-command" },
@@ -580,7 +569,6 @@ ns:RegisterGuide({
         {
             id = "objective-4903-1-overlord-wyrmthalak",
             kind = "objective",
-            priority = 65,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Kill Overlord Wyrmthalak.",
             dependsOn = { "accept-4903-warlord-s-command" },
@@ -590,7 +578,6 @@ ns:RegisterGuide({
         {
             id = "objective-4903-4-important-blackrock-docu",
             kind = "objective",
-            priority = 67,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect Important Blackrock Documents.",
             dependsOn = { "accept-4903-warlord-s-command" },
@@ -600,7 +587,6 @@ ns:RegisterGuide({
         {
             id = "turnin-4903-warlord-s-command",
             kind = "turnin",
-            priority = 68,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Warlord's Command to Warlord Goretooth.",
             dependsOn = { "objective-4903-2-highlord-omokk", "objective-4903-3-war-master-voone", "objective-4903-1-overlord-wyrmthalak", "objective-4903-4-important-blackrock-docu" },
@@ -611,8 +597,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4941-eitrigg-s-wisdom",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4903 } } },
             kind = "accept",
-            priority = 69,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Eitrigg's Wisdom from Warlord Goretooth.",
             dependsOn = { "turnin-4903-warlord-s-command" },
@@ -623,8 +609,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4941-1-council-with-eitrigg",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4903 } } },
             kind = "gossip",
-            priority = 70,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Talk to Eitrigg. 'Hello, Eitrigg. I bring news back from Blackrock Spire.' Council with Eitrigg.",
             dependsOn = { "accept-4941-eitrigg-s-wisdom" },
@@ -635,8 +621,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4941-eitrigg-s-wisdom",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4903 } } },
             kind = "turnin",
-            priority = 71,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Eitrigg's Wisdom to Thrall.",
             dependsOn = { "objective-4941-1-council-with-eitrigg" },
@@ -647,8 +633,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-4974-for-the-horde",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4941 } } },
             kind = "accept",
-            priority = 72,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept For The Horde! from Thrall.",
             dependsOn = { "turnin-4941-eitrigg-s-wisdom" },
@@ -659,8 +645,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-4974-1-head-of-rend-blackhand",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4941 } } },
             kind = "objective",
-            priority = 74,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect Head of Rend Blackhand.",
             dependsOn = { "accept-4974-for-the-horde" },
@@ -669,8 +655,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-4974-for-the-horde",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4941 } } },
             kind = "turnin",
-            priority = 75,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in For The Horde! to Thrall.",
             dependsOn = { "objective-4974-1-head-of-rend-blackhand" },
@@ -681,8 +667,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6566-what-the-wind-carries",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4974 } } },
             kind = "accept",
-            priority = 76,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept What the Wind Carries from Thrall.",
             dependsOn = { "turnin-4974-for-the-horde" },
@@ -693,8 +679,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6566-1-listen-to-thrall-s-tale",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4974 } } },
             kind = "gossip",
-            priority = 77,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Talk to Thrall. 'Please share your wisdom with me, Warchief.' Listen to Thrall's Tale.",
             dependsOn = { "accept-6566-what-the-wind-carries" },
@@ -705,8 +691,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6566-what-the-wind-carries",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 4974 } } },
             kind = "turnin",
-            priority = 78,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in What the Wind Carries to Thrall.",
             dependsOn = { "objective-6566-1-listen-to-thrall-s-tale" },
@@ -717,8 +703,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6567-the-champion-of-the-horde",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6566 } } },
             kind = "accept",
-            priority = 79,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept The Champion of the Horde from Thrall.",
             dependsOn = { "turnin-6566-what-the-wind-carries" },
@@ -729,8 +715,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6567-the-champion-of-the-horde",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6566 } } },
             kind = "turnin",
-            priority = 80,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in The Champion of the Horde to Rexxar.",
             dependsOn = { "accept-6567-the-champion-of-the-horde" },
@@ -740,7 +726,6 @@ ns:RegisterGuide({
         {
             id = "accept-6568-the-testament-of-rexxar",
             kind = "accept",
-            priority = 81,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept The Testament of Rexxar from Rexxar.",
             complete = QuestState(6568, "activeOrCompleted"),
@@ -748,7 +733,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6568-the-testament-of-rexxar",
             kind = "turnin",
-            priority = 82,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in The Testament of Rexxar to Myranda the Hag.",
             dependsOn = { "accept-6568-the-testament-of-rexxar" },
@@ -759,8 +743,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6569-oculus-illusions",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6568 } } },
             kind = "accept",
-            priority = 83,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Oculus Illusions from Myranda the Hag.",
             dependsOn = { "turnin-6568-the-testament-of-rexxar" },
@@ -771,8 +755,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6569-1-black-dragonspawn-eye",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6568 } } },
             kind = "objective",
-            priority = 85,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect 20 Black Dragonspawn Eye.",
             dependsOn = { "accept-6569-oculus-illusions" },
@@ -781,8 +765,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6569-oculus-illusions",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6568 } } },
             kind = "turnin",
-            priority = 86,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Oculus Illusions to Myranda the Hag.",
             dependsOn = { "objective-6569-1-black-dragonspawn-eye" },
@@ -793,8 +777,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6570-emberstrife",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6569 } } },
             kind = "accept",
-            priority = 87,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Emberstrife from Myranda the Hag.",
             dependsOn = { "turnin-6569-oculus-illusions" },
@@ -805,8 +789,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6570-emberstrife",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6569 } } },
             kind = "turnin",
-            priority = 88,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Emberstrife to Emberstrife.",
             dependsOn = { "accept-6570-emberstrife" },
@@ -817,8 +801,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6582-the-test-of-skulls-scryer",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6570 } } },
             kind = "accept",
-            priority = 89,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept The Test of Skulls, Scryer from Emberstrife.",
             dependsOn = { "turnin-6570-emberstrife" },
@@ -830,7 +814,6 @@ ns:RegisterGuide({
         {
             id = "accept-6583-the-test-of-skulls-somnus",
             kind = "accept",
-            priority = 90,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept The Test of Skulls, Somnus from Emberstrife.",
             complete = QuestState(6583, "activeOrCompleted"),
@@ -841,7 +824,6 @@ ns:RegisterGuide({
         {
             id = "accept-6584-the-test-of-skulls-chronalis",
             kind = "accept",
-            priority = 91,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept The Test of Skulls, Chronalis from Emberstrife.",
             complete = QuestState(6584, "activeOrCompleted"),
@@ -852,7 +834,6 @@ ns:RegisterGuide({
         {
             id = "objective-6584-1-the-skull-of-chronalis",
             kind = "objective",
-            priority = 93,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect The Skull of Chronalis.",
             dependsOn = { "accept-6584-the-test-of-skulls-chronalis" },
@@ -863,8 +844,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6582-1-the-skull-of-scryer",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6570 } } },
             kind = "objective",
-            priority = 95,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect The Skull of Scryer.",
             dependsOn = { "accept-6582-the-test-of-skulls-scryer" },
@@ -876,7 +857,6 @@ ns:RegisterGuide({
         {
             id = "objective-6583-1-the-skull-of-somnus",
             kind = "objective",
-            priority = 97,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect The Skull of Somnus.",
             dependsOn = { "accept-6583-the-test-of-skulls-somnus" },
@@ -887,8 +867,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6582-the-test-of-skulls-scryer",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6570 } } },
             kind = "turnin",
-            priority = 98,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in The Test of Skulls, Scryer to Emberstrife.",
             dependsOn = { "objective-6582-1-the-skull-of-scryer" },
@@ -900,7 +880,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6583-the-test-of-skulls-somnus",
             kind = "turnin",
-            priority = 99,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in The Test of Skulls, Somnus to Emberstrife.",
             dependsOn = { "objective-6583-1-the-skull-of-somnus" },
@@ -912,7 +891,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6584-the-test-of-skulls-chronalis",
             kind = "turnin",
-            priority = 100,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in The Test of Skulls, Chronalis to Emberstrife.",
             dependsOn = { "objective-6584-1-the-skull-of-chronalis" },
@@ -923,8 +901,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6585-the-test-of-skulls-axtroz",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6584 } } },
             kind = "accept",
-            priority = 101,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept The Test of Skulls, Axtroz from Emberstrife.",
             dependsOn = { "turnin-6584-the-test-of-skulls-chronalis" },
@@ -935,8 +913,8 @@ ns:RegisterGuide({
         },
         {
             id = "objective-6585-1-the-skull-of-axtroz",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6584 } } },
             kind = "objective",
-            priority = 103,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect The Skull of Axtroz.",
             dependsOn = { "accept-6585-the-test-of-skulls-axtroz" },
@@ -947,8 +925,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6585-the-test-of-skulls-axtroz",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6584 } } },
             kind = "turnin",
-            priority = 104,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in The Test of Skulls, Axtroz to Emberstrife.",
             dependsOn = { "objective-6585-1-the-skull-of-axtroz" },
@@ -959,8 +937,8 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6601-ascension",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6585 } } },
             kind = "accept",
-            priority = 105,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Ascension from Emberstrife.",
             dependsOn = { "turnin-6585-the-test-of-skulls-axtroz" },
@@ -971,8 +949,8 @@ ns:RegisterGuide({
         },
         {
             id = "turnin-6601-ascension",
+            requiredQuests = { { conditions = { all = { { faction = "Horde" }, {  } } }, mode = "all", quests = { 6585 } } },
             kind = "turnin",
-            priority = 106,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Ascension to Rexxar.",
             dependsOn = { "accept-6601-ascension" },
@@ -982,7 +960,6 @@ ns:RegisterGuide({
         {
             id = "accept-6602-blood-of-the-black-dragon-champion",
             kind = "accept",
-            priority = 107,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Blood of the Black Dragon Champion from Rexxar.",
             complete = QuestState(6602, "activeOrCompleted"),
@@ -990,7 +967,6 @@ ns:RegisterGuide({
         {
             id = "objective-6602-1-blood-of-the-black-drago",
             kind = "objective",
-            priority = 108,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Collect Blood of the Black Dragon Champion.",
             dependsOn = { "accept-6602-blood-of-the-black-dragon-champion" },
@@ -1000,7 +976,6 @@ ns:RegisterGuide({
         {
             id = "turnin-6602-blood-of-the-black-dragon-champion",
             kind = "turnin",
-            priority = 109,
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Turn in Blood of the Black Dragon Champion to Rexxar.",
             dependsOn = { "objective-6602-1-blood-of-the-black-drago" },

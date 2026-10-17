@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Redridge & Westfall",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-redridge-and-westfall",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 244,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.714, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.104 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             text = "Turn in Encroaching Gnolls to Deputy Feldon.",
             route = {
                 { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon in Redridge Mountains.", x = 0.3074 },
@@ -112,10 +109,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 125,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.486, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.27 },
             },
@@ -143,7 +138,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.473, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.259 },
             },
@@ -171,7 +165,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             route = {
                 { y = 0.444, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.249 },
             },
@@ -199,7 +192,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.45, mapID = 1433, label = "Darcy", offMapText = "Travel to Darcy in Redridge Mountains.", x = 0.22 },
             },
@@ -227,7 +219,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.4535, mapID = 1433, label = "Wiley the Black", offMapText = "Travel to Wiley the Black in Redridge Mountains.", x = 0.2648 },
             },
@@ -255,7 +246,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.453, mapID = 1433, label = "Wiley the Black", offMapText = "Travel to Wiley the Black in Redridge Mountains.", x = 0.214 },
             },
@@ -289,7 +279,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             route = {
                 { y = 0.438, mapID = 1433, label = "Chef Breanna", offMapText = "Travel to Chef Breanna in Redridge Mountains.", x = 0.176 },
             },
@@ -329,10 +318,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3741,
-            priority = 120,
         },
         {
-            priority = 130,
             route = {
                 { y = 0.536, mapID = 1433, label = "Shawn", offMapText = "Travel to Shawn in Redridge Mountains.", x = 0.242 },
             },
@@ -357,7 +344,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 140,
             text = "Collect 1 Hilary's Necklace.",
             route = {
                 { y = 0.541, mapID = 1433, label = "Glinting Mud", offMapText = "Travel to Glinting Mud.", x = 0.259 },
@@ -382,7 +368,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 150,
             text = "Turn in Hilary's Necklace to Hilary.",
             route = {
                 { y = 0.5363, mapID = 1433, label = "Hilary", offMapText = "Travel to Hilary in Redridge Mountains.", x = 0.2924 },
@@ -407,7 +392,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 160,
             text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
             route = {
                 { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
@@ -441,7 +425,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
             },
@@ -475,7 +458,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Turn in Messenger to Stormwind to General Marcus Jonathan.",
             route = {
                 { y = 0.7532, mapID = 1453, label = "General Marcus Jonathan", offMapText = "Travel to General Marcus Jonathan in Stormwind City.", x = 0.6397 },
@@ -503,7 +485,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 190,
             route = {
                 { y = 0.7532, mapID = 1453, label = "General Marcus Jonathan", offMapText = "Travel to General Marcus Jonathan in Stormwind City.", x = 0.6397 },
             },
@@ -537,7 +518,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             text = "Turn in The Defias Brotherhood to Master Mathias Shaw.",
             route = {
                 { y = 0.5984, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
@@ -571,7 +551,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 210,
             route = {
                 { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
@@ -605,7 +584,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
             route = {
                 { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
@@ -639,7 +617,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             route = {
                 { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
             },
@@ -673,7 +650,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 240,
             route = {
                 { y = 0.346, mapID = 1436, label = "Harvest Watcher", offMapText = "Travel to Harvest Watcher.", x = 0.534 },
             },
@@ -716,7 +692,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-            priority = 250,
             sourceStep = 19,
             requiredQuests = {
                 {
@@ -728,7 +703,6 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.8602, mapID = 1436, label = "Captain Grayson", offMapText = "Travel to Captain Grayson in Westfall.", x = 0.3001 },
             },
@@ -765,10 +739,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 104,
-            priority = 270,
         },
         {
-            priority = 280,
             route = {
                 { y = 0.8602, mapID = 1436, label = "Captain Grayson", offMapText = "Travel to Captain Grayson in Westfall.", x = 0.3001 },
             },
@@ -793,7 +765,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 290,
             text = "Turn in Keeper of the Flame to Captain Grayson.",
             route = {
                 { y = 0.8602, mapID = 1436, label = "Captain Grayson", offMapText = "Travel to Captain Grayson in Westfall.", x = 0.3001 },
@@ -818,7 +789,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 300,
             text = "Collect 1 Scale of Old Murk-Eye.",
             route = {
                 { y = 0.826, mapID = 1436, label = "Old Murk-Eye", offMapText = "Travel to Old Murk-Eye.", x = 0.324 },
@@ -843,7 +813,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 310,
             text = "Turn in The Coastal Menace to Captain Grayson.",
             route = {
                 { y = 0.8602, mapID = 1436, label = "Captain Grayson", offMapText = "Travel to Captain Grayson in Westfall.", x = 0.3001 },
@@ -868,7 +837,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 320,
             text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
             route = {
                 { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
@@ -902,7 +870,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 330,
             route = {
                 { y = 0.475, mapID = 1436, label = "The Defias Traitor", offMapText = "Travel to The Defias Traitor in Westfall.", x = 0.5568 },
             },
@@ -967,10 +934,8 @@ ns:RegisterGuide({
             },
             sourceStep = 26,
             dependsOn = { "accept-155-the-defias-brotherhood" },
-            priority = 340,
         },
         {
-            priority = 350,
             text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
             route = {
                 { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
@@ -1004,7 +969,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             route = {
                 { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon in Redridge Mountains.", x = 0.256 },
             },
@@ -1038,7 +1002,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 370,
             text = "Turn in A Free Lunch to Guard Parker.",
             route = {
                 { y = 0.7145, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.1527 },
@@ -1066,7 +1029,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 380,
             route = {
                 { y = 0.714, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.104 },
             },
@@ -1100,7 +1062,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 390,
             text = "Kill 6 Redridge Poacher.",
             route = {
                 { y = 0.784, mapID = 1433, label = "Redridge Poacher", offMapText = "Travel to Redridge Poacher.", x = 0.294 },
@@ -1155,7 +1116,6 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.294, y = 0.784, label = "Redridge Mongrel", offMapText = "Travel to Redridge Mongrel." },
             },
             sourceStep = 31,
-            priority = 400,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1189,14 +1149,12 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.22, y = 0.74, label = "Crisp Spider Meat", offMapText = "Travel to Crisp Spider Meat." },
             },
             sourceStep = 32,
-            priority = 410,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-92-redridge-goulash" },
         },
         {
-            priority = 420,
             text = "Turn in Assessing the Threat to Deputy Feldon.",
             route = {
                 { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon in Redridge Mountains.", x = 0.3074 },
@@ -1252,10 +1210,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2360,
-            priority = 430,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.707, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.783 },
             },
@@ -1286,7 +1242,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 450,
             route = {
                 { y = 0.708, mapID = 1453, label = "Renzik \"The Shiv\"", offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City.", x = 0.788 },
             },
@@ -1339,10 +1294,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1793,
-            priority = 460,
         },
         {
-            priority = 470,
             route = {
                 { mapID = 1453, x = 0.505, y = 0.475, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
             },
@@ -1388,11 +1341,9 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             dependsOn = {},
-            priority = 480,
             classAction = "loot-starter-before-accept-1649-the-tome-of-valor",
         },
         {
-            priority = 490,
             id = "accept-1649-the-tome-of-valor",
             conditions = {
                 all = {
@@ -1414,7 +1365,6 @@ ns:RegisterGuide({
             classAction = "accept-1649-the-tome-of-valor",
         },
         {
-            priority = 500,
             text = "Turn in The Tome of Valor to Duthorian Rall.",
             route = {
                 { y = 0.298, mapID = 1453, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City.", x = 0.3981 },
@@ -1467,10 +1417,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1716,
-            priority = 510,
         },
         {
-            priority = 520,
             route = {
                 { mapID = 1453, x = 0.392, y = 0.852, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
             },
@@ -1520,10 +1468,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3765,
-            priority = 530,
         },
         {
-            priority = 540,
             route = {
                 { y = 0.676, mapID = 1453, label = "Argos Nightwhisper", offMapText = "Travel to Argos Nightwhisper in Stormwind City.", x = 0.362 },
             },
@@ -1551,7 +1497,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 550,
             text = "Turn in The Price of Shoes to Smith Argus.",
             route = {
                 { y = 0.6555, mapID = 1429, label = "Smith Argus", offMapText = "Travel to Smith Argus in Elwynn Forest.", x = 0.4171 },
@@ -1579,7 +1524,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             route = {
                 { y = 0.6555, mapID = 1429, label = "Smith Argus", offMapText = "Travel to Smith Argus in Elwynn Forest.", x = 0.4171 },
             },
@@ -1632,10 +1576,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94,
-            priority = 570,
         },
         {
-            priority = 580,
             route = {
                 { y = 0.6971, mapID = 1429, label = "Theocritus", offMapText = "Travel to Theocritus in Elwynn Forest.", x = 0.6522 },
             },
@@ -1663,7 +1605,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 590,
             text = "Collect 1 Oslow's Toolbox.",
             route = {
                 { y = 0.5467, mapID = 1433, label = "Sunken Chest", offMapText = "Travel to Sunken Chest.", x = 0.4153 },
@@ -1691,7 +1632,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 600,
             text = "Turn in The Lost Tools to Foreman Oslow.",
             route = {
                 { y = 0.4864, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.3214 },
@@ -1719,7 +1659,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 610,
             route = {
                 { y = 0.486, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.27 },
             },
@@ -1753,7 +1692,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 620,
             text = "Turn in Return to Verner to Verner Osgood.",
             route = {
                 { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
@@ -1787,7 +1725,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 630,
             route = {
                 { y = 0.473, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.259 },
             },
@@ -1821,7 +1758,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 640,
             route = {
                 { y = 0.473, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.259 },
             },
@@ -1876,7 +1812,6 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.452, y = 0.7759999999999999, label = "Tough Condor Meat", offMapText = "Travel to Tough Condor Meat." },
             },
             sourceStep = 60,
-            priority = 650,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1904,7 +1839,6 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.364, y = 0.746, label = "Underbelly Whelp Scale", offMapText = "Travel to Underbelly Whelp Scale." },
             },
             sourceStep = 61,
-            priority = 660,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1938,14 +1872,12 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.304, y = 0.7040000000000001, label = "Great Goretusk Snout", offMapText = "Travel to Great Goretusk Snout." },
             },
             sourceStep = 62,
-            priority = 670,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-92-redridge-goulash" },
         },
         {
-            priority = 680,
             text = "Turn in Underbelly Scales to Verner Osgood.",
             route = {
                 { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
@@ -1979,7 +1911,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 690,
             text = "Turn in Messenger to Stormwind to Magistrate Solomon.",
             route = {
                 { y = 0.4445, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
@@ -2013,7 +1944,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 700,
             text = "Turn in Redridge Goulash to Chef Breanna.",
             route = {
                 { y = 0.4384, mapID = 1433, label = "Chef Breanna", offMapText = "Travel to Chef Breanna in Redridge Mountains.", x = 0.2268 },
@@ -2046,7 +1976,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 710,
             text = "Turn in Visit the Herbalist to Martie Jainrose.",
             route = {
                 { y = 0.4633, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.2186 },
@@ -2080,7 +2009,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 720,
             route = {
                 { y = 0.463, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.168 },
             },
@@ -2114,7 +2042,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 730,
             text = "Turn in Delivering Daffodils to Darcy.",
             route = {
                 { y = 0.4434, mapID = 1433, label = "Darcy", offMapText = "Travel to Darcy in Redridge Mountains.", x = 0.2675 },
@@ -2148,7 +2075,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 740,
             text = "Collect 5 Iron Pike.",
             route = {
                 { y = 0.384, mapID = 1433, label = "Redridge Mystic", offMapText = "Travel to Redridge Mystic.", x = 0.212 },
@@ -2182,7 +2108,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 750,
             text = "Collect 5 Iron Rivet.",
             route = {
                 { y = 0.384, mapID = 1433, label = "Iron Rivet", offMapText = "Travel to Iron Rivet.", x = 0.212 },
@@ -2237,7 +2162,6 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.212, y = 0.384, label = "Redridge Mystic", offMapText = "Travel to Redridge Mystic." },
             },
             sourceStep = 70,
-            priority = 760,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2271,7 +2195,6 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.212, y = 0.384, label = "Redridge Brute", offMapText = "Travel to Redridge Brute." },
             },
             sourceStep = 70,
-            priority = 770,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2284,7 +2207,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-124-a-baying-of-gnolls" },
         },
         {
-            priority = 780,
             text = "Turn in Redridge Rendezvous to Lucius.",
             route = {
                 { y = 0.5204, mapID = 1433, label = "Lucius", offMapText = "Travel to Lucius in Redridge Mountains.", x = 0.2806 },
@@ -2315,7 +2237,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 790,
             route = {
                 { y = 0.52, mapID = 1433, label = "Lucius", offMapText = "Travel to Lucius in Redridge Mountains.", x = 0.23 },
             },
@@ -2376,7 +2297,6 @@ ns:RegisterGuide({
                 { mapID = 1433, x = 0.5204, y = 0.44689999999999996, label = "Token of Thievery", offMapText = "Travel to Token of Thievery." },
             },
             sourceStep = 73,
-            priority = 800,
             requiredQuests = {
                 {
                     mode = "any",
@@ -2389,7 +2309,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2282-alther-s-mill" },
         },
         {
-            priority = 810,
             text = "Turn in A Baying of Gnolls to Verner Osgood.",
             route = {
                 { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
@@ -2423,7 +2342,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 820,
             text = "Turn in The Everstill Bridge to Foreman Oslow.",
             route = {
                 { y = 0.4864, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.3214 },
@@ -2457,7 +2375,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 830,
             text = "Turn in Alther's Mill to Lucius.",
             route = {
                 { y = 0.5204, mapID = 1433, label = "Lucius", offMapText = "Travel to Lucius in Redridge Mountains.", x = 0.2806 },
@@ -2520,10 +2437,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 840,
         },
         {
-            priority = 850,
             text = "Use the An Unsent Letter to accept The Unsent Letter.",
             id = "accept-373-the-unsent-letter",
             kind = "accept",
@@ -2548,7 +2463,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 860,
             text = "Turn in The Unsent Letter to Baros Alexston.",
             route = {
                 { y = 0.3028, mapID = 1453, label = "Baros Alexston", offMapText = "Travel to Baros Alexston in Stormwind City.", x = 0.4919 },
@@ -2595,10 +2509,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98407,
-            priority = 870,
         },
         {
-            priority = 880,
             route = {
                 { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.256 },
             },
@@ -2625,7 +2537,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 890,
             route = {
                 { y = 0.812, mapID = 1433, label = "Redridge Thrasher", offMapText = "Travel to Redridge Thrasher.", x = 0.3 },
             },
@@ -2652,7 +2563,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-98407-show-of-force" },
         },
         {
-            priority = 900,
             route = {
                 { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.308 },
             },

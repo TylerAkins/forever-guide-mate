@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Tanaris",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-tanaris",
@@ -27,10 +27,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1188,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.2724, mapID = 1446, label = "Shreev", offMapText = "Travel to Shreev in Tanaris.", x = 0.5096 },
             },
@@ -61,7 +59,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.2724, mapID = 1446, label = "Shreev", offMapText = "Travel to Shreev in Tanaris.", x = 0.5096 },
             },
@@ -104,10 +101,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1119,
-            priority = 40,
         },
         {
-            priority = 50,
             route = {
                 { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
             },
@@ -138,7 +133,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 60,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -170,7 +164,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 70,
             text = "Turn in Get the Gnomes Drunk to Gnome Pit Boss.",
             route = {
                 { y = 0.7694, mapID = 1441, label = "Gnome Pit Boss", offMapText = "Travel to Gnome Pit Boss in Thousand Needles.", x = 0.7756 },
@@ -202,7 +195,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 80,
             route = {
                 { y = 0.773, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.788 },
             },
@@ -233,7 +225,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             route = {
                 { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
             },
@@ -264,7 +255,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
             },
@@ -295,7 +285,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 110,
             text = "Turn in Safety First to Razzeric.",
             route = {
                 { y = 0.761, mapID = 1441, label = "Razzeric", offMapText = "Travel to Razzeric in Thousand Needles.", x = 0.8033 },
@@ -326,7 +315,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             route = {
                 { y = 0.7702, mapID = 1441, label = "Zamek", offMapText = "Travel to Zamek in Thousand Needles.", x = 0.7981 },
             },
@@ -351,7 +339,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             text = "Turn in Keeping Pace.",
             route = {
                 { y = 0.7738, mapID = 1441, label = "Keeping Pace", offMapText = "Travel to Keeping Pace.", x = 0.7721 },
@@ -382,7 +369,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 140,
             route = {
                 { y = 0.7738, mapID = 1441, label = "Rizzle's Schematics", offMapText = "Travel to Rizzle's Schematics.", x = 0.7721 },
             },
@@ -413,7 +399,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 150,
             text = "Turn in Rizzle's Schematics to Pozzik.",
             route = {
                 { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
@@ -456,10 +441,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1707,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { y = 0.2844, mapID = 1446, label = "Spigot Operator Luglunket", offMapText = "Travel to Spigot Operator Luglunket in Tanaris.", x = 0.5248 },
             },
@@ -484,7 +467,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
             },
@@ -509,7 +491,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.2227, mapID = 1446, label = "Haughty Modiste", offMapText = "Travel to Haughty Modiste in Tanaris.", x = 0.6656 },
             },
@@ -534,7 +515,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 200,
             route = {
                 { y = 0.2236, mapID = 1446, label = "Yeh'kinya", offMapText = "Travel to Yeh'kinya in Tanaris.", x = 0.6699 },
             },
@@ -559,7 +539,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 210,
             route = {
                 { y = 0.2389, mapID = 1446, label = "Security Chief Bilgewhizzle", offMapText = "Travel to Security Chief Bilgewhizzle in Tanaris.", x = 0.6706 },
             },
@@ -584,7 +563,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 220,
             route = {
                 { y = 0.2398, mapID = 1446, label = "Stoley", offMapText = "Travel to Stoley in Tanaris.", x = 0.6711 },
             },
@@ -609,7 +587,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 230,
             route = {
                 { y = 0.2398, mapID = 1446, label = "Stoley", offMapText = "Travel to Stoley in Tanaris.", x = 0.6711 },
             },
@@ -652,7 +629,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.628, y = 0.304, label = "Wastewander Water Pouch", offMapText = "Travel to Wastewander Water Pouch." },
             },
             sourceStep = 21,
-            priority = 240,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -677,7 +653,6 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.628, y = 0.304, label = "Wastewander Bandit", offMapText = "Travel to Wastewander Bandit." },
             },
             sourceStep = 22,
-            priority = 250,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -702,14 +677,12 @@ ns:RegisterGuide({
                 { mapID = 1446, x = 0.628, y = 0.304, label = "Wastewander Thief", offMapText = "Travel to Wastewander Thief." },
             },
             sourceStep = 22,
-            priority = 260,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-1690-wastewander-justice" },
         },
         {
-            priority = 270,
             text = "Turn in Wastewander Justice to Chief Engineer Bilgewhizzle.",
             route = {
                 { y = 0.2851, mapID = 1446, label = "Chief Engineer Bilgewhizzle", offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.", x = 0.5246 },
@@ -738,7 +711,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 280,
             text = "Turn in Water Pouch Bounty to Spigot Operator Luglunket.",
             route = {
                 { y = 0.2844, mapID = 1446, label = "Spigot Operator Luglunket", offMapText = "Travel to Spigot Operator Luglunket in Tanaris.", x = 0.5248 },
@@ -782,10 +754,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1452,
-            priority = 290,
         },
         {
-            priority = 300,
             route = {
                 { y = 0.3516, mapID = 1446, label = "Fire Roc", offMapText = "Travel to Fire Roc.", x = 0.4991 },
             },

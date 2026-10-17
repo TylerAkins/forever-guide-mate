@@ -47,7 +47,7 @@ end
 ns:RegisterGuide({
     id = "legacy-explore-redridge-mountains",
     title = "Explore Redridge Mountains",
-    category = "Legacy Points",
+    category = "Miscellaneous Guides",
     revision = 1,
     goals = goals,
 })

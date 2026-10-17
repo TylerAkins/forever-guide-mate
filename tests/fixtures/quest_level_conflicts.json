@@ -1,0 +1,214 @@
+{
+  "299": {
+    "index.minLevel": 22,
+    "index.reqlevel": 25,
+    "compiled.minLevel": 25,
+    "export.requiredLevel": 22
+  },
+  "308": {
+    "index.minLevel": 1,
+    "index.reqlevel": 1,
+    "compiled.minLevel": 1,
+    "export.requiredLevel": 2
+  },
+  "377": {
+    "index.minLevel": 22,
+    "index.reqlevel": 22,
+    "export.requiredLevel": 24
+  },
+  "378": {
+    "index.minLevel": 22,
+    "index.reqlevel": 22,
+    "export.requiredLevel": 25
+  },
+  "421": {
+    "index.minLevel": 12,
+    "index.reqlevel": 9,
+    "compiled.minLevel": 9,
+    "export.requiredLevel": 9
+  },
+  "631": {
+    "index.minLevel": 26,
+    "index.reqlevel": 28,
+    "compiled.minLevel": 28,
+    "export.requiredLevel": 28
+  },
+  "632": {
+    "index.minLevel": 26,
+    "index.reqlevel": 28,
+    "compiled.minLevel": 28,
+    "export.requiredLevel": 28
+  },
+  "633": {
+    "index.minLevel": 26,
+    "index.reqlevel": 28,
+    "compiled.minLevel": 28,
+    "export.requiredLevel": 28
+  },
+  "1152": {
+    "index.minLevel": 26,
+    "index.reqlevel": 26,
+    "compiled.minLevel": 26,
+    "export.requiredLevel": 25
+  },
+  "1154": {
+    "index.minLevel": 26,
+    "index.reqlevel": 26,
+    "compiled.minLevel": 26,
+    "export.requiredLevel": 25
+  },
+  "1159": {
+    "index.minLevel": 26,
+    "index.reqlevel": 26,
+    "compiled.minLevel": 26,
+    "export.requiredLevel": 25
+  },
+  "1160": {
+    "index.minLevel": 26,
+    "index.reqlevel": 26,
+    "export.requiredLevel": 28
+  },
+  "1168": {
+    "index.minLevel": 38,
+    "index.reqlevel": 38,
+    "compiled.minLevel": 38,
+    "export.requiredLevel": 37
+  },
+  "1394": {
+    "index.minLevel": 26,
+    "index.reqlevel": 26,
+    "compiled.minLevel": 26,
+    "export.requiredLevel": 25
+  },
+  "1488": {
+    "index.minLevel": 26,
+    "index.reqlevel": 26,
+    "compiled.minLevel": 26,
+    "export.requiredLevel": 25
+  },
+  "2202": {
+    "index.minLevel": 36,
+    "index.reqlevel": 36,
+    "export.requiredLevel": 40
+  },
+  "3765": {
+    "index.minLevel": 18,
+    "index.reqlevel": 18,
+    "compiled.minLevel": 18,
+    "export.requiredLevel": 20
+  },
+  "4024": {
+    "index.minLevel": 52,
+    "index.reqlevel": 52,
+    "export.requiredLevel": 42
+  },
+  "4082": {
+    "index.minLevel": 50,
+    "index.reqlevel": 50,
+    "export.requiredLevel": 48
+  },
+  "4242": {
+    "index.minLevel": 48,
+    "index.reqlevel": 48,
+    "export.requiredLevel": 42
+  },
+  "5122": {
+    "index.minLevel": 55,
+    "index.reqlevel": 55,
+    "export.requiredLevel": 48
+  },
+  "5125": {
+    "index.minLevel": 55,
+    "index.reqlevel": 55,
+    "export.requiredLevel": 48
+  },
+  "5245": {
+    "index.minLevel": 53,
+    "index.reqlevel": 53,
+    "compiled.minLevel": 53,
+    "export.requiredLevel": 49
+  },
+  "6031": {
+    "index.minLevel": 50,
+    "index.reqlevel": 50,
+    "compiled.minLevel": 50,
+    "export.requiredLevel": 40
+  },
+  "6163": {
+    "index.minLevel": 56,
+    "index.reqlevel": 56,
+    "export.requiredLevel": 55
+  },
+  "6627": {
+    "index.minLevel": 26,
+    "index.reqlevel": 26,
+    "compiled.minLevel": 26,
+    "export.requiredLevel": 25
+  },
+  "6628": {
+    "index.minLevel": 26,
+    "index.reqlevel": 26,
+    "compiled.minLevel": 26,
+    "export.requiredLevel": 25
+  },
+  "7429": {
+    "index.minLevel": 56,
+    "index.reqlevel": 56,
+    "export.requiredLevel": 54
+  },
+  "7668": {
+    "index.minLevel": 58,
+    "index.reqlevel": 58,
+    "export.requiredLevel": 55
+  },
+  "7703": {
+    "index.minLevel": 56,
+    "index.reqlevel": 56,
+    "export.requiredLevel": 60
+  },
+  "8258": {
+    "index.minLevel": 58,
+    "index.reqlevel": 58,
+    "export.requiredLevel": 55
+  },
+  "8287": {
+    "index.minLevel": 54,
+    "index.reqlevel": 54,
+    "compiled.minLevel": 54,
+    "export.requiredLevel": 40
+  },
+  "95189": {
+    "index.minLevel": 16,
+    "index.reqlevel": 16,
+    "export.requiredLevel": 15
+  },
+  "95204": {
+    "index.minLevel": 16,
+    "index.reqlevel": 16,
+    "export.requiredLevel": 15
+  },
+  "96408": {
+    "index.minLevel": 9,
+    "index.reqlevel": 9,
+    "compiled.minLevel": 9,
+    "export.requiredLevel": 10
+  },
+  "98025": {
+    "index.minLevel": 10,
+    "index.reqlevel": 10,
+    "compiled.minLevel": 10,
+    "export.requiredLevel": 15
+  },
+  "99152": {
+    "index.minLevel": 7,
+    "index.reqlevel": 7,
+    "compiled.minLevel": 7,
+    "export.requiredLevel": 10
+  },
+  "99153": {
+    "index.minLevel": 7,
+    "index.reqlevel": 7,
+    "compiled.minLevel": 7,
+    "export.requiredLevel": 10
+  }
+}

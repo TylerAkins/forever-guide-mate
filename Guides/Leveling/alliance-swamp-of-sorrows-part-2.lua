@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Swamp of Sorrows",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-swamp-of-sorrows-part-2",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 1477,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.4615, mapID = 1431, label = "Watchmaster Sorigal", offMapText = "Travel to Watchmaster Sorigal in Duskwood.", x = 0.7577 },
             },
@@ -65,7 +63,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 30,
             route = {
                 { y = 0.5983, mapID = 1435, label = "Watcher Biggs", offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.", x = 0.2674 },
             },
@@ -99,7 +96,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 40,
             text = "Collect 8 Sundried Driftwood.",
             route = {
                 { y = 0.781, mapID = 1435, label = "Sundried Driftwood", offMapText = "Travel to Sundried Driftwood.", x = 0.873 },
@@ -154,7 +150,6 @@ ns:RegisterGuide({
                 { mapID = 1435, x = 0.87, y = 0.774, label = "Pristine Crawler Leg", offMapText = "Travel to Pristine Crawler Leg." },
             },
             sourceStep = 5,
-            priority = 50,
             requiredQuests = {
                 {
                     mode = "any",
@@ -185,7 +180,6 @@ ns:RegisterGuide({
                 questObjective = { id = 1364, index = 1, text = "Khadgar's Essays on Dimensional Convergence", count = 1 },
             },
             sourceStep = 6,
-            priority = 60,
             requiredQuests = {
                 {
                     mode = "any",
@@ -219,7 +213,6 @@ ns:RegisterGuide({
                 { mapID = 1435, x = 0.134, y = 0.374, label = "Khadgar's Essays on Dimensional Convergence", offMapText = "Travel to Khadgar's Essays on Dimensional Convergence." },
             },
             sourceStep = 7,
-            priority = 70,
             requiredQuests = {
                 {
                     mode = "any",
@@ -232,7 +225,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             text = "Turn in Driftwood to Watcher Biggs.",
             route = {
                 { y = 0.5983, mapID = 1435, label = "Watcher Biggs", offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.", x = 0.2674 },
@@ -266,7 +258,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 90,
             route = {
                 { y = 0.5983, mapID = 1435, label = "Watcher Biggs", offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.", x = 0.2674 },
             },
@@ -300,7 +291,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 100,
             route = {
                 { y = 0.1916, mapID = 1419, label = "Watcher Mahar Ba", offMapText = "Travel to Watcher Mahar Ba in Blasted Lands.", x = 0.6765 },
             },
@@ -337,7 +327,6 @@ ns:RegisterGuide({
             },
         },
         {
-            priority = 110,
             text = "Turn in Deliver the Shipment to Quartermaster Lungertz.",
             route = {
                 { y = 0.2138, mapID = 1419, label = "Quartermaster Lungertz", offMapText = "Travel to Quartermaster Lungertz in Blasted Lands.", x = 0.6652 },
@@ -371,7 +360,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             route = {
                 { y = 0.4615, mapID = 1431, label = "Watchmaster Sorigal", offMapText = "Travel to Watchmaster Sorigal in Duskwood.", x = 0.7577 },
             },
@@ -399,7 +387,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 130,
             text = "Turn in Supplies for Nethergarde to Quartermaster Lungertz.",
             route = {
                 { y = 0.2138, mapID = 1419, label = "Quartermaster Lungertz", offMapText = "Travel to Quartermaster Lungertz in Blasted Lands.", x = 0.6652 },
@@ -439,10 +426,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 580,
-            priority = 140,
         },
         {
-            priority = 150,
             route = {
                 { y = 0.7745, mapID = 1434, label = "Whiskey Slim", offMapText = "Travel to Whiskey Slim in Stranglethorn Vale.", x = 0.2713 },
             },
@@ -467,7 +452,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 160,
             route = {
                 { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
             },
@@ -498,7 +482,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 170,
             route = {
                 { y = 0.7707, mapID = 1434, label = "\"Sea Wolf\" MacKinley", offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.", x = 0.2778 },
             },
@@ -523,7 +506,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             route = {
                 { y = 0.5322, mapID = 1445, label = "Privateer Groy", offMapText = "Travel to Privateer Groy in Dustwallow Marsh.", x = 0.6884 },
             },
@@ -557,7 +539,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 190,
             route = {
                 { y = 0.4547, mapID = 1445, label = "Morgan Stern", offMapText = "Travel to Morgan Stern in Dustwallow Marsh.", x = 0.6634 },
             },

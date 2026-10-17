@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 3,
+    revision = 4,
     title = "Feralas & Azshara",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-feralas-and-azshara",
@@ -34,10 +34,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7733,
-            priority = 10,
         },
         {
-            priority = 20,
             route = {
                 { y = 0.4271, mapID = 1444, label = "Pratt McGrubben", offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063 },
             },
@@ -90,10 +88,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2943,
-            priority = 30,
         },
         {
-            priority = 40,
             route = {
                 { y = 0.455, mapID = 1444, label = "Troyas Moonbreeze", offMapText = "Travel to Troyas Moonbreeze in Feralas.", x = 0.3178 },
             },
@@ -127,7 +123,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 50,
             route = {
                 { y = 0.455, mapID = 1444, label = "Troyas Moonbreeze", offMapText = "Travel to Troyas Moonbreeze in Feralas.", x = 0.3178 },
             },
@@ -173,10 +168,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 7003,
-            priority = 60,
         },
         {
-            priority = 70,
             route = {
                 { y = 0.4342, mapID = 1444, label = "Zorbin Fandazzle", offMapText = "Travel to Zorbin Fandazzle in Feralas.", x = 0.4481 },
             },
@@ -201,7 +194,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 80,
             route = {
                 { y = 0.4342, mapID = 1444, label = "Zorbin Fandazzle", offMapText = "Travel to Zorbin Fandazzle in Feralas.", x = 0.4481 },
             },
@@ -226,7 +218,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 90,
             text = "Use the Ultra-Shrinker on giants along the coast, then kill them and collect 15 Miniaturization Residues.",
             route = {
                 { y = 0.498, mapID = 1444, label = "Zorbin's Ultra-Shrinker", offMapText = "Travel to Zorbin's Ultra-Shrinker.", x = 0.444 },
@@ -269,14 +260,12 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.442, y = 0.506, label = "Water Elemental Core", offMapText = "Travel to Water Elemental Core." },
             },
             sourceStep = 6,
-            priority = 100,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-7721-fuel-for-the-zapping" },
         },
         {
-            priority = 110,
             text = "Turn in Zapped Giants to Zorbin Fandazzle.",
             route = {
                 { y = 0.4342, mapID = 1444, label = "Zorbin Fandazzle", offMapText = "Travel to Zorbin Fandazzle in Feralas.", x = 0.4481 },
@@ -301,7 +290,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 120,
             text = "Turn in Fuel for the Zapping to Zorbin Fandazzle.",
             route = {
                 { y = 0.4342, mapID = 1444, label = "Zorbin Fandazzle", offMapText = "Travel to Zorbin Fandazzle in Feralas.", x = 0.4481 },
@@ -352,10 +340,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-            priority = 130,
         },
         {
-            priority = 140,
             text = "Use the Pristine Yeti Hide to accept Pristine Yeti Hide.",
             id = "accept-7735-pristine-yeti-hide",
             kind = "accept",
@@ -407,7 +393,6 @@ ns:RegisterGuide({
                 { mapID = 1444, x = 0.514, y = 0.324, label = "Rage Scar Yeti Hide", offMapText = "Travel to Rage Scar Yeti Hide." },
             },
             sourceStep = 11,
-            priority = 150,
             requiredQuests = {
                 {
                     mode = "any",
@@ -439,10 +424,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2844,
-            priority = 160,
         },
         {
-            priority = 170,
             route = {
                 { mapID = 1444, x = 0.4238, y = 0.22, label = "Rockbiter", offMapText = "Travel to Rockbiter in Feralas." },
             },
@@ -470,7 +453,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 180,
             text = "Climb the ledges on the eastern side of the ruins. Touch the Flame of Samha on the upper ledge to obtain Samha Essence.",
             route = {
                 { mapID = 1444, x = 0.4054, y = 0.1265, label = "Flame of Samha", offMapText = "Travel to Flame of Samha." },
@@ -519,7 +501,6 @@ ns:RegisterGuide({
             rememberPreparation = 2879,
         },
         {
-            priority = 190,
             text = "Touch the Flame of Imbel to obtain Imbel Essence.",
             route = {
                 { mapID = 1444, x = 0.3993, y = 0.0944, label = "Flame of Imbel", offMapText = "Travel to Flame of Imbel." },
@@ -568,7 +549,6 @@ ns:RegisterGuide({
             rememberPreparation = 2879,
         },
         {
-            priority = 200,
             text = "Touch the Flame of Lahassa to obtain Lahassa Essence.",
             route = {
                 { mapID = 1444, x = 0.3776, y = 0.1217, label = "Flame of Lahassa", offMapText = "Travel to Flame of Lahassa." },
@@ -615,7 +595,6 @@ ns:RegisterGuide({
             rememberPreparation = 2879,
         },
         {
-            priority = 210,
             text = "Touch the Flame of Byltan to obtain Byltan Essence.",
             route = {
                 { mapID = 1444, x = 0.385, y = 0.158, label = "Flame of Byltan", offMapText = "Travel to Flame of Byltan." },
@@ -662,7 +641,6 @@ ns:RegisterGuide({
             rememberPreparation = 2879,
         },
         {
-            priority = 220,
             text = "With Samha, Imbel, Lahassa and Byltan Essence in your bags, use Troyas' Stave at the Equinex Monolith to obtain the Stave of Equinex.",
             route = {
                 { mapID = 1444, x = 0.3887, y = 0.1323, label = "Equinex Monolith", offMapText = "Travel to Equinex Monolith." },
@@ -695,7 +673,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 230,
             text = "Touch the Equinex Monolith to turn in The Stave of Equinex.",
             route = {
                 { y = 0.1323, mapID = 1444, label = "The Stave of Equinex", offMapText = "Travel to The Stave of Equinex.", x = 0.3887 },
@@ -735,7 +712,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 240,
             route = {
                 { y = 0.1323, mapID = 1444, label = "The Morrow Stone", offMapText = "Travel to The Morrow Stone.", x = 0.3887 },
             },
@@ -769,7 +745,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 250,
             text = "Turn in The Giant Guardian to Shay Leafrunner.",
             route = {
                 { y = 0.103, mapID = 1444, label = "Shay Leafrunner", offMapText = "Travel to Shay Leafrunner in Feralas.", x = 0.3822 },
@@ -797,7 +772,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 260,
             route = {
                 { y = 0.103, mapID = 1444, label = "Shay Leafrunner", offMapText = "Travel to Shay Leafrunner in Feralas.", x = 0.3822 },
             },
@@ -831,7 +805,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 270,
             text = "Collect 1 Shay's Bell.",
             route = {
                 { y = 0.1029, mapID = 1444, label = "Shay's Chest", offMapText = "Travel to Shay's Chest.", x = 0.3825 },
@@ -896,10 +869,8 @@ ns:RegisterGuide({
             },
             sourceStep = 22,
             dependsOn = { "accept-2845-wandering-shay" },
-            priority = 280,
         },
         {
-            priority = 290,
             text = "Turn in Wandering Shay to Rockbiter.",
             route = {
                 { y = 0.22, mapID = 1444, label = "Rockbiter", offMapText = "Travel to Rockbiter in Feralas.", x = 0.4238 },
@@ -952,10 +923,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4142,
-            priority = 300,
         },
         {
-            priority = 310,
             route = {
                 { y = 0.2557, mapID = 1444, label = "Gregan Brewspewer", offMapText = "Travel to Gregan Brewspewer in Feralas.", x = 0.4512 },
             },
@@ -1001,10 +970,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 3909,
-            priority = 320,
         },
         {
-            priority = 330,
             route = {
                 { mapID = 1444, x = 0.4512, y = 0.2557, label = "Videre Elixir", offMapText = "Travel to Videre Elixir." },
             },
@@ -1035,7 +1002,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 340,
             text = "For The Morrow Stone: Return the Sparkling Stone and the Stave of Equinex to Troyas Moonbreeze in Feathermoon Stronghold.",
             id = "objective-2942-quest-work",
             kind = "objective",
@@ -1066,7 +1032,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2942-the-morrow-stone" },
         },
         {
-            priority = 350,
             text = "Turn in The Morrow Stone to Troyas Moonbreeze.",
             route = {
                 { y = 0.455, mapID = 1444, label = "Troyas Moonbreeze", offMapText = "Travel to Troyas Moonbreeze in Feralas.", x = 0.3178 },
@@ -1100,7 +1065,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 360,
             text = "Turn in Improved Quality to Pratt McGrubben.",
             route = {
                 { y = 0.4271, mapID = 1444, label = "Pratt McGrubben", offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063 },
@@ -1134,7 +1098,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 370,
             text = "Turn in Pristine Yeti Hide to Pratt McGrubben.",
             route = {
                 { y = 0.4271, mapID = 1444, label = "Pratt McGrubben", offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063 },
@@ -1180,10 +1143,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 5158,
-            priority = 380,
         },
         {
-            priority = 390,
             route = {
                 { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
             },
@@ -1214,7 +1175,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 400,
             route = {
                 { y = 0.3854, mapID = 1413, label = "Marvon's Chest", offMapText = "Travel to Marvon's Chest.", x = 0.625 },
             },
@@ -1257,10 +1217,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 4502,
-            priority = 410,
         },
         {
-            priority = 420,
             route = {
                 { y = 0.3874, mapID = 1413, label = "Liv Rizzlefix", offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245 },
             },
@@ -1285,7 +1243,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 430,
             route = {
                 { y = 0.2182, mapID = 1447, label = "Kim'jael", offMapText = "Travel to Kim'jael in Azshara.", x = 0.5345 },
             },
@@ -1310,7 +1267,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 440,
             text = "Collect 1 Kim'Jael's Compass.",
             route = {
                 { y = 0.301, mapID = 1447, label = "Kim'jael's Equipment", offMapText = "Travel to Kim'jael's Equipment.", x = 0.561 },
@@ -1353,7 +1309,6 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.561, y = 0.301, label = "Kim'Jael's Scope", offMapText = "Travel to Kim'Jael's Scope." },
             },
             sourceStep = 35,
-            priority = 450,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1378,7 +1333,6 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.561, y = 0.301, label = "Kim'Jael's Stuffed Chicken", offMapText = "Travel to Kim'Jael's Stuffed Chicken." },
             },
             sourceStep = 35,
-            priority = 460,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
@@ -1403,14 +1357,12 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.561, y = 0.301, label = "Kim'Jael's Wizzlegoober", offMapText = "Travel to Kim'Jael's Wizzlegoober." },
             },
             sourceStep = 35,
-            priority = 470,
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-3601-kim-jael-indeed" },
         },
         {
-            priority = 480,
             text = "Turn in Kim'jael Indeed! to Kim'jael.",
             route = {
                 { y = 0.2182, mapID = 1447, label = "Kim'jael", offMapText = "Travel to Kim'jael in Azshara.", x = 0.5345 },
@@ -1441,7 +1393,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 490,
             route = {
                 { y = 0.2182, mapID = 1447, label = "Kim'jael", offMapText = "Travel to Kim'jael in Azshara.", x = 0.5345 },
             },
@@ -1472,7 +1423,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 500,
             route = {
                 { y = 0.5031, mapID = 1447, label = "Rune of Jin'yael", offMapText = "Travel to Rune of Jin'yael.", x = 0.3956 },
             },
@@ -1506,7 +1456,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 510,
             route = {
                 { y = 0.5319, mapID = 1447, label = "Rune of Beth'Amara", offMapText = "Travel to Rune of Beth'Amara.", x = 0.3687 },
             },
@@ -1540,7 +1489,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 520,
             route = {
                 { y = 0.5548, mapID = 1447, label = "Rune of Markri", offMapText = "Travel to Rune of Markri.", x = 0.393 },
             },
@@ -1574,7 +1522,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            priority = 530,
             route = {
                 { y = 0.6413, mapID = 1447, label = "Rune of Sael'hai", offMapText = "Travel to Rune of Sael'hai.", x = 0.4234 },
             },
@@ -1626,7 +1573,6 @@ ns:RegisterGuide({
                 { mapID = 1447, x = 0.45399999999999996, y = 0.54, label = "Some Rune", offMapText = "Travel to Some Rune." },
             },
             sourceStep = 41,
-            priority = 540,
             requiredQuests = {
                 {
                     mode = "any",
@@ -1639,7 +1585,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5534-kim-jael-s-missing-equipment" },
         },
         {
-            priority = 550,
             text = "Turn in Kim'jael's \"Missing\" Equipment to Kim'jael.",
             route = {
                 { mapID = 1447, x = 0.5345, y = 0.2182, label = "Kim'jael", offMapText = "Travel to Kim'jael in Azshara." },
@@ -1670,7 +1615,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 560,
             text = "Turn in Arcane Runes to Pilot Xiggs Fuselighter.",
             route = {
                 { mapID = 1447, x = 0.778, y = 0.9131999999999999, label = "Pilot Xiggs Fuselighter", offMapText = "Travel to Pilot Xiggs Fuselighter in Azshara." },
@@ -1709,7 +1653,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            priority = 570,
             route = {
                 { mapID = 1447, x = 0.778, y = 0.9131999999999999, label = "Pilot Xiggs Fuselighter", offMapText = "Travel to Pilot Xiggs Fuselighter in Azshara." },
             },

@@ -279,7 +279,6 @@ local optionalDrops = {
     { 'mulgore', 6, 770, 'the-demon-scarred-cloak', 'Demon Scarred Cloak' },
     { 'durotar', 2, 832, 'burning-shadows', 'Eye of Burning Shadow' },
     { 'elwynn-forest', 1, 123, 'the-collector', 'Gold Pickup Schedule' },
-    { 'dun-morogh', 3, 96391, 'underground-map', 'Dark Iron Map' },
     { 'teldrassil', 4, 927, 'the-moss-twined-heart', 'Moss-twined Heart' },
 }
 for _, spec in ipairs(optionalDrops) do

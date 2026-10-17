@@ -21,10 +21,11 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
+    routeMode = "ordered",
     id = "dungeons-dire-maul-north-tribute",
     title = "Dire Maul North Tribute",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 58 } },
@@ -33,22 +34,20 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "turnin-1193-a-broken-trap",
-            kind = "turnin",
-            priority = 13,
-            conditions = { level = { min = 56 } },
-            text = "Turn in A Broken Trap.",
-            complete = QuestState(1193, "completed"),
-            useClientPin = true,
-        },
-        {
             id = "enter-dungeon",
             kind = "travel",
-            priority = 18,
             conditions = { level = { min = 58 } },
             text = "Enter Dire Maul - North with your group.",
             persistCompletion = true,
             complete = { instance = 429 },
+        },
+        {
+            id = "turnin-1193-a-broken-trap",
+            kind = "note",
+            conditions = { level = { min = 56 } },
+            text = "Inside Dire Maul North, repair the Broken Trap with one Thorium Widget and one Frost Oil for your tribute run. Mark this instruction complete after repairing it, or skip it if your group bypasses the guard.",
+
+            useClientPin = true,
         },
     },
 })

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Druid",
     category = "Class Quests",
     id = "class-druid",
@@ -18,7 +18,6 @@ ns:RegisterGuide({
             route = {
                 { y = 0.234, mapID = 2521, label = "Ailee Farheart", offMapText = "Travel to Zephras Isle.", x = 0.428 },
             },
-            priority = 10,
             id = "accept-coming-of-age",
             conditions = {
                 all = {
@@ -48,7 +47,6 @@ ns:RegisterGuide({
             classAction = "accept-coming-of-age",
         },
         {
-            priority = 20,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
             },
@@ -81,7 +79,6 @@ ns:RegisterGuide({
             classAction = "turnin-coming-of-age",
         },
         {
-            priority = 30,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
             },
@@ -114,7 +111,6 @@ ns:RegisterGuide({
             classAction = "accept-92461-harmony-in-balance",
         },
         {
-            priority = 40,
             route = {
                 { y = 0.256, mapID = 2521, label = "Juvenile Vuldren", x = 0.432, offMapText = "Travel to Juvenile Vuldren in Zephras Isle." },
             },
@@ -147,7 +143,6 @@ ns:RegisterGuide({
             classAction = "objective-92461-harmony-in-balance",
         },
         {
-            priority = 50,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
             },
@@ -180,7 +175,6 @@ ns:RegisterGuide({
             classAction = "turnin-92461-harmony-in-balance",
         },
         {
-            priority = 60,
             route = {
                 { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
@@ -254,7 +248,6 @@ ns:RegisterGuide({
                 { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Meat", offMapText = "Travel to Plainstrider Meat." },
             },
             sourceStep = 12,
-            priority = 70,
             useClientPin = false,
             dependsOn = { "accept-747-the-hunt-begins" },
             classAction = "objective-747-1-plainstrider-meat",
@@ -294,13 +287,11 @@ ns:RegisterGuide({
                 { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Feather", offMapText = "Travel to Plainstrider Feather." },
             },
             sourceStep = 12,
-            priority = 80,
             useClientPin = false,
             dependsOn = { "accept-747-the-hunt-begins" },
             classAction = "objective-747-2-plainstrider-feather",
         },
         {
-            priority = 90,
             route = {
                 { y = 0.775, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.445 },
             },
@@ -340,7 +331,6 @@ ns:RegisterGuide({
             classAction = "turnin-747-the-hunt-begins",
         },
         {
-            priority = 100,
             route = {
                 { y = 0.775, mapID = 1412, label = "Grull Hawkwind", x = 0.445, offMapText = "Travel to Grull Hawkwind in Mulgore." },
             },
@@ -366,7 +356,6 @@ ns:RegisterGuide({
             classAction = "accept-3094-verdant-note",
         },
         {
-            priority = 110,
             route = {
                 { y = 0.766, mapID = 1412, label = "Gart Mistrunner", x = 0.446, offMapText = "Travel to Gart Mistrunner in Mulgore." },
             },
@@ -392,7 +381,6 @@ ns:RegisterGuide({
             classAction = "turnin-3094-verdant-note",
         },
         {
-            priority = 120,
             route = {
                 { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.5869 },
             },
@@ -432,7 +420,6 @@ ns:RegisterGuide({
             classAction = "accept-456-the-balance-of-nature",
         },
         {
-            priority = 130,
             route = {
                 { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
             },
@@ -472,7 +459,6 @@ ns:RegisterGuide({
             classAction = "objective-456-1-young-nightsaber",
         },
         {
-            priority = 140,
             route = {
                 { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
             },
@@ -511,7 +497,6 @@ ns:RegisterGuide({
             classAction = "objective-456-1-young-nightsaber-2",
         },
         {
-            priority = 150,
             route = {
                 { y = 0.454, mapID = 1438, label = "Young Thistle Boar", offMapText = "Travel to Young Thistle Boar.", x = 0.582 },
             },
@@ -551,7 +536,6 @@ ns:RegisterGuide({
             classAction = "objective-456-2-young-thistle-boar",
         },
         {
-            priority = 160,
             route = {
                 { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.587 },
             },
@@ -596,7 +580,6 @@ ns:RegisterGuide({
             classAction = "turnin-456-the-balance-of-nature",
         },
         {
-            priority = 170,
             route = {
                 { y = 0.442, mapID = 1438, label = "Conservator Ilthalaine", x = 0.586, offMapText = "Travel to Conservator Ilthalaine in Teldrassil." },
             },
@@ -622,7 +605,6 @@ ns:RegisterGuide({
             classAction = "accept-3120-verdant-sigil",
         },
         {
-            priority = 180,
             route = {
                 { y = 0.404, mapID = 1438, label = "Mardant Strongoak", x = 0.586, offMapText = "Travel to Mardant Strongoak in Teldrassil." },
             },
@@ -670,10 +652,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 92485,
-            priority = 190,
         },
         {
-            priority = 200,
             route = {
                 { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
             },
@@ -697,7 +677,6 @@ ns:RegisterGuide({
             classAction = "accept-92485-a-student-of-nature",
         },
         {
-            priority = 210,
             route = {
                 { y = 0.234, mapID = 2521, label = "Xyton Silverwind", x = 0.416, offMapText = "Travel to Xyton Silverwind in Zephras Isle." },
             },
@@ -746,10 +725,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5923,
             alternativeQuests = { 5924, 5925 },
-            priority = 260,
         },
         {
-            priority = 270,
             route = {
                 { y = 0.078, mapID = 1457, label = "Denatharion", x = 0.348, offMapText = "Travel to Denatharion in Darnassus." },
             },
@@ -775,7 +752,6 @@ ns:RegisterGuide({
             classAction = "accept-5923-heeding-the-call",
         },
         {
-            priority = 280,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -801,7 +777,6 @@ ns:RegisterGuide({
             classAction = "turnin-5923-heeding-the-call",
         },
         {
-            priority = 290,
             route = {
                 { y = 0.642, mapID = 1453, label = "Theridran", x = 0.362, offMapText = "Travel to Theridran in Stormwind City." },
             },
@@ -827,7 +802,6 @@ ns:RegisterGuide({
             classAction = "accept-5924-heeding-the-call",
         },
         {
-            priority = 300,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -853,7 +827,6 @@ ns:RegisterGuide({
             classAction = "turnin-5924-heeding-the-call",
         },
         {
-            priority = 310,
             route = {
                 { y = 0.616, mapID = 1438, label = "Kal", x = 0.56, offMapText = "Travel to Kal in Teldrassil." },
             },
@@ -879,7 +852,6 @@ ns:RegisterGuide({
             classAction = "accept-5925-heeding-the-call",
         },
         {
-            priority = 320,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -905,7 +877,6 @@ ns:RegisterGuide({
             classAction = "turnin-5925-heeding-the-call",
         },
         {
-            priority = 330,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -931,7 +902,6 @@ ns:RegisterGuide({
             classAction = "accept-5921-moonglade",
         },
         {
-            priority = 340,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -957,7 +927,6 @@ ns:RegisterGuide({
             classAction = "turnin-5921-moonglade",
         },
         {
-            priority = 350,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -983,7 +952,6 @@ ns:RegisterGuide({
             classAction = "accept-5929-great-bear-spirit",
         },
         {
-            priority = 360,
             id = "objective-5929-quest-work",
             conditions = {
                 all = {
@@ -1006,7 +974,6 @@ ns:RegisterGuide({
             classAction = "objective-5929-quest-work",
         },
         {
-            priority = 370,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -1032,7 +999,6 @@ ns:RegisterGuide({
             classAction = "turnin-5929-great-bear-spirit",
         },
         {
-            priority = 380,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -1058,7 +1024,6 @@ ns:RegisterGuide({
             classAction = "accept-5931-back-to-darnassus",
         },
         {
-            priority = 390,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -1084,7 +1049,6 @@ ns:RegisterGuide({
             classAction = "turnin-5931-back-to-darnassus",
         },
         {
-            priority = 400,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -1110,7 +1074,6 @@ ns:RegisterGuide({
             classAction = "accept-6001-body-and-heart",
         },
         {
-            priority = 410,
             id = "objective-6001-quest-work",
             conditions = {
                 all = {
@@ -1133,7 +1096,6 @@ ns:RegisterGuide({
             classAction = "objective-6001-quest-work",
         },
         {
-            priority = 420,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -1181,10 +1143,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94006,
-            priority = 430,
         },
         {
-            priority = 440,
             route = {
                 { y = 0.75, mapID = 2521, label = "Lotheluum Starbreeze", x = 0.64, offMapText = "Travel to Lotheluum Starbreeze in Zephras Isle." },
             },
@@ -1208,7 +1168,6 @@ ns:RegisterGuide({
             classAction = "accept-94006-the-great-ursera-spirit",
         },
         {
-            priority = 450,
             route = {
                 { y = 0.616, mapID = 2521, label = "Urs'endris", x = 0.698, offMapText = "Travel to Urs'endris in Zephras Isle." },
             },
@@ -1232,7 +1191,6 @@ ns:RegisterGuide({
             classAction = "turnin-94006-the-great-ursera-spirit",
         },
         {
-            priority = 460,
             route = {
                 { y = 0.616, mapID = 2521, label = "Urs'endris", x = 0.698, offMapText = "Travel to Urs'endris in Zephras Isle." },
             },
@@ -1256,7 +1214,6 @@ ns:RegisterGuide({
             classAction = "accept-94638-strength-and-mercy",
         },
         {
-            priority = 470,
             id = "objective-94638-quest-work",
             conditions = {
                 all = {
@@ -1277,7 +1234,6 @@ ns:RegisterGuide({
             classAction = "objective-94638-quest-work",
         },
         {
-            priority = 480,
             route = {
                 { y = 0.616, mapID = 2521, label = "Urs'endris", x = 0.698, offMapText = "Travel to Urs'endris in Zephras Isle." },
             },
@@ -1325,10 +1281,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94911,
-            priority = 490,
         },
         {
-            priority = 500,
             route = {
                 { y = 0.224, mapID = 1412, label = "Muln Earthfury", x = 0.334, offMapText = "Travel to Muln Earthfury in Mulgore." },
             },
@@ -1354,7 +1308,6 @@ ns:RegisterGuide({
             classAction = "accept-94911-child-of-nature",
         },
         {
-            priority = 510,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -1380,7 +1333,6 @@ ns:RegisterGuide({
             classAction = "turnin-94911-child-of-nature",
         },
         {
-            priority = 520,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -1406,7 +1358,6 @@ ns:RegisterGuide({
             classAction = "accept-94913-moonglade",
         },
         {
-            priority = 530,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -1456,10 +1407,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 94912,
-            priority = 540,
         },
         {
-            priority = 550,
             route = {
                 { y = 0.566, mapID = 1416, label = "Archmage Ansirem Runeweaver", x = 0.118, offMapText = "Travel to Archmage Ansirem Runeweaver in Alterac Mountains." },
             },
@@ -1485,7 +1434,6 @@ ns:RegisterGuide({
             classAction = "accept-94912-child-of-nature",
         },
         {
-            priority = 560,
             route = {
                 { y = 0.554, mapID = 1453, label = "Sheldras Moontree", x = 0.21, offMapText = "Travel to Sheldras Moontree in Stormwind City." },
             },
@@ -1511,7 +1459,6 @@ ns:RegisterGuide({
             classAction = "turnin-94912-child-of-nature",
         },
         {
-            priority = 570,
             route = {
                 { y = 0.554, mapID = 1453, label = "Sheldras Moontree", x = 0.21, offMapText = "Travel to Sheldras Moontree in Stormwind City." },
             },
@@ -1537,7 +1484,6 @@ ns:RegisterGuide({
             classAction = "accept-94914-moonglade",
         },
         {
-            priority = 580,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -1588,10 +1534,8 @@ ns:RegisterGuide({
             useClientPin = false,
             checkpointQuest = 5926,
             alternativeQuests = { 5927, 5928 },
-            priority = 590,
         },
         {
-            priority = 600,
             route = {
                 { y = 0.644, mapID = 1456, label = "Innkeeper Pala", x = 0.458, offMapText = "Travel to Innkeeper Pala in Thunder Bluff." },
             },
@@ -1617,7 +1561,6 @@ ns:RegisterGuide({
             classAction = "accept-5926-heeding-the-call",
         },
         {
-            priority = 610,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -1643,7 +1586,6 @@ ns:RegisterGuide({
             classAction = "turnin-5926-heeding-the-call",
         },
         {
-            priority = 620,
             route = {
                 { y = 0.684, mapID = 1454, label = "Innkeeper Gryshka", x = 0.542, offMapText = "Travel to Innkeeper Gryshka in Orgrimmar." },
             },
@@ -1669,7 +1611,6 @@ ns:RegisterGuide({
             classAction = "accept-5927-heeding-the-call",
         },
         {
-            priority = 630,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -1695,7 +1636,6 @@ ns:RegisterGuide({
             classAction = "turnin-5927-heeding-the-call",
         },
         {
-            priority = 640,
             route = {
                 { y = 0.630, mapID = 1412, label = "Gennia Runetotem", x = 0.475, offMapText = "Travel to Gennia Runetotem in Mulgore." },
             },
@@ -1721,7 +1661,6 @@ ns:RegisterGuide({
             classAction = "accept-5928-heeding-the-call",
         },
         {
-            priority = 650,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -1747,7 +1686,6 @@ ns:RegisterGuide({
             classAction = "turnin-5928-heeding-the-call",
         },
         {
-            priority = 660,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -1773,7 +1711,6 @@ ns:RegisterGuide({
             classAction = "accept-5922-moonglade",
         },
         {
-            priority = 670,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -1799,7 +1736,6 @@ ns:RegisterGuide({
             classAction = "turnin-5922-moonglade",
         },
         {
-            priority = 680,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -1825,7 +1761,6 @@ ns:RegisterGuide({
             classAction = "accept-5930-great-bear-spirit",
         },
         {
-            priority = 690,
             id = "objective-5930-quest-work",
             conditions = {
                 all = {
@@ -1848,7 +1783,6 @@ ns:RegisterGuide({
             classAction = "objective-5930-quest-work",
         },
         {
-            priority = 700,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -1874,7 +1808,6 @@ ns:RegisterGuide({
             classAction = "turnin-5930-great-bear-spirit",
         },
         {
-            priority = 710,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -1900,7 +1833,6 @@ ns:RegisterGuide({
             classAction = "accept-5932-back-to-thunder-bluff",
         },
         {
-            priority = 720,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -1926,7 +1858,6 @@ ns:RegisterGuide({
             classAction = "turnin-5932-back-to-thunder-bluff",
         },
         {
-            priority = 730,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -1952,7 +1883,6 @@ ns:RegisterGuide({
             classAction = "accept-6002-body-and-heart",
         },
         {
-            priority = 740,
             id = "objective-6002-quest-work",
             conditions = {
                 all = {
@@ -1975,7 +1905,6 @@ ns:RegisterGuide({
             classAction = "objective-6002-quest-work",
         },
         {
-            priority = 750,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -2025,10 +1954,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6121,
-            priority = 760,
         },
         {
-            priority = 770,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -2054,7 +1981,6 @@ ns:RegisterGuide({
             classAction = "accept-6121-lessons-anew",
         },
         {
-            priority = 780,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2080,7 +2006,6 @@ ns:RegisterGuide({
             classAction = "turnin-6121-lessons-anew",
         },
         {
-            priority = 790,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2106,7 +2031,6 @@ ns:RegisterGuide({
             classAction = "accept-6122-the-principal-source",
         },
         {
-            priority = 800,
             route = {
                 { mapID = 1439, x = 0.5493, y = 0.3332, label = "Filled Cliffspring Falls Sampler", offMapText = "Travel to Filled Cliffspring Falls Sampler." },
             },
@@ -2132,7 +2056,6 @@ ns:RegisterGuide({
             classAction = "objective-6122-quest-work",
         },
         {
-            priority = 810,
             route = {
                 { y = 0.406, mapID = 1439, label = "Alanndarian Nightsong", x = 0.376, offMapText = "Travel to Alanndarian Nightsong in Darkshore." },
             },
@@ -2182,10 +2105,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6123,
-            priority = 820,
         },
         {
-            priority = 830,
             route = {
                 { y = 0.406, mapID = 1439, label = "Alanndarian Nightsong", x = 0.376, offMapText = "Travel to Alanndarian Nightsong in Darkshore." },
             },
@@ -2211,7 +2132,6 @@ ns:RegisterGuide({
             classAction = "accept-6123-gathering-the-cure",
         },
         {
-            priority = 840,
             dependsOn = { "accept-6123-gathering-the-cure" },
             id = "objective-6123-gathering-the-cure",
             conditions = {
@@ -2234,7 +2154,6 @@ ns:RegisterGuide({
             classAction = "objective-6123-gathering-the-cure",
         },
         {
-            priority = 850,
             route = {
                 { y = 0.406, mapID = 1439, label = "Alanndarian Nightsong", x = 0.376, offMapText = "Travel to Alanndarian Nightsong in Darkshore." },
             },
@@ -2260,7 +2179,6 @@ ns:RegisterGuide({
             classAction = "turnin-6123-gathering-the-cure",
         },
         {
-            priority = 860,
             route = {
                 { y = 0.406, mapID = 1439, label = "Alanndarian Nightsong", x = 0.376, offMapText = "Travel to Alanndarian Nightsong in Darkshore." },
             },
@@ -2286,7 +2204,6 @@ ns:RegisterGuide({
             classAction = "accept-6124-curing-the-sick",
         },
         {
-            priority = 870,
             id = "objective-6124-quest-work",
             conditions = {
                 all = {
@@ -2309,7 +2226,6 @@ ns:RegisterGuide({
             classAction = "objective-6124-quest-work",
         },
         {
-            priority = 880,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2335,7 +2251,6 @@ ns:RegisterGuide({
             classAction = "turnin-6124-curing-the-sick",
         },
         {
-            priority = 890,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2361,7 +2276,6 @@ ns:RegisterGuide({
             classAction = "accept-6125-power-over-poison",
         },
         {
-            priority = 900,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -2411,10 +2325,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 6126,
-            priority = 910,
         },
         {
-            priority = 920,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -2440,7 +2352,6 @@ ns:RegisterGuide({
             classAction = "accept-6126-lessons-anew",
         },
         {
-            priority = 930,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2466,7 +2377,6 @@ ns:RegisterGuide({
             classAction = "turnin-6126-lessons-anew",
         },
         {
-            priority = 940,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2492,7 +2402,6 @@ ns:RegisterGuide({
             classAction = "accept-6127-the-principal-source",
         },
         {
-            priority = 950,
             id = "objective-6127-quest-work",
             conditions = {
                 all = {
@@ -2515,7 +2424,6 @@ ns:RegisterGuide({
             classAction = "objective-6127-quest-work",
         },
         {
-            priority = 960,
             route = {
                 { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
             },
@@ -2541,7 +2449,6 @@ ns:RegisterGuide({
             classAction = "turnin-6127-the-principal-source",
         },
         {
-            priority = 970,
             route = {
                 { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
             },
@@ -2567,7 +2474,6 @@ ns:RegisterGuide({
             classAction = "accept-6128-gathering-the-cure",
         },
         {
-            priority = 980,
             dependsOn = { "accept-6128-gathering-the-cure" },
             id = "objective-6128-gathering-the-cure",
             conditions = {
@@ -2590,7 +2496,6 @@ ns:RegisterGuide({
             classAction = "objective-6128-gathering-the-cure",
         },
         {
-            priority = 990,
             route = {
                 { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
             },
@@ -2616,7 +2521,6 @@ ns:RegisterGuide({
             classAction = "turnin-6128-gathering-the-cure",
         },
         {
-            priority = 1000,
             route = {
                 { y = 0.318, mapID = 1413, label = "Tonga Runetotem", x = 0.522, offMapText = "Travel to Tonga Runetotem in The Barrens." },
             },
@@ -2642,7 +2546,6 @@ ns:RegisterGuide({
             classAction = "accept-6129-curing-the-sick",
         },
         {
-            priority = 1010,
             id = "objective-6129-quest-work",
             conditions = {
                 all = {
@@ -2665,7 +2568,6 @@ ns:RegisterGuide({
             classAction = "objective-6129-quest-work",
         },
         {
-            priority = 1020,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2691,7 +2593,6 @@ ns:RegisterGuide({
             classAction = "turnin-6129-curing-the-sick",
         },
         {
-            priority = 1030,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2717,7 +2618,6 @@ ns:RegisterGuide({
             classAction = "accept-6130-power-over-poison",
         },
         {
-            priority = 1040,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -2767,10 +2667,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 26,
-            priority = 1050,
         },
         {
-            priority = 1060,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -2796,7 +2694,6 @@ ns:RegisterGuide({
             classAction = "accept-26-a-lesson-to-learn",
         },
         {
-            priority = 1070,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2822,7 +2719,6 @@ ns:RegisterGuide({
             classAction = "turnin-26-a-lesson-to-learn",
         },
         {
-            priority = 1080,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2848,7 +2744,6 @@ ns:RegisterGuide({
             classAction = "accept-29-trial-of-the-lake",
         },
         {
-            priority = 1090,
             id = "objective-29-quest-work",
             conditions = {
                 all = {
@@ -2871,7 +2766,6 @@ ns:RegisterGuide({
             classAction = "objective-29-quest-work",
         },
         {
-            priority = 1100,
             route = {
                 { y = 0.402, mapID = 1450, label = "Tajarri", x = 0.364, offMapText = "Travel to Tajarri in Moonglade." },
             },
@@ -2897,7 +2791,6 @@ ns:RegisterGuide({
             classAction = "turnin-29-trial-of-the-lake",
         },
         {
-            priority = 1110,
             route = {
                 { y = 0.402, mapID = 1450, label = "Tajarri", x = 0.364, offMapText = "Travel to Tajarri in Moonglade." },
             },
@@ -2923,7 +2816,6 @@ ns:RegisterGuide({
             classAction = "accept-272-trial-of-the-sea-lion",
         },
         {
-            priority = 1120,
             id = "objective-272-quest-work",
             conditions = {
                 all = {
@@ -2946,7 +2838,6 @@ ns:RegisterGuide({
             classAction = "objective-272-quest-work",
         },
         {
-            priority = 1130,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2972,7 +2863,6 @@ ns:RegisterGuide({
             classAction = "turnin-272-trial-of-the-sea-lion",
         },
         {
-            priority = 1140,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -2998,7 +2888,6 @@ ns:RegisterGuide({
             classAction = "accept-5061-aquatic-form",
         },
         {
-            priority = 1150,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -3048,10 +2937,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 27,
-            priority = 1160,
         },
         {
-            priority = 1170,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -3077,7 +2964,6 @@ ns:RegisterGuide({
             classAction = "accept-27-a-lesson-to-learn",
         },
         {
-            priority = 1180,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3103,7 +2989,6 @@ ns:RegisterGuide({
             classAction = "turnin-27-a-lesson-to-learn",
         },
         {
-            priority = 1190,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3129,7 +3014,6 @@ ns:RegisterGuide({
             classAction = "accept-28-trial-of-the-lake",
         },
         {
-            priority = 1200,
             route = {
                 { mapID = 1450, x = 0.5433, y = 0.5565, label = "Shrine Bauble", offMapText = "Travel to Shrine Bauble." },
             },
@@ -3155,7 +3039,6 @@ ns:RegisterGuide({
             classAction = "objective-28-quest-work",
         },
         {
-            priority = 1210,
             route = {
                 { y = 0.402, mapID = 1450, label = "Tajarri", x = 0.364, offMapText = "Travel to Tajarri in Moonglade." },
             },
@@ -3181,7 +3064,6 @@ ns:RegisterGuide({
             classAction = "turnin-28-trial-of-the-lake",
         },
         {
-            priority = 1220,
             route = {
                 { y = 0.402, mapID = 1450, label = "Tajarri", x = 0.364, offMapText = "Travel to Tajarri in Moonglade." },
             },
@@ -3207,7 +3089,6 @@ ns:RegisterGuide({
             classAction = "accept-30-trial-of-the-sea-lion",
         },
         {
-            priority = 1230,
             id = "objective-30-quest-work",
             conditions = {
                 all = {
@@ -3230,7 +3111,6 @@ ns:RegisterGuide({
             classAction = "objective-30-quest-work",
         },
         {
-            priority = 1240,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3256,7 +3136,6 @@ ns:RegisterGuide({
             classAction = "turnin-30-trial-of-the-sea-lion",
         },
         {
-            priority = 1250,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3282,7 +3161,6 @@ ns:RegisterGuide({
             classAction = "accept-31-aquatic-form",
         },
         {
-            priority = 1260,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -3331,10 +3209,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98340,
-            priority = 1270,
         },
         {
-            priority = 1280,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -3359,7 +3235,6 @@ ns:RegisterGuide({
             classAction = "accept-98340-the-great-cat-spirit",
         },
         {
-            priority = 1290,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3403,10 +3278,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98341,
-            priority = 1300,
         },
         {
-            priority = 1310,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3427,7 +3300,6 @@ ns:RegisterGuide({
             classAction = "accept-98341-the-great-windborne-cat-spirit",
         },
         {
-            priority = 1320,
             route = {
                 { y = 0.734, mapID = 1450, label = "Avatar of Saeyleenan", x = 0.44, offMapText = "Travel to Avatar of Saeyleenan in Moonglade." },
             },
@@ -3471,10 +3343,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98393,
-            priority = 1330,
         },
         {
-            priority = 1340,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -3499,7 +3369,6 @@ ns:RegisterGuide({
             classAction = "accept-98393-the-great-cat-spirit",
         },
         {
-            priority = 1350,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3548,10 +3417,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98394,
-            priority = 1360,
         },
         {
-            priority = 1370,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3577,7 +3444,6 @@ ns:RegisterGuide({
             classAction = "accept-98394-the-great-cat-spirit",
         },
         {
-            priority = 1380,
             route = {
                 { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
             },
@@ -3603,7 +3469,6 @@ ns:RegisterGuide({
             classAction = "turnin-98394-the-great-cat-spirit",
         },
         {
-            priority = 1390,
             route = {
                 { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
             },
@@ -3629,7 +3494,6 @@ ns:RegisterGuide({
             classAction = "accept-98396-the-great-cat-spirit",
         },
         {
-            priority = 1400,
             id = "objective-98396-quest-work",
             conditions = {
                 all = {
@@ -3652,7 +3516,6 @@ ns:RegisterGuide({
             classAction = "objective-98396-quest-work",
         },
         {
-            priority = 1410,
             route = {
                 { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
             },
@@ -3678,7 +3541,6 @@ ns:RegisterGuide({
             classAction = "turnin-98396-the-great-cat-spirit",
         },
         {
-            priority = 1420,
             route = {
                 { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
             },
@@ -3704,7 +3566,6 @@ ns:RegisterGuide({
             classAction = "accept-98731-blessings-of-the-great-cat-spirit",
         },
         {
-            priority = 1430,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3730,7 +3591,6 @@ ns:RegisterGuide({
             classAction = "turnin-98731-blessings-of-the-great-cat-spirit",
         },
         {
-            priority = 1440,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3755,7 +3615,6 @@ ns:RegisterGuide({
             classAction = "accept-98397-to-darnassus",
         },
         {
-            priority = 1450,
             route = {
                 { y = 0.08, mapID = 1457, label = "Mathrengyl Bearwalker", x = 0.352, offMapText = "Travel to Mathrengyl Bearwalker in Darnassus." },
             },
@@ -3780,7 +3639,6 @@ ns:RegisterGuide({
             classAction = "turnin-98397-to-darnassus",
         },
         {
-            priority = 1460,
             route = {
                 { y = 0.734, mapID = 1450, label = "Avatar of Saeyleenan", x = 0.44, offMapText = "Travel to Avatar of Saeyleenan in Moonglade." },
             },
@@ -3801,7 +3659,6 @@ ns:RegisterGuide({
             classAction = "accept-98404-the-great-windborne-cat-spirit",
         },
         {
-            priority = 1470,
             id = "objective-98404-quest-work",
             conditions = {
                 all = {
@@ -3819,7 +3676,6 @@ ns:RegisterGuide({
             classAction = "objective-98404-quest-work",
         },
         {
-            priority = 1480,
             route = {
                 { y = 0.734, mapID = 1450, label = "Avatar of Saeyleenan", x = 0.44, offMapText = "Travel to Avatar of Saeyleenan in Moonglade." },
             },
@@ -3840,7 +3696,6 @@ ns:RegisterGuide({
             classAction = "turnin-98404-the-great-windborne-cat-spirit",
         },
         {
-            priority = 1490,
             route = {
                 { y = 0.734, mapID = 1450, label = "Avatar of Saeyleenan", x = 0.44, offMapText = "Travel to Avatar of Saeyleenan in Moonglade." },
             },
@@ -3861,7 +3716,6 @@ ns:RegisterGuide({
             classAction = "accept-98738-blessings-of-the-great-windborne-cat-spirit",
         },
         {
-            priority = 1500,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3906,10 +3760,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 98405,
-            priority = 1510,
         },
         {
-            priority = 1520,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -3935,7 +3787,6 @@ ns:RegisterGuide({
             classAction = "accept-98405-the-great-cat-spirit",
         },
         {
-            priority = 1530,
             route = {
                 { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
             },
@@ -3961,7 +3812,6 @@ ns:RegisterGuide({
             classAction = "turnin-98405-the-great-cat-spirit",
         },
         {
-            priority = 1540,
             route = {
                 { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
             },
@@ -3987,7 +3837,6 @@ ns:RegisterGuide({
             classAction = "accept-98342-the-great-cat-spirit",
         },
         {
-            priority = 1550,
             id = "objective-98342-quest-work",
             conditions = {
                 all = {
@@ -4010,7 +3859,6 @@ ns:RegisterGuide({
             classAction = "objective-98342-quest-work",
         },
         {
-            priority = 1560,
             route = {
                 { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
             },
@@ -4036,7 +3884,6 @@ ns:RegisterGuide({
             classAction = "turnin-98342-the-great-cat-spirit",
         },
         {
-            priority = 1570,
             route = {
                 { y = 0.75, mapID = 1450, label = "Great Cat Spirit", x = 0.546, offMapText = "Travel to Great Cat Spirit in Moonglade." },
             },
@@ -4062,7 +3909,6 @@ ns:RegisterGuide({
             classAction = "accept-98739-blessings-of-the-great-cat-spirit",
         },
         {
-            priority = 1580,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -4088,7 +3934,6 @@ ns:RegisterGuide({
             classAction = "turnin-98739-blessings-of-the-great-cat-spirit",
         },
         {
-            priority = 1590,
             route = {
                 { y = 0.304, mapID = 1450, label = "Dendrite Starblaze", x = 0.562, offMapText = "Travel to Dendrite Starblaze in Moonglade." },
             },
@@ -4113,7 +3958,6 @@ ns:RegisterGuide({
             classAction = "accept-98362-to-thunder-bluff",
         },
         {
-            priority = 1600,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -4158,10 +4002,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 9063,
-            priority = 1610,
         },
         {
-            priority = 1620,
             route = {
                 { y = 0.514, mapID = 1453, label = "Theridran", x = 0.214, offMapText = "Travel to Theridran in Stormwind City." },
             },
@@ -4203,10 +4045,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 9063,
-            priority = 1630,
         },
         {
-            priority = 1640,
             route = {
                 { y = 0.276, mapID = 1456, label = "Turak Runetotem", x = 0.764, offMapText = "Travel to Turak Runetotem in Thunder Bluff." },
             },
@@ -4247,10 +4087,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 9063,
-            priority = 1650,
         },
         {
-            priority = 1660,
             route = {
                 { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
             },
@@ -4271,7 +4109,6 @@ ns:RegisterGuide({
             classAction = "turnin-9063-torwa-pathfinder",
         },
         {
-            priority = 1670,
             route = {
                 { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
             },
@@ -4292,7 +4129,6 @@ ns:RegisterGuide({
             classAction = "accept-9052-bloodpetal-poison",
         },
         {
-            priority = 1680,
             route = {
                 { y = 0.788, mapID = 1449, label = "Gorishi Wasp", x = 0.504, offMapText = "Travel to Gorishi Wasp in Un'Goro Crater." },
                 { y = 0.808, mapID = 1449, label = "Gorishi Stinger", x = 0.5, offMapText = "Travel to Gorishi Stinger in Un'Goro Crater." },
@@ -4315,7 +4151,6 @@ ns:RegisterGuide({
             classAction = "objective-9052-bloodpetal-poison",
         },
         {
-            priority = 1690,
             route = {
                 { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
             },
@@ -4336,7 +4171,6 @@ ns:RegisterGuide({
             classAction = "turnin-9052-bloodpetal-poison",
         },
         {
-            priority = 1700,
             route = {
                 { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
             },
@@ -4357,7 +4191,6 @@ ns:RegisterGuide({
             classAction = "accept-9051-toxic-test",
         },
         {
-            priority = 1710,
             id = "objective-9051-quest-work",
             conditions = {
                 all = {
@@ -4375,7 +4208,6 @@ ns:RegisterGuide({
             classAction = "objective-9051-quest-work",
         },
         {
-            priority = 1720,
             route = {
                 { y = 0.76, mapID = 1449, label = "Torwa Pathfinder", x = 0.716, offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater." },
             },
