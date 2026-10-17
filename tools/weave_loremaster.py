@@ -245,6 +245,36 @@ def extract_step_conditions(raw: str, constants: dict[str, int] | None = None) -
     }
 
 
+def goal_field(raw: str, key: str) -> str | None:
+    """Return a top-level field's value without matching route or condition fields."""
+    i = 1
+    pattern = re.compile(r"\b" + re.escape(key) + r"\s*=\s*")
+    while i < len(raw):
+        if raw.startswith("--", i):
+            end = raw.find("\n", i)
+            i = len(raw) if end < 0 else end + 1
+        elif raw[i] == "{":
+            i = brace_end(raw, i) + 1
+        elif raw[i] in ("'", '"'):
+            quote = raw[i]
+            i += 1
+            while i < len(raw):
+                if raw[i] == "\\":
+                    i += 2
+                elif raw[i] == quote:
+                    i += 1
+                    break
+                else:
+                    i += 1
+        else:
+            match = pattern.match(raw, i)
+            if match:
+                value = raw[match.end():]
+                return value[:brace_end(value, 0) + 1] if value.startswith("{") else value
+            i += 1
+    return None
+
+
 def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -> list[Goal]:
     marker = text.find("goals = {")
     if marker < 0:
@@ -257,7 +287,12 @@ def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -
         ident = re.search(r'\bid = "([^"]+)"', raw)
         kind = re.search(r'\bkind = "([^"]+)"', raw)
         priority = re.search(r"\bpriority = (\d+(?:\.\d+)?)", raw)
-        quest = re.search(r"(?:QuestState|QuestObjective)\((\d+)", raw)
+        quest = None
+        body = goal_field(raw, "complete")
+        if body:
+            quest = re.match(r"(?:QuestState|QuestObjective)\(\s*(\d+)", body)
+            if body.startswith("{"):
+                quest = re.search(r"\b(?:quest|questObjective)\s*=\s*\{[^{}]*\bid\s*=\s*(\d+)", body)
         step_text = re.search(r'\btext = "((?:\\.|[^"\\])*)"', raw)
         labels = re.findall(r',\s*"((?:\\.|[^"\\])*)"', raw)
         # Point label is the 4th string-ish arg; grab quoted labels on Point lines.
@@ -672,7 +707,7 @@ def step_level(record: dict | None) -> int | None:
             return confirmed
         confirmed_offer = positive_level(fields.get("requiredLevel"))
         if confirmed_offer is not None:
-            return confirmed_offer
+            minimum = confirmed_offer
     if fields is not None and is_class:
         confirmed_offer = positive_level(fields.get("requiredLevel"))
         if confirmed_offer is not None:

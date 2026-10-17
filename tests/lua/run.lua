@@ -6028,6 +6028,35 @@ function TestClientPinIsReadOncePerObjectiveChange()
 end
 TestClientPinIsReadOncePerObjectiveChange()
 
+function TestLateClientQuestLocations()
+    local savedLog = C_QuestLog
+    local available = false
+    local goal = { kind = "objective", useClientPin = true,
+        complete = { questObjective = { id = 887, index = 1 } },
+        route = { { mapID = 1413, x = 0.64, y = 0.45 } } }
+    local state = { mapID = 1413, x = 0.5, y = 0.5 }
+    C_QuestLog = { GetQuestsOnMap = function()
+        return available and { { questID = 887, x = 0.2, y = 0.3 } } or {}
+    end }
+    ns.Navigation:InvalidateClientPins()
+    Equal(ns.Navigation:GetActiveLeg(goal, state).x, 0.64, "missing client pin uses the authored fallback")
+    available = true
+    Equal(ns.Navigation:GetActiveLeg(goal, state).x, 0.2,
+        "a late Blizzard POI replaces fallback coordinates without quest progress or movement")
+    C_QuestLog.GetNextWaypoint = function() return 1413, 0.7, 0.8 end
+    Equal(ns.Navigation:GetActiveLeg(goal, state).x, 0.7,
+        "Blizzard's next waypoint takes precedence over a cached map POI")
+    C_QuestLog = { GetNextWaypoint = function() return 1413, 0.6, 0.7 end }
+    Equal(ns.Navigation:GetActiveLeg(goal, state).x, 0.6,
+        "Blizzard's path supplies coordinates when map POIs are unavailable")
+    C_QuestLog.GetNextWaypoint = function() error("unavailable") end
+    Equal(ns.Navigation:GetActiveLeg(goal, state).x, 0.64,
+        "an unavailable path API retains the authored fallback")
+    C_QuestLog = savedLog
+    ns.Navigation:InvalidateClientPins()
+end
+TestLateClientQuestLocations()
+
 function TestUnchangedQuestLogSkipsGuideWalk()
     local saved = ns.Engine.questLogFingerprint
     local state = {
@@ -6597,6 +6626,16 @@ function TestWaypointProviders()
     Equal(prepPin and prepPin.x, 0.33, "an instruction note follows its checkpoint quest pin")
     waypoints:Sync(preparationNote, { mapID = 1412, x = 0.35, y = 0.48 })
     Equal(trackedQuest, 746, "an instruction note super-tracks its checkpoint quest")
+    local savedPreparationLog = C_QuestLog
+    C_QuestLog = { GetQuestsOnMap = function()
+        return { { questID = 746, x = 0.33, y = 0.46 } }
+    end }
+    local writesBeforePreparation = pinWrites
+    waypoints:Sync(preparationNote, { mapID = 1412, x = 0.35, y = 0.48 })
+    Equal(pinWrites, writesBeforePreparation,
+        "checkpoint quest POIs prevent authored waypoints when the next-waypoint API is absent")
+    Equal(trackedQuest, 746, "checkpoint notes keep Blizzard navigation when only a map POI is available")
+    C_QuestLog = savedPreparationLog
     local tauren = ns.guides["leveling-era-mulgore"]
     local riteTurnin, dwarvenPrep
     for _, goal in ipairs(tauren.goals) do
@@ -6760,6 +6799,16 @@ function TestFlightWaypointOverridesQuestDestination()
     goal.kind = "turnin"
     waypoints:Sync(goal, state, api)
     Equal(tomtomMap, 1413, "TomTom also follows the flight leg on quest steps")
+    local savedLog = C_QuestLog
+    C_QuestLog = { GetNextWaypoint = function() return 1456, 0.6, 0.7 end }
+    goal.useClientPin = true
+    waypoints:Clear()
+    waypoints:Sync(goal, state)
+    Equal(pin, nil, "an available Blizzard path prevents a synthesized flight-master waypoint")
+    Equal(quest, 123, "Blizzard's quest path takes precedence over our suggested flight")
+    Equal(ns.Navigation:GetActiveLeg(goal, state).x, 0.6,
+        "the guide arrow follows Blizzard's path instead of the suggested boarding point")
+    C_QuestLog = savedLog
     waypoints:Clear()
     ns.charDB.taxiNodesByContinent = savedNodes
     C_Map, C_SuperTrack, UiMapPoint = savedMap, savedTracking, savedPoint
@@ -7051,6 +7100,8 @@ local function TestOrderedNativeQuestNavigation()
     waypoints:Sync(guide.goals[1], state)
     Equal(tracked, 3922, 'ordered single-objective work selects Blizzard native quest navigation')
     Equal(writes, 0, 'available native objective destination does not create a user waypoint')
+    Equal(ns.Navigation:GetActiveLeg(guide.goals[1], state).x, 0.6,
+        'the guide arrow uses Blizzard coordinates for an eligible ordered quest objective')
     Equal(guide.goals[1].text, 'Collect 15 Nugget Slug.', 'native selection preserves the authored walkthrough')
     state.quests[3922].complete = true
     waypoints:Sync(guide.goals[2], state)
@@ -7064,6 +7115,22 @@ local function TestOrderedNativeQuestNavigation()
     waypoints:Sync(guide.goals[2], state)
     Equal(tracked, 3922, 'a late native destination replaces the authored fallback automatically')
     Equal(pin, nil, 'late native tracking removes only the owned fallback waypoint')
+    local poiAvailable = false
+    C_QuestLog = { GetQuestsOnMap = function()
+        return poiAvailable and { { questID = 3922, x = 0.61, y = 0.12 } } or {}
+    end }
+    local writesBeforeDeferred = writes
+    ns.Navigation.deferClientPins = true
+    waypoints:Sync(guide.goals[2], state)
+    Equal(writes, writesBeforeDeferred, 'a deferred client lookup does not establish that a fallback is needed')
+    ns.Navigation.deferClientPins = false
+    waypoints:Sync(guide.goals[2], state)
+    Equal(pin and pin.position.x, 0.49, 'missing map POI uses the authored turn-in waypoint')
+    poiAvailable = true
+    waypoints:Sync(guide.goals[2], state)
+    Equal(pin, nil, 'a late map POI removes the owned fallback without a quest-log change')
+    Equal(tracked, 3922, 'a late map POI restores native quest tracking')
+    C_QuestLog = { GetNextWaypoint = function() return 1413, 0.6, 0.1 end }
     local savedEngineGuide, savedEngineGoal, savedEngineState = ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state
     local placements = 0
     ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = guide, guide.goals[2], state
@@ -7079,10 +7146,10 @@ local function TestOrderedNativeQuestNavigation()
     ns.Navigation.GetActiveLeg = function() return { mapID = 1413, x = 0.6, y = 0.5, transport = true } end
     C_QuestLog.GetNextWaypoint = function() return 1413, 0.6, 0.1 end
     ns.MapPins:Refresh(canvas)
-    Equal(placements, 2, 'native quest destination does not hide the authored transport boarding pin')
+    Equal(placements, 1, 'available native quest navigation hides our suggested transport pin')
     waypoints:Sync(guide.goals[2], state)
-    Equal(tracked, 0, 'native quest tracking does not replace the transport destination')
-    Equal(pin and pin.position.y, 0.5, 'transport keeps its authored boarding waypoint')
+    Equal(tracked, 3922, 'available native quest tracking takes precedence over suggested transport')
+    Equal(pin, nil, 'available native transport guidance does not create an authored waypoint')
     ns.Navigation.GetActiveLeg = savedActiveLeg
     ns.MapPins.Place = savedPlace
     ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = savedEngineGuide, savedEngineGoal, savedEngineState
@@ -7094,6 +7161,8 @@ local function TestOrderedNativeQuestNavigation()
     state.quests[3922].objectives[2] = nil
     Equal(ns.Navigation:QuestDestinationID(guide.goals[1], state), nil,
         'explicit native navigation opt-out preserves special authored interactions')
+    Equal(ns.Navigation:GetActiveLeg(guide.goals[1], state).x, 0.555,
+        'explicit native navigation opt-out preserves authored interaction coordinates')
     waypoints:Clear()
     C_Map, C_SuperTrack, UiMapPoint, C_QuestLog = savedMap, savedTracking, savedPoint, savedLog
     ns.db = savedDB

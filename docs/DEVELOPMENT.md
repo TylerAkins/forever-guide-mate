@@ -41,7 +41,7 @@ lua5.1 tests/lua/audit_accept_chains.lua
 
 For the complete simulated race/class matrix, run `FGM_FULL_MATRIX=1 lua5.1 tests/lua/journeys.lua`. This covers every itinerary branch with observed quest snapshots; it does not replace client walkthroughs.
 
-CI (`validate`) runs the same suite, validates `RELEASE_NOTES.md` against `VERSION`, and on pull requests checks that any change under `Guides/`, `QuestPrerequisites.lua`, core addon Lua, `ForeverGuideMate.toc`, or `VERSION` bumps the patch version and updates `CHANGELOG.md` (see the `Validate automated release intent` step in `.github/workflows/ci.yml`). It then dry-runs the packager.
+CI keeps `validate` as the required aggregate check. It selects checks conservatively from PR paths and runs Python, Lua, class-sharded journeys, and packaging in parallel. Documentation-only PRs keep Python checks and release validation while skipping Lua and packaging. Guide, engine, test, workflow, and unknown changes keep full coverage; pushes to `main` and manual runs always run everything. Shipped addon changes still require a valid version advance and matching changelog entry. See [CI selection and verification](ci.md) for the path rules, local selector commands, and measured limits.
 
 ## Forever interface updates
 
@@ -122,3 +122,5 @@ The payload URL contains the API token. Never commit it, add it as an Actions se
 The native packager reads `.pkgmeta` and replaces `@project-version@` with the pushed tag. A normal tag such as `v0.1.0` is a Release; tags containing `beta` or `alpha` receive the corresponding CurseForge status. Do not add `X-Curse-Project-ID` solely for native packaging.
 
 License on CurseForge: **GPLv3**.
+
+The [quest level audit](quest-level-audit.md) documents its fixed database snapshot, level policy, and incomplete records.

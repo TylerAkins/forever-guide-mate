@@ -5,37 +5,38 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  validate:
+  plan:
     runs-on: ubuntu-24.04
+    outputs:
+      python: ${{ steps.select.outputs.python }}
+      lua: ${{ steps.select.outputs.lua }}
+      journeys: ${{ steps.select.outputs.journeys }}
+      package: ${{ steps.select.outputs.package }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v7
-        with:
-          python-version: '3.12'
-      - run: sudo apt-get update && sudo apt-get install --yes lua5.1
-      - run: python3 -m pip install -r tests/requirements.txt
-      - run: python3 -m unittest discover -s tests
-      - run: |
-          python3 tests/test_guide_release.py
-          python3 tests/test_update_forever_interface.py
-      - run: |
-          lua5.1 tests/lua/run.lua
-          lua5.1 tests/lua/ordered.lua
-          lua5.1 tests/lua/catalog.lua
-          FGM_FULL_MATRIX=1 lua5.1 tests/lua/journeys.lua
-          lua5.1 tests/lua/ui.lua
-          lua5.1 tests/lua/lint.lua
-          lua5.1 tests/lua/audit_accept_chains.lua
-      - run: |
-          python3 tools/guide_release.py validate-notes \
-            --version "$(tr -d '[:space:]' < VERSION)"
+          persist-credentials: false
+      - name: Select checks from the PR diff
+        id: select
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            python3 tools/ci_checks.py --base "$BASE_SHA" --head "$HEAD_SHA" --output "$GITHUB_OUTPUT"
+          else
+            python3 tools/ci_checks.py --full --output "$GITHUB_OUTPUT"
+          fi
+      - name: Validate current release notes
+        run: python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
       - name: Validate automated release intent
         if: github.event_name == 'pull_request'
         env:
@@ -45,7 +46,7 @@ jobs:
           # VERSION/CHANGELOG are required only when shipped addon content or Interface changes.
           # README, docs/, skills, and other repo metadata can merge without a release bump.
           GUIDE_CONTENT_CHANGED=false
-          if ! git diff --quiet "$BASE_SHA" HEAD -- Guides Core.lua PlayerState.lua Travel.lua Taxi.lua GuideEngine.lua OrderedRoutes.lua ClassChains.lua QuestPrerequisites.lua QuestAudit.lua QuestDialog.lua Navigation.lua TomTomWaypoints.lua MapPins.lua MapPins.xml MinimapButton.lua UITheme.lua UI.lua ForeverGuideMate.toc VERSION; then
+          if ! git diff --quiet "$BASE_SHA" HEAD -- Guides Core.lua PlayerState.lua Travel.lua Taxi.lua GuideEngine.lua OrderedRoutes.lua ClassChains.lua SkipLineage.lua QuestPrerequisites.lua QuestAudit.lua QuestDialog.lua Navigation.lua TomTomWaypoints.lua MapPins.lua MapPins.xml MinimapButton.lua UITheme.lua UI.lua ForeverGuideMate.toc VERSION; then
             GUIDE_CONTENT_CHANGED=true
           fi
           PREVIOUS_INTERFACE="$(git show "${BASE_SHA}:ForeverGuideMate.toc" | sed -n 's/^## Interface: //p')"
@@ -60,7 +61,77 @@ jobs:
             --current-version "$CURRENT_VERSION" \
             --release-content-changed
           grep -qF "## ${CURRENT_VERSION} " CHANGELOG.md
-      - run: |
+
+  python:
+    needs: plan
+    if: needs.plan.outputs.python == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install -r tests/requirements.txt
+      - name: Python tests
+        run: python3 -m unittest discover -s tests
+
+  lua:
+    needs: plan
+    if: needs.plan.outputs.lua == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: sudo apt-get update && sudo apt-get install --yes lua5.1
+      - name: Engine regressions
+        run: lua5.1 tests/lua/run.lua
+      - name: Ordered route behavior
+        run: lua5.1 tests/lua/ordered.lua
+      - name: Catalog and prerequisite coverage
+        run: lua5.1 tests/lua/catalog.lua
+      - name: UI behavior
+        run: lua5.1 tests/lua/ui.lua
+      - name: Guide data lint
+        run: lua5.1 tests/lua/lint.lua
+      - name: Accept-chain audit
+        run: lua5.1 tests/lua/audit_accept_chains.lua
+
+  journeys:
+    needs: plan
+    if: needs.plan.outputs.journeys == 'true'
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        class: [1, 2, 3, 4, 5, 7, 8, 9, 11]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: sudo apt-get update && sudo apt-get install --yes lua5.1
+      - name: Full race matrix for class ${{ matrix.class }}
+        env:
+          FGM_FULL_MATRIX: '1'
+          FGM_MATRIX_CLASS: ${{ matrix.class }}
+        run: lua5.1 tests/lua/journeys.lua
+
+  package:
+    needs: plan
+    if: needs.plan.outputs.package == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Compile install tree
+        run: |
           python3 tools/compile_addon.py
           test -f .compiled/ForeverGuideMate/ForeverGuideMate.toc
           test -f .compiled/ForeverGuideMate/Core.lua
@@ -70,8 +141,23 @@ jobs:
           test -f .compiled/ForeverGuideMate/Guides/Dungeons/RuinsOfLordaeron.lua
           test ! -e .compiled/ForeverGuideMate/tests
           test ! -e .compiled/ForeverGuideMate/tools
-      - run: python3 tools/compile_addon.py --dry-run
+      - name: Verify build file selection
+        run: python3 tools/compile_addon.py --dry-run
       - name: Dry-run package
-        uses: BigWigsMods/packager@v2
+        uses: BigWigsMods/packager@e50a250f8705041e40f2fa1ddcb280a686d65aa0 # v2.6.1
         with:
           args: -d
+
+  # Keep the existing required check name, including when some jobs are skipped.
+  validate:
+    if: ${{ always() }}
+    needs: [plan, python, lua, journeys, package]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Require every selected check to pass
+        env:
+          NEEDS_JSON: ${{ toJSON(needs) }}
+        run: python3 tools/ci_checks.py --check-results

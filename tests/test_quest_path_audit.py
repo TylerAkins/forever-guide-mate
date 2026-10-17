@@ -4,9 +4,9 @@ from tools.audit_quest_paths import (
     Requirement,
     audit,
     catalog_quest,
-    normalize_export_quest,
     requirement_from_record,
 )
+from tools.quest_database import normalize_export_quest
 from tools.weave_loremaster import Goal, parse_goals
 
 

@@ -83,7 +83,7 @@ local function HasClientQuestPoint(goal, routeLeg, state, questID)
         ok, mapID, x, y = pcall(C_QuestLog.GetNextWaypoint, questID)
         if ok and ValidPoint(mapID, x, y) then return true end
     end
-    local pinGoal = { useClientPin = true, complete = goal.complete }
+    local pinGoal = { useClientPin = true, complete = goal.complete, checkpointQuest = goal.checkpointQuest }
     mapID, x, y = ns.Navigation:ClientPin(pinGoal, routeLeg and routeLeg.mapID or state.mapID, nil, state)
     return ValidPoint(mapID, x, y)
 end
@@ -177,12 +177,19 @@ function Waypoints:Sync(goal, state, api)
         self.deferred = true
         return
     end
+    -- A deferred lookup is not evidence that Blizzard has no quest path.
+    if goal and ns.Navigation.deferClientPins then return end
     self.deferred = nil
     local provider = api and "tomtom" or (ns.db and ns.db.waypointProvider or "blizzard")
     local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
-    local flightLeg = routeLeg and routeLeg.flight and routeLeg
+    local destinationQuest = ns.Navigation:QuestDestinationID(goal, state)
+    local clientQuest = destinationQuest and HasClientQuestPoint(goal, routeLeg, state, destinationQuest)
+    local flightLeg = not clientQuest and routeLeg and routeLeg.flight and routeLeg
+    local questID = clientQuest and destinationQuest or (not flightLeg and not (routeLeg and routeLeg.transport)
+        and not (ns.Navigation.PendingTaxiTravel and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg))
+        and destinationQuest) or nil
     local selection = goal and (tostring(goal) .. ":" .. provider)
-    if routeLeg then
+    if routeLeg and not questID then
         selection = selection .. ":leg:" .. tostring(routeLeg.mapID)
             .. ":" .. tostring(routeLeg.x) .. ":" .. tostring(routeLeg.y)
     end
@@ -209,9 +216,6 @@ function Waypoints:Sync(goal, state, api)
         self.questFallback = nil
     end
     if self.suspended then return end
-    local questID = not flightLeg and not (routeLeg and routeLeg.transport)
-        and not (ns.Navigation.PendingTaxiTravel and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg))
-        and ns.Navigation:QuestDestinationID(goal, state) or nil
     local nativeQuest = questID ~= nil
     if nativeQuest and provider == "blizzard" then
         if not C_SuperTrack or type(C_SuperTrack.SetSuperTrackedQuestID) ~= "function"
@@ -243,7 +247,7 @@ function Waypoints:Sync(goal, state, api)
             mapID, x, y = C_QuestLog.GetNextWaypoint(questID)
         end
         if not ValidPoint(mapID, x, y) then
-            local pinGoal = { useClientPin = true, complete = goal.complete }
+            local pinGoal = { useClientPin = true, complete = goal.complete, checkpointQuest = goal.checkpointQuest }
             local route = goal.route
             local destination = route and route[#route]
             mapID, x, y = ns.Navigation:ClientPin(pinGoal, destination and destination.mapID or state.mapID, nil, state)

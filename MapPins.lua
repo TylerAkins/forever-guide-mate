@@ -130,11 +130,8 @@ function MapPins:Refresh(mapCanvas)
                 and type(pinY) == "number" and pinY >= 0 and pinY <= 1
         end
     end
-    local taxiPending = goal and ns.Navigation.PendingTaxiTravel
-        and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg)
     if not mapCanvas or not ns.db or not ns.db.uiOpen or not goal
-        or (useBlizzardPins and hasClientPin and not taxiPending
-            and not (routeLeg and (routeLeg.transport or routeLeg.flight)))
+        or (useBlizzardPins and hasClientPin)
         or (ns.TomTomWaypoints and ns.TomTomWaypoints.waypoint)
         or (mapCanvas.IsShown and not mapCanvas:IsShown()) then return end
     local viewedMapID = mapCanvas.GetMapID and mapCanvas:GetMapID() or nil
