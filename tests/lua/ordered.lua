@@ -1109,4 +1109,89 @@ for index, goalID in ipairs(expectedWestbrook) do
     equal(westbrook[index], goalID, 'Westbrook quests share the gnoll outing ' .. index)
 end
 
+-- Verified prerequisite turn-ins must precede pickups in the authored route.
+do
+    local cases = {
+        { 'leveling-era-elwynn-forest', 91743, { 92124 } },
+        { 'leveling-era-elwynn-forest', 92124, { 91741 } },
+        { 'leveling-era-elwynn-forest', 91745, { 91743 } },
+        { 'leveling-era-dun-morogh', 98322, { 420 } },
+        { 'leveling-era-dun-morogh', 98319, { 98322 } },
+        { 'leveling-era-dun-morogh', 98323, { 98319 } },
+        { 'leveling-era-dun-morogh', 99160, { 99159 } },
+        { 'leveling-era-dun-morogh', 99162, { 99159 } },
+        { 'leveling-casual-alliance', 92745, { 92742, 92744 } },
+        { 'leveling-casual-horde', 501, { 499 } },
+    }
+    for _, case in ipairs(cases) do
+        local guide, questID = ns.guides[case[1]], case[2]
+        local accept, acceptIndex, turnins = nil, nil, {}
+        for index, goal in ipairs(guide.goals) do
+            local id = ns.Engine:GetGoalQuestID(goal)
+            if goal.kind == 'turnin' then turnins[id] = index end
+            if id == questID and goal.kind == 'accept' then accept, acceptIndex = goal, index end
+        end
+        equal(accept ~= nil, true, case[1] .. ' retains pickup ' .. questID)
+        for _, prior in ipairs(case[3]) do
+            equal(turnins[prior] ~= nil and turnins[prior] < acceptIndex, true,
+                case[1] .. ' turns in ' .. prior .. ' before accepting ' .. questID)
+            local gated = false
+            for _, group in ipairs(accept.requiredQuests or {}) do
+                if group.mode == 'all' then
+                    for _, id in ipairs(group.quests) do if id == prior then gated = true end end
+                end
+            end
+            equal(gated, true, 'Pickup ' .. questID .. ' requires observed completion of ' .. prior)
+        end
+        local snapshot = state(1, 1, 'Alliance', 60)
+        equal(ns.OrderedRoutes:Prerequisites(accept, snapshot), false, 'Pickup ' .. questID .. ' blocks without turn-ins')
+        for index, prior in ipairs(case[3]) do
+            snapshot.completedQuests[prior] = true
+            equal(ns.OrderedRoutes:Prerequisites(accept, snapshot), index == #case[3],
+                'Pickup ' .. questID .. ' waits for every prerequisite turn-in')
+        end
+        for index, goal in ipairs(guide.goals) do
+            if ns.Engine:GetGoalQuestID(goal) == questID and goal.kind == 'objective' then
+                equal(acceptIndex < index, true, 'Pickup precedes objective ' .. goal.id)
+            end
+        end
+    end
+    local removed = { [421] = true, [422] = true, [423] = true, [424] = true,
+        [99] = true, [98298] = true, [98299] = true }
+    for id, guide in pairs(ns.guides) do
+        for _, goal in ipairs(guide.goals) do
+            local quest = ns.Engine:GetGoalQuestID(goal) or goal.checkpointQuest or goal.referenceQuest
+            equal(removed[quest] == true, false, id .. ' omits the Arugal chain action ' .. goal.id)
+            for _, group in ipairs(goal.requiredQuests or {}) do
+                for _, prior in ipairs(group.quests) do
+                    equal(removed[prior] == true, false, goal.id .. ' does not require a removed quest')
+                end
+            end
+        end
+    end
+    local goals = {}
+    for _, goal in ipairs(ns.guides['leveling-era-elwynn-forest'].goals) do
+        local quest = ns.Engine:GetGoalQuestID(goal)
+        if quest == 91741 or quest == 92124 or quest == 91743 or quest == 91745 then goals[#goals + 1] = goal end
+    end
+    ns:RegisterGuide({ id = 'test-northshire-books', title = 'Northshire books', category = 'Leveling Quest Guides',
+        revision = 1, routeMode = 'ordered', goals = goals })
+    local snapshot = state(1, 1, 'Alliance', 6)
+    snapshot.completedQuests[91741] = true
+    journey('test-northshire-books', snapshot, { 'accept:92124', 'turnin:92124',
+        'accept:91743', 'objective:91743', 'turnin:91743', 'accept:91745', 'turnin:91745' })
+    goals = {}
+    for _, goal in ipairs(ns.guides['leveling-era-dun-morogh'].goals) do
+        local quest = ns.Engine:GetGoalQuestID(goal) or goal.checkpointQuest
+        if quest and quest >= 99158 and quest <= 99162 then goals[#goals + 1] = goal end
+    end
+    ns:RegisterGuide({ id = 'test-finding-warmth', title = 'Finding Warmth', category = 'Leveling Quest Guides',
+        revision = 1, routeMode = 'ordered', goals = goals })
+    snapshot = state(3, 1, 'Alliance', 6)
+    snapshot.completedQuests[99158] = true
+    journey('test-finding-warmth', snapshot, { 'accept:99159', 'objective:99159', 'turnin:99159',
+        'accept:99160', 'accept:99162', 'objective:99160', 'objective:99162', 'turnin:99160',
+        'accept:99161', 'objective:99161', 'turnin:99161', 'turnin:99162' })
+end
+
 print('Ordered production journey tests passed: ' .. assertions .. ' assertions')

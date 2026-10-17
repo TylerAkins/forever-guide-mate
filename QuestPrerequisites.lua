@@ -135,7 +135,6 @@ ns:RegisterQuestPrerequisite({ quest = 370, mode = "any", quests = { 427 }, note
 ns:RegisterQuestPrerequisite({ quest = 371, mode = "any", quests = { 370 }, note = "At War With The Scarlet Crusade follows quest 370." })
 ns:RegisterQuestPrerequisite({ quest = 407, mode = "any", quests = { 365 }, note = "Fields of Grief follows quest 365." })
 ns:RegisterQuestPrerequisite({ quest = 420, mode = "any", quests = { 282 }, note = "Senir's Observations follows quest 282." })
-ns:RegisterQuestPrerequisite({ quest = 423, mode = "any", quests = { 422 }, note = "Arugal's Folly follows quest 422." })
 ns:RegisterQuestPrerequisite({ quest = 457, mode = "any", quests = { 456 }, note = "The Balance of Nature follows quest 456." })
 ns:RegisterQuestPrerequisite({ quest = 459, mode = "any", quests = { 458 }, note = "The Woodland Protector follows quest 458." })
 ns:RegisterQuestPrerequisite({ quest = 492, mode = "any", quests = { 369 }, note = "A New Plague follows quest 369." })
@@ -730,22 +729,6 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
-    quest = 98298,
-    mode = "all",
-    quests = { 99 },
-    conditions = { faction = "Horde" },
-    note = "Dalar's worgen follow-up is offered after Pyrewood Village is turned in.",
-})
-
-ns:RegisterQuestPrerequisite({
-    quest = 98299,
-    mode = "all",
-    quests = { 98298 },
-    conditions = { faction = "Horde" },
-    note = "Stop the Spread is offered after the worgen bits are turned in to Dalar Dawnweaver.",
-})
-
-ns:RegisterQuestPrerequisite({
     quest = 95774,
     mode = "all",
     quests = { 4921 },
@@ -1050,3 +1033,27 @@ ns:RegisterQuestPrerequisite({
     quests = { 94490 },
     note = "The Fate of the Den follows Ripped Missive.",
 })
+
+ns:RegisterQuestPrerequisite({ quest = 92124, mode = "all", quests = { 91741 } })
+
+ns:RegisterQuestPrerequisite({ quest = 91743, mode = "all", quests = { 92124 } })
+
+ns:RegisterQuestPrerequisite({ quest = 91745, mode = "all", quests = { 91743 } })
+
+ns:RegisterQuestPrerequisite({ quest = 98322, mode = "all", quests = { 420 } })
+
+ns:RegisterQuestPrerequisite({ quest = 98319, mode = "all", quests = { 98322 } })
+
+ns:RegisterQuestPrerequisite({ quest = 98323, mode = "all", quests = { 98319 } })
+
+ns:RegisterQuestPrerequisite({ quest = 99159, mode = "all", quests = { 99158 } })
+
+ns:RegisterQuestPrerequisite({ quest = 99160, mode = "all", quests = { 99159 } })
+
+ns:RegisterQuestPrerequisite({ quest = 99161, mode = "all", quests = { 99160 } })
+
+ns:RegisterQuestPrerequisite({ quest = 99162, mode = "all", quests = { 99159 } })
+
+ns:RegisterQuestPrerequisite({ quest = 92745, mode = "all", quests = { 92742, 92744 } })
+
+ns:RegisterQuestPrerequisite({ quest = 501, mode = "all", quests = { 499 } })

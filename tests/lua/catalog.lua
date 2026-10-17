@@ -9,6 +9,8 @@ end
 local expected = dofile('tests/fixtures/reference_itineraries.lua')
 local excluded = { [2741]=true,[2747]=true,[2748]=true,[2749]=true,[2750]=true,[2952]=true,
  [386]=true,[2930]=true,[7067]=true,[7041]=true,[3366]=true,[77573]=true,[10352]=true,[10354]=true,[3503]=true,[3421]=true }
+-- The Arugal chain is omitted because of slow spawns.
+for _, quest in ipairs({ 421, 422, 423, 424, 99, 98298, 98299 }) do excluded[quest] = true end
 for quest in pairs(dofile('tests/fixtures/separate_content.lua')) do excluded[quest]=true end
 -- Cloth donations and random egg exchanges are optional reputation strategy.
 for _,q in ipairs({7791,7793,7794,7795,7799,7800,7802,7803,7804,7805,7807,7808,7809,7811,7813,7814,7817,7818,7820,7821,7822,7823,7824,7826,7827,7831,7833,7834,7835,7836}) do excluded[q]=true end
@@ -18,8 +20,11 @@ for guideID, quests in pairs(dofile('tests/fixtures/starter_detour_cuts.lua')) d
  starterCuts[guideID] = {}
  for _, questID in ipairs(quests) do starterCuts[guideID][questID] = true end
 end
--- These starter guides intentionally combine nearby quest actions into a single outing.
+-- These actions depart from reference order for verified prerequisites or shared outings.
 local intentionalOutingReorders = {
+ ['leveling-era-horde-hillsbrad-foothills'] = {
+  ['accept:501:0:10']=true,
+ },
  ['leveling-era-mulgore'] = {
   ['accept:749:0:79']=true, ['turnin:749:0:80']=true, ['accept:751:0:80']=true,
   ['turnin:751:0:119']=true,

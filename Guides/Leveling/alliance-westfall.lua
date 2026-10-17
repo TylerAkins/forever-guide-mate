@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 6,
+    revision = 7,
     title = "Westfall",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-westfall",
@@ -11691,32 +11691,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            route = {
-                { y = 0.53, mapID = 1436, label = "Alba Fairmoon", offMapText = "Travel to Alba Fairmoon.", x = 0.524 },
-            },
-            text = "Accept The State of the Mines from Alba Fairmoon in Sentinel Hill.",
-            id = "woven-accept-92745-the-state-of-the-mines",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 92745, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
             id = "level-before-woven-accept-98021-journey-to-sentinel-hill",
             kind = "note",
             text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
@@ -11803,32 +11777,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-98021-journey-to-sentinel-hill" },
-        },
-        {
-            route = {
-                { y = 0.234, mapID = 1436, label = "Kobold Digger", offMapText = "Travel to Kobold Digger.", x = 0.446 },
-            },
-            text = "The State of the Mines: slay 4 Kobold Diggers in the Jangolode Mine.",
-            id = "woven-objective-92745-kobold-digger",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 92745, index = 1 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-92745-the-state-of-the-mines" },
         },
         {
             text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. No saved spot for this, so the guide follows the pin in your quest log.",
@@ -11934,6 +11882,62 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-92744-murloc-gills", "woven-objective-92744-murloc-gills" },
+        },
+        {
+            route = {
+                { y = 0.53, mapID = 1436, label = "Alba Fairmoon", offMapText = "Travel to Alba Fairmoon.", x = 0.524 },
+            },
+            text = "Accept The State of the Mines from Alba Fairmoon in Sentinel Hill.",
+            id = "woven-accept-92745-the-state-of-the-mines",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 92745, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 92742, 92744 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            route = {
+                { y = 0.234, mapID = 1436, label = "Kobold Digger", offMapText = "Travel to Kobold Digger.", x = 0.446 },
+            },
+            text = "The State of the Mines: slay 4 Kobold Diggers in the Jangolode Mine.",
+            id = "woven-objective-92745-kobold-digger",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 92745, index = 1 },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 92742, 92744 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-92745-the-state-of-the-mines" },
         },
         {
             route = {
@@ -12085,7 +12089,9 @@ ns:RegisterGuide({
             complete = {
                 questObjective = { id = 92745, index = 2 },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 92742, 92744 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-92745-the-state-of-the-mines" },
@@ -12306,7 +12312,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 92745, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 92742, 92744 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {

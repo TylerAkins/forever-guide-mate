@@ -2680,57 +2680,6 @@
       },
       {
         "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "woven-accept-98298-arugals-folly"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Moonrage Bloodhowler"
-        ],
-        "actions": [
-          "woven-objective-98298-arugals-folly"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "woven-turnin-98298-arugals-folly",
-          "woven-accept-98299-stop-the-spread"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Haggard Refugee"
-        ],
-        "actions": [
-          "woven-objective-98299-stop-the-spread"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "woven-turnin-98299-stop-the-spread"
-        ]
-      },
-      {
-        "boundary": [
           8,
           1424,
           "Deathstalker Lesh"
@@ -2760,26 +2709,6 @@
         ],
         "actions": [
           "objective-496-elixir-of-suffering",
-          "level-before-accept-501-elixir-of-pain"
-        ]
-      },
-      {
-        "boundary": [
-          10,
-          1424,
-          "Apothecary Lydon"
-        ],
-        "actions": [
-          "accept-501-elixir-of-pain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
           "level-before-turnin-2479-hinott-s-assistance"
         ]
       },
@@ -2986,6 +2915,26 @@
         ],
         "actions": [
           "turnin-499-elixir-of-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-501-elixir-of-pain"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "accept-501-elixir-of-pain"
         ]
       },
       {
@@ -35399,7 +35348,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 6,
+    "revision": 7,
     "visits": [
       {
         "boundary": [
@@ -39263,8 +39212,7 @@
         ],
         "actions": [
           "woven-accept-92742-testing-the-wells",
-          "woven-accept-92744-murloc-gills",
-          "woven-accept-92745-the-state-of-the-mines"
+          "woven-accept-92744-murloc-gills"
         ]
       },
       {
@@ -39301,16 +39249,6 @@
         "boundary": [
           null,
           1436,
-          "Kobold Digger"
-        ],
-        "actions": [
-          "woven-objective-92745-kobold-digger"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
           "Saldean's Farm"
         ],
         "actions": [
@@ -39335,7 +39273,18 @@
         ],
         "actions": [
           "woven-turnin-92742-testing-the-wells",
-          "woven-turnin-92744-murloc-gills"
+          "woven-turnin-92744-murloc-gills",
+          "woven-accept-92745-the-state-of-the-mines"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1436,
+          "Kobold Digger"
+        ],
+        "actions": [
+          "woven-objective-92745-kobold-digger"
         ]
       },
       {
@@ -39427,7 +39376,7 @@
     ]
   },
   "leveling-era-dun-morogh": {
-    "revision": 9,
+    "revision": 10,
     "visits": [
       {
         "boundary": [
@@ -40064,6 +40013,26 @@
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98322-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Senir Whitebeard"
+        ],
+        "actions": [
+          "woven-accept-98322-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
           1426,
           "Eric Brighthammer"
         ],
@@ -40266,6 +40235,16 @@
       {
         "boundary": [
           null,
+          1426,
+          "Mountaineer Gretchen"
+        ],
+        "actions": [
+          "woven-turnin-98322-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
           null,
           null
         ],
@@ -40451,7 +40430,9 @@
           "Father Gavin"
         ],
         "actions": [
-          "woven-accept-99159-finding-warmth"
+          "woven-accept-99159-finding-warmth",
+          "woven-objective-99159-finding-warmth",
+          "woven-turnin-99159-finding-warmth"
         ]
       },
       {
@@ -40491,8 +40472,7 @@
           "Father Gavin"
         ],
         "actions": [
-          "woven-accept-99162-treacherous-cold",
-          "woven-objective-99159-finding-warmth"
+          "woven-accept-99162-treacherous-cold"
         ]
       },
       {
@@ -40513,7 +40493,6 @@
         ],
         "actions": [
           "woven-objective-99162-treacherous-cold",
-          "woven-turnin-99159-finding-warmth",
           "woven-turnin-99160-rimes-wrath"
         ]
       },
@@ -40626,36 +40605,6 @@
         ],
         "actions": [
           "woven-accept-98323-secure-the-mountain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-98322-secure-the-mountain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1426,
-          "Senir Whitebeard"
-        ],
-        "actions": [
-          "woven-accept-98322-secure-the-mountain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1426,
-          "Mountaineer Gretchen"
-        ],
-        "actions": [
-          "woven-turnin-98322-secure-the-mountain"
         ]
       },
       {
@@ -71502,7 +71451,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 7,
+    "revision": 8,
     "visits": [
       {
         "boundary": [
@@ -74681,26 +74630,6 @@
       },
       {
         "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-421-prove-your-worth"
-        ]
-      },
-      {
-        "boundary": [
-          8,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "accept-421-prove-your-worth"
-        ]
-      },
-      {
-        "boundary": [
           9,
           1421,
           "Shadow Priest Allister"
@@ -74804,37 +74733,6 @@
         "actions": [
           "turnin-6321-supplying-the-sepulcher",
           "accept-6323-ride-to-the-undercity"
-        ]
-      },
-      {
-        "boundary": [
-          15,
-          1421,
-          "Moonrage Whitescalp"
-        ],
-        "actions": [
-          "objective-421-1-moonrage-whitescalp"
-        ]
-      },
-      {
-        "boundary": [
-          16,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-421-prove-your-worth",
-          "accept-422-arugal-s-folly"
-        ]
-      },
-      {
-        "boundary": [
-          17,
-          1421,
-          "Remedy of Arugal"
-        ],
-        "actions": [
-          "objective-422-1-remedy-of-arugal"
         ]
       },
       {
@@ -74960,17 +74858,6 @@
       },
       {
         "boundary": [
-          29,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-422-arugal-s-folly",
-          "accept-423-arugal-s-folly"
-        ]
-      },
-      {
-        "boundary": [
           30,
           1421,
           "High Executor Hadrec"
@@ -75002,26 +74889,6 @@
       },
       {
         "boundary": [
-          32,
-          1421,
-          "Moonrage Darksoul"
-        ],
-        "actions": [
-          "objective-423-2-moonrage-darksoul"
-        ]
-      },
-      {
-        "boundary": [
-          33,
-          1421,
-          "Glutton Shackle"
-        ],
-        "actions": [
-          "objective-423-1-glutton-shackle"
-        ]
-      },
-      {
-        "boundary": [
           34,
           1421,
           "Border Crossings"
@@ -75049,26 +74916,6 @@
         "actions": [
           "turnin-478-maps-and-runes",
           "accept-481-dalar-s-analysis"
-        ]
-      },
-      {
-        "boundary": [
-          37,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-423-arugal-s-folly"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "accept-424-arugal-s-folly"
         ]
       },
       {
@@ -75303,16 +75150,6 @@
         "boundary": [
           null,
           1421,
-          "Grimson the Pale"
-        ],
-        "actions": [
-          "objective-424-1-grimson-the-pale"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
           "Ambermill"
         ],
         "actions": [
@@ -75323,41 +75160,10 @@
         "boundary": [
           null,
           1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-424-arugal-s-folly",
-          "accept-99-arugal-s-folly"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
           "Shadow Priest Allister"
         ],
         "actions": [
           "turnin-479-ambermill-investigations"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Pyrewood Village"
-        ],
-        "actions": [
-          "objective-99-1-pyrewood-shackle"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-99-arugal-s-folly"
         ]
       },
       {
@@ -89984,7 +89790,7 @@
     ]
   },
   "leveling-era-elwynn-forest": {
-    "revision": 8,
+    "revision": 9,
     "visits": [
       {
         "boundary": [
@@ -90424,6 +90230,26 @@
         ],
         "actions": [
           "woven-turnin-91741-nibbled-on-book",
+          "woven-accept-92124-book-inventory"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Daniel"
+        ],
+        "actions": [
+          "woven-turnin-92124-book-inventory"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
           "woven-accept-91743-rascally-rodents"
         ]
       },
@@ -90445,26 +90271,6 @@
         ],
         "actions": [
           "woven-turnin-91743-rascally-rodents",
-          "woven-accept-92124-book-inventory"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Daniel"
-        ],
-        "actions": [
-          "woven-turnin-92124-book-inventory"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Brother Paxton"
-        ],
-        "actions": [
           "woven-accept-91745-mining-consultant"
         ]
       },

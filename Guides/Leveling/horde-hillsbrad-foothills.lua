@@ -297,199 +297,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-95981-watching-the-roads", "woven-objective-95981-watching-the-roads" },
         },
         {
-            text = "Accept Arugal's Folly from Dalar Dawnweaver in the Sepulcher.",
-            route = {
-                { y = 0.398, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.442 },
-            },
-
-            id = "woven-accept-98298-arugals-folly",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98298, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 99 },
-                    conditions = { faction = "Horde" },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.74, mapID = 1421, label = "Moonrage Bloodhowler", offMapText = "Travel to Moonrage Bloodhowler.", x = 0.5 },
-            },
-            text = "Arugal's Folly: bring 6 Worgen Bits from Moonrage Bloodhowlers.",
-            id = "woven-objective-98298-arugals-folly",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98298, state = "complete" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 99 },
-                    conditions = { faction = "Horde" },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98298-arugals-folly" },
-        },
-        {
-            route = {
-                { y = 0.398, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.442 },
-            },
-            text = "Turn in Arugal's Folly to Dalar Dawnweaver in the Sepulcher.",
-            id = "woven-turnin-98298-arugals-folly",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98298, state = "completed" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 99 },
-                    conditions = { faction = "Horde" },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98298-arugals-folly", "woven-objective-98298-arugals-folly" },
-        },
-        {
-            route = {
-                { y = 0.398, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.442 },
-            },
-            text = "Accept Stop the Spread from Dalar Dawnweaver in the Sepulcher.",
-            id = "woven-accept-98299-stop-the-spread",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98299, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 98298 },
-                    conditions = { faction = "Horde" },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-
-        },
-        {
-            route = {
-                { y = 0.832, mapID = 1421, label = "Sickly Refugee", offMapText = "Travel to Sickly Refugee.", x = 0.454 },
-                { y = 0.864, mapID = 1421, label = "Haggard Refugee", offMapText = "Travel to Haggard Refugee.", x = 0.462 },
-            },
-            text = "Stop the Spread: slay 5 Sickly Refugees and 5 Haggard Refugees by the Greymane Wall.",
-            id = "woven-objective-98299-stop-the-spread",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98299, state = "complete" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 98298 },
-                    conditions = { faction = "Horde" },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98299-stop-the-spread" },
-        },
-        {
-            route = {
-                { y = 0.398, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.442 },
-            },
-            text = "Turn in Stop the Spread to Dalar Dawnweaver in the Sepulcher.",
-            id = "woven-turnin-98299-stop-the-spread",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98299, state = "completed" },
-            },
-            requiredQuests = {
-                {
-                    mode = "all",
-                    quests = { 98298 },
-                    conditions = { faction = "Horde" },
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98299-stop-the-spread", "woven-objective-98299-stop-the-spread" },
-        },
-        {
             route = {
                 { y = 0.474, mapID = 1424, label = "Deathstalker Lesh", offMapText = "Travel to Deathstalker Lesh in Hillsbrad Foothills.", x = 0.2078 },
             },
@@ -658,54 +465,6 @@ ns:RegisterGuide({
             },
             requiredQuests = {},
             useClientText = false,
-        },
-        {
-            id = "level-before-accept-501-elixir-of-pain",
-            kind = "note",
-            text = "Reach level 21 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 21 },
-            },
-            requiredLevel = 21,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 501,
-        },
-        {
-            route = {
-                { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
-            },
-            text = "Accept Elixir of Pain from Apothecary Lydon.",
-            id = "accept-501-elixir-of-pain",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 21 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 501, state = "activeOrCompleted" },
-            },
-            sourceStep = 10,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
             id = "level-before-turnin-2479-hinott-s-assistance",
@@ -1492,6 +1251,56 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-501-elixir-of-pain",
+            kind = "note",
+            text = "Reach level 21 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 21 },
+            },
+            requiredLevel = 21,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 501,
+        },
+        {
+            route = {
+                { y = 0.1906, mapID = 1424, label = "Apothecary Lydon", offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.", x = 0.6144 },
+            },
+            text = "Accept Elixir of Pain from Apothecary Lydon.",
+            id = "accept-501-elixir-of-pain",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 21 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 501, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {
+                { mode = "all", quests = { 499 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             text = "Turn in WANTED: Syndicate Personnel to High Executor Darthalia.",
             route = {
                 { y = 0.2046, mapID = 1424, label = "High Executor Darthalia", offMapText = "Travel to High Executor Darthalia in Hillsbrad Foothills.", x = 0.6233 },
@@ -1685,7 +1494,9 @@ ns:RegisterGuide({
                 { mapID = 1424, x = 0.418, y = 0.376, label = "Mountain Lion Blood", offMapText = "Travel to Mountain Lion Blood." },
             },
             sourceStep = 41,
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 499 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-501-elixir-of-pain" },
@@ -1713,7 +1524,9 @@ ns:RegisterGuide({
                 quest = { id = 501, state = "completed" },
             },
             sourceStep = 42,
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 499 } },
+            },
             useClientText = false,
             useClientPin = false,
         },
