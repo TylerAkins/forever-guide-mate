@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 9,
+    revision = 11,
     title = "Dwarf & Gnome Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-dun-morogh",
@@ -2127,119 +2127,6 @@ ns:RegisterGuide({
             dependsOn = { "woven-accept-94375-call-of-earth-return" },
         },
         {
-            id = "level-before-woven-accept-94472-earth-sapta",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = { level = { min = 4 } },
-            requiredLevel = 4,
-            checkpointQuest = 94472,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Accept Earth Sapta from Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-accept-94472-earth-sapta",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94472, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Bring Teo Hammerstorm the Earth Sapta he asks for. The guide follows the pin in your quest log.",
-            id = "woven-objective-94472-earth-sapta",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 94472, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-94472-earth-sapta" },
-        },
-        {
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", offMapText = "Travel to Teo Hammerstorm.", x = 0.288 },
-            },
-            text = "Turn in Earth Sapta to Teo Hammerstorm in Coldridge Valley.",
-            id = "woven-turnin-94472-earth-sapta",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 94472, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-94472-earth-sapta", "woven-objective-94472-earth-sapta" },
-        },
-        {
             id = "level-before-woven-accept-97277-grund-and-gozwin",
             kind = "note",
             text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
@@ -2511,6 +2398,53 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            id = "level-before-woven-accept-98322-secure-the-mountain",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = { level = { min = 4 } },
+            requiredLevel = 4,
+            checkpointQuest = 98322,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.538, mapID = 1426, label = "Senir Whitebeard", offMapText = "Travel to Senir Whitebeard.", x = 0.466 },
+            },
+            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
+            id = "woven-accept-98322-secure-the-mountain",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98322, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 420 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
             route = {
@@ -3051,6 +2985,34 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            route = {
+                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
+            },
+            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
+            id = "woven-turnin-98322-secure-the-mountain",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98322, state = "completed" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 420 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98322-secure-the-mountain" },
+        },
+        {
             id = "level-before-woven-accept-98319-secure-the-mountain",
             kind = "note",
             text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
@@ -3090,7 +3052,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 98319, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 98322 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
@@ -3243,7 +3207,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 98319, state = "complete" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 98322 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-98319-secure-the-mountain" },
@@ -3550,10 +3516,68 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99159, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99158 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Collect 14 pieces of Mostly Dry Firewood.",
+            id = "woven-objective-99159-finding-warmth",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99159, state = "complete" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 99158 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99159-finding-warmth" },
+        },
+        {
+            route = {
+                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
+            },
+            text = "Turn in Finding Warmth to Father Gavin.",
+            id = "woven-turnin-99159-finding-warmth",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 99159, state = "completed" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 99158 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-99159-finding-warmth", "woven-objective-99159-finding-warmth" },
         },
         {
             id = "level-before-woven-accept-99160-rimes-wrath",
@@ -3595,7 +3619,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99160, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99159 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
@@ -3640,36 +3666,12 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99162, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99159 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
-        {
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Collect 14 pieces of Mostly Dry Firewood.",
-            id = "woven-objective-99159-finding-warmth",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99159, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99159-finding-warmth" },
         },
         {
             route = {
@@ -3692,7 +3694,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99160, state = "complete" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99159 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-99160-rimes-wrath" },
@@ -3718,36 +3722,12 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99162, state = "complete" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99159 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-99162-treacherous-cold" },
-        },
-        {
-            route = {
-                { y = 0.448, mapID = 1426, label = "Father Gavin", offMapText = "Travel to Father Gavin.", x = 0.576 },
-            },
-            text = "Turn in Finding Warmth to Father Gavin.",
-            id = "woven-turnin-99159-finding-warmth",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 5 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99159, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-99159-finding-warmth", "woven-objective-99159-finding-warmth" },
         },
         {
             route = {
@@ -3770,7 +3750,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99160, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99159 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-99160-rimes-wrath", "woven-objective-99160-rimes-wrath" },
@@ -3815,7 +3797,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99161, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99160 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
@@ -3841,7 +3825,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99161, state = "complete" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99160 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-99161-rimes-wrath" },
@@ -3867,7 +3853,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99161, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99160 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-99161-rimes-wrath", "woven-objective-99161-rimes-wrath" },
@@ -3893,7 +3881,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 99162, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 99159 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-99162-treacherous-cold", "woven-objective-99162-treacherous-cold" },
@@ -4025,7 +4015,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 98319, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 98322 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-98319-secure-the-mountain", "woven-objective-98319-secure-the-mountain" },
@@ -4070,81 +4062,12 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 98323, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 98319 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
-        {
-            id = "level-before-woven-accept-98322-secure-the-mountain",
-            kind = "note",
-            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = { level = { min = 4 } },
-            requiredLevel = 4,
-            checkpointQuest = 98322,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.538, mapID = 1426, label = "Senir Whitebeard", offMapText = "Travel to Senir Whitebeard.", x = 0.466 },
-            },
-            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
-            id = "woven-accept-98322-secure-the-mountain",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98322, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            route = {
-                { y = 0.57, mapID = 1426, label = "Mountaineer Gretchen", offMapText = "Travel to Mountaineer Gretchen.", x = 0.44 },
-            },
-            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
-            id = "woven-turnin-98322-secure-the-mountain",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98322, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98322-secure-the-mountain" },
         },
         {
             route = {
@@ -4167,7 +4090,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 98323, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 98319 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-98323-secure-the-mountain" },

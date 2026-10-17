@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Warlock",
     category = "Class Quests",
     id = "class-warlock",
@@ -175,6 +175,26 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             classAction = "turnin-1599-beginnings",
+        },
+        {
+            id = "handoff-788-before-98575",
+            classAction = "handoff-788-before-98575",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
         },
         {
             route = {
@@ -5261,43 +5281,6 @@ ns:RegisterGuide({
             classAction = "accept-4784-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "objective-4784-quest-work",
-            conditions = {
-                all = {
-                    { class = 9 },
-                    {
-                        class = { 9 },
-                    },
-                    {
-                        level = { min = 31 },
-                    },
-                },
-            },
-            useClientPin = true,
-            dependsOn = { "accept-4784-components-for-the-enchanted-gold-bloodrobe" },
-            classAction = "objective-4784-quest-work",
-        },
-        {
-            route = {
-                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
-            },
-            dependsOn = { "accept-4784-components-for-the-enchanted-gold-bloodrobe", "objective-4784-quest-work" },
-            id = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
-            conditions = {
-                all = {
-                    { class = 9 },
-                    {
-                        class = { 9 },
-                    },
-                    {
-                        level = { min = 31 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
-        },
-        {
             route = {
                 { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
             },
@@ -5336,6 +5319,43 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             classAction = "turnin-4785-fine-gold-thread",
+        },
+        {
+            id = "objective-4784-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-4784-components-for-the-enchanted-gold-bloodrobe" },
+            classAction = "objective-4784-quest-work",
+        },
+        {
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4784-components-for-the-enchanted-gold-bloodrobe", "objective-4784-quest-work" },
+            id = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
         },
         {
             route = {

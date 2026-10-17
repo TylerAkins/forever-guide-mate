@@ -37,7 +37,7 @@ class RoutePlacementTests(unittest.TestCase):
     def test_silverpine_additions_use_the_later_sepulcher_visit(self):
         early = goals('horde-silverpine-forest')
         later = goals('horde-hillsbrad-foothills')
-        moved = {95981, 98298, 98299}
+        moved = {95981}
         self.assertFalse(moved & {g.quest_id for g in early})
         start = next(i for i, g in enumerate(later) if g.kind == 'accept' and g.quest_id == 493)
         end = next(i for i, g in enumerate(later) if g.kind == 'accept' and g.quest_id == 494)
@@ -45,6 +45,11 @@ class RoutePlacementTests(unittest.TestCase):
             actions = [(i, g.kind) for i, g in enumerate(later) if g.quest_id == quest]
             self.assertEqual([kind for _, kind in actions], ['accept', 'objective', 'turnin'])
             self.assertTrue(all(start < i < end for i, _ in actions))
+
+    def test_arugal_chain_is_removed_from_both_silverpine_visits(self):
+        removed = {421, 422, 423, 424, 99, 98298, 98299}
+        for chapter in ('horde-silverpine-forest', 'horde-hillsbrad-foothills'):
+            self.assertFalse(removed & {g.quest_id for g in goals(chapter)})
 
     def test_additions_without_a_suitable_later_visit_are_omitted(self):
         for name, quests in {

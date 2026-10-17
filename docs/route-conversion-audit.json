@@ -7410,6 +7410,76 @@
       "action": "accept-2864-tran-rek",
       "quest": 2864,
       "reason": "Optional dungeon/PvP chain is kept in the separate library; its dependent optional world followups are outside the leveling itinerary."
+    },
+    {
+      "guide": "leveling-era-horde-silverpine-forest",
+      "quest": 421,
+      "reason": "Remove the Prove Your Worth and Arugal's Folly chain, including Stop the Spread, at the user's request because of slow spawns."
+    },
+    {
+      "guide": "leveling-era-horde-silverpine-forest",
+      "quest": 422,
+      "reason": "Remove the Prove Your Worth and Arugal's Folly chain, including Stop the Spread, at the user's request because of slow spawns."
+    },
+    {
+      "guide": "leveling-era-horde-silverpine-forest",
+      "quest": 423,
+      "reason": "Remove the Prove Your Worth and Arugal's Folly chain, including Stop the Spread, at the user's request because of slow spawns."
+    },
+    {
+      "guide": "leveling-era-horde-silverpine-forest",
+      "quest": 424,
+      "reason": "Remove the Prove Your Worth and Arugal's Folly chain, including Stop the Spread, at the user's request because of slow spawns."
+    },
+    {
+      "guide": "leveling-era-horde-silverpine-forest",
+      "quest": 99,
+      "reason": "Remove the Prove Your Worth and Arugal's Folly chain, including Stop the Spread, at the user's request because of slow spawns."
+    },
+    {
+      "guide": "leveling-era-horde-hillsbrad-foothills",
+      "quest": 98298,
+      "reason": "Remove the Prove Your Worth and Arugal's Folly chain, including Stop the Spread, at the user's request because of slow spawns."
+    },
+    {
+      "guide": "leveling-era-horde-hillsbrad-foothills",
+      "quest": 98299,
+      "reason": "Remove the Prove Your Worth and Arugal's Folly chain, including Stop the Spread, at the user's request because of slow spawns."
+    },
+    {
+      "guide": "class-shaman",
+      "quest": 94472,
+      "reason": "Replacement Sapta is not mandatory after its consuming quest."
+    },
+    {
+      "guide": "class-shaman",
+      "quest": 94473,
+      "reason": "Replacement Sapta is not mandatory after its consuming quest."
+    },
+    {
+      "guide": "leveling-era-dun-morogh",
+      "quest": 94472,
+      "reason": "Replacement Sapta is not mandatory after its consuming quest."
+    },
+    {
+      "guide": "leveling-era-alliance-westfall",
+      "quest": 94473,
+      "reason": "Replacement Sapta is not mandatory after its consuming quest."
+    },
+    {
+      "guide": "class-rogue",
+      "quest": 6701,
+      "reason": "Optional repeatable reputation work is not required for class progression."
+    },
+    {
+      "guide": "leveling-era-horde-the-barrens",
+      "quest": 6701,
+      "reason": "Optional repeatable reputation work is not required for class progression."
+    },
+    {
+      "guide": "leveling-era-alliance-wetlands",
+      "quest": 6701,
+      "reason": "Optional repeatable reputation work is not required for class progression."
     }
   ],
   "routes": {
@@ -14369,9 +14439,7 @@
     "moved": [
       {
         "quests": [
-          95981,
-          98298,
-          98299
+          95981
         ],
         "from": "leveling-era-horde-silverpine-forest",
         "to": "leveling-era-horde-hillsbrad-foothills",

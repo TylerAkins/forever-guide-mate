@@ -6650,24 +6650,27 @@ function TestSameTitleQuestChainGates()
         for _, goal in ipairs(guide.goals) do
             local questID = goal.kind == "accept" and goal.complete and goal.complete.quest
                 and goal.complete.quest.id
-            local previousQuest = questID and chains[questID]
-            if previousQuest and turnins[previousQuest] then
-                seen[questID] = true
-                local function Matches(dependency)
-                    local prior = actual.Engine:GetGoal(guide, dependency)
-                    return prior and prior.kind == "turnin" and prior.complete and prior.complete.quest
-                        and prior.complete.quest.id == previousQuest
-                end
-                local linked = false
-                for _, dependency in ipairs(goal.dependsOn or {}) do
-                    if Matches(dependency) then linked = true end
-                end
-                for _, group in ipairs(goal.questPrerequisites or {}) do
-                    for _, dependency in ipairs(group.goalIDs or {}) do
+            local prerequisites = questID and chains[questID]
+            if type(prerequisites) == "number" then prerequisites = { prerequisites } end
+            for _, previousQuest in ipairs(prerequisites or {}) do
+                if turnins[previousQuest] then
+                    seen[questID] = true
+                    local function Matches(dependency)
+                        local prior = actual.Engine:GetGoal(guide, dependency)
+                        return prior and prior.kind == "turnin" and prior.complete and prior.complete.quest
+                            and prior.complete.quest.id == previousQuest
+                    end
+                    local linked = false
+                    for _, dependency in ipairs(goal.dependsOn or {}) do
                         if Matches(dependency) then linked = true end
                     end
+                    for _, group in ipairs(goal.questPrerequisites or {}) do
+                        for _, dependency in ipairs(group.goalIDs or {}) do
+                            if Matches(dependency) then linked = true end
+                        end
+                    end
+                    Check(linked, guideID .. " " .. goal.id .. " waits for quest " .. previousQuest)
                 end
-                Check(linked, guideID .. " " .. goal.id .. " waits for quest " .. previousQuest)
             end
         end
     end

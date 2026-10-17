@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Priest",
     category = "Class Quests",
     id = "class-priest",
@@ -14,6 +14,26 @@ ns:RegisterGuide({
         },
     },
     goals = {
+        {
+            id = "handoff-179-before-98574",
+            classAction = "handoff-179-before-98574",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+        },
         {
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },

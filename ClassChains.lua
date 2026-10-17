@@ -9,6 +9,22 @@ local KOR_GEM_NOT_NEEDED = {
     },
 }
 
+local FINISH_ACTIVE_QUESTS = { [28] = true, [29] = true }
+
+-- Repeatable hand-ins stop when their reward is owned or its consuming work is done.
+local REPEATABLE_REWARDS_NOT_NEEDED = {
+    [1714] = { any = { { item = "Essence of the Exile" }, { quest = { id = 1712, state = "completed" } } } },
+    [1641] = { any = { { item = "Tome of Divinity" }, { quest = { id = 1642, state = "activeOrCompleted" } } } },
+    [1645] = { any = { { item = "Tome of Divinity" }, { quest = { id = 1646, state = "activeOrCompleted" } } } },
+    [1789] = { any = { { item = "Symbol of Life" }, { quest = { id = 1784, state = "completed" } } } },
+    [1790] = { any = { { item = "Symbol of Life" }, { quest = { id = 1787, state = "completed" } } } },
+    [1793] = { any = { { item = "Tome of Valor" }, { quest = { id = 1649, state = "activeOrCompleted" } } } },
+    [1794] = { any = { { item = "Tome of Valor" }, { quest = { id = 1649, state = "activeOrCompleted" } } } },
+    [1655] = { any = { { item = "Jordan's Refined Ore Shipment" }, { quest = { id = 1654, state = "completed" } } } },
+    [7645] = { any = { { item = "Manna-Enriched Horse Feed" }, { quest = { id = 7643, state = "completed" } } } },
+    [4785] = { any = { { item = "Fine Gold Thread" }, { quest = { id = 4784, state = "completed" } } } },
+}
+
 ns.classActions = {
     ["accept-98601-a-difficult-path"] = {
         text = "Accept A Difficult Path from Shadow Priest Sarvis in Tirisfal Glades. This step is for Undead.",
@@ -858,7 +874,7 @@ ns.classActions = {
             quest = { id = 2997, state = "activeOrCompleted" },
         },
         requiredQuests = {},
-        alternativeQuests = { 2999, 3000 },
+        alternativeQuests = { 2999, 3000, 1646 },
         useClientText = false,
     },
     ["turnin-2997-tome-of-divinity"] = {
@@ -868,7 +884,7 @@ ns.classActions = {
             quest = { id = 2997, state = "completed" },
         },
         requiredQuests = {},
-        alternativeQuests = { 2999, 3000 },
+        alternativeQuests = { 2999, 3000, 1646 },
         useClientText = false,
     },
     ["accept-1645-the-tome-of-divinity"] = {
@@ -1606,7 +1622,7 @@ ns.classActions = {
             quest = { id = 2998, state = "activeOrCompleted" },
         },
         requiredQuests = {},
-        alternativeQuests = { 3681 },
+        alternativeQuests = { 3681, 1642 },
         useClientText = false,
     },
     ["turnin-2998-tome-of-divinity"] = {
@@ -1616,7 +1632,7 @@ ns.classActions = {
             quest = { id = 2998, state = "completed" },
         },
         requiredQuests = {},
-        alternativeQuests = { 3681 },
+        alternativeQuests = { 3681, 1642 },
         useClientText = false,
     },
     ["accept-2999-tome-of-divinity"] = {
@@ -1626,7 +1642,7 @@ ns.classActions = {
             quest = { id = 2999, state = "activeOrCompleted" },
         },
         requiredQuests = {},
-        alternativeQuests = { 2997, 3000 },
+        alternativeQuests = { 2997, 3000, 1646 },
         useClientText = false,
     },
     ["turnin-2999-tome-of-divinity"] = {
@@ -1636,7 +1652,7 @@ ns.classActions = {
             quest = { id = 2999, state = "completed" },
         },
         requiredQuests = {},
-        alternativeQuests = { 2997, 3000 },
+        alternativeQuests = { 2997, 3000, 1646 },
         useClientText = false,
     },
     ["accept-3000-tome-of-divinity"] = {
@@ -1646,7 +1662,7 @@ ns.classActions = {
             quest = { id = 3000, state = "activeOrCompleted" },
         },
         requiredQuests = {},
-        alternativeQuests = { 2997, 2999 },
+        alternativeQuests = { 2997, 2999, 1646 },
         useClientText = false,
     },
     ["turnin-3000-tome-of-divinity"] = {
@@ -1656,7 +1672,7 @@ ns.classActions = {
             quest = { id = 3000, state = "completed" },
         },
         requiredQuests = {},
-        alternativeQuests = { 2997, 2999 },
+        alternativeQuests = { 2997, 2999, 1646 },
         useClientText = false,
     },
     ["accept-3681-tome-of-divinity"] = {
@@ -1666,7 +1682,7 @@ ns.classActions = {
             quest = { id = 3681, state = "activeOrCompleted" },
         },
         requiredQuests = {},
-        alternativeQuests = { 2998 },
+        alternativeQuests = { 2998, 1642 },
         useClientText = false,
     },
     ["turnin-3681-tome-of-divinity"] = {
@@ -1676,7 +1692,7 @@ ns.classActions = {
             quest = { id = 3681, state = "completed" },
         },
         requiredQuests = {},
-        alternativeQuests = { 2998 },
+        alternativeQuests = { 2998, 1642 },
         useClientText = false,
     },
     ["accept-91858-diplomatic-incident"] = {
@@ -4356,16 +4372,20 @@ ns.classActions = {
         complete = {
             quest = { id = 97286, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "any", quests = { 78124, 78127, 78142, 78143, 78145, 78146, 78147, 78148, 78149, 79091, 79092, 79093, 79094, 79095, 79096, 79097, 79535, 79947, 79948, 79949, 79950, 79951, 79952, 79953, 81947, 81949, 81951, 81952, 81953, 81954, 81955, 81956, 84395, 84396, 84397, 84398, 84399, 84400, 84401, 84402 } },
+        },
         useClientText = false,
     },
     ["turnin-97286-research-access"] = {
-        text = "Turn in Research Access to Owen Thadd in Undercity.",
+        text = "Turn in Research Access to Garion Wendell in Stormwind City.",
         kind = "turnin",
         complete = {
             quest = { id = 97286, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "any", quests = { 78124, 78127, 78142, 78143, 78145, 78146, 78147, 78148, 78149, 79091, 79092, 79093, 79094, 79095, 79096, 79097, 79535, 79947, 79948, 79949, 79950, 79951, 79952, 79953, 81947, 81949, 81951, 81952, 81953, 81954, 81955, 81956, 84395, 84396, 84397, 84398, 84399, 84400, 84401, 84402 } },
+        },
         useClientText = false,
     },
     ["accept-98576-glyphic-parchment"] = {
@@ -4374,7 +4394,9 @@ ns.classActions = {
         complete = {
             quest = { id = 98576, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 788 } },
+        },
         useClientText = false,
     },
     ["turnin-98576-glyphic-parchment"] = {
@@ -4383,7 +4405,9 @@ ns.classActions = {
         complete = {
             quest = { id = 98576, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 788 } },
+        },
         useClientText = false,
     },
     ["accept-3104-glyphic-letter"] = {
@@ -5825,7 +5849,9 @@ ns.classActions = {
         complete = {
             quest = { id = 92479, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 7 } },
+        },
         useClientText = false,
     },
     ["turnin-92479-a-scribbled-letter"] = {
@@ -5834,7 +5860,9 @@ ns.classActions = {
         complete = {
             quest = { id = 92479, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 7 } },
+        },
         useClientText = false,
     },
     ["accept-3106-simple-rune"] = {
@@ -8198,7 +8226,9 @@ ns.classActions = {
         complete = {
             quest = { id = 98581, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 179 } },
+        },
         useClientText = false,
     },
     ["turnin-98581-archaic-rune"] = {
@@ -8207,7 +8237,9 @@ ns.classActions = {
         complete = {
             quest = { id = 98581, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 179 } },
+        },
         useClientText = false,
     },
     ["accept-3084-rune-inscribed-tablet"] = {
@@ -8666,7 +8698,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94373, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 98581 }, conditions = { race = 3 } },
+        },
         useClientText = false,
     },
     ["objective-94373-call-of-earth"] = {
@@ -8675,7 +8709,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94373, state = "complete" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 98581 }, conditions = { race = 3 } },
+        },
         useClientText = false,
     },
     ["turnin-94373-call-of-earth"] = {
@@ -8684,7 +8720,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94373, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 98581 }, conditions = { race = 3 } },
+        },
         useClientText = false,
     },
     ["accept-94374-call-of-earth"] = {
@@ -8708,7 +8746,7 @@ ns.classActions = {
         useClientText = false,
     },
     ["objective-94374-reviewed-mechanics"] = {
-        text = "Find the Spirit Stone in Dun Morogh and drink Earth Sapta. Speak with the Minor Manifestation of Earth that appears.",
+        text = "If you lost the Earth Sapta, ask Teo Hammerstorm for a replacement before continuing. Find the Spirit Stone in Dun Morogh and drink Earth Sapta. Speak with the Minor Manifestation of Earth that appears.",
         kind = "objective",
         complete = {
             quest = { id = 94374, state = "complete" },
@@ -8787,24 +8825,6 @@ ns.classActions = {
         },
         useClientText = false,
     },
-    ["accept-94472-earth-sapta"] = {
-        text = "Accept Earth Sapta from Teo Hammerstorm in Dun Morogh.",
-        kind = "accept",
-        complete = {
-            quest = { id = 94472, state = "activeOrCompleted" },
-        },
-        requiredQuests = {},
-        useClientText = false,
-    },
-    ["turnin-94472-earth-sapta"] = {
-        text = "Turn in Earth Sapta to Teo Hammerstorm in Dun Morogh.",
-        kind = "turnin",
-        complete = {
-            quest = { id = 94472, state = "completed" },
-        },
-        requiredQuests = {},
-        useClientText = false,
-    },
     ["accept-94449-call-of-fire"] = {
         text = "Accept Call of Fire from Eldrun Stormbreaker.",
         kind = "accept",
@@ -8869,7 +8889,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94466, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 94465 } },
+        },
         useClientText = false,
     },
     ["objective-94466-call-of-fire"] = {
@@ -8878,7 +8900,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94466, state = "complete" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 94465 } },
+        },
         useClientText = false,
     },
     ["turnin-94466-call-of-fire"] = {
@@ -8887,7 +8911,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94466, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 94465 } },
+        },
         useClientText = false,
     },
     ["accept-94467-call-of-fire"] = {
@@ -8896,16 +8922,20 @@ ns.classActions = {
         complete = {
             quest = { id = 94467, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 94466 } },
+        },
         useClientText = false,
     },
     ["objective-94467-quest-work"] = {
-        text = "For Call of Fire: Defeat the Minor Manifestation of Fire, and place the Glowing Ember in the brazier atop the Shrine of Eternal Flame.",
+        text = "If you lost the Fire Sapta, ask Braldir Ashmantle for a replacement before continuing. For Call of Fire: Defeat the Minor Manifestation of Fire, and place the Glowing Ember in the brazier atop the Shrine of Eternal Flame.",
         kind = "objective",
         complete = {
             quest = { id = 94467, state = "complete" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 94466 } },
+        },
         useClientText = false,
     },
     ["turnin-94467-call-of-fire"] = {
@@ -8914,7 +8944,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94467, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 94466 } },
+        },
         useClientText = false,
     },
     ["accept-94468-call-of-fire"] = {
@@ -8923,7 +8955,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94468, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 94467 } },
+        },
         useClientText = false,
     },
     ["turnin-94468-call-of-fire"] = {
@@ -8932,25 +8966,9 @@ ns.classActions = {
         complete = {
             quest = { id = 94468, state = "completed" },
         },
-        requiredQuests = {},
-        useClientText = false,
-    },
-    ["accept-94473-fire-sapta"] = {
-        text = "Accept Fire Sapta from Braldir Ashmantle in Loch Modan.",
-        kind = "accept",
-        complete = {
-            quest = { id = 94473, state = "activeOrCompleted" },
+        requiredQuests = {
+            { mode = "all", quests = { 94467 } },
         },
-        requiredQuests = {},
-        useClientText = false,
-    },
-    ["turnin-94473-fire-sapta"] = {
-        text = "Turn in Fire Sapta to Braldir Ashmantle in Loch Modan.",
-        kind = "turnin",
-        complete = {
-            quest = { id = 94473, state = "completed" },
-        },
-        requiredQuests = {},
         useClientText = false,
     },
     ["accept-97243-call-of-fire"] = {
@@ -11537,51 +11555,6 @@ ns.classActions = {
         requiredQuests = {},
         useClientText = false,
     },
-    ["accept-6701-syndicate-emblems"] = {
-        text = "Accept Syndicate Emblems from Ravenholdt Guard in Hillsbrad Foothills.",
-        kind = "accept",
-        complete = {
-            quest = { id = 6701, state = "activeOrCompleted" },
-        },
-        requiredQuests = {
-            {
-                mode = "any",
-                quests = { 6681 },
-                conditions = {},
-            },
-        },
-        useClientText = false,
-    },
-    ["objective-6701-syndicate-emblems"] = {
-        text = "Kill Syndicate in Hillsbrad Foothills and Alterac Mountains and collect Syndicate Emblems.",
-        kind = "objective",
-        complete = {
-            quest = { id = 6701, state = "complete" },
-        },
-        requiredQuests = {
-            {
-                mode = "any",
-                quests = { 6681 },
-                conditions = {},
-            },
-        },
-        useClientText = false,
-    },
-    ["turnin-6701-syndicate-emblems"] = {
-        text = "Turn in Syndicate Emblems to Ravenholdt Guard in Hillsbrad Foothills.",
-        kind = "turnin",
-        complete = {
-            quest = { id = 6701, state = "completed" },
-        },
-        requiredQuests = {
-            {
-                mode = "any",
-                quests = { 6681 },
-                conditions = {},
-            },
-        },
-        useClientText = false,
-    },
     ["accept-8233-a-simple-request"] = {
         text = "Accept A Simple Request from Osborne the Night Man.",
         kind = "accept",
@@ -11699,7 +11672,9 @@ ns.classActions = {
         complete = {
             quest = { id = 98574, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 179 } },
+        },
         useClientText = false,
     },
     ["turnin-98574-hallowed-memorandum"] = {
@@ -11708,7 +11683,9 @@ ns.classActions = {
         complete = {
             quest = { id = 98574, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 179 } },
+        },
         useClientText = false,
     },
     ["accept-3085-hallowed-tablet"] = {
@@ -13146,7 +13123,9 @@ ns.classActions = {
         complete = {
             quest = { id = 98575, state = "activeOrCompleted" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 788 } },
+        },
         useClientText = false,
     },
     ["turnin-98575-tainted-tablet"] = {
@@ -13155,7 +13134,9 @@ ns.classActions = {
         complete = {
             quest = { id = 98575, state = "completed" },
         },
-        requiredQuests = {},
+        requiredQuests = {
+            { mode = "all", quests = { 788 } },
+        },
         useClientText = false,
     },
     ["accept-1485-vile-familiars"] = {
@@ -14664,6 +14645,7 @@ ns.classActions = {
             quest = { id = 2996, state = "activeOrCompleted" },
         },
         requiredQuests = {},
+        alternativeQuests = { 1801 },
         useClientText = false,
     },
     ["turnin-2996-seeking-strahad"] = {
@@ -14673,6 +14655,7 @@ ns.classActions = {
             quest = { id = 2996, state = "completed" },
         },
         requiredQuests = {},
+        alternativeQuests = { 1801 },
         useClientText = false,
     },
     ["accept-1801-tome-of-the-cabal"] = {
@@ -14850,6 +14833,7 @@ ns.classActions = {
             quest = { id = 3001, state = "activeOrCompleted" },
         },
         requiredQuests = {},
+        alternativeQuests = { 1801 },
         useClientText = false,
     },
     ["turnin-3001-seeking-strahad"] = {
@@ -14859,6 +14843,7 @@ ns.classActions = {
             quest = { id = 3001, state = "completed" },
         },
         requiredQuests = {},
+        alternativeQuests = { 1801 },
         useClientText = false,
     },
     ["accept-4736-in-search-of-menara-voidrender"] = {
@@ -17441,7 +17426,7 @@ ns.classActions = {
             quest = { id = 6071, state = "activeOrCompleted" },
         },
         requiredQuests = {},
-        alternativeQuests = { 6072, 6073, 6721, 6722 },
+        alternativeQuests = { 6072, 6073, 6721, 6722, 6063 },
         useClientText = false,
     },
     ["turnin-6071-the-hunters-path"] = {
@@ -17451,7 +17436,7 @@ ns.classActions = {
             quest = { id = 6071, state = "completed" },
         },
         requiredQuests = {},
-        alternativeQuests = { 6072, 6073, 6721, 6722 },
+        alternativeQuests = { 6072, 6073, 6721, 6722, 6063 },
         useClientText = false,
     },
     ["accept-6074-the-hunters-path"] = {
@@ -17887,6 +17872,82 @@ ns.classActions = {
         },
         useClientText = false,
     },
+    ["handoff-179-before-98574"] = {
+        text = "Finish Dwarven Outfitters in the Dwarf & Gnome Starter guide, then return to this class route.",
+        kind = "note",
+        complete = { all = { { quest = { id = 179, state = "completed" } } } },
+        requiredQuests = {},
+        useClientText = false,
+    },
+    ["handoff-179-before-98581"] = {
+        text = "Finish Dwarven Outfitters in the Dwarf & Gnome Starter guide, then return to this class route.",
+        kind = "note",
+        complete = { all = { { quest = { id = 179, state = "completed" } } } },
+        requiredQuests = {},
+        useClientText = false,
+    },
+    ["handoff-788-before-98576"] = {
+        text = "Finish Cutting Teeth in the Orc & Troll Starter guide, then return to this class route.",
+        kind = "note",
+        complete = { all = { { quest = { id = 788, state = "completed" } } } },
+        requiredQuests = {},
+        useClientText = false,
+    },
+    ["handoff-788-before-98575"] = {
+        text = "Finish Cutting Teeth in the Orc & Troll Starter guide, then return to this class route.",
+        kind = "note",
+        complete = { all = { { quest = { id = 788, state = "completed" } } } },
+        requiredQuests = {},
+        useClientText = false,
+    },
+    ["handoff-research-book"] = {
+        text = "Find and read a mage research book before requesting Research Access. Use Library Books in Miscellaneous for book locations, then return to Garion Wendell in Stormwind.",
+        kind = "note",
+        complete = { any = {
+            { quest = { id = 78124, state = "completed" } },
+            { quest = { id = 78127, state = "completed" } },
+            { quest = { id = 78142, state = "completed" } },
+            { quest = { id = 78143, state = "completed" } },
+            { quest = { id = 78145, state = "completed" } },
+            { quest = { id = 78146, state = "completed" } },
+            { quest = { id = 78147, state = "completed" } },
+            { quest = { id = 78148, state = "completed" } },
+            { quest = { id = 78149, state = "completed" } },
+            { quest = { id = 79091, state = "completed" } },
+            { quest = { id = 79092, state = "completed" } },
+            { quest = { id = 79093, state = "completed" } },
+            { quest = { id = 79094, state = "completed" } },
+            { quest = { id = 79095, state = "completed" } },
+            { quest = { id = 79096, state = "completed" } },
+            { quest = { id = 79097, state = "completed" } },
+            { quest = { id = 79535, state = "completed" } },
+            { quest = { id = 79947, state = "completed" } },
+            { quest = { id = 79948, state = "completed" } },
+            { quest = { id = 79949, state = "completed" } },
+            { quest = { id = 79950, state = "completed" } },
+            { quest = { id = 79951, state = "completed" } },
+            { quest = { id = 79952, state = "completed" } },
+            { quest = { id = 79953, state = "completed" } },
+            { quest = { id = 81947, state = "completed" } },
+            { quest = { id = 81949, state = "completed" } },
+            { quest = { id = 81951, state = "completed" } },
+            { quest = { id = 81952, state = "completed" } },
+            { quest = { id = 81953, state = "completed" } },
+            { quest = { id = 81954, state = "completed" } },
+            { quest = { id = 81955, state = "completed" } },
+            { quest = { id = 81956, state = "completed" } },
+            { quest = { id = 84395, state = "completed" } },
+            { quest = { id = 84396, state = "completed" } },
+            { quest = { id = 84397, state = "completed" } },
+            { quest = { id = 84398, state = "completed" } },
+            { quest = { id = 84399, state = "completed" } },
+            { quest = { id = 84400, state = "completed" } },
+            { quest = { id = 84401, state = "completed" } },
+            { quest = { id = 84402, state = "completed" } },
+        } },
+        requiredQuests = {},
+        useClientText = false,
+    },
 }
 
 function ns:ExpandClassActions(guide)
@@ -17899,5 +17960,8 @@ function ns:ExpandClassActions(guide)
                 if goal[key] == nil then goal[key] = value end
             end
         end
+        local questID = goal.checkpointQuest or self.Engine:GetGoalQuestID(goal)
+        goal.excludeWhen = goal.excludeWhen or REPEATABLE_REWARDS_NOT_NEEDED[questID]
+        if FINISH_ACTIVE_QUESTS[questID] then goal.finishBeforeContinuing = true end
     end
 end

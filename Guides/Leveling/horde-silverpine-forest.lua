@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 7,
+    revision = 9,
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-silverpine-forest",
@@ -9210,54 +9210,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            id = "level-before-accept-421-prove-your-worth",
-            kind = "note",
-            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 12 },
-            },
-            requiredLevel = 12,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 421,
-        },
-        {
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver in Silverpine Forest.", x = 0.442 },
-            },
-            text = "Accept Prove Your Worth from Dalar Dawnweaver.",
-            id = "accept-421-prove-your-worth",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 12 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 421, state = "activeOrCompleted" },
-            },
-            sourceStep = 8,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
             route = {
                 { y = 0.4093, mapID = 1421, label = "Shadow Priest Allister", offMapText = "Travel to Shadow Priest Allister in Silverpine Forest.", x = 0.4398 },
             },
@@ -9737,126 +9689,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            text = "Kill 5 Moonrage Whitescalp.",
-            route = {
-                { y = 0.368, mapID = 1421, label = "Moonrage Whitescalp", offMapText = "Travel to Moonrage Whitescalp.", x = 0.49 },
-            },
-            dependsOn = { "accept-421-prove-your-worth" },
-            id = "objective-421-1-moonrage-whitescalp",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 12 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 421, text = "Moonrage Whitescalp", index = 1, count = 5 },
-            },
-            sourceStep = 15,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Turn in Prove Your Worth to Dalar Dawnweaver.",
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver in Silverpine Forest.", x = 0.442 },
-            },
-            dependsOn = { "accept-421-prove-your-worth", "objective-421-1-moonrage-whitescalp" },
-            id = "turnin-421-prove-your-worth",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 12 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 421, state = "completed" },
-            },
-            sourceStep = 16,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver in Silverpine Forest.", x = 0.442 },
-            },
-            text = "Accept Arugal's Folly from Dalar Dawnweaver.",
-            id = "accept-422-arugal-s-folly",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 422, state = "activeOrCompleted" },
-            },
-            sourceStep = 16,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 421 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            id = "objective-422-1-remedy-of-arugal",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Collect 1 Remedy of Arugal.",
-            complete = {
-                questObjective = { id = 422, index = 1, text = "Remedy of Arugal", count = 1 },
-            },
-            route = {
-                { mapID = 1421, x = 0.5282, y = 0.2858, label = "Remedy of Arugal", offMapText = "Travel to Remedy of Arugal." },
-            },
-            sourceStep = 17,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 421 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-422-arugal-s-folly" },
-        },
-        {
             text = "Turn in Return to Quinn to Quinn Yorick.",
             route = {
                 { y = 0.1259, mapID = 1421, label = "Quinn Yorick", offMapText = "Travel to Quinn Yorick in Silverpine Forest.", x = 0.5343 },
@@ -10251,72 +10083,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-447-a-recipe-for-death" },
         },
         {
-            text = "Turn in Arugal's Folly to Dalar Dawnweaver.",
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver in Silverpine Forest.", x = 0.442 },
-            },
-            dependsOn = { "accept-422-arugal-s-folly", "objective-422-1-remedy-of-arugal" },
-            id = "turnin-422-arugal-s-folly",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 422, state = "completed" },
-            },
-            sourceStep = 29,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 421 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver in Silverpine Forest.", x = 0.442 },
-            },
-            text = "Accept Arugal's Folly from Dalar Dawnweaver.",
-            id = "accept-423-arugal-s-folly",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 423, state = "activeOrCompleted" },
-            },
-            sourceStep = 29,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 422 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
             text = "Turn in The Dead Fields to High Executor Hadrec.",
             route = {
                 { y = 0.4139, mapID = 1421, label = "High Executor Hadrec", offMapText = "Travel to High Executor Hadrec in Silverpine Forest.", x = 0.4309 },
@@ -10443,72 +10209,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            text = "Collect 3 Darksoul Shackle.",
-            route = {
-                { y = 0.4602, mapID = 1421, label = "Moonrage Darksoul", offMapText = "Travel to Moonrage Darksoul.", x = 0.5654 },
-            },
-            dependsOn = { "accept-423-arugal-s-folly" },
-            id = "objective-423-2-moonrage-darksoul",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 423, text = "Moonrage Darksoul", index = 2, count = 3 },
-            },
-            sourceStep = 32,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 422 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            id = "objective-423-1-glutton-shackle",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Collect 6 Glutton Shackle.",
-            complete = {
-                questObjective = { id = 423, index = 1, text = "Glutton Shackle", count = 6 },
-            },
-            route = {
-                { mapID = 1421, x = 0.5654, y = 0.46020000000000005, label = "Glutton Shackle", offMapText = "Travel to Glutton Shackle." },
-            },
-            sourceStep = 33,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 422 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-423-arugal-s-folly" },
-        },
-        {
             text = "Turn in Border Crossings.",
             route = {
                 { mapID = 1421, x = 0.4991, y = 0.6032, label = "Border Crossings", offMapText = "Travel to Border Crossings." },
@@ -10633,71 +10333,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
-        {
-            text = "Turn in Arugal's Folly to Dalar Dawnweaver.",
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver in Silverpine Forest.", x = 0.4419 },
-            },
-            dependsOn = { "accept-423-arugal-s-folly", "objective-423-2-moonrage-darksoul", "objective-423-1-glutton-shackle" },
-            id = "turnin-423-arugal-s-folly",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 423, state = "completed" },
-            },
-            sourceStep = 37,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 422 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Accept Arugal's Folly from Dalar Dawnweaver.",
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.4419 },
-            },
-            dependsOn = { "turnin-423-arugal-s-folly" },
-            id = "accept-424-arugal-s-folly",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 424, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 423 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
         },
         {
             text = "Turn in Dalar's Analysis to Dalar Dawnweaver.",
@@ -11651,39 +11286,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Kill Grimson the Pale and collect the Head of Grimson in Deep Elem Mine.",
-            route = {
-                { y = 0.4601, mapID = 1421, label = "Deep Elem Mine", offMapText = "Travel to Deep Elem Mine.", x = 0.5657 },
-                { y = 0.4487, mapID = 1421, label = "Grimson the Pale", offMapText = "Travel to Grimson the Pale.", x = 0.5854 },
-            },
-            dependsOn = { "accept-424-arugal-s-folly" },
-            id = "objective-424-1-grimson-the-pale",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 424, text = "Head of Grimson", index = 1 },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 423 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             text = "Collect 8 Dalaran Pendants from Dalaran humans in Ambermill.",
             route = {
                 { y = 0.6424, mapID = 1421, label = "Ambermill", offMapText = "Travel to Ambermill.", x = 0.5997 },
@@ -11716,70 +11318,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Turn in Arugal's Folly to Dalar Dawnweaver.",
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.4419 },
-            },
-            dependsOn = { "accept-424-arugal-s-folly", "objective-424-1-grimson-the-pale" },
-            id = "turnin-424-arugal-s-folly",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 424, state = "completed" },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 423 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Accept Arugal's Folly from Dalar Dawnweaver.",
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.4419 },
-            },
-            dependsOn = { "turnin-424-arugal-s-folly" },
-            id = "accept-99-arugal-s-folly",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99, state = "activeOrCompleted" },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 424 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             text = "Turn in Ambermill Investigations to Shadow Priest Allister.",
             route = {
                 { y = 0.4093, mapID = 1421, label = "Shadow Priest Allister", offMapText = "Travel to Shadow Priest Allister.", x = 0.4398 },
@@ -11805,70 +11343,6 @@ ns:RegisterGuide({
                 {
                     mode = "any",
                     quests = { 482 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Collect 6 Pyrewood Shackles from Pyrewood villagers (or Moonrage forms at night).",
-            route = {
-                { y = 0.7246, mapID = 1421, label = "Pyrewood Village", offMapText = "Travel to Pyrewood Village.", x = 0.4697 },
-            },
-            dependsOn = { "accept-99-arugal-s-folly" },
-            id = "objective-99-1-pyrewood-shackle",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 99, text = "Pyrewood Shackle", index = 1 },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 424 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Turn in Arugal's Folly to Dalar Dawnweaver.",
-            route = {
-                { y = 0.3978, mapID = 1421, label = "Dalar Dawnweaver", offMapText = "Travel to Dalar Dawnweaver.", x = 0.4419 },
-            },
-            dependsOn = { "accept-99-arugal-s-folly", "objective-99-1-pyrewood-shackle" },
-            id = "turnin-99-arugal-s-folly",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 99, state = "completed" },
-            },
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 424 },
                     conditions = {},
                 },
             },

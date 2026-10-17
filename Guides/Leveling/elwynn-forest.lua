@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 8,
+    revision = 10,
     title = "Human Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-elwynn-forest",
@@ -157,37 +157,6 @@ ns:RegisterGuide({
             sourceStep = 13,
             useClientPin = false,
             classAction = "turnin-783-a-threat-within",
-        },
-        {
-            route = {
-                { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
-            },
-            text = "Accept A Scribbled Letter from Marshal McBride in Northshire Abbey.",
-            id = "woven-accept-92479-a-scribbled-letter",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { class = 3 },
-                    {
-                        class = { 3 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 1 },
-                    {
-                        race = { 1 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 92479, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
             route = {
@@ -398,6 +367,68 @@ ns:RegisterGuide({
             sourceStep = 20,
             useClientPin = false,
             classAction = "turnin-7-kobold-camp-cleanup",
+        },
+        {
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride.", x = 0.488 },
+            },
+            text = "Accept A Scribbled Letter from Marshal McBride in Northshire Abbey.",
+            id = "woven-accept-92479-a-scribbled-letter",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 92479, state = "activeOrCompleted" },
+            },
+            requiredQuests = { { mode = "all", quests = { 7 } } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Read Scribbled Letter in your bags. Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
+            route = {
+                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
+            },
+            dependsOn = { "woven-accept-92479-a-scribbled-letter" },
+            id = "woven-turnin-92479-a-scribbled-letter",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 92479, state = "completed" },
+            },
+            requiredQuests = { { mode = "all", quests = { 7 } } },
+            useClientText = false,
+            useClientPin = false,
         },
         {
             route = {
@@ -1523,37 +1554,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Read Scribbled Letter in your bags. Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
-            route = {
-                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
-            },
-            dependsOn = { "woven-accept-92479-a-scribbled-letter" },
-            id = "woven-turnin-92479-a-scribbled-letter",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 3 },
-                    {
-                        class = { 3 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 1 },
-                    {
-                        race = { 1 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 92479, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             id = "loot-starter-before-accept-91741-verified-pickup",
             kind = "note",
             instructionOnly = true,
@@ -1631,89 +1631,11 @@ ns:RegisterGuide({
             dependsOn = { "accept-91741-verified-pickup" },
         },
         {
-            text = "Accept Rascally Rodents from Brother Paxton in Northshire Abbey.",
-            route = {
-                { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
-            },
-            dependsOn = { "woven-turnin-91741-nibbled-on-book" },
-            id = "woven-accept-91743-rascally-rodents",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 91743, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Collect 8 Stolen Books from the Northshire kobolds.",
-            route = {
-                { y = 0.362, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.474 },
-            },
-            dependsOn = { "woven-accept-91743-rascally-rodents" },
-            id = "woven-objective-91743-rascally-rodents",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 91743, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Turn in Rascally Rodents to Brother Paxton.",
-            route = {
-                { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
-            },
-            dependsOn = { "woven-accept-91743-rascally-rodents", "woven-objective-91743-rascally-rodents" },
-            id = "woven-turnin-91743-rascally-rodents",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 91743, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             text = "Accept Book Inventory from Brother Paxton.",
             route = {
                 { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
             },
-            dependsOn = { "woven-turnin-91743-rascally-rodents" },
+            dependsOn = { "woven-turnin-91741-nibbled-on-book" },
             id = "woven-accept-92124-book-inventory",
             kind = "accept",
             conditions = {
@@ -1730,7 +1652,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 92124, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 91741 } },
+            },
             useClientText = false,
             useClientPin = false,
         },
@@ -1756,7 +1680,93 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 92124, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 91741 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Accept Rascally Rodents from Brother Paxton in Northshire Abbey.",
+            route = {
+                { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
+            },
+            dependsOn = { "woven-turnin-92124-book-inventory" },
+            id = "woven-accept-91743-rascally-rodents",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 91743, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 92124 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Collect 8 Stolen Books from the Northshire kobolds.",
+            route = {
+                { y = 0.362, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.474 },
+            },
+            dependsOn = { "woven-accept-91743-rascally-rodents" },
+            id = "woven-objective-91743-rascally-rodents",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 91743, state = "complete" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 92124 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in Rascally Rodents to Brother Paxton.",
+            route = {
+                { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
+            },
+            dependsOn = { "woven-accept-91743-rascally-rodents", "woven-objective-91743-rascally-rodents" },
+            id = "woven-turnin-91743-rascally-rodents",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 91743, state = "completed" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 92124 } },
+            },
             useClientText = false,
             useClientPin = false,
         },
@@ -1765,7 +1775,7 @@ ns:RegisterGuide({
             route = {
                 { y = 0.404, mapID = 1429, label = "Brother Paxton", offMapText = "Travel to Brother Paxton.", x = 0.494 },
             },
-            dependsOn = { "woven-turnin-92124-book-inventory" },
+            dependsOn = { "woven-turnin-91743-rascally-rodents" },
             id = "woven-accept-91745-mining-consultant",
             kind = "accept",
             conditions = {
@@ -1782,7 +1792,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 91745, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 91743 } },
+            },
             useClientText = false,
             useClientPin = false,
         },
@@ -1808,7 +1820,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 91745, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 91743 } },
+            },
             useClientText = false,
             useClientPin = false,
         },

@@ -2680,57 +2680,6 @@
       },
       {
         "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "woven-accept-98298-arugals-folly"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Moonrage Bloodhowler"
-        ],
-        "actions": [
-          "woven-objective-98298-arugals-folly"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "woven-turnin-98298-arugals-folly",
-          "woven-accept-98299-stop-the-spread"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Haggard Refugee"
-        ],
-        "actions": [
-          "woven-objective-98299-stop-the-spread"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "woven-turnin-98299-stop-the-spread"
-        ]
-      },
-      {
-        "boundary": [
           8,
           1424,
           "Deathstalker Lesh"
@@ -2760,26 +2709,6 @@
         ],
         "actions": [
           "objective-496-elixir-of-suffering",
-          "level-before-accept-501-elixir-of-pain"
-        ]
-      },
-      {
-        "boundary": [
-          10,
-          1424,
-          "Apothecary Lydon"
-        ],
-        "actions": [
-          "accept-501-elixir-of-pain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
           "level-before-turnin-2479-hinott-s-assistance"
         ]
       },
@@ -2986,6 +2915,26 @@
         ],
         "actions": [
           "turnin-499-elixir-of-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-501-elixir-of-pain"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "accept-501-elixir-of-pain"
         ]
       },
       {
@@ -4083,7 +4032,7 @@
     ]
   },
   "class-paladin": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -14256,7 +14205,7 @@
     ]
   },
   "leveling-era-horde-the-barrens": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -14280,46 +14229,6 @@
         ],
         "actions": [
           "woven-class-rogue-turnin-6681-authored-class-prerequisite"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-class-rogue-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "woven-class-rogue-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Gravis Slipknot"
-        ],
-        "actions": [
-          "woven-class-rogue-objective-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "woven-class-rogue-turnin-6701-syndicate-emblems"
         ]
       },
       {
@@ -22278,7 +22187,7 @@
     ]
   },
   "class-druid": {
-    "revision": 6,
+    "revision": 7,
     "visits": [
       {
         "boundary": [
@@ -24588,7 +24497,7 @@
     ]
   },
   "class-mage": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -24597,6 +24506,7 @@
           "Garion Wendell"
         ],
         "actions": [
+          "handoff-research-book",
           "accept-97286-research-access",
           "turnin-97286-research-access"
         ]
@@ -24608,6 +24518,7 @@
           "Gornek"
         ],
         "actions": [
+          "handoff-788-before-98576",
           "accept-98576-glyphic-parchment"
         ]
       },
@@ -28206,28 +28117,8 @@
     ]
   },
   "class-warrior": {
-    "revision": 6,
+    "revision": 7,
     "visits": [
-      {
-        "boundary": [
-          null,
-          1429,
-          "Marshal McBride"
-        ],
-        "actions": [
-          "accept-92479-a-scribbled-letter"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Tordrin Sternblade"
-        ],
-        "actions": [
-          "turnin-92479-a-scribbled-letter"
-        ]
-      },
       {
         "boundary": [
           8,
@@ -28397,6 +28288,26 @@
         ],
         "actions": [
           "turnin-7-kobold-camp-cleanup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "accept-92479-a-scribbled-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Tordrin Sternblade"
+        ],
+        "actions": [
+          "turnin-92479-a-scribbled-letter"
         ]
       },
       {
@@ -33927,7 +33838,7 @@
     ]
   },
   "class-shaman": {
-    "revision": 6,
+    "revision": 7,
     "visits": [
       {
         "boundary": [
@@ -33936,6 +33847,7 @@
           "Sten Stoutarm"
         ],
         "actions": [
+          "handoff-179-before-98581",
           "accept-98581-archaic-rune"
         ]
       },
@@ -34454,9 +34366,7 @@
           "Teo Hammerstorm"
         ],
         "actions": [
-          "turnin-94375-call-of-earth",
-          "accept-94472-earth-sapta",
-          "turnin-94472-earth-sapta"
+          "turnin-94375-call-of-earth"
         ]
       },
       {
@@ -34551,17 +34461,6 @@
         ],
         "actions": [
           "turnin-94468-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "accept-94473-fire-sapta",
-          "turnin-94473-fire-sapta"
         ]
       },
       {
@@ -35399,7 +35298,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 6,
+    "revision": 8,
     "visits": [
       {
         "boundary": [
@@ -36698,133 +36597,11 @@
       {
         "boundary": [
           null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-class-shaman-accept-94473-fire-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94473-fire-sapta",
-          "woven-class-shaman-turnin-94473-fire-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Brazier of the Dormant Flame"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94468-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
           1426,
-          "Bruegs Kindleborn"
+          "Sten Stoutarm"
         ],
         "actions": [
-          "woven-class-shaman-turnin-94468-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94467-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "woven-class-shaman-objective-94467-quest-work"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Brazier of the Dormant Flame"
-        ],
-        "actions": [
-          "woven-class-shaman-turnin-94467-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94466-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "woven-class-shaman-objective-94466-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-turnin-94466-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1455,
-          "Eldrun Stormbreaker"
-        ],
-        "actions": [
-          "woven-class-shaman-accept-94449-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1426,
-          "Bruegs Kindleborn"
-        ],
-        "actions": [
-          "woven-class-shaman-turnin-94449-call-of-fire",
-          "woven-class-shaman-accept-94465-call-of-fire"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1432,
-          "Braldir Ashmantle"
-        ],
-        "actions": [
-          "woven-class-shaman-turnin-94465-call-of-fire"
+          "woven-class-shaman-accept-98581-archaic-rune"
         ]
       },
       {
@@ -36834,8 +36611,7 @@
           "Teo Hammerstorm"
         ],
         "actions": [
-          "woven-class-shaman-accept-94472-earth-sapta",
-          "woven-class-shaman-turnin-94472-earth-sapta",
+          "woven-class-shaman-turnin-98581-archaic-rune",
           "woven-class-shaman-accept-94373-call-of-earth"
         ]
       },
@@ -36885,21 +36661,85 @@
       {
         "boundary": [
           null,
-          1426,
-          "Sten Stoutarm"
+          1455,
+          "Eldrun Stormbreaker"
         ],
         "actions": [
-          "woven-class-shaman-accept-98581-archaic-rune"
+          "woven-class-shaman-accept-94449-call-of-fire"
         ]
       },
       {
         "boundary": [
           null,
           1426,
-          "Teo Hammerstorm"
+          "Bruegs Kindleborn"
         ],
         "actions": [
-          "woven-class-shaman-turnin-98581-archaic-rune"
+          "woven-class-shaman-turnin-94449-call-of-fire",
+          "woven-class-shaman-accept-94465-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Braldir Ashmantle"
+        ],
+        "actions": [
+          "woven-class-shaman-turnin-94465-call-of-fire",
+          "woven-class-shaman-accept-94466-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-class-shaman-objective-94466-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Braldir Ashmantle"
+        ],
+        "actions": [
+          "woven-class-shaman-turnin-94466-call-of-fire",
+          "woven-class-shaman-accept-94467-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-class-shaman-objective-94467-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Brazier of the Dormant Flame"
+        ],
+        "actions": [
+          "woven-class-shaman-turnin-94467-call-of-fire",
+          "woven-class-shaman-accept-94468-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Bruegs Kindleborn"
+        ],
+        "actions": [
+          "woven-class-shaman-turnin-94468-call-of-fire"
         ]
       },
       {
@@ -37479,6 +37319,7 @@
           "Garion Wendell"
         ],
         "actions": [
+          "handoff-research-book",
           "woven-class-mage-accept-97286-research-access",
           "woven-class-mage-turnin-97286-research-access"
         ]
@@ -39263,8 +39104,7 @@
         ],
         "actions": [
           "woven-accept-92742-testing-the-wells",
-          "woven-accept-92744-murloc-gills",
-          "woven-accept-92745-the-state-of-the-mines"
+          "woven-accept-92744-murloc-gills"
         ]
       },
       {
@@ -39301,16 +39141,6 @@
         "boundary": [
           null,
           1436,
-          "Kobold Digger"
-        ],
-        "actions": [
-          "woven-objective-92745-kobold-digger"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
           "Saldean's Farm"
         ],
         "actions": [
@@ -39335,7 +39165,18 @@
         ],
         "actions": [
           "woven-turnin-92742-testing-the-wells",
-          "woven-turnin-92744-murloc-gills"
+          "woven-turnin-92744-murloc-gills",
+          "woven-accept-92745-the-state-of-the-mines"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1436,
+          "Kobold Digger"
+        ],
+        "actions": [
+          "woven-objective-92745-kobold-digger"
         ]
       },
       {
@@ -39427,7 +39268,7 @@
     ]
   },
   "leveling-era-dun-morogh": {
-    "revision": 9,
+    "revision": 11,
     "visits": [
       {
         "boundary": [
@@ -39973,28 +39814,6 @@
           null
         ],
         "actions": [
-          "level-before-woven-accept-94472-earth-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1426,
-          "Teo Hammerstorm"
-        ],
-        "actions": [
-          "woven-accept-94472-earth-sapta",
-          "woven-objective-94472-earth-sapta",
-          "woven-turnin-94472-earth-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
           "level-before-woven-accept-97277-grund-and-gozwin"
         ]
       },
@@ -40059,6 +39878,26 @@
         ],
         "actions": [
           "turnin-420-senir-s-observations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98322-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Senir Whitebeard"
+        ],
+        "actions": [
+          "woven-accept-98322-secure-the-mountain"
         ]
       },
       {
@@ -40266,6 +40105,16 @@
       {
         "boundary": [
           null,
+          1426,
+          "Mountaineer Gretchen"
+        ],
+        "actions": [
+          "woven-turnin-98322-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
           null,
           null
         ],
@@ -40451,7 +40300,9 @@
           "Father Gavin"
         ],
         "actions": [
-          "woven-accept-99159-finding-warmth"
+          "woven-accept-99159-finding-warmth",
+          "woven-objective-99159-finding-warmth",
+          "woven-turnin-99159-finding-warmth"
         ]
       },
       {
@@ -40491,8 +40342,7 @@
           "Father Gavin"
         ],
         "actions": [
-          "woven-accept-99162-treacherous-cold",
-          "woven-objective-99159-finding-warmth"
+          "woven-accept-99162-treacherous-cold"
         ]
       },
       {
@@ -40513,7 +40363,6 @@
         ],
         "actions": [
           "woven-objective-99162-treacherous-cold",
-          "woven-turnin-99159-finding-warmth",
           "woven-turnin-99160-rimes-wrath"
         ]
       },
@@ -40626,36 +40475,6 @@
         ],
         "actions": [
           "woven-accept-98323-secure-the-mountain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-98322-secure-the-mountain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1426,
-          "Senir Whitebeard"
-        ],
-        "actions": [
-          "woven-accept-98322-secure-the-mountain"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1426,
-          "Mountaineer Gretchen"
-        ],
-        "actions": [
-          "woven-turnin-98322-secure-the-mountain"
         ]
       },
       {
@@ -43012,7 +42831,7 @@
     ]
   },
   "class-rogue": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -44281,46 +44100,6 @@
         ],
         "actions": [
           "turnin-6681-authored-class-prerequisite"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Gravis Slipknot"
-        ],
-        "actions": [
-          "objective-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "turnin-6701-syndicate-emblems"
         ]
       },
       {
@@ -46032,7 +45811,7 @@
     ]
   },
   "leveling-era-alliance-wetlands": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -46056,46 +45835,6 @@
         ],
         "actions": [
           "woven-class-rogue-turnin-6681-authored-class-prerequisite"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-class-rogue-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "woven-class-rogue-accept-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Gravis Slipknot"
-        ],
-        "actions": [
-          "woven-class-rogue-objective-6701-syndicate-emblems"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1416,
-          "Ravenholdt Guard"
-        ],
-        "actions": [
-          "woven-class-rogue-turnin-6701-syndicate-emblems"
         ]
       },
       {
@@ -65912,7 +65651,7 @@
     ]
   },
   "class-priest": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -65921,6 +65660,7 @@
           "Sten Stoutarm"
         ],
         "actions": [
+          "handoff-179-before-98574",
           "accept-98574-hallowed-memorandum"
         ]
       },
@@ -71502,7 +71242,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 7,
+    "revision": 9,
     "visits": [
       {
         "boundary": [
@@ -74681,26 +74421,6 @@
       },
       {
         "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-421-prove-your-worth"
-        ]
-      },
-      {
-        "boundary": [
-          8,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "accept-421-prove-your-worth"
-        ]
-      },
-      {
-        "boundary": [
           9,
           1421,
           "Shadow Priest Allister"
@@ -74804,37 +74524,6 @@
         "actions": [
           "turnin-6321-supplying-the-sepulcher",
           "accept-6323-ride-to-the-undercity"
-        ]
-      },
-      {
-        "boundary": [
-          15,
-          1421,
-          "Moonrage Whitescalp"
-        ],
-        "actions": [
-          "objective-421-1-moonrage-whitescalp"
-        ]
-      },
-      {
-        "boundary": [
-          16,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-421-prove-your-worth",
-          "accept-422-arugal-s-folly"
-        ]
-      },
-      {
-        "boundary": [
-          17,
-          1421,
-          "Remedy of Arugal"
-        ],
-        "actions": [
-          "objective-422-1-remedy-of-arugal"
         ]
       },
       {
@@ -74960,17 +74649,6 @@
       },
       {
         "boundary": [
-          29,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-422-arugal-s-folly",
-          "accept-423-arugal-s-folly"
-        ]
-      },
-      {
-        "boundary": [
           30,
           1421,
           "High Executor Hadrec"
@@ -75002,26 +74680,6 @@
       },
       {
         "boundary": [
-          32,
-          1421,
-          "Moonrage Darksoul"
-        ],
-        "actions": [
-          "objective-423-2-moonrage-darksoul"
-        ]
-      },
-      {
-        "boundary": [
-          33,
-          1421,
-          "Glutton Shackle"
-        ],
-        "actions": [
-          "objective-423-1-glutton-shackle"
-        ]
-      },
-      {
-        "boundary": [
           34,
           1421,
           "Border Crossings"
@@ -75049,26 +74707,6 @@
         "actions": [
           "turnin-478-maps-and-runes",
           "accept-481-dalar-s-analysis"
-        ]
-      },
-      {
-        "boundary": [
-          37,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-423-arugal-s-folly"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "accept-424-arugal-s-folly"
         ]
       },
       {
@@ -75303,16 +74941,6 @@
         "boundary": [
           null,
           1421,
-          "Grimson the Pale"
-        ],
-        "actions": [
-          "objective-424-1-grimson-the-pale"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
           "Ambermill"
         ],
         "actions": [
@@ -75323,41 +74951,10 @@
         "boundary": [
           null,
           1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-424-arugal-s-folly",
-          "accept-99-arugal-s-folly"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
           "Shadow Priest Allister"
         ],
         "actions": [
           "turnin-479-ambermill-investigations"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Pyrewood Village"
-        ],
-        "actions": [
-          "objective-99-1-pyrewood-shackle"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1421,
-          "Dalar Dawnweaver"
-        ],
-        "actions": [
-          "turnin-99-arugal-s-folly"
         ]
       },
       {
@@ -75467,7 +75064,7 @@
     ]
   },
   "class-warlock": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -75536,6 +75133,7 @@
           "Gornek"
         ],
         "actions": [
+          "handoff-788-before-98575",
           "accept-98575-tainted-tablet"
         ]
       },
@@ -76992,6 +76590,17 @@
       {
         "boundary": [
           null,
+          1434,
+          "Xizk Goodstitch"
+        ],
+        "actions": [
+          "accept-4785-fine-gold-thread",
+          "turnin-4785-fine-gold-thread"
+        ]
+      },
+      {
+        "boundary": [
+          null,
           null,
           null
         ],
@@ -77006,27 +76615,7 @@
           "Menara Voidrender"
         ],
         "actions": [
-          "turnin-4784-components-for-the-enchanted-gold-bloodrobe"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1434,
-          "Xizk Goodstitch"
-        ],
-        "actions": [
-          "accept-4785-fine-gold-thread",
-          "turnin-4785-fine-gold-thread"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Menara Voidrender"
-        ],
-        "actions": [
+          "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
           "accept-4786-the-completed-robe"
         ]
       },
@@ -87347,7 +86936,7 @@
     ]
   },
   "class-hunter": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -89984,7 +89573,7 @@
     ]
   },
   "leveling-era-elwynn-forest": {
-    "revision": 8,
+    "revision": 10,
     "visits": [
       {
         "boundary": [
@@ -90033,26 +89622,7 @@
           "Marshal McBride"
         ],
         "actions": [
-          "turnin-783-a-threat-within"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Marshal McBride"
-        ],
-        "actions": [
-          "woven-accept-92479-a-scribbled-letter"
-        ]
-      },
-      {
-        "boundary": [
-          13,
-          1429,
-          "Marshal McBride"
-        ],
-        "actions": [
+          "turnin-783-a-threat-within",
           "accept-7-kobold-camp-cleanup"
         ]
       },
@@ -90114,7 +89684,36 @@
           "Marshal McBride"
         ],
         "actions": [
-          "turnin-7-kobold-camp-cleanup",
+          "turnin-7-kobold-camp-cleanup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "woven-accept-92479-a-scribbled-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Tordrin Sternblade"
+        ],
+        "actions": [
+          "woven-turnin-92479-a-scribbled-letter"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
           "accept-15-investigate-echo-ridge"
         ]
       },
@@ -90398,16 +89997,6 @@
       {
         "boundary": [
           null,
-          1429,
-          "Tordrin Sternblade"
-        ],
-        "actions": [
-          "woven-turnin-92479-a-scribbled-letter"
-        ]
-      },
-      {
-        "boundary": [
-          null,
           null,
           null
         ],
@@ -90424,6 +90013,26 @@
         ],
         "actions": [
           "woven-turnin-91741-nibbled-on-book",
+          "woven-accept-92124-book-inventory"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Daniel"
+        ],
+        "actions": [
+          "woven-turnin-92124-book-inventory"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
           "woven-accept-91743-rascally-rodents"
         ]
       },
@@ -90445,26 +90054,6 @@
         ],
         "actions": [
           "woven-turnin-91743-rascally-rodents",
-          "woven-accept-92124-book-inventory"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Daniel"
-        ],
-        "actions": [
-          "woven-turnin-92124-book-inventory"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Brother Paxton"
-        ],
-        "actions": [
           "woven-accept-91745-mining-consultant"
         ]
       },

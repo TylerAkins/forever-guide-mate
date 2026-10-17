@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 6,
+    revision = 8,
     title = "Westfall",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-westfall",
@@ -3781,35 +3781,10 @@ ns:RegisterGuide({
             classAction = "turnin-2239-onins-report",
         },
         {
-            id = "level-before-woven-class-shaman-accept-94473-fire-sapta",
-            kind = "note",
-            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 10 },
-            },
-            requiredLevel = 10,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 94473,
-        },
-        {
             route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
-            id = "woven-class-shaman-accept-94473-fire-sapta",
+            id = "woven-class-shaman-accept-98581-archaic-rune",
             conditions = {
                 all = {
                     { class = 7 },
@@ -3818,328 +3793,24 @@ ns:RegisterGuide({
                     },
                     { faction = "Alliance" },
                     {
-                        level = { min = 10 },
+                        level = { min = 1 },
                     },
+                    { race = 3 },
                     {
-                        race = { 1, 3, 4, 7, 95 },
+                        race = { 3 },
                     },
                 },
             },
             useClientPin = false,
             dependsOn = {},
-            classAction = "accept-94473-fire-sapta",
-        },
-        {
-            route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
-            },
-            dependsOn = { "woven-class-shaman-accept-94473-fire-sapta" },
-            id = "woven-class-shaman-turnin-94473-fire-sapta",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94473-fire-sapta",
-        },
-        {
-            route = {
-                { y = 0.645, mapID = 1432, label = "Brazier of the Dormant Flame", x = 0.319, offMapText = "Travel to Brazier of the Dormant Flame in Loch Modan." },
-            },
-            dependsOn = {},
-            id = "woven-class-shaman-accept-94468-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-94468-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
-            },
-            dependsOn = { "woven-class-shaman-accept-94468-call-of-fire" },
-            id = "woven-class-shaman-turnin-94468-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94468-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
-            },
-            dependsOn = {},
-            id = "woven-class-shaman-accept-94467-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-94467-call-of-fire",
-        },
-        {
-            id = "woven-class-shaman-objective-94467-quest-work",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = true,
-            dependsOn = { "woven-class-shaman-accept-94467-call-of-fire" },
-            classAction = "objective-94467-quest-work",
-        },
-        {
-            route = {
-                { y = 0.645, mapID = 1432, label = "Brazier of the Dormant Flame", x = 0.319, offMapText = "Travel to Brazier of the Dormant Flame in Loch Modan." },
-            },
-            dependsOn = { "woven-class-shaman-accept-94467-call-of-fire", "woven-class-shaman-objective-94467-quest-work" },
-            id = "woven-class-shaman-turnin-94467-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94467-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
-            },
-            dependsOn = {},
-            id = "woven-class-shaman-accept-94466-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-94466-call-of-fire",
-        },
-        {
-            dependsOn = { "woven-class-shaman-accept-94466-call-of-fire" },
-            id = "woven-class-shaman-objective-94466-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = true,
-            classAction = "objective-94466-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
-            },
-            dependsOn = { "woven-class-shaman-accept-94466-call-of-fire", "woven-class-shaman-objective-94466-call-of-fire" },
-            id = "woven-class-shaman-turnin-94466-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94466-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.136, mapID = 1455, label = "Eldrun Stormbreaker", x = 0.474, offMapText = "Travel to Eldrun Stormbreaker in Ironforge." },
-            },
-            id = "woven-class-shaman-accept-94449-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            dependsOn = {},
-            classAction = "accept-94449-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
-            },
-            dependsOn = { "woven-class-shaman-accept-94449-call-of-fire" },
-            id = "woven-class-shaman-turnin-94449-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94449-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
-            },
-            dependsOn = {},
-            id = "woven-class-shaman-accept-94465-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "accept-94465-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
-            },
-            dependsOn = { "woven-class-shaman-accept-94465-call-of-fire" },
-            id = "woven-class-shaman-turnin-94465-call-of-fire",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94465-call-of-fire",
+            classAction = "accept-98581-archaic-rune",
         },
         {
             route = {
                 { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
             },
-            id = "woven-class-shaman-accept-94472-earth-sapta",
+            dependsOn = { "woven-class-shaman-accept-98581-archaic-rune" },
+            id = "woven-class-shaman-turnin-98581-archaic-rune",
             conditions = {
                 all = {
                     { class = 7 },
@@ -4148,40 +3819,16 @@ ns:RegisterGuide({
                     },
                     { faction = "Alliance" },
                     {
-                        level = { min = 4 },
+                        level = { min = 1 },
                     },
+                    { race = 3 },
                     {
-                        race = { 1, 3, 4, 7, 95 },
+                        race = { 3 },
                     },
                 },
             },
             useClientPin = false,
-            dependsOn = {},
-            classAction = "accept-94472-earth-sapta",
-        },
-        {
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
-            },
-            dependsOn = { "woven-class-shaman-accept-94472-earth-sapta" },
-            id = "woven-class-shaman-turnin-94472-earth-sapta",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94472-earth-sapta",
+            classAction = "turnin-98581-archaic-rune",
         },
         {
             route = {
@@ -4365,9 +4012,9 @@ ns:RegisterGuide({
         },
         {
             route = {
-                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+                { y = 0.136, mapID = 1455, label = "Eldrun Stormbreaker", x = 0.474, offMapText = "Travel to Eldrun Stormbreaker in Ironforge." },
             },
-            id = "woven-class-shaman-accept-98581-archaic-rune",
+            id = "woven-class-shaman-accept-94449-call-of-fire",
             conditions = {
                 all = {
                     { class = 7 },
@@ -4376,24 +4023,23 @@ ns:RegisterGuide({
                     },
                     { faction = "Alliance" },
                     {
-                        level = { min = 1 },
+                        level = { min = 10 },
                     },
-                    { race = 3 },
                     {
-                        race = { 3 },
+                        race = { 1, 3, 4, 7, 95 },
                     },
                 },
             },
             useClientPin = false,
             dependsOn = {},
-            classAction = "accept-98581-archaic-rune",
+            classAction = "accept-94449-call-of-fire",
         },
         {
             route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
+                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
             },
-            dependsOn = { "woven-class-shaman-accept-98581-archaic-rune" },
-            id = "woven-class-shaman-turnin-98581-archaic-rune",
+            dependsOn = { "woven-class-shaman-accept-94449-call-of-fire" },
+            id = "woven-class-shaman-turnin-94449-call-of-fire",
             conditions = {
                 all = {
                     { class = 7 },
@@ -4402,16 +4048,249 @@ ns:RegisterGuide({
                     },
                     { faction = "Alliance" },
                     {
-                        level = { min = 1 },
+                        level = { min = 10 },
                     },
-                    { race = 3 },
                     {
-                        race = { 3 },
+                        race = { 1, 3, 4, 7, 95 },
                     },
                 },
             },
             useClientPin = false,
-            classAction = "turnin-98581-archaic-rune",
+            classAction = "turnin-94449-call-of-fire",
+        },
+        {
+            route = {
+                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
+            },
+            dependsOn = {},
+            id = "woven-class-shaman-accept-94465-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94465-call-of-fire",
+        },
+        {
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = { "woven-class-shaman-accept-94465-call-of-fire" },
+            id = "woven-class-shaman-turnin-94465-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94465-call-of-fire",
+        },
+        {
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = {},
+            id = "woven-class-shaman-accept-94466-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94466-call-of-fire",
+        },
+        {
+            dependsOn = { "woven-class-shaman-accept-94466-call-of-fire" },
+            id = "woven-class-shaman-objective-94466-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-94466-call-of-fire",
+        },
+        {
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = { "woven-class-shaman-accept-94466-call-of-fire", "woven-class-shaman-objective-94466-call-of-fire" },
+            id = "woven-class-shaman-turnin-94466-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94466-call-of-fire",
+        },
+        {
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = {},
+            id = "woven-class-shaman-accept-94467-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94467-call-of-fire",
+        },
+        {
+            id = "woven-class-shaman-objective-94467-quest-work",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "woven-class-shaman-accept-94467-call-of-fire" },
+            classAction = "objective-94467-quest-work",
+        },
+        {
+            route = {
+                { y = 0.645, mapID = 1432, label = "Brazier of the Dormant Flame", x = 0.319, offMapText = "Travel to Brazier of the Dormant Flame in Loch Modan." },
+            },
+            dependsOn = { "woven-class-shaman-accept-94467-call-of-fire", "woven-class-shaman-objective-94467-quest-work" },
+            id = "woven-class-shaman-turnin-94467-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94467-call-of-fire",
+        },
+        {
+            route = {
+                { y = 0.645, mapID = 1432, label = "Brazier of the Dormant Flame", x = 0.319, offMapText = "Travel to Brazier of the Dormant Flame in Loch Modan." },
+            },
+            dependsOn = {},
+            id = "woven-class-shaman-accept-94468-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94468-call-of-fire",
+        },
+        {
+            route = {
+                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
+            },
+            dependsOn = { "woven-class-shaman-accept-94468-call-of-fire" },
+            id = "woven-class-shaman-turnin-94468-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94468-call-of-fire",
         },
         {
             id = "level-before-woven-class-warrior-accept-94003-the-skybreaker-bulwark",
@@ -6097,6 +5976,25 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             classAction = "turnin-1860-speak-with-jennea",
+        },
+        {
+            id = "handoff-research-book",
+            classAction = "handoff-research-book",
+            conditions = {
+                all = {
+                    { class = 8 },
+                    {
+                        class = { 8 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
         },
         {
             route = {
@@ -11691,32 +11589,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            route = {
-                { y = 0.53, mapID = 1436, label = "Alba Fairmoon", offMapText = "Travel to Alba Fairmoon.", x = 0.524 },
-            },
-            text = "Accept The State of the Mines from Alba Fairmoon in Sentinel Hill.",
-            id = "woven-accept-92745-the-state-of-the-mines",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 92745, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
             id = "level-before-woven-accept-98021-journey-to-sentinel-hill",
             kind = "note",
             text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
@@ -11803,32 +11675,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-98021-journey-to-sentinel-hill" },
-        },
-        {
-            route = {
-                { y = 0.234, mapID = 1436, label = "Kobold Digger", offMapText = "Travel to Kobold Digger.", x = 0.446 },
-            },
-            text = "The State of the Mines: slay 4 Kobold Diggers in the Jangolode Mine.",
-            id = "woven-objective-92745-kobold-digger",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 92745, index = 1 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-92745-the-state-of-the-mines" },
         },
         {
             text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. No saved spot for this, so the guide follows the pin in your quest log.",
@@ -11934,6 +11780,62 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-92744-murloc-gills", "woven-objective-92744-murloc-gills" },
+        },
+        {
+            route = {
+                { y = 0.53, mapID = 1436, label = "Alba Fairmoon", offMapText = "Travel to Alba Fairmoon.", x = 0.524 },
+            },
+            text = "Accept The State of the Mines from Alba Fairmoon in Sentinel Hill.",
+            id = "woven-accept-92745-the-state-of-the-mines",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 92745, state = "activeOrCompleted" },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 92742, 92744 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            route = {
+                { y = 0.234, mapID = 1436, label = "Kobold Digger", offMapText = "Travel to Kobold Digger.", x = 0.446 },
+            },
+            text = "The State of the Mines: slay 4 Kobold Diggers in the Jangolode Mine.",
+            id = "woven-objective-92745-kobold-digger",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 92745, index = 1 },
+            },
+            requiredQuests = {
+                { mode = "all", quests = { 92742, 92744 } },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-92745-the-state-of-the-mines" },
         },
         {
             route = {
@@ -12085,7 +11987,9 @@ ns:RegisterGuide({
             complete = {
                 questObjective = { id = 92745, index = 2 },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 92742, 92744 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-92745-the-state-of-the-mines" },
@@ -12306,7 +12210,9 @@ ns:RegisterGuide({
             complete = {
                 quest = { id = 92745, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = {
+                { mode = "all", quests = { 92742, 92744 } },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {

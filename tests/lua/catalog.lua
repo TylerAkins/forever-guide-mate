@@ -7,8 +7,13 @@ local function check(value, message)
  assert(value, message)
 end
 local expected = dofile('tests/fixtures/reference_itineraries.lua')
+local repeatableRewards = dofile('tests/fixtures/class_repeatable_rewards.lua')
 local excluded = { [2741]=true,[2747]=true,[2748]=true,[2749]=true,[2750]=true,[2952]=true,
  [386]=true,[2930]=true,[7067]=true,[7041]=true,[3366]=true,[77573]=true,[10352]=true,[10354]=true,[3503]=true,[3421]=true }
+-- The Arugal chain is omitted because of slow spawns.
+for _, quest in ipairs({ 421, 422, 423, 424, 99, 98298, 98299 }) do excluded[quest] = true end
+-- Syndicate Emblems is optional repeatable reputation work.
+excluded[6701] = true
 for quest in pairs(dofile('tests/fixtures/separate_content.lua')) do excluded[quest]=true end
 -- Cloth donations and random egg exchanges are optional reputation strategy.
 for _,q in ipairs({7791,7793,7794,7795,7799,7800,7802,7803,7804,7805,7807,7808,7809,7811,7813,7814,7817,7818,7820,7821,7822,7823,7824,7826,7827,7831,7833,7834,7835,7836}) do excluded[q]=true end
@@ -18,8 +23,11 @@ for guideID, quests in pairs(dofile('tests/fixtures/starter_detour_cuts.lua')) d
  starterCuts[guideID] = {}
  for _, questID in ipairs(quests) do starterCuts[guideID][questID] = true end
 end
--- These starter guides intentionally combine nearby quest actions into a single outing.
+-- These actions depart from reference order for verified prerequisites or shared outings.
 local intentionalOutingReorders = {
+ ['leveling-era-horde-hillsbrad-foothills'] = {
+  ['accept:501:0:10']=true,
+ },
  ['leveling-era-mulgore'] = {
   ['accept:749:0:79']=true, ['turnin:749:0:80']=true, ['accept:751:0:80']=true,
   ['turnin:751:0:119']=true,
@@ -104,7 +112,7 @@ end
 for _,id in ipairs({'leveling-casual-alliance','leveling-casual-horde','class-warrior','class-paladin','class-hunter','class-rogue','class-priest','class-shaman','class-mage','class-warlock','class-druid'}) do
  local g=assert(ns.guides[id])
  for _,race in ipairs({1,2,3,4,5,6,7,8,95,96}) do for _,class in ipairs({1,2,3,4,5,7,8,9,11}) do
-  local s={raceID=race,classID=class,faction=({[1]='Alliance',[3]='Alliance',[4]='Alliance',[7]='Alliance',[95]='Alliance'})[race] or 'Horde',level=60,quests={},completedQuests={},questLogKnown=true,questCompletionKnown=true,professions={},professionsKnown=true}
+  local s={raceID=race,classID=class,faction=({[1]='Alliance',[3]='Alliance',[4]='Alliance',[7]='Alliance',[95]='Alliance'})[race] or 'Horde',level=60,quests={},completedQuests={},questLogKnown=true,questCompletionKnown=true,professions={},professionsKnown=true,items={}}
   if id:match('leveling%-casual') then
    local starters={[1]='elwynn-forest',[2]='durotar',[3]='dun-morogh',[4]='teldrassil',[5]='tirisfal-glades',[6]='mulgore',[7]='dun-morogh',[8]='durotar'}
    local starter
@@ -132,7 +140,8 @@ for _,id in ipairs({'leveling-casual-alliance','leveling-casual-horde','class-wa
      check(not q or s.quests[q] or s.completedQuests[q],id..' objective has an earlier applicable pickup '..a.id)
     elseif a.kind=='turnin' then
      check(s.quests[q] or s.completedQuests[q],id..' turn-in has an earlier applicable pickup '..a.id)
-     s.quests[q]=nil;s.completedQuests[q]=true
+     s.quests[q]=nil
+     if repeatableRewards[q] then s.items[repeatableRewards[q][1]]=1 else s.completedQuests[q]=true end
     elseif a.kind=='note' and q and not a.instructionOnly then s.completedQuests[q]=true end
    end end
   end

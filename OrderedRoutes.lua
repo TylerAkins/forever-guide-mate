@@ -4,6 +4,8 @@ local Engine = ns.Engine
 local Ordered = {}
 ns.OrderedRoutes = Ordered
 
+local finishActions = setmetatable({}, { __mode = "k" })
+
 local function OrderedGuide(guide)
     return type(guide) == "table" and guide.routeMode == "ordered"
 end
@@ -98,6 +100,7 @@ function Ordered:Storage(guide)
     end
     if storage.revision ~= guide.revision then
         storage.observedInstructions = nil
+        storage.interrupted = nil
         storage.legacyRevision = { revision = storage.revision, cursor = storage.cursor,
             confirmed = Copy(storage.confirmed), skipped = Copy(storage.skipped) }
         storage.revision, storage.recover = guide.revision, true
@@ -245,6 +248,31 @@ function Ordered:SyncReady(guide, state)
     return true
 end
 
+function Ordered:ActiveQuestToFinish(guide, state, current, advance)
+    if not state.questLogKnown then return end
+    local currentQuest = current and Engine:GetGoalQuestID(current)
+    if current and current.finishBeforeContinuing == true and not advance
+        and state.quests and state.quests[currentQuest]
+        and not (state.completedQuests and state.completedQuests[currentQuest])
+        and not self:ExcludedAction(current, state) then return current end
+    local actions = finishActions[guide]
+    if not actions then
+        actions = {}
+        for _, goal in ipairs(guide.goals) do
+            if goal.finishBeforeContinuing == true then actions[#actions + 1] = goal end
+        end
+        finishActions[guide] = actions
+    end
+    for _, goal in ipairs(actions) do
+        local questID = Engine:GetGoalQuestID(goal)
+        if state.quests and state.quests[questID]
+            and not (state.completedQuests and state.completedQuests[questID])
+            and not self:ExcludedAction(goal, state) and not self:Done(guide, goal, state) then
+            return goal
+        end
+    end
+end
+
 function Ordered:Update(engine, state)
     local guide = engine.currentGuide
     local storage = self:Storage(guide)
@@ -266,6 +294,21 @@ function Ordered:Update(engine, state)
     end
     loading = loading or storage.recover == true
     if not active and not storage.finished then active, index = self:First(guide, state) end
+    if not loading and not engine.reviewingGoal then
+        local timed = self:ActiveQuestToFinish(guide, state, active, ns.db.autoAdvance ~= false or storage.advance)
+        if timed then
+            if not storage.interrupted then
+                storage.interrupted = { cursor = active and active.id, finished = storage.finished }
+            end
+            active = timed
+        elseif storage.interrupted then
+            local resume = storage.interrupted
+            storage.interrupted = nil
+            storage.finished = resume.finished
+            active, index = engine:GetGoal(guide, resume.cursor)
+            if not active and not storage.finished then active = self:First(guide, state) end
+        end
+    end
     if active and not loading and engine.reviewingGoal ~= active.id then
         local advance = ns.db.autoAdvance ~= false or storage.advance
         if self:ExcludedAction(active, state) or (self:Done(guide, active, state) and advance) then

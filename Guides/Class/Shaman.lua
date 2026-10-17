@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 6,
+    revision = 7,
     title = "Shaman",
     category = "Class Quests",
     id = "class-shaman",
@@ -14,6 +14,26 @@ ns:RegisterGuide({
         },
     },
     goals = {
+        {
+            id = "handoff-179-before-98581",
+            classAction = "handoff-179-before-98581",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+        },
         {
             route = {
                 { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
@@ -1719,54 +1739,6 @@ ns:RegisterGuide({
             classAction = "turnin-94375-call-of-earth",
         },
         {
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
-            },
-            id = "accept-94472-earth-sapta",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            dependsOn = {},
-            classAction = "accept-94472-earth-sapta",
-        },
-        {
-            route = {
-                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
-            },
-            dependsOn = { "accept-94472-earth-sapta" },
-            id = "turnin-94472-earth-sapta",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 4 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94472-earth-sapta",
-        },
-        {
             id = "level-before-accept-94449-call-of-fire",
             kind = "note",
             text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
@@ -2072,54 +2044,6 @@ ns:RegisterGuide({
             },
             useClientPin = false,
             classAction = "turnin-94468-call-of-fire",
-        },
-        {
-            route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
-            },
-            id = "accept-94473-fire-sapta",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            dependsOn = {},
-            classAction = "accept-94473-fire-sapta",
-        },
-        {
-            route = {
-                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
-            },
-            dependsOn = { "accept-94473-fire-sapta" },
-            id = "turnin-94473-fire-sapta",
-            conditions = {
-                all = {
-                    { class = 7 },
-                    {
-                        class = { 7 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            useClientPin = false,
-            classAction = "turnin-94473-fire-sapta",
         },
         {
             id = "level-before-accept-97243-call-of-fire",
