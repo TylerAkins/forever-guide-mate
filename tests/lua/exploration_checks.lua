@@ -85,6 +85,24 @@ local guides = {
             { "Rise of the Defiler", 48, 27, "rise-of-the-defiler" },
         },
     },
+    {
+        zone = "burning-steppes",
+        title = "Explore Burning Steppes",
+        achievementID = 775,
+        mapID = 1428,
+        locations = {
+            { "Dreadmaul Rock", 81, 42, "dreadmaul-rock" },
+            { "Morgan's Vigil", 84, 68, "morgan-s-vigil" },
+            { "Terror Wing Path", 93, 45, "terror-wing-path" },
+            { "Blackrock Pass", 77, 68, "blackrock-pass" },
+            { "Ruins of Thaurissan", 65, 40, "ruins-of-thaurissan" },
+            { "The Pillar of Ash", 49, 55, "the-pillar-of-ash" },
+            { "Blackrock Stronghold", 40, 35, "blackrock-stronghold" },
+            { "Draco'dar", 23, 63, "draco-dar" },
+            { "Altar of Storms", 17, 29, "altar-of-storms" },
+            { "Blackrock Mountain", 29, 37, "blackrock-mountain" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)

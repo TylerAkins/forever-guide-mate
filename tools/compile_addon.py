@@ -191,6 +191,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreArathiHighlands.lua",
     "Guides/Miscellaneous/ExploreBadlands.lua",
     "Guides/Miscellaneous/ExploreBlastedLands.lua",
+    "Guides/Miscellaneous/ExploreBurningSteppes.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",
