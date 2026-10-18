@@ -199,6 +199,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreStranglethornVale.lua",
     "Guides/Miscellaneous/ExploreSwampOfSorrows.lua",
     "Guides/Miscellaneous/ExploreWesternPlaguelands.lua",
+    "Guides/Miscellaneous/ExploreStonetalonMountains.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",

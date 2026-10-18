@@ -257,6 +257,25 @@ local guides = {
             { "Thondroril River", 69, 47, "thondroril-river" },
         },
     },
+    {
+        zone = "stonetalon-mountains",
+        title = "Explore Stonetalon Mountains",
+        achievementID = 847,
+        mapID = 1442,
+        locations = {
+            { "Camp Aparaje", 76, 92, "camp-aparaje" },
+            { "Grimtotem Post", 75, 86, "grimtotem-post" },
+            { "Malaka'jin", 72, 93, "malaka-jin" },
+            { "Webwinder Path", 57, 66, "webwinder-path" },
+            { "Boulderslide Ravine", 65, 91, "boulderslide-ravine" },
+            { "Sishir Canyon", 54, 75, "sishir-canyon" },
+            { "Windshear Crag", 68, 48, "windshear-crag" },
+            { "Sun Rock Retreat", 49, 60, "sun-rock-retreat" },
+            { "The Charred Vale", 32, 65, "the-charred-vale" },
+            { "Mirkfallon Lake", 48, 40, "mirkfallon-lake" },
+            { "Stonetalon Peak", 36, 12, "stonetalon-peak" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
