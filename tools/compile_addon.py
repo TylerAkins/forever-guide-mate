@@ -193,6 +193,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreBlastedLands.lua",
     "Guides/Miscellaneous/ExploreBurningSteppes.lua",
     "Guides/Miscellaneous/ExploreDeadwindPass.lua",
+    "Guides/Miscellaneous/ExploreEasternPlaguelands.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",

@@ -27,7 +27,7 @@ for _, id in ipairs(ns.guideOrder) do
         check(ns.Engine:GetGoalQuestID(guide.goals[1]) == nil, 'Placeholder grants no quest progress')
     end
 end
-check(misc == 25, 'Miscellaneous contains the books and all 24 exploration guides')
+check(misc == 26, 'Miscellaneous contains the books and all 25 exploration guides')
 check(loremaster == 1, 'One Loremaster placeholder remains')
 check(ns.guides['leveling-durotar'] == nil and ns.guides['leveling-mulgore'] == nil, 'Retired Loremaster guides are absent')
 for _, old in ipairs({'leveling-durotar', 'leveling-mulgore'}) do
