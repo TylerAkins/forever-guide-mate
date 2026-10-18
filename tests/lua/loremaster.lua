@@ -90,3 +90,13 @@ local later = questAction(mulgore, 'accept', 96259)
 assert(later, 'Mulgore includes its later Skywatcher Plateau visit')
 local wool, woolIndex = questAction(mulgore, 'accept', 99196)
 assert(woolIndex > fishIndex, 'The level 60 donation belongs after the starter trials')
+local tirisfal = assert(ns.guides['loremaster-tirisfal-glades'], 'Tirisfal Glades has a Loremaster itinerary')
+local _, gravesIndex = questAction(tirisfal, 'turnin', 358)
+local lich, lichIndex = questAction(tirisfal, 'accept', 405)
+local lichReturn = questAction(tirisfal, 'turnin', 405)
+assert(gravesIndex < lichIndex, 'Graverobbers is turned in before The Prodigal Lich pickup')
+assert(lichReturn.route[1].mapID == 1458, 'The Tirisfal chain keeps its required Undercity handoff')
+for _, goal in ipairs(tirisfal.goals) do
+    local quest = ns.Engine:GetGoalQuestID(goal)
+    assert(quest ~= 5901 and quest ~= 5902, 'Plaguelands work is not assigned to Tirisfal by pickup location')
+end

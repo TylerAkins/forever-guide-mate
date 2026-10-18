@@ -84,6 +84,7 @@ for _, path in ipairs({
     "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
     "Guides/Leveling/zephras-isle.lua",
     "Guides/Loremaster/DunMorogh.lua",
+    "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",
     "Guides/Loremaster/Durotar.lua",
     "Guides/Loremaster/Teldrassil.lua",

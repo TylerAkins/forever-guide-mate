@@ -14478,6 +14478,10 @@
     "loremaster-mulgore": {
       "inventory": "docs/loremaster/mulgore.json",
       "clientWalkthrough": false
+    },
+    "loremaster-tirisfal-glades": {
+      "inventory": "docs/loremaster/tirisfal-glades.json",
+      "clientWalkthrough": false
     }
   }
 }

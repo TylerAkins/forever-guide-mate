@@ -121371,5 +121371,3462 @@
         ]
       }
     ]
+  },
+  "loremaster-tirisfal-glades": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          3,
+          1420,
+          "Undertaker Mordo"
+        ],
+        "actions": [
+          "accept-363-rude-awakening"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1420,
+          "Shadow Priest Sarvis"
+        ],
+        "actions": [
+          "turnin-363-rude-awakening",
+          "accept-364-the-mindless-ones"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1420,
+          "Venya Marthand"
+        ],
+        "actions": [
+          "accept-1470-piercing-the-veil"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1420,
+          "Rattlecage Skeleton"
+        ],
+        "actions": [
+          "objective-1470-1-rattlecage-skeleton"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1420,
+          "Venya Marthand"
+        ],
+        "actions": [
+          "turnin-1470-piercing-the-veil"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1420,
+          "Mindless Zombie"
+        ],
+        "actions": [
+          "objective-364-1-duskbat"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1420,
+          "Wretched Zombie"
+        ],
+        "actions": [
+          "objective-364-2-wretched-zombie"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1420,
+          "Shadow Priest Sarvis"
+        ],
+        "actions": [
+          "turnin-364-the-mindless-ones",
+          "accept-3095-simple-scroll",
+          "accept-3099-tainted-scroll",
+          "accept-3096-encrypted-scroll",
+          "accept-3097-hallowed-scroll",
+          "accept-3098-glyphic-scroll",
+          "accept-3901-rattling-the-rattlecages"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shadow Priest Sarvis"
+        ],
+        "actions": [
+          "woven-accept-98601-a-difficult-path"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-376-the-damned"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1420,
+          "Novice Elreth"
+        ],
+        "actions": [
+          "accept-376-the-damned"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Aramis Hammerhand"
+        ],
+        "actions": [
+          "woven-turnin-98601-a-difficult-path"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98389-a-light-in-the-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Aramis Hammerhand"
+        ],
+        "actions": [
+          "woven-accept-98389-a-light-in-the-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1420,
+          "Isabella"
+        ],
+        "actions": [
+          "turnin-3098-glyphic-scroll"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1420,
+          "Maximillion"
+        ],
+        "actions": [
+          "turnin-3099-tainted-scroll"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1420,
+          "Dark Cleric Duesten"
+        ],
+        "actions": [
+          "turnin-3097-hallowed-scroll"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1420,
+          "Rattlecage Skeleton"
+        ],
+        "actions": [
+          "objective-3901-1-rattlecage-skeleton"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1420,
+          "Scavenger Paw"
+        ],
+        "actions": [
+          "objective-376-1-scavenger-paw"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1420,
+          "Duskbat Wing"
+        ],
+        "actions": [
+          "objective-376-2-duskbat-wing"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1420,
+          "Novice Elreth"
+        ],
+        "actions": [
+          "turnin-376-the-damned"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6395-marla-s-last-wish"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1420,
+          "Novice Elreth"
+        ],
+        "actions": [
+          "accept-6395-marla-s-last-wish"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1420,
+          "Shadow Priest Sarvis"
+        ],
+        "actions": [
+          "turnin-3901-rattling-the-rattlecages"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-380-night-web-s-hollow"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1420,
+          "Executor Arren"
+        ],
+        "actions": [
+          "accept-380-night-web-s-hollow"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1420,
+          "Dannal Stern"
+        ],
+        "actions": [
+          "turnin-3095-simple-scroll"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1420,
+          "David Trias"
+        ],
+        "actions": [
+          "turnin-3096-encrypted-scroll"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3902-scavenging-deathknell"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1420,
+          "Deathguard Saltain"
+        ],
+        "actions": [
+          "accept-3902-scavenging-deathknell"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1420,
+          "Scavenged Goods"
+        ],
+        "actions": [
+          "objective-3902-1-scavenged-goods"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1420,
+          "Young Night Web Spider"
+        ],
+        "actions": [
+          "objective-380-1-young-night-web-spider"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1420,
+          "Night Web Spider"
+        ],
+        "actions": [
+          "objective-380-2-night-web-spider"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Webbed Forsaken"
+        ],
+        "actions": [
+          "woven-objective-98389-a-light-in-the-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1420,
+          "Deathguard Saltain"
+        ],
+        "actions": [
+          "turnin-3902-scavenging-deathknell"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1420,
+          "Executor Arren"
+        ],
+        "actions": [
+          "turnin-380-night-web-s-hollow"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Aramis Hammerhand"
+        ],
+        "actions": [
+          "woven-turnin-98389-a-light-in-the-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96656-the-adventurer",
+          "level-before-accept-381-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1420,
+          "Executor Arren"
+        ],
+        "actions": [
+          "accept-381-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Executor Arren"
+        ],
+        "actions": [
+          "woven-accept-96656-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1420,
+          "Scarlet Convert"
+        ],
+        "actions": [
+          "objective-381-1-scarlet-convert"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Samuel Fipps"
+        ],
+        "actions": [
+          "objective-6395-1-samuel-fipps"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1420,
+          "Novice Elreth"
+        ],
+        "actions": [
+          "turnin-6395-marla-s-last-wish"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5651-in-favor-of-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1420,
+          "Dark Cleric Duesten"
+        ],
+        "actions": [
+          "accept-5651-in-favor-of-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1420,
+          "Executor Arren"
+        ],
+        "actions": [
+          "turnin-381-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-382-the-red-messenger"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1420,
+          "Executor Arren"
+        ],
+        "actions": [
+          "accept-382-the-red-messenger"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1420,
+          "Meven Korgal"
+        ],
+        "actions": [
+          "objective-382-1-meven-korgal"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1420,
+          "Executor Arren"
+        ],
+        "actions": [
+          "turnin-382-the-red-messenger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-90902-rediscovering-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Aramis Hammerhand"
+        ],
+        "actions": [
+          "woven-accept-90902-rediscovering-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-objective-90902-rediscovering-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Aramis Hammerhand"
+        ],
+        "actions": [
+          "woven-turnin-90902-rediscovering-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91208-coming-to-terms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Aramis Hammerhand"
+        ],
+        "actions": [
+          "woven-accept-91208-coming-to-terms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Frightened Paladin"
+        ],
+        "actions": [
+          "woven-objective-91208-coming-to-terms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Aramis Hammerhand"
+        ],
+        "actions": [
+          "woven-turnin-91208-coming-to-terms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91209-continue-your-training"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Aramis Hammerhand"
+        ],
+        "actions": [
+          "woven-accept-91209-continue-your-training"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shari Stilwell"
+        ],
+        "actions": [
+          "woven-turnin-91209-continue-your-training"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-383-vital-intelligence"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1420,
+          "Executor Arren"
+        ],
+        "actions": [
+          "accept-383-vital-intelligence"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1420,
+          "Calvin Montague"
+        ],
+        "actions": [
+          "accept-8-a-rogue-s-deal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-365-fields-of-grief"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Eleanor Shackleton"
+        ],
+        "actions": [
+          "woven-turnin-96656-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96607-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Eleanor Shackleton"
+        ],
+        "actions": [
+          "woven-accept-96607-the-great-outdoors",
+          "woven-objective-96607-the-great-outdoors",
+          "woven-turnin-96607-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1420,
+          "Deathguard Simmer"
+        ],
+        "actions": [
+          "accept-365-fields-of-grief"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5481-gordo-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-5481-gordo-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-404-a-putrid-task"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "accept-404-a-putrid-task"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-367-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "accept-367-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "turnin-383-vital-intelligence"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-86784-sticks-and-bones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Bartholomew"
+        ],
+        "actions": [
+          "woven-accept-86784-sticks-and-bones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Brill"
+        ],
+        "actions": [
+          "woven-objective-86784-sticks-and-bones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Eleanor Shackleton"
+        ],
+        "actions": [
+          "woven-turnin-86784-sticks-and-bones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99134-discipline"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "woven-accept-99134-discipline"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-95314-that-shadowvale-green-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Carolai Anise"
+        ],
+        "actions": [
+          "woven-accept-95314-that-shadowvale-green-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-427-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "accept-427-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1420,
+          "Innkeeper Renee"
+        ],
+        "actions": [
+          "turnin-8-a-rogue-s-deal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Calvin Montague"
+        ],
+        "actions": [
+          "woven-accept-590-a-rogues-deal",
+          "woven-objective-590-a-rogues-deal",
+          "woven-turnin-590-a-rogues-deal"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1420,
+          "Dark Cleric Beryl"
+        ],
+        "actions": [
+          "turnin-5651-in-favor-of-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5650-garments-of-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1420,
+          "Dark Cleric Beryl"
+        ],
+        "actions": [
+          "accept-5650-garments-of-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-5650-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1420,
+          "Dark Cleric Beryl"
+        ],
+        "actions": [
+          "turnin-5650-garments-of-darkness"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1420,
+          "Decrepit Darkhound"
+        ],
+        "actions": [
+          "objective-367-1-decrepit-darkhound"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "turnin-367-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-368-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "accept-368-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1420,
+          "Ravaged Corpse"
+        ],
+        "actions": [
+          "objective-404-1-ravaged-corpse"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1420,
+          "Gloom Weed"
+        ],
+        "actions": [
+          "objective-5481-1-gloom-weed"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          1420,
+          "Tirisfal Pumpkin"
+        ],
+        "actions": [
+          "objective-365-1-tirisfal-pumpkin"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1420,
+          "Scarlet Warrior"
+        ],
+        "actions": [
+          "objective-427-1-scarlet-warrior"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "turnin-427-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "woven-objective-99134-discipline",
+          "woven-turnin-99134-discipline"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99141-patience"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "woven-accept-99141-patience"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "woven-objective-99141-patience"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "woven-turnin-99141-patience"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-370-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "accept-370-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "turnin-365-fields-of-grief"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-407-fields-of-grief"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "accept-407-fields-of-grief"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "turnin-404-a-putrid-task"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-426-the-mills-overrun"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "accept-426-the-mills-overrun"
+        ]
+      },
+      {
+        "boundary": [
+          83,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-5481-gordo-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5482-doom-weed"
+        ]
+      },
+      {
+        "boundary": [
+          83,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-5482-doom-weed"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1420,
+          "Captured Scarlet Zealot"
+        ],
+        "actions": [
+          "turnin-407-fields-of-grief"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          161,
+          1420,
+          "Austil de Mon"
+        ],
+        "actions": [
+          "accept-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-354-deaths-in-the-family"
+        ]
+      },
+      {
+        "boundary": [
+          162,
+          1420,
+          "Coleman Farthing"
+        ],
+        "actions": [
+          "accept-354-deaths-in-the-family"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-362-the-haunted-mills"
+        ]
+      },
+      {
+        "boundary": [
+          162,
+          1420,
+          "Coleman Farthing"
+        ],
+        "actions": [
+          "accept-362-the-haunted-mills"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1881-speak-with-anastasia"
+        ]
+      },
+      {
+        "boundary": [
+          163,
+          1420,
+          "Cain Firesong"
+        ],
+        "actions": [
+          "accept-1881-speak-with-anastasia"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-375-the-chill-of-death"
+        ]
+      },
+      {
+        "boundary": [
+          164,
+          1420,
+          "Gretchen Dedmar"
+        ],
+        "actions": [
+          "accept-375-the-chill-of-death"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1478-halgar-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          165,
+          1420,
+          "Ageron Kargal"
+        ],
+        "actions": [
+          "accept-1478-halgar-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1885-mennet-carkad"
+        ]
+      },
+      {
+        "boundary": [
+          166,
+          1420,
+          "Marion Call"
+        ],
+        "actions": [
+          "accept-1885-mennet-carkad"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-374-proof-of-demise"
+        ]
+      },
+      {
+        "boundary": [
+          167,
+          1420,
+          "Deathguard Burgess"
+        ],
+        "actions": [
+          "accept-374-proof-of-demise"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-358-graverobbers"
+        ]
+      },
+      {
+        "boundary": [
+          168,
+          1420,
+          "Magistrate Sevren"
+        ],
+        "actions": [
+          "accept-358-graverobbers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-398-wanted-maggot-eye"
+        ]
+      },
+      {
+        "boundary": [
+          169,
+          1420,
+          "Wanted: Maggot Eye"
+        ],
+        "actions": [
+          "accept-398-wanted-maggot-eye"
+        ]
+      },
+      {
+        "boundary": [
+          170,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "turnin-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          170,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "accept-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          171,
+          1420,
+          "Mausoleum Trigger"
+        ],
+        "actions": [
+          "objective-1819-1-mausoleum-trigger"
+        ]
+      },
+      {
+        "boundary": [
+          172,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "turnin-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          172,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "accept-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          173,
+          1420,
+          "Coleman Farthing"
+        ],
+        "actions": [
+          "turnin-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          174,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "turnin-1478-halgar-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1473-creature-of-the-void"
+        ]
+      },
+      {
+        "boundary": [
+          174,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "accept-1473-creature-of-the-void"
+        ]
+      },
+      {
+        "boundary": [
+          175,
+          1458,
+          "Mennet Carkad"
+        ],
+        "actions": [
+          "turnin-1885-mennet-carkad"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1886-the-deathstalkers"
+        ]
+      },
+      {
+        "boundary": [
+          175,
+          1458,
+          "Mennet Carkad"
+        ],
+        "actions": [
+          "accept-1886-the-deathstalkers"
+        ]
+      },
+      {
+        "boundary": [
+          178,
+          1458,
+          "Anastasia Hartwell"
+        ],
+        "actions": [
+          "turnin-1881-speak-with-anastasia"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1882-the-balnir-farmstead"
+        ]
+      },
+      {
+        "boundary": [
+          178,
+          1458,
+          "Anastasia Hartwell"
+        ],
+        "actions": [
+          "accept-1882-the-balnir-farmstead"
+        ]
+      },
+      {
+        "boundary": [
+          179,
+          1420,
+          "Captain Perrine"
+        ],
+        "actions": [
+          "objective-370-1-captain-perrine"
+        ]
+      },
+      {
+        "boundary": [
+          180,
+          1420,
+          "Egalin's Grimoire"
+        ],
+        "actions": [
+          "objective-1473-1-egalin-s-grimoire"
+        ]
+      },
+      {
+        "boundary": [
+          181,
+          1420,
+          "Scarlet Insignia Ring"
+        ],
+        "actions": [
+          "objective-374-1-scarlet-insignia-ring"
+        ]
+      },
+      {
+        "boundary": [
+          182,
+          1420,
+          "Scarlet Zealot"
+        ],
+        "actions": [
+          "objective-370-2-scarlet-zealot"
+        ]
+      },
+      {
+        "boundary": [
+          182,
+          1420,
+          "Scarlet Missionary"
+        ],
+        "actions": [
+          "objective-370-3-scarlet-missionary"
+        ]
+      },
+      {
+        "boundary": [
+          183,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "turnin-1473-creature-of-the-void"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1471-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          183,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "accept-1471-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          184,
+          1458,
+          "Runes of Summoning"
+        ],
+        "actions": [
+          "objective-1471-1-runes-of-summoning"
+        ]
+      },
+      {
+        "boundary": [
+          185,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "turnin-1471-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          186,
+          1420,
+          "Greater Duskbat"
+        ],
+        "actions": [
+          "objective-375-1-greater-duskbat"
+        ]
+      },
+      {
+        "boundary": [
+          187,
+          1420,
+          "Devlin Agamand"
+        ],
+        "actions": [
+          "objective-362-1-devlin-agamand"
+        ]
+      },
+      {
+        "boundary": [
+          188,
+          1420,
+          "Nissa Agamand"
+        ],
+        "actions": [
+          "objective-354-2-nissa-agamand"
+        ]
+      },
+      {
+        "boundary": [
+          189,
+          1420,
+          "Gregor Agamand"
+        ],
+        "actions": [
+          "objective-354-1-gregor-agamand"
+        ]
+      },
+      {
+        "boundary": [
+          190,
+          1420,
+          "Thurman Agamand"
+        ],
+        "actions": [
+          "objective-354-3-thurman-agamand"
+        ]
+      },
+      {
+        "boundary": [
+          191,
+          1420,
+          "Notched Rib"
+        ],
+        "actions": [
+          "objective-426-1-notched-rib"
+        ]
+      },
+      {
+        "boundary": [
+          192,
+          1420,
+          "Blackened Skull"
+        ],
+        "actions": [
+          "objective-426-2-blackened-skull"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Darkeye Bonecaster"
+        ],
+        "actions": [
+          "loot-starter-before-accept-361-a-letter-undelivered"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-361-a-letter-undelivered"
+        ]
+      },
+      {
+        "boundary": [
+          193,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-361-a-letter-undelivered"
+        ]
+      },
+      {
+        "boundary": [
+          194,
+          1420,
+          "Maggot Eye's Paw"
+        ],
+        "actions": [
+          "objective-398-1-maggot-eye"
+        ]
+      },
+      {
+        "boundary": [
+          195,
+          1420,
+          "Vile Fin Puddlejumper"
+        ],
+        "actions": [
+          "objective-368-1-vile-fin-puddlejumper"
+        ]
+      },
+      {
+        "boundary": [
+          196,
+          1420,
+          "Rot Hide Mongrel"
+        ],
+        "actions": [
+          "objective-358-2-rot-hide-mongrel"
+        ]
+      },
+      {
+        "boundary": [
+          197,
+          1420,
+          "Rot Hide Graverobber"
+        ],
+        "actions": [
+          "objective-358-1-rot-hide-graverobber"
+        ]
+      },
+      {
+        "boundary": [
+          198,
+          1420,
+          "Doom Weed"
+        ],
+        "actions": [
+          "objective-5482-1-doom-weed"
+        ]
+      },
+      {
+        "boundary": [
+          199,
+          1420,
+          "Embalming Ichor"
+        ],
+        "actions": [
+          "objective-358-3-embalming-ichor"
+        ]
+      },
+      {
+        "boundary": [
+          200,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-5482-doom-weed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99142-tomb-weed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Junior Apothecary Holland"
+        ],
+        "actions": [
+          "woven-accept-99142-tomb-weed"
+        ]
+      },
+      {
+        "boundary": [
+          201,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "turnin-426-the-mills-overrun"
+        ]
+      },
+      {
+        "boundary": [
+          202,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "turnin-368-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-369-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          202,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "accept-369-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          203,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "turnin-370-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-371-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          203,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "accept-371-at-war-with-the-scarlet-crusade",
+          "turnin-398-wanted-maggot-eye"
+        ]
+      },
+      {
+        "boundary": [
+          204,
+          1420,
+          "Magistrate Sevren"
+        ],
+        "actions": [
+          "turnin-358-graverobbers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-405-the-prodigal-lich"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Magistrate Sevren"
+        ],
+        "actions": [
+          "woven-accept-405-the-prodigal-lich"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Bethor Iceshard"
+        ],
+        "actions": [
+          "woven-turnin-405-the-prodigal-lich"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-357-the-lichs-identity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Bethor Iceshard"
+        ],
+        "actions": [
+          "woven-accept-357-the-lichs-identity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Gunther's island"
+        ],
+        "actions": [
+          "woven-objective-357-the-lichs-identity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Bethor Iceshard"
+        ],
+        "actions": [
+          "woven-turnin-357-the-lichs-identity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-366-return-the-book"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Bethor Iceshard"
+        ],
+        "actions": [
+          "woven-accept-366-return-the-book"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Gunther Arcanus"
+        ],
+        "actions": [
+          "woven-turnin-366-return-the-book"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-409-proving-allegiance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Gunther Arcanus"
+        ],
+        "actions": [
+          "woven-accept-409-proving-allegiance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Lillith's Dinner Table"
+        ],
+        "actions": [
+          "woven-objective-409-proving-allegiance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Gunther Arcanus"
+        ],
+        "actions": [
+          "woven-turnin-409-proving-allegiance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-411-the-prodigal-lich-returns"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Gunther Arcanus"
+        ],
+        "actions": [
+          "woven-accept-411-the-prodigal-lich-returns"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Bethor Iceshard"
+        ],
+        "actions": [
+          "woven-turnin-411-the-prodigal-lich-returns"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-359-forsaken-duties"
+        ]
+      },
+      {
+        "boundary": [
+          204,
+          1420,
+          "Magistrate Sevren"
+        ],
+        "actions": [
+          "accept-359-forsaken-duties"
+        ]
+      },
+      {
+        "boundary": [
+          205,
+          1420,
+          "Deathguard Burgess"
+        ],
+        "actions": [
+          "turnin-374-proof-of-demise"
+        ]
+      },
+      {
+        "boundary": [
+          207,
+          1420,
+          "Yvette Farthing"
+        ],
+        "actions": [
+          "turnin-361-a-letter-undelivered"
+        ]
+      },
+      {
+        "boundary": [
+          208,
+          1420,
+          "Coleman Farthing"
+        ],
+        "actions": [
+          "turnin-354-deaths-in-the-family",
+          "turnin-362-the-haunted-mills"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-355-speak-with-sevren"
+        ]
+      },
+      {
+        "boundary": [
+          208,
+          1420,
+          "Coleman Farthing"
+        ],
+        "actions": [
+          "accept-355-speak-with-sevren"
+        ]
+      },
+      {
+        "boundary": [
+          209,
+          1420,
+          "Gretchen Dedmar"
+        ],
+        "actions": [
+          "turnin-375-the-chill-of-death"
+        ]
+      },
+      {
+        "boundary": [
+          216,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "turnin-359-forsaken-duties"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-360-return-to-the-magistrate"
+        ]
+      },
+      {
+        "boundary": [
+          216,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "accept-360-return-to-the-magistrate"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-356-rear-guard-patrol"
+        ]
+      },
+      {
+        "boundary": [
+          216,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "accept-356-rear-guard-patrol"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-97558-hides-for-the-forsaken"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shelene Rhobart"
+        ],
+        "actions": [
+          "woven-accept-97558-hides-for-the-forsaken"
+        ]
+      },
+      {
+        "boundary": [
+          217,
+          1420,
+          "Balnir Snapdragons"
+        ],
+        "actions": [
+          "objective-1882-1-balnir-snapdragons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Balnir Farmstead"
+        ],
+        "actions": [
+          "woven-objective-99142-tomb-weed"
+        ]
+      },
+      {
+        "boundary": [
+          218,
+          1420,
+          "Bleeding Horror"
+        ],
+        "actions": [
+          "objective-356-1-bleeding-horror"
+        ]
+      },
+      {
+        "boundary": [
+          218,
+          1420,
+          "Wandering Spirit"
+        ],
+        "actions": [
+          "objective-356-2-wandering-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shelene Rhobart"
+        ],
+        "actions": [
+          "woven-objective-97558-hides-for-the-forsaken"
+        ]
+      },
+      {
+        "boundary": [
+          219,
+          1420,
+          "Captain Vachon"
+        ],
+        "actions": [
+          "objective-371-1-captain-vachon"
+        ]
+      },
+      {
+        "boundary": [
+          220,
+          1420,
+          "Scarlet Friar"
+        ],
+        "actions": [
+          "objective-371-2-scarlet-friar"
+        ]
+      },
+      {
+        "boundary": [
+          221,
+          1420,
+          "Vicious Night Web Spider"
+        ],
+        "actions": [
+          "objective-369-1-vicious-night-web-spider"
+        ]
+      },
+      {
+        "boundary": [
+          223,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "turnin-356-rear-guard-patrol"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99156-rear-guard-patrol"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "woven-accept-99156-rear-guard-patrol"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Riptear"
+        ],
+        "actions": [
+          "woven-objective-99156-rear-guard-patrol"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "woven-turnin-99156-rear-guard-patrol"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shelene Rhobart"
+        ],
+        "actions": [
+          "woven-turnin-97558-hides-for-the-forsaken"
+        ]
+      },
+      {
+        "boundary": [
+          224,
+          1420,
+          "Magistrate Sevren"
+        ],
+        "actions": [
+          "turnin-355-speak-with-sevren"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-408-the-family-crypt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Magistrate Sevren"
+        ],
+        "actions": [
+          "woven-accept-408-the-family-crypt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Agamand Family Crypt"
+        ],
+        "actions": [
+          "woven-objective-408-the-family-crypt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Magistrate Sevren"
+        ],
+        "actions": [
+          "woven-turnin-408-the-family-crypt"
+        ]
+      },
+      {
+        "boundary": [
+          224,
+          1420,
+          "Magistrate Sevren"
+        ],
+        "actions": [
+          "turnin-360-return-to-the-magistrate"
+        ]
+      },
+      {
+        "boundary": [
+          225,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "turnin-371-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-372-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "woven-accept-372-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Captain Melrache"
+        ],
+        "actions": [
+          "woven-objective-372-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Executor Zygand"
+        ],
+        "actions": [
+          "woven-turnin-372-at-war-with-the-scarlet-crusade"
+        ]
+      },
+      {
+        "boundary": [
+          226,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "turnin-369-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-492-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          226,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "accept-492-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-445-delivery-to-silverpine-forest"
+        ]
+      },
+      {
+        "boundary": [
+          226,
+          1420,
+          "Apothecary Johaan"
+        ],
+        "actions": [
+          "accept-445-delivery-to-silverpine-forest"
+        ]
+      },
+      {
+        "boundary": [
+          227,
+          1420,
+          "Captured Mountaineer"
+        ],
+        "actions": [
+          "turnin-492-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Junior Apothecary Holland"
+        ],
+        "actions": [
+          "woven-turnin-99142-tomb-weed"
+        ]
+      },
+      {
+        "boundary": [
+          228,
+          1458,
+          "Anastasia Hartwell"
+        ],
+        "actions": [
+          "turnin-1882-the-balnir-farmstead"
+        ]
+      },
+      {
+        "boundary": [
+          229,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-1886-1-astor-hadren"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shadowvale"
+        ],
+        "actions": [
+          "woven-objective-95314-that-shadowvale-green-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99144-seeking-refuge"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Bareth Dawnstone"
+        ],
+        "actions": [
+          "woven-accept-99144-seeking-refuge",
+          "woven-objective-99144-seeking-refuge"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shari Stilwell"
+        ],
+        "actions": [
+          "woven-turnin-99144-seeking-refuge"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Carolai Anise"
+        ],
+        "actions": [
+          "woven-turnin-95314-that-shadowvale-green-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91282-a-second-home"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shari Stilwell"
+        ],
+        "actions": [
+          "woven-accept-91282-a-second-home"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Breton Samuels"
+        ],
+        "actions": [
+          "woven-turnin-91282-a-second-home"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91285-murlocs-at-the-gates"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Breton Samuels"
+        ],
+        "actions": [
+          "woven-accept-91285-murlocs-at-the-gates"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Vile Fin Seer"
+        ],
+        "actions": [
+          "woven-objective-91285-murlocs-at-the-gates"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Breton Samuels"
+        ],
+        "actions": [
+          "woven-turnin-91285-murlocs-at-the-gates"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91294-touring-the-grounds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Breton Samuels"
+        ],
+        "actions": [
+          "woven-accept-91294-touring-the-grounds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Hilda the Breaker"
+        ],
+        "actions": [
+          "woven-objective-91294-touring-the-grounds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Danitha Morr"
+        ],
+        "actions": [
+          "woven-turnin-91294-touring-the-grounds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91316-making-repairs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Jorin Croge"
+        ],
+        "actions": [
+          "woven-accept-91316-making-repairs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91317-the-tarnished"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Danitha Morr"
+        ],
+        "actions": [
+          "woven-accept-91317-the-tarnished"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-objective-91316-making-repairs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Rudolph Gelhardt"
+        ],
+        "actions": [
+          "woven-objective-91317-the-tarnished"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Jorin Croge"
+        ],
+        "actions": [
+          "woven-turnin-91316-making-repairs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Danitha Morr"
+        ],
+        "actions": [
+          "woven-turnin-91317-the-tarnished"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-95803-a-token-of-good-faith"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Danitha Morr"
+        ],
+        "actions": [
+          "woven-accept-95803-a-token-of-good-faith"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Lady Sylvanas Windrunner"
+        ],
+        "actions": [
+          "woven-turnin-95803-a-token-of-good-faith"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94427-a-lesson-in-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Danitha Morr"
+        ],
+        "actions": [
+          "woven-accept-94427-a-lesson-in-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Tanis Alderwood"
+        ],
+        "actions": [
+          "woven-turnin-94427-a-lesson-in-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94434-a-lesson-in-divinity-undercity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Tanis Alderwood"
+        ],
+        "actions": [
+          "woven-accept-94434-a-lesson-in-divinity-undercity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-objective-94434-a-lesson-in-divinity-undercity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Tanis Alderwood"
+        ],
+        "actions": [
+          "woven-turnin-94434-a-lesson-in-divinity-undercity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94435-a-lesson-in-divinity-return"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Tanis Alderwood"
+        ],
+        "actions": [
+          "woven-accept-94435-a-lesson-in-divinity-return"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Danitha Morr"
+        ],
+        "actions": [
+          "woven-turnin-94435-a-lesson-in-divinity-return"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94436-a-lesson-in-divinity-billmuth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Danitha Morr"
+        ],
+        "actions": [
+          "woven-accept-94436-a-lesson-in-divinity-billmuth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Billmuth"
+        ],
+        "actions": [
+          "woven-turnin-94436-a-lesson-in-divinity-billmuth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94438-a-lesson-in-divinity-falgan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Billmuth"
+        ],
+        "actions": [
+          "woven-accept-94438-a-lesson-in-divinity-falgan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-94438-reviewed-mechanics"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Falgan"
+        ],
+        "actions": [
+          "woven-turnin-94438-a-lesson-in-divinity-falgan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94440-a-lesson-in-divinity-scarlets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Falgan"
+        ],
+        "actions": [
+          "woven-accept-94440-a-lesson-in-divinity-scarlets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-objective-94440-a-lesson-in-divinity-scarlets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Billmuth"
+        ],
+        "actions": [
+          "woven-turnin-94440-a-lesson-in-divinity-scarlets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94441-a-lesson-in-divinity-done"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Billmuth"
+        ],
+        "actions": [
+          "woven-accept-94441-a-lesson-in-divinity-done"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Danitha Morr"
+        ],
+        "actions": [
+          "woven-turnin-94441-a-lesson-in-divinity-done"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96895-the-argent-emissary"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Terrence"
+        ],
+        "actions": [
+          "woven-accept-96895-the-argent-emissary"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Hadric Harlson"
+        ],
+        "actions": [
+          "woven-turnin-96895-the-argent-emissary"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96896-a-righteous-cause"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Leonid Barthalomew the Revered"
+        ],
+        "actions": [
+          "woven-accept-96896-a-righteous-cause",
+          "woven-objective-96896-a-righteous-cause",
+          "woven-turnin-96896-a-righteous-cause"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96897-the-cult-of-the-damned"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Hadric Harlson"
+        ],
+        "actions": [
+          "woven-accept-96897-the-cult-of-the-damned"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96898-remnants-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Hadric Harlson"
+        ],
+        "actions": [
+          "woven-accept-96898-remnants-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Dark Neophyte"
+        ],
+        "actions": [
+          "woven-objective-96897-the-cult-of-the-damned",
+          "woven-objective-96898-remnants-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Hadric Harlson"
+        ],
+        "actions": [
+          "woven-turnin-96897-the-cult-of-the-damned",
+          "woven-turnin-96898-remnants-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96899-bandarion-keep"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Hadric Harlson"
+        ],
+        "actions": [
+          "woven-accept-96899-bandarion-keep"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Leonid Barthalomew the Revered"
+        ],
+        "actions": [
+          "woven-turnin-96899-bandarion-keep"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99152-as-above-so-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Hilda the Breaker"
+        ],
+        "actions": [
+          "woven-accept-99152-as-above-so-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99153-the-one-that-got-away"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Ephram Barbaro"
+        ],
+        "actions": [
+          "woven-accept-99153-the-one-that-got-away"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Shadowvale cellars"
+        ],
+        "actions": [
+          "woven-objective-99152-as-above-so-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Glowing Crystal Fragment"
+        ],
+        "actions": [
+          "woven-objective-99153-the-one-that-got-away"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Hilda the Breaker"
+        ],
+        "actions": [
+          "woven-turnin-99152-as-above-so-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Ephram Barbaro"
+        ],
+        "actions": [
+          "woven-turnin-99153-the-one-that-got-away"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98545-leonid-s-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Leonid Barthalomew the Revered"
+        ],
+        "actions": [
+          "woven-accept-98545-leonid-s-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Glix Xizzix"
+        ],
+        "actions": [
+          "woven-turnin-98545-leonids-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Whispering Horror"
+        ],
+        "actions": [
+          "loot-starter-before-accept-95328-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-95328-verified-pickup",
+          "accept-95328-verified-pickup",
+          "objective-95328-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Father Lankester"
+        ],
+        "actions": [
+          "woven-turnin-95328-whispering-horror-residue"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Tai'jin"
+        ],
+        "actions": [
+          "travel-tirisfal-to-durotar"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5660-touch-of-weakness"
+        ]
+      },
+      {
+        "boundary": [
+          142,
+          1411,
+          "Tai'jin"
+        ],
+        "actions": [
+          "accept-5660-touch-of-weakness"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Aelthalyste"
+        ],
+        "actions": [
+          "travel-durotar-to-tirisfal"
+        ]
+      },
+      {
+        "boundary": [
+          177,
+          1458,
+          "Aelthalyste"
+        ],
+        "actions": [
+          "turnin-5660-touch-of-weakness"
+        ]
+      }
+    ]
   }
 }
