@@ -402,6 +402,34 @@ local guides = {
             { "Valor's Rest", 81, 18, "valor-s-rest" },
         },
     },
+    {
+        zone = "tanaris",
+        title = "Explore Tanaris",
+        achievementID = 851,
+        mapID = 1446,
+        locations = {
+            { "Gadgetzan", 50, 28, "gadgetzan" },
+            { "Sandsorrow Watch", 38, 27, "sandsorrow-watch" },
+            { "Noonshade Ruins", 60, 25, "noonshade-ruins" },
+            { "Steamwheedle Port", 67, 23, "steamwheedle-port" },
+            { "Zalashji's Den", 67, 32, "zalashji-s-den" },
+            { "Lost Rigger Cove", 73, 46, "lost-rigger-cove" },
+            { "Waterspring Field", 60, 36, "waterspring-field" },
+            { "Abyssal Sands", 45, 41, "abyssal-sands" },
+            { "Broken Pillar", 52, 45, "broken-pillar" },
+            { "The Noxious Lair", 36, 43, "the-noxious-lair" },
+            { "Dunemaul Compound", 40, 57, "dunemaul-compound" },
+            { "Southbreak Shore", 64, 60, "southbreak-shore" },
+            { "The Gaping Chasm", 52, 67, "the-gaping-chasm" },
+            { "Eastmoon Ruins", 47, 65, "eastmoon-ruins" },
+            { "Land's End Beach", 64, 73, "land-s-end-beach" },
+            { "Southmoon Ruins", 40, 72, "southmoon-ruins" },
+            { "Valley of the Watchers", 36, 77, "valley-of-the-watchers" },
+            { "Thistleshrub Valley", 29, 64, "thistleshrub-valley" },
+            { "Zul'Farrak", 38, 16, "zul-farrak" },
+            { "Caverns of Time", 65, 49, "caverns-of-time" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
@@ -459,6 +487,9 @@ return function(ns, Check, Equal)
                         achievement.completed = true
                     end
                     Equal(ns.EvaluateCondition(goal.complete, state), true, context .. " completes from observed achievement data")
+                    if location[1] == "Land's End Beach" then
+                        Check(string.find(goal.text, "Swim", 1, true) ~= nil, context .. " explains the coastal discovery approach")
+                    end
                     if location[1] == "Garrison Armory" then
                         Check(string.find(goal.text, "mine", 1, true) ~= nil, context .. " directs the player into the mine")
                         Check(string.find(goal.text, "few steps", 1, true) ~= nil, context .. " explains the discovery trigger")

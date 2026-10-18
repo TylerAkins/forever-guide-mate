@@ -206,6 +206,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreFelwood.lua",
     "Guides/Miscellaneous/ExploreFeralas.lua",
     "Guides/Miscellaneous/ExploreSilithus.lua",
+    "Guides/Miscellaneous/ExploreTanaris.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",
