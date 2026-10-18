@@ -3,6 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.6.3 - 2026-10-18
+- Make Washte Pawne explicitly optional in the normal Horde route and explain his multiple spawn locations.
 - Add an ordered Zephras Isle Loremaster guide with reviewed quest coverage and capital ownership.
 - Add an ordered Tirisfal Glades Loremaster guide with reviewed quest coverage and capital ownership.
 - Add an ordered Mulgore Loremaster guide with reviewed quest coverage and capital ownership.

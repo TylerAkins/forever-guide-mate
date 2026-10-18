@@ -875,7 +875,7 @@ ns:RegisterGuide({
             route = {
                 { y = 0.62, mapID = 1413, label = "Washte Pawne", offMapText = "Travel to Washte Pawne.", x = 0.44 },
             },
-            text = "Kill Washte Pawne and loot Washte Pawne's Feather.",
+            text = "Kill Washte Pawne and loot Washte Pawne's Feather. He can spawn in many locations across the Barrens; the pin marks one possible location. You can skip this step if you do not find him.",
             id = "note-885-washte-pawne-loot",
             kind = "note",
             conditions = {
