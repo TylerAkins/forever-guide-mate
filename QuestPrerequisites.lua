@@ -1091,3 +1091,5 @@ ns:RegisterQuestPrerequisite({ quest = 98286, mode = "any", quests = { 95998, 96
 
 -- User-observed drop unlock, also recorded by QuestieDB and ATT.
 ns:RegisterQuestPrerequisite({ quest = 23, mode = "all", quests = { 6383 } })
+
+ns:RegisterQuestPrerequisite({ quest = 2, mode = "all", quests = { 6383 } })

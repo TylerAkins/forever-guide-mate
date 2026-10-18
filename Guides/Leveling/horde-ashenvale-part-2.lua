@@ -1658,9 +1658,10 @@ ns:RegisterGuide({
                     {
                         race = { 2, 5, 6, 8, 96 },
                     },
+                    { quest = { id = 6383, state = "completed" } },
                 },
             },
-            text = "Loot Sharptalon's Claw from Sharptalon. Keep it for the next pickup.",
+            text = "After turning in The Ashenvale Hunt (6383) to Senani Thunderheart at Splintertree Post, kill Sharptalon near 75.9, 69.5 and loot Sharptalon's Claw. Keep it for the next pickup.",
             complete = {
                 any = {
                     {
@@ -1671,10 +1672,11 @@ ns:RegisterGuide({
                     },
                 },
             },
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 6383 } } },
+            route = { { mapID = 1440, x = 0.759, y = 0.695, label = "Sharptalon", offMapText = "Travel to Sharptalon in Ashenvale." } },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-6383-the-ashenvale-hunt" },
         },
         {
             text = "Use the Sharptalon's Claw to accept Sharptalon's Claw.",
@@ -1704,7 +1706,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-6383-the-ashenvale-hunt" },
         },
         {
             text = "Turn in Sharptalon's Claw to Senani Thunderheart.",

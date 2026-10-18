@@ -14521,6 +14521,23 @@
       "coordinateSource": "User observation, 2026-10-18",
       "dropReports": "https://www.wowhead.com/forever/item=16408/befouled-water-globe",
       "note": "The existing outing has Stonetalon Standstill active. Do not turn ATT's chain association into a requirement to turn it in before the drop."
+    },
+    "2": {
+      "dropPrerequisite": {
+        "quest": 6383,
+        "state": "completed"
+      },
+      "provider": "Sharptalon",
+      "mapID": 1440,
+      "coordinate": [
+        75.9,
+        69.5
+      ],
+      "coordinateSource": "User observation, 2026-10-18",
+      "prerequisiteSources": [
+        "QuestieDB preQuestSingle",
+        "ATT preQuestSingle"
+      ]
     }
   }
 }
