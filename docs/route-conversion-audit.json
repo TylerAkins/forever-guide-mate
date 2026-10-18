@@ -14470,6 +14470,10 @@
     "loremaster-teldrassil": {
       "inventory": "docs/loremaster/teldrassil.json",
       "clientWalkthrough": false
+    },
+    "loremaster-durotar": {
+      "inventory": "docs/loremaster/durotar.json",
+      "clientWalkthrough": false
     }
   }
 }

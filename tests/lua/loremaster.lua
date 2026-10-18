@@ -57,3 +57,21 @@ local grove, groveIndex = questAction(teldrassil, 'accept', 941)
 assert(waterReturnIndex < groveIndex, 'The Moss-twined Heart turn-in precedes Planting the Heart')
 local crownReturn = questAction(teldrassil, 'turnin', 935)
 assert(crownReturn.route[1].mapID == 1457, 'The Teldrassil chain includes its Darnassus return')
+local durotar = assert(ns.guides['loremaster-durotar'], 'Durotar has a Loremaster itinerary')
+for _, quest in ipairs({96874, 96875}) do
+    local pickup, pickupIndex = questAction(durotar, 'accept', quest)
+    local work, workIndex = questAction(durotar, 'objective', quest)
+    local finish, finishIndex = questAction(durotar, 'turnin', quest)
+    local _, ridgeIndex = ns.Engine:GetGoal(durotar, 'objective-806-1-fizzle-s-claw')
+    assert(pickup.route[1].mapID == 1454, 'Durotar profession pickup is in Orgrimmar')
+    assert(work.route[1].mapID == 1411, 'The profession outing belongs to Durotar')
+    assert(pickupIndex < ridgeIndex and ridgeIndex < workIndex and workIndex < finishIndex,
+        'Orgrimmar pickups precede Thunder Ridge work and the later city return')
+end
+local hunterPickup = ns.Engine:GetGoal(durotar, 'accept-812-need-for-a-cure')
+local hordeSnapshot = { faction = 'Horde', raceID = 2, classID = 1, level = 10,
+    quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+    professionsKnown = true, professions = {}, items = {} }
+assert(ns.OrderedRoutes:ExcludedAction(hunterPickup, hordeSnapshot), 'Warriors pass the earlier hunter-only city pickup')
+hordeSnapshot.classID = 3
+assert(not ns.OrderedRoutes:ExcludedAction(hunterPickup, hordeSnapshot), 'Hunters keep their earlier city pickup')

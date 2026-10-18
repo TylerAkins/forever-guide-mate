@@ -1,0 +1,6326 @@
+{
+  "guide": "loremaster-durotar",
+  "title": "Durotar",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-era-durotar",
+  "spineActions": [
+    "accept-4641-your-place-in-the-world",
+    "accept-1485-vile-familiars",
+    "turnin-4641-your-place-in-the-world",
+    "accept-788-cutting-teeth",
+    "objective-788-1-mottled-boar",
+    "objective-1485-1-vile-familiar-head",
+    "accept-790-sarkoth",
+    "objective-790-1-sarkoth",
+    "turnin-790-sarkoth",
+    "accept-804-sarkoth",
+    "turnin-1485-vile-familiars",
+    "accept-1499-vile-familiars",
+    "turnin-1499-vile-familiars",
+    "turnin-788-cutting-teeth",
+    "turnin-804-sarkoth",
+    "accept-2383-simple-parchment",
+    "accept-3089-rune-inscribed-parchment",
+    "accept-3088-encrypted-parchment",
+    "accept-3087-etched-parchment",
+    "accept-3090-tainted-parchment",
+    "accept-3065-simple-tablet",
+    "accept-3082-etched-tablet",
+    "accept-3083-encrypted-tablet",
+    "accept-3085-hallowed-tablet",
+    "accept-3084-rune-inscribed-tablet",
+    "accept-3086-glyphic-tablet",
+    "woven-accept-98576-glyphic-parchment",
+    "woven-accept-98575-tainted-tablet",
+    "accept-789-sting-of-the-scorpid",
+    "turnin-3088-encrypted-parchment",
+    "turnin-3083-encrypted-tablet",
+    "turnin-3090-tainted-parchment",
+    "woven-turnin-98575-tainted-tablet",
+    "accept-4402-galgar-s-cactus-apple-surprise",
+    "turnin-3085-hallowed-tablet",
+    "turnin-3089-rune-inscribed-parchment",
+    "turnin-3084-rune-inscribed-tablet",
+    "level-before-accept-1516-call-of-earth",
+    "accept-1516-call-of-earth",
+    "turnin-3086-glyphic-tablet",
+    "woven-turnin-98576-glyphic-parchment",
+    "level-before-accept-792-vile-familiars",
+    "accept-792-vile-familiars",
+    "turnin-2383-simple-parchment",
+    "turnin-3065-simple-tablet",
+    "turnin-3087-etched-parchment",
+    "turnin-3082-etched-tablet",
+    "level-before-accept-5441-lazy-peons",
+    "accept-5441-lazy-peons",
+    "objective-792-1-vile-familiar",
+    "objective-789-1-scorpid-worker-tail",
+    "objective-4402-1-cactus-apple",
+    "turnin-4402-galgar-s-cactus-apple-surprise",
+    "turnin-789-sting-of-the-scorpid",
+    "turnin-792-vile-familiars",
+    "accept-794-burning-blade-medallion",
+    "objective-5441-quest-work",
+    "turnin-5441-lazy-peons",
+    "level-before-accept-6394-thazz-ril-s-pick",
+    "accept-6394-thazz-ril-s-pick",
+    "objective-6394-1-thazz-ril-s-pick",
+    "objective-1516-1-felstalker-hoof",
+    "objective-794-quest-work",
+    "turnin-794-burning-blade-medallion",
+    "accept-805-report-to-sen-jin-village",
+    "level-before-accept-5649-in-favor-of-spirituality",
+    "accept-5649-in-favor-of-spirituality",
+    "turnin-1516-call-of-earth",
+    "level-before-accept-1517-call-of-earth",
+    "accept-1517-call-of-earth",
+    "objective-1517-earth-sapta",
+    "turnin-1517-call-of-earth",
+    "level-before-accept-1518-call-of-earth",
+    "accept-1518-call-of-earth",
+    "turnin-1518-call-of-earth",
+    "turnin-6394-thazz-ril-s-pick",
+    "woven-accept-97279-wayward-weapons",
+    "woven-objective-97279-wayward-weapons",
+    "woven-turnin-97279-wayward-weapons",
+    "accept-2161-a-peon-s-burden",
+    "level-before-accept-786-thwarting-kolkar-aggression",
+    "accept-786-thwarting-kolkar-aggression",
+    "level-before-accept-817-practical-prey",
+    "accept-817-practical-prey",
+    "level-before-accept-818-a-solvent-spirit",
+    "accept-818-a-solvent-spirit",
+    "turnin-805-report-to-sen-jin-village",
+    "level-before-accept-808-minshina-s-skull",
+    "accept-808-minshina-s-skull",
+    "level-before-accept-826-zalazane",
+    "accept-826-zalazane",
+    "level-before-accept-823-report-to-orgnil",
+    "accept-823-report-to-orgnil",
+    "woven-accept-96821-legging-it",
+    "level-before-woven-accept-97225-forgotten-loa-idols",
+    "woven-accept-97225-forgotten-loa-idols",
+    "level-before-woven-accept-97223-bloodtalon-matriarch",
+    "woven-accept-97223-bloodtalon-matriarch",
+    "objective-818-1-makrura-clacker",
+    "objective-818-2-crawler-mucus",
+    "turnin-818-a-solvent-spirit",
+    "level-before-woven-accept-96652-the-adventurer",
+    "woven-accept-96652-the-adventurer",
+    "objective-786-1-authored-Valley-of-Trials-plan",
+    "objective-786-2-authored-Senjin-plan",
+    "objective-786-3-authored-Orgrimmar-plan",
+    "turnin-786-thwarting-kolkar-aggression",
+    "level-before-woven-accept-99123-lost-in-the-shadows",
+    "woven-accept-99123-lost-in-the-shadows",
+    "woven-objective-99123-lost-in-the-shadows",
+    "woven-turnin-99123-lost-in-the-shadows",
+    "woven-objective-96821-legging-it-1",
+    "woven-objective-96821-legging-it-2",
+    "loot-starter-before-accept-96876-verified-pickup",
+    "level-before-accept-96876-verified-pickup",
+    "accept-96876-verified-pickup",
+    "woven-turnin-96876-ukors-lost-pack",
+    "turnin-823-report-to-orgnil",
+    "level-before-accept-806-dark-storms",
+    "accept-806-dark-storms",
+    "level-before-accept-784-vanquish-the-betrayers",
+    "accept-784-vanquish-the-betrayers",
+    "level-before-accept-837-encroachment",
+    "accept-837-encroachment",
+    "level-before-accept-815-break-a-few-eggs",
+    "accept-815-break-a-few-eggs",
+    "level-before-accept-791-carry-your-weight",
+    "accept-791-carry-your-weight",
+    "level-before-woven-accept-96822-for-honor",
+    "woven-accept-96822-for-honor",
+    "level-before-woven-accept-96825-this-fruit-could-bite-back",
+    "woven-accept-96825-this-fruit-could-bite-back",
+    "turnin-2161-a-peon-s-burden",
+    "turnin-5649-in-favor-of-spirituality",
+    "level-before-accept-5648-garments-of-spirituality",
+    "accept-5648-garments-of-spirituality",
+    "objective-5648-quest-work",
+    "turnin-5648-garments-of-spirituality",
+    "objective-784-3-lieutenant-benedict",
+    "loot-starter-before-accept-830-the-admiral-s-orders",
+    "accept-830-the-admiral-s-orders",
+    "objective-791-1-canvas-scraps",
+    "objective-784-2-kul-tiras-marine",
+    "objective-784-1-kul-tiras-sailor",
+    "woven-objective-96822-for-honor",
+    "turnin-784-vanquish-the-betrayers",
+    "woven-turnin-96822-for-honor",
+    "level-before-accept-825-from-the-wreckage",
+    "accept-825-from-the-wreckage",
+    "turnin-830-the-admiral-s-orders",
+    "accept-831-the-admiral-s-orders",
+    "turnin-791-carry-your-weight",
+    "woven-turnin-96821-legging-it",
+    "objective-825-1-gnomish-tools",
+    "objective-826-3-zalazane",
+    "objective-808-1-minshina-s-skull",
+    "objective-826-1-hexed-troll",
+    "objective-826-2-voodoo-troll",
+    "objective-815-1-taillasher-egg",
+    "objective-817-1-durotar-tiger-fur",
+    "woven-objective-97225-forgotten-loa-idols",
+    "woven-objective-97223-bloodtalon-matriarch",
+    "turnin-808-minshina-s-skull",
+    "turnin-826-zalazane",
+    "turnin-817-practical-prey",
+    "woven-turnin-97225-forgotten-loa-idols",
+    "woven-turnin-97223-bloodtalon-matriarch",
+    "turnin-825-from-the-wreckage",
+    "turnin-815-break-a-few-eggs",
+    "objective-837-1-razormane-quilboar",
+    "objective-837-2-razormane-scout",
+    "objective-837-3-razormane-dustrunner",
+    "objective-837-4-razormane-battleguard",
+    "woven-objective-96825-this-fruit-could-bite-back",
+    "turnin-837-encroachment",
+    "woven-turnin-96825-this-fruit-could-bite-back",
+    "level-before-accept-5654-hex-of-weakness",
+    "accept-5654-hex-of-weakness",
+    "level-before-accept-6062-taming-the-beast",
+    "accept-6062-taming-the-beast",
+    "level-before-objective-6062-1-taming-rod",
+    "objective-6062-1-taming-rod",
+    "woven-turnin-96652-the-adventurer",
+    "level-before-woven-accept-96604-the-great-outdoors",
+    "woven-accept-96604-the-great-outdoors",
+    "woven-objective-96604-the-great-outdoors",
+    "woven-turnin-96604-the-great-outdoors",
+    "turnin-6062-taming-the-beast",
+    "level-before-accept-6083-taming-the-beast",
+    "accept-6083-taming-the-beast",
+    "objective-6083-1-taming-rod",
+    "turnin-6083-taming-the-beast",
+    "level-before-accept-6082-taming-the-beast",
+    "accept-6082-taming-the-beast",
+    "objective-6082-1-taming-rod",
+    "turnin-6082-taming-the-beast",
+    "level-before-accept-6081-training-the-beast",
+    "accept-6081-training-the-beast",
+    "level-before-accept-812-need-for-a-cure",
+    "accept-812-need-for-a-cure",
+    "turnin-831-the-admiral-s-orders",
+    "level-before-accept-813-finding-the-antidote",
+    "accept-813-finding-the-antidote",
+    "turnin-6081-training-the-beast",
+    "level-before-accept-2983-call-of-fire",
+    "accept-2983-call-of-fire",
+    "turnin-2983-call-of-fire",
+    "level-before-accept-1524-call-of-fire",
+    "accept-1524-call-of-fire",
+    "turnin-1524-call-of-fire",
+    "level-before-accept-1525-call-of-fire",
+    "accept-1525-call-of-fire",
+    "objective-1525-1-razormane-geomancer",
+    "level-before-accept-834-winds-in-the-desert",
+    "accept-834-winds-in-the-desert",
+    "objective-834-1-sack-of-supplies",
+    "turnin-834-winds-in-the-desert",
+    "level-before-accept-835-securing-the-lines",
+    "accept-835-securing-the-lines",
+    "objective-835-quest-work",
+    "loot-starter-before-accept-97281-verified-pickup",
+    "level-before-accept-97281-verified-pickup",
+    "accept-97281-verified-pickup",
+    "turnin-835-securing-the-lines",
+    "woven-turnin-97281-a-simmering-storm",
+    "level-before-woven-accept-97282-stormy-potential",
+    "woven-accept-97282-stormy-potential",
+    "woven-turnin-97282-stormy-potential",
+    "level-before-accept-816-lost-but-not-forgotten",
+    "accept-816-lost-but-not-forgotten",
+    "objective-816-1-dreadmaw-crocolisk",
+    "turnin-1525-call-of-fire",
+    "level-before-accept-1526-call-of-fire",
+    "accept-1526-call-of-fire",
+    "objective-1526-1-fire-sapta",
+    "turnin-1526-call-of-fire",
+    "level-before-accept-1527-call-of-fire",
+    "accept-1527-call-of-fire",
+    "turnin-1527-call-of-fire",
+    "turnin-816-lost-but-not-forgotten",
+    "level-before-accept-812-need-for-a-cure-2",
+    "accept-812-need-for-a-cure-2",
+    "level-before-objective-806-1-fizzle-s-claw",
+    "objective-806-1-fizzle-s-claw",
+    "loot-starter-before-accept-96877-verified-pickup",
+    "level-before-accept-96877-verified-pickup",
+    "accept-96877-verified-pickup",
+    "woven-objective-97282-stormy-potential",
+    "turnin-806-dark-storms",
+    "level-before-woven-accept-828-margoz",
+    "woven-accept-828-margoz",
+    "level-before-woven-accept-840-conscript-of-the-horde",
+    "woven-accept-840-conscript-of-the-horde",
+    "woven-turnin-828-margoz",
+    "level-before-woven-accept-827-skull-rock",
+    "woven-accept-827-skull-rock",
+    "woven-objective-827-skull-rock",
+    "level-before-woven-accept-832-burning-shadows",
+    "woven-accept-832-burning-shadows",
+    "woven-turnin-827-skull-rock",
+    "level-before-woven-accept-829-neeru-fireblade",
+    "woven-accept-829-neeru-fireblade",
+    "level-before-woven-accept-99048-a-missing-hand",
+    "woven-accept-99048-a-missing-hand",
+    "woven-turnin-99048-a-missing-hand",
+    "level-before-woven-accept-99049-threat-from-below",
+    "woven-accept-99049-threat-from-below",
+    "woven-objective-99049-threat-from-below",
+    "woven-turnin-99049-threat-from-below",
+    "level-before-woven-accept-99051-threat-from-below",
+    "woven-accept-99051-threat-from-below",
+    "woven-objective-99051-threat-from-below",
+    "woven-turnin-99051-threat-from-below",
+    "level-before-woven-accept-99052-threat-from-below",
+    "woven-accept-99052-threat-from-below",
+    "woven-objective-99052-threat-from-below",
+    "woven-turnin-99052-threat-from-below",
+    "turnin-5654-hex-of-weakness",
+    "turnin-831-the-admiral-s-orders-2",
+    "level-before-accept-813-finding-the-antidote-2",
+    "accept-813-finding-the-antidote-2",
+    "objective-813-1-venomtail-scorpid",
+    "turnin-813-finding-the-antidote",
+    "woven-turnin-829-neeru-fireblade",
+    "level-before-woven-accept-809-akzeloth",
+    "woven-accept-809-akzeloth",
+    "woven-turnin-832-burning-shadows",
+    "woven-turnin-96877-halikors-hoof",
+    "level-before-accept-812-need-for-a-cure-3",
+    "accept-812-need-for-a-cure-3",
+    "objective-812-quest-work",
+    "turnin-812-need-for-a-cure",
+    "woven-turnin-809-akzeloth",
+    "woven-turnin-840-conscript-of-the-horde",
+    "level-before-woven-accept-842-crossroads-conscription",
+    "woven-accept-842-crossroads-conscription",
+    "level-before-woven-accept-924-the-demon-seed",
+    "woven-accept-924-the-demon-seed",
+    "woven-objective-924-the-demon-seed",
+    "woven-turnin-924-the-demon-seed",
+    "woven-turnin-842-crossroads-conscription",
+    "level-before-accept-1818-speak-with-dillinger",
+    "accept-1818-speak-with-dillinger",
+    "level-before-accept-1881-speak-with-anastasia",
+    "accept-1881-speak-with-anastasia",
+    "level-before-accept-1478-halgar-s-summons",
+    "accept-1478-halgar-s-summons",
+    "turnin-1818-speak-with-dillinger",
+    "level-before-accept-1819-ulag-the-cleaver",
+    "accept-1819-ulag-the-cleaver",
+    "objective-1819-1-mausoleum-trigger",
+    "turnin-1819-ulag-the-cleaver",
+    "level-before-accept-1820-speak-with-coleman",
+    "accept-1820-speak-with-coleman",
+    "turnin-1820-speak-with-coleman",
+    "turnin-1478-halgar-s-summons",
+    "level-before-accept-1473-creature-of-the-void",
+    "accept-1473-creature-of-the-void",
+    "objective-1473-1-egalin-s-grimoire",
+    "turnin-1473-creature-of-the-void",
+    "level-before-accept-1471-the-binding",
+    "accept-1471-the-binding",
+    "objective-1471-1-runes-of-summoning",
+    "turnin-1471-the-binding",
+    "turnin-1881-speak-with-anastasia",
+    "level-before-accept-1882-the-balnir-farmstead",
+    "accept-1882-the-balnir-farmstead",
+    "objective-1882-1-balnir-snapdragons",
+    "turnin-1882-the-balnir-farmstead"
+  ],
+  "placements": [
+    {
+      "anchor": "woven-accept-96821-legging-it",
+      "position": "after",
+      "actions": [
+        "accept-96873-loremaster"
+      ],
+      "reason": "Level 8 Sen'jin pickup before the Echo Isles outing."
+    },
+    {
+      "anchor": "woven-objective-97223-bloodtalon-matriarch",
+      "position": "after",
+      "actions": [
+        "objective-96873-loremaster"
+      ],
+      "reason": "Disenchant the troll drops during the existing Echo Isles outing."
+    },
+    {
+      "anchor": "woven-turnin-97223-bloodtalon-matriarch",
+      "position": "after",
+      "actions": [
+        "turnin-96873-loremaster"
+      ],
+      "reason": "Return to Pa'zula with the Sen'jin turn-ins."
+    },
+    {
+      "anchor": "turnin-6081-training-the-beast",
+      "position": "after",
+      "actions": [
+        "accept-96874-loremaster"
+      ],
+      "reason": "Accept the level 10 profession work on the first Orgrimmar visit before the Thunder Ridge outing. Other eligible classes make this city pickup visit too."
+    },
+    {
+      "anchor": "objective-806-1-fizzle-s-claw",
+      "position": "after",
+      "actions": [
+        "objective-96874-loremaster"
+      ],
+      "reason": "Collect the beast materials on the same Thunder Ridge outing as Fizzle Darkstorm."
+    },
+    {
+      "anchor": "woven-turnin-96877-halikors-hoof",
+      "position": "after",
+      "actions": [
+        "turnin-96874-loremaster"
+      ],
+      "reason": "Use the later Orgrimmar return after the Thunder Ridge materials are ready."
+    },
+    {
+      "anchor": "turnin-6081-training-the-beast",
+      "position": "after",
+      "actions": [
+        "accept-96875-loremaster"
+      ],
+      "reason": "Accept the level 10 profession work on the first Orgrimmar visit before the Thunder Ridge outing. Other eligible classes make this city pickup visit too."
+    },
+    {
+      "anchor": "objective-806-1-fizzle-s-claw",
+      "position": "after",
+      "actions": [
+        "objective-96875-loremaster"
+      ],
+      "reason": "Collect the beast materials on the same Thunder Ridge outing as Fizzle Darkstorm."
+    },
+    {
+      "anchor": "woven-turnin-96877-halikors-hoof",
+      "position": "after",
+      "actions": [
+        "turnin-96875-loremaster"
+      ],
+      "reason": "Use the later Orgrimmar return after the Thunder Ridge materials are ready."
+    }
+  ],
+  "quests": {
+    "81": {
+      "name": "Ripple Delivery",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 48,
+      "offerMinimum": 42,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Dran Droffers",
+            "coordinate": [
+              59.4,
+              36.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 47,
+            "name": "Gilveradin Sunchaser",
+            "coordinate": [
+              26.6,
+              48.4
+            ]
+          }
+        ]
+      }
+    },
+    "235": {
+      "name": "The Ashenvale Hunt",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 20,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Warcaller Gorlach",
+            "coordinate": [
+              46.6,
+              64.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 331,
+            "name": "Senani Thunderheart",
+            "coordinate": [
+              73.6,
+              61.4
+            ]
+          }
+        ]
+      }
+    },
+    "649": {
+      "name": "Ripple Recovery",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 48,
+      "offerMinimum": 42,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Dran Droffers",
+            "coordinate": [
+              59.4,
+              36.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Malton Droffers",
+            "coordinate": [
+              59.4,
+              36.8
+            ]
+          }
+        ]
+      }
+    },
+    "650": {
+      "name": "Ripple Recovery",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 48,
+      "offerMinimum": 42,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Malton Droffers",
+            "coordinate": [
+              59.4,
+              36.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 47,
+            "name": "Gilveradin Sunchaser",
+            "coordinate": [
+              26.6,
+              48.4
+            ]
+          }
+        ]
+      }
+    },
+    "784": {
+      "name": "Vanquish the Betrayers",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ]
+      }
+    },
+    "785": {
+      "name": "A Strategic Alliance",
+      "status": "unresolved",
+      "reason": "No supported starter, objectives, or return is present.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "not-authored",
+      "locations": {},
+      "evidence": {
+        "allthethings": {
+          "name": "A Strategic Alliance",
+          "requiredLevel": 5
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "A Strategic Alliance",
+          "prerequisiteReferences": [],
+          "questLevel": 8,
+          "races": [],
+          "requiredLevel": 5,
+          "zoneId": 14
+        }
+      }
+    },
+    "786": {
+      "name": "Thwarting Kolkar Aggression",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Lar Prowltusk",
+            "coordinate": [
+              54.2,
+              73.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Lar Prowltusk",
+            "coordinate": [
+              54.2,
+              73.2
+            ]
+          }
+        ]
+      }
+    },
+    "787": {
+      "name": "The New Horde",
+      "status": "unresolved",
+      "reason": "The New Horde has no Wowhead pickup and contradictory series references; the Questie starter is Eitrigg in Orgrimmar. Do not invent a level 1 Valley of Trials pickup.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {},
+      "evidence": {
+        "questiedb": {
+          "finishedBy": [
+            [
+              3143
+            ]
+          ],
+          "name": "The New Horde",
+          "objectivesText": [
+            "Report to Gornek in the Den."
+          ],
+          "questLevel": 1,
+          "requiredLevel": 1,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            [
+              3144
+            ]
+          ],
+          "zoneOrSort": 363
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "The New Horde",
+          "prerequisiteReferences": [
+            788,
+            4641
+          ],
+          "questLevel": 1,
+          "races": [],
+          "requiredLevel": 1,
+          "zoneId": 14
+        }
+      }
+    },
+    "788": {
+      "name": "Cutting Teeth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Gornek",
+            "coordinate": [
+              42,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gornek",
+            "coordinate": [
+              42,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "789": {
+      "name": "Sting of the Scorpid",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Gornek",
+            "coordinate": [
+              42,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gornek",
+            "coordinate": [
+              42,
+              68.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Scorpid Worker",
+            "coordinate": [
+              40.6,
+              65.6
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Sarkoth",
+            "coordinate": [
+              40.6,
+              66.2
+            ]
+          }
+        ]
+      }
+    },
+    "790": {
+      "name": "Sarkoth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Hana'zua",
+            "coordinate": [
+              40.6,
+              62.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Hana'zua",
+            "coordinate": [
+              40.6,
+              62.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Sarkoth",
+            "coordinate": [
+              40.6,
+              66.2
+            ]
+          }
+        ]
+      }
+    },
+    "791": {
+      "name": "Carry Your Weight",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Furl Scornbrow",
+            "coordinate": [
+              49.8,
+              40.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Furl Scornbrow",
+            "coordinate": [
+              49.8,
+              40.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Elder Mottled Boar",
+            "coordinate": [
+              47.6,
+              12.9
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Pygmy Surf Crawler",
+            "coordinate": [
+              57.8,
+              78.2
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Dreadmaw Crocolisk",
+            "coordinate": [
+              35,
+              30
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Kolkar Drudge",
+            "coordinate": [
+              46.8,
+              80.4
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Kolkar Outrunner",
+            "coordinate": [
+              49.8,
+              81.2
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Durotar Tiger",
+            "coordinate": [
+              60,
+              79.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Bloodtalon Taillasher",
+            "coordinate": [
+              59.4,
+              83.6
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Clattering Scorpid",
+            "coordinate": [
+              57.4,
+              42.6
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Venomtail Scorpid",
+            "coordinate": [
+              36.4,
+              47.3
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Kul Tiras Sailor",
+            "coordinate": [
+              59.4,
+              58.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Kul Tiras Marine",
+            "coordinate": [
+              59.2,
+              57.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Lieutenant Benedict",
+            "coordinate": [
+              59.2,
+              58.2
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Warlord Kolkanis",
+            "coordinate": [
+              46.6,
+              79.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Watch Commander Zalaphil",
+            "coordinate": [
+              59.2,
+              57.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Attack Plan: Valley of Trials",
+            "coordinate": [
+              49.8,
+              81.3
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Attack Plan: Sen'jin Village",
+            "coordinate": [
+              47.7,
+              77.4
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Stolen Supply Sack",
+            "coordinate": [
+              51.7,
+              27.7
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Burning Blade Stash",
+            "coordinate": [
+              51.6,
+              9.7
+            ]
+          }
+        ]
+      }
+    },
+    "792": {
+      "name": "Vile Familiars",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Zureetha Fargaze",
+            "coordinate": [
+              42.8,
+              69
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Zureetha Fargaze",
+            "coordinate": [
+              42.8,
+              69
+            ]
+          }
+        ]
+      }
+    },
+    "794": {
+      "name": "Burning Blade Medallion",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Zureetha Fargaze",
+            "coordinate": [
+              42.8,
+              69
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Zureetha Fargaze",
+            "coordinate": [
+              42.8,
+              69
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Yarrog Baneshadow",
+            "coordinate": [
+              42.6,
+              52.8
+            ]
+          }
+        ]
+      }
+    },
+    "802": {
+      "name": "<UNUSED>",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "803": {
+      "name": "<UNUSED>",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "804": {
+      "name": "Sarkoth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Hana'zua",
+            "coordinate": [
+              40.6,
+              62.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gornek",
+            "coordinate": [
+              42,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "805": {
+      "name": "Report to Sen'jin Village",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Zureetha Fargaze",
+            "coordinate": [
+              42.8,
+              69
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Master Gadrin",
+            "coordinate": [
+              56,
+              74.6
+            ]
+          }
+        ]
+      }
+    },
+    "806": {
+      "name": "Dark Storms",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Elder Mottled Boar",
+            "coordinate": [
+              47.6,
+              12.9
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Dreadmaw Crocolisk",
+            "coordinate": [
+              35,
+              30
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Bloodtalon Taillasher",
+            "coordinate": [
+              59.4,
+              83.6
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Venomtail Scorpid",
+            "coordinate": [
+              36.4,
+              47.3
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Burning Blade Apprentice",
+            "coordinate": [
+              54.6,
+              8.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Fizzle Darkstorm",
+            "coordinate": [
+              42,
+              26.6
+            ]
+          }
+        ]
+      }
+    },
+    "807": {
+      "name": "<UNUSED>",
+      "status": "excluded",
+      "reason": "Unused source record.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 4,
+      "ownership": "not-authored",
+      "locations": {}
+    },
+    "808": {
+      "name": "Minshina's Skull",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Master Gadrin",
+            "coordinate": [
+              56,
+              74.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Master Gadrin",
+            "coordinate": [
+              56,
+              74.6
+            ]
+          }
+        ]
+      }
+    },
+    "809": {
+      "name": "Ak'Zeloth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Neeru Fireblade",
+            "coordinate": [
+              49.6,
+              50.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 17,
+            "name": "Ak'Zeloth",
+            "coordinate": [
+              62.4,
+              20
+            ]
+          }
+        ]
+      }
+    },
+    "810": {
+      "name": "<UNUSED>",
+      "status": "excluded",
+      "reason": "Unused source record.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 4,
+      "ownership": "not-authored",
+      "locations": {}
+    },
+    "812": {
+      "name": "Need for a Cure",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Rhinag",
+            "coordinate": [
+              41.6,
+              18.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Rhinag",
+            "coordinate": [
+              41.6,
+              18.6
+            ]
+          }
+        ]
+      }
+    },
+    "813": {
+      "name": "Finding the Antidote",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Kor'ghan",
+            "coordinate": [
+              47,
+              53.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Kor'ghan",
+            "coordinate": [
+              47,
+              53.4
+            ]
+          }
+        ]
+      }
+    },
+    "814": {
+      "name": "<UNUSED>",
+      "status": "excluded",
+      "reason": "Unused source record.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "not-authored",
+      "locations": {}
+    },
+    "815": {
+      "name": "Break a Few Eggs",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Cook Torka",
+            "coordinate": [
+              51.2,
+              42.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Cook Torka",
+            "coordinate": [
+              51.2,
+              42.4
+            ]
+          }
+        ]
+      }
+    },
+    "816": {
+      "name": "Lost But Not Forgotten",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Misha Tor'kren",
+            "coordinate": [
+              43,
+              30.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Misha Tor'kren",
+            "coordinate": [
+              43,
+              30.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Dreadmaw Crocolisk",
+            "coordinate": [
+              35,
+              30
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Corrupted Dreadmaw Crocolisk",
+            "coordinate": [
+              34.2,
+              46
+            ]
+          }
+        ]
+      }
+    },
+    "817": {
+      "name": "Practical Prey",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Vel'rin Fang",
+            "coordinate": [
+              55.8,
+              74
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Vel'rin Fang",
+            "coordinate": [
+              55.8,
+              74
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Durotar Tiger",
+            "coordinate": [
+              60,
+              79.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Shal'ma",
+            "coordinate": [
+              68.6,
+              71.4
+            ]
+          }
+        ]
+      }
+    },
+    "818": {
+      "name": "A Solvent Spirit",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Master Vornal",
+            "coordinate": [
+              55.8,
+              74.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Master Vornal",
+            "coordinate": [
+              55.8,
+              74.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Makrura Clacker",
+            "coordinate": [
+              59.8,
+              71.2
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Makrura Shellhide",
+            "coordinate": [
+              59.8,
+              71.4
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Makrura Snapclaw",
+            "coordinate": [
+              61,
+              38.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Pygmy Surf Crawler",
+            "coordinate": [
+              57.8,
+              78.2
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Surf Crawler",
+            "coordinate": [
+              52.4,
+              43
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Encrusted Surf Crawler",
+            "coordinate": [
+              58.8,
+              12.5
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Makrura Elder",
+            "coordinate": [
+              59.8,
+              20.6
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Corrupted Surf Crawler",
+            "coordinate": [
+              58.6,
+              23.2
+            ]
+          }
+        ]
+      }
+    },
+    "820": {
+      "name": "<UNUSED>",
+      "status": "excluded",
+      "reason": "Unused source record.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "not-authored",
+      "locations": {}
+    },
+    "823": {
+      "name": "Report to Orgnil",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Master Gadrin",
+            "coordinate": [
+              56,
+              74.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ]
+      }
+    },
+    "825": {
+      "name": "From The Wreckage....",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ]
+      }
+    },
+    "826": {
+      "name": "Zalazane",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Master Gadrin",
+            "coordinate": [
+              56,
+              74.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Master Gadrin",
+            "coordinate": [
+              56,
+              74.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Zalazane",
+            "coordinate": [
+              67.4,
+              86.6
+            ]
+          }
+        ]
+      }
+    },
+    "827": {
+      "name": "Skull Rock",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Margoz",
+            "coordinate": [
+              56.4,
+              20
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Margoz",
+            "coordinate": [
+              56.4,
+              20
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Dreadmaw Crocolisk",
+            "coordinate": [
+              35,
+              30
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Bloodtalon Scythemaw",
+            "coordinate": [
+              52.1,
+              11.1
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Venomtail Scorpid",
+            "coordinate": [
+              36.4,
+              47.3
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Kul Tiras Sailor",
+            "coordinate": [
+              59.4,
+              58.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Burning Blade Thug",
+            "coordinate": [
+              52.8,
+              27.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Burning Blade Neophyte",
+            "coordinate": [
+              52.8,
+              28.6
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Burning Blade Fanatic",
+            "coordinate": [
+              55,
+              9.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Burning Blade Apprentice",
+            "coordinate": [
+              54.6,
+              8.8
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Burning Blade Cultist",
+            "coordinate": [
+              52.4,
+              26.8
+            ]
+          }
+        ]
+      }
+    },
+    "828": {
+      "name": "Margoz",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Margoz",
+            "coordinate": [
+              56.4,
+              20
+            ]
+          }
+        ]
+      }
+    },
+    "829": {
+      "name": "Neeru Fireblade",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Margoz",
+            "coordinate": [
+              56.4,
+              20
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Neeru Fireblade",
+            "coordinate": [
+              49.6,
+              50.4
+            ]
+          }
+        ]
+      }
+    },
+    "830": {
+      "name": "The Admiral's Orders",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ]
+      }
+    },
+    "831": {
+      "name": "The Admiral's Orders",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Nazgrel",
+            "coordinate": [
+              32.4,
+              36
+            ]
+          }
+        ]
+      }
+    },
+    "832": {
+      "name": "Burning Shadows",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Neeru Fireblade",
+            "coordinate": [
+              49.6,
+              50.4
+            ]
+          }
+        ]
+      }
+    },
+    "834": {
+      "name": "Winds in the Desert",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Rezlak",
+            "coordinate": [
+              46.4,
+              23
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Rezlak",
+            "coordinate": [
+              46.4,
+              23
+            ]
+          }
+        ]
+      }
+    },
+    "835": {
+      "name": "Securing the Lines",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Rezlak",
+            "coordinate": [
+              46.4,
+              23
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Rezlak",
+            "coordinate": [
+              46.4,
+              23
+            ]
+          }
+        ]
+      }
+    },
+    "837": {
+      "name": "Encroachment",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ]
+      }
+    },
+    "840": {
+      "name": "Conscript of the Horde",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Takrin Pathseeker",
+            "coordinate": [
+              50.8,
+              43.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 17,
+            "name": "Kargal Battlescar",
+            "coordinate": [
+              62.2,
+              19.4
+            ]
+          }
+        ]
+      }
+    },
+    "842": {
+      "name": "Crossroads Conscription",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 17,
+            "name": "Kargal Battlescar",
+            "coordinate": [
+              62.2,
+              19.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 17,
+            "name": "Sergra Darkthorn",
+            "coordinate": [
+              52.2,
+              31
+            ]
+          }
+        ]
+      }
+    },
+    "924": {
+      "name": "The Demon Seed",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 14,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 17,
+            "name": "Ak'Zeloth",
+            "coordinate": [
+              62.4,
+              20
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 17,
+            "name": "Ak'Zeloth",
+            "coordinate": [
+              62.4,
+              20
+            ]
+          }
+        ]
+      }
+    },
+    "926": {
+      "name": "Flawed Power Stone",
+      "status": "excluded",
+      "reason": "Repeatable and not needed by an included chain.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 14,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "start": [
+          {
+            "areaID": 17,
+            "name": "Flawed Power Stones",
+            "coordinate": [
+              62.4,
+              20
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 17,
+            "name": "Flawed Power Stone",
+            "coordinate": [
+              62.4,
+              20
+            ]
+          },
+          {
+            "areaID": 17,
+            "name": "Flawed Power Stones",
+            "coordinate": [
+              62.4,
+              20
+            ]
+          },
+          {
+            "areaID": 17,
+            "name": "Flawed Power Stones",
+            "coordinate": [
+              62.4,
+              20
+            ]
+          }
+        ]
+      }
+    },
+    "936": {
+      "name": "Assisting Arch Druid Runetotem",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Innkeeper Gryshka",
+            "coordinate": [
+              54.2,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ]
+      }
+    },
+    "1018": {
+      "name": "The New Frontier",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Warcaller Gorlach",
+            "coordinate": [
+              46.6,
+              64.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ]
+      }
+    },
+    "1146": {
+      "name": "The Swarm Grows",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 29,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Belgrom Rockmaul",
+            "coordinate": [
+              75,
+              34.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 400,
+            "name": "Moktar Krin",
+            "coordinate": [
+              67.6,
+              64
+            ]
+          }
+        ]
+      }
+    },
+    "1431": {
+      "name": "Alliance Relations",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Craven Drok",
+            "coordinate": [
+              49.4,
+              48.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Keldran",
+            "coordinate": [
+              22.4,
+              52.8
+            ]
+          }
+        ]
+      }
+    },
+    "1432": {
+      "name": "Alliance Relations",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Keldran",
+            "coordinate": [
+              22.4,
+              52.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 405,
+            "name": "Takata Steelblade",
+            "coordinate": [
+              52.6,
+              54.2
+            ]
+          }
+        ]
+      }
+    },
+    "1433": {
+      "name": "Alliance Relations",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 405,
+            "name": "Takata Steelblade",
+            "coordinate": [
+              52.6,
+              54.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 405,
+            "name": "Maurin Bonesplitter",
+            "coordinate": [
+              52.2,
+              53.4
+            ]
+          }
+        ]
+      }
+    },
+    "1434": {
+      "name": "Befouled by Satyr",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 405,
+            "name": "Takata Steelblade",
+            "coordinate": [
+              52.6,
+              54.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 405,
+            "name": "Takata Steelblade",
+            "coordinate": [
+              52.6,
+              54.2
+            ]
+          }
+        ]
+      }
+    },
+    "1435": {
+      "name": "The Burning of Spirits",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 405,
+            "name": "Maurin Bonesplitter",
+            "coordinate": [
+              52.2,
+              53.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 405,
+            "name": "Maurin Bonesplitter",
+            "coordinate": [
+              52.2,
+              53.4
+            ]
+          }
+        ]
+      }
+    },
+    "1436": {
+      "name": "Alliance Relations",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Keldran",
+            "coordinate": [
+              22.4,
+              52.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 405,
+            "name": "Takata Steelblade",
+            "coordinate": [
+              52.6,
+              54.2
+            ]
+          }
+        ]
+      }
+    },
+    "2161": {
+      "name": "A Peon's Burden",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Ukor",
+            "coordinate": [
+              52,
+              68.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Innkeeper Grosk",
+            "coordinate": [
+              51.6,
+              41.6
+            ]
+          }
+        ]
+      }
+    },
+    "2950": {
+      "name": "Nogg's Ring Redo",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 35,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Nogg",
+            "coordinate": [
+              75.8,
+              25.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Nogg",
+            "coordinate": [
+              75.8,
+              25.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1637,
+            "name": "Senior Sergeant Kai'jin",
+            "coordinate": [
+              51.6,
+              66.4
+            ]
+          }
+        ]
+      }
+    },
+    "2981": {
+      "name": "A Threat in Feralas",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 43,
+      "offerMinimum": 38,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Belgrom Rockmaul",
+            "coordinate": [
+              75,
+              34.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 357,
+            "name": "Rok Orhan",
+            "coordinate": [
+              75.4,
+              43.6
+            ]
+          }
+        ]
+      }
+    },
+    "3504": {
+      "name": "Betrayed",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 53,
+      "offerMinimum": 44,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 16,
+            "name": "Ag'tor Bloodfist",
+            "coordinate": [
+              22.2,
+              51.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Belgrom Rockmaul",
+            "coordinate": [
+              75,
+              34.2
+            ]
+          }
+        ]
+      }
+    },
+    "3505": {
+      "name": "Betrayed",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 53,
+      "offerMinimum": 44,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16,
+            "name": "Ag'tor Bloodfist",
+            "coordinate": [
+              22.2,
+              51.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16,
+            "name": "Kaldorei Tome of Summoning",
+            "coordinate": [
+              59.5,
+              31.3
+            ]
+          }
+        ]
+      }
+    },
+    "3506": {
+      "name": "Betrayed",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 56,
+      "offerMinimum": 44,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16,
+            "name": "Kaldorei Tome of Summoning",
+            "coordinate": [
+              59.5,
+              31.3
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16,
+            "name": "Ag'tor Bloodfist",
+            "coordinate": [
+              22.2,
+              51.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16,
+            "name": "Magus Rimtori",
+            "coordinate": [
+              59.4,
+              31.4
+            ]
+          }
+        ]
+      }
+    },
+    "3507": {
+      "name": "Betrayed",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 56,
+      "offerMinimum": 44,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16,
+            "name": "Ag'tor Bloodfist",
+            "coordinate": [
+              22.2,
+              51.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Belgrom Rockmaul",
+            "coordinate": [
+              75,
+              34.2
+            ]
+          }
+        ]
+      }
+    },
+    "4300": {
+      "name": "Bone-Bladed Weapons",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Jes'rimon",
+            "coordinate": [
+              55.6,
+              34
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Jes'rimon",
+            "coordinate": [
+              55.6,
+              34
+            ]
+          }
+        ]
+      }
+    },
+    "4402": {
+      "name": "Galgar's Cactus Apple Surprise",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Galgar",
+            "coordinate": [
+              42.6,
+              67.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Galgar",
+            "coordinate": [
+              42.6,
+              67.2
+            ]
+          }
+        ]
+      }
+    },
+    "4494": {
+      "name": "March of the Silithid",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 53,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Zilzibin Drumlore",
+            "coordinate": [
+              56.4,
+              46.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 440,
+            "name": "Alchemist Pestlezugg",
+            "coordinate": [
+              50.8,
+              27
+            ]
+          }
+        ]
+      }
+    },
+    "4511": {
+      "name": "Calm Before the Storm",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 54,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Zilzibin Drumlore",
+            "coordinate": [
+              56.4,
+              46.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Karus",
+            "coordinate": [
+              49.6,
+              69.4
+            ]
+          }
+        ]
+      }
+    },
+    "4641": {
+      "name": "Your Place In The World",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Kaltunk",
+            "coordinate": [
+              43.2,
+              68.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gornek",
+            "coordinate": [
+              42,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "4941": {
+      "name": "Eitrigg's Wisdom",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 55,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 3,
+            "name": "Warlord Goretooth",
+            "coordinate": [
+              5.8,
+              47.4
+            ]
+          }
+        ]
+      }
+    },
+    "5441": {
+      "name": "Lazy Peons",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Foreman Thazz'ril",
+            "coordinate": [
+              44.6,
+              68.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Foreman Thazz'ril",
+            "coordinate": [
+              44.6,
+              68.6
+            ]
+          }
+        ]
+      }
+    },
+    "5726": {
+      "name": "Hidden Enemies",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1637,
+            "name": "Elder Mottled Boar",
+            "coordinate": [
+              49,
+              91.2
+            ]
+          }
+        ]
+      }
+    },
+    "5727": {
+      "name": "Hidden Enemies",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ]
+      }
+    },
+    "5729": {
+      "name": "Hidden Enemies",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Neeru Fireblade",
+            "coordinate": [
+              49.6,
+              50.4
+            ]
+          }
+        ]
+      }
+    },
+    "5730": {
+      "name": "Hidden Enemies",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 16,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Neeru Fireblade",
+            "coordinate": [
+              49.6,
+              50.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ]
+      }
+    },
+    "5843": {
+      "name": "Welcome!",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Magga",
+            "coordinate": [
+              43,
+              69.2
+            ]
+          }
+        ]
+      }
+    },
+    "6394": {
+      "name": "Thazz'ril's Pick",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Foreman Thazz'ril",
+            "coordinate": [
+              44.6,
+              68.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Foreman Thazz'ril",
+            "coordinate": [
+              44.6,
+              68.6
+            ]
+          }
+        ]
+      }
+    },
+    "6566": {
+      "name": "What the Wind Carries",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 55,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ]
+      }
+    },
+    "6567": {
+      "name": "The Champion of the Horde",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 55,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 357,
+            "name": "Rexxar",
+            "coordinate": [
+              45.2,
+              2.6
+            ]
+          },
+          {
+            "areaID": 405,
+            "name": "Rexxar",
+            "coordinate": [
+              54,
+              3.2
+            ]
+          },
+          {
+            "areaID": 406,
+            "name": "Rexxar",
+            "coordinate": [
+              29.8,
+              77.6
+            ]
+          }
+        ]
+      }
+    },
+    "7341": {
+      "name": "A Fair Trade",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 52,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Bounty Hunter Kolark",
+            "coordinate": [
+              74.4,
+              25.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Bounty Hunter Kolark",
+            "coordinate": [
+              74.4,
+              25.2
+            ]
+          }
+        ]
+      }
+    },
+    "7490": {
+      "name": "Victory for the Horde",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ]
+      }
+    },
+    "7491": {
+      "name": "For All To See",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Overlord Runthak",
+            "coordinate": [
+              51.6,
+              75.6
+            ]
+          }
+        ]
+      }
+    },
+    "7493": {
+      "name": "The Journey Has Just Begun",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Overlord Runthak",
+            "coordinate": [
+              51.6,
+              75.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Overlord Runthak",
+            "coordinate": [
+              51.6,
+              75.6
+            ]
+          }
+        ]
+      }
+    },
+    "7783": {
+      "name": "The Lord of Blackrock",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ]
+      }
+    },
+    "7784": {
+      "name": "The Lord of Blackrock",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1377,
+            "name": "High Overlord Saurfang",
+            "coordinate": [
+              49.4,
+              35.2
+            ]
+          },
+          {
+            "areaID": 1637,
+            "name": "High Overlord Saurfang",
+            "coordinate": [
+              51,
+              75.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ]
+      }
+    },
+    "7824": {
+      "name": "A Donation of Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ]
+      }
+    },
+    "7826": {
+      "name": "A Donation of Wool",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ]
+      }
+    },
+    "7827": {
+      "name": "A Donation of Silk",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ]
+      }
+    },
+    "7831": {
+      "name": "A Donation of Mageweave",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ]
+      }
+    },
+    "7832": {
+      "name": "Additional Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Rashona Straglash",
+            "coordinate": [
+              63.4,
+              51
+            ]
+          }
+        ]
+      }
+    },
+    "7833": {
+      "name": "A Donation of Wool",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ]
+      }
+    },
+    "7834": {
+      "name": "A Donation of Silk",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ]
+      }
+    },
+    "7835": {
+      "name": "A Donation of Mageweave",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ]
+      }
+    },
+    "7836": {
+      "name": "A Donation of Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ]
+      }
+    },
+    "7837": {
+      "name": "Additional Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Vehena",
+            "coordinate": [
+              37.8,
+              87.6
+            ]
+          }
+        ]
+      }
+    },
+    "7926": {
+      "name": "The Darkmoon Faire",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 6,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Gelvas Grimegate",
+            "coordinate": [
+              41.6,
+              68.8
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Gelvas Grimegate",
+            "coordinate": [
+              37.2,
+              37.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Kruban Darkblade",
+            "coordinate": [
+              52,
+              65.4
+            ]
+          }
+        ]
+      }
+    },
+    "8276": {
+      "name": "Taking Back Silithus",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1377,
+            "name": "Windcaller Proudhorn",
+            "coordinate": [
+              51,
+              38.2
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Cenarion Emissary Blackhoof",
+            "coordinate": [
+              47.8,
+              65.6
+            ]
+          }
+        ]
+      }
+    },
+    "8367": {
+      "name": "For Great Honor",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 51,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              58.2,
+              97.6
+            ]
+          },
+          {
+            "areaID": 1637,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              80.4,
+              30.4
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              57.8,
+              76.8
+            ]
+          },
+          {
+            "areaID": 17,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              46.6,
+              8.6
+            ]
+          },
+          {
+            "areaID": 36,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              63,
+              59.8
+            ]
+          },
+          {
+            "areaID": 45,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              73.6,
+              29.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              58.2,
+              97.6
+            ]
+          },
+          {
+            "areaID": 1637,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              80.4,
+              30.4
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              57.8,
+              76.8
+            ]
+          },
+          {
+            "areaID": 17,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              46.6,
+              8.6
+            ]
+          },
+          {
+            "areaID": 36,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              63,
+              59.8
+            ]
+          },
+          {
+            "areaID": 45,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              73.6,
+              29.2
+            ]
+          }
+        ]
+      }
+    },
+    "8388": {
+      "name": "For Great Honor",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 51,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              58.2,
+              97.6
+            ]
+          },
+          {
+            "areaID": 1637,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              80.4,
+              30.4
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              57.8,
+              76.8
+            ]
+          },
+          {
+            "areaID": 17,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              46.6,
+              8.6
+            ]
+          },
+          {
+            "areaID": 36,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              63,
+              59.8
+            ]
+          },
+          {
+            "areaID": 45,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              73.6,
+              29.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              58.2,
+              97.6
+            ]
+          },
+          {
+            "areaID": 1637,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              80.4,
+              30.4
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              57.8,
+              76.8
+            ]
+          },
+          {
+            "areaID": 17,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              46.6,
+              8.6
+            ]
+          },
+          {
+            "areaID": 36,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              63,
+              59.8
+            ]
+          },
+          {
+            "areaID": 45,
+            "name": "Horde Warbringer",
+            "coordinate": [
+              73.6,
+              29.2
+            ]
+          }
+        ]
+      }
+    },
+    "8913": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8914": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8915": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8916": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8917": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8918": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8919": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8920": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8927": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8938": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8939": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8940": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8941": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8942": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8943": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8944": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8957": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "8978": {
+      "name": "Return to Mokvar",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          },
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              35,
+              38
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 440,
+            "name": "Mux Manascrambler",
+            "coordinate": [
+              52.4,
+              27.2
+            ]
+          }
+        ]
+      }
+    },
+    "8998": {
+      "name": "Back to the Beginning",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          },
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              35,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9007": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9008": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9009": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9010": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9011": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9012": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9013": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9014": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "9016": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9017": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9018": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9019": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9020": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9021": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "9022": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Mokvar",
+            "coordinate": [
+              34.8,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "93739": {
+      "name": "Exploring the Horde",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ]
+      }
+    },
+    "95350": {
+      "name": "Welcome to Azeroth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thrall",
+            "coordinate": [
+              32,
+              37.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Alaana Stormwalker",
+            "coordinate": [
+              33.4,
+              22.4
+            ]
+          }
+        ]
+      }
+    },
+    "96821": {
+      "name": "Legging It",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Vel'rin Fang",
+            "coordinate": [
+              55.8,
+              74
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Gar'Thok",
+            "coordinate": [
+              52,
+              43.4
+            ]
+          }
+        ]
+      }
+    },
+    "96822": {
+      "name": "For Honor",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Turroc",
+            "coordinate": [
+              54,
+              42.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Turroc",
+            "coordinate": [
+              54,
+              42.6
+            ]
+          }
+        ]
+      }
+    },
+    "96825": {
+      "name": "This Fruit Could Bite Back",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Cook Torka",
+            "coordinate": [
+              51.2,
+              42.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Cook Torka",
+            "coordinate": [
+              51.2,
+              42.4
+            ]
+          }
+        ]
+      }
+    },
+    "96873": {
+      "name": "A Pain in the Neck",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "durotar",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Pa'zula",
+            "coordinate": [
+              56.6,
+              73.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Pa'zula",
+            "coordinate": [
+              56.6,
+              73.6
+            ]
+          }
+        ]
+      },
+      "requirements": [],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Horde"
+          },
+          {
+            "level": {
+              "min": 5
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 333,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "A Pain in the Neck",
+          "requiredLevel": 5,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            333,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 266881,
+              "spawns": [
+                [
+                  14,
+                  56.6,
+                  73.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              266881
+            ]
+          ],
+          "name": "A Pain in the Neck",
+          "objectivesText": [
+            "Pa'zula in Sen'jin Village wants you to collect 3 Luminous Residue. Luminous Residue can be obtained by disenchanting Hexed Pendants dropped by trolls in the Echo Isles."
+          ],
+          "questLevel": 8,
+          "requiredLevel": 5,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            333,
+            1
+          ],
+          "startedBy": [
+            [
+              266881
+            ]
+          ],
+          "zoneOrSort": 14
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "A Pain in the Neck",
+          "prerequisiteReferences": [],
+          "questLevel": 8,
+          "races": [],
+          "requiredLevel": 5,
+          "zoneId": 14
+        }
+      }
+    },
+    "96874": {
+      "name": "This Is Spinal Axe",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 6,
+      "ownership": "durotar",
+      "locations": {
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Thunder Lizard",
+            "coordinate": [
+              40.5,
+              29.2
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Lightning Hide",
+            "coordinate": [
+              43.6,
+              24
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Halikor",
+            "coordinate": [
+              41.1,
+              24.1
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Ug'thok",
+            "coordinate": [
+              80.6,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Ug'thok",
+            "coordinate": [
+              80.6,
+              23.4
+            ]
+          }
+        ]
+      },
+      "requirements": [],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Horde"
+          },
+          {
+            "class": [
+              1,
+              2,
+              7
+            ]
+          },
+          {
+            "level": {
+              "min": 6
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 164,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "This Is Spinal Axe",
+          "requiredLevel": 6,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            164,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 10266,
+              "spawns": [
+                [
+                  1637,
+                  80.6,
+                  23.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              10266
+            ]
+          ],
+          "name": "This Is Spinal Axe",
+          "objectivesText": [
+            "Ug'thok in Orgrimmar wants you to collect 5 Weathered Spines from beasts in Thunder Ridge, along with 5 Rough Grinding Stones."
+          ],
+          "questLevel": 10,
+          "requiredLevel": 6,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            164,
+            1
+          ],
+          "startedBy": [
+            [
+              10266
+            ]
+          ],
+          "zoneOrSort": 14
+        },
+        "wowhead": {
+          "classes": [
+            1,
+            2,
+            7
+          ],
+          "name": "This Is Spinal Axe",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [],
+          "requiredLevel": 6,
+          "zoneId": 14
+        }
+      }
+    },
+    "96875": {
+      "name": "Beasts of Thunder Ridge",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 6,
+      "ownership": "durotar",
+      "locations": {
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Thunder Lizard",
+            "coordinate": [
+              40.5,
+              29.2
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Lightning Hide",
+            "coordinate": [
+              43.6,
+              24
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Halikor",
+            "coordinate": [
+              41.1,
+              24.1
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Kamari",
+            "coordinate": [
+              63,
+              45
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Kamari",
+            "coordinate": [
+              63,
+              45
+            ]
+          }
+        ]
+      },
+      "requirements": [],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Horde"
+          },
+          {
+            "level": {
+              "min": 6
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 165,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Beasts of Thunder Ridge",
+          "requiredLevel": 6,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            165,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 5811,
+              "spawns": [
+                [
+                  1637,
+                  63,
+                  45
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              5811
+            ]
+          ],
+          "name": "Beasts of Thunder Ridge",
+          "objectivesText": [
+            "Kamari in Orgrimmar wants you to collect 5 Rough Lizard Hide from beasts in Thunder Ridge, along with 2 Cured Light Hides."
+          ],
+          "questLevel": 10,
+          "requiredLevel": 6,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            165,
+            1
+          ],
+          "startedBy": [
+            [
+              5811
+            ]
+          ],
+          "zoneOrSort": 14
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Beasts of Thunder Ridge",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [],
+          "requiredLevel": 6,
+          "zoneId": 14
+        }
+      }
+    },
+    "96876": {
+      "name": "Ukor's Lost Pack",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Ukor",
+            "coordinate": [
+              52,
+              68.2
+            ]
+          }
+        ]
+      }
+    },
+    "96877": {
+      "name": "Halikor's Hoof",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Kamari",
+            "coordinate": [
+              63,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "97223": {
+      "name": "Bloodtalon Matriarch",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Xar'Ti",
+            "coordinate": [
+              55.2,
+              75.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Xar'Ti",
+            "coordinate": [
+              55.2,
+              75.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Bloodtalon Matriarch",
+            "coordinate": [
+              68.7,
+              71.3
+            ]
+          }
+        ]
+      }
+    },
+    "97225": {
+      "name": "Forgotten Loa Idols",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Master Vornal",
+            "coordinate": [
+              55.8,
+              74.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Master Gadrin",
+            "coordinate": [
+              56,
+              74.6
+            ]
+          }
+        ]
+      }
+    },
+    "97242": {
+      "name": "Yelmak's Medley",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Kor'geld",
+            "coordinate": [
+              56.2,
+              34.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Kor'geld",
+            "coordinate": [
+              56.2,
+              34.2
+            ]
+          }
+        ]
+      }
+    },
+    "97246": {
+      "name": "Meal Appeal",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 5,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thatog",
+            "coordinate": [
+              55.6,
+              72
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Borstan",
+            "coordinate": [
+              57.4,
+              53.4
+            ]
+          }
+        ]
+      }
+    },
+    "97249": {
+      "name": "Favorite Food",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 5,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Borstan",
+            "coordinate": [
+              57.4,
+              53.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Migi",
+            "coordinate": [
+              36.8,
+              29
+            ]
+          }
+        ]
+      }
+    },
+    "97275": {
+      "name": "Whuut's the Rush",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Yelmak",
+            "coordinate": [
+              56.6,
+              33.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Whuut",
+            "coordinate": [
+              55.8,
+              33.2
+            ]
+          }
+        ]
+      }
+    },
+    "97279": {
+      "name": "Wayward Weapons",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Gornek",
+            "coordinate": [
+              42,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Kzan Thornslash",
+            "coordinate": [
+              40.4,
+              68
+            ]
+          }
+        ]
+      }
+    },
+    "97281": {
+      "name": "A Simmering Storm",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Rezlak",
+            "coordinate": [
+              46.4,
+              23
+            ]
+          }
+        ]
+      }
+    },
+    "97282": {
+      "name": "Stormy Potential",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Rezlak",
+            "coordinate": [
+              46.4,
+              23
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Rezlak",
+            "coordinate": [
+              46.4,
+              23
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Thunder Lizard",
+            "coordinate": [
+              40.5,
+              29.2
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Lightning Hide",
+            "coordinate": [
+              43.6,
+              24
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Halikor",
+            "coordinate": [
+              41.1,
+              24.1
+            ]
+          }
+        ]
+      }
+    },
+    "97326": {
+      "name": "Rocks to Rests",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 5,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1637,
+            "name": "Thra",
+            "coordinate": [
+              36.8,
+              29
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1637,
+            "name": "Thra",
+            "coordinate": [
+              36.8,
+              29
+            ]
+          }
+        ]
+      }
+    },
+    "99048": {
+      "name": "A Missing Hand",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Heglan Shadeeye",
+            "coordinate": [
+              58.6,
+              45.6
+            ]
+          }
+        ]
+      }
+    },
+    "99049": {
+      "name": "Threat from Below",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Heglan Shadeeye",
+            "coordinate": [
+              58.6,
+              45.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ]
+      }
+    },
+    "99051": {
+      "name": "Threat from Below",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Spitelash Scout",
+            "coordinate": [
+              59.1,
+              23.3
+            ]
+          },
+          {
+            "areaID": 14,
+            "name": "Spitelash Attendant",
+            "coordinate": [
+              59.5,
+              22.4
+            ]
+          }
+        ]
+      }
+    },
+    "99052": {
+      "name": "Threat from Below",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Orgnil Soulscar",
+            "coordinate": [
+              52.2,
+              43.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 14,
+            "name": "Aggor the Young",
+            "coordinate": [
+              58.9,
+              16.9
+            ]
+          }
+        ]
+      }
+    },
+    "99123": {
+      "name": "Lost in the Shadows",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "durotar"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 14,
+            "name": "Pal'juh",
+            "coordinate": [
+              46.2,
+              78.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 14,
+            "name": "Master Vornal",
+            "coordinate": [
+              55.8,
+              74.4
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "clientWalkthrough": "Not performed."
+}

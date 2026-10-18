@@ -115272,5 +115272,3066 @@
         ]
       }
     ]
+  },
+  "loremaster-durotar": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          3,
+          1411,
+          "Kaltunk"
+        ],
+        "actions": [
+          "accept-4641-your-place-in-the-world"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1411,
+          "Ruzan"
+        ],
+        "actions": [
+          "accept-1485-vile-familiars"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1411,
+          "Gornek"
+        ],
+        "actions": [
+          "turnin-4641-your-place-in-the-world",
+          "accept-788-cutting-teeth"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1411,
+          "Mottled Boar"
+        ],
+        "actions": [
+          "objective-788-1-mottled-boar"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1411,
+          "Vile Familiar Head"
+        ],
+        "actions": [
+          "objective-1485-1-vile-familiar-head"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1411,
+          "Hana'zua"
+        ],
+        "actions": [
+          "accept-790-sarkoth"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1411,
+          "Sarkoth"
+        ],
+        "actions": [
+          "objective-790-1-sarkoth"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1411,
+          "Hana'zua"
+        ],
+        "actions": [
+          "turnin-790-sarkoth",
+          "accept-804-sarkoth"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1411,
+          "Ruzan"
+        ],
+        "actions": [
+          "turnin-1485-vile-familiars",
+          "accept-1499-vile-familiars"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1411,
+          "Zureetha Fargaze"
+        ],
+        "actions": [
+          "turnin-1499-vile-familiars"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1411,
+          "Gornek"
+        ],
+        "actions": [
+          "turnin-788-cutting-teeth",
+          "turnin-804-sarkoth",
+          "accept-2383-simple-parchment",
+          "accept-3089-rune-inscribed-parchment",
+          "accept-3088-encrypted-parchment",
+          "accept-3087-etched-parchment",
+          "accept-3090-tainted-parchment",
+          "accept-3065-simple-tablet",
+          "accept-3082-etched-tablet",
+          "accept-3083-encrypted-tablet",
+          "accept-3085-hallowed-tablet",
+          "accept-3084-rune-inscribed-tablet",
+          "accept-3086-glyphic-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Gornek"
+        ],
+        "actions": [
+          "woven-accept-98576-glyphic-parchment",
+          "woven-accept-98575-tainted-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1411,
+          "Gornek"
+        ],
+        "actions": [
+          "accept-789-sting-of-the-scorpid"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1411,
+          "Rwag"
+        ],
+        "actions": [
+          "turnin-3088-encrypted-parchment",
+          "turnin-3083-encrypted-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1411,
+          "Nartok"
+        ],
+        "actions": [
+          "turnin-3090-tainted-parchment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Nartok"
+        ],
+        "actions": [
+          "woven-turnin-98575-tainted-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1411,
+          "Galgar"
+        ],
+        "actions": [
+          "accept-4402-galgar-s-cactus-apple-surprise"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1411,
+          "Ken'jai"
+        ],
+        "actions": [
+          "turnin-3085-hallowed-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1411,
+          "Shikrik"
+        ],
+        "actions": [
+          "turnin-3089-rune-inscribed-parchment",
+          "turnin-3084-rune-inscribed-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1516-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1411,
+          "Canaga Earthcaller"
+        ],
+        "actions": [
+          "accept-1516-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1411,
+          "Mai'ah"
+        ],
+        "actions": [
+          "turnin-3086-glyphic-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Mai'ah"
+        ],
+        "actions": [
+          "woven-turnin-98576-glyphic-parchment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-792-vile-familiars"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1411,
+          "Zureetha Fargaze"
+        ],
+        "actions": [
+          "accept-792-vile-familiars"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1411,
+          "Frang"
+        ],
+        "actions": [
+          "turnin-2383-simple-parchment",
+          "turnin-3065-simple-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1411,
+          "Jen'shan"
+        ],
+        "actions": [
+          "turnin-3087-etched-parchment",
+          "turnin-3082-etched-tablet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5441-lazy-peons"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1411,
+          "Foreman Thazz'ril"
+        ],
+        "actions": [
+          "accept-5441-lazy-peons"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1411,
+          "Vile Familiar"
+        ],
+        "actions": [
+          "objective-792-1-vile-familiar"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1411,
+          "Scorpid Worker Tail"
+        ],
+        "actions": [
+          "objective-789-1-scorpid-worker-tail"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1411,
+          "Cactus Apple"
+        ],
+        "actions": [
+          "objective-4402-1-cactus-apple"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1411,
+          "Galgar"
+        ],
+        "actions": [
+          "turnin-4402-galgar-s-cactus-apple-surprise"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1411,
+          "Gornek"
+        ],
+        "actions": [
+          "turnin-789-sting-of-the-scorpid"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1411,
+          "Zureetha Fargaze"
+        ],
+        "actions": [
+          "turnin-792-vile-familiars",
+          "accept-794-burning-blade-medallion"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-5441-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1411,
+          "Foreman Thazz'ril"
+        ],
+        "actions": [
+          "turnin-5441-lazy-peons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6394-thazz-ril-s-pick"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1411,
+          "Foreman Thazz'ril"
+        ],
+        "actions": [
+          "accept-6394-thazz-ril-s-pick"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1411,
+          "Thazz'ril's Pick"
+        ],
+        "actions": [
+          "objective-6394-1-thazz-ril-s-pick"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1411,
+          "Felstalker Hoof"
+        ],
+        "actions": [
+          "objective-1516-1-felstalker-hoof"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-794-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1411,
+          "Zureetha Fargaze"
+        ],
+        "actions": [
+          "turnin-794-burning-blade-medallion",
+          "accept-805-report-to-sen-jin-village"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5649-in-favor-of-spirituality"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1411,
+          "Ken'jai"
+        ],
+        "actions": [
+          "accept-5649-in-favor-of-spirituality"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1411,
+          "Canaga Earthcaller"
+        ],
+        "actions": [
+          "turnin-1516-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1517-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1411,
+          "Canaga Earthcaller"
+        ],
+        "actions": [
+          "accept-1517-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1411,
+          "Minor Manifestation of Earth"
+        ],
+        "actions": [
+          "objective-1517-earth-sapta",
+          "turnin-1517-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1518-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1411,
+          "Minor Manifestation of Earth"
+        ],
+        "actions": [
+          "accept-1518-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1411,
+          "Canaga Earthcaller"
+        ],
+        "actions": [
+          "turnin-1518-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1411,
+          "Foreman Thazz'ril"
+        ],
+        "actions": [
+          "turnin-6394-thazz-ril-s-pick"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Gornek"
+        ],
+        "actions": [
+          "woven-accept-97279-wayward-weapons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Valley of Trials"
+        ],
+        "actions": [
+          "woven-objective-97279-wayward-weapons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Kzan Thornslash"
+        ],
+        "actions": [
+          "woven-turnin-97279-wayward-weapons"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1411,
+          "Ukor"
+        ],
+        "actions": [
+          "accept-2161-a-peon-s-burden"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-786-thwarting-kolkar-aggression"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1411,
+          "Lar Prowltusk"
+        ],
+        "actions": [
+          "accept-786-thwarting-kolkar-aggression"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-817-practical-prey"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1411,
+          "Vel'rin Fang"
+        ],
+        "actions": [
+          "accept-817-practical-prey"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-818-a-solvent-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1411,
+          "Master Vornal"
+        ],
+        "actions": [
+          "accept-818-a-solvent-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1411,
+          "Master Gadrin"
+        ],
+        "actions": [
+          "turnin-805-report-to-sen-jin-village"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-808-minshina-s-skull"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1411,
+          "Master Gadrin"
+        ],
+        "actions": [
+          "accept-808-minshina-s-skull"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-826-zalazane"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1411,
+          "Master Gadrin"
+        ],
+        "actions": [
+          "accept-826-zalazane"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-823-report-to-orgnil"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1411,
+          "Master Gadrin"
+        ],
+        "actions": [
+          "accept-823-report-to-orgnil"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Vel'rin Fang"
+        ],
+        "actions": [
+          "woven-accept-96821-legging-it"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Pa'zula"
+        ],
+        "actions": [
+          "accept-96873-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-97225-forgotten-loa-idols"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Master Vornal"
+        ],
+        "actions": [
+          "woven-accept-97225-forgotten-loa-idols"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-97223-bloodtalon-matriarch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Xar'Ti"
+        ],
+        "actions": [
+          "woven-accept-97223-bloodtalon-matriarch"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1411,
+          "Makrura Clacker"
+        ],
+        "actions": [
+          "objective-818-1-makrura-clacker"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1411,
+          "Crawler Mucus"
+        ],
+        "actions": [
+          "objective-818-2-crawler-mucus"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1411,
+          "Master Vornal"
+        ],
+        "actions": [
+          "turnin-818-a-solvent-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96652-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Valley of Trials"
+        ],
+        "actions": [
+          "woven-accept-96652-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Valley-of-Trials-plan"
+        ],
+        "actions": [
+          "objective-786-1-authored-Valley-of-Trials-plan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Senjin-plan"
+        ],
+        "actions": [
+          "objective-786-2-authored-Senjin-plan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Orgrimmar-plan"
+        ],
+        "actions": [
+          "objective-786-3-authored-Orgrimmar-plan"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1411,
+          "Lar Prowltusk"
+        ],
+        "actions": [
+          "turnin-786-thwarting-kolkar-aggression"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99123-lost-in-the-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Pal'juh"
+        ],
+        "actions": [
+          "woven-accept-99123-lost-in-the-shadows",
+          "woven-objective-99123-lost-in-the-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Master Vornal"
+        ],
+        "actions": [
+          "woven-turnin-99123-lost-in-the-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Ridgeshade Creeper"
+        ],
+        "actions": [
+          "woven-objective-96821-legging-it-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Ridgeshade Lurker"
+        ],
+        "actions": [
+          "woven-objective-96821-legging-it-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Ukorsbane"
+        ],
+        "actions": [
+          "loot-starter-before-accept-96876-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-96876-verified-pickup",
+          "accept-96876-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Ukor"
+        ],
+        "actions": [
+          "woven-turnin-96876-ukors-lost-pack"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "turnin-823-report-to-orgnil"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-806-dark-storms"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "accept-806-dark-storms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-784-vanquish-the-betrayers"
+        ]
+      },
+      {
+        "boundary": [
+          83,
+          1411,
+          "Gar'Thok"
+        ],
+        "actions": [
+          "accept-784-vanquish-the-betrayers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-837-encroachment"
+        ]
+      },
+      {
+        "boundary": [
+          83,
+          1411,
+          "Gar'Thok"
+        ],
+        "actions": [
+          "accept-837-encroachment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-815-break-a-few-eggs"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1411,
+          "Cook Torka"
+        ],
+        "actions": [
+          "accept-815-break-a-few-eggs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-791-carry-your-weight"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1411,
+          "Furl Scornbrow"
+        ],
+        "actions": [
+          "accept-791-carry-your-weight"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96822-for-honor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Turroc"
+        ],
+        "actions": [
+          "woven-accept-96822-for-honor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96825-this-fruit-could-bite-back"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Cook Torka"
+        ],
+        "actions": [
+          "woven-accept-96825-this-fruit-could-bite-back"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1411,
+          "Innkeeper Grosk"
+        ],
+        "actions": [
+          "turnin-2161-a-peon-s-burden"
+        ]
+      },
+      {
+        "boundary": [
+          91,
+          1411,
+          "Tai'jin"
+        ],
+        "actions": [
+          "turnin-5649-in-favor-of-spirituality"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5648-garments-of-spirituality"
+        ]
+      },
+      {
+        "boundary": [
+          91,
+          1411,
+          "Tai'jin"
+        ],
+        "actions": [
+          "accept-5648-garments-of-spirituality"
+        ]
+      },
+      {
+        "boundary": [
+          93,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-5648-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          93,
+          1411,
+          "Tai'jin"
+        ],
+        "actions": [
+          "turnin-5648-garments-of-spirituality"
+        ]
+      },
+      {
+        "boundary": [
+          94,
+          1411,
+          "Lieutenant Benedict"
+        ],
+        "actions": [
+          "objective-784-3-lieutenant-benedict"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Benedict's Chest"
+        ],
+        "actions": [
+          "loot-starter-before-accept-830-the-admiral-s-orders"
+        ]
+      },
+      {
+        "boundary": [
+          96,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-830-the-admiral-s-orders"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1411,
+          "Canvas Scraps"
+        ],
+        "actions": [
+          "objective-791-1-canvas-scraps"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1411,
+          "Kul Tiras Marine"
+        ],
+        "actions": [
+          "objective-784-2-kul-tiras-marine"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1411,
+          "Kul Tiras Sailor"
+        ],
+        "actions": [
+          "objective-784-1-kul-tiras-sailor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Tiragarde Keep outskirts"
+        ],
+        "actions": [
+          "woven-objective-96822-for-honor"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1411,
+          "Gar'Thok"
+        ],
+        "actions": [
+          "turnin-784-vanquish-the-betrayers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Turroc"
+        ],
+        "actions": [
+          "woven-turnin-96822-for-honor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-825-from-the-wreckage"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1411,
+          "Gar'Thok"
+        ],
+        "actions": [
+          "accept-825-from-the-wreckage",
+          "turnin-830-the-admiral-s-orders",
+          "accept-831-the-admiral-s-orders"
+        ]
+      },
+      {
+        "boundary": [
+          105,
+          1411,
+          "Furl Scornbrow"
+        ],
+        "actions": [
+          "turnin-791-carry-your-weight"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Gar'Thok"
+        ],
+        "actions": [
+          "woven-turnin-96821-legging-it"
+        ]
+      },
+      {
+        "boundary": [
+          114,
+          1411,
+          "Gnomish Tools"
+        ],
+        "actions": [
+          "objective-825-1-gnomish-tools"
+        ]
+      },
+      {
+        "boundary": [
+          115,
+          1411,
+          "Zalazane"
+        ],
+        "actions": [
+          "objective-826-3-zalazane"
+        ]
+      },
+      {
+        "boundary": [
+          116,
+          1411,
+          "Minshina's Skull"
+        ],
+        "actions": [
+          "objective-808-1-minshina-s-skull"
+        ]
+      },
+      {
+        "boundary": [
+          117,
+          1411,
+          "Hexed Troll"
+        ],
+        "actions": [
+          "objective-826-1-hexed-troll"
+        ]
+      },
+      {
+        "boundary": [
+          118,
+          1411,
+          "Voodoo Troll"
+        ],
+        "actions": [
+          "objective-826-2-voodoo-troll"
+        ]
+      },
+      {
+        "boundary": [
+          119,
+          1411,
+          "Taillasher Egg"
+        ],
+        "actions": [
+          "objective-815-1-taillasher-egg"
+        ]
+      },
+      {
+        "boundary": [
+          120,
+          1411,
+          "Durotar Tiger Fur"
+        ],
+        "actions": [
+          "objective-817-1-durotar-tiger-fur"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Echo Isles"
+        ],
+        "actions": [
+          "woven-objective-97225-forgotten-loa-idols"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Bloodtalon Matriarch"
+        ],
+        "actions": [
+          "woven-objective-97223-bloodtalon-matriarch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-96873-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          126,
+          1411,
+          "Master Gadrin"
+        ],
+        "actions": [
+          "turnin-808-minshina-s-skull",
+          "turnin-826-zalazane"
+        ]
+      },
+      {
+        "boundary": [
+          128,
+          1411,
+          "Vel'rin Fang"
+        ],
+        "actions": [
+          "turnin-817-practical-prey"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Master Gadrin"
+        ],
+        "actions": [
+          "woven-turnin-97225-forgotten-loa-idols"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Xar'Ti"
+        ],
+        "actions": [
+          "woven-turnin-97223-bloodtalon-matriarch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Pa'zula"
+        ],
+        "actions": [
+          "turnin-96873-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          129,
+          1411,
+          "Gar'Thok"
+        ],
+        "actions": [
+          "turnin-825-from-the-wreckage"
+        ]
+      },
+      {
+        "boundary": [
+          130,
+          1411,
+          "Cook Torka"
+        ],
+        "actions": [
+          "turnin-815-break-a-few-eggs"
+        ]
+      },
+      {
+        "boundary": [
+          131,
+          1411,
+          "Razormane Quilboar"
+        ],
+        "actions": [
+          "objective-837-1-razormane-quilboar"
+        ]
+      },
+      {
+        "boundary": [
+          131,
+          1411,
+          "Razormane Scout"
+        ],
+        "actions": [
+          "objective-837-2-razormane-scout"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1411,
+          "Razormane Dustrunner"
+        ],
+        "actions": [
+          "objective-837-3-razormane-dustrunner"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1411,
+          "Razormane Battleguard"
+        ],
+        "actions": [
+          "objective-837-4-razormane-battleguard"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Razormane grounds"
+        ],
+        "actions": [
+          "woven-objective-96825-this-fruit-could-bite-back"
+        ]
+      },
+      {
+        "boundary": [
+          136,
+          1411,
+          "Gar'Thok"
+        ],
+        "actions": [
+          "turnin-837-encroachment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Cook Torka"
+        ],
+        "actions": [
+          "woven-turnin-96825-this-fruit-could-bite-back"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5654-hex-of-weakness"
+        ]
+      },
+      {
+        "boundary": [
+          138,
+          1411,
+          "Tai'jin"
+        ],
+        "actions": [
+          "accept-5654-hex-of-weakness"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6062-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          145,
+          1411,
+          "Thotar"
+        ],
+        "actions": [
+          "accept-6062-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-6062-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6062-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Brakk"
+        ],
+        "actions": [
+          "woven-turnin-96652-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96604-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Brakk"
+        ],
+        "actions": [
+          "woven-accept-96604-the-great-outdoors",
+          "woven-objective-96604-the-great-outdoors",
+          "woven-turnin-96604-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1411,
+          "Thotar"
+        ],
+        "actions": [
+          "turnin-6062-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6083-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1411,
+          "Thotar"
+        ],
+        "actions": [
+          "accept-6083-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6083-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          149,
+          1411,
+          "Thotar"
+        ],
+        "actions": [
+          "turnin-6083-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6082-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          149,
+          1411,
+          "Thotar"
+        ],
+        "actions": [
+          "accept-6082-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6082-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          151,
+          1411,
+          "Thotar"
+        ],
+        "actions": [
+          "turnin-6082-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6081-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          151,
+          1411,
+          "Thotar"
+        ],
+        "actions": [
+          "accept-6081-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-812-need-for-a-cure"
+        ]
+      },
+      {
+        "boundary": [
+          153,
+          1411,
+          "Rhinag"
+        ],
+        "actions": [
+          "accept-812-need-for-a-cure"
+        ]
+      },
+      {
+        "boundary": [
+          155,
+          1454,
+          "Nazgrel"
+        ],
+        "actions": [
+          "turnin-831-the-admiral-s-orders"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-813-finding-the-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          156,
+          1454,
+          "Kor'ghan"
+        ],
+        "actions": [
+          "accept-813-finding-the-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          158,
+          1454,
+          "Ormak Grimshot"
+        ],
+        "actions": [
+          "turnin-6081-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Kamari"
+        ],
+        "actions": [
+          "accept-96875-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Ug'thok"
+        ],
+        "actions": [
+          "accept-96874-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2983-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          163,
+          1411,
+          "Swart"
+        ],
+        "actions": [
+          "accept-2983-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          164,
+          1413,
+          "Kranal Fiss"
+        ],
+        "actions": [
+          "turnin-2983-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1524-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          164,
+          1413,
+          "Kranal Fiss"
+        ],
+        "actions": [
+          "accept-1524-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          165,
+          1411,
+          "Telf Joolam"
+        ],
+        "actions": [
+          "turnin-1524-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1525-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          165,
+          1411,
+          "Telf Joolam"
+        ],
+        "actions": [
+          "accept-1525-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          166,
+          1413,
+          "Razormane Geomancer"
+        ],
+        "actions": [
+          "objective-1525-1-razormane-geomancer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-834-winds-in-the-desert"
+        ]
+      },
+      {
+        "boundary": [
+          168,
+          1411,
+          "Rezlak"
+        ],
+        "actions": [
+          "accept-834-winds-in-the-desert"
+        ]
+      },
+      {
+        "boundary": [
+          169,
+          1411,
+          "Sack of Supplies"
+        ],
+        "actions": [
+          "objective-834-1-sack-of-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          170,
+          1411,
+          "Rezlak"
+        ],
+        "actions": [
+          "turnin-834-winds-in-the-desert"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-835-securing-the-lines"
+        ]
+      },
+      {
+        "boundary": [
+          170,
+          1411,
+          "Rezlak"
+        ],
+        "actions": [
+          "accept-835-securing-the-lines"
+        ]
+      },
+      {
+        "boundary": [
+          174,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-835-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Dustwind Storm Witch"
+        ],
+        "actions": [
+          "loot-starter-before-accept-97281-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-97281-verified-pickup",
+          "accept-97281-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          174,
+          1411,
+          "Rezlak"
+        ],
+        "actions": [
+          "turnin-835-securing-the-lines"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Rezlak"
+        ],
+        "actions": [
+          "woven-turnin-97281-a-simmering-storm"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-97282-stormy-potential"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Rezlak"
+        ],
+        "actions": [
+          "woven-accept-97282-stormy-potential",
+          "woven-turnin-97282-stormy-potential"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-816-lost-but-not-forgotten"
+        ]
+      },
+      {
+        "boundary": [
+          175,
+          1411,
+          "Misha Tor'kren"
+        ],
+        "actions": [
+          "accept-816-lost-but-not-forgotten"
+        ]
+      },
+      {
+        "boundary": [
+          176,
+          1411,
+          "Dreadmaw Crocolisk"
+        ],
+        "actions": [
+          "objective-816-1-dreadmaw-crocolisk"
+        ]
+      },
+      {
+        "boundary": [
+          177,
+          1411,
+          "Telf Joolam"
+        ],
+        "actions": [
+          "turnin-1525-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1526-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          177,
+          1411,
+          "Telf Joolam"
+        ],
+        "actions": [
+          "accept-1526-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          179,
+          1411,
+          "Minor Manifestation of Fire"
+        ],
+        "actions": [
+          "objective-1526-1-fire-sapta"
+        ]
+      },
+      {
+        "boundary": [
+          180,
+          1411,
+          "Call of Fire"
+        ],
+        "actions": [
+          "turnin-1526-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1527-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          180,
+          1411,
+          "Call of Fire"
+        ],
+        "actions": [
+          "accept-1527-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          181,
+          1413,
+          "Kranal Fiss"
+        ],
+        "actions": [
+          "turnin-1527-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          183,
+          1411,
+          "Misha Tor'kren"
+        ],
+        "actions": [
+          "turnin-816-lost-but-not-forgotten"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-812-need-for-a-cure-2"
+        ]
+      },
+      {
+        "boundary": [
+          184,
+          1411,
+          "Rhinag"
+        ],
+        "actions": [
+          "accept-812-need-for-a-cure-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-806-1-fizzle-s-claw"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Fizzle Darkstorm"
+        ],
+        "actions": [
+          "objective-806-1-fizzle-s-claw"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Thunder Ridge beasts"
+        ],
+        "actions": [
+          "objective-96875-loremaster",
+          "objective-96874-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Halikor"
+        ],
+        "actions": [
+          "loot-starter-before-accept-96877-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-96877-verified-pickup",
+          "accept-96877-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Thunder Lizard"
+        ],
+        "actions": [
+          "woven-objective-97282-stormy-potential"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Dark Storms"
+        ],
+        "actions": [
+          "turnin-806-dark-storms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-828-margoz"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "woven-accept-828-margoz"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-840-conscript-of-the-horde"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Takrin Pathseeker"
+        ],
+        "actions": [
+          "woven-accept-840-conscript-of-the-horde"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Margoz"
+        ],
+        "actions": [
+          "woven-turnin-828-margoz"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-827-skull-rock"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Margoz"
+        ],
+        "actions": [
+          "woven-accept-827-skull-rock"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Skull Rock"
+        ],
+        "actions": [
+          "woven-objective-827-skull-rock"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-832-burning-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Gazz'uz"
+        ],
+        "actions": [
+          "woven-accept-832-burning-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Margoz"
+        ],
+        "actions": [
+          "woven-turnin-827-skull-rock"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-829-neeru-fireblade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Margoz"
+        ],
+        "actions": [
+          "woven-accept-829-neeru-fireblade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99048-a-missing-hand"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "woven-accept-99048-a-missing-hand"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Heglan Shadeeye"
+        ],
+        "actions": [
+          "woven-turnin-99048-a-missing-hand"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99049-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Heglan Shadeeye"
+        ],
+        "actions": [
+          "woven-accept-99049-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Skirmish site"
+        ],
+        "actions": [
+          "woven-objective-99049-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "woven-turnin-99049-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99051-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "woven-accept-99051-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Spitelash Scout"
+        ],
+        "actions": [
+          "woven-objective-99051-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "woven-turnin-99051-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99052-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "woven-accept-99052-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Aggor the Young"
+        ],
+        "actions": [
+          "woven-objective-99052-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Orgnil Soulscar"
+        ],
+        "actions": [
+          "woven-turnin-99052-threat-from-below"
+        ]
+      },
+      {
+        "boundary": [
+          186,
+          1454,
+          "Ur'kyo"
+        ],
+        "actions": [
+          "turnin-5654-hex-of-weakness"
+        ]
+      },
+      {
+        "boundary": [
+          187,
+          1454,
+          "Nazgrel"
+        ],
+        "actions": [
+          "turnin-831-the-admiral-s-orders-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-813-finding-the-antidote-2"
+        ]
+      },
+      {
+        "boundary": [
+          188,
+          1454,
+          "Kor'ghan"
+        ],
+        "actions": [
+          "accept-813-finding-the-antidote-2"
+        ]
+      },
+      {
+        "boundary": [
+          190,
+          1411,
+          "Venomtail Poison Sac"
+        ],
+        "actions": [
+          "objective-813-1-venomtail-scorpid"
+        ]
+      },
+      {
+        "boundary": [
+          191,
+          1454,
+          "Kor'ghan"
+        ],
+        "actions": [
+          "turnin-813-finding-the-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Neeru Fireblade"
+        ],
+        "actions": [
+          "woven-turnin-829-neeru-fireblade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-809-akzeloth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Neeru Fireblade"
+        ],
+        "actions": [
+          "woven-accept-809-akzeloth",
+          "woven-turnin-832-burning-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Kamari"
+        ],
+        "actions": [
+          "woven-turnin-96877-halikors-hoof",
+          "turnin-96875-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Ug'thok"
+        ],
+        "actions": [
+          "turnin-96874-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-812-need-for-a-cure-3"
+        ]
+      },
+      {
+        "boundary": [
+          192,
+          1411,
+          "Rhinag"
+        ],
+        "actions": [
+          "accept-812-need-for-a-cure-3"
+        ]
+      },
+      {
+        "boundary": [
+          193,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-812-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          193,
+          1411,
+          "Rhinag"
+        ],
+        "actions": [
+          "turnin-812-need-for-a-cure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Ak'Zeloth"
+        ],
+        "actions": [
+          "woven-turnin-809-akzeloth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Kargal Battlescar"
+        ],
+        "actions": [
+          "woven-turnin-840-conscript-of-the-horde"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-842-crossroads-conscription"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Kargal Battlescar"
+        ],
+        "actions": [
+          "woven-accept-842-crossroads-conscription"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-924-the-demon-seed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Ak'Zeloth"
+        ],
+        "actions": [
+          "woven-accept-924-the-demon-seed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Altar of Fire"
+        ],
+        "actions": [
+          "woven-objective-924-the-demon-seed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Ak'Zeloth"
+        ],
+        "actions": [
+          "woven-turnin-924-the-demon-seed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "woven-turnin-842-crossroads-conscription"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          206,
+          1420,
+          "Austil de Mon"
+        ],
+        "actions": [
+          "accept-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1881-speak-with-anastasia"
+        ]
+      },
+      {
+        "boundary": [
+          208,
+          1420,
+          "Cain Firesong"
+        ],
+        "actions": [
+          "accept-1881-speak-with-anastasia"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1478-halgar-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          210,
+          1420,
+          "Ageron Kargal"
+        ],
+        "actions": [
+          "accept-1478-halgar-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          214,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "turnin-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          214,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "accept-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          215,
+          1420,
+          "Mausoleum Trigger"
+        ],
+        "actions": [
+          "objective-1819-1-mausoleum-trigger"
+        ]
+      },
+      {
+        "boundary": [
+          216,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "turnin-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          216,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "accept-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          217,
+          1420,
+          "Coleman Farthing"
+        ],
+        "actions": [
+          "turnin-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          220,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "turnin-1478-halgar-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1473-creature-of-the-void"
+        ]
+      },
+      {
+        "boundary": [
+          220,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "accept-1473-creature-of-the-void"
+        ]
+      },
+      {
+        "boundary": [
+          221,
+          1420,
+          "Egalin's Grimoire"
+        ],
+        "actions": [
+          "objective-1473-1-egalin-s-grimoire"
+        ]
+      },
+      {
+        "boundary": [
+          222,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "turnin-1473-creature-of-the-void"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1471-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          222,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "accept-1471-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          223,
+          1458,
+          "Runes of Summoning"
+        ],
+        "actions": [
+          "objective-1471-1-runes-of-summoning"
+        ]
+      },
+      {
+        "boundary": [
+          224,
+          1458,
+          "Carendin Halgar"
+        ],
+        "actions": [
+          "turnin-1471-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          225,
+          1458,
+          "Anastasia Hartwell"
+        ],
+        "actions": [
+          "turnin-1881-speak-with-anastasia"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1882-the-balnir-farmstead"
+        ]
+      },
+      {
+        "boundary": [
+          225,
+          1458,
+          "Anastasia Hartwell"
+        ],
+        "actions": [
+          "accept-1882-the-balnir-farmstead"
+        ]
+      },
+      {
+        "boundary": [
+          247,
+          1420,
+          "Balnir Snapdragons"
+        ],
+        "actions": [
+          "objective-1882-1-balnir-snapdragons"
+        ]
+      },
+      {
+        "boundary": [
+          251,
+          1458,
+          "Anastasia Hartwell"
+        ],
+        "actions": [
+          "turnin-1882-the-balnir-farmstead"
+        ]
+      }
+    ]
   }
 }
