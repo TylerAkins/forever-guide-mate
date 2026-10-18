@@ -34,7 +34,7 @@ for _, old in ipairs({'leveling-durotar', 'leveling-mulgore'}) do
     ForeverGuideMateCharDB = { schemaVersion = 11, selectedGuide = old, customSetting = 'preserve',
         completionLedger = { [old] = { ['1'] = { oldGoal = true } } } }
     ns.InitializeStorage()
-    check(ns.charDB.selectedGuide == 'loremaster-dun-morogh', 'Retired selection opens an available Loremaster guide')
+    check(ns.charDB.selectedGuide == old:gsub('^leveling%-', 'loremaster-'), 'Retired selection retains its zone')
     check(ns.charDB.completionLedger[old]['1'].oldGoal == true, 'Old progress stays archived')
     check(ns.charDB.customSetting == 'preserve', 'Migration preserves unrelated state')
 end
@@ -59,3 +59,7 @@ dofile('tests/lua/prerequisite_groups.lua')
 dofile('tests/lua/normal_optional.lua')
 
 dofile('tests/lua/ashenvale_starters.lua')
+
+dofile('tests/lua/loremaster_migration.lua')
+
+dofile('tests/lua/item_starter_bags.lua')

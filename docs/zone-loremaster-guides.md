@@ -23,7 +23,9 @@ recommendations require later returns even when the offer minimum is low.
 
 The library contains Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Mulgore,
 Tirisfal Glades, and Zephras Isle. The previous placeholder is retired; archived
-completion ledgers remain preserved. Zephras also retains its Leveling starter.
+completion ledgers remain preserved. Retired Durotar and Mulgore selections retain
+their zone. Placeholder selections wait for captured character identity and choose
+an eligible starter zone. Zephras also retains its Leveling starter.
 
 The inventories identify six unresolved records: Applejack Still (91736), A Taste
 of Darkness (95771), Crown of the Earth (934), A Strategic Alliance (785), The New

@@ -114,6 +114,13 @@ function Ordered:Storage(guide)
 end
 
 function Ordered:Observed(goal, state)
+    local complete = type(goal.complete) == "table" and goal.complete
+    if goal.kind == "note" and complete then
+        -- A held starter finishes its instruction even while quest history loads.
+        for _, condition in ipairs(complete.any or {}) do
+            if condition.item and ns.EvaluateCondition(condition, state) == true then return true end
+        end
+    end
     local questID = Engine:GetGoalQuestID(goal)
     if questID then
         if not state.questLogKnown then return false end
@@ -375,6 +382,13 @@ function Engine:Refresh(state)
         local ids, priority = ns.QuestQuery()
         self.state = ns.PlayerState:Capture(nil, ids, priority, ns.GetTrackedAchievementIDs())
     end
+    if ns.charDB and ns.charDB.pendingLoremasterSelection
+        and not ns.guides[ns.charDB.selectedGuide] and not state then
+        local ids, priority = ns.QuestQuery()
+        state = ns.PlayerState:Capture(nil, ids, priority, ns.GetTrackedAchievementIDs())
+        self.state = state
+    end
+    self:MigrateLoremasterSelection(state)
     self:MigrateEraProgress()
     local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
     if not OrderedGuide(guide) then return refresh(self, state) end
