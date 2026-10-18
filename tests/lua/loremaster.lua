@@ -37,3 +37,17 @@ assert(not ns.OrderedRoutes:ExcludedAction(map, snapshot), 'The outdoor map drop
 local _, brew = index('accept', 415)
 snapshot.completedQuests[413] = true
 assert(ns.OrderedRoutes:ExcludedAction(brew, snapshot), 'Shimmer Stout completion bypasses its unavailable breadcrumb')
+local elwynn = assert(ns.guides['loremaster-elwynn-forest'], 'Elwynn Forest has a Loremaster itinerary')
+local function questAction(route, kind, quest)
+    for i, goal in ipairs(route.goals) do
+        if goal.kind == kind and ns.Engine:GetGoalQuestID(goal) == quest then return goal, i end
+    end
+    error(route.id .. ' is missing ' .. kind .. ' ' .. quest)
+end
+local lesson, lessonIndex = questAction(elwynn, 'accept', 91753)
+local _, mineIndex = ns.Engine:GetGoal(elwynn, 'woven-objective-91723-delicate-instruments')
+local lessonWork, lessonWorkIndex = questAction(elwynn, 'objective', 91753)
+local lessonReturn, lessonReturnIndex = questAction(elwynn, 'turnin', 91753)
+assert(lessonIndex < mineIndex and mineIndex < lessonWorkIndex and lessonWorkIndex < lessonReturnIndex,
+    'The Tower pickup precedes the Jasperlode outing and its Tower return')
+assert(lesson.route[1].mapID == 1429, 'The enchanting lesson belongs to Elwynn')

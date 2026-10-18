@@ -14462,6 +14462,10 @@
     "loremaster-dun-morogh": {
       "inventory": "docs/loremaster/dun-morogh.json",
       "clientWalkthrough": false
+    },
+    "loremaster-elwynn-forest": {
+      "inventory": "docs/loremaster/elwynn-forest.json",
+      "clientWalkthrough": false
     }
   }
 }

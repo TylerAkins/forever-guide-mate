@@ -26,7 +26,7 @@ for _, id in ipairs(ns.guideOrder) do
     end
 end
 check(misc == 41, 'Miscellaneous contains the books and all 40 exploration guides')
-check(loremaster == 1, 'One zone Loremaster guide is registered')
+check(loremaster == 2, 'The completed zone Loremaster guides are registered')
 check(ns.guides['loremaster-coming-soon'] == nil, 'The placeholder is retired')
 check(ns.guides['leveling-durotar'] == nil and ns.guides['leveling-mulgore'] == nil, 'Retired Loremaster guides are absent')
 for _, old in ipairs({'leveling-durotar', 'leveling-mulgore'}) do

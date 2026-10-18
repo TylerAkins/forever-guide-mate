@@ -108140,5 +108140,3701 @@
         ]
       }
     ]
+  },
+  "loremaster-elwynn-forest": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          6,
+          1429,
+          "Drusilla La Salle"
+        ],
+        "actions": [
+          "accept-1598-the-stolen-tome"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1429,
+          "Powers of the Void"
+        ],
+        "actions": [
+          "objective-1598-1-powers-of-the-void"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1429,
+          "Drusilla La Salle"
+        ],
+        "actions": [
+          "turnin-1598-the-stolen-tome"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1429,
+          "Deputy Willem"
+        ],
+        "actions": [
+          "accept-783-a-threat-within"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "turnin-783-a-threat-within",
+          "accept-7-kobold-camp-cleanup"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1429,
+          "Deputy Willem"
+        ],
+        "actions": [
+          "accept-5261-eagan-peltskinner"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1429,
+          "Eagan Peltskinner"
+        ],
+        "actions": [
+          "turnin-5261-eagan-peltskinner",
+          "accept-33-wolves-across-the-border"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1429,
+          "Timber Wolf"
+        ],
+        "actions": [
+          "objective-33-1-timber-wolf"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1429,
+          "Kobold Vermin"
+        ],
+        "actions": [
+          "objective-7-1-kobold-vermin"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1429,
+          "Eagan Peltskinner"
+        ],
+        "actions": [
+          "turnin-33-wolves-across-the-border"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "turnin-7-kobold-camp-cleanup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "woven-accept-92479-a-scribbled-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Tordrin Sternblade"
+        ],
+        "actions": [
+          "woven-turnin-92479-a-scribbled-letter"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "accept-15-investigate-echo-ridge"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1429,
+          "Kobold Worker"
+        ],
+        "actions": [
+          "objective-15-1-kobold-worker"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "turnin-15-investigate-echo-ridge",
+          "accept-21-skirmish-at-echo-ridge",
+          "accept-3104-glyphic-letter",
+          "accept-3100-simple-letter",
+          "accept-3105-tainted-letter",
+          "accept-3102-encrypted-letter",
+          "accept-3103-hallowed-letter",
+          "accept-3101-consecrated-letter"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1429,
+          "Llane Beshere"
+        ],
+        "actions": [
+          "turnin-3100-simple-letter"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1429,
+          "Brother Sammuel"
+        ],
+        "actions": [
+          "turnin-3101-consecrated-letter"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1429,
+          "Priestess Anetta"
+        ],
+        "actions": [
+          "turnin-3103-hallowed-letter"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1429,
+          "Khelden Bremen"
+        ],
+        "actions": [
+          "turnin-3104-glyphic-letter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-18-brotherhood-of-thieves"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1429,
+          "Deputy Willem"
+        ],
+        "actions": [
+          "accept-18-brotherhood-of-thieves"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1429,
+          "Drusilla La Salle"
+        ],
+        "actions": [
+          "turnin-3105-tainted-letter"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1429,
+          "Defias Thug"
+        ],
+        "actions": [
+          "objective-18-1-defias-thug"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1429,
+          "Deputy Willem"
+        ],
+        "actions": [
+          "turnin-18-brotherhood-of-thieves"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3903-milly-osworth"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1429,
+          "Deputy Willem"
+        ],
+        "actions": [
+          "accept-3903-milly-osworth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6-bounty-on-garrick-padfoot"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1429,
+          "Deputy Willem"
+        ],
+        "actions": [
+          "accept-6-bounty-on-garrick-padfoot"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1429,
+          "Kobold Laborer"
+        ],
+        "actions": [
+          "objective-21-1-kobold-laborer"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1429,
+          "Milly Osworth"
+        ],
+        "actions": [
+          "turnin-3903-milly-osworth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3904-milly-s-harvest"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1429,
+          "Milly Osworth"
+        ],
+        "actions": [
+          "accept-3904-milly-s-harvest"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1429,
+          "Jorik Kerridan"
+        ],
+        "actions": [
+          "turnin-3102-encrypted-letter"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1429,
+          "Garrick Padfoot"
+        ],
+        "actions": [
+          "objective-6-1-garrick-padfoot"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1429,
+          "Milly's Harvest"
+        ],
+        "actions": [
+          "objective-3904-1-milly-s-harvest"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1429,
+          "Milly Osworth"
+        ],
+        "actions": [
+          "turnin-3904-milly-s-harvest"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3905-grape-manifest"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1429,
+          "Milly Osworth"
+        ],
+        "actions": [
+          "accept-3905-grape-manifest"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1429,
+          "Deputy Willem"
+        ],
+        "actions": [
+          "turnin-6-bounty-on-garrick-padfoot"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "turnin-21-skirmish-at-echo-ridge"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "loot-starter-before-accept-91741-verified-pickup",
+          "accept-91741-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
+          "woven-turnin-91741-nibbled-on-book",
+          "woven-accept-92124-book-inventory"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Daniel"
+        ],
+        "actions": [
+          "woven-turnin-92124-book-inventory"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
+          "woven-accept-91743-rascally-rodents"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Kobold Vermin"
+        ],
+        "actions": [
+          "woven-objective-91743-rascally-rodents"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
+          "woven-turnin-91743-rascally-rodents",
+          "woven-accept-91745-mining-consultant"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Kelsey Fargo"
+        ],
+        "actions": [
+          "woven-turnin-91745-mining-consultant",
+          "woven-accept-91752-the-big-picture"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Shinyfinder Narf"
+        ],
+        "actions": [
+          "woven-objective-91752-the-big-picture"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "woven-turnin-91752-the-big-picture",
+          "woven-accept-91758-follow-that-kobold"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Tordrin Sternblade"
+        ],
+        "actions": [
+          "woven-turnin-91758-follow-that-kobold",
+          "woven-accept-91772-shhh-were-hunting-kobolds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96627-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "woven-accept-96627-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "accept-54-report-to-goldshire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5623-in-favor-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1429,
+          "Priestess Anetta"
+        ],
+        "actions": [
+          "accept-5623-in-favor-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1429,
+          "Brother Neals"
+        ],
+        "actions": [
+          "turnin-3905-grape-manifest"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1429,
+          "Falkhaan Isenstrider"
+        ],
+        "actions": [
+          "accept-2158-rest-and-relaxation"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "turnin-54-report-to-goldshire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "woven-objective-91772-shhh-were-hunting-kobolds",
+          "woven-turnin-91772-shhh-were-hunting-kobolds",
+          "woven-accept-91775-book-return"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-62-the-fargodeep-mine"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "accept-62-the-fargodeep-mine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-60-kobold-candles"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1429,
+          "William Pestle"
+        ],
+        "actions": [
+          "accept-60-kobold-candles"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1429,
+          "Innkeeper Farley"
+        ],
+        "actions": [
+          "turnin-2158-rest-and-relaxation"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Sam Sarsaparilla"
+        ],
+        "actions": [
+          "woven-turnin-96627-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96101-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Sam Sarsaparilla"
+        ],
+        "actions": [
+          "woven-accept-96101-the-great-outdoors",
+          "woven-objective-96101-the-great-outdoors",
+          "woven-turnin-96101-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1429,
+          "Priestess Josetta"
+        ],
+        "actions": [
+          "turnin-5623-in-favor-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5624-garments-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1429,
+          "Priestess Josetta"
+        ],
+        "actions": [
+          "accept-5624-garments-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-5624-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1429,
+          "Priestess Josetta"
+        ],
+        "actions": [
+          "turnin-5624-garments-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-47-gold-dust-exchange"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1429,
+          "Remy \"Two Times\""
+        ],
+        "actions": [
+          "accept-47-gold-dust-exchange"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91751-rough-wolf-pelts"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Helene Peltskinner"
+        ],
+        "actions": [
+          "woven-accept-91751-rough-wolf-pelts"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-85-lost-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1429,
+          "\"Auntie\" Bernice Stonefield"
+        ],
+        "actions": [
+          "accept-85-lost-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1429,
+          "Billy Maclure"
+        ],
+        "actions": [
+          "turnin-85-lost-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-86-pie-for-billy"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1429,
+          "Billy Maclure"
+        ],
+        "actions": [
+          "accept-86-pie-for-billy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-106-young-lovers"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1429,
+          "Maybell Maclure"
+        ],
+        "actions": [
+          "accept-106-young-lovers"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1429,
+          "Chunk of Boar Meat"
+        ],
+        "actions": [
+          "objective-86-1-chunk-of-boar-meat"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1429,
+          "Tommy Joe Stonefield"
+        ],
+        "actions": [
+          "turnin-106-young-lovers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-111-speak-with-gramma"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1429,
+          "Tommy Joe Stonefield"
+        ],
+        "actions": [
+          "accept-111-speak-with-gramma"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1429,
+          "\"Auntie\" Bernice Stonefield"
+        ],
+        "actions": [
+          "turnin-86-pie-for-billy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-84-back-to-billy"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1429,
+          "\"Auntie\" Bernice Stonefield"
+        ],
+        "actions": [
+          "accept-84-back-to-billy"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1429,
+          "Gramma Stonefield"
+        ],
+        "actions": [
+          "turnin-111-speak-with-gramma"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-107-note-to-william"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1429,
+          "Gramma Stonefield"
+        ],
+        "actions": [
+          "accept-107-note-to-william"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1429,
+          "Billy Maclure"
+        ],
+        "actions": [
+          "turnin-84-back-to-billy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-87-goldtooth"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1429,
+          "Billy Maclure"
+        ],
+        "actions": [
+          "accept-87-goldtooth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-88-princess-must-die"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Ma Stonefield"
+        ],
+        "actions": [
+          "woven-accept-88-princess-must-die"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1429,
+          "Large Candle"
+        ],
+        "actions": [
+          "objective-60-1-large-candle"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1429,
+          "Gold Dust"
+        ],
+        "actions": [
+          "objective-47-1-gold-dust"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Kobold Miner"
+        ],
+        "actions": [
+          "woven-objective-91775-book-return"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-87-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1429,
+          "\"Auntie\" Bernice Stonefield"
+        ],
+        "actions": [
+          "turnin-87-goldtooth"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1429,
+          "Remy \"Two Times\""
+        ],
+        "actions": [
+          "turnin-47-gold-dust-exchange"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "woven-turnin-91775-book-return",
+          "woven-accept-91777-rare-books"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-40-a-fishy-peril"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1429,
+          "Remy \"Two Times\""
+        ],
+        "actions": [
+          "accept-40-a-fishy-peril"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "turnin-40-a-fishy-peril"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-35-further-concerns"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "accept-35-further-concerns",
+          "turnin-62-the-fargodeep-mine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-76-the-jasperlode-mine"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "accept-76-the-jasperlode-mine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91723-delicate-instruments"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Hamish Bergwort"
+        ],
+        "actions": [
+          "woven-accept-91723-delicate-instruments"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91725-stolen-enchanting-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Blixie Fitzwink"
+        ],
+        "actions": [
+          "woven-accept-91725-stolen-enchanting-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Kitta Firewind"
+        ],
+        "actions": [
+          "accept-91753-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91732-good-steel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Hagar Lowe"
+        ],
+        "actions": [
+          "woven-accept-91732-good-steel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91733-downstream"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Ormin Pelford"
+        ],
+        "actions": [
+          "woven-accept-91733-downstream"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1429,
+          "William Pestle"
+        ],
+        "actions": [
+          "turnin-60-kobold-candles"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-61-shipment-to-stormwind"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1429,
+          "William Pestle"
+        ],
+        "actions": [
+          "accept-61-shipment-to-stormwind",
+          "turnin-107-note-to-william"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-112-collecting-kelp"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1429,
+          "William Pestle"
+        ],
+        "actions": [
+          "accept-112-collecting-kelp"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99127-a-net-disaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Jason Mathers"
+        ],
+        "actions": [
+          "woven-accept-99127-a-net-disaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99143-bottles-and-baubles"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Lee Brown"
+        ],
+        "actions": [
+          "woven-accept-99143-bottles-and-baubles"
+        ]
+      },
+      {
+        "boundary": [
+          95,
+          1429,
+          "Murloc"
+        ],
+        "actions": [
+          "objective-112-1-murloc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Crystal Lake"
+        ],
+        "actions": [
+          "woven-objective-99127-a-net-disaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Murloc camp"
+        ],
+        "actions": [
+          "woven-objective-99143-bottles-and-baubles"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Croaky"
+        ],
+        "actions": [
+          "loot-starter-before-accept-91740-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-91740-verified-pickup",
+          "accept-91740-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Merell Ross"
+        ],
+        "actions": [
+          "woven-turnin-91740-croakys-head"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1429,
+          "Guard Thomas"
+        ],
+        "actions": [
+          "turnin-35-further-concerns"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-37-find-the-lost-guards"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1429,
+          "Guard Thomas"
+        ],
+        "actions": [
+          "accept-37-find-the-lost-guards"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-52-protect-the-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1429,
+          "Guard Thomas"
+        ],
+        "actions": [
+          "accept-52-protect-the-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1429,
+          "Find the Lost Guards"
+        ],
+        "actions": [
+          "turnin-37-find-the-lost-guards"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-45-discover-rolf-s-fate"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1429,
+          "Discover Rolf's Fate"
+        ],
+        "actions": [
+          "accept-45-discover-rolf-s-fate"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5545-a-bundle-of-trouble"
+        ]
+      },
+      {
+        "boundary": [
+          99,
+          1429,
+          "Supervisor Raelen"
+        ],
+        "actions": [
+          "accept-5545-a-bundle-of-trouble"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1429,
+          "Bundle of Wood"
+        ],
+        "actions": [
+          "objective-5545-1-bundle-of-wood"
+        ]
+      },
+      {
+        "boundary": [
+          101,
+          1429,
+          "Young Forest Bear"
+        ],
+        "actions": [
+          "objective-52-2-young-forest-bear"
+        ]
+      },
+      {
+        "boundary": [
+          102,
+          1429,
+          "Prowler"
+        ],
+        "actions": [
+          "objective-52-1-prowler"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Gray Forest Wolf"
+        ],
+        "actions": [
+          "woven-objective-91751-rough-wolf-pelts"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Elmpaw"
+        ],
+        "actions": [
+          "loot-starter-before-accept-91746-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-91746-verified-pickup",
+          "accept-91746-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1429,
+          "Discover Rolf's Fate"
+        ],
+        "actions": [
+          "turnin-45-discover-rolf-s-fate"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-71-report-to-thomas"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1429,
+          "Report to Thomas"
+        ],
+        "actions": [
+          "accept-71-report-to-thomas"
+        ]
+      },
+      {
+        "boundary": [
+          105,
+          1429,
+          "Supervisor Raelen"
+        ],
+        "actions": [
+          "turnin-5545-a-bundle-of-trouble"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-83-red-linen-goods"
+        ]
+      },
+      {
+        "boundary": [
+          106,
+          1429,
+          "Sara Timberlain"
+        ],
+        "actions": [
+          "accept-83-red-linen-goods"
+        ]
+      },
+      {
+        "boundary": [
+          107,
+          1429,
+          "Guard Thomas"
+        ],
+        "actions": [
+          "turnin-52-protect-the-frontier",
+          "turnin-71-report-to-thomas"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-39-deliver-thomas-report"
+        ]
+      },
+      {
+        "boundary": [
+          107,
+          1429,
+          "Guard Thomas"
+        ],
+        "actions": [
+          "accept-39-deliver-thomas-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-109-report-to-gryan-stoutmantle"
+        ]
+      },
+      {
+        "boundary": [
+          107,
+          1429,
+          "Guard Thomas"
+        ],
+        "actions": [
+          "accept-109-report-to-gryan-stoutmantle"
+        ]
+      },
+      {
+        "boundary": [
+          108,
+          1429,
+          "Defias Bandit"
+        ],
+        "actions": [
+          "objective-83-1-defias-bandit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Princess"
+        ],
+        "actions": [
+          "woven-objective-88-princess-must-die"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Defias Bandit"
+        ],
+        "actions": [
+          "loot-starter-before-accept-184-furlbrow-s-deed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-184-furlbrow-s-deed"
+        ]
+      },
+      {
+        "boundary": [
+          110,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-184-furlbrow-s-deed"
+        ]
+      },
+      {
+        "boundary": [
+          111,
+          1429,
+          "Sara Timberlain"
+        ],
+        "actions": [
+          "turnin-83-red-linen-goods"
+        ]
+      },
+      {
+        "boundary": [
+          113,
+          1429,
+          "William Pestle"
+        ],
+        "actions": [
+          "turnin-112-collecting-kelp"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-114-the-escape"
+        ]
+      },
+      {
+        "boundary": [
+          114,
+          1429,
+          "William Pestle"
+        ],
+        "actions": [
+          "accept-114-the-escape"
+        ]
+      },
+      {
+        "boundary": [
+          115,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "turnin-39-deliver-thomas-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-59-cloth-and-leather-armor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "woven-accept-59-cloth-and-leather-armor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Sara Timberlain"
+        ],
+        "actions": [
+          "woven-turnin-59-cloth-and-leather-armor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-46-bounty-on-murlocs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Guard Thomas"
+        ],
+        "actions": [
+          "woven-accept-46-bounty-on-murlocs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Murloc camp"
+        ],
+        "actions": [
+          "woven-objective-46-bounty-on-murlocs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Guard Thomas"
+        ],
+        "actions": [
+          "woven-turnin-46-bounty-on-murlocs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Kobold Geomancer"
+        ],
+        "actions": [
+          "woven-objective-91723-delicate-instruments"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-91753-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Hamish Bergwort"
+        ],
+        "actions": [
+          "woven-turnin-91723-delicate-instruments"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Kitta Firewind"
+        ],
+        "actions": [
+          "turnin-91753-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91724-delicate-instruments"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Hamish Bergwort"
+        ],
+        "actions": [
+          "woven-accept-91724-delicate-instruments"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Jasperlode Mine"
+        ],
+        "actions": [
+          "woven-objective-91732-good-steel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Eastvale river"
+        ],
+        "actions": [
+          "woven-objective-91733-downstream"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Ormin Pelford"
+        ],
+        "actions": [
+          "woven-turnin-91733-downstream"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Defias Rogue Wizard"
+        ],
+        "actions": [
+          "woven-objective-91724-delicate-instruments"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Stone Cairn Lake"
+        ],
+        "actions": [
+          "woven-objective-91725-stolen-enchanting-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Hamish Bergwort"
+        ],
+        "actions": [
+          "woven-turnin-91724-delicate-instruments"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Blixie Fitzwink"
+        ],
+        "actions": [
+          "woven-turnin-91725-stolen-enchanting-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Hagar Lowe"
+        ],
+        "actions": [
+          "woven-turnin-91732-good-steel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Helene Peltskinner"
+        ],
+        "actions": [
+          "woven-turnin-91751-rough-wolf-pelts",
+          "woven-turnin-91746-elmpaws-head"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Mother Fang"
+        ],
+        "actions": [
+          "woven-objective-91777-rare-books"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
+          "woven-turnin-91777-rare-books"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Jason Mathers"
+        ],
+        "actions": [
+          "woven-turnin-99127-a-net-disaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99128-slimy-menace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Jason Mathers"
+        ],
+        "actions": [
+          "woven-accept-99128-slimy-menace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Murloc"
+        ],
+        "actions": [
+          "woven-objective-99128-slimy-menace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Jason Mathers"
+        ],
+        "actions": [
+          "woven-turnin-99128-slimy-menace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Lee Brown"
+        ],
+        "actions": [
+          "woven-turnin-99143-bottles-and-baubles"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99129-a-man-about-a-murloc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Jason Mathers"
+        ],
+        "actions": [
+          "woven-accept-99129-a-man-about-a-murloc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Remy Two Times"
+        ],
+        "actions": [
+          "woven-turnin-99129-a-man-about-a-murloc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99130-an-enticing-offer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Remy Two Times"
+        ],
+        "actions": [
+          "woven-accept-99130-an-enticing-offer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Stonetusk Boar"
+        ],
+        "actions": [
+          "woven-objective-99130-an-enticing-offer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Remy Two Times"
+        ],
+        "actions": [
+          "woven-turnin-99130-an-enticing-offer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99131-baited-for-success"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Remy Two Times"
+        ],
+        "actions": [
+          "woven-accept-99131-baited-for-success"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Jason Mathers"
+        ],
+        "actions": [
+          "woven-turnin-99131-baited-for-success"
+        ]
+      },
+      {
+        "boundary": [
+          115,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "turnin-76-the-jasperlode-mine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-239-westbrook-garrison-needs-help"
+        ]
+      },
+      {
+        "boundary": [
+          115,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "accept-239-westbrook-garrison-needs-help"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1097-elmore-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          116,
+          1429,
+          "Smith Argus"
+        ],
+        "actions": [
+          "accept-1097-elmore-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1685-gakin-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          118,
+          1429,
+          "Remen Marcot"
+        ],
+        "actions": [
+          "accept-1685-gakin-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5635-desperate-prayer"
+        ]
+      },
+      {
+        "boundary": [
+          122,
+          1429,
+          "Priestess Josetta"
+        ],
+        "actions": [
+          "accept-5635-desperate-prayer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2205-seek-out-si-7"
+        ]
+      },
+      {
+        "boundary": [
+          124,
+          1429,
+          "Keryn Sylvius"
+        ],
+        "actions": [
+          "accept-2205-seek-out-si-7"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          127,
+          1429,
+          "Lyria Du Lac"
+        ],
+        "actions": [
+          "accept-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94774-divine-grace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Priestess Josetta"
+        ],
+        "actions": [
+          "woven-accept-94774-divine-grace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94792-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Josephine Carson"
+        ],
+        "actions": [
+          "woven-accept-94792-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-objective-94792-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Josephine Carson"
+        ],
+        "actions": [
+          "woven-turnin-94792-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94863-taming-the-beast-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Josephine Carson"
+        ],
+        "actions": [
+          "woven-accept-94863-taming-the-beast-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-objective-94863-taming-the-beast-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Josephine Carson"
+        ],
+        "actions": [
+          "woven-turnin-94863-taming-the-beast-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94864-taming-the-beast-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Josephine Carson"
+        ],
+        "actions": [
+          "woven-accept-94864-taming-the-beast-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-objective-94864-taming-the-beast-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Josephine Carson"
+        ],
+        "actions": [
+          "woven-turnin-94864-taming-the-beast-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94793-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Josephine Carson"
+        ],
+        "actions": [
+          "woven-accept-94793-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Isaac Chan"
+        ],
+        "actions": [
+          "woven-turnin-94793-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          128,
+          1429,
+          "Maybell Maclure"
+        ],
+        "actions": [
+          "turnin-114-the-escape"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Ma Stonefield"
+        ],
+        "actions": [
+          "woven-turnin-88-princess-must-die"
+        ]
+      },
+      {
+        "boundary": [
+          129,
+          1429,
+          "Deputy Rainer"
+        ],
+        "actions": [
+          "turnin-239-westbrook-garrison-needs-help"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-176-wanted-hogger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Wanted Poster"
+        ],
+        "actions": [
+          "woven-accept-176-wanted-hogger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-91738-an-apple-treat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Sergeant De Vries"
+        ],
+        "actions": [
+          "woven-accept-91738-an-apple-treat",
+          "woven-objective-91738-an-apple-treat",
+          "woven-turnin-91738-an-apple-treat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-11-riverpaw-gnoll-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          129,
+          1429,
+          "Deputy Rainer"
+        ],
+        "actions": [
+          "accept-11-riverpaw-gnoll-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          130,
+          1429,
+          "Riverpaw Runt"
+        ],
+        "actions": [
+          "objective-11-1-riverpaw-runt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Hogger"
+        ],
+        "actions": [
+          "woven-objective-176-wanted-hogger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-123-the-collector"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Riverpaw gnolls"
+        ],
+        "actions": [
+          "woven-accept-123-the-collector"
+        ]
+      },
+      {
+        "boundary": [
+          131,
+          1429,
+          "Deputy Rainer"
+        ],
+        "actions": [
+          "turnin-11-riverpaw-gnoll-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "woven-turnin-176-wanted-hogger",
+          "woven-turnin-123-the-collector"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-147-manhunt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "woven-accept-147-manhunt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Morgan the Collector"
+        ],
+        "actions": [
+          "woven-objective-147-manhunt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Marshal Dughan"
+        ],
+        "actions": [
+          "woven-turnin-147-manhunt"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1436,
+          "Farmer Furlbrow"
+        ],
+        "actions": [
+          "turnin-184-furlbrow-s-deed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-64-the-forgotten-heirloom"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1436,
+          "Farmer Furlbrow"
+        ],
+        "actions": [
+          "accept-64-the-forgotten-heirloom"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-36-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          133,
+          1436,
+          "Verna Furlbrow"
+        ],
+        "actions": [
+          "accept-36-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-151-poor-old-blanchy"
+        ]
+      },
+      {
+        "boundary": [
+          133,
+          1436,
+          "Verna Furlbrow"
+        ],
+        "actions": [
+          "accept-151-poor-old-blanchy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-9-the-killing-fields"
+        ]
+      },
+      {
+        "boundary": [
+          134,
+          1436,
+          "Farmer Saldean"
+        ],
+        "actions": [
+          "accept-9-the-killing-fields"
+        ]
+      },
+      {
+        "boundary": [
+          135,
+          1436,
+          "Salma Saldean"
+        ],
+        "actions": [
+          "turnin-36-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-38-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          135,
+          1436,
+          "Salma Saldean"
+        ],
+        "actions": [
+          "accept-38-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-22-goretusk-liver-pie"
+        ]
+      },
+      {
+        "boundary": [
+          135,
+          1436,
+          "Salma Saldean"
+        ],
+        "actions": [
+          "accept-22-goretusk-liver-pie"
+        ]
+      },
+      {
+        "boundary": [
+          136,
+          1436,
+          "Gryan Stoutmantle"
+        ],
+        "actions": [
+          "turnin-109-report-to-gryan-stoutmantle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-12-the-people-s-militia"
+        ]
+      },
+      {
+        "boundary": [
+          136,
+          1436,
+          "Gryan Stoutmantle"
+        ],
+        "actions": [
+          "accept-12-the-people-s-militia"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-102-patrolling-westfall"
+        ]
+      },
+      {
+        "boundary": [
+          137,
+          1436,
+          "Captain Danuvin"
+        ],
+        "actions": [
+          "accept-102-patrolling-westfall"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6181-a-swift-message"
+        ]
+      },
+      {
+        "boundary": [
+          138,
+          1436,
+          "Quartermaster Lewis"
+        ],
+        "actions": [
+          "accept-6181-a-swift-message"
+        ]
+      },
+      {
+        "boundary": [
+          140,
+          1436,
+          "Thor"
+        ],
+        "actions": [
+          "turnin-6181-a-swift-message"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6281-continue-to-stormwind"
+        ]
+      },
+      {
+        "boundary": [
+          140,
+          1436,
+          "Thor"
+        ],
+        "actions": [
+          "accept-6281-continue-to-stormwind"
+        ]
+      },
+      {
+        "boundary": [
+          142,
+          1453,
+          "Morgan Pestle"
+        ],
+        "actions": [
+          "turnin-61-shipment-to-stormwind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-turnin-1685-gakin-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          144,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "turnin-1685-gakin-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1688-surena-caledon"
+        ]
+      },
+      {
+        "boundary": [
+          144,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "accept-1688-surena-caledon"
+        ]
+      },
+      {
+        "boundary": [
+          146,
+          1429,
+          "Surena Caledon"
+        ],
+        "actions": [
+          "objective-1688-1-surena-caledon"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "turnin-1688-surena-caledon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1689-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "accept-1689-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          148,
+          1453,
+          "Bloodstone Choker"
+        ],
+        "actions": [
+          "objective-1689-1-bloodstone-choker"
+        ]
+      },
+      {
+        "boundary": [
+          149,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "turnin-1689-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          151,
+          1453,
+          "Master Mathias Shaw"
+        ],
+        "actions": [
+          "turnin-2205-seek-out-si-7"
+        ]
+      },
+      {
+        "boundary": [
+          152,
+          1453,
+          "Osric Strang"
+        ],
+        "actions": [
+          "turnin-6281-continue-to-stormwind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6261-dungar-longdrink"
+        ]
+      },
+      {
+        "boundary": [
+          152,
+          1453,
+          "Osric Strang"
+        ],
+        "actions": [
+          "accept-6261-dungar-longdrink"
+        ]
+      },
+      {
+        "boundary": [
+          153,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "turnin-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          153,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "accept-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          154,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "turnin-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          154,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "accept-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-1640-1-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "objective-1640-1-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          156,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "turnin-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1665-bartleby-s-mug"
+        ]
+      },
+      {
+        "boundary": [
+          156,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "accept-1665-bartleby-s-mug"
+        ]
+      },
+      {
+        "boundary": [
+          157,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "turnin-1665-bartleby-s-mug"
+        ]
+      },
+      {
+        "boundary": [
+          158,
+          1453,
+          "High Priestess Laurena"
+        ],
+        "actions": [
+          "turnin-5635-desperate-prayer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "High Priestess Laurena"
+        ],
+        "actions": [
+          "woven-turnin-94774-divine-grace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94773-divine-grace-laurena"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "High Priestess Laurena"
+        ],
+        "actions": [
+          "woven-accept-94773-divine-grace-laurena",
+          "woven-turnin-94773-divine-grace-laurena"
+        ]
+      },
+      {
+        "boundary": [
+          163,
+          1453,
+          "Grimand Elmore"
+        ],
+        "actions": [
+          "turnin-1097-elmore-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-353-stormpike-s-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          163,
+          1453,
+          "Grimand Elmore"
+        ],
+        "actions": [
+          "accept-353-stormpike-s-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6661-deeprun-rat-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          165,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-6661-deeprun-rat-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-6661-1-rat-catcher-s-flute"
+        ]
+      },
+      {
+        "boundary": [
+          167,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-6661-deeprun-rat-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          197,
+          1432,
+          "Mountaineer Stormpike"
+        ],
+        "actions": [
+          "turnin-353-stormpike-s-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-418-thelsamar-blood-sausages"
+        ]
+      },
+      {
+        "boundary": [
+          199,
+          1432,
+          "Vidra Hearthstove"
+        ],
+        "actions": [
+          "accept-418-thelsamar-blood-sausages"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-416-rat-catching"
+        ]
+      },
+      {
+        "boundary": [
+          200,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-416-rat-catching"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1339-mountaineer-stormpike-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          200,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-1339-mountaineer-stormpike-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          201,
+          1432,
+          "Tunnel Rat Scout"
+        ],
+        "actions": [
+          "objective-416-1-tunnel-rat-scout"
+        ]
+      },
+      {
+        "boundary": [
+          202,
+          1432,
+          "Mountaineer Stormpike"
+        ],
+        "actions": [
+          "turnin-1339-mountaineer-stormpike-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1338-stormpike-s-order"
+        ]
+      },
+      {
+        "boundary": [
+          202,
+          1432,
+          "Mountaineer Stormpike"
+        ],
+        "actions": [
+          "accept-1338-stormpike-s-order"
+        ]
+      },
+      {
+        "boundary": [
+          206,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-416-rat-catching"
+        ]
+      },
+      {
+        "boundary": [
+          207,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-418-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          207,
+          1432,
+          "Vidra Hearthstove"
+        ],
+        "actions": [
+          "turnin-418-thelsamar-blood-sausages"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-224-in-defense-of-the-king-s-lands"
+        ]
+      },
+      {
+        "boundary": [
+          208,
+          1432,
+          "Mountaineer Cobbleflint"
+        ],
+        "actions": [
+          "accept-224-in-defense-of-the-king-s-lands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-267-the-trogg-threat"
+        ]
+      },
+      {
+        "boundary": [
+          209,
+          1432,
+          "Captain Rugelfuss"
+        ],
+        "actions": [
+          "accept-267-the-trogg-threat"
+        ]
+      },
+      {
+        "boundary": [
+          211,
+          1432,
+          "Stonesplinter Trogg"
+        ],
+        "actions": [
+          "objective-224-1-stonesplinter-trogg"
+        ]
+      },
+      {
+        "boundary": [
+          211,
+          1432,
+          "Stonesplinter Scout"
+        ],
+        "actions": [
+          "objective-224-2-stonesplinter-scout"
+        ]
+      },
+      {
+        "boundary": [
+          213,
+          1432,
+          "Mountaineer Cobbleflint"
+        ],
+        "actions": [
+          "turnin-224-in-defense-of-the-king-s-lands"
+        ]
+      },
+      {
+        "boundary": [
+          214,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-267-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          214,
+          1432,
+          "Captain Rugelfuss"
+        ],
+        "actions": [
+          "turnin-267-the-trogg-threat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1641-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          219,
+          1453,
+          "Duthorian Rall"
+        ],
+        "actions": [
+          "accept-1641-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          220,
+          1453,
+          "Duthorian Rall"
+        ],
+        "actions": [
+          "turnin-1641-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "loot-starter-before-accept-1642-the-tome-of-divinity",
+          "level-before-accept-1642-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          221,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-1642-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          222,
+          1453,
+          "Duthorian Rall"
+        ],
+        "actions": [
+          "turnin-1642-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1643-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          222,
+          1453,
+          "Duthorian Rall"
+        ],
+        "actions": [
+          "accept-1643-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          224,
+          1453,
+          "Furen Longbeard"
+        ],
+        "actions": [
+          "turnin-1338-stormpike-s-order"
+        ]
+      },
+      {
+        "boundary": [
+          227,
+          1453,
+          "Stephanie Turner"
+        ],
+        "actions": [
+          "turnin-1643-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1644-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          227,
+          1453,
+          "Stephanie Turner"
+        ],
+        "actions": [
+          "accept-1644-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          228,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-1644-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          228,
+          1453,
+          "Stephanie Turner"
+        ],
+        "actions": [
+          "turnin-1644-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          229,
+          1453,
+          "Dungar Longdrink"
+        ],
+        "actions": [
+          "turnin-6261-dungar-longdrink"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6285-return-to-lewis"
+        ]
+      },
+      {
+        "boundary": [
+          229,
+          1453,
+          "Dungar Longdrink"
+        ],
+        "actions": [
+          "accept-6285-return-to-lewis"
+        ]
+      },
+      {
+        "boundary": [
+          230,
+          1436,
+          "Quartermaster Lewis"
+        ],
+        "actions": [
+          "turnin-6285-return-to-lewis"
+        ]
+      }
+    ]
   }
 }

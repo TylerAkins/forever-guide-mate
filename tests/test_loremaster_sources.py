@@ -51,6 +51,13 @@ class LoremasterSources(unittest.TestCase):
         self.assertTrue(any(q['status'] == 'other-zone' and q['catalogs'] == ['ironforge']
                             for q in quests.values()))
 
+    def test_stormwind_pickup_does_not_assign_arathi_work_to_elwynn(self):
+        audit = json.loads((ROOT / 'docs/loremaster/elwynn-forest.json').read_text())
+        malin = audit['quests']['690']
+        self.assertEqual(malin['status'], 'other-zone')
+        self.assertIn('Arathi Highlands', malin['evidence']['questiedb']['objectivesText'][0])
+        self.assertTrue(any(p['areaID'] == 1519 for p in malin['locations']['start']))
+
 
 if __name__ == '__main__':
     unittest.main()
