@@ -213,3 +213,4 @@ Guides/Miscellaneous/ExploreStranglethornVale.lua
 Guides/Miscellaneous/ExploreSwampOfSorrows.lua
 Guides/Miscellaneous/ExploreWesternPlaguelands.lua
 Guides/Miscellaneous/ExploreStonetalonMountains.lua
+Guides/Miscellaneous/ExploreAzshara.lua

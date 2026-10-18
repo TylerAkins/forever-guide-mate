@@ -276,6 +276,33 @@ local guides = {
             { "Stonetalon Peak", 36, 12, "stonetalon-peak" },
         },
     },
+    {
+        zone = "azshara",
+        title = "Explore Azshara",
+        achievementID = 852,
+        mapID = 1447,
+        locations = {
+            { "Bay of Storms", 56, 59, "bay-of-storms" },
+            { "The Shattered Strand", 45, 52, "the-shattered-strand" },
+            { "Jagged Reef", 52, 10, "jagged-reef" },
+            { "Bitter Reaches", 73, 21, "bitter-reaches" },
+            { "Tower of Eldara", 89, 33, "tower-of-eldara" },
+            { "Temple of Arkkoran", 76, 43, "temple-of-arkkoran" },
+            { "Legash Encampment", 51, 19, "legash-encampment" },
+            { "Thalassian Base Camp", 56, 29, "thalassian-base-camp" },
+            { "Ursolan", 44, 27, "ursolan" },
+            { "Timbermaw Hold", 38, 33, "timbermaw-hold" },
+            { "Valormok", 21, 51, "valormok" },
+            { "Haldarr Encampment", 20, 61, "haldarr-encampment" },
+            { "Shadowsong Shrine", 13, 74, "shadowsong-shrine" },
+            { "Ruins of Eldarath", 36, 53, "ruins-of-eldarath" },
+            { "Southridge Beach", 47, 66, "southridge-beach" },
+            { "Ravencrest Monument", 72, 86, "ravencrest-monument" },
+            { "Lake Mennar", 40, 80, "lake-mennar" },
+            { "The Ruined Reaches", 51, 88, "the-ruined-reaches" },
+            { "Forlorn Ridge", 30, 71, "forlorn-ridge" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
