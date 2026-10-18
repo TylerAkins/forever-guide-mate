@@ -57,3 +57,5 @@ dofile('tests/lua/loremaster.lua')
 dofile('tests/lua/prerequisite_groups.lua')
 
 dofile('tests/lua/normal_optional.lua')
+
+dofile('tests/lua/ashenvale_starters.lua')

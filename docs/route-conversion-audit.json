@@ -14487,5 +14487,40 @@
       "inventory": "docs/loremaster/zephras-isle.json",
       "clientWalkthrough": false
     }
+  },
+  "normalItemStarterRepairs": {
+    "23": {
+      "dropPrerequisite": {
+        "quest": 6383,
+        "state": "completed"
+      },
+      "provider": "Ursangous",
+      "mapID": 1440,
+      "coordinate": [
+        42.3,
+        68.8
+      ],
+      "coordinateSource": "User observation, 2026-10-18",
+      "prerequisiteSources": [
+        "User observation",
+        "QuestieDB preQuestSingle",
+        "ATT preQuestSingle"
+      ]
+    },
+    "1918": {
+      "dropPrerequisite": {
+        "quest": 25,
+        "state": "activeOrCompleted"
+      },
+      "provider": "Tideress",
+      "mapID": 1440,
+      "coordinate": [
+        50.7,
+        71.8
+      ],
+      "coordinateSource": "User observation, 2026-10-18",
+      "dropReports": "https://www.wowhead.com/forever/item=16408/befouled-water-globe",
+      "note": "The existing outing has Stonetalon Standstill active. Do not turn ATT's chain association into a requirement to turn it in before the drop."
+    }
   }
 }

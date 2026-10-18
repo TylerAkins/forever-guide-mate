@@ -31209,8 +31209,8 @@
       {
         "boundary": [
           null,
-          null,
-          null
+          1440,
+          "Ursangous"
         ],
         "actions": [
           "loot-starter-before-accept-23-ursangous-s-paw"
@@ -31229,8 +31229,8 @@
       {
         "boundary": [
           null,
-          null,
-          null
+          1440,
+          "Tideress"
         ],
         "actions": [
           "loot-starter-before-accept-1918-the-befouled-element"
@@ -71242,7 +71242,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 10,
+    "revision": 11,
     "visits": [
       {
         "boundary": [
