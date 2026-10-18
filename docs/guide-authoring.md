@@ -6,6 +6,8 @@ Rules for `Guides/Leveling/`, `Guides/Loremaster/`, `Guides/Dungeons/`, `Guides/
 
 Guides in `Guides/Miscellaneous/` cover optional world collection routes that are not zone leveling chapters. Use `category = "Miscellaneous Guides"`. Book pickup steps are usually `kind = "note"` with map pins; use `complete = QuestState(questID, "completed")` when the Forever turn-in quest id is verified, otherwise omit `complete` so the player marks the step with the tracker **Complete** button (stored in the completion ledger). Milestone reward quests use normal accept and turn-in steps with `dependsOn` on the book step that matches the collection tier in the authored order, not empty `dependsOn` on the accept.
 
+TODO: Riverglades exploration guide. Add verified achievement criteria and waypoints when available.
+
 ## Class quests
 
 One guide per class lives in `Guides/Class/`. The library label is Class. Each guide is the classic class route with Forever class quests woven in. Put class, race, and faction on every step. Use the database race list. A quest offered to both factions stays open to both. When the database leaves the race blank, keep a race lock only when a single-faction classic guide names that race.

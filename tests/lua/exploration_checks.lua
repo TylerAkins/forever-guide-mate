@@ -145,6 +145,28 @@ local guides = {
             { "Thondroril River", 9, 66, "thondroril-river" },
         },
     },
+    {
+        zone = "the-hinterlands",
+        title = "Explore The Hinterlands",
+        achievementID = 773,
+        mapID = 1425,
+        locations = {
+            { "Aerie Peak", 13, 48, "aerie-peak" },
+            { "Plaguemist Ravine", 23, 40, "plaguemist-ravine" },
+            { "Hiri'watha", 31, 58, "hiri-watha" },
+            { "Quel'Danil Lodge", 31, 47, "quel-danil-lodge" },
+            { "Shadra'Alor", 34, 70, "shadra-alor" },
+            { "Valorwind Lake", 40, 59, "valorwind-lake" },
+            { "Agol'watha", 47, 40, "agol-watha" },
+            { "The Creeping Ruin", 51, 50, "the-creeping-ruin" },
+            { "The Altar of Zul", 48, 66, "the-altar-of-zul" },
+            { "Seradane", 63, 24, "seradane" },
+            { "Skulk Rock", 57, 40, "skulk-rock" },
+            { "Shaol'watha", 73, 53, "shaol-watha" },
+            { "Jintha'Alor", 62, 72, "jintha-alor" },
+            { "The Overlook Cliffs", 76, 65, "the-overlook-cliffs" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
