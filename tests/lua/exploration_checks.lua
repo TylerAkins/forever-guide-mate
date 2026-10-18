@@ -385,6 +385,23 @@ local guides = {
             { "Isle of Dread", 34, 78, "isle-of-dread" },
         },
     },
+    {
+        zone = "silithus",
+        title = "Explore Silithus",
+        achievementID = 856,
+        mapID = 1451,
+        locations = {
+            { "Crystal Vale", 28, 14, "crystal-vale" },
+            { "Hive'Ashi", 49, 24, "hive-ashi" },
+            { "Cenarion Hold", 53, 34, "cenarion-hold" },
+            { "Staghelm Point", 67, 28, "staghelm-point" },
+            { "Hive'Zora", 32, 52, "hive-zora" },
+            { "The Scarab Wall", 29, 90, "the-scarab-wall" },
+            { "Hive'Regal", 59, 70, "hive-regal" },
+            { "Southwind Village", 64, 50, "southwind-village" },
+            { "Valor's Rest", 81, 18, "valor-s-rest" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
