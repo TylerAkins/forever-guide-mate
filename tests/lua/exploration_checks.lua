@@ -341,6 +341,26 @@ local guides = {
             { "Alcaz Island", 72, 19, "alcaz-island" },
         },
     },
+    {
+        zone = "felwood",
+        title = "Explore Felwood",
+        achievementID = 853,
+        mapID = 1448,
+        locations = {
+            { "Felpaw Village", 63, 10, "felpaw-village" },
+            { "Talonbranch Glade", 63, 22, "talonbranch-glade" },
+            { "Irontree Woods", 48, 23, "irontree-woods" },
+            { "Jadefire Run", 42, 16, "jadefire-run" },
+            { "Shatter Scar Vale", 42, 40, "shatter-scar-vale" },
+            { "Bloodvenom Falls", 41, 47, "bloodvenom-falls" },
+            { "Jaedenar", 35, 60, "jaedenar" },
+            { "Ruins of Constellas", 37, 68, "ruins-of-constellas" },
+            { "Jadefire Glen", 39, 82, "jadefire-glen" },
+            { "Emerald Sanctuary", 51, 81, "emerald-sanctuary" },
+            { "Deadwood Village", 48, 90, "deadwood-village" },
+            { "Morlos'Aran", 56, 87, "morlos-aran" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
