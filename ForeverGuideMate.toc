@@ -210,3 +210,4 @@ Guides/Miscellaneous/ExploreEasternPlaguelands.lua
 Guides/Miscellaneous/ExploreTheHinterlands.lua
 Guides/Miscellaneous/ExploreSearingGorge.lua
 Guides/Miscellaneous/ExploreStranglethornVale.lua
+Guides/Miscellaneous/ExploreSwampOfSorrows.lua

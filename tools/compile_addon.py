@@ -197,6 +197,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreTheHinterlands.lua",
     "Guides/Miscellaneous/ExploreSearingGorge.lua",
     "Guides/Miscellaneous/ExploreStranglethornVale.lua",
+    "Guides/Miscellaneous/ExploreSwampOfSorrows.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",

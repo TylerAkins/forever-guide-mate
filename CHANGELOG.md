@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 
 ## 0.6.2 - 2026-10-17
 - Consolidate exploration guide files in Miscellaneous while preserving saved progress.
-- Add exploration guides for Alterac Mountains, Arathi Highlands, Badlands, Blasted Lands, Burning Steppes, Deadwind Pass, Eastern Plaguelands, The Hinterlands, Searing Gorge, Stranglethorn Vale.
+- Add exploration guides for Alterac Mountains, Arathi Highlands, Badlands, Blasted Lands, Burning Steppes, Deadwind Pass, Eastern Plaguelands, The Hinterlands, Searing Gorge, Stranglethorn Vale, Swamp of Sorrows.
 
 ## 0.6.1 - 2026-10-17
 - Finish an active Trial of the Lake before other route work, then resume the interrupted step after reporting to Tajarri.

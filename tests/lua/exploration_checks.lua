@@ -217,6 +217,25 @@ local guides = {
             { "Zul'Gurub", 53, 17, "zul-gurub" },
         },
     },
+    {
+        zone = "swamp-of-sorrows",
+        title = "Explore Swamp of Sorrows",
+        achievementID = 782,
+        mapID = 1435,
+        locations = {
+            { "Itharius's Cave", 13, 68, "itharius-s-cave" },
+            { "Misty Valley", 14, 36, "misty-valley" },
+            { "The Harborage", 25, 31, "the-harborage" },
+            { "Splinterspear Junction", 17, 51, "splinterspear-junction" },
+            { "The Shifting Mire", 36, 42, "the-shifting-mire" },
+            { "Stonard", 46, 54, "stonard" },
+            { "Pool of Tears", 65, 54, "pool-of-tears" },
+            { "Stagalbog", 70, 83, "stagalbog" },
+            { "Sorrowmurk", 84, 47, "sorrowmurk" },
+            { "Fallow Sanctuary", 62, 23, "fallow-sanctuary" },
+            { "Misty Reed Strand", 94, 48, "misty-reed-strand" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
