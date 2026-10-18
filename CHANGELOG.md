@@ -3,6 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.6.3 - 2026-10-18
+- Add a search placeholder and Exploration labels to the guide library.
 - Add Loremaster guides for Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Mulgore, Tirisfal Glades, and Zephras Isle, with prerequisite routing and relevant capital visits.
 - Preserve retired Loremaster selections by zone and choose an eligible route when replacing the placeholder.
 - Make Washte Pawne optional in the normal Horde route and explain his multiple spawn locations.

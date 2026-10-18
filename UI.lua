@@ -544,6 +544,9 @@ local function EligibilityText(guide, state)
         end
     end
     Collect(guide.conditions)
+    if type(guide.id) == "string" and guide.id:match("^legacy%-explore%-") then
+        requirements[#requirements + 1] = "Exploration"
+    end
     if isDungeon then
         local factionLabel = DungeonFactionLabel(guide)
         if factionLabel then requirements[#requirements + 1] = factionLabel end
@@ -738,7 +741,15 @@ function UI:CreateGuideBrowser()
     search:SetPoint("TOPRIGHT", -14, -42)
     search:SetAutoFocus(false)
     search:SetTextInsets(8, 8, 0, 0)
-    search:SetScript("OnTextChanged", function() UI.browserPage = 1; UI:RefreshGuideBrowser() end)
+    local placeholder = search:CreateFontString(nil, "OVERLAY", "GameFontDisable")
+    placeholder:SetPoint("LEFT", search, "LEFT", 8, 0)
+    placeholder:SetText("Search...")
+    search.placeholder = placeholder
+    search:SetScript("OnTextChanged", function(self)
+        placeholder:SetShown(self:GetText() == "")
+        UI.browserPage = 1
+        UI:RefreshGuideBrowser()
+    end)
     local categoryTitle = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     categoryTitle:SetPoint("TOPLEFT", 16, -52)
     categoryTitle:SetText("CATEGORIES")

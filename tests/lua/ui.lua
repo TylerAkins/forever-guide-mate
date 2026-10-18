@@ -753,6 +753,37 @@ do
     Check(not enabled, "abandonment disables remembered preparation completion")
 end
 
+local search = ns.UI.browser.search
+Check(rawget(search, "placeholder") ~= nil, "search has placeholder text")
+if rawget(search, "placeholder") then
+    search:SetText("")
+    search.scripts.OnTextChanged(search)
+    Equal(search.placeholder.text, "Search...", "search placeholder uses the requested copy")
+    Check(search.placeholder.shown, "empty search shows its placeholder")
+    Equal(search:GetText(), "", "placeholder does not become a query")
+    search:SetText("dun morogh")
+    search.scripts.OnTextChanged(search)
+    Check(not search.placeholder.shown, "typing hides the placeholder")
+    search:SetText("")
+    search.scripts.OnTextChanged(search)
+    Check(search.placeholder.shown, "clearing search restores the placeholder")
+end
+for path in io.lines("ForeverGuideMate.toc") do
+    if path:match("^Guides/Miscellaneous/Explore.*%.lua$") then
+        Load(path)
+    end
+end
+ns.UI.browserCategory = "Miscellaneous Guides"
+for id, guide in pairs(ns.guides) do
+    if id:match("^legacy%-explore%-") then
+        search:SetText(guide.title)
+        ns.UI.browserPage = 1
+        ns.UI:RefreshGuideBrowser()
+        Check(GuideRow(guide.title).eligibility.text:find("  •  Exploration", 1, true) ~= nil,
+            guide.title .. " displays the Exploration tag")
+    end
+end
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)
