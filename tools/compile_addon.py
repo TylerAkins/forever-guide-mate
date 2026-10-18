@@ -189,6 +189,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreDarkshore.lua",
     "Guides/Miscellaneous/ExploreAlteracMountains.lua",
     "Guides/Miscellaneous/ExploreArathiHighlands.lua",
+    "Guides/Miscellaneous/ExploreBadlands.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",

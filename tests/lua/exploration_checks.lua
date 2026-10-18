@@ -46,6 +46,28 @@ local guides = {
             { "Hammerfall", 74, 38, "hammerfall" },
         },
     },
+    {
+        zone = "badlands",
+        title = "Explore Badlands",
+        achievementID = 765,
+        mapID = 1418,
+        locations = {
+            { "Lethlor Ravine", 80, 56, "lethlor-ravine" },
+            { "Camp Boff", 62, 72, "camp-boff" },
+            { "Agmond's End", 47, 70, "agmond-s-end" },
+            { "Mirage Flats", 30, 69, "mirage-flats" },
+            { "Camp Cagg", 15, 75, "camp-cagg" },
+            { "Apocryphan's Rest", 15, 60, "apocryphan-s-rest" },
+            { "Kargath", 4, 46, "kargath" },
+            { "The Dustbowl", 26, 52, "the-dustbowl" },
+            { "Valley of Fangs", 48, 53, "valley-of-fangs" },
+            { "Angor Fortress", 43, 30, "angor-fortress" },
+            { "Dustwind Gulch", 62, 42, "dustwind-gulch" },
+            { "Hammertoe's Digsite", 52, 34, "hammertoe-s-digsite" },
+            { "The Maker's Terrace", 49, 13, "the-maker-s-terrace" },
+            { "Camp Kosh", 67, 21, "camp-kosh" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
