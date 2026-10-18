@@ -209,3 +209,4 @@ Guides/Miscellaneous/ExploreDeadwindPass.lua
 Guides/Miscellaneous/ExploreEasternPlaguelands.lua
 Guides/Miscellaneous/ExploreTheHinterlands.lua
 Guides/Miscellaneous/ExploreSearingGorge.lua
+Guides/Miscellaneous/ExploreStranglethornVale.lua
