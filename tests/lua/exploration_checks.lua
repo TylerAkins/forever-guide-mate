@@ -167,6 +167,21 @@ local guides = {
             { "The Overlook Cliffs", 76, 65, "the-overlook-cliffs" },
         },
     },
+    {
+        zone = "searing-gorge",
+        title = "Explore Searing Gorge",
+        achievementID = 774,
+        mapID = 1427,
+        locations = {
+            { "Firewatch Ridge", 33, 43, "firewatch-ridge" },
+            { "The Cauldron", 49, 50, "the-cauldron" },
+            { "Blackchar Cave", 22, 80, "blackchar-cave" },
+            { "The Sea of Cinders", 48, 70, "the-sea-of-cinders" },
+            { "Tanner Camp", 64.7, 73.5, "tanner-camp" },
+            { "Grimesilt Dig Site", 62, 62.3, "grimesilt-dig-site" },
+            { "Dustfire Valley", 72, 27, "dustfire-valley" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
