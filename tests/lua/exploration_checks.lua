@@ -22,6 +22,30 @@ local guides = {
             { "The Uplands", 58, 31, "the-uplands" },
         },
     },
+    {
+        zone = "arathi-highlands",
+        title = "Explore Arathi Highlands",
+        achievementID = 761,
+        mapID = 1417,
+        locations = {
+            { "Circle of West Binding", 25, 31, "circle-of-west-binding" },
+            { "Northfold Manor", 32, 27, "northfold-manor" },
+            { "Bouldergor", 39, 36, "bouldergor" },
+            { "Thoradin's Wall", 18, 40, "thoradin-s-wall" },
+            { "Stromgarde Keep", 25, 57, "stromgarde-keep" },
+            { "Faldir's Cove", 24, 81, "faldir-s-cove" },
+            { "Circle of Inner Binding", 35, 58, "circle-of-inner-binding" },
+            { "Thandol Span", 44, 87, "thandol-span" },
+            { "Boulderfist Hall", 53, 73, "boulderfist-hall" },
+            { "Refuge Pointe", 45, 47, "refuge-pointe" },
+            { "Circle of Outer Binding", 52, 50, "circle-of-outer-binding" },
+            { "Witherbark Village", 65, 68, "witherbark-village" },
+            { "Go'Shek Farm", 61, 58, "go-shek-farm" },
+            { "Dabyrie's Farmstead", 55, 39, "dabyrie-s-farmstead" },
+            { "Circle of East Binding", 66, 29, "circle-of-east-binding" },
+            { "Hammerfall", 74, 38, "hammerfall" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
