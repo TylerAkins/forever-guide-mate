@@ -236,6 +236,27 @@ local guides = {
             { "Misty Reed Strand", 94, 48, "misty-reed-strand" },
         },
     },
+    {
+        zone = "western-plaguelands",
+        title = "Explore Western Plaguelands",
+        achievementID = 770,
+        mapID = 1422,
+        locations = {
+            { "Darrowmere Lake", 60, 73, "darrowmere-lake" },
+            { "Caer Darrow", 68, 78, "caer-darrow" },
+            { "Sorrow Hill", 51, 78, "sorrow-hill" },
+            { "Ruins of Andorhal", 43, 69, "ruins-of-andorhal" },
+            { "The Bulwark", 27, 57, "the-bulwark" },
+            { "Felstone Field", 36, 56, "felstone-field" },
+            { "Dalson's Tears", 46, 53, "dalson-s-tears" },
+            { "The Writhing Haunt", 52, 66, "the-writhing-haunt" },
+            { "Northridge Lumber Camp", 46, 36, "northridge-lumber-camp" },
+            { "Hearthglen", 44, 16, "hearthglen" },
+            { "Gahrron's Withering", 62, 58, "gahrron-s-withering" },
+            { "The Weeping Cave", 65, 40, "the-weeping-cave" },
+            { "Thondroril River", 69, 47, "thondroril-river" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
