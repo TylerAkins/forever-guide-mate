@@ -1069,3 +1069,7 @@ ns:RegisterQuestPrerequisite({ quest = 94468, mode = "all", quests = { 94467 } }
 -- Wowhead Forever Data Hoarders and QuestieDB Rejold breadcrumb evidence.
 ns:RegisterQuestPrerequisite({ quest = 95041, mode = "all", quests = { 412 } })
 ns:RegisterQuestPrerequisite({ quest = 415, mode = "all", quests = { 315 } })
+
+-- QuestieDB and ATT agree on the ordered Earthmother trial unlocks.
+ns:RegisterQuestPrerequisite({ quest = 76160, mode = "all", quests = { 76156 } })
+ns:RegisterQuestPrerequisite({ quest = 76240, mode = "all", quests = { 76160 } })

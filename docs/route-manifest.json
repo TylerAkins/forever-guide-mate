@@ -118333,5 +118333,3043 @@
         ]
       }
     ]
+  },
+  "loremaster-mulgore": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          6,
+          1412,
+          "Grull Hawkwind"
+        ],
+        "actions": [
+          "accept-747-the-hunt-begins"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1412,
+          "Chief Hawkwind"
+        ],
+        "actions": [
+          "accept-752-a-humble-task"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1412,
+          "Greatmother Hawkwind"
+        ],
+        "actions": [
+          "turnin-752-a-humble-task",
+          "accept-753-a-humble-task"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1412,
+          "Water Pitcher"
+        ],
+        "actions": [
+          "objective-753-1-water-pitcher"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1412,
+          "Plainstrider Meat"
+        ],
+        "actions": [
+          "objective-747-1-plainstrider-meat"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1412,
+          "Plainstrider Feather"
+        ],
+        "actions": [
+          "objective-747-2-plainstrider-feather"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1412,
+          "Grull Hawkwind"
+        ],
+        "actions": [
+          "turnin-747-the-hunt-begins",
+          "accept-3091-simple-note",
+          "accept-3093-rune-inscribed-note",
+          "accept-3092-etched-note",
+          "accept-3094-verdant-note",
+          "accept-750-the-hunt-continues"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1412,
+          "Meela Dawnstrider"
+        ],
+        "actions": [
+          "turnin-3093-rune-inscribed-note"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1412,
+          "Gart Mistrunner"
+        ],
+        "actions": [
+          "turnin-3094-verdant-note"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1412,
+          "Chief Hawkwind"
+        ],
+        "actions": [
+          "turnin-753-a-humble-task",
+          "accept-755-rites-of-the-earthmother"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1412,
+          "Harutt Thunderhorn"
+        ],
+        "actions": [
+          "turnin-3091-simple-note"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1412,
+          "Lanka Farshot"
+        ],
+        "actions": [
+          "turnin-3092-etched-note"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1412,
+          "Seer Graytongue"
+        ],
+        "actions": [
+          "turnin-755-rites-of-the-earthmother",
+          "accept-757-rite-of-strength"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Seer Graytongue"
+        ],
+        "actions": [
+          "woven-accept-95805-grace-of-anshe-and-musha"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Ritual Fire"
+        ],
+        "actions": [
+          "woven-objective-95805-grace-of-anshe-and-musha"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1412,
+          "Mountain Cougar Pelt"
+        ],
+        "actions": [
+          "objective-750-1-mountain-cougar-pelt"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1412,
+          "Grull Hawkwind"
+        ],
+        "actions": [
+          "turnin-750-the-hunt-continues",
+          "accept-780-the-battleboars"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3376-break-sharptusk"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1412,
+          "Brave Windfeather"
+        ],
+        "actions": [
+          "accept-3376-break-sharptusk"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1519-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1412,
+          "Seer Ravenfeather"
+        ],
+        "actions": [
+          "accept-1519-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1412,
+          "Battleboar"
+        ],
+        "actions": [
+          "objective-780-1-battleboar"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1412,
+          "Battleboar Flank"
+        ],
+        "actions": [
+          "objective-780-2-battleboar-flank"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1412,
+          "Chief Sharptusk Thornmantle's Head"
+        ],
+        "actions": [
+          "objective-3376-1-chief-sharptusk-thornmantle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Dirt-stained Map"
+        ],
+        "actions": [
+          "loot-starter-before-accept-781-attack-on-camp-narache"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-781-attack-on-camp-narache"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1412,
+          "Ritual Salve"
+        ],
+        "actions": [
+          "objective-1519-1-ritual-salve"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1412,
+          "Bristleback Belt"
+        ],
+        "actions": [
+          "objective-757-1-bristleback-belt"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1412,
+          "Grull Hawkwind"
+        ],
+        "actions": [
+          "turnin-780-the-battleboars"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1412,
+          "Brave Windfeather"
+        ],
+        "actions": [
+          "turnin-3376-break-sharptusk"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1412,
+          "Chief Hawkwind"
+        ],
+        "actions": [
+          "turnin-781-attack-on-camp-narache",
+          "turnin-757-rite-of-strength",
+          "accept-763-rites-of-the-earthmother"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1412,
+          "Seer Ravenfeather"
+        ],
+        "actions": [
+          "turnin-1519-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1520-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1412,
+          "Seer Ravenfeather"
+        ],
+        "actions": [
+          "accept-1520-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1412,
+          "Minor Manifestation of Earth"
+        ],
+        "actions": [
+          "objective-1520-earth-sapta"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1412,
+          "Minor Manifestation of Earth at Kodo Rock"
+        ],
+        "actions": [
+          "turnin-1520-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1521-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1412,
+          "Minor Manifestation of Earth at Kodo Rock"
+        ],
+        "actions": [
+          "accept-1521-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1412,
+          "Seer Ravenfeather"
+        ],
+        "actions": [
+          "turnin-1521-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96659-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Chief Hawkwind"
+        ],
+        "actions": [
+          "woven-accept-96659-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1412,
+          "Antur Fallow"
+        ],
+        "actions": [
+          "accept-1656-a-task-unfinished"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Kaga Wildhoof"
+        ],
+        "actions": [
+          "woven-turnin-96659-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96605-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Kaga Wildhoof"
+        ],
+        "actions": [
+          "woven-accept-96605-the-great-outdoors",
+          "woven-objective-96605-the-great-outdoors",
+          "woven-turnin-96605-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-766-mazzranache"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1412,
+          "Maur Raincaller"
+        ],
+        "actions": [
+          "accept-766-mazzranache"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-761-swoop-hunting"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1412,
+          "Harken Windtotem"
+        ],
+        "actions": [
+          "accept-761-swoop-hunting"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-748-poison-water"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "accept-748-poison-water"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-743-dangers-of-the-windfury"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1412,
+          "Ruul Eagletalon"
+        ],
+        "actions": [
+          "accept-743-dangers-of-the-windfury"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "turnin-763-rites-of-the-earthmother",
+          "accept-745-sharing-the-land"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-767-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "accept-767-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-746-dwarven-digging"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "accept-746-dwarven-digging"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1412,
+          "Innkeeper Kauth"
+        ],
+        "actions": [
+          "turnin-1656-a-task-unfinished"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1412,
+          "Zarlman Two-Moons"
+        ],
+        "actions": [
+          "turnin-767-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-771-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1412,
+          "Zarlman Two-Moons"
+        ],
+        "actions": [
+          "accept-771-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1412,
+          "Ambercorn"
+        ],
+        "actions": [
+          "objective-771-2-ambercorn"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1412,
+          "Prairie Wolf Heart"
+        ],
+        "actions": [
+          "objective-766-1-prairie-wolf-heart"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1412,
+          "Prairie Wolf Paw"
+        ],
+        "actions": [
+          "objective-748-1-prairie-wolf-paw"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1412,
+          "Plainstrider Scale"
+        ],
+        "actions": [
+          "objective-766-3-plainstrider-scale"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1412,
+          "Plainstrider Talon"
+        ],
+        "actions": [
+          "objective-748-2-plainstrider-talon"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1412,
+          "Swoop Gizzard"
+        ],
+        "actions": [
+          "objective-766-4-swoop-gizzard"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1412,
+          "Trophy Swoop Quill"
+        ],
+        "actions": [
+          "objective-761-1-trophy-swoop-quill"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "turnin-748-poison-water"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-754-winterhoof-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "accept-754-winterhoof-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1412,
+          "Harken Windtotem"
+        ],
+        "actions": [
+          "turnin-761-swoop-hunting"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1412,
+          "Well Stone"
+        ],
+        "actions": [
+          "objective-771-1-well-stone"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-754-1-winterhoof-cleansing-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Winterhoof Cleansing Totem"
+        ],
+        "actions": [
+          "objective-754-1-winterhoof-cleansing-totem"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1412,
+          "Palemane Poacher"
+        ],
+        "actions": [
+          "objective-745-3-palemane-poacher"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1412,
+          "Palemane Skinner"
+        ],
+        "actions": [
+          "objective-745-2-palemane-skinner"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1412,
+          "Palemane Tanner"
+        ],
+        "actions": [
+          "objective-745-1-palemane-tanner"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Perith Stormhoof"
+        ],
+        "actions": [
+          "woven-accept-98430-the-longwalkers",
+          "woven-objective-98430-the-longwalkers"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "turnin-754-winterhoof-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-756-thunderhorn-totem"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "accept-756-thunderhorn-totem"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "turnin-745-sharing-the-land"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1412,
+          "Zarlman Two-Moons"
+        ],
+        "actions": [
+          "turnin-771-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-772-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1412,
+          "Zarlman Two-Moons"
+        ],
+        "actions": [
+          "accept-772-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1412,
+          "Flatland Cougar Femur"
+        ],
+        "actions": [
+          "objective-766-2-flatland-cougar-femur"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1412,
+          "Cougar Claws"
+        ],
+        "actions": [
+          "objective-756-2-cougar-claws"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1412,
+          "Stalker Claws"
+        ],
+        "actions": [
+          "objective-756-1-stalker-claws"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1412,
+          "Maur Raincaller"
+        ],
+        "actions": [
+          "turnin-766-mazzranache"
+        ]
+      },
+      {
+        "boundary": [
+          87,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "turnin-756-thunderhorn-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-758-thunderhorn-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          87,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "accept-758-thunderhorn-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99108-sparring-match"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Krang Stonehoof"
+        ],
+        "actions": [
+          "woven-accept-99108-sparring-match",
+          "woven-objective-99108-sparring-match",
+          "woven-turnin-99108-sparring-match"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Thunderhorn Cleansing Totem"
+        ],
+        "actions": [
+          "objective-758-1-thunderhorn-cleansing-totem"
+        ]
+      },
+      {
+        "boundary": [
+          92,
+          1412,
+          "Windfury Harpy"
+        ],
+        "actions": [
+          "objective-743-1-windfury-harpy"
+        ]
+      },
+      {
+        "boundary": [
+          93,
+          1412,
+          "Seer Wiserunner"
+        ],
+        "actions": [
+          "turnin-772-rite-of-vision"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-773-rite-of-wisdom"
+        ]
+      },
+      {
+        "boundary": [
+          93,
+          1412,
+          "Seer Wiserunner"
+        ],
+        "actions": [
+          "accept-773-rite-of-wisdom"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Bael'dun Digsite"
+        ],
+        "actions": [
+          "objective-746-1-bael-dun-digger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Thunder Bluff forge"
+        ],
+        "actions": [
+          "objective-746-1-prospector-s-pick"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-833-a-sacred-burial"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1412,
+          "Lorekeeper Raintotem"
+        ],
+        "actions": [
+          "accept-833-a-sacred-burial"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1412,
+          "Ancestral Spirit"
+        ],
+        "actions": [
+          "turnin-773-rite-of-wisdom"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-775-journey-into-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1412,
+          "Ancestral Spirit"
+        ],
+        "actions": [
+          "accept-775-journey-into-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          99,
+          1412,
+          "Bristleback Interloper"
+        ],
+        "actions": [
+          "objective-833-1-bristleback-interloper"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1412,
+          "Lorekeeper Raintotem"
+        ],
+        "actions": [
+          "turnin-833-a-sacred-burial"
+        ]
+      },
+      {
+        "boundary": [
+          102,
+          1412,
+          "Ruul Eagletalon"
+        ],
+        "actions": [
+          "turnin-743-dangers-of-the-windfury"
+        ]
+      },
+      {
+        "boundary": [
+          103,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "turnin-746-dwarven-digging"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "turnin-758-thunderhorn-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99411-kyles-gone-missing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Ahab Wheathoof"
+        ],
+        "actions": [
+          "woven-accept-99411-kyles-gone-missing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Bloodhoof Village"
+        ],
+        "actions": [
+          "woven-objective-99411-kyles-gone-missing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Ahab Wheathoof"
+        ],
+        "actions": [
+          "woven-turnin-99411-kyles-gone-missing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6061-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          106,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "accept-6061-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-6061-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6061-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          109,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "turnin-6061-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6087-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          109,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "accept-6087-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6087-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          111,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "turnin-6087-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6088-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          111,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "accept-6088-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6088-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          113,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "turnin-6088-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6089-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          113,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "accept-6089-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2984-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          115,
+          1412,
+          "Narm Skychaser"
+        ],
+        "actions": [
+          "accept-2984-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5928-heeding-the-call"
+        ]
+      },
+      {
+        "boundary": [
+          117,
+          1412,
+          "Gennia Runetotem"
+        ],
+        "actions": [
+          "accept-5928-heeding-the-call"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-749-the-ravaged-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-749-the-ravaged-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1412,
+          "The Ravaged Caravan"
+        ],
+        "actions": [
+          "turnin-749-the-ravaged-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-751-the-ravaged-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1412,
+          "The Ravaged Caravan"
+        ],
+        "actions": [
+          "accept-751-the-ravaged-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          119,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-751-the-ravaged-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-854-journey-to-the-crossroads"
+        ]
+      },
+      {
+        "boundary": [
+          123,
+          1413,
+          "Kirge Sternhorn"
+        ],
+        "actions": [
+          "accept-854-journey-to-the-crossroads"
+        ]
+      },
+      {
+        "boundary": [
+          124,
+          1413,
+          "Thork"
+        ],
+        "actions": [
+          "turnin-854-journey-to-the-crossroads"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6361-a-bundle-of-hides"
+        ]
+      },
+      {
+        "boundary": [
+          126,
+          1413,
+          "Jahan Hawkwing"
+        ],
+        "actions": [
+          "accept-6361-a-bundle-of-hides"
+        ]
+      },
+      {
+        "boundary": [
+          127,
+          1413,
+          "Devrak"
+        ],
+        "actions": [
+          "turnin-6361-a-bundle-of-hides"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6362-ride-to-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          127,
+          1413,
+          "Devrak"
+        ],
+        "actions": [
+          "accept-6362-ride-to-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          128,
+          1456,
+          "Ahanu"
+        ],
+        "actions": [
+          "turnin-6362-ride-to-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6363-tal-the-wind-rider-master"
+        ]
+      },
+      {
+        "boundary": [
+          128,
+          1456,
+          "Ahanu"
+        ],
+        "actions": [
+          "accept-6363-tal-the-wind-rider-master"
+        ]
+      },
+      {
+        "boundary": [
+          135,
+          1456,
+          "Holt Thunderhorn"
+        ],
+        "actions": [
+          "turnin-6089-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          138,
+          1456,
+          "Cairne Bloodhoof"
+        ],
+        "actions": [
+          "turnin-775-journey-into-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-776-rites-of-the-earthmother"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Cairne Bloodhoof"
+        ],
+        "actions": [
+          "woven-accept-776-rites-of-the-earthmother",
+          "woven-turnin-98430-the-longwalkers"
+        ]
+      },
+      {
+        "boundary": [
+          139,
+          1456,
+          "Turak Runetotem"
+        ],
+        "actions": [
+          "turnin-5928-heeding-the-call"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5922-moonglade"
+        ]
+      },
+      {
+        "boundary": [
+          139,
+          1456,
+          "Turak Runetotem"
+        ],
+        "actions": [
+          "accept-5922-moonglade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-886-the-barrens-oases"
+        ]
+      },
+      {
+        "boundary": [
+          140,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "accept-886-the-barrens-oases"
+        ]
+      },
+      {
+        "boundary": [
+          141,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "turnin-5922-moonglade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5930-great-bear-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          141,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "accept-5930-great-bear-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          143,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-5930-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          143,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "turnin-5930-great-bear-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5932-back-to-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          143,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "accept-5932-back-to-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          144,
+          1456,
+          "Turak Runetotem"
+        ],
+        "actions": [
+          "turnin-5932-back-to-thunder-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6002-body-and-heart"
+        ]
+      },
+      {
+        "boundary": [
+          144,
+          1456,
+          "Turak Runetotem"
+        ],
+        "actions": [
+          "accept-6002-body-and-heart"
+        ]
+      },
+      {
+        "boundary": [
+          145,
+          1456,
+          "Tal"
+        ],
+        "actions": [
+          "turnin-6363-tal-the-wind-rider-master"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6364-return-to-jahan"
+        ]
+      },
+      {
+        "boundary": [
+          145,
+          1456,
+          "Tal"
+        ],
+        "actions": [
+          "accept-6364-return-to-jahan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-6002-1-cenarion-lunardust"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Cenarion Lunardust"
+        ],
+        "actions": [
+          "objective-6002-1-cenarion-lunardust"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1456,
+          "Turak Runetotem"
+        ],
+        "actions": [
+          "turnin-6002-body-and-heart"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-97485-traditions-of-the-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Boarton Shadetotem"
+        ],
+        "actions": [
+          "accept-76156-stalk-with-the-earthmother"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Eylah Sunhorn"
+        ],
+        "actions": [
+          "woven-accept-97485-traditions-of-the-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Nida Winterhoof"
+        ],
+        "actions": [
+          "woven-preparation-97485-bundle-of-herbs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Nata Dawnstrider"
+        ],
+        "actions": [
+          "woven-preparation-97485-cedar-twigs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Mahu"
+        ],
+        "actions": [
+          "woven-preparation-97485-sinew-thread"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Naal Mistrunner"
+        ],
+        "actions": [
+          "woven-preparation-97485-flint-and-tinder"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Ceremonial site"
+        ],
+        "actions": [
+          "woven-preparation-97485-prepared-incense",
+          "woven-objective-97485-traditions-of-the-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Eylah Sunhorn"
+        ],
+        "actions": [
+          "woven-turnin-97485-traditions-of-the-bluff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99079-longwalker-malah"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Brave Wildrunner"
+        ],
+        "actions": [
+          "woven-accept-99079-longwalker-malah"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-861-the-hunters-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Skorn Whitecloud"
+        ],
+        "actions": [
+          "woven-accept-861-the-hunters-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96130-chakuyak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "woven-accept-96130-chakuyak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Chakuyak"
+        ],
+        "actions": [
+          "woven-objective-96130-chakuyak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Yaw Sharpmane"
+        ],
+        "actions": [
+          "woven-turnin-96130-chakuyak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-764-the-venture-co"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Morin Cloudstalker"
+        ],
+        "actions": [
+          "woven-accept-764-the-venture-co"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-765-supervisor-fizsprocket"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Morin Cloudstalker"
+        ],
+        "actions": [
+          "woven-accept-765-supervisor-fizsprocket"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Worker"
+        ],
+        "actions": [
+          "woven-objective-764-the-venture-co-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Supervisor"
+        ],
+        "actions": [
+          "woven-objective-764-the-venture-co-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Supervisor Fizsprocket"
+        ],
+        "actions": [
+          "woven-objective-765-supervisor-fizsprocket"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Mine"
+        ],
+        "actions": [
+          "objective-76156-stalk-with-the-earthmother-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "loot-starter-before-woven-accept-98424-fizsprockets-notes",
+          "level-before-woven-accept-98424-fizsprockets-notes",
+          "woven-accept-98424-fizsprockets-notes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Shredder instructions"
+        ],
+        "actions": [
+          "woven-objective-98424-fizsprockets-notes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Gerenzo page"
+        ],
+        "actions": [
+          "woven-objective-98424-fizsprockets-notes-gerenzo"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Barrens operations page"
+        ],
+        "actions": [
+          "woven-objective-98424-fizsprockets-notes-barrens"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Malah Longwind"
+        ],
+        "actions": [
+          "woven-turnin-99079-longwalker-malah"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99081-grim-tidings"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Malah Longwind"
+        ],
+        "actions": [
+          "woven-accept-99081-grim-tidings"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Brave Wildrunner"
+        ],
+        "actions": [
+          "woven-turnin-99081-grim-tidings"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99101-our-ancient-enemy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Brave Wildrunner"
+        ],
+        "actions": [
+          "woven-accept-99101-our-ancient-enemy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "woven-turnin-99101-our-ancient-enemy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99080-drive-them-out"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "woven-accept-99080-drive-them-out"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Morin Cloudstalker"
+        ],
+        "actions": [
+          "woven-turnin-764-the-venture-co",
+          "woven-turnin-765-supervisor-fizsprocket",
+          "woven-turnin-98424-fizsprockets-notes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98427-ceasing-operations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Morin Cloudstalker"
+        ],
+        "actions": [
+          "woven-accept-98427-ceasing-operations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Venture Co. Clearclutter"
+        ],
+        "actions": [
+          "woven-objective-98427-ceasing-operations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Morin Cloudstalker"
+        ],
+        "actions": [
+          "woven-turnin-98427-ceasing-operations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Galak Centaur"
+        ],
+        "actions": [
+          "woven-objective-99080-drive-them-out-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Galak Outrunner"
+        ],
+        "actions": [
+          "woven-objective-99080-drive-them-out-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Herak the Pillager"
+        ],
+        "actions": [
+          "woven-objective-99080-drive-them-out-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "woven-turnin-99080-drive-them-out"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99082-the-high-chieftain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Baine Bloodhoof"
+        ],
+        "actions": [
+          "woven-accept-99082-the-high-chieftain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-759-wildmane-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "woven-accept-759-wildmane-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Prairie Wolf Alpha"
+        ],
+        "actions": [
+          "woven-objective-759-wildmane-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Arra'chea"
+        ],
+        "actions": [
+          "woven-objective-776-rites-of-the-earthmother"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-770-the-demon-scarred-cloak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Ghost Howl"
+        ],
+        "actions": [
+          "woven-accept-770-the-demon-scarred-cloak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "woven-turnin-759-wildmane-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-760-wildmane-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "woven-accept-760-wildmane-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Skorn Whitecloud"
+        ],
+        "actions": [
+          "woven-turnin-770-the-demon-scarred-cloak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Wildmane Water Well"
+        ],
+        "actions": [
+          "woven-objective-760-wildmane-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Flatland Prowler"
+        ],
+        "actions": [
+          "woven-objective-861-the-hunters-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "woven-turnin-760-wildmane-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98435-thunderhorns-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mull Thunderhorn"
+        ],
+        "actions": [
+          "woven-accept-98435-thunderhorns-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Cairne Bloodhoof"
+        ],
+        "actions": [
+          "woven-turnin-99082-the-high-chieftain",
+          "woven-turnin-776-rites-of-the-earthmother"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "woven-turnin-98435-thunderhorns-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Melor Stonehoof"
+        ],
+        "actions": [
+          "woven-turnin-861-the-hunters-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Boarton Shadetotem"
+        ],
+        "actions": [
+          "turnin-76156-stalk-with-the-earthmother",
+          "accept-76160-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-76160-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Boarton Shadetotem"
+        ],
+        "actions": [
+          "turnin-76160-loremaster",
+          "accept-76240-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-76240-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Boarton Shadetotem"
+        ],
+        "actions": [
+          "turnin-76240-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-860-sergra-darkthorn"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Melor Stonehoof"
+        ],
+        "actions": [
+          "woven-accept-860-sergra-darkthorn"
+        ]
+      },
+      {
+        "boundary": [
+          148,
+          1413,
+          "Tonga Runetotem"
+        ],
+        "actions": [
+          "turnin-886-the-barrens-oases"
+        ]
+      },
+      {
+        "boundary": [
+          149,
+          1413,
+          "Jahan Hawkwing"
+        ],
+        "actions": [
+          "turnin-6364-return-to-jahan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "woven-turnin-860-sergra-darkthorn"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-turnin-2984-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          151,
+          1413,
+          "Kranal Fiss"
+        ],
+        "actions": [
+          "turnin-2984-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1524-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          151,
+          1413,
+          "Kranal Fiss"
+        ],
+        "actions": [
+          "accept-1524-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          152,
+          1411,
+          "Telf Joolam"
+        ],
+        "actions": [
+          "turnin-1524-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1525-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          152,
+          1411,
+          "Telf Joolam"
+        ],
+        "actions": [
+          "accept-1525-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          153,
+          1413,
+          "Razormane Thornweaver"
+        ],
+        "actions": [
+          "objective-1525-1-razormane-thornweaver"
+        ]
+      },
+      {
+        "boundary": [
+          182,
+          1411,
+          "Telf Joolam"
+        ],
+        "actions": [
+          "turnin-1525-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1526-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          182,
+          1411,
+          "Telf Joolam"
+        ],
+        "actions": [
+          "accept-1526-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          184,
+          1411,
+          "Minor Manifestation of Fire"
+        ],
+        "actions": [
+          "objective-1526-1-fire-sapta"
+        ]
+      },
+      {
+        "boundary": [
+          185,
+          1411,
+          "Call of Fire"
+        ],
+        "actions": [
+          "turnin-1526-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1527-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          185,
+          1411,
+          "Call of Fire"
+        ],
+        "actions": [
+          "accept-1527-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          186,
+          1413,
+          "Kranal Fiss"
+        ],
+        "actions": [
+          "turnin-1527-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          218,
+          1420,
+          "Austil de Mon"
+        ],
+        "actions": [
+          "accept-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          219,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "turnin-1818-speak-with-dillinger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          219,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "accept-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          220,
+          1420,
+          "Mausoleum Trigger"
+        ],
+        "actions": [
+          "objective-1819-1-mausoleum-trigger"
+        ]
+      },
+      {
+        "boundary": [
+          221,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "turnin-1819-ulag-the-cleaver"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          221,
+          1420,
+          "Deathguard Dillinger"
+        ],
+        "actions": [
+          "accept-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          222,
+          1420,
+          "Coleman Farthing"
+        ],
+        "actions": [
+          "turnin-1820-speak-with-coleman"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94911-child-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Muln Earthfury"
+        ],
+        "actions": [
+          "woven-accept-94911-child-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Turak Runetotem"
+        ],
+        "actions": [
+          "woven-turnin-94911-child-of-nature",
+          "woven-accept-94913-moonglade-skyborne"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-96259"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Muln Earthfury"
+        ],
+        "actions": [
+          "accept-96259-defending-the-dead"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mazu'kon"
+        ],
+        "actions": [
+          "accept-96241-talkin-bout-toxins-mon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Yorn Grimtotem"
+        ],
+        "actions": [
+          "accept-96260-stronger-than-steel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-96261"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Muln Earthfury"
+        ],
+        "actions": [
+          "accept-96261-the-broodmother"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mazu'kon"
+        ],
+        "actions": [
+          "accept-96774-ancient-gurubashi-idol"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-96259-defending-the-dead",
+          "objective-96241-talkin-bout-toxins-mon",
+          "objective-96260-stronger-than-steel",
+          "objective-96261-the-broodmother",
+          "collect-bloody-parchment",
+          "accept-96294-a-darker-truth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Muln Earthfury"
+        ],
+        "actions": [
+          "turnin-96259-defending-the-dead"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Mazu'kon"
+        ],
+        "actions": [
+          "turnin-96241-talkin-bout-toxins-mon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Yorn Grimtotem"
+        ],
+        "actions": [
+          "turnin-96260-stronger-than-steel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Muln Earthfury"
+        ],
+        "actions": [
+          "turnin-96261-the-broodmother",
+          "turnin-96294-a-darker-truth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-loremaster-wool-donation"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Oura Stormspinner"
+        ],
+        "actions": [
+          "accept-99196-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-99196-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Oura Stormspinner"
+        ],
+        "actions": [
+          "turnin-99196-loremaster"
+        ]
+      }
+    ]
   }
 }

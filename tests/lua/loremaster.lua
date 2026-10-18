@@ -75,3 +75,18 @@ local hordeSnapshot = { faction = 'Horde', raceID = 2, classID = 1, level = 10,
 assert(ns.OrderedRoutes:ExcludedAction(hunterPickup, hordeSnapshot), 'Warriors pass the earlier hunter-only city pickup')
 hordeSnapshot.classID = 3
 assert(not ns.OrderedRoutes:ExcludedAction(hunterPickup, hordeSnapshot), 'Hunters keep their earlier city pickup')
+local mulgore = assert(ns.guides['loremaster-mulgore'], 'Mulgore has a Loremaster itinerary')
+local mining, miningIndex = questAction(mulgore, 'turnin', 76156)
+local salve, salveIndex = questAction(mulgore, 'accept', 76160)
+local salveReturn, salveReturnIndex = questAction(mulgore, 'turnin', 76160)
+local fish, fishIndex = questAction(mulgore, 'accept', 76240)
+assert(miningIndex < salveIndex and salveReturnIndex < fishIndex, 'The Earthmother trials start only after their prerequisite turn-ins')
+assert(ns.OrderedRoutes:Prerequisites(salve, hordeSnapshot) == false, 'The cone trial waits for the mining turn-in')
+hordeSnapshot.classID = 7
+local miningPickup = questAction(mulgore, 'accept', 76156)
+assert(not ns.OrderedRoutes:ExcludedAction(miningPickup, hordeSnapshot), 'An eligible Orc shaman retains the prerequisite trial')
+assert(not ns.OrderedRoutes:ExcludedAction(salve, hordeSnapshot), 'An eligible Orc shaman retains the cone trial')
+local later = questAction(mulgore, 'accept', 96259)
+assert(later, 'Mulgore includes its later Skywatcher Plateau visit')
+local wool, woolIndex = questAction(mulgore, 'accept', 99196)
+assert(woolIndex > fishIndex, 'The level 60 donation belongs after the starter trials')

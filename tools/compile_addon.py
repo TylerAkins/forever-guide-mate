@@ -74,6 +74,7 @@ SHIPPED = (
     "Guides/Dungeons/ClassPrerequisites.lua",
                             "Guides/Leveling/zephras-isle.lua",
     "Guides/Loremaster/DunMorogh.lua",
+    "Guides/Loremaster/Mulgore.lua",
     "Guides/Loremaster/Durotar.lua",
     "Guides/Loremaster/Teldrassil.lua",
     "Guides/Loremaster/ElwynnForest.lua",

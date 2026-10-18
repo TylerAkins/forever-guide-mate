@@ -76,9 +76,11 @@ do
     for guideID, candidate in pairs(ns.guides) do
         for _, goal in ipairs(candidate.goals) do
             local questID = ns.Engine:GetGoalQuestID(goal) or goal.checkpointQuest
-            equal(questID == 76160 or questID == 76240, false, guideID .. ' omits cone and fish trials')
+            if candidate.category ~= 'Loremaster Guides' then
+                equal(questID == 76160 or questID == 76240, false, guideID .. ' omits cone and fish trials')
+            end
             if questID == 76156 then
-                equal(guideID == 'leveling-era-mulgore', true, guideID .. ' keeps mining charges in Tauren Starter only')
+                equal(guideID == 'leveling-era-mulgore' or guideID == 'loremaster-mulgore', true, guideID .. ' keeps mining charges in Mulgore routes')
             end
         end
     end

@@ -14474,6 +14474,10 @@
     "loremaster-durotar": {
       "inventory": "docs/loremaster/durotar.json",
       "clientWalkthrough": false
+    },
+    "loremaster-mulgore": {
+      "inventory": "docs/loremaster/mulgore.json",
+      "clientWalkthrough": false
     }
   }
 }

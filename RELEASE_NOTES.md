@@ -1,4 +1,5 @@
 ## 0.6.3 - 2026-10-18
+- Add an ordered Mulgore Loremaster guide with reviewed quest coverage and capital ownership.
 - Add an ordered Durotar Loremaster guide with reviewed quest coverage and capital ownership.
 - Add an ordered Teldrassil Loremaster guide with reviewed quest coverage and capital ownership.
 - Add an ordered Elwynn Forest Loremaster guide with reviewed quest coverage and capital ownership.
