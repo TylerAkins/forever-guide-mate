@@ -68,6 +68,23 @@ local guides = {
             { "Camp Kosh", 67, 21, "camp-kosh" },
         },
     },
+    {
+        zone = "blasted-lands",
+        title = "Explore Blasted Lands",
+        achievementID = 766,
+        mapID = 1419,
+        locations = {
+            { "Dreadmaul Hold", 43, 13, "dreadmaul-hold" },
+            { "Garrison Armory", 54, 12, "garrison-armory" },
+            { "Nethergarde Keep", 63, 19, "nethergarde-keep" },
+            { "Serpent's Coil", 63, 32, "serpent-s-coil" },
+            { "The Dark Portal", 59, 56, "the-dark-portal" },
+            { "Altar of Storms", 39, 32, "altar-of-storms" },
+            { "Dreadmaul Post", 48, 43, "dreadmaul-post" },
+            { "The Tainted Scar", 42, 59, "the-tainted-scar" },
+            { "Rise of the Defiler", 48, 27, "rise-of-the-defiler" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
