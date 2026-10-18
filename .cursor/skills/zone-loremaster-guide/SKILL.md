@@ -1,80 +1,109 @@
 ---
 name: zone-loremaster-guide
-description: Add or update a Forever GuideMate zone Loremaster guide so it follows the leveling route and weaves in zone quests the route skips. Use when adding a zone, rewriting a Loremaster route, or deciding where an extra quest belongs.
+description: Add or update an ordered Forever GuideMate zone Loremaster itinerary, assign capital pickups to their owning zones, and weave omitted quests around verified prerequisites, levels, and visits.
 ---
 
 # Zone Loremaster guide
 
-Loremaster finishes the zone. The walk is the leveling route, plus every zone quest that route left out.
+Read `docs/guide-authoring.md` before editing. Loremaster preserves the zone's
+leveling spine and adds eligible permanent completion quests. Use
+`routeMode = "ordered"`; array position chooses the next action. The legacy
+`tools/weave_loremaster.py` cannot author ordered guides.
 
-Only Durotar and Mulgore ship in the addon today. Add the file to `ForeverGuideMate.toc` and `tools/compile_addon.py` when a zone is ready.
+## Establish the completion set
 
-Zephras Isle stays a Leveling guide. Do not move it into Loremaster.
+Read the zone's leveling chapters in faction visit order, resolving shared
+`classAction` references. Preserve their quest actions and existing prerequisite
+handoffs. Keep dungeon-only work in dungeon guides. Event-only, unused, and
+standalone repeatable quests stay out; retain repeatables needed by included chains.
+Do not inherit the legacy tool's omission list without reviewing each reason.
 
-## Do this
+Read the local `wow-database` source observations. Prefer eligible Wowhead facts,
+then QuestieDB, ATT, and finally the client scrape. The database compiler uses a
+different field priority, so inspect `attributes.sourceData` and provenance rather
+than accepting its selected value blindly. ATT exports stored under a legacy
+`questie` key are not independent Questie evidence. Missing, unavailable, empty,
+and conflicting values are distinct. Preserve unresolved mechanics as unresolved;
+do not invent providers, prerequisites, or coordinates.
 
-1. Open the zone's leveling chapters, lowest level first for that faction. Chapters are zone/faction slugs in `Guides/Leveling/` (for example `durotar.lua`, `horde-the-barrens.lua`). That step list is the spine. Keep its accepts, objectives, and turn-ins in that order. Leave hub-to-hub travel steps out. TomTom already points at the next pin, and those steps do not auto-clear. Keep a travel step when the quest is to discover or investigate that place, and give it the same `complete` condition as that objective so it clears when the discovery is done. When the zone has more than one chapter, walk them in that faction's route order. `(Part n)` counts that faction's visits only. See [era-forever-weave](../era-forever-weave/SKILL.md) **Names**.
-2. Open the Wowhead Forever zone quest page, for example `https://www.wowhead.com/forever/quests/kalimdor/durotar`.
-3. Every quest on that page that is not already on the spine gets woven in. Do not drop a quest the spine already runs.
-4. Compare shared quest-chain edges with the leveling route. Register verified prerequisites in `QuestPrerequisites.lua` using `all` or `any` semantics.
-5. Register the guide, then run the checks at the bottom.
+Record candidate dispositions, source revision/hashes, ownership, restrictions,
+levels, prerequisite evidence, and action insertion visits under `docs/loremaster/`.
+Tests must use frozen evidence and run without the local database checkout.
 
-`tools/weave_loremaster.py` does steps 1-3 for the zones it lists. Read its output before shipping. A quest it could not read is named in the guide header. Fix that by hand rather than inventing a pin.
+## Assign capital quests to their owning zone
 
-## Where an extra quest goes
+Ownership and action location are separate facts. Accepting a quest in Stormwind
+does not make it Elwynn Forest content. Searching a capital catalog finds candidates;
+it does not assign all of them to its neighboring starter zone.
 
-Use the first rule that fits.
+Check the supported zone classification, objective locations, chain context, and
+turn-in. Resolve disagreement before assigning ownership. Include a capital quest
+only when its work belongs to this zone or it supplies a verified prerequisite or
+handoff for an included chain. Record prerequisite excursions as supporting work,
+without importing unrelated quests from that city or another zone.
 
-1. **Series follow-up.** It continues a quest already on the route. Put it immediately after that quest's turn-in. The accept or handoff `dependsOn` that turn-in.
-2. **Same giver.** The route already stops at this NPC at the quest's recommended level. Accept it with the other accepts on that visit, before anyone leaves. Do its objectives on the trip that leaves. Turn it in with that NPC's turn-ins. A giver you met earlier does not count when this quest's recommended level is still ahead.
-3. **Nearest stop.** Nothing above matched. Insert the whole quest beside the closest pin, after quests of a lower recommended level. Inside a leveling chapter, a Wowhead level above that chapter's end does not count as the route having reached it. The quest waits at the end of the chapter.
+Route each action where it happens. Data Hoarders belongs to Dun Morogh but starts
+in Ironforge after Operation Recombobulation. An unrelated Stormwind pickup whose
+work belongs in another zone belongs on that zone's route. Likewise, A Plague Upon
+Thee starts in Tirisfal but its Plaguelands outing does not belong in Tirisfal
+Loremaster merely because the catalog lists it there.
 
-## Same trip
+Test both inclusion of a zone quest with a city pickup and exclusion of city
+pickups owned by other zones. Do not use NPC proximity as an ownership rule.
 
-Past level 20 there is no published speed run to copy. Place an extra quest the way that speed run places a new one. The leveling spine stays in order.
+## Weave the actions
 
-Accept it with the giver the route is already visiting, once the route has reached the quest's level. Do the objective on the classic trip that already crosses that spot. Turn it in on the way back to that NPC. Do not add a trip, and do not start a chain in the middle. A recommended level that is still above the steps ahead waits until after those steps, so the tracker does not turn around when the character dings. An accept with no turn-in is handed in on the later chapter that already stops at that NPC. The full pattern is in [era-forever-weave](../era-forever-weave/SKILL.md).
+1. Resolve the prerequisite chain recursively. Read all/any groups, breadcrumbs,
+   alternatives, exclusions, and signed source values with their own semantics.
+   A reference to another quest does not by itself establish a prerequisite edge.
+   Check contradictory or circular references against the actual chain evidence.
+2. Keep the offer minimum separate from the recommended level. Use the offer
+   minimum as the pickup gate and the recommendation to choose the itinerary visit.
+   A low offer minimum does not justify an early high-level outing. Work above the
+   chapter band belongs in a later return section, not an early isolated level gate.
+3. Put a follow-up after its unlocking turn-in when level and location fit. Otherwise
+   use the next suitable visit. Register verified edges in `QuestPrerequisites.lua`,
+   put them in the accept's `requiredQuests`, and reference predecessor turn-ins in
+   `dependsOn`. Metadata cannot repair an accept placed before its prerequisite.
+4. Accept with the existing giver visit, do objectives on the matching outing, and
+   turn in with that hub's return. Choose the nearest suitable stop only after
+   prerequisite and level constraints. Document unavoidable new trips.
+5. Breadcrumbs must precede the quest that removes them. Use observed alternatives
+   to avoid blocking characters who already passed the breadcrumb. Never invent
+   quest completion to recover a missing pickup.
 
-Leave it out of the first wave when the guide does not know the NPC offers it yet. A follow-up that needs a turn-in keeps `dependsOn` on that turn-in.
+Put faction, race, class, and profession restrictions consistently on every action
+of a quest. Profession conditions alone block an ordered route; use `excludeWhen`
+with the unavailable profession condition to omit inapplicable profession work.
+Preserve explicit class/race pickup branches. New item-started work must explain
+where the starter comes from and must not force a player to farm an optional drop.
 
-## Shape of a quest
+Use separate accept and turn-in actions for deliveries. Accept completes on
+`activeOrCompleted`; turn-in completes on `completed`. Prefer one API-driven
+objective for one outing, with separate objective actions only for distinct visits.
+Each split objective depends on the accept; the turn-in depends on all objectives.
+Use objective labels with indexed objectives so client reordering remains safe.
+Provided items belong in the instruction that uses them. An elite instruction says
+`This is an elite. Bring a group.` only when source rank supports it.
 
-- Prefer one API-driven objective step when all client objectives belong to the same outing; it cycles through unfinished objective rows. Split objectives only when the route needs separate locations. Split objective steps depend on the accept, not on each other, and the turn-in depends on every split objective. See [docs/guide-authoring.md](../../docs/guide-authoring.md).
-- A handoff has a separate accept at the giver and turn-in at the recipient. The accept depends on the previous turn-in and completes on `activeOrCompleted`; the turn-in depends on that accept and completes on `completed`. Never combine them as `Accept ..., then ...`.
-- Use `gossip` for a dialogue action required between acceptance and turn-in. It depends on the accept and completes from the matching client objective or quest-complete state.
-- A kill or a collect still has its own accept step.
-- A provided item, such as a quest item the giver hands you, is not its own step. Say how to use it on the objective that needs it.
-- An item that starts an optional quest is not a required step. Mention it on a step the player is already doing. Gate the turn-in, and every later step, with `quest` state `activeOrCompleted`.
-- An elite step says `This is an elite. Bring a group.` Use Forever's creature rank. A normal named target does not get that sentence.
-- Keep prerequisite handoffs already present in the leveling route. Dungeon-only quests stay in the dungeon guides. Record every other intentional omission in the header.
-- Put faction, class, race, and profession requirements on every step of that quest. A mismatch is left out of the percentage. The same quest's steps must carry the same conditions.
-- When a Questie record exists, a positive `questLevel` is the step level and a positive `requiredLevel` is the offer gate. A `0` or `-1` leaves the Wowhead Level line. Without a Questie level, use Wowhead's recommended level, the Level line, not the level the quest can be started. `detail.requirements.allOf` is mode `all` and `anyOf` is mode `any`. It stays in the percentage until the character reaches it.
-- Use uiMap IDs. Wowhead area IDs are not map IDs.
-- `flightTo` only on a travel hop. Say a flight path is available only when that character has learned it.
-- If there is no saved pin, keep the nearest named landmark and say the guide follows the pin in the quest log. Do not invent a precise pin. Mark that step `useClientPin` so the addon uses the quest log pin while the quest is accepted.
-- For a counted objective on a quest with two or more parts, pass the quest log label into `QuestObjective(questID, index, "label")` so completion stays correct if the client reorders objectives.
-- Coordinates in these guides have not been validated in the Forever client.
-- Priorities are unique. Number the route in order so a later hub cannot jump ahead.
+Use UI map IDs, not area IDs. If no saved objective/return pin exists, use
+`useClientPin = true` with a named destination and instructions to follow the quest
+log. Unaccepted pickups still need supported navigation. Coordinates remain
+unverified until a Forever client walkthrough.
 
-Race ids: Orc 2, Troll 8, Tauren 6, Undead 5, Human 1, Dwarf 3, Night Elf 4, Gnome 7, Alliance Skyborne 95, Horde Skyborne 96.
+## Register and verify
 
-## Camp example
+Use `category = "Loremaster Guides"`, a distinct `loremaster-<zone>` ID, and the
+zone name as the title. Zephras Isle has a separate Loremaster entry while its
+Skyborne starter remains under Leveling Quest Guides. Keep faction branches in
+one zone file, with restrictions on their actions.
 
-Keep the leveling route's order when it already visits the camp. The Barrens route accepts Raptor Thieves and works that quest before Plainstrider Menace. A quest the route skipped, offered by someone the route already stops for, is accepted on that same visit, before the route leaves. Its follow-up still waits on the turn-in that unlocks it.
+Register each file in the TOC, compiler, contract checks, and Lua loaders. Update
+`docs/route-manifest.json` and the source audit. Add prerequisite turn-in fixtures
+in `tests/lua/guide_data_checks.lua`. Test preserved spine order, capital ownership,
+level placement, applicability, and real chain completion, including characters
+who enter midway. Do not weaken normal-guide detour exclusions to add Loremaster.
 
-## Ship it
-
-- Put the file in `Guides/Loremaster/` with `category = "Loremaster Guides"`. The library tag is already `Loremaster`, so the title is the zone name.
-- One faction on the guide when the whole zone is that faction. Both factions in one file when the zone has both; put the faction on every step from that route.
-- Add the file to `ForeverGuideMate.toc`, `tools/compile_addon.py`, `tests/test_contracts.py`, `tests/lua/run.lua`, and `tests/lua/lint.lua`.
-- Assert one real chain, one quest split into objectives, the elite wording if the zone has an elite, and that omitted and dungeon quests are absent.
-- Add a changelog line.
-- If the change should publish (guides, engine, or TOC), bump `VERSION` by exactly one patch and refresh `CHANGELOG.md` plus `RELEASE_NOTES.md` (current release only, no email addresses). Merging that reviewed PR tags and publishes the GitHub Release and CurseForge package. See [docs/DEVELOPMENT.md](../../docs/DEVELOPMENT.md).
-- Do not accept quests, turn in quests, or move the character from the addon.
-
-```sh
-python3 -m unittest discover -s tests
-lua5.1 tests/lua/run.lua
-lua5.1 tests/lua/lint.lua
-python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
-```
+Run all checks in `docs/guide-authoring.md` under **Before you ship**. Update release
+metadata once per combined release with an exact patch bump. Keep generated files
+untracked. Commit, push, and publication require the user's authorization.

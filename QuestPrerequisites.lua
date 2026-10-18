@@ -1065,3 +1065,7 @@ ns:RegisterQuestPrerequisite({ quest = 94466, mode = "all", quests = { 94465 } }
 ns:RegisterQuestPrerequisite({ quest = 94467, mode = "all", quests = { 94466 } })
 
 ns:RegisterQuestPrerequisite({ quest = 94468, mode = "all", quests = { 94467 } })
+
+-- Wowhead Forever Data Hoarders and QuestieDB Rejold breadcrumb evidence.
+ns:RegisterQuestPrerequisite({ quest = 95041, mode = "all", quests = { 412 } })
+ns:RegisterQuestPrerequisite({ quest = 415, mode = "all", quests = { 315 } })

@@ -83,7 +83,7 @@ for _, path in ipairs({
     "Guides/Dungeons/DireMaulNorthTribute.lua",
     "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
     "Guides/Leveling/zephras-isle.lua",
-    "Guides/Loremaster/ComingSoon.lua",
+    "Guides/Loremaster/DunMorogh.lua",
     "Guides/Leveling/tirisfal-glades.lua",
     "Guides/Leveling/mulgore.lua",
     "Guides/Leveling/durotar.lua",

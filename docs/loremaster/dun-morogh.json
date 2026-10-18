@@ -1,0 +1,6196 @@
+{
+  "guide": "loremaster-dun-morogh",
+  "title": "Dun Morogh",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-era-dun-morogh",
+  "spineActions": [
+    "accept-179-dwarven-outfitters",
+    "objective-179-1-ragged-young-wolf",
+    "turnin-179-dwarven-outfitters",
+    "accept-3106-simple-rune",
+    "accept-3109-encrypted-rune",
+    "accept-3110-hallowed-rune",
+    "accept-3107-consecrated-rune",
+    "accept-3108-etched-rune",
+    "accept-3114-glyphic-memorandum",
+    "accept-3112-simple-memorandum",
+    "accept-3115-tainted-memorandum",
+    "accept-3113-encrypted-memorandum",
+    "accept-233-coldridge-valley-mail-delivery",
+    "woven-accept-98574-hallowed-memorandum",
+    "accept-170-a-new-threat",
+    "objective-170-1-rockjaw-trogg",
+    "objective-170-2-burly-rockjaw-trogg",
+    "turnin-233-coldridge-valley-mail-delivery",
+    "accept-234-coldridge-valley-mail-delivery",
+    "accept-183-the-boar-hunter",
+    "objective-183-1-small-crag-boar",
+    "turnin-183-the-boar-hunter",
+    "turnin-234-coldridge-valley-mail-delivery",
+    "level-before-accept-3364-scalding-mornbrew-delivery",
+    "accept-3364-scalding-mornbrew-delivery",
+    "level-before-accept-3361-a-refugee-s-quandary",
+    "accept-3361-a-refugee-s-quandary",
+    "turnin-3364-scalding-mornbrew-delivery",
+    "level-before-accept-3365-bring-back-the-mug",
+    "accept-3365-bring-back-the-mug",
+    "turnin-3106-simple-rune",
+    "turnin-3109-encrypted-rune",
+    "turnin-3110-hallowed-rune",
+    "woven-turnin-98574-hallowed-memorandum",
+    "turnin-3107-consecrated-rune",
+    "turnin-3108-etched-rune",
+    "turnin-3112-simple-memorandum",
+    "turnin-3113-encrypted-memorandum",
+    "turnin-3114-glyphic-memorandum",
+    "turnin-3115-tainted-memorandum",
+    "accept-1599-beginnings",
+    "turnin-170-a-new-threat",
+    "accept-182-the-troll-cave",
+    "turnin-3365-bring-back-the-mug",
+    "objective-1599-1-frostmane-novice",
+    "objective-3361-1-felix-s-box",
+    "objective-3361-2-felix-s-chest",
+    "objective-3361-3-felix-s-bucket-of-bolts",
+    "objective-182-1-frostmane-troll-whelp",
+    "turnin-182-the-troll-cave",
+    "turnin-1599-beginnings",
+    "accept-218-the-stolen-journal",
+    "objective-218-1-grik-nir-the-cold",
+    "turnin-218-the-stolen-journal",
+    "accept-282-senir-s-observations",
+    "turnin-3361-a-refugee-s-quandary",
+    "woven-accept-98581-archaic-rune",
+    "woven-turnin-98581-archaic-rune",
+    "level-before-woven-accept-94373-call-of-earth",
+    "woven-accept-94373-call-of-earth",
+    "woven-objective-94373-call-of-earth",
+    "woven-turnin-94373-call-of-earth",
+    "level-before-woven-accept-94374-call-of-earth-shrine",
+    "woven-accept-94374-call-of-earth-shrine",
+    "objective-94374-reviewed-mechanics",
+    "woven-turnin-94374-call-of-earth-shrine",
+    "level-before-woven-accept-94375-call-of-earth-return",
+    "woven-accept-94375-call-of-earth-return",
+    "woven-turnin-94375-call-of-earth-return",
+    "level-before-woven-accept-97277-grund-and-gozwin",
+    "woven-accept-97277-grund-and-gozwin",
+    "woven-objective-97277-grund-and-gozwin",
+    "woven-turnin-97277-grund-and-gozwin",
+    "turnin-282-senir-s-observations",
+    "accept-420-senir-s-observations",
+    "level-before-woven-accept-96628-the-adventurer",
+    "woven-accept-96628-the-adventurer",
+    "accept-2160-supplies-to-tannok",
+    "turnin-420-senir-s-observations",
+    "level-before-woven-accept-98322-secure-the-mountain",
+    "woven-accept-98322-secure-the-mountain",
+    "woven-turnin-96628-the-adventurer",
+    "level-before-woven-accept-96101-the-great-outdoors",
+    "woven-accept-96101-the-great-outdoors",
+    "woven-objective-96101-the-great-outdoors",
+    "woven-turnin-96101-the-great-outdoors",
+    "level-before-accept-384-beer-basted-boar-ribs",
+    "accept-384-beer-basted-boar-ribs",
+    "turnin-2160-supplies-to-tannok",
+    "level-before-accept-5625-accept-garments-of-the-light",
+    "accept-5625-accept-garments-of-the-light",
+    "level-before-woven-accept-99158-dawn-in-the-mountains",
+    "woven-accept-99158-dawn-in-the-mountains",
+    "objective-5625-quest-work",
+    "turnin-5625-accept-garments-of-the-light",
+    "level-before-accept-400-tools-for-steelgrill",
+    "accept-400-tools-for-steelgrill",
+    "level-before-accept-317-stocking-jetsteam",
+    "accept-317-stocking-jetsteam",
+    "level-before-accept-313-the-grizzled-den",
+    "accept-313-the-grizzled-den",
+    "level-before-woven-accept-98321-flintfires-shipment",
+    "woven-accept-98321-flintfires-shipment",
+    "woven-turnin-98322-secure-the-mountain",
+    "level-before-woven-accept-98319-secure-the-mountain",
+    "woven-accept-98319-secure-the-mountain",
+    "turnin-400-tools-for-steelgrill",
+    "level-before-accept-5541-ammo-for-rumbleshot",
+    "accept-5541-ammo-for-rumbleshot",
+    "objective-5541-1-rumbleshot-s-ammo",
+    "objective-313-1-young-wendigo",
+    "woven-objective-98319-secure-the-mountain",
+    "woven-objective-98321-flintfires-shipment",
+    "turnin-5541-ammo-for-rumbleshot",
+    "objective-317-2-thick-bear-fur",
+    "objective-317-1-chunk-of-boar-meat",
+    "objective-384-1-crag-boar-rib",
+    "level-before-accept-287-frostmane-hold",
+    "accept-287-frostmane-hold",
+    "objective-384-reviewed-2",
+    "turnin-384-beer-basted-boar-ribs",
+    "woven-turnin-99158-dawn-in-the-mountains",
+    "level-before-woven-accept-99159-finding-warmth",
+    "woven-accept-99159-finding-warmth",
+    "woven-objective-99159-finding-warmth",
+    "woven-turnin-99159-finding-warmth",
+    "level-before-woven-accept-99160-rimes-wrath",
+    "woven-accept-99160-rimes-wrath",
+    "level-before-woven-accept-99162-treacherous-cold",
+    "woven-accept-99162-treacherous-cold",
+    "woven-objective-99160-rimes-wrath",
+    "woven-objective-99162-treacherous-cold",
+    "woven-turnin-99160-rimes-wrath",
+    "level-before-woven-accept-99161-rimes-wrath",
+    "woven-accept-99161-rimes-wrath",
+    "woven-objective-99161-rimes-wrath",
+    "woven-turnin-99161-rimes-wrath",
+    "woven-turnin-99162-treacherous-cold",
+    "turnin-317-stocking-jetsteam",
+    "level-before-accept-318-evershine",
+    "accept-318-evershine",
+    "turnin-313-the-grizzled-den",
+    "woven-turnin-98319-secure-the-mountain",
+    "level-before-woven-accept-98323-secure-the-mountain",
+    "woven-accept-98323-secure-the-mountain",
+    "woven-turnin-98323-secure-the-mountain",
+    "woven-turnin-98321-flintfires-shipment",
+    "level-before-accept-412-operation-recombobulation",
+    "accept-412-operation-recombobulation",
+    "level-before-accept-312-tundra-macgrann-s-stolen-stash",
+    "accept-312-tundra-macgrann-s-stolen-stash",
+    "objective-312-1-macgrann-s-dried-meats",
+    "turnin-312-tundra-macgrann-s-stolen-stash",
+    "turnin-318-evershine",
+    "level-before-accept-319-a-favor-for-evershine",
+    "accept-319-a-favor-for-evershine",
+    "level-before-accept-315-the-perfect-stout",
+    "accept-315-the-perfect-stout",
+    "level-before-accept-310-bitter-rivals",
+    "accept-310-bitter-rivals",
+    "objective-315-1-frostmane-seer",
+    "objective-319-1-ice-claw-bear",
+    "objective-319-2-elder-crag-boar",
+    "objective-319-3-snow-leopard",
+    "accept-308-distracting-jarven",
+    "turnin-310-bitter-rivals",
+    "level-before-accept-311-return-to-marleth",
+    "accept-311-return-to-marleth",
+    "turnin-311-return-to-marleth",
+    "turnin-319-a-favor-for-evershine",
+    "level-before-accept-320-return-to-bellowfiz",
+    "accept-320-return-to-bellowfiz",
+    "turnin-315-the-perfect-stout",
+    "level-before-accept-413-shimmer-stout",
+    "accept-413-shimmer-stout",
+    "objective-287-1-frostmane-headhunter",
+    "objective-412-1-leper-gnome",
+    "objective-412-2-gyromechanic-gear",
+    "level-before-woven-accept-98326-frosthowl",
+    "woven-accept-98326-frosthowl",
+    "woven-objective-98326-frosthowl",
+    "woven-turnin-98326-frosthowl",
+    "turnin-287-frostmane-hold",
+    "accept-291-the-reports",
+    "turnin-412-operation-recombobulation",
+    "turnin-320-return-to-bellowfiz",
+    "level-before-accept-5637-desperate-prayer",
+    "accept-5637-desperate-prayer",
+    "level-before-accept-6064-taming-the-beast",
+    "accept-6064-taming-the-beast",
+    "level-before-woven-accept-94824-confounding-flash",
+    "woven-accept-94824-confounding-flash",
+    "level-before-objective-6064-1-taming-rod",
+    "objective-6064-1-taming-rod",
+    "turnin-6064-taming-the-beast",
+    "level-before-accept-6084-taming-the-beast",
+    "accept-6084-taming-the-beast",
+    "objective-6084-1-taming-rod",
+    "turnin-6084-taming-the-beast",
+    "level-before-accept-6085-taming-the-beast",
+    "accept-6085-taming-the-beast",
+    "objective-6085-1-taming-rod",
+    "turnin-6085-taming-the-beast",
+    "level-before-accept-6086-training-the-beast",
+    "accept-6086-training-the-beast",
+    "turnin-6086-training-the-beast",
+    "level-before-accept-433-the-public-servant",
+    "accept-433-the-public-servant",
+    "level-before-accept-432-those-blasted-troggs",
+    "accept-432-those-blasted-troggs",
+    "objective-433-1-rockjaw-bonesnapper",
+    "objective-432-1-rockjaw-skullthumper",
+    "turnin-433-the-public-servant",
+    "turnin-432-those-blasted-troggs",
+    "level-before-woven-accept-95212-never-saddle-on-quality",
+    "woven-accept-95212-never-saddle-on-quality",
+    "woven-objective-95212-never-saddle-on-quality",
+    "woven-turnin-95212-never-saddle-on-quality",
+    "level-before-woven-accept-314-protecting-the-herd",
+    "woven-accept-314-protecting-the-herd",
+    "woven-objective-314-protecting-the-herd",
+    "woven-turnin-314-protecting-the-herd",
+    "loot-starter-before-accept-95213-verified-pickup",
+    "level-before-accept-95213-verified-pickup",
+    "accept-95213-verified-pickup",
+    "objective-95213-quest-work",
+    "woven-turnin-95213-stolen-blasting-powder",
+    "level-before-woven-accept-95214-stolen-blasting-powder",
+    "woven-accept-95214-stolen-blasting-powder",
+    "woven-objective-95214-stolen-blasting-powder",
+    "woven-turnin-95214-stolen-blasting-powder",
+    "level-before-woven-accept-96408-a-visitor-to-dun-morogh",
+    "woven-accept-96408-a-visitor-to-dun-morogh",
+    "woven-turnin-96408-a-visitor-to-dun-morogh",
+    "level-before-woven-accept-96392-farsens-watch",
+    "woven-accept-96392-farsens-watch",
+    "woven-gossip-96392-farsens-watch",
+    "woven-turnin-96392-farsens-watch",
+    "level-before-woven-accept-96390-nip-em-in-the-bud",
+    "woven-accept-96390-nip-em-in-the-bud",
+    "woven-objective-96390-nip-em-in-the-bud",
+    "woven-turnin-96390-nip-em-in-the-bud",
+    "level-before-woven-accept-94449-call-of-fire",
+    "woven-accept-94449-call-of-fire",
+    "woven-turnin-94449-call-of-fire",
+    "level-before-woven-accept-94465-call-of-fire-loch",
+    "woven-accept-94465-call-of-fire-loch",
+    "level-before-accept-419-the-lost-pilot",
+    "accept-419-the-lost-pilot",
+    "turnin-419-the-lost-pilot",
+    "level-before-accept-417-a-pilot-s-revenge",
+    "accept-417-a-pilot-s-revenge",
+    "objective-417-1-mangeclaw",
+    "turnin-417-a-pilot-s-revenge",
+    "turnin-413-shimmer-stout",
+    "woven-turnin-94465-call-of-fire-loch",
+    "level-before-accept-414-stout-to-kadrell",
+    "accept-414-stout-to-kadrell",
+    "level-before-accept-224-in-defense-of-the-king-s-lands",
+    "accept-224-in-defense-of-the-king-s-lands",
+    "level-before-accept-267-the-trogg-threat",
+    "accept-267-the-trogg-threat",
+    "turnin-414-stout-to-kadrell",
+    "level-before-accept-1339-mountaineer-stormpike-s-task",
+    "accept-1339-mountaineer-stormpike-s-task",
+    "turnin-1339-mountaineer-stormpike-s-task",
+    "level-before-accept-1338-stormpike-s-order",
+    "accept-1338-stormpike-s-order",
+    "level-before-accept-6387-honor-students",
+    "accept-6387-honor-students",
+    "turnin-6387-honor-students",
+    "level-before-accept-6391-ride-to-ironforge",
+    "accept-6391-ride-to-ironforge",
+    "turnin-291-the-reports",
+    "woven-turnin-94824-confounding-flash",
+    "level-before-woven-accept-94817-confounding-flash-mims",
+    "woven-accept-94817-confounding-flash-mims",
+    "woven-turnin-94817-confounding-flash-mims",
+    "accept-97263-verified-pickup",
+    "woven-turnin-97263-your-package-has-arrived",
+    "turnin-6391-ride-to-ironforge",
+    "level-before-accept-6388-gryth-thurden",
+    "accept-6388-gryth-thurden",
+    "level-before-accept-1715-the-slaughtered-lamb",
+    "accept-1715-the-slaughtered-lamb",
+    "turnin-6388-gryth-thurden",
+    "level-before-accept-6392-return-to-brock",
+    "accept-6392-return-to-brock",
+    "level-before-accept-6661-deeprun-rat-roundup",
+    "accept-6661-deeprun-rat-roundup",
+    "objective-6661-1-rat-catcher-s-flute",
+    "turnin-6661-deeprun-rat-roundup",
+    "level-before-accept-6662-me-brother-nipsy",
+    "accept-6662-me-brother-nipsy",
+    "turnin-6662-me-brother-nipsy",
+    "level-before-accept-353-stormpike-s-delivery",
+    "accept-353-stormpike-s-delivery",
+    "turnin-1338-stormpike-s-order",
+    "level-before-accept-1638-a-warrior-s-training",
+    "accept-1638-a-warrior-s-training",
+    "turnin-1638-a-warrior-s-training",
+    "level-before-accept-1639-bartleby-the-drunk",
+    "accept-1639-bartleby-the-drunk",
+    "turnin-1639-bartleby-the-drunk",
+    "level-before-accept-1640-beat-bartleby",
+    "accept-1640-beat-bartleby",
+    "level-before-objective-1640-1-bartleby",
+    "objective-1640-1-bartleby",
+    "turnin-1640-beat-bartleby",
+    "level-before-accept-1665-bartleby-s-mug",
+    "accept-1665-bartleby-s-mug",
+    "turnin-1665-bartleby-s-mug",
+    "turnin-5637-desperate-prayer",
+    "level-before-turnin-1715-the-slaughtered-lamb",
+    "turnin-1715-the-slaughtered-lamb",
+    "level-before-accept-1688-surena-caledon",
+    "accept-1688-surena-caledon",
+    "level-before-objective-1688-1-surena-s-choker",
+    "objective-1688-1-surena-s-choker",
+    "turnin-1688-surena-caledon",
+    "level-before-accept-1689-the-binding",
+    "accept-1689-the-binding",
+    "objective-1689-1-bloodstone-choker",
+    "turnin-1689-the-binding",
+    "level-before-accept-2999-tome-of-divinity",
+    "accept-2999-tome-of-divinity",
+    "turnin-2999-tome-of-divinity",
+    "level-before-accept-1645-the-tome-of-divinity",
+    "accept-1645-the-tome-of-divinity",
+    "loot-starter-before-accept-1646-the-tome-of-divinity",
+    "level-before-accept-1646-the-tome-of-divinity",
+    "accept-1646-the-tome-of-divinity",
+    "turnin-1646-the-tome-of-divinity",
+    "level-before-accept-1647-the-tome-of-divinity",
+    "accept-1647-the-tome-of-divinity",
+    "turnin-1647-the-tome-of-divinity",
+    "level-before-accept-1648-the-tome-of-divinity",
+    "accept-1648-the-tome-of-divinity",
+    "objective-1648-quest-work",
+    "turnin-1648-the-tome-of-divinity",
+    "level-before-accept-1778-the-tome-of-divinity",
+    "accept-1778-the-tome-of-divinity",
+    "turnin-1778-the-tome-of-divinity",
+    "level-before-accept-1779-the-tome-of-divinity",
+    "accept-1779-the-tome-of-divinity",
+    "turnin-1779-the-tome-of-divinity",
+    "level-before-accept-1783-the-tome-of-divinity",
+    "accept-1783-the-tome-of-divinity",
+    "level-before-accept-418-thelsamar-blood-sausages",
+    "accept-418-thelsamar-blood-sausages",
+    "level-before-accept-416-rat-catching",
+    "accept-416-rat-catching",
+    "turnin-6392-return-to-brock",
+    "objective-416-1-tunnel-rat-scout",
+    "turnin-353-stormpike-s-delivery",
+    "turnin-416-rat-catching",
+    "objective-418-quest-work",
+    "turnin-418-thelsamar-blood-sausages",
+    "objective-224-1-stonesplinter-trogg",
+    "objective-224-2-stonesplinter-scout",
+    "turnin-224-in-defense-of-the-king-s-lands",
+    "objective-267-quest-work",
+    "turnin-267-the-trogg-threat",
+    "objective-1783-quest-work",
+    "turnin-1783-the-tome-of-divinity",
+    "level-before-accept-1784-the-tome-of-divinity",
+    "accept-1784-the-tome-of-divinity",
+    "objective-1784-1-dark-iron-spy",
+    "turnin-1784-the-tome-of-divinity",
+    "level-before-accept-1785-the-tome-of-divinity",
+    "accept-1785-the-tome-of-divinity",
+    "turnin-1785-the-tome-of-divinity"
+  ],
+  "placements": [
+    {
+      "anchor": "turnin-315-the-perfect-stout",
+      "position": "after",
+      "actions": [
+        "accept-415-loremaster",
+        "turnin-415-loremaster"
+      ],
+      "reason": "After The Perfect Stout, visit Pilot Bellowfiz and return to Rejold before accepting Shimmer Stout. Accepting 413 first removes this breadcrumb."
+    },
+    {
+      "anchor": "accept-433-the-public-servant",
+      "position": "after",
+      "actions": [
+        "accept-95217-loremaster"
+      ],
+      "reason": "Collect the blacksmithing pickup on the level 10 quarry visit before leaving for the boars."
+    },
+    {
+      "anchor": "turnin-432-those-blasted-troggs",
+      "position": "after",
+      "actions": [
+        "objective-95217-loremaster",
+        "turnin-95217-loremaster"
+      ],
+      "reason": "Finish the quarry supply outing and return to its smith before leaving the eastern area."
+    },
+    {
+      "anchor": "turnin-291-the-reports",
+      "position": "after",
+      "actions": [
+        "accept-95041-loremaster",
+        "objective-95041-loremaster",
+        "turnin-95041-loremaster"
+      ],
+      "reason": "First shared Ironforge visit after Operation Recombobulation. The unlocked pickup requires a new outdoor Gnomeregan outing and Ironforge return."
+    },
+    {
+      "anchor": "turnin-1785-the-tome-of-divinity",
+      "position": "after",
+      "actions": [
+        "level-before-loremaster-underground-map",
+        "accept-96391-loremaster",
+        "turnin-96391-loremaster"
+      ],
+      "reason": "Level 15 return for the verified outdoor item start. Absence of the drop does not block the itinerary."
+    }
+  ],
+  "quests": {
+    "170": {
+      "name": "A New Threat",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Balir Frosthammer",
+            "coordinate": [
+              29.6,
+              71.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Balir Frosthammer",
+            "coordinate": [
+              29.6,
+              71.2
+            ]
+          }
+        ]
+      }
+    },
+    "179": {
+      "name": "Dwarven Outfitters",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Sten Stoutarm",
+            "coordinate": [
+              29.8,
+              71.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Sten Stoutarm",
+            "coordinate": [
+              29.8,
+              71.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Hogger",
+            "coordinate": [
+              33.2,
+              71.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Ragged Timber Wolf",
+            "coordinate": [
+              29.8,
+              74.6
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Ragged Young Wolf",
+            "coordinate": [
+              29.4,
+              73.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frostmane Troll Whelp",
+            "coordinate": [
+              27.4,
+              80.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Rockjaw Trogg",
+            "coordinate": [
+              30,
+              74.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Small Crag Boar",
+            "coordinate": [
+              21.8,
+              70
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Burly Rockjaw Trogg",
+            "coordinate": [
+              30.2,
+              74.4
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Grik'nir the Cold",
+            "coordinate": [
+              30.4,
+              79.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frostmane Novice",
+            "coordinate": [
+              30.4,
+              79.4
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Rockjaw Skullthumper",
+            "coordinate": [
+              70.8,
+              56
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Rockjaw Bonesnapper",
+            "coordinate": [
+              70.8,
+              56
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frostmane Troll",
+            "coordinate": [
+              25.4,
+              50
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frostmane Snowstrider",
+            "coordinate": [
+              41,
+              36.4
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frostmane Hideskinner",
+            "coordinate": [
+              22.8,
+              52
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frostmane Headhunter",
+            "coordinate": [
+              24.4,
+              50.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frostmane Shadowcaster",
+            "coordinate": [
+              23.2,
+              52.4
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Crag Boar",
+            "coordinate": [
+              48,
+              49.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Large Crag Boar",
+            "coordinate": [
+              41.8,
+              47
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Elder Crag Boar",
+            "coordinate": [
+              40.6,
+              47.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Young Black Bear",
+            "coordinate": [
+              47.6,
+              50.4
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Winter Wolf",
+            "coordinate": [
+              43.2,
+              47
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Young Wendigo",
+            "coordinate": [
+              42.6,
+              55.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Wendigo",
+            "coordinate": [
+              42.2,
+              52.6
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Snow Tracker Wolf",
+            "coordinate": [
+              43.2,
+              47
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Ice Claw Bear",
+            "coordinate": [
+              38,
+              42.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Juvenile Snow Leopard",
+            "coordinate": [
+              43.8,
+              59
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Snow Leopard",
+            "coordinate": [
+              79.4,
+              36.6
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Leper Gnome",
+            "coordinate": [
+              24.4,
+              39.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Vagash",
+            "coordinate": [
+              62,
+              47
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frostmane Seer",
+            "coordinate": [
+              40.2,
+              42.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Scarred Crag Boar",
+            "coordinate": [
+              81.4,
+              53
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Rockjaw Raider",
+            "coordinate": [
+              34.4,
+              70.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Mangeclaw",
+            "coordinate": [
+              79,
+              36.8
+            ]
+          }
+        ]
+      }
+    },
+    "182": {
+      "name": "The Troll Cave",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Grelin Whitebeard",
+            "coordinate": [
+              25,
+              75.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Grelin Whitebeard",
+            "coordinate": [
+              25,
+              75.8
+            ]
+          }
+        ]
+      }
+    },
+    "183": {
+      "name": "The Boar Hunter",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Talin Keeneye",
+            "coordinate": [
+              22.6,
+              71.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Talin Keeneye",
+            "coordinate": [
+              22.6,
+              71.4
+            ]
+          }
+        ]
+      }
+    },
+    "218": {
+      "name": "The Stolen Journal",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Grelin Whitebeard",
+            "coordinate": [
+              25,
+              75.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Grelin Whitebeard",
+            "coordinate": [
+              25,
+              75.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Grik'nir the Cold",
+            "coordinate": [
+              30.4,
+              79.8
+            ]
+          }
+        ]
+      }
+    },
+    "233": {
+      "name": "Coldridge Valley Mail Delivery",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Sten Stoutarm",
+            "coordinate": [
+              29.8,
+              71.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Talin Keeneye",
+            "coordinate": [
+              22.6,
+              71.4
+            ]
+          }
+        ]
+      }
+    },
+    "234": {
+      "name": "Coldridge Valley Mail Delivery",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Talin Keeneye",
+            "coordinate": [
+              22.6,
+              71.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Grelin Whitebeard",
+            "coordinate": [
+              25,
+              75.8
+            ]
+          }
+        ]
+      }
+    },
+    "282": {
+      "name": "Senir's Observations",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Grelin Whitebeard",
+            "coordinate": [
+              25,
+              75.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Mountaineer Thalos",
+            "coordinate": [
+              33.4,
+              71.8
+            ]
+          }
+        ]
+      }
+    },
+    "287": {
+      "name": "Frostmane Hold",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Senir Whitebeard",
+            "coordinate": [
+              46.6,
+              53.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Senir Whitebeard",
+            "coordinate": [
+              46.6,
+              53.8
+            ]
+          }
+        ]
+      }
+    },
+    "291": {
+      "name": "The Reports",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Senir Whitebeard",
+            "coordinate": [
+              46.6,
+              53.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Senator Barin Redstone",
+            "coordinate": [
+              39.4,
+              57
+            ]
+          }
+        ]
+      }
+    },
+    "308": {
+      "name": "Distracting Jarven",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Jarven Thunderbrew",
+            "coordinate": [
+              47.6,
+              52.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Jarven Thunderbrew",
+            "coordinate": [
+              47.6,
+              52.6
+            ]
+          }
+        ]
+      }
+    },
+    "310": {
+      "name": "Bitter Rivals",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Marleth Barleybrew",
+            "coordinate": [
+              30.2,
+              45.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Unguarded Thunder Ale Barrel",
+            "coordinate": [
+              47.7,
+              52.7
+            ]
+          }
+        ]
+      }
+    },
+    "311": {
+      "name": "Return to Marleth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Guarded Thunder Ale Barrel",
+            "coordinate": [
+              47.7,
+              52.7
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Unguarded Thunder Ale Barrel",
+            "coordinate": [
+              47.7,
+              52.7
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Marleth Barleybrew",
+            "coordinate": [
+              30.2,
+              45.6
+            ]
+          }
+        ]
+      }
+    },
+    "312": {
+      "name": "Tundra MacGrann's Stolen Stash",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Tundra MacGrann",
+            "coordinate": [
+              34.6,
+              51.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Tundra MacGrann",
+            "coordinate": [
+              34.6,
+              51.6
+            ]
+          }
+        ]
+      }
+    },
+    "313": {
+      "name": "The Grizzled Den",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Pilot Stonegear",
+            "coordinate": [
+              49.6,
+              48.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Pilot Stonegear",
+            "coordinate": [
+              49.6,
+              48.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Young Wendigo",
+            "coordinate": [
+              42.6,
+              55.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Wendigo",
+            "coordinate": [
+              42.2,
+              52.6
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Edan the Howler",
+            "coordinate": [
+              40.8,
+              47
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Old Icebeard",
+            "coordinate": [
+              38.4,
+              54
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Vagash",
+            "coordinate": [
+              62,
+              47
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Wendigo Shaman",
+            "coordinate": [
+              41.8,
+              49.1
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Elder Wendigo",
+            "coordinate": [
+              42.6,
+              50.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Frosthowl",
+            "coordinate": [
+              39.6,
+              48.6
+            ]
+          }
+        ]
+      }
+    },
+    "314": {
+      "name": "Protecting the Herd",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Rudra Amberstill",
+            "coordinate": [
+              63,
+              49.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Rudra Amberstill",
+            "coordinate": [
+              63,
+              49.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Vagash",
+            "coordinate": [
+              62,
+              47
+            ]
+          }
+        ]
+      }
+    },
+    "315": {
+      "name": "The Perfect Stout",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Rejold Barleybrew",
+            "coordinate": [
+              30.2,
+              45.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Rejold Barleybrew",
+            "coordinate": [
+              30.2,
+              45.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Frostmane Seer",
+            "coordinate": [
+              40.2,
+              42.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Shimmerweed Basket",
+            "coordinate": [
+              41.4,
+              43.8
+            ]
+          }
+        ]
+      }
+    },
+    "317": {
+      "name": "Stocking Jetsteam",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Pilot Bellowfiz",
+            "coordinate": [
+              49.4,
+              48.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Pilot Bellowfiz",
+            "coordinate": [
+              49.4,
+              48.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Crag Boar",
+            "coordinate": [
+              48,
+              49.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Large Crag Boar",
+            "coordinate": [
+              41.8,
+              47
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Elder Crag Boar",
+            "coordinate": [
+              40.6,
+              47.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Young Black Bear",
+            "coordinate": [
+              47.6,
+              50.4
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Black Bear",
+            "coordinate": [
+              65.4,
+              12.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Winter Wolf",
+            "coordinate": [
+              43.2,
+              47
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Ice Claw Bear",
+            "coordinate": [
+              38,
+              42.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Scarred Crag Boar",
+            "coordinate": [
+              81.4,
+              53
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Fyodi",
+            "coordinate": [
+              29.2,
+              38.8
+            ]
+          }
+        ]
+      }
+    },
+    "318": {
+      "name": "Evershine",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Pilot Bellowfiz",
+            "coordinate": [
+              49.4,
+              48.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Rejold Barleybrew",
+            "coordinate": [
+              30.2,
+              45.8
+            ]
+          }
+        ]
+      }
+    },
+    "319": {
+      "name": "A Favor for Evershine",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Rejold Barleybrew",
+            "coordinate": [
+              30.2,
+              45.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Rejold Barleybrew",
+            "coordinate": [
+              30.2,
+              45.8
+            ]
+          }
+        ]
+      }
+    },
+    "320": {
+      "name": "Return to Bellowfiz",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Rejold Barleybrew",
+            "coordinate": [
+              30.2,
+              45.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Pilot Bellowfiz",
+            "coordinate": [
+              49.4,
+              48.4
+            ]
+          }
+        ]
+      }
+    },
+    "400": {
+      "name": "Tools for Steelgrill",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Tharek Blackstone",
+            "coordinate": [
+              46,
+              51.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Beldin Steelgrill",
+            "coordinate": [
+              50.4,
+              49
+            ]
+          }
+        ]
+      }
+    },
+    "403": {
+      "name": "Guarded Thunderbrew Barrel",
+      "status": "excluded",
+      "reason": "Repeatable and not needed by an included chain.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Guarded Thunder Ale Barrel",
+            "coordinate": [
+              47.7,
+              52.7
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Guarded Thunder Ale Barrel",
+            "coordinate": [
+              47.7,
+              52.7
+            ]
+          }
+        ]
+      }
+    },
+    "412": {
+      "name": "Operation Recombobulation",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Razzle Sprysprocket",
+            "coordinate": [
+              45.8,
+              49.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Razzle Sprysprocket",
+            "coordinate": [
+              45.8,
+              49.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Leper Gnome",
+            "coordinate": [
+              24.4,
+              39.8
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Gibblewilt",
+            "coordinate": [
+              24.2,
+              43.6
+            ]
+          }
+        ]
+      }
+    },
+    "413": {
+      "name": "Shimmer Stout",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Rejold Barleybrew",
+            "coordinate": [
+              30.2,
+              45.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Mountaineer Barleybrew",
+            "coordinate": [
+              86.2,
+              48.8
+            ]
+          }
+        ]
+      }
+    },
+    "414": {
+      "name": "Stout to Kadrell",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Mountaineer Barleybrew",
+            "coordinate": [
+              86.2,
+              48.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 38,
+            "name": "Mountaineer Kadrell",
+            "coordinate": [
+              32.8,
+              49.6
+            ]
+          }
+        ]
+      }
+    },
+    "415": {
+      "name": "Rejold's New Brew",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 8,
+      "ownership": "dun-morogh",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Pilot Bellowfiz",
+            "coordinate": [
+              49.4,
+              48.4
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Tharek Blackstone",
+            "coordinate": [
+              46,
+              51.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Rejold Barleybrew",
+            "coordinate": [
+              30.2,
+              45.8
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "all",
+          "quests": [
+            315
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Alliance"
+          },
+          {
+            "level": {
+              "min": 8
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Rejold's New Brew",
+          "requiredLevel": 8,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            {
+              "id": 1378,
+              "spawns": [
+                [
+                  1,
+                  49.4,
+                  48.4
+                ],
+                [
+                  1,
+                  46,
+                  51.6
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 1872,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "breadcrumbForQuestId": 413,
+          "finishedBy": [
+            [
+              1374
+            ]
+          ],
+          "name": "Rejold's New Brew",
+          "objectivesText": [
+            "Speak with Rejold Barleybrew."
+          ],
+          "preQuestSingle": [
+            315
+          ],
+          "questLevel": 10,
+          "requiredLevel": 8,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            [
+              1378,
+              1872
+            ]
+          ],
+          "zoneOrSort": 1
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Rejold's New Brew",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [],
+          "requiredLevel": 8,
+          "zoneId": 1
+        }
+      }
+    },
+    "417": {
+      "name": "A Pilot's Revenge",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "A Dwarven Corpse",
+            "coordinate": [
+              79.7,
+              36.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Pilot Hammerfoot",
+            "coordinate": [
+              83.8,
+              39.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Mangeclaw",
+            "coordinate": [
+              79,
+              36.8
+            ]
+          }
+        ]
+      }
+    },
+    "419": {
+      "name": "The Lost Pilot",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Pilot Hammerfoot",
+            "coordinate": [
+              83.8,
+              39.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "A Dwarven Corpse",
+            "coordinate": [
+              79.7,
+              36.2
+            ]
+          }
+        ]
+      }
+    },
+    "420": {
+      "name": "Senir's Observations",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Mountaineer Thalos",
+            "coordinate": [
+              33.4,
+              71.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Senir Whitebeard",
+            "coordinate": [
+              46.6,
+              53.8
+            ]
+          }
+        ]
+      }
+    },
+    "432": {
+      "name": "Those Blasted Troggs!",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Foreman Stonebrow",
+            "coordinate": [
+              69,
+              56.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Foreman Stonebrow",
+            "coordinate": [
+              69,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "433": {
+      "name": "The Public Servant",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Senator Mehr Stonehallow",
+            "coordinate": [
+              68.6,
+              56
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Senator Mehr Stonehallow",
+            "coordinate": [
+              68.6,
+              56
+            ]
+          }
+        ]
+      }
+    },
+    "466": {
+      "name": "Search for Incendicite",
+      "status": "other-zone",
+      "reason": "Its Incendicite objective is in the Wetlands; a Dun Morogh pickup does not make it Dun Morogh completion work.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 22,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Pilot Stonegear",
+            "coordinate": [
+              49.6,
+              48.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Pilot Stonegear",
+            "coordinate": [
+              49.6,
+              48.4
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Search for Incendicite",
+          "preQuestSingle": [
+            467
+          ],
+          "requiredLevel": 20,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            {
+              "id": 1377,
+              "spawns": [
+                [
+                  1,
+                  49.6,
+                  48.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              1377
+            ]
+          ],
+          "name": "Search for Incendicite",
+          "objectivesText": [
+            "Bring 6 loads of Incendicite Ore to Pilot Stonegear in Dun Morogh."
+          ],
+          "preQuestSingle": [],
+          "questLevel": 22,
+          "requiredLevel": 20,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            [
+              1377
+            ]
+          ],
+          "zoneOrSort": 1
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Search for Incendicite",
+          "prerequisiteReferences": [],
+          "questLevel": 22,
+          "races": [],
+          "requiredLevel": 20,
+          "zoneId": 1
+        }
+      }
+    },
+    "467": {
+      "name": "Stonegear's Search",
+      "status": "other-zone",
+      "reason": "Breadcrumb to the Wetlands Incendicite outing; neither its Ironforge pickup nor Dun Morogh recipient establishes ownership.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 23,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Pilot Stonegear",
+            "coordinate": [
+              49.6,
+              48.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Pilot Longbeard",
+            "coordinate": [
+              72.4,
+              93.6
+            ]
+          },
+          {
+            "areaID": 38,
+            "name": "Mountaineer Kadrell",
+            "coordinate": [
+              32.8,
+              49.6
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Stonegear's Search",
+          "requiredLevel": 20,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            {
+              "id": 1340,
+              "spawns": [
+                [
+                  38,
+                  34.8,
+                  47
+                ],
+                [
+                  1537,
+                  72.4,
+                  93.6
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 2092,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "breadcrumbForQuestId": 466,
+          "finishedBy": [
+            [
+              1377
+            ]
+          ],
+          "name": "Stonegear's Search",
+          "objectivesText": [
+            "Speak with Pilot Stonegear."
+          ],
+          "questLevel": 23,
+          "requiredLevel": 20,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            [
+              1340,
+              2092
+            ]
+          ],
+          "zoneOrSort": 1
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Stonegear's Search",
+          "prerequisiteReferences": [],
+          "questLevel": 23,
+          "races": [],
+          "requiredLevel": 20,
+          "zoneId": 1
+        }
+      }
+    },
+    "637": {
+      "name": "Sully Balloo's Letter",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Sara Balloo",
+            "coordinate": [
+              63.8,
+              67.6
+            ]
+          }
+        ]
+      }
+    },
+    "683": {
+      "name": "Sara Balloo's Plea",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Sara Balloo",
+            "coordinate": [
+              63.8,
+              67.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "King Magni Bronzebeard",
+            "coordinate": [
+              39.4,
+              55.8
+            ]
+          }
+        ]
+      }
+    },
+    "686": {
+      "name": "A King's Tribute",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "King Magni Bronzebeard",
+            "coordinate": [
+              39.4,
+              55.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Grand Mason Marblesten",
+            "coordinate": [
+              38.6,
+              87
+            ]
+          }
+        ]
+      }
+    },
+    "689": {
+      "name": "A King's Tribute",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Grand Mason Marblesten",
+            "coordinate": [
+              38.6,
+              87
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Grand Mason Marblesten",
+            "coordinate": [
+              38.6,
+              87
+            ]
+          }
+        ]
+      }
+    },
+    "700": {
+      "name": "A King's Tribute",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Grand Mason Marblesten",
+            "coordinate": [
+              38.6,
+              87
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "King Magni Bronzebeard",
+            "coordinate": [
+              39.4,
+              55.8
+            ]
+          }
+        ]
+      }
+    },
+    "707": {
+      "name": "Ironband Wants You!",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 37,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Prospector Stormpike",
+            "coordinate": [
+              74.4,
+              12
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 38,
+            "name": "Prospector Ironband",
+            "coordinate": [
+              65.8,
+              65.6
+            ]
+          }
+        ]
+      }
+    },
+    "1019": {
+      "name": "The New Frontier",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Courier Hammerfall",
+            "coordinate": [
+              31.6,
+              67
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "1453": {
+      "name": "Reclaimers' Business in Desolace",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Roetten Stonehammer",
+            "coordinate": [
+              69.6,
+              21
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 405,
+            "name": "Kreldig Ungor",
+            "coordinate": [
+              66.2,
+              9.6
+            ]
+          }
+        ]
+      }
+    },
+    "2039": {
+      "name": "Find Bingles",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Gnoarn",
+            "coordinate": [
+              69.4,
+              50.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 38,
+            "name": "Bingles Blastenheimer",
+            "coordinate": [
+              63.4,
+              47.8
+            ]
+          }
+        ]
+      }
+    },
+    "2041": {
+      "name": "Speak with Shoni",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 15,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Shoni the Shilent",
+            "coordinate": [
+              55.4,
+              12.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Gnoarn",
+            "coordinate": [
+              69.4,
+              50.6
+            ]
+          }
+        ]
+      }
+    },
+    "2160": {
+      "name": "Supplies to Tannok",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Hands Springsprocket",
+            "coordinate": [
+              33.8,
+              72.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Tannok Frosthammer",
+            "coordinate": [
+              47.2,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "2439": {
+      "name": "The Platinum Discs",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 47,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "High Explorer Magellas",
+            "coordinate": [
+              69.6,
+              18.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Dinita Stonemantle",
+            "coordinate": [
+              33.8,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "2946": {
+      "name": "Seeing What Happens",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Historian Karnik",
+            "coordinate": [
+              77.2,
+              11.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 440,
+            "name": "Uldum Pedestal",
+            "coordinate": [
+              37.7,
+              81.4
+            ]
+          }
+        ]
+      }
+    },
+    "2948": {
+      "name": "Gnome Improvement",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 35,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Talvash del Kissel",
+            "coordinate": [
+              36,
+              4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Talvash del Kissel",
+            "coordinate": [
+              36,
+              4
+            ]
+          }
+        ]
+      }
+    },
+    "2963": {
+      "name": "Portents of Uldum",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "High Explorer Magellas",
+            "coordinate": [
+              69.6,
+              18.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Historian Karnik",
+            "coordinate": [
+              77.2,
+              11.8
+            ]
+          }
+        ]
+      }
+    },
+    "2964": {
+      "name": "A Future Task",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Historian Karnik",
+            "coordinate": [
+              77.2,
+              11.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "High Explorer Magellas",
+            "coordinate": [
+              69.6,
+              18.6
+            ]
+          }
+        ]
+      }
+    },
+    "2977": {
+      "name": "Return to Ironforge",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Historian Karnik",
+            "coordinate": [
+              77.2,
+              11.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 440,
+            "name": "Uldum Pedestal",
+            "coordinate": [
+              37.7,
+              81.4
+            ]
+          }
+        ]
+      }
+    },
+    "3201": {
+      "name": "At Last!",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 48,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Curator Thorius",
+            "coordinate": [
+              71.4,
+              16.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 38,
+            "name": "Mountaineer Pebblebitty",
+            "coordinate": [
+              18.2,
+              83.8
+            ]
+          }
+        ]
+      }
+    },
+    "3361": {
+      "name": "A Refugee's Quandary",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Felix Whindlebolt",
+            "coordinate": [
+              28.4,
+              67.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Felix Whindlebolt",
+            "coordinate": [
+              28.4,
+              67.6
+            ]
+          }
+        ]
+      }
+    },
+    "3364": {
+      "name": "Scalding Mornbrew Delivery",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Nori Pridedrift",
+            "coordinate": [
+              25,
+              75.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Durnan Furcutter",
+            "coordinate": [
+              28.8,
+              66.4
+            ]
+          }
+        ]
+      }
+    },
+    "3365": {
+      "name": "Bring Back the Mug",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Durnan Furcutter",
+            "coordinate": [
+              28.8,
+              66.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Nori Pridedrift",
+            "coordinate": [
+              25,
+              75.8
+            ]
+          }
+        ]
+      }
+    },
+    "3371": {
+      "name": "Dwarven Justice",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Curator Thorius",
+            "coordinate": [
+              71.4,
+              16.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 51,
+            "name": "Dying Archaeologist",
+            "coordinate": [
+              41.2,
+              25.6
+            ]
+          }
+        ]
+      }
+    },
+    "3448": {
+      "name": "Passing the Burden",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Historian Karnik",
+            "coordinate": [
+              77.2,
+              11.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Tymor",
+            "coordinate": [
+              31.2,
+              4.6
+            ]
+          }
+        ]
+      }
+    },
+    "3449": {
+      "name": "Arcane Runes",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Tymor",
+            "coordinate": [
+              31.2,
+              4.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16,
+            "name": "Pilot Xiggs Fuselighter",
+            "coordinate": [
+              77.8,
+              91.4
+            ]
+          }
+        ]
+      }
+    },
+    "3450": {
+      "name": "An Easy Pickup",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Tymor",
+            "coordinate": [
+              31.2,
+              4.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Xiggs Fuselighter",
+            "coordinate": [
+              71,
+              94.2
+            ]
+          }
+        ]
+      }
+    },
+    "3451": {
+      "name": "Signal for Pickup",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Xiggs Fuselighter",
+            "coordinate": [
+              71,
+              94.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Xiggs Fuselighter",
+            "coordinate": [
+              71,
+              94.2
+            ]
+          }
+        ]
+      }
+    },
+    "3461": {
+      "name": "Return to Tymor",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Tymor",
+            "coordinate": [
+              31.2,
+              4.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 16,
+            "name": "Pilot Xiggs Fuselighter",
+            "coordinate": [
+              77.8,
+              91.4
+            ]
+          }
+        ]
+      }
+    },
+    "3483": {
+      "name": "Signal for Pickup",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Xiggs Fuselighter",
+            "coordinate": [
+              71,
+              94.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Xiggs Fuselighter",
+            "coordinate": [
+              71,
+              94.2
+            ]
+          }
+        ]
+      }
+    },
+    "3701": {
+      "name": "The Smoldering Ruins of Thaurissan",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 54,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Royal Historian Archesonus",
+            "coordinate": [
+              38.6,
+              55.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Royal Historian Archesonus",
+            "coordinate": [
+              38.6,
+              55.4
+            ]
+          }
+        ]
+      }
+    },
+    "3702": {
+      "name": "The Smoldering Ruins of Thaurissan",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 54,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Royal Historian Archesonus",
+            "coordinate": [
+              38.6,
+              55.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Royal Historian Archesonus",
+            "coordinate": [
+              38.6,
+              55.4
+            ]
+          }
+        ]
+      }
+    },
+    "3790": {
+      "name": "Assisting Arch Druid Staghelm",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Innkeeper Firebrew",
+            "coordinate": [
+              18.6,
+              51.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "4512": {
+      "name": "A Little Slime Goes a Long Way",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Laris Geardawdle",
+            "coordinate": [
+              75.4,
+              23
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Laris Geardawdle",
+            "coordinate": [
+              75.4,
+              23
+            ]
+          }
+        ]
+      }
+    },
+    "4513": {
+      "name": "A Little Slime Goes a Long Way",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 54,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Laris Geardawdle",
+            "coordinate": [
+              75.4,
+              23
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Laris Geardawdle",
+            "coordinate": [
+              75.4,
+              23
+            ]
+          }
+        ]
+      }
+    },
+    "5090": {
+      "name": "A Call to Arms: The Plaguelands!",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Courier Hammerfall",
+            "coordinate": [
+              31.6,
+              67
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 28,
+            "name": "Commander Ashlam Valorfist",
+            "coordinate": [
+              42.8,
+              84
+            ]
+          }
+        ]
+      }
+    },
+    "5541": {
+      "name": "Ammo for Rumbleshot",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Loslor Rudge",
+            "coordinate": [
+              50,
+              49.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Hegnar Rumbleshot",
+            "coordinate": [
+              40.6,
+              65
+            ]
+          }
+        ]
+      }
+    },
+    "5841": {
+      "name": "Welcome!",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Yori Crackhelm",
+            "coordinate": [
+              30,
+              71.6
+            ]
+          }
+        ]
+      }
+    },
+    "6721": {
+      "name": "The Hunter's Path",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Dazalar",
+            "coordinate": [
+              56.6,
+              59.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Olmin Burningbeard",
+            "coordinate": [
+              70.6,
+              83.8
+            ]
+          }
+        ]
+      }
+    },
+    "7342": {
+      "name": "Arrows Are For Sissies",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 52,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Artilleryman Sheldonore",
+            "coordinate": [
+              19.6,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Artilleryman Sheldonore",
+            "coordinate": [
+              19.6,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "7802": {
+      "name": "A Donation of Wool",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ]
+      }
+    },
+    "7803": {
+      "name": "A Donation of Silk",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ]
+      }
+    },
+    "7804": {
+      "name": "A Donation of Mageweave",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ]
+      }
+    },
+    "7805": {
+      "name": "A Donation of Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ]
+      }
+    },
+    "7806": {
+      "name": "Additional Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Mistina Steelshield",
+            "coordinate": [
+              43.2,
+              32
+            ]
+          }
+        ]
+      }
+    },
+    "7807": {
+      "name": "A Donation of Wool",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ]
+      }
+    },
+    "7808": {
+      "name": "A Donation of Silk",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ]
+      }
+    },
+    "7809": {
+      "name": "A Donation of Mageweave",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ]
+      }
+    },
+    "7811": {
+      "name": "A Donation of Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ]
+      }
+    },
+    "7812": {
+      "name": "Additional Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Bubulo Acerbus",
+            "coordinate": [
+              73.8,
+              47.8
+            ]
+          }
+        ]
+      }
+    },
+    "7905": {
+      "name": "The Darkmoon Faire",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 6,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Gelvas Grimegate",
+            "coordinate": [
+              41.6,
+              68.8
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Gelvas Grimegate",
+            "coordinate": [
+              37.2,
+              37.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Melnan Darkstone",
+            "coordinate": [
+              27.2,
+              70.8
+            ]
+          }
+        ]
+      }
+    },
+    "8275": {
+      "name": "Taking Back Silithus",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1377,
+            "name": "Windcaller Proudhorn",
+            "coordinate": [
+              51,
+              38.2
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Cenarion Emissary Jademoon",
+            "coordinate": [
+              58.2,
+              47.4
+            ]
+          }
+        ]
+      }
+    },
+    "8385": {
+      "name": "Concerted Efforts",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 51,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              79.4,
+              18
+            ]
+          },
+          {
+            "areaID": 1537,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              69.8,
+              90
+            ]
+          },
+          {
+            "areaID": 1657,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              58,
+              34.4
+            ]
+          },
+          {
+            "areaID": 331,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              61.8,
+              83.8
+            ]
+          },
+          {
+            "areaID": 36,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              39.4,
+              82.2
+            ]
+          },
+          {
+            "areaID": 45,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              45.6,
+              45.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              79.4,
+              18
+            ]
+          },
+          {
+            "areaID": 1537,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              69.8,
+              90
+            ]
+          },
+          {
+            "areaID": 1657,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              58,
+              34.4
+            ]
+          },
+          {
+            "areaID": 331,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              61.8,
+              83.8
+            ]
+          },
+          {
+            "areaID": 36,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              39.4,
+              82.2
+            ]
+          },
+          {
+            "areaID": 45,
+            "name": "Alliance Brigadier General",
+            "coordinate": [
+              45.6,
+              45.8
+            ]
+          }
+        ]
+      }
+    },
+    "8905": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8906": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8907": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8908": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8909": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8910": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8911": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8912": {
+      "name": "An Earnest Proposition",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8926": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8931": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8932": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8933": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8934": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8935": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8936": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8937": {
+      "name": "Just Compensation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8951": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8952": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8953": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8954": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8955": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8956": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8958": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8959": {
+      "name": "Anthion's Parting Words",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8977": {
+      "name": "Return to Deliana",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          },
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 440,
+            "name": "Mux Manascrambler",
+            "coordinate": [
+              52.4,
+              27.2
+            ]
+          }
+        ]
+      }
+    },
+    "8997": {
+      "name": "Back to the Beginning",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          },
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "8999": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "9000": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "9001": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "9002": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "9003": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "9004": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "9005": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "9006": {
+      "name": "Saving the Best for Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 58,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Deliana",
+            "coordinate": [
+              43.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "95041": {
+      "name": "Data Hoarders",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "dun-morogh",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Jemma Quikswitch",
+            "coordinate": [
+              67.8,
+              43.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Jemma Quikswitch",
+            "coordinate": [
+              67.8,
+              43.8
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "all",
+          "quests": [
+            412
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Alliance"
+          },
+          {
+            "race": [
+              3,
+              4,
+              7,
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 7
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Data Hoaders",
+          "requiredLevel": 7,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            {
+              "id": 11028,
+              "spawns": [
+                [
+                  1537,
+                  67.7,
+                  44.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              11028
+            ]
+          ],
+          "name": "Data Hoarders",
+          "objectivesText": [
+            "Collect 7 Gnomeregan Archival Data cards from around Gnomeregan, then deliver them to Jemma Quikswitch in Ironforge."
+          ],
+          "questLevel": 10,
+          "requiredLevel": 7,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            [
+              11028
+            ]
+          ],
+          "zoneOrSort": 1
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Data Hoarders",
+          "prerequisiteReferences": [
+            412
+          ],
+          "questLevel": 10,
+          "races": [
+            3,
+            4,
+            7,
+            95
+          ],
+          "requiredLevel": 7,
+          "zoneId": 1
+        }
+      }
+    },
+    "95212": {
+      "name": "Never Saddle on Quality",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Rudra Amberstill",
+            "coordinate": [
+              63,
+              49.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Rudra Amberstill",
+            "coordinate": [
+              63,
+              49.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Elder Snow Leopard",
+            "coordinate": [
+              72.8,
+              55.3
+            ]
+          }
+        ]
+      }
+    },
+    "95213": {
+      "name": "Stolen Blasting Powder",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Quarrymaster Thesten",
+            "coordinate": [
+              69,
+              54.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Rockjaw Ambusher",
+            "coordinate": [
+              73.8,
+              51.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Rockjaw Backbreaker",
+            "coordinate": [
+              68.1,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "95214": {
+      "name": "Stolen Blasting Powder",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Quarrymaster Thesten",
+            "coordinate": [
+              69,
+              54.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Quarrymaster Thesten",
+            "coordinate": [
+              69,
+              54.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Rockjaw Ambusher",
+            "coordinate": [
+              73.8,
+              51.2
+            ]
+          },
+          {
+            "areaID": 1,
+            "name": "Rockjaw Backbreaker",
+            "coordinate": [
+              68.1,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "95217": {
+      "name": "The Quarry's Smith",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "dun-morogh",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Frast Dokner",
+            "coordinate": [
+              68.8,
+              55.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Frast Dokner",
+            "coordinate": [
+              68.8,
+              55.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Scarred Crag Boar",
+            "coordinate": [
+              81.4,
+              53
+            ]
+          },
+          {
+            "areaID": 130,
+            "name": "Fel Interloper",
+            "coordinate": [
+              38.8,
+              23.4
+            ]
+          },
+          {
+            "areaID": 17,
+            "name": "Fel Interloper",
+            "coordinate": [
+              56,
+              24.8
+            ]
+          },
+          {
+            "areaID": 17,
+            "name": "Fel Interloper",
+            "coordinate": [
+              50.2,
+              80.6
+            ]
+          },
+          {
+            "areaID": 331,
+            "name": "Fel Interloper",
+            "coordinate": [
+              77.2,
+              73.2
+            ]
+          },
+          {
+            "areaID": 40,
+            "name": "Fel Interloper",
+            "coordinate": [
+              32.2,
+              80.2
+            ]
+          },
+          {
+            "areaID": 44,
+            "name": "Fel Interloper",
+            "coordinate": [
+              29.8,
+              30
+            ]
+          }
+        ]
+      },
+      "requirements": [],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Alliance"
+          },
+          {
+            "class": [
+              1,
+              2,
+              7
+            ]
+          },
+          {
+            "race": [
+              3,
+              7,
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 7
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 164,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "The Quarry's Smith",
+          "requiredClasses": 67,
+          "requiredLevel": 7,
+          "requiredRaces": 4294967364,
+          "requiredSkill": [
+            164,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 1698,
+              "spawns": [
+                [
+                  1,
+                  68.8,
+                  55.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              1698
+            ]
+          ],
+          "name": "The Quarry's Smith",
+          "objectivesText": [
+            "Collect 12 Copper Bars and 4 Toughened Boar Hides and deliver them to Frast Dokner."
+          ],
+          "questLevel": 10,
+          "requiredLevel": 7,
+          "requiredRaces": 4294967373,
+          "requiredSkill": [
+            164,
+            1
+          ],
+          "startedBy": [
+            [
+              1698
+            ]
+          ],
+          "zoneOrSort": 1
+        },
+        "wowhead": {
+          "classes": [
+            1,
+            2,
+            7
+          ],
+          "name": "The Quarry's Smith",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            3,
+            7,
+            95
+          ],
+          "requiredLevel": 7,
+          "zoneId": 1
+        }
+      }
+    },
+    "95817": {
+      "name": "Rotgath Stonebeard",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 1,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "95818": {
+      "name": "A Quick Craft",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 1,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "96390": {
+      "name": "Nip 'Em in the Bud",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Earthseer Farsen",
+            "coordinate": [
+              64.8,
+              58.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Earthseer Farsen",
+            "coordinate": [
+              64.8,
+              58.4
+            ]
+          }
+        ]
+      }
+    },
+    "96391": {
+      "name": "Underground Map",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 9,
+      "ownership": "dun-morogh",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Earthseer Farsen",
+            "coordinate": [
+              64.8,
+              58.4
+            ]
+          }
+        ]
+      },
+      "requirements": [],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Alliance"
+          },
+          {
+            "level": {
+              "min": 9
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Underground Map",
+          "requiredLevel": 9,
+          "requiredRaces": 4294967373
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              264936
+            ]
+          ],
+          "name": "Underground Map",
+          "objectivesText": [
+            "Deliver the Dark Iron Map to Earthseer Farsen in Dun Morogh."
+          ],
+          "questLevel": 15,
+          "requiredLevel": 9,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            null,
+            null,
+            [
+              274268
+            ]
+          ],
+          "zoneOrSort": 1
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Underground Map",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 9,
+          "zoneId": 1
+        }
+      }
+    },
+    "96392": {
+      "name": "Farsen's Watch",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Earthseer Farsen",
+            "coordinate": [
+              64.8,
+              58.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Earthseer Farsen",
+            "coordinate": [
+              64.8,
+              58.4
+            ]
+          }
+        ]
+      }
+    },
+    "96408": {
+      "name": "A Visitor to Dun Morogh",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Beldin Steelgrill",
+            "coordinate": [
+              50.4,
+              49
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Earthseer Farsen",
+            "coordinate": [
+              64.8,
+              58.4
+            ]
+          }
+        ]
+      }
+    },
+    "97263": {
+      "name": "Your Package Has Arrived",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1537,
+            "name": "Misplaced Packages",
+            "coordinate": [
+              72.4,
+              48.5
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Eldrun Stormbreaker",
+            "coordinate": [
+              47.4,
+              13.6
+            ]
+          }
+        ]
+      }
+    },
+    "98300": {
+      "name": "Word to Ironforge",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 34,
+      "offerMinimum": 24,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 11,
+            "name": "Howin Kindfeather",
+            "coordinate": [
+              49.4,
+              42
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "King Magni Bronzebeard",
+            "coordinate": [
+              39.4,
+              55.8
+            ]
+          }
+        ]
+      }
+    },
+    "98313": {
+      "name": "For Further Study",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "ironforge"
+      ],
+      "recommendedLevel": 32,
+      "offerMinimum": 24,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 11,
+            "name": "Prospector Whelgar",
+            "coordinate": [
+              38.8,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "Historian Karnik",
+            "coordinate": [
+              77.2,
+              11.8
+            ]
+          }
+        ]
+      }
+    },
+    "98319": {
+      "name": "Secure the Mountain",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Mountaineer Gretchen",
+            "coordinate": [
+              44,
+              57
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Mountaineer Gretchen",
+            "coordinate": [
+              44,
+              57
+            ]
+          }
+        ]
+      }
+    },
+    "98321": {
+      "name": "Flintfire's Shipment",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Tognus Flintfire",
+            "coordinate": [
+              45.2,
+              52
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Tognus Flintfire",
+            "coordinate": [
+              45.2,
+              52
+            ]
+          }
+        ]
+      }
+    },
+    "98322": {
+      "name": "Secure the Mountain",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Senir Whitebeard",
+            "coordinate": [
+              46.6,
+              53.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Mountaineer Gretchen",
+            "coordinate": [
+              44,
+              57
+            ]
+          }
+        ]
+      }
+    },
+    "98323": {
+      "name": "Secure the Mountain",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Mountaineer Gretchen",
+            "coordinate": [
+              44,
+              57
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Senir Whitebeard",
+            "coordinate": [
+              46.6,
+              53.8
+            ]
+          }
+        ]
+      }
+    },
+    "98326": {
+      "name": "Frosthowl",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Gretta Ganter",
+            "coordinate": [
+              31.4,
+              44.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Gretta Ganter",
+            "coordinate": [
+              31.4,
+              44.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Frosthowl",
+            "coordinate": [
+              39.6,
+              48.6
+            ]
+          }
+        ]
+      }
+    },
+    "98423": {
+      "name": "The Treaty of Understanding",
+      "status": "excluded",
+      "reason": "Item starter comes from Hall of Thanes; keep this dungeon chain in its dungeon guide.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 16,
+      "offerMinimum": 9,
+      "ownership": "not-authored",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1537,
+            "name": "King Magni Bronzebeard",
+            "coordinate": [
+              39.4,
+              55.8
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "The Treaty of Understanding",
+          "requiredLevel": 9,
+          "requiredRaces": 4294967373
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              2784
+            ]
+          ],
+          "name": "The Treaty of Understanding",
+          "objectivesText": [
+            "Deliver the Treaty of Understanding to Magni Bronzebeard in Ironforge."
+          ],
+          "questLevel": 16,
+          "requiredLevel": 9,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            null,
+            null,
+            [
+              281030
+            ]
+          ],
+          "zoneOrSort": 1
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "The Treaty of Understanding",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 9,
+          "zoneId": 1
+        }
+      }
+    },
+    "99158": {
+      "name": "Dawn in the Mountains",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Maxan Anvol",
+            "coordinate": [
+              47.2,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "99159": {
+      "name": "Finding Warmth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "99160": {
+      "name": "Rime's Wrath",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "99161": {
+      "name": "Rime's Wrath",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1,
+            "name": "Avala",
+            "coordinate": [
+              58.2,
+              42
+            ]
+          }
+        ]
+      }
+    },
+    "99162": {
+      "name": "Treacherous Cold",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "dun-morogh"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Father Gavin",
+            "coordinate": [
+              57.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "clientWalkthrough": "Not performed."
+}

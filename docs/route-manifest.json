@@ -104647,5 +104647,3498 @@
         ]
       }
     ]
+  },
+  "loremaster-dun-morogh": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          8,
+          1426,
+          "Sten Stoutarm"
+        ],
+        "actions": [
+          "accept-179-dwarven-outfitters"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1426,
+          "Ragged Young Wolf"
+        ],
+        "actions": [
+          "objective-179-1-ragged-young-wolf"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1426,
+          "Sten Stoutarm"
+        ],
+        "actions": [
+          "turnin-179-dwarven-outfitters",
+          "accept-3106-simple-rune",
+          "accept-3109-encrypted-rune",
+          "accept-3110-hallowed-rune",
+          "accept-3107-consecrated-rune",
+          "accept-3108-etched-rune",
+          "accept-3114-glyphic-memorandum",
+          "accept-3112-simple-memorandum",
+          "accept-3115-tainted-memorandum",
+          "accept-3113-encrypted-memorandum",
+          "accept-233-coldridge-valley-mail-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Sten Stoutarm"
+        ],
+        "actions": [
+          "woven-accept-98574-hallowed-memorandum"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1426,
+          "Balir Frosthammer"
+        ],
+        "actions": [
+          "accept-170-a-new-threat"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1426,
+          "Rockjaw Trogg"
+        ],
+        "actions": [
+          "objective-170-1-rockjaw-trogg"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1426,
+          "Burly Rockjaw Trogg"
+        ],
+        "actions": [
+          "objective-170-2-burly-rockjaw-trogg"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1426,
+          "Talin Keeneye"
+        ],
+        "actions": [
+          "turnin-233-coldridge-valley-mail-delivery",
+          "accept-234-coldridge-valley-mail-delivery",
+          "accept-183-the-boar-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1426,
+          "Small Crag Boar"
+        ],
+        "actions": [
+          "objective-183-1-small-crag-boar"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1426,
+          "Talin Keeneye"
+        ],
+        "actions": [
+          "turnin-183-the-boar-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1426,
+          "Grelin Whitebeard"
+        ],
+        "actions": [
+          "turnin-234-coldridge-valley-mail-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3364-scalding-mornbrew-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1426,
+          "Nori Pridedrift"
+        ],
+        "actions": [
+          "accept-3364-scalding-mornbrew-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3361-a-refugee-s-quandary"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1426,
+          "Felix Whindlebolt"
+        ],
+        "actions": [
+          "accept-3361-a-refugee-s-quandary"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1426,
+          "Durnan Furcutter"
+        ],
+        "actions": [
+          "turnin-3364-scalding-mornbrew-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3365-bring-back-the-mug"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1426,
+          "Durnan Furcutter"
+        ],
+        "actions": [
+          "accept-3365-bring-back-the-mug"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1426,
+          "Thran Khorman"
+        ],
+        "actions": [
+          "turnin-3106-simple-rune"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1426,
+          "Solm Hargrin"
+        ],
+        "actions": [
+          "turnin-3109-encrypted-rune"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1426,
+          "Branstock Khalder"
+        ],
+        "actions": [
+          "turnin-3110-hallowed-rune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Branstock Khalder"
+        ],
+        "actions": [
+          "woven-turnin-98574-hallowed-memorandum"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1426,
+          "Bromos Grummner"
+        ],
+        "actions": [
+          "turnin-3107-consecrated-rune"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1426,
+          "Thorgas Grimson"
+        ],
+        "actions": [
+          "turnin-3108-etched-rune"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1426,
+          "Thran Khorman"
+        ],
+        "actions": [
+          "turnin-3112-simple-memorandum"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1426,
+          "Solm Hargrin"
+        ],
+        "actions": [
+          "turnin-3113-encrypted-memorandum"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1426,
+          "Marryk Nurribit"
+        ],
+        "actions": [
+          "turnin-3114-glyphic-memorandum"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1426,
+          "Alamar Grimm"
+        ],
+        "actions": [
+          "turnin-3115-tainted-memorandum",
+          "accept-1599-beginnings"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1426,
+          "Balir Frosthammer"
+        ],
+        "actions": [
+          "turnin-170-a-new-threat"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1426,
+          "Grelin Whitebeard"
+        ],
+        "actions": [
+          "accept-182-the-troll-cave"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1426,
+          "Nori Pridedrift"
+        ],
+        "actions": [
+          "turnin-3365-bring-back-the-mug"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1426,
+          "Frostmane Novice"
+        ],
+        "actions": [
+          "objective-1599-1-frostmane-novice"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1426,
+          "Felix's Box"
+        ],
+        "actions": [
+          "objective-3361-1-felix-s-box"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1426,
+          "Felix's Chest"
+        ],
+        "actions": [
+          "objective-3361-2-felix-s-chest"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1426,
+          "Felix's Bucket of Bolts"
+        ],
+        "actions": [
+          "objective-3361-3-felix-s-bucket-of-bolts"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1426,
+          "Frostmane Troll Whelp"
+        ],
+        "actions": [
+          "objective-182-1-frostmane-troll-whelp"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1426,
+          "Grelin Whitebeard"
+        ],
+        "actions": [
+          "turnin-182-the-troll-cave"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1426,
+          "Alamar Grimm"
+        ],
+        "actions": [
+          "turnin-1599-beginnings"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1426,
+          "Grelin Whitebeard"
+        ],
+        "actions": [
+          "accept-218-the-stolen-journal"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1426,
+          "Grelin Whitebeard's Journal"
+        ],
+        "actions": [
+          "objective-218-1-grik-nir-the-cold"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1426,
+          "Grelin Whitebeard"
+        ],
+        "actions": [
+          "turnin-218-the-stolen-journal",
+          "accept-282-senir-s-observations"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1426,
+          "Felix Whindlebolt"
+        ],
+        "actions": [
+          "turnin-3361-a-refugee-s-quandary"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Sten Stoutarm"
+        ],
+        "actions": [
+          "woven-accept-98581-archaic-rune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Teo Hammerstorm"
+        ],
+        "actions": [
+          "woven-turnin-98581-archaic-rune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94373-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Teo Hammerstorm"
+        ],
+        "actions": [
+          "woven-accept-94373-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "woven-objective-94373-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Teo Hammerstorm"
+        ],
+        "actions": [
+          "woven-turnin-94373-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94374-call-of-earth-shrine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Teo Hammerstorm"
+        ],
+        "actions": [
+          "woven-accept-94374-call-of-earth-shrine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-94374-reviewed-mechanics",
+          "woven-turnin-94374-call-of-earth-shrine",
+          "level-before-woven-accept-94375-call-of-earth-return",
+          "woven-accept-94375-call-of-earth-return"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Teo Hammerstorm"
+        ],
+        "actions": [
+          "woven-turnin-94375-call-of-earth-return"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-97277-grund-and-gozwin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Grund Drokda"
+        ],
+        "actions": [
+          "woven-accept-97277-grund-and-gozwin",
+          "woven-objective-97277-grund-and-gozwin",
+          "woven-turnin-97277-grund-and-gozwin"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1426,
+          "Mountaineer Thalos"
+        ],
+        "actions": [
+          "turnin-282-senir-s-observations",
+          "accept-420-senir-s-observations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96628-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Mountaineer Thalos"
+        ],
+        "actions": [
+          "woven-accept-96628-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1426,
+          "Hands Springsprocket"
+        ],
+        "actions": [
+          "accept-2160-supplies-to-tannok"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1426,
+          "Senir Whitebeard"
+        ],
+        "actions": [
+          "turnin-420-senir-s-observations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98322-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Senir Whitebeard"
+        ],
+        "actions": [
+          "woven-accept-98322-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Eric Brighthammer"
+        ],
+        "actions": [
+          "woven-turnin-96628-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96101-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Eric Brighthammer"
+        ],
+        "actions": [
+          "woven-accept-96101-the-great-outdoors",
+          "woven-objective-96101-the-great-outdoors",
+          "woven-turnin-96101-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-384-beer-basted-boar-ribs"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1426,
+          "Ragnar Thunderbrew"
+        ],
+        "actions": [
+          "accept-384-beer-basted-boar-ribs"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1426,
+          "Tannok Frosthammer"
+        ],
+        "actions": [
+          "turnin-2160-supplies-to-tannok"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5625-accept-garments-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1426,
+          "Maxan Anvol"
+        ],
+        "actions": [
+          "accept-5625-accept-garments-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99158-dawn-in-the-mountains"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Maxan Anvol"
+        ],
+        "actions": [
+          "woven-accept-99158-dawn-in-the-mountains"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-5625-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1426,
+          "Maxan Anvol"
+        ],
+        "actions": [
+          "turnin-5625-accept-garments-of-the-light"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-400-tools-for-steelgrill"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1426,
+          "Tharek Blackstone"
+        ],
+        "actions": [
+          "accept-400-tools-for-steelgrill"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-317-stocking-jetsteam"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1426,
+          "Pilot Bellowfiz"
+        ],
+        "actions": [
+          "accept-317-stocking-jetsteam"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-313-the-grizzled-den"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1426,
+          "Pilot Stonegear"
+        ],
+        "actions": [
+          "accept-313-the-grizzled-den"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98321-flintfires-shipment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Tognus Flintfire"
+        ],
+        "actions": [
+          "woven-accept-98321-flintfires-shipment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Mountaineer Gretchen"
+        ],
+        "actions": [
+          "woven-turnin-98322-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98319-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Mountaineer Gretchen"
+        ],
+        "actions": [
+          "woven-accept-98319-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1426,
+          "Beldin Steelgrill"
+        ],
+        "actions": [
+          "turnin-400-tools-for-steelgrill"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5541-ammo-for-rumbleshot"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1426,
+          "Loslor Rudge"
+        ],
+        "actions": [
+          "accept-5541-ammo-for-rumbleshot"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1426,
+          "Rumbleshot's Ammo"
+        ],
+        "actions": [
+          "objective-5541-1-rumbleshot-s-ammo"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1426,
+          "Young Wendigo"
+        ],
+        "actions": [
+          "objective-313-1-young-wendigo"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Grizzled Den"
+        ],
+        "actions": [
+          "woven-objective-98319-secure-the-mountain",
+          "woven-objective-98321-flintfires-shipment"
+        ]
+      },
+      {
+        "boundary": [
+          87,
+          1426,
+          "Hegnar Rumbleshot"
+        ],
+        "actions": [
+          "turnin-5541-ammo-for-rumbleshot"
+        ]
+      },
+      {
+        "boundary": [
+          88,
+          1426,
+          "Thick Bear Fur"
+        ],
+        "actions": [
+          "objective-317-2-thick-bear-fur"
+        ]
+      },
+      {
+        "boundary": [
+          89,
+          1426,
+          "Chunk of Boar Meat"
+        ],
+        "actions": [
+          "objective-317-1-chunk-of-boar-meat"
+        ]
+      },
+      {
+        "boundary": [
+          89,
+          1426,
+          "Crag Boar Rib"
+        ],
+        "actions": [
+          "objective-384-1-crag-boar-rib"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-287-frostmane-hold"
+        ]
+      },
+      {
+        "boundary": [
+          90,
+          1426,
+          "Senir Whitebeard"
+        ],
+        "actions": [
+          "accept-287-frostmane-hold"
+        ]
+      },
+      {
+        "boundary": [
+          91,
+          1426,
+          "Innkeeper Belm"
+        ],
+        "actions": [
+          "objective-384-reviewed-2"
+        ]
+      },
+      {
+        "boundary": [
+          92,
+          1426,
+          "Ragnar Thunderbrew"
+        ],
+        "actions": [
+          "turnin-384-beer-basted-boar-ribs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Father Gavin"
+        ],
+        "actions": [
+          "woven-turnin-99158-dawn-in-the-mountains"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99159-finding-warmth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Father Gavin"
+        ],
+        "actions": [
+          "woven-accept-99159-finding-warmth",
+          "woven-objective-99159-finding-warmth",
+          "woven-turnin-99159-finding-warmth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99160-rimes-wrath"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Father Gavin"
+        ],
+        "actions": [
+          "woven-accept-99160-rimes-wrath"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99162-treacherous-cold"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Father Gavin"
+        ],
+        "actions": [
+          "woven-accept-99162-treacherous-cold"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Minor Ice Elemental"
+        ],
+        "actions": [
+          "woven-objective-99160-rimes-wrath"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Father Gavin"
+        ],
+        "actions": [
+          "woven-objective-99162-treacherous-cold",
+          "woven-turnin-99160-rimes-wrath"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99161-rimes-wrath"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Father Gavin"
+        ],
+        "actions": [
+          "woven-accept-99161-rimes-wrath"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Avala"
+        ],
+        "actions": [
+          "woven-objective-99161-rimes-wrath"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Father Gavin"
+        ],
+        "actions": [
+          "woven-turnin-99161-rimes-wrath",
+          "woven-turnin-99162-treacherous-cold"
+        ]
+      },
+      {
+        "boundary": [
+          93,
+          1426,
+          "Pilot Bellowfiz"
+        ],
+        "actions": [
+          "turnin-317-stocking-jetsteam"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-318-evershine"
+        ]
+      },
+      {
+        "boundary": [
+          93,
+          1426,
+          "Pilot Bellowfiz"
+        ],
+        "actions": [
+          "accept-318-evershine"
+        ]
+      },
+      {
+        "boundary": [
+          94,
+          1426,
+          "Pilot Stonegear"
+        ],
+        "actions": [
+          "turnin-313-the-grizzled-den"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Mountaineer Gretchen"
+        ],
+        "actions": [
+          "woven-turnin-98319-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98323-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Mountaineer Gretchen"
+        ],
+        "actions": [
+          "woven-accept-98323-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Senir Whitebeard"
+        ],
+        "actions": [
+          "woven-turnin-98323-secure-the-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Tognus Flintfire"
+        ],
+        "actions": [
+          "woven-turnin-98321-flintfires-shipment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-412-operation-recombobulation"
+        ]
+      },
+      {
+        "boundary": [
+          106,
+          1426,
+          "Razzle Sprysprocket"
+        ],
+        "actions": [
+          "accept-412-operation-recombobulation"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-312-tundra-macgrann-s-stolen-stash"
+        ]
+      },
+      {
+        "boundary": [
+          107,
+          1426,
+          "Tundra MacGrann"
+        ],
+        "actions": [
+          "accept-312-tundra-macgrann-s-stolen-stash"
+        ]
+      },
+      {
+        "boundary": [
+          108,
+          1426,
+          "MacGrann's Dried Meats"
+        ],
+        "actions": [
+          "objective-312-1-macgrann-s-dried-meats"
+        ]
+      },
+      {
+        "boundary": [
+          109,
+          1426,
+          "Tundra MacGrann"
+        ],
+        "actions": [
+          "turnin-312-tundra-macgrann-s-stolen-stash"
+        ]
+      },
+      {
+        "boundary": [
+          110,
+          1426,
+          "Rejold Barleybrew"
+        ],
+        "actions": [
+          "turnin-318-evershine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-319-a-favor-for-evershine"
+        ]
+      },
+      {
+        "boundary": [
+          110,
+          1426,
+          "Rejold Barleybrew"
+        ],
+        "actions": [
+          "accept-319-a-favor-for-evershine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-315-the-perfect-stout"
+        ]
+      },
+      {
+        "boundary": [
+          110,
+          1426,
+          "Rejold Barleybrew"
+        ],
+        "actions": [
+          "accept-315-the-perfect-stout"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-310-bitter-rivals"
+        ]
+      },
+      {
+        "boundary": [
+          111,
+          1426,
+          "Marleth Barleybrew"
+        ],
+        "actions": [
+          "accept-310-bitter-rivals"
+        ]
+      },
+      {
+        "boundary": [
+          112,
+          1426,
+          "Frostmane Seer"
+        ],
+        "actions": [
+          "objective-315-1-frostmane-seer"
+        ]
+      },
+      {
+        "boundary": [
+          113,
+          1426,
+          "Ice Claw Bear"
+        ],
+        "actions": [
+          "objective-319-1-ice-claw-bear"
+        ]
+      },
+      {
+        "boundary": [
+          113,
+          1426,
+          "Elder Crag Boar"
+        ],
+        "actions": [
+          "objective-319-2-elder-crag-boar"
+        ]
+      },
+      {
+        "boundary": [
+          113,
+          1426,
+          "Snow Leopard"
+        ],
+        "actions": [
+          "objective-319-3-snow-leopard"
+        ]
+      },
+      {
+        "boundary": [
+          118,
+          1426,
+          "Jarven Thunderbrew"
+        ],
+        "actions": [
+          "accept-308-distracting-jarven"
+        ]
+      },
+      {
+        "boundary": [
+          119,
+          1426,
+          "Bitter Rivals"
+        ],
+        "actions": [
+          "turnin-310-bitter-rivals"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-311-return-to-marleth"
+        ]
+      },
+      {
+        "boundary": [
+          119,
+          1426,
+          "Return to Marleth"
+        ],
+        "actions": [
+          "accept-311-return-to-marleth"
+        ]
+      },
+      {
+        "boundary": [
+          120,
+          1426,
+          "Marleth Barleybrew"
+        ],
+        "actions": [
+          "turnin-311-return-to-marleth"
+        ]
+      },
+      {
+        "boundary": [
+          121,
+          1426,
+          "Rejold Barleybrew"
+        ],
+        "actions": [
+          "turnin-319-a-favor-for-evershine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-320-return-to-bellowfiz"
+        ]
+      },
+      {
+        "boundary": [
+          121,
+          1426,
+          "Rejold Barleybrew"
+        ],
+        "actions": [
+          "accept-320-return-to-bellowfiz",
+          "turnin-315-the-perfect-stout"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Pilot Bellowfiz"
+        ],
+        "actions": [
+          "accept-415-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Rejold Barleybrew"
+        ],
+        "actions": [
+          "turnin-415-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-413-shimmer-stout"
+        ]
+      },
+      {
+        "boundary": [
+          121,
+          1426,
+          "Rejold Barleybrew"
+        ],
+        "actions": [
+          "accept-413-shimmer-stout"
+        ]
+      },
+      {
+        "boundary": [
+          124,
+          1426,
+          "Frostmane Headhunter"
+        ],
+        "actions": [
+          "objective-287-1-frostmane-headhunter"
+        ]
+      },
+      {
+        "boundary": [
+          125,
+          1426,
+          "Restabilization Cog"
+        ],
+        "actions": [
+          "objective-412-1-leper-gnome"
+        ]
+      },
+      {
+        "boundary": [
+          125,
+          1426,
+          "Gyromechanic Gear"
+        ],
+        "actions": [
+          "objective-412-2-gyromechanic-gear"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98326-frosthowl"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Gretta Ganter"
+        ],
+        "actions": [
+          "woven-accept-98326-frosthowl"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Frosthowl"
+        ],
+        "actions": [
+          "woven-objective-98326-frosthowl"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Gretta Ganter"
+        ],
+        "actions": [
+          "woven-turnin-98326-frosthowl"
+        ]
+      },
+      {
+        "boundary": [
+          130,
+          1426,
+          "Senir Whitebeard"
+        ],
+        "actions": [
+          "turnin-287-frostmane-hold",
+          "accept-291-the-reports"
+        ]
+      },
+      {
+        "boundary": [
+          131,
+          1426,
+          "Razzle Sprysprocket"
+        ],
+        "actions": [
+          "turnin-412-operation-recombobulation"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1426,
+          "Pilot Bellowfiz"
+        ],
+        "actions": [
+          "turnin-320-return-to-bellowfiz"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5637-desperate-prayer"
+        ]
+      },
+      {
+        "boundary": [
+          138,
+          1426,
+          "Maxan Anvol"
+        ],
+        "actions": [
+          "accept-5637-desperate-prayer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6064-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          143,
+          1426,
+          "Grif Wildheart"
+        ],
+        "actions": [
+          "accept-6064-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94824-confounding-flash"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Maxan Anvol"
+        ],
+        "actions": [
+          "woven-accept-94824-confounding-flash"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-6064-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6064-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          145,
+          1426,
+          "Grif Wildheart"
+        ],
+        "actions": [
+          "turnin-6064-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6084-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          145,
+          1426,
+          "Grif Wildheart"
+        ],
+        "actions": [
+          "accept-6084-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6084-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1426,
+          "Grif Wildheart"
+        ],
+        "actions": [
+          "turnin-6084-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6085-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1426,
+          "Grif Wildheart"
+        ],
+        "actions": [
+          "accept-6085-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6085-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          149,
+          1426,
+          "Grif Wildheart"
+        ],
+        "actions": [
+          "turnin-6085-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6086-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          149,
+          1426,
+          "Grif Wildheart"
+        ],
+        "actions": [
+          "accept-6086-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          150,
+          1455,
+          "Belia Thundergranite"
+        ],
+        "actions": [
+          "turnin-6086-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-433-the-public-servant"
+        ]
+      },
+      {
+        "boundary": [
+          155,
+          1426,
+          "Senator Mehr Stonehallow"
+        ],
+        "actions": [
+          "accept-433-the-public-servant"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Frast Dokner"
+        ],
+        "actions": [
+          "accept-95217-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-432-those-blasted-troggs"
+        ]
+      },
+      {
+        "boundary": [
+          156,
+          1426,
+          "Foreman Stonebrow"
+        ],
+        "actions": [
+          "accept-432-those-blasted-troggs"
+        ]
+      },
+      {
+        "boundary": [
+          157,
+          1426,
+          "Rockjaw Bonesnapper"
+        ],
+        "actions": [
+          "objective-433-1-rockjaw-bonesnapper"
+        ]
+      },
+      {
+        "boundary": [
+          158,
+          1426,
+          "Rockjaw Skullthumper"
+        ],
+        "actions": [
+          "objective-432-1-rockjaw-skullthumper"
+        ]
+      },
+      {
+        "boundary": [
+          160,
+          1426,
+          "Senator Mehr Stonehallow"
+        ],
+        "actions": [
+          "turnin-433-the-public-servant"
+        ]
+      },
+      {
+        "boundary": [
+          161,
+          1426,
+          "Foreman Stonebrow"
+        ],
+        "actions": [
+          "turnin-432-those-blasted-troggs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Scarred Crag Boar"
+        ],
+        "actions": [
+          "objective-95217-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Frast Dokner"
+        ],
+        "actions": [
+          "turnin-95217-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-95212-never-saddle-on-quality"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Rudra Amberstill"
+        ],
+        "actions": [
+          "woven-accept-95212-never-saddle-on-quality"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Elder Snow Leopard"
+        ],
+        "actions": [
+          "woven-objective-95212-never-saddle-on-quality"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Rudra Amberstill"
+        ],
+        "actions": [
+          "woven-turnin-95212-never-saddle-on-quality"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-314-protecting-the-herd"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Rudra Amberstill"
+        ],
+        "actions": [
+          "woven-accept-314-protecting-the-herd"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Vagash"
+        ],
+        "actions": [
+          "woven-objective-314-protecting-the-herd"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Rudra Amberstill"
+        ],
+        "actions": [
+          "woven-turnin-314-protecting-the-herd"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "loot-starter-before-accept-95213-verified-pickup",
+          "level-before-accept-95213-verified-pickup",
+          "accept-95213-verified-pickup",
+          "objective-95213-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Quarrymaster Thesten"
+        ],
+        "actions": [
+          "woven-turnin-95213-stolen-blasting-powder"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-95214-stolen-blasting-powder"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Quarrymaster Thesten"
+        ],
+        "actions": [
+          "woven-accept-95214-stolen-blasting-powder"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Rockjaw Ambusher"
+        ],
+        "actions": [
+          "woven-objective-95214-stolen-blasting-powder"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Quarrymaster Thesten"
+        ],
+        "actions": [
+          "woven-turnin-95214-stolen-blasting-powder"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96408-a-visitor-to-dun-morogh"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Beldin Steelgrill"
+        ],
+        "actions": [
+          "woven-accept-96408-a-visitor-to-dun-morogh"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Earthseer Farsen"
+        ],
+        "actions": [
+          "woven-turnin-96408-a-visitor-to-dun-morogh"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96392-farsens-watch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Earthseer Farsen"
+        ],
+        "actions": [
+          "woven-accept-96392-farsens-watch",
+          "woven-gossip-96392-farsens-watch",
+          "woven-turnin-96392-farsens-watch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96390-nip-em-in-the-bud"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Earthseer Farsen"
+        ],
+        "actions": [
+          "woven-accept-96390-nip-em-in-the-bud"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Dark Iron Spy"
+        ],
+        "actions": [
+          "woven-objective-96390-nip-em-in-the-bud"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Earthseer Farsen"
+        ],
+        "actions": [
+          "woven-turnin-96390-nip-em-in-the-bud"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94449-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Ingrid Dunwald"
+        ],
+        "actions": [
+          "woven-accept-94449-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Bruegs Kindleborn"
+        ],
+        "actions": [
+          "woven-turnin-94449-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94465-call-of-fire-loch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Bruegs Kindleborn"
+        ],
+        "actions": [
+          "woven-accept-94465-call-of-fire-loch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-419-the-lost-pilot"
+        ]
+      },
+      {
+        "boundary": [
+          163,
+          1426,
+          "Pilot Hammerfoot"
+        ],
+        "actions": [
+          "accept-419-the-lost-pilot"
+        ]
+      },
+      {
+        "boundary": [
+          164,
+          1426,
+          "The Lost Pilot"
+        ],
+        "actions": [
+          "turnin-419-the-lost-pilot"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-417-a-pilot-s-revenge"
+        ]
+      },
+      {
+        "boundary": [
+          164,
+          1426,
+          "A Pilot's Revenge"
+        ],
+        "actions": [
+          "accept-417-a-pilot-s-revenge"
+        ]
+      },
+      {
+        "boundary": [
+          165,
+          1426,
+          "Mangeclaw"
+        ],
+        "actions": [
+          "objective-417-1-mangeclaw"
+        ]
+      },
+      {
+        "boundary": [
+          166,
+          1426,
+          "Pilot Hammerfoot"
+        ],
+        "actions": [
+          "turnin-417-a-pilot-s-revenge"
+        ]
+      },
+      {
+        "boundary": [
+          167,
+          1426,
+          "Mountaineer Barleybrew"
+        ],
+        "actions": [
+          "turnin-413-shimmer-stout"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Braldir Ashmantle"
+        ],
+        "actions": [
+          "woven-turnin-94465-call-of-fire-loch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-414-stout-to-kadrell"
+        ]
+      },
+      {
+        "boundary": [
+          167,
+          1426,
+          "Mountaineer Barleybrew"
+        ],
+        "actions": [
+          "accept-414-stout-to-kadrell"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-224-in-defense-of-the-king-s-lands"
+        ]
+      },
+      {
+        "boundary": [
+          168,
+          1432,
+          "Mountaineer Cobbleflint"
+        ],
+        "actions": [
+          "accept-224-in-defense-of-the-king-s-lands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-267-the-trogg-threat"
+        ]
+      },
+      {
+        "boundary": [
+          169,
+          1432,
+          "Captain Rugelfuss"
+        ],
+        "actions": [
+          "accept-267-the-trogg-threat"
+        ]
+      },
+      {
+        "boundary": [
+          171,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-414-stout-to-kadrell"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1339-mountaineer-stormpike-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          171,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-1339-mountaineer-stormpike-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          172,
+          1432,
+          "Mountaineer Stormpike"
+        ],
+        "actions": [
+          "turnin-1339-mountaineer-stormpike-s-task"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1338-stormpike-s-order"
+        ]
+      },
+      {
+        "boundary": [
+          172,
+          1432,
+          "Mountaineer Stormpike"
+        ],
+        "actions": [
+          "accept-1338-stormpike-s-order"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6387-honor-students"
+        ]
+      },
+      {
+        "boundary": [
+          176,
+          1432,
+          "Brock Stoneseeker"
+        ],
+        "actions": [
+          "accept-6387-honor-students"
+        ]
+      },
+      {
+        "boundary": [
+          177,
+          1432,
+          "Thorgrum Borrelson"
+        ],
+        "actions": [
+          "turnin-6387-honor-students"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6391-ride-to-ironforge"
+        ]
+      },
+      {
+        "boundary": [
+          177,
+          1432,
+          "Thorgrum Borrelson"
+        ],
+        "actions": [
+          "accept-6391-ride-to-ironforge"
+        ]
+      },
+      {
+        "boundary": [
+          180,
+          1455,
+          "Senator Barin Redstone"
+        ],
+        "actions": [
+          "turnin-291-the-reports"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Jemma Quikswitch"
+        ],
+        "actions": [
+          "accept-95041-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-95041-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Jemma Quikswitch"
+        ],
+        "actions": [
+          "turnin-95041-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "High Priestess Mims"
+        ],
+        "actions": [
+          "woven-turnin-94824-confounding-flash"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-94817-confounding-flash-mims"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "High Priestess Mims"
+        ],
+        "actions": [
+          "woven-accept-94817-confounding-flash-mims",
+          "woven-turnin-94817-confounding-flash-mims"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Misplaced Packages"
+        ],
+        "actions": [
+          "accept-97263-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Eldrun Stormbreaker"
+        ],
+        "actions": [
+          "woven-turnin-97263-your-package-has-arrived"
+        ]
+      },
+      {
+        "boundary": [
+          181,
+          1455,
+          "Golnir Bouldertoe"
+        ],
+        "actions": [
+          "turnin-6391-ride-to-ironforge"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6388-gryth-thurden"
+        ]
+      },
+      {
+        "boundary": [
+          181,
+          1455,
+          "Golnir Bouldertoe"
+        ],
+        "actions": [
+          "accept-6388-gryth-thurden"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1715-the-slaughtered-lamb"
+        ]
+      },
+      {
+        "boundary": [
+          182,
+          1455,
+          "Lago Blackwrench"
+        ],
+        "actions": [
+          "accept-1715-the-slaughtered-lamb"
+        ]
+      },
+      {
+        "boundary": [
+          183,
+          1455,
+          "Gryth Thurden"
+        ],
+        "actions": [
+          "turnin-6388-gryth-thurden"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6392-return-to-brock"
+        ]
+      },
+      {
+        "boundary": [
+          183,
+          1455,
+          "Gryth Thurden"
+        ],
+        "actions": [
+          "accept-6392-return-to-brock"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6661-deeprun-rat-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          185,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-6661-deeprun-rat-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-6661-1-rat-catcher-s-flute"
+        ]
+      },
+      {
+        "boundary": [
+          187,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-6661-deeprun-rat-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6662-me-brother-nipsy"
+        ]
+      },
+      {
+        "boundary": [
+          187,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-6662-me-brother-nipsy"
+        ]
+      },
+      {
+        "boundary": [
+          188,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-6662-me-brother-nipsy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-353-stormpike-s-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          190,
+          1453,
+          "Grimand Elmore"
+        ],
+        "actions": [
+          "accept-353-stormpike-s-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          191,
+          1453,
+          "Furen Longbeard"
+        ],
+        "actions": [
+          "turnin-1338-stormpike-s-order"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          192,
+          1453,
+          "Ilsa Corbin"
+        ],
+        "actions": [
+          "accept-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          193,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "turnin-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          193,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "accept-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          194,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "turnin-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          194,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "accept-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-1640-1-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "objective-1640-1-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          196,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "turnin-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1665-bartleby-s-mug"
+        ]
+      },
+      {
+        "boundary": [
+          196,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "accept-1665-bartleby-s-mug"
+        ]
+      },
+      {
+        "boundary": [
+          197,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "turnin-1665-bartleby-s-mug"
+        ]
+      },
+      {
+        "boundary": [
+          198,
+          1453,
+          "High Priestess Laurena"
+        ],
+        "actions": [
+          "turnin-5637-desperate-prayer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-turnin-1715-the-slaughtered-lamb"
+        ]
+      },
+      {
+        "boundary": [
+          199,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "turnin-1715-the-slaughtered-lamb"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1688-surena-caledon"
+        ]
+      },
+      {
+        "boundary": [
+          199,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "accept-1688-surena-caledon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-1688-1-surena-s-choker"
+        ]
+      },
+      {
+        "boundary": [
+          214,
+          1429,
+          "Surena's Choker"
+        ],
+        "actions": [
+          "objective-1688-1-surena-s-choker"
+        ]
+      },
+      {
+        "boundary": [
+          223,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "turnin-1688-surena-caledon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1689-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          223,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "accept-1689-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          224,
+          1453,
+          "Bloodstone Choker"
+        ],
+        "actions": [
+          "objective-1689-1-bloodstone-choker"
+        ]
+      },
+      {
+        "boundary": [
+          225,
+          1453,
+          "Gakin the Darkbinder"
+        ],
+        "actions": [
+          "turnin-1689-the-binding"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2999-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          234,
+          1455,
+          "Brandur Ironhammer"
+        ],
+        "actions": [
+          "accept-2999-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          235,
+          1455,
+          "Tiza Battleforge"
+        ],
+        "actions": [
+          "turnin-2999-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1645-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          235,
+          1455,
+          "Tiza Battleforge"
+        ],
+        "actions": [
+          "accept-1645-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "loot-starter-before-accept-1646-the-tome-of-divinity",
+          "level-before-accept-1646-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          236,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-1646-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          237,
+          1455,
+          "Tiza Battleforge"
+        ],
+        "actions": [
+          "turnin-1646-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1647-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          237,
+          1455,
+          "Tiza Battleforge"
+        ],
+        "actions": [
+          "accept-1647-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          238,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-1647-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1648-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          238,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-1648-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          239,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-1648-quest-work",
+          "turnin-1648-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1778-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          239,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-1778-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          240,
+          1455,
+          "Tiza Battleforge"
+        ],
+        "actions": [
+          "turnin-1778-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1779-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          240,
+          1455,
+          "Tiza Battleforge"
+        ],
+        "actions": [
+          "accept-1779-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          241,
+          1455,
+          "Muiredon Battleforge"
+        ],
+        "actions": [
+          "turnin-1779-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1783-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          241,
+          1455,
+          "Muiredon Battleforge"
+        ],
+        "actions": [
+          "accept-1783-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-418-thelsamar-blood-sausages"
+        ]
+      },
+      {
+        "boundary": [
+          242,
+          1432,
+          "Vidra Hearthstove"
+        ],
+        "actions": [
+          "accept-418-thelsamar-blood-sausages"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-416-rat-catching"
+        ]
+      },
+      {
+        "boundary": [
+          243,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-416-rat-catching"
+        ]
+      },
+      {
+        "boundary": [
+          244,
+          1432,
+          "Brock Stoneseeker"
+        ],
+        "actions": [
+          "turnin-6392-return-to-brock"
+        ]
+      },
+      {
+        "boundary": [
+          245,
+          1432,
+          "Tunnel Rat Scout"
+        ],
+        "actions": [
+          "objective-416-1-tunnel-rat-scout"
+        ]
+      },
+      {
+        "boundary": [
+          246,
+          1432,
+          "Mountaineer Stormpike"
+        ],
+        "actions": [
+          "turnin-353-stormpike-s-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          250,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-416-rat-catching"
+        ]
+      },
+      {
+        "boundary": [
+          251,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-418-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          251,
+          1432,
+          "Vidra Hearthstove"
+        ],
+        "actions": [
+          "turnin-418-thelsamar-blood-sausages"
+        ]
+      },
+      {
+        "boundary": [
+          253,
+          1432,
+          "Stonesplinter Trogg"
+        ],
+        "actions": [
+          "objective-224-1-stonesplinter-trogg"
+        ]
+      },
+      {
+        "boundary": [
+          253,
+          1432,
+          "Stonesplinter Scout"
+        ],
+        "actions": [
+          "objective-224-2-stonesplinter-scout"
+        ]
+      },
+      {
+        "boundary": [
+          254,
+          1432,
+          "Mountaineer Cobbleflint"
+        ],
+        "actions": [
+          "turnin-224-in-defense-of-the-king-s-lands"
+        ]
+      },
+      {
+        "boundary": [
+          255,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-267-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          255,
+          1432,
+          "Captain Rugelfuss"
+        ],
+        "actions": [
+          "turnin-267-the-trogg-threat"
+        ]
+      },
+      {
+        "boundary": [
+          256,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-1783-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          256,
+          1426,
+          "Narm Faulk"
+        ],
+        "actions": [
+          "turnin-1783-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1784-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          256,
+          1426,
+          "Narm Faulk"
+        ],
+        "actions": [
+          "accept-1784-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          257,
+          1426,
+          "Dark Iron Spy"
+        ],
+        "actions": [
+          "objective-1784-1-dark-iron-spy"
+        ]
+      },
+      {
+        "boundary": [
+          258,
+          1455,
+          "Muiredon Battleforge"
+        ],
+        "actions": [
+          "turnin-1784-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1785-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          258,
+          1455,
+          "Muiredon Battleforge"
+        ],
+        "actions": [
+          "accept-1785-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          259,
+          1455,
+          "Tiza Battleforge"
+        ],
+        "actions": [
+          "turnin-1785-the-tome-of-divinity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-loremaster-underground-map",
+          "accept-96391-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1426,
+          "Earthseer Farsen"
+        ],
+        "actions": [
+          "turnin-96391-loremaster"
+        ]
+      }
+    ]
   }
 }

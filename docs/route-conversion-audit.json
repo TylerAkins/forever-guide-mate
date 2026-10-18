@@ -14457,5 +14457,11 @@
       "98407": "Retained in the later alliance-redridge-and-westfall chapter"
     },
     "pacing": "Quest-only. Reference grind and level-up instructions remain omitted; XP sufficiency is unverified."
+  },
+  "loremaster": {
+    "loremaster-dun-morogh": {
+      "inventory": "docs/loremaster/dun-morogh.json",
+      "clientWalkthrough": false
+    }
   }
 }

@@ -1,15 +1,30 @@
 # Zone Loremaster guides
 
-The procedure for adding or updating a zone lives in the repo skill [`.cursor/skills/zone-loremaster-guide/SKILL.md`](../.cursor/skills/zone-loremaster-guide/SKILL.md). Use that when writing the next zone. The files in `Guides/Loremaster/` are the working copies. Only **Durotar** and **Mulgore** are listed in `ForeverGuideMate.toc` today; other zones return when rewritten from their leveling spine. Quest id, multi-objective, and pin rules are in [guide-authoring.md](guide-authoring.md).
+Use the [Loremaster authoring skill](../.cursor/skills/zone-loremaster-guide/SKILL.md)
+and [guide authoring rules](guide-authoring.md). Guides use explicit ordered action
+arrays, preserving the leveling spine while adding permanent zone quests.
 
-Loremaster finishes the zone. The walk is the leveling route under `Guides/Leveling/` (zone/faction slugs such as `durotar.lua`, `horde-the-barrens.lua`). A quest on the Wowhead Forever zone page that is not already on that route is woven in:
+The source inventories and insertion decisions live in [loremaster/](loremaster/).
+They record the database revision and source hashes, candidate dispositions, levels,
+prerequisite evidence, and the visits where new actions belong. Source priority is
+Wowhead, QuestieDB, ATT, then the client scrape. Compiled selections may use another
+priority; original source observations determine these inventories.
 
-1. A series follow-up goes immediately after the previous turn-in.
-2. A quest from a giver the route already visits at that quest's recommended level is accepted with that visit, before anyone leaves. An earlier visit does not count when the recommended level is still ahead.
-3. Anything else goes beside the closest pin, after quests of a lower recommended level. The recommended level is Wowhead's Level line, not the level the quest can be started. Inside a leveling chapter, a Wowhead level above that chapter's end does not count as the route having reached it. The quest waits at the end of the chapter.
+A capital pickup does not determine ownership. Use objective locations, supported
+zone classification, chain context, and the turn-in to assign a quest. Data Hoarders
+belongs to Dun Morogh although Jemma Quikswitch offers it in Ironforge. City catalogs
+are discovery sources, not permission to import every capital quest into its
+neighboring starter zone. Required prerequisite excursions remain supporting work.
 
-Shared leveling quests must keep the same quest-chain edges in Loremaster. When a leveling route gains a required handoff, add the same chain to the zone route and register the verified relationship in `QuestPrerequisites.lua`. Loremaster keeps all eligible zone quests; recovery changes their order only to satisfy prerequisites and never reduces the completion set.
+Prerequisites come before proximity: finish the unlocking quest, reach a suitable
+recommended-level visit, accept with that giver visit, work the matching outing,
+and return with that hub. Breadcrumbs precede the quests that remove them. Higher
+recommendations require later returns even when the offer minimum is low.
 
-Keep every quest the leveling route already runs, including prerequisite handoffs it shares with a dungeon chain. Dungeon-only quests stay in the dungeon guides. Put the file in `Guides/Loremaster/` and register it as `category = "Loremaster Guides"`. The library row tag is `Loremaster`, so the title is the zone name. Zephras Isle stays in `Guides/Leveling/` under `Leveling Quest Guides`, because that file is the Skyborne starter path.
+Dun Morogh is available under Loremaster. The previous placeholder is retired;
+archived completion ledgers remain preserved. Other starter zones are added as
+their inventories and itineraries are verified. Zephras keeps its Leveling starter
+when its separate Loremaster itinerary is added.
 
-An elite step says `This is an elite. Bring a group.` A handoff uses a separate accept at the giver and turn-in at the recipient. The accept completes on `activeOrCompleted`; the turn-in completes on `completed` and depends on the accept. Use one API-driven objective step when the client can cycle objectives from the same outing, and split objectives only when the route requires separate locations. Coordinates have not been validated in the Forever client.
+Automated checks verify structural order and observed progress, not sufficient XP,
+server availability, or pin accuracy. No Forever client walkthrough has been performed.

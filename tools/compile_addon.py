@@ -73,7 +73,7 @@ SHIPPED = (
     "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
     "Guides/Dungeons/ClassPrerequisites.lua",
                             "Guides/Leveling/zephras-isle.lua",
-    "Guides/Loremaster/ComingSoon.lua",
+    "Guides/Loremaster/DunMorogh.lua",
     "Guides/Leveling/tirisfal-glades.lua",
     "Guides/Leveling/mulgore.lua",
     "Guides/Leveling/durotar.lua",

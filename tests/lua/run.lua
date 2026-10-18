@@ -90,7 +90,7 @@ Load("Guides/Dungeons/CityOfDalaran.lua")
 Load("Guides/Dungeons/DrownedCity.lua")
 Load("Guides/Leveling/horde-mulgore-part-2.lua")
 Load("Guides/Leveling/zephras-isle.lua")
-Load("Guides/Loremaster/ComingSoon.lua")
+Load("Guides/Loremaster/DunMorogh.lua")
 Load("Guides/Leveling/tirisfal-glades.lua")
 Load("Guides/Leveling/mulgore.lua")
 Load("Guides/Leveling/durotar.lua")
@@ -1108,7 +1108,7 @@ ForeverGuideMateCharDB = {
 }
 ns.InitializeStorage()
 Equal(ns.db.schemaVersion, 5, "account schema migrated")
-Equal(ns.charDB.schemaVersion, 12, "character schema migrated")
+Equal(ns.charDB.schemaVersion, 13, "character schema migrated")
 Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
 Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
 Equal(ns.db.tracker.x, 0, "schema migration starts the tracker at the left edge")
@@ -5280,7 +5280,7 @@ function TestStaleFlightRoutesPurged()
         taxiNodes = { ["thunder bluff, mulgore"] = "Thunder Bluff, Mulgore" },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 12, "stale flight storage migrates forward")
+    Equal(ns.charDB.schemaVersion, 13, "stale flight storage migrates forward")
     local survivors = ns.charDB.taxiRoutes[1413] and ns.charDB.taxiRoutes[1413].destinations or {}
     Check(survivors["thunder bluff, mulgore"] ~= nil, "a learned flight survives the route purge")
     Equal(survivors["sun rock retreat, stonetalon mountains"], nil,
@@ -5308,7 +5308,7 @@ function TestEraChapterIdMigration()
         },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 12, "era chapter rename bumps character schema")
+    Equal(ns.charDB.schemaVersion, 13, "era chapter rename bumps character schema")
     Equal(ns.charDB.selectedGuide, "leveling-era-durotar", "selectedGuide migrates to the new chapter id")
     Equal(ns.charDB.eraChapterPick, "leveling-era-horde-the-barrens-and-stonetalon-mountain", "eraChapterPick migrates")
     Equal(ns.charDB.activeGoal, "leveling-era-durotar:accept-4641-your-place-in-the-world",
@@ -5344,7 +5344,7 @@ function TestSkippedBecauseRemapsWithSchema9()
         },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 12, "schema 9 remaps skip cascade tables")
+    Equal(ns.charDB.schemaVersion, 13, "schema 9 remaps skip cascade tables")
     local root = "leveling-era-horde-the-barrens-and-stonetalon-mountain:accept-844-plainstrider-menace"
     local child = "leveling-era-horde-the-barrens-and-stonetalon-mountain:accept-845-the-zhevra"
     Check(ns.charDB.skipped[root], "skipped root remaps onto Casual Barrens id")
@@ -5371,7 +5371,7 @@ function TestAshenvalePartIdMigration()
         },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 12, "ashenvale part rename bumps character schema")
+    Equal(ns.charDB.schemaVersion, 13, "ashenvale part rename bumps character schema")
     Equal(ns.charDB.selectedGuide, "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
         "the first Alliance Ashenvale chapter migrates to part 1")
     Equal(ns.charDB.activeGoal, "leveling-era-alliance-ashenvale-and-stonetalon-mountains:turnin-967-the-tower-of-althalaxx",

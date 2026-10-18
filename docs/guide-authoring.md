@@ -36,7 +36,7 @@ Define shared class actions in `ClassChains.lua` and reference them with `classA
 
 The route remains quest-only: the supplied reference includes grind and level-up instructions that are intentionally not imported. Simulations verify order and observed progress, not sufficient XP. Do not add isolated level gates as a substitute for a suitable zone visit.
 
-Loremaster currently contains only the ordered “Coming Soon!” placeholder. The old Durotar and Mulgore guide selections migrate to it; their saved completion ledgers remain archived.
+Loremaster guides use ordered zone itineraries. Retired guide selections migrate to an available Loremaster guide; their saved completion ledgers remain archived. See [zone-loremaster-guides.md](zone-loremaster-guides.md) for capital ownership and source selection.
 
 Record chapter visits and insertion points in `route-manifest.json`. `route-conversion-audit.json` records the pinned facts, removed imports, and exclusions. Legacy import and append tools refuse to overwrite ordered guides. Update an itinerary through explicit reviewed action positions.
 
