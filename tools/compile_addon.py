@@ -208,6 +208,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreSilithus.lua",
     "Guides/Miscellaneous/ExploreTanaris.lua",
     "Guides/Miscellaneous/ExploreUnGoroCrater.lua",
+    "Guides/Miscellaneous/ExploreWinterspring.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",

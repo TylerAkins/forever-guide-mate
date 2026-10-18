@@ -445,6 +445,27 @@ local guides = {
             { "Lakkari Tar Pits", 50, 21, "lakkari-tar-pits" },
         },
     },
+    {
+        zone = "winterspring",
+        title = "Explore Winterspring",
+        achievementID = 857,
+        mapID = 1452,
+        locations = {
+            { "Frostfire Hot Springs", 30, 37, "frostfire-hot-springs" },
+            { "Timbermaw Post", 40, 42, "timbermaw-post" },
+            { "Lake Kel'Theril", 53, 41, "lake-kel-theril" },
+            { "Starfall Village", 50, 28, "starfall-village" },
+            { "Mazthoril", 57, 54, "mazthoril" },
+            { "Everlook", 61, 37, "everlook" },
+            { "Owl Wing Thicket", 65, 60, "owl-wing-thicket" },
+            { "Ice Thistle Hills", 68, 43, "ice-thistle-hills" },
+            { "Winterfall Village", 68, 36, "winterfall-village" },
+            { "The Hidden Grove", 63, 16, "the-hidden-grove" },
+            { "Frostsaber Rock", 49, 11, "frostsaber-rock" },
+            { "Frostwhisper Gorge", 61, 68, "frostwhisper-gorge" },
+            { "Darkwhisper Gorge", 58, 80, "darkwhisper-gorge" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)

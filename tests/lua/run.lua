@@ -243,6 +243,7 @@ Load("Guides/Miscellaneous/ExploreFeralas.lua")
 Load("Guides/Miscellaneous/ExploreSilithus.lua")
 Load("Guides/Miscellaneous/ExploreTanaris.lua")
 Load("Guides/Miscellaneous/ExploreUnGoroCrater.lua")
+Load("Guides/Miscellaneous/ExploreWinterspring.lua")
 
 dofile("tests/lua/exploration_checks.lua")(ns, Check, Equal)
 
@@ -978,9 +979,9 @@ Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, missingLegacyAPIState
     "a failed achievement API read stays unknown")
 Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, missingLegacyAPIState), nil,
     "a failed criterion API read stays unknown")
-Equal(#ns.GetTrackedAchievementIDs(), 38, "all exploration achievements are tracked")
+Equal(#ns.GetTrackedAchievementIDs(), 39, "all exploration achievements are tracked")
 do
-    local expected = { 627, 728, 736, 750, 760, 761, 765, 766, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 802, 841, 842, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 856 }
+    local expected = { 627, 728, 736, 750, 760, 761, 765, 766, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 802, 841, 842, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 856, 857 }
     for index, id in ipairs(expected) do
         Equal(ns.GetTrackedAchievementIDs()[index], id, "exploration achievement " .. id .. " is registered for capture")
     end
