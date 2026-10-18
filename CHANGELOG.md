@@ -2,6 +2,9 @@
 
 All notable changes to this project are documented here.
 
+## 0.6.2 - 2026-10-17
+- Consolidate exploration guide files in Miscellaneous while preserving saved progress.
+
 ## 0.6.1 - 2026-10-17
 - Finish an active Trial of the Lake before other route work, then resume the interrupted step after reporting to Tajarri.
 - Fix class starter prerequisites, research-book access, obsolete trainer introductions, and repeatable reward progression. Remove mandatory Sapta replacements and Syndicate reputation work.
