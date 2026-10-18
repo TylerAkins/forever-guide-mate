@@ -430,6 +430,21 @@ local guides = {
             { "Caverns of Time", 65, 49, "caverns-of-time" },
         },
     },
+    {
+        zone = "un-goro-crater",
+        title = "Explore Un'Goro Crater",
+        achievementID = 854,
+        mapID = 1449,
+        locations = {
+            { "Fire Plume Ridge", 51, 47, "fire-plume-ridge" },
+            { "Golakka Hot Springs", 31, 50, "golakka-hot-springs" },
+            { "Terror Run", 32, 67, "terror-run" },
+            { "The Slithering Scar", 50, 79, "the-slithering-scar" },
+            { "The Marshlands", 68, 64, "the-marshlands" },
+            { "Ironstone Plateau", 77, 32, "ironstone-plateau" },
+            { "Lakkari Tar Pits", 50, 21, "lakkari-tar-pits" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
