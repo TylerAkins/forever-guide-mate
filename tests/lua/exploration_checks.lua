@@ -361,6 +361,30 @@ local guides = {
             { "Morlos'Aran", 56, 87, "morlos-aran" },
         },
     },
+    {
+        zone = "feralas",
+        title = "Explore Feralas",
+        achievementID = 849,
+        mapID = 1444,
+        locations = {
+            { "Dream Bough", 51, 9, "dream-bough" },
+            { "Lower Wilds", 84, 46, "lower-wilds" },
+            { "Oneiros", 54, 16, "oneiros" },
+            { "Ruins of Ravenwind", 40, 12, "ruins-of-ravenwind" },
+            { "The Twin Colossals", 46, 18, "the-twin-colossals" },
+            { "The Forgotten Coast", 45, 49, "the-forgotten-coast" },
+            { "Dire Maul", 59, 44, "dire-maul" },
+            { "Feral Scar Vale", 54, 56, "feral-scar-vale" },
+            { "Frayfeather Highlands", 54, 69, "frayfeather-highlands" },
+            { "Ruins of Isildien", 59, 69, "ruins-of-isildien" },
+            { "The Writhing Deep", 75, 61, "the-writhing-deep" },
+            { "Camp Mojache", 75, 42, "camp-mojache" },
+            { "Grimtotem Compound", 66, 38, "grimtotem-compound" },
+            { "Gordunni Outpost", 77, 31, "gordunni-outpost" },
+            { "Sardor Isle", 29, 49, "sardor-isle" },
+            { "Isle of Dread", 34, 78, "isle-of-dread" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)

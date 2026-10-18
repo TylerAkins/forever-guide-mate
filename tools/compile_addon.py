@@ -204,6 +204,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreDesolace.lua",
     "Guides/Miscellaneous/ExploreDustwallowMarsh.lua",
     "Guides/Miscellaneous/ExploreFelwood.lua",
+    "Guides/Miscellaneous/ExploreFeralas.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",
