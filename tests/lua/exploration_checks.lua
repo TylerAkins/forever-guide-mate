@@ -103,6 +103,17 @@ local guides = {
             { "Blackrock Mountain", 29, 37, "blackrock-mountain" },
         },
     },
+    {
+        zone = "deadwind-pass",
+        title = "Explore Deadwind Pass",
+        achievementID = 777,
+        mapID = 1430,
+        locations = {
+            { "Deadman's Crossing", 42, 34, "deadman-s-crossing" },
+            { "The Vice", 58, 64, "the-vice" },
+            { "Karazhan", 45, 73, "karazhan" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)
