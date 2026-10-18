@@ -28,6 +28,8 @@ grants no quest completion credit.
 
 Author pickups, objective outings, intermediate pickups, returns, and turn-ins separately. Keep directions in `text`; the tracker adds live counts separately. Use `questObjective.count` for a verified partial count checkpoint. Before a quest pickup, use `complete.item = { name = "Item", minCount = quantity }` for verified material collection. An item starter instruction may use `instructionOnly = true` with observed bag or quest state so skipping it passes only that instruction. Use an observed level checkpoint before gated work, with the required level in its text. Set `checkpointQuest` to the guarded quest ID and copy verified `alternativeQuests` so completed or excluded quest work does not leave an unrelated level gate. This metadata does not turn the checkpoint into a quest action. Manual confirmation belongs only on unobservable instructions without quest completion conditions. A repeatable quest never reports as turned in, so give its actions an `excludeWhen` condition describing when the reward is no longer needed (for example, the consuming quest is completed or the reward item is in the bags). Ordered routes drop an action while `excludeWhen` is true; other false `conditions` block the route instead.
 
+A single item starter uses the watched bag-presence path, including bag-link fallback when the item count lookup is unavailable. A held starter may finish its preparation note while quest history loads; this does not accept or complete its quest. Quantities above one still require a verified count.
+
 For preparation that consumes an intermediate item during an active quest, set `rememberPreparation` to that quest ID. Completion is retained only after observing the item state while the quest is active; abandoning the quest resets it. This records instruction progress and grants no quest credit. Set `instructionOnly = true` so a direct skip passes only that preparation.
 
 `requiredQuests` contains verified prerequisite groups with `mode`, `quests`, and optional `conditions`. Ordered routes have no soft prerequisite exceptions. Unknown state, unavailable pickups, missing active quests, and unmet requirements block the current action. Explicit quest skips cascade through these groups within the selected guide; they never grant observed quest completion.
@@ -36,7 +38,7 @@ Define shared class actions in `ClassChains.lua` and reference them with `classA
 
 The route remains quest-only: the supplied reference includes grind and level-up instructions that are intentionally not imported. Simulations verify order and observed progress, not sufficient XP. Do not add isolated level gates as a substitute for a suitable zone visit.
 
-Loremaster currently contains only the ordered “Coming Soon!” placeholder. The old Durotar and Mulgore guide selections migrate to it; their saved completion ledgers remain archived.
+Loremaster guides use ordered zone itineraries. Retired guide selections migrate to an available Loremaster guide; their saved completion ledgers remain archived. See [zone-loremaster-guides.md](zone-loremaster-guides.md) for capital ownership and source selection.
 
 Record chapter visits and insertion points in `route-manifest.json`. `route-conversion-audit.json` records the pinned facts, removed imports, and exclusions. Legacy import and append tools refuse to overwrite ordered guides. Update an itinerary through explicit reviewed action positions.
 
@@ -215,6 +217,7 @@ lua5.1 tests/lua/ordered.lua
 lua5.1 tests/lua/catalog.lua
 FGM_FULL_MATRIX=1 lua5.1 tests/lua/journeys.lua
 FGM_DUNGEONS=1 lua5.1 tests/lua/journeys.lua
+FGM_LOREMASTER=1 lua5.1 tests/lua/journeys.lua
 lua5.1 tests/lua/ui.lua
 lua5.1 tests/lua/lint.lua
 lua5.1 tests/lua/audit_accept_chains.lua
@@ -229,6 +232,6 @@ Changing a turn-in’s `dependsOn` or splitting objectives can leave **stale com
 
 The addon saves **active step per guide** (`activeGoalByGuide`). Reload and switching away and back should return to the same step, not the first open quest in the chapter.
 
-Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`. Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database) (`data/forever/compiled/`). A positive Questie `questLevel` is the step level. `0` and `-1` leave the Wowhead level.
+Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`. Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database) (`data/forever/compiled/`). Existing Casual level fixtures retain their documented Questie policy. New Loremaster facts use Wowhead, QuestieDB, ATT, then the client scrape; see the Loremaster skill for source conflicts and provenance.
 
 Ordered routes keep authored instructions and fallback pins. Registration enables `useQuestNavigation` for ordinary quest objectives and turn-ins independently of `useClientPin`. Blizzard navigation is selected when the current objective is unfinished or the quest is ready to turn in, with authored coordinates as fallback if the client has no quest destination. Travel and checkpoint instructions retain their explicit destination. Set `useQuestNavigation = false` for an interaction requiring a specific authored destination.

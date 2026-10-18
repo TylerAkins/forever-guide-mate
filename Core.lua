@@ -33,7 +33,7 @@ local ACCOUNT_DEFAULTS = {
 }
 
 local CHARACTER_DEFAULTS = {
-    schemaVersion = 12,
+    schemaVersion = 13,
     orderedRoutes = {},
     activeGoal = nil,
     manualCompleted = {},
@@ -327,10 +327,19 @@ local function MigrateStorage(account, character)
     end
     if (tonumber(character.schemaVersion) or 1) < 12 then
         if character.selectedGuide == "leveling-durotar" or character.selectedGuide == "leveling-mulgore" then
-            character.selectedGuide = "loremaster-coming-soon"
+            character.selectedGuide = character.selectedGuide == "leveling-mulgore"
+                and "loremaster-mulgore" or "loremaster-durotar"
             character.activeGoal = nil
         end
         character.schemaVersion = 12
+    end
+    if (tonumber(character.schemaVersion) or 1) < 13 then
+        if character.selectedGuide == "loremaster-coming-soon" then
+            character.selectedGuide = nil
+            character.pendingLoremasterSelection = true
+            character.activeGoal = nil
+        end
+        character.schemaVersion = 13
     end
 end
 

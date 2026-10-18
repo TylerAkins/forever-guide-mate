@@ -1,0 +1,7606 @@
+{
+  "guide": "loremaster-elwynn-forest",
+  "title": "Elwynn Forest",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-era-elwynn-forest",
+  "spineActions": [
+    "accept-1598-the-stolen-tome",
+    "objective-1598-1-powers-of-the-void",
+    "turnin-1598-the-stolen-tome",
+    "accept-783-a-threat-within",
+    "turnin-783-a-threat-within",
+    "accept-7-kobold-camp-cleanup",
+    "accept-5261-eagan-peltskinner",
+    "turnin-5261-eagan-peltskinner",
+    "accept-33-wolves-across-the-border",
+    "objective-33-1-timber-wolf",
+    "objective-7-1-kobold-vermin",
+    "turnin-33-wolves-across-the-border",
+    "turnin-7-kobold-camp-cleanup",
+    "woven-accept-92479-a-scribbled-letter",
+    "woven-turnin-92479-a-scribbled-letter",
+    "accept-15-investigate-echo-ridge",
+    "objective-15-1-kobold-worker",
+    "turnin-15-investigate-echo-ridge",
+    "accept-21-skirmish-at-echo-ridge",
+    "accept-3104-glyphic-letter",
+    "accept-3100-simple-letter",
+    "accept-3105-tainted-letter",
+    "accept-3102-encrypted-letter",
+    "accept-3103-hallowed-letter",
+    "accept-3101-consecrated-letter",
+    "turnin-3100-simple-letter",
+    "turnin-3101-consecrated-letter",
+    "turnin-3103-hallowed-letter",
+    "turnin-3104-glyphic-letter",
+    "level-before-accept-18-brotherhood-of-thieves",
+    "accept-18-brotherhood-of-thieves",
+    "turnin-3105-tainted-letter",
+    "objective-18-1-defias-thug",
+    "turnin-18-brotherhood-of-thieves",
+    "level-before-accept-3903-milly-osworth",
+    "accept-3903-milly-osworth",
+    "level-before-accept-6-bounty-on-garrick-padfoot",
+    "accept-6-bounty-on-garrick-padfoot",
+    "objective-21-1-kobold-laborer",
+    "turnin-3903-milly-osworth",
+    "level-before-accept-3904-milly-s-harvest",
+    "accept-3904-milly-s-harvest",
+    "turnin-3102-encrypted-letter",
+    "objective-6-1-garrick-padfoot",
+    "objective-3904-1-milly-s-harvest",
+    "turnin-3904-milly-s-harvest",
+    "level-before-accept-3905-grape-manifest",
+    "accept-3905-grape-manifest",
+    "turnin-6-bounty-on-garrick-padfoot",
+    "turnin-21-skirmish-at-echo-ridge",
+    "loot-starter-before-accept-91741-verified-pickup",
+    "accept-91741-verified-pickup",
+    "woven-turnin-91741-nibbled-on-book",
+    "woven-accept-92124-book-inventory",
+    "woven-turnin-92124-book-inventory",
+    "woven-accept-91743-rascally-rodents",
+    "woven-objective-91743-rascally-rodents",
+    "woven-turnin-91743-rascally-rodents",
+    "woven-accept-91745-mining-consultant",
+    "woven-turnin-91745-mining-consultant",
+    "woven-accept-91752-the-big-picture",
+    "woven-objective-91752-the-big-picture",
+    "woven-turnin-91752-the-big-picture",
+    "woven-accept-91758-follow-that-kobold",
+    "woven-turnin-91758-follow-that-kobold",
+    "woven-accept-91772-shhh-were-hunting-kobolds",
+    "level-before-woven-accept-96627-the-adventurer",
+    "woven-accept-96627-the-adventurer",
+    "accept-54-report-to-goldshire",
+    "level-before-accept-5623-in-favor-of-the-light",
+    "accept-5623-in-favor-of-the-light",
+    "turnin-3905-grape-manifest",
+    "accept-2158-rest-and-relaxation",
+    "turnin-54-report-to-goldshire",
+    "woven-objective-91772-shhh-were-hunting-kobolds",
+    "woven-turnin-91772-shhh-were-hunting-kobolds",
+    "woven-accept-91775-book-return",
+    "level-before-accept-62-the-fargodeep-mine",
+    "accept-62-the-fargodeep-mine",
+    "level-before-accept-60-kobold-candles",
+    "accept-60-kobold-candles",
+    "turnin-2158-rest-and-relaxation",
+    "woven-turnin-96627-the-adventurer",
+    "level-before-woven-accept-96101-the-great-outdoors",
+    "woven-accept-96101-the-great-outdoors",
+    "woven-objective-96101-the-great-outdoors",
+    "woven-turnin-96101-the-great-outdoors",
+    "turnin-5623-in-favor-of-the-light",
+    "level-before-accept-5624-garments-of-the-light",
+    "accept-5624-garments-of-the-light",
+    "objective-5624-quest-work",
+    "turnin-5624-garments-of-the-light",
+    "level-before-accept-47-gold-dust-exchange",
+    "accept-47-gold-dust-exchange",
+    "level-before-woven-accept-91751-rough-wolf-pelts",
+    "woven-accept-91751-rough-wolf-pelts",
+    "level-before-accept-85-lost-necklace",
+    "accept-85-lost-necklace",
+    "turnin-85-lost-necklace",
+    "level-before-accept-86-pie-for-billy",
+    "accept-86-pie-for-billy",
+    "level-before-accept-106-young-lovers",
+    "accept-106-young-lovers",
+    "objective-86-1-chunk-of-boar-meat",
+    "turnin-106-young-lovers",
+    "level-before-accept-111-speak-with-gramma",
+    "accept-111-speak-with-gramma",
+    "turnin-86-pie-for-billy",
+    "level-before-accept-84-back-to-billy",
+    "accept-84-back-to-billy",
+    "turnin-111-speak-with-gramma",
+    "level-before-accept-107-note-to-william",
+    "accept-107-note-to-william",
+    "turnin-84-back-to-billy",
+    "level-before-accept-87-goldtooth",
+    "accept-87-goldtooth",
+    "level-before-woven-accept-88-princess-must-die",
+    "woven-accept-88-princess-must-die",
+    "objective-60-1-large-candle",
+    "objective-47-1-gold-dust",
+    "woven-objective-91775-book-return",
+    "objective-87-quest-work",
+    "turnin-87-goldtooth",
+    "turnin-47-gold-dust-exchange",
+    "woven-turnin-91775-book-return",
+    "woven-accept-91777-rare-books",
+    "level-before-accept-40-a-fishy-peril",
+    "accept-40-a-fishy-peril",
+    "turnin-40-a-fishy-peril",
+    "level-before-accept-35-further-concerns",
+    "accept-35-further-concerns",
+    "turnin-62-the-fargodeep-mine",
+    "level-before-accept-76-the-jasperlode-mine",
+    "accept-76-the-jasperlode-mine",
+    "level-before-woven-accept-91723-delicate-instruments",
+    "woven-accept-91723-delicate-instruments",
+    "level-before-woven-accept-91725-stolen-enchanting-supplies",
+    "woven-accept-91725-stolen-enchanting-supplies",
+    "level-before-woven-accept-91732-good-steel",
+    "woven-accept-91732-good-steel",
+    "level-before-woven-accept-91733-downstream",
+    "woven-accept-91733-downstream",
+    "turnin-60-kobold-candles",
+    "level-before-accept-61-shipment-to-stormwind",
+    "accept-61-shipment-to-stormwind",
+    "turnin-107-note-to-william",
+    "level-before-accept-112-collecting-kelp",
+    "accept-112-collecting-kelp",
+    "level-before-woven-accept-99127-a-net-disaster",
+    "woven-accept-99127-a-net-disaster",
+    "level-before-woven-accept-99143-bottles-and-baubles",
+    "woven-accept-99143-bottles-and-baubles",
+    "objective-112-1-murloc",
+    "woven-objective-99127-a-net-disaster",
+    "woven-objective-99143-bottles-and-baubles",
+    "loot-starter-before-accept-91740-verified-pickup",
+    "level-before-accept-91740-verified-pickup",
+    "accept-91740-verified-pickup",
+    "woven-turnin-91740-croakys-head",
+    "turnin-35-further-concerns",
+    "level-before-accept-37-find-the-lost-guards",
+    "accept-37-find-the-lost-guards",
+    "level-before-accept-52-protect-the-frontier",
+    "accept-52-protect-the-frontier",
+    "turnin-37-find-the-lost-guards",
+    "level-before-accept-45-discover-rolf-s-fate",
+    "accept-45-discover-rolf-s-fate",
+    "level-before-accept-5545-a-bundle-of-trouble",
+    "accept-5545-a-bundle-of-trouble",
+    "objective-5545-1-bundle-of-wood",
+    "objective-52-2-young-forest-bear",
+    "objective-52-1-prowler",
+    "woven-objective-91751-rough-wolf-pelts",
+    "loot-starter-before-accept-91746-verified-pickup",
+    "level-before-accept-91746-verified-pickup",
+    "accept-91746-verified-pickup",
+    "turnin-45-discover-rolf-s-fate",
+    "level-before-accept-71-report-to-thomas",
+    "accept-71-report-to-thomas",
+    "turnin-5545-a-bundle-of-trouble",
+    "level-before-accept-83-red-linen-goods",
+    "accept-83-red-linen-goods",
+    "turnin-52-protect-the-frontier",
+    "turnin-71-report-to-thomas",
+    "level-before-accept-39-deliver-thomas-report",
+    "accept-39-deliver-thomas-report",
+    "level-before-accept-109-report-to-gryan-stoutmantle",
+    "accept-109-report-to-gryan-stoutmantle",
+    "objective-83-1-defias-bandit",
+    "woven-objective-88-princess-must-die",
+    "loot-starter-before-accept-184-furlbrow-s-deed",
+    "level-before-accept-184-furlbrow-s-deed",
+    "accept-184-furlbrow-s-deed",
+    "turnin-83-red-linen-goods",
+    "turnin-112-collecting-kelp",
+    "level-before-accept-114-the-escape",
+    "accept-114-the-escape",
+    "turnin-39-deliver-thomas-report",
+    "level-before-woven-accept-59-cloth-and-leather-armor",
+    "woven-accept-59-cloth-and-leather-armor",
+    "woven-turnin-59-cloth-and-leather-armor",
+    "level-before-woven-accept-46-bounty-on-murlocs",
+    "woven-accept-46-bounty-on-murlocs",
+    "woven-objective-46-bounty-on-murlocs",
+    "woven-turnin-46-bounty-on-murlocs",
+    "woven-objective-91723-delicate-instruments",
+    "woven-turnin-91723-delicate-instruments",
+    "level-before-woven-accept-91724-delicate-instruments",
+    "woven-accept-91724-delicate-instruments",
+    "woven-objective-91732-good-steel",
+    "woven-objective-91733-downstream",
+    "woven-turnin-91733-downstream",
+    "woven-objective-91724-delicate-instruments",
+    "woven-objective-91725-stolen-enchanting-supplies",
+    "woven-turnin-91724-delicate-instruments",
+    "woven-turnin-91725-stolen-enchanting-supplies",
+    "woven-turnin-91732-good-steel",
+    "woven-turnin-91751-rough-wolf-pelts",
+    "woven-turnin-91746-elmpaws-head",
+    "woven-objective-91777-rare-books",
+    "woven-turnin-91777-rare-books",
+    "woven-turnin-99127-a-net-disaster",
+    "level-before-woven-accept-99128-slimy-menace",
+    "woven-accept-99128-slimy-menace",
+    "woven-objective-99128-slimy-menace",
+    "woven-turnin-99128-slimy-menace",
+    "woven-turnin-99143-bottles-and-baubles",
+    "level-before-woven-accept-99129-a-man-about-a-murloc",
+    "woven-accept-99129-a-man-about-a-murloc",
+    "woven-turnin-99129-a-man-about-a-murloc",
+    "level-before-woven-accept-99130-an-enticing-offer",
+    "woven-accept-99130-an-enticing-offer",
+    "woven-objective-99130-an-enticing-offer",
+    "woven-turnin-99130-an-enticing-offer",
+    "level-before-woven-accept-99131-baited-for-success",
+    "woven-accept-99131-baited-for-success",
+    "woven-turnin-99131-baited-for-success",
+    "turnin-76-the-jasperlode-mine",
+    "level-before-accept-239-westbrook-garrison-needs-help",
+    "accept-239-westbrook-garrison-needs-help",
+    "level-before-accept-1097-elmore-s-task",
+    "accept-1097-elmore-s-task",
+    "level-before-accept-1685-gakin-s-summons",
+    "accept-1685-gakin-s-summons",
+    "level-before-accept-5635-desperate-prayer",
+    "accept-5635-desperate-prayer",
+    "level-before-accept-2205-seek-out-si-7",
+    "accept-2205-seek-out-si-7",
+    "level-before-accept-1638-a-warrior-s-training",
+    "accept-1638-a-warrior-s-training",
+    "level-before-woven-accept-94774-divine-grace",
+    "woven-accept-94774-divine-grace",
+    "level-before-woven-accept-94792-taming-the-beast",
+    "woven-accept-94792-taming-the-beast",
+    "woven-objective-94792-taming-the-beast",
+    "woven-turnin-94792-taming-the-beast",
+    "level-before-woven-accept-94863-taming-the-beast-2",
+    "woven-accept-94863-taming-the-beast-2",
+    "woven-objective-94863-taming-the-beast-2",
+    "woven-turnin-94863-taming-the-beast-2",
+    "level-before-woven-accept-94864-taming-the-beast-3",
+    "woven-accept-94864-taming-the-beast-3",
+    "woven-objective-94864-taming-the-beast-3",
+    "woven-turnin-94864-taming-the-beast-3",
+    "level-before-woven-accept-94793-training-the-beast",
+    "woven-accept-94793-training-the-beast",
+    "woven-turnin-94793-training-the-beast",
+    "turnin-114-the-escape",
+    "woven-turnin-88-princess-must-die",
+    "turnin-239-westbrook-garrison-needs-help",
+    "level-before-woven-accept-176-wanted-hogger",
+    "woven-accept-176-wanted-hogger",
+    "level-before-woven-accept-91738-an-apple-treat",
+    "woven-accept-91738-an-apple-treat",
+    "woven-objective-91738-an-apple-treat",
+    "woven-turnin-91738-an-apple-treat",
+    "level-before-accept-11-riverpaw-gnoll-bounty",
+    "accept-11-riverpaw-gnoll-bounty",
+    "objective-11-1-riverpaw-runt",
+    "woven-objective-176-wanted-hogger",
+    "level-before-woven-accept-123-the-collector",
+    "woven-accept-123-the-collector",
+    "turnin-11-riverpaw-gnoll-bounty",
+    "woven-turnin-176-wanted-hogger",
+    "woven-turnin-123-the-collector",
+    "level-before-woven-accept-147-manhunt",
+    "woven-accept-147-manhunt",
+    "woven-objective-147-manhunt",
+    "woven-turnin-147-manhunt",
+    "turnin-184-furlbrow-s-deed",
+    "level-before-accept-64-the-forgotten-heirloom",
+    "accept-64-the-forgotten-heirloom",
+    "level-before-accept-36-westfall-stew",
+    "accept-36-westfall-stew",
+    "level-before-accept-151-poor-old-blanchy",
+    "accept-151-poor-old-blanchy",
+    "level-before-accept-9-the-killing-fields",
+    "accept-9-the-killing-fields",
+    "turnin-36-westfall-stew",
+    "level-before-accept-38-westfall-stew",
+    "accept-38-westfall-stew",
+    "level-before-accept-22-goretusk-liver-pie",
+    "accept-22-goretusk-liver-pie",
+    "turnin-109-report-to-gryan-stoutmantle",
+    "level-before-accept-12-the-people-s-militia",
+    "accept-12-the-people-s-militia",
+    "level-before-accept-102-patrolling-westfall",
+    "accept-102-patrolling-westfall",
+    "level-before-accept-6181-a-swift-message",
+    "accept-6181-a-swift-message",
+    "turnin-6181-a-swift-message",
+    "level-before-accept-6281-continue-to-stormwind",
+    "accept-6281-continue-to-stormwind",
+    "turnin-61-shipment-to-stormwind",
+    "level-before-turnin-1685-gakin-s-summons",
+    "turnin-1685-gakin-s-summons",
+    "level-before-accept-1688-surena-caledon",
+    "accept-1688-surena-caledon",
+    "objective-1688-1-surena-caledon",
+    "turnin-1688-surena-caledon",
+    "level-before-accept-1689-the-binding",
+    "accept-1689-the-binding",
+    "objective-1689-1-bloodstone-choker",
+    "turnin-1689-the-binding",
+    "turnin-2205-seek-out-si-7",
+    "turnin-6281-continue-to-stormwind",
+    "level-before-accept-6261-dungar-longdrink",
+    "accept-6261-dungar-longdrink",
+    "turnin-1638-a-warrior-s-training",
+    "level-before-accept-1639-bartleby-the-drunk",
+    "accept-1639-bartleby-the-drunk",
+    "turnin-1639-bartleby-the-drunk",
+    "level-before-accept-1640-beat-bartleby",
+    "accept-1640-beat-bartleby",
+    "level-before-objective-1640-1-bartleby",
+    "objective-1640-1-bartleby",
+    "turnin-1640-beat-bartleby",
+    "level-before-accept-1665-bartleby-s-mug",
+    "accept-1665-bartleby-s-mug",
+    "turnin-1665-bartleby-s-mug",
+    "turnin-5635-desperate-prayer",
+    "woven-turnin-94774-divine-grace",
+    "level-before-woven-accept-94773-divine-grace-laurena",
+    "woven-accept-94773-divine-grace-laurena",
+    "woven-turnin-94773-divine-grace-laurena",
+    "turnin-1097-elmore-s-task",
+    "level-before-accept-353-stormpike-s-delivery",
+    "accept-353-stormpike-s-delivery",
+    "level-before-accept-6661-deeprun-rat-roundup",
+    "accept-6661-deeprun-rat-roundup",
+    "objective-6661-1-rat-catcher-s-flute",
+    "turnin-6661-deeprun-rat-roundup",
+    "turnin-353-stormpike-s-delivery",
+    "level-before-accept-418-thelsamar-blood-sausages",
+    "accept-418-thelsamar-blood-sausages",
+    "level-before-accept-416-rat-catching",
+    "accept-416-rat-catching",
+    "level-before-accept-1339-mountaineer-stormpike-s-task",
+    "accept-1339-mountaineer-stormpike-s-task",
+    "objective-416-1-tunnel-rat-scout",
+    "turnin-1339-mountaineer-stormpike-s-task",
+    "level-before-accept-1338-stormpike-s-order",
+    "accept-1338-stormpike-s-order",
+    "turnin-416-rat-catching",
+    "objective-418-quest-work",
+    "turnin-418-thelsamar-blood-sausages",
+    "level-before-accept-224-in-defense-of-the-king-s-lands",
+    "accept-224-in-defense-of-the-king-s-lands",
+    "level-before-accept-267-the-trogg-threat",
+    "accept-267-the-trogg-threat",
+    "objective-224-1-stonesplinter-trogg",
+    "objective-224-2-stonesplinter-scout",
+    "turnin-224-in-defense-of-the-king-s-lands",
+    "objective-267-quest-work",
+    "turnin-267-the-trogg-threat",
+    "level-before-accept-1641-the-tome-of-divinity",
+    "accept-1641-the-tome-of-divinity",
+    "turnin-1641-the-tome-of-divinity",
+    "loot-starter-before-accept-1642-the-tome-of-divinity",
+    "level-before-accept-1642-the-tome-of-divinity",
+    "accept-1642-the-tome-of-divinity",
+    "turnin-1642-the-tome-of-divinity",
+    "level-before-accept-1643-the-tome-of-divinity",
+    "accept-1643-the-tome-of-divinity",
+    "turnin-1338-stormpike-s-order",
+    "turnin-1643-the-tome-of-divinity",
+    "level-before-accept-1644-the-tome-of-divinity",
+    "accept-1644-the-tome-of-divinity",
+    "objective-1644-quest-work",
+    "turnin-1644-the-tome-of-divinity",
+    "turnin-6261-dungar-longdrink",
+    "level-before-accept-6285-return-to-lewis",
+    "accept-6285-return-to-lewis",
+    "turnin-6285-return-to-lewis"
+  ],
+  "placements": [
+    {
+      "anchor": "woven-accept-91725-stolen-enchanting-supplies",
+      "position": "after",
+      "actions": [
+        "accept-91753-loremaster"
+      ],
+      "reason": "Accept the level 7 enchanting quest during the existing Tower of Azora pickup visit."
+    },
+    {
+      "anchor": "woven-objective-91723-delicate-instruments",
+      "position": "after",
+      "actions": [
+        "objective-91753-loremaster"
+      ],
+      "reason": "Disenchant the geomancer drops on the same Jasperlode Mine outing as Delicate Instruments."
+    },
+    {
+      "anchor": "woven-turnin-91723-delicate-instruments",
+      "position": "after",
+      "actions": [
+        "turnin-91753-loremaster"
+      ],
+      "reason": "Return to Kitta with the existing Tower of Azora turn-ins."
+    }
+  ],
+  "quests": {
+    "6": {
+      "name": "Bounty on Garrick Padfoot",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Deputy Willem",
+            "coordinate": [
+              48.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Deputy Willem",
+            "coordinate": [
+              48.2,
+              42.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Garrick Padfoot",
+            "coordinate": [
+              57.4,
+              48.2
+            ]
+          }
+        ]
+      }
+    },
+    "7": {
+      "name": "Kobold Camp Cleanup",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ]
+      }
+    },
+    "11": {
+      "name": "Riverpaw Gnoll Bounty",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Deputy Rainer",
+            "coordinate": [
+              24.2,
+              74.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Deputy Rainer",
+            "coordinate": [
+              24.2,
+              74.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Riverpaw Runt",
+            "coordinate": [
+              26.4,
+              86.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Riverpaw Outrunner",
+            "coordinate": [
+              27,
+              80.5
+            ]
+          }
+        ]
+      }
+    },
+    "15": {
+      "name": "Investigate Echo Ridge",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ]
+      }
+    },
+    "16": {
+      "name": "Give Gerard a Drink",
+      "status": "excluded",
+      "reason": "Repeatable and not needed by an included chain.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Gerard Tiller",
+            "coordinate": [
+              43,
+              85.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Gerard Tiller",
+            "coordinate": [
+              43,
+              85.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Kobold Vermin",
+            "coordinate": [
+              47.4,
+              36.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Thug",
+            "coordinate": [
+              57.4,
+              48.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Miner",
+            "coordinate": [
+              39.6,
+              80.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Forager",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Ruklar the Trapper",
+            "coordinate": [
+              64.4,
+              56.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Thuros Lightfingers",
+            "coordinate": [
+              52.4,
+              59
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Narg the Taskmaster",
+            "coordinate": [
+              41,
+              77.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Laborer",
+            "coordinate": [
+              48.4,
+              29.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Cutpurse",
+            "coordinate": [
+              40.8,
+              53.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Riverpaw Runt",
+            "coordinate": [
+              26.4,
+              86.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Morgaine the Sly",
+            "coordinate": [
+              30.8,
+              64.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Gruff Swiftbite",
+            "coordinate": [
+              28.8,
+              89.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Garrick Padfoot",
+            "coordinate": [
+              57.4,
+              48.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Stonetusk Boar",
+            "coordinate": [
+              41,
+              69.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Bandit",
+            "coordinate": [
+              71.2,
+              77.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Worker",
+            "coordinate": [
+              47.8,
+              31.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc",
+            "coordinate": [
+              50.2,
+              66.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Goldtooth",
+            "coordinate": [
+              41.4,
+              78
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Hogger",
+            "coordinate": [
+              27.3,
+              86.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Fedfennel",
+            "coordinate": [
+              67.8,
+              39.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Morgan the Collector",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Rogue Wizard",
+            "coordinate": [
+              74.8,
+              51
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Tunneler",
+            "coordinate": [
+              39,
+              81.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Geomancer",
+            "coordinate": [
+              60.6,
+              50.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Riverpaw Outrunner",
+            "coordinate": [
+              27,
+              80.5
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Mangy Wolf",
+            "coordinate": [
+              37,
+              60.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Ambusher",
+            "coordinate": [
+              33.8,
+              55
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Lurker",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Streamrunner",
+            "coordinate": [
+              53.2,
+              63.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Young Forest Bear",
+            "coordinate": [
+              81.8,
+              59
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Erlan Drudgemoor",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Surena Caledon",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Servant of Azora",
+            "coordinate": [
+              64.2,
+              69.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Dead-Tooth Jack",
+            "coordinate": [
+              89.2,
+              79
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Dockmaster",
+            "coordinate": [
+              48.2,
+              87.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Bodyguard",
+            "coordinate": [
+              48,
+              87
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Dockworker",
+            "coordinate": [
+              47.6,
+              88.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Frozen Murloc",
+            "coordinate": [
+              77,
+              51.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Croaky",
+            "coordinate": [
+              76.4,
+              86
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Shinyfinder Narf",
+            "coordinate": [
+              49.2,
+              27.9
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Nimsy",
+            "coordinate": [
+              41.6,
+              79.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Battered Chest",
+            "coordinate": [
+              50,
+              26.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Ripe Pumpkin",
+            "coordinate": [
+              69.2,
+              77.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Water Barrel",
+            "coordinate": [
+              26.2,
+              91.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Battered Chest",
+            "coordinate": [
+              38.2,
+              82
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Bundle of Wood",
+            "coordinate": [
+              83.4,
+              59.2
+            ]
+          }
+        ]
+      }
+    },
+    "18": {
+      "name": "Brotherhood of Thieves",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Deputy Willem",
+            "coordinate": [
+              48.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Deputy Willem",
+            "coordinate": [
+              48.2,
+              42.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Defias Thug",
+            "coordinate": [
+              57.4,
+              48.2
+            ]
+          }
+        ]
+      }
+    },
+    "21": {
+      "name": "Skirmish at Echo Ridge",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ]
+      }
+    },
+    "33": {
+      "name": "Wolves Across the Border",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Eagan Peltskinner",
+            "coordinate": [
+              48.8,
+              40.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Eagan Peltskinner",
+            "coordinate": [
+              48.8,
+              40.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Kobold Vermin",
+            "coordinate": [
+              47.4,
+              36.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Forest Spider",
+            "coordinate": [
+              36.4,
+              55.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Thug",
+            "coordinate": [
+              57.4,
+              48.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Miner",
+            "coordinate": [
+              39.6,
+              80.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Mine Spider",
+            "coordinate": [
+              60,
+              49
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Forager",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Timber Wolf",
+            "coordinate": [
+              47,
+              39.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Laborer",
+            "coordinate": [
+              48.4,
+              29.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Cutpurse",
+            "coordinate": [
+              40.8,
+              53.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Riverpaw Runt",
+            "coordinate": [
+              26.4,
+              86.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Garrick Padfoot",
+            "coordinate": [
+              57.4,
+              48.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Stonetusk Boar",
+            "coordinate": [
+              41,
+              69.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Bandit",
+            "coordinate": [
+              71.2,
+              77.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Prowler",
+            "coordinate": [
+              84.2,
+              61.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Longsnout",
+            "coordinate": [
+              25.6,
+              79.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Worker",
+            "coordinate": [
+              47.8,
+              31.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc",
+            "coordinate": [
+              50.2,
+              66.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Young Wolf",
+            "coordinate": [
+              48.2,
+              39.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Princess",
+            "coordinate": [
+              69.6,
+              79.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Hogger",
+            "coordinate": [
+              27.3,
+              86.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Rogue Wizard",
+            "coordinate": [
+              74.8,
+              51
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Tunneler",
+            "coordinate": [
+              39,
+              81.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Geomancer",
+            "coordinate": [
+              60.6,
+              50.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Riverpaw Outrunner",
+            "coordinate": [
+              27,
+              80.5
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Rockhide Boar",
+            "coordinate": [
+              41.1,
+              66.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Mangy Wolf",
+            "coordinate": [
+              37,
+              60.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Lurker",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Streamrunner",
+            "coordinate": [
+              53.2,
+              63.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Young Forest Bear",
+            "coordinate": [
+              81.8,
+              59
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Erlan Drudgemoor",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Gray Forest Wolf",
+            "coordinate": [
+              74.4,
+              63
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Bodyguard",
+            "coordinate": [
+              48,
+              87
+            ]
+          }
+        ]
+      }
+    },
+    "35": {
+      "name": "Further Concerns",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          }
+        ]
+      }
+    },
+    "37": {
+      "name": "Find the Lost Guards",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "A half-eaten body",
+            "coordinate": [
+              72.7,
+              60.3
+            ]
+          }
+        ]
+      }
+    },
+    "39": {
+      "name": "Deliver Thomas' Report",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "40": {
+      "name": "A Fishy Peril",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Remy \"Two Times\"",
+            "coordinate": [
+              42.2,
+              67.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "45": {
+      "name": "Discover Rolf's Fate",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "A half-eaten body",
+            "coordinate": [
+              72.7,
+              60.3
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Rolf's corpse",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          }
+        ]
+      }
+    },
+    "46": {
+      "name": "Bounty on Murlocs",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Murloc Forager",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Lurker",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Frozen Murloc",
+            "coordinate": [
+              77,
+              51.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Croaky",
+            "coordinate": [
+              76.4,
+              86
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Elder Finseer",
+            "coordinate": [
+              78.8,
+              57
+            ]
+          }
+        ]
+      }
+    },
+    "47": {
+      "name": "Gold Dust Exchange",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Remy \"Two Times\"",
+            "coordinate": [
+              42.2,
+              67.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Remy \"Two Times\"",
+            "coordinate": [
+              42.2,
+              67.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Kobold Miner",
+            "coordinate": [
+              39.6,
+              80.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Goldtooth",
+            "coordinate": [
+              41.4,
+              78
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Tunneler",
+            "coordinate": [
+              39,
+              81.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Geomancer",
+            "coordinate": [
+              60.6,
+              50.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Nimsy",
+            "coordinate": [
+              41.6,
+              79.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Geosculptor Yip",
+            "coordinate": [
+              61.3,
+              48.9
+            ]
+          }
+        ]
+      }
+    },
+    "52": {
+      "name": "Protect the Frontier",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          }
+        ]
+      }
+    },
+    "54": {
+      "name": "Report to Goldshire",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "59": {
+      "name": "Cloth and Leather Armor",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Sara Timberlain",
+            "coordinate": [
+              79.4,
+              68.6
+            ]
+          }
+        ]
+      }
+    },
+    "60": {
+      "name": "Kobold Candles",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "William Pestle",
+            "coordinate": [
+              43.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "William Pestle",
+            "coordinate": [
+              43.2,
+              65.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Kobold Miner",
+            "coordinate": [
+              39.6,
+              80.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Goldtooth",
+            "coordinate": [
+              41.4,
+              78
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Tunneler",
+            "coordinate": [
+              39,
+              81.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Geomancer",
+            "coordinate": [
+              60.6,
+              50.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Nimsy",
+            "coordinate": [
+              41.6,
+              79.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Geosculptor Yip",
+            "coordinate": [
+              61.3,
+              48.9
+            ]
+          }
+        ]
+      }
+    },
+    "61": {
+      "name": "Shipment to Stormwind",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "William Pestle",
+            "coordinate": [
+              43.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Morgan Pestle",
+            "coordinate": [
+              56.2,
+              64.8
+            ]
+          }
+        ]
+      }
+    },
+    "62": {
+      "name": "The Fargodeep Mine",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "71": {
+      "name": "Report to Thomas",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Rolf's corpse",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          }
+        ]
+      }
+    },
+    "76": {
+      "name": "The Jasperlode Mine",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "83": {
+      "name": "Red Linen Goods",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Sara Timberlain",
+            "coordinate": [
+              79.4,
+              68.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Sara Timberlain",
+            "coordinate": [
+              79.4,
+              68.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Defias Bandit",
+            "coordinate": [
+              71.2,
+              77.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Morgan the Collector",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Rogue Wizard",
+            "coordinate": [
+              74.8,
+              51
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Ambusher",
+            "coordinate": [
+              33.8,
+              55
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Erlan Drudgemoor",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Surena Caledon",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Dockmaster",
+            "coordinate": [
+              48.2,
+              87.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Bodyguard",
+            "coordinate": [
+              48,
+              87
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Dockworker",
+            "coordinate": [
+              47.6,
+              88.4
+            ]
+          }
+        ]
+      }
+    },
+    "84": {
+      "name": "Back to Billy",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "\"Auntie\" Bernice Stonefield",
+            "coordinate": [
+              34.4,
+              84.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Billy Maclure",
+            "coordinate": [
+              43,
+              85.8
+            ]
+          }
+        ]
+      }
+    },
+    "85": {
+      "name": "Lost Necklace",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "\"Auntie\" Bernice Stonefield",
+            "coordinate": [
+              34.4,
+              84.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Billy Maclure",
+            "coordinate": [
+              43,
+              85.8
+            ]
+          }
+        ]
+      }
+    },
+    "86": {
+      "name": "Pie for Billy",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Billy Maclure",
+            "coordinate": [
+              43,
+              85.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "\"Auntie\" Bernice Stonefield",
+            "coordinate": [
+              34.4,
+              84.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Stonetusk Boar",
+            "coordinate": [
+              41,
+              69.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Longsnout",
+            "coordinate": [
+              25.6,
+              79.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Princess",
+            "coordinate": [
+              69.6,
+              79.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Porcine Entourage",
+            "coordinate": [
+              69.8,
+              79.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Riverpaw Outrunner",
+            "coordinate": [
+              27,
+              80.5
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Rockhide Boar",
+            "coordinate": [
+              41.1,
+              66.4
+            ]
+          }
+        ]
+      }
+    },
+    "87": {
+      "name": "Goldtooth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Billy Maclure",
+            "coordinate": [
+              43,
+              85.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "\"Auntie\" Bernice Stonefield",
+            "coordinate": [
+              34.4,
+              84.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Goldtooth",
+            "coordinate": [
+              41.4,
+              78
+            ]
+          }
+        ]
+      }
+    },
+    "88": {
+      "name": "Princess Must Die!",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Ma Stonefield",
+            "coordinate": [
+              34.6,
+              84.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Ma Stonefield",
+            "coordinate": [
+              34.6,
+              84.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Prowler",
+            "coordinate": [
+              84.2,
+              61.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Princess",
+            "coordinate": [
+              69.6,
+              79.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Mangy Wolf",
+            "coordinate": [
+              37,
+              60.8
+            ]
+          }
+        ]
+      }
+    },
+    "106": {
+      "name": "Young Lovers",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Maybell Maclure",
+            "coordinate": [
+              43,
+              89.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Tommy Joe Stonefield",
+            "coordinate": [
+              29.8,
+              86
+            ]
+          }
+        ]
+      }
+    },
+    "107": {
+      "name": "Note to William",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Gramma Stonefield",
+            "coordinate": [
+              34.8,
+              83.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "William Pestle",
+            "coordinate": [
+              43.2,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "109": {
+      "name": "Report to Gryan Stoutmantle",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Guard Thomas",
+            "coordinate": [
+              74,
+              72.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Marshal Haggard",
+            "coordinate": [
+              84.6,
+              69.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Deputy Rainer",
+            "coordinate": [
+              24.2,
+              74.6
+            ]
+          },
+          {
+            "areaID": 40,
+            "name": "Farmer Saldean",
+            "coordinate": [
+              56,
+              31.2
+            ]
+          },
+          {
+            "areaID": 40,
+            "name": "Farmer Furlbrow",
+            "coordinate": [
+              60,
+              19.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 40,
+            "name": "Gryan Stoutmantle",
+            "coordinate": [
+              56.2,
+              47.6
+            ]
+          }
+        ]
+      }
+    },
+    "111": {
+      "name": "Speak with Gramma",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Tommy Joe Stonefield",
+            "coordinate": [
+              29.8,
+              86
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Gramma Stonefield",
+            "coordinate": [
+              34.8,
+              83.8
+            ]
+          }
+        ]
+      }
+    },
+    "112": {
+      "name": "Collecting Kelp",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "William Pestle",
+            "coordinate": [
+              43.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "William Pestle",
+            "coordinate": [
+              43.2,
+              65.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Murloc",
+            "coordinate": [
+              50.2,
+              66.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Streamrunner",
+            "coordinate": [
+              53.2,
+              63.6
+            ]
+          }
+        ]
+      }
+    },
+    "114": {
+      "name": "The Escape",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "William Pestle",
+            "coordinate": [
+              43.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Maybell Maclure",
+            "coordinate": [
+              43,
+              89.6
+            ]
+          }
+        ]
+      }
+    },
+    "123": {
+      "name": "The Collector",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "137": {
+      "name": "<NYI> <TXT> Stormwind Commendation",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "147": {
+      "name": "Manhunt",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Morgan the Collector",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          }
+        ]
+      }
+    },
+    "176": {
+      "name": "Wanted: \"Hogger\"",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Wanted Poster",
+            "coordinate": [
+              24.5,
+              74.7
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Wanted Poster",
+            "coordinate": [
+              24.6,
+              78.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Hogger",
+            "coordinate": [
+              27.3,
+              86.8
+            ]
+          }
+        ]
+      }
+    },
+    "212": {
+      "name": "A Meal Served Cold",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 40,
+      "offerMinimum": 35,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Angus Stern",
+            "coordinate": [
+              41.4,
+              89.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Angus Stern",
+            "coordinate": [
+              41.4,
+              89.2
+            ]
+          }
+        ]
+      }
+    },
+    "239": {
+      "name": "Westbrook Garrison Needs Help!",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Deputy Rainer",
+            "coordinate": [
+              24.2,
+              74.6
+            ]
+          }
+        ]
+      }
+    },
+    "332": {
+      "name": "Wine Shop Advert",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Renato Gallina",
+            "coordinate": [
+              57,
+              63.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Suzetta Gallina",
+            "coordinate": [
+              52.2,
+              67.6
+            ]
+          }
+        ]
+      }
+    },
+    "333": {
+      "name": "Harlan Needs a Resupply",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Harlan Bagley",
+            "coordinate": [
+              55,
+              56
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Rema Schneider",
+            "coordinate": [
+              49.6,
+              55.4
+            ]
+          }
+        ]
+      }
+    },
+    "334": {
+      "name": "Package for Thurman",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Rema Schneider",
+            "coordinate": [
+              49.6,
+              55.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Thurman Schneider",
+            "coordinate": [
+              42.4,
+              76.4
+            ]
+          }
+        ]
+      }
+    },
+    "335": {
+      "name": "A Noble Brew",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Zardeth of the Black Claw",
+            "coordinate": [
+              26.4,
+              78.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Zardeth of the Black Claw",
+            "coordinate": [
+              26.4,
+              78.4
+            ]
+          }
+        ]
+      }
+    },
+    "336": {
+      "name": "A Noble Brew",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Zardeth of the Black Claw",
+            "coordinate": [
+              26.4,
+              78.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Lord Baurles K. Wishock",
+            "coordinate": [
+              75,
+              31.4
+            ]
+          }
+        ]
+      }
+    },
+    "343": {
+      "name": "Speaking of Fortitude",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 24,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Brother Kristoff",
+            "coordinate": [
+              45.8,
+              38.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Milton Sheaf",
+            "coordinate": [
+              74,
+              7.6
+            ]
+          }
+        ]
+      }
+    },
+    "344": {
+      "name": "Brother Paxton",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 24,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Milton Sheaf",
+            "coordinate": [
+              74,
+              7.6
+            ]
+          }
+        ]
+      }
+    },
+    "345": {
+      "name": "Ink Supplies",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 24,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 44,
+            "name": "Foreman Oslow",
+            "coordinate": [
+              32.2,
+              48.6
+            ]
+          }
+        ]
+      }
+    },
+    "346": {
+      "name": "Return to Kristoff",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 24,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Brother Kristoff",
+            "coordinate": [
+              45.8,
+              38.6
+            ]
+          }
+        ]
+      }
+    },
+    "347": {
+      "name": "Rethban Ore",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 24,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 44,
+            "name": "Foreman Oslow",
+            "coordinate": [
+              32.2,
+              48.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 44,
+            "name": "Redridge Drudger",
+            "coordinate": [
+              20.2,
+              27.8
+            ]
+          }
+        ]
+      }
+    },
+    "350": {
+      "name": "Look to an Old Friend",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Master Mathias Shaw",
+            "coordinate": [
+              75.8,
+              59.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ]
+      }
+    },
+    "353": {
+      "name": "Stormpike's Delivery",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Grimand Elmore",
+            "coordinate": [
+              51.6,
+              12.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 38,
+            "name": "Mountaineer Stormpike",
+            "coordinate": [
+              24.8,
+              18.2
+            ]
+          }
+        ]
+      }
+    },
+    "373": {
+      "name": "The Unsent Letter",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 22,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ]
+      }
+    },
+    "389": {
+      "name": "Bazil Thredd",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 22,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Warden Thelwater",
+            "coordinate": [
+              41.2,
+              58
+            ]
+          }
+        ]
+      }
+    },
+    "392": {
+      "name": "The Curious Visitor",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 29,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Warden Thelwater",
+            "coordinate": [
+              41.2,
+              58
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ]
+      }
+    },
+    "393": {
+      "name": "Shadow of the Past",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 29,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Master Mathias Shaw",
+            "coordinate": [
+              75.8,
+              59.8
+            ]
+          }
+        ]
+      }
+    },
+    "394": {
+      "name": "The Head of the Beast",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Master Mathias Shaw",
+            "coordinate": [
+              75.8,
+              59.8
+            ]
+          }
+        ]
+      }
+    },
+    "395": {
+      "name": "Brotherhood's End",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Master Mathias Shaw",
+            "coordinate": [
+              75.8,
+              59.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ]
+      }
+    },
+    "396": {
+      "name": "An Audience with the King",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Lady Katrana Prestor",
+            "coordinate": [
+              78,
+              17.8
+            ]
+          }
+        ]
+      }
+    },
+    "397": {
+      "name": "You Have Served Us Well",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Zardeth of the Black Claw",
+            "coordinate": [
+              26.4,
+              78.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Zggi",
+            "coordinate": [
+              26.4,
+              78.4
+            ]
+          }
+        ]
+      }
+    },
+    "399": {
+      "name": "Humble Beginnings",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 10,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ]
+      }
+    },
+    "434": {
+      "name": "The Attack!",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Tyrion",
+            "coordinate": [
+              69.2,
+              14.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ]
+      }
+    },
+    "538": {
+      "name": "Southshore",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 38,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Milton Sheaf",
+            "coordinate": [
+              74,
+              7.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 267,
+            "name": "Loremaster Dibbs",
+            "coordinate": [
+              50.4,
+              57
+            ]
+          }
+        ]
+      }
+    },
+    "542": {
+      "name": "Return to Milton",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 38,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Milton Sheaf",
+            "coordinate": [
+              74,
+              7.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 267,
+            "name": "Loremaster Dibbs",
+            "coordinate": [
+              50.4,
+              57
+            ]
+          }
+        ]
+      }
+    },
+    "543": {
+      "name": "The Perenolde Tiara",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 40,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Count Remington Ridgewell",
+            "coordinate": [
+              74,
+              30
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Count Remington Ridgewell",
+            "coordinate": [
+              74,
+              30
+            ]
+          }
+        ]
+      }
+    },
+    "579": {
+      "name": "Stormwind Library",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Donyal Tovald",
+            "coordinate": [
+              71.6,
+              7.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Donyal Tovald",
+            "coordinate": [
+              71.6,
+              7.4
+            ]
+          }
+        ]
+      }
+    },
+    "690": {
+      "name": "Malin's Request",
+      "status": "other-zone",
+      "reason": "Stormwind pickup sends the player to Skuerto at Refuge Pointe in Arathi Highlands; it does not belong to Elwynn.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 32,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Archmage Malin",
+            "coordinate": [
+              39.8,
+              81.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 45,
+            "name": "Skuerto",
+            "coordinate": [
+              46.6,
+              47
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Malin's Request (1/2)",
+          "requiredLevel": 30,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            {
+              "id": 2708,
+              "spawns": [
+                [
+                  1519,
+                  50.6,
+                  87.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "breadcrumbForQuestId": 691,
+          "finishedBy": [
+            [
+              2789
+            ]
+          ],
+          "name": "Malin's Request",
+          "objectivesText": [
+            "Find Skuerto at Refuge Pointe in the Arathi Highlands."
+          ],
+          "questLevel": 32,
+          "requiredLevel": 30,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            [
+              2708
+            ]
+          ],
+          "zoneOrSort": 1519
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Malin's Request",
+          "prerequisiteReferences": [],
+          "questLevel": 32,
+          "races": [],
+          "requiredLevel": 30,
+          "zoneId": 1519
+        }
+      }
+    },
+    "783": {
+      "name": "A Threat Within",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Deputy Willem",
+            "coordinate": [
+              48.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ]
+      }
+    },
+    "1015": {
+      "name": "The New Frontier",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Crier Goodman",
+            "coordinate": [
+              55,
+              62.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "1097": {
+      "name": "Elmore's Task",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Smith Argus",
+            "coordinate": [
+              41.6,
+              65.6
+            ]
+          },
+          {
+            "areaID": 44,
+            "name": "Verner Osgood",
+            "coordinate": [
+              31,
+              47.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Grimand Elmore",
+            "coordinate": [
+              51.6,
+              12.2
+            ]
+          }
+        ]
+      }
+    },
+    "1241": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 28,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Bishop DeLavey",
+            "coordinate": [
+              78.2,
+              25.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Jorgen",
+            "coordinate": [
+              73,
+              78.6
+            ]
+          }
+        ]
+      }
+    },
+    "1242": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 28,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Jorgen",
+            "coordinate": [
+              73,
+              78.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ]
+      }
+    },
+    "1243": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 28,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 10,
+            "name": "Watcher Backus",
+            "coordinate": [
+              74.4,
+              40.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ]
+      }
+    },
+    "1244": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 10,
+            "name": "Watcher Backus",
+            "coordinate": [
+              74.4,
+              40.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 10,
+            "name": "Watcher Backus",
+            "coordinate": [
+              74.4,
+              40.8
+            ]
+          }
+        ]
+      }
+    },
+    "1245": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 10,
+            "name": "Watcher Backus",
+            "coordinate": [
+              74.4,
+              40.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ]
+      }
+    },
+    "1246": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Dashel Stonefist",
+            "coordinate": [
+              70.2,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "1247": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Dashel Stonefist",
+            "coordinate": [
+              70.2,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ]
+      }
+    },
+    "1248": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 11,
+            "name": "Mikhail",
+            "coordinate": [
+              10.6,
+              60.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ]
+      }
+    },
+    "1249": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 11,
+            "name": "Mikhail",
+            "coordinate": [
+              10.6,
+              60.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 11,
+            "name": "Mikhail",
+            "coordinate": [
+              10.6,
+              60.6
+            ]
+          }
+        ]
+      }
+    },
+    "1250": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 11,
+            "name": "Tapoke \"Slim\" Jahn",
+            "coordinate": [
+              10.6,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 11,
+            "name": "Mikhail",
+            "coordinate": [
+              10.6,
+              60.6
+            ]
+          }
+        ]
+      }
+    },
+    "1264": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 11,
+            "name": "Mikhail",
+            "coordinate": [
+              10.6,
+              60.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 15,
+            "name": "Commander Samaul",
+            "coordinate": [
+              68,
+              48.6
+            ]
+          }
+        ]
+      }
+    },
+    "1265": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 35,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 15,
+            "name": "Commander Samaul",
+            "coordinate": [
+              68,
+              48.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 15,
+            "name": "Archmage Tervosh",
+            "coordinate": [
+              66.4,
+              49.2
+            ]
+          }
+        ]
+      }
+    },
+    "1266": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 36,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 15,
+            "name": "Archmage Tervosh",
+            "coordinate": [
+              66.4,
+              49.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 15,
+            "name": "Private Hendel",
+            "coordinate": [
+              45.2,
+              24.6
+            ]
+          }
+        ]
+      }
+    },
+    "1267": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 38,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 15,
+            "name": "Lady Jaina Proudmoore",
+            "coordinate": [
+              45.2,
+              24.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 15,
+            "name": "Lady Jaina Proudmoore",
+            "coordinate": [
+              45.2,
+              24.2
+            ]
+          }
+        ]
+      }
+    },
+    "1274": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 28,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Thomas",
+            "coordinate": [
+              41.2,
+              30.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Bishop DeLavey",
+            "coordinate": [
+              78.2,
+              25.2
+            ]
+          }
+        ]
+      }
+    },
+    "1301": {
+      "name": "James Hyal",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 35,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 11,
+            "name": "Vincent Hyal",
+            "coordinate": [
+              10.8,
+              60.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Connor Rivers",
+            "coordinate": [
+              40.4,
+              91.6
+            ]
+          }
+        ]
+      }
+    },
+    "1324": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 38,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 15,
+            "name": "Private Hendel",
+            "coordinate": [
+              45.2,
+              24.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 15,
+            "name": "Archmage Tervosh",
+            "coordinate": [
+              66.4,
+              49.2
+            ]
+          }
+        ]
+      }
+    },
+    "1363": {
+      "name": "Mazen's Behest",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 41,
+      "offerMinimum": 37,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Mazen Mac'Nadir",
+            "coordinate": [
+              41.4,
+              64.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Acolyte Dellis",
+            "coordinate": [
+              40.8,
+              64
+            ]
+          }
+        ]
+      }
+    },
+    "1364": {
+      "name": "Mazen's Behest",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 41,
+      "offerMinimum": 37,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Acolyte Dellis",
+            "coordinate": [
+              40.8,
+              64
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 4,
+            "name": "Watcher Mahar Ba",
+            "coordinate": [
+              67.6,
+              19.2
+            ]
+          }
+        ]
+      }
+    },
+    "1447": {
+      "name": "The Missing Diplomat",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 28,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Dashel Stonefist",
+            "coordinate": [
+              70.2,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Dashel Stonefist",
+            "coordinate": [
+              70.2,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "1448": {
+      "name": "In Search of The Temple",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 43,
+      "offerMinimum": 38,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Brohann Caskbelly",
+            "coordinate": [
+              64.2,
+              20.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Brohann Caskbelly",
+            "coordinate": [
+              64.2,
+              20.8
+            ]
+          }
+        ]
+      }
+    },
+    "1449": {
+      "name": "To The Hinterlands",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 43,
+      "offerMinimum": 38,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Brohann Caskbelly",
+            "coordinate": [
+              64.2,
+              20.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 47,
+            "name": "Falstad Wildhammer",
+            "coordinate": [
+              11.8,
+              46.8
+            ]
+          }
+        ]
+      }
+    },
+    "1477": {
+      "name": "Vital Supplies",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 45,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 10,
+            "name": "Watchmaster Sorigal",
+            "coordinate": [
+              75.8,
+              46.2
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "High Sorcerer Andromath",
+            "coordinate": [
+              37.6,
+              81.6
+            ]
+          }
+        ]
+      }
+    },
+    "2158": {
+      "name": "Rest and Relaxation",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Falkhaan Isenstrider",
+            "coordinate": [
+              45.6,
+              47.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Innkeeper Farley",
+            "coordinate": [
+              43.8,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "2745": {
+      "name": "Infiltrating the Castle",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Elling Trias",
+            "coordinate": [
+              60,
+              64.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Tyrion",
+            "coordinate": [
+              69.2,
+              14.6
+            ]
+          }
+        ]
+      }
+    },
+    "2746": {
+      "name": "Items of Some Consequence",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Tyrion",
+            "coordinate": [
+              69.2,
+              14.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Tyrion",
+            "coordinate": [
+              69.2,
+              14.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1519,
+            "name": "Lord Gregor Lescovar",
+            "coordinate": [
+              68.4,
+              14.6
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Marzon the Silent Blade",
+            "coordinate": [
+              68,
+              14.2
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Forlorn Spirit",
+            "coordinate": [
+              29.6,
+              61.8
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Old Town Thug",
+            "coordinate": [
+              70,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "3765": {
+      "name": "The Corruption Abroad",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 24,
+      "offerMinimum": 18,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 148,
+            "name": "Gershala Nightwhisper",
+            "coordinate": [
+              38.4,
+              43
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Argos Nightwhisper",
+            "coordinate": [
+              21.4,
+              55.6
+            ]
+          }
+        ]
+      }
+    },
+    "3787": {
+      "name": "Jonespyre's Request",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Tannysa",
+            "coordinate": [
+              44.8,
+              77
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 357,
+            "name": "Quintis Jonespyre",
+            "coordinate": [
+              32.4,
+              43.8
+            ]
+          }
+        ]
+      }
+    },
+    "3789": {
+      "name": "Assisting Arch Druid Staghelm",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Innkeeper Allison",
+            "coordinate": [
+              52.6,
+              65.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "3903": {
+      "name": "Milly Osworth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Deputy Willem",
+            "coordinate": [
+              48.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Milly Osworth",
+            "coordinate": [
+              50.6,
+              39.4
+            ]
+          }
+        ]
+      }
+    },
+    "3904": {
+      "name": "Milly's Harvest",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Milly Osworth",
+            "coordinate": [
+              50.6,
+              39.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Milly Osworth",
+            "coordinate": [
+              50.6,
+              39.4
+            ]
+          }
+        ]
+      }
+    },
+    "3905": {
+      "name": "Grape Manifest",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Milly Osworth",
+            "coordinate": [
+              50.6,
+              39.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Brother Neals",
+            "coordinate": [
+              49.4,
+              41.4
+            ]
+          }
+        ]
+      }
+    },
+    "5048": {
+      "name": "Good Natured Emma",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Royal Factor Bathrilor",
+            "coordinate": [
+              48.6,
+              30.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Ol' Emma",
+            "coordinate": [
+              52.4,
+              41.8
+            ]
+          }
+        ]
+      }
+    },
+    "5066": {
+      "name": "A Call to Arms: The Plaguelands!",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Crier Goodman",
+            "coordinate": [
+              55,
+              62.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 28,
+            "name": "Commander Ashlam Valorfist",
+            "coordinate": [
+              42.8,
+              84
+            ]
+          }
+        ]
+      }
+    },
+    "5261": {
+      "name": "Eagan Peltskinner",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Deputy Willem",
+            "coordinate": [
+              48.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Eagan Peltskinner",
+            "coordinate": [
+              48.8,
+              40.2
+            ]
+          }
+        ]
+      }
+    },
+    "5545": {
+      "name": "A Bundle of Trouble",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Supervisor Raelen",
+            "coordinate": [
+              81.4,
+              66
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Supervisor Raelen",
+            "coordinate": [
+              81.4,
+              66
+            ]
+          }
+        ]
+      }
+    },
+    "5805": {
+      "name": "Welcome!",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Merissa Stilwell",
+            "coordinate": [
+              47.4,
+              41.8
+            ]
+          }
+        ]
+      }
+    },
+    "6182": {
+      "name": "The First and the Last",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 56,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Master Mathias Shaw",
+            "coordinate": [
+              75.8,
+              59.8
+            ]
+          }
+        ]
+      }
+    },
+    "6183": {
+      "name": "Honor the Dead",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 56,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Master Mathias Shaw",
+            "coordinate": [
+              75.8,
+              59.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Master Mathias Shaw",
+            "coordinate": [
+              75.8,
+              59.8
+            ]
+          }
+        ]
+      }
+    },
+    "6186": {
+      "name": "The Blightcaller Cometh",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 56,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 28,
+            "name": "Flint Shadowmore",
+            "coordinate": [
+              43.6,
+              84.4
+            ]
+          }
+        ]
+      }
+    },
+    "6402": {
+      "name": "Stormwind Rendezvous",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Reginald Windsor",
+            "coordinate": [
+              32,
+              49.2
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Reginald Windsor",
+            "coordinate": [
+              68,
+              29.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 46,
+            "name": "Marshal Maxwell",
+            "coordinate": [
+              84.6,
+              68.8
+            ]
+          }
+        ]
+      }
+    },
+    "6403": {
+      "name": "The Great Masquerade",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Reginald Windsor",
+            "coordinate": [
+              32,
+              49.2
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Reginald Windsor",
+            "coordinate": [
+              68,
+              29.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ]
+      }
+    },
+    "6501": {
+      "name": "The Dragon's Eye",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 618,
+            "name": "Haleh",
+            "coordinate": [
+              54.4,
+              51.2
+            ]
+          }
+        ]
+      }
+    },
+    "7495": {
+      "name": "Victory for the Alliance",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ]
+      }
+    },
+    "7496": {
+      "name": "Celebrating Good Times",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Major Mattingly",
+            "coordinate": [
+              61.4,
+              78.6
+            ]
+          }
+        ]
+      }
+    },
+    "7497": {
+      "name": "The Journey Has Just Begun",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Major Mattingly",
+            "coordinate": [
+              61.4,
+              78.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Major Mattingly",
+            "coordinate": [
+              61.4,
+              78.6
+            ]
+          }
+        ]
+      }
+    },
+    "7781": {
+      "name": "The Lord of Blackrock",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ]
+      }
+    },
+    "7782": {
+      "name": "The Lord of Blackrock",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Field Marshal Stonebridge",
+            "coordinate": [
+              66.6,
+              72.4
+            ]
+          }
+        ]
+      }
+    },
+    "7791": {
+      "name": "A Donation of Wool",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1519,
+            "name": "Lord Gregor Lescovar",
+            "coordinate": [
+              68.4,
+              14.6
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Marzon the Silent Blade",
+            "coordinate": [
+              68,
+              14.2
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Forlorn Spirit",
+            "coordinate": [
+              29.6,
+              61.8
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Old Town Thug",
+            "coordinate": [
+              70,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "7793": {
+      "name": "A Donation of Silk",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1519,
+            "name": "Lord Gregor Lescovar",
+            "coordinate": [
+              68.4,
+              14.6
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Marzon the Silent Blade",
+            "coordinate": [
+              68,
+              14.2
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Forlorn Spirit",
+            "coordinate": [
+              29.6,
+              61.8
+            ]
+          },
+          {
+            "areaID": 1519,
+            "name": "Old Town Thug",
+            "coordinate": [
+              70,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "7794": {
+      "name": "A Donation of Mageweave",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ]
+      }
+    },
+    "7795": {
+      "name": "A Donation of Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1519,
+            "name": "Stormwind Royal Guard",
+            "coordinate": [
+              76.8,
+              19.4
+            ]
+          }
+        ]
+      }
+    },
+    "7796": {
+      "name": "Additional Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Clavicus Knavingham",
+            "coordinate": [
+              44.2,
+              73.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1519,
+            "name": "Stormwind Royal Guard",
+            "coordinate": [
+              76.8,
+              19.4
+            ]
+          }
+        ]
+      }
+    },
+    "7961": {
+      "name": "Waskily Wabbits!",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {}
+    },
+    "7962": {
+      "name": "Wabbit Pelts",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {}
+    },
+    "91723": {
+      "name": "Delicate Instruments",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Hamish Bergwort",
+            "coordinate": [
+              65,
+              69.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Hamish Bergwort",
+            "coordinate": [
+              65,
+              69.8
+            ]
+          }
+        ]
+      }
+    },
+    "91724": {
+      "name": "Delicate Instruments",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Hamish Bergwort",
+            "coordinate": [
+              65,
+              69.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Hamish Bergwort",
+            "coordinate": [
+              65,
+              69.8
+            ]
+          }
+        ]
+      }
+    },
+    "91725": {
+      "name": "Stolen Enchanting Supplies",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Blixie Fitzwink",
+            "coordinate": [
+              63.2,
+              72.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Blixie Fitzwink",
+            "coordinate": [
+              63.2,
+              72.6
+            ]
+          }
+        ]
+      }
+    },
+    "91732": {
+      "name": "Good Steel",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Hagar Lowe",
+            "coordinate": [
+              82.4,
+              63.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Hagar Lowe",
+            "coordinate": [
+              82.4,
+              63.8
+            ]
+          }
+        ]
+      }
+    },
+    "91733": {
+      "name": "Downstream",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Ormin Pelford",
+            "coordinate": [
+              76.4,
+              72
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Ormin Pelford",
+            "coordinate": [
+              76.4,
+              72
+            ]
+          }
+        ]
+      }
+    },
+    "91736": {
+      "name": "Applejack Still",
+      "status": "unresolved",
+      "reason": "Level 0 record has no supported pickup or objective mechanics; do not invent an Applejack Still action.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 0,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Applejack Still",
+            "coordinate": [
+              24.5,
+              58.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Applejack Still",
+            "coordinate": [
+              24.5,
+              58.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Kobold Vermin",
+            "coordinate": [
+              47.4,
+              36.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Forest Spider",
+            "coordinate": [
+              36.4,
+              55.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Thug",
+            "coordinate": [
+              57.4,
+              48.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Miner",
+            "coordinate": [
+              39.6,
+              80.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Mine Spider",
+            "coordinate": [
+              60,
+              49
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Forager",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Ruklar the Trapper",
+            "coordinate": [
+              64.4,
+              56.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Timber Wolf",
+            "coordinate": [
+              47,
+              39.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Narg the Taskmaster",
+            "coordinate": [
+              41,
+              77.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Laborer",
+            "coordinate": [
+              48.4,
+              29.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Cutpurse",
+            "coordinate": [
+              40.8,
+              53.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Riverpaw Runt",
+            "coordinate": [
+              26.4,
+              86.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Stonetusk Boar",
+            "coordinate": [
+              41,
+              69.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Bandit",
+            "coordinate": [
+              71.2,
+              77.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Prowler",
+            "coordinate": [
+              84.2,
+              61.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Longsnout",
+            "coordinate": [
+              25.6,
+              79.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Coastrunner",
+            "coordinate": [
+              13.6,
+              71.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Worker",
+            "coordinate": [
+              47.8,
+              31.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc",
+            "coordinate": [
+              50.2,
+              66.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Young Wolf",
+            "coordinate": [
+              48.2,
+              39.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Goldtooth",
+            "coordinate": [
+              41.4,
+              78
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Princess",
+            "coordinate": [
+              69.6,
+              79.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Porcine Entourage",
+            "coordinate": [
+              69.8,
+              79.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Hogger",
+            "coordinate": [
+              27.3,
+              86.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Mother Fang",
+            "coordinate": [
+              61.7,
+              47.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Morgan the Collector",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Rogue Wizard",
+            "coordinate": [
+              74.8,
+              51
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Tunneler",
+            "coordinate": [
+              39,
+              81.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Geomancer",
+            "coordinate": [
+              60.6,
+              50.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Riverpaw Outrunner",
+            "coordinate": [
+              27,
+              80.5
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Rockhide Boar",
+            "coordinate": [
+              41.1,
+              66.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Mangy Wolf",
+            "coordinate": [
+              37,
+              60.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Lurker",
+            "coordinate": [
+              79.8,
+              55.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Murloc Streamrunner",
+            "coordinate": [
+              53.2,
+              63.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Young Forest Bear",
+            "coordinate": [
+              81.8,
+              59
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Erlan Drudgemoor",
+            "coordinate": [
+              71,
+              80.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Gray Forest Wolf",
+            "coordinate": [
+              74.4,
+              63
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Dead-Tooth Jack",
+            "coordinate": [
+              89.2,
+              79
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Defias Dockworker",
+            "coordinate": [
+              47.6,
+              88.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Shinyfinder Narf",
+            "coordinate": [
+              49.2,
+              27.9
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Nimsy",
+            "coordinate": [
+              41.6,
+              79.8
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Geosculptor Yip",
+            "coordinate": [
+              61.3,
+              48.9
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Battered Chest",
+            "coordinate": [
+              50,
+              26.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Ripe Pumpkin",
+            "coordinate": [
+              69.2,
+              77.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Food Crate",
+            "coordinate": [
+              43.9,
+              65.7
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Battered Chest",
+            "coordinate": [
+              38.2,
+              82
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Bundle of Wood",
+            "coordinate": [
+              83.4,
+              59.2
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Applejack Still",
+          "requiredLevel": 7,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            {
+              "id": 562131,
+              "spawns": [
+                [
+                  12,
+                  24.6,
+                  58
+                ]
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              562131
+            ]
+          ],
+          "name": "Applejack Still",
+          "questLevel": 1,
+          "requiredLevel": 1,
+          "requiredRaces": 4294967373,
+          "startedBy": [
+            null,
+            [
+              562131
+            ]
+          ],
+          "zoneOrSort": 12
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Applejack Still",
+          "prerequisiteReferences": [
+            91738
+          ],
+          "questLevel": 0,
+          "races": [],
+          "zoneId": 12
+        }
+      }
+    },
+    "91738": {
+      "name": "An Apple Treat",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Sergeant De Vries",
+            "coordinate": [
+              24,
+              73
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Sergeant De Vries",
+            "coordinate": [
+              24,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    "91740": {
+      "name": "Croaky's Head",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Merell Ross",
+            "coordinate": [
+              84.6,
+              79.2
+            ]
+          }
+        ]
+      }
+    },
+    "91741": {
+      "name": "Nibbled-On Book",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ]
+      }
+    },
+    "91743": {
+      "name": "Rascally Rodents",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Kobold Vermin",
+            "coordinate": [
+              47.4,
+              36.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Laborer",
+            "coordinate": [
+              48.4,
+              29.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Worker",
+            "coordinate": [
+              47.8,
+              31.6
+            ]
+          }
+        ]
+      }
+    },
+    "91745": {
+      "name": "Mining Consultant",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Kelsey Fargo",
+            "coordinate": [
+              47.2,
+              32.2
+            ]
+          }
+        ]
+      }
+    },
+    "91746": {
+      "name": "Elmpaw's Head",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Helene Peltskinner",
+            "coordinate": [
+              46.2,
+              62.2
+            ]
+          }
+        ]
+      }
+    },
+    "91751": {
+      "name": "Rough Wolf Pelts",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Helene Peltskinner",
+            "coordinate": [
+              46.2,
+              62.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Helene Peltskinner",
+            "coordinate": [
+              46.2,
+              62.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Prowler",
+            "coordinate": [
+              84.2,
+              61.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Gray Forest Wolf",
+            "coordinate": [
+              74.4,
+              63
+            ]
+          }
+        ]
+      }
+    },
+    "91752": {
+      "name": "The Big Picture",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Kelsey Fargo",
+            "coordinate": [
+              47.2,
+              32.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Shinyfinder Narf",
+            "coordinate": [
+              49.2,
+              27.9
+            ]
+          }
+        ]
+      }
+    },
+    "91753": {
+      "name": "An Enchanting Lesson",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "elwynn-forest",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Kitta Firewind",
+            "coordinate": [
+              64.8,
+              70.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Kitta Firewind",
+            "coordinate": [
+              64.8,
+              70.6
+            ]
+          }
+        ]
+      },
+      "requirements": [],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Alliance"
+          },
+          {
+            "race": [
+              3,
+              4,
+              7,
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 5
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 333,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "An Enchanting Lesson",
+          "requiredLevel": 5,
+          "requiredRaces": 4294967373,
+          "requiredSkill": [
+            333,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 11072,
+              "spawns": [
+                [
+                  12,
+                  64.8,
+                  70.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              11072
+            ]
+          ],
+          "name": "An Enchanting Lesson",
+          "objectivesText": [
+            "Kitta Firewind in the Tower of Azora wants you to collect 3 Luminous Residue.",
+            "",
+            "Luminous Residue can be obtained by disenchanting Crude Wax Effigies dropped by Kobold Geomancers."
+          ],
+          "questLevel": 7,
+          "requiredLevel": 5,
+          "requiredRaces": 4294967373,
+          "requiredSkill": [
+            333,
+            1
+          ],
+          "startedBy": [
+            [
+              11072
+            ]
+          ],
+          "zoneOrSort": 12
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "An Enchanting Lesson",
+          "prerequisiteReferences": [],
+          "questLevel": 7,
+          "races": [
+            3,
+            4,
+            7,
+            95
+          ],
+          "requiredLevel": 5,
+          "zoneId": 12
+        }
+      }
+    },
+    "91758": {
+      "name": "Follow That Kobold!",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal McBride",
+            "coordinate": [
+              48.8,
+              41.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Tordrin Sternblade",
+            "coordinate": [
+              51.2,
+              40.8
+            ]
+          }
+        ]
+      }
+    },
+    "91772": {
+      "name": "Shhh! We're Hunting Kobolds",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Tordrin Sternblade",
+            "coordinate": [
+              51.2,
+              40.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "91775": {
+      "name": "Book Return",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Kobold Miner",
+            "coordinate": [
+              39.6,
+              80.2
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Kobold Tunneler",
+            "coordinate": [
+              39,
+              81.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Nimsy",
+            "coordinate": [
+              41.6,
+              79.8
+            ]
+          }
+        ]
+      }
+    },
+    "91777": {
+      "name": "Rare Books",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Marshal Dughan",
+            "coordinate": [
+              42.2,
+              65.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Mother Fang",
+            "coordinate": [
+              61.7,
+              47.6
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Geosculptor Yip",
+            "coordinate": [
+              61.3,
+              48.9
+            ]
+          }
+        ]
+      }
+    },
+    "92124": {
+      "name": "Book Inventory",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Brother Paxton",
+            "coordinate": [
+              49.4,
+              40.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Daniel",
+            "coordinate": [
+              49.4,
+              40.6
+            ]
+          }
+        ]
+      }
+    },
+    "93963": {
+      "name": "Exploring the Alliance",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ]
+      }
+    },
+    "94947": {
+      "name": "Welcome to Azeroth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 36,
+            "name": "Denaaris Stargale",
+            "coordinate": [
+              12.4,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "95065": {
+      "name": "Fishin' Time",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Gilbert Gray",
+            "coordinate": [
+              26.2,
+              47
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Gilbert Gray",
+            "coordinate": [
+              26.2,
+              47
+            ]
+          }
+        ]
+      }
+    },
+    "95771": {
+      "name": "A Taste of Darkness",
+      "status": "unresolved",
+      "reason": "No supported starter, objectives, or return is present in the frozen source observations.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 6,
+      "ownership": "not-authored",
+      "locations": {},
+      "evidence": {
+        "wowhead": {
+          "classes": [],
+          "name": "A Taste of Darkness",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [],
+          "requiredLevel": 6,
+          "zoneId": 12
+        }
+      }
+    },
+    "97220": {
+      "name": "Philmor's Favor",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Manifest Clerk Philmor",
+            "coordinate": [
+              30.4,
+              29
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Elaine Trias",
+            "coordinate": [
+              60.4,
+              63.4
+            ]
+          }
+        ]
+      }
+    },
+    "97222": {
+      "name": "Gatehouse Goods",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Elaine Trias",
+            "coordinate": [
+              60.4,
+              63.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Elaine Trias",
+            "coordinate": [
+              60.4,
+              63.4
+            ]
+          }
+        ]
+      }
+    },
+    "97234": {
+      "name": "Reading Room",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 18,
+      "offerMinimum": 13,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Roy Lewells",
+            "coordinate": [
+              38.6,
+              62
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Donyal Tovald",
+            "coordinate": [
+              71.6,
+              7.4
+            ]
+          }
+        ]
+      }
+    },
+    "97237": {
+      "name": "Shelf Picked",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 18,
+      "offerMinimum": 13,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Donyal Tovald",
+            "coordinate": [
+              71.6,
+              7.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Roy Lewells",
+            "coordinate": [
+              38.6,
+              62
+            ]
+          }
+        ]
+      }
+    },
+    "97914": {
+      "name": "Expanding Horizons",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 17,
+      "offerMinimum": 13,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 148,
+            "name": "Thundris Windweaver",
+            "coordinate": [
+              37.4,
+              40.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Baros Alexston",
+            "coordinate": [
+              49,
+              30.2
+            ]
+          }
+        ]
+      }
+    },
+    "98190": {
+      "name": "A Friend of the Family",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 25,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 11,
+            "name": "Captain Stoutfist",
+            "coordinate": [
+              9.8,
+              57.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ]
+      }
+    },
+    "98191": {
+      "name": "A Friend of the Family",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 25,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Highlord Bolvar Fordragon",
+            "coordinate": [
+              78,
+              18
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1519,
+            "name": "Lord Grayson Shadowbreaker",
+            "coordinate": [
+              37.2,
+              33
+            ]
+          }
+        ]
+      }
+    },
+    "98219": {
+      "name": "The Shamed Lieutenant",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1519,
+            "name": "Lord Grayson Shadowbreaker",
+            "coordinate": [
+              37.2,
+              33
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 267,
+            "name": "Lieutenant Farren Orinelle",
+            "coordinate": [
+              51.4,
+              58.4
+            ]
+          }
+        ]
+      }
+    },
+    "99127": {
+      "name": "A Net Disaster",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Jason Mathers",
+            "coordinate": [
+              47.4,
+              62.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Jason Mathers",
+            "coordinate": [
+              47.4,
+              62.2
+            ]
+          }
+        ]
+      }
+    },
+    "99128": {
+      "name": "Slimy Menace",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Jason Mathers",
+            "coordinate": [
+              47.4,
+              62.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Jason Mathers",
+            "coordinate": [
+              47.4,
+              62.2
+            ]
+          }
+        ]
+      }
+    },
+    "99129": {
+      "name": "A Man About a Murloc",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Jason Mathers",
+            "coordinate": [
+              47.4,
+              62.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Remy \"Two Times\"",
+            "coordinate": [
+              42.2,
+              67.2
+            ]
+          }
+        ]
+      }
+    },
+    "99130": {
+      "name": "An Enticing Offer",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Remy \"Two Times\"",
+            "coordinate": [
+              42.2,
+              67.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Remy \"Two Times\"",
+            "coordinate": [
+              42.2,
+              67.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 12,
+            "name": "Stonetusk Boar",
+            "coordinate": [
+              41,
+              69.4
+            ]
+          },
+          {
+            "areaID": 12,
+            "name": "Young Forest Bear",
+            "coordinate": [
+              81.8,
+              59
+            ]
+          }
+        ]
+      }
+    },
+    "99131": {
+      "name": "Baited for Success",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Remy \"Two Times\"",
+            "coordinate": [
+              42.2,
+              67.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Jason Mathers",
+            "coordinate": [
+              47.4,
+              62.2
+            ]
+          }
+        ]
+      }
+    },
+    "99143": {
+      "name": "Bottles and Baubles",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "elwynn-forest"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 12,
+            "name": "Lee Brown",
+            "coordinate": [
+              47.4,
+              62.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 12,
+            "name": "Lee Brown",
+            "coordinate": [
+              47.4,
+              62.2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "clientWalkthrough": "Not performed."
+}

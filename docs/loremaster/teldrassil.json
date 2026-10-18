@@ -1,0 +1,4262 @@
+{
+  "guide": "loremaster-teldrassil",
+  "title": "Teldrassil",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-era-teldrassil",
+  "spineActions": [
+    "accept-456-the-balance-of-nature",
+    "objective-456-1-young-nightsaber",
+    "objective-456-1-young-nightsaber-2",
+    "objective-456-2-young-thistle-boar",
+    "level-before-accept-4495-a-good-friend",
+    "accept-4495-a-good-friend",
+    "accept-458-the-woodland-protector",
+    "turnin-456-the-balance-of-nature",
+    "accept-457-the-balance-of-nature",
+    "accept-3116-simple-sigil",
+    "accept-3118-encrypted-sigil",
+    "accept-3119-hallowed-sigil",
+    "accept-3117-etched-sigil",
+    "accept-3120-verdant-sigil",
+    "turnin-3116-simple-sigil",
+    "turnin-3118-encrypted-sigil",
+    "turnin-3119-hallowed-sigil",
+    "turnin-3117-etched-sigil",
+    "turnin-3120-verdant-sigil",
+    "turnin-458-the-woodland-protector",
+    "woven-accept-97977-natures-call",
+    "accept-459-the-woodland-protector",
+    "objective-459-1-grell",
+    "woven-objective-97977-natures-call",
+    "level-before-accept-916-webwood-venom",
+    "turnin-4495-a-good-friend",
+    "level-before-accept-3519-a-friend-in-need",
+    "accept-3519-a-friend-in-need",
+    "turnin-3519-a-friend-in-need",
+    "level-before-accept-3521-iverron-s-antidote",
+    "accept-3521-iverron-s-antidote",
+    "accept-916-webwood-venom",
+    "objective-457-1-mangy-nightsaber",
+    "objective-457-2-thistle-boar",
+    "objective-916-1-webwood-venom-sac",
+    "objective-3521-3-webwood-ichor",
+    "turnin-916-webwood-venom",
+    "accept-917-webwood-egg",
+    "turnin-457-the-balance-of-nature",
+    "turnin-459-the-woodland-protector",
+    "woven-turnin-97977-natures-call",
+    "objective-3521-1-hyacinth-mushroom",
+    "objective-3521-2-moonpetal-lily",
+    "objective-917-1-webwood-egg",
+    "turnin-917-webwood-egg",
+    "loot-starter-before-accept-97236-verified-pickup",
+    "accept-97236-verified-pickup",
+    "woven-turnin-97236-fang-of-githyiss",
+    "accept-920-tenaron-s-summons",
+    "turnin-920-tenaron-s-summons",
+    "level-before-woven-accept-96630-the-adventurer",
+    "accept-921-crown-of-the-earth",
+    "turnin-3521-iverron-s-antidote",
+    "level-before-accept-3522-iverron-s-antidote",
+    "accept-3522-iverron-s-antidote",
+    "objective-921-1-crystal-phial",
+    "turnin-3522-iverron-s-antidote",
+    "level-before-accept-5622-in-favor-of-elune",
+    "accept-5622-in-favor-of-elune",
+    "turnin-921-crown-of-the-earth",
+    "woven-accept-96630-the-adventurer",
+    "accept-928-crown-of-the-earth",
+    "accept-2159-dolanaar-delivery",
+    "level-before-accept-488-zenn-s-bidding",
+    "accept-488-zenn-s-bidding",
+    "level-before-accept-997-denalan-s-earth",
+    "accept-997-denalan-s-earth",
+    "level-before-accept-475-a-troubling-breeze",
+    "accept-475-a-troubling-breeze",
+    "woven-turnin-96630-the-adventurer",
+    "level-before-woven-accept-96101-the-great-outdoors",
+    "woven-accept-96101-the-great-outdoors",
+    "woven-objective-96101-the-great-outdoors",
+    "woven-turnin-96101-the-great-outdoors",
+    "turnin-5622-in-favor-of-elune",
+    "level-before-accept-5621-garments-of-the-moon",
+    "accept-5621-garments-of-the-moon",
+    "level-before-accept-932-twisted-hatred",
+    "accept-932-twisted-hatred",
+    "level-before-woven-accept-87288-soft-saber-pelts",
+    "woven-accept-87288-soft-saber-pelts",
+    "woven-objective-87288-soft-saber-pelts",
+    "woven-turnin-87288-soft-saber-pelts",
+    "level-before-woven-accept-98403-twisted-hatred",
+    "woven-accept-98403-twisted-hatred",
+    "level-before-woven-accept-98391-the-sisterhood-of-elune",
+    "woven-accept-98391-the-sisterhood-of-elune",
+    "accept-2438-the-emerald-dreamcatcher",
+    "turnin-2159-dolanaar-delivery",
+    "turnin-928-crown-of-the-earth",
+    "accept-929-crown-of-the-earth",
+    "turnin-997-denalan-s-earth",
+    "level-before-accept-918-timberling-seeds",
+    "accept-918-timberling-seeds",
+    "level-before-accept-919-timberling-sprouts",
+    "accept-919-timberling-sprouts",
+    "objective-919-1-timberling-sprout",
+    "objective-918-1-timberling-seed",
+    "turnin-918-timberling-seeds",
+    "level-before-accept-922-rellian-greenspyre",
+    "accept-922-rellian-greenspyre",
+    "turnin-919-timberling-sprouts",
+    "objective-929-1-jade-phial",
+    "turnin-475-a-troubling-breeze",
+    "level-before-accept-476-gnarlpine-corruption",
+    "accept-476-gnarlpine-corruption",
+    "objective-2438-1-emerald-dreamcatcher",
+    "objective-488-2-strigid-owl-feather",
+    "objective-488-1-nightsaber-fang",
+    "objective-488-3-webwood-spider-silk",
+    "turnin-488-zenn-s-bidding",
+    "level-before-accept-489-seek-redemption",
+    "accept-489-seek-redemption",
+    "turnin-476-gnarlpine-corruption",
+    "level-before-woven-accept-483-the-relics-of-wakening",
+    "woven-accept-483-the-relics-of-wakening",
+    "woven-objective-483-the-relics-of-wakening",
+    "level-before-woven-accept-2541-the-sleeping-druid",
+    "woven-accept-2541-the-sleeping-druid",
+    "woven-objective-2541-the-sleeping-druid",
+    "woven-turnin-2541-the-sleeping-druid",
+    "level-before-woven-accept-2561-druid-of-the-claw",
+    "woven-accept-2561-druid-of-the-claw",
+    "woven-objective-2561-druid-of-the-claw",
+    "woven-turnin-2561-druid-of-the-claw",
+    "level-before-woven-accept-99053-escaping-banethil",
+    "woven-accept-99053-escaping-banethil",
+    "woven-objective-99053-escaping-banethil",
+    "woven-turnin-483-the-relics-of-wakening",
+    "woven-turnin-99053-escaping-banethil",
+    "level-before-woven-accept-486-ursal-the-mauler",
+    "woven-accept-486-ursal-the-mauler",
+    "woven-objective-486-ursal-the-mauler",
+    "woven-turnin-486-ursal-the-mauler",
+    "level-before-woven-accept-99046-the-lost-runner",
+    "woven-accept-99046-the-lost-runner",
+    "woven-turnin-99046-the-lost-runner",
+    "level-before-woven-accept-99047-not-dead-yet",
+    "woven-accept-99047-not-dead-yet",
+    "woven-turnin-99047-not-dead-yet",
+    "level-before-woven-accept-99050-the-great-tree-provides",
+    "woven-accept-99050-the-great-tree-provides",
+    "woven-objective-99050-the-great-tree-provides-2",
+    "woven-objective-99050-the-great-tree-provides-3",
+    "woven-objective-99050-the-great-tree-provides-1",
+    "woven-turnin-99050-the-great-tree-provides",
+    "level-before-woven-accept-99073-easing-suffering",
+    "woven-accept-99073-easing-suffering",
+    "woven-turnin-99073-easing-suffering",
+    "objective-5621-quest-work",
+    "turnin-5621-garments-of-the-moon",
+    "turnin-2438-the-emerald-dreamcatcher",
+    "accept-2459-ferocitas-the-dream-eater",
+    "turnin-929-crown-of-the-earth",
+    "accept-933-crown-of-the-earth",
+    "accept-4161-recipe-of-the-kaldorei",
+    "objective-4161-quest-work",
+    "turnin-4161-recipe-of-the-kaldorei",
+    "objective-2459-2-gnarlpine-necklace",
+    "objective-2459-prepared-result",
+    "objective-2459-1-ferocitas-the-dream-eater",
+    "objective-489-1-fel-cone",
+    "turnin-489-seek-redemption",
+    "objective-932-1-lord-melenas",
+    "woven-objective-98403-twisted-hatred",
+    "turnin-932-twisted-hatred",
+    "woven-turnin-98403-twisted-hatred",
+    "turnin-2459-ferocitas-the-dream-eater",
+    "level-before-accept-930-the-glowing-fruit",
+    "accept-930-the-glowing-fruit",
+    "objective-933-1-tourmaline-phial",
+    "turnin-933-crown-of-the-earth",
+    "accept-7383-crown-of-the-earth",
+    "level-before-accept-487-the-road-to-darnassus",
+    "accept-487-the-road-to-darnassus",
+    "objective-487-1-gnarlpine-ambusher",
+    "level-before-accept-937-the-enchanted-glade",
+    "accept-937-the-enchanted-glade",
+    "objective-7383-1-amethyst-phial",
+    "level-before-accept-931-the-shimmering-frond",
+    "accept-931-the-shimmering-frond",
+    "level-before-accept-938-mist",
+    "accept-938-mist",
+    "turnin-938-mist",
+    "objective-937-1-bloodfeather-belt",
+    "turnin-937-the-enchanted-glade",
+    "level-before-woven-accept-98392-darkness-in-the-glade",
+    "woven-accept-98392-darkness-in-the-glade",
+    "woven-objective-98392-darkness-in-the-glade-1",
+    "woven-objective-98392-darkness-in-the-glade-2",
+    "woven-objective-98392-darkness-in-the-glade-3",
+    "woven-turnin-98392-darkness-in-the-glade",
+    "level-before-woven-accept-98398-the-oracle-tree",
+    "woven-accept-98398-the-oracle-tree",
+    "woven-turnin-98398-the-oracle-tree",
+    "level-before-accept-940-teldrassil",
+    "accept-940-teldrassil",
+    "turnin-922-rellian-greenspyre",
+    "woven-turnin-98391-the-sisterhood-of-elune",
+    "level-before-accept-923-tumors",
+    "accept-923-tumors",
+    "level-before-accept-6071-the-hunter-s-path",
+    "accept-6071-the-hunter-s-path",
+    "level-before-accept-5921-moonglade",
+    "accept-5921-moonglade",
+    "turnin-940-teldrassil",
+    "level-before-accept-952-grove-of-the-ancients",
+    "accept-952-grove-of-the-ancients",
+    "level-before-accept-2518-tears-of-the-moon",
+    "accept-2518-tears-of-the-moon",
+    "turnin-5921-moonglade",
+    "level-before-accept-5929-great-bear-spirit",
+    "accept-5929-great-bear-spirit",
+    "objective-5929-quest-work",
+    "turnin-5929-great-bear-spirit",
+    "level-before-accept-5931-back-to-darnassus",
+    "accept-5931-back-to-darnassus",
+    "level-before-accept-1684-elanaria",
+    "accept-1684-elanaria",
+    "turnin-6071-the-hunter-s-path",
+    "level-before-accept-6063-taming-the-beast",
+    "accept-6063-taming-the-beast",
+    "level-before-objective-6063-1-taming-rod",
+    "objective-6063-1-taming-rod",
+    "turnin-6063-taming-the-beast",
+    "level-before-accept-6101-taming-the-beast",
+    "accept-6101-taming-the-beast",
+    "turnin-7383-crown-of-the-earth",
+    "accept-935-crown-of-the-earth",
+    "turnin-931-the-shimmering-frond",
+    "level-before-woven-accept-2399-the-sprouted-fronds",
+    "woven-accept-2399-the-sprouted-fronds",
+    "woven-turnin-2399-the-sprouted-fronds",
+    "turnin-930-the-glowing-fruit",
+    "objective-6101-1-taming-rod",
+    "turnin-6101-taming-the-beast",
+    "level-before-accept-6102-taming-the-beast",
+    "accept-6102-taming-the-beast",
+    "objective-6102-1-taming-rod",
+    "turnin-6102-taming-the-beast",
+    "level-before-accept-6103-training-the-beast",
+    "accept-6103-training-the-beast",
+    "level-before-accept-5629-returning-home",
+    "accept-5629-returning-home",
+    "level-before-accept-2241-the-apple-falls",
+    "accept-2241-the-apple-falls",
+    "turnin-487-the-road-to-darnassus",
+    "turnin-2241-the-apple-falls",
+    "level-before-accept-2242-destiny-calls",
+    "accept-2242-destiny-calls",
+    "objective-2518-1-lady-sathrah",
+    "objective-2242-1-sethir-s-journal",
+    "objective-923-1-mossy-tumor",
+    "level-before-woven-accept-927-the-moss-twined-heart",
+    "woven-accept-927-the-moss-twined-heart",
+    "level-before-accept-6344-nessa-shadowsong",
+    "accept-6344-nessa-shadowsong",
+    "turnin-1684-elanaria",
+    "level-before-accept-1683-vorlus-vilehoof",
+    "accept-1683-vorlus-vilehoof",
+    "objective-1683-1-vorlus-vilehoof",
+    "turnin-1683-vorlus-vilehoof",
+    "turnin-923-tumors",
+    "level-before-woven-accept-2498-return-to-denalan",
+    "woven-accept-2498-return-to-denalan",
+    "woven-turnin-2498-return-to-denalan",
+    "woven-turnin-927-the-moss-twined-heart",
+    "level-before-woven-accept-941-planting-the-heart",
+    "woven-accept-941-planting-the-heart",
+    "woven-turnin-941-planting-the-heart",
+    "level-before-woven-accept-2499-oakenscowl",
+    "woven-accept-2499-oakenscowl",
+    "woven-objective-2499-oakenscowl",
+    "woven-turnin-2499-oakenscowl",
+    "level-before-turnin-2242-destiny-calls",
+    "turnin-2242-destiny-calls",
+    "turnin-6103-training-the-beast",
+    "turnin-5931-back-to-darnassus",
+    "level-before-accept-6001-body-and-heart",
+    "accept-6001-body-and-heart",
+    "turnin-935-crown-of-the-earth",
+    "woven-accept-98046-crown-of-the-earth",
+    "woven-turnin-98046-crown-of-the-earth",
+    "woven-accept-98065-crown-of-the-earth",
+    "woven-turnin-98065-crown-of-the-earth",
+    "woven-accept-98067-eyes-of-the-sentinels",
+    "woven-objective-98067-eyes-of-the-sentinels",
+    "woven-turnin-98067-eyes-of-the-sentinels",
+    "turnin-2518-tears-of-the-moon",
+    "level-before-accept-2520-sathrah-s-sacrifice",
+    "accept-2520-sathrah-s-sacrifice",
+    "turnin-5629-returning-home",
+    "level-before-accept-5627-stars-of-elune",
+    "accept-5627-stars-of-elune",
+    "objective-2520-1-sathrah-s-sacrifice",
+    "turnin-2520-sathrah-s-sacrifice",
+    "turnin-6344-nessa-shadowsong",
+    "level-before-accept-6341-the-bounty-of-teldrassil",
+    "accept-6341-the-bounty-of-teldrassil",
+    "turnin-6341-the-bounty-of-teldrassil",
+    "level-before-accept-6342-flight-to-auberdine",
+    "accept-6342-flight-to-auberdine",
+    "level-before-accept-3524-washed-ashore",
+    "accept-3524-washed-ashore",
+    "turnin-6342-flight-to-auberdine",
+    "level-before-accept-983-buzzbox-827",
+    "accept-983-buzzbox-827",
+    "level-before-accept-2118-plagued-lands",
+    "accept-2118-plagued-lands",
+    "level-before-accept-984-how-big-a-threat",
+    "accept-984-how-big-a-threat",
+    "objective-3524-1-sea-creature-bones",
+    "objective-2118-1-tharnariun-s-hope",
+    "objective-983-1-crawler-leg",
+    "turnin-983-buzzbox-827",
+    "turnin-3524-washed-ashore",
+    "level-before-accept-4681-washed-ashore",
+    "accept-4681-washed-ashore",
+    "objective-4681-1-sea-turtle-remains",
+    "turnin-4681-washed-ashore",
+    "level-before-objective-6001-1-cenarion-moondust",
+    "objective-6001-1-cenarion-moondust",
+    "level-before-accept-6343-return-to-nessa",
+    "accept-6343-return-to-nessa",
+    "turnin-6343-return-to-nessa",
+    "turnin-6001-body-and-heart",
+    "turnin-2118-plagued-lands",
+    "turnin-984-how-big-a-threat",
+    "level-before-accept-4761-thundris-windweaver",
+    "accept-4761-thundris-windweaver",
+    "turnin-4761-thundris-windweaver",
+    "level-before-accept-954-bashal-aran",
+    "accept-954-bashal-aran",
+    "turnin-954-bashal-aran",
+    "level-before-accept-955-bashal-aran",
+    "accept-955-bashal-aran",
+    "objective-955-1-wild-grell",
+    "turnin-955-bashal-aran",
+    "level-before-accept-956-bashal-aran",
+    "accept-956-bashal-aran",
+    "objective-956-1-deth-ryll-satyr",
+    "turnin-956-bashal-aran",
+    "level-before-accept-957-bashal-aran",
+    "accept-957-bashal-aran",
+    "objective-2178-1-moonkin",
+    "level-before-accept-2178-easy-strider-living",
+    "accept-2178-easy-strider-living",
+    "turnin-2178-easy-strider-living",
+    "level-before-accept-1638-a-warrior-s-training",
+    "accept-1638-a-warrior-s-training",
+    "turnin-1638-a-warrior-s-training",
+    "level-before-accept-1639-bartleby-the-drunk",
+    "accept-1639-bartleby-the-drunk",
+    "turnin-1639-bartleby-the-drunk",
+    "level-before-accept-1640-beat-bartleby",
+    "accept-1640-beat-bartleby",
+    "level-before-objective-1640-1-bartleby",
+    "objective-1640-1-bartleby",
+    "turnin-1640-beat-bartleby",
+    "level-before-accept-1665-bartleby-s-mug",
+    "accept-1665-bartleby-s-mug",
+    "turnin-1665-bartleby-s-mug"
+  ],
+  "placements": [],
+  "quests": {
+    "456": {
+      "name": "The Balance of Nature",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Conservator Ilthalaine",
+            "coordinate": [
+              58.6,
+              44.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Conservator Ilthalaine",
+            "coordinate": [
+              58.6,
+              44.2
+            ]
+          }
+        ]
+      }
+    },
+    "457": {
+      "name": "The Balance of Nature",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Conservator Ilthalaine",
+            "coordinate": [
+              58.6,
+              44.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Conservator Ilthalaine",
+            "coordinate": [
+              58.6,
+              44.2
+            ]
+          }
+        ]
+      }
+    },
+    "458": {
+      "name": "The Woodland Protector",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Melithar Staghelm",
+            "coordinate": [
+              59.8,
+              42.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tarindrella",
+            "coordinate": [
+              57.8,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "459": {
+      "name": "The Woodland Protector",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Tarindrella",
+            "coordinate": [
+              57.8,
+              45
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tarindrella",
+            "coordinate": [
+              57.8,
+              45
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Grell",
+            "coordinate": [
+              56.4,
+              45.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Grellkin",
+            "coordinate": [
+              55,
+              44.6
+            ]
+          }
+        ]
+      }
+    },
+    "475": {
+      "name": "A Troubling Breeze",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Athridas Bearmantle",
+            "coordinate": [
+              56,
+              57.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Gaerolas Talvethren",
+            "coordinate": [
+              66.2,
+              58.6
+            ]
+          }
+        ]
+      }
+    },
+    "476": {
+      "name": "Gnarlpine Corruption",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Gaerolas Talvethren",
+            "coordinate": [
+              66.2,
+              58.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Athridas Bearmantle",
+            "coordinate": [
+              56,
+              57.4
+            ]
+          }
+        ]
+      }
+    },
+    "483": {
+      "name": "The Relics of Wakening",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Athridas Bearmantle",
+            "coordinate": [
+              56,
+              57.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Athridas Bearmantle",
+            "coordinate": [
+              56,
+              57.4
+            ]
+          }
+        ]
+      }
+    },
+    "486": {
+      "name": "Ursal the Mauler",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Athridas Bearmantle",
+            "coordinate": [
+              56,
+              57.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Athridas Bearmantle",
+            "coordinate": [
+              56,
+              57.4
+            ]
+          }
+        ]
+      }
+    },
+    "487": {
+      "name": "The Road to Darnassus",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Moon Priestess Amara",
+            "coordinate": [
+              55.6,
+              58.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Moon Priestess Amara",
+            "coordinate": [
+              55.6,
+              58.4
+            ]
+          }
+        ]
+      }
+    },
+    "488": {
+      "name": "Zenn's Bidding",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Zenn Foulhoof",
+            "coordinate": [
+              60.4,
+              56.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Zenn Foulhoof",
+            "coordinate": [
+              60.4,
+              56.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Strigid Owl",
+            "coordinate": [
+              62,
+              51.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Strigid Screecher",
+            "coordinate": [
+              44,
+              51
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Strigid Hunter",
+            "coordinate": [
+              38.6,
+              48.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Webwood Lurker",
+            "coordinate": [
+              60.6,
+              56
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Webwood Venomfang",
+            "coordinate": [
+              43.4,
+              54
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Webwood Silkspinner",
+            "coordinate": [
+              37.8,
+              35
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Giant Webwood Spider",
+            "coordinate": [
+              40.6,
+              25.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Elder Nightsaber",
+            "coordinate": [
+              39.4,
+              44.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Feral Nightsaber",
+            "coordinate": [
+              38.8,
+              26.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Nightsaber",
+            "coordinate": [
+              61.4,
+              58.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Nightsaber Stalker",
+            "coordinate": [
+              40.8,
+              57.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Duskstalker",
+            "coordinate": [
+              60.2,
+              75.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Befouled Webwood",
+            "coordinate": [
+              48.4,
+              50.2
+            ]
+          }
+        ]
+      }
+    },
+    "489": {
+      "name": "Seek Redemption!",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Kyra Starsong",
+            "coordinate": [
+              56,
+              59.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Syral Bladeleaf",
+            "coordinate": [
+              56,
+              57.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Moon Priestess Amara",
+            "coordinate": [
+              55.6,
+              58.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Zenn Foulhoof",
+            "coordinate": [
+              60.4,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "490": {
+      "name": "<UNUSED>",
+      "status": "excluded",
+      "reason": "Unused source record.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "not-authored",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Shayla Nightbreeze",
+            "coordinate": [
+              38.4,
+              54
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Shayla Nightbreeze",
+            "coordinate": [
+              38.4,
+              54
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Ursa",
+            "coordinate": [
+              65,
+              57.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Gardener",
+            "coordinate": [
+              65,
+              57.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Warrior",
+            "coordinate": [
+              67.8,
+              59.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Shaman",
+            "coordinate": [
+              44.2,
+              60.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Defender",
+            "coordinate": [
+              44,
+              58.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Augur",
+            "coordinate": [
+              44.4,
+              61.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Pathfinder",
+            "coordinate": [
+              39.4,
+              80.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Avenger",
+            "coordinate": [
+              42.5,
+              79.7
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Totemic",
+            "coordinate": [
+              39.4,
+              80.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Ambusher",
+            "coordinate": [
+              47.8,
+              53.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Mystic",
+            "coordinate": [
+              68.6,
+              52.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Uruson",
+            "coordinate": [
+              66.8,
+              58.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Grimmaw",
+            "coordinate": [
+              41,
+              78.8
+            ]
+          }
+        ]
+      }
+    },
+    "730": {
+      "name": "Trouble In Darkshore?",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 14,
+      "offerMinimum": 14,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 148,
+            "name": "Archaeologist Hollee",
+            "coordinate": [
+              37.4,
+              41.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Chief Archaeologist Greywhisker",
+            "coordinate": [
+              31.4,
+              84
+            ]
+          }
+        ]
+      }
+    },
+    "916": {
+      "name": "Webwood Venom",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Gilshalan Windwalker",
+            "coordinate": [
+              57.8,
+              41.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Gilshalan Windwalker",
+            "coordinate": [
+              57.8,
+              41.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Webwood Spider",
+            "coordinate": [
+              56.6,
+              31
+            ]
+          }
+        ]
+      }
+    },
+    "917": {
+      "name": "Webwood Egg",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Gilshalan Windwalker",
+            "coordinate": [
+              57.8,
+              41.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Gilshalan Windwalker",
+            "coordinate": [
+              57.8,
+              41.6
+            ]
+          }
+        ]
+      }
+    },
+    "918": {
+      "name": "Timberling Seeds",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Timberling",
+            "coordinate": [
+              59.4,
+              72.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Timberling Bark Ripper",
+            "coordinate": [
+              52.4,
+              73.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Timberling Trampler",
+            "coordinate": [
+              53.2,
+              74.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Timberling Mire Beast",
+            "coordinate": [
+              43.2,
+              35.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Elder Timberling",
+            "coordinate": [
+              43.8,
+              29
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Oakenscowl",
+            "coordinate": [
+              53.6,
+              75
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Blackmoss the Fetid",
+            "coordinate": [
+              44,
+              28.2
+            ]
+          }
+        ]
+      }
+    },
+    "919": {
+      "name": "Timberling Sprouts",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "920": {
+      "name": "Tenaron's Summons",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Gilshalan Windwalker",
+            "coordinate": [
+              57.8,
+              41.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tenaron Stormgrip",
+            "coordinate": [
+              59,
+              39.4
+            ]
+          }
+        ]
+      }
+    },
+    "921": {
+      "name": "Crown of the Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Tenaron Stormgrip",
+            "coordinate": [
+              59,
+              39.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tenaron Stormgrip",
+            "coordinate": [
+              59,
+              39.4
+            ]
+          }
+        ]
+      }
+    },
+    "922": {
+      "name": "Rellian Greenspyre",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Rellian Greenspyre",
+            "coordinate": [
+              38.4,
+              21.6
+            ]
+          }
+        ]
+      }
+    },
+    "923": {
+      "name": "Tumors",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Rellian Greenspyre",
+            "coordinate": [
+              38.4,
+              21.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Rellian Greenspyre",
+            "coordinate": [
+              38.4,
+              21.6
+            ]
+          }
+        ]
+      }
+    },
+    "927": {
+      "name": "The Moss-twined Heart",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "928": {
+      "name": "Crown of the Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Tenaron Stormgrip",
+            "coordinate": [
+              59,
+              39.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Corithras Moonrage",
+            "coordinate": [
+              56.2,
+              61.6
+            ]
+          }
+        ]
+      }
+    },
+    "929": {
+      "name": "Crown of the Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Corithras Moonrage",
+            "coordinate": [
+              56.2,
+              61.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Corithras Moonrage",
+            "coordinate": [
+              56.2,
+              61.6
+            ]
+          }
+        ]
+      }
+    },
+    "930": {
+      "name": "The Glowing Fruit",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Strange Fruited Plant",
+            "coordinate": [
+              42.6,
+              76.1
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "931": {
+      "name": "The Shimmering Frond",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Strange Fronded Plant",
+            "coordinate": [
+              34.7,
+              28.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "932": {
+      "name": "Twisted Hatred",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Tallonkai Swiftroot",
+            "coordinate": [
+              55.4,
+              56.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tallonkai Swiftroot",
+            "coordinate": [
+              55.4,
+              56.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Lord Melenas",
+            "coordinate": [
+              51.5,
+              49.5
+            ]
+          }
+        ]
+      }
+    },
+    "933": {
+      "name": "Crown of the Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Corithras Moonrage",
+            "coordinate": [
+              56.2,
+              61.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Corithras Moonrage",
+            "coordinate": [
+              56.2,
+              61.6
+            ]
+          }
+        ]
+      }
+    },
+    "934": {
+      "name": "Crown of the Earth",
+      "status": "unresolved",
+      "reason": "This Crown of the Earth variant references 7383 but has no supported giver or finisher. Preserve the complete supported spine variants without inventing this pickup.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {},
+      "evidence": {
+        "allthethings": {
+          "name": "Crown of the Earth (5/6)",
+          "requiredRaces": 4294967373
+        },
+        "questiedb": {
+          "name": "Crown of the Earth",
+          "objectivesText": [
+            "Fill the Amethyst Phial and bring it back to Corithras Moonrage in Dolanaar."
+          ],
+          "questLevel": 11,
+          "requiredLevel": 1,
+          "requiredRaces": 4294967373,
+          "zoneOrSort": 141
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Crown of the Earth",
+          "prerequisiteReferences": [
+            7383
+          ],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 1,
+          "zoneId": 141
+        }
+      }
+    },
+    "935": {
+      "name": "Crown of the Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Corithras Moonrage",
+            "coordinate": [
+              56.2,
+              61.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "937": {
+      "name": "The Enchanted Glade",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Arynia Cloudsbreak",
+            "coordinate": [
+              38.2,
+              34.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Arynia Cloudsbreak",
+            "coordinate": [
+              38.2,
+              34.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Harpy",
+            "coordinate": [
+              33.8,
+              35.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Rogue",
+            "coordinate": [
+              35.2,
+              35
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Sorceress",
+            "coordinate": [
+              35.2,
+              35
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Fury",
+            "coordinate": [
+              31.8,
+              32.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Wind Witch",
+            "coordinate": [
+              33.4,
+              29.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Matriarch",
+            "coordinate": [
+              31.4,
+              31.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Fury Shelda",
+            "coordinate": [
+              36.4,
+              38.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Hatescreech",
+            "coordinate": [
+              35,
+              38.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Windmistress Gaedress",
+            "coordinate": [
+              33.2,
+              36
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Witchmother Arysa",
+            "coordinate": [
+              34.2,
+              27.9
+            ]
+          }
+        ]
+      }
+    },
+    "938": {
+      "name": "Mist",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Mist",
+            "coordinate": [
+              31.4,
+              31.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Arynia Cloudsbreak",
+            "coordinate": [
+              38.2,
+              34.4
+            ]
+          }
+        ]
+      }
+    },
+    "940": {
+      "name": "Teldrassil",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Arynia Cloudsbreak",
+            "coordinate": [
+              38.2,
+              34.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Oracle Tree Bark",
+            "coordinate": [
+              37,
+              34.1
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "941": {
+      "name": "Planting the Heart",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan's Planter",
+            "coordinate": [
+              60.8,
+              68.5
+            ]
+          }
+        ]
+      }
+    },
+    "997": {
+      "name": "Denalan's Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Syral Bladeleaf",
+            "coordinate": [
+              56,
+              57.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "1047": {
+      "name": "The New Frontier",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Herald Moonstalker",
+            "coordinate": [
+              32.4,
+              41.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "2159": {
+      "name": "Dolanaar Delivery",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Porthannius",
+            "coordinate": [
+              61.2,
+              47.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Innkeeper Keldamyr",
+            "coordinate": [
+              55.6,
+              59.8
+            ]
+          }
+        ]
+      }
+    },
+    "2399": {
+      "name": "The Sprouted Fronds",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sprouted Frond",
+            "coordinate": [
+              60.8,
+              68.5
+            ]
+          },
+          {
+            "areaID": 148,
+            "name": "Sprouted Frond",
+            "coordinate": [
+              33.8,
+              81.9
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Sprouted Frond",
+            "coordinate": [
+              60.8,
+              68.5
+            ]
+          },
+          {
+            "areaID": 148,
+            "name": "Sprouted Frond",
+            "coordinate": [
+              33.8,
+              81.9
+            ]
+          }
+        ]
+      }
+    },
+    "2438": {
+      "name": "The Emerald Dreamcatcher",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Tallonkai Swiftroot",
+            "coordinate": [
+              55.4,
+              56.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tallonkai Swiftroot",
+            "coordinate": [
+              55.4,
+              56.8
+            ]
+          }
+        ]
+      }
+    },
+    "2459": {
+      "name": "Ferocitas the Dream Eater",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Tallonkai Swiftroot",
+            "coordinate": [
+              55.4,
+              56.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tallonkai Swiftroot",
+            "coordinate": [
+              55.4,
+              56.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Ferocitas the Dream Eater",
+            "coordinate": [
+              69.2,
+              53.4
+            ]
+          }
+        ]
+      }
+    },
+    "2498": {
+      "name": "Return to Denalan",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Rellian Greenspyre",
+            "coordinate": [
+              38.4,
+              21.6
+            ]
+          }
+        ]
+      }
+    },
+    "2499": {
+      "name": "Oakenscowl",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Denalan",
+            "coordinate": [
+              60.8,
+              68.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Oakenscowl",
+            "coordinate": [
+              53.6,
+              75
+            ]
+          }
+        ]
+      }
+    },
+    "2518": {
+      "name": "Tears of the Moon",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Priestess A'moora",
+            "coordinate": [
+              36.4,
+              86
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Priestess A'moora",
+            "coordinate": [
+              36.4,
+              86
+            ]
+          }
+        ]
+      }
+    },
+    "2519": {
+      "name": "The Temple of the Moon",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 5,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Sister Aquinne",
+            "coordinate": [
+              29,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Priestess A'moora",
+            "coordinate": [
+              36.4,
+              86
+            ]
+          }
+        ]
+      }
+    },
+    "2520": {
+      "name": "Sathrah's Sacrifice",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Priestess A'moora",
+            "coordinate": [
+              36.4,
+              86
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Priestess A'moora",
+            "coordinate": [
+              36.4,
+              86
+            ]
+          }
+        ]
+      }
+    },
+    "2541": {
+      "name": "The Sleeping Druid",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Oben Rageclaw",
+            "coordinate": [
+              45,
+              61.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Oben Rageclaw",
+            "coordinate": [
+              45,
+              61.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Shaman",
+            "coordinate": [
+              44.2,
+              60.6
+            ]
+          }
+        ]
+      }
+    },
+    "2561": {
+      "name": "Druid of the Claw",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Oben Rageclaw",
+            "coordinate": [
+              45,
+              61.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Oben Rageclaw",
+            "coordinate": [
+              45,
+              61.4
+            ]
+          }
+        ]
+      }
+    },
+    "3519": {
+      "name": "A Friend in Need",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Iverron",
+            "coordinate": [
+              54.6,
+              33
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Dirania Silvershine",
+            "coordinate": [
+              60.8,
+              42
+            ]
+          }
+        ]
+      }
+    },
+    "3521": {
+      "name": "Iverron's Antidote",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Dirania Silvershine",
+            "coordinate": [
+              60.8,
+              42
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Dirania Silvershine",
+            "coordinate": [
+              60.8,
+              42
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Webwood Spider",
+            "coordinate": [
+              56.6,
+              31
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Grell",
+            "coordinate": [
+              56.4,
+              45.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Grellkin",
+            "coordinate": [
+              55,
+              44.6
+            ]
+          }
+        ]
+      }
+    },
+    "3522": {
+      "name": "Iverron's Antidote",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Dirania Silvershine",
+            "coordinate": [
+              60.8,
+              42
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Iverron",
+            "coordinate": [
+              54.6,
+              33
+            ]
+          }
+        ]
+      }
+    },
+    "3622": {
+      "name": "<UNUSED>",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 41,
+      "offerMinimum": 41,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "3763": {
+      "name": "Assisting Arch Druid Staghelm",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Innkeeper Saelienne",
+            "coordinate": [
+              67.2,
+              15.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "3764": {
+      "name": "Un'Goro Soil",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Jenal",
+            "coordinate": [
+              31.4,
+              8.4
+            ]
+          }
+        ]
+      }
+    },
+    "3781": {
+      "name": "Morrowgrain Research",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Mathrengyl Bearwalker",
+            "coordinate": [
+              35.2,
+              8
+            ]
+          }
+        ]
+      }
+    },
+    "3785": {
+      "name": "Morrowgrain Research",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Mathrengyl Bearwalker",
+            "coordinate": [
+              35.2,
+              8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Mathrengyl Bearwalker",
+            "coordinate": [
+              35.2,
+              8
+            ]
+          }
+        ]
+      }
+    },
+    "3788": {
+      "name": "Jonespyre's Request",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 357,
+            "name": "Innkeeper Shyria",
+            "coordinate": [
+              31,
+              43.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 357,
+            "name": "Quintis Jonespyre",
+            "coordinate": [
+              32.4,
+              43.8
+            ]
+          }
+        ]
+      }
+    },
+    "3791": {
+      "name": "The Mystery of Morrowgrain",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 357,
+            "name": "Quintis Jonespyre",
+            "coordinate": [
+              32.4,
+              43.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 357,
+            "name": "Quintis Jonespyre",
+            "coordinate": [
+              32.4,
+              43.8
+            ]
+          }
+        ]
+      }
+    },
+    "3792": {
+      "name": "Morrowgrain to Feathermoon Stronghold",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 357,
+            "name": "Quintis Jonespyre",
+            "coordinate": [
+              32.4,
+              43.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 357,
+            "name": "Quintis Jonespyre",
+            "coordinate": [
+              32.4,
+              43.8
+            ]
+          }
+        ]
+      }
+    },
+    "3803": {
+      "name": "Morrowgrain to Darnassus",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Mathrengyl Bearwalker",
+            "coordinate": [
+              35.2,
+              8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Mathrengyl Bearwalker",
+            "coordinate": [
+              35.2,
+              8
+            ]
+          }
+        ]
+      }
+    },
+    "4493": {
+      "name": "March of the Silithid",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 53,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Gracina Spiritmight",
+            "coordinate": [
+              42,
+              85.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 440,
+            "name": "Alchemist Pestlezugg",
+            "coordinate": [
+              50.8,
+              27
+            ]
+          }
+        ]
+      }
+    },
+    "4495": {
+      "name": "A Good Friend",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Dirania Silvershine",
+            "coordinate": [
+              60.8,
+              42
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Iverron",
+            "coordinate": [
+              54.6,
+              33
+            ]
+          }
+        ]
+      }
+    },
+    "4510": {
+      "name": "Calm Before the Storm",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 54,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Gracina Spiritmight",
+            "coordinate": [
+              42,
+              85.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Idriana",
+            "coordinate": [
+              39.8,
+              42.4
+            ]
+          }
+        ]
+      }
+    },
+    "5091": {
+      "name": "A Call to Arms: The Plaguelands!",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Herald Moonstalker",
+            "coordinate": [
+              32.4,
+              41.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 28,
+            "name": "Commander Ashlam Valorfist",
+            "coordinate": [
+              42.8,
+              84
+            ]
+          }
+        ]
+      }
+    },
+    "5842": {
+      "name": "Welcome!",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Orenthil Whisperwind",
+            "coordinate": [
+              58.8,
+              44.4
+            ]
+          }
+        ]
+      }
+    },
+    "6344": {
+      "name": "Nessa Shadowsong",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Nessa Shadowsong",
+            "coordinate": [
+              56.2,
+              92.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Mydrannul",
+            "coordinate": [
+              70.6,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "6761": {
+      "name": "The New Frontier",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Mathrengyl Bearwalker",
+            "coordinate": [
+              35.2,
+              8
+            ]
+          }
+        ]
+      }
+    },
+    "6762": {
+      "name": "Rabine Saturna",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Mathrengyl Bearwalker",
+            "coordinate": [
+              35.2,
+              8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 493,
+            "name": "Rabine Saturna",
+            "coordinate": [
+              51.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "7383": {
+      "name": "Crown of the Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Corithras Moonrage",
+            "coordinate": [
+              56.2,
+              61.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Corithras Moonrage",
+            "coordinate": [
+              56.2,
+              61.6
+            ]
+          }
+        ]
+      }
+    },
+    "7792": {
+      "name": "A Donation of Wool",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ]
+      }
+    },
+    "7798": {
+      "name": "A Donation of Silk",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ]
+      }
+    },
+    "7799": {
+      "name": "A Donation of Mageweave",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ]
+      }
+    },
+    "7800": {
+      "name": "A Donation of Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ]
+      }
+    },
+    "7801": {
+      "name": "Additional Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Raedon Duskstriker",
+            "coordinate": [
+              63.8,
+              22.8
+            ]
+          }
+        ]
+      }
+    },
+    "8734": {
+      "name": "Tyrande and Remulos",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 60,
+      "ownership": "not-authored",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Forest Wisp",
+            "coordinate": [
+              37.6,
+              48
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 493,
+            "name": "Keeper Remulos",
+            "coordinate": [
+              36.2,
+              41.8
+            ]
+          }
+        ]
+      }
+    },
+    "87288": {
+      "name": "Soft Saber Pelts",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Aldia",
+            "coordinate": [
+              55.4,
+              57.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Aldia",
+            "coordinate": [
+              55.4,
+              57.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Nightsaber",
+            "coordinate": [
+              61.4,
+              58.8
+            ]
+          }
+        ]
+      }
+    },
+    "97236": {
+      "name": "Fang of Githyiss",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Gilshalan Windwalker",
+            "coordinate": [
+              57.8,
+              41.6
+            ]
+          }
+        ]
+      }
+    },
+    "97977": {
+      "name": "Nature's Call",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Tarindrella",
+            "coordinate": [
+              57.8,
+              45
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tarindrella",
+            "coordinate": [
+              57.8,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "98046": {
+      "name": "Crown of the Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Arch Druid Fandral Staghelm",
+            "coordinate": [
+              34.8,
+              8.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Lariia",
+            "coordinate": [
+              40.2,
+              88.2
+            ]
+          }
+        ]
+      }
+    },
+    "98065": {
+      "name": "Crown of the Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Lariia",
+            "coordinate": [
+              40.2,
+              88.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Tyrande Whisperwind",
+            "coordinate": [
+              39,
+              81.2
+            ]
+          }
+        ]
+      }
+    },
+    "98067": {
+      "name": "Eyes of the Sentinels",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1657,
+            "name": "Sentinel Dalia Sunblade",
+            "coordinate": [
+              39.8,
+              89.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Sentinel Dalia Sunblade",
+            "coordinate": [
+              39.8,
+              89.2
+            ]
+          }
+        ]
+      }
+    },
+    "98391": {
+      "name": "The Sisterhood of Elune",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "darnassus"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Laurna Morninglight",
+            "coordinate": [
+              55.6,
+              56.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1657,
+            "name": "Sister Aquinne",
+            "coordinate": [
+              29,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "98392": {
+      "name": "Darkness in the Glade",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Arynia Cloudsbreak",
+            "coordinate": [
+              38.2,
+              34.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Arynia Cloudsbreak",
+            "coordinate": [
+              38.2,
+              34.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Hatescreech",
+            "coordinate": [
+              35,
+              39.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Windmistress Gaedress",
+            "coordinate": [
+              33.2,
+              36
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Witchmother Arysa",
+            "coordinate": [
+              34.2,
+              27.9
+            ]
+          }
+        ]
+      }
+    },
+    "98398": {
+      "name": "The Oracle Tree",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Arynia Cloudsbreak",
+            "coordinate": [
+              38.2,
+              34.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Oracle Tree Bark",
+            "coordinate": [
+              37,
+              34.1
+            ]
+          }
+        ]
+      }
+    },
+    "98403": {
+      "name": "Twisted Hatred",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Tallonkai Swiftroot",
+            "coordinate": [
+              55.4,
+              56.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Tallonkai Swiftroot",
+            "coordinate": [
+              55.4,
+              56.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Xethorr the Wicked",
+            "coordinate": [
+              51.3,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "99046": {
+      "name": "The Lost Runner",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Kyra Starsong",
+            "coordinate": [
+              56,
+              59.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Eralya Leafshadow",
+            "coordinate": [
+              37.6,
+              36.8
+            ]
+          }
+        ]
+      }
+    },
+    "99047": {
+      "name": "Not Dead Yet",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Eralya Leafshadow",
+            "coordinate": [
+              37.6,
+              36.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Byancie",
+            "coordinate": [
+              55.2,
+              56.8
+            ]
+          }
+        ]
+      }
+    },
+    "99050": {
+      "name": "The Great Tree Provides",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Byancie",
+            "coordinate": [
+              55.2,
+              56.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Byancie",
+            "coordinate": [
+              55.2,
+              56.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 141,
+            "name": "Lasher Sproutling",
+            "coordinate": [
+              52.7,
+              74.3
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Blooming Lasher",
+            "coordinate": [
+              42.9,
+              31.1
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Wrathvine",
+            "coordinate": [
+              59.6,
+              72
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Hogger",
+            "coordinate": [
+              58.4,
+              43.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Grell",
+            "coordinate": [
+              56.4,
+              45.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Grellkin",
+            "coordinate": [
+              55,
+              44.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Greenpaw",
+            "coordinate": [
+              44.3,
+              61.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Rascal Sprite",
+            "coordinate": [
+              53.2,
+              49
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Shadow Sprite",
+            "coordinate": [
+              54.6,
+              52.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Dark Sprite",
+            "coordinate": [
+              51.8,
+              48.5
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Vicious Grell",
+            "coordinate": [
+              52.8,
+              49.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Ursa",
+            "coordinate": [
+              65,
+              57.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Gardener",
+            "coordinate": [
+              65,
+              57.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Warrior",
+            "coordinate": [
+              67.8,
+              59.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Shaman",
+            "coordinate": [
+              44.2,
+              60.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Defender",
+            "coordinate": [
+              44,
+              58.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Augur",
+            "coordinate": [
+              44.4,
+              61.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Pathfinder",
+            "coordinate": [
+              39.4,
+              80.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Avenger",
+            "coordinate": [
+              42.5,
+              79.7
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Totemic",
+            "coordinate": [
+              39.4,
+              80.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Harpy",
+            "coordinate": [
+              33.8,
+              35.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Rogue",
+            "coordinate": [
+              35.2,
+              35
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Sorceress",
+            "coordinate": [
+              35.2,
+              35
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Fury",
+            "coordinate": [
+              31.8,
+              32.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Wind Witch",
+            "coordinate": [
+              33.4,
+              29.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Bloodfeather Matriarch",
+            "coordinate": [
+              31.4,
+              31.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Timberling",
+            "coordinate": [
+              59.4,
+              72.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Timberling Bark Ripper",
+            "coordinate": [
+              52.4,
+              73.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Timberling Trampler",
+            "coordinate": [
+              53.2,
+              74.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Timberling Mire Beast",
+            "coordinate": [
+              43.2,
+              35.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Elder Timberling",
+            "coordinate": [
+              43.8,
+              29
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Lord Melenas",
+            "coordinate": [
+              51.5,
+              49.5
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Ursal the Mauler",
+            "coordinate": [
+              39.4,
+              80.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Nightsaber",
+            "coordinate": [
+              61.4,
+              58.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Ambusher",
+            "coordinate": [
+              47.8,
+              53.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Agal",
+            "coordinate": [
+              46.2,
+              51.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Oakenscowl",
+            "coordinate": [
+              53.6,
+              75
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Blackmoss the Fetid",
+            "coordinate": [
+              44,
+              28.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Vorlus Vilehoof",
+            "coordinate": [
+              47.2,
+              63.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Minion of Sethir",
+            "coordinate": [
+              37.2,
+              23
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Ferocitas the Dream Eater",
+            "coordinate": [
+              69.2,
+              53.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Mystic",
+            "coordinate": [
+              68.6,
+              52.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Rageclaw",
+            "coordinate": [
+              45.6,
+              58.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Uruson",
+            "coordinate": [
+              66.8,
+              58.6
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Fury Shelda",
+            "coordinate": [
+              36.4,
+              38.8
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Threggil",
+            "coordinate": [
+              52,
+              52
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Hatescreech",
+            "coordinate": [
+              35,
+              39.2
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Windmistress Gaedress",
+            "coordinate": [
+              33.2,
+              36
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Witchmother Arysa",
+            "coordinate": [
+              34.2,
+              27.9
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Xethorr the Wicked",
+            "coordinate": [
+              51.3,
+              45.4
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Chest of the Sky",
+            "coordinate": [
+              44.6,
+              62.5
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Battered Chest",
+            "coordinate": [
+              55.7,
+              27.3
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Water Barrel",
+            "coordinate": [
+              43.9,
+              61.1
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Battered Chest",
+            "coordinate": [
+              44.5,
+              60.5
+            ]
+          },
+          {
+            "areaID": 141,
+            "name": "Gnarlpine Cache",
+            "coordinate": [
+              44.5,
+              62.5
+            ]
+          }
+        ]
+      }
+    },
+    "99053": {
+      "name": "Escaping Ban'ethil",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Lynessa Duskblossom",
+            "coordinate": [
+              44.6,
+              58.9
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Kyra Starsong",
+            "coordinate": [
+              56,
+              59.4
+            ]
+          }
+        ]
+      }
+    },
+    "99073": {
+      "name": "Easing Suffering",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "teldrassil"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 141,
+            "name": "Byancie",
+            "coordinate": [
+              55.2,
+              56.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 141,
+            "name": "Sentinel Eralya Leafshadow",
+            "coordinate": [
+              37.6,
+              36.8
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "clientWalkthrough": "Not performed."
+}

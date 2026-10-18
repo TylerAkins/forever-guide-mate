@@ -20,6 +20,14 @@ The 1–60 Casual spine lives in `Guides/Leveling/`. Weaving means inserting For
 
 `tools/weave_loremaster.py` (`recommended_level`, `insert_quest`, `place_woven`) encodes placement helpers. Read its output before shipping.
 
+## Capital pickups
+
+A capital pickup does not assign the quest to the neighboring starter zone. Check
+its objective locations, chain context, and supported zone classification first.
+Route it with the zone that owns the work, including required city pickups and
+returns. The [Loremaster ownership rules](../zone-loremaster-guide/SKILL.md#assign-capital-quests-to-their-owning-zone)
+also apply when identifying a Casual quest's owning zone.
+
 ## Where a new quest goes
 
 Use the first rule that fits.

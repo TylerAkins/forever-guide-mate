@@ -1,0 +1,4714 @@
+{
+  "guide": "loremaster-tirisfal-glades",
+  "title": "Tirisfal Glades",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-era-tirisfal-glades",
+  "additionalSpines": [],
+  "spineActions": [
+    "accept-363-rude-awakening",
+    "turnin-363-rude-awakening",
+    "accept-364-the-mindless-ones",
+    "accept-1470-piercing-the-veil",
+    "objective-1470-1-rattlecage-skeleton",
+    "turnin-1470-piercing-the-veil",
+    "objective-364-1-duskbat",
+    "objective-364-2-wretched-zombie",
+    "turnin-364-the-mindless-ones",
+    "accept-3095-simple-scroll",
+    "accept-3099-tainted-scroll",
+    "accept-3096-encrypted-scroll",
+    "accept-3097-hallowed-scroll",
+    "accept-3098-glyphic-scroll",
+    "accept-3901-rattling-the-rattlecages",
+    "woven-accept-98601-a-difficult-path",
+    "level-before-accept-376-the-damned",
+    "accept-376-the-damned",
+    "woven-turnin-98601-a-difficult-path",
+    "level-before-woven-accept-98389-a-light-in-the-darkness",
+    "woven-accept-98389-a-light-in-the-darkness",
+    "turnin-3098-glyphic-scroll",
+    "turnin-3099-tainted-scroll",
+    "turnin-3097-hallowed-scroll",
+    "objective-3901-1-rattlecage-skeleton",
+    "objective-376-1-scavenger-paw",
+    "objective-376-2-duskbat-wing",
+    "turnin-376-the-damned",
+    "level-before-accept-6395-marla-s-last-wish",
+    "accept-6395-marla-s-last-wish",
+    "turnin-3901-rattling-the-rattlecages",
+    "level-before-accept-380-night-web-s-hollow",
+    "accept-380-night-web-s-hollow",
+    "turnin-3095-simple-scroll",
+    "turnin-3096-encrypted-scroll",
+    "level-before-accept-3902-scavenging-deathknell",
+    "accept-3902-scavenging-deathknell",
+    "objective-3902-1-scavenged-goods",
+    "objective-380-1-young-night-web-spider",
+    "objective-380-2-night-web-spider",
+    "woven-objective-98389-a-light-in-the-darkness",
+    "turnin-3902-scavenging-deathknell",
+    "turnin-380-night-web-s-hollow",
+    "woven-turnin-98389-a-light-in-the-darkness",
+    "level-before-woven-accept-96656-the-adventurer",
+    "level-before-accept-381-the-scarlet-crusade",
+    "accept-381-the-scarlet-crusade",
+    "woven-accept-96656-the-adventurer",
+    "objective-381-1-scarlet-convert",
+    "objective-6395-1-samuel-fipps",
+    "turnin-6395-marla-s-last-wish",
+    "level-before-accept-5651-in-favor-of-darkness",
+    "accept-5651-in-favor-of-darkness",
+    "turnin-381-the-scarlet-crusade",
+    "level-before-accept-382-the-red-messenger",
+    "accept-382-the-red-messenger",
+    "objective-382-1-meven-korgal",
+    "turnin-382-the-red-messenger",
+    "level-before-woven-accept-90902-rediscovering-the-light",
+    "woven-accept-90902-rediscovering-the-light",
+    "woven-objective-90902-rediscovering-the-light",
+    "woven-turnin-90902-rediscovering-the-light",
+    "level-before-woven-accept-91208-coming-to-terms",
+    "woven-accept-91208-coming-to-terms",
+    "woven-objective-91208-coming-to-terms",
+    "woven-turnin-91208-coming-to-terms",
+    "level-before-woven-accept-91209-continue-your-training",
+    "woven-accept-91209-continue-your-training",
+    "woven-turnin-91209-continue-your-training",
+    "level-before-accept-383-vital-intelligence",
+    "accept-383-vital-intelligence",
+    "accept-8-a-rogue-s-deal",
+    "level-before-accept-365-fields-of-grief",
+    "woven-turnin-96656-the-adventurer",
+    "level-before-woven-accept-96607-the-great-outdoors",
+    "woven-accept-96607-the-great-outdoors",
+    "woven-objective-96607-the-great-outdoors",
+    "woven-turnin-96607-the-great-outdoors",
+    "accept-365-fields-of-grief",
+    "level-before-accept-5481-gordo-s-task",
+    "accept-5481-gordo-s-task",
+    "level-before-accept-404-a-putrid-task",
+    "accept-404-a-putrid-task",
+    "level-before-accept-367-a-new-plague",
+    "accept-367-a-new-plague",
+    "turnin-383-vital-intelligence",
+    "level-before-woven-accept-86784-sticks-and-bones",
+    "woven-accept-86784-sticks-and-bones",
+    "woven-objective-86784-sticks-and-bones",
+    "woven-turnin-86784-sticks-and-bones",
+    "level-before-woven-accept-99134-discipline",
+    "woven-accept-99134-discipline",
+    "level-before-woven-accept-95314-that-shadowvale-green-elixir",
+    "woven-accept-95314-that-shadowvale-green-elixir",
+    "level-before-accept-427-at-war-with-the-scarlet-crusade",
+    "accept-427-at-war-with-the-scarlet-crusade",
+    "turnin-8-a-rogue-s-deal",
+    "woven-accept-590-a-rogues-deal",
+    "woven-objective-590-a-rogues-deal",
+    "woven-turnin-590-a-rogues-deal",
+    "turnin-5651-in-favor-of-darkness",
+    "level-before-accept-5650-garments-of-darkness",
+    "accept-5650-garments-of-darkness",
+    "objective-5650-quest-work",
+    "turnin-5650-garments-of-darkness",
+    "objective-367-1-decrepit-darkhound",
+    "turnin-367-a-new-plague",
+    "level-before-accept-368-a-new-plague",
+    "accept-368-a-new-plague",
+    "objective-404-1-ravaged-corpse",
+    "objective-5481-1-gloom-weed",
+    "objective-365-1-tirisfal-pumpkin",
+    "objective-427-1-scarlet-warrior",
+    "turnin-427-at-war-with-the-scarlet-crusade",
+    "woven-objective-99134-discipline",
+    "woven-turnin-99134-discipline",
+    "level-before-woven-accept-99141-patience",
+    "woven-accept-99141-patience",
+    "woven-objective-99141-patience",
+    "woven-turnin-99141-patience",
+    "level-before-accept-370-at-war-with-the-scarlet-crusade",
+    "accept-370-at-war-with-the-scarlet-crusade",
+    "turnin-365-fields-of-grief",
+    "level-before-accept-407-fields-of-grief",
+    "accept-407-fields-of-grief",
+    "turnin-404-a-putrid-task",
+    "level-before-accept-426-the-mills-overrun",
+    "accept-426-the-mills-overrun",
+    "turnin-5481-gordo-s-task",
+    "level-before-accept-5482-doom-weed",
+    "accept-5482-doom-weed",
+    "turnin-407-fields-of-grief",
+    "level-before-accept-1818-speak-with-dillinger",
+    "accept-1818-speak-with-dillinger",
+    "level-before-accept-354-deaths-in-the-family",
+    "accept-354-deaths-in-the-family",
+    "level-before-accept-362-the-haunted-mills",
+    "accept-362-the-haunted-mills",
+    "level-before-accept-1881-speak-with-anastasia",
+    "accept-1881-speak-with-anastasia",
+    "level-before-accept-375-the-chill-of-death",
+    "accept-375-the-chill-of-death",
+    "level-before-accept-1478-halgar-s-summons",
+    "accept-1478-halgar-s-summons",
+    "level-before-accept-1885-mennet-carkad",
+    "accept-1885-mennet-carkad",
+    "level-before-accept-374-proof-of-demise",
+    "accept-374-proof-of-demise",
+    "level-before-accept-358-graverobbers",
+    "accept-358-graverobbers",
+    "level-before-accept-398-wanted-maggot-eye",
+    "accept-398-wanted-maggot-eye",
+    "turnin-1818-speak-with-dillinger",
+    "level-before-accept-1819-ulag-the-cleaver",
+    "accept-1819-ulag-the-cleaver",
+    "objective-1819-1-mausoleum-trigger",
+    "turnin-1819-ulag-the-cleaver",
+    "level-before-accept-1820-speak-with-coleman",
+    "accept-1820-speak-with-coleman",
+    "turnin-1820-speak-with-coleman",
+    "turnin-1478-halgar-s-summons",
+    "level-before-accept-1473-creature-of-the-void",
+    "accept-1473-creature-of-the-void",
+    "turnin-1885-mennet-carkad",
+    "level-before-accept-1886-the-deathstalkers",
+    "accept-1886-the-deathstalkers",
+    "turnin-1881-speak-with-anastasia",
+    "level-before-accept-1882-the-balnir-farmstead",
+    "accept-1882-the-balnir-farmstead",
+    "objective-370-1-captain-perrine",
+    "objective-1473-1-egalin-s-grimoire",
+    "objective-374-1-scarlet-insignia-ring",
+    "objective-370-2-scarlet-zealot",
+    "objective-370-3-scarlet-missionary",
+    "turnin-1473-creature-of-the-void",
+    "level-before-accept-1471-the-binding",
+    "accept-1471-the-binding",
+    "objective-1471-1-runes-of-summoning",
+    "turnin-1471-the-binding",
+    "objective-375-1-greater-duskbat",
+    "objective-362-1-devlin-agamand",
+    "objective-354-2-nissa-agamand",
+    "objective-354-1-gregor-agamand",
+    "objective-354-3-thurman-agamand",
+    "objective-426-1-notched-rib",
+    "objective-426-2-blackened-skull",
+    "loot-starter-before-accept-361-a-letter-undelivered",
+    "level-before-accept-361-a-letter-undelivered",
+    "accept-361-a-letter-undelivered",
+    "objective-398-1-maggot-eye",
+    "objective-368-1-vile-fin-puddlejumper",
+    "objective-358-2-rot-hide-mongrel",
+    "objective-358-1-rot-hide-graverobber",
+    "objective-5482-1-doom-weed",
+    "objective-358-3-embalming-ichor",
+    "turnin-5482-doom-weed",
+    "level-before-woven-accept-99142-tomb-weed",
+    "woven-accept-99142-tomb-weed",
+    "turnin-426-the-mills-overrun",
+    "turnin-368-a-new-plague",
+    "level-before-accept-369-a-new-plague",
+    "accept-369-a-new-plague",
+    "turnin-370-at-war-with-the-scarlet-crusade",
+    "level-before-accept-371-at-war-with-the-scarlet-crusade",
+    "accept-371-at-war-with-the-scarlet-crusade",
+    "turnin-398-wanted-maggot-eye",
+    "turnin-358-graverobbers",
+    "level-before-woven-accept-405-the-prodigal-lich",
+    "woven-accept-405-the-prodigal-lich",
+    "woven-turnin-405-the-prodigal-lich",
+    "level-before-woven-accept-357-the-lichs-identity",
+    "woven-accept-357-the-lichs-identity",
+    "woven-objective-357-the-lichs-identity",
+    "woven-turnin-357-the-lichs-identity",
+    "level-before-woven-accept-366-return-the-book",
+    "woven-accept-366-return-the-book",
+    "woven-turnin-366-return-the-book",
+    "level-before-woven-accept-409-proving-allegiance",
+    "woven-accept-409-proving-allegiance",
+    "woven-objective-409-proving-allegiance",
+    "woven-turnin-409-proving-allegiance",
+    "level-before-woven-accept-411-the-prodigal-lich-returns",
+    "woven-accept-411-the-prodigal-lich-returns",
+    "woven-turnin-411-the-prodigal-lich-returns",
+    "level-before-accept-359-forsaken-duties",
+    "accept-359-forsaken-duties",
+    "turnin-374-proof-of-demise",
+    "turnin-361-a-letter-undelivered",
+    "turnin-354-deaths-in-the-family",
+    "turnin-362-the-haunted-mills",
+    "level-before-accept-355-speak-with-sevren",
+    "accept-355-speak-with-sevren",
+    "turnin-375-the-chill-of-death",
+    "turnin-359-forsaken-duties",
+    "level-before-accept-360-return-to-the-magistrate",
+    "accept-360-return-to-the-magistrate",
+    "level-before-accept-356-rear-guard-patrol",
+    "accept-356-rear-guard-patrol",
+    "level-before-woven-accept-97558-hides-for-the-forsaken",
+    "woven-accept-97558-hides-for-the-forsaken",
+    "objective-1882-1-balnir-snapdragons",
+    "woven-objective-99142-tomb-weed",
+    "objective-356-1-bleeding-horror",
+    "objective-356-2-wandering-spirit",
+    "woven-objective-97558-hides-for-the-forsaken",
+    "objective-371-1-captain-vachon",
+    "objective-371-2-scarlet-friar",
+    "objective-369-1-vicious-night-web-spider",
+    "turnin-356-rear-guard-patrol",
+    "level-before-woven-accept-99156-rear-guard-patrol",
+    "woven-accept-99156-rear-guard-patrol",
+    "woven-objective-99156-rear-guard-patrol",
+    "woven-turnin-99156-rear-guard-patrol",
+    "woven-turnin-97558-hides-for-the-forsaken",
+    "turnin-355-speak-with-sevren",
+    "level-before-woven-accept-408-the-family-crypt",
+    "woven-accept-408-the-family-crypt",
+    "woven-objective-408-the-family-crypt",
+    "woven-turnin-408-the-family-crypt",
+    "turnin-360-return-to-the-magistrate",
+    "turnin-371-at-war-with-the-scarlet-crusade",
+    "level-before-woven-accept-372-at-war-with-the-scarlet-crusade",
+    "woven-accept-372-at-war-with-the-scarlet-crusade",
+    "woven-objective-372-at-war-with-the-scarlet-crusade",
+    "woven-turnin-372-at-war-with-the-scarlet-crusade",
+    "turnin-369-a-new-plague",
+    "level-before-accept-492-a-new-plague",
+    "accept-492-a-new-plague",
+    "level-before-accept-445-delivery-to-silverpine-forest",
+    "accept-445-delivery-to-silverpine-forest",
+    "turnin-492-a-new-plague",
+    "woven-turnin-99142-tomb-weed",
+    "turnin-1882-the-balnir-farmstead",
+    "objective-1886-1-astor-hadren",
+    "woven-objective-95314-that-shadowvale-green-elixir",
+    "level-before-woven-accept-99144-seeking-refuge",
+    "woven-accept-99144-seeking-refuge",
+    "woven-objective-99144-seeking-refuge",
+    "woven-turnin-99144-seeking-refuge",
+    "woven-turnin-95314-that-shadowvale-green-elixir",
+    "level-before-woven-accept-91282-a-second-home",
+    "woven-accept-91282-a-second-home",
+    "woven-turnin-91282-a-second-home",
+    "level-before-woven-accept-91285-murlocs-at-the-gates",
+    "woven-accept-91285-murlocs-at-the-gates",
+    "woven-objective-91285-murlocs-at-the-gates",
+    "woven-turnin-91285-murlocs-at-the-gates",
+    "level-before-woven-accept-91294-touring-the-grounds",
+    "woven-accept-91294-touring-the-grounds",
+    "woven-objective-91294-touring-the-grounds",
+    "woven-turnin-91294-touring-the-grounds",
+    "level-before-woven-accept-91316-making-repairs",
+    "woven-accept-91316-making-repairs",
+    "level-before-woven-accept-91317-the-tarnished",
+    "woven-accept-91317-the-tarnished",
+    "woven-objective-91316-making-repairs",
+    "woven-objective-91317-the-tarnished",
+    "woven-turnin-91316-making-repairs",
+    "woven-turnin-91317-the-tarnished",
+    "level-before-woven-accept-95803-a-token-of-good-faith",
+    "woven-accept-95803-a-token-of-good-faith",
+    "woven-turnin-95803-a-token-of-good-faith",
+    "level-before-woven-accept-94427-a-lesson-in-divinity",
+    "woven-accept-94427-a-lesson-in-divinity",
+    "woven-turnin-94427-a-lesson-in-divinity",
+    "level-before-woven-accept-94434-a-lesson-in-divinity-undercity",
+    "woven-accept-94434-a-lesson-in-divinity-undercity",
+    "woven-objective-94434-a-lesson-in-divinity-undercity",
+    "woven-turnin-94434-a-lesson-in-divinity-undercity",
+    "level-before-woven-accept-94435-a-lesson-in-divinity-return",
+    "woven-accept-94435-a-lesson-in-divinity-return",
+    "woven-turnin-94435-a-lesson-in-divinity-return",
+    "level-before-woven-accept-94436-a-lesson-in-divinity-billmuth",
+    "woven-accept-94436-a-lesson-in-divinity-billmuth",
+    "woven-turnin-94436-a-lesson-in-divinity-billmuth",
+    "level-before-woven-accept-94438-a-lesson-in-divinity-falgan",
+    "woven-accept-94438-a-lesson-in-divinity-falgan",
+    "objective-94438-reviewed-mechanics",
+    "woven-turnin-94438-a-lesson-in-divinity-falgan",
+    "level-before-woven-accept-94440-a-lesson-in-divinity-scarlets",
+    "woven-accept-94440-a-lesson-in-divinity-scarlets",
+    "woven-objective-94440-a-lesson-in-divinity-scarlets",
+    "woven-turnin-94440-a-lesson-in-divinity-scarlets",
+    "level-before-woven-accept-94441-a-lesson-in-divinity-done",
+    "woven-accept-94441-a-lesson-in-divinity-done",
+    "woven-turnin-94441-a-lesson-in-divinity-done",
+    "level-before-woven-accept-96895-the-argent-emissary",
+    "woven-accept-96895-the-argent-emissary",
+    "woven-turnin-96895-the-argent-emissary",
+    "level-before-woven-accept-96896-a-righteous-cause",
+    "woven-accept-96896-a-righteous-cause",
+    "woven-objective-96896-a-righteous-cause",
+    "woven-turnin-96896-a-righteous-cause",
+    "level-before-woven-accept-96897-the-cult-of-the-damned",
+    "woven-accept-96897-the-cult-of-the-damned",
+    "level-before-woven-accept-96898-remnants-of-war",
+    "woven-accept-96898-remnants-of-war",
+    "woven-objective-96897-the-cult-of-the-damned",
+    "woven-objective-96898-remnants-of-war",
+    "woven-turnin-96897-the-cult-of-the-damned",
+    "woven-turnin-96898-remnants-of-war",
+    "level-before-woven-accept-96899-bandarion-keep",
+    "woven-accept-96899-bandarion-keep",
+    "woven-turnin-96899-bandarion-keep",
+    "level-before-woven-accept-99152-as-above-so-below",
+    "woven-accept-99152-as-above-so-below",
+    "level-before-woven-accept-99153-the-one-that-got-away",
+    "woven-accept-99153-the-one-that-got-away",
+    "woven-objective-99152-as-above-so-below",
+    "woven-objective-99153-the-one-that-got-away",
+    "woven-turnin-99152-as-above-so-below",
+    "woven-turnin-99153-the-one-that-got-away",
+    "level-before-woven-accept-98545-leonid-s-letter",
+    "woven-accept-98545-leonid-s-letter",
+    "woven-turnin-98545-leonids-letter",
+    "loot-starter-before-accept-95328-verified-pickup",
+    "level-before-accept-95328-verified-pickup",
+    "accept-95328-verified-pickup",
+    "objective-95328-quest-work",
+    "woven-turnin-95328-whispering-horror-residue",
+    "travel-tirisfal-to-durotar",
+    "level-before-accept-5660-touch-of-weakness",
+    "accept-5660-touch-of-weakness",
+    "travel-durotar-to-tirisfal",
+    "turnin-5660-touch-of-weakness"
+  ],
+  "placements": [],
+  "quests": {
+    "8": {
+      "name": "A Rogue's Deal",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Calvin Montague",
+            "coordinate": [
+              38.2,
+              56.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Innkeeper Renee",
+            "coordinate": [
+              61.6,
+              52
+            ]
+          }
+        ]
+      }
+    },
+    "232": {
+      "name": "Errand for Apothecary Zinge",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 45,
+      "offerMinimum": 38,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Apothecary Zinge",
+            "coordinate": [
+              50,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Alessandro Luca",
+            "coordinate": [
+              58.2,
+              55.2
+            ]
+          }
+        ]
+      }
+    },
+    "238": {
+      "name": "Errand for Apothecary Zinge",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 45,
+      "offerMinimum": 38,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Alessandro Luca",
+            "coordinate": [
+              58.2,
+              55.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Apothecary Zinge",
+            "coordinate": [
+              50,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "354": {
+      "name": "Deaths in the Family",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Coleman Farthing",
+            "coordinate": [
+              61.8,
+              52.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Coleman Farthing",
+            "coordinate": [
+              61.8,
+              52.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Gregor Agamand",
+            "coordinate": [
+              45.8,
+              29.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Nissa Agamand",
+            "coordinate": [
+              49.4,
+              36
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Thurman Agamand",
+            "coordinate": [
+              42.8,
+              32.4
+            ]
+          }
+        ]
+      }
+    },
+    "355": {
+      "name": "Speak with Sevren",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Coleman Farthing",
+            "coordinate": [
+              61.8,
+              52.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Magistrate Sevren",
+            "coordinate": [
+              61.2,
+              50.8
+            ]
+          }
+        ]
+      }
+    },
+    "356": {
+      "name": "Rear Guard Patrol",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Linnea",
+            "coordinate": [
+              65.4,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Linnea",
+            "coordinate": [
+              65.4,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "357": {
+      "name": "The Lich's Identity",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Bethor Iceshard",
+            "coordinate": [
+              84.2,
+              17.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Bethor Iceshard",
+            "coordinate": [
+              84.2,
+              17.4
+            ]
+          }
+        ]
+      }
+    },
+    "358": {
+      "name": "Graverobbers",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Magistrate Sevren",
+            "coordinate": [
+              61.2,
+              50.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Magistrate Sevren",
+            "coordinate": [
+              61.2,
+              50.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Rattlecage Soldier",
+            "coordinate": [
+              49.2,
+              36
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Darkeye Bonecaster",
+            "coordinate": [
+              49.2,
+              36.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Cracked Skull Soldier",
+            "coordinate": [
+              48.3,
+              35.1
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rotting Dead",
+            "coordinate": [
+              53.5,
+              47.3
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Ravaged Corpse",
+            "coordinate": [
+              52.5,
+              50
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Hungering Dead",
+            "coordinate": [
+              67.4,
+              43
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Shambling Horror",
+            "coordinate": [
+              66.6,
+              44.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Bleeding Horror",
+            "coordinate": [
+              76.2,
+              62.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rotting Ancestor",
+            "coordinate": [
+              52.4,
+              26.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Wandering Spirit",
+            "coordinate": [
+              75,
+              59.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Wailing Ancestor",
+            "coordinate": [
+              52.2,
+              26.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Warrior",
+            "coordinate": [
+              31.8,
+              46.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Missionary",
+            "coordinate": [
+              51.8,
+              66.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Zealot",
+            "coordinate": [
+              51.6,
+              67.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Friar",
+            "coordinate": [
+              79.4,
+              55.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Neophyte",
+            "coordinate": [
+              79,
+              28.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Vanguard",
+            "coordinate": [
+              79.6,
+              26.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vile Fin Puddlejumper",
+            "coordinate": [
+              59.4,
+              29
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vile Fin Minor Oracle",
+            "coordinate": [
+              59.4,
+              29
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Decrepit Darkhound",
+            "coordinate": [
+              61,
+              55.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Cursed Darkhound",
+            "coordinate": [
+              60.6,
+              62.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Ravenous Darkhound",
+            "coordinate": [
+              81.4,
+              45
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Greater Duskbat",
+            "coordinate": [
+              65.7,
+              54.7
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vampiric Duskbat",
+            "coordinate": [
+              77.8,
+              70.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vicious Night Web Spider",
+            "coordinate": [
+              82,
+              54.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Nissa Agamand",
+            "coordinate": [
+              49.4,
+              36
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Bodyguard",
+            "coordinate": [
+              79.4,
+              26
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Captain Perrine",
+            "coordinate": [
+              51.6,
+              67.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Captain Vachon",
+            "coordinate": [
+              79.4,
+              55.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rot Hide Gnoll",
+            "coordinate": [
+              56.8,
+              38.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rot Hide Mongrel",
+            "coordinate": [
+              58.6,
+              31.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Tirisfal Farmhand",
+            "coordinate": [
+              35,
+              49.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rot Hide Graverobber",
+            "coordinate": [
+              55.6,
+              42.8
+            ]
+          }
+        ]
+      }
+    },
+    "359": {
+      "name": "Forsaken Duties",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Magistrate Sevren",
+            "coordinate": [
+              61.2,
+              50.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Linnea",
+            "coordinate": [
+              65.4,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "360": {
+      "name": "Return to the Magistrate",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Linnea",
+            "coordinate": [
+              65.4,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Magistrate Sevren",
+            "coordinate": [
+              61.2,
+              50.8
+            ]
+          }
+        ]
+      }
+    },
+    "361": {
+      "name": "A Letter Undelivered",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Yvette Farthing",
+            "coordinate": [
+              61.6,
+              52.6
+            ]
+          }
+        ]
+      }
+    },
+    "362": {
+      "name": "The Haunted Mills",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Coleman Farthing",
+            "coordinate": [
+              61.8,
+              52.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Coleman Farthing",
+            "coordinate": [
+              61.8,
+              52.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Devlin Agamand",
+            "coordinate": [
+              47.3,
+              40.5
+            ]
+          }
+        ]
+      }
+    },
+    "363": {
+      "name": "Rude Awakening",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Undertaker Mordo",
+            "coordinate": [
+              30.2,
+              71.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Shadow Priest Sarvis",
+            "coordinate": [
+              30.8,
+              66.2
+            ]
+          }
+        ]
+      }
+    },
+    "364": {
+      "name": "The Mindless Ones",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Shadow Priest Sarvis",
+            "coordinate": [
+              30.8,
+              66.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Shadow Priest Sarvis",
+            "coordinate": [
+              30.8,
+              66.2
+            ]
+          }
+        ]
+      }
+    },
+    "365": {
+      "name": "Fields of Grief",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Simmer",
+            "coordinate": [
+              40.8,
+              54.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "366": {
+      "name": "Return the Book",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Bethor Iceshard",
+            "coordinate": [
+              84.2,
+              17.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Gunther Arcanus",
+            "coordinate": [
+              68.2,
+              42
+            ]
+          }
+        ]
+      }
+    },
+    "367": {
+      "name": "A New Plague",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Decrepit Darkhound",
+            "coordinate": [
+              61,
+              55.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Cursed Darkhound",
+            "coordinate": [
+              60.6,
+              62.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Ravenous Darkhound",
+            "coordinate": [
+              81.4,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "368": {
+      "name": "A New Plague",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Vile Fin Puddlejumper",
+            "coordinate": [
+              59.4,
+              29
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vile Fin Minor Oracle",
+            "coordinate": [
+              59.4,
+              29
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vile Fin Muckdweller",
+            "coordinate": [
+              36.7,
+              42
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vile Fin Seer",
+            "coordinate": [
+              13.8,
+              56.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vile Fin Attacker",
+            "coordinate": [
+              18.2,
+              60.1
+            ]
+          }
+        ]
+      }
+    },
+    "369": {
+      "name": "A New Plague",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Vicious Night Web Spider",
+            "coordinate": [
+              82,
+              54.2
+            ]
+          }
+        ]
+      }
+    },
+    "370": {
+      "name": "At War With The Scarlet Crusade",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ]
+      }
+    },
+    "371": {
+      "name": "At War With The Scarlet Crusade",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ]
+      }
+    },
+    "372": {
+      "name": "At War With The Scarlet Crusade",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ]
+      }
+    },
+    "374": {
+      "name": "Proof of Demise",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Burgess",
+            "coordinate": [
+              60.8,
+              52
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Burgess",
+            "coordinate": [
+              60.8,
+              52
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Scarlet Warrior",
+            "coordinate": [
+              31.8,
+              46.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Missionary",
+            "coordinate": [
+              51.8,
+              66.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Zealot",
+            "coordinate": [
+              51.6,
+              67.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Friar",
+            "coordinate": [
+              79.4,
+              55.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Neophyte",
+            "coordinate": [
+              79,
+              28.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Vanguard",
+            "coordinate": [
+              79.6,
+              26.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Bodyguard",
+            "coordinate": [
+              79.4,
+              26
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Captain Perrine",
+            "coordinate": [
+              51.6,
+              67.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Captain Vachon",
+            "coordinate": [
+              79.4,
+              55.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Captain Melrache",
+            "coordinate": [
+              79.4,
+              26
+            ]
+          }
+        ]
+      }
+    },
+    "375": {
+      "name": "The Chill of Death",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Gretchen Dedmar",
+            "coordinate": [
+              61.8,
+              52.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Gretchen Dedmar",
+            "coordinate": [
+              61.8,
+              52.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Greater Duskbat",
+            "coordinate": [
+              65.7,
+              54.7
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vampiric Duskbat",
+            "coordinate": [
+              77.8,
+              70.4
+            ]
+          }
+        ]
+      }
+    },
+    "376": {
+      "name": "The Damned",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Novice Elreth",
+            "coordinate": [
+              30.8,
+              66
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Novice Elreth",
+            "coordinate": [
+              30.8,
+              66
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Mindless Zombie",
+            "coordinate": [
+              32,
+              63.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Wretched Zombie",
+            "coordinate": [
+              31.6,
+              63.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Young Night Web Spider",
+            "coordinate": [
+              27.2,
+              59.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Night Web Spider",
+            "coordinate": [
+              25.4,
+              59.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Convert",
+            "coordinate": [
+              35.6,
+              68
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Initiate",
+            "coordinate": [
+              36.4,
+              69.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Young Scavenger",
+            "coordinate": [
+              30.8,
+              62.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Ragged Scavenger",
+            "coordinate": [
+              34.4,
+              62.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Duskbat",
+            "coordinate": [
+              30,
+              65.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Mangy Duskbat",
+            "coordinate": [
+              34,
+              61.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rattlecage Soldier",
+            "coordinate": [
+              49.2,
+              36
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Darkeye Bonecaster",
+            "coordinate": [
+              49.2,
+              36.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Cracked Skull Soldier",
+            "coordinate": [
+              48.3,
+              35.1
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rotting Dead",
+            "coordinate": [
+              53.5,
+              47.3
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Ravaged Corpse",
+            "coordinate": [
+              52.5,
+              50
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Hungering Dead",
+            "coordinate": [
+              67.4,
+              43
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Bleeding Horror",
+            "coordinate": [
+              76.2,
+              62.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rotting Ancestor",
+            "coordinate": [
+              52.4,
+              26.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Wandering Spirit",
+            "coordinate": [
+              75,
+              59.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Wailing Ancestor",
+            "coordinate": [
+              52.2,
+              26.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Warrior",
+            "coordinate": [
+              31.8,
+              46.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Missionary",
+            "coordinate": [
+              51.8,
+              66.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Zealot",
+            "coordinate": [
+              51.6,
+              67.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Friar",
+            "coordinate": [
+              79.4,
+              55.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vile Fin Puddlejumper",
+            "coordinate": [
+              59.4,
+              29
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vile Fin Minor Oracle",
+            "coordinate": [
+              59.4,
+              29
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Decrepit Darkhound",
+            "coordinate": [
+              61,
+              55.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Cursed Darkhound",
+            "coordinate": [
+              60.6,
+              62.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Greater Duskbat",
+            "coordinate": [
+              65.7,
+              54.7
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vampiric Duskbat",
+            "coordinate": [
+              77.8,
+              70.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Vicious Night Web Spider",
+            "coordinate": [
+              82,
+              54.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Thurman Agamand",
+            "coordinate": [
+              42.8,
+              32.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Bodyguard",
+            "coordinate": [
+              79.4,
+              26
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Meven Korgal",
+            "coordinate": [
+              36,
+              68.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rot Hide Gnoll",
+            "coordinate": [
+              56.8,
+              38.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rot Hide Mongrel",
+            "coordinate": [
+              58.6,
+              31.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rattlecage Skeleton",
+            "coordinate": [
+              33,
+              63.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Tirisfal Farmer",
+            "coordinate": [
+              38.4,
+              51.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Rot Hide Graverobber",
+            "coordinate": [
+              55.6,
+              42.8
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Agamand Weapon Rack",
+            "coordinate": [
+              52.6,
+              26.9
+            ]
+          }
+        ]
+      }
+    },
+    "380": {
+      "name": "Night Web's Hollow",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Arren",
+            "coordinate": [
+              32,
+              66
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Arren",
+            "coordinate": [
+              32,
+              66
+            ]
+          }
+        ]
+      }
+    },
+    "381": {
+      "name": "The Scarlet Crusade",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Arren",
+            "coordinate": [
+              32,
+              66
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Arren",
+            "coordinate": [
+              32,
+              66
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Scarlet Convert",
+            "coordinate": [
+              35.6,
+              68
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Scarlet Initiate",
+            "coordinate": [
+              36.4,
+              69.4
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Meven Korgal",
+            "coordinate": [
+              36,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "382": {
+      "name": "The Red Messenger",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Arren",
+            "coordinate": [
+              32,
+              66
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Arren",
+            "coordinate": [
+              32,
+              66
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Meven Korgal",
+            "coordinate": [
+              36,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "383": {
+      "name": "Vital Intelligence",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Arren",
+            "coordinate": [
+              32,
+              66
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ]
+      }
+    },
+    "398": {
+      "name": "Wanted: Maggot Eye",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Wanted!",
+            "coordinate": [
+              60.7,
+              51.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Maggot Eye",
+            "coordinate": [
+              58.6,
+              31
+            ]
+          }
+        ]
+      }
+    },
+    "404": {
+      "name": "A Putrid Task",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Dillinger",
+            "coordinate": [
+              58.2,
+              51.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Dillinger",
+            "coordinate": [
+              58.2,
+              51.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Rotting Dead",
+            "coordinate": [
+              53.5,
+              47.3
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Ravaged Corpse",
+            "coordinate": [
+              52.5,
+              50
+            ]
+          }
+        ]
+      }
+    },
+    "405": {
+      "name": "The Prodigal Lich",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Bethor Iceshard",
+            "coordinate": [
+              84.2,
+              17.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Magistrate Sevren",
+            "coordinate": [
+              61.2,
+              50.8
+            ]
+          }
+        ]
+      }
+    },
+    "407": {
+      "name": "Fields of Grief",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Captured Scarlet Zealot",
+            "coordinate": [
+              61.8,
+              51.2
+            ]
+          }
+        ]
+      }
+    },
+    "408": {
+      "name": "The Family Crypt",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Magistrate Sevren",
+            "coordinate": [
+              61.2,
+              50.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Magistrate Sevren",
+            "coordinate": [
+              61.2,
+              50.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Captain Dargol",
+            "coordinate": [
+              52.2,
+              26.4
+            ]
+          }
+        ]
+      }
+    },
+    "409": {
+      "name": "Proving Allegiance",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Gunther Arcanus",
+            "coordinate": [
+              68.2,
+              42
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Gunther Arcanus",
+            "coordinate": [
+              68.2,
+              42
+            ]
+          }
+        ]
+      }
+    },
+    "410": {
+      "name": "The Dormant Shade",
+      "status": "excluded",
+      "reason": "Repeatable and not needed by an included chain.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 5,
+      "ownership": "not-authored",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Lillith's Dinner Table",
+            "coordinate": [
+              66.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Lillith's Dinner Table",
+            "coordinate": [
+              66.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "411": {
+      "name": "The Prodigal Lich Returns",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Bethor Iceshard",
+            "coordinate": [
+              84.2,
+              17.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Gunther Arcanus",
+            "coordinate": [
+              68.2,
+              42
+            ]
+          }
+        ]
+      }
+    },
+    "426": {
+      "name": "The Mills Overrun",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Dillinger",
+            "coordinate": [
+              58.2,
+              51.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Dillinger",
+            "coordinate": [
+              58.2,
+              51.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Rattlecage Soldier",
+            "coordinate": [
+              49.2,
+              36
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Darkeye Bonecaster",
+            "coordinate": [
+              49.2,
+              36.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Cracked Skull Soldier",
+            "coordinate": [
+              48.3,
+              35.1
+            ]
+          }
+        ]
+      }
+    },
+    "427": {
+      "name": "At War With The Scarlet Crusade",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ]
+      }
+    },
+    "431": {
+      "name": "Candles of Beckoning",
+      "status": "excluded",
+      "reason": "Repeatable and not needed by an included chain.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 5,
+      "ownership": "not-authored",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1,
+            "name": "Crate of Candles",
+            "coordinate": [
+              45.3,
+              52
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Crate of Candles",
+            "coordinate": [
+              68.1,
+              42
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1,
+            "name": "Crate of Candles",
+            "coordinate": [
+              45.3,
+              52
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Crate of Candles",
+            "coordinate": [
+              68.1,
+              42
+            ]
+          }
+        ]
+      }
+    },
+    "445": {
+      "name": "Delivery to Silverpine Forest",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 130,
+            "name": "Apothecary Renferrel",
+            "coordinate": [
+              42.8,
+              40.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "492": {
+      "name": "A New Plague",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Apothecary Johaan",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Captured Mountaineer",
+            "coordinate": [
+              61.8,
+              51.4
+            ]
+          }
+        ]
+      }
+    },
+    "495": {
+      "name": "The Crown of Will",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 39,
+      "offerMinimum": 34,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Sharlindra",
+            "coordinate": [
+              57.4,
+              93.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 267,
+            "name": "Melisara",
+            "coordinate": [
+              62.6,
+              20.6
+            ]
+          }
+        ]
+      }
+    },
+    "590": {
+      "name": "A Rogue's Deal",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Calvin Montague",
+            "coordinate": [
+              38.2,
+              56.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Calvin Montague",
+            "coordinate": [
+              38.2,
+              56.6
+            ]
+          }
+        ]
+      }
+    },
+    "736": {
+      "name": "The Star, the Hand and the Heart",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 44,
+      "offerMinimum": 30,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Keeper Bel'dugur",
+            "coordinate": [
+              53.6,
+              54
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Keeper Bel'dugur",
+            "coordinate": [
+              53.6,
+              54
+            ]
+          }
+        ]
+      }
+    },
+    "864": {
+      "name": "Return to Apothecary Zinge",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 46,
+      "offerMinimum": 38,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Apothecary Zinge",
+            "coordinate": [
+              50,
+              68.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 440,
+            "name": "Chief Engineer Bilgewhizzle",
+            "coordinate": [
+              52.4,
+              28.4
+            ]
+          }
+        ]
+      }
+    },
+    "1004": {
+      "name": "The New Frontier",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Harbinger Balthazad",
+            "coordinate": [
+              68.2,
+              47.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ]
+      }
+    },
+    "1164": {
+      "name": "To Steal From Thieves",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 36,
+      "offerMinimum": 27,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Genavie Callow",
+            "coordinate": [
+              64,
+              49.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Genavie Callow",
+            "coordinate": [
+              64,
+              49.4
+            ]
+          }
+        ]
+      }
+    },
+    "1358": {
+      "name": "Sample for Helbrim",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 10,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Apothecary Zinge",
+            "coordinate": [
+              50,
+              68.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 17,
+            "name": "Apothecary Helbrim",
+            "coordinate": [
+              51.4,
+              30.2
+            ]
+          }
+        ]
+      }
+    },
+    "1359": {
+      "name": "Zinge's Delivery",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 10,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 130,
+            "name": "Apothecary Renferrel",
+            "coordinate": [
+              42.8,
+              40.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Apothecary Zinge",
+            "coordinate": [
+              50,
+              68.4
+            ]
+          }
+        ]
+      }
+    },
+    "2995": {
+      "name": "Lines of Communication",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 47,
+      "offerMinimum": 42,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Oran Snakewrithe",
+            "coordinate": [
+              73.4,
+              32.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Oran Snakewrithe",
+            "coordinate": [
+              73.4,
+              32.4
+            ]
+          }
+        ]
+      }
+    },
+    "3568": {
+      "name": "Seeping Corruption",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Cuely",
+            "coordinate": [
+              48.6,
+              71.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Cuely",
+            "coordinate": [
+              48.6,
+              71.8
+            ]
+          }
+        ]
+      }
+    },
+    "3569": {
+      "name": "Seeping Corruption",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Cuely",
+            "coordinate": [
+              48.6,
+              71.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Thersa Windsong",
+            "coordinate": [
+              49,
+              71.2
+            ]
+          }
+        ]
+      }
+    },
+    "3570": {
+      "name": "Seeping Corruption",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Cuely",
+            "coordinate": [
+              48.6,
+              71.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Cuely",
+            "coordinate": [
+              48.6,
+              71.8
+            ]
+          }
+        ]
+      }
+    },
+    "3784": {
+      "name": "Assisting Arch Druid Runetotem",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Innkeeper Norman",
+            "coordinate": [
+              67.6,
+              38.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ]
+      }
+    },
+    "3901": {
+      "name": "Rattling the Rattlecages",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Shadow Priest Sarvis",
+            "coordinate": [
+              30.8,
+              66.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Shadow Priest Sarvis",
+            "coordinate": [
+              30.8,
+              66.2
+            ]
+          }
+        ]
+      }
+    },
+    "3902": {
+      "name": "Scavenging Deathknell",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Saltain",
+            "coordinate": [
+              31.6,
+              65.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Saltain",
+            "coordinate": [
+              31.6,
+              65.6
+            ]
+          }
+        ]
+      }
+    },
+    "4293": {
+      "name": "A Sample of Slime...",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Fuely",
+            "coordinate": [
+              47.6,
+              73
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Fuely",
+            "coordinate": [
+              47.6,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    "4294": {
+      "name": "... and a Batch of Ooze",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 56,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Fuely",
+            "coordinate": [
+              47.6,
+              73
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Fuely",
+            "coordinate": [
+              47.6,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    "4561": {
+      "name": "Testing for Impurities - Un'Goro Crater",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Testing Equipment",
+            "coordinate": [
+              47.7,
+              73.3
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Testing Equipment",
+            "coordinate": [
+              47.7,
+              73.3
+            ]
+          }
+        ]
+      }
+    },
+    "4642": {
+      "name": "Melding of Influences",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Fuely",
+            "coordinate": [
+              47.6,
+              73
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Chemist Fuely",
+            "coordinate": [
+              47.6,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    "4661": {
+      "name": "Testing for Corruption - Felwood",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Testing Equipment",
+            "coordinate": [
+              47.7,
+              73.3
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Testing Equipment",
+            "coordinate": [
+              47.7,
+              73.3
+            ]
+          }
+        ]
+      }
+    },
+    "5049": {
+      "name": "The Jeremiah Blues",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 52,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Royal Overseer Bauhaus",
+            "coordinate": [
+              69.6,
+              43.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Jeremiah Payson",
+            "coordinate": [
+              67.4,
+              43.8
+            ]
+          }
+        ]
+      }
+    },
+    "5481": {
+      "name": "Gordo's Task",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Gordo",
+            "coordinate": [
+              53.4,
+              53.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Junior Apothecary Holland",
+            "coordinate": [
+              57.6,
+              49
+            ]
+          }
+        ]
+      }
+    },
+    "5482": {
+      "name": "Doom Weed",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Junior Apothecary Holland",
+            "coordinate": [
+              57.6,
+              49
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Junior Apothecary Holland",
+            "coordinate": [
+              57.6,
+              49
+            ]
+          }
+        ]
+      }
+    },
+    "5847": {
+      "name": "Welcome!",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Claire Willower",
+            "coordinate": [
+              32,
+              66.4
+            ]
+          }
+        ]
+      }
+    },
+    "5901": {
+      "name": "A Plague Upon Thee",
+      "status": "other-zone",
+      "reason": "The Tirisfal pickup requires gathering termites in Eastern Plaguelands and begins a Plaguelands chain.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "sourcerequirement": [
+          {
+            "areaID": 139,
+            "name": "Lord Darkscythe",
+            "coordinate": [
+              25,
+              32.8
+            ]
+          },
+          {
+            "areaID": 139,
+            "name": "Ziggurat Protector",
+            "coordinate": [
+              43.6,
+              26.8
+            ]
+          },
+          {
+            "areaID": 139,
+            "name": "Crimson Courier",
+            "coordinate": [
+              63.2,
+              61
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Mickey Levine",
+            "coordinate": [
+              83.2,
+              72.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Mickey Levine",
+            "coordinate": [
+              83.2,
+              72.4
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "A Plague Upon Thee (1/3) [H]",
+          "requiredLevel": 48,
+          "startedBy": [
+            {
+              "id": 11615,
+              "spawns": [
+                [
+                  85,
+                  83.2,
+                  72.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              11615
+            ]
+          ],
+          "name": "A Plague Upon Thee",
+          "objectivesText": [
+            "Use the Empty Termite Jar on the Termite Mounds in Eastern Plaguelands. After you've gathered 100 Plagueland Termites, return to Mickey Levine at the Bulwark in Tirisfal Glades."
+          ],
+          "questLevel": 55,
+          "requiredLevel": 48,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            [
+              11615
+            ]
+          ],
+          "zoneOrSort": 85
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "A Plague Upon Thee",
+          "prerequisiteReferences": [],
+          "questLevel": 55,
+          "races": [],
+          "requiredLevel": 48,
+          "zoneId": 85
+        }
+      }
+    },
+    "5902": {
+      "name": "A Plague Upon Thee",
+      "status": "other-zone",
+      "reason": "The follow-up requires Northridge Lumber Mill in Western Plaguelands. Keep this chain with its Plaguelands work, including the Bulwark pickups and returns.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 48,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 28,
+            "name": "Termite Barrel",
+            "coordinate": [
+              48.4,
+              31.9
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Mickey Levine",
+            "coordinate": [
+              83.2,
+              72.4
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "A Plague Upon Thee (2/3) [H]",
+          "preQuestSingle": [
+            5901
+          ],
+          "requiredLevel": 48,
+          "startedBy": [
+            {
+              "id": 11615,
+              "spawns": [
+                [
+                  85,
+                  83.2,
+                  72.4
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 15044,
+              "spawns": [],
+              "type": "item"
+            },
+            {
+              "id": 177491,
+              "spawns": [],
+              "type": "object"
+            },
+            {
+              "id": 177490,
+              "spawns": [],
+              "type": "object"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              177491
+            ]
+          ],
+          "name": "A Plague Upon Thee",
+          "objectivesText": [
+            "Find someplace suitable in the center of the Northridge Lumber Mill in Western Plaguelands to place the Barrel of Plagueland Termites."
+          ],
+          "preQuestSingle": [
+            5901
+          ],
+          "questLevel": 55,
+          "requiredLevel": 48,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            [
+              11615
+            ]
+          ],
+          "zoneOrSort": 85
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "A Plague Upon Thee",
+          "prerequisiteReferences": [],
+          "questLevel": 55,
+          "races": [],
+          "requiredLevel": 48,
+          "zoneId": 85
+        }
+      }
+    },
+    "5961": {
+      "name": "The Champion of the Banshee Queen",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 56,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 139,
+            "name": "Nathanos Blightcaller",
+            "coordinate": [
+              26.6,
+              74.8
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Lady Sylvanas Windrunner",
+            "coordinate": [
+              57.8,
+              91.8
+            ]
+          }
+        ]
+      }
+    },
+    "6395": {
+      "name": "Marla's Last Wish",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Novice Elreth",
+            "coordinate": [
+              30.8,
+              66
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Novice Elreth",
+            "coordinate": [
+              30.8,
+              66
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Samuel Fipps",
+            "coordinate": [
+              36.6,
+              61.6
+            ]
+          }
+        ]
+      }
+    },
+    "6841": {
+      "name": "<UNUSED>",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {}
+    },
+    "7813": {
+      "name": "A Donation of Wool",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ]
+      }
+    },
+    "7814": {
+      "name": "A Donation of Silk",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ]
+      }
+    },
+    "7817": {
+      "name": "A Donation of Mageweave",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ]
+      }
+    },
+    "7818": {
+      "name": "A Donation of Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ]
+      }
+    },
+    "7819": {
+      "name": "Additional Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Ralston Farnsley",
+            "coordinate": [
+              71.6,
+              28.8
+            ]
+          }
+        ]
+      }
+    },
+    "86784": {
+      "name": "Sticks and Bones",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Bartholomew",
+            "coordinate": [
+              58.4,
+              51.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Eleanor Shackleton",
+            "coordinate": [
+              57.2,
+              55.4
+            ]
+          }
+        ]
+      }
+    },
+    "95314": {
+      "name": "That Shadowvale Green Elixir",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Carolai Anise",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Carolai Anise",
+            "coordinate": [
+              59.4,
+              52.2
+            ]
+          }
+        ]
+      }
+    },
+    "95328": {
+      "name": "Whispering Horror Residue",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Father Lankester",
+            "coordinate": [
+              49.6,
+              15.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Whispering Horror",
+            "coordinate": [
+              8.6,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "96895": {
+      "name": "The Argent Emissary",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Terrence",
+            "coordinate": [
+              61.4,
+              53.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Hadric Harlson",
+            "coordinate": [
+              65.8,
+              61
+            ]
+          }
+        ]
+      }
+    },
+    "96896": {
+      "name": "A Righteous Cause",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Leonid Barthalomew the Revered",
+            "coordinate": [
+              22,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Leonid Barthalomew the Revered",
+            "coordinate": [
+              22,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "96897": {
+      "name": "The Cult of the Damned",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Hadric Harlson",
+            "coordinate": [
+              65.8,
+              61
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Hadric Harlson",
+            "coordinate": [
+              65.8,
+              61
+            ]
+          }
+        ]
+      }
+    },
+    "96898": {
+      "name": "Remnants of War",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Hadric Harlson",
+            "coordinate": [
+              65.8,
+              61
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Hadric Harlson",
+            "coordinate": [
+              65.8,
+              61
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Dark Neophyte",
+            "coordinate": [
+              68.8,
+              64.6
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Dark Enforcer",
+            "coordinate": [
+              67.1,
+              64.2
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Naxxramas Crystal Fragment",
+            "coordinate": [
+              69.2,
+              66
+            ]
+          }
+        ]
+      }
+    },
+    "96899": {
+      "name": "Bandarion Keep",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Hadric Harlson",
+            "coordinate": [
+              65.8,
+              61
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Leonid Barthalomew the Revered",
+            "coordinate": [
+              22,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "97290": {
+      "name": "Unending Torment",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 21,
+      "offerMinimum": 16,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Unfinished Abomination",
+            "coordinate": [
+              46.2,
+              63
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Master Apothecary Faranell",
+            "coordinate": [
+              48.4,
+              69.4
+            ]
+          }
+        ]
+      }
+    },
+    "97558": {
+      "name": "Hides for the Forsaken",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "sourcerequirement": [
+          {
+            "areaID": 1497,
+            "name": "Cursed Darkhound",
+            "coordinate": [
+              24.8,
+              33
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Shelene Rhobart",
+            "coordinate": [
+              65.4,
+              60
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Shelene Rhobart",
+            "coordinate": [
+              65.4,
+              60
+            ]
+          }
+        ]
+      }
+    },
+    "97891": {
+      "name": "Prompt Potion Runner",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 16,
+      "offerMinimum": 9,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Alessandro Luca",
+            "coordinate": [
+              58.2,
+              55.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Doctor Martin Felben",
+            "coordinate": [
+              46.6,
+              74.4
+            ]
+          }
+        ]
+      }
+    },
+    "97985": {
+      "name": "Thundering Hearts",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "undercity"
+      ],
+      "recommendedLevel": 33,
+      "offerMinimum": 25,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1497,
+            "name": "Calder Gray",
+            "coordinate": [
+              49.2,
+              70.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Calder Gray",
+            "coordinate": [
+              49.2,
+              70.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 400,
+            "name": "Stormheart",
+            "coordinate": [
+              56.9,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "98389": {
+      "name": "A Light in the Darkness",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Aramis Hammerhand",
+            "coordinate": [
+              31,
+              66.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Aramis Hammerhand",
+            "coordinate": [
+              31,
+              66.2
+            ]
+          }
+        ]
+      }
+    },
+    "98545": {
+      "name": "Leonid's Letter",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1497,
+            "name": "Glix Xizzix",
+            "coordinate": [
+              69.8,
+              47
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Leonid Barthalomew the Revered",
+            "coordinate": [
+              22,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "99134": {
+      "name": "Discipline",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ]
+      }
+    },
+    "99141": {
+      "name": "Patience",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Executor Zygand",
+            "coordinate": [
+              60.6,
+              51.8
+            ]
+          }
+        ]
+      }
+    },
+    "99142": {
+      "name": "Tomb Weed",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Junior Apothecary Holland",
+            "coordinate": [
+              57.6,
+              49
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Junior Apothecary Holland",
+            "coordinate": [
+              57.6,
+              49
+            ]
+          }
+        ]
+      }
+    },
+    "99144": {
+      "name": "Seeking Refuge",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Bareth Dawnstone",
+            "coordinate": [
+              32,
+              46.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Shari Stilwell",
+            "coordinate": [
+              60.2,
+              52.6
+            ]
+          }
+        ]
+      }
+    },
+    "99152": {
+      "name": "As Above, So Below",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Hilda the Breaker",
+            "coordinate": [
+              22,
+              47.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Hilda the Breaker",
+            "coordinate": [
+              22,
+              47.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Shadowvale Lurcher",
+            "coordinate": [
+              11.1,
+              65.5
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Shadowvale Mystic",
+            "coordinate": [
+              10,
+              68.1
+            ]
+          },
+          {
+            "areaID": 85,
+            "name": "Shadowvale Mystic",
+            "coordinate": [
+              9.5,
+              63.2
+            ]
+          }
+        ]
+      }
+    },
+    "99153": {
+      "name": "The One That Got Away",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Ephram Barbaro",
+            "coordinate": [
+              20.2,
+              46.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Ephram Barbaro",
+            "coordinate": [
+              20.2,
+              46.4
+            ]
+          }
+        ]
+      }
+    },
+    "99156": {
+      "name": "Rear Guard Patrol",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "tirisfal-glades"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Linnea",
+            "coordinate": [
+              65.4,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 85,
+            "name": "Deathguard Linnea",
+            "coordinate": [
+              65.4,
+              60.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 85,
+            "name": "Riptear",
+            "coordinate": [
+              83.9,
+              44
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "clientWalkthrough": "Not performed."
+}

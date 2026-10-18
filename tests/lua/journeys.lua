@@ -23,12 +23,17 @@ local total=0
 local function walk(guideID,race,class,faction)
  n.charDB={selectedGuide=guideID,orderedRoutes={},activeGoalByGuide={}};n.Engine.reviewingGoal=nil
 local s={raceID=race,classID=class,faction=faction,level=os.getenv("FGM_DUNGEONS") == "1" and 60 or 1,quests={},completedQuests={},questLogKnown=true,questCompletionKnown=true,professions={[171]=300,[182]=300,[185]=300,[356]=300},professionsKnown=true,items={}}
+if guideID:match('^loremaster%-') then
+ -- Exercise every profession branch structurally; this is not an in-game profession build.
+ for _, skill in ipairs({129,164,165,171,182,185,186,197,202,333,356,393}) do s.professions[skill] = 300 end
+ s.items['Dark Iron Map'] = 1
+end
 -- Players reach this helper from a class-chain handoff after its outdoor work.
 if guideID == 'dungeons-class-prerequisites' then
  local outside = { [2] = 7641, [7] = 7667, [8] = 1950 }
  if outside[class] then s.completedQuests[outside[class]] = true end
 end
-if os.getenv("FGM_DUNGEONS") == "1" then
+if os.getenv("FGM_DUNGEONS") == "1" or os.getenv("FGM_LOREMASTER") == "1" then
  local guide=n.guides[guideID]
  if n.EvaluateCondition(guide.conditions,s)==false then
   n.Engine:Refresh(s)
@@ -110,6 +115,7 @@ if os.getenv("FGM_FULL_MATRIX") == "1" then
    if not os.getenv("FGM_MATRIX_CLASS") or class == tonumber(os.getenv("FGM_MATRIX_CLASS")) then
    contexts[#contexts+1] = { starters[race] and "leveling-era-"..starters[race] or "leveling-zephras-isle", race, class, faction }
    contexts[#contexts+1] = { "class-"..classes[class], race, class, faction }
+   contexts[#contexts+1] = { "loremaster-" .. (starters[race] or "zephras-isle"), race, class, faction }
    end
   end
  end
@@ -136,6 +142,20 @@ if os.getenv("FGM_DUNGEONS") == "1" then
      contexts[#contexts+1]={id,faction=='Alliance' and 1 or 5,class,faction}
     end
    end
+  end
+ end
+end
+if os.getenv('FGM_LOREMASTER') == '1' then
+ contexts = {}
+ for _, spec in ipairs({
+  {'dun-morogh',3,'Alliance'}, {'dun-morogh',7,'Alliance'},
+  {'elwynn-forest',1,'Alliance'}, {'teldrassil',4,'Alliance'},
+  {'durotar',2,'Horde'}, {'durotar',8,'Horde'},
+  {'mulgore',6,'Horde'}, {'tirisfal-glades',5,'Horde'},
+  {'zephras-isle',95,'Alliance'}, {'zephras-isle',96,'Horde'},
+ }) do
+  for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
+   contexts[#contexts+1] = {'loremaster-' .. spec[1], spec[2], class, spec[3]}
   end
  end
 end

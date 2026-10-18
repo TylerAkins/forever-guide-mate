@@ -305,6 +305,9 @@ function ns.EvaluateCondition(condition, state)
             return false, "Invalid item condition."
         end
         if type(condition.item) == "table" and condition.item.minCount then
+            -- Single starters use the presence cache, which bag events watch.
+            if condition.item.minCount == 1 and ns.PlayerState and ns.PlayerState.HasItem
+                and ns.PlayerState:HasItem(name, state) then return true end
             local count = ns.PlayerState and ns.PlayerState.GetItemCount
                 and ns.PlayerState:GetItemCount(name, state)
             if count == nil then return Unknown("Item count is unavailable.") end
@@ -1587,6 +1590,24 @@ function Engine:LockEraFloor(guide, state)
     if index > current then
         ns.charDB.eraFloor = self.currentSegment.id
     end
+end
+
+function Engine:MigrateLoremasterSelection(state)
+    if not ns.charDB or not ns.charDB.pendingLoremasterSelection then return end
+    if ns.guides[ns.charDB.selectedGuide] then
+        ns.charDB.pendingLoremasterSelection = nil
+        return
+    end
+    if not state or (state.faction ~= "Alliance" and state.faction ~= "Horde") then return end
+    local starter = ERA_STARTER_BY_RACE[state.raceID]
+    local targetID = starter and starter:gsub("^leveling%-era%-", "loremaster-")
+        :gsub("^leveling%-", "loremaster-")
+    local target = targetID and ns.guides[targetID]
+    if not target or ns.EvaluateCondition(target.conditions, state) ~= true then
+        targetID = state.faction == "Horde" and "loremaster-durotar" or "loremaster-dun-morogh"
+    end
+    ns.charDB.selectedGuide = targetID
+    ns.charDB.pendingLoremasterSelection = nil
 end
 
 function Engine:MigrateEraProgress()

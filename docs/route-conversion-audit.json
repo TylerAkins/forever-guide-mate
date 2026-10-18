@@ -14457,5 +14457,87 @@
       "98407": "Retained in the later alliance-redridge-and-westfall chapter"
     },
     "pacing": "Quest-only. Reference grind and level-up instructions remain omitted; XP sufficiency is unverified."
+  },
+  "loremaster": {
+    "loremaster-dun-morogh": {
+      "inventory": "docs/loremaster/dun-morogh.json",
+      "clientWalkthrough": false
+    },
+    "loremaster-elwynn-forest": {
+      "inventory": "docs/loremaster/elwynn-forest.json",
+      "clientWalkthrough": false
+    },
+    "loremaster-teldrassil": {
+      "inventory": "docs/loremaster/teldrassil.json",
+      "clientWalkthrough": false
+    },
+    "loremaster-durotar": {
+      "inventory": "docs/loremaster/durotar.json",
+      "clientWalkthrough": false
+    },
+    "loremaster-mulgore": {
+      "inventory": "docs/loremaster/mulgore.json",
+      "clientWalkthrough": false
+    },
+    "loremaster-tirisfal-glades": {
+      "inventory": "docs/loremaster/tirisfal-glades.json",
+      "clientWalkthrough": false
+    },
+    "loremaster-zephras-isle": {
+      "inventory": "docs/loremaster/zephras-isle.json",
+      "clientWalkthrough": false
+    }
+  },
+  "normalItemStarterRepairs": {
+    "23": {
+      "dropPrerequisite": {
+        "quest": 6383,
+        "state": "completed"
+      },
+      "provider": "Ursangous",
+      "mapID": 1440,
+      "coordinate": [
+        42.3,
+        68.8
+      ],
+      "coordinateSource": "User observation, 2026-10-18",
+      "prerequisiteSources": [
+        "User observation",
+        "QuestieDB preQuestSingle",
+        "ATT preQuestSingle"
+      ]
+    },
+    "1918": {
+      "dropPrerequisite": {
+        "quest": 25,
+        "state": "activeOrCompleted"
+      },
+      "provider": "Tideress",
+      "mapID": 1440,
+      "coordinate": [
+        50.7,
+        71.8
+      ],
+      "coordinateSource": "User observation, 2026-10-18",
+      "dropReports": "https://www.wowhead.com/forever/item=16408/befouled-water-globe",
+      "note": "The existing outing has Stonetalon Standstill active. Do not turn ATT's chain association into a requirement to turn it in before the drop."
+    },
+    "2": {
+      "dropPrerequisite": {
+        "quest": 6383,
+        "state": "completed"
+      },
+      "provider": "Sharptalon",
+      "mapID": 1440,
+      "coordinate": [
+        75.9,
+        69.5
+      ],
+      "coordinateSource": "User observation, 2026-10-18",
+      "prerequisiteSources": [
+        "QuestieDB preQuestSingle",
+        "ATT preQuestSingle"
+      ]
+    }
   }
 }

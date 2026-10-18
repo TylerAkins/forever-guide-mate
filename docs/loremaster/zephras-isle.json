@@ -1,0 +1,7601 @@
+{
+  "guide": "loremaster-zephras-isle",
+  "title": "Zephras Isle",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-zephras-isle",
+  "additionalSpines": [],
+  "spineActions": [
+    "accept-coming-of-age",
+    "turnin-coming-of-age",
+    "accept-harmony-in-balance",
+    "accept-infestation-investigation",
+    "objective-harmony-in-balance",
+    "objective-infestation-investigation",
+    "turnin-infestation-investigation",
+    "level-before-accept-the-cirrusfly-queen",
+    "accept-the-cirrusfly-queen",
+    "accept-the-anchors-of-zephras",
+    "gossip-the-anchors-of-zephras",
+    "turnin-the-anchors-of-zephras",
+    "accept-falling-with-style",
+    "turnin-92461-harmony-in-balance",
+    "objective-falling-with-style",
+    "turnin-falling-with-style",
+    "accept-elemental-unrest",
+    "level-before-accept-a-student-of-the-arcane",
+    "accept-a-student-of-the-arcane",
+    "level-before-accept-at-home-in-the-shadows",
+    "accept-at-home-in-the-shadows",
+    "level-before-accept-the-way-of-the-hunter",
+    "accept-the-way-of-the-hunter",
+    "level-before-accept-embracing-the-elements",
+    "accept-embracing-the-elements",
+    "level-before-accept-the-warriors-path",
+    "accept-the-warriors-path",
+    "level-before-accept-a-student-of-nature",
+    "accept-a-student-of-nature",
+    "turnin-a-student-of-nature",
+    "objective-92481-reviewed-mechanics",
+    "turnin-a-student-of-the-arcane",
+    "objective-92484-reviewed-mechanics",
+    "turnin-embracing-the-elements",
+    "level-before-accept-call-of-earth",
+    "accept-call-of-earth",
+    "turnin-the-way-of-the-hunter",
+    "level-before-accept-the-gift-of-skysight",
+    "accept-the-gift-of-skysight",
+    "accept-harvesting-windstones",
+    "level-before-accept-reading-the-ley-lines",
+    "accept-reading-the-ley-lines",
+    "objective-harvesting-windstones",
+    "objective-the-cirrusfly-queen",
+    "turnin-elemental-unrest",
+    "accept-agitators",
+    "objective-92465-authored-roiling-winds",
+    "objective-92465-authored-alaketh-convert",
+    "objective-reading-the-ley-lines",
+    "objective-the-gift-of-skysight",
+    "objective-call-of-earth",
+    "turnin-agitators",
+    "level-before-accept-return-to-rorian",
+    "accept-return-to-rorian",
+    "turnin-harvesting-windstones",
+    "turnin-reading-the-ley-lines",
+    "turnin-at-home-in-the-shadows",
+    "turnin-the-cirrusfly-queen",
+    "turnin-the-warriors-path",
+    "turnin-the-gift-of-skysight",
+    "turnin-return-to-rorian",
+    "level-before-accept-aetheen-of-the-gales",
+    "accept-aetheen-of-the-gales",
+    "turnin-aetheen-of-the-gales",
+    "accept-foul-matriarch",
+    "turnin-call-of-earth",
+    "accept-call-of-earth-92467",
+    "objective-92467-earth-sapta",
+    "turnin-call-of-earth-92467",
+    "accept-call-of-earth-92468",
+    "turnin-call-of-earth-92468",
+    "accept-aggressive-encroachment",
+    "objective-aggressive-encroachment",
+    "objective-92470-authored-ursera-scavenger",
+    "objective-92470-authored-ursanah",
+    "turnin-foul-matriarch",
+    "accept-the-next-step",
+    "accept-the-adventurer",
+    "turnin-aggressive-encroachment",
+    "accept-alaketh-thugs",
+    "objective-92544-authored-alaketh-brute",
+    "objective-92544-authored-alaketh-neophyte",
+    "objective-92544-authored-malduko-cloudcrush",
+    "turnin-alaketh-thugs",
+    "turnin-the-next-step",
+    "level-before-accept-welcome-to-shendar-village-93461",
+    "accept-welcome-to-shendar-village-93461",
+    "level-before-accept-welcome-to-shendar-village",
+    "accept-welcome-to-shendar-village",
+    "objective-93461-authored-rathiril-sunlance",
+    "objective-93461-authored-coriella-calmbreeze",
+    "objective-92514-authored-illaya-amberwind",
+    "objective-92514-authored-coriella-calmbreeze",
+    "turnin-93461-welcome-to-shendar-village",
+    "accept-the-high-order",
+    "objective-92596-quest-work",
+    "turnin-the-high-order",
+    "accept-a-magical-affront",
+    "turnin-92514-welcome-to-shendar-village",
+    "accept-the-windshapers",
+    "objective-92595-quest-work",
+    "turnin-the-windshapers",
+    "accept-meddlesome-mages",
+    "accept-the-criminal-element",
+    "accept-pilfered-windstones",
+    "accept-hippogryph-harrassment",
+    "accept-the-problem-with-prideclaws",
+    "accept-a-little-beauty",
+    "accept-restocking-the-larders",
+    "objective-92553-authored-small-egg",
+    "objective-92553-authored-strider-meat",
+    "objective-the-problem-with-prideclaws",
+    "objective-meddlesome-mages",
+    "objective-92517-authored-highlands-bandit",
+    "objective-92517-authored-bennic",
+    "objective-pilfered-windstones",
+    "turnin-meddlesome-mages",
+    "accept-wanted-vulgara-the-insatiable",
+    "turnin-the-adventurer",
+    "accept-the-great-outdoors",
+    "objective-the-great-outdoors",
+    "turnin-the-great-outdoors",
+    "accept-camping-101-cooking",
+    "objective-a-magical-affront",
+    "objective-92516-authored-hippogryph-youth",
+    "objective-92516-authored-hippogryph-protector",
+    "objective-92516-authored-hippogryph-matriarch",
+    "objective-a-little-beauty",
+    "objective-wanted-vulgara-the-insatiable",
+    "turnin-restocking-the-larders",
+    "objective-96646-quest-work",
+    "turnin-camping-101-cooking",
+    "turnin-a-little-beauty",
+    "turnin-the-problem-with-prideclaws",
+    "turnin-hippogryph-harrassment",
+    "turnin-pilfered-windstones",
+    "turnin-wanted-vulgara-the-insatiable",
+    "turnin-the-criminal-element",
+    "level-before-accept-infiltrating-the-cult",
+    "accept-infiltrating-the-cult",
+    "turnin-infiltrating-the-cult",
+    "accept-falaath-village",
+    "turnin-a-magical-affront",
+    "turnin-falaath-village",
+    "accept-among-the-faithful",
+    "objective-92528-quest-work",
+    "turnin-92528-among-the-faithful",
+    "accept-havoc-in-the-highlands",
+    "accept-stolen-supplies",
+    "objective-92550-authored-alaketh-stormcaller",
+    "objective-92550-authored-living-lightning",
+    "objective-92550-authored-cyclas",
+    "objective-92551-quest-work",
+    "turnin-stolen-supplies",
+    "turnin-92550-havoc-in-the-highlands",
+    "accept-the-western-watch",
+    "objective-93926-quest-work",
+    "turnin-the-western-watch",
+    "accept-93927-a-last-request",
+    "objective-93927-authored-bloody-note",
+    "objective-93927-authored-raanis-lucky-feather",
+    "objective-93927-authored-shadowsong-family-signet",
+    "objective-93927-authored-skypriest-aanders",
+    "turnin-93927-a-last-request",
+    "level-before-accept-to-valanaar-92701",
+    "accept-to-valanaar-92701",
+    "level-before-accept-to-valanaar",
+    "accept-to-valanaar",
+    "level-before-accept-deliver-the-signet",
+    "accept-deliver-the-signet",
+    "accept-crab-season",
+    "accept-blood-tithe",
+    "level-before-accept-unnerving-silence",
+    "accept-unnerving-silence",
+    "accept-aid-for-the-refugees",
+    "turnin-deliver-the-signet",
+    "turnin-92701-to-valanaar",
+    "turnin-92579-to-valanaar",
+    "accept-the-supreme-magister",
+    "accept-the-grand-skyseer",
+    "accept-bugged",
+    "objective-bugged",
+    "turnin-92699-the-supreme-magister",
+    "level-before-accept-a-grand-adventure",
+    "accept-a-grand-adventure",
+    "accept-the-missing-scholar",
+    "level-before-accept-unwelcome-visitors",
+    "accept-unwelcome-visitors",
+    "objective-92709-quest-work",
+    "turnin-a-grand-adventure",
+    "turnin-92700-the-grand-skyseer",
+    "level-before-accept-a-grand-adventure-92708",
+    "accept-a-grand-adventure-92708",
+    "accept-the-broken-construct",
+    "accept-unwelcome-spirits",
+    "objective-unwelcome-spirits",
+    "turnin-unwelcome-spirits",
+    "objective-92708-quest-work",
+    "turnin-a-grand-adventure-92708",
+    "turnin-the-broken-construct",
+    "accept-the-broken-construct-93737",
+    "objective-93737-authored-riaani-nightwind",
+    "objective-93737-authored-crystallized-lightning",
+    "objective-93737-authored-enchanted-gyrozephyr",
+    "objective-93737-authored-air-construct-core",
+    "turnin-the-broken-construct-93737",
+    "objective-92679-authored-alvarion-windfield",
+    "objective-92679-authored-aamelia-windfield",
+    "turnin-92679-blood-tithe",
+    "accept-make-yourself-useful",
+    "accept-ornery-ornery-galestriders",
+    "accept-flutterfly-dust",
+    "objective-ornery-ornery-galestriders",
+    "objective-92682-authored-ripe-stormapple",
+    "objective-92682-authored-hungry-bandit",
+    "accept-what-is-my-purpose",
+    "turnin-92682-make-yourself-useful",
+    "turnin-92684-ornery-ornery-galestriders",
+    "turnin-what-is-my-purpose",
+    "objective-92683-quest-work",
+    "turnin-92683-flutterfly-dust",
+    "accept-the-hills-have-eyes",
+    "objective-the-hills-have-eyes",
+    "turnin-92685-the-hills-have-eyes",
+    "accept-standing-our-ground",
+    "objective-92693-authored-aamelia-windfield",
+    "objective-92693-authored-ferauu-the-bludgeon",
+    "turnin-standing-our-ground",
+    "accept-deliver-the-news",
+    "turnin-deliver-the-news",
+    "level-before-accept-call-of-fire",
+    "accept-call-of-fire",
+    "turnin-call-of-fire",
+    "level-before-accept-speak-with-belann",
+    "accept-speak-with-belann",
+    "turnin-speak-with-belann",
+    "accept-boughs-in-the-wind",
+    "turnin-the-missing-scholar",
+    "accept-the-missing-scholar-92849",
+    "objective-the-missing-scholar-92849",
+    "objective-the-missing-scholar-92849-carry",
+    "turnin-the-missing-scholar-92849",
+    "accept-the-missing-scholar-92850",
+    "objective-the-missing-scholar-92850",
+    "turnin-the-missing-scholar-92850",
+    "level-before-accept-99260-fillions-mission",
+    "accept-99260-fillions-mission",
+    "turnin-99260-fillions-mission",
+    "accept-catching-wind",
+    "objective-crab-season",
+    "objective-catching-wind",
+    "objective-boughs-in-the-wind",
+    "turnin-crab-season",
+    "turnin-boughs-in-the-wind",
+    "turnin-92840-catching-wind",
+    "accept-avenged-tenfold",
+    "turnin-bugged",
+    "accept-in-service-of-zephras",
+    "turnin-92860-in-service-of-zephras",
+    "accept-the-broken-construct-93738",
+    "turnin-the-broken-construct-93738",
+    "accept-a-firm-response",
+    "objective-a-firm-response",
+    "turnin-93746-a-firm-response",
+    "accept-in-service-of-zephras-92871",
+    "turnin-92871-in-service-of-zephras",
+    "accept-tower-defense",
+    "objective-avenged-tenfold",
+    "turnin-tower-defense",
+    "accept-disrupting-logistics",
+    "accept-breaking-the-breaker",
+    "objective-92642-authored-alaketh-healer",
+    "objective-92642-authored-alaketh-brawler",
+    "objective-breaking-the-breaker",
+    "turnin-breaking-the-breaker",
+    "turnin-disrupting-logistics",
+    "accept-return-to-valanaar",
+    "turnin-return-to-valanaar",
+    "accept-the-high-elders-request",
+    "turnin-the-high-elders-request",
+    "accept-the-turncoat",
+    "turnin-avenged-tenfold",
+    "objective-92643-quest-work",
+    "turnin-the-turncoat",
+    "accept-alaketh-assassins",
+    "objective-alaketh-assassins",
+    "accept-unfortunate-news",
+    "turnin-alaketh-assassins",
+    "turnin-unfortunate-news",
+    "accept-the-cults-true-plans",
+    "objective-94568-quest-work",
+    "turnin-the-cults-true-plans",
+    "level-before-accept-the-skybreaker-bulwark",
+    "accept-the-skybreaker-bulwark",
+    "objective-the-skybreaker-bulwark",
+    "turnin-the-skybreaker-bulwark",
+    "objective-unwelcome-visitors",
+    "accept-the-strange-hermit",
+    "objective-93159-quest-work",
+    "turnin-the-strange-hermit",
+    "accept-the-forests-bounty",
+    "accept-free-the-hollows",
+    "turnin-94484-unnerving-silence",
+    "accept-tears-of-the-lady",
+    "accept-feathers-for-binding",
+    "accept-unwanted-and-unworthy",
+    "objective-tears-of-the-lady",
+    "objective-unwanted-and-unworthy",
+    "accept-mercy-falls-on-deaf-ears",
+    "objective-mercy-falls-on-deaf-ears",
+    "turnin-mercy-falls-on-deaf-ears",
+    "objective-feathers-for-binding",
+    "turnin-tears-of-the-lady",
+    "turnin-94487-unwanted-and-unworthy",
+    "turnin-94486-feathers-for-binding",
+    "accept-the-ties-that-bind",
+    "objective-the-ties-that-bind",
+    "turnin-the-ties-that-bind",
+    "loot-starter-before-accept-ripped-missive",
+    "level-before-accept-ripped-missive",
+    "accept-ripped-missive",
+    "turnin-94490-ripped-missive",
+    "objective-free-the-hollows",
+    "objective-aid-for-the-refugees",
+    "objective-93160-quest-work",
+    "turnin-the-forests-bounty",
+    "turnin-free-the-hollows",
+    "turnin-aid-for-the-refugees",
+    "accept-the-fate-of-a-loved-one",
+    "objective-the-fate-of-a-loved-one",
+    "turnin-the-fate-of-a-loved-one",
+    "turnin-unwelcome-visitors",
+    "accept-a-sacrifice-in-vain",
+    "turnin-a-sacrifice-in-vain",
+    "accept-the-wounds-of-betrayal",
+    "objective-94489-authored-druid",
+    "objective-94489-authored-jorel-windsinger",
+    "turnin-the-wounds-of-betrayal",
+    "accept-the-fate-of-the-den",
+    "turnin-the-fate-of-the-den",
+    "level-before-accept-the-great-ursera-spirit",
+    "accept-the-great-ursera-spirit",
+    "turnin-the-great-ursera-spirit",
+    "accept-strength-and-mercy",
+    "objective-strength-and-mercy",
+    "turnin-strength-and-mercy",
+    "level-before-accept-taming-the-beast",
+    "accept-taming-the-beast",
+    "turnin-taming-the-beast",
+    "accept-taming-the-beast-94978",
+    "objective-94978-quest-work",
+    "turnin-taming-the-beast-94978",
+    "accept-taming-the-beast-94979",
+    "objective-94979-quest-work",
+    "turnin-taming-the-beast-94979",
+    "accept-taming-the-beast-94013",
+    "objective-94013-quest-work",
+    "turnin-taming-the-beast-94013",
+    "accept-training-the-beast",
+    "turnin-training-the-beast",
+    "accept-call-of-fire-97244",
+    "objective-call-of-fire-97244",
+    "turnin-call-of-fire-97244",
+    "accept-call-of-fire-97245",
+    "objective-call-of-fire-97245",
+    "turnin-call-of-fire-97245",
+    "accept-call-of-fire-97257",
+    "objective-call-of-fire-97257-ritual",
+    "objective-call-of-fire-97257-deliver-flame",
+    "turnin-call-of-fire-97257",
+    "accept-blood-for-blood",
+    "objective-blood-for-blood",
+    "turnin-blood-for-blood",
+    "accept-desperate-times",
+    "objective-92640-authored-valennia-stormfist",
+    "objective-92640-authored-ayessa-dawnsinger",
+    "objective-92640-authored-elaadrin-evengale",
+    "turnin-desperate-times",
+    "accept-prepare-for-battle",
+    "objective-93065-quest-work",
+    "turnin-prepare-for-battle",
+    "accept-making-our-move",
+    "objective-92947-authored-alaketh-guardian",
+    "objective-92947-authored-alaketh-spiritcaller",
+    "objective-92947-authored-alaketh-blademaster",
+    "objective-92947-authored-hyusaa-quickbreeze",
+    "turnin-making-our-move",
+    "accept-the-inner-sanctum",
+    "turnin-the-inner-sanctum",
+    "accept-confront-lorthuna-93835",
+    "turnin-confront-lorthuna-93835",
+    "accept-the-fate-of-zephras-94369",
+    "objective-94369-quest-work",
+    "turnin-the-fate-of-zephras-94369",
+    "accept-what-comes-next",
+    "turnin-what-comes-next",
+    "accept-the-magical-city-of-dalaran",
+    "turnin-the-magical-city-of-dalaran",
+    "accept-confront-lorthuna",
+    "turnin-confront-lorthuna",
+    "accept-the-fate-of-zephras",
+    "objective-93836-quest-work",
+    "turnin-the-fate-of-zephras",
+    "accept-what-comes-next-93090",
+    "turnin-what-comes-next-93090",
+    "accept-the-earthen-ring",
+    "turnin-the-earthen-ring",
+    "level-before-accept-welcome-to-azeroth",
+    "accept-welcome-to-azeroth",
+    "turnin-welcome-to-azeroth",
+    "accept-exploring-the-horde",
+    "objective-exploring-the-horde",
+    "objective-exploring-the-horde-voljin",
+    "objective-exploring-the-horde-cairne",
+    "objective-exploring-the-horde-sylvanas",
+    "turnin-exploring-the-horde",
+    "level-before-accept-welcome-to-azeroth-94947",
+    "accept-welcome-to-azeroth-94947",
+    "level-before-accept-child-of-nature",
+    "accept-child-of-nature",
+    "objective-welcome-to-azeroth-94947",
+    "turnin-welcome-to-azeroth-94947",
+    "accept-exploring-the-alliance",
+    "accept-journey-to-sentinel-hill",
+    "turnin-child-of-nature",
+    "accept-moonglade",
+    "gossip-exploring-the-alliance",
+    "objective-exploring-the-alliance-mekkatorque",
+    "objective-exploring-the-alliance-magni",
+    "objective-exploring-the-alliance-tyrande",
+    "turnin-exploring-the-alliance",
+    "turnin-moonglade"
+  ],
+  "placements": [
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97963-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97963-loremaster",
+        "turnin-97963-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97964-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97964-loremaster",
+        "turnin-97964-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97965-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97965-loremaster",
+        "turnin-97965-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97967-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97967-loremaster",
+        "turnin-97967-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97968-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-92579-to-valanaar",
+      "position": "after",
+      "actions": [
+        "objective-97968-loremaster",
+        "turnin-97968-loremaster"
+      ],
+      "reason": "The herbalism trainer is Syriel Nightrain in Valanaar; hold this lesson for the existing first Valanaar visit."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97969-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97969-loremaster",
+        "turnin-97969-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97970-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97970-loremaster",
+        "turnin-97970-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97971-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97971-loremaster",
+        "turnin-97971-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97972-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97972-loremaster",
+        "turnin-97972-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-97973-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-97973-loremaster",
+        "turnin-97973-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-98284-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-98284-loremaster",
+        "turnin-98284-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    },
+    {
+      "anchor": "turnin-the-strange-hermit",
+      "position": "after",
+      "actions": [
+        "accept-98285-loremaster",
+        "objective-98285-loremaster",
+        "turnin-98285-loremaster"
+      ],
+      "reason": "Wowhead identifies the Strange Hermit as both provider and finisher, overriding Questie's Raan starter; use the existing Shadowgale Forest visit."
+    },
+    {
+      "anchor": "accept-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "accept-98286-loremaster"
+      ],
+      "reason": "Accept applicable level 6 profession lessons with Raan Wildwind after The Great Outdoors, before leaving Shen'dar Village."
+    },
+    {
+      "anchor": "turnin-camping-101-cooking",
+      "position": "after",
+      "actions": [
+        "objective-98286-loremaster",
+        "turnin-98286-loremaster"
+      ],
+      "reason": "Visit the profession trainer during the existing Shen'dar Village trainer outing. Keep observed recipe alternatives and profession restrictions on every action."
+    }
+  ],
+  "quests": {
+    "92460": {
+      "name": "Coming of Age",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ailee Farheart",
+            "coordinate": [
+              42.8,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ]
+      }
+    },
+    "92461": {
+      "name": "Harmony in Balance",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ]
+      }
+    },
+    "92462": {
+      "name": "Infestation Investigation",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elatrell Featherlight",
+            "coordinate": [
+              43.4,
+              24.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elatrell Featherlight",
+            "coordinate": [
+              43.4,
+              24.8
+            ]
+          }
+        ]
+      }
+    },
+    "92463": {
+      "name": "The Cirrusfly Queen",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elatrell Featherlight",
+            "coordinate": [
+              43.4,
+              24.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elatrell Featherlight",
+            "coordinate": [
+              43.4,
+              24.8
+            ]
+          }
+        ]
+      }
+    },
+    "92464": {
+      "name": "Elemental Unrest",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Yala Windwatcher",
+            "coordinate": [
+              47.2,
+              21.8
+            ]
+          }
+        ]
+      }
+    },
+    "92465": {
+      "name": "Agitators",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Yala Windwatcher",
+            "coordinate": [
+              47.2,
+              21.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Yala Windwatcher",
+            "coordinate": [
+              47.2,
+              21.8
+            ]
+          }
+        ]
+      }
+    },
+    "92466": {
+      "name": "Call of Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Windshaper Boro",
+            "coordinate": [
+              42.8,
+              23.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Windshaper Boro",
+            "coordinate": [
+              42.8,
+              23.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Brute",
+            "coordinate": [
+              37.8,
+              32.8
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Convert",
+            "coordinate": [
+              46.5,
+              20.2
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Neophyte",
+            "coordinate": [
+              35.4,
+              32.6
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "High Priestess Lorthuna",
+            "coordinate": [
+              48.8,
+              54
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Skypriest Aanders",
+            "coordinate": [
+              48.8,
+              54
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Commander Belguilos",
+            "coordinate": [
+              65.6,
+              65.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "High Priestess Lorthuna",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92467": {
+      "name": "Call of Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Windshaper Boro",
+            "coordinate": [
+              42.8,
+              23.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Minor Manifestation of Earth",
+            "coordinate": [
+              49.6,
+              24
+            ]
+          }
+        ]
+      }
+    },
+    "92468": {
+      "name": "Call of Earth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Minor Manifestation of Earth",
+            "coordinate": [
+              49.6,
+              24
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Windshaper Boro",
+            "coordinate": [
+              42.8,
+              23.6
+            ]
+          }
+        ]
+      }
+    },
+    "92469": {
+      "name": "Return to Rorian",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Yala Windwatcher",
+            "coordinate": [
+              47.2,
+              21.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ]
+      }
+    },
+    "92470": {
+      "name": "Foul Matriarch",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aetheen of the Gales",
+            "coordinate": [
+              42.6,
+              23.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aetheen of the Gales",
+            "coordinate": [
+              42.6,
+              23.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Urs'anah",
+            "coordinate": [
+              35.6,
+              26
+            ]
+          }
+        ]
+      }
+    },
+    "92471": {
+      "name": "Aetheen of the Gales",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aetheen of the Gales",
+            "coordinate": [
+              42.6,
+              23.6
+            ]
+          }
+        ]
+      }
+    },
+    "92472": {
+      "name": "The Next Step",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aetheen of the Gales",
+            "coordinate": [
+              42.6,
+              23.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "92473": {
+      "name": "Aggressive Encroachment",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valreaa Valewind",
+            "coordinate": [
+              42.4,
+              25
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valreaa Valewind",
+            "coordinate": [
+              42.4,
+              25
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Scrawny Ursera",
+            "coordinate": [
+              37,
+              24.6
+            ]
+          }
+        ]
+      }
+    },
+    "92474": {
+      "name": "Falling With Style",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Myriaal Mistwake",
+            "coordinate": [
+              43.6,
+              24
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ]
+      }
+    },
+    "92481": {
+      "name": "A Student of the Arcane",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Dorii Brightwhisper",
+            "coordinate": [
+              41.6,
+              23.6
+            ]
+          }
+        ]
+      }
+    },
+    "92482": {
+      "name": "The Way of the Hunter",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Tai'ree Farsight",
+            "coordinate": [
+              42.4,
+              23.6
+            ]
+          }
+        ]
+      }
+    },
+    "92483": {
+      "name": "At Home in the Shadows",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Akeri Duskblade",
+            "coordinate": [
+              43.6,
+              24.2
+            ]
+          }
+        ]
+      }
+    },
+    "92484": {
+      "name": "Embracing the Elements",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Windshaper Boro",
+            "coordinate": [
+              42.8,
+              23.6
+            ]
+          }
+        ]
+      }
+    },
+    "92485": {
+      "name": "A Student of Nature",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Xyton Silverwind",
+            "coordinate": [
+              41.6,
+              23.4
+            ]
+          }
+        ]
+      }
+    },
+    "92514": {
+      "name": "Welcome to Shen'dar Village",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "92515": {
+      "name": "The Problem With Prideclaws",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Indari Sunseam",
+            "coordinate": [
+              44.6,
+              44.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Indari Sunseam",
+            "coordinate": [
+              44.6,
+              44.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Prideclaw",
+            "coordinate": [
+              51.9,
+              62.5
+            ]
+          }
+        ]
+      }
+    },
+    "92516": {
+      "name": "Hippogryph Harrassment",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Teeri Wellwind",
+            "coordinate": [
+              44.4,
+              45
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Teeri Wellwind",
+            "coordinate": [
+              44.4,
+              45
+            ]
+          }
+        ]
+      }
+    },
+    "92517": {
+      "name": "The Criminal Element",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "92528": {
+      "name": "Among the Faithful",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Missionary Jasaan",
+            "coordinate": [
+              46.8,
+              56.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "92529": {
+      "name": "Falaath Village",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Sania Silverstream",
+            "coordinate": [
+              44.8,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Missionary Jasaan",
+            "coordinate": [
+              46.8,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "92532": {
+      "name": "The Warrior's Path",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rorian the Dayseeker",
+            "coordinate": [
+              42,
+              23.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Blademaster Ren",
+            "coordinate": [
+              43.6,
+              24.2
+            ]
+          }
+        ]
+      }
+    },
+    "92544": {
+      "name": "Al'Aketh Thugs",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Hanaa Nightwind",
+            "coordinate": [
+              38.2,
+              30.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Hanaa Nightwind",
+            "coordinate": [
+              38.2,
+              30.2
+            ]
+          }
+        ]
+      }
+    },
+    "92550": {
+      "name": "Havoc in the Highlands",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Commander Cyclas",
+            "coordinate": [
+              50.3,
+              56.9
+            ]
+          }
+        ]
+      }
+    },
+    "92551": {
+      "name": "Stolen Supplies",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Danarii Bellowveil",
+            "coordinate": [
+              45.2,
+              45.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Danarii Bellowveil",
+            "coordinate": [
+              45.2,
+              45.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Supply Cache",
+            "coordinate": [
+              49.9,
+              56
+            ]
+          }
+        ]
+      }
+    },
+    "92553": {
+      "name": "Restocking the Larders",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Zerril Softbreeze",
+            "coordinate": [
+              43.8,
+              43.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Zerril Softbreeze",
+            "coordinate": [
+              43.8,
+              43.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Shadowgale Ursera",
+            "coordinate": [
+              61.8,
+              37.3
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Highlands Ursera",
+            "coordinate": [
+              50.1,
+              58.3
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Den'dralass",
+            "coordinate": [
+              60.1,
+              33.5
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Hippogryph Matriarch",
+            "coordinate": [
+              34.9,
+              52
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Hippogryph Protector",
+            "coordinate": [
+              35,
+              51.8
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Hippogryph Youth",
+            "coordinate": [
+              37.8,
+              51
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Galestrider",
+            "coordinate": [
+              44.4,
+              43
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Ur'endra",
+            "coordinate": [
+              54,
+              65.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Mystmane",
+            "coordinate": [
+              60.3,
+              36.2
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Juvenile Cloudrunner",
+            "coordinate": [
+              46.4,
+              80.2
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Cloudrunner Matriarch",
+            "coordinate": [
+              52.4,
+              80.6
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Cloudrunner",
+            "coordinate": [
+              43.4,
+              69.6
+            ]
+          }
+        ]
+      }
+    },
+    "92579": {
+      "name": "To Valanaar",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92595": {
+      "name": "The Windshapers",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Illaya Amberwind",
+            "coordinate": [
+              43.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Illaya Amberwind",
+            "coordinate": [
+              43.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "92596": {
+      "name": "The High Order",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rathiril Sunlance",
+            "coordinate": [
+              45,
+              46.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Rathiril Sunlance",
+            "coordinate": [
+              45,
+              46.4
+            ]
+          }
+        ]
+      }
+    },
+    "92597": {
+      "name": "Reading the Ley Lines",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Falorne Fallwind",
+            "coordinate": [
+              43.2,
+              24.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Falorne Fallwind",
+            "coordinate": [
+              43.2,
+              24.8
+            ]
+          }
+        ]
+      }
+    },
+    "92598": {
+      "name": "The Gift of Skysight",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ventaari Brightwish",
+            "coordinate": [
+              42.6,
+              24.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ventaari Brightwish",
+            "coordinate": [
+              42.6,
+              24.4
+            ]
+          }
+        ]
+      }
+    },
+    "92640": {
+      "name": "Desperate Times",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92642": {
+      "name": "Disrupting Logistics",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Yorana Windyreed",
+            "coordinate": [
+              69.6,
+              67
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Yorana Windyreed",
+            "coordinate": [
+              69.6,
+              67
+            ]
+          }
+        ]
+      }
+    },
+    "92643": {
+      "name": "The Turncoat",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Dead Cultist",
+            "coordinate": [
+              56,
+              58.8
+            ]
+          }
+        ]
+      }
+    },
+    "92644": {
+      "name": "Unfortunate News",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Dead Cultist",
+            "coordinate": [
+              56,
+              58.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92645": {
+      "name": "Breaking the Breaker",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Yorana Windyreed",
+            "coordinate": [
+              69.6,
+              67
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Yorana Windyreed",
+            "coordinate": [
+              69.6,
+              67
+            ]
+          }
+        ]
+      }
+    },
+    "92646": {
+      "name": "Confront Lorthuna",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              65.2,
+              50.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ]
+      }
+    },
+    "92679": {
+      "name": "Blood Tithe",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Alvarion Windfield",
+            "coordinate": [
+              62,
+              73.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ]
+      }
+    },
+    "92682": {
+      "name": "Make Yourself Useful",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ]
+      }
+    },
+    "92683": {
+      "name": "Flutterfly Dust",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ]
+      }
+    },
+    "92684": {
+      "name": "Ornery Ornery Galestriders",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Ornery Galestrider",
+            "coordinate": [
+              64.6,
+              67.2
+            ]
+          }
+        ]
+      }
+    },
+    "92685": {
+      "name": "The Hills Have Eyes",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Bandit Highwayman",
+            "coordinate": [
+              51.8,
+              76.4
+            ]
+          }
+        ]
+      }
+    },
+    "92693": {
+      "name": "Standing Our Ground",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ]
+      }
+    },
+    "92698": {
+      "name": "What Is My Purpose?",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Malfunctioning Cyclone Construct",
+            "coordinate": [
+              48,
+              77.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ]
+      }
+    },
+    "92699": {
+      "name": "The Supreme Magister",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ]
+      }
+    },
+    "92700": {
+      "name": "The Grand Skyseer",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ]
+      }
+    },
+    "92701": {
+      "name": "To Valanaar",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92703": {
+      "name": "Deliver the News",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aamelia Windfield",
+            "coordinate": [
+              46.6,
+              81.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Alvarion Windfield",
+            "coordinate": [
+              62,
+              73.2
+            ]
+          }
+        ]
+      }
+    },
+    "92708": {
+      "name": "A Grand Adventure",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ]
+      }
+    },
+    "92709": {
+      "name": "A Grand Adventure",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ]
+      }
+    },
+    "92727": {
+      "name": "The Missing Scholar",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Dondallion Whisperwind",
+            "coordinate": [
+              66.2,
+              79.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Bloodstained Satchel",
+            "coordinate": [
+              53.3,
+              72.2
+            ]
+          }
+        ]
+      }
+    },
+    "92741": {
+      "name": "Unwelcome Visitors",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Iaadaria Bitterwind",
+            "coordinate": [
+              66.2,
+              79.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Iaadaria Bitterwind",
+            "coordinate": [
+              66.2,
+              79.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Shadowgale Shriekling",
+            "coordinate": [
+              62.3,
+              38.6
+            ]
+          }
+        ]
+      }
+    },
+    "92834": {
+      "name": "Avenged Tenfold",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Stormchaser",
+            "coordinate": [
+              62,
+              35.7
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Footsoldier",
+            "coordinate": [
+              63.1,
+              36.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Guardian",
+            "coordinate": [
+              62.9,
+              49.1
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Spiritcaller",
+            "coordinate": [
+              64.8,
+              47.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Skypriest",
+            "coordinate": [
+              69,
+              50.6
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Blademaster",
+            "coordinate": [
+              63.2,
+              47.9
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Honor Guard",
+            "coordinate": [
+              69.8,
+              51.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Preacher",
+            "coordinate": [
+              64.1,
+              65.9
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Pillager",
+            "coordinate": [
+              64.4,
+              66
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Skypriest Aanders",
+            "coordinate": [
+              41,
+              64.3
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Brawler",
+            "coordinate": [
+              65.2,
+              66
+            ]
+          }
+        ]
+      }
+    },
+    "92840": {
+      "name": "Catching Wind",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ]
+      }
+    },
+    "92849": {
+      "name": "The Missing Scholar",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Bloodstained Satchel",
+            "coordinate": [
+              53.3,
+              72.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Fillion Flamebreeze",
+            "coordinate": [
+              52,
+              69.4
+            ]
+          }
+        ]
+      }
+    },
+    "92850": {
+      "name": "The Missing Scholar",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Fillion Flamebreeze",
+            "coordinate": [
+              52,
+              69.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Dondallion Whisperwind",
+            "coordinate": [
+              66.2,
+              79.8
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Fillion Flamebreeze",
+            "coordinate": [
+              66.2,
+              79.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Shriekling Matriarch",
+            "coordinate": [
+              51.9,
+              65.6
+            ]
+          }
+        ]
+      }
+    },
+    "92860": {
+      "name": "In Service of Zephras",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92871": {
+      "name": "In Service of Zephras",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92880": {
+      "name": "Return to Valanaar",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Yorana Windyreed",
+            "coordinate": [
+              69.6,
+              67
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92881": {
+      "name": "The High Elder's Request",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "92947": {
+      "name": "Making Our Move",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              61.2,
+              71
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Hyusaa Quickbreeze",
+            "coordinate": [
+              63.8,
+              50.4
+            ]
+          }
+        ]
+      }
+    },
+    "93036": {
+      "name": "Infiltrating the Cult",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Sania Silverstream",
+            "coordinate": [
+              44.8,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "93065": {
+      "name": "Prepare for Battle",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              61.2,
+              71
+            ]
+          }
+        ]
+      }
+    },
+    "93089": {
+      "name": "What Comes Next",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ]
+      }
+    },
+    "93090": {
+      "name": "What Comes Next",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ]
+      }
+    },
+    "93159": {
+      "name": "The Strange Hermit",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Strange Hermit",
+            "coordinate": [
+              54,
+              39
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Strange Hermit",
+            "coordinate": [
+              54,
+              39
+            ]
+          }
+        ]
+      }
+    },
+    "93160": {
+      "name": "The Forest's Bounty",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Strange Hermit",
+            "coordinate": [
+              54,
+              39
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Strange Hermit",
+            "coordinate": [
+              54,
+              39
+            ]
+          }
+        ]
+      }
+    },
+    "93165": {
+      "name": "Mercy Falls on Deaf Ears",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Vayn Moongaze",
+            "coordinate": [
+              63.8,
+              36
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Vayn Moongaze",
+            "coordinate": [
+              63.8,
+              36
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Stormchaser",
+            "coordinate": [
+              62,
+              35.7
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Footsoldier",
+            "coordinate": [
+              63.1,
+              36.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Guardian",
+            "coordinate": [
+              62.9,
+              49.1
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Spiritcaller",
+            "coordinate": [
+              64.8,
+              47.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Skypriest",
+            "coordinate": [
+              69,
+              50.6
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Blademaster",
+            "coordinate": [
+              63.2,
+              47.9
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Honor Guard",
+            "coordinate": [
+              69.8,
+              51.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Preacher",
+            "coordinate": [
+              64.1,
+              65.9
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Pillager",
+            "coordinate": [
+              64.4,
+              66
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Commander Haalien",
+            "coordinate": [
+              65.5,
+              36.3
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Skypriest Aanders",
+            "coordinate": [
+              41,
+              64.3
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Zaal Stormshield",
+            "coordinate": [
+              56.6,
+              50.3
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Brawler",
+            "coordinate": [
+              65.2,
+              66
+            ]
+          }
+        ]
+      }
+    },
+    "93172": {
+      "name": "Free the Hollows",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Strange Hermit",
+            "coordinate": [
+              54,
+              39
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Strange Hermit",
+            "coordinate": [
+              54,
+              39
+            ]
+          }
+        ]
+      }
+    },
+    "93317": {
+      "name": "Crab Season",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Nyalah Brightfire",
+            "coordinate": [
+              60.6,
+              72.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Nyalah Brightfire",
+            "coordinate": [
+              60.6,
+              72.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Windsong Crawler",
+            "coordinate": [
+              52.3,
+              74.7
+            ]
+          }
+        ]
+      }
+    },
+    "93318": {
+      "name": "WANTED: Vulgara the Insatiable",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Bounty Available: Vulgara the Insatiable!",
+            "coordinate": [
+              43.4,
+              45.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Danarii Bellowveil",
+            "coordinate": [
+              45.2,
+              45.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Vulgara the Insatiable",
+            "coordinate": [
+              42.8,
+              52
+            ]
+          }
+        ]
+      }
+    },
+    "93319": {
+      "name": "Pilfered Windstones",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Teeri Wellwind",
+            "coordinate": [
+              44.4,
+              45
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Teeri Wellwind",
+            "coordinate": [
+              44.4,
+              45
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Highlands Bandit",
+            "coordinate": [
+              50.4,
+              33.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "\"Badwind\" Bennic",
+            "coordinate": [
+              50.7,
+              34
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Contemplative Bandit",
+            "coordinate": [
+              48.6,
+              86
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Captured Bandit",
+            "coordinate": [
+              43,
+              46.4
+            ]
+          }
+        ]
+      }
+    },
+    "93320": {
+      "name": "Tower Defense",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Yorana Windyreed",
+            "coordinate": [
+              69.6,
+              67
+            ]
+          }
+        ]
+      }
+    },
+    "93461": {
+      "name": "Welcome to Shen'dar Village",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "93552": {
+      "name": "Harvesting Windstones",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Dalia the Collector",
+            "coordinate": [
+              43.2,
+              24
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Dalia the Collector",
+            "coordinate": [
+              43.2,
+              24
+            ]
+          }
+        ]
+      }
+    },
+    "93735": {
+      "name": "The Broken Construct",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Riaani Nightwind",
+            "coordinate": [
+              59,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    "93736": {
+      "name": "Unwelcome Spirits",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Endaria Mistgaze",
+            "coordinate": [
+              58.2,
+              78.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Endaria Mistgaze",
+            "coordinate": [
+              58.2,
+              78.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Wind Hollow",
+            "coordinate": [
+              59,
+              34.3
+            ]
+          }
+        ]
+      }
+    },
+    "93737": {
+      "name": "The Broken Construct",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Riaani Nightwind",
+            "coordinate": [
+              59,
+              73
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Riaani Nightwind",
+            "coordinate": [
+              59,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    "93738": {
+      "name": "The Broken Construct",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Riaani Nightwind",
+            "coordinate": [
+              59,
+              73
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ]
+      }
+    },
+    "93740": {
+      "name": "Blood for Blood",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Stormchaser",
+            "coordinate": [
+              62,
+              35.7
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Footsoldier",
+            "coordinate": [
+              63.1,
+              36.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Guardian",
+            "coordinate": [
+              62.9,
+              49.1
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Spiritcaller",
+            "coordinate": [
+              64.8,
+              47.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Skypriest",
+            "coordinate": [
+              69,
+              50.6
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Blademaster",
+            "coordinate": [
+              63.2,
+              47.9
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Honor Guard",
+            "coordinate": [
+              69.8,
+              51.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Preacher",
+            "coordinate": [
+              64.1,
+              65.9
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Pillager",
+            "coordinate": [
+              64.4,
+              66
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Skypriest Aanders",
+            "coordinate": [
+              41,
+              64.3
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Brawler",
+            "coordinate": [
+              65.2,
+              66
+            ]
+          }
+        ]
+      }
+    },
+    "93746": {
+      "name": "A Firm Response",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ]
+      }
+    },
+    "93791": {
+      "name": "Speak with Belann",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Anathamaas Aetherwind",
+            "coordinate": [
+              65.8,
+              80.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Belann Windwood",
+            "coordinate": [
+              62.8,
+              77.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Belann Windwood",
+            "coordinate": [
+              62.8,
+              77.4
+            ]
+          }
+        ]
+      }
+    },
+    "93797": {
+      "name": "Boughs in the Wind",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Belann Windwood",
+            "coordinate": [
+              62.8,
+              77.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Belann Windwood",
+            "coordinate": [
+              62.8,
+              77.4
+            ]
+          }
+        ]
+      }
+    },
+    "93835": {
+      "name": "Confront Lorthuna",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              65.2,
+              50.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ]
+      }
+    },
+    "93836": {
+      "name": "The Fate of Zephras",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "93926": {
+      "name": "The Western Watch",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Peacekeeper Vaaniel",
+            "coordinate": [
+              42.4,
+              62
+            ]
+          }
+        ]
+      }
+    },
+    "93927": {
+      "name": "A Last Request",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Peacekeeper Vaaniel",
+            "coordinate": [
+              42.4,
+              62
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ]
+      }
+    },
+    "93948": {
+      "name": "Deliver the Signet",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Constable Aonda",
+            "coordinate": [
+              45.6,
+              45.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "93949": {
+      "name": "Bugged",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "93951": {
+      "name": "A Little Beauty",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Taleen Shimmerthread",
+            "coordinate": [
+              44.8,
+              44.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Taleen Shimmerthread",
+            "coordinate": [
+              44.8,
+              44.2
+            ]
+          }
+        ]
+      }
+    },
+    "93958": {
+      "name": "The Inner Sanctum",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Hyusaa Quickbreeze",
+            "coordinate": [
+              63.8,
+              50.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Valennia Stormfist",
+            "coordinate": [
+              65.2,
+              50.4
+            ]
+          }
+        ]
+      }
+    },
+    "94003": {
+      "name": "The Skybreaker Bulwark",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Seena Skybreaker",
+            "coordinate": [
+              59.8,
+              72.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Seena Skybreaker",
+            "coordinate": [
+              59.8,
+              72.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Zaal Stormshield",
+            "coordinate": [
+              56.6,
+              50.3
+            ]
+          }
+        ]
+      }
+    },
+    "94006": {
+      "name": "The Great Ursera Spirit",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Lotheluum Starbreeze",
+            "coordinate": [
+              64,
+              75
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Urs'endris",
+            "coordinate": [
+              69.8,
+              61.6
+            ]
+          }
+        ]
+      }
+    },
+    "94007": {
+      "name": "Taming the Beast",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elayaa Easewind",
+            "coordinate": [
+              45.2,
+              44.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Quel'ana Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ]
+      }
+    },
+    "94013": {
+      "name": "Taming the Beast",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Quel'ana Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Quel'ana Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ]
+      }
+    },
+    "94050": {
+      "name": "Training the Beast",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Quel'ana Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Quel'dora Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ]
+      }
+    },
+    "94369": {
+      "name": "The Fate of Zephras",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "94411": {
+      "name": "Meddlesome Mages",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Illaya Amberwind",
+            "coordinate": [
+              43.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Illaya Amberwind",
+            "coordinate": [
+              43.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "94413": {
+      "name": "A Magical Affront",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Rathiril Sunlance",
+            "coordinate": [
+              45,
+              46.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Rathiril Sunlance",
+            "coordinate": [
+              45,
+              46.4
+            ]
+          }
+        ]
+      }
+    },
+    "94414": {
+      "name": "The Anchors of Zephras",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 2,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Halaan Hawk-Eye",
+            "coordinate": [
+              43.8,
+              24
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Halaan Hawk-Eye",
+            "coordinate": [
+              43.8,
+              24
+            ]
+          }
+        ]
+      }
+    },
+    "94484": {
+      "name": "Unnerving Silence",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Lotheluum Starbreeze",
+            "coordinate": [
+              64,
+              75
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ]
+      }
+    },
+    "94485": {
+      "name": "Tears of the Lady",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ]
+      }
+    },
+    "94486": {
+      "name": "Feathers for Binding",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Shadowgale Shriekling",
+            "coordinate": [
+              62.3,
+              38.6
+            ]
+          }
+        ]
+      }
+    },
+    "94487": {
+      "name": "Unwanted and Unworthy",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Stormchaser",
+            "coordinate": [
+              62,
+              35.7
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Al'Aketh Footsoldier",
+            "coordinate": [
+              63.1,
+              36.4
+            ]
+          }
+        ]
+      }
+    },
+    "94488": {
+      "name": "The Ties That Bind",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Commander Haalien",
+            "coordinate": [
+              65.5,
+              36.3
+            ]
+          }
+        ]
+      }
+    },
+    "94489": {
+      "name": "The Wounds of Betrayal",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ]
+      }
+    },
+    "94491": {
+      "name": "The Fate of the Den",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Lotheluum Starbreeze",
+            "coordinate": [
+              64,
+              75
+            ]
+          }
+        ]
+      }
+    },
+    "94493": {
+      "name": "A Sacrifice in Vain",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elegael Thornpaw",
+            "coordinate": [
+              61.6,
+              39.2
+            ]
+          }
+        ]
+      }
+    },
+    "94568": {
+      "name": "The Cult's True Plans",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Talaanis Shadowsong",
+            "coordinate": [
+              66.2,
+              76.6
+            ]
+          }
+        ]
+      }
+    },
+    "94638": {
+      "name": "Strength and Mercy",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Urs'endris",
+            "coordinate": [
+              69.8,
+              61.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Urs'endris",
+            "coordinate": [
+              69.8,
+              61.6
+            ]
+          }
+        ]
+      }
+    },
+    "94896": {
+      "name": "Aid For The Refugees",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ealaane Nimbuswalker",
+            "coordinate": [
+              65.8,
+              74.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ealaane Nimbuswalker",
+            "coordinate": [
+              65.8,
+              74.4
+            ]
+          }
+        ]
+      }
+    },
+    "94897": {
+      "name": "The Fate of a Loved One",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 8,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ealaane Nimbuswalker",
+            "coordinate": [
+              65.8,
+              74.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Ealaane Nimbuswalker",
+            "coordinate": [
+              65.8,
+              74.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Resaan Nimbuswalker",
+            "coordinate": [
+              57,
+              29.4
+            ]
+          }
+        ]
+      }
+    },
+    "94946": {
+      "name": "The Magical City of Dalaran",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 36,
+            "name": "Denaaris Stargale",
+            "coordinate": [
+              12.4,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "94978": {
+      "name": "Taming the Beast",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Quel'ana Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Quel'ana Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ]
+      }
+    },
+    "94979": {
+      "name": "Taming the Beast",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Quel'ana Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Quel'ana Quickgale",
+            "coordinate": [
+              59.6,
+              72.6
+            ]
+          }
+        ]
+      }
+    },
+    "95349": {
+      "name": "The Earthen Ring",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 13,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Ayessa Dawnsinger",
+            "coordinate": [
+              59,
+              79.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Alaana Stormwalker",
+            "coordinate": [
+              33.4,
+              22.4
+            ]
+          }
+        ]
+      }
+    },
+    "96101": {
+      "name": "The Great Outdoors",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "96638": {
+      "name": "The Adventurer",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Aetheen of the Gales",
+            "coordinate": [
+              42.6,
+              23.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "96646": {
+      "name": "Camping 101: Cooking",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Zerril Softbreeze",
+            "coordinate": [
+              43.8,
+              43.8
+            ]
+          }
+        ]
+      }
+    },
+    "97243": {
+      "name": "Call of Fire",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Sessaria Skystride",
+            "coordinate": [
+              58.2,
+              78.4
+            ]
+          },
+          {
+            "areaID": 16593,
+            "name": "Aarnor Galestrike",
+            "coordinate": [
+              43.4,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Olariaan Swiftburn",
+            "coordinate": [
+              51.2,
+              86
+            ]
+          }
+        ]
+      }
+    },
+    "97244": {
+      "name": "Call of Fire",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Olariaan Swiftburn",
+            "coordinate": [
+              51.2,
+              86
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Olariaan Swiftburn",
+            "coordinate": [
+              51.2,
+              86
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Skypriest Faladiel",
+            "coordinate": [
+              64.5,
+              64.3
+            ]
+          }
+        ]
+      }
+    },
+    "97245": {
+      "name": "Call of Fire",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Olariaan Swiftburn",
+            "coordinate": [
+              51.2,
+              86
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Olariaan Swiftburn",
+            "coordinate": [
+              51.2,
+              86
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 16593,
+            "name": "Kuramaa",
+            "coordinate": [
+              42.4,
+              69
+            ]
+          }
+        ]
+      }
+    },
+    "97257": {
+      "name": "Call of Fire",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Olariaan Swiftburn",
+            "coordinate": [
+              51.2,
+              86
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Sessaria Skystride",
+            "coordinate": [
+              58.2,
+              78.4
+            ]
+          }
+        ]
+      }
+    },
+    "97963": {
+      "name": "Camping 101: Alchemy",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Nyassa Swiftdraught",
+            "coordinate": [
+              43.6,
+              43.4
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 171,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96045,
+            97899,
+            97915,
+            97927,
+            97938,
+            97951
+          ],
+          "name": "Camping 101: Alchemy",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            171,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96045,
+            97899,
+            97915,
+            97927,
+            97938,
+            97951
+          ],
+          "finishedBy": [
+            [
+              257019
+            ]
+          ],
+          "name": "Camping 101: Alchemy",
+          "objectivesText": [
+            "Speak with Nyassa Swiftdraught in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            171,
+            1
+          ],
+          "requiredSpell": -1230564,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Alchemy",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97964": {
+      "name": "Camping 101: Blacksmithing",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Aedi Thriceforged",
+            "coordinate": [
+              44.8,
+              44.4
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "race": [
+              6,
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 164,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96044,
+            97900,
+            97916,
+            97928,
+            97939,
+            97952
+          ],
+          "name": "Camping 101: Blacksmithing",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            164,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96044,
+            97900,
+            97916,
+            97928,
+            97939,
+            97952
+          ],
+          "finishedBy": [
+            [
+              251913
+            ]
+          ],
+          "name": "Camping 101: Blacksmithing",
+          "objectivesText": [
+            "Speak with Aedi Thriceforged in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            164,
+            1
+          ],
+          "requiredSpell": -1230171,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Blacksmithing",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            6,
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97965": {
+      "name": "Camping 101: First Aid",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Naleeia Tattermend",
+            "coordinate": [
+              43,
+              46.2
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 129,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96047,
+            97903,
+            97919,
+            97931,
+            97942,
+            97955
+          ],
+          "name": "Camping 101: First Aid",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            129,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96047,
+            97903,
+            97919,
+            97931,
+            97942,
+            97955
+          ],
+          "finishedBy": [
+            [
+              257018
+            ]
+          ],
+          "name": "Camping 101: First Aid",
+          "objectivesText": [
+            "Speak with Naleeia Tattermend in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            129,
+            1
+          ],
+          "requiredSpell": -1230117,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: First Aid",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97967": {
+      "name": "Camping 101: Fishing",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Fenn Fairweather",
+            "coordinate": [
+              45,
+              48.4
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 356,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96050,
+            97904,
+            97920,
+            97932,
+            97943,
+            97956
+          ],
+          "name": "Camping 101: Fishing",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            356,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96050,
+            97904,
+            97920,
+            97932,
+            97943,
+            97956
+          ],
+          "finishedBy": [
+            [
+              251992
+            ]
+          ],
+          "name": "Camping 101: Fishing",
+          "objectivesText": [
+            "Speak with Fenn Fairweather in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            356,
+            1
+          ],
+          "requiredSpell": -1229745,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Fishing",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97968": {
+      "name": "Camping 101: Herbalism",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Syriel Nightrain",
+            "coordinate": [
+              57.8,
+              75.4
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 182,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96055,
+            97905,
+            97921,
+            97933,
+            97944,
+            97957
+          ],
+          "name": "Camping 101: Herbalism",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            182,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96055,
+            97905,
+            97921,
+            97933,
+            97944,
+            97957
+          ],
+          "finishedBy": [
+            [
+              254345
+            ]
+          ],
+          "name": "Camping 101: Herbalism",
+          "objectivesText": [
+            "Speak with Syriel Nightrain in Valanaar to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            182,
+            1
+          ],
+          "requiredSpell": -1229705,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Herbalism",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97969": {
+      "name": "Camping 101: Leatherworking",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Indari Sunseam",
+            "coordinate": [
+              44.6,
+              44.4
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 165,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96031,
+            97906,
+            97922,
+            97934,
+            97946,
+            97958
+          ],
+          "name": "Camping 101: Leatherworking",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            165,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96031,
+            97906,
+            97922,
+            97934,
+            97946,
+            97958
+          ],
+          "finishedBy": [
+            [
+              251993
+            ]
+          ],
+          "name": "Camping 101: Leatherworking",
+          "objectivesText": [
+            "Speak with Indari Sunseam in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            165,
+            1
+          ],
+          "requiredSpell": -1229432,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Leatherworking",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97970": {
+      "name": "Camping 101: Mining",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Messana Crestwind",
+            "coordinate": [
+              44.8,
+              44.4
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 186,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96046,
+            97907,
+            97923,
+            97935,
+            97948,
+            97959
+          ],
+          "name": "Camping 101: Mining",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            186,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96046,
+            97907,
+            97923,
+            97935,
+            97948,
+            97959
+          ],
+          "finishedBy": [
+            [
+              257022
+            ]
+          ],
+          "name": "Camping 101: Mining",
+          "objectivesText": [
+            "Speak with Messana Crestwind in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            186,
+            1
+          ],
+          "requiredSpell": -1230161,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Mining",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97971": {
+      "name": "Camping 101: Skinning",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Mendalass Tattermend",
+            "coordinate": [
+              43.2,
+              43.4
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 393,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96056,
+            97908,
+            97924,
+            97936,
+            97949,
+            97960
+          ],
+          "name": "Camping 101: Skinning",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            393,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96056,
+            97908,
+            97924,
+            97936,
+            97949,
+            97960
+          ],
+          "finishedBy": [
+            [
+              257024
+            ]
+          ],
+          "name": "Camping 101: Skinning",
+          "objectivesText": [
+            "Speak with Mendalass Tattermend in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            393,
+            1
+          ],
+          "requiredSpell": -1229517,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Skinning",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97972": {
+      "name": "Camping 101: Tailoring",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Taleen Shimmerthread",
+            "coordinate": [
+              44.8,
+              44.2
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Horde"
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 197,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96057,
+            96102,
+            97925,
+            97937,
+            97950,
+            97961,
+            97973
+          ],
+          "name": "Camping 101: Tailoring",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            197,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96057,
+            96102,
+            97925,
+            97937,
+            97950,
+            97961,
+            97973
+          ],
+          "finishedBy": [
+            [
+              251991
+            ]
+          ],
+          "name": "Camping 101: Tailoring",
+          "objectivesText": [
+            "Speak with Taleen Shimmerthread in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            197,
+            1
+          ],
+          "requiredSpell": -1229504,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Tailoring",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "97973": {
+      "name": "Camping 101: Tailoring",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Taleen Shimmerthread",
+            "coordinate": [
+              44.8,
+              44.2
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Alliance"
+          },
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 197,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96057,
+            96102,
+            97925,
+            97937,
+            97950,
+            97961,
+            97972
+          ],
+          "name": "Camping 101: Tailoring",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredRaces": 4294967373,
+          "requiredSkill": [
+            197,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96057,
+            96102,
+            97925,
+            97937,
+            97950,
+            97961,
+            97972
+          ],
+          "finishedBy": [
+            [
+              251991
+            ]
+          ],
+          "name": "Camping 101: Tailoring",
+          "objectivesText": [
+            "Speak with Taleen Shimmerthread in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 4294967373,
+          "requiredSkill": [
+            197,
+            1
+          ],
+          "requiredSpell": -1263425,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Tailoring",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "98284": {
+      "name": "Camping 101: Enchanting",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Nasalanna Windsinger",
+            "coordinate": [
+              43.2,
+              43.2
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Horde"
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 333,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96059,
+            97901,
+            97917,
+            97929,
+            97940,
+            97953,
+            98286
+          ],
+          "name": "Camping 101: Enchanting",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            333,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96059,
+            97901,
+            97917,
+            97929,
+            97940,
+            97953,
+            98286
+          ],
+          "finishedBy": [
+            [
+              257020
+            ]
+          ],
+          "name": "Camping 101: Enchanting",
+          "objectivesText": [
+            "Speak with Nasalanna Windsinger in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 8589934770,
+          "requiredSkill": [
+            333,
+            1
+          ],
+          "requiredSpell": -1230643,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Enchanting",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "98285": {
+      "name": "Camping 101: Engineering",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Strange Hermit",
+            "coordinate": [
+              54,
+              39
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Strange Hermit",
+            "coordinate": [
+              54,
+              39
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 202,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96058,
+            97902,
+            97918,
+            97930,
+            97941,
+            97954,
+            98287
+          ],
+          "name": "Camping 101: Engineering",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredSkill": [
+            202,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96058,
+            97902,
+            97918,
+            97930,
+            97941,
+            97954,
+            98287
+          ],
+          "finishedBy": [
+            [
+              251684
+            ]
+          ],
+          "name": "Camping 101: Engineering",
+          "objectivesText": [
+            "Speak with the Strange Hermit in Shadowgale Forest to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 0,
+          "requiredSkill": [
+            202,
+            1
+          ],
+          "requiredSpell": -1230656,
+          "startedBy": [
+            [
+              251684
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Engineering",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "98286": {
+      "name": "Camping 101: Enchanting",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "zephras-isle",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Raan Wildwind",
+            "coordinate": [
+              41.6,
+              44.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Nasalanna Windsinger",
+            "coordinate": [
+              43.2,
+              43.2
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "any",
+          "quests": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Alliance"
+          },
+          {
+            "race": [
+              95
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          },
+          {
+            "profession": {
+              "skillLineID": 333,
+              "minRank": 1
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "altQuests": [
+            96059,
+            97901,
+            97917,
+            97929,
+            97940,
+            97953,
+            98284
+          ],
+          "name": "Camping 101: Enchanting",
+          "preQuestSingle": [
+            96101
+          ],
+          "requiredLevel": 4,
+          "requiredRaces": 4294967373,
+          "requiredSkill": [
+            333,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 263664,
+              "spawns": [],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "exclusiveTo": [
+            96059,
+            97901,
+            97917,
+            97929,
+            97940,
+            97953,
+            98284
+          ],
+          "finishedBy": [
+            [
+              257020
+            ]
+          ],
+          "name": "Camping 101: Enchanting",
+          "objectivesText": [
+            "Speak with Nasalanna Windsinger in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill."
+          ],
+          "preQuestSingle": [
+            95998,
+            96101,
+            96604,
+            96605,
+            96606,
+            96607,
+            96608
+          ],
+          "questLevel": 6,
+          "requiredLevel": 4,
+          "requiredRaces": 4294967373,
+          "requiredSkill": [
+            333,
+            1
+          ],
+          "requiredSpell": -1230643,
+          "startedBy": [
+            [
+              263664
+            ]
+          ],
+          "zoneOrSort": -666
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "Camping 101: Enchanting",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            95
+          ],
+          "requiredLevel": 4,
+          "zoneId": -666
+        }
+      }
+    },
+    "98512": {
+      "name": "Al'Aketh Assassins",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Fendaal Windstone",
+            "coordinate": [
+              56.8,
+              61
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Fendaal Windstone",
+            "coordinate": [
+              56.8,
+              61
+            ]
+          }
+        ]
+      }
+    },
+    "99260": {
+      "name": "Fillion's Mission",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "zephras-isle"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 16593,
+            "name": "Fillion Flamebreeze",
+            "coordinate": [
+              66.2,
+              79.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 16593,
+            "name": "Elaadrin Evengale",
+            "coordinate": [
+              66.6,
+              79.8
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "clientWalkthrough": "Not performed."
+}

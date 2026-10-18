@@ -1039,9 +1039,10 @@ ns:RegisterGuide({
                     {
                         race = { 2, 5, 6, 8, 96 },
                     },
+                    { quest = { id = 6383, state = "completed" } },
                 },
             },
-            text = "Loot Ursangous's Paw from Ursangous. Keep it for the next pickup.",
+            text = "After turning in The Ashenvale Hunt (6383) to Senani Thunderheart at Splintertree Post, kill Ursangous near 42.3, 68.8 and loot Ursangous's Paw. Keep it for the next pickup.",
             complete = {
                 any = {
                     {
@@ -1052,10 +1053,11 @@ ns:RegisterGuide({
                     },
                 },
             },
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 6383 } } },
+            route = { { mapID = 1440, x = 0.423, y = 0.688, label = "Ursangous", offMapText = "Travel to Ursangous in Ashenvale." } },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-6383-the-ashenvale-hunt" },
         },
         {
             text = "Use the Ursangous's Paw to accept Ursangous's Paw.",
@@ -1085,7 +1087,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-6383-the-ashenvale-hunt" },
         },
         {
             id = "loot-starter-before-accept-1918-the-befouled-element",
@@ -1097,9 +1099,10 @@ ns:RegisterGuide({
                     {
                         race = { 2, 5, 6, 8, 96 },
                     },
+                    { quest = { id = 25, state = "activeOrCompleted" } },
                 },
             },
-            text = "Loot Befouled Water Globe from Tideress. Keep it for the next pickup.",
+            text = "With Stonetalon Standstill (25) in your quest log, kill Tideress near 50.7, 71.8 in Mystral Lake and loot the Befouled Water Globe. Keep it for the next pickup.",
             complete = {
                 any = {
                     {
@@ -1110,10 +1113,12 @@ ns:RegisterGuide({
                     },
                 },
             },
-            requiredQuests = {},
+            -- The active quest condition governs the drop; this group links Skip.
+            requiredQuests = { { mode = "all", quests = { 25 } } },
+            route = { { mapID = 1440, x = 0.507, y = 0.718, label = "Tideress", offMapText = "Travel to Tideress in Mystral Lake, Ashenvale." } },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "accept-25-stonetalon-standstill" },
         },
         {
             text = "Use the Befouled Water Globe to accept The Befouled Element.",
@@ -1653,9 +1658,10 @@ ns:RegisterGuide({
                     {
                         race = { 2, 5, 6, 8, 96 },
                     },
+                    { quest = { id = 6383, state = "completed" } },
                 },
             },
-            text = "Loot Sharptalon's Claw from Sharptalon. Keep it for the next pickup.",
+            text = "After turning in The Ashenvale Hunt (6383) to Senani Thunderheart at Splintertree Post, kill Sharptalon near 75.9, 69.5 and loot Sharptalon's Claw. Keep it for the next pickup.",
             complete = {
                 any = {
                     {
@@ -1666,10 +1672,11 @@ ns:RegisterGuide({
                     },
                 },
             },
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 6383 } } },
+            route = { { mapID = 1440, x = 0.759, y = 0.695, label = "Sharptalon", offMapText = "Travel to Sharptalon in Ashenvale." } },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-6383-the-ashenvale-hunt" },
         },
         {
             text = "Use the Sharptalon's Claw to accept Sharptalon's Claw.",
@@ -1699,7 +1706,7 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-            dependsOn = {},
+            dependsOn = { "turnin-6383-the-ashenvale-hunt" },
         },
         {
             text = "Turn in Sharptalon's Claw to Senani Thunderheart.",

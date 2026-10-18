@@ -1,0 +1,4427 @@
+{
+  "guide": "loremaster-mulgore",
+  "title": "Mulgore",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-era-mulgore",
+  "additionalSpines": [
+    "leveling-era-horde-mulgore-part-2"
+  ],
+  "spineActions": [
+    "accept-747-the-hunt-begins",
+    "accept-752-a-humble-task",
+    "turnin-752-a-humble-task",
+    "accept-753-a-humble-task",
+    "objective-753-1-water-pitcher",
+    "objective-747-1-plainstrider-meat",
+    "objective-747-2-plainstrider-feather",
+    "turnin-747-the-hunt-begins",
+    "accept-3091-simple-note",
+    "accept-3093-rune-inscribed-note",
+    "accept-3092-etched-note",
+    "accept-3094-verdant-note",
+    "accept-750-the-hunt-continues",
+    "turnin-3093-rune-inscribed-note",
+    "turnin-3094-verdant-note",
+    "turnin-753-a-humble-task",
+    "accept-755-rites-of-the-earthmother",
+    "turnin-3091-simple-note",
+    "turnin-3092-etched-note",
+    "turnin-755-rites-of-the-earthmother",
+    "accept-757-rite-of-strength",
+    "woven-accept-95805-grace-of-anshe-and-musha",
+    "woven-objective-95805-grace-of-anshe-and-musha",
+    "objective-750-1-mountain-cougar-pelt",
+    "turnin-750-the-hunt-continues",
+    "accept-780-the-battleboars",
+    "level-before-accept-3376-break-sharptusk",
+    "accept-3376-break-sharptusk",
+    "level-before-accept-1519-call-of-earth",
+    "accept-1519-call-of-earth",
+    "objective-780-1-battleboar",
+    "objective-780-2-battleboar-flank",
+    "objective-3376-1-chief-sharptusk-thornmantle",
+    "loot-starter-before-accept-781-attack-on-camp-narache",
+    "accept-781-attack-on-camp-narache",
+    "objective-1519-1-ritual-salve",
+    "objective-757-1-bristleback-belt",
+    "turnin-780-the-battleboars",
+    "turnin-3376-break-sharptusk",
+    "turnin-781-attack-on-camp-narache",
+    "turnin-757-rite-of-strength",
+    "accept-763-rites-of-the-earthmother",
+    "turnin-1519-call-of-earth",
+    "level-before-accept-1520-call-of-earth",
+    "accept-1520-call-of-earth",
+    "objective-1520-earth-sapta",
+    "turnin-1520-call-of-earth",
+    "level-before-accept-1521-call-of-earth",
+    "accept-1521-call-of-earth",
+    "turnin-1521-call-of-earth",
+    "level-before-woven-accept-96659-the-adventurer",
+    "woven-accept-96659-the-adventurer",
+    "accept-1656-a-task-unfinished",
+    "woven-turnin-96659-the-adventurer",
+    "level-before-woven-accept-96605-the-great-outdoors",
+    "woven-accept-96605-the-great-outdoors",
+    "woven-objective-96605-the-great-outdoors",
+    "woven-turnin-96605-the-great-outdoors",
+    "level-before-accept-766-mazzranache",
+    "accept-766-mazzranache",
+    "level-before-accept-761-swoop-hunting",
+    "accept-761-swoop-hunting",
+    "level-before-accept-748-poison-water",
+    "accept-748-poison-water",
+    "level-before-accept-743-dangers-of-the-windfury",
+    "accept-743-dangers-of-the-windfury",
+    "turnin-763-rites-of-the-earthmother",
+    "accept-745-sharing-the-land",
+    "level-before-accept-767-rite-of-vision",
+    "accept-767-rite-of-vision",
+    "level-before-accept-746-dwarven-digging",
+    "accept-746-dwarven-digging",
+    "turnin-1656-a-task-unfinished",
+    "turnin-767-rite-of-vision",
+    "level-before-accept-771-rite-of-vision",
+    "accept-771-rite-of-vision",
+    "objective-771-2-ambercorn",
+    "objective-766-1-prairie-wolf-heart",
+    "objective-748-1-prairie-wolf-paw",
+    "objective-766-3-plainstrider-scale",
+    "objective-748-2-plainstrider-talon",
+    "objective-766-4-swoop-gizzard",
+    "objective-761-1-trophy-swoop-quill",
+    "turnin-748-poison-water",
+    "level-before-accept-754-winterhoof-cleansing",
+    "accept-754-winterhoof-cleansing",
+    "turnin-761-swoop-hunting",
+    "objective-771-1-well-stone",
+    "level-before-objective-754-1-winterhoof-cleansing-totem",
+    "objective-754-1-winterhoof-cleansing-totem",
+    "objective-745-3-palemane-poacher",
+    "objective-745-2-palemane-skinner",
+    "objective-745-1-palemane-tanner",
+    "woven-accept-98430-the-longwalkers",
+    "woven-objective-98430-the-longwalkers",
+    "turnin-754-winterhoof-cleansing",
+    "level-before-accept-756-thunderhorn-totem",
+    "accept-756-thunderhorn-totem",
+    "turnin-745-sharing-the-land",
+    "turnin-771-rite-of-vision",
+    "level-before-accept-772-rite-of-vision",
+    "accept-772-rite-of-vision",
+    "objective-766-2-flatland-cougar-femur",
+    "objective-756-2-cougar-claws",
+    "objective-756-1-stalker-claws",
+    "turnin-766-mazzranache",
+    "turnin-756-thunderhorn-totem",
+    "level-before-accept-758-thunderhorn-cleansing",
+    "accept-758-thunderhorn-cleansing",
+    "level-before-woven-accept-99108-sparring-match",
+    "woven-accept-99108-sparring-match",
+    "woven-objective-99108-sparring-match",
+    "woven-turnin-99108-sparring-match",
+    "objective-758-1-thunderhorn-cleansing-totem",
+    "objective-743-1-windfury-harpy",
+    "turnin-772-rite-of-vision",
+    "level-before-accept-773-rite-of-wisdom",
+    "accept-773-rite-of-wisdom",
+    "objective-746-1-bael-dun-digger",
+    "objective-746-1-prospector-s-pick",
+    "level-before-accept-833-a-sacred-burial",
+    "accept-833-a-sacred-burial",
+    "turnin-773-rite-of-wisdom",
+    "level-before-accept-775-journey-into-thunder-bluff",
+    "accept-775-journey-into-thunder-bluff",
+    "objective-833-1-bristleback-interloper",
+    "turnin-833-a-sacred-burial",
+    "turnin-743-dangers-of-the-windfury",
+    "turnin-746-dwarven-digging",
+    "turnin-758-thunderhorn-cleansing",
+    "level-before-woven-accept-99411-kyles-gone-missing",
+    "woven-accept-99411-kyles-gone-missing",
+    "woven-objective-99411-kyles-gone-missing",
+    "woven-turnin-99411-kyles-gone-missing",
+    "level-before-accept-6061-taming-the-beast",
+    "accept-6061-taming-the-beast",
+    "level-before-objective-6061-1-taming-rod",
+    "objective-6061-1-taming-rod",
+    "turnin-6061-taming-the-beast",
+    "level-before-accept-6087-taming-the-beast",
+    "accept-6087-taming-the-beast",
+    "objective-6087-1-taming-rod",
+    "turnin-6087-taming-the-beast",
+    "level-before-accept-6088-taming-the-beast",
+    "accept-6088-taming-the-beast",
+    "objective-6088-1-taming-rod",
+    "turnin-6088-taming-the-beast",
+    "level-before-accept-6089-training-the-beast",
+    "accept-6089-training-the-beast",
+    "level-before-accept-2984-call-of-fire",
+    "accept-2984-call-of-fire",
+    "level-before-accept-5928-heeding-the-call",
+    "accept-5928-heeding-the-call",
+    "level-before-accept-749-the-ravaged-caravan",
+    "accept-749-the-ravaged-caravan",
+    "turnin-749-the-ravaged-caravan",
+    "level-before-accept-751-the-ravaged-caravan",
+    "accept-751-the-ravaged-caravan",
+    "turnin-751-the-ravaged-caravan",
+    "level-before-accept-854-journey-to-the-crossroads",
+    "accept-854-journey-to-the-crossroads",
+    "turnin-854-journey-to-the-crossroads",
+    "level-before-accept-6361-a-bundle-of-hides",
+    "accept-6361-a-bundle-of-hides",
+    "turnin-6361-a-bundle-of-hides",
+    "level-before-accept-6362-ride-to-thunder-bluff",
+    "accept-6362-ride-to-thunder-bluff",
+    "turnin-6362-ride-to-thunder-bluff",
+    "level-before-accept-6363-tal-the-wind-rider-master",
+    "accept-6363-tal-the-wind-rider-master",
+    "turnin-6089-training-the-beast",
+    "turnin-775-journey-into-thunder-bluff",
+    "level-before-woven-accept-776-rites-of-the-earthmother",
+    "woven-accept-776-rites-of-the-earthmother",
+    "woven-turnin-98430-the-longwalkers",
+    "turnin-5928-heeding-the-call",
+    "level-before-accept-5922-moonglade",
+    "accept-5922-moonglade",
+    "level-before-accept-886-the-barrens-oases",
+    "accept-886-the-barrens-oases",
+    "turnin-5922-moonglade",
+    "level-before-accept-5930-great-bear-spirit",
+    "accept-5930-great-bear-spirit",
+    "objective-5930-quest-work",
+    "turnin-5930-great-bear-spirit",
+    "level-before-accept-5932-back-to-thunder-bluff",
+    "accept-5932-back-to-thunder-bluff",
+    "turnin-5932-back-to-thunder-bluff",
+    "level-before-accept-6002-body-and-heart",
+    "accept-6002-body-and-heart",
+    "turnin-6363-tal-the-wind-rider-master",
+    "level-before-accept-6364-return-to-jahan",
+    "accept-6364-return-to-jahan",
+    "level-before-objective-6002-1-cenarion-lunardust",
+    "objective-6002-1-cenarion-lunardust",
+    "turnin-6002-body-and-heart",
+    "level-before-woven-accept-97485-traditions-of-the-bluff",
+    "accept-76156-stalk-with-the-earthmother",
+    "woven-accept-97485-traditions-of-the-bluff",
+    "woven-preparation-97485-bundle-of-herbs",
+    "woven-preparation-97485-cedar-twigs",
+    "woven-preparation-97485-sinew-thread",
+    "woven-preparation-97485-flint-and-tinder",
+    "woven-preparation-97485-prepared-incense",
+    "woven-objective-97485-traditions-of-the-bluff",
+    "woven-turnin-97485-traditions-of-the-bluff",
+    "level-before-woven-accept-99079-longwalker-malah",
+    "woven-accept-99079-longwalker-malah",
+    "level-before-woven-accept-861-the-hunters-way",
+    "woven-accept-861-the-hunters-way",
+    "level-before-woven-accept-96130-chakuyak",
+    "woven-accept-96130-chakuyak",
+    "woven-objective-96130-chakuyak",
+    "woven-turnin-96130-chakuyak",
+    "level-before-woven-accept-764-the-venture-co",
+    "woven-accept-764-the-venture-co",
+    "level-before-woven-accept-765-supervisor-fizsprocket",
+    "woven-accept-765-supervisor-fizsprocket",
+    "woven-objective-764-the-venture-co-1",
+    "woven-objective-764-the-venture-co-2",
+    "woven-objective-765-supervisor-fizsprocket",
+    "objective-76156-stalk-with-the-earthmother-1",
+    "loot-starter-before-woven-accept-98424-fizsprockets-notes",
+    "level-before-woven-accept-98424-fizsprockets-notes",
+    "woven-accept-98424-fizsprockets-notes",
+    "woven-objective-98424-fizsprockets-notes",
+    "woven-objective-98424-fizsprockets-notes-gerenzo",
+    "woven-objective-98424-fizsprockets-notes-barrens",
+    "woven-turnin-99079-longwalker-malah",
+    "level-before-woven-accept-99081-grim-tidings",
+    "woven-accept-99081-grim-tidings",
+    "woven-turnin-99081-grim-tidings",
+    "level-before-woven-accept-99101-our-ancient-enemy",
+    "woven-accept-99101-our-ancient-enemy",
+    "woven-turnin-99101-our-ancient-enemy",
+    "level-before-woven-accept-99080-drive-them-out",
+    "woven-accept-99080-drive-them-out",
+    "woven-turnin-764-the-venture-co",
+    "woven-turnin-765-supervisor-fizsprocket",
+    "woven-turnin-98424-fizsprockets-notes",
+    "level-before-woven-accept-98427-ceasing-operations",
+    "woven-accept-98427-ceasing-operations",
+    "woven-objective-98427-ceasing-operations",
+    "woven-turnin-98427-ceasing-operations",
+    "woven-objective-99080-drive-them-out-1",
+    "woven-objective-99080-drive-them-out-2",
+    "woven-objective-99080-drive-them-out-3",
+    "woven-turnin-99080-drive-them-out",
+    "level-before-woven-accept-99082-the-high-chieftain",
+    "woven-accept-99082-the-high-chieftain",
+    "level-before-woven-accept-759-wildmane-totem",
+    "woven-accept-759-wildmane-totem",
+    "woven-objective-759-wildmane-totem",
+    "woven-objective-776-rites-of-the-earthmother",
+    "level-before-woven-accept-770-the-demon-scarred-cloak",
+    "woven-accept-770-the-demon-scarred-cloak",
+    "woven-turnin-759-wildmane-totem",
+    "level-before-woven-accept-760-wildmane-cleansing",
+    "woven-accept-760-wildmane-cleansing",
+    "woven-turnin-770-the-demon-scarred-cloak",
+    "woven-objective-760-wildmane-cleansing",
+    "woven-objective-861-the-hunters-way",
+    "woven-turnin-760-wildmane-cleansing",
+    "level-before-woven-accept-98435-thunderhorns-report",
+    "woven-accept-98435-thunderhorns-report",
+    "woven-turnin-99082-the-high-chieftain",
+    "woven-turnin-776-rites-of-the-earthmother",
+    "woven-turnin-98435-thunderhorns-report",
+    "woven-turnin-861-the-hunters-way",
+    "turnin-76156-stalk-with-the-earthmother",
+    "level-before-woven-accept-860-sergra-darkthorn",
+    "woven-accept-860-sergra-darkthorn",
+    "turnin-886-the-barrens-oases",
+    "turnin-6364-return-to-jahan",
+    "woven-turnin-860-sergra-darkthorn",
+    "level-before-turnin-2984-call-of-fire",
+    "turnin-2984-call-of-fire",
+    "level-before-accept-1524-call-of-fire",
+    "accept-1524-call-of-fire",
+    "turnin-1524-call-of-fire",
+    "level-before-accept-1525-call-of-fire",
+    "accept-1525-call-of-fire",
+    "objective-1525-1-razormane-thornweaver",
+    "turnin-1525-call-of-fire",
+    "level-before-accept-1526-call-of-fire",
+    "accept-1526-call-of-fire",
+    "objective-1526-1-fire-sapta",
+    "turnin-1526-call-of-fire",
+    "level-before-accept-1527-call-of-fire",
+    "accept-1527-call-of-fire",
+    "turnin-1527-call-of-fire",
+    "level-before-accept-1818-speak-with-dillinger",
+    "accept-1818-speak-with-dillinger",
+    "turnin-1818-speak-with-dillinger",
+    "level-before-accept-1819-ulag-the-cleaver",
+    "accept-1819-ulag-the-cleaver",
+    "objective-1819-1-mausoleum-trigger",
+    "turnin-1819-ulag-the-cleaver",
+    "level-before-accept-1820-speak-with-coleman",
+    "accept-1820-speak-with-coleman",
+    "turnin-1820-speak-with-coleman",
+    "level-before-woven-accept-94911-child-of-nature",
+    "woven-accept-94911-child-of-nature",
+    "woven-turnin-94911-child-of-nature",
+    "woven-accept-94913-moonglade-skyborne",
+    "level-before-96259",
+    "accept-96259-defending-the-dead",
+    "accept-96241-talkin-bout-toxins-mon",
+    "accept-96260-stronger-than-steel",
+    "level-before-96261",
+    "accept-96261-the-broodmother",
+    "accept-96774-ancient-gurubashi-idol",
+    "objective-96259-defending-the-dead",
+    "objective-96241-talkin-bout-toxins-mon",
+    "objective-96260-stronger-than-steel",
+    "objective-96261-the-broodmother",
+    "collect-bloody-parchment",
+    "accept-96294-a-darker-truth",
+    "turnin-96259-defending-the-dead",
+    "turnin-96241-talkin-bout-toxins-mon",
+    "turnin-96260-stronger-than-steel",
+    "turnin-96261-the-broodmother",
+    "turnin-96294-a-darker-truth"
+  ],
+  "placements": [
+    {
+      "anchor": "turnin-76156-stalk-with-the-earthmother",
+      "position": "after",
+      "actions": [
+        "accept-76160-loremaster",
+        "objective-76160-loremaster",
+        "turnin-76160-loremaster"
+      ],
+      "reason": "The shaman follow-up waits for the observed mining-charge turn-in at Boarton, then makes its northern Mulgore outing."
+    },
+    {
+      "anchor": "turnin-76160-loremaster",
+      "position": "after",
+      "actions": [
+        "accept-76240-loremaster",
+        "objective-76240-loremaster",
+        "turnin-76240-loremaster"
+      ],
+      "reason": "The fish preparation follows the Pine Salve turn-in at the same giver; the provided Knife Set is used during the objective."
+    },
+    {
+      "anchor": "turnin-96294-a-darker-truth",
+      "position": "after",
+      "actions": [
+        "level-before-loremaster-wool-donation",
+        "accept-99196-loremaster",
+        "objective-99196-loremaster",
+        "turnin-99196-loremaster"
+      ],
+      "reason": "The permanent wool donation is a later level 60 return; its offer minimum of 12 does not pull it into the starter visit."
+    }
+  ],
+  "quests": {
+    "264": {
+      "name": "Until Death Do Us Part",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 15,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 130,
+            "name": "Yuriv's Tombstone",
+            "coordinate": [
+              44.2,
+              42.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Clarice Foster",
+            "coordinate": [
+              28,
+              25.2
+            ]
+          }
+        ]
+      }
+    },
+    "742": {
+      "name": "The Ashenvale Hunt",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 20,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Bluff Runner Windstrider",
+            "coordinate": [
+              42.6,
+              56.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 331,
+            "name": "Senani Thunderheart",
+            "coordinate": [
+              73.6,
+              61.4
+            ]
+          }
+        ]
+      }
+    },
+    "743": {
+      "name": "Dangers of the Windfury",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Ruul Eagletalon",
+            "coordinate": [
+              47.4,
+              61.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Ruul Eagletalon",
+            "coordinate": [
+              47.4,
+              61.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Windfury Harpy",
+            "coordinate": [
+              33.7,
+              46.9
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Windfury Wind Witch",
+            "coordinate": [
+              61.6,
+              72
+            ]
+          }
+        ]
+      }
+    },
+    "744": {
+      "name": "Preparation for Ceremony",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 11,
+      "offerMinimum": 7,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Eyahn Eagletalon",
+            "coordinate": [
+              37.6,
+              59.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Eyahn Eagletalon",
+            "coordinate": [
+              37.6,
+              59.8
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1638,
+            "name": "Windfury Sorceress",
+            "coordinate": [
+              6.3,
+              23.3
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Windfury Matriarch",
+            "coordinate": [
+              12.8,
+              23.8
+            ]
+          }
+        ]
+      }
+    },
+    "745": {
+      "name": "Sharing the Land",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "746": {
+      "name": "Dwarven Digging",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Elder Plainstrider",
+            "coordinate": [
+              59.9,
+              67.1
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Prairie Stalker",
+            "coordinate": [
+              45.8,
+              55.8
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Prairie Wolf Alpha",
+            "coordinate": [
+              48.8,
+              30.6
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Windfury Matriarch",
+            "coordinate": [
+              32.4,
+              27.6
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Swoop",
+            "coordinate": [
+              45.4,
+              48.4
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Kodo Calf",
+            "coordinate": [
+              35,
+              36.7
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Venture Co. Worker",
+            "coordinate": [
+              61.6,
+              46.6
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Venture Co. Supervisor",
+            "coordinate": [
+              61.4,
+              47.2
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Bael'dun Digger",
+            "coordinate": [
+              32.2,
+              48.8
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Bael'dun Appraiser",
+            "coordinate": [
+              34.2,
+              53.8
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Flatland Cougar",
+            "coordinate": [
+              46.2,
+              49.3
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Bristleback Interloper",
+            "coordinate": [
+              57.9,
+              30.9
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Flatland Prowler",
+            "coordinate": [
+              45.8,
+              35.8
+            ]
+          }
+        ]
+      }
+    },
+    "747": {
+      "name": "The Hunt Begins",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Grull Hawkwind",
+            "coordinate": [
+              44.8,
+              77.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Grull Hawkwind",
+            "coordinate": [
+              44.8,
+              77.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Plainstrider",
+            "coordinate": [
+              45.4,
+              78.9
+            ]
+          }
+        ]
+      }
+    },
+    "748": {
+      "name": "Poison Water",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Adult Plainstrider",
+            "coordinate": [
+              46.8,
+              59.3
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Elder Plainstrider",
+            "coordinate": [
+              59.9,
+              67.1
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Prairie Wolf",
+            "coordinate": [
+              37.8,
+              76
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Prairie Stalker",
+            "coordinate": [
+              45.8,
+              55.8
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Prairie Wolf Alpha",
+            "coordinate": [
+              48.8,
+              30.6
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Mazzranache",
+            "coordinate": [
+              37.1,
+              48.4
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Chakuyak",
+            "coordinate": [
+              39.3,
+              65.3
+            ]
+          }
+        ]
+      }
+    },
+    "749": {
+      "name": "The Ravaged Caravan",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Sealed Supply Crate",
+            "coordinate": [
+              53.8,
+              48.3
+            ]
+          }
+        ]
+      }
+    },
+    "750": {
+      "name": "The Hunt Continues",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Grull Hawkwind",
+            "coordinate": [
+              44.8,
+              77.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Grull Hawkwind",
+            "coordinate": [
+              44.8,
+              77.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Mountain Cougar",
+            "coordinate": [
+              45.4,
+              88.8
+            ]
+          }
+        ]
+      }
+    },
+    "751": {
+      "name": "The Ravaged Caravan",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Sealed Supply Crate",
+            "coordinate": [
+              53.8,
+              48.3
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "752": {
+      "name": "A Humble Task",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 2,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Chief Hawkwind",
+            "coordinate": [
+              44.2,
+              76
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Greatmother Hawkwind",
+            "coordinate": [
+              50,
+              81
+            ]
+          }
+        ]
+      }
+    },
+    "753": {
+      "name": "A Humble Task",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Greatmother Hawkwind",
+            "coordinate": [
+              50,
+              81
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Chief Hawkwind",
+            "coordinate": [
+              44.2,
+              76
+            ]
+          }
+        ]
+      }
+    },
+    "754": {
+      "name": "Winterhoof Cleansing",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ]
+      }
+    },
+    "755": {
+      "name": "Rites of the Earthmother",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 3,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Chief Hawkwind",
+            "coordinate": [
+              44.2,
+              76
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Seer Graytongue",
+            "coordinate": [
+              42.6,
+              92
+            ]
+          }
+        ]
+      }
+    },
+    "756": {
+      "name": "Thunderhorn Totem",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Prairie Stalker",
+            "coordinate": [
+              45.8,
+              55.8
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Flatland Cougar",
+            "coordinate": [
+              46.2,
+              49.3
+            ]
+          }
+        ]
+      }
+    },
+    "757": {
+      "name": "Rite of Strength",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Seer Graytongue",
+            "coordinate": [
+              42.6,
+              92
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Chief Hawkwind",
+            "coordinate": [
+              44.2,
+              76
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Bristleback Quilboar",
+            "coordinate": [
+              64.2,
+              78
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Bristleback Shaman",
+            "coordinate": [
+              64.6,
+              77.8
+            ]
+          }
+        ]
+      }
+    },
+    "758": {
+      "name": "Thunderhorn Cleansing",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ]
+      }
+    },
+    "759": {
+      "name": "Wildmane Totem",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Prairie Wolf Alpha",
+            "coordinate": [
+              48.8,
+              30.6
+            ]
+          }
+        ]
+      }
+    },
+    "760": {
+      "name": "Wildmane Cleansing",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ]
+      }
+    },
+    "761": {
+      "name": "Swoop Hunting",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Harken Windtotem",
+            "coordinate": [
+              48.6,
+              59.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Harken Windtotem",
+            "coordinate": [
+              48.6,
+              59.4
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Wiry Swoop",
+            "coordinate": [
+              41.2,
+              57.1
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Swoop",
+            "coordinate": [
+              45.4,
+              48.4
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Taloned Swoop",
+            "coordinate": [
+              53.4,
+              40.3
+            ]
+          }
+        ]
+      }
+    },
+    "763": {
+      "name": "Rites of the Earthmother",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Chief Hawkwind",
+            "coordinate": [
+              44.2,
+              76
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "764": {
+      "name": "The Venture Co.",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "765": {
+      "name": "Supervisor Fizsprocket",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Supervisor Fizsprocket",
+            "coordinate": [
+              64.4,
+              43.6
+            ]
+          }
+        ]
+      }
+    },
+    "766": {
+      "name": "Mazzranache",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Maur Raincaller",
+            "coordinate": [
+              47,
+              57
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Maur Raincaller",
+            "coordinate": [
+              47,
+              57
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Adult Plainstrider",
+            "coordinate": [
+              46.8,
+              59.3
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Elder Plainstrider",
+            "coordinate": [
+              59.9,
+              67.1
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Prairie Wolf",
+            "coordinate": [
+              37.8,
+              76
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Prairie Stalker",
+            "coordinate": [
+              45.8,
+              55.8
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Prairie Wolf Alpha",
+            "coordinate": [
+              48.8,
+              30.6
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Wiry Swoop",
+            "coordinate": [
+              41.2,
+              57.1
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Swoop",
+            "coordinate": [
+              45.4,
+              48.4
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Taloned Swoop",
+            "coordinate": [
+              53.4,
+              40.3
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Flatland Cougar",
+            "coordinate": [
+              46.2,
+              49.3
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Mazzranache",
+            "coordinate": [
+              37.1,
+              48.4
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Chakuyak",
+            "coordinate": [
+              39.3,
+              65.3
+            ]
+          }
+        ]
+      }
+    },
+    "767": {
+      "name": "Rite of Vision",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Zarlman Two-Moons",
+            "coordinate": [
+              47.8,
+              57.6
+            ]
+          }
+        ]
+      }
+    },
+    "768": {
+      "name": "Gathering Leather",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 4,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Veren Tallstrider",
+            "coordinate": [
+              44,
+              44.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Veren Tallstrider",
+            "coordinate": [
+              44,
+              44.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1638,
+            "name": "Elder Plainstrider",
+            "coordinate": [
+              84.2,
+              12.7
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Prairie Stalker",
+            "coordinate": [
+              24.2,
+              72.5
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Prairie Wolf Alpha",
+            "coordinate": [
+              45.1,
+              17
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Kodo Calf",
+            "coordinate": [
+              25.4,
+              72.8
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Kodo Matriarch",
+            "coordinate": [
+              24.4,
+              57.8
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Flatland Cougar",
+            "coordinate": [
+              27.4,
+              78.6
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Ghost Howl",
+            "coordinate": [
+              23.2,
+              5
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Flatland Prowler",
+            "coordinate": [
+              42.1,
+              18.1
+            ]
+          }
+        ]
+      }
+    },
+    "769": {
+      "name": "Kodo Hide Bag",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Veren Tallstrider",
+            "coordinate": [
+              44,
+              44.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Veren Tallstrider",
+            "coordinate": [
+              44,
+              44.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 1638,
+            "name": "Elder Plainstrider",
+            "coordinate": [
+              84.2,
+              12.7
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Prairie Stalker",
+            "coordinate": [
+              24.2,
+              72.5
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Prairie Wolf Alpha",
+            "coordinate": [
+              45.1,
+              17
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Kodo Calf",
+            "coordinate": [
+              25.4,
+              72.8
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Kodo Matriarch",
+            "coordinate": [
+              24.4,
+              57.8
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Flatland Cougar",
+            "coordinate": [
+              27.4,
+              78.6
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Ghost Howl",
+            "coordinate": [
+              23.2,
+              5
+            ]
+          },
+          {
+            "areaID": 1638,
+            "name": "Flatland Prowler",
+            "coordinate": [
+              42.1,
+              18.1
+            ]
+          }
+        ]
+      }
+    },
+    "770": {
+      "name": "The Demon Scarred Cloak",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 6,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Skorn Whitecloud",
+            "coordinate": [
+              46.8,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "771": {
+      "name": "Rite of Vision",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Zarlman Two-Moons",
+            "coordinate": [
+              47.8,
+              57.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Zarlman Two-Moons",
+            "coordinate": [
+              47.8,
+              57.6
+            ]
+          }
+        ]
+      }
+    },
+    "772": {
+      "name": "Rite of Vision",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Zarlman Two-Moons",
+            "coordinate": [
+              47.8,
+              57.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Seer Wiserunner",
+            "coordinate": [
+              32.8,
+              36
+            ]
+          }
+        ]
+      }
+    },
+    "773": {
+      "name": "Rite of Wisdom",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Seer Wiserunner",
+            "coordinate": [
+              32.8,
+              36
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Ancestral Spirit",
+            "coordinate": [
+              61.4,
+              21
+            ]
+          }
+        ]
+      }
+    },
+    "774": {
+      "name": "<UNUSED>",
+      "status": "excluded",
+      "reason": "Unused source record.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {}
+    },
+    "775": {
+      "name": "Journey into Thunder Bluff",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Cairne Bloodhoof",
+            "coordinate": [
+              59.8,
+              51.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Ancestral Spirit",
+            "coordinate": [
+              61.4,
+              21
+            ]
+          }
+        ]
+      }
+    },
+    "776": {
+      "name": "Rites of the Earthmother",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 14,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Cairne Bloodhoof",
+            "coordinate": [
+              59.8,
+              51.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Cairne Bloodhoof",
+            "coordinate": [
+              59.8,
+              51.6
+            ]
+          }
+        ]
+      }
+    },
+    "780": {
+      "name": "The Battleboars",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Grull Hawkwind",
+            "coordinate": [
+              44.8,
+              77.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Grull Hawkwind",
+            "coordinate": [
+              44.8,
+              77.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Bristleback Battleboar",
+            "coordinate": [
+              63.4,
+              78.2
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Battleboar",
+            "coordinate": [
+              51,
+              77.9
+            ]
+          }
+        ]
+      }
+    },
+    "781": {
+      "name": "Attack on Camp Narache",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Chief Hawkwind",
+            "coordinate": [
+              44.2,
+              76
+            ]
+          }
+        ]
+      }
+    },
+    "833": {
+      "name": "A Sacred Burial",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 7,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Lorekeeper Raintotem",
+            "coordinate": [
+              59.8,
+              25.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Lorekeeper Raintotem",
+            "coordinate": [
+              59.8,
+              25.6
+            ]
+          }
+        ]
+      }
+    },
+    "854": {
+      "name": "Journey to the Crossroads",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 9,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 17,
+            "name": "Kirge Sternhorn",
+            "coordinate": [
+              44.8,
+              58.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 17,
+            "name": "Thork",
+            "coordinate": [
+              51.4,
+              30.8
+            ]
+          }
+        ]
+      }
+    },
+    "861": {
+      "name": "The Hunter's Way",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 10,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Melor Stonehoof",
+            "coordinate": [
+              61.4,
+              80.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Skorn Whitecloud",
+            "coordinate": [
+              46.8,
+              60.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Flatland Prowler",
+            "coordinate": [
+              45.8,
+              35.8
+            ]
+          }
+        ]
+      }
+    },
+    "1000": {
+      "name": "The New Frontier",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Bluff Runner Windstrider",
+            "coordinate": [
+              42.6,
+              56.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ]
+      }
+    },
+    "1064": {
+      "name": "Forsaken Aid",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 18,
+      "offerMinimum": 13,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Magatha Grimtotem",
+            "coordinate": [
+              70.2,
+              30.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Apothecary Zamah",
+            "coordinate": [
+              23,
+              21
+            ]
+          }
+        ]
+      }
+    },
+    "1065": {
+      "name": "Journey to Tarren Mill",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 18,
+      "offerMinimum": 13,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Apothecary Zamah",
+            "coordinate": [
+              23,
+              21
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 267,
+            "name": "Apothecary Lydon",
+            "coordinate": [
+              61.4,
+              19.2
+            ]
+          }
+        ]
+      }
+    },
+    "1066": {
+      "name": "Blood of Innocents",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 23,
+      "offerMinimum": 13,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 267,
+            "name": "Apothecary Lydon",
+            "coordinate": [
+              61.4,
+              19.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 267,
+            "name": "Apothecary Lydon",
+            "coordinate": [
+              61.4,
+              19.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 267,
+            "name": "Syndicate Shadow Mage",
+            "coordinate": [
+              78.8,
+              41.4
+            ]
+          }
+        ]
+      }
+    },
+    "1067": {
+      "name": "Return to Thunder Bluff",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 23,
+      "offerMinimum": 13,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Apothecary Zamah",
+            "coordinate": [
+              23,
+              21
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 267,
+            "name": "Apothecary Lydon",
+            "coordinate": [
+              61.4,
+              19.2
+            ]
+          }
+        ]
+      }
+    },
+    "1086": {
+      "name": "The Flying Machine Airport",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 23,
+      "offerMinimum": 13,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Apothecary Zamah",
+            "coordinate": [
+              23,
+              21
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Apothecary Zamah",
+            "coordinate": [
+              23,
+              21
+            ]
+          }
+        ]
+      }
+    },
+    "1123": {
+      "name": "Rabine Saturna",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 54,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 493,
+            "name": "Rabine Saturna",
+            "coordinate": [
+              51.6,
+              44.8
+            ]
+          }
+        ]
+      }
+    },
+    "1130": {
+      "name": "Melor Sends Word",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Melor Stonehoof",
+            "coordinate": [
+              61.4,
+              80.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 17,
+            "name": "Jorn Skyseer",
+            "coordinate": [
+              44.8,
+              59
+            ]
+          }
+        ]
+      }
+    },
+    "1131": {
+      "name": "Steelsnap",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Melor Stonehoof",
+            "coordinate": [
+              61.4,
+              80.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Melor Stonehoof",
+            "coordinate": [
+              61.4,
+              80.6
+            ]
+          }
+        ]
+      }
+    },
+    "1136": {
+      "name": "Frostmaw",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 37,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Melor Stonehoof",
+            "coordinate": [
+              61.4,
+              80.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Melor Stonehoof",
+            "coordinate": [
+              61.4,
+              80.6
+            ]
+          }
+        ]
+      }
+    },
+    "1195": {
+      "name": "The Sacred Flame",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 25,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Zangen Stonehoof",
+            "coordinate": [
+              54.6,
+              51.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Zangen Stonehoof",
+            "coordinate": [
+              54.6,
+              51.2
+            ]
+          }
+        ]
+      }
+    },
+    "1196": {
+      "name": "The Sacred Flame",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 29,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Zangen Stonehoof",
+            "coordinate": [
+              54.6,
+              51.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 400,
+            "name": "Rau Cliffrunner",
+            "coordinate": [
+              46,
+              51.6
+            ]
+          }
+        ]
+      }
+    },
+    "1197": {
+      "name": "The Sacred Flame",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 29,
+      "offerMinimum": 20,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 400,
+            "name": "Rau Cliffrunner",
+            "coordinate": [
+              46,
+              51.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 400,
+            "name": "Rau Cliffrunner",
+            "coordinate": [
+              46,
+              51.6
+            ]
+          }
+        ]
+      }
+    },
+    "1656": {
+      "name": "A Task Unfinished",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Antur Fallow",
+            "coordinate": [
+              38.6,
+              81.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Innkeeper Kauth",
+            "coordinate": [
+              46.6,
+              61
+            ]
+          }
+        ]
+      }
+    },
+    "2440": {
+      "name": "The Platinum Discs",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 47,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Sage Truthseeker",
+            "coordinate": [
+              34.6,
+              47.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Bena Winterhoof",
+            "coordinate": [
+              46.8,
+              33.6
+            ]
+          }
+        ]
+      }
+    },
+    "2965": {
+      "name": "Portents of Uldum",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Sage Truthseeker",
+            "coordinate": [
+              34.6,
+              47.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Nara Wildmane",
+            "coordinate": [
+              75.6,
+              31.2
+            ]
+          }
+        ]
+      }
+    },
+    "2966": {
+      "name": "Seeing What Happens",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Nara Wildmane",
+            "coordinate": [
+              75.6,
+              31.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 440,
+            "name": "Uldum Pedestal",
+            "coordinate": [
+              37.7,
+              81.4
+            ]
+          }
+        ]
+      }
+    },
+    "2967": {
+      "name": "Return to Thunder Bluff",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Nara Wildmane",
+            "coordinate": [
+              75.6,
+              31.2
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 440,
+            "name": "Uldum Pedestal",
+            "coordinate": [
+              37.7,
+              81.4
+            ]
+          }
+        ]
+      }
+    },
+    "2968": {
+      "name": "A Future Task",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 45,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Nara Wildmane",
+            "coordinate": [
+              75.6,
+              31.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Sage Truthseeker",
+            "coordinate": [
+              34.6,
+              47.2
+            ]
+          }
+        ]
+      }
+    },
+    "3376": {
+      "name": "Break Sharptusk!",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 5,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Brave Windfeather",
+            "coordinate": [
+              44.8,
+              76.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Brave Windfeather",
+            "coordinate": [
+              44.8,
+              76.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Chief Sharptusk Thornmantle",
+            "coordinate": [
+              64.2,
+              78
+            ]
+          }
+        ]
+      }
+    },
+    "3761": {
+      "name": "Un'Goro Soil",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Ghede",
+            "coordinate": [
+              77.2,
+              22.2
+            ]
+          }
+        ]
+      }
+    },
+    "3762": {
+      "name": "Assisting Arch Druid Runetotem",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Innkeeper Pala",
+            "coordinate": [
+              45.8,
+              64.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ]
+      }
+    },
+    "3782": {
+      "name": "Morrowgrain Research",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Bashana Runetotem",
+            "coordinate": [
+              70.8,
+              33.8
+            ]
+          }
+        ]
+      }
+    },
+    "3786": {
+      "name": "Morrowgrain Research",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 50,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Bashana Runetotem",
+            "coordinate": [
+              70.8,
+              33.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Bashana Runetotem",
+            "coordinate": [
+              70.8,
+              33.8
+            ]
+          }
+        ]
+      }
+    },
+    "3804": {
+      "name": "Morrowgrain to Thunder Bluff",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 55,
+      "offerMinimum": 47,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Bashana Runetotem",
+            "coordinate": [
+              70.8,
+              33.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Bashana Runetotem",
+            "coordinate": [
+              70.8,
+              33.8
+            ]
+          }
+        ]
+      }
+    },
+    "5844": {
+      "name": "Welcome!",
+      "status": "excluded",
+      "reason": "Event-only content.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 1,
+      "offerMinimum": 1,
+      "ownership": "not-authored",
+      "locations": {
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Vorn Skyseer",
+            "coordinate": [
+              44.4,
+              77
+            ]
+          }
+        ]
+      }
+    },
+    "7820": {
+      "name": "A Donation of Wool",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ]
+      }
+    },
+    "7821": {
+      "name": "A Donation of Silk",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ]
+      }
+    },
+    "7822": {
+      "name": "A Donation of Mageweave",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 40,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ]
+      }
+    },
+    "7823": {
+      "name": "A Donation of Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ]
+      }
+    },
+    "7825": {
+      "name": "Additional Runecloth",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 50,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Rumstag Proudstrider",
+            "coordinate": [
+              43.2,
+              42.8
+            ]
+          }
+        ]
+      }
+    },
+    "76156": {
+      "name": "Stalk With The Earthmother",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Boarton Shadetotem",
+            "coordinate": [
+              39.6,
+              65.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Boarton Shadetotem",
+            "coordinate": [
+              39.6,
+              65.6
+            ]
+          }
+        ]
+      }
+    },
+    "76160": {
+      "name": "Stalk With The Earthmother",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "mulgore",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Boarton Shadetotem",
+            "coordinate": [
+              39.6,
+              65.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Boarton Shadetotem",
+            "coordinate": [
+              39.6,
+              65.6
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "all",
+          "quests": [
+            76156
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Horde"
+          },
+          {
+            "class": [
+              7
+            ]
+          },
+          {
+            "race": [
+              2,
+              6,
+              8
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Stalk With The Earthmother",
+          "preQuestSingle": [
+            76156
+          ],
+          "requiredLevel": 4,
+          "requiredRaces": 162,
+          "startedBy": [
+            {
+              "id": 205729,
+              "spawns": [
+                [
+                  1638,
+                  39.6,
+                  65.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              205729
+            ]
+          ],
+          "name": "Stalk With The Earthmother",
+          "objectivesText": [
+            "Gather 8 Windfury Cones north of Thunder Bluff, use them with the Mortar and Pestle, then return to Boarton Shadetotem in Thunder Bluff with the result."
+          ],
+          "preQuestSingle": [
+            76156
+          ],
+          "questLevel": 11,
+          "requiredLevel": 4,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            [
+              205729
+            ]
+          ],
+          "zoneOrSort": 215
+        },
+        "wowhead": {
+          "classes": [
+            7
+          ],
+          "name": "Stalk With The Earthmother",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            2,
+            6,
+            8
+          ],
+          "requiredLevel": 4,
+          "zoneId": 215
+        }
+      }
+    },
+    "76240": {
+      "name": "Stalk With The Earthmother",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "mulgore",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Boarton Shadetotem",
+            "coordinate": [
+              39.6,
+              65.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Boarton Shadetotem",
+            "coordinate": [
+              39.6,
+              65.6
+            ]
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "mode": "all",
+          "quests": [
+            76160
+          ]
+        }
+      ],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Horde"
+          },
+          {
+            "class": [
+              7
+            ]
+          },
+          {
+            "race": [
+              2,
+              6,
+              8
+            ]
+          },
+          {
+            "level": {
+              "min": 4
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "Stalk With The Earthmother",
+          "preQuestSingle": [
+            76160
+          ],
+          "requiredClasses": 64,
+          "requiredLevel": 4,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            {
+              "id": 205729,
+              "spawns": [
+                [
+                  1638,
+                  39.6,
+                  65.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              205729
+            ]
+          ],
+          "name": "Stalk With The Earthmother",
+          "objectivesText": [
+            "Buy or catch a Raw Brilliant Smallfish, then use the Knife Set to fillet it in front of Boarton Shadetotem in Thunder Bluff."
+          ],
+          "preQuestSingle": [
+            76160
+          ],
+          "questLevel": 11,
+          "requiredClasses": 0,
+          "requiredLevel": 4,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            [
+              205729
+            ]
+          ],
+          "zoneOrSort": 215
+        },
+        "wowhead": {
+          "classes": [
+            7
+          ],
+          "name": "Stalk With The Earthmother",
+          "prerequisiteReferences": [],
+          "questLevel": 6,
+          "races": [
+            2,
+            6,
+            8
+          ],
+          "requiredLevel": 4,
+          "zoneId": 215
+        }
+      }
+    },
+    "95805": {
+      "name": "Grace of An'she and Mu'sha",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 4,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Seer Graytongue",
+            "coordinate": [
+              42.6,
+              92
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Ritual Fire",
+            "coordinate": [
+              56.6,
+              88.7
+            ]
+          }
+        ]
+      }
+    },
+    "96130": {
+      "name": "Chakuyak",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Yaw Sharpmane",
+            "coordinate": [
+              46.8,
+              59.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Yaw Sharpmane",
+            "coordinate": [
+              46.8,
+              59.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Chakuyak",
+            "coordinate": [
+              39.3,
+              65.3
+            ]
+          }
+        ]
+      }
+    },
+    "96241": {
+      "name": "Talkin' bout Toxins, Mon",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 23,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Mazu'kon",
+            "coordinate": [
+              32.4,
+              20.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Mazu'kon",
+            "coordinate": [
+              32.4,
+              20.6
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Gnawed Corpse",
+            "coordinate": [
+              32.8,
+              8.8
+            ]
+          }
+        ]
+      }
+    },
+    "96259": {
+      "name": "Defending the Dead",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 23,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Muln Earthfury",
+            "coordinate": [
+              33.4,
+              22.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Muln Earthfury",
+            "coordinate": [
+              33.4,
+              22.4
+            ]
+          }
+        ]
+      }
+    },
+    "96260": {
+      "name": "Stronger than Steel",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 23,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Yorn Grimtotem",
+            "coordinate": [
+              32.4,
+              20
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Yorn Grimtotem",
+            "coordinate": [
+              32.4,
+              20
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Gloomrise Spinner",
+            "coordinate": [
+              33.4,
+              7.4
+            ]
+          }
+        ]
+      }
+    },
+    "96261": {
+      "name": "The Broodmother",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 31,
+      "offerMinimum": 23,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Muln Earthfury",
+            "coordinate": [
+              33.4,
+              22.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Muln Earthfury",
+            "coordinate": [
+              33.4,
+              22.4
+            ]
+          }
+        ]
+      }
+    },
+    "96294": {
+      "name": "A Darker Truth",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 30,
+      "offerMinimum": 23,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Muln Earthfury",
+            "coordinate": [
+              33.4,
+              22.4
+            ]
+          }
+        ]
+      }
+    },
+    "97485": {
+      "name": "Traditions of the Bluff",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 3,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 1638,
+            "name": "Eylah Sunhorn",
+            "coordinate": [
+              38.2,
+              56.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Eylah Sunhorn",
+            "coordinate": [
+              38.2,
+              56.2
+            ]
+          }
+        ]
+      }
+    },
+    "98251": {
+      "name": "Never Coming Back",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 22,
+      "offerMinimum": 18,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 331,
+            "name": "Va'xug Firefure",
+            "coordinate": [
+              40.4,
+              61.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 331,
+            "name": "Va'xug Firefure",
+            "coordinate": [
+              40.4,
+              61.4
+            ]
+          }
+        ]
+      }
+    },
+    "98252": {
+      "name": "A Void Path",
+      "status": "other-zone",
+      "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "recommendedLevel": 22,
+      "offerMinimum": 18,
+      "ownership": "outside-completion-set",
+      "locations": {
+        "start": [
+          {
+            "areaID": 331,
+            "name": "Va'xug Firefure",
+            "coordinate": [
+              40.4,
+              61.4
+            ]
+          }
+        ]
+      }
+    },
+    "98424": {
+      "name": "Fizsprocket's Notes",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Supervisor Fizsprocket",
+            "coordinate": [
+              64.4,
+              43.6
+            ]
+          }
+        ]
+      }
+    },
+    "98427": {
+      "name": "Ceasing Operations",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 12,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Morin Cloudstalker",
+            "coordinate": [
+              53,
+              60.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Venture Co. Clearclutter",
+            "coordinate": [
+              56.9,
+              42.9
+            ]
+          }
+        ]
+      }
+    },
+    "98430": {
+      "name": "The Longwalkers",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 8,
+      "offerMinimum": 1,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Cairne Bloodhoof",
+            "coordinate": [
+              59.8,
+              51.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Perith Stormhoof",
+            "coordinate": [
+              33,
+              65.8
+            ]
+          }
+        ]
+      }
+    },
+    "98435": {
+      "name": "Thunderhorn's Report",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 10,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Arch Druid Hamuul Runetotem",
+            "coordinate": [
+              78.2,
+              28.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Mull Thunderhorn",
+            "coordinate": [
+              48.4,
+              60.4
+            ]
+          }
+        ]
+      }
+    },
+    "99079": {
+      "name": "Longwalker Malah",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Brave Wildrunner",
+            "coordinate": [
+              46.6,
+              63
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Malah Longwind",
+            "coordinate": [
+              57.6,
+              63.2
+            ]
+          }
+        ]
+      }
+    },
+    "99080": {
+      "name": "Drive Them Out",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ],
+        "sourcerequirement": [
+          {
+            "areaID": 215,
+            "name": "Herak the Pillager",
+            "coordinate": [
+              60.5,
+              59.6
+            ]
+          }
+        ]
+      }
+    },
+    "99081": {
+      "name": "Grim Tidings",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Malah Longwind",
+            "coordinate": [
+              57.6,
+              63.2
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Brave Wildrunner",
+            "coordinate": [
+              46.6,
+              63
+            ]
+          }
+        ]
+      }
+    },
+    "99082": {
+      "name": "The High Chieftain",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "end": [
+          {
+            "areaID": 1638,
+            "name": "Cairne Bloodhoof",
+            "coordinate": [
+              59.8,
+              51.6
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "99101": {
+      "name": "Our Ancient Enemy",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 9,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Brave Wildrunner",
+            "coordinate": [
+              46.6,
+              63
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Baine Bloodhoof",
+            "coordinate": [
+              47.4,
+              60.2
+            ]
+          }
+        ]
+      }
+    },
+    "99108": {
+      "name": "Sparring Match",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 6,
+      "offerMinimum": 4,
+      "ownership": "preserved-spine",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Krang Stonehoof",
+            "coordinate": [
+              49.4,
+              60.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Krang Stonehoof",
+            "coordinate": [
+              49.4,
+              60.4
+            ]
+          }
+        ]
+      }
+    },
+    "99196": {
+      "name": "A Donation of Wool",
+      "status": "included",
+      "reason": "Permanent zone quest; see insertion visits.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 12,
+      "ownership": "mulgore",
+      "locations": {
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Oura Stormspinner",
+            "coordinate": [
+              34.2,
+              22.4
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Oura Stormspinner",
+            "coordinate": [
+              34.2,
+              22.4
+            ]
+          }
+        ]
+      },
+      "requirements": [],
+      "applicability": {
+        "all": [
+          {
+            "faction": "Horde"
+          },
+          {
+            "level": {
+              "min": 12
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "allthethings": {
+          "name": "A Donation of Wool",
+          "requiredLevel": 12,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            {
+              "id": 276171,
+              "spawns": [
+                [
+                  215,
+                  34.2,
+                  22.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "questiedb": {
+          "finishedBy": [
+            [
+              276171
+            ]
+          ],
+          "name": "A Donation of Wool",
+          "questLevel": 60,
+          "requiredLevel": 12,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            [
+              276171
+            ]
+          ],
+          "zoneOrSort": 215
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "A Donation of Wool",
+          "prerequisiteReferences": [],
+          "questLevel": 60,
+          "races": [],
+          "requiredLevel": 12,
+          "zoneId": 215
+        }
+      }
+    },
+    "99197": {
+      "name": "A Donation of Silk",
+      "status": "unresolved",
+      "reason": "Silk donation lacks a supported return or objective record and has no Wowhead pickup pin. Do not infer its mechanics from the wool quest.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 60,
+      "offerMinimum": 26,
+      "ownership": "not-authored",
+      "locations": {},
+      "evidence": {
+        "questiedb": {
+          "name": "A Donation of Silk",
+          "questLevel": 60,
+          "requiredLevel": 26,
+          "requiredRaces": 8589934770,
+          "startedBy": [
+            [
+              276171
+            ]
+          ],
+          "zoneOrSort": 215
+        },
+        "wowhead": {
+          "classes": [],
+          "name": "A Donation of Silk",
+          "prerequisiteReferences": [],
+          "questLevel": 60,
+          "races": [],
+          "requiredLevel": 26,
+          "zoneId": 215
+        }
+      }
+    },
+    "99411": {
+      "name": "Kyle's Gone Missing!",
+      "status": "spine",
+      "reason": "Preserved from the leveling itinerary, including shared class actions.",
+      "catalogs": [
+        "mulgore"
+      ],
+      "recommendedLevel": 7,
+      "offerMinimum": 5,
+      "ownership": "preserved-spine",
+      "locations": {
+        "sourcerequirement": [
+          {
+            "areaID": 1638,
+            "name": "Elder Plainstrider",
+            "coordinate": [
+              84.2,
+              12.7
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Adult Plainstrider",
+            "coordinate": [
+              46.8,
+              59.3
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Elder Plainstrider",
+            "coordinate": [
+              59.9,
+              67.1
+            ]
+          },
+          {
+            "areaID": 215,
+            "name": "Mazzranache",
+            "coordinate": [
+              37.1,
+              48.4
+            ]
+          }
+        ],
+        "start": [
+          {
+            "areaID": 215,
+            "name": "Ahab Wheathoof",
+            "coordinate": [
+              47.2,
+              57.6
+            ]
+          }
+        ],
+        "end": [
+          {
+            "areaID": 215,
+            "name": "Ahab Wheathoof",
+            "coordinate": [
+              47.2,
+              57.6
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "clientWalkthrough": "Not performed."
+}

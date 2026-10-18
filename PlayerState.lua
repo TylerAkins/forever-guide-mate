@@ -801,11 +801,12 @@ end
 function PlayerState:HasItem(itemName, state, api)
     if type(itemName) ~= "string" or itemName == "" then return false end
     if type(state) == "table" and type(state.items) == "table" then
-        if state.items[itemName] then return true end
+        local amount = state.items[itemName]
+        if amount == true or (type(amount) == "number" and amount > 0) then return true end
         local lower = string.lower(itemName)
         local stripped = lower:gsub("^(the|a|an)%s+", "")
         for name, count in pairs(state.items) do
-            if count and count > 0 then
+            if count == true or (type(count) == "number" and count > 0) then
                 local nLower = string.lower(tostring(name))
                 if nLower == lower or nLower == stripped or string.find(nLower, stripped, 1, true) then
                     return true

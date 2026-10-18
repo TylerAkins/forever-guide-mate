@@ -90,7 +90,13 @@ REQUIRED_FILES = (
     "Guides/Dungeons/DireMaulNorthTribute.lua",
     "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
     "Guides/Leveling/zephras-isle.lua",
-    "Guides/Loremaster/ComingSoon.lua",
+    "Guides/Loremaster/DunMorogh.lua",
+    "Guides/Loremaster/ZephrasIsle.lua",
+    "Guides/Loremaster/TirisfalGlades.lua",
+    "Guides/Loremaster/Mulgore.lua",
+    "Guides/Loremaster/Durotar.lua",
+    "Guides/Loremaster/Teldrassil.lua",
+    "Guides/Loremaster/ElwynnForest.lua",
     "Guides/Leveling/tirisfal-glades.lua",
     "Guides/Leveling/mulgore.lua",
     "Guides/Leveling/durotar.lua",
@@ -348,7 +354,13 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/DireMaulNorthTribute.lua",
                 "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
                 "Guides/Leveling/zephras-isle.lua",
-                "Guides/Loremaster/ComingSoon.lua",
+                "Guides/Loremaster/DunMorogh.lua",
+    "Guides/Loremaster/ZephrasIsle.lua",
+    "Guides/Loremaster/TirisfalGlades.lua",
+    "Guides/Loremaster/Mulgore.lua",
+    "Guides/Loremaster/Durotar.lua",
+    "Guides/Loremaster/Teldrassil.lua",
+    "Guides/Loremaster/ElwynnForest.lua",
             )
         )
         for term in forbidden:
@@ -462,15 +474,15 @@ class ContractTests(unittest.TestCase):
         self.assertRegex(guide, r'race\s*=\s*\{[^}]*\b96\b')
         self.assertNotIn("97963", guide)
 
-    def test_loremaster_is_a_single_authored_placeholder(self) -> None:
+    def test_loremaster_guides_have_ordered_zone_itineraries(self) -> None:
         files = sorted((ROOT / "Guides/Loremaster").glob("*.lua"))
-        self.assertEqual([path.name for path in files], ["ComingSoon.lua"])
-        guide = files[0].read_text(encoding="utf-8")
-        self.assertIn('title = "Coming Soon!"', guide)
-        self.assertIn('text = "Coming Soon!"', guide)
-        self.assertIn('routeMode = "ordered"', guide)
-        self.assertNotIn('priority =', guide)
-        self.assertNotIn('QuestState(', guide)
+        self.assertEqual([path.name for path in files], ["DunMorogh.lua", "Durotar.lua", "ElwynnForest.lua", "Mulgore.lua", "Teldrassil.lua", "TirisfalGlades.lua", "ZephrasIsle.lua"])
+        for path in files:
+            guide = path.read_text(encoding="utf-8")
+            self.assertIn('category = "Loremaster Guides"', guide)
+            self.assertIn('routeMode = "ordered"', guide)
+            self.assertNotIn('priority =', guide)
+            self.assertNotIn('Coming Soon!', guide)
 
     def test_era_leveling_guides_are_horde_routes(self) -> None:
         horde_files = (

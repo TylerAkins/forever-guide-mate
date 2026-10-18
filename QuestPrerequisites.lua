@@ -1065,3 +1065,31 @@ ns:RegisterQuestPrerequisite({ quest = 94466, mode = "all", quests = { 94465 } }
 ns:RegisterQuestPrerequisite({ quest = 94467, mode = "all", quests = { 94466 } })
 
 ns:RegisterQuestPrerequisite({ quest = 94468, mode = "all", quests = { 94467 } })
+
+-- Wowhead Forever Data Hoarders and QuestieDB Rejold breadcrumb evidence.
+ns:RegisterQuestPrerequisite({ quest = 95041, mode = "all", quests = { 412 } })
+ns:RegisterQuestPrerequisite({ quest = 415, mode = "all", quests = { 315 } })
+
+-- QuestieDB and ATT agree on the ordered Earthmother trial unlocks.
+ns:RegisterQuestPrerequisite({ quest = 76160, mode = "all", quests = { 76156 } })
+ns:RegisterQuestPrerequisite({ quest = 76240, mode = "all", quests = { 76160 } })
+
+-- QuestieDB alternative outdoors introductions for the Zephras profession lessons.
+ns:RegisterQuestPrerequisite({ quest = 97963, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97964, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97965, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97967, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97968, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97969, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97970, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97971, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97972, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 97973, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 98284, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 98285, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+ns:RegisterQuestPrerequisite({ quest = 98286, mode = "any", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } })
+
+-- User-observed drop unlock, also recorded by QuestieDB and ATT.
+ns:RegisterQuestPrerequisite({ quest = 23, mode = "all", quests = { 6383 } })
+
+ns:RegisterQuestPrerequisite({ quest = 2, mode = "all", quests = { 6383 } })
