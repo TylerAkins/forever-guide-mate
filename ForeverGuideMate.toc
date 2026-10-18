@@ -215,3 +215,4 @@ Guides/Miscellaneous/ExploreWesternPlaguelands.lua
 Guides/Miscellaneous/ExploreStonetalonMountains.lua
 Guides/Miscellaneous/ExploreAzshara.lua
 Guides/Miscellaneous/ExploreDesolace.lua
+Guides/Miscellaneous/ExploreDustwallowMarsh.lua

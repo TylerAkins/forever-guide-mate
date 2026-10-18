@@ -326,6 +326,21 @@ local guides = {
             { "Ranazjar Isle", 28, 9, "ranazjar-isle" },
         },
     },
+    {
+        zone = "dustwallow-marsh",
+        title = "Explore Dustwallow Marsh",
+        achievementID = 850,
+        mapID = 1445,
+        locations = {
+            { "Theramore Isle", 66, 47, "theramore-isle" },
+            { "Witch Hill", 52, 27, "witch-hill" },
+            { "Brackenwall Village", 35, 30, "brackenwall-village" },
+            { "The Quagmire", 41, 51, "the-quagmire" },
+            { "The Den of Flame", 38, 65, "the-den-of-flame" },
+            { "Wyrmbog", 52, 73, "wyrmbog" },
+            { "Alcaz Island", 72, 19, "alcaz-island" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)

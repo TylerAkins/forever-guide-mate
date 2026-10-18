@@ -202,6 +202,7 @@ SHIPPED = (
     "Guides/Miscellaneous/ExploreStonetalonMountains.lua",
     "Guides/Miscellaneous/ExploreAzshara.lua",
     "Guides/Miscellaneous/ExploreDesolace.lua",
+    "Guides/Miscellaneous/ExploreDustwallowMarsh.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",
