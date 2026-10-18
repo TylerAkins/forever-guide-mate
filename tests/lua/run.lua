@@ -223,6 +223,10 @@ Load("Guides/Miscellaneous/ExploreTeldrassil.lua")
 Load("Guides/Miscellaneous/ExploreThousandNeedles.lua")
 Load("Guides/Miscellaneous/ExploreDarkshore.lua")
 
+Load("Guides/Miscellaneous/ExploreAlteracMountains.lua")
+
+dofile("tests/lua/exploration_checks.lua")(ns, Check, Equal)
+
 local baseState = {
     faction = "Horde",
     raceID = 2,
@@ -955,24 +959,13 @@ Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, missingLegacyAPIState
     "a failed achievement API read stays unknown")
 Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, missingLegacyAPIState), nil,
     "a failed criterion API read stays unknown")
-Equal(#ns.GetTrackedAchievementIDs(), 17, "the guide query tracks only referenced achievement ids")
-Equal(ns.GetTrackedAchievementIDs()[1], 627, "Dun Morogh registers achievement 627 for capture")
-Equal(ns.GetTrackedAchievementIDs()[2], 728, "Durotar registers achievement 728 for capture")
-Equal(ns.GetTrackedAchievementIDs()[3], 736, "Mulgore registers achievement 736 for capture")
-Equal(ns.GetTrackedAchievementIDs()[4], 750, "The Barrens registers achievement 750 for capture")
-Equal(ns.GetTrackedAchievementIDs()[5], 768, "the Tirisfal guide registers achievement 768 for capture")
-Equal(ns.GetTrackedAchievementIDs()[6], 769, "the Silverpine guide registers achievement 769 for capture")
-Equal(ns.GetTrackedAchievementIDs()[7], 772, "Hillsbrad registers achievement 772 for capture")
-Equal(ns.GetTrackedAchievementIDs()[8], 776, "Elwynn registers achievement 776 for capture")
-Equal(ns.GetTrackedAchievementIDs()[9], 778, "Duskwood registers achievement 778 for capture")
-Equal(ns.GetTrackedAchievementIDs()[10], 779, "Loch Modan registers achievement 779 for capture")
-Equal(ns.GetTrackedAchievementIDs()[11], 780, "Redridge registers achievement 780 for capture")
-Equal(ns.GetTrackedAchievementIDs()[12], 802, "Westfall registers achievement 802 for capture")
-Equal(ns.GetTrackedAchievementIDs()[13], 841, "Wetlands registers achievement 841 for capture")
-Equal(ns.GetTrackedAchievementIDs()[14], 842, "Teldrassil registers achievement 842 for capture")
-Equal(ns.GetTrackedAchievementIDs()[15], 844, "Darkshore registers achievement 844 for capture")
-Equal(ns.GetTrackedAchievementIDs()[16], 845, "Ashenvale registers achievement 845 for capture")
-Equal(ns.GetTrackedAchievementIDs()[17], 846, "Thousand Needles registers achievement 846 for capture")
+Equal(#ns.GetTrackedAchievementIDs(), 18, "all exploration achievements are tracked")
+do
+    local expected = { 627, 728, 736, 750, 760, 768, 769, 772, 776, 778, 779, 780, 802, 841, 842, 844, 845, 846 }
+    for index, id in ipairs(expected) do
+        Equal(ns.GetTrackedAchievementIDs()[index], id, "exploration achievement " .. id .. " is registered for capture")
+    end
+end
 
 local duplicateOK = pcall(function()
     ns:RegisterGuide({ id = "dungeons-ragefire-chasm-horde", title = "Duplicate", category = "Test", revision = 1,
