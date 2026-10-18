@@ -111836,5 +111836,3441 @@
         ]
       }
     ]
+  },
+  "loremaster-teldrassil": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          7,
+          1438,
+          "Conservator Ilthalaine"
+        ],
+        "actions": [
+          "accept-456-the-balance-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1438,
+          "Young Nightsaber"
+        ],
+        "actions": [
+          "objective-456-1-young-nightsaber"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Young Nightsaber"
+        ],
+        "actions": [
+          "objective-456-1-young-nightsaber-2"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1438,
+          "Young Thistle Boar"
+        ],
+        "actions": [
+          "objective-456-2-young-thistle-boar"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-4495-a-good-friend"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1438,
+          "Dirania Silvershine"
+        ],
+        "actions": [
+          "accept-4495-a-good-friend"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1438,
+          "Melithar Staghelm"
+        ],
+        "actions": [
+          "accept-458-the-woodland-protector"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1438,
+          "Conservator Ilthalaine"
+        ],
+        "actions": [
+          "turnin-456-the-balance-of-nature",
+          "accept-457-the-balance-of-nature",
+          "accept-3116-simple-sigil",
+          "accept-3118-encrypted-sigil",
+          "accept-3119-hallowed-sigil",
+          "accept-3117-etched-sigil",
+          "accept-3120-verdant-sigil"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1438,
+          "Alyissia"
+        ],
+        "actions": [
+          "turnin-3116-simple-sigil"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1438,
+          "Frahun Shadewhisper"
+        ],
+        "actions": [
+          "turnin-3118-encrypted-sigil"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1438,
+          "Shanda"
+        ],
+        "actions": [
+          "turnin-3119-hallowed-sigil"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1438,
+          "Ayanna Everstride"
+        ],
+        "actions": [
+          "turnin-3117-etched-sigil"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1438,
+          "Mardant Strongoak"
+        ],
+        "actions": [
+          "turnin-3120-verdant-sigil"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1438,
+          "Tarindrella"
+        ],
+        "actions": [
+          "turnin-458-the-woodland-protector"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Tarindrella"
+        ],
+        "actions": [
+          "woven-accept-97977-natures-call"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1438,
+          "Tarindrella"
+        ],
+        "actions": [
+          "accept-459-the-woodland-protector"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1438,
+          "Grell"
+        ],
+        "actions": [
+          "objective-459-1-grell"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Grell camps"
+        ],
+        "actions": [
+          "woven-objective-97977-natures-call"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-916-webwood-venom"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1438,
+          "Iverron"
+        ],
+        "actions": [
+          "turnin-4495-a-good-friend"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3519-a-friend-in-need"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1438,
+          "Iverron"
+        ],
+        "actions": [
+          "accept-3519-a-friend-in-need"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1438,
+          "Dirania Silvershine"
+        ],
+        "actions": [
+          "turnin-3519-a-friend-in-need"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3521-iverron-s-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1438,
+          "Dirania Silvershine"
+        ],
+        "actions": [
+          "accept-3521-iverron-s-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1438,
+          "Gilshalan Windwalker"
+        ],
+        "actions": [
+          "accept-916-webwood-venom"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1438,
+          "Mangy Nightsaber"
+        ],
+        "actions": [
+          "objective-457-1-mangy-nightsaber"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1438,
+          "Thistle Boar"
+        ],
+        "actions": [
+          "objective-457-2-thistle-boar"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1438,
+          "Webwood Venom Sac"
+        ],
+        "actions": [
+          "objective-916-1-webwood-venom-sac"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1438,
+          "Webwood Ichor"
+        ],
+        "actions": [
+          "objective-3521-3-webwood-ichor"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1438,
+          "Gilshalan Windwalker"
+        ],
+        "actions": [
+          "turnin-916-webwood-venom",
+          "accept-917-webwood-egg"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1438,
+          "Conservator Ilthalaine"
+        ],
+        "actions": [
+          "turnin-457-the-balance-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1438,
+          "Tarindrella"
+        ],
+        "actions": [
+          "turnin-459-the-woodland-protector"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Tarindrella"
+        ],
+        "actions": [
+          "woven-turnin-97977-natures-call"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1438,
+          "Hyacinth Mushroom"
+        ],
+        "actions": [
+          "objective-3521-1-hyacinth-mushroom"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1438,
+          "Moonpetal Lily"
+        ],
+        "actions": [
+          "objective-3521-2-moonpetal-lily"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1438,
+          "Webwood Egg"
+        ],
+        "actions": [
+          "objective-917-1-webwood-egg"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1438,
+          "Gilshalan Windwalker"
+        ],
+        "actions": [
+          "turnin-917-webwood-egg"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "loot-starter-before-accept-97236-verified-pickup",
+          "accept-97236-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Gilshalan Windwalker"
+        ],
+        "actions": [
+          "woven-turnin-97236-fang-of-githyiss"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1438,
+          "Gilshalan Windwalker"
+        ],
+        "actions": [
+          "accept-920-tenaron-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1438,
+          "Tenaron Stormgrip"
+        ],
+        "actions": [
+          "turnin-920-tenaron-s-summons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96630-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1438,
+          "Tenaron Stormgrip"
+        ],
+        "actions": [
+          "accept-921-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1438,
+          "Dirania Silvershine"
+        ],
+        "actions": [
+          "turnin-3521-iverron-s-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3522-iverron-s-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1438,
+          "Dirania Silvershine"
+        ],
+        "actions": [
+          "accept-3522-iverron-s-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1438,
+          "Crystal Phial"
+        ],
+        "actions": [
+          "objective-921-1-crystal-phial"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1438,
+          "Iverron"
+        ],
+        "actions": [
+          "turnin-3522-iverron-s-antidote"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5622-in-favor-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1438,
+          "Shanda"
+        ],
+        "actions": [
+          "accept-5622-in-favor-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1438,
+          "Tenaron Stormgrip"
+        ],
+        "actions": [
+          "turnin-921-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Tenaron Stormgrip"
+        ],
+        "actions": [
+          "woven-accept-96630-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1438,
+          "Tenaron Stormgrip"
+        ],
+        "actions": [
+          "accept-928-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1438,
+          "Porthannius"
+        ],
+        "actions": [
+          "accept-2159-dolanaar-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-488-zenn-s-bidding"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1438,
+          "Zenn Foulhoof"
+        ],
+        "actions": [
+          "accept-488-zenn-s-bidding"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-997-denalan-s-earth"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1438,
+          "Syral Bladeleaf"
+        ],
+        "actions": [
+          "accept-997-denalan-s-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-475-a-troubling-breeze"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1438,
+          "Athridas Bearmantle"
+        ],
+        "actions": [
+          "accept-475-a-troubling-breeze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Lyreena Duskblade"
+        ],
+        "actions": [
+          "woven-turnin-96630-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-96101-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Lyreena Duskblade"
+        ],
+        "actions": [
+          "woven-accept-96101-the-great-outdoors",
+          "woven-objective-96101-the-great-outdoors",
+          "woven-turnin-96101-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1438,
+          "Laurna Morninglight"
+        ],
+        "actions": [
+          "turnin-5622-in-favor-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5621-garments-of-the-moon"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1438,
+          "Laurna Morninglight"
+        ],
+        "actions": [
+          "accept-5621-garments-of-the-moon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-932-twisted-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1438,
+          "Tallonkai Swiftroot"
+        ],
+        "actions": [
+          "accept-932-twisted-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-87288-soft-saber-pelts"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Aldia"
+        ],
+        "actions": [
+          "woven-accept-87288-soft-saber-pelts"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Nightsaber"
+        ],
+        "actions": [
+          "woven-objective-87288-soft-saber-pelts"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Aldia"
+        ],
+        "actions": [
+          "woven-turnin-87288-soft-saber-pelts"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98403-twisted-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Tallonkai Swiftroot"
+        ],
+        "actions": [
+          "woven-accept-98403-twisted-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98391-the-sisterhood-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Laurna Morninglight"
+        ],
+        "actions": [
+          "woven-accept-98391-the-sisterhood-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1438,
+          "Tallonkai Swiftroot"
+        ],
+        "actions": [
+          "accept-2438-the-emerald-dreamcatcher"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1438,
+          "Innkeeper Keldamyr"
+        ],
+        "actions": [
+          "turnin-2159-dolanaar-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1438,
+          "Corithras Moonrage"
+        ],
+        "actions": [
+          "turnin-928-crown-of-the-earth",
+          "accept-929-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "turnin-997-denalan-s-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-918-timberling-seeds"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "accept-918-timberling-seeds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-919-timberling-sprouts"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "accept-919-timberling-sprouts"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          1438,
+          "Timberling Sprout"
+        ],
+        "actions": [
+          "objective-919-1-timberling-sprout"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1438,
+          "Timberling Seed"
+        ],
+        "actions": [
+          "objective-918-1-timberling-seed"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "turnin-918-timberling-seeds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-922-rellian-greenspyre"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "accept-922-rellian-greenspyre",
+          "turnin-919-timberling-sprouts"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1438,
+          "Jade Phial"
+        ],
+        "actions": [
+          "objective-929-1-jade-phial"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1438,
+          "Gaerolas Talvethren"
+        ],
+        "actions": [
+          "turnin-475-a-troubling-breeze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-476-gnarlpine-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1438,
+          "Gaerolas Talvethren"
+        ],
+        "actions": [
+          "accept-476-gnarlpine-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1438,
+          "Emerald Dreamcatcher"
+        ],
+        "actions": [
+          "objective-2438-1-emerald-dreamcatcher"
+        ]
+      },
+      {
+        "boundary": [
+          83,
+          1438,
+          "Strigid Owl Feather"
+        ],
+        "actions": [
+          "objective-488-2-strigid-owl-feather"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1438,
+          "Nightsaber Fang"
+        ],
+        "actions": [
+          "objective-488-1-nightsaber-fang"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1438,
+          "Webwood Spider Silk"
+        ],
+        "actions": [
+          "objective-488-3-webwood-spider-silk"
+        ]
+      },
+      {
+        "boundary": [
+          87,
+          1438,
+          "Zenn Foulhoof"
+        ],
+        "actions": [
+          "turnin-488-zenn-s-bidding"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-489-seek-redemption"
+        ]
+      },
+      {
+        "boundary": [
+          88,
+          1438,
+          "Syral Bladeleaf"
+        ],
+        "actions": [
+          "accept-489-seek-redemption"
+        ]
+      },
+      {
+        "boundary": [
+          89,
+          1438,
+          "Athridas Bearmantle"
+        ],
+        "actions": [
+          "turnin-476-gnarlpine-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-483-the-relics-of-wakening"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Athridas Bearmantle"
+        ],
+        "actions": [
+          "woven-accept-483-the-relics-of-wakening"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Ban'ethil Barrow Den"
+        ],
+        "actions": [
+          "woven-objective-483-the-relics-of-wakening"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-2541-the-sleeping-druid"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Oben Rageclaw"
+        ],
+        "actions": [
+          "woven-accept-2541-the-sleeping-druid"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Gnarlpine Shaman"
+        ],
+        "actions": [
+          "woven-objective-2541-the-sleeping-druid"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Oben Rageclaw"
+        ],
+        "actions": [
+          "woven-turnin-2541-the-sleeping-druid"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-2561-druid-of-the-claw"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Oben Rageclaw"
+        ],
+        "actions": [
+          "woven-accept-2561-druid-of-the-claw"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Rageclaw"
+        ],
+        "actions": [
+          "woven-objective-2561-druid-of-the-claw"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Oben Rageclaw"
+        ],
+        "actions": [
+          "woven-turnin-2561-druid-of-the-claw"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99053-escaping-banethil"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Lynessa Duskblossom"
+        ],
+        "actions": [
+          "woven-accept-99053-escaping-banethil",
+          "woven-objective-99053-escaping-banethil"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Athridas Bearmantle"
+        ],
+        "actions": [
+          "woven-turnin-483-the-relics-of-wakening"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Kyra Starsong"
+        ],
+        "actions": [
+          "woven-turnin-99053-escaping-banethil"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-486-ursal-the-mauler"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Athridas Bearmantle"
+        ],
+        "actions": [
+          "woven-accept-486-ursal-the-mauler"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Ursal the Mauler"
+        ],
+        "actions": [
+          "woven-objective-486-ursal-the-mauler"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Athridas Bearmantle"
+        ],
+        "actions": [
+          "woven-turnin-486-ursal-the-mauler"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99046-the-lost-runner"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Kyra Starsong"
+        ],
+        "actions": [
+          "woven-accept-99046-the-lost-runner"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Eralya Leafshadow"
+        ],
+        "actions": [
+          "woven-turnin-99046-the-lost-runner"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99047-not-dead-yet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Eralya Leafshadow"
+        ],
+        "actions": [
+          "woven-accept-99047-not-dead-yet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Byancie"
+        ],
+        "actions": [
+          "woven-turnin-99047-not-dead-yet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99050-the-great-tree-provides"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Byancie"
+        ],
+        "actions": [
+          "woven-accept-99050-the-great-tree-provides"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Dolanaar vendor"
+        ],
+        "actions": [
+          "woven-objective-99050-the-great-tree-provides-2",
+          "woven-objective-99050-the-great-tree-provides-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Lasher Sproutling"
+        ],
+        "actions": [
+          "woven-objective-99050-the-great-tree-provides-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Byancie"
+        ],
+        "actions": [
+          "woven-turnin-99050-the-great-tree-provides"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-99073-easing-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Byancie"
+        ],
+        "actions": [
+          "woven-accept-99073-easing-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Eralya Leafshadow"
+        ],
+        "actions": [
+          "woven-turnin-99073-easing-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          90,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-5621-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          90,
+          1438,
+          "Laurna Morninglight"
+        ],
+        "actions": [
+          "turnin-5621-garments-of-the-moon"
+        ]
+      },
+      {
+        "boundary": [
+          92,
+          1438,
+          "Tallonkai Swiftroot"
+        ],
+        "actions": [
+          "turnin-2438-the-emerald-dreamcatcher",
+          "accept-2459-ferocitas-the-dream-eater"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1438,
+          "Corithras Moonrage"
+        ],
+        "actions": [
+          "turnin-929-crown-of-the-earth",
+          "accept-933-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          99,
+          1438,
+          "Zarrin"
+        ],
+        "actions": [
+          "accept-4161-recipe-of-the-kaldorei"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-4161-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1438,
+          "Zarrin"
+        ],
+        "actions": [
+          "turnin-4161-recipe-of-the-kaldorei"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Ferocitas the Dream Eater"
+        ],
+        "actions": [
+          "objective-2459-2-gnarlpine-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          102,
+          1438,
+          "Ferocitas camp"
+        ],
+        "actions": [
+          "objective-2459-prepared-result"
+        ]
+      },
+      {
+        "boundary": [
+          103,
+          1438,
+          "Ferocitas the Dream Eater"
+        ],
+        "actions": [
+          "objective-2459-1-ferocitas-the-dream-eater"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1438,
+          "Fel Cone"
+        ],
+        "actions": [
+          "objective-489-1-fel-cone"
+        ]
+      },
+      {
+        "boundary": [
+          105,
+          1438,
+          "Zenn Foulhoof"
+        ],
+        "actions": [
+          "turnin-489-seek-redemption"
+        ]
+      },
+      {
+        "boundary": [
+          106,
+          1438,
+          "Melenas' Head"
+        ],
+        "actions": [
+          "objective-932-1-lord-melenas"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Xethorr the Wicked"
+        ],
+        "actions": [
+          "woven-objective-98403-twisted-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          108,
+          1438,
+          "Tallonkai Swiftroot"
+        ],
+        "actions": [
+          "turnin-932-twisted-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Tallonkai Swiftroot"
+        ],
+        "actions": [
+          "woven-turnin-98403-twisted-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          108,
+          1438,
+          "Tallonkai Swiftroot"
+        ],
+        "actions": [
+          "turnin-2459-ferocitas-the-dream-eater"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-930-the-glowing-fruit"
+        ]
+      },
+      {
+        "boundary": [
+          109,
+          1438,
+          "The Glowing Fruit"
+        ],
+        "actions": [
+          "accept-930-the-glowing-fruit"
+        ]
+      },
+      {
+        "boundary": [
+          110,
+          1438,
+          "Tourmaline Phial"
+        ],
+        "actions": [
+          "objective-933-1-tourmaline-phial"
+        ]
+      },
+      {
+        "boundary": [
+          113,
+          1438,
+          "Corithras Moonrage"
+        ],
+        "actions": [
+          "turnin-933-crown-of-the-earth",
+          "accept-7383-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-487-the-road-to-darnassus"
+        ]
+      },
+      {
+        "boundary": [
+          115,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-487-the-road-to-darnassus"
+        ]
+      },
+      {
+        "boundary": [
+          116,
+          1438,
+          "Gnarlpine Ambusher"
+        ],
+        "actions": [
+          "objective-487-1-gnarlpine-ambusher"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-937-the-enchanted-glade"
+        ]
+      },
+      {
+        "boundary": [
+          117,
+          1438,
+          "Sentinel Arynia Cloudsbreak"
+        ],
+        "actions": [
+          "accept-937-the-enchanted-glade"
+        ]
+      },
+      {
+        "boundary": [
+          118,
+          1438,
+          "Amethyst Phial"
+        ],
+        "actions": [
+          "objective-7383-1-amethyst-phial"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-931-the-shimmering-frond"
+        ]
+      },
+      {
+        "boundary": [
+          119,
+          1438,
+          "The Shimmering Frond"
+        ],
+        "actions": [
+          "accept-931-the-shimmering-frond"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-938-mist"
+        ]
+      },
+      {
+        "boundary": [
+          120,
+          1438,
+          "Mist"
+        ],
+        "actions": [
+          "accept-938-mist"
+        ]
+      },
+      {
+        "boundary": [
+          122,
+          1438,
+          "Sentinel Arynia Cloudsbreak"
+        ],
+        "actions": [
+          "turnin-938-mist"
+        ]
+      },
+      {
+        "boundary": [
+          123,
+          1438,
+          "Bloodfeather Belt"
+        ],
+        "actions": [
+          "objective-937-1-bloodfeather-belt"
+        ]
+      },
+      {
+        "boundary": [
+          124,
+          1438,
+          "Sentinel Arynia Cloudsbreak"
+        ],
+        "actions": [
+          "turnin-937-the-enchanted-glade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98392-darkness-in-the-glade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Arynia Cloudsbreak"
+        ],
+        "actions": [
+          "woven-accept-98392-darkness-in-the-glade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Hatescreech"
+        ],
+        "actions": [
+          "woven-objective-98392-darkness-in-the-glade-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Windmistress Gaedress"
+        ],
+        "actions": [
+          "woven-objective-98392-darkness-in-the-glade-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Witchmother Arysa"
+        ],
+        "actions": [
+          "woven-objective-98392-darkness-in-the-glade-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Arynia Cloudsbreak"
+        ],
+        "actions": [
+          "woven-turnin-98392-darkness-in-the-glade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98398-the-oracle-tree"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sentinel Arynia Cloudsbreak"
+        ],
+        "actions": [
+          "woven-accept-98398-the-oracle-tree"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Oracle Tree"
+        ],
+        "actions": [
+          "woven-turnin-98398-the-oracle-tree"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-940-teldrassil"
+        ]
+      },
+      {
+        "boundary": [
+          124,
+          1438,
+          "Sentinel Arynia Cloudsbreak"
+        ],
+        "actions": [
+          "accept-940-teldrassil"
+        ]
+      },
+      {
+        "boundary": [
+          130,
+          1457,
+          "Rellian Greenspyre"
+        ],
+        "actions": [
+          "turnin-922-rellian-greenspyre"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Sister Aquinne"
+        ],
+        "actions": [
+          "woven-turnin-98391-the-sisterhood-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-923-tumors"
+        ]
+      },
+      {
+        "boundary": [
+          130,
+          1457,
+          "Rellian Greenspyre"
+        ],
+        "actions": [
+          "accept-923-tumors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6071-the-hunter-s-path"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1457,
+          "Jocaste"
+        ],
+        "actions": [
+          "accept-6071-the-hunter-s-path"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5921-moonglade"
+        ]
+      },
+      {
+        "boundary": [
+          135,
+          1457,
+          "Mathrengyl Bearwalker"
+        ],
+        "actions": [
+          "accept-5921-moonglade"
+        ]
+      },
+      {
+        "boundary": [
+          136,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "turnin-940-teldrassil"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-952-grove-of-the-ancients"
+        ]
+      },
+      {
+        "boundary": [
+          136,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "accept-952-grove-of-the-ancients"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2518-tears-of-the-moon"
+        ]
+      },
+      {
+        "boundary": [
+          138,
+          1457,
+          "Priestess A'moora"
+        ],
+        "actions": [
+          "accept-2518-tears-of-the-moon"
+        ]
+      },
+      {
+        "boundary": [
+          139,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "turnin-5921-moonglade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5929-great-bear-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          139,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "accept-5929-great-bear-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          141,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-5929-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          141,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "turnin-5929-great-bear-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5931-back-to-darnassus"
+        ]
+      },
+      {
+        "boundary": [
+          141,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "accept-5931-back-to-darnassus"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1684-elanaria"
+        ]
+      },
+      {
+        "boundary": [
+          143,
+          1438,
+          "Kyra Windblade"
+        ],
+        "actions": [
+          "accept-1684-elanaria"
+        ]
+      },
+      {
+        "boundary": [
+          144,
+          1438,
+          "Dazalar"
+        ],
+        "actions": [
+          "turnin-6071-the-hunter-s-path"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6063-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          144,
+          1438,
+          "Dazalar"
+        ],
+        "actions": [
+          "accept-6063-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-6063-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6063-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          146,
+          1438,
+          "Dazalar"
+        ],
+        "actions": [
+          "turnin-6063-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6101-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          146,
+          1438,
+          "Dazalar"
+        ],
+        "actions": [
+          "accept-6101-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1438,
+          "Corithras Moonrage"
+        ],
+        "actions": [
+          "turnin-7383-crown-of-the-earth",
+          "accept-935-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          148,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "turnin-931-the-shimmering-frond"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-2399-the-sprouted-fronds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Sprouted Frond"
+        ],
+        "actions": [
+          "woven-accept-2399-the-sprouted-fronds",
+          "woven-turnin-2399-the-sprouted-fronds"
+        ]
+      },
+      {
+        "boundary": [
+          148,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "turnin-930-the-glowing-fruit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6101-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          152,
+          1438,
+          "Dazalar"
+        ],
+        "actions": [
+          "turnin-6101-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6102-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          152,
+          1438,
+          "Dazalar"
+        ],
+        "actions": [
+          "accept-6102-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Taming Rod"
+        ],
+        "actions": [
+          "objective-6102-1-taming-rod"
+        ]
+      },
+      {
+        "boundary": [
+          156,
+          1438,
+          "Dazalar"
+        ],
+        "actions": [
+          "turnin-6102-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6103-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          156,
+          1438,
+          "Dazalar"
+        ],
+        "actions": [
+          "accept-6103-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5629-returning-home"
+        ]
+      },
+      {
+        "boundary": [
+          157,
+          1438,
+          "Laurna Morninglight"
+        ],
+        "actions": [
+          "accept-5629-returning-home"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2241-the-apple-falls"
+        ]
+      },
+      {
+        "boundary": [
+          158,
+          1438,
+          "Jannok Breezesong"
+        ],
+        "actions": [
+          "accept-2241-the-apple-falls"
+        ]
+      },
+      {
+        "boundary": [
+          159,
+          null,
+          null
+        ],
+        "actions": [
+          "turnin-487-the-road-to-darnassus"
+        ]
+      },
+      {
+        "boundary": [
+          162,
+          1457,
+          "Syurna"
+        ],
+        "actions": [
+          "turnin-2241-the-apple-falls"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2242-destiny-calls"
+        ]
+      },
+      {
+        "boundary": [
+          162,
+          1457,
+          "Syurna"
+        ],
+        "actions": [
+          "accept-2242-destiny-calls"
+        ]
+      },
+      {
+        "boundary": [
+          164,
+          1438,
+          "Lady Sathrah"
+        ],
+        "actions": [
+          "objective-2518-1-lady-sathrah"
+        ]
+      },
+      {
+        "boundary": [
+          165,
+          1438,
+          "Sethir's Journal"
+        ],
+        "actions": [
+          "objective-2242-1-sethir-s-journal"
+        ]
+      },
+      {
+        "boundary": [
+          166,
+          1438,
+          "Mossy Tumor"
+        ],
+        "actions": [
+          "objective-923-1-mossy-tumor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-927-the-moss-twined-heart"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Blackmoss the Fetid"
+        ],
+        "actions": [
+          "woven-accept-927-the-moss-twined-heart"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6344-nessa-shadowsong"
+        ]
+      },
+      {
+        "boundary": [
+          171,
+          1457,
+          "Mydrannul"
+        ],
+        "actions": [
+          "accept-6344-nessa-shadowsong"
+        ]
+      },
+      {
+        "boundary": [
+          172,
+          1457,
+          "Elanaria"
+        ],
+        "actions": [
+          "turnin-1684-elanaria"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1683-vorlus-vilehoof"
+        ]
+      },
+      {
+        "boundary": [
+          172,
+          1457,
+          "Elanaria"
+        ],
+        "actions": [
+          "accept-1683-vorlus-vilehoof"
+        ]
+      },
+      {
+        "boundary": [
+          173,
+          1438,
+          "Horn of Vorlus"
+        ],
+        "actions": [
+          "objective-1683-1-vorlus-vilehoof"
+        ]
+      },
+      {
+        "boundary": [
+          176,
+          1457,
+          "Elanaria"
+        ],
+        "actions": [
+          "turnin-1683-vorlus-vilehoof"
+        ]
+      },
+      {
+        "boundary": [
+          178,
+          1457,
+          "Rellian Greenspyre"
+        ],
+        "actions": [
+          "turnin-923-tumors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-2498-return-to-denalan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Rellian Greenspyre"
+        ],
+        "actions": [
+          "woven-accept-2498-return-to-denalan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "woven-turnin-2498-return-to-denalan",
+          "woven-turnin-927-the-moss-twined-heart"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-941-planting-the-heart"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "woven-accept-941-planting-the-heart"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Denalan's Planter"
+        ],
+        "actions": [
+          "woven-turnin-941-planting-the-heart"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-2499-oakenscowl"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "woven-accept-2499-oakenscowl"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Oakenscowl"
+        ],
+        "actions": [
+          "woven-objective-2499-oakenscowl"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1438,
+          "Denalan"
+        ],
+        "actions": [
+          "woven-turnin-2499-oakenscowl"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-turnin-2242-destiny-calls"
+        ]
+      },
+      {
+        "boundary": [
+          179,
+          1457,
+          "Syurna"
+        ],
+        "actions": [
+          "turnin-2242-destiny-calls"
+        ]
+      },
+      {
+        "boundary": [
+          180,
+          1457,
+          "Jocaste"
+        ],
+        "actions": [
+          "turnin-6103-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          183,
+          1457,
+          "Mathrengyl Bearwalker"
+        ],
+        "actions": [
+          "turnin-5931-back-to-darnassus"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6001-body-and-heart"
+        ]
+      },
+      {
+        "boundary": [
+          183,
+          1457,
+          "Mathrengyl Bearwalker"
+        ],
+        "actions": [
+          "accept-6001-body-and-heart"
+        ]
+      },
+      {
+        "boundary": [
+          184,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "turnin-935-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Archdruid Fandral Staghelm"
+        ],
+        "actions": [
+          "woven-accept-98046-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Priestess Lariia"
+        ],
+        "actions": [
+          "woven-turnin-98046-crown-of-the-earth",
+          "woven-accept-98065-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Tyrande Whisperwind"
+        ],
+        "actions": [
+          "woven-turnin-98065-crown-of-the-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Sentinel Dalia Sunblade"
+        ],
+        "actions": [
+          "woven-accept-98067-eyes-of-the-sentinels"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Craftsmen's Terrace"
+        ],
+        "actions": [
+          "woven-objective-98067-eyes-of-the-sentinels"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Sentinel Dalia Sunblade"
+        ],
+        "actions": [
+          "woven-turnin-98067-eyes-of-the-sentinels"
+        ]
+      },
+      {
+        "boundary": [
+          185,
+          1457,
+          "Priestess A'moora"
+        ],
+        "actions": [
+          "turnin-2518-tears-of-the-moon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2520-sathrah-s-sacrifice"
+        ]
+      },
+      {
+        "boundary": [
+          185,
+          1457,
+          "Priestess A'moora"
+        ],
+        "actions": [
+          "accept-2520-sathrah-s-sacrifice"
+        ]
+      },
+      {
+        "boundary": [
+          186,
+          1457,
+          "Priestess Alathea"
+        ],
+        "actions": [
+          "turnin-5629-returning-home"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-5627-stars-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          186,
+          1457,
+          "Priestess Alathea"
+        ],
+        "actions": [
+          "accept-5627-stars-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Sathrah's Sacrifice"
+        ],
+        "actions": [
+          "objective-2520-1-sathrah-s-sacrifice"
+        ]
+      },
+      {
+        "boundary": [
+          188,
+          1457,
+          "Priestess A'moora"
+        ],
+        "actions": [
+          "turnin-2520-sathrah-s-sacrifice"
+        ]
+      },
+      {
+        "boundary": [
+          189,
+          1438,
+          "Nessa Shadowsong"
+        ],
+        "actions": [
+          "turnin-6344-nessa-shadowsong"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6341-the-bounty-of-teldrassil"
+        ]
+      },
+      {
+        "boundary": [
+          189,
+          1438,
+          "Nessa Shadowsong"
+        ],
+        "actions": [
+          "accept-6341-the-bounty-of-teldrassil"
+        ]
+      },
+      {
+        "boundary": [
+          190,
+          1438,
+          "Vesprystus"
+        ],
+        "actions": [
+          "turnin-6341-the-bounty-of-teldrassil"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6342-flight-to-auberdine"
+        ]
+      },
+      {
+        "boundary": [
+          190,
+          1438,
+          "Vesprystus"
+        ],
+        "actions": [
+          "accept-6342-flight-to-auberdine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3524-washed-ashore"
+        ]
+      },
+      {
+        "boundary": [
+          192,
+          1439,
+          "Gwennyth Bly'Leggonde"
+        ],
+        "actions": [
+          "accept-3524-washed-ashore"
+        ]
+      },
+      {
+        "boundary": [
+          193,
+          1439,
+          "Laird"
+        ],
+        "actions": [
+          "turnin-6342-flight-to-auberdine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-983-buzzbox-827"
+        ]
+      },
+      {
+        "boundary": [
+          195,
+          1439,
+          "Wizbang Cranktoggle"
+        ],
+        "actions": [
+          "accept-983-buzzbox-827"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2118-plagued-lands"
+        ]
+      },
+      {
+        "boundary": [
+          200,
+          1439,
+          "Tharnariun Treetender"
+        ],
+        "actions": [
+          "accept-2118-plagued-lands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-984-how-big-a-threat"
+        ]
+      },
+      {
+        "boundary": [
+          201,
+          1439,
+          "Terenthis"
+        ],
+        "actions": [
+          "accept-984-how-big-a-threat"
+        ]
+      },
+      {
+        "boundary": [
+          203,
+          1439,
+          "Sea Creature Bones"
+        ],
+        "actions": [
+          "objective-3524-1-sea-creature-bones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "Rabid Thistle Bears"
+        ],
+        "actions": [
+          "objective-2118-1-tharnariun-s-hope"
+        ]
+      },
+      {
+        "boundary": [
+          204,
+          1439,
+          "Crawler Leg"
+        ],
+        "actions": [
+          "objective-983-1-crawler-leg"
+        ]
+      },
+      {
+        "boundary": [
+          209,
+          1439,
+          "Buzzbox 827"
+        ],
+        "actions": [
+          "turnin-983-buzzbox-827"
+        ]
+      },
+      {
+        "boundary": [
+          210,
+          1439,
+          "Gwennyth Bly'Leggonde"
+        ],
+        "actions": [
+          "turnin-3524-washed-ashore"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-4681-washed-ashore"
+        ]
+      },
+      {
+        "boundary": [
+          210,
+          1439,
+          "Gwennyth Bly'Leggonde"
+        ],
+        "actions": [
+          "accept-4681-washed-ashore"
+        ]
+      },
+      {
+        "boundary": [
+          211,
+          1439,
+          "Sea Turtle Remains"
+        ],
+        "actions": [
+          "objective-4681-1-sea-turtle-remains"
+        ]
+      },
+      {
+        "boundary": [
+          212,
+          1439,
+          "Gwennyth Bly'Leggonde"
+        ],
+        "actions": [
+          "turnin-4681-washed-ashore"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-6001-1-cenarion-moondust"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "Cenarion Moondust"
+        ],
+        "actions": [
+          "objective-6001-1-cenarion-moondust"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-6343-return-to-nessa"
+        ]
+      },
+      {
+        "boundary": [
+          216,
+          1439,
+          "Laird"
+        ],
+        "actions": [
+          "accept-6343-return-to-nessa"
+        ]
+      },
+      {
+        "boundary": [
+          217,
+          1438,
+          "Nessa Shadowsong"
+        ],
+        "actions": [
+          "turnin-6343-return-to-nessa"
+        ]
+      },
+      {
+        "boundary": [
+          219,
+          1457,
+          "Mathrengyl Bearwalker"
+        ],
+        "actions": [
+          "turnin-6001-body-and-heart"
+        ]
+      },
+      {
+        "boundary": [
+          226,
+          1439,
+          "Tharnariun Treetender"
+        ],
+        "actions": [
+          "turnin-2118-plagued-lands"
+        ]
+      },
+      {
+        "boundary": [
+          227,
+          1439,
+          "Terenthis"
+        ],
+        "actions": [
+          "turnin-984-how-big-a-threat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-4761-thundris-windweaver"
+        ]
+      },
+      {
+        "boundary": [
+          227,
+          1439,
+          "Terenthis"
+        ],
+        "actions": [
+          "accept-4761-thundris-windweaver"
+        ]
+      },
+      {
+        "boundary": [
+          228,
+          1439,
+          "Thundris Windweaver"
+        ],
+        "actions": [
+          "turnin-4761-thundris-windweaver"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-954-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          228,
+          1439,
+          "Thundris Windweaver"
+        ],
+        "actions": [
+          "accept-954-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          229,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "turnin-954-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-955-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          229,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "accept-955-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          230,
+          1439,
+          "Wild Grell"
+        ],
+        "actions": [
+          "objective-955-1-wild-grell"
+        ]
+      },
+      {
+        "boundary": [
+          231,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "turnin-955-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-956-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          231,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "accept-956-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          232,
+          1439,
+          "Deth'ryll Satyr"
+        ],
+        "actions": [
+          "objective-956-1-deth-ryll-satyr"
+        ]
+      },
+      {
+        "boundary": [
+          233,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "turnin-956-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-957-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          233,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "accept-957-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "Moonkin"
+        ],
+        "actions": [
+          "objective-2178-1-moonkin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-2178-easy-strider-living"
+        ]
+      },
+      {
+        "boundary": [
+          239,
+          1439,
+          "Alanndarian Nightsong"
+        ],
+        "actions": [
+          "accept-2178-easy-strider-living"
+        ]
+      },
+      {
+        "boundary": [
+          240,
+          1439,
+          "Alanndarian Nightsong"
+        ],
+        "actions": [
+          "turnin-2178-easy-strider-living"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          267,
+          1453,
+          "Ilsa Corbin"
+        ],
+        "actions": [
+          "accept-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          268,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "turnin-1638-a-warrior-s-training"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          268,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "accept-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          269,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "turnin-1639-bartleby-the-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          269,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "accept-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-objective-1640-1-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "objective-1640-1-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          271,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "turnin-1640-beat-bartleby"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1665-bartleby-s-mug"
+        ]
+      },
+      {
+        "boundary": [
+          271,
+          1453,
+          "Bartleby"
+        ],
+        "actions": [
+          "accept-1665-bartleby-s-mug"
+        ]
+      },
+      {
+        "boundary": [
+          272,
+          1453,
+          "Harry Burlguard"
+        ],
+        "actions": [
+          "turnin-1665-bartleby-s-mug"
+        ]
+      }
+    ]
   }
 }

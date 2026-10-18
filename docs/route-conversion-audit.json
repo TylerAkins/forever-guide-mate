@@ -14466,6 +14466,10 @@
     "loremaster-elwynn-forest": {
       "inventory": "docs/loremaster/elwynn-forest.json",
       "clientWalkthrough": false
+    },
+    "loremaster-teldrassil": {
+      "inventory": "docs/loremaster/teldrassil.json",
+      "clientWalkthrough": false
     }
   }
 }
