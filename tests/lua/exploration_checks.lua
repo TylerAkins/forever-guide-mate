@@ -303,6 +303,29 @@ local guides = {
             { "Forlorn Ridge", 30, 71, "forlorn-ridge" },
         },
     },
+    {
+        zone = "desolace",
+        title = "Explore Desolace",
+        achievementID = 848,
+        mapID = 1443,
+        locations = {
+            { "Tethris Aran", 54, 13, "tethris-aran" },
+            { "Nijel's Point", 65, 9, "nijel-s-point" },
+            { "Sargeron", 76, 21, "sargeron" },
+            { "Thunder Axe Fortress", 55, 28, "thunder-axe-fortress" },
+            { "Kormek's Hut", 62, 39, "kormek-s-hut" },
+            { "Kolkar Village", 73, 48, "kolkar-village" },
+            { "Ethel Rethor", 38, 28, "ethel-rethor" },
+            { "Valley of Spears", 33, 58, "valley-of-spears" },
+            { "Kodo Graveyard", 50, 57, "kodo-graveyard" },
+            { "Shadowprey Village", 24, 70, "shadowprey-village" },
+            { "Gelkis Village", 34, 86, "gelkis-village" },
+            { "Mannoroc Coven", 52, 76, "mannoroc-coven" },
+            { "Magram Village", 72, 73, "magram-village" },
+            { "Shadowbreak Ravine", 79, 77, "shadowbreak-ravine" },
+            { "Ranazjar Isle", 28, 9, "ranazjar-isle" },
+        },
+    },
 }
 
 return function(ns, Check, Equal)

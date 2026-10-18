@@ -207,6 +207,7 @@ for _, path in ipairs({
     "Guides/Miscellaneous/ExploreWesternPlaguelands.lua",
     "Guides/Miscellaneous/ExploreStonetalonMountains.lua",
     "Guides/Miscellaneous/ExploreAzshara.lua",
+    "Guides/Miscellaneous/ExploreDesolace.lua",
 }) do Load(path) end
 
 local function Serialize(value)
