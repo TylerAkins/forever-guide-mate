@@ -215,6 +215,7 @@ lua5.1 tests/lua/ordered.lua
 lua5.1 tests/lua/catalog.lua
 FGM_FULL_MATRIX=1 lua5.1 tests/lua/journeys.lua
 FGM_DUNGEONS=1 lua5.1 tests/lua/journeys.lua
+FGM_LOREMASTER=1 lua5.1 tests/lua/journeys.lua
 lua5.1 tests/lua/ui.lua
 lua5.1 tests/lua/lint.lua
 lua5.1 tests/lua/audit_accept_chains.lua
@@ -229,6 +230,6 @@ Changing a turn-in’s `dependsOn` or splitting objectives can leave **stale com
 
 The addon saves **active step per guide** (`activeGoalByGuide`). Reload and switching away and back should return to the same step, not the first open quest in the chapter.
 
-Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`. Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database) (`data/forever/compiled/`). A positive Questie `questLevel` is the step level. `0` and `-1` leave the Wowhead level.
+Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`. Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database) (`data/forever/compiled/`). Existing Casual level fixtures retain their documented Questie policy. New Loremaster facts use Wowhead, QuestieDB, ATT, then the client scrape; see the Loremaster skill for source conflicts and provenance.
 
 Ordered routes keep authored instructions and fallback pins. Registration enables `useQuestNavigation` for ordinary quest objectives and turn-ins independently of `useClientPin`. Blizzard navigation is selected when the current objective is unfinished or the quest is ready to turn in, with authored coordinates as fallback if the client has no quest destination. Travel and checkpoint instructions retain their explicit destination. Set `useQuestNavigation = false` for an interaction requiring a specific authored destination.

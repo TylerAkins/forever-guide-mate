@@ -1,4 +1,5 @@
 ## 0.6.3 - 2026-10-18
+- Add an ordered Zephras Isle Loremaster guide with reviewed quest coverage and capital ownership.
 - Add an ordered Tirisfal Glades Loremaster guide with reviewed quest coverage and capital ownership.
 - Add an ordered Mulgore Loremaster guide with reviewed quest coverage and capital ownership.
 - Add an ordered Durotar Loremaster guide with reviewed quest coverage and capital ownership.

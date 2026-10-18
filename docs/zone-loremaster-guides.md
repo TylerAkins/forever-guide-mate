@@ -21,10 +21,24 @@ recommended-level visit, accept with that giver visit, work the matching outing,
 and return with that hub. Breadcrumbs precede the quests that remove them. Higher
 recommendations require later returns even when the offer minimum is low.
 
-Dun Morogh is available under Loremaster. The previous placeholder is retired;
-archived completion ledgers remain preserved. Other starter zones are added as
-their inventories and itineraries are verified. Zephras keeps its Leveling starter
-when its separate Loremaster itinerary is added.
+The library contains Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Mulgore,
+Tirisfal Glades, and Zephras Isle. The previous placeholder is retired; archived
+completion ledgers remain preserved. Zephras also retains its Leveling starter.
+
+The inventories identify six unresolved records: Applejack Still (91736), A Taste
+of Darkness (95771), Crown of the Earth (934), A Strategic Alliance (785), The New
+Horde (787), and A Donation of Silk (99197). These are not authored as available
+quests until their missing or contradictory mechanics can be resolved.
+
+The full race/class journey matrix includes Loremaster. To isolate those journeys:
+
+```sh
+FGM_LOREMASTER=1 lua5.1 tests/lua/journeys.lua
+```
+
+These simulations supply observed quest states, levels, optional item drops, and
+profession ranks to exercise the authored actions. They do not establish gameplay
+availability or that one character can learn every profession.
 
 Automated checks verify structural order and observed progress, not sufficient XP,
 server availability, or pin accuracy. No Forever client walkthrough has been performed.

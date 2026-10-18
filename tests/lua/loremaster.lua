@@ -19,7 +19,6 @@ for _, group in ipairs(accept.requiredQuests or {}) do
 end
 assert(found, 'Data Hoarders requires observed completion of Operation Recombobulation')
 assert(accept.route[1].mapID == 1455, 'Data Hoarders is accepted in Ironforge despite Dun Morogh ownership')
-print('Loremaster route checks passed')
 local snapshot = { faction = 'Alliance', raceID = 3, classID = 1, level = 10,
     quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
     professionsKnown = true, professions = {}, items = {} }
@@ -100,3 +99,28 @@ for _, goal in ipairs(tirisfal.goals) do
     local quest = ns.Engine:GetGoalQuestID(goal)
     assert(quest ~= 5901 and quest ~= 5902, 'Plaguelands work is not assigned to Tirisfal by pickup location')
 end
+local zephras = assert(ns.guides['loremaster-zephras-isle'], 'Zephras Isle has a separate Loremaster itinerary')
+assert(ns.guides['leveling-zephras-isle'].category == 'Leveling Quest Guides', 'The Skyborne starter remains available')
+local outdoors, outdoorsIndex = questAction(zephras, 'turnin', 96101)
+local alchemy, alchemyIndex = questAction(zephras, 'accept', 97963)
+assert(outdoorsIndex < alchemyIndex, 'Profession lessons follow The Great Outdoors')
+local herb, herbIndex = questAction(zephras, 'turnin', 97968)
+local _, valanaarIndex = ns.Engine:GetGoal(zephras, 'turnin-92579-to-valanaar')
+assert(valanaarIndex < herbIndex, 'The herbalism lesson finishes on the Valanaar visit')
+local engineering, engineeringIndex = questAction(zephras, 'accept', 98285)
+local _, hermitIndex = ns.Engine:GetGoal(zephras, 'turnin-the-strange-hermit')
+assert(hermitIndex < engineeringIndex, 'Engineering is offered on the existing Strange Hermit visit')
+assert(engineering.route[1].label == 'Strange Hermit', 'Wowhead provider evidence takes precedence over the Questie Raan provider')
+
+local skyborne = { faction = 'Alliance', raceID = 95, classID = 8, level = 6,
+    quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+    professionsKnown = true, professions = {}, items = {} }
+assert(ns.OrderedRoutes:ExcludedAction(alchemy, skyborne), 'Profession lessons pass characters without that profession')
+skyborne.professions[171] = 1
+assert(not ns.OrderedRoutes:ExcludedAction(alchemy, skyborne), 'Alchemists retain the profession lesson')
+assert(not ns.OrderedRoutes:Prerequisites(alchemy, skyborne), 'The lesson cannot start without an outdoors introduction')
+skyborne.completedQuests[96605] = true
+assert(ns.OrderedRoutes:Prerequisites(alchemy, skyborne), 'Any verified outdoors introduction can unlock the lesson')
+skyborne.completedQuests[96045] = true
+assert(ns.OrderedRoutes:ExcludedAction(alchemy, skyborne), 'An equivalent completed recipe quest bypasses the lesson')
+print('Loremaster route checks passed')

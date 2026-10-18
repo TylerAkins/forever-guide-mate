@@ -14482,6 +14482,10 @@
     "loremaster-tirisfal-glades": {
       "inventory": "docs/loremaster/tirisfal-glades.json",
       "clientWalkthrough": false
+    },
+    "loremaster-zephras-isle": {
+      "inventory": "docs/loremaster/zephras-isle.json",
+      "clientWalkthrough": false
     }
   }
 }

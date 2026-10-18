@@ -3046,6 +3046,20 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-accept-413-shimmer-stout",
+            kind = "note",
+            text = "Reach level 8 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7, 95 } } } },
+            complete = {
+                level = { min = 8 },
+            },
+            requiredLevel = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 413,
+        },
+        {
             id = "accept-415-loremaster",
             kind = "accept",
             text = "Accept Rejold's New Brew from Pilot Bellowfiz.",
@@ -3069,20 +3083,6 @@ ns:RegisterGuide({
             useClientPin = true,
             route = { { mapID = 1426, x = 0.302, y = 0.45799999999999996, label = "Rejold Barleybrew", offMapText = "Travel to Rejold Barleybrew." } },
             alternativeQuests = { 413 },
-        },
-        {
-            id = "level-before-accept-413-shimmer-stout",
-            kind = "note",
-            text = "Reach level 8 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7, 95 } } } },
-            complete = {
-                level = { min = 8 },
-            },
-            requiredLevel = 8,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 413,
         },
         {
             route = {

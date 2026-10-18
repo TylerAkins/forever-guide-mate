@@ -106132,6 +106132,16 @@
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-413-shimmer-stout"
+        ]
+      },
+      {
+        "boundary": [
+          null,
           1426,
           "Pilot Bellowfiz"
         ],
@@ -106147,16 +106157,6 @@
         ],
         "actions": [
           "turnin-415-loremaster"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-413-shimmer-stout"
         ]
       },
       {
@@ -124825,6 +124825,3812 @@
         ],
         "actions": [
           "turnin-5660-touch-of-weakness"
+        ]
+      }
+    ]
+  },
+  "loremaster-zephras-isle": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ailee Farheart"
+        ],
+        "actions": [
+          "accept-coming-of-age"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "turnin-coming-of-age",
+          "accept-harmony-in-balance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elatrell Featherlight"
+        ],
+        "actions": [
+          "accept-infestation-investigation"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Juvenile Vuldren"
+        ],
+        "actions": [
+          "objective-harmony-in-balance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Pesky Cirrusfly"
+        ],
+        "actions": [
+          "objective-infestation-investigation"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elatrell Featherlight"
+        ],
+        "actions": [
+          "turnin-infestation-investigation"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-the-cirrusfly-queen"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elatrell Featherlight"
+        ],
+        "actions": [
+          "accept-the-cirrusfly-queen"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Halaan Hawk-Eye"
+        ],
+        "actions": [
+          "accept-the-anchors-of-zephras"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "gossip-the-anchors-of-zephras"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Halaan Hawk-Eye"
+        ],
+        "actions": [
+          "turnin-the-anchors-of-zephras"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Myriaal Mistwake"
+        ],
+        "actions": [
+          "accept-falling-with-style"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "turnin-92461-harmony-in-balance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Thendal Grove watchtower ledge"
+        ],
+        "actions": [
+          "objective-falling-with-style"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "turnin-falling-with-style",
+          "accept-elemental-unrest"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-a-student-of-the-arcane"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "accept-a-student-of-the-arcane"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-at-home-in-the-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "accept-at-home-in-the-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-the-way-of-the-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "accept-the-way-of-the-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-embracing-the-elements"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "accept-embracing-the-elements"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-the-warriors-path"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "accept-the-warriors-path"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-a-student-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "accept-a-student-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Xyton Silverwind"
+        ],
+        "actions": [
+          "turnin-a-student-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92481-reviewed-mechanics"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Dorii Brightwhisper"
+        ],
+        "actions": [
+          "turnin-a-student-of-the-arcane"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92484-reviewed-mechanics"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Windshaper Boro"
+        ],
+        "actions": [
+          "turnin-embracing-the-elements"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Windshaper Boro"
+        ],
+        "actions": [
+          "accept-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Tai'ree Farsight"
+        ],
+        "actions": [
+          "turnin-the-way-of-the-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-the-gift-of-skysight"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ventaari Brightwish"
+        ],
+        "actions": [
+          "accept-the-gift-of-skysight"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Dalia the Collector"
+        ],
+        "actions": [
+          "accept-harvesting-windstones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-reading-the-ley-lines"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Falorne Fallwind"
+        ],
+        "actions": [
+          "accept-reading-the-ley-lines"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Raw Windstones around Thendal Grove"
+        ],
+        "actions": [
+          "objective-harvesting-windstones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Cirrusfly Queen"
+        ],
+        "actions": [
+          "objective-the-cirrusfly-queen"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Yala Windwatcher"
+        ],
+        "actions": [
+          "turnin-elemental-unrest",
+          "accept-agitators"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Roiling Winds"
+        ],
+        "actions": [
+          "objective-92465-authored-roiling-winds"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Convert"
+        ],
+        "actions": [
+          "objective-92465-authored-alaketh-convert"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Standing stones northeast of Thendal Village"
+        ],
+        "actions": [
+          "objective-reading-the-ley-lines"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elemental Convergence at the standing stones"
+        ],
+        "actions": [
+          "objective-the-gift-of-skysight"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Converts at the standing stones"
+        ],
+        "actions": [
+          "objective-call-of-earth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Yala Windwatcher"
+        ],
+        "actions": [
+          "turnin-agitators"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-return-to-rorian"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Yala Windwatcher"
+        ],
+        "actions": [
+          "accept-return-to-rorian"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Dalia the Collector"
+        ],
+        "actions": [
+          "turnin-harvesting-windstones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Falorne Fallwind"
+        ],
+        "actions": [
+          "turnin-reading-the-ley-lines"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Akeri Duskblade"
+        ],
+        "actions": [
+          "turnin-at-home-in-the-shadows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elatrell Featherlight"
+        ],
+        "actions": [
+          "turnin-the-cirrusfly-queen"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Blademaster Ren"
+        ],
+        "actions": [
+          "turnin-the-warriors-path"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ventaari Brightwish"
+        ],
+        "actions": [
+          "turnin-the-gift-of-skysight"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "turnin-return-to-rorian"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-aetheen-of-the-gales"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rorian the Dayseeker"
+        ],
+        "actions": [
+          "accept-aetheen-of-the-gales"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Aetheen of the Gales"
+        ],
+        "actions": [
+          "turnin-aetheen-of-the-gales",
+          "accept-foul-matriarch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Windshaper Boro"
+        ],
+        "actions": [
+          "turnin-call-of-earth",
+          "accept-call-of-earth-92467"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Minor Manifestation of Earth"
+        ],
+        "actions": [
+          "objective-92467-earth-sapta",
+          "turnin-call-of-earth-92467",
+          "accept-call-of-earth-92468"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Windshaper Boro"
+        ],
+        "actions": [
+          "turnin-call-of-earth-92468"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valreaa Valewind"
+        ],
+        "actions": [
+          "accept-aggressive-encroachment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Scrawny Ursera"
+        ],
+        "actions": [
+          "objective-aggressive-encroachment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ursera Scavenger"
+        ],
+        "actions": [
+          "objective-92470-authored-ursera-scavenger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Urs'anah"
+        ],
+        "actions": [
+          "objective-92470-authored-ursanah"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Aetheen of the Gales"
+        ],
+        "actions": [
+          "turnin-foul-matriarch",
+          "accept-the-next-step",
+          "accept-the-adventurer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valreaa Valewind"
+        ],
+        "actions": [
+          "turnin-aggressive-encroachment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Hanaa Nightwind"
+        ],
+        "actions": [
+          "accept-alaketh-thugs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Brute"
+        ],
+        "actions": [
+          "objective-92544-authored-alaketh-brute"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Neophyte"
+        ],
+        "actions": [
+          "objective-92544-authored-alaketh-neophyte"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Malduko Cloudcrush"
+        ],
+        "actions": [
+          "objective-92544-authored-malduko-cloudcrush"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Hanaa Nightwind"
+        ],
+        "actions": [
+          "turnin-alaketh-thugs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "turnin-the-next-step"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-welcome-to-shendar-village-93461"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "accept-welcome-to-shendar-village-93461"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-welcome-to-shendar-village"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "accept-welcome-to-shendar-village"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rathiril Sunlance"
+        ],
+        "actions": [
+          "objective-93461-authored-rathiril-sunlance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Coriella Calmbreeze"
+        ],
+        "actions": [
+          "objective-93461-authored-coriella-calmbreeze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Illaya Amberwind"
+        ],
+        "actions": [
+          "objective-92514-authored-illaya-amberwind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Coriella Calmbreeze"
+        ],
+        "actions": [
+          "objective-92514-authored-coriella-calmbreeze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "turnin-93461-welcome-to-shendar-village"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rathiril Sunlance"
+        ],
+        "actions": [
+          "accept-the-high-order"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92596-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rathiril Sunlance"
+        ],
+        "actions": [
+          "turnin-the-high-order",
+          "accept-a-magical-affront"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "turnin-92514-welcome-to-shendar-village"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Illaya Amberwind"
+        ],
+        "actions": [
+          "accept-the-windshapers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92595-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Illaya Amberwind"
+        ],
+        "actions": [
+          "turnin-the-windshapers",
+          "accept-meddlesome-mages"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "accept-the-criminal-element"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Teeri Wellwind"
+        ],
+        "actions": [
+          "accept-pilfered-windstones",
+          "accept-hippogryph-harrassment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Indari Sunseam"
+        ],
+        "actions": [
+          "accept-the-problem-with-prideclaws"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Taleen Shimmerthread"
+        ],
+        "actions": [
+          "accept-a-little-beauty"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Zerril Softbreeze"
+        ],
+        "actions": [
+          "accept-restocking-the-larders"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Small Egg"
+        ],
+        "actions": [
+          "objective-92553-authored-small-egg"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Strider Meat"
+        ],
+        "actions": [
+          "objective-92553-authored-strider-meat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Prideclaw"
+        ],
+        "actions": [
+          "objective-the-problem-with-prideclaws"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "High Order Apprentice"
+        ],
+        "actions": [
+          "objective-meddlesome-mages"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Highlands Bandit"
+        ],
+        "actions": [
+          "objective-92517-authored-highlands-bandit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Bennic"
+        ],
+        "actions": [
+          "objective-92517-authored-bennic"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Captured Bandit"
+        ],
+        "actions": [
+          "objective-pilfered-windstones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Illaya Amberwind"
+        ],
+        "actions": [
+          "turnin-meddlesome-mages"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Vulgara wanted notice in Shen'dar Village"
+        ],
+        "actions": [
+          "accept-wanted-vulgara-the-insatiable"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Raan Wildwind"
+        ],
+        "actions": [
+          "turnin-the-adventurer",
+          "accept-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-the-great-outdoors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Raan Wildwind"
+        ],
+        "actions": [
+          "turnin-the-great-outdoors",
+          "accept-camping-101-cooking",
+          "accept-98286-loremaster",
+          "accept-98284-loremaster",
+          "accept-97973-loremaster",
+          "accept-97972-loremaster",
+          "accept-97971-loremaster",
+          "accept-97970-loremaster",
+          "accept-97969-loremaster",
+          "accept-97968-loremaster",
+          "accept-97967-loremaster",
+          "accept-97965-loremaster",
+          "accept-97964-loremaster",
+          "accept-97963-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Windshaper Novice Seer"
+        ],
+        "actions": [
+          "objective-a-magical-affront"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Hippogryph Youth"
+        ],
+        "actions": [
+          "objective-92516-authored-hippogryph-youth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Hippogryph Protector"
+        ],
+        "actions": [
+          "objective-92516-authored-hippogryph-protector"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Hippogryph Matriarch"
+        ],
+        "actions": [
+          "objective-92516-authored-hippogryph-matriarch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Hippogryph nesting grounds"
+        ],
+        "actions": [
+          "objective-a-little-beauty"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Vulgara wanted notice in Shen'dar Village"
+        ],
+        "actions": [
+          "objective-wanted-vulgara-the-insatiable"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Zerril Softbreeze"
+        ],
+        "actions": [
+          "turnin-restocking-the-larders"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-96646-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Zerril Softbreeze"
+        ],
+        "actions": [
+          "turnin-camping-101-cooking"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-98286-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Nasalanna Windsinger"
+        ],
+        "actions": [
+          "turnin-98286-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-98284-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Nasalanna Windsinger"
+        ],
+        "actions": [
+          "turnin-98284-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97973-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Taleen Shimmerthread"
+        ],
+        "actions": [
+          "turnin-97973-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97972-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Taleen Shimmerthread"
+        ],
+        "actions": [
+          "turnin-97972-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97971-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Mendalass Tattermend"
+        ],
+        "actions": [
+          "turnin-97971-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97970-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Messana Crestwind"
+        ],
+        "actions": [
+          "turnin-97970-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97969-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Indari Sunseam"
+        ],
+        "actions": [
+          "turnin-97969-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97967-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Fenn Fairweather"
+        ],
+        "actions": [
+          "turnin-97967-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97965-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Naleeia Tattermend"
+        ],
+        "actions": [
+          "turnin-97965-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97964-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Aedi Thriceforged"
+        ],
+        "actions": [
+          "turnin-97964-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97963-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Nyassa Swiftdraught"
+        ],
+        "actions": [
+          "turnin-97963-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Taleen Shimmerthread"
+        ],
+        "actions": [
+          "turnin-a-little-beauty"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Indari Sunseam"
+        ],
+        "actions": [
+          "turnin-the-problem-with-prideclaws"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Teeri Wellwind"
+        ],
+        "actions": [
+          "turnin-hippogryph-harrassment",
+          "turnin-pilfered-windstones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Danarii Bellowveil"
+        ],
+        "actions": [
+          "turnin-wanted-vulgara-the-insatiable"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "turnin-the-criminal-element"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-infiltrating-the-cult"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "accept-infiltrating-the-cult"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Sania Silverstream"
+        ],
+        "actions": [
+          "turnin-infiltrating-the-cult",
+          "accept-falaath-village"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Rathiril Sunlance"
+        ],
+        "actions": [
+          "turnin-a-magical-affront"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Missionary Jasaan"
+        ],
+        "actions": [
+          "turnin-falaath-village",
+          "accept-among-the-faithful"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92528-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "turnin-92528-among-the-faithful",
+          "accept-havoc-in-the-highlands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Danarii Bellowveil"
+        ],
+        "actions": [
+          "accept-stolen-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Stormcaller"
+        ],
+        "actions": [
+          "objective-92550-authored-alaketh-stormcaller"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Living Lightning"
+        ],
+        "actions": [
+          "objective-92550-authored-living-lightning"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Cyclas"
+        ],
+        "actions": [
+          "objective-92550-authored-cyclas"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92551-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Danarii Bellowveil"
+        ],
+        "actions": [
+          "turnin-stolen-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "turnin-92550-havoc-in-the-highlands",
+          "accept-the-western-watch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-93926-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Peacekeeper Vaaniel"
+        ],
+        "actions": [
+          "turnin-the-western-watch",
+          "accept-93927-a-last-request"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Bloody Note"
+        ],
+        "actions": [
+          "objective-93927-authored-bloody-note"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Raani's Lucky Feather"
+        ],
+        "actions": [
+          "objective-93927-authored-raanis-lucky-feather"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Shadowsong Family Signet"
+        ],
+        "actions": [
+          "objective-93927-authored-shadowsong-family-signet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Skypriest Aanders"
+        ],
+        "actions": [
+          "objective-93927-authored-skypriest-aanders"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "turnin-93927-a-last-request"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-to-valanaar-92701"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "accept-to-valanaar-92701"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-to-valanaar"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "accept-to-valanaar"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-deliver-the-signet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Constable Aonda"
+        ],
+        "actions": [
+          "accept-deliver-the-signet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Nyalah Brightfire"
+        ],
+        "actions": [
+          "accept-crab-season"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Alvarion Windfield"
+        ],
+        "actions": [
+          "accept-blood-tithe"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-unnerving-silence"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Lotheluum Starbreeze"
+        ],
+        "actions": [
+          "accept-unnerving-silence"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ealaane Nimbuswalker"
+        ],
+        "actions": [
+          "accept-aid-for-the-refugees"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Talaanis Shadowsong"
+        ],
+        "actions": [
+          "turnin-deliver-the-signet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "turnin-92701-to-valanaar",
+          "turnin-92579-to-valanaar"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-97968-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Syriel Nightrain"
+        ],
+        "actions": [
+          "turnin-97968-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "accept-the-supreme-magister",
+          "accept-the-grand-skyseer",
+          "accept-bugged"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Gustberry Lowlands outside Valanaar"
+        ],
+        "actions": [
+          "objective-bugged"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "turnin-92699-the-supreme-magister"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-a-grand-adventure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "accept-a-grand-adventure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Dondallion Whisperwind"
+        ],
+        "actions": [
+          "accept-the-missing-scholar"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-unwelcome-visitors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Iaadaria Bitterwind"
+        ],
+        "actions": [
+          "accept-unwelcome-visitors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92709-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "turnin-a-grand-adventure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "turnin-92700-the-grand-skyseer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-a-grand-adventure-92708"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "accept-a-grand-adventure-92708",
+          "accept-the-broken-construct"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Endaria Mistgaze"
+        ],
+        "actions": [
+          "accept-unwelcome-spirits"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Wind Hollow"
+        ],
+        "actions": [
+          "objective-unwelcome-spirits"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Endaria Mistgaze"
+        ],
+        "actions": [
+          "turnin-unwelcome-spirits"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92708-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "turnin-a-grand-adventure-92708"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Riaani Nightwind"
+        ],
+        "actions": [
+          "turnin-the-broken-construct",
+          "accept-the-broken-construct-93737",
+          "objective-93737-authored-riaani-nightwind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Crystallized Lightning"
+        ],
+        "actions": [
+          "objective-93737-authored-crystallized-lightning"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Enchanted Gyrozephyr"
+        ],
+        "actions": [
+          "objective-93737-authored-enchanted-gyrozephyr"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Air Construct Core"
+        ],
+        "actions": [
+          "objective-93737-authored-air-construct-core"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Riaani Nightwind"
+        ],
+        "actions": [
+          "turnin-the-broken-construct-93737"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Alvarion Windfield"
+        ],
+        "actions": [
+          "objective-92679-authored-alvarion-windfield"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Aamelia Windfield"
+        ],
+        "actions": [
+          "objective-92679-authored-aamelia-windfield",
+          "turnin-92679-blood-tithe",
+          "accept-make-yourself-useful",
+          "accept-ornery-ornery-galestriders",
+          "accept-flutterfly-dust"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ornery Galestrider"
+        ],
+        "actions": [
+          "objective-ornery-ornery-galestriders"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ripe Stormapple"
+        ],
+        "actions": [
+          "objective-92682-authored-ripe-stormapple"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Hungry Bandit"
+        ],
+        "actions": [
+          "objective-92682-authored-hungry-bandit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Malfunctioning Cyclone Construct"
+        ],
+        "actions": [
+          "accept-what-is-my-purpose"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Aamelia Windfield"
+        ],
+        "actions": [
+          "turnin-92682-make-yourself-useful",
+          "turnin-92684-ornery-ornery-galestriders",
+          "turnin-what-is-my-purpose"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92683-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Aamelia Windfield"
+        ],
+        "actions": [
+          "turnin-92683-flutterfly-dust",
+          "accept-the-hills-have-eyes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Bandit Highwayman"
+        ],
+        "actions": [
+          "objective-the-hills-have-eyes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Aamelia Windfield"
+        ],
+        "actions": [
+          "turnin-92685-the-hills-have-eyes",
+          "accept-standing-our-ground",
+          "objective-92693-authored-aamelia-windfield"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ferauu the Bludgeon"
+        ],
+        "actions": [
+          "objective-92693-authored-ferauu-the-bludgeon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Aamelia Windfield"
+        ],
+        "actions": [
+          "turnin-standing-our-ground",
+          "accept-deliver-the-news"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Alvarion Windfield"
+        ],
+        "actions": [
+          "turnin-deliver-the-news"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Sessaria Skystride"
+        ],
+        "actions": [
+          "accept-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Olariaan Swiftburn"
+        ],
+        "actions": [
+          "turnin-call-of-fire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-speak-with-belann"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Anathamaas Aetherwind"
+        ],
+        "actions": [
+          "accept-speak-with-belann"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Belann Windwood"
+        ],
+        "actions": [
+          "turnin-speak-with-belann",
+          "accept-boughs-in-the-wind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Fillion Flamebreeze's trail"
+        ],
+        "actions": [
+          "turnin-the-missing-scholar"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Fillion Flamebreeze"
+        ],
+        "actions": [
+          "accept-the-missing-scholar-92849",
+          "objective-the-missing-scholar-92849"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Carry Fillion Flamebreeze to safety"
+        ],
+        "actions": [
+          "objective-the-missing-scholar-92849-carry"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Fillion Flamebreeze"
+        ],
+        "actions": [
+          "turnin-the-missing-scholar-92849",
+          "accept-the-missing-scholar-92850"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Shriekling Matriarch"
+        ],
+        "actions": [
+          "objective-the-missing-scholar-92850"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Dondallion Whisperwind"
+        ],
+        "actions": [
+          "turnin-the-missing-scholar-92850"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-99260-fillions-mission"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Fillion Flamebreeze"
+        ],
+        "actions": [
+          "accept-99260-fillions-mission"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "turnin-99260-fillions-mission",
+          "accept-catching-wind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Windsong Crawler"
+        ],
+        "actions": [
+          "objective-crab-season"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Index Esoteria"
+        ],
+        "actions": [
+          "objective-catching-wind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Falaath Village, then the wind shrine just south"
+        ],
+        "actions": [
+          "objective-boughs-in-the-wind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Nyalah Brightfire"
+        ],
+        "actions": [
+          "turnin-crab-season"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Belann Windwood"
+        ],
+        "actions": [
+          "turnin-boughs-in-the-wind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "turnin-92840-catching-wind",
+          "accept-avenged-tenfold"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "turnin-bugged"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "accept-in-service-of-zephras"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "turnin-92860-in-service-of-zephras"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Riaani Nightwind"
+        ],
+        "actions": [
+          "accept-the-broken-construct-93738"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "turnin-the-broken-construct-93738",
+          "accept-a-firm-response"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Belathaan Brightwish"
+        ],
+        "actions": [
+          "objective-a-firm-response"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "turnin-93746-a-firm-response",
+          "accept-in-service-of-zephras-92871"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "turnin-92871-in-service-of-zephras",
+          "accept-tower-defense"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh cultists in the Gustberry Lowlands"
+        ],
+        "actions": [
+          "objective-avenged-tenfold"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Yorana Windyreed"
+        ],
+        "actions": [
+          "turnin-tower-defense",
+          "accept-disrupting-logistics",
+          "accept-breaking-the-breaker"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Healer"
+        ],
+        "actions": [
+          "objective-92642-authored-alaketh-healer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Brawler"
+        ],
+        "actions": [
+          "objective-92642-authored-alaketh-brawler"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Commander Belguilos"
+        ],
+        "actions": [
+          "objective-breaking-the-breaker"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Yorana Windyreed"
+        ],
+        "actions": [
+          "turnin-breaking-the-breaker",
+          "turnin-disrupting-logistics",
+          "accept-return-to-valanaar"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "turnin-return-to-valanaar",
+          "accept-the-high-elders-request"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Talaanis Shadowsong"
+        ],
+        "actions": [
+          "turnin-the-high-elders-request",
+          "accept-the-turncoat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "turnin-avenged-tenfold"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-92643-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Dead Cultist"
+        ],
+        "actions": [
+          "turnin-the-turncoat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Fendaal Windstone"
+        ],
+        "actions": [
+          "accept-alaketh-assassins"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Assassin"
+        ],
+        "actions": [
+          "objective-alaketh-assassins"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Dead Cultist"
+        ],
+        "actions": [
+          "accept-unfortunate-news"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Fendaal Windstone"
+        ],
+        "actions": [
+          "turnin-alaketh-assassins"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Talaanis Shadowsong"
+        ],
+        "actions": [
+          "turnin-unfortunate-news",
+          "accept-the-cults-true-plans"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-94568-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Talaanis Shadowsong"
+        ],
+        "actions": [
+          "turnin-the-cults-true-plans"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-the-skybreaker-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Seena Skybreaker"
+        ],
+        "actions": [
+          "accept-the-skybreaker-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Zaal Stormshield"
+        ],
+        "actions": [
+          "objective-the-skybreaker-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Seena Skybreaker"
+        ],
+        "actions": [
+          "turnin-the-skybreaker-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Shadowgale Shriekling"
+        ],
+        "actions": [
+          "objective-unwelcome-visitors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Strange Hermit"
+        ],
+        "actions": [
+          "accept-the-strange-hermit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-93159-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Strange Hermit"
+        ],
+        "actions": [
+          "turnin-the-strange-hermit",
+          "accept-98285-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-98285-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Strange Hermit"
+        ],
+        "actions": [
+          "turnin-98285-loremaster",
+          "accept-the-forests-bounty",
+          "accept-free-the-hollows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elegael Thornpaw"
+        ],
+        "actions": [
+          "turnin-94484-unnerving-silence",
+          "accept-tears-of-the-lady",
+          "accept-feathers-for-binding",
+          "accept-unwanted-and-unworthy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Lady's Tear Moss around Elegael Thornpaw"
+        ],
+        "actions": [
+          "objective-tears-of-the-lady"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Stormchaser"
+        ],
+        "actions": [
+          "objective-unwanted-and-unworthy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Vayn Moongaze"
+        ],
+        "actions": [
+          "accept-mercy-falls-on-deaf-ears"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Zaal Stormshield"
+        ],
+        "actions": [
+          "objective-mercy-falls-on-deaf-ears"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Vayn Moongaze"
+        ],
+        "actions": [
+          "turnin-mercy-falls-on-deaf-ears"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Shadowgale Shriekling"
+        ],
+        "actions": [
+          "objective-feathers-for-binding"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elegael Thornpaw"
+        ],
+        "actions": [
+          "turnin-tears-of-the-lady",
+          "turnin-94487-unwanted-and-unworthy",
+          "turnin-94486-feathers-for-binding",
+          "accept-the-ties-that-bind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Commander Haalien"
+        ],
+        "actions": [
+          "objective-the-ties-that-bind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elegael Thornpaw"
+        ],
+        "actions": [
+          "turnin-the-ties-that-bind"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Commander Haalien"
+        ],
+        "actions": [
+          "loot-starter-before-accept-ripped-missive"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-ripped-missive",
+          "accept-ripped-missive"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elegael Thornpaw"
+        ],
+        "actions": [
+          "turnin-94490-ripped-missive"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Wind Hollow"
+        ],
+        "actions": [
+          "objective-free-the-hollows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ruins of Ban'aethal"
+        ],
+        "actions": [
+          "objective-aid-for-the-refugees"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-93160-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Strange Hermit"
+        ],
+        "actions": [
+          "turnin-the-forests-bounty",
+          "turnin-free-the-hollows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ealaane Nimbuswalker"
+        ],
+        "actions": [
+          "turnin-aid-for-the-refugees",
+          "accept-the-fate-of-a-loved-one"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Resaan Nimbuswalker"
+        ],
+        "actions": [
+          "objective-the-fate-of-a-loved-one"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ealaane Nimbuswalker"
+        ],
+        "actions": [
+          "turnin-the-fate-of-a-loved-one"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Iaadaria Bitterwind"
+        ],
+        "actions": [
+          "turnin-unwelcome-visitors"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elegael Thornpaw"
+        ],
+        "actions": [
+          "accept-a-sacrifice-in-vain",
+          "turnin-a-sacrifice-in-vain",
+          "accept-the-wounds-of-betrayal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "druid"
+        ],
+        "actions": [
+          "objective-94489-authored-druid"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Jorel Windsinger"
+        ],
+        "actions": [
+          "objective-94489-authored-jorel-windsinger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elegael Thornpaw"
+        ],
+        "actions": [
+          "turnin-the-wounds-of-betrayal",
+          "accept-the-fate-of-the-den"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Lotheluum Starbreeze"
+        ],
+        "actions": [
+          "turnin-the-fate-of-the-den"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-the-great-ursera-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Lotheluum Starbreeze"
+        ],
+        "actions": [
+          "accept-the-great-ursera-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Urs'endris"
+        ],
+        "actions": [
+          "turnin-the-great-ursera-spirit",
+          "accept-strength-and-mercy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ur'endra"
+        ],
+        "actions": [
+          "objective-strength-and-mercy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Urs'endris"
+        ],
+        "actions": [
+          "turnin-strength-and-mercy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elayaa Easewind"
+        ],
+        "actions": [
+          "accept-taming-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Quel'ana Quickgale"
+        ],
+        "actions": [
+          "turnin-taming-the-beast",
+          "accept-taming-the-beast-94978"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-94978-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Quel'ana Quickgale"
+        ],
+        "actions": [
+          "turnin-taming-the-beast-94978",
+          "accept-taming-the-beast-94979"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-94979-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Quel'ana Quickgale"
+        ],
+        "actions": [
+          "turnin-taming-the-beast-94979",
+          "accept-taming-the-beast-94013"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-94013-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Quel'ana Quickgale"
+        ],
+        "actions": [
+          "turnin-taming-the-beast-94013",
+          "accept-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Quel'dora Quickgale"
+        ],
+        "actions": [
+          "turnin-training-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Olariaan Swiftburn"
+        ],
+        "actions": [
+          "accept-call-of-fire-97244"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Skypriest Faladiel"
+        ],
+        "actions": [
+          "objective-call-of-fire-97244"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Olariaan Swiftburn"
+        ],
+        "actions": [
+          "turnin-call-of-fire-97244",
+          "accept-call-of-fire-97245"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Kuramaa"
+        ],
+        "actions": [
+          "objective-call-of-fire-97245"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Olariaan Swiftburn"
+        ],
+        "actions": [
+          "turnin-call-of-fire-97245",
+          "accept-call-of-fire-97257"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Brazier of Offering"
+        ],
+        "actions": [
+          "objective-call-of-fire-97257-ritual"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Brazier of Eternal Flame"
+        ],
+        "actions": [
+          "objective-call-of-fire-97257-deliver-flame"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Sessaria Skystride"
+        ],
+        "actions": [
+          "turnin-call-of-fire-97257"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "accept-blood-for-blood"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh cultists in the Gustberry Lowlands"
+        ],
+        "actions": [
+          "objective-blood-for-blood"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "turnin-blood-for-blood"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Talaanis Shadowsong"
+        ],
+        "actions": [
+          "accept-desperate-times"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "objective-92640-authored-valennia-stormfist"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "objective-92640-authored-ayessa-dawnsinger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "objective-92640-authored-elaadrin-evengale"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "turnin-desperate-times",
+          "accept-prepare-for-battle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-93065-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "turnin-prepare-for-battle",
+          "accept-making-our-move"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Guardian"
+        ],
+        "actions": [
+          "objective-92947-authored-alaketh-guardian"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Spiritcaller"
+        ],
+        "actions": [
+          "objective-92947-authored-alaketh-spiritcaller"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Al'Aketh Blademaster"
+        ],
+        "actions": [
+          "objective-92947-authored-alaketh-blademaster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Hyusaa Quickbreeze"
+        ],
+        "actions": [
+          "objective-92947-authored-hyusaa-quickbreeze",
+          "turnin-making-our-move",
+          "accept-the-inner-sanctum"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "turnin-the-inner-sanctum",
+          "accept-confront-lorthuna-93835"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "turnin-confront-lorthuna-93835",
+          "accept-the-fate-of-zephras-94369"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-94369-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Talaanis Shadowsong"
+        ],
+        "actions": [
+          "turnin-the-fate-of-zephras-94369",
+          "accept-what-comes-next"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Elaadrin Evengale"
+        ],
+        "actions": [
+          "turnin-what-comes-next",
+          "accept-the-magical-city-of-dalaran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Danaaris Stargale in Dalaran"
+        ],
+        "actions": [
+          "turnin-the-magical-city-of-dalaran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Valennia Stormfist"
+        ],
+        "actions": [
+          "accept-confront-lorthuna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "turnin-confront-lorthuna",
+          "accept-the-fate-of-zephras"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-93836-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Talaanis Shadowsong"
+        ],
+        "actions": [
+          "turnin-the-fate-of-zephras",
+          "accept-what-comes-next-93090"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
+          "Ayessa Dawnsinger"
+        ],
+        "actions": [
+          "turnin-what-comes-next-93090",
+          "accept-the-earthen-ring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Alana Stormwalker in Mulgore"
+        ],
+        "actions": [
+          "turnin-the-earthen-ring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-welcome-to-azeroth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1412,
+          "Alana Stormwalker in Mulgore"
+        ],
+        "actions": [
+          "accept-welcome-to-azeroth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Thrall in the Valley of Wisdom"
+        ],
+        "actions": [
+          "turnin-welcome-to-azeroth",
+          "accept-exploring-the-horde"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Nazgrel in Grommash Hold"
+        ],
+        "actions": [
+          "objective-exploring-the-horde"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Vol'jin in Grommash Hold"
+        ],
+        "actions": [
+          "objective-exploring-the-horde-voljin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Cairne Bloodhoof on the High Rise"
+        ],
+        "actions": [
+          "objective-exploring-the-horde-cairne"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Lady Sylvanas Windrunner in the Royal Quarter"
+        ],
+        "actions": [
+          "objective-exploring-the-horde-sylvanas",
+          "turnin-exploring-the-horde"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-welcome-to-azeroth-94947"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Danaaris Stargale in Dalaran"
+        ],
+        "actions": [
+          "accept-welcome-to-azeroth-94947"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-child-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Archmage Ansirem Runeweaver in Dalaran"
+        ],
+        "actions": [
+          "accept-child-of-nature"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Skyborne Portal in Dalaran"
+        ],
+        "actions": [
+          "objective-welcome-to-azeroth-94947"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Highlord Bolvar Fordragon"
+        ],
+        "actions": [
+          "turnin-welcome-to-azeroth-94947",
+          "accept-exploring-the-alliance",
+          "accept-journey-to-sentinel-hill"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Sheldras Moontree"
+        ],
+        "actions": [
+          "turnin-child-of-nature",
+          "accept-moonglade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Randal Emerson"
+        ],
+        "actions": [
+          "gossip-exploring-the-alliance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "High Tinker Mekkatorque"
+        ],
+        "actions": [
+          "objective-exploring-the-alliance-mekkatorque"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "King Magni Bronzebeard"
+        ],
+        "actions": [
+          "objective-exploring-the-alliance-magni"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Tyrande Whisperwind"
+        ],
+        "actions": [
+          "objective-exploring-the-alliance-tyrande"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Highlord Bolvar Fordragon"
+        ],
+        "actions": [
+          "turnin-exploring-the-alliance"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1450,
+          "Dendrite Starblaze"
+        ],
+        "actions": [
+          "turnin-moonglade"
         ]
       }
     ]

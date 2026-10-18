@@ -1112,7 +1112,9 @@ function M.PrerequisiteTurninViolations(guides, catalog)
         if guide and not M.FocusedPickupCategory(guide.category) and not guide.casualSpine then
             local turnins = {}
             for _, goal in ipairs(guide.goals or {}) do
-                local questID = M.TurninQuestID(goal.id)
+                local questID = goal.kind == "turnin" and goal.complete and goal.complete.quest
+                    and goal.complete.quest.state == "completed" and goal.complete.quest.id
+                    or M.TurninQuestID(goal.id)
                 if questID then
                     turnins[questID] = true
                 end
@@ -1122,10 +1124,16 @@ function M.PrerequisiteTurninViolations(guides, catalog)
                     local acceptQuest = goal.id and tonumber(tostring(goal.id):match("^accept%-(%d+)%-"))
                     local rules = acceptQuest and catalog and catalog[acceptQuest]
                     for _, rule in ipairs(rules or {}) do
+                        local anySatisfied = false
+                        if rule.mode == "any" then
+                            for _, need in ipairs(rule.quests or {}) do
+                                if turnins[need] then anySatisfied = true end
+                            end
+                        end
                         for _, need in ipairs(rule.quests or {}) do
                             local skipped = M.PrerequisiteTurninExceptions[acceptQuest]
                                 and M.PrerequisiteTurninExceptions[acceptQuest][need]
-                            if not skipped and not turnins[need] then
+                            if not skipped and not turnins[need] and not anySatisfied then
                                 issues[#issues + 1] = {
                                     guideID = guideID,
                                     goalID = goal.id,

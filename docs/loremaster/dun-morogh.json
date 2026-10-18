@@ -25,6 +25,7 @@
     "foreverclient"
   ],
   "spine": "leveling-era-dun-morogh",
+  "additionalSpines": [],
   "spineActions": [
     "accept-179-dwarven-outfitters",
     "objective-179-1-ragged-young-wolf",
@@ -401,7 +402,7 @@
   ],
   "placements": [
     {
-      "anchor": "turnin-315-the-perfect-stout",
+      "anchor": "level-before-accept-413-shimmer-stout",
       "position": "after",
       "actions": [
         "accept-415-loremaster",

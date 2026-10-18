@@ -91,6 +91,7 @@ REQUIRED_FILES = (
     "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
     "Guides/Leveling/zephras-isle.lua",
     "Guides/Loremaster/DunMorogh.lua",
+    "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",
     "Guides/Loremaster/Durotar.lua",
@@ -354,6 +355,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
                 "Guides/Leveling/zephras-isle.lua",
                 "Guides/Loremaster/DunMorogh.lua",
+    "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",
     "Guides/Loremaster/Durotar.lua",
@@ -474,7 +476,7 @@ class ContractTests(unittest.TestCase):
 
     def test_loremaster_guides_have_ordered_zone_itineraries(self) -> None:
         files = sorted((ROOT / "Guides/Loremaster").glob("*.lua"))
-        self.assertEqual([path.name for path in files], ["DunMorogh.lua", "Durotar.lua", "ElwynnForest.lua", "Mulgore.lua", "Teldrassil.lua", "TirisfalGlades.lua"])
+        self.assertEqual([path.name for path in files], ["DunMorogh.lua", "Durotar.lua", "ElwynnForest.lua", "Mulgore.lua", "Teldrassil.lua", "TirisfalGlades.lua", "ZephrasIsle.lua"])
         for path in files:
             guide = path.read_text(encoding="utf-8")
             self.assertIn('category = "Loremaster Guides"', guide)

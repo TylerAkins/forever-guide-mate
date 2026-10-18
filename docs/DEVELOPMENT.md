@@ -36,6 +36,7 @@ lua5.1 tests/lua/ordered.lua
 lua5.1 tests/lua/catalog.lua
 lua5.1 tests/lua/journeys.lua
 FGM_DUNGEONS=1 lua5.1 tests/lua/journeys.lua
+FGM_LOREMASTER=1 lua5.1 tests/lua/journeys.lua
 lua5.1 tests/lua/ui.lua
 lua5.1 tests/lua/lint.lua
 lua5.1 tests/lua/audit_accept_chains.lua
