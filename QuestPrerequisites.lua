@@ -1173,3 +1173,6 @@ ns:RegisterQuestPrerequisite({ quest = 473, mode = "any", quests = { 455 } })
 ns:RegisterQuestPrerequisite({ quest = 474, mode = "any", quests = { 465 } })
 ns:RegisterQuestPrerequisite({ quest = 98072, mode = "any", quests = { 471 } })
 ns:RegisterQuestPrerequisite({ quest = 98297, mode = "any", quests = { 98291 } })
+
+-- Alterac Mountains chain edge from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 504, mode = "any", quests = { 500 } })

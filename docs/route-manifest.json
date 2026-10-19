@@ -146051,5 +146051,497 @@
         ]
       }
     ]
+  },
+  "loremaster-alterac-mountains": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1424,
+          "Magistrate Henry Maleb"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-505-syndicate-assassins"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1416,
+          "Foreboding Plans"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-510-foreboding-plans"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1416,
+          "Encrypted Letter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-511-encrypted-letter"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1416,
+          "Syndicate Thief"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-505-2-syndicate-thief"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1416,
+          "Syndicate Footpad"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-505-1-syndicate-footpad"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1424,
+          "Magistrate Henry Maleb"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-510-foreboding-plans",
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-505-syndicate-assassins"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1424,
+          "Loremaster Dibbs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-511-encrypted-letter",
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-514-letter-to-stormpike"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1455,
+          "Prospector Stormpike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-514-letter-to-stormpike"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1455,
+          "Prospector Stormpike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-525-further-mysteries"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-arathi-highlands-and-alterac-mountains"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1424,
+          "Marshal Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-500-crushridge-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1424,
+          "Magistrate Henry Maleb"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-525-further-mysteries",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-537-dark-council",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-512-noble-deaths"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1416,
+          "Nagaz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-537-2-nagaz"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-551-the-ensorcelled-parchment"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1416,
+          "Argus Shadow Mage"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-537-1-argus-shadow-mage"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1416,
+          "Alterac Signet Ring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-512-1-alterac-signet-ring"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1416,
+          "Crushridge Ogre"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-500-1-crushridge-ogre"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1424,
+          "Marshal Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-500-crushridge-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1424,
+          "Magistrate Henry Maleb"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-537-dark-council",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-512-noble-deaths"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1424,
+          "Loremaster Dibbs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-551-the-ensorcelled-parchment"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1424,
+          "Loremaster Dibbs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-554-stormpike-s-deciphering"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1455,
+          "Prospector Stormpike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-554-stormpike-s-deciphering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-504-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Marshal Redpath"
+        ],
+        "actions": [
+          "alliance-extra-504-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Crushridge Warmonger"
+        ],
+        "actions": [
+          "alliance-extra-504-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Marshal Redpath"
+        ],
+        "actions": [
+          "alliance-extra-504-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-92432-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Emissary Jacques"
+        ],
+        "actions": [
+          "alliance-extra-92432-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-92432-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1421,
+          "Image of Archmage Modera"
+        ],
+        "actions": [
+          "alliance-extra-92432-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-hillsbrad-foothills-part-2",
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-level-before-accept-544-prison-break-in"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1424,
+          "Magus Wordeen Voidglare"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-544-prison-break-in"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1416,
+          "Ricter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-2-ricter"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1416,
+          "Alina"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-3-alina"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1416,
+          "Dermot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-1-dermot"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1416,
+          "Kegan Darkmar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-4-kegan-darkmar"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1424,
+          "Magus Wordeen Voidglare"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-544-prison-break-in"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-alterac-mountains-and-arathi-highlands",
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-545-dalaran-patrols"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1424,
+          "Magus Wordeen Voidglare"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1416,
+          "Dalaran Summoner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-1-dalaran-summoner"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1416,
+          "Elemental Slave"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-2-elemental-slave"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1424,
+          "Magus Wordeen Voidglare"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-535-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Henchman Valik"
+        ],
+        "actions": [
+          "horde-extra-535-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Drunken Footpad"
+        ],
+        "actions": [
+          "horde-extra-535-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Henchman Valik"
+        ],
+        "actions": [
+          "horde-extra-535-turnin"
+        ]
+      }
+    ]
   }
 }
