@@ -155622,5 +155622,1161 @@
         ]
       }
     ]
+  },
+  "loremaster-burning-steppes": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-searing-gorge"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-3441-divine-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3441-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3441-divine-retribution",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3442-the-flawless-flame"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1427,
+          "Heart of Flame"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3442-1-heart-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1427,
+          "Golem Oil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3442-2-golem-oil"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3442-the-flawless-flame",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3443-forging-the-shaft"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1427,
+          "Thorium Plated Dagger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3443-1-thorium-plated-dagger"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3443-forging-the-shaft",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3452-the-flame-s-casing"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1427,
+          "Twilight Dark Shaman"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3452-1-twilight-dark-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3452-the-flame-s-casing",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3453-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3453-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3453-the-torch-of-retribution",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3454-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1427,
+          "The Torch of Retribution"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3454-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-3462-squire-maltrake"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1427,
+          "Squire Maltrake"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3462-squire-maltrake",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3463-set-them-ablaze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Northern-Tower"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3463-4-authored-Northern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Western-Tower"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3463-1-authored-Western-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Southern-Tower"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3463-2-authored-Southern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Eastern-Tower"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3463-3-authored-Eastern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1427,
+          "Squire Maltrake"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3463-set-them-ablaze"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1427,
+          "Trinkets.."
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-3481-trinkets"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1427,
+          "Trinkets.."
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3481-trinkets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-open-objective-4022-1-hoard-of-the-black-dragonflight",
+          "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1428,
+          "Oralius"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-3823-extinguish-the-firegut"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1428,
+          "Firegut Ogre"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-3823-2-firegut-ogre"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1428,
+          "Firegut Brute"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-3823-3-firegut-brute"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1428,
+          "Firegut Ogre Mage"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-3823-1-firegut-ogre-mage"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1428,
+          "Oralius"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3823-extinguish-the-firegut"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-burning-steppes",
+          "alliance-leveling-era-alliance-burning-steppes-level-before-accept-3702-the-smoldering-ruins-of-thaurissan"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1455,
+          "Royal Historian Archesonus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-3702-the-smoldering-ruins-of-thaurissan"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-3702-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1455,
+          "Royal Historian Archesonus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-3702-the-smoldering-ruins-of-thaurissan",
+          "alliance-leveling-era-alliance-burning-steppes-accept-3701-the-smoldering-ruins-of-thaurissan"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1428,
+          "Oralius"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-3824-gor-tesh-the-brute-lord",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4283-fifty-yep"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1428,
+          "Helendis Riverhorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-4182-dragonkin-menace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-level-before-accept-4726-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1428,
+          "Tinkee Steamboil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-4726-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1428,
+          "Maxwort Uberglint"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-4296-tablet-of-the-seven"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-level-before-accept-4022-a-taste-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1428,
+          "Cyrus Therepentous"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-4022-a-taste-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1428,
+          "Frenzied Black Drake"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4022-1-frenzied-black-drake"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1428,
+          "Cyrus Therepentous"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4022-a-taste-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1428,
+          "Broodling Essence"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4726-1-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1428,
+          "Black Drake"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4182-3-black-drake"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1428,
+          "Black Wyrmkin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4182-4-black-wyrmkin"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1428,
+          "Black Dragonspawn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4182-2-black-dragonspawn"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1428,
+          "Black Broodling"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4182-1-black-broodling"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1428,
+          "Tablet Transcript"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4296-1-tablet-transcript"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1428,
+          "Gor'tesh"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-3824-1-gor-tesh"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1428,
+          "Blackrock Medallion"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4283-1-blackrock-medallion"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1428,
+          "Oralius"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-3824-gor-tesh-the-brute-lord",
+          "alliance-leveling-era-alliance-burning-steppes-accept-3825-ogre-head-on-a-stick-party",
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4283-fifty-yep"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1428,
+          "Helendis Riverhorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4182-dragonkin-menace",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4183-the-true-masters"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4183-the-true-masters",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4184-the-true-masters"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1453,
+          "Highlord Bolvar Fordragon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4184-the-true-masters",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4185-the-true-masters"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4185-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1453,
+          "Highlord Bolvar Fordragon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4185-the-true-masters",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4186-the-true-masters"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4186-the-true-masters",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4223-the-true-masters"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1428,
+          "Marshal Maxwell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4223-the-true-masters",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4224-the-true-masters"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1428,
+          "Tinkee Steamboil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4726-broodling-essence",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1428,
+          "Maxwort Uberglint"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4296-tablet-of-the-seven"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-3825-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1428,
+          "Oralius"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-3825-ogre-head-on-a-stick-party"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4224-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1428,
+          "Marshal Maxwell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4224-the-true-masters"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-western-and-eastern-plaguelands",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-level-before-objective-3701-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-3701-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1455,
+          "Royal Historian Archesonus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-3701-the-smoldering-ruins-of-thaurissan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring",
+          "alliance-leveling-era-alliance-winterspring-level-before-turnin-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1452,
+          "Felnok Steelspring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-searing-gorge",
+          "horde-leveling-era-horde-searing-gorge-level-before-accept-3821-dreadmaul-rock"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1418,
+          "Thal'trak Proudtusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-3821-dreadmaul-rock"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-3441-divine-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3441-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3441-divine-retribution",
+          "horde-leveling-era-horde-searing-gorge-accept-3442-the-flawless-flame"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1427,
+          "Heart of Flame"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3442-1-heart-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1427,
+          "Golem Oil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3442-2-golem-oil"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3442-the-flawless-flame",
+          "horde-leveling-era-horde-searing-gorge-accept-3443-forging-the-shaft"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1427,
+          "Thorium Plated Dagger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3443-1-thorium-plated-dagger"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3443-forging-the-shaft",
+          "horde-leveling-era-horde-searing-gorge-accept-3452-the-flame-s-casing"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1427,
+          "Twilight Dark Shaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3452-1-twilight-dark-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3452-the-flame-s-casing",
+          "horde-leveling-era-horde-searing-gorge-accept-3453-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3453-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3453-the-torch-of-retribution",
+          "horde-leveling-era-horde-searing-gorge-accept-3454-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1427,
+          "The Torch of Retribution"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3454-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-3462-squire-maltrake"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1427,
+          "Squire Maltrake"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3462-squire-maltrake",
+          "horde-leveling-era-horde-searing-gorge-accept-3463-set-them-ablaze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Northern-Tower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3463-4-authored-Northern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Western-Tower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3463-1-authored-Western-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Southern-Tower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3463-2-authored-Southern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Eastern-Tower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3463-3-authored-Eastern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1427,
+          "Squire Maltrake"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3463-set-them-ablaze"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1427,
+          "Trinkets.."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-3481-trinkets"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1427,
+          "Trinkets.."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3481-trinkets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-open-objective-4022-1-hoard-of-the-black-dragonflight",
+          "visit-entry-leveling-era-horde-burning-steppes-and-azshara",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-level-before-accept-4726-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1428,
+          "Tinkee Steamboil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-4726-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1428,
+          "Maxwort Uberglint"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-4296-tablet-of-the-seven"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1428,
+          "Tablet Transcript"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-4296-1-tablet-transcript"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-level-before-turnin-3821-dreadmaul-rock"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1428,
+          "Sha'ni Proudtusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-3821-dreadmaul-rock"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-level-before-accept-4022-a-taste-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1428,
+          "Cyrus Therepentous"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-4022-a-taste-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1428,
+          "Black Dragonflight Molt"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-4022-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1428,
+          "Cyrus Therepentous"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-4022-a-taste-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1428,
+          "Broodling Essence"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-4726-1-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1428,
+          "Tinkee Steamboil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-4726-broodling-essence",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1428,
+          "Maxwort Uberglint"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-4296-tablet-of-the-seven"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1452,
+          "Felnok Steelspring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-3822-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1428,
+          "Sha'ni Proudtusk"
+        ],
+        "actions": [
+          "horde-extra-3822-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1428,
+          "Krom'Grul"
+        ],
+        "actions": [
+          "horde-extra-3822-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Thal'trak Proudtusk"
+        ],
+        "actions": [
+          "horde-extra-3822-turnin"
+        ]
+      }
+    ]
   }
 }

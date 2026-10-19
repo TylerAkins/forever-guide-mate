@@ -3,6 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.6.4 - 2026-10-18
+- Add Burning Steppes Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Searing Gorge Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Blasted Lands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Swamp of Sorrows Loremaster with recorded Forever evidence and advisory legacy ordering.

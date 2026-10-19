@@ -1201,3 +1201,6 @@ ns:RegisterQuestPrerequisite({ quest = 591, mode = "any", quests = { 589 } })
 -- Badlands chain edges from the frozen source observations.
 ns:RegisterQuestPrerequisite({ quest = 732, mode = "any", quests = { 718 } })
 ns:RegisterQuestPrerequisite({ quest = 734, mode = "all", quests = { 712, 714 } })
+
+-- Burning Steppes chain edge from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 3822, mode = "any", quests = { 3821 } })
