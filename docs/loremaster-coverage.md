@@ -12,6 +12,7 @@ Counts are unique quest IDs with authored pickups, across all race, class, and p
 | Elwynn Forest | 122 | 123 | 1 | 31 | 4 | 2 / 1 | 3.5/5 |
 | Loch Modan | 18 | 43 | 25 | 1 | 0 | 2 / 0 | 2.5/5 |
 | Mulgore | 91 | 94 | 3 | 15 | 2 | 1 / 5 | 3.5/5 |
+| Redridge Mountains | 28 | 42 | 14 | 2 | 0 | 4 / 0 | 2.5/5 |
 | Silverpine Forest | 22 | 46 | 24 | 0 | 0 | 3 / 0 | 2.5/5 |
 | Teldrassil | 107 | 107 | 0 | 28 | 3 | 1 / 3 | 3.5/5 |
 | The Barrens | 84 | 92 | 8 | 2 | 15 | 1 / 0 | 2.5/5 |
@@ -64,3 +65,11 @@ Python checks pass (114 tests). Lua 5.1 checks pass for the engine, authored gui
 Please verify Zephras visitor branches with an Undead Paladin and Tauren Druid, as well as both Skyborne factions. Check village dialogue, profession introductions, class branches, and midway entry against actual quest offers.
 
 Please walk the new Militia, Moonbrook explosives, and optional treasure routes; Loch Modan defense, hunting, excavation, and dam chains; northern and southern Darkshore plus the later Althalaxx return; Sepulcher, Fenris, Pyrewood, and Arugal; and the Barrens northern camps, Ratchet, southern returns, and level-30 Tear of the Moons. Pins, escorts, item consumption, and server offers remain unverified until these walks are recorded.
+
+## Expansion checkpoints
+
+Redridge Mountains preserves the faction Casual subsequence and uses the pinned
+Wrath references for omitted legacy quests. Dry Times (116), Theocritus' Retrieval
+(178), Sign Me Up! (95816), and Shipping Label (98247) remain unresolved for missing
+acquisition directions or supported pickup/return navigation. Its cold-entry and
+midway eligibility checks use observed prerequisite history without inferring credit.

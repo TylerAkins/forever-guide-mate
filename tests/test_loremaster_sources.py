@@ -40,6 +40,30 @@ class LoremasterSources(unittest.TestCase):
                     elif entry['status'] in {'excluded', 'other-zone', 'unresolved'}:
                         self.assertFalse(authored)
 
+    def test_expanded_return_levels_use_suitable_spine_visits(self):
+        bands = json.loads((ROOT / 'tests/fixtures/reference_bands.json').read_text())
+        for path in (ROOT / 'Guides/Loremaster').glob('*.lua'):
+            text = path.read_text()
+            if 'loremasterExpanded = true' not in text:
+                continue
+            goals = parse_goals(text, '', str(path), None)
+            sources = []
+            for i, goal in enumerate(goals):
+                source = re.search(r'sourceGuide = "([^"\n]+)"', goal.raw)
+                if source and source[1] in bands:
+                    sources.append((i, bands[source[1]]['max']))
+            for i, goal in enumerate(goals):
+                if '-extra-' not in goal.id or not goal.id.endswith('-level'):
+                    continue
+                level = int(re.search(r'requiredLevel = (\d+)', goal.raw)[1])
+                suitable = [position for position, maximum in sources if maximum >= level]
+                if suitable:
+                    self.assertTrue(any(position < i for position in suitable),
+                                    f'{path.name}: {goal.id} precedes its recommended visit band')
+                elif sources:
+                    self.assertGreater(i, max(position for position, _ in sources),
+                                       f'{path.name}: {goal.id} needs a later return after the spine')
+
     def test_dun_morogh_ownership_and_prerequisite_evidence(self):
         audit = json.loads((ROOT / 'docs/loremaster/dun-morogh.json').read_text())
         quests = audit['quests']

@@ -1148,3 +1148,16 @@ ns:RegisterQuestPrerequisite({ quest = 3924, mode = "any", quests = { 3923 } })
 ns:RegisterQuestPrerequisite({ quest = 4021, mode = "any", quests = { 852 } })
 
 ns:RegisterQuestPrerequisite({ quest = 95350, mode = "all", quests = { 95349 } })
+
+-- Redridge outdoor chains verified in docs/loremaster/redridge-mountains.json.
+ns:RegisterQuestPrerequisite({ quest = 143, mode = "any", quests = { 121 } })
+ns:RegisterQuestPrerequisite({ quest = 19, mode = "any", quests = { 20 } })
+ns:RegisterQuestPrerequisite({ quest = 115, mode = "any", quests = { 20 } })
+ns:RegisterQuestPrerequisite({ quest = 248, mode = "any", quests = { 94 } })
+ns:RegisterQuestPrerequisite({ quest = 144, mode = "any", quests = { 143 } })
+ns:RegisterQuestPrerequisite({ quest = 145, mode = "any", quests = { 144 } })
+ns:RegisterQuestPrerequisite({ quest = 146, mode = "any", quests = { 145 } })
+ns:RegisterQuestPrerequisite({ quest = 249, mode = "any", quests = { 248 } })
+ns:RegisterQuestPrerequisite({ quest = 344, mode = "any", quests = { 343 } })
+ns:RegisterQuestPrerequisite({ quest = 345, mode = "any", quests = { 344 } })
+ns:RegisterQuestPrerequisite({ quest = 347, mode = "any", quests = { 345 } })

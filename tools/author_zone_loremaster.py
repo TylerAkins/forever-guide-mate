@@ -80,6 +80,8 @@ def build_actions(facts, faction):
     work = [p for p in facts['points'] if p.get('point') not in ('start', 'end')]
     instructions = facts['objectivesText']
     if work and not instructions: raise ValueError('Missing objective how-to text')
+    if instructions and not work and not any(re.search(r'(?i)\b(speak|talk|report)\b', line) for line in instructions):
+        raise ValueError('Objective materials are named but acquisition sources and visits need review')
     if not work and not instructions and start.get('id') == end.get('id'):
         raise ValueError('Missing objective or instant-turn-in evidence')
     q, name = facts['id'], facts['name']
@@ -107,6 +109,11 @@ def build_actions(facts, faction):
     if work or instructions:
         pin = next((point_route(p) for p in work if point_route(p)), None)
         text = ' '.join(instructions)
+        hostile = [p for p in work if p.get('type') == 1 and
+                   (p.get('reactalliance') == -1 if faction == 'Alliance' else p.get('reacthorde') == -1)]
+        if hostile and not re.search(r'(?i)\b(kill|slay|defeat|collect|gather)\b', text):
+            p = hostile[0]
+            text = f'Defeat {p["name"]}' + (f' and loot the {p["item"]}.' if p.get('item') else ' until the quest log marks the objective complete.') + ' ' + text
         if facts.get('elite'): text += ' This is an elite. Bring a group.'
         objective = action('objective', text, pin, {'quest': {'id': q, 'state': 'complete'}})
         objective['dependsOn'] = [accept['id']]
@@ -305,9 +312,9 @@ def prepare(zone_spec, database, upstream, snapshot):
                 all_goals[goal['id']] = goal;added.append(goal['id']);extra_ids.append(goal['id'])
         existing = [g['id'] for g in current_goals if faction_of(g.get('conditions')) in (None, faction)]
         movable = [n for n in existing if quest_id(all_goals[n]) in facts
-                   and not facts[quest_id(all_goals[n])]['forever']
                    and quest_id(all_goals[n]) not in casual_quests
-                   and facts[quest_id(all_goals[n])]['firstseenpatch'] is not None]
+                   and (('-extra-' in n) or (not facts[quest_id(all_goals[n])]['forever']
+                        and facts[quest_id(all_goals[n])]['firstseenpatch'] is not None))]
         extra_ids = movable + extra_ids
         active = [n for n in existing if n not in movable]
         # Place newly copied Casual actions alongside matching original source IDs.
@@ -338,13 +345,14 @@ def prepare(zone_spec, database, upstream, snapshot):
             goal = all_goals[node];q = quest_id(goal)
             if node not in extra_ids: continue
             if goal['kind'] == 'accept':
-                for group in requirements.get(q, []):
+                groups = goal.get('requiredQuests') or requirements.get(q, [])
+                for group in groups:
                     for p in group['quests']:
                         predecessors[node].extend(turnins.get(p, []))
                 # Ordering every available alternative before this pickup does not
                 # make every alternative a completion requirement.
-                goal['requiredQuests'] = copy.deepcopy(requirements.get(q, []))
-                for group in requirements.get(q, []):
+                goal['requiredQuests'] = copy.deepcopy(groups)
+                for group in groups:
                     if group['mode'] == 'all' and not group.get('conditions'):
                         goal.setdefault('dependsOn', []).extend(d for p in group['quests'] for d in turnins.get(p, []))
         availability_facts = dict(facts)
@@ -376,19 +384,30 @@ def prepare(zone_spec, database, upstream, snapshot):
                 ranked.append((match['source'],match['line'],node))
                 if node in extra_ids: matches[node] = match
         preference = [n for _,_,n in sorted(ranked)]
-        # Preserve later-return bands without treating every lower-level action
-        # as a prerequisite. Upstream remains advisory inside that visit band.
+        # Offer minima do not identify the leveling visit. Use the frozen
+        # Casual chapter bands to keep higher recommendations in later returns.
+        bands_path = ROOT / 'tests/fixtures/reference_bands.json'
+        bands = json.loads(bands_path.read_text()) if bands_path.exists() else {}
         for node in extra_ids:
             goal = all_goals[node];q = quest_id(goal)
             if goal['kind'] != 'accept': continue
             level = facts[q]['level']
-            checkpoints = [(n,all_goals[n].get('requiredLevel',0)) for n in active
-                           if all_goals[n].get('checkpointQuest') and all_goals[n].get('requiredLevel',0) <= level]
-            if checkpoints:
-                band = max(value for _,value in checkpoints)
-                anchor = next(n for n,value in checkpoints if value == band)
+            visits = [(n,bands.get(all_goals[n].get('sourceGuide'))) for n in active]
+            anchor = next((n for n,band in visits if band and band['max'] >= level), None)
+            if anchor is None and active: anchor = active[-1]
+            if anchor:
                 predecessors[node].append(anchor)
+                checkpoint = next((n for n in extra_ids if all_goals[n].get('checkpointQuest') == q), None)
+                if checkpoint: predecessors[checkpoint].append(anchor)
         order = weave(active, extra_ids, preference, predecessors)
+        for node in list(order):
+            goal = all_goals[node]
+            if goal.get('checkpointQuest') and '-extra-' in node and node.endswith('-level'):
+                q = goal['checkpointQuest']
+                pickup = next((n for n in order if all_goals[n].get('kind') == 'accept' and quest_id(all_goals[n]) == q), None)
+                if pickup:
+                    order.remove(node)
+                    order.insert(order.index(pickup),node)
         if not current:
             current_goals.extend(all_goals[n] for n in order)
         else:

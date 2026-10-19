@@ -15,6 +15,8 @@ M.DalaranDungeonTurninGates = {
 
 -- Single-predecessor, same-title chains verified against wow-database Forever exports.
 M.SameTitleQuestChains = {
+    [144] = 143,
+    [146] = 145,
     [1499] = 1485,
     [1517] = 1516,
     [1520] = 1519,

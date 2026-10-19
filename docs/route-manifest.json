@@ -139837,5 +139837,1340 @@
         ]
       }
     ]
+  },
+  "loremaster-redridge-mountains": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-level-before-accept-244-encroaching-gnolls"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1433,
+          "Guard Parker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-244-encroaching-gnolls"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-244-encroaching-gnolls"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-level-before-accept-125-the-lost-tools"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1433,
+          "Foreman Oslow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-125-the-lost-tools"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1433,
+          "Verner Osgood"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-118-the-price-of-shoes"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-120-messenger-to-stormwind"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1433,
+          "Darcy"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-129-a-free-lunch"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1433,
+          "Chef Breanna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-92-redridge-goulash"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-level-before-accept-3741-hilary-s-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1433,
+          "Shawn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-3741-hilary-s-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1433,
+          "Glinting Mud"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-3741-1-glinting-mud"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1433,
+          "Hilary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-3741-hilary-s-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1453,
+          "General Marcus Jonathan"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-120-messenger-to-stormwind",
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-121-messenger-to-stormwind"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-246-assessing-the-threat"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1433,
+          "Guard Parker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-129-a-free-lunch",
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-130-visit-the-herbalist"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1433,
+          "Redridge Poacher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-246-2-redridge-poacher"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1433,
+          "Redridge Mongrel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-246-1-redridge-mongrel"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1433,
+          "Crisp Spider Meat"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-92-3-crisp-spider-meat"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-246-assessing-the-threat"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1429,
+          "Smith Argus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-118-the-price-of-shoes",
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-119-return-to-verner"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-level-before-accept-94-a-watchful-eye"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1429,
+          "Theocritus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-94-a-watchful-eye"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1433,
+          "Sunken Chest"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-125-1-sunken-chest"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1433,
+          "Foreman Oslow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-125-the-lost-tools",
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-89-the-everstill-bridge"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1433,
+          "Verner Osgood"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-119-return-to-verner",
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-122-underbelly-scales",
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-124-a-baying-of-gnolls"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1433,
+          "Tough Condor Meat"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-92-2-tough-condor-meat"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1433,
+          "Underbelly Whelp Scale"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-122-1-underbelly-whelp-scale"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1433,
+          "Great Goretusk Snout"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-92-1-great-goretusk-snout"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1433,
+          "Verner Osgood"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-122-underbelly-scales"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-121-messenger-to-stormwind"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1433,
+          "Chef Breanna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-92-redridge-goulash"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1433,
+          "Martie Jainrose"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-130-visit-the-herbalist",
+          "alliance-leveling-era-alliance-redridge-and-westfall-accept-131-delivering-daffodils"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1433,
+          "Darcy"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-131-delivering-daffodils"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-143-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-extra-143-accept"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1433,
+          "Redridge Mystic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-89-1-redridge-mystic"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1433,
+          "Iron Rivet"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-89-2-iron-rivet"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1433,
+          "Redridge Mystic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-124-2-redridge-mystic"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1433,
+          "Redridge Brute"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-objective-124-1-redridge-brute"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1433,
+          "Verner Osgood"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-124-a-baying-of-gnolls"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1433,
+          "Foreman Oslow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-turnin-89-the-everstill-bridge"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-level-before-woven-accept-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-woven-accept-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Redridge Thrasher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-woven-objective-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1433,
+          "Marshal Marris"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-20-blackrock-menace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-343-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Brother Kristoff"
+        ],
+        "actions": [
+          "alliance-extra-343-accept"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1433,
+          "Dockmaster Baren"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-127-selling-fish",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-150-murloc-poachers"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1433,
+          "Martie Jainrose"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-34-an-unwelcome-guest"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1433,
+          "Bellygrub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-34-1-bellygrub"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1433,
+          "Martie Jainrose"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-34-an-unwelcome-guest"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1433,
+          "Blackrock Grunt"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-20-1-blackrock-grunt"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1433,
+          "Murloc Flesheater"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-150-1-murloc-flesheater"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1433,
+          "Spotted Sunfish"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-127-1-spotted-sunfish"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1433,
+          "Marshal Marris"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-20-blackrock-menace"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1433,
+          "Dockmaster Baren"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-127-selling-fish",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-150-murloc-poachers"
+        ]
+      },
+      {
+        "boundary": [
+          90,
+          1433,
+          "Guard Howe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-128-blackrock-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          91,
+          1433,
+          "Verner Osgood"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-126-howling-in-the-hills"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-19-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Marshal Marris"
+        ],
+        "actions": [
+          "alliance-extra-19-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-115-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Marshal Marris"
+        ],
+        "actions": [
+          "alliance-extra-115-accept"
+        ]
+      },
+      {
+        "boundary": [
+          92,
+          1433,
+          "Bailiff Conacher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-91-solomon-s-law"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-169-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Wanted: Gath'Ilzogg"
+        ],
+        "actions": [
+          "alliance-extra-169-accept"
+        ]
+      },
+      {
+        "boundary": [
+          93,
+          1433,
+          "Wanted: Lieutenant Fangore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-180-wanted-lieutenant-fangore"
+        ]
+      },
+      {
+        "boundary": [
+          94,
+          1433,
+          "Yowler"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-126-1-yowler"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Tharil'zun"
+        ],
+        "actions": [
+          "alliance-extra-19-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Gath'Ilzogg"
+        ],
+        "actions": [
+          "alliance-extra-169-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Blackrock Shadowcaster"
+        ],
+        "actions": [
+          "alliance-extra-115-objective"
+        ]
+      },
+      {
+        "boundary": [
+          95,
+          1433,
+          "Lieutenant Fangore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-180-1-lieutenant-fangore"
+        ]
+      },
+      {
+        "boundary": [
+          96,
+          1433,
+          "A Watchful Eye"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-94-a-watchful-eye"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-248-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Old Lion Statue"
+        ],
+        "actions": [
+          "alliance-extra-248-accept"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1433,
+          "Shadowhide Pendant"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-91-1-shadowhide-pendant"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1433,
+          "Blackrock Champion"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-128-1-blackrock-champion"
+        ]
+      },
+      {
+        "boundary": [
+          99,
+          1433,
+          "Corporal Keeshan"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-219-missing-in-action"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1433,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-219-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          101,
+          1433,
+          "Marshal Marris"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-219-missing-in-action"
+        ]
+      },
+      {
+        "boundary": [
+          103,
+          1433,
+          "Verner Osgood"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-126-howling-in-the-hills"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Marshal Marris"
+        ],
+        "actions": [
+          "alliance-extra-19-turnin",
+          "alliance-extra-115-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1433,
+          "Bailiff Conacher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-91-solomon-s-law"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-extra-169-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          105,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-180-wanted-lieutenant-fangore"
+        ]
+      },
+      {
+        "boundary": [
+          106,
+          1433,
+          "Guard Howe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-128-blackrock-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-woven-accept-98387-blackrock-blockade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Marshal Marris"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-accept-98387-blackrock-blockade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Foreman Oslow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-accept-98386-althers-mill"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Blackrock Grunt"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-objective-98387-blackrock-blockade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Marshal Marris"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-turnin-98387-blackrock-blockade"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Greater Tarantula"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-objective-98386-althers-mill"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Foreman Oslow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-turnin-98386-althers-mill"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-143-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1436,
+          "Gryan Stoutmantle"
+        ],
+        "actions": [
+          "alliance-extra-143-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-144-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1436,
+          "Gryan Stoutmantle"
+        ],
+        "actions": [
+          "alliance-extra-144-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-144-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-extra-144-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-145-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-extra-145-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-145-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Lord Ello Ebonlocke"
+        ],
+        "actions": [
+          "alliance-extra-145-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-146-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Lord Ello Ebonlocke"
+        ],
+        "actions": [
+          "alliance-extra-146-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-146-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-extra-146-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-248-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "An Empty Jar"
+        ],
+        "actions": [
+          "alliance-extra-248-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-249-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Theocritus"
+        ],
+        "actions": [
+          "alliance-extra-249-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Morganth"
+        ],
+        "actions": [
+          "alliance-extra-249-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Theocritus"
+        ],
+        "actions": [
+          "alliance-extra-249-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-343-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Milton Sheaf"
+        ],
+        "actions": [
+          "alliance-extra-343-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-344-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Milton Sheaf"
+        ],
+        "actions": [
+          "alliance-extra-344-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-344-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
+          "alliance-extra-344-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-345-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
+          "alliance-extra-345-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-345-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Foreman Oslow"
+        ],
+        "actions": [
+          "alliance-extra-345-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-347-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Foreman Oslow"
+        ],
+        "actions": [
+          "alliance-extra-347-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Redridge Drudger"
+        ],
+        "actions": [
+          "alliance-extra-347-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1429,
+          "Brother Paxton"
+        ],
+        "actions": [
+          "alliance-extra-347-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-95999-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Wanted: Incinerator Gar'im"
+        ],
+        "actions": [
+          "alliance-extra-95999-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Incinerator Gar'im"
+        ],
+        "actions": [
+          "alliance-extra-95999-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Magistrate Solomon"
+        ],
+        "actions": [
+          "alliance-extra-95999-turnin"
+        ]
+      }
+    ]
   }
 }

@@ -2,13 +2,15 @@ local ns = {}
 for path in io.lines('ForeverGuideMate.toc') do
     if path:match('%.lua$') then assert(loadfile(path))('FGM', ns) end
 end
-local sourcePositions, ordinal = {}, 0
+local serialize = dofile('tools/loremaster_parity.lua').Serialize
+local sourcePositions, sourceGoals, ordinal = {}, {}, 0
 for _, id in ipairs(ns.guideOrder) do
     local guide = ns.guides[id]
     if guide.category == 'Leveling Quest Guides' then
         for _, goal in ipairs(guide.goals) do
             ordinal = ordinal + 1
             sourcePositions[id .. ':' .. goal.id] = ordinal
+            sourceGoals[id .. ':' .. goal.id] = goal
         end
     end
 end
@@ -33,11 +35,22 @@ for _, id in ipairs(ns.guideOrder) do
                 local position = assert(sourcePositions[goal.sourceGuide .. ':' .. goal.sourceActionID])
                 check(position > (previous[faction] or 0), id .. ' preserves the faction Casual subsequence: ' .. goal.id)
                 previous[faction] = position
+                local original = assert(sourceGoals[goal.sourceGuide .. ':' .. goal.sourceActionID])
+                -- Local dependency IDs and cold-entry exclusions are recorded in
+                -- the zone inventory; shared quest facts must stay synchronized.
+                for _, field in ipairs({'kind','text','conditions','complete','route','requiredQuests','requiredLevel','classAction'}) do
+                    check(serialize(goal[field]) == serialize(original[field]), id .. ' preserves source ' .. field .. ': ' .. goal.id)
+                end
             end
             if goal.kind == 'accept' then pickups[quest] = pickups[quest] or i end
             if goal.kind == 'turnin' then finishes[quest] = finishes[quest] or i end
         end
         for i, goal in ipairs(guide.goals) do
+            if goal.checkpointQuest and goal.id:find('%-extra%-') and goal.id:match('%-level$') then
+                local pickup = guide.goals[i+1]
+                check(pickup and pickup.kind == 'accept' and ns.Engine:GetGoalQuestID(pickup) == goal.checkpointQuest,
+                    id .. ' keeps the extra level gate with its pickup: ' .. goal.id)
+            end
             if goal.sourceGuide or goal.id:find('%-extra%-') then
                 local quest = ns.Engine:GetGoalQuestID(goal)
                 if goal.kind == 'objective' then

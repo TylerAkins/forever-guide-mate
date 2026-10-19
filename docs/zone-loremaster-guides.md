@@ -23,7 +23,7 @@ recommendations require later returns even when the offer minimum is low.
 
 The library contains Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Mulgore,
 Tirisfal Glades, Zephras Isle, Westfall, Loch Modan, Darkshore, Silverpine Forest,
-and The Barrens. The previous placeholder is retired; archived
+The Barrens, and Redridge Mountains. The previous placeholder is retired; archived
 completion ledgers remain preserved. Retired Durotar and Mulgore selections retain
 their zone. Placeholder selections wait for captured character identity and choose
 an eligible starter zone. Zephras also retains its Leveling starter.
@@ -71,6 +71,8 @@ upstream guide prose or use it to establish Forever quest availability.
 
 Commit each completed zone after verification and independent review. Keep each
 zone's guide, evidence, registration, tests, and release notes in its checkpoint.
+Keep one patch bump relative to the PR base across all zone commits; CI validates
+the combined branch rather than each intermediate commit's parent.
 
 For one-zone authoring, `tools/author_zone_loremaster.py <zone-slug> --upstream
 <checkout>` previews dispositions using a clean upstream checkout at the pinned
