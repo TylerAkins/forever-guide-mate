@@ -25,4 +25,15 @@ assert(not overlap({conditions={faction='Alliance'}},{conditions={faction='Horde
 assert(overlap({conditions={faction='Alliance'}},{conditions={faction='Alliance'}},ns.EvaluateCondition),'The same faction retains objective dependencies')
 local profession={conditions={profession={skillLineID=333,minRank=1}}}
 assert(overlap(profession,profession,ns.EvaluateCondition),'Unknown profession branches conservatively retain dependencies')
+local preserved=dofile('tests/lua/guide_data_checks.lua').PreservedPickupBranches
+local serialize=dofile('tools/loremaster_parity.lua').Serialize
+local repeats={}
+for _,g in ipairs(ns.guides['loremaster-blasted-lands'].goals) do
+ if ns.Engine:GetGoalQuestID(g)==1363 then repeats[#repeats+1]=g end
+end
+assert(preserved(repeats,ns.guides,ns.EvaluateCondition,serialize),'Repeated source visits preserve their valid actor coverage')
+local altered={}
+for i,g in ipairs(repeats) do altered[i]={kind=g.kind,conditions=g.conditions,complete=g.complete,sourceGuide=g.sourceGuide,sourceActionID=g.sourceActionID} end
+altered[1].conditions={faction='Horde'}
+assert(not preserved(altered,ns.guides,ns.EvaluateCondition,serialize),'Changed source conditions cannot bypass the branch check')
 print('Loremaster pickup branch coverage checks passed')

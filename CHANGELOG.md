@@ -3,6 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.6.4 - 2026-10-18
+- Add Blasted Lands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Swamp of Sorrows Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Badlands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Stranglethorn Vale Loremaster with recorded Forever evidence and advisory legacy ordering.

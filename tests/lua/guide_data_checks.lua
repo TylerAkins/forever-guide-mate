@@ -1415,7 +1415,7 @@ function M.ItemStartQuestObjectiveViolations(guides)
 end
 
 -- Pickup branches may differ by race or class while sharing later work.
-function M.DisjointPickupBranches(goals, evaluate)
+local function PickupBranchCoverage(goals, evaluate, repeated)
     local seen, count = {}, 0
     for _, goal in ipairs(goals) do if goal.kind == "accept" then count = count + 1 end end
     if count < 2 then return false end
@@ -1433,20 +1433,44 @@ function M.DisjointPickupBranches(goals, evaluate)
                     seen[goal] = true
                 end
             end
-            if pickups > 1 then return false end
+            if pickups > 1 and not repeated then return false end
             local returns = 0
             for _, goal in ipairs(goals) do
                 if goal.kind ~= "accept" and evaluate(goal.conditions,state) then
-                    if pickups ~= 1 then return false end
+                    if pickups < 1 then return false end
                     if goal.kind == "turnin" then returns = returns + 1 end
                 end
             end
-            if pickups == 1 and returns == 0 then return false end
+            if pickups >= 1 and returns == 0 then return false end
         end
     end
     local observed = 0
     for _ in pairs(seen) do observed = observed + 1 end
     return observed == count
+end
+
+function M.DisjointPickupBranches(goals, evaluate)
+    return PickupBranchCoverage(goals, evaluate, false)
+end
+
+-- Repeated visits retain their source actor restrictions and quest observations.
+function M.PreservedPickupBranches(goals, guides, evaluate, serialize)
+    local seen = {}
+    for _, goal in ipairs(goals) do
+        local guide = guides[goal.sourceGuide]
+        if not guide or guide.category ~= "Leveling Quest Guides" or not goal.sourceActionID then return false end
+        local key = goal.sourceGuide .. ":" .. goal.sourceActionID
+        if seen[key] then return false end
+        seen[key] = true
+        local original
+        for _, candidate in ipairs(guide.goals) do
+            if candidate.id == goal.sourceActionID then original = candidate; break end
+        end
+        if not original or original.kind ~= goal.kind
+            or serialize(original.conditions) ~= serialize(goal.conditions)
+            or serialize(original.complete) ~= serialize(goal.complete) then return false end
+    end
+    return PickupBranchCoverage(goals, evaluate, true)
 end
 
 -- Only overlapping character branches share objective dependencies.

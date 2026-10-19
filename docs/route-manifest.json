@@ -153800,5 +153800,687 @@
         ]
       }
     ]
+  },
+  "loremaster-blasted-lands": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1453,
+          "Mazen Mac'Nadir"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1453,
+          "Acolyte Dellis"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1364-mazen-s-behest"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest-2"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1453,
+          "Mazen Mac'Nadir"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest-2"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1453,
+          "Acolyte Dellis"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1453,
+          "Acolyte Dellis"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1364-mazen-s-behest"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1435,
+          "Khadgar's Essays on Dimensional Convergence"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge-2"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1419,
+          "Watcher Mahar Ba"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1364-mazen-s-behest"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-level-before-accept-2783-petty-squabbles"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1419,
+          "Ambassador Ardalan"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-2783-petty-squabbles"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2783-petty-squabbles"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-level-before-accept-2801-a-tale-of-sorrow"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-2801-a-tale-of-sorrow"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2801-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2801-a-tale-of-sorrow"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1419,
+          "Bloodmage Drazial"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-2581-snickerfang-jowls",
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-2583-a-boar-s-vitality",
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-2585-the-decisive-striker"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1419,
+          "Bloodmage Lynnore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-2601-the-basilisk-s-bite",
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-2603-vulture-s-vigor"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1419,
+          "Kum'isha the Collector"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-3501-everything-counts-in-large-amounts",
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-2521-to-serve-kum-isha"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-3501-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1419,
+          "Kum'isha the Collector"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3501-everything-counts-in-large-amounts"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2521-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1419,
+          "Kum'isha the Collector"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2521-to-serve-kum-isha"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2601-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1419,
+          "Bloodmage Lynnore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2601-the-basilisk-s-bite"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2603-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1419,
+          "Bloodmage Lynnore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2603-vulture-s-vigor"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2581-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1419,
+          "Bloodmage Drazial"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2581-snickerfang-jowls"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2583-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1419,
+          "Bloodmage Drazial"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2583-a-boar-s-vitality"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2585-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1419,
+          "Bloodmage Drazial"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2585-the-decisive-striker"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-swamp-of-sorrows",
+          "horde-leveling-era-horde-swamp-of-sorrows-level-before-accept-2784-fall-from-grace"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-2784-fall-from-grace"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-2784-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-2784-fall-from-grace",
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-2621-the-disgraced-one"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1435,
+          "Dispatch Commander Ruag"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-2621-the-disgraced-one",
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-2622-the-missing-orders"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1435,
+          "Bengor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-2622-the-missing-orders"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-level-before-accept-2623-the-swamp-talker"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1435,
+          "Bengor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-2623-the-swamp-talker"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1435,
+          "Warchief's Orders"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-2623-1-swamp-talker"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-2623-the-swamp-talker",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-2801-a-tale-of-sorrow"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-2801-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-2801-a-tale-of-sorrow"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-blasted-lands",
+          "horde-leveling-era-horde-blasted-lands-level-before-accept-2581-snickerfang-jowls"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1419,
+          "Bloodmage Drazial"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-accept-2581-snickerfang-jowls",
+          "horde-leveling-era-horde-blasted-lands-accept-2583-a-boar-s-vitality",
+          "horde-leveling-era-horde-blasted-lands-accept-2585-the-decisive-striker"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1419,
+          "Bloodmage Lynnore"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-accept-2601-the-basilisk-s-bite",
+          "horde-leveling-era-horde-blasted-lands-accept-2603-vulture-s-vigor"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1419,
+          "Kum'isha the Collector"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-accept-3501-everything-counts-in-large-amounts",
+          "horde-leveling-era-horde-blasted-lands-accept-2521-to-serve-kum-isha"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-objective-3501-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1419,
+          "Kum'isha the Collector"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-turnin-3501-everything-counts-in-large-amounts"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-objective-2521-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1419,
+          "Kum'isha the Collector"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-turnin-2521-to-serve-kum-isha"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-objective-2601-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1419,
+          "Bloodmage Lynnore"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-turnin-2601-the-basilisk-s-bite"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-objective-2603-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1419,
+          "Bloodmage Lynnore"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-turnin-2603-vulture-s-vigor"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-objective-2581-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1419,
+          "Bloodmage Drazial"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-turnin-2581-snickerfang-jowls"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-objective-2583-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1419,
+          "Bloodmage Drazial"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-turnin-2583-a-boar-s-vitality"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-objective-2585-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1419,
+          "Bloodmage Drazial"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-blasted-lands-turnin-2585-the-decisive-striker"
+        ]
+      }
+    ]
   }
 }

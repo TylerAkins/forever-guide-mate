@@ -319,6 +319,7 @@ def prepare(zone_spec, database, upstream, snapshot):
             mapping[(guide['id'],goal['id'])] = node
         faction_spine = []
         source_ordinals = {node: i for i, (node, _, _) in enumerate(source_actions)}
+        originals = {node: goal for node, _, goal in selected}
         for node,guide,goal in selected:
             clone = copy.deepcopy(goal)
             clone.pop('questPrerequisites', None)
@@ -331,7 +332,18 @@ def prepare(zone_spec, database, upstream, snapshot):
                     earlier = [n for n, _, action in selected if action['id'] == dep
                                and source_ordinals[n] < source_ordinals[node]]
                     target = earlier[-1] if earlier else None
-                if target: clone['dependsOn'].append(target)
+                # An identical earlier pickup already satisfies the observed quest state.
+                if target and source_ordinals[target] > source_ordinals[node]:
+                    dependency = originals[target]
+                    if dependency.get('kind') == 'accept' and quest_id(dependency) == quest_id(goal):
+                        earlier_pickups = [n for n, original in originals.items()
+                            if source_ordinals[n] < source_ordinals[node]
+                            and original.get('kind') == 'accept'
+                            and quest_id(original) == quest_id(goal)
+                            and original.get('conditions') == goal.get('conditions')
+                            and original.get('complete', {}).get('quest', {}).get('state') == 'activeOrCompleted']
+                        if earlier_pickups: target = max(earlier_pickups, key=source_ordinals.get)
+                if target and target not in clone['dependsOn']: clone['dependsOn'].append(target)
             all_goals[node] = clone; added.append(node);faction_spine.append(node)
             if guide['id'] not in sources_used: sources_used.append(guide['id'])
         extra_ids = []

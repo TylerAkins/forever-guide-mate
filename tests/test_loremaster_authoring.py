@@ -182,6 +182,30 @@ class ZonePreparationTests(unittest.TestCase):
         self.assertEqual(audit['quests']['11']['status'],'unresolved')
         self.assertEqual(audit['quests']['10']['status'],'excluded')
 
+    def test_future_duplicate_pickup_dependency_uses_observed_earlier_pickup(self):
+        from weave_loremaster import parse_goals
+        condition={'faction':'Horde'}
+        first={'id':'accept-10-first','kind':'accept','conditions':condition,
+               'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}}
+        return_goal={'id':'turnin-10','kind':'turnin','conditions':condition,
+                     'complete':{'quest':{'id':10,'state':'completed'}},
+                     'dependsOn':['accept-10-first','accept-10-late']}
+        late={**first,'id':'accept-10-late'}
+        text,audit=self.prepare({10:{}},[first,return_goal,late])
+        goals=parse_goals(text,'','',None)
+        returned=next(g for g in goals if g.kind=='turnin')
+        self.assertEqual(returned.depends,['horde-leveling-source-accept-10-first'])
+        self.assertEqual([g.kind for g in goals],['accept','turnin','accept'])
+
+    def test_future_pickup_dependency_keeps_an_uncovered_actor_cycle(self):
+        first={'id':'accept-10-first','kind':'accept','conditions':{'faction':'Horde','class':8},
+               'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}}
+        returned={'id':'turnin-10','kind':'turnin','conditions':{'faction':'Horde'},
+                  'complete':{'quest':{'id':10,'state':'completed'}},'dependsOn':['accept-10-late']}
+        late={**first,'id':'accept-10-late','conditions':{'faction':'Horde'}}
+        with self.assertRaisesRegex(ValueError,'Prerequisite/spine cycle'):
+            self.prepare({10:{}},[first,returned,late])
+
     def test_any_prerequisite_does_not_become_all_completion_dependencies(self):
         text, audit = self.prepare({10: {}, 11: {}, 12: {'preQuestSingle': [10, 11]}})
         from weave_loremaster import parse_goals, goal_field
