@@ -17,6 +17,7 @@ state.items['An Old History Book'] = 1
 assert(not ns.OrderedRoutes:ExcludedAction(early,state), 'A held book enables its pickup')
 state.items={}
 local late = assert(goals['accept-337-an-old-history-book-late'])
+assert(#late.dependsOn==0,'The optional book drop does not require accepting the Worgen chain')
 assert(positions['objective-221-1-nightbane-dark-runner'] < positions[late.id], 'The optional pickup follows the Nightbane outing')
 assert(positions[late.id] < positions['turnin-337-an-old-history-book-2'], 'The later city return follows its optional pickup')
 local southshore=goals['accept-538-southshore']

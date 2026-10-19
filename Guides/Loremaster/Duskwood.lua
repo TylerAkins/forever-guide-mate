@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-duskwood",
     title = "Duskwood",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -7308,7 +7308,7 @@ ns:RegisterGuide({
         {
             complete = { quest = { id = 337, state = "activeOrCompleted" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 1, 3, 4, 7, 95 } } } },
-            dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-221-1-nightbane-dark-runner" },
+            dependsOn = {},
             excludeWhen = {
                 ["not"] = {
                     any = {

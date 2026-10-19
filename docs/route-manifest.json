@@ -35289,7 +35289,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 10,
+    "revision": 11,
     "visits": [
       {
         "boundary": [
@@ -53950,6 +53950,16 @@
       },
       {
         "boundary": [
+          23,
+          1416,
+          "Baron Vardus"
+        ],
+        "actions": [
+          "objective-566-1-baron-vardus-2"
+        ]
+      },
+      {
+        "boundary": [
           17,
           1424,
           "Krusk"
@@ -54018,16 +54028,6 @@
         "actions": [
           "turnin-507-lord-aliden-perenolde",
           "accept-508-taretha-s-gift"
-        ]
-      },
-      {
-        "boundary": [
-          23,
-          1416,
-          "Baron Vardus"
-        ],
-        "actions": [
-          "objective-566-1-baron-vardus-2"
         ]
       },
       {
@@ -71261,7 +71261,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 13,
+    "revision": 14,
     "visits": [
       {
         "boundary": [
@@ -72452,7 +72452,7 @@
         "boundary": [
           null,
           2521,
-          "Aarnor Galestrike"
+          "Sessaria Skystride"
         ],
         "actions": [
           "woven-class-shaman-accept-97243-call-of-fire"
@@ -72666,20 +72666,11 @@
       {
         "boundary": [
           null,
-          1412,
-          "Minor Manifestation of Earth"
-        ],
-        "actions": [
-          "woven-class-shaman-objective-1517-earth-sapta"
-        ]
-      },
-      {
-        "boundary": [
-          null,
           1411,
           "Minor Manifestation of Earth"
         ],
         "actions": [
+          "woven-class-shaman-objective-1517-earth-sapta",
           "woven-class-shaman-turnin-1517-call-of-earth",
           "woven-class-shaman-accept-1518-call-of-earth"
         ]
@@ -72707,7 +72698,7 @@
       {
         "boundary": [
           null,
-          1412,
+          1411,
           "Minor Manifestation of Earth"
         ],
         "actions": [
@@ -141211,7 +141202,7 @@
     ]
   },
   "loremaster-duskwood": {
-    "revision": 1,
+    "revision": 2,
     "visits": [
       {
         "boundary": [
@@ -144150,6 +144141,1913 @@
         ],
         "actions": [
           "alliance-extra-98297-turnin"
+        ]
+      }
+    ]
+  },
+  "loremaster-hillsbrad-foothills": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-wetlands",
+          "alliance-leveling-era-alliance-wetlands-level-before-accept-279-claws-from-the-deep"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1437,
+          "Karl Boran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-accept-279-claws-from-the-deep"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1437,
+          "Gobbler"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-279-2-gobbler"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1437,
+          "Bluegill Murlocs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-279-reviewed-1"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1437,
+          "Karl Boran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-279-claws-from-the-deep"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-wetlands-part-2",
+          "alliance-leveling-era-alliance-wetlands-part-2-level-before-accept-281-reclaiming-goods"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1437,
+          "Karl Boran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-281-reclaiming-goods"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1437,
+          "Reclaiming Goods"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-281-reclaiming-goods"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1437,
+          "The Search Continues"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-284-the-search-continues"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1437,
+          "The Search Continues"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-284-the-search-continues"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1437,
+          "Search More Hovels"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-285-search-more-hovels"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1437,
+          "Search More Hovels"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-285-search-more-hovels"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1437,
+          "Return the Statuette"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-286-return-the-statuette"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1437,
+          "Karl Boran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-286-return-the-statuette"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Snapjaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-collect-before-pickup-objective-555-1-snapjaw"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-duskwood-and-stranglethorn-vale"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1453,
+          "Milton Sheaf"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-538-southshore"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Nightbane Dark Runner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book-late"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Turtle Meat"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-collect-before-pickup-objective-555-1-turtle-meat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "An Old History Book"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book-2"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1453,
+          "Milton Sheaf"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-538-southshore-late"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-level-before-accept-565-bartolo-s-yeti-fur-cloak"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1424,
+          "Bartolo Ginsetti"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-565-bartolo-s-yeti-fur-cloak"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-level-before-accept-564-costly-menace"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1424,
+          "Darren Malvew"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-564-costly-menace"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1424,
+          "Loremaster Dibbs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-538-southshore"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1424,
+          "Lieutenant Farren Orinelle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-536-down-the-coast"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1424,
+          "Chef Jessen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-555-soothing-turtle-bisque"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-collect-before-pickup-objective-555-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Micha Yance"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-prepare-555-all-required-materials"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1424,
+          "Chef Jessen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-555-soothing-turtle-bisque"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1424,
+          "Torn Fin Tidehunter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-536-1-torn-fin-tidehunter"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1424,
+          "Torn Fin Oracle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-536-2-torn-fin-oracle"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1424,
+          "Lieutenant Farren Orinelle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-536-down-the-coast",
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-559-farren-s-proof"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1424,
+          "Torn Fin Tidehunter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-559-1-torn-fin-tidehunter"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1424,
+          "Lieutenant Farren Orinelle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-559-farren-s-proof",
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-560-farren-s-proof"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1424,
+          "Marshal Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-560-farren-s-proof",
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-561-farren-s-proof"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1424,
+          "Lieutenant Farren Orinelle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-561-farren-s-proof",
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-562-stormwind-ho"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1424,
+          "Daggerspine Shorehunter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-562-1-daggerspine-shorehunter"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1424,
+          "Daggerspine Siren"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-562-2-daggerspine-siren"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1424,
+          "Lieutenant Farren Orinelle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-562-stormwind-ho"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1424,
+          "Phin Odelic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-659-hints-of-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1424,
+          "Yeti Fur"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-565-4-yeti-fur"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1416,
+          "Mountain Lion"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-564-1-mountain-lion"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1416,
+          "Hulking Mountain Lion"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-564-2-hulking-mountain-lion"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1424,
+          "Lieutenant Farren Orinelle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-563-reassignment"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1424,
+          "Darren Malvew"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-564-costly-menace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Auctioneer Jaxon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-565-reviewed-1"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1424,
+          "Micha Yance"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-565-reviewed-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Auctioneer Jaxon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-565-reviewed-3"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1424,
+          "Bartolo Ginsetti"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-565-bartolo-s-yeti-fur-cloak"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1417,
+          "Quae"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-659-hints-of-a-new-plague",
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-658-hints-of-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1453,
+          "Major Samuelson"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-563-reassignment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-level-before-objective-658-1-forsaken-courier"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-658-1-forsaken-courier"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1417,
+          "Quae"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-658-hints-of-a-new-plague",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-657-hints-of-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1417,
+          "Kinelory"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-657-hints-of-a-new-plague",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-660-hints-of-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1417,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-660-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1417,
+          "Quae"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-660-hints-of-a-new-plague",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-661-hints-of-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1424,
+          "Phin Odelic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-661-hints-of-a-new-plague"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-barrens-and-stonetalon-mountain",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-level-before-accept-1061-the-spirits-of-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1454,
+          "Zor Lonetree"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1061-the-spirits-of-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          136,
+          1413,
+          "Seereth Stonebreak"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1061-the-spirits-of-stonetalon",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1062-goblin-invaders"
+        ]
+      },
+      {
+        "boundary": [
+          151,
+          1442,
+          "Venture Co. Logger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-1062-1-venture-co-logger"
+        ]
+      },
+      {
+        "boundary": [
+          249,
+          1413,
+          "Seereth Stonebreak"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1062-goblin-invaders"
+        ]
+      },
+      {
+        "boundary": [
+          250,
+          1413,
+          "Seereth Stonebreak"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1063-the-elder-crone"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ashenvale"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1456,
+          "Magatha Grimtotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-turnin-1063-the-elder-crone"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1456,
+          "Magatha Grimtotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-accept-1064-forsaken-aid"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1456,
+          "Apothecary Zamah"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-turnin-1064-forsaken-aid",
+          "horde-leveling-era-horde-ashenvale-accept-1065-journey-to-tarren-mill"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-hillsbrad-foothills"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1424,
+          "Deathstalker Lesh"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-494-time-to-strike"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-1065-journey-to-tarren-mill",
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-1066-blood-of-innocents",
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-496-elixir-of-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-496-elixir-of-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-494-time-to-strike",
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-527-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1424,
+          "Dangerous!"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-567-dangerous"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1424,
+          "WANTED: Syndicate Personnel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-549-wanted-syndicate-personnel"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1424,
+          "Krusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-498-the-rescue"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Jailor Marlgen"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-498-1-jailor-marlgen"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Tog'thar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-498-2-locked-ball-and-chain"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1424,
+          "Vial of Innocent Blood"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-1066-1-vial-of-innocent-blood"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Jailor Eston"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-498-1-jailor-eston"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1424,
+          "Syndicate Rogue"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-549-1-syndicate-rogue"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Drull"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-498-1-locked-ball-and-chain"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1424,
+          "Syndicate Watchman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-549-2-syndicate-watchman"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1424,
+          "Creeper Ichor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-496-2-creeper-ichor"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1424,
+          "Gray Bear Tongue"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-496-1-gray-bear-tongue"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-1066-blood-of-innocents",
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-496-elixir-of-suffering",
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-499-elixir-of-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1424,
+          "Umpi"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-499-elixir-of-suffering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-level-before-accept-501-elixir-of-pain"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-501-elixir-of-pain"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-549-wanted-syndicate-personnel"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1424,
+          "Krusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-498-the-rescue"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1424,
+          "Farmer Getz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-527-4-farmer-getz"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1424,
+          "Farmer Ray"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-527-3-farmer-ray"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1424,
+          "Hillsbrad Farmer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-527-1-hillsbrad-farmer"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1424,
+          "Hillsbrad Farmhand"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-527-2-hillsbrad-farmhand"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1424,
+          "Mountain Lion Blood"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-501-1-mountain-lion-blood"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-501-elixir-of-pain",
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-502-elixir-of-pain"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-527-battle-of-hillsbrad",
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-528-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1424,
+          "Deathguard Samsa"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-546-souvenirs-of-death"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1424,
+          "Stanley"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-502-elixir-of-pain"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1424,
+          "Farmer Kalaba"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-567-4-farmer-kalaba"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-567-2-citizen-wilkes"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1424,
+          "Hillsbrad Peasant"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-528-1-hillsbrad-peasant"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-turnin-528-battle-of-hillsbrad",
+          "horde-leveling-era-horde-hillsbrad-foothills-accept-529-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1424,
+          "Shipment of Iron"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-529-3-shipment-of-iron"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1424,
+          "Blacksmith Verringtan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-529-1-blacksmith-verringtan"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1424,
+          "Hillsbrad Apprentice Blacksmith"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-529-2-hillsbrad-apprentice-blacksmith"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-objective-546-1-hillsbrad-human-skull"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-hillsbrad-foothills-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-509-elixir-of-agony"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1424,
+          "Shipment of Iron"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-529-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-529-battle-of-hillsbrad",
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-532-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-level-before-accept-533-infiltration"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1424,
+          "Krusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-533-infiltration"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1424,
+          "Novice Thaivand"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-552-helcular-s-revenge"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-level-before-accept-544-prison-break-in"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1424,
+          "Magus Wordeen Voidglare"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-544-prison-break-in"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1424,
+          "Keeper Bel'varil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-556-stone-tokens"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1424,
+          "Cave Yeti"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-552-1-cave-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1424,
+          "Clerk Horrace Whitesteed"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-567-1-clerk-horrace-whitesteed"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1424,
+          "Magistrate Burnside"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-532-1-magistrate-burnside"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1424,
+          "Hillsbrad Town Registry"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-532-4-hillsbrad-town-registry"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1424,
+          "Hillsbrad Councilman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-532-2-hillsbrad-councilman"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-532-battle-of-hillsbrad",
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-539-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1424,
+          "Novice Thaivand"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-552-helcular-s-revenge",
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-553-helcular-s-revenge"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1424,
+          "Foreman Bonds"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-539-1-foreman-bonds"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1424,
+          "Miner Hackett"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-567-3-miner-hackett"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1424,
+          "Hillsbrad Miner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-539-2-hillsbrad-miner"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1424,
+          "Hillsbrad Human Skull"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-546-1-hillsbrad-human-skull"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1416,
+          "Ricter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-2-ricter"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1416,
+          "Alina"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-3-alina"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1416,
+          "Dermot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-1-dermot"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1416,
+          "Kegan Darkmar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-4-kegan-darkmar"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1416,
+          "Worn Stone Token"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-556-1-worn-stone-token"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1416,
+          "Syndicate Footpad"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-533-1-syndicate-footpad"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1424,
+          "Magus Wordeen Voidglare"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-544-prison-break-in"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1424,
+          "Keeper Bel'varil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-556-stone-tokens"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1424,
+          "Deathguard Samsa"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-546-souvenirs-of-death"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-539-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-level-before-accept-541-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-541-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-541-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-541-battle-of-hillsbrad",
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-550-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-567-dangerous"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1424,
+          "Krusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-533-infiltration"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Flame-of-Veraz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-553-2-authored-Flame-of-Veraz"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Flame-of-Azel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-553-1-authored-Flame-of-Azel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Flame-of-Uzel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-553-3-authored-Flame-of-Uzel"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1424,
+          "Helcular's Revenge"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-553-helcular-s-revenge"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1424,
+          "Mudsnout Blossoms"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-509-1-mudsnout-blossoms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-arathi-highlands"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1424,
+          "Mudsnout Blossoms"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-objective-509-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-turnin-509-elixir-of-agony",
+          "horde-leveling-era-horde-arathi-highlands-accept-513-elixir-of-agony"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1458,
+          "Master Apothecary Faranell"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-turnin-513-elixir-of-agony"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1458,
+          "Varimathras"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-turnin-550-battle-of-hillsbrad"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-alterac-mountains-and-arathi-highlands"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1424,
+          "Keeper Bel'varil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-557-bracers-of-binding"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-566-wanted-baron-vardus"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1424,
+          "WANTED: Baron Vardus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-566-wanted-baron-vardus"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1424,
+          "Krusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-503-gol-dir"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1416,
+          "Jailor Borhuin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-503-1-jailor-borhuin"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1416,
+          "Gol'dir"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-503-gol-dir",
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-506-blackmoore-s-legacy"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1416,
+          "Baron Vardus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-566-1-baron-vardus"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1416,
+          "Baron Vardus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-566-1-baron-vardus-2"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1424,
+          "Krusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-506-blackmoore-s-legacy",
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-507-lord-aliden-perenolde"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1424,
+          "High Executor Darthalia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-566-wanted-baron-vardus"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1416,
+          "Bracers of Earth Binding"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-557-1-elemental-slave"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1416,
+          "Lord Aliden Perenolde"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-507-1-lord-aliden-perenolde"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1416,
+          "Elysa"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-507-lord-aliden-perenolde",
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-508-taretha-s-gift"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1424,
+          "Keeper Bel'varil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-557-bracers-of-binding"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1424,
+          "Krusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-508-taretha-s-gift"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-495-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Sharlindra"
+        ],
+        "actions": [
+          "horde-extra-495-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-495-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Melisara"
+        ],
+        "actions": [
+          "horde-extra-495-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-518-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Melisara"
+        ],
+        "actions": [
+          "horde-extra-518-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1416,
+          "Crushridge Mauler"
+        ],
+        "actions": [
+          "horde-extra-518-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Melisara"
+        ],
+        "actions": [
+          "horde-extra-518-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-547-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Deathguard Humbert"
+        ],
+        "actions": [
+          "horde-extra-547-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Dun Garok Mountaineer"
+        ],
+        "actions": [
+          "horde-extra-547-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Deathguard Humbert"
+        ],
+        "actions": [
+          "horde-extra-547-turnin"
         ]
       }
     ]

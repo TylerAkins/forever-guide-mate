@@ -2088,7 +2088,7 @@ ns:RegisterGuide({
             route = {
                 { y = 0.432, mapID = 1431, label = "Nightbane Dark Runner", offMapText = "Travel to Nightbane Dark Runner.", x = 0.67 },
             },
-            dependsOn = { "objective-221-1-nightbane-dark-runner" },
+            dependsOn = {},
             id = "accept-337-an-old-history-book-late",
             kind = "accept",
             conditions = {

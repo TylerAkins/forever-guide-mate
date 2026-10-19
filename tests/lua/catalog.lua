@@ -25,6 +25,7 @@ for guideID, quests in pairs(dofile('tests/fixtures/starter_detour_cuts.lua')) d
 end
 -- These actions depart from reference order for verified prerequisites or shared outings.
 local intentionalOutingReorders = {
+ ['leveling-era-horde-alterac-mountains-and-arathi-highlands'] = { ['objective:566:1:23']=true },
  ['leveling-era-alliance-westfall'] = { ['objective:22:1:22']=true },
  ['leveling-era-horde-the-barrens-and-stonetalon-mountain'] = { ['objective:855:1:121']=true },
  ['leveling-era-horde-hillsbrad-foothills'] = {

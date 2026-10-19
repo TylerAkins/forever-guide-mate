@@ -58,6 +58,17 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertEqual(facts['item'], {'id': 2794, 'name': None})
         self.assertEqual(facts['evidence']['questiedb']['sourceItemId'], 2794)
 
+    def test_unnamed_intermediate_material_requires_review(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Test', 'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
+            {'point':'start','coord':[10,20],'name':'First','id':1},
+            {'point':'sourcerequirement','coord':[15,20],'name':'First Mob','item':'Bait','id':3},
+            {'point':'sourcerequirement','coord':[16,20],'name':'Boss','item':'Head','id':4},
+            {'point':'end','coord':[20,20],'name':'Second','id':2}]]}}}},
+            'questiedb': {'objectivesText': ['Bring the Head to Second.']}})
+        with self.assertRaisesRegex(ValueError, 'intermediate'):
+            build_actions(facts, 'Horde')
+
     def test_lua_keyword_keys_are_quoted(self):
         from loremaster_sources import lua
         self.assertIn('["not"]', lua({'not': {'profession': {'skillLineID': 333}}}))
@@ -93,7 +104,7 @@ assert(n.EvaluateCondition(condition,s)==true,'Observed predecessor history allo
         subprocess.run([runner,'-'],input=source,text=True,check=True,cwd=Path(__file__).resolve().parents[1])
 
 class ZonePreparationTests(unittest.TestCase):
-    def prepare(self, quests, source_goals=(), upstream_order=(), revision=None, registered=None):
+    def prepare(self, quests, source_goals=(), upstream_order=(), revision=None, registered=None, extra_guides=(), source_condition=None):
         import gzip
         import json
         import tempfile
@@ -120,7 +131,7 @@ class ZonePreparationTests(unittest.TestCase):
                                        'questiedb': {'attributes': fields, 'revision': 'qd'}}}
                 stream.write(json.dumps({'entityType': 'quest', 'entityId': str(q), 'attributes': attrs})+'\n')
         snapshot = {'guides': [{'id': 'leveling-source', 'category': 'Leveling Quest Guides',
-                    'conditions': {'faction': 'Horde'}, 'goals': list(source_goals)}], 'prerequisites': registered or {}}
+                    'conditions': source_condition or {'faction': 'Horde'}, 'goals': list(source_goals)}] + list(extra_guides), 'prerequisites': registered or {}}
         spec = {'zone': 'Redridge Mountains', 'slug': 'redridge-mountains', 'file': 'Guides/Loremaster/RedridgeMountains.lua'}
         with patch.object(author, 'ROOT', root), patch.object(author.subprocess, 'check_output', return_value=revision or author.UPSTREAM_COMMIT), patch.object(author.subprocess, 'run'), patch.object(author, 'upstream_actions', return_value=(list(upstream_order), {})):
             text, audit = author.prepare(spec, root, root, snapshot)
@@ -134,6 +145,29 @@ class ZonePreparationTests(unittest.TestCase):
         target = next(i for i,g in enumerate(goals) if g.quest_id==11 and g.kind=='accept')
         self.assertLess(end,target)
         self.assertTrue(all('alternativeQuests' in g.raw for g in goals if g.quest_id==10))
+
+    def test_source_dependencies_resolve_across_casual_chapters(self):
+        from weave_loremaster import parse_goals
+        def goal(id, kind):
+            return {'id':id,'kind':kind,'conditions':{'faction':'Horde'},
+                    'complete':{'quest':{'id':10,'state':'complete' if kind=='objective' else 'activeOrCompleted'}},
+                    'dependsOn':['objective-10-quest-work'] if kind=='turnin' else []}
+        text, audit = self.prepare({10:{}}, [goal('accept-10','accept'),goal('objective-10','objective')],
+            extra_guides=[{'id':'leveling-second','category':'Leveling Quest Guides',
+                           'conditions':{'faction':'Horde'},'goals':[goal('turnin-10','turnin')]}])
+        turnin=next(g for g in parse_goals(text,'','',None) if g.kind=='turnin')
+        self.assertIn('horde-leveling-source-objective-10',turnin.depends)
+
+    def test_extracted_visit_retains_chapter_entry_level(self):
+        from weave_loremaster import parse_goals, goal_field
+        goal={'id':'accept-10','kind':'accept','conditions':{'faction':'Horde'},
+              'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}}
+        text, audit = self.prepare({10:{}}, [goal], source_condition={'all':[{'faction':'Horde'},{'level':{'min':22}}]})
+        goals=parse_goals(text,'','',None)
+        entry=next(g for g in goals if g.id=='visit-entry-leveling-source')
+        self.assertIn('requiredLevel = 22',entry.raw)
+        self.assertNotIn('level',goal_field(entry.raw,'conditions'))
+        self.assertLess(goals.index(entry),next(i for i,g in enumerate(goals) if g.kind=='accept'))
 
     def test_any_prerequisite_does_not_become_all_completion_dependencies(self):
         text, audit = self.prepare({10: {}, 11: {}, 12: {'preQuestSingle': [10, 11]}})

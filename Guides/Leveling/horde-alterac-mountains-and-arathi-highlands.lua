@@ -660,6 +660,39 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            text = "Collect 1 Head of Baron Vardus.",
+            route = {
+                { y = 0.17, mapID = 1416, label = "Baron Vardus", offMapText = "Travel to Baron Vardus.", x = 0.474 },
+            },
+            dependsOn = { "accept-566-wanted-baron-vardus" },
+            id = "objective-566-1-baron-vardus-2",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 566, text = "Baron Vardus", index = 1, count = 1 },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 549 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
             text = "Turn in Blackmoore's Legacy to Krusk.",
             route = {
                 { y = 0.2066, mapID = 1424, label = "Krusk", offMapText = "Travel to Krusk in Hillsbrad Foothills.", x = 0.6324 },
@@ -955,39 +988,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
-        {
-            text = "Collect 1 Head of Baron Vardus.",
-            route = {
-                { y = 0.17, mapID = 1416, label = "Baron Vardus", offMapText = "Travel to Baron Vardus.", x = 0.474 },
-            },
-            dependsOn = { "accept-566-wanted-baron-vardus" },
-            id = "objective-566-1-baron-vardus-2",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 35 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 566, text = "Baron Vardus", index = 1, count = 1 },
-            },
-            sourceStep = 23,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 549 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
         },
         {
             text = "Turn in Dalaran Patrols to Magus Wordeen Voidglare.",

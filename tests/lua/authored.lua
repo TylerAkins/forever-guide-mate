@@ -77,3 +77,5 @@ dofile('tests/lua/loremaster_zones.lua')
 dofile('tests/lua/duskwood_items.lua')
 
 dofile('tests/lua/loremaster_branches.lua')
+
+dofile('tests/lua/hillsbrad_order.lua')

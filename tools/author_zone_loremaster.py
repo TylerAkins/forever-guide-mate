@@ -79,6 +79,11 @@ def build_actions(facts, faction):
     if not start or not end: raise ValueError('Missing supported pickup or return navigation')
     work = [p for p in facts['points'] if p.get('point') not in ('start', 'end')]
     instructions = facts['objectivesText']
+    materials = {p['item'] for p in work if p.get('item')}
+    def words(text):
+        return ' '.join(word.rstrip('s') for word in re.findall(r'[a-z0-9]+', text.lower()))
+    if len(materials) > 1 and any(words(item) not in words(' '.join(instructions)) for item in materials):
+        raise ValueError('Unexplained intermediate material requires reviewed mechanics and visits')
     if work and not instructions: raise ValueError('Missing objective how-to text')
     if instructions and not work and not any(re.search(r'(?i)\b(speak|talk|report)\b', line) for line in instructions):
         raise ValueError('Objective materials are named but acquisition sources and visits need review')
@@ -301,12 +306,20 @@ def prepare(zone_spec, database, upstream, snapshot):
         for node,guide,goal in selected:
             mapping[(guide['id'],goal['id'])] = node
         faction_spine = []
+        source_ordinals = {node: i for i, (node, _, _) in enumerate(source_actions)}
         for node,guide,goal in selected:
             clone = copy.deepcopy(goal)
             clone.pop('questPrerequisites', None)
             clone['id'] = node
             clone['sourceGuide'] = guide['id'];clone['sourceActionID'] = goal['id']
-            clone['dependsOn'] = [mapping[(guide['id'],dep)] for dep in goal.get('dependsOn', []) if (guide['id'],dep) in mapping]
+            clone['dependsOn'] = []
+            for dep in goal.get('dependsOn', []):
+                target = mapping.get((guide['id'], dep))
+                if target is None:
+                    earlier = [n for n, _, action in selected if action['id'] == dep
+                               and source_ordinals[n] < source_ordinals[node]]
+                    target = earlier[-1] if earlier else None
+                if target: clone['dependsOn'].append(target)
             all_goals[node] = clone; added.append(node);faction_spine.append(node)
             if guide['id'] not in sources_used: sources_used.append(guide['id'])
         extra_ids = []
@@ -343,6 +356,13 @@ def prepare(zone_spec, database, upstream, snapshot):
             goal = all_goals[node];q = quest_id(goal)
             if goal.get('kind') == 'turnin': turnins.setdefault(q, []).append(node)
             if goal.get('kind') == 'accept': accepts.setdefault(q, []).append(node)
+        for node in nodes:
+            goal = all_goals[node]
+            if goal.get('kind') == 'turnin':
+                work = [n for n in nodes if all_goals[n].get('kind') == 'objective'
+                        and quest_id(all_goals[n]) == quest_id(goal)]
+                goal['dependsOn'] = list(dict.fromkeys(list(goal.get('dependsOn') or []) + work))
+                if node in raw: raw.pop(node)
         predecessors = {node: [d for d in all_goals[node].get('dependsOn', []) if d in nodes] for node in nodes}
         for node in nodes:
             goal = all_goals[node];q = quest_id(goal)
@@ -427,6 +447,32 @@ def prepare(zone_spec, database, upstream, snapshot):
             entry = audit['quests'].setdefault(str(q), {'catalogs': catalogs.get(q, []), 'evidence': facts[q]['evidence']})
             entry.update(status='spine' if q in casual_quests else 'included', reason='Preserved faction Casual actions.' if q in casual_quests else 'Permanent outdoor quest woven using verified source requirements and advisory legacy order.')
             if entry.get('supporting') and q not in audit['supportingQuests']: audit['supportingQuests'].append(q)
+    # An extracted visit must retain the original chapter entry level even
+    # when its preceding leveling chapters are outside this zone.
+    def without_level(condition):
+        if not isinstance(condition, dict): return condition
+        return {k: ([without_level(c) for c in value if not (isinstance(c, dict) and set(c) == {'level'})]
+                    if k in ('all', 'any') else without_level(value))
+                for k, value in condition.items() if k != 'level'}
+    visits = set()
+    for goal in list(current_goals):
+        source = goal.get('sourceGuide')
+        if not source or source in visits: continue
+        visits.add(source)
+        original = next(g for g in guides if g['id'] == source)
+        condition = original.get('conditions', {})
+        levels = [condition.get('level', {}).get('min', 1)]
+        levels.extend(c.get('level', {}).get('min', 1) for c in condition.get('all', []))
+        level = max(levels)
+        node = 'visit-entry-' + source
+        if level <= 1 or any(g['id'] == node for g in current_goals): continue
+        actor = without_level(condition)
+        entry = {'id': node, 'kind': 'note', 'visitSourceGuide': source,
+                 'text': f'Reach level {level} before the {original.get("title", source)} visit.',
+                 'conditions': actor, 'excludeWhen': {'not': actor},
+                 'complete': {'level': {'min': level}}, 'requiredLevel': level}
+        current_goals.insert(current_goals.index(goal), entry)
+        added.append(node)
     authored = {quest_id(g) for g in current_goals if g.get('kind') == 'accept'}
     for q in authored:
         entry = audit['quests'].get(str(q))

@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Hillsbrad Foothills Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Wetlands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Duskwood Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Redridge Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
