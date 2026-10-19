@@ -3125,6 +3125,33 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "objective-855-1-centaur-bracers",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 15 Centaur Bracers.",
+            complete = {
+                questObjective = { id = 855, index = 1, text = "Centaur Bracers", count = 15 },
+            },
+            route = {
+                { mapID = 1413, x = 0.5291, y = 0.4177, label = "Centaur Bracers", offMapText = "Travel to Centaur Bracers." },
+            },
+            sourceStep = 121,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-855-centaur-bracers" },
+        },
+        {
             text = "Turn in Centaur Bracers to Regthar Deathgate.",
             route = {
                 { y = 0.2841, mapID = 1413, label = "Regthar Deathgate", offMapText = "Travel to Regthar Deathgate in The Barrens.", x = 0.4534 },
@@ -5222,33 +5249,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            id = "objective-855-1-centaur-bracers",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Collect 15 Centaur Bracers.",
-            complete = {
-                questObjective = { id = 855, index = 1, text = "Centaur Bracers", count = 15 },
-            },
-            route = {
-                { mapID = 1413, x = 0.5291, y = 0.4177, label = "Centaur Bracers", offMapText = "Travel to Centaur Bracers." },
-            },
-            sourceStep = 121,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-855-centaur-bracers" },
         },
         {
             text = "Find the Beaten Corpse south of the Crossroads. Inspect it to learn the fate of Mankrik's wife.",

@@ -22,12 +22,13 @@ and return with that hub. Breadcrumbs precede the quests that remove them. Highe
 recommendations require later returns even when the offer minimum is low.
 
 The library contains Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Mulgore,
-Tirisfal Glades, and Zephras Isle. The previous placeholder is retired; archived
+Tirisfal Glades, Zephras Isle, Westfall, Loch Modan, Darkshore, Silverpine Forest,
+and The Barrens. The previous placeholder is retired; archived
 completion ledgers remain preserved. Retired Durotar and Mulgore selections retain
 their zone. Placeholder selections wait for captured character identity and choose
 an eligible starter zone. Zephras also retains its Leveling starter.
 
-The inventories identify six unresolved records: Applejack Still (91736), A Taste
+The original starter inventories identify six unresolved records: Applejack Still (91736), A Taste
 of Darkness (95771), Crown of the Earth (934), A Strategic Alliance (785), The New
 Horde (787), and A Donation of Silk (99197). These are not authored as available
 quests until their missing or contradictory mechanics can be resolved.
@@ -44,3 +45,5 @@ availability or that one character can learn every profession.
 
 Automated checks verify structural order and observed progress, not sufficient XP,
 server availability, or pin accuracy. No Forever client walkthrough has been performed.
+
+See [coverage and verification](loremaster-coverage.md) for reproducible counts, character applicability, source conflicts, provisional quality ratings, and requested client walkthroughs.

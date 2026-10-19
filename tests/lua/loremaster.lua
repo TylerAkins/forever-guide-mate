@@ -124,3 +124,5 @@ assert(ns.OrderedRoutes:Prerequisites(alchemy, skyborne), 'Any verified outdoors
 skyborne.completedQuests[96045] = true
 assert(ns.OrderedRoutes:ExcludedAction(alchemy, skyborne), 'An equivalent completed recipe quest bypasses the lesson')
 print('Loremaster route checks passed')
+
+dofile("tests/lua/zephras_visitors.lua")

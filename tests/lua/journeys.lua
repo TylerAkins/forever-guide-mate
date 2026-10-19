@@ -27,6 +27,9 @@ if guideID:match('^loremaster%-') then
  -- Exercise every profession branch structurally; this is not an in-game profession build.
  for _, skill in ipairs({129,164,165,171,182,185,186,197,202,333,356,393}) do s.professions[skill] = 300 end
  s.items['Dark Iron Map'] = 1
+ s.items["Captain Sander's Treasure Map"] = 1
+ s.items['A Talking Head'] = 1
+ s.items['Runed Scroll'] = 1
 end
 -- Players reach this helper from a class-chain handoff after its outdoor work.
 if guideID == 'dungeons-class-prerequisites' then
@@ -153,6 +156,12 @@ if os.getenv('FGM_LOREMASTER') == '1' then
   {'durotar',2,'Horde'}, {'durotar',8,'Horde'},
   {'mulgore',6,'Horde'}, {'tirisfal-glades',5,'Horde'},
   {'zephras-isle',95,'Alliance'}, {'zephras-isle',96,'Horde'},
+  {'westfall',1,'Alliance'}, {'westfall',3,'Alliance'}, {'westfall',4,'Alliance'}, {'westfall',7,'Alliance'}, {'westfall',95,'Alliance'},
+  {'loch-modan',1,'Alliance'}, {'loch-modan',3,'Alliance'}, {'loch-modan',4,'Alliance'}, {'loch-modan',7,'Alliance'}, {'loch-modan',95,'Alliance'},
+  {'darkshore',1,'Alliance'}, {'darkshore',3,'Alliance'}, {'darkshore',4,'Alliance'}, {'darkshore',7,'Alliance'}, {'darkshore',95,'Alliance'},
+  {'silverpine-forest',2,'Horde'}, {'silverpine-forest',5,'Horde'}, {'silverpine-forest',6,'Horde'}, {'silverpine-forest',8,'Horde'}, {'silverpine-forest',96,'Horde'},
+  {'the-barrens',2,'Horde'}, {'the-barrens',5,'Horde'}, {'the-barrens',6,'Horde'}, {'the-barrens',8,'Horde'}, {'the-barrens',96,'Horde'},
+  {'the-barrens',1,'Alliance'}, {'the-barrens',3,'Alliance'}, {'the-barrens',4,'Alliance'}, {'the-barrens',7,'Alliance'}, {'the-barrens',95,'Alliance'},
  }) do
   for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
    contexts[#contexts+1] = {'loremaster-' .. spec[1], spec[2], class, spec[3]}

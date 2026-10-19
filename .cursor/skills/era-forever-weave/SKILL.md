@@ -3,6 +3,8 @@ name: era-forever-weave
 description: Weave Wowhead Forever quests into a Casual leveling chapter under Guides/Leveling. Use when deciding whether a new Forever quest belongs on the route or placing a woven quest.
 ---
 
+When changing a Casual or Starter quest that also appears in Loremaster, update its corresponding Loremaster actions in the same change, or document a supported intentional difference.
+
 # Era Forever weave
 
 The 1–60 Casual spine lives in `Guides/Leveling/`. Weaving means inserting Forever quests that sit on the existing route — never rewriting the spine itself.

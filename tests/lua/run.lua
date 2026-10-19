@@ -3986,7 +3986,7 @@ local otherShaman = {}
 for key, value in pairs(shaman) do otherShaman[key] = value end
 otherShaman.level = 10
 otherShaman.raceID = 6
-Equal(ns.EvaluateCondition(callOfFire.conditions, otherShaman), false, "other horde shamans do not take Call of Fire")
+Equal(ns.EvaluateCondition(callOfFire.conditions, otherShaman), true, "Wowhead permits other Horde shamans to take Call of Fire")
 local skyborneWarrior = {}
 for key, value in pairs(hordeSkyborne) do skyborneWarrior[key] = value end
 skyborneWarrior.classID = 1
@@ -6025,7 +6025,7 @@ local function TestClassQuestGuides()
         { "leveling-era-mulgore", "turnin-748-poison-water", "Horde", { { 6, 1, true }, { 2, 1, false } } },
         { "leveling-era-mulgore", "accept-854-journey-to-the-crossroads", "Horde", { { 6, 1, true }, { 8, 1, false } } },
         { "leveling-era-tirisfal-glades", "accept-363-rude-awakening", "Horde", { { 5, 1, true }, { 2, 1, false } } },
-        { "leveling-zephras-isle", "accept-welcome-to-azeroth", "Horde", { { 96, 1, true }, { 2, 1, false } }, 14 },
+        { "leveling-zephras-isle", "accept-welcome-to-azeroth", "Horde", { { 96, 1, true }, { 2, 1, true } }, 14 },
     }
     for _, case in ipairs(starterGates) do
         local step = Goal(ns.guides[case[1]], case[2])

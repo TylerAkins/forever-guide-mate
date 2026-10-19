@@ -3,6 +3,8 @@ name: zone-loremaster-guide
 description: Add or update an ordered Forever GuideMate zone Loremaster itinerary, assign capital pickups to their owning zones, and weave omitted quests around verified prerequisites, levels, and visits.
 ---
 
+When changing a Casual or Starter quest that also appears in Loremaster, update its corresponding Loremaster actions in the same change, or document a supported intentional difference.
+
 # Zone Loremaster guide
 
 Read `docs/guide-authoring.md` before editing. Loremaster preserves the zone's

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 8,
+    revision = 9,
     title = "Westfall",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-westfall",
@@ -11091,6 +11091,33 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "objective-22-1-goretusk-liver",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 8 Goretusk Liver.",
+            complete = {
+                questObjective = { id = 22, index = 1, text = "Goretusk Liver", count = 8 },
+            },
+            route = {
+                { mapID = 1436, x = 0.522, y = 0.426, label = "Goretusk Liver", offMapText = "Travel to Goretusk Liver." },
+            },
+            sourceStep = 22,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-22-goretusk-liver-pie" },
+        },
+        {
             text = "Turn in Goretusk Liver Pie to Salma Saldean.",
             route = {
                 { y = 0.3052, mapID = 1436, label = "Salma Saldean", offMapText = "Travel to Salma Saldean in Westfall.", x = 0.5642 },
@@ -11242,33 +11269,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-38-westfall-stew" },
-        },
-        {
-            id = "objective-22-1-goretusk-liver",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            text = "Collect 8 Goretusk Liver.",
-            complete = {
-                questObjective = { id = 22, index = 1, text = "Goretusk Liver", count = 8 },
-            },
-            route = {
-                { mapID = 1436, x = 0.522, y = 0.426, label = "Goretusk Liver", offMapText = "Travel to Goretusk Liver." },
-            },
-            sourceStep = 22,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-22-goretusk-liver-pie" },
         },
         {
             text = "Turn in The Killing Fields to Farmer Saldean.",

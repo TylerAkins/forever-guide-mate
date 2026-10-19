@@ -1,0 +1,173 @@
+{
+  "10621": {
+    "name": "Runed Scroll",
+    "startQuest": 3513,
+    "drops": [
+      {
+        "id": 5797,
+        "name": "Aean Swiftriver"
+      }
+    ],
+    "sources": {
+      "allthethings": {
+        "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "attributes": {}
+      },
+      "foreverclient": {
+        "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "attributes": {
+          "Display_lang": "Runed Scroll",
+          "StartQuestID": 3513
+        }
+      },
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Runed Scroll",
+          "npcDrops": [
+            5797
+          ]
+        }
+      }
+    }
+  },
+  "1357": {
+    "name": "Captain Sander's Treasure Map",
+    "startQuest": 136,
+    "drops": [
+      {
+        "id": 126,
+        "name": "Murloc Coastrunner"
+      },
+      {
+        "id": 127,
+        "name": "Murloc Tidehunter"
+      },
+      {
+        "id": 171,
+        "name": "Murloc Warrior"
+      },
+      {
+        "id": 391,
+        "name": "Old Murk-Eye"
+      },
+      {
+        "id": 456,
+        "name": "Murloc Minor Oracle"
+      },
+      {
+        "id": 458,
+        "name": "Murloc Hunter"
+      },
+      {
+        "id": 513,
+        "name": "Murloc Netter"
+      },
+      {
+        "id": 515,
+        "name": "Murloc Raider"
+      },
+      {
+        "id": 517,
+        "name": "Murloc Oracle"
+      }
+    ],
+    "sources": {
+      "allthethings": {
+        "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "attributes": {}
+      },
+      "foreverclient": {
+        "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "attributes": {
+          "Display_lang": "Captain Sander's Treasure Map",
+          "StartQuestID": 136
+        }
+      },
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Captain Sander's Treasure Map",
+          "npcDrops": [
+            126,
+            127,
+            171,
+            391,
+            456,
+            458,
+            513,
+            515,
+            517
+          ]
+        }
+      }
+    }
+  },
+  "278049": {
+    "name": "Excavation Tools",
+    "startQuest": 86613,
+    "drops": [],
+    "sources": {
+      "foreverclient": {
+        "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "attributes": {
+          "Display_lang": "Excavation Tools",
+          "StartQuestID": 86613
+        }
+      },
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Excavation Tools"
+        }
+      }
+    }
+  },
+  "3317": {
+    "name": "A Talking Head",
+    "startQuest": 460,
+    "drops": [
+      {
+        "id": 1939,
+        "name": "Rot Hide Brute"
+      },
+      {
+        "id": 1940,
+        "name": "Rot Hide Plague Weaver"
+      },
+      {
+        "id": 1942,
+        "name": "Rot Hide Savage"
+      },
+      {
+        "id": 1943,
+        "name": "Raging Rot Hide"
+      }
+    ],
+    "sources": {
+      "allthethings": {
+        "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "attributes": {}
+      },
+      "foreverclient": {
+        "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "attributes": {
+          "Display_lang": "A Talking Head",
+          "StartQuestID": 460
+        }
+      },
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "A Talking Head",
+          "npcDrops": [
+            1939,
+            1940,
+            1942,
+            1943
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6556 @@
+{
+  "92460": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Coming of Age"
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Coming of Age",
+        "questLevel": 1,
+        "requiredLevel": 1,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Coming of Age",
+        "prerequisiteReferences": [],
+        "questLevel": 1,
+        "races": [
+          95
+        ],
+        "requiredLevel": 1
+      }
+    }
+  },
+  "92461": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Harmony in Balance",
+        "preQuestSingle": [
+          92460
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Harmony in Balance",
+        "preQuestSingle": [
+          92460
+        ],
+        "questLevel": 1,
+        "requiredLevel": 1,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Harmony in Balance",
+        "prerequisiteReferences": [],
+        "questLevel": 1,
+        "races": [
+          95
+        ],
+        "requiredLevel": 1
+      }
+    }
+  },
+  "92462": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Infestation Investigation",
+        "preQuestSingle": [
+          92460
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Infestation Investigation",
+        "preQuestSingle": [
+          92460
+        ],
+        "questLevel": 2,
+        "requiredLevel": 1,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Infestation Investigation",
+        "prerequisiteReferences": [
+          92463
+        ],
+        "questLevel": 2,
+        "races": [
+          95
+        ],
+        "requiredLevel": 1
+      }
+    }
+  },
+  "92463": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Cirrusfly Queen",
+        "preQuestSingle": [
+          92462
+        ],
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Cirrusfly Queen",
+        "preQuestSingle": [
+          92462
+        ],
+        "questLevel": 3,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Cirrusfly Queen",
+        "prerequisiteReferences": [],
+        "questLevel": 3,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92464": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Elemental Unrest",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Elemental Unrest",
+        "questLevel": 3,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Elemental Unrest",
+        "prerequisiteReferences": [],
+        "questLevel": 3,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92465": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Agitators",
+        "preQuestSingle": [
+          92464
+        ],
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Agitators",
+        "questLevel": 3,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Agitators",
+        "prerequisiteReferences": [],
+        "questLevel": 3,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92466": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Call of Earth",
+        "requiredClasses": 64,
+        "requiredLevel": 3,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          1516,
+          1519
+        ],
+        "name": "Call of Earth",
+        "questLevel": 4,
+        "requiredClasses": 64,
+        "requiredLevel": 3,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          7,
+          11
+        ],
+        "faction": "Horde",
+        "name": "Call of Earth",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [
+          6
+        ],
+        "requiredLevel": 3
+      }
+    }
+  },
+  "92467": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Call of Earth",
+        "preQuestSingle": [
+          92466
+        ],
+        "requiredClasses": 64,
+        "requiredLevel": 3,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Call of Earth",
+        "preQuestSingle": [
+          1516,
+          1519,
+          92466
+        ],
+        "questLevel": 4,
+        "requiredClasses": 64,
+        "requiredLevel": 3,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          7,
+          11
+        ],
+        "faction": "Horde",
+        "name": "Call of Earth",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [
+          6,
+          8
+        ],
+        "requiredLevel": 3
+      }
+    }
+  },
+  "92468": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Call of Earth",
+        "preQuestSingle": [
+          92467
+        ],
+        "requiredClasses": 64,
+        "requiredLevel": 3,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Call of Earth",
+        "preQuestSingle": [
+          92467
+        ],
+        "questLevel": 4,
+        "requiredClasses": 64,
+        "requiredLevel": 3,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          7,
+          11
+        ],
+        "faction": "Horde",
+        "name": "Call of Earth",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [
+          6
+        ],
+        "requiredLevel": 3
+      }
+    }
+  },
+  "92469": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Return to Rorian",
+        "preQuestSingle": [
+          92465
+        ],
+        "requiredLevel": 3
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Return to Rorian",
+        "preQuestSingle": [
+          92465
+        ],
+        "questLevel": 4,
+        "requiredLevel": 3,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Return to Rorian",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [
+          95
+        ],
+        "requiredLevel": 3
+      }
+    }
+  },
+  "92470": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Foul Matriarch",
+        "preQuestSingle": [
+          92471
+        ],
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Foul Matriarch",
+        "preQuestSingle": [
+          92471
+        ],
+        "questLevel": 5,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Foul Matriarch",
+        "prerequisiteReferences": [],
+        "questLevel": 5,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92471": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Aetheen of the Gales",
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Aetheen of the Gales",
+        "questLevel": 4,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Aetheen of the Gales",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92472": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Next Step",
+        "preQuestSingle": [
+          92470
+        ],
+        "requiredLevel": 3
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Next Step",
+        "preQuestSingle": [
+          92470
+        ],
+        "questLevel": 5,
+        "requiredLevel": 3,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Next Step",
+        "prerequisiteReferences": [],
+        "questLevel": 5,
+        "races": [
+          95
+        ],
+        "requiredLevel": 3
+      }
+    }
+  },
+  "92473": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Aggressive Encroachment",
+        "preQuestSingle": [
+          92471
+        ],
+        "requiredLevel": 3
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Aggressive Encroachment",
+        "preQuestSingle": [
+          92471
+        ],
+        "questLevel": 4,
+        "requiredLevel": 3,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Aggressive Encroachment",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [
+          95
+        ],
+        "requiredLevel": 3
+      }
+    }
+  },
+  "92474": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Falling With Style",
+        "requiredLevel": 2,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Falling With Style",
+        "questLevel": 2,
+        "requiredLevel": 2,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Falling With Style",
+        "prerequisiteReferences": [],
+        "questLevel": 2,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92481": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Student of the Arcane",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredClasses": 128,
+        "requiredLevel": 2,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "A Student of the Arcane",
+        "preQuestSingle": [
+          92461
+        ],
+        "questLevel": 2,
+        "requiredClasses": 128,
+        "requiredLevel": 2,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          8
+        ],
+        "faction": "Alliance",
+        "name": "A Student of the Arcane",
+        "prerequisiteReferences": [],
+        "questLevel": 2,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92482": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Way of the Hunter",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredClasses": 4,
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Way of the Hunter",
+        "preQuestSingle": [
+          92461
+        ],
+        "questLevel": 2,
+        "requiredClasses": 4,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          3
+        ],
+        "name": "The Way of the Hunter",
+        "prerequisiteReferences": [],
+        "questLevel": 2,
+        "races": [
+          5,
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92483": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "At Home in the Shadows",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredClasses": 8,
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "At Home in the Shadows",
+        "preQuestSingle": [
+          92461
+        ],
+        "questLevel": 2,
+        "requiredClasses": 8,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          4
+        ],
+        "name": "At Home in the Shadows",
+        "prerequisiteReferences": [],
+        "questLevel": 2,
+        "races": [
+          5,
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92484": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Embracing the Elements",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredClasses": 64,
+        "requiredLevel": 2,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Embracing the Elements",
+        "preQuestSingle": [
+          92461
+        ],
+        "questLevel": 2,
+        "requiredClasses": 64,
+        "requiredLevel": 2,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          7
+        ],
+        "faction": "Horde",
+        "name": "Embracing the Elements",
+        "prerequisiteReferences": [],
+        "questLevel": 2,
+        "races": [],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92485": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Student of Nature",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredClasses": 1024,
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "A Student of Nature",
+        "preQuestSingle": [
+          92461
+        ],
+        "questLevel": 2,
+        "requiredClasses": 1024,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          11
+        ],
+        "name": "A Student of Nature",
+        "prerequisiteReferences": [],
+        "questLevel": 2,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92514": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Welcome to Shen'dar Village (H)",
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Welcome to Shen'dar Village",
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Welcome to Shen'dar Village",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92515": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Problem With Prideclaws",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Problem With Prideclaws",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Problem With Prideclaws",
+        "prerequisiteReferences": [
+          93461
+        ],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92516": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Hippogryph Harrassment",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Hippogryph Harrassment",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "questLevel": 7,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Hippogryph Harrassment",
+        "prerequisiteReferences": [],
+        "questLevel": 7,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92517": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Criminal Element",
+        "preQuestGroup": [
+          93461,
+          92514
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Criminal Element",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "questLevel": 7,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Criminal Element",
+        "prerequisiteReferences": [],
+        "questLevel": 7,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92528": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Among the Faithful",
+        "preQuestSingle": [
+          92529
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Among the Faithful",
+        "preQuestSingle": [
+          92529
+        ],
+        "questLevel": 8,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Among the Faithful",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92529": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Falaath Village",
+        "preQuestSingle": [
+          93036
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Falaath Village",
+        "preQuestSingle": [
+          93036
+        ],
+        "questLevel": 8,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Falaath Village",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92532": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Warrior's Path",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredClasses": 1,
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Warrior's Path",
+        "preQuestSingle": [
+          92461
+        ],
+        "questLevel": 2,
+        "requiredClasses": 1,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          1
+        ],
+        "name": "The Warrior's Path",
+        "prerequisiteReferences": [],
+        "questLevel": 2,
+        "races": [
+          6,
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92544": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Al'Aketh Thugs",
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Al'Aketh Thugs",
+        "questLevel": 5,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Al'Aketh Thugs",
+        "prerequisiteReferences": [],
+        "questLevel": 5,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92550": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Havoc in the Highlands",
+        "preQuestSingle": [
+          92528
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Havoc in the Highlands",
+        "preQuestSingle": [
+          92528
+        ],
+        "questLevel": 8,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Havoc in the Highlands",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92551": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Stolen Supplies",
+        "preQuestSingle": [
+          92528
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Stolen Supplies",
+        "preQuestSingle": [
+          92528
+        ],
+        "questLevel": 8,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Stolen Supplies",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92553": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Restocking the Larders",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Restocking the Larders",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Restocking the Larders",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92579": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "To Valanaar",
+        "preQuestGroup": [
+          92550,
+          93927
+        ],
+        "requiredLevel": 6,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "To Valanaar",
+        "preQuestGroup": [
+          92550,
+          93927
+        ],
+        "questLevel": 8,
+        "requiredLevel": 6,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "To Valanaar",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          6
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92595": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Windshapers",
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Windshapers",
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "The Windshapers",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          6
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92596": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The High Order",
+        "preQuestSingle": [
+          92472
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The High Order",
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "The High Order",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92597": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Reading the Ley Lines",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredLevel": 2,
+        "requiredRaces": 4294967296
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Reading the Ley Lines",
+        "preQuestSingle": [
+          92461
+        ],
+        "questLevel": 4,
+        "requiredLevel": 2,
+        "requiredRaces": 4294967296
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Reading the Ley Lines",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92598": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Gift of Skysight",
+        "requiredLevel": 2,
+        "requiredRaces": 8589934592
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Gift of Skysight",
+        "questLevel": 4,
+        "requiredLevel": 2,
+        "requiredRaces": 8589934592
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "The Gift of Skysight",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "92640": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Desperate Times",
+        "preQuestSingle": [
+          94568
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Desperate Times",
+        "preQuestSingle": [
+          94568
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Desperate Times",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92642": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Disrupting Logistics",
+        "preQuestSingle": [
+          93320
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Disrupting Logistics",
+        "preQuestSingle": [
+          93320
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Disrupting Logistics",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92643": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Turncoat",
+        "preQuestSingle": [
+          92881
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Turncoat",
+        "preQuestSingle": [
+          92881
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Turncoat",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92644": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Unfortunate News",
+        "preQuestSingle": [
+          92643
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Unfortunate News",
+        "preQuestSingle": [
+          92643
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Unfortunate News",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92645": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Breaking the Breaker",
+        "preQuestSingle": [
+          93320
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Breaking the Breaker",
+        "preQuestSingle": [
+          93320
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Breaking the Breaker",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92646": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Confront Lorthuna",
+        "preQuestSingle": [
+          93958
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Confront Lorthuna",
+        "preQuestSingle": [
+          93958
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Confront Lorthuna",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "92679": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Blood Tithe",
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Blood Tithe",
+        "questLevel": 9,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Blood Tithe",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92682": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Make Yourself Useful",
+        "preQuestSingle": [
+          92679
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Make Yourself Useful",
+        "preQuestSingle": [
+          92679
+        ],
+        "questLevel": 9,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Make Yourself Useful",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92683": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Flutterfly Dust",
+        "preQuestSingle": [
+          92679
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Flutterfly Dust",
+        "preQuestSingle": [
+          92679
+        ],
+        "questLevel": 9,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Flutterfly Dust",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92684": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Ornery Ornery Galestriders",
+        "preQuestSingle": [
+          92679
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Ornery Ornery Galestriders",
+        "preQuestSingle": [
+          92679
+        ],
+        "questLevel": 9,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Ornery Ornery Galestriders",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92685": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Hills Have Eyes",
+        "preQuestGroup": [
+          92682,
+          92683,
+          92684
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Hills Have Eyes",
+        "preQuestGroup": [
+          92682,
+          92683,
+          92684
+        ],
+        "questLevel": 9,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Hills Have Eyes",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92693": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Standing Our Ground",
+        "preQuestSingle": [
+          92685
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Standing Our Ground",
+        "preQuestSingle": [
+          92685
+        ],
+        "questLevel": 9,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Standing Our Ground",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92698": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "What Is My Purpose?",
+        "preQuestSingle": [
+          92679
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "What Is My Purpose?",
+        "preQuestSingle": [
+          92679
+        ],
+        "questLevel": 9,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "What Is My Purpose?",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92699": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Supreme Magister",
+        "preQuestSingle": [
+          92701
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Supreme Magister",
+        "preQuestSingle": [
+          92701
+        ],
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "The Supreme Magister",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92700": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Grand Skyseer",
+        "preQuestSingle": [
+          92579
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Grand Skyseer",
+        "preQuestSingle": [
+          92579
+        ],
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "The Grand Skyseer",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          6
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92701": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "To Valanaar",
+        "preQuestGroup": [
+          92550,
+          93927
+        ],
+        "requiredLevel": 6,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "To Valanaar",
+        "preQuestGroup": [
+          92550,
+          93927
+        ],
+        "questLevel": 9,
+        "requiredLevel": 6,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "To Valanaar",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92703": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Deliver the News",
+        "preQuestSingle": [
+          92693
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Deliver the News",
+        "preQuestSingle": [
+          92693
+        ],
+        "questLevel": 9,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Deliver the News",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92708": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Grand Adventure",
+        "preQuestSingle": [
+          92700
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "A Grand Adventure",
+        "preQuestSingle": [
+          92700
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "A Grand Adventure",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "92709": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Grand Adventure",
+        "preQuestSingle": [
+          92699
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "A Grand Adventure",
+        "preQuestSingle": [
+          92699
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "A Grand Adventure",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "92727": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Missing Scholar",
+        "preQuestSingle": [
+          92699
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Missing Scholar",
+        "preQuestSingle": [
+          92699
+        ],
+        "questLevel": 10,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "The Missing Scholar",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92741": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Unwelcome Visitors",
+        "preQuestSingle": [
+          92699
+        ],
+        "requiredLevel": 8,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Unwelcome Visitors",
+        "preQuestSingle": [
+          92699
+        ],
+        "questLevel": 13,
+        "requiredLevel": 8,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Unwelcome Visitors",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "92834": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Avenged Tenfold",
+        "preQuestSingle": [
+          92840
+        ],
+        "requiredLevel": 6,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Avenged Tenfold",
+        "preQuestSingle": [
+          92840
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Avenged Tenfold",
+        "prerequisiteReferences": [
+          93165,
+          94487
+        ],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92840": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Catching Wind",
+        "preQuestSingle": [
+          99260
+        ],
+        "requiredLevel": 5,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Catching Wind",
+        "preQuestSingle": [
+          99260
+        ],
+        "questLevel": 11,
+        "requiredLevel": 5,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Catching Wind",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "92849": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Missing Scholar",
+        "preQuestSingle": [
+          92727
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Missing Scholar",
+        "preQuestSingle": [
+          92727
+        ],
+        "questLevel": 10,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "The Missing Scholar",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92850": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Missing Scholar",
+        "preQuestSingle": [
+          92849
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Missing Scholar",
+        "preQuestSingle": [
+          92849
+        ],
+        "questLevel": 10,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "The Missing Scholar",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "92860": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "In Service of Zephras",
+        "preQuestSingle": [
+          92834
+        ],
+        "requiredLevel": 6,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "In Service of Zephras",
+        "preQuestSingle": [
+          92840
+        ],
+        "questLevel": 12,
+        "requiredLevel": 6,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "In Service of Zephras",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92871": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "In Service of Zephras",
+        "preQuestSingle": [
+          93746
+        ],
+        "requiredLevel": 6,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "In Service of Zephras",
+        "preQuestSingle": [
+          93746
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "In Service of Zephras",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92880": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Return to Valanaar",
+        "preQuestGroup": [
+          92642,
+          92645
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Return to Valanaar",
+        "preQuestGroup": [
+          92642,
+          92645
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Return to Valanaar",
+        "prerequisiteReferences": [
+          92881
+        ],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92881": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The High Elder's Request",
+        "preQuestSingle": [
+          92880
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The High Elder's Request",
+        "preQuestSingle": [
+          92880
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The High Elder's Request",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "92947": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Making Our Move",
+        "preQuestSingle": [
+          93065
+        ],
+        "requiredLevel": 7
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Making Our Move",
+        "preQuestSingle": [
+          93065
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Making Our Move",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "93036": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Infiltrating the Cult",
+        "preQuestSingle": [
+          92517
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Infiltrating the Cult",
+        "preQuestSingle": [
+          92517
+        ],
+        "questLevel": 8,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Infiltrating the Cult",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "93065": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Prepare for Battle",
+        "preQuestSingle": [
+          92640
+        ],
+        "requiredLevel": 7
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Prepare for Battle",
+        "preQuestSingle": [
+          92640
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Prepare for Battle",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "93089": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "What Comes Next",
+        "preQuestSingle": [
+          94369
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "What Comes Next",
+        "preQuestSingle": [
+          94369
+        ],
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "What Comes Next",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "93090": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "What Comes Next",
+        "preQuestSingle": [
+          93836
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "What Comes Next",
+        "preQuestSingle": [
+          93836
+        ],
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "What Comes Next",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "93159": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Strange Hermit",
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Strange Hermit",
+        "questLevel": 13,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Strange Hermit",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          6,
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "93160": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Forest's Bounty",
+        "preQuestSingle": [
+          93159
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Forest's Bounty",
+        "preQuestSingle": [
+          93159
+        ],
+        "questLevel": 13,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Forest's Bounty",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "93165": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Mercy Falls on Deaf Ears",
+        "preQuestSingle": [
+          94484
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Mercy Falls on Deaf Ears",
+        "preQuestSingle": [
+          94484,
+          94493
+        ],
+        "questLevel": 13,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Mercy Falls on Deaf Ears",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          3,
+          6,
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "93172": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Free the Hollows",
+        "preQuestSingle": [
+          93159
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Free the Hollows",
+        "preQuestSingle": [
+          93159
+        ],
+        "questLevel": 13,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Free the Hollows",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "93317": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Crab Season",
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Crab Season",
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Crab Season",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93318": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "WANTED: Vulgara the Insatiable",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "WANTED: Vulgara the Insatiable",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "WANTED: Vulgara the Insatiable",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93319": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Pilfered Windstones",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Pilfered Windstones",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "questLevel": 7,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Pilfered Windstones",
+        "prerequisiteReferences": [],
+        "questLevel": 7,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93320": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Tower Defense",
+        "preQuestSingle": [
+          92860,
+          92871
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Tower Defense",
+        "preQuestSingle": [
+          92860,
+          92871
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Tower Defense",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "93461": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Welcome to Shen'dar Village (A)",
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Welcome to Shen'dar Village",
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Welcome to Shen'dar Village",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93552": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Harvesting Windstones",
+        "preQuestSingle": [
+          92461
+        ],
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Harvesting Windstones",
+        "preQuestSingle": [
+          92461
+        ],
+        "questLevel": 4,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Harvesting Windstones",
+        "prerequisiteReferences": [],
+        "questLevel": 4,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "93735": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Broken Construct",
+        "preQuestSingle": [
+          92700
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Broken Construct",
+        "preQuestSingle": [
+          92700
+        ],
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "The Broken Construct",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93736": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Unwelcome Spirits",
+        "preQuestSingle": [
+          92700
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Unwelcome Spirits",
+        "preQuestSingle": [
+          92700
+        ],
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Unwelcome Spirits",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93737": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Broken Construct",
+        "preQuestSingle": [
+          93735
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Broken Construct",
+        "preQuestSingle": [
+          93735
+        ],
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "The Broken Construct",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93738": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Broken Construct",
+        "preQuestSingle": [
+          93737
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Broken Construct",
+        "preQuestSingle": [
+          93737
+        ],
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "The Broken Construct",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93739": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Exploring the Horde",
+        "preQuestSingle": [
+          95350
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 8589934592
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Exploring the Horde",
+        "preQuestSingle": [
+          95350
+        ],
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 8589934592
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Exploring the Horde",
+        "prerequisiteReferences": [
+          5725
+        ],
+        "questLevel": 13,
+        "races": [],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "93740": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Blood for Blood",
+        "preQuestSingle": [
+          93746
+        ],
+        "requiredLevel": 6,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Blood for Blood",
+        "preQuestSingle": [
+          93746
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Blood for Blood",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "93746": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Firm Response",
+        "preQuestSingle": [
+          93738
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "A Firm Response",
+        "preQuestSingle": [
+          93738
+        ],
+        "questLevel": 9,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "A Firm Response",
+        "prerequisiteReferences": [
+          93735
+        ],
+        "questLevel": 9,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93791": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Speak with Belann",
+        "requiredClasses": 128,
+        "requiredLevel": 10,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Speak with Belann",
+        "questLevel": 10,
+        "requiredClasses": 128,
+        "requiredLevel": 10,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          8
+        ],
+        "faction": "Alliance",
+        "name": "Speak with Belann",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "93797": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Boughs in the Wind",
+        "preQuestSingle": [
+          93791
+        ],
+        "requiredClasses": 128,
+        "requiredLevel": 10,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Boughs in the Wind",
+        "preQuestSingle": [
+          93791
+        ],
+        "questLevel": 10,
+        "requiredLevel": 10,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [
+          8
+        ],
+        "faction": "Alliance",
+        "name": "Boughs in the Wind",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "93835": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Confront Lorthuna",
+        "preQuestSingle": [
+          93958
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Confront Lorthuna",
+        "preQuestSingle": [
+          93958
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Confront Lorthuna",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "93836": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Fate of Zephras",
+        "preQuestSingle": [
+          92646
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Fate of Zephras",
+        "preQuestSingle": [
+          92646
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "The Fate of Zephras",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "93926": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Western Watch",
+        "preQuestSingle": [
+          92528
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Western Watch",
+        "preQuestSingle": [
+          92528
+        ],
+        "questLevel": 8,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Western Watch",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "93927": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Last Request",
+        "preQuestSingle": [
+          93926
+        ],
+        "requiredLevel": 5
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "A Last Request",
+        "preQuestSingle": [
+          93926
+        ],
+        "questLevel": 8,
+        "requiredLevel": 5,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "A Last Request",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  },
+  "93948": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Deliver the Signet",
+        "preQuestGroup": [
+          92550,
+          93927
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Deliver the Signet",
+        "preQuestGroup": [
+          92550,
+          93927
+        ],
+        "questLevel": 9,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Deliver the Signet",
+        "prerequisiteReferences": [],
+        "questLevel": 9,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "93949": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Bugged",
+        "preQuestSingle": [
+          93948
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Bugged",
+        "preQuestSingle": [
+          93948
+        ],
+        "questLevel": 8,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Bugged",
+        "prerequisiteReferences": [],
+        "questLevel": 8,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "93951": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Little Beauty",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "A Little Beauty",
+        "preQuestSingle": [
+          92514,
+          93461
+        ],
+        "questLevel": 7,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "A Little Beauty",
+        "prerequisiteReferences": [],
+        "questLevel": 7,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "93958": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Inner Sanctum",
+        "preQuestSingle": [
+          92947
+        ],
+        "requiredLevel": 7
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Inner Sanctum",
+        "preQuestSingle": [
+          92947
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Inner Sanctum",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "93963": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Exploring the Alliance",
+        "preQuestSingle": [
+          94947
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 4294967296
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Exploring the Alliance",
+        "preQuestSingle": [
+          94947
+        ],
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 4294967296
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Exploring the Alliance",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "94003": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Skybreaker Bulwark",
+        "requiredClasses": 1,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Skybreaker Bulwark",
+        "questLevel": 10,
+        "requiredClasses": 1,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Skybreaker Bulwark",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94006": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Great Ursera Spirit",
+        "requiredClasses": 1024,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Great Ursera Spirit",
+        "questLevel": 10,
+        "requiredClasses": 1024,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Great Ursera Spirit",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94007": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Taming the Beast",
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Taming the Beast",
+        "questLevel": 10,
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Taming the Beast",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94013": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Taming the Beast",
+        "preQuestSingle": [
+          94979
+        ],
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Taming the Beast",
+        "preQuestSingle": [
+          94979
+        ],
+        "questLevel": 10,
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Taming the Beast",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94050": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Training the Beast",
+        "preQuestSingle": [
+          94013
+        ],
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Training the Beast",
+        "preQuestSingle": [
+          94013
+        ],
+        "questLevel": 10,
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Training the Beast",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94369": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Fate of Zephras",
+        "preQuestSingle": [
+          93835
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Fate of Zephras",
+        "preQuestSingle": [
+          93835
+        ],
+        "questLevel": 12,
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "The Fate of Zephras",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "94411": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Meddlesome Mages",
+        "preQuestSingle": [
+          92595
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Meddlesome Mages",
+        "preQuestSingle": [
+          92595
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Meddlesome Mages",
+        "prerequisiteReferences": [
+          1527
+        ],
+        "questLevel": 6,
+        "races": [
+          6
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "94413": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Magical Affront",
+        "preQuestSingle": [
+          92596
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "A Magical Affront",
+        "preQuestSingle": [
+          92596
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "A Magical Affront",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "94414": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Anchors of Zephras",
+        "requiredLevel": 2
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Anchors of Zephras",
+        "questLevel": 2,
+        "requiredLevel": 2,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Anchors of Zephras",
+        "prerequisiteReferences": [],
+        "questLevel": 2,
+        "races": [
+          95
+        ],
+        "requiredLevel": 2
+      }
+    }
+  },
+  "94484": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Unnerving Silence",
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          94493
+        ],
+        "name": "Unnerving Silence",
+        "questLevel": 11,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Unnerving Silence",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94485": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Tears of the Lady",
+        "preQuestSingle": [
+          94484
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Tears of the Lady",
+        "preQuestSingle": [
+          94484,
+          94493
+        ],
+        "questLevel": 12,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Tears of the Lady",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94486": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Feathers for Binding",
+        "preQuestSingle": [
+          94484
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Feathers for Binding",
+        "preQuestSingle": [
+          94484,
+          94493
+        ],
+        "questLevel": 11,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Feathers for Binding",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94487": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Unwanted and Unworthy",
+        "preQuestSingle": [
+          94484
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Unwanted and Unworthy",
+        "preQuestSingle": [
+          94484,
+          94493
+        ],
+        "questLevel": 11,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Unwanted and Unworthy",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94488": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Ties That Bind",
+        "preQuestGroup": [
+          94485,
+          94486,
+          94487
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Ties That Bind",
+        "preQuestGroup": [
+          94485,
+          94486,
+          94487
+        ],
+        "questLevel": 11,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Ties That Bind",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94489": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Wounds of Betrayal",
+        "preQuestGroup": [
+          94485,
+          94486,
+          94487
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Wounds of Betrayal",
+        "preQuestGroup": [
+          94485,
+          94486,
+          94487
+        ],
+        "questLevel": 12,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Wounds of Betrayal",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94490": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Ripped Missive",
+        "preQuestGroup": [
+          94485,
+          94486,
+          94487
+        ],
+        "requiredLevel": 9
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Ripped Missive",
+        "preQuestGroup": [
+          94485,
+          94486,
+          94487
+        ],
+        "questLevel": 12,
+        "requiredLevel": 9,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Ripped Missive",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [],
+        "requiredLevel": 9
+      }
+    }
+  },
+  "94491": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Fate of the Den",
+        "preQuestSingle": [
+          94490
+        ],
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Fate of the Den",
+        "preQuestSingle": [
+          94490
+        ],
+        "questLevel": 12,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Fate of the Den",
+        "prerequisiteReferences": [],
+        "questLevel": 12,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94493": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "A Sacrifice in Vain",
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          94484
+        ],
+        "name": "A Sacrifice in Vain",
+        "questLevel": 11,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "A Sacrifice in Vain",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94568": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Cult's True Plans",
+        "preQuestSingle": [
+          92644
+        ],
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Cult's True Plans",
+        "preQuestSingle": [
+          92644
+        ],
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Cult's True Plans",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "94638": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Strength and Mercy",
+        "preQuestSingle": [
+          92840
+        ],
+        "requiredClasses": 1024,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Strength and Mercy",
+        "preQuestSingle": [
+          94006
+        ],
+        "questLevel": 10,
+        "requiredClasses": 1024,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Strength and Mercy",
+        "prerequisiteReferences": [
+          92840
+        ],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94896": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Aid For The Refugees",
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Aid For The Refugees",
+        "questLevel": 11,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Aid For The Refugees",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94897": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Fate of a Loved One",
+        "requiredLevel": 8
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Fate of a Loved One",
+        "questLevel": 11,
+        "requiredLevel": 8,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Fate of a Loved One",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 8
+      }
+    }
+  },
+  "94912": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Child of Nature",
+        "requiredClasses": 1024,
+        "requiredLevel": 10,
+        "requiredRaces": 4294967296
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Child of Nature",
+        "questLevel": 10,
+        "requiredClasses": 1024,
+        "requiredLevel": 10,
+        "requiredRaces": 4294967296
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Child of Nature",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94914": {
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Moonglade",
+        "questLevel": 10,
+        "requiredClasses": 1024,
+        "requiredLevel": 10,
+        "requiredRaces": 4294967296
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Moonglade",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94946": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Magical City of Dalaran",
+        "preQuestSingle": [
+          93089
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Magical City of Dalaran",
+        "preQuestSingle": [
+          93089
+        ],
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "The Magical City of Dalaran",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "94947": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Welcome to Azeroth",
+        "requiredLevel": 7,
+        "requiredRaces": 4294967296
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Welcome to Azeroth",
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 4294967296
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Welcome to Azeroth",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "94978": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Taming the Beast",
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Taming the Beast",
+        "questLevel": 10,
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Taming the Beast",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "94979": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Taming the Beast",
+        "preQuestSingle": [
+          94978
+        ],
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Taming the Beast",
+        "preQuestSingle": [
+          94978
+        ],
+        "questLevel": 10,
+        "requiredClasses": 4,
+        "requiredLevel": 10,
+        "requiredRaces": 12884901888
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Taming the Beast",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "95349": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Earthen Ring",
+        "preQuestSingle": [
+          93090
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "The Earthen Ring",
+        "preQuestSingle": [
+          93090
+        ],
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 8589934770
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "The Earthen Ring",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "95350": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Welcome to Azeroth",
+        "preQuestSingle": [
+          95349
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 8589934592
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Welcome to Azeroth",
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 8589934592
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Welcome to Azeroth",
+        "prerequisiteReferences": [],
+        "questLevel": 13,
+        "races": [],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "96101": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Great Outdoors [Zephras Isle]",
+        "preQuestSingle": [
+          96638
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          95998,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "name": "The Great Outdoors",
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Great Outdoors",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "96638": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "The Adventurer [Zephras Isle]",
+        "preQuestSingle": [
+          92470
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96627,
+          96628,
+          96630,
+          96652,
+          96656,
+          96659
+        ],
+        "name": "The Adventurer",
+        "preQuestSingle": [
+          92470
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "The Adventurer",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "96646": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Cooking",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96626,
+          96629,
+          96634,
+          96655,
+          96658,
+          96661
+        ],
+        "name": "Camping 101: Cooking",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Cooking",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97243": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Call of Fire",
+        "requiredClasses": 64,
+        "requiredLevel": 10,
+        "requiredRaces": 8589934592
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Call of Fire",
+        "questLevel": 10,
+        "requiredClasses": 64,
+        "requiredLevel": 10,
+        "requiredRaces": 8589934592
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Call of Fire",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "97244": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Call of Fire",
+        "preQuestSingle": [
+          97243
+        ],
+        "requiredClasses": 64,
+        "requiredLevel": 10,
+        "requiredRaces": 8589934592
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Call of Fire",
+        "preQuestSingle": [
+          97243
+        ],
+        "questLevel": 10,
+        "requiredClasses": 64,
+        "requiredLevel": 10,
+        "requiredRaces": 8589934592
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Call of Fire",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "97245": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Call of Fire",
+        "preQuestSingle": [
+          97244
+        ],
+        "requiredClasses": 64,
+        "requiredLevel": 10,
+        "requiredRaces": 8589934592
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Call of Fire",
+        "preQuestSingle": [
+          97244
+        ],
+        "questLevel": 10,
+        "requiredClasses": 64,
+        "requiredLevel": 10,
+        "requiredRaces": 8589934592
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Call of Fire",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "97257": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Call of Fire",
+        "preQuestSingle": [
+          97245
+        ],
+        "requiredClasses": 64,
+        "requiredLevel": 10,
+        "requiredRaces": 8589934592
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Call of Fire",
+        "preQuestSingle": [
+          97245
+        ],
+        "questLevel": 10,
+        "requiredClasses": 64,
+        "requiredLevel": 10,
+        "requiredRaces": 8589934592
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Call of Fire",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [],
+        "requiredLevel": 10
+      }
+    }
+  },
+  "97963": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Alchemy",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          171,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96045,
+          97899,
+          97915,
+          97927,
+          97938,
+          97951
+        ],
+        "name": "Camping 101: Alchemy",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          171,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Alchemy",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97964": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Blacksmithing",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          164,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96044,
+          97900,
+          97916,
+          97928,
+          97939,
+          97952
+        ],
+        "name": "Camping 101: Blacksmithing",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          164,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Blacksmithing",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          6,
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97965": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: First Aid",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          129,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96047,
+          97903,
+          97919,
+          97931,
+          97942,
+          97955
+        ],
+        "name": "Camping 101: First Aid",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          129,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: First Aid",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97967": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Fishing",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          356,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96050,
+          97904,
+          97920,
+          97932,
+          97943,
+          97956
+        ],
+        "name": "Camping 101: Fishing",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          356,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Fishing",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97968": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Herbalism",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          182,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96055,
+          97905,
+          97921,
+          97933,
+          97944,
+          97957
+        ],
+        "name": "Camping 101: Herbalism",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          182,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Herbalism",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97969": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Leatherworking",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          165,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96031,
+          97906,
+          97922,
+          97934,
+          97946,
+          97958
+        ],
+        "name": "Camping 101: Leatherworking",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          165,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Leatherworking",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97970": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Mining",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          186,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96046,
+          97907,
+          97923,
+          97935,
+          97948,
+          97959
+        ],
+        "name": "Camping 101: Mining",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          186,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Mining",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97971": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Skinning",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          393,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96056,
+          97908,
+          97924,
+          97936,
+          97949,
+          97960
+        ],
+        "name": "Camping 101: Skinning",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          393,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Skinning",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97972": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Tailoring",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770,
+        "requiredSkill": [
+          197,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96057,
+          96102,
+          97925,
+          97937,
+          97950,
+          97961,
+          97973
+        ],
+        "name": "Camping 101: Tailoring",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770,
+        "requiredSkill": [
+          197,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Camping 101: Tailoring",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "97973": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Tailoring",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373,
+        "requiredSkill": [
+          197,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96057,
+          96102,
+          97925,
+          97937,
+          97950,
+          97961,
+          97972
+        ],
+        "name": "Camping 101: Tailoring",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373,
+        "requiredSkill": [
+          197,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Camping 101: Tailoring",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "98021": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Journey to Sentinel Hill",
+        "preQuestSingle": [
+          94947
+        ],
+        "requiredLevel": 7,
+        "requiredRaces": 4294967296
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Journey to Sentinel Hill",
+        "preQuestSingle": [
+          94947
+        ],
+        "questLevel": 13,
+        "requiredLevel": 7,
+        "requiredRaces": 4294967296
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Journey to Sentinel Hill",
+        "prerequisiteReferences": [
+          109
+        ],
+        "questLevel": 13,
+        "races": [
+          95
+        ],
+        "requiredLevel": 7
+      }
+    }
+  },
+  "98284": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Enchanting",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770,
+        "requiredSkill": [
+          333,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96059,
+          97901,
+          97917,
+          97929,
+          97940,
+          97953,
+          98286
+        ],
+        "name": "Camping 101: Enchanting",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 8589934770,
+        "requiredSkill": [
+          333,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Horde",
+        "name": "Camping 101: Enchanting",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "98285": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Engineering",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredSkill": [
+          202,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96058,
+          97902,
+          97918,
+          97930,
+          97941,
+          97954,
+          98287
+        ],
+        "name": "Camping 101: Engineering",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 0,
+        "requiredSkill": [
+          202,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Camping 101: Engineering",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "98286": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Camping 101: Enchanting",
+        "preQuestSingle": [
+          96101
+        ],
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373,
+        "requiredSkill": [
+          333,
+          1
+        ]
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "exclusiveTo": [
+          96059,
+          97901,
+          97917,
+          97929,
+          97940,
+          97953,
+          98284
+        ],
+        "name": "Camping 101: Enchanting",
+        "preQuestSingle": [
+          95998,
+          96101,
+          96604,
+          96605,
+          96606,
+          96607,
+          96608
+        ],
+        "questLevel": 6,
+        "requiredLevel": 4,
+        "requiredRaces": 4294967373,
+        "requiredSkill": [
+          333,
+          1
+        ]
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Camping 101: Enchanting",
+        "prerequisiteReferences": [],
+        "questLevel": 6,
+        "races": [
+          95
+        ],
+        "requiredLevel": 4
+      }
+    }
+  },
+  "98512": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Al'Aketh Assassins",
+        "requiredLevel": 6
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Al'Aketh Assassins",
+        "questLevel": 11,
+        "requiredLevel": 6,
+        "requiredRaces": 0
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "name": "Al'Aketh Assassins",
+        "prerequisiteReferences": [],
+        "questLevel": 11,
+        "races": [
+          95
+        ],
+        "requiredLevel": 6
+      }
+    }
+  },
+  "99260": {
+    "allthethings": {
+      "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "name": "Fillion's Mission",
+        "preQuestSingle": [
+          92850
+        ],
+        "requiredLevel": 5,
+        "requiredRaces": 4294967373
+      }
+    },
+    "foreverclient": {
+      "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+      "attributes": {}
+    },
+    "questiedb": {
+      "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+      "attributes": {
+        "name": "Fillion's Mission",
+        "preQuestSingle": [
+          92850
+        ],
+        "questLevel": 10,
+        "requiredLevel": 5,
+        "requiredRaces": 4294967373
+      }
+    },
+    "wowhead": {
+      "revision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "attributes": {
+        "classes": [],
+        "faction": "Alliance",
+        "name": "Fillion's Mission",
+        "prerequisiteReferences": [],
+        "questLevel": 10,
+        "races": [
+          95
+        ],
+        "requiredLevel": 5
+      }
+    }
+  }
+}

@@ -2,6 +2,8 @@
 
 Rules for `Guides/Leveling/`, `Guides/Loremaster/`, `Guides/Dungeons/`, `Guides/Class/`, and `Guides/Miscellaneous/`. The engine tests in `tests/lua/run.lua` cover behaviour; `tests/lua/lint.lua` catches common data mistakes. Class quests are a supported guide type. Class guides use `category = "Class Quests"`. Collection guides such as library books use `category = "Miscellaneous Guides"`; the library label is **Miscellaneous**.
 
+When changing a Casual or Starter quest that also appears in Loremaster, update its corresponding Loremaster actions in the same change, or document a supported intentional difference.
+
 ## Miscellaneous guides
 
 Guides in `Guides/Miscellaneous/` cover optional world collection routes that are not zone leveling chapters. Use `category = "Miscellaneous Guides"`. Book pickup steps are usually `kind = "note"` with map pins; use `complete = QuestState(questID, "completed")` when the Forever turn-in quest id is verified, otherwise omit `complete` so the player marks the step with the tracker **Complete** button (stored in the completion ledger). Milestone reward quests use normal accept and turn-in steps with `dependsOn` on the book step that matches the collection tier in the authored order, not empty `dependsOn` on the accept.
@@ -39,6 +41,8 @@ Define shared class actions in `ClassChains.lua` and reference them with `classA
 The route remains quest-only: the supplied reference includes grind and level-up instructions that are intentionally not imported. Simulations verify order and observed progress, not sufficient XP. Do not add isolated level gates as a substitute for a suitable zone visit.
 
 Loremaster guides use ordered zone itineraries. Retired guide selections migrate to an available Loremaster guide; their saved completion ledgers remain archived. See [zone-loremaster-guides.md](zone-loremaster-guides.md) for capital ownership and source selection.
+
+Run `python3 tools/loremaster_report.py` to inspect combined and character-specific pickup sets. Read [coverage and verification](loremaster-coverage.md) for source conflicts and walkthrough gaps.
 
 Record chapter visits and insertion points in `route-manifest.json`. `route-conversion-audit.json` records the pinned facts, removed imports, and exclusions. Legacy import and append tools refuse to overwrite ordered guides. Update an itinerary through explicit reviewed action positions.
 

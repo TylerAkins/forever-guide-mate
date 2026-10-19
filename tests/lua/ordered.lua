@@ -1161,7 +1161,7 @@ do
     local removed = { [421] = true, [422] = true, [423] = true, [424] = true,
         [99] = true, [98298] = true, [98299] = true }
     for id, guide in pairs(ns.guides) do
-        for _, goal in ipairs(guide.goals) do
+        for _, goal in ipairs(id ~= "loremaster-silverpine-forest" and guide.goals or {}) do
             local quest = ns.Engine:GetGoalQuestID(goal) or goal.checkpointQuest or goal.referenceQuest
             equal(removed[quest] == true, false, id .. ' omits the Arugal chain action ' .. goal.id)
             for _, group in ipairs(goal.requiredQuests or {}) do

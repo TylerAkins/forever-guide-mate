@@ -93,6 +93,11 @@ Guides/Loremaster/Mulgore.lua
 Guides/Loremaster/Durotar.lua
 Guides/Loremaster/Teldrassil.lua
 Guides/Loremaster/ElwynnForest.lua
+Guides/Loremaster/Westfall.lua
+Guides/Loremaster/LochModan.lua
+Guides/Loremaster/Darkshore.lua
+Guides/Loremaster/SilverpineForest.lua
+Guides/Loremaster/TheBarrens.lua
 Guides/Leveling/tirisfal-glades.lua
 Guides/Leveling/mulgore.lua
 Guides/Leveling/durotar.lua

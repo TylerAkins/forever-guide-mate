@@ -1,7 +1,5 @@
-## 0.6.3 - 2026-10-18
-- Add a search placeholder and Exploration labels to the guide library.
-- Add Loremaster guides for Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Mulgore, Tirisfal Glades, and Zephras Isle, with prerequisite routing and relevant capital visits.
-- Preserve retired Loremaster selections by zone and choose an eligible route when replacing the placeholder.
-- Make Washte Pawne optional in the normal Horde route and explain his multiple spawn locations.
-- Advance item-starter instructions when the item arrives in the bags, including the Befouled Water Globe.
-- Add Ursangous, Sharptalon, and Tideress waypoints and guard their item drops with Hunt completion or the Stonetalon Standstill pickup.
+## 0.6.4 - 2026-10-18
+- Add zone Loremaster routes for Westfall, Loch Modan, Darkshore, Silverpine Forest, and The Barrens.
+- Remove unsupported Zephras visitor race gates in Starter and Loremaster, and retain the Alliance restriction on A Sacrifice in Vain.
+- Add frozen source inventories, coverage reporting, and Casual-to-Loremaster synchronization checks.
+- Place Goretusk Liver Pie and Centaur Bracers collection before their returns in Casual and Loremaster.

@@ -1,0 +1,6183 @@
+{
+  "guide": "loremaster-silverpine-forest",
+  "title": "Silverpine Forest",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-era-horde-silverpine-forest",
+  "additionalSpines": [],
+  "spineActions": [
+    "accept-435-escorting-erland",
+    "turnin-435-escorting-erland",
+    "accept-449-the-deathstalkers-report",
+    "accept-429-wild-hearts",
+    "accept-477-border-crossings",
+    "accept-6321-supplying-the-sepulcher",
+    "turnin-449-the-deathstalkers-report",
+    "accept-3221-speak-with-renferrel",
+    "accept-437-the-dead-fields",
+    "turnin-3221-speak-with-renferrel",
+    "objective-429-quest-work",
+    "turnin-429-wild-hearts",
+    "accept-430-return-to-quinn",
+    "accept-447-a-recipe-for-death",
+    "turnin-6321-supplying-the-sepulcher",
+    "accept-6323-ride-to-the-undercity",
+    "turnin-430-return-to-quinn",
+    "woven-accept-91920-wild-eyes",
+    "woven-objective-91920-wild-eyes",
+    "woven-turnin-91920-wild-eyes",
+    "woven-accept-91921-return-to-quinn-again",
+    "woven-turnin-91921-return-to-quinn-again",
+    "accept-425-ivar-the-foul",
+    "objective-425-1-ivar-the-foul",
+    "turnin-425-ivar-the-foul",
+    "objective-437-1-essence-of-nightlash",
+    "objective-447-1-grizzled-bear-heart",
+    "objective-447-2-skittering-blood",
+    "turnin-437-the-dead-fields",
+    "accept-438-the-decrepit-ferry",
+    "turnin-438-the-decrepit-ferry",
+    "accept-439-rot-hide-clues",
+    "turnin-477-border-crossings",
+    "accept-478-maps-and-runes",
+    "turnin-478-maps-and-runes",
+    "accept-481-dalar-s-analysis",
+    "turnin-481-dalar-s-analysis",
+    "accept-482-dalaran-s-intentions",
+    "turnin-482-dalaran-s-intentions",
+    "accept-479-ambermill-investigations",
+    "turnin-439-rot-hide-clues",
+    "turnin-6323-ride-to-the-undercity",
+    "accept-6322-michael-garrett",
+    "turnin-6322-michael-garrett",
+    "accept-6324-return-to-podrig",
+    "turnin-6324-return-to-podrig",
+    "turnin-447-a-recipe-for-death",
+    "objective-479-1-dalaran-pendant",
+    "turnin-479-ambermill-investigations",
+    "woven-accept-95981-watching-the-roads",
+    "woven-objective-95981-watching-the-roads",
+    "woven-turnin-95981-watching-the-roads"
+  ],
+  "placements": [
+    {
+      "anchor": "turnin-424-loremaster",
+      "actions": [
+        "level-before-accept-99-loremaster",
+        "accept-99-loremaster",
+        "objective-99-loremaster",
+        "turnin-99-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "level-before-accept-435-escorting-erland",
+      "actions": [
+        "level-before-accept-421-loremaster",
+        "accept-421-loremaster",
+        "objective-421-loremaster",
+        "turnin-421-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-481-dalar-s-analysis",
+      "actions": [
+        "level-before-accept-422-loremaster",
+        "accept-422-loremaster",
+        "objective-422-loremaster",
+        "turnin-422-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "accept-482-dalaran-s-intentions",
+      "actions": [
+        "level-before-accept-423-loremaster",
+        "accept-423-loremaster",
+        "objective-423-loremaster",
+        "turnin-423-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "level-before-woven-accept-95981-watching-the-roads",
+      "actions": [
+        "level-before-accept-424-loremaster",
+        "accept-424-loremaster",
+        "objective-424-loremaster",
+        "turnin-424-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "level-before-accept-429-wild-hearts",
+      "actions": [
+        "level-before-accept-428-loremaster",
+        "accept-428-loremaster",
+        "turnin-428-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-452-loremaster",
+      "actions": [
+        "level-before-accept-440-loremaster",
+        "accept-440-loremaster",
+        "turnin-440-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-440-loremaster",
+      "actions": [
+        "level-before-accept-441-loremaster",
+        "accept-441-loremaster",
+        "turnin-441-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-98299-loremaster",
+      "actions": [
+        "level-before-accept-442-loremaster",
+        "accept-442-loremaster",
+        "objective-442-loremaster",
+        "turnin-442-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "accept-440-loremaster",
+      "actions": [
+        "level-before-accept-443-loremaster",
+        "accept-443-loremaster",
+        "objective-443-loremaster",
+        "turnin-443-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-98298-loremaster",
+      "actions": [
+        "level-before-accept-444-loremaster",
+        "accept-444-loremaster",
+        "turnin-444-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-444-loremaster",
+      "actions": [
+        "level-before-accept-446-loremaster",
+        "accept-446-loremaster",
+        "turnin-446-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-446-loremaster",
+      "actions": [
+        "level-before-accept-448-loremaster",
+        "accept-448-loremaster",
+        "turnin-448-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-99-loremaster",
+      "actions": [
+        "level-before-accept-450-loremaster",
+        "accept-450-loremaster",
+        "objective-450-loremaster",
+        "turnin-450-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-443-loremaster",
+      "actions": [
+        "level-before-accept-451-loremaster",
+        "accept-451-loremaster",
+        "objective-451-loremaster",
+        "turnin-451-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-450-loremaster",
+      "actions": [
+        "level-before-accept-452-loremaster",
+        "accept-452-loremaster",
+        "objective-452-loremaster",
+        "turnin-452-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-448-loremaster",
+      "actions": [
+        "level-before-accept-460-loremaster",
+        "accept-460-loremaster",
+        "turnin-460-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-460-loremaster",
+      "actions": [
+        "level-before-accept-461-loremaster",
+        "accept-461-loremaster",
+        "turnin-461-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "woven-accept-95981-watching-the-roads",
+      "actions": [
+        "level-before-accept-480-loremaster",
+        "accept-480-loremaster",
+        "objective-480-loremaster",
+        "turnin-480-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-461-loremaster",
+      "actions": [
+        "level-before-accept-491-loremaster",
+        "accept-491-loremaster",
+        "turnin-491-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-480-loremaster",
+      "actions": [
+        "level-before-accept-516-loremaster",
+        "accept-516-loremaster",
+        "objective-516-loremaster",
+        "turnin-516-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "woven-turnin-95981-watching-the-roads",
+      "actions": [
+        "level-before-accept-530-loremaster",
+        "accept-530-loremaster",
+        "objective-530-loremaster",
+        "turnin-530-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-441-loremaster",
+      "actions": [
+        "level-before-accept-98298-loremaster",
+        "accept-98298-loremaster",
+        "objective-98298-loremaster",
+        "turnin-98298-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-530-loremaster",
+      "actions": [
+        "level-before-accept-98299-loremaster",
+        "accept-98299-loremaster",
+        "objective-98299-loremaster",
+        "turnin-98299-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    }
+  ],
+  "quests": {
+    "99": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Arugal's Folly (4/4)",
+          "preQuestSingle": [
+            424
+          ],
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1938,
+              "spawns": [
+                [
+                  130,
+                  44.2,
+                  39.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1938
+            ]
+          ],
+          "name": "Arugal's Folly",
+          "objectivesText": [
+            "Bring 6 Pyrewood Shackles to Dalar Dawnweaver at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            424
+          ],
+          "questLevel": 15,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1938
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Arugal's Folly",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "start",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "end",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1891,
+          "name": "Pyrewood Watcher",
+          "point": "sourcerequirement",
+          "coord": [
+            48.4,
+            72
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1892,
+          "name": "Moonrage Watcher",
+          "point": "sourcerequirement",
+          "coord": [
+            48.3,
+            72.1
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1893,
+          "name": "Moonrage Sentry",
+          "point": "sourcerequirement",
+          "coord": [
+            45.2,
+            75.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1894,
+          "name": "Pyrewood Sentry",
+          "point": "sourcerequirement",
+          "coord": [
+            43.4,
+            73
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1895,
+          "name": "Pyrewood Elder",
+          "point": "sourcerequirement",
+          "coord": [
+            43.6,
+            73
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1896,
+          "name": "Moonrage Elder",
+          "point": "sourcerequirement",
+          "coord": [
+            45.3,
+            73.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 3528,
+          "name": "Pyrewood Armorer",
+          "point": "sourcerequirement",
+          "coord": [
+            46.4,
+            72
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 3529,
+          "name": "Moonrage Armorer",
+          "point": "sourcerequirement",
+          "coord": [
+            46.9,
+            71.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 3530,
+          "name": "Pyrewood Tailor",
+          "point": "sourcerequirement",
+          "coord": [
+            46.5,
+            72.5
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 3531,
+          "name": "Moonrage Tailor",
+          "point": "sourcerequirement",
+          "coord": [
+            47.4,
+            72.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 3532,
+          "name": "Pyrewood Leatherworker",
+          "point": "sourcerequirement",
+          "coord": [
+            44,
+            74
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 3533,
+          "name": "Moonrage Leatherworker",
+          "point": "sourcerequirement",
+          "coord": [
+            43.9,
+            74
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "421": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Prove Your Worth",
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1938,
+              "spawns": [
+                [
+                  130,
+                  44.2,
+                  39.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1938
+            ]
+          ],
+          "name": "Prove Your Worth",
+          "objectivesText": [
+            "Dalar Dawnweaver at the Sepulcher wants you to kill 5 Moonrage Whitescalps."
+          ],
+          "questLevel": 10,
+          "requiredLevel": 12,
+          "startedBy": [
+            [
+              1938
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Prove Your Worth",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [],
+          "requiredLevel": 12
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "start",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "end",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1769,
+          "name": "Moonrage Whitescalp",
+          "point": "requirement",
+          "coord": [
+            52.8,
+            27.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "422": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Arugal's Folly (1/4)",
+          "preQuestSingle": [
+            421
+          ],
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1938,
+              "spawns": [
+                [
+                  130,
+                  44.2,
+                  39.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1938
+            ]
+          ],
+          "name": "Arugal's Folly",
+          "objectivesText": [
+            "Retrieve the Remedy of Arugal for Dalar Dawnweaver at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            421
+          ],
+          "questLevel": 11,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1938
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Arugal's Folly",
+          "prerequisiteReferences": [],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "start",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "end",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "423": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Arugal's Folly (2/4)",
+          "preQuestSingle": [
+            422
+          ],
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1938,
+              "spawns": [
+                [
+                  130,
+                  44.2,
+                  39.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1938
+            ]
+          ],
+          "name": "Arugal's Folly",
+          "objectivesText": [
+            "Bring 6 Glutton Shackles and 3 Darksoul Shackles to Dalar Dawnweaver at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            422
+          ],
+          "questLevel": 14,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1938
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Arugal's Folly",
+          "prerequisiteReferences": [],
+          "questLevel": 14,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "start",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "end",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1779,
+          "name": "Moonrage Glutton",
+          "point": "sourcerequirement",
+          "coord": [
+            57.6,
+            44.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1782,
+          "name": "Moonrage Darksoul",
+          "point": "sourcerequirement",
+          "coord": [
+            57.2,
+            45.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "424": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Arugal's Folly (3/4)",
+          "preQuestSingle": [
+            423
+          ],
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1938,
+              "spawns": [
+                [
+                  130,
+                  44.2,
+                  39.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1938
+            ]
+          ],
+          "name": "Arugal's Folly",
+          "objectivesText": [
+            "Kill Grimson the Pale and bring his head to Dalar Dawnweaver at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            423
+          ],
+          "questLevel": 15,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1938
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Arugal's Folly",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "start",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "end",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1972,
+          "name": "Grimson the Pale",
+          "point": "sourcerequirement",
+          "coord": [
+            58.4,
+            44.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "425": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Ivar the Foul",
+          "preQuestSingle": [
+            430
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1950,
+              "spawns": [
+                [
+                  130,
+                  53.4,
+                  13.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1950
+            ]
+          ],
+          "name": "Ivar the Foul",
+          "objectivesText": [
+            "Kill Ivar the Foul, and bring Ivar's Head to Rane Yorick at the Ivar Patch."
+          ],
+          "preQuestSingle": [
+            430
+          ],
+          "questLevel": 12,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1950
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Ivar the Foul",
+          "prerequisiteReferences": [],
+          "questLevel": 12,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1950,
+          "name": "Rane Yorick",
+          "point": "start",
+          "coord": [
+            53.4,
+            13.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1950,
+          "name": "Rane Yorick",
+          "point": "end",
+          "coord": [
+            53.4,
+            13.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1971,
+          "name": "Ivar the Foul",
+          "point": "sourcerequirement",
+          "coord": [
+            51.6,
+            13.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "428": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Lost Deathstalkers",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1952,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1950
+            ]
+          ],
+          "name": "Lost Deathstalkers",
+          "objectivesText": [
+            "Find the Deathstalkers Quinn and Rane Yorick."
+          ],
+          "questLevel": 12,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1952
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Lost Deathstalkers",
+          "prerequisiteReferences": [
+            429
+          ],
+          "questLevel": 12,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "start",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1950,
+          "name": "Rane Yorick",
+          "point": "end",
+          "coord": [
+            53.4,
+            13.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "429": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Wild Hearts",
+          "preQuestSingle": [
+            428
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1950,
+              "spawns": [
+                [
+                  130,
+                  53.4,
+                  13.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1937
+            ]
+          ],
+          "name": "Wild Hearts",
+          "objectivesText": [
+            "Gather 6 discolored worg hearts and bring them to Apothecary Renferrel at the Sepulcher."
+          ],
+          "preQuestSingle": [],
+          "questLevel": 11,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1950
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Wild Hearts",
+          "prerequisiteReferences": [
+            22,
+            38,
+            90,
+            92,
+            93,
+            127,
+            384,
+            385,
+            418,
+            471,
+            564,
+            769,
+            862,
+            1582,
+            1618,
+            2751,
+            2752,
+            2753,
+            2754,
+            2755,
+            2756,
+            2758
+          ],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1950,
+          "name": "Rane Yorick",
+          "point": "start",
+          "coord": [
+            53.4,
+            13.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "end",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1765,
+          "name": "Worg",
+          "point": "sourcerequirement",
+          "coord": [
+            46.2,
+            44.5
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1766,
+          "name": "Mottled Worg",
+          "point": "sourcerequirement",
+          "coord": [
+            56.4,
+            9.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1923,
+          "name": "Bloodsnout Worg",
+          "point": "sourcerequirement",
+          "coord": [
+            50.4,
+            74.9
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 12431,
+          "name": "Gorefang",
+          "point": "sourcerequirement",
+          "coord": [
+            59.4,
+            7.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "430": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Return to Quinn",
+          "preQuestSingle": [
+            429
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1937,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 3165,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1951
+            ]
+          ],
+          "name": "Return to Quinn",
+          "objectivesText": [
+            "Bring Quinn's potion to Quinn Yorick at the Ivar Patch, north of the Sepulcher."
+          ],
+          "preQuestSingle": [
+            429
+          ],
+          "questLevel": 11,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1937
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Return to Quinn",
+          "prerequisiteReferences": [],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "start",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1951,
+          "name": "Quinn Yorick",
+          "point": "end",
+          "coord": [
+            53.4,
+            12.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "435": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Escorting Erland",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1978,
+              "spawns": [
+                [
+                  130,
+                  56.2,
+                  9.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1950
+            ]
+          ],
+          "name": "Escorting Erland",
+          "objectivesText": [
+            "Escort Erland through the wolves, to Rane Yorick."
+          ],
+          "questLevel": 11,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1978
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Escorting Erland",
+          "prerequisiteReferences": [],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1978,
+          "name": "Deathstalker Erland",
+          "point": "start",
+          "coord": [
+            56.2,
+            9.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1950,
+          "name": "Rane Yorick",
+          "point": "end",
+          "coord": [
+            53.4,
+            13.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "437": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "The Dead Fields",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1952,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1952
+            ]
+          ],
+          "name": "The Dead Fields",
+          "objectivesText": [
+            "Kill rot hide gnolls at the Dead Fields.",
+            "",
+            "When Nightlash appears, kill her.",
+            "",
+            "Bring the Essence of Nightlash to High Executor Hadrec at the Sepulcher."
+          ],
+          "questLevel": 14,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1952
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Dead Fields",
+          "prerequisiteReferences": [],
+          "questLevel": 14,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "start",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "end",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1983,
+          "name": "Nightlash",
+          "point": "sourcerequirement",
+          "coord": [
+            45.4,
+            21
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "438": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "The Decrepit Ferry",
+          "preQuestSingle": [
+            437
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1952,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              1593
+            ]
+          ],
+          "name": "The Decrepit Ferry",
+          "objectivesText": [
+            "Go to the Decrepit Ferry.",
+            "",
+            "Search for the reason the Scourge are there."
+          ],
+          "preQuestSingle": [
+            437
+          ],
+          "questLevel": 16,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1952
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Decrepit Ferry",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "start",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1593,
+          "name": "Corpse Laden Boat",
+          "point": "end",
+          "coord": [
+            58.4,
+            34.9
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "439": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Rot Hide Clues",
+          "preQuestSingle": [
+            438
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1593,
+              "spawns": [
+                [
+                  130,
+                  58.4,
+                  34.9
+                ]
+              ],
+              "type": "object"
+            },
+            {
+              "id": 3234,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1952
+            ]
+          ],
+          "name": "Rot Hide Clues",
+          "objectivesText": [
+            "Bring Deliah's Ring to High Executor Hadrec at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            438
+          ],
+          "questLevel": 16,
+          "requiredLevel": 10,
+          "startedBy": [
+            null,
+            [
+              1593
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Rot Hide Clues",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1593,
+          "name": "Corpse Laden Boat",
+          "point": "start",
+          "coord": [
+            58.4,
+            34.9
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "end",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "440": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "The Engraved Ring",
+          "preQuestSingle": [
+            439
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1952,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 3234,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1499
+            ]
+          ],
+          "name": "The Engraved Ring",
+          "objectivesText": [
+            "Bring Deliah's Ring to Magistrate Sevren in Brill."
+          ],
+          "preQuestSingle": [
+            439
+          ],
+          "questLevel": 16,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1952
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Engraved Ring",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "start",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1499,
+          "name": "Magistrate Sevren",
+          "point": "end",
+          "coord": [
+            61.2,
+            50.8
+          ],
+          "type": 1,
+          "zone": "Tirisfal Glades"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "441": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Raleigh and the Undercity",
+          "preQuestSingle": [
+            440
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1499,
+              "spawns": [
+                [
+                  85,
+                  61.2,
+                  50.8
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 3234,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2050
+            ]
+          ],
+          "name": "Raleigh and the Undercity",
+          "objectivesText": [
+            "Bring Deliah's Ring to Raleigh."
+          ],
+          "preQuestSingle": [
+            440
+          ],
+          "questLevel": 16,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1499
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Raleigh and the Undercity",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2050,
+          "name": "Raleigh Andrean",
+          "point": "end",
+          "coord": [
+            62,
+            43
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "id": 1499,
+          "name": "Magistrate Sevren",
+          "point": "start",
+          "coord": [
+            61.2,
+            50.8
+          ],
+          "type": 1,
+          "zone": "Tirisfal Glades"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "442": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Assault on Fenris Isle",
+          "preQuestSingle": [
+            448
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1952,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1952
+            ]
+          ],
+          "name": "Assault on Fenris Isle",
+          "objectivesText": [
+            "Bring Thule's Head to High Executor Hadrec at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            448
+          ],
+          "questLevel": 24,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1952
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Assault on Fenris Isle",
+          "prerequisiteReferences": [],
+          "questLevel": 24,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "start",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "end",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1947,
+          "name": "Thule Ravenclaw",
+          "point": "sourcerequirement",
+          "coord": [
+            65.6,
+            23.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "443": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Rot Hide Ichor",
+          "preQuestSingle": [
+            439
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1952,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1937
+            ]
+          ],
+          "name": "Rot Hide Ichor",
+          "objectivesText": [
+            "Bring 8 bottles of rot hide ichor to Apothecary Renferrel at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            439
+          ],
+          "questLevel": 17,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1952
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Rot Hide Ichor",
+          "prerequisiteReferences": [],
+          "questLevel": 17,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "start",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "end",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1939,
+          "name": "Rot Hide Brute",
+          "point": "sourcerequirement",
+          "coord": [
+            65.6,
+            29.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1940,
+          "name": "Rot Hide Plague Weaver",
+          "point": "sourcerequirement",
+          "coord": [
+            67.4,
+            24.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1942,
+          "name": "Rot Hide Savage",
+          "point": "sourcerequirement",
+          "coord": [
+            65.6,
+            23.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1943,
+          "name": "Raging Rot Hide",
+          "point": "sourcerequirement",
+          "coord": [
+            65.8,
+            23.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1944,
+          "name": "Rot Hide Bruiser",
+          "point": "sourcerequirement",
+          "coord": [
+            68.2,
+            25.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "444": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Rot Hide Origins",
+          "preQuestSingle": [
+            443
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1937,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 3237,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1498
+            ]
+          ],
+          "name": "Rot Hide Origins",
+          "objectivesText": [
+            "Bring the Sample Ichor to Bethor Iceshard in the Undercity."
+          ],
+          "preQuestSingle": [
+            443
+          ],
+          "questLevel": 17,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1937
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Rot Hide Origins",
+          "prerequisiteReferences": [],
+          "questLevel": 17,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "start",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1498,
+          "name": "Bethor Iceshard",
+          "point": "end",
+          "coord": [
+            84.2,
+            17.4
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "446": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Thule Ravenclaw",
+          "preQuestSingle": [
+            444
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1498,
+              "spawns": [
+                [
+                  1497,
+                  84.2,
+                  17.4
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 3250,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1937
+            ]
+          ],
+          "name": "Thule Ravenclaw",
+          "objectivesText": [
+            "Bring Bethor's Scroll to Apothecary Renferrel at the Silverpine Sepulcher."
+          ],
+          "preQuestSingle": [
+            444
+          ],
+          "questLevel": 16,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1498
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Thule Ravenclaw",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "end",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1498,
+          "name": "Bethor Iceshard",
+          "point": "start",
+          "coord": [
+            84.2,
+            17.4
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "447": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Recipe For Death (1/3)",
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1937,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2055
+            ]
+          ],
+          "name": "A Recipe For Death",
+          "objectivesText": [
+            "Collect 6 Grizzled Bear Hearts and 6 samples of Skittering Blood and deliver them to Master Apothecary Faranell in the Undercity."
+          ],
+          "questLevel": 12,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1937
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Recipe For Death",
+          "prerequisiteReferences": [],
+          "questLevel": 12,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "start",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1778,
+          "name": "Ferocious Grizzled Bear",
+          "point": "sourcerequirement",
+          "coord": [
+            49,
+            33
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1780,
+          "name": "Moss Stalker",
+          "point": "sourcerequirement",
+          "coord": [
+            35.6,
+            13.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1781,
+          "name": "Mist Creeper",
+          "point": "sourcerequirement",
+          "coord": [
+            35.4,
+            11.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1797,
+          "name": "Giant Grizzled Bear",
+          "point": "sourcerequirement",
+          "coord": [
+            51.4,
+            55.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 12432,
+          "name": "Old Vicejaw",
+          "point": "sourcerequirement",
+          "coord": [
+            53.8,
+            51.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 12433,
+          "name": "Krethis Shadowspinner",
+          "point": "sourcerequirement",
+          "coord": [
+            34.6,
+            10.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2055,
+          "name": "Master Apothecary Faranell",
+          "point": "end",
+          "coord": [
+            48.4,
+            69.4
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "448": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Report to Hadrec",
+          "preQuestSingle": [
+            446
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1937,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1952
+            ]
+          ],
+          "name": "Report to Hadrec",
+          "objectivesText": [
+            "Report to High Executor Hadrec at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            446
+          ],
+          "questLevel": 16,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1937
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Report to Hadrec",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "start",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "end",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "449": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "The Deathstalkers' Report",
+          "preQuestSingle": [
+            435
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1950,
+              "spawns": [
+                [
+                  130,
+                  53.4,
+                  13.4
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 3252,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1952
+            ]
+          ],
+          "name": "The Deathstalkers' Report",
+          "objectivesText": [
+            "Bring the Deathstalker Report to High Executor Hadrec at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            435
+          ],
+          "questLevel": 11,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1950
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Deathstalkers' Report",
+          "prerequisiteReferences": [],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1950,
+          "name": "Rane Yorick",
+          "point": "start",
+          "coord": [
+            53.4,
+            13.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "end",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "450": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Recipe For Death (2/3)",
+          "preQuestSingle": [
+            447
+          ],
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 2055,
+              "spawns": [
+                [
+                  1497,
+                  48.6,
+                  69.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1937
+            ]
+          ],
+          "name": "A Recipe For Death",
+          "objectivesText": [
+            "Retrieve Apothecary Berard's journal from Pyrewood Village and take it to Apothecary Renferrel at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            447
+          ],
+          "questLevel": 15,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              2055
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Recipe For Death",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "end",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2055,
+          "name": "Master Apothecary Faranell",
+          "point": "start",
+          "coord": [
+            48.4,
+            69.4
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "451": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Recipe For Death (3/3)",
+          "preQuestSingle": [
+            450
+          ],
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1937,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2055
+            ]
+          ],
+          "name": "A Recipe For Death",
+          "objectivesText": [
+            "Bring 6 samples of Lake Creeper Moss, 6 samples of Lake Skulker Moss and a Hardened Tumor to Master Apothecary Faranell in the Undercity."
+          ],
+          "preQuestSingle": [
+            450
+          ],
+          "questLevel": 18,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1937
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Recipe For Death",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "start",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1767,
+          "name": "Vile Fin Shredder",
+          "point": "sourcerequirement",
+          "coord": [
+            57.4,
+            19.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1768,
+          "name": "Vile Fin Tidehunter",
+          "point": "sourcerequirement",
+          "coord": [
+            66.3,
+            12.7
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1908,
+          "name": "Vile Fin Oracle",
+          "point": "sourcerequirement",
+          "coord": [
+            64.9,
+            43.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1909,
+          "name": "Vile Fin Lakestalker",
+          "point": "sourcerequirement",
+          "coord": [
+            65.2,
+            18.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1953,
+          "name": "Lake Skulker",
+          "point": "sourcerequirement",
+          "coord": [
+            73,
+            36.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1954,
+          "name": "Elder Lake Skulker",
+          "point": "sourcerequirement",
+          "coord": [
+            72.9,
+            35
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1955,
+          "name": "Lake Creeper",
+          "point": "sourcerequirement",
+          "coord": [
+            77.2,
+            29
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1956,
+          "name": "Elder Lake Creeper",
+          "point": "sourcerequirement",
+          "coord": [
+            76.8,
+            23.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1957,
+          "name": "Vile Fin Shorecreeper",
+          "point": "sourcerequirement",
+          "coord": [
+            76.1,
+            32.5
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1958,
+          "name": "Vile Fin Tidecaller",
+          "point": "sourcerequirement",
+          "coord": [
+            77,
+            32
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2055,
+          "name": "Master Apothecary Faranell",
+          "point": "end",
+          "coord": [
+            48.4,
+            69.4
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "452": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Pyrewood Ambush",
+          "requiredLevel": 12,
+          "startedBy": [
+            {
+              "id": 2058,
+              "spawns": [
+                [
+                  130,
+                  46.4,
+                  74.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2058
+            ]
+          ],
+          "name": "Pyrewood Ambush",
+          "objectivesText": [
+            "Help Deathstalker Faerleia kill the Pyrewood Council."
+          ],
+          "questLevel": 15,
+          "requiredLevel": 12,
+          "startedBy": [
+            [
+              2058
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Pyrewood Ambush",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 12
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2058,
+          "name": "Deathstalker Faerleia",
+          "point": "start",
+          "coord": [
+            46.4,
+            74
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2058,
+          "name": "Deathstalker Faerleia",
+          "point": "end",
+          "coord": [
+            46.4,
+            74
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "460": {
+      "status": "included",
+      "reason": "Verified permanent quest with supported providers and recursively authored prerequisites.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Resting in Pieces",
+          "requiredLevel": 12,
+          "startedBy": [
+            {
+              "id": 3317,
+              "spawns": [
+                [
+                  130,
+                  65.2,
+                  32.8
+                ]
+              ],
+              "type": "item"
+            },
+            {
+              "id": 1599,
+              "spawns": [],
+              "type": "object"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              1599
+            ]
+          ],
+          "name": "Resting in Pieces",
+          "objectivesText": [
+            "Bring Alaric's Head to his grave."
+          ],
+          "questLevel": 17,
+          "requiredLevel": 12,
+          "startedBy": [
+            null,
+            null,
+            [
+              3317
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Resting in Pieces",
+          "prerequisiteReferences": [],
+          "questLevel": 17,
+          "races": [],
+          "requiredLevel": 12
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1599,
+          "name": "Shallow Grave",
+          "point": "end",
+          "coord": [
+            67.8,
+            24.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "461": {
+      "status": "included",
+      "reason": "Verified permanent quest with supported providers and recursively authored prerequisites.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "The Hidden Niche",
+          "preQuestSingle": [
+            460
+          ],
+          "requiredLevel": 12,
+          "startedBy": [
+            {
+              "id": 1599,
+              "spawns": [
+                [
+                  130,
+                  67.8,
+                  24.8
+                ]
+              ],
+              "type": "object"
+            },
+            {
+              "id": 3318,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              112888
+            ]
+          ],
+          "name": "The Hidden Niche",
+          "objectivesText": [
+            "Take Alaric to the hidden alcove."
+          ],
+          "preQuestSingle": [
+            460
+          ],
+          "questLevel": 18,
+          "requiredLevel": 12,
+          "startedBy": [
+            null,
+            [
+              1599
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Hidden Niche",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 12
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1599,
+          "name": "Shallow Grave",
+          "point": "start",
+          "coord": [
+            67.8,
+            24.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 112888,
+          "name": "Dusty Shelf",
+          "point": "end",
+          "coord": [
+            65.3,
+            24.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "477": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Border Crossings",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 2121,
+              "spawns": [
+                [
+                  130,
+                  44,
+                  41
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 1627,
+              "spawns": [],
+              "type": "object"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              1627
+            ]
+          ],
+          "name": "Border Crossings",
+          "objectivesText": [
+            "Retrieve the contents of one of the Dalaran wizards' crates. You will find Pyrewood Village to the south."
+          ],
+          "questLevel": 14,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              2121
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Border Crossings",
+          "prerequisiteReferences": [],
+          "questLevel": 14,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "start",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1627,
+          "name": "Dalaran Crate",
+          "point": "end",
+          "coord": [
+            49.9,
+            60.2
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "478": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Maps and Runes",
+          "preQuestSingle": [
+            477
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1627,
+              "spawns": [
+                [
+                  130,
+                  49.9,
+                  60.4
+                ]
+              ],
+              "type": "object"
+            },
+            {
+              "id": 3353,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2121
+            ]
+          ],
+          "name": "Maps and Runes",
+          "objectivesText": [
+            "Bring the strange pendant to Shadow Priest Allister at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            477
+          ],
+          "questLevel": 14,
+          "requiredLevel": 10,
+          "startedBy": [
+            null,
+            [
+              1627
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Maps and Runes",
+          "prerequisiteReferences": [],
+          "questLevel": 14,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1627,
+          "name": "Dalaran Crate",
+          "point": "start",
+          "coord": [
+            49.9,
+            60.2
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "end",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "479": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Ambermill Investigations",
+          "preQuestSingle": [
+            482
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 2121,
+              "spawns": [
+                [
+                  130,
+                  44,
+                  41
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2121
+            ]
+          ],
+          "name": "Ambermill Investigations",
+          "objectivesText": [
+            "Obtain 8 Dalaran Pendants for Shadow Priest Allister at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            482
+          ],
+          "questLevel": 16,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              2121
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Ambermill Investigations",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "start",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "end",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1912,
+          "name": "Dalaran Protector",
+          "point": "sourcerequirement",
+          "coord": [
+            59.7,
+            64.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1914,
+          "name": "Dalaran Mage",
+          "point": "sourcerequirement",
+          "coord": [
+            59,
+            67
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1915,
+          "name": "Dalaran Conjuror",
+          "point": "sourcerequirement",
+          "coord": [
+            63.2,
+            63.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "480": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "The Weaver",
+          "preQuestSingle": [
+            479
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 2121,
+              "spawns": [
+                [
+                  130,
+                  44,
+                  41
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2121
+            ]
+          ],
+          "name": "The Weaver",
+          "objectivesText": [
+            "Kill the Dalaran archmage, then retrieve his staff for Shadow Priest Allister at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            479
+          ],
+          "questLevel": 22,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              2121
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Weaver",
+          "prerequisiteReferences": [
+            442
+          ],
+          "questLevel": 22,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "start",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "end",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2120,
+          "name": "Archmage Ataeric",
+          "point": "sourcerequirement",
+          "coord": [
+            63.4,
+            64.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "481": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Dalar's Analysis",
+          "preQuestSingle": [
+            478
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 2121,
+              "spawns": [
+                [
+                  130,
+                  44,
+                  41
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 3353,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1938
+            ]
+          ],
+          "name": "Dalar's Analysis",
+          "objectivesText": [
+            "Take the rune-inscribed pendant to Dalar Dawnweaver at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            478
+          ],
+          "questLevel": 14,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              2121
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Dalar's Analysis",
+          "prerequisiteReferences": [],
+          "questLevel": 14,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "start",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "end",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "482": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Dalaran's Intentions",
+          "preQuestSingle": [
+            481
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1938,
+              "spawns": [
+                [
+                  130,
+                  44.2,
+                  39.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2121
+            ]
+          ],
+          "name": "Dalaran's Intentions",
+          "objectivesText": [
+            "Speak with Shadow Priest Allister at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            481
+          ],
+          "questLevel": 14,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1938
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Dalaran's Intentions",
+          "prerequisiteReferences": [],
+          "questLevel": 14,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "start",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "end",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "491": {
+      "status": "included",
+      "reason": "Verified permanent quest with supported providers and recursively authored prerequisites.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Wand to Bethor",
+          "preQuestSingle": [
+            461
+          ],
+          "requiredLevel": 12,
+          "startedBy": [
+            {
+              "id": 112888,
+              "spawns": [
+                [
+                  130,
+                  65.3,
+                  24.8
+                ]
+              ],
+              "type": "object"
+            },
+            {
+              "id": 3425,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1498
+            ]
+          ],
+          "name": "Wand to Bethor",
+          "objectivesText": [
+            "Take the Woven Wand to Bethor Iceshard in the Magic Quarter of the Undercity."
+          ],
+          "preQuestSingle": [
+            461
+          ],
+          "questLevel": 18,
+          "requiredLevel": 12,
+          "startedBy": [
+            null,
+            [
+              112888
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Wand to Bethor",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 12
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 112888,
+          "name": "Dusty Shelf",
+          "point": "start",
+          "coord": [
+            65.3,
+            24.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1498,
+          "name": "Bethor Iceshard",
+          "point": "end",
+          "coord": [
+            84.2,
+            17.4
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "493": {
+      "status": "other-zone",
+      "reason": "Objectives and chain belong to another zone; capital or zone pickup does not establish ownership.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Journey to Hillsbrad Foothills",
+          "requiredLevel": 19,
+          "startedBy": [
+            {
+              "id": 1937,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 3468,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2216
+            ]
+          ],
+          "name": "Journey to Hillsbrad Foothills",
+          "objectivesText": [
+            "Deliver Apothecary Renferrel's findings to Apothecary Lydon in the town of Tarren Mill in the Hillsbrad Foothills."
+          ],
+          "questLevel": 20,
+          "requiredLevel": 19,
+          "startedBy": [
+            [
+              1937
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Journey to Hillsbrad Foothills",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [],
+          "requiredLevel": 19
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "start",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2216,
+          "name": "Apothecary Lydon",
+          "point": "end",
+          "coord": [
+            61.4,
+            19.2
+          ],
+          "type": 1,
+          "zone": "Hillsbrad Foothills"
+        }
+      ]
+    },
+    "516": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Beren's Peril",
+          "requiredLevel": 16,
+          "startedBy": [
+            {
+              "id": 2121,
+              "spawns": [
+                [
+                  130,
+                  44,
+                  41
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2121
+            ]
+          ],
+          "name": "Beren's Peril",
+          "objectivesText": [
+            "Locate Beren's Peril, then kill 6 Ravenclaw Drudgers and 6 Ravenclaw Guardians, then return to Shadow Priest Allister at the Sepulcher."
+          ],
+          "questLevel": 21,
+          "requiredLevel": 16,
+          "startedBy": [
+            [
+              2121
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Beren's Peril",
+          "prerequisiteReferences": [],
+          "questLevel": 21,
+          "races": [],
+          "requiredLevel": 16
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "start",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "end",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1973,
+          "name": "Ravenclaw Guardian",
+          "point": "requirement",
+          "coord": [
+            59,
+            70.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1974,
+          "name": "Ravenclaw Drudger",
+          "point": "requirement",
+          "coord": [
+            60.2,
+            72.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "530": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Husband's Revenge",
+          "preQuestSingle": [
+            441
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 2050,
+              "spawns": [
+                [
+                  1497,
+                  62,
+                  43
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2050
+            ]
+          ],
+          "name": "A Husband's Revenge",
+          "objectivesText": [
+            "Kill Valdred Moray.",
+            "",
+            "Bring his hands to Raleigh Andrean in the Undercity."
+          ],
+          "preQuestSingle": [
+            441
+          ],
+          "questLevel": 20,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              2050
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Husband's Revenge",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2050,
+          "name": "Raleigh Andrean",
+          "point": "start",
+          "coord": [
+            62,
+            43
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "id": 2050,
+          "name": "Raleigh Andrean",
+          "point": "end",
+          "coord": [
+            62,
+            43
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "3221": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Speak with Renferrel",
+          "preQuestSingle": [
+            449
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1952,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  40.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1937
+            ]
+          ],
+          "name": "Speak with Renferrel",
+          "objectivesText": [
+            "Speak with Apothecary Renferrel at the Sepulcher."
+          ],
+          "preQuestSingle": [
+            449
+          ],
+          "questLevel": 12,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1952
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Speak with Renferrel",
+          "prerequisiteReferences": [
+            429
+          ],
+          "questLevel": 12,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "start",
+          "coord": [
+            43.4,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "end",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "6321": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Supplying the Sepulcher / Supplying Brill [CATA+]",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 6389,
+              "spawns": [
+                [
+                  130,
+                  43.4,
+                  41.6
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 16209,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2226
+            ]
+          ],
+          "name": "Supplying the Sepulcher",
+          "objectivesText": [
+            "Bring Podrig's Order to Karos Razok."
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              6389
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Supplying the Sepulcher",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            5
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 6389,
+          "name": "Deathguard Podrig",
+          "point": "start",
+          "coord": [
+            43.4,
+            41.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2226,
+          "name": "Karos Razok",
+          "point": "end",
+          "coord": [
+            45.6,
+            42.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "6322": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Michael Garrett",
+          "preQuestSingle": [
+            6323
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 4556,
+              "spawns": [
+                [
+                  1497,
+                  61.6,
+                  41.8
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 16210,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              4551
+            ]
+          ],
+          "name": "Michael Garrett",
+          "objectivesText": [
+            "Bring Gordon's Crate to Michael Garrett."
+          ],
+          "preQuestSingle": [
+            6323
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              4556
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Michael Garrett",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            5
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 4556,
+          "name": "Gordon Wendham",
+          "point": "start",
+          "coord": [
+            61.8,
+            41.8
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "id": 4551,
+          "name": "Michael Garrett",
+          "point": "end",
+          "coord": [
+            63.4,
+            48.6
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "6323": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Ride to the Undercity",
+          "preQuestSingle": [
+            6321
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 2226,
+              "spawns": [
+                [
+                  130,
+                  45.6,
+                  42.4
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 16209,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              4556
+            ]
+          ],
+          "name": "Ride to the Undercity",
+          "objectivesText": [
+            "Buy a bat ride to the Undercity from the bat master Karos Razok, then take Podrig's Order to Gordon Wendham in the Undercity."
+          ],
+          "preQuestSingle": [
+            6321
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              2226
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Ride to the Undercity",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            5
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2226,
+          "name": "Karos Razok",
+          "point": "start",
+          "coord": [
+            45.6,
+            42.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 4556,
+          "name": "Gordon Wendham",
+          "point": "end",
+          "coord": [
+            61.8,
+            41.8
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "6324": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Return to Podrig",
+          "preQuestSingle": [
+            6322
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 4551,
+              "spawns": [
+                [
+                  1497,
+                  63.4,
+                  48.6
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 16210,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              6389
+            ]
+          ],
+          "name": "Return to Podrig",
+          "objectivesText": [
+            "Buy a bat ride to the Sepulcher from the bat master Michael Garrett, then bring Gordon's Crate to Deathguard Podrig in the Sepulcher."
+          ],
+          "preQuestSingle": [
+            6322
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              4551
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Return to Podrig",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            5
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 6389,
+          "name": "Deathguard Podrig",
+          "point": "end",
+          "coord": [
+            43.4,
+            41.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 4551,
+          "name": "Michael Garrett",
+          "point": "start",
+          "coord": [
+            63.4,
+            48.6
+          ],
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "91920": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Wild Eyes",
+          "preQuestSingle": [
+            430
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1951,
+              "spawns": [
+                [
+                  130,
+                  53.43,
+                  12.59
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1937
+            ]
+          ],
+          "name": "Wild Eyes",
+          "objectivesText": [
+            "Gather 3 murloc eyes and bring them to Apothecary Renferrel at the Sepulcher."
+          ],
+          "questLevel": 11,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1951
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Wild Eyes",
+          "prerequisiteReferences": [],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1951,
+          "name": "Quinn Yorick",
+          "point": "start",
+          "coord": [
+            53.4,
+            12.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "end",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1767,
+          "name": "Vile Fin Shredder",
+          "point": "sourcerequirement",
+          "coord": [
+            57.4,
+            19.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1768,
+          "name": "Vile Fin Tidehunter",
+          "point": "sourcerequirement",
+          "coord": [
+            66.3,
+            12.7
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1908,
+          "name": "Vile Fin Oracle",
+          "point": "sourcerequirement",
+          "coord": [
+            64.9,
+            43.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1909,
+          "name": "Vile Fin Lakestalker",
+          "point": "sourcerequirement",
+          "coord": [
+            65.2,
+            18.4
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1957,
+          "name": "Vile Fin Shorecreeper",
+          "point": "sourcerequirement",
+          "coord": [
+            76.1,
+            32.5
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1958,
+          "name": "Vile Fin Tidecaller",
+          "point": "sourcerequirement",
+          "coord": [
+            77,
+            32
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "91921": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Return to Quinn (Again)",
+          "preQuestSingle": [
+            91920
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1937,
+              "spawns": [
+                [
+                  130,
+                  42.8,
+                  40.86
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1951
+            ]
+          ],
+          "name": "Return to Quinn (Again)",
+          "objectivesText": [
+            "Bring Quinn's potion to Quinn Yorick at the Ivar Patch, north of the Sepulcher."
+          ],
+          "questLevel": 11,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1937
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Return to Quinn (Again)",
+          "prerequisiteReferences": [],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "start",
+          "coord": [
+            42.8,
+            40.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1951,
+          "name": "Quinn Yorick",
+          "point": "end",
+          "coord": [
+            53.4,
+            12.6
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "95883": {
+      "status": "unresolved",
+      "reason": "The Offering Stone sequence lacks verified predecessor and item-consumption semantics across the three source records.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              645153
+            ]
+          ],
+          "name": "The Tortured Soul",
+          "objectivesText": [
+            "Collect a Tortured Soul from the nearby undead in Beren's Peril in Silverpine Forest."
+          ],
+          "questLevel": 23,
+          "requiredLevel": 20,
+          "startedBy": [
+            null,
+            [
+              645153
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Tortured Soul",
+          "prerequisiteReferences": [],
+          "questLevel": 23,
+          "races": [],
+          "requiredLevel": 20
+        }
+      },
+      "sourceRevisions": {
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 645153,
+          "name": "Offering Stone",
+          "point": "start",
+          "coord": [
+            58.1,
+            69.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 645153,
+          "name": "Offering Stone",
+          "point": "end",
+          "coord": [
+            58.1,
+            69.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1973,
+          "name": "Ravenclaw Guardian",
+          "point": "sourcerequirement",
+          "coord": [
+            59,
+            70.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1974,
+          "name": "Ravenclaw Drudger",
+          "point": "sourcerequirement",
+          "coord": [
+            60.2,
+            72.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ]
+    },
+    "95884": {
+      "status": "unresolved",
+      "reason": "The item starter and Offering Stone sequence need verified acquisition and unlock semantics.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "The Offering Stone",
+          "requiredLevel": 20,
+          "startedBy": [
+            {
+              "id": 271343,
+              "spawns": [
+                [
+                  130,
+                  57.12,
+                  71.02
+                ]
+              ],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              645153
+            ]
+          ],
+          "name": "The Offering Stone",
+          "objectivesText": [
+            "Find the Offering Stone in Beren's Peril in Silverpine Forest."
+          ],
+          "questLevel": 23,
+          "requiredLevel": 20,
+          "startedBy": [
+            null,
+            null,
+            [
+              271343
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Offering Stone",
+          "prerequisiteReferences": [],
+          "questLevel": 23,
+          "races": [],
+          "requiredLevel": 20
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 645153,
+          "name": "Offering Stone",
+          "point": "end",
+          "coord": [
+            58.1,
+            69.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1973,
+          "name": "Ravenclaw Guardian",
+          "point": "sourcerequirement",
+          "coord": [
+            59,
+            70.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1974,
+          "name": "Ravenclaw Drudger",
+          "point": "sourcerequirement",
+          "coord": [
+            60.2,
+            72.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ]
+    },
+    "95885": {
+      "status": "unresolved",
+      "reason": "The source requires using a Tortured Soul but does not establish the preceding reward and consumption sequence.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              645153
+            ]
+          ],
+          "name": "The Offering of Blood",
+          "objectivesText": [
+            "Use the Tortured Soul to give an offering of blood at the Offering Stone in Beren's Peril."
+          ],
+          "questLevel": 23,
+          "requiredLevel": 20,
+          "startedBy": [
+            null,
+            [
+              645153
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Offering of Blood",
+          "prerequisiteReferences": [],
+          "questLevel": 23,
+          "races": [],
+          "requiredLevel": 20
+        }
+      },
+      "sourceRevisions": {
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 645153,
+          "name": "Offering Stone",
+          "point": "start",
+          "coord": [
+            58.1,
+            69.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 645153,
+          "name": "Offering Stone",
+          "point": "end",
+          "coord": [
+            58.1,
+            69.8
+          ],
+          "type": 2,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 212753,
+          "name": "Tortured Soul",
+          "point": "requirement",
+          "coord": [
+            58,
+            69.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ]
+    },
+    "95981": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Watching the Roads",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 2121,
+              "spawns": [
+                [
+                  130,
+                  43.98,
+                  40.93
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2121
+            ]
+          ],
+          "name": "Watching the Roads",
+          "objectivesText": [
+            "Slay 8 Dalaran Wizards and 8 Dalaran Watchers for Shadow Priest Allister in the Sepulcher."
+          ],
+          "questLevel": 20,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              2121
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Watching the Roads",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "start",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2121,
+          "name": "Shadow Priest Allister",
+          "point": "end",
+          "coord": [
+            44,
+            41
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1888,
+          "name": "Dalaran Watcher",
+          "point": "requirement",
+          "coord": [
+            60.6,
+            74.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1889,
+          "name": "Dalaran Wizard",
+          "point": "requirement",
+          "coord": [
+            66.2,
+            78.5
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "98298": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Arugal's Folly",
+          "preQuestSingle": [
+            99
+          ],
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1938,
+              "spawns": [
+                [
+                  130,
+                  44.2,
+                  39.81
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1938
+            ]
+          ],
+          "name": "Arugal's Folly",
+          "objectivesText": [
+            "Bring 6 Worgen Bits to Dalar Dawnweaver in The Sepulcher."
+          ],
+          "questLevel": 16,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1938
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Arugal's Folly",
+          "prerequisiteReferences": [],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "start",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "end",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1924,
+          "name": "Moonrage Bloodhowler",
+          "point": "sourcerequirement",
+          "coord": [
+            50,
+            74
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "98299": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Stop the Spread",
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1938,
+              "spawns": [
+                [
+                  130,
+                  44.2,
+                  39.81
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1938
+            ]
+          ],
+          "name": "Stop the Spread",
+          "objectivesText": [
+            "Slay 5 Sickly Refugees and 5 Haggard Refugees for Dalar Dawnweaver in The Sepulcher."
+          ],
+          "questLevel": 20,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1938
+            ]
+          ],
+          "zoneOrSort": 130
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Horde",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Stop the Spread",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [
+            2,
+            5,
+            8
+          ],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "start",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 1938,
+          "name": "Dalar Dawnweaver",
+          "point": "end",
+          "coord": [
+            44.2,
+            39.8
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2053,
+          "name": "Haggard Refugee",
+          "point": "requirement",
+          "coord": [
+            46,
+            84.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "id": 2054,
+          "name": "Sickly Refugee",
+          "point": "requirement",
+          "coord": [
+            45.4,
+            83.2
+          ],
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    }
+  },
+  "supportingQuests": [],
+  "clientWalkthrough": "unverified"
+}

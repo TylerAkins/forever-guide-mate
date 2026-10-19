@@ -26,7 +26,7 @@ for _, id in ipairs(ns.guideOrder) do
     end
 end
 check(misc == 41, 'Miscellaneous contains the books and all 40 exploration guides')
-check(loremaster == 7, 'The completed zone Loremaster guides are registered')
+check(loremaster == 12, 'The completed zone Loremaster guides are registered')
 check(ns.guides['loremaster-coming-soon'] == nil, 'The placeholder is retired')
 check(ns.guides['leveling-durotar'] == nil and ns.guides['leveling-mulgore'] == nil, 'Retired Loremaster guides are absent')
 for _, old in ipairs({'leveling-durotar', 'leveling-mulgore'}) do
@@ -63,3 +63,7 @@ dofile('tests/lua/ashenvale_starters.lua')
 dofile('tests/lua/loremaster_migration.lua')
 
 dofile('tests/lua/item_starter_bags.lua')
+
+dofile("tests/lua/loremaster_expansion.lua")
+
+dofile("tests/lua/loremaster_parity.lua")
