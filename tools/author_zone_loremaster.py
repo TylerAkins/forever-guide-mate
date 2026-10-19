@@ -240,6 +240,7 @@ def prepare(zone_spec, database, upstream, snapshot):
             else:
                 wanted.add(q)
         # Supporting quest closure uses the same evidence and source route actions.
+        roots = set(wanted)
         pending = list(sorted(wanted))
         requirements = {}
         failures = {}
@@ -289,6 +290,17 @@ def prepare(zone_spec, database, upstream, snapshot):
         for q in list(wanted):
             if q in failures:
                 audit['quests'].setdefault(str(q), {'evidence': {}, 'catalogs': []}).update(status='unresolved', reason=failures[q]);wanted.remove(q)
+        needed, pending = set(), list(roots & wanted)
+        while pending:
+            q = pending.pop()
+            if q in needed: continue
+            needed.add(q)
+            pending.extend(p for group in requirements.get(q, []) for p in group['quests']
+                           if p in wanted and p not in needed)
+        for q in wanted - needed:
+            audit['quests'][str(q)].update(status='excluded',
+                reason='Prerequisite excursion only served a candidate whose complete itinerary remains unresolved.')
+        wanted.intersection_update(needed)
         selected = [(node,g,goal) for node,g,goal in source_actions if quest_id(goal) in wanted]
         selected_ids = {node for node,_,_ in selected}
         # Dependency notes belong with the selected source action even without a quest id.
@@ -479,6 +491,11 @@ def prepare(zone_spec, database, upstream, snapshot):
         if entry and entry.get('status') in ('excluded', 'other-zone', 'unresolved'):
             entry['factionNotes'] = entry.get('reason')
             entry.update(status='included', reason='Authored for an applicable faction; other faction limitations are recorded separately.')
+    audit['supportingQuests'] = sorted(q for q in authored
+        if audit['quests'].get(str(q), {}).get('supporting') or q in audit.get('supportingQuests', []))
+    valid_actions = {g['id'] for g in current_goals}
+    audit['placements'] = [visit for visit in audit['placements']
+        if visit['anchor'] in valid_actions and set(visit['actions']) <= valid_actions]
     if not current_goals:
         return None, audit
     guide = {k: v for k,v in (current or {}).items() if k != 'goals'}

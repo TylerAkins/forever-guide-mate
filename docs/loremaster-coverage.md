@@ -24,6 +24,7 @@ Counts are unique quest IDs with authored pickups, across all race, class, and p
 | Hillsbrad Foothills | 56 | 59 | 3 | 10 | 0 | 12 / 0 | 2.5/5 |
 | Alterac Mountains | 12 | 15 | 3 | 1 | 0 | 11 / 0 | 2.5/5 |
 | Arathi Highlands | 23 | 36 | 13 | 0 | 0 | 22 / 0 | 2.5/5 |
+| Stranglethorn Vale | 84 | 90 | 6 | 0 | 19 | 44 / 0 | 2.5/5 |
 
 Inherited supporting work is classified from the frozen Wowhead category, then objective areas or delivery endpoints for class categories. Conflicting or missing ownership remains explicitly unresolved. A capital pickup alone does not determine ownership; Data Hoarders remains Dun Morogh content. Supporting counts include inherited neighboring-zone handoffs, whose necessity has not been reworked here. The five new catalog baselines remain 30 Westfall pickups already in Leveling, 20 Loch Modan, 69 Darkshore, 23 Silverpine, and 91 Barrens. Exclusions and ownership decisions explain why overlap can be smaller. Each new inventory records every catalog candidate, supporting prerequisites, source revisions, levels, restrictions, and fallback destinations.
 

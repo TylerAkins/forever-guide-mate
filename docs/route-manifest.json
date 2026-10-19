@@ -148134,5 +148134,3972 @@
         ]
       }
     ]
+  },
+  "loremaster-stranglethorn-vale": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-duskwood-and-stranglethorn-vale",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-215-jungle-secrets"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1434,
+          "Private Thorsen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-215-jungle-secrets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-583-welcome-to-the-jungle"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-583-welcome-to-the-jungle"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-583-welcome-to-the-jungle"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-185-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-190-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1434,
+          "Young Stranglethorn Tiger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-185-1-young-stranglethorn-tiger"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1434,
+          "Young Panther"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-190-1-young-panther"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-185-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-190-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1434,
+          "Lieutenant Doren"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-215-jungle-secrets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale",
+          "alliance-leveling-era-alliance-stranglethorn-vale-level-before-accept-605-singing-blue-shards"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-605-singing-blue-shards"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-201-investigate-the-camp"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-level-before-accept-198-supplies-to-private-thorsen"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-198-supplies-to-private-thorsen"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-level-before-accept-616-the-haunted-isle"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-616-the-haunted-isle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-level-before-accept-213-hostile-takeover"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-213-hostile-takeover"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-616-the-haunted-isle",
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-578-the-stone-of-the-tides"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-575-supply-and-demand"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1434,
+          "Private Thorsen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-198-supplies-to-private-thorsen"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1434,
+          "Sergeant Yohwa"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-203-the-second-rebellion",
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-204-bad-medicine"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1434,
+          "Lieutenant Doren"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-200-bookie-herod"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-186-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-191-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1434,
+          "Venom Fern Extract"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-204-2-venom-fern-extract"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1434,
+          "Bookie Herod"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-200-bookie-herod"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1434,
+          "The Hidden Key"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-328-the-hidden-key"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1434,
+          "Jungle Remedy"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-204-1-jungle-remedy"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1434,
+          "Kurzen Jungle Fighter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-203-1-kurzen-jungle-fighter"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1434,
+          "Crystal Spine Basilisk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-605-1-crystal-spine-basilisk"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1434,
+          "Stranglethorn Tiger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-186-1-stranglethorn-tiger"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1434,
+          "Tumbled Crystal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-213-1-tumbled-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1434,
+          "Sergeant Yohwa"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-203-the-second-rebellion",
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-204-bad-medicine"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1434,
+          "Corporal Kaleb"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-210-krazek-s-cookery"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1434,
+          "Large River Crocolisk Skin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-575-1-large-river-crocolisk-skin"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-186-tiger-mastery",
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-187-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-194-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1434,
+          "Elder Stranglethorn Tiger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-187-1-elder-stranglethorn-tiger"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1434,
+          "Panther"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-191-1-panther"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1434,
+          "Stranglethorn Raptor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-194-1-stranglethorn-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1434,
+          "Crystal Spine Basilisk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-605-1-crystal-spine-basilisk-2"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-194-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-187-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-191-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-605-singing-blue-shards"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-201-investigate-the-camp",
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-210-krazek-s-cookery"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-213-hostile-takeover"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-578-the-stone-of-the-tides"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-575-supply-and-demand"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-189-bloodscalp-ears"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-level-before-accept-601-water-elementals"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-601-water-elementals"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-level-before-accept-577-some-assembly-required"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-577-some-assembly-required"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Lesser Bloodstone Ore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-627-1-lesser-bloodstone-ore"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-627-favor-for-krazek"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-627-favor-for-krazek",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-622-return-to-corporal-kaleb"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1434,
+          "Brother Nimetz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-207-kurzen-s-mystery"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1434,
+          "Private Thorsen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-198-supplies-to-private-thorsen"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1434,
+          "Sergeant Yohwa"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-574-special-forces"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1434,
+          "Corporal Kaleb"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-622-return-to-corporal-kaleb"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-195-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-188-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-192-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1434,
+          "The Hidden Key"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-328-the-hidden-key"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1434,
+          "The Spy Revealed!"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-329-the-spy-revealed"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1434,
+          "Kurzen Headshrinker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-574-2-kurzen-headshrinker"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1434,
+          "Kurzen Commando"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-574-1-kurzen-commando"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1434,
+          "Shadowmaw Panther"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-192-1-shadowmaw-panther"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1434,
+          "Snapjaw Crocolisk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-577-1-snapjaw-crocolisk"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1434,
+          "Lashtail Raptor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-195-1-lashtail-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1434,
+          "Sin'Dall"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-188-1-sin-dall"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1434,
+          "The First Troll Legend"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-207-1-the-first-troll-legend"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1434,
+          "The Second Troll Legend"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-207-2-the-second-troll-legend"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1434,
+          "Lesser Water Elemental"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-601-1-lesser-water-elemental"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1434,
+          "Fourth Troll Legend"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-207-reviewed-4"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1434,
+          "Third Troll Legend"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-207-reviewed-3"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1434,
+          "Bloodscalp Ear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-objective-189-1-bloodscalp-ear"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-195-raptor-mastery",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-196-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-188-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-192-panther-mastery",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-193-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1434,
+          "Brother Nimetz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-207-kurzen-s-mystery",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-205-troll-witchery"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1434,
+          "Lieutenant Doren"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-574-special-forces",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-329-the-spy-revealed",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-330-patrol-schedules"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1434,
+          "Corporal Sethman"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-330-patrol-schedules",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-331-report-to-doren"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1434,
+          "Lieutenant Doren"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-331-report-to-doren"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-189-bloodscalp-ears"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-601-water-elementals",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-602-magical-analysis"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-577-some-assembly-required"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-level-before-turnin-602-magical-analysis",
+          "alliance-extra-202-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Lieutenant Doren"
+        ],
+        "actions": [
+          "alliance-extra-202-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Kurzen Elite"
+        ],
+        "actions": [
+          "alliance-extra-202-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Lieutenant Doren"
+        ],
+        "actions": [
+          "alliance-extra-202-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1416,
+          "Archmage Ansirem Runeweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-602-magical-analysis"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1416,
+          "Archmage Ansirem Runeweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-603-ansirem-s-key"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-level-before-accept-209-skullsplitter-tusks"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-209-skullsplitter-tusks"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1434,
+          "Catelyn the Blade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-603-ansirem-s-key",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-610-pretty-boy-duncan"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-600-venture-company-mining",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-621-zanzil-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-606-scaring-shaky"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1434,
+          "First Mate Crazz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-595-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-628-excelsior"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1434,
+          "Mistvale Giblets"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-606-1-elder-mistvale-gorilla"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1434,
+          "The Bloodsail Buccaneers"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-595-the-bloodsail-buccaneers",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-597-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1434,
+          "Catelyn's Blade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-610-1-catelyn-s-blade"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1434,
+          "\"Shaky\" Phillipe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-606-scaring-shaky",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-607-return-to-mackinley"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1434,
+          "First Mate Crazz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-597-the-bloodsail-buccaneers",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-599-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-607-return-to-mackinley",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-609-voodoo-dues"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1434,
+          "Catelyn the Blade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-610-pretty-boy-duncan",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-611-the-curse-of-the-tides"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-599-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-level-before-accept-617-akiris-by-the-bundle"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1434,
+          "Privateer Bloads"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-617-akiris-by-the-bundle"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1434,
+          "Akiris Reed"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-617-1-naga-explorer"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1434,
+          "Jon-Jon the Crow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-609-2-jon-jon-the-crow"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1434,
+          "Maury \"Club Foot\" Wilkins"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-609-1-maury-club-foot-wilkins"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1434,
+          "Chucky Ten Thumbs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-609-reviewed-3"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1434,
+          "Zanzil's Mixture"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-621-1-zanzil-s-mixture"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1434,
+          "Jungle Stalker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-196-1-jungle-stalker"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1434,
+          "Venture Co. Strip Miner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-600-1-venture-co-strip-miner"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1434,
+          "Skullsplitter Warrior"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-205-1-skullsplitter-warrior"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1434,
+          "Skullsplitter Tusk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-209-1-skullsplitter-tusk"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1434,
+          "Bhag'thera"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-193-1-bhag-thera"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1434,
+          "Brother Nimetz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-205-troll-witchery"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-193-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-196-raptor-mastery",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-197-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1434,
+          "Elder Saltwater Crocolisk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-628-1-elder-saltwater-crocolisk"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1434,
+          "Gazban"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-611-1-gazban"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-600-venture-company-mining",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-621-zanzil-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1434,
+          "Deeg"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-587-up-to-snuff"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-209-skullsplitter-tusks"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-604-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-611-the-curse-of-the-tides"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1434,
+          "Privateer Bloads"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-617-akiris-by-the-bundle",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-623-akiris-by-the-bundle"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-609-voodoo-dues"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-628-excelsior"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1434,
+          "Dizzy One-Eye"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-576-keep-an-eye-out"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1434,
+          "Bloodsail Charts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-604-2-bloodsail-charts"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1434,
+          "Bloodsail Orders"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-604-3-bloodsail-orders"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1434,
+          "Dizzy's Eye"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-576-1-dizzy-s-eye"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1434,
+          "Snuff"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-587-1-snuff"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1434,
+          "Bloodsail Swashbuckler"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-604-1-bloodsail-swashbuckler"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1434,
+          "Dizzy One-Eye"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-576-keep-an-eye-out"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-604-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1434,
+          "Deeg"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-587-up-to-snuff"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-338-the-green-hills-of-stranglethorn"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-339-chapter-i"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-339-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-339-chapter-i"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-340-chapter-ii"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-340-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-340-chapter-ii"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-341-chapter-iii"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-341-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-341-chapter-iii"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-342-chapter-iv"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-342-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-342-chapter-iv"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-338-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-338-the-green-hills-of-stranglethorn"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1445,
+          "Privateer Groy"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-623-akiris-by-the-bundle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-4",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-level-before-accept-608-the-bloodsail-buccaneers",
+          "alliance-extra-206-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Brother Nimetz"
+        ],
+        "actions": [
+          "alliance-extra-206-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Mai'Zoth"
+        ],
+        "actions": [
+          "alliance-extra-206-objective"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-accept-608-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Brother Nimetz"
+        ],
+        "actions": [
+          "alliance-extra-206-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-613-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "alliance-extra-613-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Mosh'Ogg Mauler"
+        ],
+        "actions": [
+          "alliance-extra-613-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "alliance-extra-613-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-level-before-accept-594-message-in-a-bottle"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-accept-594-message-in-a-bottle"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1434,
+          "Captain Keelhaul"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-objective-608-2-captain-keelhaul"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-accept-624-cortello-s-riddle"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1434,
+          "Fleet Master Firallon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-objective-608-3-fleet-master-firallon"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1434,
+          "Captain Stillwater"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-objective-608-1-captain-stillwater"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1434,
+          "Princess Poobah"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-594-message-in-a-bottle"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1434,
+          "Tethis"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-objective-197-1-tethis"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-197-raptor-mastery",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-accept-208-big-game-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1434,
+          "King Bangalash"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-objective-208-1-king-bangalash"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-208-big-game-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1435,
+          "Cortello's Riddle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-624-cortello-s-riddle",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-accept-625-cortello-s-riddle"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-608-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1445,
+          "Cortello's Riddle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-625-cortello-s-riddle",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-accept-626-cortello-s-riddle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1425,
+          "Cortello's Riddle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-626-cortello-s-riddle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-630-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Princess Poobah"
+        ],
+        "actions": [
+          "alliance-extra-630-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "King Mukla"
+        ],
+        "actions": [
+          "alliance-extra-630-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Princess Poobah"
+        ],
+        "actions": [
+          "alliance-extra-630-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8551-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Captain Hecklebury Smotts"
+        ],
+        "actions": [
+          "alliance-extra-8551-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Gorlash"
+        ],
+        "actions": [
+          "alliance-extra-8551-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Captain Hecklebury Smotts"
+        ],
+        "actions": [
+          "alliance-extra-8551-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-thousand-needles-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-575-supply-and-demand"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-605-singing-blue-shards"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-201-investigate-the-camp"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-189-bloodscalp-ears"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-level-before-accept-213-hostile-takeover"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-213-hostile-takeover"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale",
+          "horde-leveling-era-horde-stranglethorn-vale-level-before-accept-568-the-defense-of-grom-gol"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1434,
+          "Commander Aggro'gosh"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-accept-568-the-defense-of-grom-gol"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1434,
+          "Nimboya"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-accept-581-hunt-for-yenniku"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-accept-596-bloody-bone-necklaces"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-accept-583-welcome-to-the-jungle"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1434,
+          "Hemet Nesingwary Jr."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-583-welcome-to-the-jungle",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-194-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-accept-185-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-accept-190-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1434,
+          "Young Stranglethorn Tiger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-185-1-young-stranglethorn-tiger"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-185-tiger-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-186-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1434,
+          "Young Panther"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-190-1-young-panther"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-level-before-objective-605-1-crystal-spine-basilisk"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1434,
+          "Crystal Spine Basilisk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-605-1-crystal-spine-basilisk"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1434,
+          "Stranglethorn Tiger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-186-1-stranglethorn-tiger"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1434,
+          "Large River Crocolisk Skin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-575-1-large-river-crocolisk-skin"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-186-tiger-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-187-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-190-panther-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-191-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1434,
+          "Elder Stranglethorn Tiger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-187-1-elder-stranglethorn-tiger"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1434,
+          "Panther"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-191-1-panther"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1434,
+          "Stranglethorn Raptor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-194-1-stranglethorn-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1434,
+          "Crystal Spine Basilisk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-605-1-crystal-spine-basilisk-2"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1434,
+          "Bloodscalp Tusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-581-1-bloodscalp-tusk"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1434,
+          "Bloodscalp Ear"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-189-1-bloodscalp-ear"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1434,
+          "Bloody Bone Necklace"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-596-1-bloody-bone-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1434,
+          "Hemet Nesingwary Jr."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-194-raptor-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-195-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-187-tiger-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-188-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-191-panther-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-192-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1434,
+          "Sin'Dall"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-188-1-sin-dall"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1434,
+          "Lashtail Raptor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-195-1-lashtail-raptor",
+          "horde-leveling-era-horde-stranglethorn-vale-objective-568-1-lashtail-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1434,
+          "Nimboya"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-581-hunt-for-yenniku",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-582-headhunting"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-596-bloody-bone-necklaces",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-629-the-vile-reef"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1434,
+          "Commander Aggro'gosh"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-568-the-defense-of-grom-gol",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-569-the-defense-of-grom-gol"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1434,
+          "Tablet Shard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-629-1-tablet-shard"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1434,
+          "Bloodscalp Headhunter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-582-1-bloodscalp-headhunter"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1434,
+          "Nimboya"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-582-headhunting"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-629-the-vile-reef"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1434,
+          "Far Seer Mok'thardin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-accept-570-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1434,
+          "Mosh'Ogg Witch Doctor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-569-2-mosh-ogg-witch-doctor"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1434,
+          "Mosh'Ogg Brute"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-569-1-mosh-ogg-brute"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1434,
+          "Stranglethorn Tigress"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-570-2-stranglethorn-tigress"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1434,
+          "Shadowmaw Claw"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-570-1-shadowmaw-claw"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1434,
+          "Shadowmaw Panther"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-192-1-shadowmaw-panther"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-level-before-objective-213-1-tumbled-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1434,
+          "Tumbled Crystal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-213-1-tumbled-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1434,
+          "Hemet Nesingwary Jr."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-195-raptor-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-196-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1434,
+          "Ajeck Rouack"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-188-tiger-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-192-panther-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-accept-193-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1434,
+          "Nimboya"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-accept-638-trollbane"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1434,
+          "Commander Aggro'gosh"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-569-the-defense-of-grom-gol"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1434,
+          "Far Seer Mok'thardin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-570-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-189-bloodscalp-ears",
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-213-hostile-takeover"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-201-investigate-the-camp"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-605-singing-blue-shards"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-575-supply-and-demand"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-alterac-mountains-and-arathi-highlands"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1417,
+          "Zengu"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-638-trollbane"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-577-some-assembly-required"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-577-some-assembly-required"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-600-venture-company-mining"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-209-skullsplitter-tusks"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-209-skullsplitter-tusks"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-572-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1434,
+          "Far Seer Mok'thardin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-572-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1434,
+          "Nimboya"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-584-bloodscalp-clan-heads"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-598-split-bone-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1434,
+          "Nezzliok's Head"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-584-2-nezzliok-the-dire"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1434,
+          "Gan'zulah"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-584-1-gan-zulah"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1434,
+          "Bloodscalp Clan Heads"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-584-bloodscalp-clan-heads"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1434,
+          "Speaking with Nezzliok"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-585-speaking-with-nezzliok"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1434,
+          "Jungle Stalker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-572-1-jungle-stalker"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1434,
+          "Jungle Stalker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-196-1-jungle-stalker"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1434,
+          "Venture Co. Strip Miner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-600-1-venture-co-strip-miner"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1434,
+          "Ziata'jai Trophy"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-585-2-ziata-jai-trophy"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1434,
+          "Balia'mah Trophy"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-585-1-balia-mah-trophy"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1434,
+          "Zul'Mamwe Trophy"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-585-3-zul-mamwe-trophy"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1434,
+          "Skullsplitter Tusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-209-1-skullsplitter-tusk"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1434,
+          "Split Bone Necklace"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-598-1-split-bone-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1434,
+          "Snapjaw Crocolisk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-577-1-snapjaw-crocolisk"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1434,
+          "Far Seer Mok'thardin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-572-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-577-some-assembly-required",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-628-excelsior"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-600-venture-company-mining"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1434,
+          "Kebok"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-209-skullsplitter-tusks"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-598-split-bone-necklace"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1434,
+          "Speaking with Nezzliok"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-585-speaking-with-nezzliok"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-196-raptor-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-197-raptor-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-part-2",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-level-before-accept-586-speaking-with-gan-zulah"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1434,
+          "Speaking with Gan'zulah"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-586-speaking-with-gan-zulah"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-level-before-objective-628-1-elder-saltwater-crocolisk"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1434,
+          "Elder Saltwater Crocolisk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-628-1-elder-saltwater-crocolisk"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1434,
+          "Ana'thek the Cruel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-586-4-ana-thek-the-cruel"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1434,
+          "Skullsplitter Headhunter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-586-2-skullsplitter-headhunter"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1434,
+          "Skullsplitter Berserker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-586-3-skullsplitter-berserker"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1434,
+          "Skullsplitter Hunter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-586-1-skullsplitter-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1434,
+          "Bhag'thera"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-193-1-bhag-thera"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1434,
+          "Sir S. J. Erlgadin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-193-panther-mastery"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-338-the-green-hills-of-stranglethorn"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-339-chapter-i"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-339-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-339-chapter-i"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-340-chapter-ii"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-340-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-340-chapter-ii"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-341-chapter-iii"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-341-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-341-chapter-iii"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-342-chapter-iv"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-342-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-342-chapter-iv"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-338-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1434,
+          "Barnil Stonepot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-338-the-green-hills-of-stranglethorn"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1434,
+          "Speaking with Gan'zulah"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-586-speaking-with-gan-zulah"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1434,
+          "The Fate of Yenniku"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-588-the-fate-of-yenniku"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-588-the-fate-of-yenniku",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-589-the-singing-crystals"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-level-before-accept-571-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1434,
+          "Far Seer Mok'thardin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-571-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-621-zanzil-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-606-scaring-shaky"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-level-before-accept-595-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1434,
+          "First Mate Crazz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-595-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1434,
+          "Drizzlik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-628-excelsior"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1434,
+          "Aged Gorilla Sinew"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-571-1-elder-mistvale-gorilla"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1434,
+          "Mistvale Giblets"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-606-1-mistvale-giblets"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1434,
+          "The Bloodsail Buccaneers"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-595-the-bloodsail-buccaneers",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-597-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1434,
+          "\"Shaky\" Phillipe"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-606-scaring-shaky",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-607-return-to-mackinley"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1434,
+          "First Mate Crazz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-597-the-bloodsail-buccaneers",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-599-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-607-return-to-mackinley",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-609-voodoo-dues"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1434,
+          "Deeg"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-587-up-to-snuff"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-599-the-bloodsail-buccaneers",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-604-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1434,
+          "Dizzy One-Eye"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-576-keep-an-eye-out"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1434,
+          "Bloodsail Charts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-604-2-bloodsail-charts"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1434,
+          "Bloodsail Orders"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-604-3-bloodsail-orders"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1434,
+          "Dizzy's Eye"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-576-1-dizzy-s-eye"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1434,
+          "Snuff"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-587-1-snuff"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1434,
+          "Bloodsail Swashbuckler"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-604-1-bloodsail-swashbuckler"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1434,
+          "Dizzy One-Eye"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-576-keep-an-eye-out"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-level-before-accept-617-akiris-by-the-bundle"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1434,
+          "Privateer Bloads"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-617-akiris-by-the-bundle"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1434,
+          "Deeg"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-587-up-to-snuff"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-604-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1434,
+          "Far Seer Mok'thardin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-571-mok-thardin-s-enchantment",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-573-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1434,
+          "Maury's Clubbed Foot"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-609-1-maury-club-foot-wilkins"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1434,
+          "Jon-Jon the Crow"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-609-2-jon-jon-the-crow"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1434,
+          "Zanzil's Mixture"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-621-1-zanzil-s-mixture"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1434,
+          "Akiris Reed"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-617-1-akiris-reed"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1434,
+          "Naga Explorer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-573-1-naga-explorer"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-609-voodoo-dues"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1434,
+          "Privateer Bloads"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-617-akiris-by-the-bundle"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-621-zanzil-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1434,
+          "Far Seer Mok'thardin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-573-mok-thardin-s-enchantment"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-589-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-589-the-singing-crystals"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1434,
+          "Tethis"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-197-1-tethis"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-197-raptor-mastery",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-208-big-game-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1434,
+          "King Bangalash"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-208-1-king-bangalash"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-208-big-game-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-608-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-level-before-accept-594-message-in-a-bottle"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-594-message-in-a-bottle"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1434,
+          "Captain Keelhaul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-608-2-captain-keelhaul"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-624-cortello-s-riddle"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1434,
+          "Fleet Master Firallon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-608-3-fleet-master-firallon"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1434,
+          "Captain Stillwater"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-608-1-captain-stillwater"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1434,
+          "Princess Poobah"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-594-message-in-a-bottle"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-608-the-bloodsail-buccaneers"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1435,
+          "Cortello's Riddle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-624-cortello-s-riddle",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-625-cortello-s-riddle"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1445,
+          "Cortello's Riddle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-625-cortello-s-riddle",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-626-cortello-s-riddle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          96,
+          1425,
+          "Cortello's Riddle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-626-cortello-s-riddle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-630-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Princess Poobah"
+        ],
+        "actions": [
+          "horde-extra-630-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "King Mukla"
+        ],
+        "actions": [
+          "horde-extra-630-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Princess Poobah"
+        ],
+        "actions": [
+          "horde-extra-630-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-591-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-extra-591-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Mai'Zoth"
+        ],
+        "actions": [
+          "horde-extra-591-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-extra-591-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-613-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "horde-extra-613-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Mosh'Ogg Mauler"
+        ],
+        "actions": [
+          "horde-extra-613-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "\"Sea Wolf\" MacKinley"
+        ],
+        "actions": [
+          "horde-extra-613-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8551-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Captain Hecklebury Smotts"
+        ],
+        "actions": [
+          "horde-extra-8551-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Gorlash"
+        ],
+        "actions": [
+          "horde-extra-8551-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Captain Hecklebury Smotts"
+        ],
+        "actions": [
+          "horde-extra-8551-turnin"
+        ]
+      }
+    ]
   }
 }

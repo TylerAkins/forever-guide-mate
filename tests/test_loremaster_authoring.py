@@ -69,6 +69,13 @@ class SourcePolicyTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'intermediate'):
             build_actions(facts, 'Horde')
 
+    def test_child_and_extra_objectives_require_reviewed_mechanics(self):
+        for field,value in [('childQuests',[349]),('extraObjectives',[[None,4,'Release the Servant',1,[['object',141812]]]])]:
+            with self.subTest(field=field):
+                facts=self.facts({'questiedb':{field:value}})
+                self.assertTrue(any(field in reason for reason in facts['unresolved']))
+                self.assertEqual(facts['evidence']['questiedb'][field],value)
+
     def test_lua_keyword_keys_are_quoted(self):
         from loremaster_sources import lua
         self.assertIn('["not"]', lua({'not': {'profession': {'skillLineID': 333}}}))
@@ -104,7 +111,7 @@ assert(n.EvaluateCondition(condition,s)==true,'Observed predecessor history allo
         subprocess.run([runner,'-'],input=source,text=True,check=True,cwd=Path(__file__).resolve().parents[1])
 
 class ZonePreparationTests(unittest.TestCase):
-    def prepare(self, quests, source_goals=(), upstream_order=(), revision=None, registered=None, extra_guides=(), source_condition=None):
+    def prepare(self, quests, source_goals=(), upstream_order=(), revision=None, registered=None, extra_guides=(), source_condition=None, catalog_quests=None):
         import gzip
         import json
         import tempfile
@@ -116,7 +123,7 @@ class ZonePreparationTests(unittest.TestCase):
         (root / 'data/forever/compiled/zones').mkdir(parents=True)
         (root / 'data/forever/compilation').mkdir(parents=True)
         (root / 'data/forever/compiled/zones/redridge-mountains.json').write_text(json.dumps({
-            'zone': {'zoneId': 44}, 'quests': {str(q): {} for q in quests}}))
+            'zone': {'zoneId': 44}, 'quests': {str(q): {} for q in (quests if catalog_quests is None else catalog_quests)}}))
         (root / 'data/forever/compilation/manifest.json').write_text('{"compilationFormatVersion":2}')
         with gzip.open(root / 'data/forever/compilation/records.jsonl.gz', 'wt') as stream:
             for q, fields in quests.items():
@@ -168,6 +175,12 @@ class ZonePreparationTests(unittest.TestCase):
         self.assertIn('requiredLevel = 22',entry.raw)
         self.assertNotIn('level',goal_field(entry.raw,'conditions'))
         self.assertLess(goals.index(entry),next(i for i,g in enumerate(goals) if g.kind=='accept'))
+
+    def test_orphan_prerequisite_excursions_are_not_imported(self):
+        text,audit=self.prepare({10:{},11:{'preQuestSingle':[10],'wowhead':{'mapper':{}}}},catalog_quests=[11])
+        self.assertIsNone(text)
+        self.assertEqual(audit['quests']['11']['status'],'unresolved')
+        self.assertEqual(audit['quests']['10']['status'],'excluded')
 
     def test_any_prerequisite_does_not_become_all_completion_dependencies(self):
         text, audit = self.prepare({10: {}, 11: {}, 12: {'preQuestSingle': [10, 11]}})

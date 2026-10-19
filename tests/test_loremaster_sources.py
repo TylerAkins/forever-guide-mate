@@ -24,6 +24,10 @@ class LoremasterSources(unittest.TestCase):
             goals = parse_goals(guide.read_text(), 'guide', str(guide), None)
             actions = {g.id for g in goals}
             indices = {g.id: i for i, g in enumerate(goals)}
+            if audit.get('upstream'):
+                pickups = {g.quest_id for g in goals if g.kind == 'accept'}
+                self.assertLessEqual(set(audit.get('supportingQuests', [])), pickups)
+
             self.assertEqual(sorted(audit['spineActions'], key=indices.__getitem__), audit['spineActions'])
             for visit in audit['placements']:
                 self.assertIn(visit['anchor'], actions)

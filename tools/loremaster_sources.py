@@ -42,7 +42,7 @@ def quest_facts(quest_id, attributes):
                 requirements.append({'mode': mode, 'quests': list(dict.fromkeys(ids))})
         break
     for field in ('requiredMinRep','requiredMaxRep','requiredSpell','requiredSpecialization',
-                  'requiredRanks','sourceQuestNumRequired','requiredMaxLevel'):
+                  'requiredRanks','sourceQuestNumRequired','requiredMaxLevel','childQuests','extraObjectives'):
         value = choose(field)
         if value:
             unresolved.append(f'{field} requires reviewed mechanics not represented by this authoring tool')
@@ -100,7 +100,7 @@ def quest_facts(quest_id, attributes):
                                         'preQuestSingle','prerequisiteReferences','objectivesText','requiredSkill',
                                         'sourceItemId','startedBy','finishedBy','exclusiveTo','breadcrumbs','breadcrumbForQuestId',
                                         'requiredMinRep','requiredMaxRep','requiredSpell','requiredSpecialization',
-                                        'requiredRanks','sourceQuestNumRequired','requiredMaxLevel'}}
+                                        'requiredRanks','sourceQuestNumRequired','requiredMaxLevel','childQuests','extraObjectives'}}
                          for name, values in observed.items()},
             'sourceRevisions': {name: s.get('revision') for name, s in sources.items()}}
 

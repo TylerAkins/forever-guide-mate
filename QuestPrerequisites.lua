@@ -1190,3 +1190,10 @@ ns:RegisterQuestPrerequisite({ quest = 688, mode = "any", quests = { 652 } })
 
 -- Malin's optional delivery is removed after starting Worth Its Weight in Gold.
 ns.questBreadcrumbBypass[690] = { 691 }
+
+-- Stranglethorn Vale chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 202, mode = "any", quests = { 574 } })
+ns:RegisterQuestPrerequisite({ quest = 206, mode = "all", quests = { 202, 205 } })
+ns:RegisterQuestPrerequisite({ quest = 613, mode = "any", quests = { 609 } })
+ns:RegisterQuestPrerequisite({ quest = 630, mode = "any", quests = { 594 } })
+ns:RegisterQuestPrerequisite({ quest = 591, mode = "any", quests = { 589 } })
