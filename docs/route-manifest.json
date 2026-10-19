@@ -160827,5 +160827,1167 @@
         ]
       }
     ]
+  },
+  "loremaster-stonetalon-mountains": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ashenvale-and-stonetalon-mountains"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1442,
+          "Kaela Shadowspear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1085-on-guard-in-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1442,
+          "Gaxim Rustfizzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1085-on-guard-in-stonetalon",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1071-a-gnome-s-respite"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-level-before-accept-1093-super-reaper-6000"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1442,
+          "Ziz Fizziks"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1093-super-reaper-6000"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1442,
+          "Venture Co. Operator"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1093-1-venture-co-operator"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1442,
+          "Venture Co. Logger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1071-1-venture-co-logger"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1442,
+          "Venture Co. Deforester"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1071-2-venture-co-deforester"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1442,
+          "Ziz Fizziks"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1093-super-reaper-6000"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1442,
+          "Gaxim Rustfizzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1071-a-gnome-s-respite",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1072-an-old-colleague",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1075-a-scroll-from-mauren"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-wetlands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Elixir of Minor Fortitude"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-1073-1-elixir-of-minor-fortitude"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1455,
+          "Lomac Gearstrip"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-1072-an-old-colleague"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1455,
+          "Lomac Gearstrip"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-accept-1073-ineptitude-chemicals-fun"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Auctioneer Redmuse"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-prepare-1073-all-required-materials"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1455,
+          "Lomac Gearstrip"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-1073-ineptitude-chemicals-fun"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1453,
+          "Collin Mauren"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-1075-a-scroll-from-mauren"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-level-before-accept-1057-reclaiming-the-charred-vale"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1442,
+          "Keeper Albagorm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1057-reclaiming-the-charred-vale"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1442,
+          "Bloodfury Harpy"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1057-1-bloodfury-harpy"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1442,
+          "Bloodfury Ambusher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1057-2-bloodfury-ambusher"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1442,
+          "Bloodfury Slayer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1057-3-bloodfury-slayer"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1442,
+          "Bloodfury Roguefeather"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1057-4-bloodfury-roguefeather"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1442,
+          "Keeper Albagorm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1057-reclaiming-the-charred-vale",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1059-reclaiming-the-charred-vale"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1444,
+          "Falfindel Waywarder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1059-reclaiming-the-charred-vale"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-barrens-and-stonetalon-mountain",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-level-before-accept-1061-the-spirits-of-stonetalon",
+          "horde-extra-6421-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Mor'rogal"
+        ],
+        "actions": [
+          "horde-extra-6421-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Resonite Crystal"
+        ],
+        "actions": [
+          "horde-extra-6421-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Mor'rogal"
+        ],
+        "actions": [
+          "horde-extra-6421-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6284-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Wanted Poster: Besseleth"
+        ],
+        "actions": [
+          "horde-extra-6284-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Besseleth"
+        ],
+        "actions": [
+          "horde-extra-6284-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Maggran Earthbinder"
+        ],
+        "actions": [
+          "horde-extra-6284-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1454,
+          "Zor Lonetree"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1061-the-spirits-of-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          136,
+          1413,
+          "Seereth Stonebreak"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1061-the-spirits-of-stonetalon",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1062-goblin-invaders"
+        ]
+      },
+      {
+        "boundary": [
+          137,
+          1413,
+          "Makaba Flathoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-6548-avenge-my-village"
+        ]
+      },
+      {
+        "boundary": [
+          138,
+          1442,
+          "Grimtotem Mercenary"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-6548-2-grimtotem-mercenary"
+        ]
+      },
+      {
+        "boundary": [
+          138,
+          1442,
+          "Grimtotem Ruffian"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-6548-1-grimtotem-ruffian"
+        ]
+      },
+      {
+        "boundary": [
+          139,
+          1413,
+          "Makaba Flathoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6548-avenge-my-village",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-6629-kill-grundig-darkcloud"
+        ]
+      },
+      {
+        "boundary": [
+          141,
+          1442,
+          "Grimtotem Brute"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-6629-2-grimtotem-brute"
+        ]
+      },
+      {
+        "boundary": [
+          142,
+          1442,
+          "Kaya Flathoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-6523-protect-kaya"
+        ]
+      },
+      {
+        "boundary": [
+          144,
+          1442,
+          "Xen'Zilla"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-6461-blood-feeders"
+        ]
+      },
+      {
+        "boundary": [
+          145,
+          1442,
+          "Deepmoss Creeper"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-6461-1-deepmoss-creeper"
+        ]
+      },
+      {
+        "boundary": [
+          147,
+          1442,
+          "Ziz Fizziks"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1093-super-reaper-6000"
+        ]
+      },
+      {
+        "boundary": [
+          149,
+          1442,
+          "Deepmoss Venomspitter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-6461-2-deepmoss-venomspitter"
+        ]
+      },
+      {
+        "boundary": [
+          150,
+          1442,
+          "Venture Co. Operator"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-1093-1-venture-co-operator"
+        ]
+      },
+      {
+        "boundary": [
+          151,
+          1442,
+          "Venture Co. Logger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-1062-1-venture-co-logger"
+        ]
+      },
+      {
+        "boundary": [
+          153,
+          1442,
+          "Ziz Fizziks"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1093-super-reaper-6000",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1094-further-instructions"
+        ]
+      },
+      {
+        "boundary": [
+          167,
+          1413,
+          "Sputtervalve"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1094-further-instructions",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1095-further-instructions"
+        ]
+      },
+      {
+        "boundary": [
+          249,
+          1413,
+          "Seereth Stonebreak"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1062-goblin-invaders"
+        ]
+      },
+      {
+        "boundary": [
+          250,
+          1413,
+          "Seereth Stonebreak"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1063-the-elder-crone",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1068-shredding-machines"
+        ]
+      },
+      {
+        "boundary": [
+          251,
+          1413,
+          "Makaba Flathoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6523-protect-kaya",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-6401-kaya-s-alive",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6629-kill-grundig-darkcloud"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-level-before-accept-1058-jin-zil-s-forest-magic"
+        ]
+      },
+      {
+        "boundary": [
+          252,
+          1442,
+          "Witch Doctor Jin'Zil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1058-jin-zil-s-forest-magic"
+        ]
+      },
+      {
+        "boundary": [
+          254,
+          1442,
+          "Xen'Zilla"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6461-blood-feeders"
+        ]
+      },
+      {
+        "boundary": [
+          255,
+          1442,
+          "Tammra Windfield"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6401-kaya-s-alive"
+        ]
+      },
+      {
+        "boundary": [
+          257,
+          1442,
+          "Ziz Fizziks"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1095-further-instructions"
+        ]
+      },
+      {
+        "boundary": [
+          258,
+          1442,
+          "XT-9"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-1068-2-authored-XT-9"
+        ]
+      },
+      {
+        "boundary": [
+          259,
+          1442,
+          "XT-4"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-1068-1-authored-XT-4"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ashenvale"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1456,
+          "Magatha Grimtotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-turnin-1063-the-elder-crone"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stonetalon-mountains",
+          "horde-leveling-era-horde-stonetalon-mountains-level-before-accept-1087-cenarius-legacy"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1442,
+          "Braelyn Firehand"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-accept-1087-cenarius-legacy"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1442,
+          "Tammra Windfield"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-accept-6301-cycle-of-rebirth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-level-before-accept-5881-calling-in-the-reserves"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1442,
+          "Maggran Earthbinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-accept-5881-calling-in-the-reserves",
+          "horde-leveling-era-horde-stonetalon-mountains-accept-6282-harpies-threaten"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1442,
+          "Tsunaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-accept-6393-elemental-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-level-before-accept-1096-gerenzo-wrenchwhistle"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1442,
+          "Ziz Fizziks"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-accept-1096-gerenzo-wrenchwhistle"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1096-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1442,
+          "Ziz Fizziks"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-turnin-1096-gerenzo-wrenchwhistle"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1442,
+          "Incendrites"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-6393-1-burning-ravager"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1442,
+          "Antlered Courser"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1058-3-antlered-courser"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1442,
+          "Fey Dragon Scale"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1058-4-fey-dragon-scale"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Burning Ravager"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-6393-1-burning-ravager-2"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1442,
+          "Stonetalon Sap"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1058-1-stonetalon-sap"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1442,
+          "Twilight Whisker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1058-2-twilight-whisker"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1442,
+          "Son of Cenarius"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1087-1-son-of-cenarius"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1442,
+          "Daughter of Cenarius"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1087-2-daughter-of-cenarius"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1442,
+          "Cenarion Botanist"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1087-3-cenarion-botanist"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1442,
+          "Gaea Seed"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-6301-1-gaea-seed"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1442,
+          "Bloodfury Harpy"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-6282-1-bloodfury-harpy"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1442,
+          "Bloodfury Ambusher"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-6282-2-bloodfury-ambusher"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1442,
+          "Bloodfury Slayer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-6282-3-bloodfury-slayer"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1442,
+          "Bloodfury Roguefeather"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-6282-4-bloodfury-roguefeather"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1442,
+          "Tsunaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-turnin-6393-elemental-war"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1442,
+          "Maggran Earthbinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-turnin-6282-harpies-threaten"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1442,
+          "Tammra Windfield"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-turnin-6301-cycle-of-rebirth",
+          "horde-leveling-era-horde-stonetalon-mountains-accept-6381-new-life"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1442,
+          "Braelyn Firehand"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-turnin-1087-cenarius-legacy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6283-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Maggran Earthbinder"
+        ],
+        "actions": [
+          "horde-extra-6283-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Bloodfury Ripper"
+        ],
+        "actions": [
+          "horde-extra-6283-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Maggran Earthbinder"
+        ],
+        "actions": [
+          "horde-extra-6283-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1442,
+          "New Life"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-6381-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1442,
+          "Tammra Windfield"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-turnin-6381-new-life"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1442,
+          "Witch Doctor Jin'Zil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-turnin-1058-jin-zil-s-forest-magic"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "XT-9"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1068-2-authored-XT-9"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "XT-4"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-objective-1068-1-authored-XT-4"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1413,
+          "Seereth Stonebreak"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stonetalon-mountains-turnin-1068-shredding-machines"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-thousand-needles"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1441,
+          "Grish Longrunner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-5881-calling-in-the-reserves"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6481-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Mor'rogal"
+        ],
+        "actions": [
+          "horde-extra-6481-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Goggeroc"
+        ],
+        "actions": [
+          "horde-extra-6481-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Mor'rogal"
+        ],
+        "actions": [
+          "horde-extra-6481-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6542-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Darn Talongrip"
+        ],
+        "actions": [
+          "horde-extra-6542-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6542-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Kadrak"
+        ],
+        "actions": [
+          "horde-extra-6542-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-86576-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Maggran Earthbinder"
+        ],
+        "actions": [
+          "horde-extra-86576-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Bloodfury Harpy"
+        ],
+        "actions": [
+          "horde-extra-86576-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1442,
+          "Mor'rogal"
+        ],
+        "actions": [
+          "horde-extra-86576-turnin"
+        ]
+      }
+    ]
   }
 }

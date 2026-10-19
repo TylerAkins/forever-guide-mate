@@ -1204,3 +1204,11 @@ ns:RegisterQuestPrerequisite({ quest = 734, mode = "all", quests = { 712, 714 } 
 
 -- Burning Steppes chain edge from the frozen source observations.
 ns:RegisterQuestPrerequisite({ quest = 3822, mode = "any", quests = { 3821 } })
+
+-- Outdoor Loremaster chains from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 836, mode = "any", quests = { 485 } })
+ns:RegisterQuestPrerequisite({ quest = 2935, mode = "any", quests = { 2934 } })
+ns:RegisterQuestPrerequisite({ quest = 105, mode = "any", quests = { 5098 } })
+ns:RegisterQuestPrerequisite({ quest = 211, mode = "any", quests = { 5097 } })
+ns:RegisterQuestPrerequisite({ quest = 6283, mode = "any", quests = { 6282 } })
+ns:RegisterQuestPrerequisite({ quest = 6481, mode = "any", quests = { 6421 } })
