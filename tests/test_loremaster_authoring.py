@@ -58,6 +58,10 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertEqual(facts['item'], {'id': 2794, 'name': None})
         self.assertEqual(facts['evidence']['questiedb']['sourceItemId'], 2794)
 
+    def test_npc_provided_material_is_not_an_item_starter(self):
+        facts = self.facts({'questiedb': {'sourceItemId': 12815, 'startedBy': [[10838]]}})
+        self.assertIsNone(facts['item'])
+
     def test_unnamed_intermediate_material_requires_review(self):
         from author_zone_loremaster import build_actions
         facts = self.facts({'wowhead': {'name': 'Test', 'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
@@ -121,6 +125,50 @@ s.completedQuests[10]=true
 assert(n.EvaluateCondition(condition,s)==true,'Observed predecessor history allows midway entry')
 """ % lua(condition)
         subprocess.run([runner,'-'],input=source,text=True,check=True,cwd=Path(__file__).resolve().parents[1])
+
+    def test_optional_item_parent_requires_drop_or_observed_history(self):
+        import shutil
+        import subprocess
+        from loremaster_sources import prerequisite_availability, lua
+        runner = shutil.which('lua5.1')
+        if not runner: self.skipTest('Lua 5.1 is required')
+        parent = self.facts({'questiedb': {'sourceItemId': 8704}})
+        parent['item']['name'] = 'OOX-09/HL Distress Beacon'
+        child = self.facts({'questiedb': {'preQuestSingle': [485]}})
+        condition = prerequisite_availability(836, {485: parent, 836: child})
+        source = """local n={}; assert(loadfile('GuideEngine.lua'))('FGM',n)
+assert(loadfile('PlayerState.lua'))('FGM',n)
+local c = %s
+local s={raceID=1,classID=1,faction='Alliance',level=60,quests={},completedQuests={},items={},questLogKnown=true,questCompletionKnown=true}
+assert(n.EvaluateCondition(c,s)==false,'Missing optional drop excludes cold entry')
+s.items['OOX-09/HL Distress Beacon']=1
+assert(n.EvaluateCondition(c,s)==true,'Held drop enables possible path')
+s.items={}; s.quests[485]={}
+assert(n.EvaluateCondition(c,s)==true,'Active parent survives consumed starter')
+s.quests={}; s.completedQuests[485]=true
+assert(n.EvaluateCondition(c,s)==true,'Completed parent allows follow-up')
+assert(not s.completedQuests[836],'Availability never invents completion')
+""" % lua(condition)
+        subprocess.run([runner,'-'],input=source,text=True,check=True,cwd=Path(__file__).resolve().parents[1])
+
+    def test_item_names_use_original_observations(self):
+        import gzip
+        import json
+        import tempfile
+        from loremaster_sources import load_facts
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            folder = root / 'data/forever/compilation'
+            folder.mkdir(parents=True)
+            records = [
+                {'entityType': 'quest', 'entityId': '485', 'attributes': {'sourceData': {
+                    'questiedb': {'attributes': {'sourceItemId': 8704}}}}},
+                {'entityType': 'item', 'entityId': '8704', 'attributes': {'name': 'Untrusted merged name', 'sourceData': {
+                    'questiedb': {'attributes': {'name': 'Observed beacon'}},
+                    'foreverclient': {'attributes': {'Display_lang': 'Lower priority name'}}}}}]
+            with gzip.open(folder / 'records.jsonl.gz', 'wt') as stream:
+                for record in records: stream.write(json.dumps(record) + '\n')
+            self.assertEqual(load_facts(root)[485]['item'], {'id': 8704, 'name': 'Observed beacon'})
 
 class ZonePreparationTests(unittest.TestCase):
     def prepare(self, quests, source_goals=(), upstream_order=(), revision=None, registered=None, extra_guides=(), source_condition=None, catalog_quests=None):

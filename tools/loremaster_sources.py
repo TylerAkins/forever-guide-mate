@@ -72,6 +72,16 @@ def quest_facts(quest_id, attributes):
                     points.append({**point, 'zone': group.get('zone')})
     markup = detail.get('infoboxMarkup') or ''
     item = re.search(r'Start:.*?item=(\d+)/[^\]]*\]([^\[]+)', markup)
+    starter_id = choose('sourceItemId')
+    providers = choose('startedBy', default=[])
+    if isinstance(providers, list) and providers:
+        typed = isinstance(providers[0], dict)
+        item_providers = ([p.get('id') for p in providers if p.get('type') == 'item'] if typed
+                          else list_ids(providers[2]) if len(providers) > 2 else [])
+        nonitem_providers = (any(p.get('type') in ('npc', 'object') for p in providers) if typed
+                             else any(providers[:2]))
+        if nonitem_providers and not item_providers:
+            starter_id = None
     skill = choose('requiredSkill')
     if skill is not None and not (isinstance(skill, list) and len(skill) >= 2
                                    and all(isinstance(v, int) for v in skill[:2])):
@@ -97,7 +107,7 @@ def quest_facts(quest_id, attributes):
             'zoneId': wh.get('zoneId'), 'questieZone': observed['questiedb'].get('zoneOrSort'),
             'forever': forever, 'firstseenpatch': firstseen,
             'item': ({'id': int(item[1]), 'name': item[2]} if item else
-                     {'id': choose('sourceItemId'), 'name': None} if choose('sourceItemId') else None),
+                     {'id': starter_id, 'name': None} if starter_id else None),
             'exclusiveTo': list_ids(choose('exclusiveTo', default=[])),
             'breadcrumbs': list_ids(choose('breadcrumbs', default=[])),
             'breadcrumbForQuestId': choose('breadcrumbForQuestId'),
@@ -114,13 +124,26 @@ def quest_facts(quest_id, attributes):
 
 def load_facts(database):
     records = database / 'data/forever/compilation/records.jsonl.gz'
-    facts = {}
+    facts, item_names = {}, {}
     with gzip.open(records, 'rt') as stream:
         for line in stream:
             record = json.loads(line)
+            if record['entityType'] == 'item':
+                sources = record['attributes'].get('sourceData', {})
+                for source in SOURCE_PRIORITY:
+                    observed = sources.get(source, {}).get('attributes', {})
+                    name = observed.get('name') or observed.get('Display_lang')
+                    if not name:
+                        name = next((o.get('label') for o in observed.get('observations', []) if o.get('label')), None)
+                    if name:
+                        item_names[int(record['entityId'])] = name
+                        break
             if record['entityType'] == 'quest':
                 quest_id = int(record['entityId'])
                 facts[quest_id] = quest_facts(quest_id, record['attributes'])
+    for entry in facts.values():
+        if entry['item'] and not entry['item']['name']:
+            entry['item']['name'] = item_names.get(entry['item']['id'])
     return facts
 
 
@@ -148,7 +171,12 @@ def prerequisite_availability(quest, facts, failures=(), visiting=()):
     if quest in failures or quest not in facts or quest in visiting:
         return history
     entry = facts[quest]
+    history = {'quest': {'id': quest, 'state': 'activeOrCompleted'}}
     own = []
+    if entry.get('item'):
+        if not entry['item'].get('name'):
+            return history
+        own.append({'item': {'name': entry['item']['name'], 'minCount': 1}})
     if entry['faction']: own.append({'faction': entry['faction']})
     if entry['races']: own.append({'race': entry['races']})
     if entry['classes']: own.append({'class': entry['classes']})

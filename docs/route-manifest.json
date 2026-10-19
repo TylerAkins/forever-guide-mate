@@ -35289,7 +35289,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 12,
+    "revision": 13,
     "visits": [
       {
         "boundary": [
@@ -46705,7 +46705,7 @@
     ]
   },
   "leveling-era-horde-the-hinterlands": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -71271,7 +71271,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 14,
+    "revision": 15,
     "visits": [
       {
         "boundary": [
@@ -81246,7 +81246,7 @@
     ]
   },
   "leveling-era-alliance-the-hinterlands": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -156775,6 +156775,1236 @@
         ],
         "actions": [
           "horde-extra-3822-turnin"
+        ]
+      }
+    ]
+  },
+  "loremaster-the-hinterlands": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1448-in-search-of-the-temple"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1453,
+          "Brohann Caskbelly"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1448-in-search-of-the-temple"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1453,
+          "Brohann Caskbelly"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1448-in-search-of-the-temple",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1449-to-the-hinterlands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-level-before-turnin-1449-to-the-hinterlands"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1425,
+          "Falstad Wildhammer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1449-to-the-hinterlands",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-1450-gryphon-master-talonaxe"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1425,
+          "Gryphon Master Talonaxe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1450-gryphon-master-talonaxe",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-1451-rhapsody-shindigger"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1425,
+          "Rhapsody Shindigger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1451-rhapsody-shindigger",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-1452-rhapsody-s-kalimdor-kocktail"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-tanaris",
+          "alliance-leveling-era-alliance-tanaris-level-before-objective-1452-1-fire-roc"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1446,
+          "Fire Roc"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-objective-1452-1-fire-roc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-feralas-and-tanaris"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1444,
+          "Groddoc Liver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-1452-3-groddoc-liver"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1444,
+          "Ironfur Liver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-1452-2-ironfur-liver"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Roc Gizzard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-1452-1-roc-gizzard"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-the-hinterlands",
+          "alliance-leveling-era-alliance-the-hinterlands-level-before-accept-2988-witherbark-cages"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1425,
+          "Gryphon Master Talonaxe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-accept-2988-witherbark-cages"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1446,
+          "Roc Gizzard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-objective-1452-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1425,
+          "Rhapsody Shindigger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-turnin-1452-rhapsody-s-kalimdor-kocktail"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1425,
+          "Rhapsody Shindigger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-accept-1469-rhapsody-s-tale"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1425,
+          "Fraggar Thundermantle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-accept-2880-troll-necklace-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-objective-2880-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1425,
+          "Fraggar Thundermantle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-turnin-2880-troll-necklace-bounty",
+          "alliance-leveling-era-alliance-the-hinterlands-accept-2877-skulk-rock-clean-up"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-objective-2988-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1425,
+          "Gryphon Master Talonaxe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-turnin-2988-witherbark-cages",
+          "alliance-leveling-era-alliance-the-hinterlands-accept-2989-the-altar-of-zul"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1425,
+          "Green Sludge"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-objective-2877-1-green-sludge"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1425,
+          "Jade Ooze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-objective-2877-2-jade-ooze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-level-before-accept-485-find-oox-09-hl"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-accept-485-find-oox-09-hl"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1425,
+          "Homing Robot OOX-09/HL"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-turnin-485-find-oox-09-hl"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-4",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-level-before-turnin-1469-rhapsody-s-tale"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1453,
+          "Brohann Caskbelly"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-1469-rhapsody-s-tale"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1425,
+          "Gryphon Master Talonaxe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2989-the-altar-of-zul"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1425,
+          "Green Sludge"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2877-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1425,
+          "Fraggar Thundermantle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2877-skulk-rock-clean-up"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-836-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Homing Robot OOX-09/HL"
+        ],
+        "actions": [
+          "alliance-extra-836-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-836-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Oglethorpe Obnoticus"
+        ],
+        "actions": [
+          "alliance-extra-836-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-1424-pool-of-tears"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1435,
+          "Fel'zerul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1424-pool-of-tears"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1435,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1424-1-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1435,
+          "Fel'zerul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1424-pool-of-tears"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-feralas"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Frayfeather Hippogryph"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-collect-before-pickup-objective-7842-1-frayfeather-hippogryph"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1435,
+          "Fel'zerul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-1429-the-atal-ai-exile"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-tanaris-and-dustwallow-marsh"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1454,
+          "Dran Droffers"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-649-ripple-recovery"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1454,
+          "Malton Droffers"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-649-ripple-recovery",
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-650-ripple-recovery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-hinterlands",
+          "horde-leveling-era-horde-the-hinterlands-level-before-objective-7842-1-long-elegant-feather"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Long Elegant Feather"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7842-1-long-elegant-feather"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1458,
+          "Oran Snakewrithe"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-2995-lines-of-communication"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1425,
+          "Venom Bottles"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-2933-venom-bottles"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1425,
+          "Gilveradin Sunchaser"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-650-ripple-recovery",
+          "horde-leveling-era-horde-the-hinterlands-accept-77-a-sticky-situation"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1425,
+          "Smith Slagtree"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-7839-vilebranch-hooligans"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1425,
+          "Lard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-7840-lard-lost-his-lunch"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1425,
+          "Katoom the Angler"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-7815-snapjaws-mon"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1425,
+          "Vilebranch Kidnapper"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7840-1-vilebranch-kidnapper"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1425,
+          "Saltwater Snapjaw"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7815-1-saltwater-snapjaw"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1425,
+          "Lard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-7840-lard-lost-his-lunch"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1425,
+          "Katoom the Angler"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-7815-snapjaws-mon"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1425,
+          "Huntsman Markhor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-7828-stalking-the-stalkers",
+          "horde-leveling-era-horde-the-hinterlands-accept-7829-hunt-the-savages",
+          "horde-leveling-era-horde-the-hinterlands-accept-7830-avenging-the-fallen"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1425,
+          "Otho Moji'ko"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-7841-message-to-the-wildhammer"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1425,
+          "Mystic Yayo'jin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-7844-cannibalistic-cousins"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1425,
+          "Skylord Plume"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7830-1-skylord-plume"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1425,
+          "Hinterlands Honey Ripple"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-77-1-hinterlands-honey-ripple"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1425,
+          "Silvermane Howler"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7828-2-silvermane-howler"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1425,
+          "Vilebranch Soothsayer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7844-2-vilebranch-soothsayer"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1425,
+          "Vilebranch Scalper"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7844-1-vilebranch-scalper"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1425,
+          "Silvermane Stalker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7828-1-silvermane-stalker"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1425,
+          "Savage Owlbeast"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7829-1-savage-owlbeast"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1425,
+          "Rin'ji"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-2742-rin-ji-is-trapped"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1425,
+          "Highvale Marksman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7841-4-highvale-marksman"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1425,
+          "Highvale Outrunner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7841-2-highvale-outrunner"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1425,
+          "Highvale Ranger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7841-3-highvale-ranger"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1425,
+          "Highvale Scout"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7841-1-highvale-scout"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-485-find-oox-09-hl"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1425,
+          "Homing Robot OOX-09/HL"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-485-find-oox-09-hl"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1425,
+          "Rin'ji is Trapped!"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-2742-rin-ji-is-trapped"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1425,
+          "Rin'ji's Secret"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-accept-2782-rin-ji-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7839-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1425,
+          "Smith Slagtree"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-7839-vilebranch-hooligans"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1425,
+          "Mystic Yayo'jin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-7844-cannibalistic-cousins"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1425,
+          "Otho Moji'ko"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-7841-message-to-the-wildhammer",
+          "horde-leveling-era-horde-the-hinterlands-accept-7842-another-message-to-the-wildhammer"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1425,
+          "Otho Moji'ko"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-7842-another-message-to-the-wildhammer",
+          "horde-leveling-era-horde-the-hinterlands-accept-7843-the-final-message-to-the-wildhammer"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1425,
+          "Huntsman Markhor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-7828-stalking-the-stalkers",
+          "horde-leveling-era-horde-the-hinterlands-turnin-7829-hunt-the-savages",
+          "horde-leveling-era-horde-the-hinterlands-turnin-7830-avenging-the-fallen"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-2933-venom-bottles",
+          "horde-leveling-era-horde-the-hinterlands-accept-2934-undamaged-venom-sac"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Final Message to the Wildhammer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-7843-1-final-message-to-the-wildhammer"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1425,
+          "Gilveradin Sunchaser"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-77-a-sticky-situation"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1425,
+          "Atal'ai Exile"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-1429-the-atal-ai-exile",
+          "horde-leveling-era-horde-the-hinterlands-accept-1444-return-to-fel-zerul"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1425,
+          "Undamaged Venom Sac"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-2934-1-undamaged-venom-sac"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Find OOX-09/HL!"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-485-find-oox-09-hl-2"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1425,
+          "Otho Moji'ko"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-7843-the-final-message-to-the-wildhammer"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-2934-undamaged-venom-sac"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Highvale-Records"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-2995-1-authored-Highvale-Records"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Highvale-Notes"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-2995-2-authored-Highvale-Notes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Highvale-Report"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-2995-3-authored-Highvale-Report"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1458,
+          "Oran Snakewrithe"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-2995-lines-of-communication",
+          "horde-leveling-era-horde-the-hinterlands-turnin-2782-rin-ji-s-secret",
+          "horde-leveling-era-horde-the-hinterlands-accept-8273-ora-s-gratitude"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1435,
+          "Fel'zerul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-1444-return-to-fel-zerul"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          95,
+          1425,
+          "Katoom the Angler"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-7816-gammerita-mon"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1425,
+          "Katoom's Best Lure"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-7816-1-katoom-s-best-lure"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1425,
+          "Katoom the Angler"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-7816-gammerita-mon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-836-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Homing Robot OOX-09/HL"
+        ],
+        "actions": [
+          "horde-extra-836-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-836-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Oglethorpe Obnoticus"
+        ],
+        "actions": [
+          "horde-extra-836-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-2935-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1424,
+          "Apothecary Lydon"
+        ],
+        "actions": [
+          "horde-extra-2935-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-2935-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Master Gadrin"
+        ],
+        "actions": [
+          "horde-extra-2935-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-7861-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Call to Arms!"
+        ],
+        "actions": [
+          "horde-extra-7861-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Vilebranch Aman'zasi Guard"
+        ],
+        "actions": [
+          "horde-extra-7861-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Primal Torntusk"
+        ],
+        "actions": [
+          "horde-extra-7861-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-7862-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Call to Arms!"
+        ],
+        "actions": [
+          "horde-extra-7862-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Vilebranch Berserker"
+        ],
+        "actions": [
+          "horde-extra-7862-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1425,
+          "Primal Torntusk"
+        ],
+        "actions": [
+          "horde-extra-7862-turnin"
         ]
       }
     ]

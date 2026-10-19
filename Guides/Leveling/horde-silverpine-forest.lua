@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 14,
+    revision = 15,
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-silverpine-forest",

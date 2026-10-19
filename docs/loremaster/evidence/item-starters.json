@@ -234,5 +234,95 @@
         }
       }
     }
+  },
+  "8704": {
+    "name": "OOX-09/HL Distress Beacon",
+    "startQuest": 485,
+    "drops": [],
+    "sources": {
+      "allthethings": {
+        "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "attributes": {
+          "observations": [
+            {
+              "path": ".contrib/.db/forever/zzOLD/02 - Outdoor Zones/02 Eastern Kingdoms/The Hinterlands.lua",
+              "label": "OOX-09/HL Distress Beacon",
+              "fields": {
+                "description": "This item can drop off of any hostile creature in the zone. Rare and Elite creatures have higher drop chance."
+              }
+            }
+          ]
+        }
+      },
+      "foreverclient": {
+        "revision": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "attributes": {
+          "Display_lang": "OOX-09/HL Distress Beacon",
+          "StartQuestID": 485
+        }
+      },
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "OOX-09/HL Distress Beacon",
+          "npcDrops": [
+            2505,
+            2639,
+            2640,
+            2641,
+            2642,
+            2643,
+            2644,
+            2645,
+            2646,
+            2647,
+            2648,
+            2649,
+            2650,
+            2651,
+            2652,
+            2653,
+            2654,
+            2655,
+            2656,
+            2657,
+            2658,
+            2659,
+            2680,
+            2681,
+            2686,
+            2691,
+            2692,
+            2693,
+            2694,
+            2707,
+            2923,
+            2924,
+            2925,
+            2926,
+            2927,
+            2928,
+            2929,
+            4465,
+            4466,
+            4467,
+            4468,
+            4469,
+            7808,
+            7809,
+            7977,
+            7995,
+            7996,
+            8210,
+            8214,
+            8217,
+            8219,
+            8636,
+            10802
+          ],
+          "startQuest": 485
+        }
+      }
+    }
   }
 }

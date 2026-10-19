@@ -302,6 +302,7 @@ M.SameTitleQuestChains = {
 
 -- Forever quests woven into starter routes that unlock after a spine turn-in.
 M.WovenQuestTurninGates = {
+    [836] = 485,
     [95350] = 95349,
     [13] = 12,
     [14] = 13,
