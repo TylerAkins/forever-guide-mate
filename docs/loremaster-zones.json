@@ -159,7 +159,9 @@
       "slug": "deadwind-pass",
       "mapID": 1430,
       "file": "Guides/Loremaster/DeadwindPass.lua",
-      "status": "pending"
+      "status": "reviewed-empty",
+      "reason": "No supported quest itinerary in available source observations; the compiled zone catalog is missing.",
+      "review": "docs/loremaster/reviews/deadwind-pass.json"
     },
     {
       "zone": "Durotar",

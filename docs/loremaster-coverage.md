@@ -89,3 +89,5 @@ Wrath references for omitted legacy quests. Dry Times (116), Theocritus' Retriev
 (178), Sign Me Up! (95816), and Shipping Label (98247) remain unresolved for missing
 acquisition directions or supported pickup/return navigation. Its cold-entry and
 midway eligibility checks use observed prerequisite history without inferring credit.
+
+Deadwind Pass has no supported quest itinerary in the available observations. Its compiled zone catalog is missing; a scan of all 7,475 quest records found no Deadwind classification or objective location. The [review record](loremaster/reviews/deadwind-pass.json) freezes the source hashes and filters. Server quest availability remains unverified.

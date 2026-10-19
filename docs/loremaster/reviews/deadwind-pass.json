@@ -1,0 +1,116 @@
+{
+  "title": "Deadwind Pass",
+  "spine": "",
+  "additionalSpines": [],
+  "spineActions": [],
+  "placements": [],
+  "quests": {},
+  "supportingQuests": [],
+  "clientWalkthrough": "unverified",
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47",
+      "data/forever/sources/allthethings/records.jsonl": "63de18c24dbbe2e1e1d1c7e4e203c31c93560b3890961b7799901876f2ad63ac",
+      "data/forever/sources/wowhead/records.jsonl": "3e160626414194d8a5e7d5b696f0fc27a268b55502daf9b2b3ad02b95bec0b81",
+      "data/forever/sources/questiedb/records.jsonl.gz": "3c926211ed6226b65302151f2c436b7bcf5ddd7aca7b67b4ef446b45eae84f2b",
+      "data/forever/sources/foreverclient/records.jsonl.gz": "47a692aeb35e4f49e50ce14e34f0d41b9b0fd20fa0cd761303a309c5e6c5b79c"
+    }
+  },
+  "coverageMode": "zone",
+  "orderingEligibility": {},
+  "upstream": {
+    "repository": "https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK",
+    "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
+    "strict": false,
+    "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+    }
+  },
+  "review": {
+    "status": "reviewed-empty",
+    "compiledZoneCatalog": "missing",
+    "matchingQuestObservations": [],
+    "filters": [
+      "Original Wowhead zoneId 41",
+      "Original QuestieDB zoneOrSort 41",
+      "Original Wowhead objective zone names containing Deadwind",
+      "Original ATT quest startedBy provider spawns in area 41"
+    ],
+    "limitation": "The available source observations contain no supported quest itinerary. This is not a claim that the server has no quests in Deadwind Pass.",
+    "questRecordsScanned": 7475,
+    "matchingATTProviderRecords": [],
+    "clientLocationFields": "Available client quest records contain no zone or objective-location fields."
+  },
+  "nonQuestZoneObservations": [
+    {
+      "schemaVersion": 1,
+      "flavor": "forever",
+      "entityType": "achievement",
+      "entityId": "777",
+      "source": "allthethings",
+      "sourceRevision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "observations": [
+          {
+            "path": ".contrib/.db/forever/zzOLD/02 - Outdoor Zones/02 Eastern Kingdoms/Deadwind Pass.lua",
+            "label": "Explore Deadwind Pass"
+          }
+        ]
+      },
+      "provenance": {
+        "observations": {
+          "source": "allthethings",
+          "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+          "path": ".contrib/.db/forever"
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "flavor": "forever",
+      "entityType": "item",
+      "entityId": "16246",
+      "source": "allthethings",
+      "sourceRevision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+      "attributes": {
+        "observations": [
+          {
+            "path": ".contrib/.db/forever/profession db/enchanting.lua",
+            "label": "Enchant Bracer - Superior Strength"
+          },
+          {
+            "path": ".contrib/.db/forever/zzOLD/02 - Outdoor Zones/02 Eastern Kingdoms/Deadwind Pass.lua",
+            "label": "Formula: Enchant Bracer - Superior Strength (RECIPE!)"
+          }
+        ]
+      },
+      "provenance": {
+        "observations": {
+          "source": "allthethings",
+          "revision": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+          "path": ".contrib/.db/forever"
+        }
+      }
+    }
+  ]
+}
