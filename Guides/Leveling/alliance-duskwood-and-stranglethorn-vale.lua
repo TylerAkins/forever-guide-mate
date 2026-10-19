@@ -1504,6 +1504,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+    ["not"] = {
+        any = {
+            { item = { name = "An Old History Book", minCount = 1 } },
+            { quest = { id = 337, state = "activeOrCompleted" } },
+        },
+    },
+},
         },
         {
             text = "Use the An Old History Book to accept An Old History Book.",
@@ -1528,6 +1536,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+    ["not"] = {
+        any = {
+            { item = { name = "An Old History Book", minCount = 1 } },
+            { quest = { id = 337, state = "activeOrCompleted" } },
+        },
+    },
+},
         },
         {
             text = "Turn in The Missing Diplomat to Bishop DeLavey.",
@@ -1594,7 +1610,7 @@ ns:RegisterGuide({
             route = {
                 { mapID = 1453, x = 0.7417, y = 0.07490000000000001, label = "Milton Sheaf", offMapText = "Travel to Milton Sheaf in Stormwind City." },
             },
-            dependsOn = { "accept-337-an-old-history-book", "objective-337-1-nightbane-dark-runner" },
+            dependsOn = { "accept-337-an-old-history-book" },
             id = "turnin-337-an-old-history-book",
             kind = "turnin",
             conditions = {
@@ -1615,6 +1631,14 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+    ["not"] = {
+        any = {
+            { item = { name = "An Old History Book", minCount = 1 } },
+            { quest = { id = 337, state = "activeOrCompleted" } },
+        },
+    },
+},
         },
         {
             route = {
@@ -1648,6 +1672,11 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+    ["not"] = {
+        any = { { quest = { id = 337, state = "completed" } }, { quest = { id = 538, state = "activeOrCompleted" } } },
+    },
+},
         },
         {
             text = "Turn in The Missing Diplomat to Jorgen.",
@@ -2055,13 +2084,13 @@ ns:RegisterGuide({
             dependsOn = { "accept-221-worgen-in-the-woods" },
         },
         {
-            text = "Kill Nightbane Dark Runner.",
+            text = "Use An Old History Book to accept An Old History Book if it dropped from Nightbane Dark Runners during this outing. This drop is optional.",
             route = {
                 { y = 0.432, mapID = 1431, label = "Nightbane Dark Runner", offMapText = "Travel to Nightbane Dark Runner.", x = 0.67 },
             },
-            dependsOn = { "accept-337-an-old-history-book" },
-            id = "objective-337-1-nightbane-dark-runner",
-            kind = "objective",
+            dependsOn = { "objective-221-1-nightbane-dark-runner" },
+            id = "accept-337-an-old-history-book-late",
+            kind = "accept",
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2073,12 +2102,18 @@ ns:RegisterGuide({
                     },
                 },
             },
-            complete = {
-                questObjective = { id = 337, text = "Nightbane Dark Runner", index = 1 },
-            },
+            complete = { quest = { id = 337, state = "activeOrCompleted" } },
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+    ["not"] = {
+        any = {
+            { item = { name = "An Old History Book", minCount = 1 } },
+            { quest = { id = 337, state = "activeOrCompleted" } },
+        },
+    },
+},
         },
         {
             route = {
@@ -4782,7 +4817,7 @@ ns:RegisterGuide({
             route = {
                 { y = 0.0749, mapID = 1453, label = "An Old History Book", offMapText = "Travel to An Old History Book.", x = 0.7417 },
             },
-            dependsOn = { "accept-337-an-old-history-book", "objective-337-1-nightbane-dark-runner" },
+            dependsOn = { "accept-337-an-old-history-book", "accept-337-an-old-history-book-late" },
             id = "turnin-337-an-old-history-book-2",
             kind = "turnin",
             conditions = {
@@ -4802,6 +4837,52 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+    ["not"] = {
+        any = {
+            { item = { name = "An Old History Book", minCount = 1 } },
+            { quest = { id = 337, state = "activeOrCompleted" } },
+        },
+    },
+},
+        },
+        {
+            route = {
+                { mapID = 1453, x = 0.771, y = 0.302, label = "Milton Sheaf", offMapText = "Travel to Milton Sheaf in Stormwind City." },
+            },
+            text = "Accept Southshore from Milton Sheaf.",
+            id = "accept-538-southshore-late",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 538, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 337 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            excludeWhen = {
+    ["not"] = {
+        any = { { quest = { id = 337, state = "completed" } }, { quest = { id = 538, state = "activeOrCompleted" } } },
+    },
+},
         },
         {
             text = "Turn in James Hyal to Vincent Hyal.",

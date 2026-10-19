@@ -116,6 +116,7 @@ ns:RegisterGuide({
             },
             text = "Turn in Southshore to Loremaster Dibbs.",
             id = "turnin-538-southshore",
+            excludeWhen = { ["not"] = { quest = { id = 538, state = "activeOrCompleted" } } },
             kind = "turnin",
             conditions = {
                 all = {

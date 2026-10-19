@@ -41,10 +41,19 @@ def quest_facts(quest_id, attributes):
             elif ids:
                 requirements.append({'mode': mode, 'quests': list(dict.fromkeys(ids))})
         break
+    for field in ('requiredMinRep','requiredMaxRep','requiredSpell','requiredSpecialization',
+                  'requiredRanks','sourceQuestNumRequired','requiredMaxLevel'):
+        value = choose(field)
+        if value:
+            unresolved.append(f'{field} requires reviewed mechanics not represented by this authoring tool')
     races = choose('races', 'requiredRaces', default=[])
     if not isinstance(races, list):
         unresolved.append('Race bitmask requires an explicit supported race observation')
         races = []
+    faction = choose('faction')
+    faction_races = {'Alliance': {1, 3, 4, 7, 95}, 'Horde': {2, 5, 6, 8, 96}}
+    if faction in faction_races and races and not set(races) & faction_races[faction]:
+        unresolved.append('Faction and race observations have no applicable character')
     classes = choose('classes', 'requiredClasses', default=[])
     if isinstance(classes, int):
         classes = [c for c in CLASS_IDS if classes & (1 << (c - 1))]
@@ -80,7 +89,8 @@ def quest_facts(quest_id, attributes):
             'points': points, 'startPins': wh.get('startPins', []),
             'zoneId': wh.get('zoneId'), 'questieZone': observed['questiedb'].get('zoneOrSort'),
             'forever': forever, 'firstseenpatch': firstseen,
-            'item': {'id': int(item[1]), 'name': item[2]} if item else None,
+            'item': ({'id': int(item[1]), 'name': item[2]} if item else
+                     {'id': choose('sourceItemId'), 'name': None} if choose('sourceItemId') else None),
             'exclusiveTo': list_ids(choose('exclusiveTo', default=[])),
             'breadcrumbs': list_ids(choose('breadcrumbs', default=[])),
             'breadcrumbForQuestId': choose('breadcrumbForQuestId'),
@@ -88,7 +98,9 @@ def quest_facts(quest_id, attributes):
                                if k in {'name','classes','races','faction','requiredRaces','requiredClasses',
                                         'questLevel','requiredLevel','zoneOrSort','flags','preQuestGroup',
                                         'preQuestSingle','prerequisiteReferences','objectivesText','requiredSkill',
-                                        'startedBy','finishedBy','exclusiveTo','breadcrumbs','breadcrumbForQuestId'}}
+                                        'sourceItemId','startedBy','finishedBy','exclusiveTo','breadcrumbs','breadcrumbForQuestId',
+                                        'requiredMinRep','requiredMaxRep','requiredSpell','requiredSpecialization',
+                                        'requiredRanks','sourceQuestNumRequired','requiredMaxLevel'}}
                          for name, values in observed.items()},
             'sourceRevisions': {name: s.get('revision') for name, s in sources.items()}}
 

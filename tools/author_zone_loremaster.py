@@ -109,6 +109,7 @@ def build_actions(facts, faction):
     if work or instructions:
         pin = next((point_route(p) for p in work if point_route(p)), None)
         text = ' '.join(instructions)
+        text = re.split(r'(?i)(?:,?\s+(?:and\s+)?then\s+(?:return to|report(?: back)?(?: to)?|turn in)|\s+and\s+(?:return to|report(?: back)?(?: to)?|turn in))\b', text)[0].rstrip(' ,.;') + '.'
         hostile = [p for p in work if p.get('type') == 1 and
                    (p.get('reactalliance') == -1 if faction == 'Alliance' else p.get('reacthorde') == -1)]
         if hostile and not re.search(r'(?i)\b(kill|slay|defeat|collect|gather)\b', text):

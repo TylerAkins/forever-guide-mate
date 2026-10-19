@@ -1161,3 +1161,9 @@ ns:RegisterQuestPrerequisite({ quest = 249, mode = "any", quests = { 248 } })
 ns:RegisterQuestPrerequisite({ quest = 344, mode = "any", quests = { 343 } })
 ns:RegisterQuestPrerequisite({ quest = 345, mode = "any", quests = { 344 } })
 ns:RegisterQuestPrerequisite({ quest = 347, mode = "any", quests = { 345 } })
+
+-- Duskwood chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 253, mode = "any", quests = { 252 } })
+ns:RegisterQuestPrerequisite({ quest = 228, mode = "any", quests = { 227 } })
+ns:RegisterQuestPrerequisite({ quest = 229, mode = "any", quests = { 228 } })
+ns:RegisterQuestPrerequisite({ quest = 55, mode = "any", quests = { 325 } })

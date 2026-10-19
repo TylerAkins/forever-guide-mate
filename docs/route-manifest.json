@@ -35289,7 +35289,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 9,
+    "revision": 10,
     "visits": [
       {
         "boundary": [
@@ -36817,7 +36817,7 @@
         "boundary": [
           null,
           1438,
-          "Kyra Windblade"
+          "Moon Priestess Amara"
         ],
         "actions": [
           "woven-class-warrior-accept-1684-elanaria"
@@ -37215,10 +37215,19 @@
         "boundary": [
           null,
           2521,
+          "Anathamaas Aetherwind"
+        ],
+        "actions": [
+          "woven-class-mage-accept-93791-speak-with-belann"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          2521,
           "Belann Windwood"
         ],
         "actions": [
-          "woven-class-mage-accept-93791-speak-with-belann",
           "woven-class-mage-turnin-93791-speak-with-belann",
           "woven-class-mage-accept-93797-boughs-in-the-wind"
         ]
@@ -37306,11 +37315,20 @@
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "handoff-research-book"
+        ]
+      },
+      {
+        "boundary": [
+          null,
           1453,
           "Garion Wendell"
         ],
         "actions": [
-          "handoff-research-book",
           "woven-class-mage-accept-97286-research-access",
           "woven-class-mage-turnin-97286-research-access"
         ]
@@ -38578,7 +38596,7 @@
         "boundary": [
           null,
           1453,
-          "Food Crate"
+          "Forlorn Spirit"
         ],
         "actions": [
           "woven-class-paladin-objective-1644-the-tome-of-divinity"
@@ -38662,7 +38680,7 @@
         "boundary": [
           null,
           1429,
-          "Defias Bodyguard"
+          "Defias Rogue Wizard"
         ],
         "actions": [
           "woven-class-paladin-objective-1787-the-tome-of-divinity"
@@ -38929,12 +38947,21 @@
       },
       {
         "boundary": [
+          22,
+          1436,
+          "Goretusk Liver"
+        ],
+        "actions": [
+          "objective-22-1-goretusk-liver"
+        ]
+      },
+      {
+        "boundary": [
           18,
           1436,
           "Salma Saldean"
         ],
         "actions": [
-          "objective-22-1-goretusk-liver",
           "turnin-22-goretusk-liver-pie"
         ]
       },
@@ -39123,7 +39150,7 @@
         "boundary": [
           null,
           1436,
-          "Saldean's Farm"
+          "The Jansen Stead"
         ],
         "actions": [
           "woven-objective-92742-testing-the-wells"
@@ -68522,7 +68549,7 @@
       {
         "boundary": [
           null,
-          1435,
+          1431,
           "Solid Chest"
         ],
         "actions": [
@@ -68982,7 +69009,7 @@
           "Nightbane Dark Runner"
         ],
         "actions": [
-          "objective-337-1-nightbane-dark-runner"
+          "accept-337-an-old-history-book-late"
         ]
       },
       {
@@ -69647,6 +69674,16 @@
         ],
         "actions": [
           "turnin-337-an-old-history-book-2"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1453,
+          "Milton Sheaf"
+        ],
+        "actions": [
+          "accept-538-southshore-late"
         ]
       },
       {
@@ -141169,6 +141206,1510 @@
         ],
         "actions": [
           "alliance-extra-95999-turnin"
+        ]
+      }
+    ]
+  },
+  "loremaster-duskwood": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-accept-66-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1431,
+          "Madame Eva"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-66-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-101-the-totem-of-infliction"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-56-the-night-watch"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1431,
+          "Clerk Daltry"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-66-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-67-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1431,
+          "Elaine Carevin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-163-raven-hill",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-165-the-hermit",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-164-deliveries-to-sven"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1431,
+          "Viktori Prism'Antras"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-174-look-to-the-stars"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-245-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Watcher Dodds"
+        ],
+        "actions": [
+          "alliance-extra-245-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Pygmy Venom Web Spider"
+        ],
+        "actions": [
+          "alliance-extra-245-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Watcher Dodds"
+        ],
+        "actions": [
+          "alliance-extra-245-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-174-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1431,
+          "Viktori Prism'Antras"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-174-look-to-the-stars",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-175-look-to-the-stars"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1431,
+          "Blind Mary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-175-look-to-the-stars",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-177-look-to-the-stars"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1431,
+          "Insane Ghoul"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-177-1-insane-ghoul"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1431,
+          "Skeleton Finger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-101-3-skeleton-finger"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1431,
+          "Skeletal Mage"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-56-2-skeletal-mage"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1431,
+          "Skeletal Warrior"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-56-1-skeletal-warrior"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1431,
+          "Jitters"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-163-raven-hill",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-5-jitters-growling-gut"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1431,
+          "Sven Yorgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-164-deliveries-to-sven",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-95-sven-s-revenge"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1431,
+          "Lars"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-226-wolves-at-our-heels"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1431,
+          "Rabid Dire Wolf"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-226-2-rabid-dire-wolf"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1431,
+          "Starving Dire Wolf"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-226-1-starving-dire-wolf"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1431,
+          "Abercrombie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-165-the-hermit",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-148-supplies-from-darkshire"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1431,
+          "Vial of Spider Venom"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-101-2-vial-of-spider-venom"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1431,
+          "Flesh Eater"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-101-1-flesh-eater"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1431,
+          "Lars"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-226-wolves-at-our-heels"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1436,
+          "The Legend of Stalvan"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-67-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-68-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1431,
+          "Chef Grual"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-5-jitters-growling-gut",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-93-dusky-crab-cakes"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-93-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1431,
+          "Chef Grual"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-93-dusky-crab-cakes",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-240-return-to-jitters"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-56-the-night-watch",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-57-the-night-watch"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1431,
+          "Clerk Daltry"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-68-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-69-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1431,
+          "Madame Eva"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-101-the-totem-of-infliction",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-148-supplies-from-darkshire",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-149-ghost-hair-thread"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1431,
+          "Viktori Prism'Antras"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-177-look-to-the-stars"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1431,
+          "Blind Mary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-149-ghost-hair-thread",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-154-return-the-comb"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1431,
+          "Madame Eva"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-154-return-the-comb",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-157-deliver-the-thread"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1431,
+          "Sven's Revenge"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-95-sven-s-revenge"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1431,
+          "Sven's Camp"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-230-sven-s-camp"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1431,
+          "Abercrombie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-157-deliver-the-thread",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-158-zombie-juice"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1431,
+          "Sven Yorgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-230-sven-s-camp",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-262-the-shadowy-figure"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1429,
+          "Innkeeper Farley"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-69-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-70-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1429,
+          "An Undelivered Letter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-70-1-an-undelivered-letter"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1453,
+          "Caretaker Folsom"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-70-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-72-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1453,
+          "The Legend of Stalvan"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-72-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-74-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          1431,
+          "Madame Eva"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-262-the-shadowy-figure",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-265-the-shadowy-search-continues"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1431,
+          "Clerk Daltry"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-265-the-shadowy-search-continues",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-266-inquire-at-the-inn"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1431,
+          "Tavernkeep Smitts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-158-zombie-juice",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-156-gather-rot-blossoms",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-266-inquire-at-the-inn",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-453-finding-the-shadowy-figure"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1431,
+          "Jitters"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-240-return-to-jitters",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-453-finding-the-shadowy-figure",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-268-return-to-sven"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1431,
+          "Skeletal Fiend"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-156-1-skeletal-fiend"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1431,
+          "Skeletal Fiend"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-57-1-skeletal-fiend"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1431,
+          "Skeletal Horror"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-57-2-skeletal-horror"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1431,
+          "Sven Yorgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-268-return-to-sven",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-323-proving-your-worth"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1431,
+          "Skeletal Warder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-323-3-skeletal-warder"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1431,
+          "Skeletal Healer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-323-2-skeletal-healer"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1431,
+          "Skeletal Raider"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-objective-323-1-skeletal-raider"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1431,
+          "Sven Yorgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-323-proving-your-worth",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-269-seeking-wisdom"
+        ]
+      },
+      {
+        "boundary": [
+          87,
+          1431,
+          "Tavernkeep Smitts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-156-gather-rot-blossoms",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-159-juice-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          88,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-57-the-night-watch"
+        ]
+      },
+      {
+        "boundary": [
+          110,
+          1453,
+          "Bishop Farthing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-269-seeking-wisdom",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-270-the-doomed-fleet"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Sirra Von'Indi"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-accept-96139-the-valor-family"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-accept-96137-iras-dagger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Black Ravager"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-objective-96137-black-ravager"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Young Black Ravager"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-objective-96137-young-black-ravager"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Raven Hill"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-objective-96139-the-valor-family"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Sirra Von'Indi"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-turnin-96139-the-valor-family",
+          "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-turnin-96137-iras-dagger"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1437,
+          "Glorin Steelbrow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-270-the-doomed-fleet"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1437,
+          "Glorin Steelbrow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-321-lightforge-iron"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1437,
+          "Lightforge Iron"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-321-lightforge-iron"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1437,
+          "The Lost Ingots"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-324-the-lost-ingots"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1437,
+          "Bluegill Raider"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-324-1-bluegill-raider"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1437,
+          "Glorin Steelbrow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-324-the-lost-ingots",
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-322-blessed-arm"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-1274-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1453,
+          "Thomas"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1274-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1453,
+          "Grimand Elmore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-322-blessed-arm",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-325-armed-and-ready"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1453,
+          "Bishop DeLavey"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1274-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1241-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1453,
+          "Milton Sheaf"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1453,
+          "Jorgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1241-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1242-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1453,
+          "Elling Trias"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1242-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1243-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1431,
+          "Viktori Prism'Antras"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-181-look-to-the-stars"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1431,
+          "Calor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-173-worgen-in-the-woods"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-58-the-night-watch"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1243-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1244-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1431,
+          "Nightbane Shadow Weaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-173-1-nightbane-shadow-weaver"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1431,
+          "Calor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-173-worgen-in-the-woods",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-221-worgen-in-the-woods"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1431,
+          "Nightbane Dark Runner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-221-1-nightbane-dark-runner"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Nightbane Dark Runner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book-late"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1429,
+          "Marshal Haggard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-74-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-75-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1429,
+          "A Faded Journal Page"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-75-1-a-faded-journal-page"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1429,
+          "Marshal Haggard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-75-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-78-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1431,
+          "Abercrombie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-159-juice-delivery",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-133-ghoulish-effigy"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1431,
+          "Flesh Eater"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-133-1-flesh-eater"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1431,
+          "Plague Spreader"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-58-1-plague-spreader"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1431,
+          "Abercrombie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-133-ghoulish-effigy",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-134-ogre-thieves"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1431,
+          "Defias Docket"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1244-1-defias-docket"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1431,
+          "Abercrombie's Crate"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-134-1-abercrombie-s-crate"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1431,
+          "Ogre's Monocle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-181-1-zzarc-vul"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1431,
+          "Abercrombie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-134-ogre-thieves",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-160-note-to-the-mayor"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1431,
+          "The Weathered Grave"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-225-the-weathered-grave"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1431,
+          "Sven Yorgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-325-armed-and-ready"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1431,
+          "Tavernkeep Smitts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-78-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-79-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-58-the-night-watch",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-79-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-80-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1431,
+          "Clerk Daltry"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-80-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-97-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1431,
+          "Sirra Von'Indi"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-225-the-weathered-grave",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-227-morgan-ladimore"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1431,
+          "Lord Ello Ebonlocke"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-160-note-to-the-mayor",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-251-translate-abercrombie-s-note"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1431,
+          "Sirra Von'Indi"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-251-translate-abercrombie-s-note",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-401-wait-for-sirra-to-finish"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1431,
+          "Sirra Von'Indi"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-401-wait-for-sirra-to-finish",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-252-translation-to-ello"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1431,
+          "Lord Ello Ebonlocke"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-252-translation-to-ello"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-227-morgan-ladimore",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-97-the-legend-of-stalvan",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-98-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1431,
+          "Calor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-221-worgen-in-the-woods",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-222-worgen-in-the-woods"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1431,
+          "Viktori Prism'Antras"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-181-look-to-the-stars"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1244-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1431,
+          "Mistmantle Family Ring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-98-1-mistmantle-family-ring"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1431,
+          "Madame Eva"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-98-the-legend-of-stalvan"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1431,
+          "Nightbane Tainted One"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-222-2-nightbane-tainted-one"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1431,
+          "Nightbane Vile Fang"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-222-1-nightbane-vile-fang"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1431,
+          "Calor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-222-worgen-in-the-woods",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-223-worgen-in-the-woods"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1431,
+          "Jonathan Carevin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-223-worgen-in-the-woods"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-253-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Lord Ello Ebonlocke"
+        ],
+        "actions": [
+          "alliance-extra-253-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Eliza"
+        ],
+        "actions": [
+          "alliance-extra-253-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Lord Ello Ebonlocke"
+        ],
+        "actions": [
+          "alliance-extra-253-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "An Old History Book"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-level-before-accept-1477-vital-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1453,
+          "High Sorcerer Andromath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1477-vital-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-level-before-turnin-1477-vital-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1431,
+          "Watchmaster Sorigal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1477-vital-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-228-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-extra-228-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Mor'Ladim"
+        ],
+        "actions": [
+          "alliance-extra-228-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-extra-228-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-229-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Commander Althea Ebonlocke"
+        ],
+        "actions": [
+          "alliance-extra-229-accept"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1431,
+          "Watchmaster Sorigal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1395-supplies-for-nethergarde"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1419,
+          "Quartermaster Lungertz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1395-supplies-for-nethergarde"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-55-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Sven Yorgen"
+        ],
+        "actions": [
+          "alliance-extra-55-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Morbent Fel"
+        ],
+        "actions": [
+          "alliance-extra-55-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Sven Yorgen"
+        ],
+        "actions": [
+          "alliance-extra-55-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-229-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1431,
+          "Watcher Ladimore"
+        ],
+        "actions": [
+          "alliance-extra-229-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-1372-nothing-but-the-truth"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1431,
+          "Deathstalker Zraedus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1372-nothing-but-the-truth"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1431,
+          "Apothecary Faustin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1372-nothing-but-the-truth"
         ]
       }
     ]

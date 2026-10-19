@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Duskwood Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Redridge Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add zone Loremaster routes for Westfall, Loch Modan, Darkshore, Silverpine Forest, and The Barrens.
 - Remove unsupported Zephras visitor race gates in Starter and Loremaster, and retain the Alliance restriction on A Sacrifice in Vain.

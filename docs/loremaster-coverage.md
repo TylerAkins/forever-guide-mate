@@ -8,6 +8,7 @@ Counts are unique quest IDs with authored pickups, across all race, class, and p
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Darkshore | 72 | 82 | 10 | 10 | 2 | 1 / 0 | 2.5/5 |
 | Dun Morogh | 111 | 115 | 4 | 28 | 3 | 0 / 3 | 3.5/5 |
+| Duskwood | 72 | 77 | 5 | 3 | 18 | 10 / 0 | 2.5/5 |
 | Durotar | 94 | 97 | 3 | 5 | 6 | 2 / 3 | 3/5 |
 | Elwynn Forest | 122 | 123 | 1 | 31 | 4 | 2 / 1 | 3.5/5 |
 | Loch Modan | 18 | 43 | 25 | 1 | 0 | 2 / 0 | 2.5/5 |

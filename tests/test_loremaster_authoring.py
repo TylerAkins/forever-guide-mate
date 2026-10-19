@@ -34,6 +34,30 @@ class SourcePolicyTests(unittest.TestCase):
         facts = self.facts({'wowhead': {'requiredLevel': 0}, 'questiedb': {'requiredLevel': 12}})
         self.assertEqual(facts['offer'], 12)
 
+    def test_unsupported_reputation_is_not_silently_ignored(self):
+        facts = self.facts({'questiedb': {'requiredMinRep': [529, 3000]}})
+        self.assertTrue(any('requiredMinRep' in reason for reason in facts['unresolved']))
+        self.assertEqual(facts['evidence']['questiedb']['requiredMinRep'], [529, 3000])
+
+    def test_conflicting_faction_and_races_remain_unresolved(self):
+        facts = self.facts({'wowhead': {'faction': 'Alliance', 'races': [2, 6, 8]}})
+        self.assertTrue(any('faction' in reason.lower() for reason in facts['unresolved']))
+
+    def test_objective_omits_return_instruction(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Test', 'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
+            {'point': 'start', 'coord': [10,20], 'name': 'First', 'id': 1},
+            {'point': 'requirement', 'coord': [15,20], 'name': 'Target', 'id': 3},
+            {'point': 'end', 'coord': [20,20], 'name': 'Second', 'id': 2}]]}}}},
+            'questiedb': {'objectivesText': ['Defeat the target, then return to Second.']}})
+        goal = next(g for g in build_actions(facts, 'Horde') if g['kind'] == 'objective')
+        self.assertEqual(goal['text'], 'Defeat the target.')
+
+    def test_source_item_without_wowhead_markup_is_preserved(self):
+        facts = self.facts({'questiedb': {'sourceItemId': 2794}})
+        self.assertEqual(facts['item'], {'id': 2794, 'name': None})
+        self.assertEqual(facts['evidence']['questiedb']['sourceItemId'], 2794)
+
     def test_lua_keyword_keys_are_quoted(self):
         from loremaster_sources import lua
         self.assertIn('["not"]', lua({'not': {'profession': {'skillLineID': 333}}}))

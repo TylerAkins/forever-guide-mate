@@ -21,9 +21,7 @@ recommended-level visit, accept with that giver visit, work the matching outing,
 and return with that hub. Breadcrumbs precede the quests that remove them. Higher
 recommendations require later returns even when the offer minimum is low.
 
-The library contains Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Mulgore,
-Tirisfal Glades, Zephras Isle, Westfall, Loch Modan, Darkshore, Silverpine Forest,
-The Barrens, and Redridge Mountains. The previous placeholder is retired; archived
+The [zone inventory](loremaster-zones.json) records the available guides and pending zones. The previous placeholder is retired; archived
 completion ledgers remain preserved. Retired Durotar and Mulgore selections retain
 their zone. Placeholder selections wait for captured character identity and choose
 an eligible starter zone. Zephras also retains its Leveling starter.

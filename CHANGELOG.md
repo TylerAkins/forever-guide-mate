@@ -3,6 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.6.4 - 2026-10-18
+- Add Duskwood Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Redridge Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Place Goretusk Liver Pie and Centaur Bracers collection before their returns in Casual and Loremaster.
 - Add zone Loremaster routes for Westfall, Loch Modan, Darkshore, Silverpine Forest, and The Barrens.
