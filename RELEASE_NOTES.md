@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Swamp of Sorrows Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Badlands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Stranglethorn Vale Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Arathi Highlands Loremaster with recorded Forever evidence and advisory legacy ordering.

@@ -153054,5 +153054,751 @@
         ]
       }
     ]
+  },
+  "loremaster-swamp-of-sorrows": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1435,
+          "Watcher Biggs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1396-encroaching-wildlife"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1392-noboru-the-cudgel"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1435,
+          "Magtoor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1392-noboru-the-cudgel",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1389-draenethyst-crystals"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1435,
+          "Young Sawtooth Crocolisk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1396-1-young-sawtooth-crocolisk"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1435,
+          "Sorrow Spinner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1396-2-sorrow-spinner"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1435,
+          "Swamp Jaguar"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1396-3-swamp-jaguar"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1435,
+          "Watcher Biggs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1396-encroaching-wildlife",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1421-the-lost-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1435,
+          "Caravan Chest"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1421-1-caravan-chest"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1435,
+          "Galen Goodward"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1393-galen-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1435,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1393-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1435,
+          "Draenethyst Crystal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1389-1-draenethyst-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1435,
+          "Galen's Escape"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1393-galen-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1435,
+          "Magtoor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1389-draenethyst-crystals"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1435,
+          "Watcher Biggs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1421-the-lost-caravan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1435,
+          "Watcher Biggs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1398-driftwood"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1435,
+          "Sundried Driftwood"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1398-1-sundried-driftwood"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1435,
+          "Watcher Biggs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1398-driftwood",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1425-deliver-the-shipment"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1419,
+          "Quartermaster Lungertz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1425-deliver-the-shipment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-93429-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1435,
+          "Karana"
+        ],
+        "actions": [
+          "alliance-extra-93429-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1435,
+          "Lost One Hunter"
+        ],
+        "actions": [
+          "alliance-extra-93429-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1435,
+          "Karana"
+        ],
+        "actions": [
+          "alliance-extra-93429-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1435,
+          "Dar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-698-lack-of-surplus"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-1424-pool-of-tears"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1435,
+          "Fel'zerul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1424-pool-of-tears"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1392-noboru-the-cudgel"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1435,
+          "Magtoor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1392-noboru-the-cudgel",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1389-draenethyst-crystals"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1435,
+          "Galen Goodward"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1393-galen-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1435,
+          "Draenethyst Crystal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1389-1-draenethyst-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1435,
+          "Galen's Escape"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1393-galen-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1435,
+          "Unprepared Sawtooth Flank"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-698-1-unprepared-sawtooth-flank"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1435,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1424-1-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1435,
+          "Tok'Kar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-698-lack-of-surplus"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1435,
+          "Fel'zerul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1424-pool-of-tears"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1435,
+          "Magtoor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1389-draenethyst-crystals"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-swamp-of-sorrows",
+          "horde-leveling-era-horde-swamp-of-sorrows-level-before-accept-2784-fall-from-grace"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-2784-fall-from-grace"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-2784-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-2784-fall-from-grace",
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-2621-the-disgraced-one"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1435,
+          "Dispatch Commander Ruag"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-2621-the-disgraced-one",
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-2622-the-missing-orders"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1435,
+          "Fel'zerul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-1429-the-atal-ai-exile"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1435,
+          "Bengor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-2622-the-missing-orders"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1435,
+          "Tok'Kar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-699-lack-of-surplus"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1435,
+          "Sawtooth Snapper"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-699-1-sawtooth-snapper"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1435,
+          "Tok'Kar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-699-lack-of-surplus",
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-1422-threat-from-the-sea"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1435,
+          "Katar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-1422-threat-from-the-sea",
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-1426-threat-from-the-sea"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1435,
+          "Marsh Murloc"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-1426-1-marsh-murloc"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1435,
+          "Marsh Flesheater"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-1426-3-marsh-flesheater"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1435,
+          "Marsh Inkspewer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-1426-2-marsh-inkspewer"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1435,
+          "Katar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-1426-threat-from-the-sea",
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-1427-threat-from-the-sea"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1435,
+          "Tok'Kar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-1427-threat-from-the-sea"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1435,
+          "Katar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-1428-continued-threat"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1435,
+          "Marsh Inkspewer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-1428-1-marsh-inkspewer"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1435,
+          "Marsh Flesheater"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-1428-2-marsh-flesheater"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1435,
+          "Marsh Oracle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-objective-1428-3-marsh-oracle"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1435,
+          "Katar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-1428-continued-threat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-hinterlands"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1425,
+          "Atal'ai Exile"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-turnin-1429-the-atal-ai-exile"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-level-before-accept-2623-the-swamp-talker"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1435,
+          "Bengor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-2623-the-swamp-talker"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1435,
+          "Warchief's Orders"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-2623-1-swamp-talker"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1435,
+          "Fallen Hero of the Horde"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-2623-the-swamp-talker"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1418-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1435,
+          "Helgrum the Swift"
+        ],
+        "actions": [
+          "horde-extra-1418-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1418-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Neeka Bloodscar"
+        ],
+        "actions": [
+          "horde-extra-1418-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1430-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1435,
+          "Dar"
+        ],
+        "actions": [
+          "horde-extra-1430-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1435,
+          "Monstrous Crawler"
+        ],
+        "actions": [
+          "horde-extra-1430-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1435,
+          "Dar"
+        ],
+        "actions": [
+          "horde-extra-1430-turnin"
+        ]
+      }
+    ]
   }
 }
