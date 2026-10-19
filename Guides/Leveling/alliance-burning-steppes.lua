@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Burning Steppes",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-burning-steppes",
@@ -1364,7 +1364,7 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
-            text = "Use the Good Luck Charm to accept Good Luck Charm.",
+            text = "Accept Good Luck Charm from Ol' Emma in Stormwind.",
             id = "accept-5050-good-luck-charm",
             kind = "accept",
             conditions = {
@@ -1387,8 +1387,9 @@ ns:RegisterGuide({
                 },
             },
             useClientText = false,
-            useClientPin = true,
+            useClientPin = false,
             dependsOn = {},
+            route = { { mapID = 1453, x = 0.524, y = 0.418, label = "Ol' Emma", offMapText = "Travel to Ol' Emma in Stormwind." } },
         },
         {
             text = "Turn in The True Masters to Magistrate Solomon.",

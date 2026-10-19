@@ -83,3 +83,5 @@ dofile('tests/lua/hillsbrad_order.lua')
 dofile('tests/lua/arathi_breadcrumb.lua')
 
 dofile("tests/lua/hinterlands_items.lua")
+
+dofile("tests/lua/western_plaguelands.lua")

@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Western Plaguelands Loremaster and repair the Good Luck Charm pickup and Dalson key sequence.
 - Add The Hinterlands Loremaster and keep its beacon rescue chain optional.
 - Add Burning Steppes Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Searing Gorge Loremaster with recorded Forever evidence and advisory legacy ordering.

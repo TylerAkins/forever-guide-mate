@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Western & Eastern Plaguelands",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-western-and-eastern-plaguelands",
@@ -862,50 +862,64 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            complete = { quest = { id = 5058, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
+            dependsOn = { "accept-5058-mrs-dalson-s-diary" },
+            id = "turnin-5058-mrs-dalson-s-diary",
+            kind = "turnin",
+            requiredQuests = {},
             route = {
-                { y = 0.4927, mapID = 1422, label = "Wandering Skeleton", offMapText = "Travel to Wandering Skeleton.", x = 0.4834 },
-            },
-            text = "Kill Wandering Skeleton. Loot the starter item here, then use it to accept the quest.",
-            id = "objective-5060-1-wandering-skeleton",
-            kind = "note",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 52 },
-                    },
+                {
+                    label = "Mrs. Dalson's Diary",
+                    mapID = 1422,
+                    offMapText = "Travel to Mrs. Dalson's Diary at Dalson's Tears.",
+                    x = 0.4779,
+                    y = 0.5067,
                 },
             },
-            complete = {
-                quest = { id = 5060, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
+            sourceStep = 18,
+            text = "Finish reading Mrs. Dalson's Diary.",
             useClientPin = false,
-            dependsOn = {},
+            useClientText = false,
         },
         {
-            route = {
-                { y = 0.4971, mapID = 1422, label = "Farmer Dalson", offMapText = "Travel to Farmer Dalson.", x = 0.4811 },
-            },
-            text = "Kill Farmer Dalson. Loot the starter item here, then use it to accept the quest.",
-            id = "objective-5060-1-farmer-dalson",
-            kind = "note",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 52 },
-                    },
+            complete = {
+                any = {
+                    { item = { name = "Dalson Outhouse Key", minCount = 1 } },
+                    { item = { name = "Dalson Cabinet Key", minCount = 1 } },
+                    { quest = { id = 5060, state = "activeOrCompleted" } },
                 },
             },
-            complete = {
-                quest = { id = 5060, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
             dependsOn = {},
+            id = "objective-5060-1-wandering-skeleton",
+            kind = "note",
+            requiredQuests = {},
+            route = {
+                { label = "Wandering Skeleton", mapID = 1422, offMapText = "Travel to Wandering Skeleton.", x = 0.4834, y = 0.4927 },
+            },
+            text = "Defeat Wandering Skeleton at Dalson's Tears and loot Dalson Outhouse Key.",
+            useClientPin = false,
+            useClientText = false,
+            instructionOnly = true,
+        },
+        {
+            complete = {
+                any = {
+                    { item = { name = "Dalson Cabinet Key", minCount = 1 } },
+                    { quest = { id = 5060, state = "activeOrCompleted" } },
+                },
+            },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
+            dependsOn = {},
+            id = "objective-5060-1-farmer-dalson",
+            kind = "note",
+            requiredQuests = {},
+            route = { { label = "Farmer Dalson", mapID = 1422, offMapText = "Travel to Farmer Dalson.", x = 0.4811, y = 0.4971 } },
+            text = "Take Dalson Outhouse Key to the Outhouse at Dalson's Tears and complete Locked Away there. Defeat Farmer Dalson and loot Dalson Cabinet Key.",
+            useClientPin = false,
+            useClientText = false,
+            instructionOnly = true,
         },
         {
             route = {
@@ -930,6 +944,27 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            complete = { quest = { id = 5060, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 52 } } } },
+            dependsOn = { "accept-5060-locked-away" },
+            id = "turnin-5060-locked-away",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Locked Cabinet",
+                    mapID = 1422,
+                    offMapText = "Travel to Locked Cabinet at Dalson's Tears.",
+                    x = 0.4737,
+                    y = 0.4965,
+                },
+            },
+            sourceStep = 21,
+            text = "Complete Locked Away at the Locked Cabinet.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             id = "level-before-accept-4971-a-matter-of-time",

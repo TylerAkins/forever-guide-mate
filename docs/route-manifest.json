@@ -10198,7 +10198,7 @@
     ]
   },
   "leveling-era-horde-western-and-eastern-plaguelands": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -10434,7 +10434,8 @@
           "Mrs. Dalson's Diary"
         ],
         "actions": [
-          "accept-5058-mrs-dalson-s-diary"
+          "accept-5058-mrs-dalson-s-diary",
+          "turnin-5058-mrs-dalson-s-diary"
         ]
       },
       {
@@ -10465,6 +10466,16 @@
         ],
         "actions": [
           "accept-5060-locked-away"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1422,
+          "Locked Cabinet"
+        ],
+        "actions": [
+          "turnin-5060-locked-away"
         ]
       },
       {
@@ -35289,7 +35300,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 13,
+    "revision": 14,
     "visits": [
       {
         "boundary": [
@@ -44737,7 +44748,7 @@
     ]
   },
   "leveling-era-alliance-western-and-eastern-plaguelands": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -44906,7 +44917,8 @@
           "Mrs. Dalson's Diary"
         ],
         "actions": [
-          "accept-5058-mrs-dalson-s-diary"
+          "accept-5058-mrs-dalson-s-diary",
+          "turnin-5058-mrs-dalson-s-diary"
         ]
       },
       {
@@ -44937,6 +44949,16 @@
         ],
         "actions": [
           "accept-5060-locked-away"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1422,
+          "Locked Cabinet"
+        ],
+        "actions": [
+          "turnin-5060-locked-away"
         ]
       },
       {
@@ -65200,7 +65222,7 @@
     ]
   },
   "leveling-era-alliance-burning-steppes": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -65570,7 +65592,16 @@
           null
         ],
         "actions": [
-          "turnin-5048-good-natured-emma",
+          "turnin-5048-good-natured-emma"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1453,
+          "Ol' Emma"
+        ],
+        "actions": [
           "accept-5050-good-luck-charm"
         ]
       },
@@ -71271,7 +71302,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 15,
+    "revision": 16,
     "visits": [
       {
         "boundary": [
@@ -158005,6 +158036,1825 @@
         ],
         "actions": [
           "horde-extra-7862-turnin"
+        ]
+      }
+    ]
+  },
+  "loremaster-western-plaguelands": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-5090-a-call-to-arms-the-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-western-plaguelands",
+          "alliance-leveling-era-alliance-western-plaguelands-level-before-accept-5066-verified-pickup",
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5066-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1422,
+          "Commander Ashlam Valorfist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-turnin-5066-a-call-to-arms-the-plaguelands",
+          "alliance-leveling-era-alliance-western-plaguelands-turnin-5090-a-call-to-arms-the-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5091-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1422,
+          "Commander Ashlam Valorfist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-turnin-5091-a-call-to-arms-the-plaguelands",
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5092-clear-the-way"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-level-before-accept-5401-argent-dawn-commission"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1422,
+          "Argent Officer Pureheart"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5401-argent-dawn-commission"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1422,
+          "Skeletal Flayer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-objective-5092-1-skeletal-flayer"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1422,
+          "Slavering Ghoul"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-objective-5092-2-slavering-ghoul"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1422,
+          "Commander Ashlam Valorfist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-turnin-5092-clear-the-way",
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5215-the-scourge-cauldrons"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1422,
+          "High Priestess MacDonnell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-turnin-5215-the-scourge-cauldrons",
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5216-target-felstone-field"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1422,
+          "Cauldron Lord Bilemaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-objective-5216-1-cauldron-lord-bilemaw"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1422,
+          "Target: Felstone Field"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-turnin-5216-target-felstone-field"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1422,
+          "Return to Chillwind Camp"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5217-return-to-chillwind-camp"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1422,
+          "Janice Felstone"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5021-better-late-than-never"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1422,
+          "Better Late Than Never"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-turnin-5021-better-late-than-never",
+          "alliance-leveling-era-alliance-western-plaguelands-accept-5022-better-late-than-never"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1422,
+          "High Priestess MacDonnell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-plaguelands-turnin-5217-return-to-chillwind-camp"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-burning-steppes",
+          "alliance-leveling-era-alliance-burning-steppes-level-before-accept-6182-the-first-and-the-last"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1453,
+          "Highlord Bolvar Fordragon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-6182-the-first-and-the-last"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1453,
+          "Master Mathias Shaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-6182-the-first-and-the-last",
+          "alliance-leveling-era-alliance-burning-steppes-accept-6183-honor-the-dead"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1453,
+          "Master Mathias Shaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-6183-honor-the-dead",
+          "alliance-leveling-era-alliance-burning-steppes-accept-6184-flint-shadowmore"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1453,
+          "Royal Factor Bathrilor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-5022-better-late-than-never",
+          "alliance-leveling-era-alliance-burning-steppes-accept-5048-good-natured-emma"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-5048-good-natured-emma"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1453,
+          "Ol' Emma"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-5050-good-luck-charm"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-western-and-eastern-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1422,
+          "High Priestess MacDonnell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5219-target-dalson-s-tears"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1422,
+          "Commander Ashlam Valorfist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5097-all-along-the-watchtowers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-level-before-turnin-6184-flint-shadowmore"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1422,
+          "Flint Shadowmore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6184-flint-shadowmore"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Beacon Torch"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5097-4-beacon-torch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-level-before-accept-4984-the-wildlife-suffers-too"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1422,
+          "Mulgris Deepriver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-4984-the-wildlife-suffers-too"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1422,
+          "Diseased Wolf"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-4984-1-diseased-wolf"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Beacon Torch"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5097-3-beacon-torch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-level-before-accept-5058-mrs-dalson-s-diary"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1422,
+          "Mrs. Dalson's Diary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5058-mrs-dalson-s-diary",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5058-mrs-dalson-s-diary"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1422,
+          "Locked Away"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5060-locked-away"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1422,
+          "Locked Cabinet"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5060-locked-away"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1422,
+          "Cauldron Lord Malvinious"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5219-1-cauldron-lord-malvinious"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1422,
+          "Target: Dalson's Tears"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5219-target-dalson-s-tears"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1422,
+          "Return to Chillwind Camp"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5220-return-to-chillwind-camp"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1422,
+          "Janice Felstone"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5050-good-luck-charm",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5051-two-halves-become-one"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1422,
+          "Jabbering Ghouls"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5051-1-jabbering-ghoul"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1422,
+          "Janice Felstone"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5051-two-halves-become-one"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Beacon Torch"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5097-2-beacon-torch",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5097-1-beacon-torch"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1422,
+          "Commander Ashlam Valorfist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5097-all-along-the-watchtowers",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5533-scholomance"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1422,
+          "Alchemist Arbington"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5533-scholomance"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1422,
+          "High Priestess MacDonnell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5220-return-to-chillwind-camp",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5222-target-writhing-haunt"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1422,
+          "Nathaniel Dumah"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5903-a-plague-upon-thee"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1422,
+          "Cauldron Lord Razarch"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5222-1-cauldron-lord-razarch"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1422,
+          "Target: Writhing Haunt"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5222-target-writhing-haunt"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1422,
+          "Return to Chillwind Camp"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5223-return-to-chillwind-camp"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1422,
+          "Mulgris Deepriver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-4984-the-wildlife-suffers-too",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-4985-the-wildlife-suffers-too"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1423,
+          "Pamela Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5149-pamela-s-doll"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Darrowshire houses"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5149-1-pamela-s-doll-s-head",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5149-1-pamela-s-doll-s-head-2"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1423,
+          "Pamela Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5149-pamela-s-doll",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5152-auntie-marlene"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1423,
+          "Large Termite Mound"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5903-1-large-termite-mound"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1422,
+          "High Priestess MacDonnell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5223-return-to-chillwind-camp",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5225-target-gahrron-s-withering"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1422,
+          "Alchemist Arbington"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5537-skeletal-fragments"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1422,
+          "Nathaniel Dumah"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5903-a-plague-upon-thee",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5904-a-plague-upon-thee"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1422,
+          "Marlene Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5152-auntie-marlene",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5153-a-strange-historian"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1422,
+          "Joseph's Wedding Ring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5153-1-joseph-s-wedding-ring"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1422,
+          "Skeletal Fragments"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5537-1-skeletal-fragments"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5153-a-strange-historian",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5154-the-annals-of-darrowshire",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-4971-a-matter-of-time"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1422,
+          "Annals of Darrowshire"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5154-1-annals-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1422,
+          "Temporal Displacer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-4971-1-temporal-displacer"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5154-the-annals-of-darrowshire",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-4971-a-matter-of-time",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-4972-counting-out-time"
+        ]
+      },
+      {
+        "boundary": [
+          83,
+          1422,
+          "Andorhal Watch"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-4972-1-andorhal-watch"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-4972-counting-out-time"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1422,
+          "Alchemist Arbington"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5537-skeletal-fragments"
+        ]
+      },
+      {
+        "boundary": [
+          91,
+          1422,
+          "Cauldron Lord Soulwrath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5225-1-cauldron-lord-soulwrath"
+        ]
+      },
+      {
+        "boundary": [
+          92,
+          1422,
+          "Target: Gahrron's Withering"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5225-target-gahrron-s-withering"
+        ]
+      },
+      {
+        "boundary": [
+          92,
+          1422,
+          "Return to Chillwind Point"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5226-return-to-chillwind-point"
+        ]
+      },
+      {
+        "boundary": [
+          93,
+          1422,
+          "Diseased Grizzly"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-4985-1-diseased-grizzly"
+        ]
+      },
+      {
+        "boundary": [
+          94,
+          1422,
+          "Mulgris Deepriver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-4985-the-wildlife-suffers-too",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-4986-glyphed-oaken-branch"
+        ]
+      },
+      {
+        "boundary": [
+          95,
+          1422,
+          "A Plague Upon Thee"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5904-a-plague-upon-thee",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-6389-a-plague-upon-thee"
+        ]
+      },
+      {
+        "boundary": [
+          96,
+          1422,
+          "Kirsta Deepshadow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-6004-unfinished-business"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1422,
+          "Scarlet Mage"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6004-3-scarlet-mage"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1422,
+          "Scarlet Knight"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6004-4-scarlet-knight"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1422,
+          "Scarlet Medic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6004-1-scarlet-medic"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1422,
+          "Scarlet Hunter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6004-2-scarlet-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          99,
+          1422,
+          "Kirsta Deepshadow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6004-unfinished-business",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-6023-unfinished-business"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1422,
+          "Huntsman Radley"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6023-1-huntsman-radley"
+        ]
+      },
+      {
+        "boundary": [
+          101,
+          1422,
+          "Cavalier Durgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6023-2-cavalier-durgen"
+        ]
+      },
+      {
+        "boundary": [
+          102,
+          1422,
+          "Kirsta Deepshadow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6023-unfinished-business"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1422,
+          "Nathaniel Dumah"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6389-a-plague-upon-thee"
+        ]
+      },
+      {
+        "boundary": [
+          105,
+          1422,
+          "High Priestess MacDonnell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5226-return-to-chillwind-camp"
+        ]
+      },
+      {
+        "boundary": [
+          106,
+          1422,
+          "Commander Ashlam Valorfist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5237-mission-accomplished"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1457,
+          "Mathrengyl Bearwalker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-4986-glyphed-oaken-branch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-211-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Commander Ashlam Valorfist"
+        ],
+        "actions": [
+          "alliance-extra-211-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Araj the Summoner"
+        ],
+        "actions": [
+          "alliance-extra-211-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Commander Ashlam Valorfist"
+        ],
+        "actions": [
+          "alliance-extra-211-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-western-and-eastern-plaguelands",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-level-before-accept-5094-a-call-to-arms-the-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1458,
+          "Harbinger Balthazad"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5094-a-call-to-arms-the-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Warcaller Gorlach"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5093-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1420,
+          "High Executor Derrington"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5093-a-call-to-arms-the-plaguelands",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5094-a-call-to-arms-the-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5095-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1420,
+          "High Executor Derrington"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5095-a-call-to-arms-the-plaguelands",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5096-scarlet-diversions"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-level-before-accept-5405-argent-dawn-commission"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1420,
+          "Argent Officer Garush"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5405-argent-dawn-commission"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Scourge Banner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5096-1-scourge-banner"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1420,
+          "High Executor Derrington"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5096-scarlet-diversions",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5098-all-along-the-watchtowers",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5228-the-scourge-cauldrons"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1420,
+          "Shadow Priestess Vandis"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5228-the-scourge-cauldrons",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5229-target-felstone-field"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1422,
+          "Cauldron Lord Bilemaw"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5229-1-cauldron-lord-bilemaw"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1422,
+          "Target: Felstone Field"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5229-target-felstone-field"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1422,
+          "Return to the Bulwark"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5230-return-to-the-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1422,
+          "Janice Felstone"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5021-better-late-than-never"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1422,
+          "Better Late Than Never"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5021-better-late-than-never",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5023-better-late-than-never"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1420,
+          "Shadow Priestess Vandis"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5230-return-to-the-bulwark",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5231-target-dalson-s-tears"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1422,
+          "Cauldron Lord Malvinious"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5231-1-cauldron-lord-malvinious"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1422,
+          "Target: Dalson's Tears"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5231-target-dalson-s-tears"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1422,
+          "Return to the Bulwark"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5232-return-to-the-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-level-before-accept-5058-mrs-dalson-s-diary"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1422,
+          "Mrs. Dalson's Diary"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5058-mrs-dalson-s-diary",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5058-mrs-dalson-s-diary"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1422,
+          "Locked Away"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5060-locked-away"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1422,
+          "Locked Cabinet"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5060-locked-away"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-level-before-accept-4971-a-matter-of-time"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-4971-a-matter-of-time"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Beacon Torch"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5098-1-beacon-torch",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5098-4-beacon-torch"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1422,
+          "Temporal Displacer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-4971-1-temporal-displacer"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Beacon Torch"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5098-3-beacon-torch",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5098-2-beacon-torch"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-4971-a-matter-of-time",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-4972-counting-out-time"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1422,
+          "Andorhal Watch"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-4972-1-andorhal-watch"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1420,
+          "High Executor Derrington"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5098-all-along-the-watchtowers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-level-before-accept-838-scholomance"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1420,
+          "High Executor Derrington"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-838-scholomance"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1420,
+          "Apothecary Dithers"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-838-scholomance",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-964-skeletal-fragments"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1420,
+          "Shadow Priestess Vandis"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5232-return-to-the-bulwark",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5233-target-writhing-haunt"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1420,
+          "Mickey Levine"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5901-a-plague-upon-thee"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1422,
+          "Skeletal Sorcerer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-964-1-skeletal-sorcerer"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1422,
+          "Cauldron Lord Razarch"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5233-1-cauldron-lord-razarch"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1422,
+          "Target: Writhing Haunt"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5233-target-writhing-haunt"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1422,
+          "Return to the Bulwark"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5234-return-to-the-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1422,
+          "Mulgris Deepriver"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-4984-the-wildlife-suffers-too"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1422,
+          "Kirsta Deepshadow"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-6004-unfinished-business"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1422,
+          "Scarlet Mage"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6004-3-scarlet-mage"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1422,
+          "Scarlet Knight"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6004-4-scarlet-knight"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1422,
+          "Scarlet Medic"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6004-1-scarlet-medic"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1422,
+          "Scarlet Hunter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6004-2-scarlet-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1422,
+          "Kirsta Deepshadow"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6004-unfinished-business",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-6023-unfinished-business"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1422,
+          "Huntsman Radley"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6023-1-huntsman-radley"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1422,
+          "Cavalier Durgen"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6023-2-cavalier-durgen"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1422,
+          "Kirsta Deepshadow"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6023-unfinished-business"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1422,
+          "Diseased Wolf"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-4984-1-diseased-wolf"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1422,
+          "Mulgris Deepriver"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-4984-the-wildlife-suffers-too",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-4985-the-wildlife-suffers-too"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1423,
+          "Pamela Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5149-pamela-s-doll"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Darrowshire houses"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5149-1-pamela-s-doll-s-head",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5149-1-pamela-s-doll-s-head-2"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1423,
+          "Pamela Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5149-pamela-s-doll",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5152-auntie-marlene"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1423,
+          "Large Termite Mound"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5901-1-large-termite-mound"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1422,
+          "Diseased Grizzly"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-4985-1-diseased-grizzly"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1422,
+          "Mulgris Deepriver"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-4985-the-wildlife-suffers-too",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-4987-glyphed-oaken-branch"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1422,
+          "Marlene Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5152-auntie-marlene",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5153-a-strange-historian"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1422,
+          "Joseph's Wedding Ring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5153-1-joseph-s-wedding-ring"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-4972-counting-out-time",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5153-a-strange-historian",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5154-the-annals-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1422,
+          "Annals of Darrowshire"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5154-1-annals-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5154-the-annals-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          87,
+          1420,
+          "Apothecary Dithers"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-964-skeletal-fragments"
+        ]
+      },
+      {
+        "boundary": [
+          88,
+          1420,
+          "Shadow Priestess Vandis"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5234-return-to-the-bulwark",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5235-target-gahrron-s-withering"
+        ]
+      },
+      {
+        "boundary": [
+          89,
+          1420,
+          "Mickey Levine"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5901-a-plague-upon-thee",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5902-a-plague-upon-thee"
+        ]
+      },
+      {
+        "boundary": [
+          92,
+          1458,
+          "Royal Overseer Bauhaus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5023-better-late-than-never"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5235-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1422,
+          "Target: Gahrron's Withering"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5235-target-gahrron-s-withering"
+        ]
+      },
+      {
+        "boundary": [
+          104,
+          1422,
+          "Return to the Bulwark"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5236-return-to-the-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          105,
+          1422,
+          "A Plague Upon Thee"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5902-a-plague-upon-thee",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-6390-a-plague-upon-thee"
+        ]
+      },
+      {
+        "boundary": [
+          111,
+          1420,
+          "Shadow Priestess Vandis"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5236-return-to-the-bulwark"
+        ]
+      },
+      {
+        "boundary": [
+          112,
+          1420,
+          "Mickey Levine"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6390-a-plague-upon-thee"
+        ]
+      },
+      {
+        "boundary": [
+          113,
+          1420,
+          "High Executor Derrington"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5238-mission-accomplished"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-winterspring"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1456,
+          "Nara Wildmane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-4987-glyphed-oaken-branch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-105-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "High Executor Derrington"
+        ],
+        "actions": [
+          "horde-extra-105-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1422,
+          "Araj the Summoner"
+        ],
+        "actions": [
+          "horde-extra-105-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "High Executor Derrington"
+        ],
+        "actions": [
+          "horde-extra-105-turnin"
         ]
       }
     ]
