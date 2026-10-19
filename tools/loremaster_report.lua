@@ -53,6 +53,23 @@ for _, pair in ipairs(mappings) do
     end
 end
 
+local reported = {}
+for _, pair in ipairs(mappings) do reported[pair.target] = true end
+for _, id in ipairs(ns.guideOrder) do
+    local guide = ns.guides[id]
+    if guide.category == 'Loremaster Guides' and not reported[id] then
+        print(id, '', 'catalog', '', values(pickups(guide)))
+        for _, p in ipairs(profiles) do
+            local state = {raceID=p[2],classID=p[3],faction=p[4],level=60,
+                professionsKnown=true,professions={},items={},quests={},completedQuests={},
+                questLogKnown=true,questCompletionKnown=true}
+            print(id,'',p[1],'',values(pickups(guide,state)))
+            for _,skill in ipairs({129,164,165,171,182,185,186,197,202,333,356,393}) do state.professions[skill]=300 end
+            print(id,'',p[1] .. ' professions','',values(pickups(guide,state)))
+        end
+    end
+end
+
 for id in pairs(sources) do
     local guide=sourceGuide(id)
     do

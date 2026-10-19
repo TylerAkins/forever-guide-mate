@@ -71,3 +71,5 @@ dofile('tests/lua/item_starter_bags.lua')
 dofile("tests/lua/loremaster_expansion.lua")
 
 dofile("tests/lua/loremaster_parity.lua")
+
+dofile('tests/lua/loremaster_zones.lua')

@@ -71,3 +71,12 @@ upstream guide prose or use it to establish Forever quest availability.
 
 Commit each completed zone after verification and independent review. Keep each
 zone's guide, evidence, registration, tests, and release notes in its checkpoint.
+
+For one-zone authoring, `tools/author_zone_loremaster.py <zone-slug> --upstream
+<checkout>` previews dispositions using a clean upstream checkout at the pinned
+revision. Add `--write` to prepare that zone's guide and evidence for review.
+The tool does not register guides, change release metadata, or create commits.
+Review ownership, optional item starters, source conflicts, and new trips before
+registering the candidate. It deliberately leaves unsupported mechanics unresolved.
+Use `FGM_LOREMASTER=1 FGM_LOREMASTER_ZONE=<zone-slug>` for a focused race/class
+journey run; `FGM_MATRIX_CLASS` can select a single class.

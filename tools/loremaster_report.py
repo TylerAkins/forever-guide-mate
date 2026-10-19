@@ -24,7 +24,7 @@ def report(lua):
         source, target = profiles.pop('catalog')
         expanded = path.stem in {'westfall','loch-modan','darkshore','silverpine-forest','the-barrens'}
         catalog = {int(q) for q, entry in audit['quests'].items() if entry.get('catalogs')}
-        if expanded:
+        if expanded or audit.get('coverageMode') == 'zone':
             relevant = catalog | set(audit.get('supportingQuests', []))
             source = sets['__all__']['catalog'][0] & relevant
             for name, (before, after) in profiles.items():

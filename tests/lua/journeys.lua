@@ -150,24 +150,36 @@ if os.getenv("FGM_DUNGEONS") == "1" then
 end
 if os.getenv('FGM_LOREMASTER') == '1' then
  contexts = {}
- for _, spec in ipairs({
-  {'dun-morogh',3,'Alliance'}, {'dun-morogh',7,'Alliance'},
-  {'elwynn-forest',1,'Alliance'}, {'teldrassil',4,'Alliance'},
-  {'durotar',2,'Horde'}, {'durotar',8,'Horde'},
-  {'mulgore',6,'Horde'}, {'tirisfal-glades',5,'Horde'},
-  {'zephras-isle',95,'Alliance'}, {'zephras-isle',96,'Horde'},
-  {'westfall',1,'Alliance'}, {'westfall',3,'Alliance'}, {'westfall',4,'Alliance'}, {'westfall',7,'Alliance'}, {'westfall',95,'Alliance'},
-  {'loch-modan',1,'Alliance'}, {'loch-modan',3,'Alliance'}, {'loch-modan',4,'Alliance'}, {'loch-modan',7,'Alliance'}, {'loch-modan',95,'Alliance'},
-  {'darkshore',1,'Alliance'}, {'darkshore',3,'Alliance'}, {'darkshore',4,'Alliance'}, {'darkshore',7,'Alliance'}, {'darkshore',95,'Alliance'},
-  {'silverpine-forest',2,'Horde'}, {'silverpine-forest',5,'Horde'}, {'silverpine-forest',6,'Horde'}, {'silverpine-forest',8,'Horde'}, {'silverpine-forest',96,'Horde'},
-  {'the-barrens',2,'Horde'}, {'the-barrens',5,'Horde'}, {'the-barrens',6,'Horde'}, {'the-barrens',8,'Horde'}, {'the-barrens',96,'Horde'},
-  {'the-barrens',1,'Alliance'}, {'the-barrens',3,'Alliance'}, {'the-barrens',4,'Alliance'}, {'the-barrens',7,'Alliance'}, {'the-barrens',95,'Alliance'},
- }) do
-  for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
-   contexts[#contexts+1] = {'loremaster-' .. spec[1], spec[2], class, spec[3]}
+ local zone = os.getenv('FGM_LOREMASTER_ZONE')
+ local existingProfiles = {
+  ['loremaster-dun-morogh']={[3]=true,[7]=true}, ['loremaster-elwynn-forest']={[1]=true},
+  ['loremaster-teldrassil']={[4]=true}, ['loremaster-durotar']={[2]=true,[8]=true},
+  ['loremaster-mulgore']={[6]=true}, ['loremaster-tirisfal-glades']={[5]=true},
+  ['loremaster-zephras-isle']={[95]=true,[96]=true},
+  ['loremaster-westfall']={[1]=true,[3]=true,[4]=true,[7]=true,[95]=true},
+  ['loremaster-loch-modan']={[1]=true,[3]=true,[4]=true,[7]=true,[95]=true},
+  ['loremaster-darkshore']={[1]=true,[3]=true,[4]=true,[7]=true,[95]=true},
+  ['loremaster-silverpine-forest']={[2]=true,[5]=true,[6]=true,[8]=true,[96]=true},
+ }
+
+ for _, id in ipairs(n.guideOrder) do
+  local guide = n.guides[id]
+  if guide.category == 'Loremaster Guides' and (not zone or id == 'loremaster-' .. zone) then
+   for _, race in ipairs({1,2,3,4,5,6,7,8,95,96}) do
+    local faction = ({[1]=true,[3]=true,[4]=true,[7]=true,[95]=true})[race] and 'Alliance' or 'Horde'
+    for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
+     if (not os.getenv('FGM_MATRIX_CLASS') or class == tonumber(os.getenv('FGM_MATRIX_CLASS')))
+      and (guide.loremasterExpanded or not existingProfiles[id] or existingProfiles[id][race])
+      and n.EvaluateCondition(guide.conditions,{raceID=race,classID=class,faction=faction,level=60}) ~= false then
+      contexts[#contexts+1] = {id,race,class,faction}
+     end
+    end
+   end
   end
  end
+ assert(#contexts > 0, 'The requested Loremaster journey selection contains no contexts')
 end
+
 for _,ctx in ipairs(contexts) do
  local count=walk(unpack(ctx));total=total+count
  print(ctx[1]..' race '..ctx[2]..' class '..ctx[3]..': '..count..' observed actions')
