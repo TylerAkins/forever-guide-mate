@@ -152101,5 +152101,958 @@
         ]
       }
     ]
+  },
+  "loremaster-badlands": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-badlands"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1432,
+          "Prospector Ironband"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-738-find-agmond"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1418,
+          "Prospector Ryedol"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-719-a-dwarf-and-his-tools"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1418,
+          "Sigrun Ironhew"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-718-mirages"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1418,
+          "A Sign of Hope"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-720-a-sign-of-hope"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1418,
+          "Ryedol's Lucky Pick"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-719-1-ryedol-s-lucky-pick"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1418,
+          "Supply Crate"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-718-1-supply-crate"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1418,
+          "Prospector Ryedol"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-719-a-dwarf-and-his-tools",
+          "alliance-leveling-era-alliance-badlands-turnin-720-a-sign-of-hope"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1418,
+          "Sigrun Ironhew"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-718-mirages",
+          "alliance-leveling-era-alliance-badlands-accept-733-scrounging"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-level-before-accept-703-barbecued-buzzard-wings"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1418,
+          "Rigglefuzz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-703-barbecued-buzzard-wings"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1418,
+          "Find Agmond"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-738-find-agmond"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1418,
+          "Murdaloc"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-739-murdaloc"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1418,
+          "Murdaloc"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-739-1-murdaloc"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1418,
+          "Stonevault Bonesnapper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-739-2-stonevault-bonesnapper"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1418,
+          "Buzzard Wing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-703-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1418,
+          "Rigglefuzz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-703-barbecued-buzzard-wings"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-level-before-accept-710-study-of-the-elements-rock"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-710-study-of-the-elements-rock",
+          "alliance-leveling-era-alliance-badlands-accept-713-coolant-heads-prevail"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-713-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-713-coolant-heads-prevail",
+          "alliance-leveling-era-alliance-badlands-accept-714-gyro-what"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-714-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-714-gyro-what"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1418,
+          "Lucien Tosselwrench"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-715-liquid-stone"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-715-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1418,
+          "Lucien Tosselwrench"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-715-liquid-stone"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1418,
+          "Lesser Rock Elemental"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-710-1-lesser-rock-elemental"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-710-study-of-the-elements-rock",
+          "alliance-leveling-era-alliance-badlands-accept-711-study-of-the-elements-rock"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1418,
+          "Rock Elemental"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-711-1-rock-elemental"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-711-study-of-the-elements-rock",
+          "alliance-leveling-era-alliance-badlands-accept-712-study-of-the-elements-rock"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1418,
+          "Greater Rock Elemental"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-712-1-greater-rock-elemental"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1418,
+          "Scrap Metal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-733-1-scrap-metal"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1418,
+          "Sigrun Ironhew"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-733-scrounging"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-712-study-of-the-elements-rock",
+          "alliance-leveling-era-alliance-badlands-accept-734-this-is-going-to-be-hard"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1418,
+          "Lucien Tosselwrench"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-734-this-is-going-to-be-hard",
+          "alliance-leveling-era-alliance-badlands-accept-777-this-is-going-to-be-hard",
+          "alliance-leveling-era-alliance-badlands-accept-716-stone-is-better-than-cloth"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-716-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1418,
+          "Lucien Tosselwrench"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-716-stone-is-better-than-cloth"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-777-this-is-going-to-be-hard",
+          "alliance-leveling-era-alliance-badlands-accept-778-this-is-going-to-be-hard"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-778-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-778-this-is-going-to-be-hard"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1432,
+          "Prospector Ironband"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-739-murdaloc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-706-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Sigrun Ironhew"
+        ],
+        "actions": [
+          "alliance-extra-706-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Scalding Whelp"
+        ],
+        "actions": [
+          "alliance-extra-706-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Sigrun Ironhew"
+        ],
+        "actions": [
+          "alliance-extra-706-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-732-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Garek"
+        ],
+        "actions": [
+          "alliance-extra-732-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Boss Tho'grun"
+        ],
+        "actions": [
+          "alliance-extra-732-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Garek"
+        ],
+        "actions": [
+          "alliance-extra-732-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-badlands",
+          "horde-leveling-era-horde-badlands-level-before-accept-703-barbecued-buzzard-wings"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1418,
+          "Rigglefuzz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-accept-703-barbecued-buzzard-wings"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-level-before-accept-710-study-of-the-elements-rock"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-accept-710-study-of-the-elements-rock",
+          "horde-leveling-era-horde-badlands-accept-713-coolant-heads-prevail"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-713-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-713-coolant-heads-prevail",
+          "horde-leveling-era-horde-badlands-accept-714-gyro-what"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-714-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-714-gyro-what"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1418,
+          "Lucien Tosselwrench"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-accept-715-liquid-stone"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-715-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1418,
+          "Lucien Tosselwrench"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-715-liquid-stone"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-level-before-accept-1419-coyote-thieves"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1418,
+          "Neeka Bloodscar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-accept-1419-coyote-thieves"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-level-before-accept-2258-badlands-reagent-run"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1418,
+          "Jarkal Mossmeld"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-accept-2258-badlands-reagent-run"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1418,
+          "Buzzard Wing"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-703-1-buzzard-wing"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1418,
+          "Small Stone Shard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-710-1-small-stone-shard"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-710-study-of-the-elements-rock",
+          "horde-leveling-era-horde-badlands-accept-711-study-of-the-elements-rock"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1418,
+          "Rock Elemental"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-711-1-rock-elemental"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1418,
+          "Rock Elemental Shard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-2258-3-rock-elemental-shard"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-711-study-of-the-elements-rock"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1418,
+          "Buzzard Gizzard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-2258-1-buzzard-gizzard"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1418,
+          "Crag Coyote Fang"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-2258-2-crag-coyote-fang"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1418,
+          "Coyote Jawbone"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-1419-1-coyote-jawbone"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1418,
+          "Rigglefuzz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-703-barbecued-buzzard-wings"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1418,
+          "Neeka Bloodscar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-1419-coyote-thieves",
+          "horde-leveling-era-horde-badlands-accept-1420-report-to-helgrum"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1418,
+          "Jarkal Mossmeld"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-2258-badlands-reagent-run"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1435,
+          "Helgrum the Swift"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1420-report-to-helgrum"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-searing-gorge",
+          "horde-leveling-era-horde-searing-gorge-level-before-accept-3821-dreadmaul-rock",
+          "horde-extra-712-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "horde-extra-712-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Greater Rock Elemental"
+        ],
+        "actions": [
+          "horde-extra-712-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "horde-extra-712-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-734-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Lotwil Veriatus"
+        ],
+        "actions": [
+          "horde-extra-734-accept"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1418,
+          "Thal'trak Proudtusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-3821-dreadmaul-rock"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-burning-steppes-and-azshara",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-level-before-turnin-3821-dreadmaul-rock"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1428,
+          "Sha'ni Proudtusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-3821-dreadmaul-rock"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-734-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Lucien Tosselwrench"
+        ],
+        "actions": [
+          "horde-extra-734-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-782-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Gorn"
+        ],
+        "actions": [
+          "horde-extra-782-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Boss Tho'grun"
+        ],
+        "actions": [
+          "horde-extra-782-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1418,
+          "Gorn"
+        ],
+        "actions": [
+          "horde-extra-782-turnin"
+        ]
+      }
+    ]
   }
 }

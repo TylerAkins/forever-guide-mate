@@ -55,18 +55,46 @@ class LoremasterSources(unittest.TestCase):
             for i, goal in enumerate(goals):
                 source = re.search(r'sourceGuide = "([^"\n]+)"', goal.raw)
                 if source and source[1] in bands:
-                    sources.append((i, bands[source[1]]['max']))
+                    faction = re.search(r'faction = "(Alliance|Horde)"', goal.raw)
+                    sources.append((i, bands[source[1]]['max'], faction[1] if faction else None))
             for i, goal in enumerate(goals):
                 if '-extra-' not in goal.id or not goal.id.endswith('-level'):
                     continue
                 level = int(re.search(r'requiredLevel = (\d+)', goal.raw)[1])
-                suitable = [position for position, maximum in sources if maximum >= level]
+                faction = re.search(r'faction = "(Alliance|Horde)"', goal.raw)
+                faction = faction[1] if faction else None
+                visits = [(position, maximum) for position, maximum, side in sources
+                          if not faction or side in (None, faction)]
+                suitable = [position for position, maximum in visits if maximum >= level]
                 if suitable:
                     self.assertTrue(any(position < i for position in suitable),
                                     f'{path.name}: {goal.id} precedes its recommended visit band')
-                elif sources:
-                    self.assertGreater(i, max(position for position, _ in sources),
+                elif visits:
+                    self.assertGreater(i, max(position for position, _ in visits),
                                        f'{path.name}: {goal.id} needs a later return after the spine')
+
+    def test_visit_bands_ignore_other_factions_but_reject_an_early_return(self):
+        import tempfile
+        from unittest.mock import patch
+        from weave_loremaster import replace_goals
+        text = (ROOT / 'Guides/Loremaster/Badlands.lua').read_text()
+        bands = (ROOT / 'tests/fixtures/reference_bands.json').read_text()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'Guides/Loremaster').mkdir(parents=True)
+            (root / 'tests/fixtures').mkdir(parents=True)
+            guide = root / 'Guides/Loremaster/Badlands.lua'
+            guide.write_text(text)
+            (root / 'tests/fixtures/reference_bands.json').write_text(bands)
+            with patch.dict(self.test_expanded_return_levels_use_suitable_spine_visits.__func__.__globals__, ROOT=root):
+                self.test_expanded_return_levels_use_suitable_spine_visits()
+                goals = parse_goals(text, '', str(guide), None)
+                checkpoint = next(g for g in goals if g.id == 'alliance-extra-706-level')
+                goals.remove(checkpoint)
+                goals.insert(0, checkpoint)
+                guide.write_text(replace_goals(text, ',\n'.join(g.raw for g in goals)))
+                with self.assertRaisesRegex(AssertionError, 'alliance-extra-706-level'):
+                    self.test_expanded_return_levels_use_suitable_spine_visits()
 
     def test_faction_order_check_detects_a_real_same_faction_inversion(self):
         import shutil

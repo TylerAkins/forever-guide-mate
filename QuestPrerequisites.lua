@@ -1197,3 +1197,7 @@ ns:RegisterQuestPrerequisite({ quest = 206, mode = "all", quests = { 202, 205 } 
 ns:RegisterQuestPrerequisite({ quest = 613, mode = "any", quests = { 609 } })
 ns:RegisterQuestPrerequisite({ quest = 630, mode = "any", quests = { 594 } })
 ns:RegisterQuestPrerequisite({ quest = 591, mode = "any", quests = { 589 } })
+
+-- Badlands chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 732, mode = "any", quests = { 718 } })
+ns:RegisterQuestPrerequisite({ quest = 734, mode = "all", quests = { 712, 714 } })

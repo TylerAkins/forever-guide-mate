@@ -25,10 +25,13 @@ Counts are unique quest IDs with authored pickups, across all race, class, and p
 | Alterac Mountains | 12 | 15 | 3 | 1 | 0 | 11 / 0 | 2.5/5 |
 | Arathi Highlands | 23 | 36 | 13 | 0 | 0 | 22 / 0 | 2.5/5 |
 | Stranglethorn Vale | 84 | 90 | 6 | 0 | 19 | 44 / 0 | 2.5/5 |
+| Badlands | 21 | 24 | 3 | 0 | 5 | 25 / 0 | 2.5/5 |
 
 Inherited supporting work is classified from the frozen Wowhead category, then objective areas or delivery endpoints for class categories. Conflicting or missing ownership remains explicitly unresolved. A capital pickup alone does not determine ownership; Data Hoarders remains Dun Morogh content. Supporting counts include inherited neighboring-zone handoffs, whose necessity has not been reworked here. The five new catalog baselines remain 30 Westfall pickups already in Leveling, 20 Loch Modan, 69 Darkshore, 23 Silverpine, and 91 Barrens. Exclusions and ownership decisions explain why overlap can be smaller. Each new inventory records every catalog candidate, supporting prerequisites, source revisions, levels, restrictions, and fallback destinations.
 
 Quality ratings are provisional assessments of source coverage, prerequisite placement, navigation evidence, and test coverage. The new routes receive 2.5/5 because unresolved records and client verification remain. Zephras remains 2/5 because source restrictions still disagree. None has received a complete Forever client walkthrough.
+
+Badlands preserves the Casual actions for Stone Is Better than Cloth (716). Acquisition and crafting preparation for Patterned Bronze Bracers remain an unresolved source limitation, recorded in its inventory.
 
 ## Character applicability
 
