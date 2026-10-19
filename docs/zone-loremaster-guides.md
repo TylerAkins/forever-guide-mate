@@ -47,3 +47,27 @@ Automated checks verify structural order and observed progress, not sufficient X
 server availability, or pin accuracy. No Forever client walkthrough has been performed.
 
 See [coverage and verification](loremaster-coverage.md) for reproducible counts, character applicability, source conflicts, provisional quality ratings, and requested client walkthroughs.
+
+## Expansion policy
+
+The zone inventory is [loremaster-zones.json](loremaster-zones.json). Cover every
+original Era outdoor questing zone for each applicable faction. Mount Hyjal and
+Riverglades are excluded; the existing Zephras Isle guide is preserved. A zone
+without eligible permanent outdoor quests receives a recorded disposition.
+
+Preserve the faction's Casual and starter action spine, including later returns.
+For a legacy quest absent from that faction's entire Casual route, use
+[ErebusAres' Wrath routes](https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK)
+as advisory ordering evidence. Prefer dedicated Alliance Loremaster routes and
+matching Horde leveling routes. Never substitute Alliance-only routes for Horde.
+`--no-strict` describes this policy, not a runtime flag: verified prerequisites,
+recommended levels, and suitable hub visits override upstream ordering. Missing
+upstream matches do not exclude quests. Upstream supplies ordering only; Forever
+quest facts continue to come from the local wow-database observations.
+
+Freeze the upstream commit, file hash, chapter, line, and matched action references
+in each zone inventory. Record conflicts and supported deviations. Do not copy
+upstream guide prose or use it to establish Forever quest availability.
+
+Commit each completed zone after verification and independent review. Keep each
+zone's guide, evidence, registration, tests, and release notes in its checkpoint.

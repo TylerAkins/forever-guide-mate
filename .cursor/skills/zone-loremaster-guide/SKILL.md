@@ -53,6 +53,19 @@ Loremaster merely because the catalog lists it there.
 Test both inclusion of a zone quest with a city pickup and exclusion of city
 pickups owned by other zones. Do not use NPC proximity as an ownership rule.
 
+## Advisory legacy ordering
+
+Follow the expansion policy in `docs/zone-loremaster-guides.md` and the explicit
+zone inventory in `docs/loremaster-zones.json`. Preserve the faction's entire
+Casual/starter spine. For legacy quests absent from that faction's Casual route,
+use the pinned ErebusAres repository as advisory ordering evidence: dedicated
+Alliance Loremaster routes first, matching Horde leveling routes for Horde.
+`--no-strict` is an authoring policy, not an option that disables validation.
+Prerequisites, levels, and suitable visits take precedence; unmatched quests stay
+eligible. Forever-specific quests use wow-database evidence and visit weaving.
+Record upstream revision, hashes, matches, and deviations. Never use upstream
+prose, coordinates, or availability as Forever quest facts.
+
 ## Weave the actions
 
 1. Resolve the prerequisite chain recursively. Read all/any groups, breadcrumbs,

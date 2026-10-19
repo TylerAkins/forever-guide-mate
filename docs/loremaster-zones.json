@@ -1,0 +1,291 @@
+{
+  "excluded": [
+    "Mount Hyjal",
+    "Riverglades"
+  ],
+  "preserved": [
+    "Zephras Isle"
+  ],
+  "zones": [
+    {
+      "zone": "Dun Morogh",
+      "slug": "dun-morogh",
+      "mapID": 1426,
+      "file": "Guides/Loremaster/DunMorogh.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Elwynn Forest",
+      "slug": "elwynn-forest",
+      "mapID": 1429,
+      "file": "Guides/Loremaster/ElwynnForest.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Tirisfal Glades",
+      "slug": "tirisfal-glades",
+      "mapID": 1420,
+      "file": "Guides/Loremaster/TirisfalGlades.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Silverpine Forest",
+      "slug": "silverpine-forest",
+      "mapID": 1421,
+      "file": "Guides/Loremaster/SilverpineForest.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Westfall",
+      "slug": "westfall",
+      "mapID": 1436,
+      "file": "Guides/Loremaster/Westfall.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Loch Modan",
+      "slug": "loch-modan",
+      "mapID": 1432,
+      "file": "Guides/Loremaster/LochModan.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Redridge Mountains",
+      "slug": "redridge-mountains",
+      "mapID": 1433,
+      "file": "Guides/Loremaster/RedridgeMountains.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Duskwood",
+      "slug": "duskwood",
+      "mapID": 1431,
+      "file": "Guides/Loremaster/Duskwood.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Wetlands",
+      "slug": "wetlands",
+      "mapID": 1437,
+      "file": "Guides/Loremaster/Wetlands.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Hillsbrad Foothills",
+      "slug": "hillsbrad-foothills",
+      "mapID": 1424,
+      "file": "Guides/Loremaster/HillsbradFoothills.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Alterac Mountains",
+      "slug": "alterac-mountains",
+      "mapID": 1416,
+      "file": "Guides/Loremaster/AlteracMountains.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Arathi Highlands",
+      "slug": "arathi-highlands",
+      "mapID": 1417,
+      "file": "Guides/Loremaster/ArathiHighlands.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Stranglethorn Vale",
+      "slug": "stranglethorn-vale",
+      "mapID": 1434,
+      "file": "Guides/Loremaster/StranglethornVale.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Badlands",
+      "slug": "badlands",
+      "mapID": 1418,
+      "file": "Guides/Loremaster/Badlands.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Swamp of Sorrows",
+      "slug": "swamp-of-sorrows",
+      "mapID": 1435,
+      "file": "Guides/Loremaster/SwampofSorrows.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Blasted Lands",
+      "slug": "blasted-lands",
+      "mapID": 1419,
+      "file": "Guides/Loremaster/BlastedLands.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Searing Gorge",
+      "slug": "searing-gorge",
+      "mapID": 1427,
+      "file": "Guides/Loremaster/SearingGorge.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Burning Steppes",
+      "slug": "burning-steppes",
+      "mapID": 1428,
+      "file": "Guides/Loremaster/BurningSteppes.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "The Hinterlands",
+      "slug": "the-hinterlands",
+      "mapID": 1425,
+      "file": "Guides/Loremaster/TheHinterlands.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Western Plaguelands",
+      "slug": "western-plaguelands",
+      "mapID": 1422,
+      "file": "Guides/Loremaster/WesternPlaguelands.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Eastern Plaguelands",
+      "slug": "eastern-plaguelands",
+      "mapID": 1423,
+      "file": "Guides/Loremaster/EasternPlaguelands.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Deadwind Pass",
+      "slug": "deadwind-pass",
+      "mapID": 1430,
+      "file": "Guides/Loremaster/DeadwindPass.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Durotar",
+      "slug": "durotar",
+      "mapID": 1411,
+      "file": "Guides/Loremaster/Durotar.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Mulgore",
+      "slug": "mulgore",
+      "mapID": 1412,
+      "file": "Guides/Loremaster/Mulgore.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Teldrassil",
+      "slug": "teldrassil",
+      "mapID": 1438,
+      "file": "Guides/Loremaster/Teldrassil.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Darkshore",
+      "slug": "darkshore",
+      "mapID": 1439,
+      "file": "Guides/Loremaster/Darkshore.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "The Barrens",
+      "slug": "the-barrens",
+      "mapID": 1413,
+      "file": "Guides/Loremaster/TheBarrens.lua",
+      "status": "authored"
+    },
+    {
+      "zone": "Stonetalon Mountains",
+      "slug": "stonetalon-mountains",
+      "mapID": 1442,
+      "file": "Guides/Loremaster/StonetalonMountains.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Ashenvale",
+      "slug": "ashenvale",
+      "mapID": 1440,
+      "file": "Guides/Loremaster/Ashenvale.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Thousand Needles",
+      "slug": "thousand-needles",
+      "mapID": 1441,
+      "file": "Guides/Loremaster/ThousandNeedles.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Desolace",
+      "slug": "desolace",
+      "mapID": 1443,
+      "file": "Guides/Loremaster/Desolace.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Dustwallow Marsh",
+      "slug": "dustwallow-marsh",
+      "mapID": 1445,
+      "file": "Guides/Loremaster/DustwallowMarsh.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Feralas",
+      "slug": "feralas",
+      "mapID": 1444,
+      "file": "Guides/Loremaster/Feralas.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Tanaris",
+      "slug": "tanaris",
+      "mapID": 1446,
+      "file": "Guides/Loremaster/Tanaris.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Azshara",
+      "slug": "azshara",
+      "mapID": 1447,
+      "file": "Guides/Loremaster/Azshara.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Felwood",
+      "slug": "felwood",
+      "mapID": 1448,
+      "file": "Guides/Loremaster/Felwood.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Un'Goro Crater",
+      "slug": "ungoro-crater",
+      "mapID": 1449,
+      "file": "Guides/Loremaster/UnGoroCrater.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Winterspring",
+      "slug": "winterspring",
+      "mapID": 1452,
+      "file": "Guides/Loremaster/Winterspring.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Silithus",
+      "slug": "silithus",
+      "mapID": 1451,
+      "file": "Guides/Loremaster/Silithus.lua",
+      "status": "pending"
+    },
+    {
+      "zone": "Moonglade",
+      "slug": "moonglade",
+      "mapID": 1450,
+      "file": "Guides/Loremaster/Moonglade.lua",
+      "status": "pending"
+    }
+  ]
+}

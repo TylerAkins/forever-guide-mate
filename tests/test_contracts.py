@@ -486,7 +486,11 @@ class ContractTests(unittest.TestCase):
 
     def test_loremaster_guides_have_ordered_zone_itineraries(self) -> None:
         files = sorted((ROOT / "Guides/Loremaster").glob("*.lua"))
-        self.assertEqual([path.name for path in files], ["Darkshore.lua", "DunMorogh.lua", "Durotar.lua", "ElwynnForest.lua", "LochModan.lua", "Mulgore.lua", "SilverpineForest.lua", "Teldrassil.lua", "TheBarrens.lua", "TirisfalGlades.lua", "Westfall.lua", "ZephrasIsle.lua"])
+        import json
+        inventory = json.loads((ROOT / "docs/loremaster-zones.json").read_text())
+        expected = {Path(z["file"]).name for z in inventory["zones"] if z["status"] == "authored"}
+        expected.add("ZephrasIsle.lua")
+        self.assertEqual({p.name for p in files}, expected)
         for path in files:
             guide = path.read_text(encoding="utf-8")
             self.assertIn('category = "Loremaster Guides"', guide)
