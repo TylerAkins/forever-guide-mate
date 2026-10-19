@@ -76,6 +76,18 @@ class SourcePolicyTests(unittest.TestCase):
                 self.assertTrue(any(field in reason for reason in facts['unresolved']))
                 self.assertEqual(facts['evidence']['questiedb'][field],value)
 
+    def test_all_required_collection_materials_need_source_coverage(self):
+        from author_zone_loremaster import build_actions
+        facts=self.facts({'wowhead':{'name':'Test','mapper':{'objectives':{'1':{'zone':'Durotar','levels':[[
+            {'point':'start','coord':[10,20],'name':'First','id':1},
+            {'point':'sourcerequirement','coord':[15,20],'name':'Spider','item':'Leg','id':3},
+            {'point':'end','coord':[20,20],'name':'Second','id':2}]]}}}},
+            'questiedb':{'objectivesText':['Collect 20 legs and the other ledger materials.'],'objectives':[None,None,[[11725],[11724]]]}})
+        with self.assertRaisesRegex(ValueError,'collection'):
+            build_actions(facts,'Horde')
+        self.assertEqual(facts['objectiveItems'],[11725,11724])
+        self.assertEqual(facts['evidence']['questiedb']['objectives'][2],[[11725],[11724]])
+
     def test_lua_keyword_keys_are_quoted(self):
         from loremaster_sources import lua
         self.assertIn('["not"]', lua({'not': {'profession': {'skillLineID': 333}}}))

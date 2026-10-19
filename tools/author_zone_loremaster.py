@@ -80,6 +80,8 @@ def build_actions(facts, faction):
     work = [p for p in facts['points'] if p.get('point') not in ('start', 'end')]
     instructions = facts['objectivesText']
     materials = {p['item'] for p in work if p.get('item')}
+    if work and len(facts.get('objectiveItems', [])) > len(materials):
+        raise ValueError('Required collection materials lack complete acquisition sources and visits')
     def words(text):
         return ' '.join(word.rstrip('s') for word in re.findall(r'[a-z0-9]+', text.lower()))
     if len(materials) > 1 and any(words(item) not in words(' '.join(instructions)) for item in materials):

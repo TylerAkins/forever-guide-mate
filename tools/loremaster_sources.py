@@ -29,6 +29,13 @@ def quest_facts(quest_id, attributes):
     catalog = wh.get('wowheadCatalog', {})
     detail = wh.get('wowheadDetail', {})
     flags = choose('flags', default={})
+    objectives = choose('objectives', default=[])
+    items = (objectives[2] or []) if isinstance(objectives, list) and len(objectives) > 2 else []
+    if isinstance(objectives, dict): items = objectives.get('item', [])
+    objective_items = []
+    for row in items:
+        item = row.get('id') if isinstance(row, dict) else row[0] if isinstance(row, list) and row else None
+        if isinstance(item, int) and item not in objective_items: objective_items.append(item)
     requirements, unresolved = [], []
     for source in SOURCE_PRIORITY:
         values = observed[source]
@@ -85,7 +92,7 @@ def quest_facts(quest_id, attributes):
             'faction': choose('faction'), 'skill': skill, 'flags': flags,
             'elite': catalog.get('list', {}).get('type') == 1,
             'requirements': requirements, 'unresolved': unresolved,
-            'objectivesText': choose('objectivesText', default=[]),
+            'objectivesText': choose('objectivesText', default=[]), 'objectiveItems': objective_items,
             'points': points, 'startPins': wh.get('startPins', []),
             'zoneId': wh.get('zoneId'), 'questieZone': observed['questiedb'].get('zoneOrSort'),
             'forever': forever, 'firstseenpatch': firstseen,
@@ -97,7 +104,7 @@ def quest_facts(quest_id, attributes):
             'evidence': {name: {k: v for k, v in values.items()
                                if k in {'name','classes','races','faction','requiredRaces','requiredClasses',
                                         'questLevel','requiredLevel','zoneOrSort','flags','preQuestGroup',
-                                        'preQuestSingle','prerequisiteReferences','objectivesText','requiredSkill',
+                                        'preQuestSingle','prerequisiteReferences','objectivesText','objectives','requiredSkill',
                                         'sourceItemId','startedBy','finishedBy','exclusiveTo','breadcrumbs','breadcrumbForQuestId',
                                         'requiredMinRep','requiredMaxRep','requiredSpell','requiredSpecialization',
                                         'requiredRanks','sourceQuestNumRequired','requiredMaxLevel','childQuests','extraObjectives'}}

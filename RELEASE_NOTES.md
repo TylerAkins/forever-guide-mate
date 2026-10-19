@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Searing Gorge Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Blasted Lands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Swamp of Sorrows Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Badlands Loremaster with recorded Forever evidence and advisory legacy ordering.

@@ -154482,5 +154482,1145 @@
         ]
       }
     ]
+  },
+  "loremaster-searing-gorge": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-4"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Silk Cloth"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-collect-before-pickup-objective-4449-1-silk-cloth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-7701-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Wanted/Missing/Lost & Found"
+        ],
+        "actions": [
+          "alliance-extra-7701-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-searing-gorge",
+          "alliance-leveling-era-alliance-searing-gorge-level-before-accept-7723-curse-these-fat-fingers"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1427,
+          "Hansel Heavyhands"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-7723-curse-these-fat-fingers",
+          "alliance-leveling-era-alliance-searing-gorge-accept-7724-fiery-menace",
+          "alliance-leveling-era-alliance-searing-gorge-accept-7727-incendosaurs-whateverosaur-is-more-like-"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1427,
+          "STOLEN: Smithing Tuyere and Lookout's Spyglass"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-7728-stolen-smithing-tuyere-and-lookout-s-spy"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1427,
+          "JOB OPPORTUNITY: Culling the Competition"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-7729-job-opportunity-culling-the-competition"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-7722-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Master Smith Burninate"
+        ],
+        "actions": [
+          "alliance-extra-7722-accept"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-3441-divine-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3441-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3441-divine-retribution",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3442-the-flawless-flame"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1427,
+          "Dark Iron Steamsmith"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-7728-1-dark-iron-steamsmith"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1427,
+          "Heart of Flame"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3442-1-heart-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1427,
+          "Golem Oil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3442-2-golem-oil"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3442-the-flawless-flame",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3443-forging-the-shaft"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Overseer Maltorius"
+        ],
+        "actions": [
+          "alliance-extra-7701-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Secret Plans: Fiery Flux"
+        ],
+        "actions": [
+          "alliance-extra-7722-objective"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1427,
+          "Incendosaur"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-7727-1-incendosaur"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-4451-the-key-to-freedom"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1427,
+          "Thorium Plated Dagger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3443-1-thorium-plated-dagger"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1427,
+          "Dark Iron Taskmaster"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-7729-1-dark-iron-taskmaster"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1427,
+          "Dark Iron Slaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-7729-2-dark-iron-slaver"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3443-forging-the-shaft",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3452-the-flame-s-casing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Lookout Captain Lolo Longstriker"
+        ],
+        "actions": [
+          "alliance-extra-7701-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Master Smith Burninate"
+        ],
+        "actions": [
+          "alliance-extra-7722-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1427,
+          "Twilight Dark Shaman"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3452-1-twilight-dark-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3452-the-flame-s-casing",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3453-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3453-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3453-the-torch-of-retribution",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3454-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1427,
+          "The Torch of Retribution"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3454-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-3462-squire-maltrake"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1427,
+          "Squire Maltrake"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3462-squire-maltrake",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3463-set-them-ablaze"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1427,
+          "The Key to Freedom"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-4451-the-key-to-freedom"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1427,
+          "Caught!"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-4449-caught"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1427,
+          "Dark Iron Geologist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-4449-1-dark-iron-geologist"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-level-before-note-3181-margol-loot"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-3181-the-horn-of-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1427,
+          "Silk Cloth"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-collect-before-pickup-objective-4449-2-silk-cloth"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1427,
+          "Caught!"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-4449-caught"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1427,
+          "Dorius Stonetender"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-3367-suntara-stones"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1427,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3367-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1427,
+          "Suntara Stones"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3367-suntara-stones",
+          "alliance-leveling-era-alliance-searing-gorge-accept-3368-suntara-stones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Northern-Tower"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3463-4-authored-Northern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Western-Tower"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3463-1-authored-Western-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Southern-Tower"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3463-2-authored-Southern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Eastern-Tower"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-3463-3-authored-Eastern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1427,
+          "Squire Maltrake"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3463-set-them-ablaze"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1427,
+          "Trinkets.."
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-accept-3481-trinkets"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1427,
+          "Trinkets.."
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3481-trinkets"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1427,
+          "Lookout's Spyglass"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-7728-2-lookout-s-spyglass"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1427,
+          "Greater Lava Spider"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-7724-1-greater-lava-spider"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1427,
+          "Heavy War Golem"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-objective-7723-1-heavy-war-golem"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1427,
+          "Hansel Heavyhands"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-7723-curse-these-fat-fingers",
+          "alliance-leveling-era-alliance-searing-gorge-turnin-7724-fiery-menace",
+          "alliance-leveling-era-alliance-searing-gorge-turnin-7727-incendosaurs-whateverosaur-is-more-like-"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1427,
+          "Taskmaster Scrange"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-7728-stolen-smithing-tuyere-and-lookout-s-spy",
+          "alliance-leveling-era-alliance-searing-gorge-turnin-7729-job-opportunity-culling-the-competition"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1432,
+          "Mountaineer Pebblebitty"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-searing-gorge-turnin-3181-the-horn-of-the-beast"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1455,
+          "Curator Thorius"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3368-suntara-stones"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Silk Cloth"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-collect-before-pickup-objective-4449-1-silk-cloth"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-7701-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Wanted/Missing/Lost & Found"
+        ],
+        "actions": [
+          "horde-extra-7701-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-7722-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Master Smith Burninate"
+        ],
+        "actions": [
+          "horde-extra-7722-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-searing-gorge",
+          "horde-leveling-era-horde-searing-gorge-level-before-accept-4449-caught"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1427,
+          "Caught!"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-4449-caught"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1427,
+          "Dark Iron Geologist"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-4449-1-dark-iron-geologist"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Overseer Maltorius"
+        ],
+        "actions": [
+          "horde-extra-7701-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Secret Plans: Fiery Flux"
+        ],
+        "actions": [
+          "horde-extra-7722-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Lookout Captain Lolo Longstriker"
+        ],
+        "actions": [
+          "horde-extra-7701-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Master Smith Burninate"
+        ],
+        "actions": [
+          "horde-extra-7722-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1427,
+          "Silk Cloth"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-collect-before-pickup-objective-4449-2-silk-cloth"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1427,
+          "Caught!"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-4449-caught"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-3441-divine-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3441-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3441-divine-retribution",
+          "horde-leveling-era-horde-searing-gorge-accept-3442-the-flawless-flame"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-level-before-accept-7728-stolen-smithing-tuyere-and-lookout-s-spy"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1427,
+          "STOLEN: Smithing Tuyere and Lookout's Spyglass"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-7728-stolen-smithing-tuyere-and-lookout-s-spy"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1427,
+          "JOB OPPORTUNITY: Culling the Competition"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-7729-job-opportunity-culling-the-competition"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1427,
+          "Hansel Heavyhands"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-7723-curse-these-fat-fingers",
+          "horde-leveling-era-horde-searing-gorge-accept-7724-fiery-menace",
+          "horde-leveling-era-horde-searing-gorge-accept-7727-incendosaurs-whateverosaur-is-more-like-"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1427,
+          "Dark Iron Steamsmith"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-7728-1-dark-iron-steamsmith"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1427,
+          "Heart of Flame"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3442-1-heart-of-flame"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1427,
+          "Golem Oil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3442-2-golem-oil"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3442-the-flawless-flame",
+          "horde-leveling-era-horde-searing-gorge-accept-3443-forging-the-shaft"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1427,
+          "Incendosaur"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-7727-1-incendosaur"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-4451-the-key-to-freedom"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1427,
+          "Thorium Plated Dagger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3443-1-thorium-plated-dagger"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1427,
+          "Dark Iron Taskmaster"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-7729-1-dark-iron-taskmaster"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1427,
+          "Dark Iron Slaver"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-7729-2-dark-iron-slaver"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3443-forging-the-shaft",
+          "horde-leveling-era-horde-searing-gorge-accept-3452-the-flame-s-casing"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1427,
+          "Twilight Dark Shaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3452-1-twilight-dark-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3452-the-flame-s-casing",
+          "horde-leveling-era-horde-searing-gorge-accept-3453-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3453-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3453-the-torch-of-retribution",
+          "horde-leveling-era-horde-searing-gorge-accept-3454-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1427,
+          "The Torch of Retribution"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3454-the-torch-of-retribution"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1427,
+          "Velarok Windblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-3462-squire-maltrake"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1427,
+          "Squire Maltrake"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3462-squire-maltrake",
+          "horde-leveling-era-horde-searing-gorge-accept-3463-set-them-ablaze"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1427,
+          "The Key to Freedom"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-4451-the-key-to-freedom"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Northern-Tower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3463-4-authored-Northern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Western-Tower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3463-1-authored-Western-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Southern-Tower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3463-2-authored-Southern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1427,
+          "Eastern-Tower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-3463-3-authored-Eastern-Tower"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1427,
+          "Squire Maltrake"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3463-set-them-ablaze"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1427,
+          "Trinkets.."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-accept-3481-trinkets"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1427,
+          "Trinkets.."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-3481-trinkets"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1427,
+          "Lookout's Spyglass"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-7728-2-lookout-s-spyglass"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1427,
+          "Greater Lava Spider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-7724-1-greater-lava-spider"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1427,
+          "Heavy War Golem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-objective-7723-1-heavy-war-golem"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1427,
+          "Hansel Heavyhands"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-7723-curse-these-fat-fingers",
+          "horde-leveling-era-horde-searing-gorge-turnin-7724-fiery-menace",
+          "horde-leveling-era-horde-searing-gorge-turnin-7727-incendosaurs-whateverosaur-is-more-like-"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1427,
+          "Taskmaster Scrange"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-searing-gorge-turnin-7728-stolen-smithing-tuyere-and-lookout-s-spy",
+          "horde-leveling-era-horde-searing-gorge-turnin-7729-job-opportunity-culling-the-competition"
+        ]
+      }
+    ]
   }
 }
