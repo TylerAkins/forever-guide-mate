@@ -66,6 +66,19 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "turnin-690-malin-s-request",
+            kind = "turnin",
+            text = "Turn in Malin's Request to Skuerto at Refuge Pointe.",
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            complete = { quest = { id = 690, state = "completed" } },
+            alternativeQuests = { 691 },
+            route = { { mapID = 1417, x = 0.466, y = 0.47, label = "Skuerto", offMapText = "Travel to Skuerto at Refuge Pointe." } },
+            dependsOn = {},
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
             route = {
                 { y = 0.4775, mapID = 1417, label = "Apprentice Kryten", offMapText = "Travel to Apprentice Kryten in Arathi Highlands.", x = 0.462 },
             },

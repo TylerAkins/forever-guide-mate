@@ -35289,7 +35289,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 11,
+    "revision": 12,
     "visits": [
       {
         "boundary": [
@@ -67784,6 +67784,16 @@
         ],
         "actions": [
           "objective-658-1-forsaken-courier"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Skuerto"
+        ],
+        "actions": [
+          "turnin-690-malin-s-request"
         ]
       },
       {
@@ -146540,6 +146550,1587 @@
         ],
         "actions": [
           "horde-extra-535-turnin"
+        ]
+      }
+    ]
+  },
+  "loremaster-arathi-highlands": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-duskwood-and-stranglethorn-vale",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-690-malin-s-request"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1453,
+          "Archmage Malin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-690-malin-s-request"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-690-malin-s-request-2"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1453,
+          "Archmage Malin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-690-malin-s-request-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1417,
+          "Captain Nials"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-681-northfold-manor"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1417,
+          "Syndicate Mercenary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-681-2-syndicate-mercenary"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1417,
+          "Syndicate Highwayman"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-681-1-syndicate-highwayman"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1417,
+          "Captain Nials"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-681-northfold-manor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-arathi-highlands-and-alterac-mountains"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Skuerto"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-690-malin-s-request"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1417,
+          "Apprentice Kryten"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-691-worth-its-weight-in-gold"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-684-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Wanted Board"
+        ],
+        "actions": [
+          "alliance-extra-684-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-685-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Wanted Board"
+        ],
+        "actions": [
+          "alliance-extra-685-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-level-before-accept-642-the-princess-trapped"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1417,
+          "The Princess Trapped"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-642-the-princess-trapped"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1417,
+          "Drywhisker Kobold"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-642-1-drywhisker-kobold"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1417,
+          "The Princess Trapped"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-642-the-princess-trapped"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1417,
+          "Stones of Binding"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-651-stones-of-binding"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1417,
+          "Cresting Key"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-651-2-cresting-key"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1417,
+          "Witherbark Shadow Hunter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-691-3-witherbark-shadow-hunter"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1417,
+          "Witherbark Medicine Pouch"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-691-2-witherbark-medicine-pouch"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1417,
+          "Witherbark Tusk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-691-1-witherbark-tusk"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1417,
+          "Thundering Key"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-651-3-thundering-key"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1417,
+          "Apprentice Kryten"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-691-worth-its-weight-in-gold"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1417,
+          "Skuerto"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-693-wand-over-fist"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1417,
+          "Trelane's Wand of Invocation"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-693-1-kor-gresh-coldrage"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1417,
+          "Skuerto"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-693-wand-over-fist"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1417,
+          "Burning Key"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-651-1-burning-key"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1417,
+          "Stones of Binding"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-651-stones-of-binding"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-694-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Skuerto"
+        ],
+        "actions": [
+          "alliance-extra-694-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-682-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Captain Nials"
+        ],
+        "actions": [
+          "alliance-extra-682-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Marez Cowl"
+        ],
+        "actions": [
+          "alliance-extra-684-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Lord Falconcrest"
+        ],
+        "actions": [
+          "alliance-extra-685-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Syndicate Prowler"
+        ],
+        "actions": [
+          "alliance-extra-682-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Boulderfist Shaman"
+        ],
+        "actions": [
+          "alliance-extra-694-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-level-before-accept-663-land-ho"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1417,
+          "Lolo the Lookout"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-663-land-ho"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1417,
+          "Shakes O'Breen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-663-land-ho"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1417,
+          "First Mate Nilzlix"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-662-deep-sea-salvage"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1417,
+          "Captain Steelgut"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-664-drowned-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1417,
+          "Professor Phizzlethorpe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-665-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1417,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-665-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1417,
+          "Doctor Draxlegauge"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-665-sunken-treasure",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-666-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1417,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-662-2-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1417,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-662-1-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1417,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-662-3-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1417,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-662-4-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1417,
+          "Elven Gem"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-666-1-elven-gem"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1417,
+          "Daggerspine Sorceress"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-664-2-daggerspine-sorceress"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1417,
+          "Daggerspine Raider"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-664-1-daggerspine-raider"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1417,
+          "First Mate Nilzlix"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-662-deep-sea-salvage"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1417,
+          "Captain Steelgut"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-664-drowned-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1417,
+          "Doctor Draxlegauge"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-666-sunken-treasure",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-668-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1417,
+          "Shakes O'Breen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-668-sunken-treasure",
+          "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-669-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Captain Nials"
+        ],
+        "actions": [
+          "alliance-extra-682-turnin",
+          "alliance-extra-684-turnin",
+          "alliance-extra-685-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Apprentice Kryten"
+        ],
+        "actions": [
+          "alliance-extra-694-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-669-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-652-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Stone of Inner Binding"
+        ],
+        "actions": [
+          "alliance-extra-652-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Fozruk"
+        ],
+        "actions": [
+          "alliance-extra-652-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Keystone"
+        ],
+        "actions": [
+          "alliance-extra-652-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-653-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Keystone"
+        ],
+        "actions": [
+          "alliance-extra-653-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-653-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Gerrig Bonegrip"
+        ],
+        "actions": [
+          "alliance-extra-653-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-arathi-highlands",
+          "horde-leveling-era-horde-arathi-highlands-level-before-accept-642-the-princess-trapped"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1417,
+          "The Princess Trapped"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-accept-642-the-princess-trapped"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1417,
+          "Drum Fel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-accept-677-call-to-arms"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1417,
+          "Gor'mul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-accept-655-hammerfall"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-turnin-655-hammerfall",
+          "horde-leveling-era-horde-arathi-highlands-accept-672-raising-spirits",
+          "horde-leveling-era-horde-arathi-highlands-accept-671-foul-magics"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1417,
+          "Syndicate Pathstalker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-objective-671-1-syndicate-pathstalker"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1417,
+          "Highland Raptor Eye"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-objective-672-1-highland-raptor-eye"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1417,
+          "Witherbark Witch Doctor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-objective-677-3-witherbark-witch-doctor"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1417,
+          "Witherbark Headhunter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-objective-677-2-witherbark-headhunter"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1417,
+          "Witherbark Axe Thrower"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-objective-677-1-witherbark-axe-thrower"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-turnin-671-foul-magics",
+          "horde-leveling-era-horde-arathi-highlands-turnin-672-raising-spirits",
+          "horde-leveling-era-horde-arathi-highlands-accept-674-raising-spirits"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1417,
+          "Gor'mul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-turnin-674-raising-spirits",
+          "horde-leveling-era-horde-arathi-highlands-accept-675-raising-spirits"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-turnin-675-raising-spirits"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1417,
+          "Drum Fel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-arathi-highlands-turnin-677-call-to-arms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-alterac-mountains-and-arathi-highlands"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1417,
+          "Drum Fel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-678-call-to-arms"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-639-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Zengu"
+        ],
+        "actions": [
+          "horde-extra-639-accept"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-701-guile-of-the-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-objective-642-1-drywhisker-kobold"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1417,
+          "Drywhisker Kobold"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-642-1-drywhisker-kobold"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1417,
+          "The Princess Trapped"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-642-the-princess-trapped"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1417,
+          "Stones of Binding"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-651-stones-of-binding"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Syndicate Prowler"
+        ],
+        "actions": [
+          "horde-extra-639-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Zengu"
+        ],
+        "actions": [
+          "horde-extra-639-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1417,
+          "Cresting Key"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-651-2-cresting-key"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1417,
+          "Thundering Key"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-651-3-thundering-key"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1417,
+          "Boulderfist Magus"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-678-2-boulderfist-magus"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1417,
+          "Boulderfist Brute"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-678-1-boulderfist-brute"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1417,
+          "Raptor Heart"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-701-1-raptor-heart"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-701-guile-of-the-raptor",
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-702-guile-of-the-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1417,
+          "Gor'mul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-702-guile-of-the-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1417,
+          "Gor'mul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-847-guile-of-the-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1417,
+          "Drum Fel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-678-call-to-arms"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-847-guile-of-the-raptor"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1417,
+          "Burning Key"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-651-1-burning-key"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1417,
+          "Stones of Binding"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-651-stones-of-binding"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-663-land-ho"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1417,
+          "Lolo the Lookout"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-663-land-ho"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1417,
+          "Shakes O'Breen"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-663-land-ho"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1417,
+          "First Mate Nilzlix"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-662-deep-sea-salvage"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1417,
+          "Captain Steelgut"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-664-drowned-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1417,
+          "Professor Phizzlethorpe"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-665-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1417,
+          "Doctor Draxlegauge"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-665-sunken-treasure",
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-666-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1417,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-662-2-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1417,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-662-1-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1417,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-662-3-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1417,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-662-4-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1417,
+          "Elven Gem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-666-1-elven-gem"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1417,
+          "Daggerspine Sorceress"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-664-2-daggerspine-sorceress"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1417,
+          "Daggerspine Raider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-664-1-daggerspine-raider"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1417,
+          "First Mate Nilzlix"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-662-deep-sea-salvage"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1417,
+          "Captain Steelgut"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-664-drowned-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1417,
+          "Doctor Draxlegauge"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-666-sunken-treasure",
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-668-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1417,
+          "Shakes O'Breen"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-668-sunken-treasure",
+          "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-669-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1434,
+          "Fleet Master Seahorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-669-sunken-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-640-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Zengu"
+        ],
+        "actions": [
+          "horde-extra-640-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Stromgarde Troll Hunter"
+        ],
+        "actions": [
+          "horde-extra-640-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-extra-640-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-652-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Stone of Inner Binding"
+        ],
+        "actions": [
+          "horde-extra-652-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Fozruk"
+        ],
+        "actions": [
+          "horde-extra-652-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Keystone"
+        ],
+        "actions": [
+          "horde-extra-652-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-673-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-extra-673-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Marez Cowl"
+        ],
+        "actions": [
+          "horde-extra-673-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Tor'gan"
+        ],
+        "actions": [
+          "horde-extra-673-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-679-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Drum Fel"
+        ],
+        "actions": [
+          "horde-extra-679-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Boulderfist Shaman"
+        ],
+        "actions": [
+          "horde-extra-679-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Drum Fel"
+        ],
+        "actions": [
+          "horde-extra-679-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-680-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Korin Fel"
+        ],
+        "actions": [
+          "horde-extra-680-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Or'Kalar"
+        ],
+        "actions": [
+          "horde-extra-680-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Korin Fel"
+        ],
+        "actions": [
+          "horde-extra-680-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-688-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Keystone"
+        ],
+        "actions": [
+          "horde-extra-688-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-688-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Zaruk"
+        ],
+        "actions": [
+          "horde-extra-688-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-97539-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Doctor Gregory Victor"
+        ],
+        "actions": [
+          "horde-extra-97539-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Plains Creeper"
+        ],
+        "actions": [
+          "horde-extra-97539-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1417,
+          "Doctor Gregory Victor"
+        ],
+        "actions": [
+          "horde-extra-97539-turnin"
         ]
       }
     ]

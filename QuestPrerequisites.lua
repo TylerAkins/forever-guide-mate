@@ -1176,3 +1176,17 @@ ns:RegisterQuestPrerequisite({ quest = 98297, mode = "any", quests = { 98291 } }
 
 -- Alterac Mountains chain edge from the frozen source observations.
 ns:RegisterQuestPrerequisite({ quest = 504, mode = "any", quests = { 500 } })
+
+-- Arathi Highlands chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 694, mode = "any", quests = { 693 } })
+ns:RegisterQuestPrerequisite({ quest = 682, mode = "any", quests = { 681 } })
+ns:RegisterQuestPrerequisite({ quest = 652, mode = "any", quests = { 651 } })
+ns:RegisterQuestPrerequisite({ quest = 653, mode = "any", quests = { 652 } })
+ns:RegisterQuestPrerequisite({ quest = 640, mode = "any", quests = { 639 } })
+ns:RegisterQuestPrerequisite({ quest = 673, mode = "any", quests = { 671 } })
+ns:RegisterQuestPrerequisite({ quest = 679, mode = "any", quests = { 678 } })
+ns:RegisterQuestPrerequisite({ quest = 680, mode = "any", quests = { 678 } })
+ns:RegisterQuestPrerequisite({ quest = 688, mode = "any", quests = { 652 } })
+
+-- Malin's optional delivery is removed after starting Worth Its Weight in Gold.
+ns.questBreadcrumbBypass[690] = { 691 }

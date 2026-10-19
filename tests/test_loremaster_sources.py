@@ -64,6 +64,24 @@ class LoremasterSources(unittest.TestCase):
                     self.assertGreater(i, max(position for position, _ in sources),
                                        f'{path.name}: {goal.id} needs a later return after the spine')
 
+    def test_faction_order_check_detects_a_real_same_faction_inversion(self):
+        import shutil
+        import subprocess
+        runner = shutil.which('lua5.1')
+        if not runner: self.skipTest('Lua 5.1 is required')
+        source = (ROOT / 'tests/lua/loremaster_zones.lua').read_text()
+        mutation = """local goals=ns.guides['loremaster-arathi-highlands'].goals
+local objective, target
+for i,g in ipairs(goals) do if g.id=='horde-extra-652-objective' then objective=table.remove(goals,i);break end end
+assert(objective)
+for i,g in ipairs(goals) do if g.id=='horde-extra-652-turnin' then target=i end end
+table.insert(goals,target+1,objective)
+"""
+        source = source.replace("local serialize =", mutation + "local serialize =", 1)
+        result = subprocess.run([runner, '-'], input=source, text=True, capture_output=True, cwd=ROOT)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('completes objectives before returning: horde-extra-652-objective', result.stderr)
+
     def test_dun_morogh_ownership_and_prerequisite_evidence(self):
         audit = json.loads((ROOT / 'docs/loremaster/dun-morogh.json').read_text())
         quests = audit['quests']

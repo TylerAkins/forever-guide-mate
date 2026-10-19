@@ -89,6 +89,7 @@ for _, path in ipairs({
     "Guides/Loremaster/Wetlands.lua",
     "Guides/Loremaster/HillsbradFoothills.lua",
     "Guides/Loremaster/AlteracMountains.lua",
+    "Guides/Loremaster/ArathiHighlands.lua",
     "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",
@@ -437,14 +438,15 @@ for _, guideID in ipairs(ns.guideOrder) do
         local spec = QuestObjectiveSpec(goal)
         if spec and type(spec.id) == "number" then
             objectivesByQuest[spec.id] = objectivesByQuest[spec.id] or {}
-            objectivesByQuest[spec.id][#objectivesByQuest[spec.id] + 1] = goal.id
+            objectivesByQuest[spec.id][#objectivesByQuest[spec.id] + 1] = goal
         end
     end
     for _, goal in ipairs(guide.goals) do
         if goal.kind == "turnin" then
             local questID = guideData.AcceptQuestIDFromGoal(goal)
-            for _, objectiveID in ipairs(objectivesByQuest[questID] or {}) do
-                local found = false
+            for _, objective in ipairs(objectivesByQuest[questID] or {}) do
+                local objectiveID = objective.id
+                local found = not guideData.ActionsOverlap(goal, objective, ns.EvaluateCondition)
                 for _, dependency in ipairs(goal.dependsOn or {}) do
                     if dependency == objectiveID then found = true end
                 end

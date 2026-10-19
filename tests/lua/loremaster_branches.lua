@@ -15,4 +15,14 @@ copy={}
 for i,g in ipairs(goals) do copy[i]={kind=g.kind,conditions=g.conditions} end
 copy[#copy].conditions={faction='Horde'}
 assert(not check(copy,ns.EvaluateCondition),'A return with no applicable pickup is rejected')
+local shared={}
+for _,g in ipairs(ns.guides['loremaster-arathi-highlands'].goals) do
+ if ns.Engine:GetGoalQuestID(g)==642 then shared[#shared+1]=g end
+end
+assert(check(shared,ns.EvaluateCondition),'Both factions retain independent pickups, work, and returns')
+local overlap=dofile('tests/lua/guide_data_checks.lua').ActionsOverlap
+assert(not overlap({conditions={faction='Alliance'}},{conditions={faction='Horde'}},ns.EvaluateCondition),'Opposite factions do not share objective dependencies')
+assert(overlap({conditions={faction='Alliance'}},{conditions={faction='Alliance'}},ns.EvaluateCondition),'The same faction retains objective dependencies')
+local profession={conditions={profession={skillLineID=333,minRank=1}}}
+assert(overlap(profession,profession,ns.EvaluateCondition),'Unknown profession branches conservatively retain dependencies')
 print('Loremaster pickup branch coverage checks passed')

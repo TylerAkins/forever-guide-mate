@@ -79,6 +79,7 @@ SHIPPED = (
     "Guides/Loremaster/Wetlands.lua",
     "Guides/Loremaster/HillsbradFoothills.lua",
     "Guides/Loremaster/AlteracMountains.lua",
+    "Guides/Loremaster/ArathiHighlands.lua",
     "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",

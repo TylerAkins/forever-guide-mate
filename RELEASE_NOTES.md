@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Arathi Highlands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Alterac Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Hillsbrad Foothills Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Wetlands Loremaster with recorded Forever evidence and advisory legacy ordering.

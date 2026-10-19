@@ -1433,14 +1433,32 @@ function M.DisjointPickupBranches(goals, evaluate)
                 end
             end
             if pickups > 1 then return false end
+            local returns = 0
             for _, goal in ipairs(goals) do
-                if goal.kind ~= "accept" and evaluate(goal.conditions,state) ~= (pickups == 1) then return false end
+                if goal.kind ~= "accept" and evaluate(goal.conditions,state) then
+                    if pickups ~= 1 then return false end
+                    if goal.kind == "turnin" then returns = returns + 1 end
+                end
             end
+            if pickups == 1 and returns == 0 then return false end
         end
     end
     local observed = 0
     for _ in pairs(seen) do observed = observed + 1 end
     return observed == count
+end
+
+-- Only overlapping character branches share objective dependencies.
+function M.ActionsOverlap(first, second, evaluate)
+    for _, race in ipairs({1,2,3,4,5,6,7,8,95,96}) do
+        for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
+            local alliance = race==1 or race==3 or race==4 or race==7 or race==95
+            local state = {raceID=race,classID=class,faction=alliance and "Alliance" or "Horde",
+                level=60,professions={},professionsKnown=false}
+            if evaluate(first.conditions,state) ~= false and evaluate(second.conditions,state) ~= false then return true end
+        end
+    end
+    return false
 end
 
 return M

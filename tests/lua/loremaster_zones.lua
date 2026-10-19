@@ -14,6 +14,12 @@ for _, id in ipairs(ns.guideOrder) do
         end
     end
 end
+local function factions(goal)
+    local c=goal.conditions or {}
+    local faction=c.faction
+    for _,part in ipairs(c.all or {}) do faction=faction or part.faction end
+    return faction and {faction} or {'Alliance','Horde'}
+end
 local checks = 0
 local function check(ok, message)
     checks = checks + 1
@@ -23,7 +29,7 @@ for _, id in ipairs(ns.guideOrder) do
     local guide = ns.guides[id]
     if guide.category == 'Loremaster Guides' then
         local previous = {}
-        local pickups, finishes = {}, {}
+        local pickups, finishes = {Alliance={},Horde={}}, {Alliance={},Horde={}}
         for i, goal in ipairs(guide.goals) do
             local quest = ns.Engine:GetGoalQuestID(goal)
             if goal.sourceGuide then
@@ -42,8 +48,10 @@ for _, id in ipairs(ns.guideOrder) do
                     check(serialize(goal[field]) == serialize(original[field]), id .. ' preserves source ' .. field .. ': ' .. goal.id)
                 end
             end
-            if goal.kind == 'accept' then pickups[quest] = pickups[quest] or i end
-            if goal.kind == 'turnin' then finishes[quest] = finishes[quest] or i end
+            for _,faction in ipairs(factions(goal)) do
+                if goal.kind == 'accept' then pickups[faction][quest] = pickups[faction][quest] or i end
+                if goal.kind == 'turnin' then finishes[faction][quest] = finishes[faction][quest] or i end
+            end
         end
         for i, goal in ipairs(guide.goals) do
             if goal.checkpointQuest and goal.id:find('%-extra%-') and goal.id:match('%-level$') then
@@ -53,6 +61,8 @@ for _, id in ipairs(ns.guideOrder) do
             end
             if goal.sourceGuide or goal.id:find('%-extra%-') then
                 local quest = ns.Engine:GetGoalQuestID(goal)
+                for _,faction in ipairs(factions(goal)) do
+                local pickups,finishes=pickups[faction],finishes[faction]
                 if goal.kind == 'objective' then
                     check(pickups[quest] and pickups[quest] < i, id .. ' picks up before objectives: ' .. goal.id)
                     check(finishes[quest] and i < finishes[quest], id .. ' completes objectives before returning: ' .. goal.id)
@@ -67,6 +77,7 @@ for _, id in ipairs(ns.guideOrder) do
                             or group.conditions and goal.unresolvedPrerequisites and goal.excludeWhen,
                             id .. ' places prerequisite returns before pickup: ' .. goal.id)
                     end
+                end
                 end
             end
         end
