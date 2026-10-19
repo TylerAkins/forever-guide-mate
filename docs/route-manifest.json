@@ -159858,5 +159858,974 @@
         ]
       }
     ]
+  },
+  "loremaster-eastern-plaguelands": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-burning-steppes",
+          "alliance-leveling-era-alliance-burning-steppes-level-before-accept-6182-the-first-and-the-last"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1453,
+          "Highlord Bolvar Fordragon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-6182-the-first-and-the-last"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1453,
+          "Master Mathias Shaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-6182-the-first-and-the-last",
+          "alliance-leveling-era-alliance-burning-steppes-accept-6183-honor-the-dead"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1453,
+          "Master Mathias Shaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-6183-honor-the-dead",
+          "alliance-leveling-era-alliance-burning-steppes-accept-6184-flint-shadowmore"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-western-and-eastern-plaguelands",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-level-before-turnin-6184-flint-shadowmore"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1422,
+          "Flint Shadowmore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6184-flint-shadowmore"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-level-before-accept-5142-little-pamela"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1422,
+          "Marlene Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5142-little-pamela"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1422,
+          "Flint Shadowmore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-6185-the-eastern-plagues"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1423,
+          "Tirion Fordring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5542-demon-dogs",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5543-blood-tinged-skies",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5544-carrion-grubbage"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1423,
+          "SI:7 Insignia (Turyen)"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6185-3-si-7-insignia-turyen"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1423,
+          "SI:7 Insignia (Fredo)"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6185-2-si-7-insignia-fredo"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1423,
+          "SI:7 Insignia (Rutger)"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6185-1-si-7-insignia-rutger"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1423,
+          "Pamela Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5142-little-pamela",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5149-pamela-s-doll"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Darrowshire houses"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5149-1-pamela-s-doll-s-head",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5149-1-pamela-s-doll-s-head-2"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1423,
+          "Pamela Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5149-pamela-s-doll",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5152-auntie-marlene",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5241-uncle-carlin"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1423,
+          "Slab of Carrion Worm Meat"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5544-1-slab-of-carrion-worm-meat"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1423,
+          "Plaguehound Runt"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5542-1-plaguehound-runt"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1423,
+          "Plaguebat"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5543-1-plaguebat"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1423,
+          "Plaguehound"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5542-2-plaguehound"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1423,
+          "Caretaker Alen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-6021-zaeldarr-the-outcast"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1423,
+          "Carlin Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5241-uncle-carlin",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5211-defenders-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1423,
+          "Augustus the Touched"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-6164-augustus-receipt-book"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1423,
+          "Augustus' Receipt Book"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6164-1-augustus-receipt-book"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1423,
+          "Augustus the Touched"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6164-augustus-receipt-book"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1423,
+          "Frenzied Plaguehound"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5542-3-frenzied-plaguehound"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1423,
+          "Zaeldarr the Outcast"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6021-1-zaeldarr-the-outcast"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1423,
+          "Tirion Fordring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5542-demon-dogs",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5543-blood-tinged-skies",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5544-carrion-grubbage",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5742-redemption"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5742-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1423,
+          "Tirion Fordring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5742-redemption"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1422,
+          "Flint Shadowmore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6185-the-eastern-plagues"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1422,
+          "Marlene Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5152-auntie-marlene",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5153-a-strange-historian"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1422,
+          "Joseph's Wedding Ring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5153-1-joseph-s-wedding-ring"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5153-a-strange-historian",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5154-the-annals-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1422,
+          "Annals of Darrowshire"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5154-1-annals-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5154-the-annals-of-darrowshire",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5210-brother-carlin"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1423,
+          "Carlin Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5210-brother-carlin",
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5181-villains-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1423,
+          "Darrowshire ghouls"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5211-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          86,
+          1423,
+          "Carlin Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5211-defenders-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          88,
+          1423,
+          "Caretaker Alen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6021-zaeldarr-the-outcast"
+        ]
+      },
+      {
+        "boundary": [
+          89,
+          1423,
+          "Horgus' Skull"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5181-1-horgus-skull"
+        ]
+      },
+      {
+        "boundary": [
+          90,
+          1423,
+          "Shattered Sword of Marduk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5181-2-shattered-sword-of-marduk"
+        ]
+      },
+      {
+        "boundary": [
+          103,
+          1423,
+          "Carlin Redpath"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5181-villains-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-6024-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Torn Scroll"
+        ],
+        "actions": [
+          "alliance-extra-6024-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Infiltrator Hameya"
+        ],
+        "actions": [
+          "alliance-extra-6024-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Mound of Dirt"
+        ],
+        "actions": [
+          "alliance-extra-6024-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1452,
+          "Jessica Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-5601-sister-pamela"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-western-and-eastern-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1423,
+          "Tirion Fordring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5542-demon-dogs",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5543-blood-tinged-skies",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5544-carrion-grubbage"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1423,
+          "Nathanos Blightcaller"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-6022-to-kill-with-purpose",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-6042-un-life-s-little-annoyances"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1423,
+          "Pamela Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5601-sister-pamela",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5149-pamela-s-doll"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Darrowshire houses"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5149-1-pamela-s-doll-s-head",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5149-1-pamela-s-doll-s-head-2"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1423,
+          "Pamela Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5149-pamela-s-doll",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5152-auntie-marlene",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5241-uncle-carlin"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1423,
+          "Slab of Carrion Worm Meat"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5544-1-slab-of-carrion-worm-meat"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1423,
+          "Plaguehound Runt"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5542-1-plaguehound-runt"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1423,
+          "Plaguebat"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5543-1-plaguebat"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1423,
+          "To Kill With Purpose"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6022-1-hate-shrieker"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1423,
+          "Plaguehound"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5542-2-plaguehound"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1423,
+          "Noxious Plaguebat"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6042-1-noxious-plaguebat"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1423,
+          "Carlin Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5241-uncle-carlin",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5211-defenders-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1423,
+          "Caretaker Alen"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-6021-zaeldarr-the-outcast"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1423,
+          "Augustus the Touched"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-6164-augustus-receipt-book"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1423,
+          "Augustus' Receipt Book"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6164-1-augustus-receipt-book"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1423,
+          "Augustus the Touched"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6164-augustus-receipt-book"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1423,
+          "Frenzied Plaguehound"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5542-3-frenzied-plaguehound"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1423,
+          "Monstrous Plaguebat"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6042-2-monstrous-plaguebat"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1423,
+          "Zaeldarr the Outcast"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6021-1-zaeldarr-the-outcast"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1423,
+          "Nathanos Blightcaller"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6022-to-kill-with-purpose",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6042-un-life-s-little-annoyances"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1423,
+          "Tirion Fordring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5542-demon-dogs",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5543-blood-tinged-skies",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5544-carrion-grubbage",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5742-redemption"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5742-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          1423,
+          "Tirion Fordring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5742-redemption"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1422,
+          "Marlene Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5152-auntie-marlene",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5153-a-strange-historian"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1422,
+          "Joseph's Wedding Ring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5153-1-joseph-s-wedding-ring"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5153-a-strange-historian",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5154-the-annals-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1422,
+          "Annals of Darrowshire"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5154-1-annals-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1422,
+          "Chromie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5154-the-annals-of-darrowshire",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5210-brother-carlin"
+        ]
+      },
+      {
+        "boundary": [
+          99,
+          1423,
+          "Caretaker Alen"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6021-zaeldarr-the-outcast"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1423,
+          "Carlin Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5210-brother-carlin",
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5181-villains-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1423,
+          "Defenders of Darrowshire"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5211-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1423,
+          "Carlin Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5211-defenders-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          101,
+          1423,
+          "Horgus' Skull"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5181-1-horgus-skull"
+        ]
+      },
+      {
+        "boundary": [
+          102,
+          1423,
+          "Shattered Sword of Marduk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5181-2-shattered-sword-of-marduk"
+        ]
+      },
+      {
+        "boundary": [
+          115,
+          1423,
+          "Carlin Redpath"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5181-villains-of-darrowshire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5961-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Lady Sylvanas Windrunner"
+        ],
+        "actions": [
+          "horde-extra-5961-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5961-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Nathanos Blightcaller"
+        ],
+        "actions": [
+          "horde-extra-5961-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6024-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Torn Scroll"
+        ],
+        "actions": [
+          "horde-extra-6024-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Infiltrator Hameya"
+        ],
+        "actions": [
+          "horde-extra-6024-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1423,
+          "Mound of Dirt"
+        ],
+        "actions": [
+          "horde-extra-6024-turnin"
+        ]
+      }
+    ]
   }
 }
