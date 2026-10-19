@@ -86,6 +86,7 @@ for _, path in ipairs({
     "Guides/Loremaster/DunMorogh.lua",
     "Guides/Loremaster/RedridgeMountains.lua",
     "Guides/Loremaster/Duskwood.lua",
+    "Guides/Loremaster/Wetlands.lua",
     "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",
@@ -339,7 +340,8 @@ for _, guideID in ipairs(ns.guideOrder) do
                 end
             end
             Check(mismatchID == nil or (guide.routeMode == "ordered"
-                and ExplicitPickupBranches(byQuest[questID])), ("%s quest %d: %s and %s do not share conditions")
+                and (ExplicitPickupBranches(byQuest[questID])
+                    or guideData.DisjointPickupBranches(byQuest[questID], ns.EvaluateCondition))), ("%s quest %d: %s and %s do not share conditions")
                 :format(guideID, questID, tostring(firstID), tostring(mismatchID)))
         end
     end

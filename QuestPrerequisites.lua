@@ -1167,3 +1167,9 @@ ns:RegisterQuestPrerequisite({ quest = 253, mode = "any", quests = { 252 } })
 ns:RegisterQuestPrerequisite({ quest = 228, mode = "any", quests = { 227 } })
 ns:RegisterQuestPrerequisite({ quest = 229, mode = "any", quests = { 228 } })
 ns:RegisterQuestPrerequisite({ quest = 55, mode = "any", quests = { 325 } })
+
+-- Wetlands chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 473, mode = "any", quests = { 455 } })
+ns:RegisterQuestPrerequisite({ quest = 474, mode = "any", quests = { 465 } })
+ns:RegisterQuestPrerequisite({ quest = 98072, mode = "any", quests = { 471 } })
+ns:RegisterQuestPrerequisite({ quest = 98297, mode = "any", quests = { 98291 } })

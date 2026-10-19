@@ -75,3 +75,5 @@ dofile("tests/lua/loremaster_parity.lua")
 dofile('tests/lua/loremaster_zones.lua')
 
 dofile('tests/lua/duskwood_items.lua')
+
+dofile('tests/lua/loremaster_branches.lua')

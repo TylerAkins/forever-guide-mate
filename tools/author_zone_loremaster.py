@@ -102,6 +102,7 @@ def build_actions(facts, faction):
                'complete': complete, 'requiredQuests': copy.deepcopy(facts['requirements']),
                'useClientText': False}
         if exclusion: out['excludeWhen'] = {'any': copy.deepcopy(exclusion)}
+        if facts.get('breadcrumbForQuestId'): out['alternativeQuests'] = [facts['breadcrumbForQuestId']]
         return out
     accept = action('accept', f'Accept {name} from {start["name"]}.', point_route(start),
                     {'quest': {'id': q, 'state': 'activeOrCompleted'}})
@@ -129,6 +130,7 @@ def build_actions(facts, faction):
                   'conditions': {'all': [c for c in copy.deepcopy(conditions) if 'level' not in c]},
                   'complete': {'level': {'min': facts['level']}}, 'requiredLevel': facts['level']}
     if exclusion: checkpoint['excludeWhen'] = {'any': copy.deepcopy(exclusion)}
+    if facts.get('breadcrumbForQuestId'): checkpoint['alternativeQuests'] = [facts['breadcrumbForQuestId']]
     accept['dependsOn'] = [checkpoint['id']]
     return [checkpoint, accept] + ([objective] if objective else []) + [turnin]
 
@@ -356,6 +358,11 @@ def prepare(zone_spec, database, upstream, snapshot):
                 for group in groups:
                     if group['mode'] == 'all' and not group.get('conditions'):
                         goal.setdefault('dependsOn', []).extend(d for p in group['quests'] for d in turnins.get(p, []))
+        for q in {quest_id(all_goals[n]) for n in extra_ids}:
+            target = facts.get(q, {}).get('breadcrumbForQuestId')
+            if target:
+                for pickup in accepts.get(target, []):
+                    predecessors[pickup].extend(turnins.get(q, []))
         availability_facts = dict(facts)
         for q, groups in requirements.items():
             if q in facts: availability_facts[q] = {**facts[q], 'requirements': groups}

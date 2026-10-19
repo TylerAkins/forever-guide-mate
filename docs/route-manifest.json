@@ -142713,5 +142713,1445 @@
         ]
       }
     ]
+  },
+  "loremaster-wetlands": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-darkshore-part-2-level-before-woven-accept-98461-unrequited-love",
+          "alliance-extra-468-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Mountaineer Kadrell"
+        ],
+        "actions": [
+          "alliance-extra-468-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "Archaeologist Hollee"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-darkshore-part-2-woven-accept-98461-unrequited-love"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-level-before-accept-484-young-crocolisk-skins"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1437,
+          "James Halloran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-accept-484-young-crocolisk-skins"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-level-before-accept-279-claws-from-the-deep"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1437,
+          "Karl Boran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-accept-279-claws-from-the-deep"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-level-before-accept-288-the-third-fleet"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1437,
+          "First Mate Fitzsimmons"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-accept-288-the-third-fleet",
+          "alliance-leveling-era-alliance-wetlands-accept-463-the-greenwarden"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-288-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1437,
+          "First Mate Fitzsimmons"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-288-the-third-fleet"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1437,
+          "Sida"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-accept-470-digging-through-the-ooze"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1437,
+          "Tarrel Rockweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-accept-305-in-search-of-the-excavation-team"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1437,
+          "Gobbler"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-279-2-gobbler"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1437,
+          "Bluegill Murlocs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-279-reviewed-1"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1437,
+          "Merrin Rockweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-305-in-search-of-the-excavation-team",
+          "alliance-leveling-era-alliance-wetlands-accept-306-in-search-of-the-excavation-team"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1437,
+          "Einar Stonegrip"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-accept-469-daily-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1437,
+          "Rethiel the Greenwarden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-463-the-greenwarden",
+          "alliance-leveling-era-alliance-wetlands-accept-276-tramping-paws"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1437,
+          "Mosshide Mongrel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-276-2-mosshide-mongrel"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1437,
+          "Mosshide Gnoll"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-276-1-mosshide-gnoll"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1437,
+          "Young Crocolisk Skin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-484-1-young-crocolisk-skin"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1437,
+          "Rethiel the Greenwarden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-276-tramping-paws",
+          "alliance-leveling-era-alliance-wetlands-accept-277-fire-taboo"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1437,
+          "Black Ooze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-objective-470-1-black-ooze"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1437,
+          "Sida"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-470-digging-through-the-ooze"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1437,
+          "Tarrel Rockweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-306-in-search-of-the-excavation-team"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1437,
+          "James Halloran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-484-young-crocolisk-skins",
+          "alliance-leveling-era-alliance-wetlands-turnin-469-daily-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1437,
+          "Karl Boran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-turnin-279-claws-from-the-deep"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-level-before-woven-accept-98197-spoils-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Valstag Ironjaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-woven-accept-98197-spoils-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Tarrel Rockweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-woven-turnin-98461-unrequited-love"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Menethil Harbor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-woven-objective-98197-spoils-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Valstag Ironjaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-woven-turnin-98197-spoils-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-level-before-accept-281-reclaiming-goods"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1437,
+          "Karl Boran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-281-reclaiming-goods"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1437,
+          "James Halloran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-471-apprentice-s-duties"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-level-before-accept-289-the-cursed-crew"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1437,
+          "First Mate Fitzsimmons"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-289-the-cursed-crew"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-468-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Mountaineer Rockgar"
+        ],
+        "actions": [
+          "alliance-extra-468-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-455-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1432,
+          "Mountaineer Rockgar"
+        ],
+        "actions": [
+          "alliance-extra-455-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Dragonmaw Grunt"
+        ],
+        "actions": [
+          "alliance-extra-455-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Valstag Ironjaw"
+        ],
+        "actions": [
+          "alliance-extra-455-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-473-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Valstag Ironjaw"
+        ],
+        "actions": [
+          "alliance-extra-473-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-473-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Captain Stoutfist"
+        ],
+        "actions": [
+          "alliance-extra-473-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1437,
+          "Captain Stoutfist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-464-war-banners"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1437,
+          "Reclaiming Goods"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-281-reclaiming-goods"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1437,
+          "The Search Continues"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-284-the-search-continues"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1437,
+          "The Search Continues"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-284-the-search-continues"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1437,
+          "Search More Hovels"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-285-search-more-hovels"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1437,
+          "Search More Hovels"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-285-search-more-hovels"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1437,
+          "Return the Statuette"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-286-return-the-statuette"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1437,
+          "First Mate Snellig"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-289-3-first-mate-snellig"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1437,
+          "Cursed Marine"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-289-2-cursed-marine"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1437,
+          "Cursed Sailor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-289-1-cursed-sailor"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1437,
+          "Giant Wetlands Crocolisk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-471-1-giant-wetlands-crocolisk"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1437,
+          "Mosshide Brute"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-277-1-mosshide-brute"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1437,
+          "Prospector Whelgar"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-299-uncovering-the-past"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1437,
+          "Neru Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-299-4-neru-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1437,
+          "Golm Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-299-3-golm-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1437,
+          "Modr Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-299-2-modr-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1437,
+          "Ados Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-299-1-ados-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1437,
+          "Prospector Whelgar"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-299-uncovering-the-past"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1437,
+          "Dragonmaw War Banner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-464-1-dragonmaw-raider"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1437,
+          "Rethiel the Greenwarden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-277-fire-taboo",
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-275-blisters-on-the-land"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1437,
+          "First Mate Fitzsimmons"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-289-the-cursed-crew",
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-290-lifting-the-curse"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1437,
+          "Karl Boran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-286-return-the-statuette"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1437,
+          "James Halloran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-471-apprentice-s-duties"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1437,
+          "Captain Stoutfist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-464-war-banners",
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-465-nek-rosh-s-gambit"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1437,
+          "Captain Halyndor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-290-1-captain-halyndor"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1437,
+          "Lifting the Curse"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-290-lifting-the-curse"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1437,
+          "The Eye of Paleth"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-292-the-eye-of-paleth"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1437,
+          "Fen Creeper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-275-1-fen-creeper"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1437,
+          "Nek'rosh's Gambit"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-465-nek-rosh-s-gambit"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1437,
+          "Fen Creeper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-275-1-fen-creeper-2"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1437,
+          "Rethiel the Greenwarden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-275-blisters-on-the-land"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-level-before-accept-631-the-thandol-span"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1437,
+          "Rhag Garmason"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-631-the-thandol-span"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1437,
+          "The Thandol Span"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-631-the-thandol-span",
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-632-the-thandol-span"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1437,
+          "Rhag Garmason"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-632-the-thandol-span",
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-633-the-thandol-span"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-objective-633-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1437,
+          "Rhag Garmason"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-633-the-thandol-span",
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-634-plea-to-the-alliance"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1417,
+          "Captain Nials"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-634-plea-to-the-alliance"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1437,
+          "Glorin Steelbrow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-wetlands-part-2-turnin-292-the-eye-of-paleth",
+          "alliance-leveling-era-alliance-wetlands-part-2-accept-293-cleansing-the-eye"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-turnin-293-cleansing-the-eye",
+          "alliance-extra-303-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Motley Garmason"
+        ],
+        "actions": [
+          "alliance-extra-303-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Dark Iron Dwarf"
+        ],
+        "actions": [
+          "alliance-extra-303-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Motley Garmason"
+        ],
+        "actions": [
+          "alliance-extra-303-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-474-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Dragonmaw Catapult"
+        ],
+        "actions": [
+          "alliance-extra-474-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Chieftain Nek'rosh"
+        ],
+        "actions": [
+          "alliance-extra-474-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Captain Stoutfist"
+        ],
+        "actions": [
+          "alliance-extra-474-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1453,
+          "Archbishop Benedictus"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-293-cleansing-the-eye"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-1274-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1453,
+          "Thomas"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1274-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1453,
+          "Bishop DeLavey"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1274-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1241-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1453,
+          "Jorgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1241-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1242-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1453,
+          "Elling Trias"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1242-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1243-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1243-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1244-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1431,
+          "Defias Docket"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1244-1-defias-docket"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1244-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1245-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1453,
+          "Connor Rivers"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1301-james-hyal"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1453,
+          "Elling Trias"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1245-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1246-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1453,
+          "Connor Rivers"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1301-james-hyal-2"
+        ]
+      },
+      {
+        "boundary": [
+          88,
+          1453,
+          "Dashel Stonefist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1246-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1447-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Dashel Stonefist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1447-1-dashel-stonefist"
+        ]
+      },
+      {
+        "boundary": [
+          90,
+          1453,
+          "Dashel Stonefist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1447-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1247-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          91,
+          1453,
+          "Elling Trias"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1247-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1248-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          94,
+          1437,
+          "Vincent Hyal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1301-james-hyal",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1302-james-hyal"
+        ]
+      },
+      {
+        "boundary": [
+          96,
+          1437,
+          "Mikhail"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1248-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1249-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Tapoke \"Slim\" Jahn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1249-1-tapoke-slim-jahn"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1437,
+          "Mikhail"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1249-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          99,
+          1437,
+          "Tapoke \"Slim\" Jahn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1250-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1437,
+          "Mikhail"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1250-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1445,
+          "Clerk Lendry"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1302-james-hyal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1132-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Red Jack Flint"
+        ],
+        "actions": [
+          "alliance-extra-1132-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1132-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1445,
+          "Fiora Longears"
+        ],
+        "actions": [
+          "alliance-extra-1132-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-98072-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "James Halloran"
+        ],
+        "actions": [
+          "alliance-extra-98072-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Red Whelp"
+        ],
+        "actions": [
+          "alliance-extra-98072-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "James Halloran"
+        ],
+        "actions": [
+          "alliance-extra-98072-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-98221-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Captain Stoutfist"
+        ],
+        "actions": [
+          "alliance-extra-98221-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Attack Plan: Menethil Harbor"
+        ],
+        "actions": [
+          "alliance-extra-98221-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Captain Stoutfist"
+        ],
+        "actions": [
+          "alliance-extra-98221-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-98282-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Caitlin Grassman"
+        ],
+        "actions": [
+          "alliance-extra-98282-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Leech Stalker"
+        ],
+        "actions": [
+          "alliance-extra-98282-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Caitlin Grassman"
+        ],
+        "actions": [
+          "alliance-extra-98282-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-98291-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Howin Kindfeather"
+        ],
+        "actions": [
+          "alliance-extra-98291-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Dragonmaw Infiltrator"
+        ],
+        "actions": [
+          "alliance-extra-98291-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Howin Kindfeather"
+        ],
+        "actions": [
+          "alliance-extra-98291-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-98297-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Howin Kindfeather"
+        ],
+        "actions": [
+          "alliance-extra-98297-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Subdued Dragonspawn"
+        ],
+        "actions": [
+          "alliance-extra-98297-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Howin Kindfeather"
+        ],
+        "actions": [
+          "alliance-extra-98297-turnin"
+        ]
+      }
+    ]
   }
 }

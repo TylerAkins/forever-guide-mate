@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Wetlands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Duskwood Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Redridge Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add zone Loremaster routes for Westfall, Loch Modan, Darkshore, Silverpine Forest, and The Barrens.

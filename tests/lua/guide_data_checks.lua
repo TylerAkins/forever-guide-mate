@@ -1413,4 +1413,34 @@ function M.ItemStartQuestObjectiveViolations(guides)
     return issues
 end
 
+-- Pickup branches may differ by race or class while sharing later work.
+function M.DisjointPickupBranches(goals, evaluate)
+    local seen, count = {}, 0
+    for _, goal in ipairs(goals) do if goal.kind == "accept" then count = count + 1 end end
+    if count < 2 then return false end
+    for _, race in ipairs({1,2,3,4,5,6,7,8,95,96}) do
+        for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
+            local alliance = race==1 or race==3 or race==4 or race==7 or race==95
+            local state = {raceID=race,classID=class,faction=alliance and "Alliance" or "Horde",
+                level=60,professions={},professionsKnown=true}
+            local pickups = 0
+            for _, goal in ipairs(goals) do
+                local applies = evaluate(goal.conditions,state)
+                if applies == nil then return false end
+                if goal.kind == "accept" and applies then
+                    pickups = pickups + 1
+                    seen[goal] = true
+                end
+            end
+            if pickups > 1 then return false end
+            for _, goal in ipairs(goals) do
+                if goal.kind ~= "accept" and evaluate(goal.conditions,state) ~= (pickups == 1) then return false end
+            end
+        end
+    end
+    local observed = 0
+    for _ in pairs(seen) do observed = observed + 1 end
+    return observed == count
+end
+
 return M

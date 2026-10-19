@@ -126,6 +126,15 @@ class ZonePreparationTests(unittest.TestCase):
             text, audit = author.prepare(spec, root, root, snapshot)
         return text, audit
 
+    def test_breadcrumb_finishes_before_its_target_pickup(self):
+        from weave_loremaster import parse_goals
+        text, audit = self.prepare({10: {'breadcrumbForQuestId': 11}, 11: {}})
+        goals = parse_goals(text, '', '', None)
+        end = next(i for i,g in enumerate(goals) if g.quest_id==10 and g.kind=='turnin')
+        target = next(i for i,g in enumerate(goals) if g.quest_id==11 and g.kind=='accept')
+        self.assertLess(end,target)
+        self.assertTrue(all('alternativeQuests' in g.raw for g in goals if g.quest_id==10))
+
     def test_any_prerequisite_does_not_become_all_completion_dependencies(self):
         text, audit = self.prepare({10: {}, 11: {}, 12: {'preQuestSingle': [10, 11]}})
         from weave_loremaster import parse_goals, goal_field
