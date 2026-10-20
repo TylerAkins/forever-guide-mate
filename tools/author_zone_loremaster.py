@@ -30,6 +30,9 @@ ALIASES = {'Barrens': 'The Barrens', 'Hinterlands': 'The Hinterlands',
            'Field of Giants': 'The Barrens', 'Stonewrought Dam': 'Loch Modan',
            "Thoradin's Wall": 'Arathi Highlands', "Rut'theran Village": 'Teldrassil',
            'Anvilmar': 'Dun Morogh', 'Kharanos': 'Dun Morogh'}
+UNRESOLVED_MECHANICS = {
+    1126: 'Local observations identify the Encrusted Silithid Object drop but do not document how to trigger the hive from the tower; encounter instructions need verification.'
+}
 
 
 def quest_id(goal):
@@ -82,6 +85,19 @@ def build_actions(facts, faction):
     materials = {p['item'] for p in work if p.get('item')}
     if len(facts.get('objectiveItems', [])) > len(materials):
         raise ValueError('Required collection materials lack complete acquisition sources and visits')
+    item_sources = {}
+    for item_id, label, count in zip(facts.get('objectiveItems', []), facts.get('objectiveLabels', []),
+                                    facts.get('objectiveCounts', [])):
+        if label and count:
+            matches = [p for p in work if p.get('item') == label and point_route(p)]
+            if matches: item_sources[item_id] = (label, count, matches)
+    if len(facts.get('objectiveItems', [])) > 1 and len(item_sources) != len(facts['objectiveItems']):
+        raise ValueError('Separate collection objectives lack complete item labels or source-backed visits')
+    if len(facts.get('objectiveItems', [])) > 1:
+        labels = {label for label, _, _ in item_sources.values()}
+        if facts.get('otherObjectives') or any(p.get('point') != 'sourcerequirement' or p.get('item') not in labels
+                                                for p in work):
+            raise ValueError('Mixed collection and non-item objectives need a reviewed combined itinerary')
     def words(text):
         return ' '.join(word.rstrip('s') for word in re.findall(r'[a-z0-9]+', text.lower()))
     if len(materials) > 1 and any(words(item) not in words(' '.join(instructions)) for item in materials):
@@ -113,25 +129,51 @@ def build_actions(facts, faction):
         return out
     accept = action('accept', f'Accept {name} from {start["name"]}.', point_route(start),
                     {'quest': {'id': q, 'state': 'activeOrCompleted'}})
-    objective = None
+    objectives = []
     if work or instructions:
-        pin = next((point_route(p) for p in work if point_route(p)), None)
         text = ' '.join(instructions)
         text = re.split(r'(?i)(?:,?\s+(?:and\s+)?then\s+(?:return to|report(?: back)?(?: to)?|turn in)|\s+and\s+(?:return to|report(?: back)?(?: to)?|turn in))\b', text)[0].rstrip(' ,.;') + '.'
-        hostile = [p for p in work if p.get('type') == 1 and
-                   (p.get('reactalliance') == -1 if faction == 'Alliance' else p.get('reacthorde') == -1)]
-        if hostile and not re.search(r'(?i)\b(kill|slay|defeat|collect|gather)\b', text):
-            p = hostile[0]
-            text = f'Defeat {p["name"]}' + (f' and loot the {p["item"]}.' if p.get('item') else ' until the quest log marks the objective complete.') + ' ' + text
-        if facts.get('elite'): text += ' This is an elite. Bring a group.'
-        objective = action('objective', text, pin, {'quest': {'id': q, 'state': 'complete'}})
-        objective['dependsOn'] = [accept['id']]
-        if not pin:
-            objective['useClientPin'] = True
-            objective['text'] += ' Follow the quest log for the destination.'
+        if len(facts.get('objectiveItems', [])) > 1:
+            for index, item_id in enumerate(facts['objectiveItems'], 1):
+                label, count, sources = item_sources[item_id]
+                source = next((p for p in sources if p.get('type') == 1), sources[0])
+                if source.get('type') == 2:
+                    instruction = f'Collect {label} from the marked object.'
+                elif source.get('type') == 1 and source.get('item'):
+                    hostile = source.get('reactalliance') == -1 if faction == 'Alliance' else source.get('reacthorde') == -1
+                    if not hostile: raise ValueError('Collection provider is not verified as hostile')
+                    instruction = f'Defeat {source["name"]} and loot {label}.'
+                else:
+                    raise ValueError('Collection provider has no supported NPC or object interaction')
+                objective = action('objective', instruction, point_route(source),
+                    {'questObjective': {'id': q, 'index': index, 'text': label, 'count': count}})
+                objective['id'] = f'{prefix}-objective-{index}'
+                objective['dependsOn'] = [accept['id']]
+                if facts.get('elite'): objective['text'] += ' This is an elite. Bring a group.'
+                objectives.append(objective)
+        else:
+            label, _, sources = next(iter(item_sources.values()), (None, None, []))
+            object_source = next((p for p in sources if p.get('type') == 2), None)
+            if object_source:
+                text = f'Collect {label} from the marked object.'
+                pin = point_route(object_source)
+            else:
+                pin = next((point_route(p) for p in work if point_route(p)), None)
+                hostile = [p for p in work if p.get('type') == 1 and
+                           (p.get('reactalliance') == -1 if faction == 'Alliance' else p.get('reacthorde') == -1)]
+                if hostile and not re.search(r'(?i)\b(kill|slay|defeat|collect|gather)\b', text):
+                    p = hostile[0]
+                    text = f'Defeat {p["name"]}' + (f' and loot the {p["item"]}.' if p.get('item') else ' until the quest log marks the objective complete.') + ' ' + text
+            if facts.get('elite'): text += ' This is an elite. Bring a group.'
+            objective = action('objective', text, pin, {'quest': {'id': q, 'state': 'complete'}})
+            objective['dependsOn'] = [accept['id']]
+            if not pin:
+                objective['useClientPin'] = True
+                objective['text'] += ' Follow the quest log for the destination.'
+            objectives.append(objective)
     turnin = action('turnin', f'Turn in {name} to {end["name"]}.', point_route(end),
                     {'quest': {'id': q, 'state': 'completed'}})
-    turnin['dependsOn'] = [objective['id'] if objective else accept['id']]
+    turnin['dependsOn'] = [objective['id'] for objective in objectives] or [accept['id']]
     checkpoint = {'id': prefix + '-level', 'kind': 'note', 'checkpointQuest': q,
                   'text': f'Reach level {facts["offer"]} before this visit.',
                   'conditions': {'all': [c for c in copy.deepcopy(conditions) if 'level' not in c]},
@@ -139,7 +181,7 @@ def build_actions(facts, faction):
     if exclusion: checkpoint['excludeWhen'] = {'any': copy.deepcopy(exclusion)}
     if facts.get('breadcrumbForQuestId'): checkpoint['alternativeQuests'] = [facts['breadcrumbForQuestId']]
     accept['dependsOn'] = [checkpoint['id']]
-    return [checkpoint, accept] + ([objective] if objective else []) + [turnin]
+    return [checkpoint, accept] + objectives + [turnin]
 
 
 def upstream_actions(upstream, faction, zone):
@@ -247,6 +289,20 @@ def prepare(zone_spec, database, upstream, snapshot):
                  and faction_of(g.get('conditions')) in (None, faction)}
         wanted = set()
         for q in sorted(candidates):
+            if q in UNRESOLVED_MECHANICS:
+                f = facts.get(q, {})
+                entry = {'catalogs': catalogs.get(q, []), 'evidence': f.get('evidence', {}),
+                         'sourceRevisions': f.get('sourceRevisions', {}), 'locations': f.get('points', []),
+                         'supporting': False}
+                entry.update(status='unresolved', reason=UNRESOLVED_MECHANICS[q])
+                audit['quests'][str(q)] = entry
+                if q in known:
+                    obsolete = {g['id'] for g in current_goals if quest_id(g) == q
+                                and not g.get('sourceGuide')
+                                and faction_of(g.get('conditions')) in (None, faction)}
+                    removed.update(obsolete)
+                    current_goals = [g for g in current_goals if g['id'] not in obsolete]
+                continue
             if q in known: continue
             f = facts.get(q)
             if not f: continue

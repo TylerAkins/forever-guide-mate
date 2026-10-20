@@ -261,6 +261,12 @@ M.SameTitleQuestChains = {
     [5056] = 5055,
     [5121] = 5087,
     [975] = 969,
+    [1126] = 1125,
+    [8282] = 8278,
+    [8306] = 8304,
+    [8310] = 8304,
+    [8321] = 8320,
+    [8323] = 8279,
     [2976] = 2974,
     [2980] = 2975,
     [3368] = 3367,
@@ -307,6 +313,10 @@ M.SameTitleQuestChains = {
     [6389] = 5904,
     [6390] = 5902,
     [7383] = 933,
+}
+
+M.UnresolvedSameTitleQuestChains = {
+    [1126] = "Tower hive trigger instructions are not supported by the frozen local observations.",
 }
 
 -- Forever quests woven into starter routes that unlock after a spine turn-in.

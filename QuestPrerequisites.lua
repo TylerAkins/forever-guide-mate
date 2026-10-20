@@ -1240,3 +1240,11 @@ ns:RegisterQuestPrerequisite({ quest = 5055, mode = "any", quests = { 5054 } })
 ns:RegisterQuestPrerequisite({ quest = 5056, mode = "any", quests = { 5055 } })
 ns:RegisterQuestPrerequisite({ quest = 5121, mode = "any", quests = { 5087 } })
 ns:RegisterQuestPrerequisite({ quest = 975, mode = "any", quests = { 969 } })
+
+-- Silithus handoffs from the frozen QuestieDB observations.
+ns:RegisterQuestPrerequisite({ quest = 1126, mode = "any", quests = { 1125 } })
+ns:RegisterQuestPrerequisite({ quest = 8282, mode = "any", quests = { 8278 } })
+ns:RegisterQuestPrerequisite({ quest = 8306, mode = "any", quests = { 8304 } })
+ns:RegisterQuestPrerequisite({ quest = 8310, mode = "any", quests = { 8304 } })
+ns:RegisterQuestPrerequisite({ quest = 8321, mode = "any", quests = { 8320 } })
+ns:RegisterQuestPrerequisite({ quest = 8323, mode = "any", quests = { 8279 } })

@@ -180495,5 +180495,1921 @@
         ]
       }
     ]
+  },
+  "loremaster-silithus": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ungoro-crater-part-2",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-level-before-accept-1047-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-1047-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-1047-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1015-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Crier Goodman"
+        ],
+        "actions": [
+          "alliance-extra-1015-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1019-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Courier Hammerfall"
+        ],
+        "actions": [
+          "alliance-extra-1019-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1015-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-extra-1015-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1019-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-extra-1019-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-6761-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1457,
+          "Mathrengyl Bearwalker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-6761-the-new-frontier",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-6762-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-western-and-eastern-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          108,
+          1455,
+          "Cenarion Emissary Jademoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-8275-taking-back-silithus"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring",
+          "alliance-leveling-era-alliance-winterspring-level-before-turnin-6762-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-6762-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-level-before-accept-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-accept-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8283-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Wanted Poster: Deathclasp"
+        ],
+        "actions": [
+          "alliance-extra-8283-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Deathclasp"
+        ],
+        "actions": [
+          "alliance-extra-8283-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Vish Kozus"
+        ],
+        "actions": [
+          "alliance-extra-8283-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-silithus",
+          "alliance-leveling-era-alliance-silithus-level-before-turnin-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1451,
+          "Layo Starstrike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-1124-wasteland",
+          "alliance-leveling-era-alliance-silithus-accept-1125-the-spirits-of-southwind"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1451,
+          "Beetix Ficklespragg"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-accept-8277-deadly-desert-venom"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-level-before-turnin-8275-taking-back-silithus"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1451,
+          "Windcaller Proudhorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8275-taking-back-silithus",
+          "alliance-leveling-era-alliance-silithus-accept-8280-securing-the-supply-lines"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1451,
+          "Geologist Larksbane"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-accept-8284-the-twilight-mystery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8320-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Huum Wildmane"
+        ],
+        "actions": [
+          "alliance-extra-8320-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-level-before-accept-8318-secret-communication"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1451,
+          "Bor Wildmane"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-accept-8318-secret-communication"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-level-before-accept-8304-dearest-natalia"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-accept-8304-dearest-natalia"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1451,
+          "Tortured Druid"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-1125-1-tortured-druid"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1451,
+          "Tortured Sentinel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-1125-2-tortured-sentinel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-9415-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Rifleman Torrig"
+        ],
+        "actions": [
+          "alliance-extra-9415-accept"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-accept-8308-brann-bronzebeard-s-lost-letter"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1451,
+          "Layo Starstrike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-1125-the-spirits-of-southwind"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1451,
+          "Stonelash Scorpid Stinger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8277-1-stonelash-scorpid-stinger"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1451,
+          "Sand Skitterer Fang"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8277-2-sand-skitterer-fang"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1451,
+          "Dredge Striker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8280-1-dredge-striker"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Twilight Geolord"
+        ],
+        "actions": [
+          "alliance-extra-8320-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Huum Wildmane"
+        ],
+        "actions": [
+          "alliance-extra-8320-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8321-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Huum Wildmane"
+        ],
+        "actions": [
+          "alliance-extra-8321-accept"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1451,
+          "Beetix Ficklespragg"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8277-deadly-desert-venom",
+          "alliance-leveling-era-alliance-silithus-accept-8278-noggle-s-last-hope"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1451,
+          "Windcaller Proudhorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8280-securing-the-supply-lines",
+          "alliance-leveling-era-alliance-silithus-accept-8281-stepping-up-security"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1451,
+          "Twilight Tablet Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8284-1-twilight-tablet-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1451,
+          "Geologist Larksbane"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8284-the-twilight-mystery",
+          "alliance-leveling-era-alliance-silithus-accept-8285-the-deserter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Vyral the Vile"
+        ],
+        "actions": [
+          "alliance-extra-8321-objective"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1451,
+          "Hermit Ortell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8285-the-deserter",
+          "alliance-leveling-era-alliance-silithus-accept-8279-the-twilight-lexicon"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Huum Wildmane"
+        ],
+        "actions": [
+          "alliance-extra-8321-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1451,
+          "Twilight Keeper Exeter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8279-2-twilight-keeper-exeter"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1451,
+          "Stonelash Flayer Stinger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8278-1-stonelash-flayer-stinger"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1451,
+          "Rock Stalker Fang"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8278-3-rock-stalker-fang"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1451,
+          "Twilight Keeper Havunth"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8279-3-twilight-keeper-havunth"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1451,
+          "Twilight Keeper Mayna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8279-1-twilight-keeper-mayna"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1451,
+          "Encrypted Twilight Text"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8318-1-encrypted-twilight-text"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1451,
+          "Hermit Ortell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8279-the-twilight-lexicon",
+          "alliance-leveling-era-alliance-silithus-accept-8287-a-terrible-purpose"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1451,
+          "Stonelash Pincer Stinger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8278-2-stonelash-pincer-stinger"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1451,
+          "Dredge Crusher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8281-1-dredge-crusher"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1451,
+          "Windcaller Proudhorn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8281-stepping-up-security"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1451,
+          "Beetix Ficklespragg"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8278-noggle-s-last-hope"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8282-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Noggle Ficklespragg"
+        ],
+        "actions": [
+          "alliance-extra-8282-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Noggle's Satchel"
+        ],
+        "actions": [
+          "alliance-extra-8282-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8323-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hermit Ortell"
+        ],
+        "actions": [
+          "alliance-extra-8323-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Noggle Ficklespragg"
+        ],
+        "actions": [
+          "alliance-extra-8282-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8287-a-terrible-purpose"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Twilight Avenger"
+        ],
+        "actions": [
+          "alliance-extra-8323-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hermit Ortell"
+        ],
+        "actions": [
+          "alliance-extra-8323-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1451,
+          "Rutgar Glyphshaper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8304-question-2"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1451,
+          "Frankal Stonebridge"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-8304-question-1"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8304-dearest-natalia"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1451,
+          "Bor Wildmane"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-8318-secret-communication"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8306-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "alliance-extra-8306-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Mistress Natalia Mar'alith"
+        ],
+        "actions": [
+          "alliance-extra-8306-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "alliance-extra-8306-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8800-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Windcaller Kaldon"
+        ],
+        "actions": [
+          "alliance-extra-8800-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8800-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Vargus"
+        ],
+        "actions": [
+          "alliance-extra-8800-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-9415-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Marshal Bluewall"
+        ],
+        "actions": [
+          "alliance-extra-9415-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-8310-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Frankal Stonebridge"
+        ],
+        "actions": [
+          "alliance-extra-8310-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hive'Ashi Stinger"
+        ],
+        "actions": [
+          "alliance-extra-8310-objective-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hive'Zora Waywatcher"
+        ],
+        "actions": [
+          "alliance-extra-8310-objective-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hive'Regal Ambusher"
+        ],
+        "actions": [
+          "alliance-extra-8310-objective-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Frankal Stonebridge"
+        ],
+        "actions": [
+          "alliance-extra-8310-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ungoro-crater",
+          "horde-leveling-era-horde-ungoro-crater-level-before-accept-1000-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-1000-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-1000-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1018-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Warcaller Gorlach"
+        ],
+        "actions": [
+          "horde-extra-1018-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1004-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Harbinger Balthazad"
+        ],
+        "actions": [
+          "horde-extra-1004-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1004-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "horde-extra-1004-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1018-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "horde-extra-1018-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-1123-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-western-and-eastern-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          133,
+          1454,
+          "Cenarion Emissary Blackhoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-8276-taking-back-silithus"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-winterspring",
+          "horde-leveling-era-horde-winterspring-level-before-turnin-1123-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-1123-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-level-before-accept-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-accept-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-silithus",
+          "horde-leveling-era-horde-silithus-level-before-turnin-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1451,
+          "Layo Starstrike"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-1124-wasteland",
+          "horde-leveling-era-horde-silithus-accept-1125-the-spirits-of-southwind"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1451,
+          "Beetix Ficklespragg"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-accept-8277-deadly-desert-venom"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-level-before-turnin-8276-taking-back-silithus"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1451,
+          "Windcaller Proudhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8276-taking-back-silithus",
+          "horde-leveling-era-horde-silithus-accept-8280-securing-the-supply-lines"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1451,
+          "Geologist Larksbane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-accept-8284-the-twilight-mystery"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-level-before-accept-8318-secret-communication"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1451,
+          "Bor Wildmane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-accept-8318-secret-communication"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-level-before-accept-8304-dearest-natalia"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-accept-8304-dearest-natalia"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1451,
+          "Tortured Druid"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-1125-1-tortured-druid"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1451,
+          "Tortured Sentinel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-1125-2-tortured-sentinel"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-accept-8308-brann-bronzebeard-s-lost-letter"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1451,
+          "Layo Starstrike"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-1125-the-spirits-of-southwind"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1451,
+          "Stonelash Scorpid Stinger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8277-1-stonelash-scorpid-stinger"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1451,
+          "Sand Skitterer Fang"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8277-2-sand-skitterer-fang"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1451,
+          "Dredge Striker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8280-1-dredge-striker"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1451,
+          "Beetix Ficklespragg"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8277-deadly-desert-venom",
+          "horde-leveling-era-horde-silithus-accept-8278-noggle-s-last-hope"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1451,
+          "Windcaller Proudhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8280-securing-the-supply-lines",
+          "horde-leveling-era-horde-silithus-accept-8281-stepping-up-security"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1451,
+          "Twilight Tablet Fragment"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8284-1-twilight-tablet-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1451,
+          "Geologist Larksbane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8284-the-twilight-mystery",
+          "horde-leveling-era-horde-silithus-accept-8285-the-deserter"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1451,
+          "Hermit Ortell"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8285-the-deserter",
+          "horde-leveling-era-horde-silithus-accept-8279-the-twilight-lexicon"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1451,
+          "Twilight Keeper Exeter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8279-2-twilight-keeper-exeter"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1451,
+          "Stonelash Flayer Stinger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8278-1-stonelash-flayer-stinger"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1451,
+          "Rock Stalker Fang"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8278-3-rock-stalker-fang"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1451,
+          "Twilight Keeper Havunth"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8279-3-twilight-keeper-havunth"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1451,
+          "Twilight Keeper Mayna"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8279-1-twilight-keeper-mayna"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1451,
+          "Encrypted Twilight Text"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8318-1-encrypted-twilight-text"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1451,
+          "Hermit Ortell"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8279-the-twilight-lexicon",
+          "horde-leveling-era-horde-silithus-accept-8287-a-terrible-purpose"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1451,
+          "Stonelash Pincer Stinger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8278-2-stonelash-pincer-stinger"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1451,
+          "Dredge Crusher"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8281-1-dredge-crusher"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1451,
+          "Windcaller Proudhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8281-stepping-up-security"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1451,
+          "Beetix Ficklespragg"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8278-noggle-s-last-hope"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8287-a-terrible-purpose"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Rutgar-Glyphshaper"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8304-2-authored-Rutgar-Glyphshaper"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Frankal-Stonebridge"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-8304-1-authored-Frankal-Stonebridge"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8304-dearest-natalia"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1451,
+          "Bor Wildmane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-8318-secret-communication"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8283-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Wanted Poster: Deathclasp"
+        ],
+        "actions": [
+          "horde-extra-8283-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Deathclasp"
+        ],
+        "actions": [
+          "horde-extra-8283-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Vish Kozus"
+        ],
+        "actions": [
+          "horde-extra-8283-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8306-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "horde-extra-8306-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Mistress Natalia Mar'alith"
+        ],
+        "actions": [
+          "horde-extra-8306-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Commander Mar'alith"
+        ],
+        "actions": [
+          "horde-extra-8306-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8320-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Huum Wildmane"
+        ],
+        "actions": [
+          "horde-extra-8320-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Twilight Geolord"
+        ],
+        "actions": [
+          "horde-extra-8320-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Huum Wildmane"
+        ],
+        "actions": [
+          "horde-extra-8320-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8321-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Huum Wildmane"
+        ],
+        "actions": [
+          "horde-extra-8321-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Vyral the Vile"
+        ],
+        "actions": [
+          "horde-extra-8321-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Huum Wildmane"
+        ],
+        "actions": [
+          "horde-extra-8321-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8323-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hermit Ortell"
+        ],
+        "actions": [
+          "horde-extra-8323-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Twilight Avenger"
+        ],
+        "actions": [
+          "horde-extra-8323-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hermit Ortell"
+        ],
+        "actions": [
+          "horde-extra-8323-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8800-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Windcaller Kaldon"
+        ],
+        "actions": [
+          "horde-extra-8800-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8800-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Vargus"
+        ],
+        "actions": [
+          "horde-extra-8800-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-9416-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Scout Bloodfist"
+        ],
+        "actions": [
+          "horde-extra-9416-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-9416-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "General Kirika"
+        ],
+        "actions": [
+          "horde-extra-9416-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8282-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Noggle Ficklespragg"
+        ],
+        "actions": [
+          "horde-extra-8282-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Noggle's Satchel"
+        ],
+        "actions": [
+          "horde-extra-8282-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Noggle Ficklespragg"
+        ],
+        "actions": [
+          "horde-extra-8282-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-8310-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Frankal Stonebridge"
+        ],
+        "actions": [
+          "horde-extra-8310-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hive'Ashi Stinger"
+        ],
+        "actions": [
+          "horde-extra-8310-objective-1"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hive'Zora Waywatcher"
+        ],
+        "actions": [
+          "horde-extra-8310-objective-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Hive'Regal Ambusher"
+        ],
+        "actions": [
+          "horde-extra-8310-objective-3"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1451,
+          "Frankal Stonebridge"
+        ],
+        "actions": [
+          "horde-extra-8310-turnin"
+        ]
+      }
+    ]
   }
 }

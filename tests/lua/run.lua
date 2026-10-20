@@ -117,6 +117,7 @@ Load("Guides/Loremaster/Azshara.lua")
 Load("Guides/Loremaster/Felwood.lua")
 Load("Guides/Loremaster/UnGoroCrater.lua")
 Load("Guides/Loremaster/Winterspring.lua")
+Load("Guides/Loremaster/Silithus.lua")
 Load("Guides/Loremaster/ZephrasIsle.lua")
 Load("Guides/Loremaster/TirisfalGlades.lua")
 Load("Guides/Loremaster/Mulgore.lua")
@@ -6720,7 +6721,11 @@ function TestSameTitleQuestChainGates()
         end
     end
     for questID in pairs(chains) do
-        if questID == 166 then
+        local unresolved = guideData.UnresolvedSameTitleQuestChains[questID]
+        if unresolved then
+            Check(type(unresolved) == "string" and #unresolved > 0 and not seen[questID],
+                "unresolved same-title chain " .. questID .. " stays out of routes with its mechanics gap documented")
+        elseif questID == 166 then
             Check(actual.guides["dungeons-the-deadmines"] ~= nil,
                 "the optional Defias dungeon finale stays in the Dungeon library")
         else

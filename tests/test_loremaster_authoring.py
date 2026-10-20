@@ -63,6 +63,47 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertEqual(checkpoint['requiredLevel'], 10)
         self.assertEqual(checkpoint['complete'], {'level': {'min': 10}})
 
+    def test_multiple_items_get_separate_objective_steps_and_visits(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({
+            'wowhead': {'name': 'Brains', 'mapper': {'objectives': {'1377': {'zone': 'Silithus', 'levels': [[
+                {'point': 'start', 'coord': [40, 88], 'name': 'Frankal', 'id': 1},
+                {'point': 'end', 'coord': [40, 88], 'name': 'Frankal', 'id': 1},
+                {'point': 'sourcerequirement', 'coord': [45, 28], 'name': 'Ashi Cache', 'id': 2, 'type': 2, 'item': 'Ashi Brain'},
+                {'point': 'sourcerequirement', 'coord': [26, 55], 'name': 'Zora Waywatcher', 'id': 3, 'type': 1, 'item': 'Zora Brain', 'reacthorde': -1}]]}}}},
+            'questiedb': {'requiredLevel': 10, 'objectives': [None, None, [[100], [200]]],
+                          'objectivesText': ['Recover a Zora Brain and an Ashi Brain.']},
+            'allthethings': {'objectives': {'item': [
+                {'id': 100, 'text': '0/3 Zora Brain'}, {'id': 200, 'text': '0/1 Ashi Brain'}]}}})
+        goals = build_actions(facts, 'Horde')
+        objectives = [g for g in goals if g['kind'] == 'objective']
+        self.assertEqual([g['complete']['questObjective']['text'] for g in objectives], ['Zora Brain', 'Ashi Brain'])
+        self.assertEqual([g['complete']['questObjective']['index'] for g in objectives], [1, 2])
+        self.assertEqual([g['complete']['questObjective']['count'] for g in objectives], [3, 1])
+        self.assertEqual([g['route'][0]['label'] for g in objectives], ['Zora Waywatcher', 'Ashi Cache'])
+        self.assertIn('marked object', objectives[1]['text'])
+        turnin = next(g for g in goals if g['kind'] == 'turnin')
+        self.assertEqual(turnin['dependsOn'], [g['id'] for g in objectives])
+        facts['otherObjectives'] = True
+        with self.assertRaisesRegex(ValueError, 'Mixed collection and non-item objectives'):
+            build_actions(facts, 'Horde')
+
+    def test_item_object_pin_takes_precedence_over_hostile_drop_candidate(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({
+            'wowhead': {'name': 'Lost Satchel', 'mapper': {'objectives': {'1377': {'zone': 'Silithus', 'levels': [[
+                {'point': 'start', 'coord': [51, 38], 'name': 'Noggle', 'id': 1},
+                {'point': 'end', 'coord': [51, 38], 'name': 'Noggle', 'id': 1},
+                {'point': 'sourcerequirement', 'coord': [44, 90], 'name': 'Deathclasp', 'id': 2, 'type': 1, 'item': 'Lost Satchel', 'reacthorde': -1},
+                {'point': 'sourcerequirement', 'coord': [44, 91], 'name': 'Lost Satchel', 'id': 3, 'type': 2, 'item': 'Lost Satchel'}]]}}}},
+            'questiedb': {'requiredLevel': 10, 'objectives': [None, None, [[100]]],
+                          'objectivesText': ['Retrieve the Lost Satchel from the mountains.']},
+            'allthethings': {'objectives': {'item': [{'id': 100, 'text': '0/1 Lost Satchel'}]}}})
+        objective = next(g for g in build_actions(facts, 'Horde') if g['kind'] == 'objective')
+        self.assertEqual(objective['route'][0]['label'], 'Lost Satchel')
+        self.assertIn('marked object', objective['text'])
+        self.assertNotIn('Deathclasp', objective['text'])
+
     def test_source_item_without_wowhead_markup_is_preserved(self):
         facts = self.facts({'questiedb': {'sourceItemId': 2794}})
         self.assertEqual(facts['item'], {'id': 2794, 'name': None})

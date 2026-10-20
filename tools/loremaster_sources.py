@@ -31,11 +31,22 @@ def quest_facts(quest_id, attributes):
     flags = choose('flags', default={})
     objectives = choose('objectives', default=[])
     items = (objectives[2] or []) if isinstance(objectives, list) and len(objectives) > 2 else []
+    other_objectives = any(objectives[index] for index in (0, 1)
+                           if isinstance(objectives, list) and len(objectives) > index)
     if isinstance(objectives, dict): items = objectives.get('item', [])
     objective_items = []
     for row in items:
         item = row.get('id') if isinstance(row, dict) else row[0] if isinstance(row, list) and row else None
         if isinstance(item, int) and item not in objective_items: objective_items.append(item)
+    item_objectives = observed['allthethings'].get('objectives', {}).get('item', [])
+    objective_labels = {}
+    objective_counts = {}
+    for row in item_objectives:
+        if not isinstance(row, dict) or not isinstance(row.get('id'), int): continue
+        label = re.sub(r'^\s*\d+\s*/\s*\d+\s+', '', row.get('text', '')).strip()
+        if label: objective_labels[row['id']] = label
+        count = re.match(r'^\s*\d+\s*/\s*(\d+)\s+', row.get('text', ''))
+        if count: objective_counts[row['id']] = int(count[1])
     requirements, unresolved = [], []
     for source in SOURCE_PRIORITY:
         values = observed[source]
@@ -103,6 +114,9 @@ def quest_facts(quest_id, attributes):
             'elite': catalog.get('list', {}).get('type') == 1,
             'requirements': requirements, 'unresolved': unresolved,
             'objectivesText': choose('objectivesText', default=[]), 'objectiveItems': objective_items,
+            'objectiveLabels': [objective_labels.get(item) for item in objective_items],
+            'objectiveCounts': [objective_counts.get(item) for item in objective_items],
+            'otherObjectives': other_objectives,
             'points': points, 'startPins': wh.get('startPins', []),
             'zoneId': wh.get('zoneId'), 'questieZone': observed['questiedb'].get('zoneOrSort'),
             'forever': forever, 'firstseenpatch': firstseen,
