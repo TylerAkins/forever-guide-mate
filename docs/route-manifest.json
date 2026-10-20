@@ -128676,12 +128676,72 @@
           null
         ],
         "actions": [
-          "level-before-accept-109-report-to-gryan-stoutmantle"
+          "level-before-loot-starter-before-accept-184-furlbrow-s-deed"
         ]
       },
       {
         "boundary": [
           null,
+          1429,
+          "Defias Bandit"
+        ],
+        "actions": [
+          "loot-starter-before-connector-accept-184-furlbrow-s-deed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "connector-accept-184-furlbrow-s-deed"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1436,
+          "Farmer Furlbrow"
+        ],
+        "actions": [
+          "turnin-184-furlbrow-s-deed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-64-the-forgotten-heirloom"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1436,
+          "Farmer Furlbrow"
+        ],
+        "actions": [
+          "accept-64-the-forgotten-heirloom"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-109-report-to-gryan-stoutmantle"
+        ]
+      },
+      {
+        "boundary": [
+          107,
           1429,
           "Guard Thomas"
         ],
@@ -128692,6 +128752,116 @@
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-36-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          133,
+          1436,
+          "Verna Furlbrow"
+        ],
+        "actions": [
+          "accept-36-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-151-poor-old-blanchy"
+        ]
+      },
+      {
+        "boundary": [
+          133,
+          1436,
+          "Verna Furlbrow"
+        ],
+        "actions": [
+          "accept-151-poor-old-blanchy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-9-the-killing-fields"
+        ]
+      },
+      {
+        "boundary": [
+          134,
+          1436,
+          "Farmer Saldean"
+        ],
+        "actions": [
+          "accept-9-the-killing-fields"
+        ]
+      },
+      {
+        "boundary": [
+          135,
+          1436,
+          "Salma Saldean"
+        ],
+        "actions": [
+          "turnin-36-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-38-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          135,
+          1436,
+          "Salma Saldean"
+        ],
+        "actions": [
+          "accept-38-westfall-stew"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-22-goretusk-liver-pie"
+        ]
+      },
+      {
+        "boundary": [
+          135,
+          1436,
+          "Salma Saldean"
+        ],
+        "actions": [
+          "accept-22-goretusk-liver-pie"
+        ]
+      },
+      {
+        "boundary": [
+          136,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -128722,16 +128892,6 @@
       {
         "boundary": [
           null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-loot-starter-before-accept-184-furlbrow-s-deed"
-        ]
-      },
-      {
-        "boundary": [
-          null,
           1429,
           "Defias Bandit"
         ],
@@ -128741,152 +128901,12 @@
       },
       {
         "boundary": [
-          null,
+          110,
           null,
           null
         ],
         "actions": [
           "accept-184-furlbrow-s-deed"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
-          "Farmer Furlbrow"
-        ],
-        "actions": [
-          "turnin-184-furlbrow-s-deed"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-64-the-forgotten-heirloom"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
-          "Farmer Furlbrow"
-        ],
-        "actions": [
-          "accept-64-the-forgotten-heirloom"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-36-westfall-stew"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
-          "Verna Furlbrow"
-        ],
-        "actions": [
-          "accept-36-westfall-stew"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-151-poor-old-blanchy"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
-          "Verna Furlbrow"
-        ],
-        "actions": [
-          "accept-151-poor-old-blanchy"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-9-the-killing-fields"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
-          "Farmer Saldean"
-        ],
-        "actions": [
-          "accept-9-the-killing-fields"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
-          "Salma Saldean"
-        ],
-        "actions": [
-          "turnin-36-westfall-stew"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-38-westfall-stew"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
-          "Salma Saldean"
-        ],
-        "actions": [
-          "accept-38-westfall-stew"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-22-goretusk-liver-pie"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1436,
-          "Salma Saldean"
-        ],
-        "actions": [
-          "accept-22-goretusk-liver-pie"
         ]
       },
       {
@@ -128901,7 +128921,7 @@
       },
       {
         "boundary": [
-          null,
+          136,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -128921,7 +128941,7 @@
       },
       {
         "boundary": [
-          null,
+          137,
           1436,
           "Captain Danuvin"
         ],
@@ -128941,7 +128961,7 @@
       },
       {
         "boundary": [
-          null,
+          138,
           1436,
           "Quartermaster Lewis"
         ],
@@ -128951,7 +128971,7 @@
       },
       {
         "boundary": [
-          null,
+          140,
           1436,
           "Thor"
         ],
@@ -128971,7 +128991,7 @@
       },
       {
         "boundary": [
-          null,
+          140,
           1436,
           "Thor"
         ],
@@ -128981,7 +129001,7 @@
       },
       {
         "boundary": [
-          null,
+          152,
           1453,
           "Osric Strang"
         ],
@@ -129001,7 +129021,7 @@
       },
       {
         "boundary": [
-          null,
+          152,
           1453,
           "Osric Strang"
         ],
@@ -129011,7 +129031,7 @@
       },
       {
         "boundary": [
-          null,
+          229,
           1453,
           "Dungar Longdrink"
         ],
@@ -129031,7 +129051,7 @@
       },
       {
         "boundary": [
-          null,
+          229,
           1453,
           "Dungar Longdrink"
         ],
@@ -129041,7 +129061,7 @@
       },
       {
         "boundary": [
-          null,
+          230,
           1436,
           "Quartermaster Lewis"
         ],
@@ -129056,33 +129076,13 @@
           null
         ],
         "actions": [
-          "visit-before-loot-starter-before-connector-accept-184-furlbrow-s-deed"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1429,
-          "Defias Bandit"
-        ],
-        "actions": [
-          "loot-starter-before-connector-accept-184-furlbrow-s-deed"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "connector-accept-184-furlbrow-s-deed",
+          "visit-before-loot-starter-before-connector-accept-184-furlbrow-s-deed",
           "level-before-accept-153-red-leather-bandanas"
         ]
       },
       {
         "boundary": [
-          null,
+          8,
           1436,
           "Scout Galiaan"
         ],
@@ -129092,18 +129092,27 @@
       },
       {
         "boundary": [
-          null,
+          9,
           1436,
           "Defias Trapper"
         ],
         "actions": [
-          "objective-153-1-defias-trapper",
+          "objective-153-1-defias-trapper"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1436,
+          "Defias Trapper"
+        ],
+        "actions": [
           "objective-12-1-defias-trapper"
         ]
       },
       {
         "boundary": [
-          null,
+          10,
           1436,
           "Defias Smuggler"
         ],
@@ -129113,7 +129122,7 @@
       },
       {
         "boundary": [
-          null,
+          12,
           1436,
           "Furlbrow's Wardrobe"
         ],
@@ -129123,7 +129132,7 @@
       },
       {
         "boundary": [
-          null,
+          13,
           1436,
           "Riverpaw Gnoll"
         ],
@@ -129133,7 +129142,7 @@
       },
       {
         "boundary": [
-          null,
+          14,
           1436,
           "Murloc Raider"
         ],
@@ -129143,7 +129152,7 @@
       },
       {
         "boundary": [
-          null,
+          15,
           1436,
           "Handful of Oats"
         ],
@@ -129153,7 +129162,7 @@
       },
       {
         "boundary": [
-          null,
+          16,
           1436,
           "Farmer Furlbrow"
         ],
@@ -129163,7 +129172,7 @@
       },
       {
         "boundary": [
-          null,
+          17,
           1436,
           "Verna Furlbrow"
         ],
@@ -129173,29 +129182,47 @@
       },
       {
         "boundary": [
-          null,
+          22,
+          1436,
+          "Goretusk Liver"
+        ],
+        "actions": [
+          "objective-22-1-goretusk-liver"
+        ]
+      },
+      {
+        "boundary": [
+          18,
           1436,
           "Salma Saldean"
         ],
         "actions": [
-          "objective-22-1-goretusk-liver",
           "turnin-22-goretusk-liver-pie"
         ]
       },
       {
         "boundary": [
-          null,
+          19,
           1436,
           "Harvest Watcher"
         ],
         "actions": [
-          "objective-38-4-harvest-watcher",
+          "objective-38-4-harvest-watcher"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1436,
+          "Harvest Watcher"
+        ],
+        "actions": [
           "objective-9-1-harvest-watcher"
         ]
       },
       {
         "boundary": [
-          null,
+          21,
           1436,
           "Stringy Vulture Meat"
         ],
@@ -129205,7 +129232,7 @@
       },
       {
         "boundary": [
-          null,
+          22,
           1436,
           "Goretusk Snout"
         ],
@@ -129215,7 +129242,7 @@
       },
       {
         "boundary": [
-          null,
+          24,
           1436,
           "Farmer Saldean"
         ],
@@ -129225,7 +129252,7 @@
       },
       {
         "boundary": [
-          null,
+          25,
           1436,
           "Salma Saldean"
         ],
@@ -129235,7 +129262,7 @@
       },
       {
         "boundary": [
-          null,
+          26,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -129255,7 +129282,7 @@
       },
       {
         "boundary": [
-          null,
+          26,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -129265,7 +129292,7 @@
       },
       {
         "boundary": [
-          null,
+          27,
           1436,
           "Captain Danuvin"
         ],
@@ -129275,7 +129302,7 @@
       },
       {
         "boundary": [
-          null,
+          28,
           1436,
           "Scout Galiaan"
         ],
@@ -130043,7 +130070,7 @@
       },
       {
         "boundary": [
-          null,
+          9,
           1433,
           "Wiley the Black"
         ],
@@ -130063,7 +130090,7 @@
       },
       {
         "boundary": [
-          null,
+          9,
           1433,
           "Wiley the Black"
         ],
@@ -130073,7 +130100,7 @@
       },
       {
         "boundary": [
-          null,
+          14,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -130093,7 +130120,7 @@
       },
       {
         "boundary": [
-          null,
+          14,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -130103,7 +130130,7 @@
       },
       {
         "boundary": [
-          null,
+          16,
           1453,
           "Master Mathias Shaw"
         ],
@@ -130123,7 +130150,7 @@
       },
       {
         "boundary": [
-          null,
+          16,
           1453,
           "Master Mathias Shaw"
         ],
@@ -130133,7 +130160,7 @@
       },
       {
         "boundary": [
-          null,
+          17,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -130153,7 +130180,7 @@
       },
       {
         "boundary": [
-          null,
+          17,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -130183,7 +130210,7 @@
       },
       {
         "boundary": [
-          null,
+          19,
           null,
           null
         ],
@@ -130193,7 +130220,7 @@
       },
       {
         "boundary": [
-          null,
+          20,
           1436,
           "Captain Grayson"
         ],
@@ -130253,18 +130280,27 @@
       },
       {
         "boundary": [
-          null,
+          20,
           1436,
           "Captain Grayson"
         ],
         "actions": [
-          "accept-104-the-coastal-menace",
+          "accept-104-the-coastal-menace"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1436,
+          "Captain Grayson"
+        ],
+        "actions": [
           "turnin-103-keeper-of-the-flame"
         ]
       },
       {
         "boundary": [
-          null,
+          22,
           1436,
           "Old Murk-Eye"
         ],
@@ -130274,7 +130310,7 @@
       },
       {
         "boundary": [
-          null,
+          23,
           1436,
           "Captain Grayson"
         ],
@@ -130284,7 +130320,7 @@
       },
       {
         "boundary": [
-          null,
+          24,
           1436,
           "Gryan Stoutmantle"
         ],
@@ -130304,7 +130340,7 @@
       },
       {
         "boundary": [
-          null,
+          25,
           1436,
           "The Defias Traitor"
         ],
@@ -130314,7 +130350,7 @@
       },
       {
         "boundary": [
-          null,
+          26,
           1436,
           "Escort destination"
         ],
@@ -130324,7 +130360,7 @@
       },
       {
         "boundary": [
-          null,
+          27,
           1436,
           "Gryan Stoutmantle"
         ],

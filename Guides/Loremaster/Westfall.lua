@@ -9,61 +9,9 @@ ns:RegisterGuide({
     revision = 1,
     routeMode = "ordered",
     goals = {
-        { id = "level-before-accept-109-report-to-gryan-stoutmantle", kind = "note", checkpointQuest = 109, text = "Reach level 9 before this visit.", conditions = { all = { { faction = "Alliance" }, } }, complete = { level = { min = 9 } }, requiredLevel = 9 },
-        {
-            route = {
-                { y = 0.7218, mapID = 1429, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest.", x = 0.7397 },
-            },
-            text = "Accept Report to Gryan Stoutmantle from Guard Thomas.",
-            id = "accept-109-report-to-gryan-stoutmantle",
-            kind = "accept",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 9 } } } },
-            complete = {
-                quest = { id = 109, state = "activeOrCompleted" },
-            },
-            sourceStep = 107,
-            requiredQuests = {  },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {  },
-        },
-        {
-            text = "Turn in Report to Gryan Stoutmantle to Gryan Stoutmantle.",
-            route = {
-                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
-            },
-            dependsOn = { "accept-109-report-to-gryan-stoutmantle" },
-            id = "turnin-109-report-to-gryan-stoutmantle",
-            kind = "turnin",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 9 } } } },
-            complete = {
-                quest = { id = 109, state = "completed" },
-            },
-            sourceStep = 136,
-            requiredQuests = {  },
-            useClientText = false,
-            useClientPin = false,
-        },
-        { id = "level-before-accept-journey-to-sentinel-hill", kind = "note", checkpointQuest = 98021, text = "Reach level 7 before this visit.", conditions = { all = { { faction = "Alliance" }, { race = { 95 } }, } }, complete = { level = { min = 7 } }, requiredLevel = 7 },
-        {
-            text = "Accept Journey to Sentinel Hill from Bolvar Fordragon. Westfall turns this in at Sentinel Hill.",
-            route = {
-                { y = 0.384, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.801 },
-            },
-            dependsOn = {  },
-            id = "accept-journey-to-sentinel-hill",
-            kind = "accept",
-            conditions = { all = { { faction = "Alliance" }, { race = { 95 } }, { level = { min = 7 } } } },
-            complete = {
-                quest = { id = 98021, state = "activeOrCompleted" },
-            },
-            requiredQuests = { { mode = "all", quests = { 109 }, conditions = {  } } },
-            useClientText = false,
-            useClientPin = false,
-        },
         { id = "level-before-loot-starter-before-accept-184-furlbrow-s-deed", kind = "note", checkpointQuest = 184, text = "Reach level 8 before this visit.", conditions = { all = { { faction = "Alliance" }, } }, complete = { level = { min = 8 } }, requiredLevel = 8 , excludeWhen = { ["not"] = { any = { { item = "Westfall Deed" }, { quest = { id = 184, state = "activeOrCompleted" } } } } } },
         {
-            id = "loot-starter-before-accept-184-furlbrow-s-deed",
+            id = "loot-starter-before-connector-accept-184-furlbrow-s-deed",
             kind = "note",
             instructionOnly = true,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 8 } } } },
@@ -88,13 +36,12 @@ ns:RegisterGuide({
         excludeWhen = { ["not"] = { any = { { item = "Westfall Deed" }, { quest = { id = 184, state = "activeOrCompleted" } } } } }, },
         {
             text = "Use the Westfall Deed to accept Furlbrow's Deed.",
-            id = "accept-184-furlbrow-s-deed",
+            id = "connector-accept-184-furlbrow-s-deed",
             kind = "accept",
             conditions = { all = { { faction = "Alliance" }, { level = { min = 8 } } } },
             complete = {
                 quest = { id = 184, state = "activeOrCompleted" },
             },
-            sourceStep = 110,
             requiredQuests = {  },
             useClientText = false,
             useClientPin = false,
@@ -130,6 +77,24 @@ ns:RegisterGuide({
                 quest = { id = 64, state = "activeOrCompleted" },
             },
             sourceStep = 132,
+            requiredQuests = {  },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        { id = "level-before-accept-109-report-to-gryan-stoutmantle", kind = "note", checkpointQuest = 109, text = "Reach level 9 before this visit.", conditions = { all = { { faction = "Alliance" }, } }, complete = { level = { min = 9 } }, requiredLevel = 9 },
+        {
+            route = {
+                { y = 0.7218, mapID = 1429, label = "Guard Thomas", offMapText = "Travel to Guard Thomas in Elwynn Forest.", x = 0.7397 },
+            },
+            text = "Accept Report to Gryan Stoutmantle from Guard Thomas.",
+            id = "accept-109-report-to-gryan-stoutmantle",
+            kind = "accept",
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 9 } } } },
+            complete = {
+                quest = { id = 109, state = "activeOrCompleted" },
+            },
+            sourceStep = 107,
             requiredQuests = {  },
             useClientText = false,
             useClientPin = false,
@@ -242,6 +207,78 @@ ns:RegisterGuide({
             useClientPin = false,
             dependsOn = {  },
         },
+        {
+            text = "Turn in Report to Gryan Stoutmantle to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "accept-109-report-to-gryan-stoutmantle" },
+            id = "turnin-109-report-to-gryan-stoutmantle",
+            kind = "turnin",
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 9 } } } },
+            complete = {
+                quest = { id = 109, state = "completed" },
+            },
+            sourceStep = 136,
+            requiredQuests = {  },
+            useClientText = false,
+            useClientPin = false,
+        },
+        { id = "level-before-accept-journey-to-sentinel-hill", kind = "note", checkpointQuest = 98021, text = "Reach level 7 before this visit.", conditions = { all = { { faction = "Alliance" }, { race = { 95 } }, } }, complete = { level = { min = 7 } }, requiredLevel = 7 },
+        {
+            text = "Accept Journey to Sentinel Hill from Bolvar Fordragon. Westfall turns this in at Sentinel Hill.",
+            route = {
+                { y = 0.384, mapID = 1453, label = "Highlord Bolvar Fordragon", offMapText = "Travel to Stormwind Keep.", x = 0.801 },
+            },
+            dependsOn = {  },
+            id = "accept-journey-to-sentinel-hill",
+            kind = "accept",
+            conditions = { all = { { faction = "Alliance" }, { race = { 95 } }, { level = { min = 7 } } } },
+            complete = {
+                quest = { id = 98021, state = "activeOrCompleted" },
+            },
+            requiredQuests = { { mode = "all", quests = { 109 }, conditions = {  } } },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            id = "loot-starter-before-accept-184-furlbrow-s-deed",
+            kind = "note",
+            instructionOnly = true,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 8 } } } },
+            text = "Loot Westfall Deed from Defias Bandit, Defias Rogue Wizard, Surena Caledon. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Westfall Deed", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 184, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {  },
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1429, x = 0.3406, y = 0.5559000000000001, label = "Defias Bandit", offMapText = "Travel to Defias Bandit." },
+            },
+            dependsOn = {  },
+        excludeWhen = { ["not"] = { any = { { item = "Westfall Deed" }, { quest = { id = 184, state = "activeOrCompleted" } } } } }, },
+        {
+            text = "Use the Westfall Deed to accept Furlbrow's Deed.",
+            id = "accept-184-furlbrow-s-deed",
+            kind = "accept",
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 8 } } } },
+            complete = {
+                quest = { id = 184, state = "activeOrCompleted" },
+            },
+            sourceStep = 110,
+            requiredQuests = {  },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        excludeWhen = { ["not"] = { any = { { item = "Westfall Deed" }, { quest = { id = 184, state = "activeOrCompleted" } } } } }, },
         { id = "level-before-accept-12-the-people-s-militia", kind = "note", checkpointQuest = 12, text = "Reach level 9 before this visit.", conditions = { all = { { faction = "Alliance" }, } }, complete = { level = { min = 9 } }, requiredLevel = 9 },
         {
             route = {
@@ -419,43 +456,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         { id = "visit-before-loot-starter-before-connector-accept-184-furlbrow-s-deed", kind = "note", checkpointQuest = 184, text = "Return for this visit at level 9.", conditions = { all = { { faction = "Alliance" }, } }, complete = { level = { min = 9 } }, requiredLevel = 9 , excludeWhen = { ["not"] = { any = { { item = "Westfall Deed" }, { quest = { id = 184, state = "activeOrCompleted" } } } } } },
-        {
-            id = "loot-starter-before-connector-accept-184-furlbrow-s-deed",
-            kind = "note",
-            instructionOnly = true,
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 8 } } } },
-            text = "Loot Westfall Deed from Defias Bandit, Defias Rogue Wizard, Surena Caledon. Keep it for the next pickup.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Westfall Deed", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 184, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {  },
-            useClientText = false,
-            useClientPin = false,
-            route = {
-                { mapID = 1429, x = 0.3406, y = 0.5559000000000001, label = "Defias Bandit", offMapText = "Travel to Defias Bandit." },
-            },
-            dependsOn = {  },
-        excludeWhen = { ["not"] = { any = { { item = "Westfall Deed" }, { quest = { id = 184, state = "activeOrCompleted" } } } } }, },
-        {
-            text = "Use the Westfall Deed to accept Furlbrow's Deed.",
-            id = "connector-accept-184-furlbrow-s-deed",
-            kind = "accept",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 8 } } } },
-            complete = {
-                quest = { id = 184, state = "activeOrCompleted" },
-            },
-            requiredQuests = {  },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {  },
-        excludeWhen = { ["not"] = { any = { { item = "Westfall Deed" }, { quest = { id = 184, state = "activeOrCompleted" } } } } }, },
         { id = "level-before-accept-153-red-leather-bandanas", kind = "note", checkpointQuest = 153, text = "Reach level 10 before this visit.", conditions = { all = { { faction = "Alliance" }, } }, complete = { level = { min = 10 } }, requiredLevel = 10 },
         {
             route = {
