@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Desolace",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-desolace-part-2",
@@ -211,37 +211,89 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            route = {
-                { mapID = 1443, x = 0.5257000000000001, y = 0.5438000000000001, label = "Takata Steelblade", offMapText = "Travel to Takata Steelblade in Desolace." },
-            },
-            text = "Accept The Corrupter from Takata Steelblade.",
+            complete = { quest = { id = 1488, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
             id = "accept-1488-the-corrupter",
             kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1484 } } },
+            route = {
+                {
+                    label = "Takata Steelblade",
+                    mapID = 1443,
+                    offMapText = "Travel to Takata Steelblade in Desolace.",
+                    x = 0.5257,
+                    y = 0.5438,
                 },
-            },
-            complete = {
-                quest = { id = 1488, state = "activeOrCompleted" },
             },
             sourceStep = 4,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1484 },
-                    conditions = {},
+            text = "Accept The Corrupter from Takata Steelblade.",
+            useClientPin = false,
+            useClientText = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1488, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1484, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1482, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Horde" },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                                                                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
             text = "Kill Demon Portal Guardian.",
@@ -276,70 +328,162 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Kill Jugkar Grim'rod.",
-            route = {
-                { y = 0.7776, mapID = 1443, label = "Jugkar Grim'rod", offMapText = "Travel to Jugkar Grim'rod.", x = 0.5591 },
-            },
+            complete = { questObjective = { id = 1488, index = 2, text = "Jugkar Grim'rod" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "accept-1488-the-corrupter" },
             id = "objective-1488-2-jugkar-grim-rod",
             kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 1488, text = "Jugkar Grim'rod", index = 2 },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1484 } } },
+            route = {
+                { label = "Jugkar Grim'rod", mapID = 1443, offMapText = "Travel to Jugkar Grim'rod.", x = 0.5591, y = 0.7776 },
             },
             sourceStep = 6,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1484 },
-                    conditions = {},
+            text = "Kill Jugkar Grim'rod.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1488, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1484, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1482, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Horde" },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                                                                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
         },
         {
-            text = "Kill Lord Azrethoc.",
-            route = {
-                { y = 0.7776, mapID = 1443, label = "Lord Azrethoc", offMapText = "Travel to Lord Azrethoc.", x = 0.5602 },
-            },
+            complete = { questObjective = { id = 1488, index = 1, text = "Lord Azrethoc" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "accept-1488-the-corrupter" },
             id = "objective-1488-1-lord-azrethoc",
             kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 1488, text = "Lord Azrethoc", index = 1 },
-            },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1484 } } },
+            route = { { label = "Lord Azrethoc", mapID = 1443, offMapText = "Travel to Lord Azrethoc.", x = 0.5602, y = 0.7776 } },
             sourceStep = 7,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1484 },
-                    conditions = {},
+            text = "Kill Lord Azrethoc.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1488, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1484, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1482, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Horde" },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                                                                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
         },
         {
             text = "Use the Crate of Ghost Magnets beside the large bones in southern Desolace. Kill the Magrami Spectres it attracts and collect 8 Ghost-o-plasm. Pull them away from the magnet before they become hostile.",
@@ -396,37 +540,90 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Turn in The Corrupter to Takata Steelblade.",
-            route = {
-                { mapID = 1443, x = 0.5257000000000001, y = 0.5438000000000001, label = "Takata Steelblade", offMapText = "Travel to Takata Steelblade in Desolace." },
-            },
+            complete = { quest = { id = 1488, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "accept-1488-the-corrupter", "objective-1488-2-jugkar-grim-rod", "objective-1488-1-lord-azrethoc" },
             id = "turnin-1488-the-corrupter",
             kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1484 } } },
+            route = {
+                {
+                    label = "Takata Steelblade",
+                    mapID = 1443,
+                    offMapText = "Travel to Takata Steelblade in Desolace.",
+                    x = 0.5257,
+                    y = 0.5438,
                 },
-            },
-            complete = {
-                quest = { id = 1488, state = "completed" },
             },
             sourceStep = 10,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1484 },
-                    conditions = {},
+            text = "Turn in The Corrupter to Takata Steelblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1488, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1484, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1482, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Horde" },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                                                                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
         },
         {
             text = "Turn in Ghost-o-plasm Round Up to Hornizz Brimbuzzle.",

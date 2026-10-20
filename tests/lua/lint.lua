@@ -102,6 +102,7 @@ for _, path in ipairs({
     "Guides/Loremaster/StonetalonMountains.lua",
     "Guides/Loremaster/Ashenvale.lua",
     "Guides/Loremaster/ThousandNeedles.lua",
+    "Guides/Loremaster/Desolace.lua",
     "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",

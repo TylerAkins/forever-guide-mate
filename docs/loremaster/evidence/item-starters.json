@@ -324,5 +324,32 @@
         }
       }
     }
+  },
+  "20310": {
+    "name": "Flayed Demon Skin",
+    "startQuest": 1480,
+    "drops": [],
+    "sources": {
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Flayed Demon Skin",
+          "npcDrops": [
+            4663,
+            4664,
+            4665,
+            4666,
+            4667,
+            4668,
+            4705,
+            13019
+          ],
+          "relatedQuests": [
+            1480
+          ],
+          "startQuest": 1480
+        }
+      }
+    }
   }
 }

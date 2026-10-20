@@ -26927,7 +26927,7 @@
     ]
   },
   "leveling-era-horde-desolace": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -71302,7 +71302,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 16,
+    "revision": 17,
     "visits": [
       {
         "boundary": [
@@ -94197,7 +94197,7 @@
     ]
   },
   "leveling-era-horde-desolace-part-2": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -166159,6 +166159,2129 @@
         ],
         "actions": [
           "horde-extra-98070-turnin"
+        ]
+      }
+    ]
+  },
+  "loremaster-desolace": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          1455,
+          "Roetten Stonehammer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-1453-reclaimers-business-in-desolace"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-desolace",
+          "alliance-leveling-era-alliance-desolace-level-before-turnin-1453-reclaimers-business-in-desolace"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1443,
+          "Kreldig Ungor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1453-reclaimers-business-in-desolace",
+          "alliance-leveling-era-alliance-desolace-accept-1454-the-karnitol-shipwreck",
+          "alliance-leveling-era-alliance-desolace-accept-1458-reagents-for-reclaimers-inc"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1443,
+          "Corporal Melkins"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-1387-centaur-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1443,
+          "Captain Pentigast"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-1382-strange-alliance"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1443,
+          "Vahlarriel Demonslayer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-1437-vahlarriel-s-search"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1443,
+          "Hatefury Trickster"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1458-1-hatefury-trickster"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1443,
+          "Hatefury Horn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1458-2-hatefury-horn"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1443,
+          "Kreldig Ungor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1458-reagents-for-reclaimers-inc",
+          "alliance-leveling-era-alliance-desolace-accept-1459-reagents-for-reclaimers-inc"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1443,
+          "Vahlarriel's Search"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1437-vahlarriel-s-search",
+          "alliance-leveling-era-alliance-desolace-accept-1465-vahlarriel-s-search"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-level-before-accept-5741-sceptre-of-light"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1443,
+          "Azore Aldamort"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-5741-sceptre-of-light"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1443,
+          "The Karnitol Shipwreck"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1454-the-karnitol-shipwreck",
+          "alliance-leveling-era-alliance-desolace-accept-1455-the-karnitol-shipwreck"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1443,
+          "Claim Rackmore's Treasure!"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-6161-claim-rackmore-s-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1443,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-6161-1-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1443,
+          "Kreldig Ungor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1455-the-karnitol-shipwreck",
+          "alliance-leveling-era-alliance-desolace-accept-1456-the-karnitol-shipwreck"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1443,
+          "Vahlarriel Demonslayer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1465-vahlarriel-s-search",
+          "alliance-leveling-era-alliance-desolace-accept-1438-vahlarriel-s-search"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1443,
+          "Burning Blade Seer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-5741-1-burning-blade-seer"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1443,
+          "Dalinda Malem"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1438-vahlarriel-s-search",
+          "alliance-leveling-era-alliance-desolace-accept-1439-search-for-tyranis"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1443,
+          "Tyranis Malem"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1439-1-tyranis-malem"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1443,
+          "Dalinda Malem"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1439-search-for-tyranis",
+          "alliance-leveling-era-alliance-desolace-accept-1440-return-to-vahlarriel"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1443,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1440-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-level-before-accept-5501-bone-collector"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1443,
+          "Bibbly F'utzbuckle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-5501-bone-collector"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1443,
+          "Magram Outrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1387-1-magram-outrunner"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1443,
+          "Smeed Scrabblescrew"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-5561-kodo-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Kodo Kombobulator"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-5561-1-kodo-kombobulator"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1443,
+          "Smeed Scrabblescrew"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-5561-kodo-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1443,
+          "Aged Kodo Hide"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1459-2-aged-kodo-hide"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1443,
+          "Kodo Bone"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-5501-1-kodo-bone"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1382-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1382-strange-alliance",
+          "alliance-leveling-era-alliance-desolace-accept-1384-raid-on-the-kolkar"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1443,
+          "Corporal Melkins"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1387-centaur-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1443,
+          "Vahlarriel Demonslayer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1440-return-to-vahlarriel"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1443,
+          "Kolkar Ambusher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1384-1-kolkar-ambusher"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1443,
+          "Bibbly F'utzbuckle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-5501-bone-collector"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1443,
+          "Azore Aldamort"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-5741-sceptre-of-light",
+          "alliance-leveling-era-alliance-desolace-accept-6027-book-of-the-ancients"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1443,
+          "Lord Kragaru"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-6027-1-lord-kragaru"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1443,
+          "Karnitol's Satchel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1456-1-karnitol-s-satchel"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1443,
+          "Rackmore's Golden Key"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-6161-2-rackmore-s-golden-key"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1443,
+          "Claim Rackmore's Treasure!"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-6161-claim-rackmore-s-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1443,
+          "Azore Aldamort"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-6027-book-of-the-ancients"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1384-raid-on-the-kolkar",
+          "alliance-leveling-era-alliance-desolace-accept-1370-stealing-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1443,
+          "Sack of Meat"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1370-1-sack-of-meat"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1370-stealing-supplies",
+          "alliance-leveling-era-alliance-desolace-accept-1373-ongeku"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1443,
+          "Kreldig Ungor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1456-the-karnitol-shipwreck",
+          "alliance-leveling-era-alliance-desolace-accept-1457-the-karnitol-shipwreck"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1443,
+          "Scorpashi Venom"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-objective-1459-1-scorpashi-venom"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1443,
+          "Kreldig Ungor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1459-reagents-for-reclaimers-inc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1435,
+          "Ongeku"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1373-1-ongeku"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-6141-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Brother Crowley"
+        ],
+        "actions": [
+          "alliance-extra-6141-accept"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1455,
+          "Roetten Stonehammer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1457-the-karnitol-shipwreck"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-desolace-part-2",
+          "alliance-leveling-era-alliance-desolace-part-2-level-before-accept-261-down-the-scarlet-path",
+          "alliance-extra-6132-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Melizza Brimbuzzle"
+        ],
+        "actions": [
+          "alliance-extra-6132-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-6132-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Hornizz Brimbuzzle"
+        ],
+        "actions": [
+          "alliance-extra-6132-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5943-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Rigger Gizelton"
+        ],
+        "actions": [
+          "alliance-extra-5943-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5943-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Smeed Scrabblescrew"
+        ],
+        "actions": [
+          "alliance-extra-5943-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5821-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Cork Gizelton"
+        ],
+        "actions": [
+          "alliance-extra-5821-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5821-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Smeed Scrabblescrew"
+        ],
+        "actions": [
+          "alliance-extra-5821-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-6141-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Brother Anton"
+        ],
+        "actions": [
+          "alliance-extra-6141-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1443,
+          "Brother Anton"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-accept-261-down-the-scarlet-path"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1443,
+          "Kreldig Ungor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-accept-1466-reagents-for-reclaimers-inc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-level-before-accept-6134-ghost-o-plasm-round-up"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1443,
+          "Hornizz Brimbuzzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-accept-6134-ghost-o-plasm-round-up"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1435,
+          "Draenethyst Shard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-objective-1373-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-turnin-1373-ongeku",
+          "alliance-leveling-era-alliance-desolace-part-2-accept-1374-khan-jehn"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1443,
+          "Doomwarder Captain"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-objective-1466-3-doomwarder-captain"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1443,
+          "Felhound Brain"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-objective-1466-1-felhound-brain"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1443,
+          "Nether Wing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-objective-1466-2-nether-wing"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1443,
+          "Crate of Ghost Magnets"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-objective-6134-1-crate-of-ghost-magnets"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1443,
+          "Undead Ravager"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-objective-261-1-undead-ravager"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1443,
+          "Khan Jehn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-objective-1374-1-khan-jehn"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1443,
+          "Hornizz Brimbuzzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-turnin-6134-ghost-o-plasm-round-up"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-turnin-1374-khan-jehn"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1443,
+          "Brother Anton"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-turnin-261-down-the-scarlet-path",
+          "alliance-leveling-era-alliance-desolace-part-2-accept-1052-down-the-scarlet-path"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1443,
+          "Kreldig Ungor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-turnin-1466-reagents-for-reclaimers-inc",
+          "alliance-leveling-era-alliance-desolace-part-2-accept-1467-reagents-for-reclaimers-inc"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1424,
+          "Raleigh the Devout"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-turnin-1052-down-the-scarlet-path"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-badlands",
+          "alliance-leveling-era-alliance-badlands-level-before-turnin-1467-reagents-for-reclaimers-inc"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1455,
+          "Roetten Stonehammer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-1467-reagents-for-reclaimers-inc"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-79235-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Bibbly F'utzbuckle"
+        ],
+        "actions": [
+          "alliance-extra-79235-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Tokal"
+        ],
+        "actions": [
+          "alliance-extra-79235-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-93224-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Captain Pentigast"
+        ],
+        "actions": [
+          "alliance-extra-93224-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Kolkar Centaur"
+        ],
+        "actions": [
+          "alliance-extra-93224-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Captain Pentigast"
+        ],
+        "actions": [
+          "alliance-extra-93224-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-97284-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Vahlarriel Demonslayer"
+        ],
+        "actions": [
+          "alliance-extra-97284-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Burning Blade Augur"
+        ],
+        "actions": [
+          "alliance-extra-97284-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Vahlarriel Demonslayer"
+        ],
+        "actions": [
+          "alliance-extra-97284-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-thousand-needles",
+          "horde-leveling-era-horde-thousand-needles-level-before-accept-1431-alliance-relations"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1454,
+          "Craven Drok"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-1431-alliance-relations"
+        ]
+      },
+      {
+        "boundary": [
+          83,
+          1454,
+          "Keldran"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-1431-alliance-relations",
+          "horde-leveling-era-horde-thousand-needles-accept-1432-alliance-relations"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-desolace",
+          "horde-leveling-era-horde-desolace-loot-starter-before-accept-1480-the-corrupter",
+          "horde-extra-1361-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Nazgrel"
+        ],
+        "actions": [
+          "horde-extra-1361-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-level-before-accept-1480-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-1480-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-level-before-accept-5741-sceptre-of-light"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1443,
+          "Azore Aldamort"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-5741-sceptre-of-light"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1443,
+          "Takata Steelblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1432-alliance-relations",
+          "horde-leveling-era-horde-desolace-accept-1433-alliance-relations",
+          "horde-leveling-era-horde-desolace-accept-1434-befouled-by-satyr"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1443,
+          "Maurin Bonesplitter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1433-alliance-relations",
+          "horde-leveling-era-horde-desolace-accept-1435-the-burning-of-spirits",
+          "horde-leveling-era-horde-desolace-turnin-1480-the-corrupter",
+          "horde-leveling-era-horde-desolace-accept-1481-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1361-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Regthar Deathgate"
+        ],
+        "actions": [
+          "horde-extra-1361-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1362-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Regthar Deathgate"
+        ],
+        "actions": [
+          "horde-extra-1362-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1362-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Felgur Twocuts"
+        ],
+        "actions": [
+          "horde-extra-1362-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1443,
+          "Felgur Twocuts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-1365-khan-dez-hepah"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1443,
+          "Gurda Wildmane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-1368-gelkis-alliance"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1443,
+          "Khan Dez'hepah"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1365-1-khan-dez-hepah"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1443,
+          "Hatefury Shadowstalker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1481-1-hatefury-shadowstalker"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1443,
+          "Hatefury Rogue"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1434-1-hatefury-rogue"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1443,
+          "Hatefury Felsworn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1434-2-hatefury-felsworn"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1443,
+          "Hatefury Betrayer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1434-3-hatefury-betrayer"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1443,
+          "Hatefury Hellcaller"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1434-4-hatefury-hellcaller"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-level-before-accept-5501-bone-collector"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1443,
+          "Bibbly F'utzbuckle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-5501-bone-collector"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1443,
+          "Takata Steelblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1434-befouled-by-satyr"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1443,
+          "Maurin Bonesplitter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1481-the-corrupter",
+          "horde-leveling-era-horde-desolace-accept-1482-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1443,
+          "Felgur Twocuts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1365-khan-dez-hepah",
+          "horde-leveling-era-horde-desolace-accept-1366-centaur-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1443,
+          "Magram Outrunner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1366-1-magram-outrunner"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1443,
+          "Smeed Scrabblescrew"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-5561-kodo-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Kodo Kombobulator"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-5561-1-kodo-kombobulator"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1443,
+          "Smeed Scrabblescrew"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-5561-kodo-roundup"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1443,
+          "Kodo Bone"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-5501-1-kodo-bone"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1443,
+          "Felgur Twocuts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1366-centaur-bounty"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1368-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1368-gelkis-alliance",
+          "horde-leveling-era-horde-desolace-accept-1370-stealing-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1443,
+          "Taiga Wisemane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-5381-hand-of-iruxos"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1443,
+          "Drulzegar Skraghook"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-6143-other-fish-to-fry"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1443,
+          "Mai'Lahii"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-6142-clam-bait"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1443,
+          "Bibbly F'utzbuckle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-5501-bone-collector"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1443,
+          "Burning Blade Seer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-5741-1-burning-blade-seer"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1443,
+          "Hand of Iruxos Crystal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-5381-1-hand-of-iruxos-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1443,
+          "Infused Burning Gem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1435-1-infused-burning-gem"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1443,
+          "Azore Aldamort"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-5741-sceptre-of-light",
+          "horde-leveling-era-horde-desolace-accept-6027-book-of-the-ancients"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1443,
+          "Claim Rackmore's Treasure!"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-6161-claim-rackmore-s-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1443,
+          "Elixir of Water Breathing"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-6161-1-elixir-of-water-breathing"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1443,
+          "Soft-shelled Clam Meat"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-6142-1-soft-shelled-clam-meat"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1443,
+          "Rackmore's Golden Key"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-6161-2-rackmore-s-golden-key"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1443,
+          "Claim Rackmore's Treasure!"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-6161-claim-rackmore-s-treasure"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1443,
+          "Lord Kragaru"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-6027-1-lord-kragaru"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1443,
+          "Oracle Crystal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1482-1-oracle-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1443,
+          "Slitherblade Myrmidon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-6143-1-slitherblade-myrmidon"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1443,
+          "Slitherblade Sorceress"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-6143-3-slitherblade-sorceress"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1443,
+          "Slitherblade Naga"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-6143-2-slitherblade-naga"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1443,
+          "Azore Aldamort"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-6027-book-of-the-ancients"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1443,
+          "Maurin Bonesplitter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1435-the-burning-of-spirits",
+          "horde-leveling-era-horde-desolace-turnin-1482-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1443,
+          "Maurin Bonesplitter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-1484-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1443,
+          "Takata Steelblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1484-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1443,
+          "Sack of Meat"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-objective-1370-1-sack-of-meat"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-1370-stealing-supplies",
+          "horde-leveling-era-horde-desolace-accept-1373-ongeku"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1443,
+          "Roon Wildmane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-accept-5763-hunting-in-stranglethorn"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1443,
+          "Taiga Wisemane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-5381-hand-of-iruxos"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1443,
+          "Drulzegar Skraghook"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-6143-other-fish-to-fry"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1443,
+          "Mai'Lahii"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-6142-clam-bait"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Hemet Nesingwary Jr."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-5763-hunting-in-stranglethorn"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1435,
+          "Ongeku"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1373-1-ongeku"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-desolace-part-2",
+          "horde-leveling-era-horde-desolace-part-2-level-before-accept-5581-portals-of-the-legion"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1443,
+          "Taiga Wisemane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-accept-5581-portals-of-the-legion"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-level-before-objective-1373-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1435,
+          "Draenethyst Shard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-objective-1373-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-turnin-1373-ongeku",
+          "horde-leveling-era-horde-desolace-part-2-accept-1374-khan-jehn"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-level-before-accept-6134-ghost-o-plasm-round-up"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1443,
+          "Hornizz Brimbuzzle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-accept-6134-ghost-o-plasm-round-up"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1443,
+          "Takata Steelblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-accept-1488-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Demon Portal Guardian"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-objective-5581-1-demon-portal-guardian"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1443,
+          "Jugkar Grim'rod"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-objective-1488-2-jugkar-grim-rod"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1443,
+          "Lord Azrethoc"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-objective-1488-1-lord-azrethoc"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1443,
+          "Crate of Ghost Magnets"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-objective-6134-1-crate-of-ghost-magnets"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1443,
+          "Khan Jehn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-objective-1374-1-khan-jehn"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1443,
+          "Takata Steelblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-turnin-1488-the-corrupter"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1443,
+          "Hornizz Brimbuzzle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-turnin-6134-ghost-o-plasm-round-up"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1443,
+          "Uthek the Wise"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-turnin-1374-khan-jehn"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1443,
+          "Taiga Wisemane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-part-2-turnin-5581-portals-of-the-legion"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5821-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Cork Gizelton"
+        ],
+        "actions": [
+          "horde-extra-5821-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5821-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Smeed Scrabblescrew"
+        ],
+        "actions": [
+          "horde-extra-5821-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5943-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Rigger Gizelton"
+        ],
+        "actions": [
+          "horde-extra-5943-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5943-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Smeed Scrabblescrew"
+        ],
+        "actions": [
+          "horde-extra-5943-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6132-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Melizza Brimbuzzle"
+        ],
+        "actions": [
+          "horde-extra-6132-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6132-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Hornizz Brimbuzzle"
+        ],
+        "actions": [
+          "horde-extra-6132-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-79235-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Bibbly F'utzbuckle"
+        ],
+        "actions": [
+          "horde-extra-79235-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Tokal"
+        ],
+        "actions": [
+          "horde-extra-79235-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-93225-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Gurda Wildmane"
+        ],
+        "actions": [
+          "horde-extra-93225-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Kolkar Centaur"
+        ],
+        "actions": [
+          "horde-extra-93225-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Gurda Wildmane"
+        ],
+        "actions": [
+          "horde-extra-93225-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-97265-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Aka'rai"
+        ],
+        "actions": [
+          "horde-extra-97265-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Hatefury Rogue"
+        ],
+        "actions": [
+          "horde-extra-97265-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1443,
+          "Aka'rai"
+        ],
+        "actions": [
+          "horde-extra-97265-turnin"
         ]
       }
     ]

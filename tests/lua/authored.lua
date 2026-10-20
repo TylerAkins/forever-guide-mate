@@ -87,3 +87,5 @@ dofile("tests/lua/hinterlands_items.lua")
 dofile("tests/lua/western_plaguelands.lua")
 
 dofile("tests/lua/loremaster_prerequisites.lua")
+
+dofile("tests/lua/desolace_items.lua")

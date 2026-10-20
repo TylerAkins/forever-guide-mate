@@ -1216,3 +1216,6 @@ ns:RegisterQuestPrerequisite({ quest = 6481, mode = "any", quests = { 6421 } })
 -- Ashenvale chains from the frozen source observations.
 ns:RegisterQuestPrerequisite({ quest = 976, mode = "any", quests = { 973 } })
 ns:RegisterQuestPrerequisite({ quest = 1012, mode = "any", quests = { 1011 } })
+
+-- Desolace handoff from the frozen ATT observation.
+ns:RegisterQuestPrerequisite({ quest = 1362, mode = "any", quests = { 1361 } })
