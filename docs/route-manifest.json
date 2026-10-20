@@ -174289,5 +174289,719 @@
         ]
       }
     ]
+  },
+  "loremaster-azshara": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1455,
+          "Historian Karnik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-3448-passing-the-burden"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1455,
+          "Tymor"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3448-passing-the-burden",
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-3449-arcane-runes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-azshara-and-felwood",
+          "alliance-leveling-era-alliance-azshara-and-felwood-level-before-accept-5535-spiritual-unrest"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1447,
+          "Loh'atu"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-5535-spiritual-unrest",
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-5536-a-land-filled-with-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1447,
+          "Highborne Apparition"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5535-1-highborne-apparition"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1447,
+          "Highborne Lichling"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5535-2-highborne-lichling"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1447,
+          "Haldarr Trickster"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5536-2-haldarr-trickster"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1447,
+          "Haldarr Felsworn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5536-3-haldarr-felsworn"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1447,
+          "Haldarr Satyr"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5536-1-haldarr-satyr"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1447,
+          "Loh'atu"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-5535-spiritual-unrest",
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-5536-a-land-filled-with-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-feralas-and-azshara"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1447,
+          "Kim'jael"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-3601-kim-jael-indeed"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1447,
+          "Kim'jael's Equipment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3601-1-kim-jael-s-equipment"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1447,
+          "Kim'Jael's Scope"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3601-2-kim-jael-s-scope"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1447,
+          "Kim'Jael's Stuffed Chicken"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3601-3-kim-jael-s-stuffed-chicken"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1447,
+          "Kim'Jael's Wizzlegoober"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3601-4-kim-jael-s-wizzlegoober"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1447,
+          "Kim'jael"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-3601-kim-jael-indeed",
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-5534-kim-jael-s-missing-equipment"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1447,
+          "Rune of Jin'yael"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3449-2-rune-of-jin-yael"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1447,
+          "Rune of Beth'Amara"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3449-1-rune-of-beth-amara"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1447,
+          "Rune of Markri"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3449-3-rune-of-markri"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1447,
+          "Rune of Sael'hai"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3449-4-rune-of-sael-hai"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1447,
+          "Some Rune"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-5534-1-some-rune"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1447,
+          "Kim'jael"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-5534-kim-jael-s-missing-equipment"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1447,
+          "Pilot Xiggs Fuselighter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-3449-arcane-runes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-burning-steppes-and-azshara"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1454,
+          "Belgrom Rockmaul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-3504-betrayed"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1447,
+          "Loh'atu"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-5535-spiritual-unrest",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-5536-a-land-filled-with-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1447,
+          "Highborne Apparition"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-5535-1-highborne-apparition"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1447,
+          "Highborne Lichling"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-5535-2-highborne-lichling"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1447,
+          "Haldarr Trickster"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-5536-2-haldarr-trickster"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1447,
+          "Haldarr Felsworn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-5536-3-haldarr-felsworn"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1447,
+          "Haldarr Satyr"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-5536-1-haldarr-satyr"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1447,
+          "Loh'atu"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-5535-spiritual-unrest",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-5536-a-land-filled-with-hatred"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1447,
+          "Ag'tor Bloodfist"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-3504-betrayed"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1447,
+          "Jediga"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-3517-stealing-knowledge"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1447,
+          "Tablet of Markri"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-3517-3-tablet-of-markri"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1447,
+          "Tablet of Beth'Amara"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-3517-1-tablet-of-beth-amara"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1447,
+          "Tablet of Jin'yael"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-3517-2-tablet-of-jin-yael"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1447,
+          "Tablet of Sael'hai"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-3517-4-tablet-of-sael-hai"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1447,
+          "Jediga"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-3517-stealing-knowledge",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-3518-delivery-to-magatha",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-3541-delivery-to-jes-rimon",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-3561-delivery-to-archmage-xylem"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1447,
+          "Archmage Xylem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-3561-delivery-to-archmage-xylem",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-3565-xylem-s-payment-to-jediga"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1447,
+          "Jediga"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-3565-xylem-s-payment-to-jediga"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1454,
+          "Jes'rimon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-3541-delivery-to-jes-rimon",
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-3563-jes-rimon-s-payment-to-jediga"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ungoro-crater"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1456,
+          "Magatha Grimtotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-3518-delivery-to-magatha",
+          "horde-leveling-era-horde-ungoro-crater-accept-3562-magatha-s-payment-to-jediga"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-azshara",
+          "horde-leveling-era-horde-azshara-level-before-accept-3505-betrayed"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1447,
+          "Ag'tor Bloodfist"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-accept-3505-betrayed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-level-before-turnin-3562-magatha-s-payment-to-jediga"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1447,
+          "Jediga"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-turnin-3562-magatha-s-payment-to-jediga",
+          "horde-leveling-era-horde-azshara-turnin-3563-jes-rimon-s-payment-to-jediga",
+          "horde-leveling-era-horde-azshara-accept-3542-delivery-to-andron-gant"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-level-before-accept-3601-kim-jael-indeed"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1447,
+          "Kim'jael"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-accept-3601-kim-jael-indeed"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1447,
+          "Blood Elf Reclaimer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-objective-3505-1-blood-elf-reclaimer"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1447,
+          "Blood Elf Surveyor"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-objective-3505-2-blood-elf-surveyor"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1447,
+          "Betrayed"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-turnin-3505-betrayed",
+          "horde-leveling-era-horde-azshara-accept-3506-betrayed"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1447,
+          "Blood Elf Defender"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-objective-3506-1-blood-elf-defender"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1447,
+          "Kim'Jael's Compass"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-objective-3601-1-kim-jael-s-compass"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1447,
+          "Kim'Jael's Scope"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-objective-3601-2-kim-jael-s-scope"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1447,
+          "Kim'Jael's Stuffed Chicken"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-objective-3601-3-kim-jael-s-stuffed-chicken"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1447,
+          "Kim'Jael's Wizzlegoober"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-objective-3601-4-kim-jael-s-wizzlegoober"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1447,
+          "Kim'jael"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-turnin-3601-kim-jael-indeed",
+          "horde-leveling-era-horde-azshara-accept-5534-kim-jael-s-missing-equipment"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1447,
+          "Spitelash Siren"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-objective-5534-1-spitelash-siren"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1447,
+          "Kim'jael"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-turnin-5534-kim-jael-s-missing-equipment"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1447,
+          "Ag'tor Bloodfist"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-azshara-turnin-3506-betrayed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          89,
+          1458,
+          "Andron Gant"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3542-delivery-to-andron-gant",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3564-andron-s-payment-to-jediga"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-western-and-eastern-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          141,
+          1447,
+          "Jediga"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-3564-andron-s-payment-to-jediga"
+        ]
+      }
+    ]
   }
 }

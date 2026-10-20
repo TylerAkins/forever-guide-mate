@@ -3,6 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.6.4 - 2026-10-18
+- Add Azshara Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Tanaris Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Feralas Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Dustwallow Marsh Loremaster with recorded Forever evidence and advisory legacy ordering.
