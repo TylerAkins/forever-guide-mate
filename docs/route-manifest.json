@@ -176457,5 +176457,2258 @@
         ]
       }
     ]
+  },
+  "loremaster-ungoro-crater": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-feralas-and-tanaris"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Red Power Crystal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-collect-before-pickup-objective-4284-1-red-power-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-tanaris-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Red Power Crystal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-part-2-collect-before-pickup-objective-4284-1-red-power-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ungoro-crater",
+          "alliance-leveling-era-alliance-ungoro-crater-level-before-accept-4289-the-apes-of-un-goro"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-accept-4289-the-apes-of-un-goro"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-level-before-accept-4290-the-fare-of-lar-korwi"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-accept-4290-the-fare-of-lar-korwi"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1449,
+          "It's a Secret to Everybody"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-accept-3844-it-s-a-secret-to-everybody"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1449,
+          "It's a Secret to Everybody"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-turnin-3844-it-s-a-secret-to-everybody",
+          "alliance-leveling-era-alliance-ungoro-crater-accept-3845-it-s-a-secret-to-everybody"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1449,
+          "Piece of Threshadon Carcass"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-objective-4290-1-piece-of-threshadon-carcass"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-turnin-4290-the-fare-of-lar-korwi",
+          "alliance-leveling-era-alliance-ungoro-crater-accept-4291-the-scent-of-lar-korwi"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1449,
+          "Lar'korwi Mate"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-objective-4291-1-lar-korwi-mate"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-turnin-4291-the-scent-of-lar-korwi",
+          "alliance-leveling-era-alliance-ungoro-crater-accept-4292-the-bait-for-lar-korwi"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-accept-3884-williden-s-journal"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-objective-3845-1-a-small-pack",
+          "alliance-leveling-era-alliance-ungoro-crater-objective-3845-2-curled-map-parchment",
+          "alliance-leveling-era-alliance-ungoro-crater-objective-3845-3-lion-headed-key"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-turnin-3845-it-s-a-secret-to-everybody",
+          "alliance-leveling-era-alliance-ungoro-crater-accept-3908-it-s-a-secret-to-everybody"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1449,
+          "Williden Marshal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-turnin-3884-williden-s-journal"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-accept-4284-crystals-of-power"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-objective-4284-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-turnin-4284-crystals-of-power"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-level-before-accept-4141-muigin-and-larion"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1449,
+          "Muigin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-accept-4141-muigin-and-larion"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1449,
+          "Bloodpetal Flayer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-objective-4141-1-bloodpetal-flayer"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1449,
+          "Muigin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-turnin-4141-muigin-and-larion",
+          "alliance-leveling-era-alliance-ungoro-crater-accept-4142-a-visit-to-gregan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-azshara-and-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3908-it-s-a-secret-to-everybody",
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-3909-the-videre-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-feralas-and-azshara",
+          "alliance-leveling-era-alliance-feralas-and-azshara-level-before-turnin-4142-a-visit-to-gregan"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1444,
+          "Gregan Brewspewer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-4142-a-visit-to-gregan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-level-before-objective-3909-1-evoroot"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1444,
+          "Videre Elixir"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-3909-1-evoroot"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-level-before-accept-4502-volcanic-activity"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1413,
+          "Liv Rizzlefix"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-4502-volcanic-activity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ungoro-crater-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1449,
+          "Williden Marshal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-3881-expedition-salvation"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1449,
+          "Hol'anyee Marshal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-3883-alien-ecology"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1449,
+          "Spark Nilminer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-3882-roll-the-bones"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4285-the-northern-pylon",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4287-the-eastern-pylon",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4288-the-western-pylon"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1449,
+          "Beware of Pterrordax"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4501-beware-of-pterrordax"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1449,
+          "Spraggle Frock"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4492-lost"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1449,
+          "Shizzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4503-shizzle-s-flyer"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1449,
+          "Pterrordax"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4501-1-pterrordax"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1449,
+          "Un'Goro Gorilla"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4289-1-un-goro-gorilla"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1449,
+          "Un'Goro Stomper Pelt"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4289-2-un-goro-stomper-pelt"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1449,
+          "Un'Goro Thunderer Pelt"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4289-3-un-goro-thunderer-pelt"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1449,
+          "Crate of Foodstuffs"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-3881-1-crate-of-foodstuffs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Lar'korwi's Head"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4292-1-torwa-s-pouch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Lar'korwi bait site"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4292-1-preserved-threshadon-meat"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4289-the-apes-of-un-goro",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4292-the-bait-for-lar-korwi",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4301-the-mighty-u-cha"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1449,
+          "Pterrordax"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4501-1-pterrordax-2"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1449,
+          "Hive Wall Sample"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-3883-1-unused-scraping-vial"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1449,
+          "Research Equipment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-3881-2-research-equipment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-level-before-accept-974-finding-the-source"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1449,
+          "Krakle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-974-finding-the-source"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-974-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1449,
+          "Krakle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-974-finding-the-source",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1449,
+          "Dinosaur Bone"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-3882-1-dinosaur-bone"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1449,
+          "Webbed Diemetradon Scale"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4503-1-webbed-diemetradon-scale"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1449,
+          "Webbed Pterrordax Scale"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4503-2-webbed-pterrordax-scale"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1449,
+          "Frenzied Pterrordax"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4501-2-frenzied-pterrordax"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1449,
+          "Ringo"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4492-lost",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4491-a-little-help-from-my-friends"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4491-authored-escort"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1449,
+          "Spraggle Frock"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4491-a-little-help-from-my-friends",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4501-beware-of-pterrordax"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1449,
+          "Spark Nilminer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-3882-roll-the-bones"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1449,
+          "Northern Crystal Pylon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4285-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4285-the-northern-pylon"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1449,
+          "Eastern Crystal Pylon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4287-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4287-the-eastern-pylon"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1449,
+          "Western Crystal Pylon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4288-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4288-the-western-pylon",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4321-making-sense-of-it"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4321-making-sense-of-it"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1449,
+          "Hol'anyee Marshal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-3883-alien-ecology"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1449,
+          "Williden Marshal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-3881-expedition-salvation"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1449,
+          "Shizzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4503-shizzle-s-flyer"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1449,
+          "Karna Remtravel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4243-chasing-a-me-01"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1449,
+          "U'cha's Pelt"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4301-1-u-cha"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1449,
+          "A-Me 01"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4243-chasing-a-me-01",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4244-chasing-a-me-01"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4244-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1449,
+          "A-Me 01"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4244-chasing-a-me-01",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4245-chasing-a-me-01"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1449,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4245-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1449,
+          "Karna Remtravel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4245-chasing-a-me-01"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4301-the-mighty-u-cha"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-3908-it-s-a-secret-to-everybody"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Videre Elixir"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-3909-1-videre-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4502-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1413,
+          "Liv Rizzlefix"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4502-volcanic-activity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring-and-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1444,
+          "Videre Elixir"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-3909-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3909-the-videre-elixir",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3912-meet-at-the-grave"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-turnin-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Videre Elixir"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-3912-1-videre-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1446,
+          "Gaeriyan"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3912-meet-at-the-grave",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3913-a-grave-situation"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1446,
+          "A Grave Situation"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3913-a-grave-situation"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1446,
+          "Linken's Sword"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3914-linken-s-sword"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3914-linken-s-sword",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3941-a-gnome-s-assistance"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3941-a-gnome-s-assistance"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3942-linken-s-memory"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3942-linken-s-memory",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4084-silver-heart"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1448,
+          "Irontree Stomper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4084-2-irontree-stomper"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1448,
+          "Silvery Claws"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4084-1-silvery-claws"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Silvery Claws"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-objective-4084-1-silvery-claws"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-4084-silver-heart",
+          "alliance-leveling-era-alliance-winterspring-accept-4005-aquementas"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Silver Totem of Aquementas"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-objective-4005-1-eridan-s-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Aquementas stone circle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-objective-4005-1-book-of-aquor"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1449,
+          "J.D. Collie at Marshal's Refuge"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-4005-aquementas"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-accept-3961-linken-s-adventure"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-3961-linken-s-adventure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-3962-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "alliance-extra-3962-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Blazerunner"
+        ],
+        "actions": [
+          "alliance-extra-3962-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "alliance-extra-3962-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-hinterlands"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Red Power Crystal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-collect-before-pickup-objective-4284-1-red-power-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-feralas-and-ungoro-crater",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-level-before-objective-4284-1-red-power-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Red Power Crystal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-4284-1-red-power-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-4289-the-apes-of-un-goro"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-level-before-accept-4290-the-fare-of-lar-korwi"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-4290-the-fare-of-lar-korwi"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1449,
+          "It's a Secret to Everybody"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3844-it-s-a-secret-to-everybody"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1449,
+          "It's a Secret to Everybody"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3844-it-s-a-secret-to-everybody",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3845-it-s-a-secret-to-everybody"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1449,
+          "Piece of Threshadon Carcass"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-4290-1-piece-of-threshadon-carcass"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-4290-the-fare-of-lar-korwi",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-4291-the-scent-of-lar-korwi"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1449,
+          "Lar'korwi Mate"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-4291-1-lar-korwi-mate"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3884-williden-s-journal"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-4291-the-scent-of-lar-korwi",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-4292-the-bait-for-lar-korwi"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3845-1-a-small-pack",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3845-2-curled-map-parchment",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3845-3-lion-headed-key"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3845-it-s-a-secret-to-everybody",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3908-it-s-a-secret-to-everybody"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1449,
+          "Williden Marshal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3884-williden-s-journal"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-4284-crystals-of-power"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-4284-crystals-of-power"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-level-before-accept-4502-volcanic-activity"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1413,
+          "Liv Rizzlefix"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-4502-volcanic-activity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-3908-it-s-a-secret-to-everybody"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-3909-the-videre-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ungoro-crater"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1449,
+          "Larion"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-4145-larion-and-muigin"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1449,
+          "Williden Marshal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-3881-expedition-salvation"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1449,
+          "Hol'anyee Marshal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-3883-alien-ecology"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1449,
+          "Spark Nilminer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-3882-roll-the-bones"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-4288-the-western-pylon"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1449,
+          "Beware of Pterrordax"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-4501-beware-of-pterrordax"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1449,
+          "Spraggle Frock"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-4492-lost"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1449,
+          "Shizzle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-4503-shizzle-s-flyer"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1449,
+          "Pterrordax"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4501-1-pterrordax"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1449,
+          "Bloodpetal Flayer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4145-3-bloodpetal-flayer"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1449,
+          "Un'Goro Gorilla"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4289-1-un-goro-gorilla"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1449,
+          "Un'Goro Stomper Pelt"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4289-2-un-goro-stomper-pelt"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1449,
+          "Un'Goro Thunderer Pelt"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4289-3-un-goro-thunderer-pelt"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1449,
+          "Crate of Foodstuffs"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-3881-1-crate-of-foodstuffs"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1449,
+          "Bloodpetal Thresher"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4145-4-bloodpetal-thresher"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1449,
+          "Bloodpetal Lasher"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4145-1-bloodpetal-lasher"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Lar'korwi's Head"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4292-1-torwa-s-pouch"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Lar'korwi bait site"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4292-1-preserved-threshadon-meat"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4289-the-apes-of-un-goro",
+          "horde-leveling-era-horde-ungoro-crater-turnin-4292-the-bait-for-lar-korwi",
+          "horde-leveling-era-horde-ungoro-crater-accept-4301-the-mighty-u-cha"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1449,
+          "Pterrordax"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4501-1-pterrordax-2"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1449,
+          "Hive Wall Sample"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-3883-1-unused-scraping-vial"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1449,
+          "Research Equipment"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-3881-2-research-equipment"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-level-before-accept-974-finding-the-source"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1449,
+          "Krakle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-974-finding-the-source"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-974-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1449,
+          "Krakle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-974-finding-the-source",
+          "horde-leveling-era-horde-ungoro-crater-accept-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1449,
+          "Bloodpetal Trapper"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4145-2-bloodpetal-trapper"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1449,
+          "Dinosaur Bone"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-3882-1-dinosaur-bone"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1449,
+          "Webbed Diemetradon Scale"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4503-1-webbed-diemetradon-scale"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1449,
+          "Webbed Pterrordax Scale"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4503-2-webbed-pterrordax-scale"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1449,
+          "Frenzied Pterrordax"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4501-2-frenzied-pterrordax"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1449,
+          "Ringo"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4492-lost",
+          "horde-leveling-era-horde-ungoro-crater-accept-4491-a-little-help-from-my-friends"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "A Little Help From My Friends"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4491-authored-escort"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1449,
+          "Spraggle Frock"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4491-a-little-help-from-my-friends",
+          "horde-leveling-era-horde-ungoro-crater-turnin-4501-beware-of-pterrordax"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1449,
+          "Spark Nilminer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-3882-roll-the-bones"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1449,
+          "The Western Pylon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4288-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4288-the-western-pylon",
+          "horde-leveling-era-horde-ungoro-crater-accept-4285-the-northern-pylon",
+          "horde-leveling-era-horde-ungoro-crater-accept-4287-the-eastern-pylon"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1449,
+          "Hol'anyee Marshal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-3883-alien-ecology"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1449,
+          "Williden Marshal"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-3881-expedition-salvation"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1449,
+          "Larion"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4145-larion-and-muigin",
+          "horde-leveling-era-horde-ungoro-crater-accept-4147-marvon-s-workshop"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1449,
+          "Shizzle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4503-shizzle-s-flyer"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1449,
+          "Karna Remtravel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-4243-chasing-a-me-01"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1449,
+          "U'cha's Pelt"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4301-1-u-cha"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1449,
+          "A-Me 01"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4243-chasing-a-me-01",
+          "horde-leveling-era-horde-ungoro-crater-accept-4244-chasing-a-me-01"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4244-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1449,
+          "A-Me 01"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4244-chasing-a-me-01",
+          "horde-leveling-era-horde-ungoro-crater-accept-4245-chasing-a-me-01"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1449,
+          "Karna Remtravel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4245-chasing-a-me-01"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1449,
+          "Torwa Pathfinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4301-the-mighty-u-cha"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1449,
+          "The Northern Pylon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4285-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4285-the-northern-pylon"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1449,
+          "The Eastern Pylon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4287-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4287-the-eastern-pylon",
+          "horde-leveling-era-horde-ungoro-crater-accept-4321-making-sense-of-it"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4321-making-sense-of-it"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1444,
+          "Videre Elixir"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-3909-1-evoroot"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1413,
+          "Liv Rizzlefix"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4147-marvon-s-workshop"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-4502-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1413,
+          "Liv Rizzlefix"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-4502-volcanic-activity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1444,
+          "Videre Elixir"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-3909-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3909-the-videre-elixir",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3912-meet-at-the-grave"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Videre Elixir"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-3912-1-videre-elixir"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1446,
+          "Gaeriyan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3912-meet-at-the-grave",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3913-a-grave-situation"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1446,
+          "A Grave Situation"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3913-a-grave-situation"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1446,
+          "Linken's Sword"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3914-linken-s-sword"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3914-linken-s-sword",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3941-a-gnome-s-assistance"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3941-a-gnome-s-assistance"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3942-linken-s-memory"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3942-linken-s-memory",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-4084-silver-heart"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1448,
+          "Irontree Stomper"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4084-2-irontree-stomper"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1448,
+          "Silvery Claws"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4084-1-silvery-claws"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4084-silver-heart",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-4005-aquementas"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-winterspring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Silver Totem of Aquementas"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-objective-4005-1-eridan-s-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Aquementas stone circle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-objective-4005-1-book-of-aquor"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1449,
+          "J.D. Collie at Marshal's Refuge"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-4005-aquementas"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1449,
+          "J.D. Collie"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-accept-3961-linken-s-adventure"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-3961-linken-s-adventure"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-3962-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "horde-extra-3962-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Blazerunner"
+        ],
+        "actions": [
+          "horde-extra-3962-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1449,
+          "Linken"
+        ],
+        "actions": [
+          "horde-extra-3962-turnin"
+        ]
+      }
+    ]
   }
 }

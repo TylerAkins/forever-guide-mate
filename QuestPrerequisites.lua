@@ -1232,3 +1232,5 @@ ns:RegisterQuestPrerequisite({ quest = 4493, mode = "any", quests = { 162 } })
 -- Felwood continuation handoffs from the frozen QuestieDB observations.
 ns:RegisterQuestPrerequisite({ quest = 4261, mode = "any", quests = { 4442 } })
 ns:RegisterQuestPrerequisite({ quest = 5242, mode = "any", quests = { 5165 } })
+
+ns:RegisterQuestPrerequisite({ quest = 3962, mode = "any", quests = { 3961 } })
