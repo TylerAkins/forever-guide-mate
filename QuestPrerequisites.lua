@@ -1224,3 +1224,7 @@ ns:RegisterQuestPrerequisite({ quest = 2767, mode = "any", quests = { 2766 } })
 ns:RegisterQuestPrerequisite({ quest = 3787, mode = "any", quests = { 3781 } })
 ns:RegisterQuestPrerequisite({ quest = 3788, mode = "any", quests = { 3781 } })
 ns:RegisterQuestPrerequisite({ quest = 3841, mode = "any", quests = { 2972 } })
+
+-- Tanaris handoffs from the frozen QuestieDB observations.
+ns:RegisterQuestPrerequisite({ quest = 648, mode = "any", quests = { 351 } })
+ns:RegisterQuestPrerequisite({ quest = 4493, mode = "any", quests = { 162 } })

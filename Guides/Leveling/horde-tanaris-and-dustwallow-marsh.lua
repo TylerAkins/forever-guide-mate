@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Tanaris & Dustwallow Marsh",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-tanaris-and-dustwallow-marsh",
@@ -834,11 +834,20 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2876, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Ship Schedule", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             id = "loot-starter-before-accept-2876-ship-schedules",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 2876,
             conditions = { faction = "Horde" },
             text = "Loot Ship Schedule from Ship Schedule. Keep it for the next pickup.",
             complete = {
@@ -855,7 +864,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2876, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Ship Schedule", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Use the Ship Schedule to accept Ship Schedules.",
             id = "accept-2876-ship-schedules",
@@ -876,11 +893,20 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2876, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Ship Schedule", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             id = "loot-starter-before-accept-351-find-oox-17-tn",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 351,
             conditions = { faction = "Horde" },
             text = "Loot OOX-17/TN Distress Beacon from Glasshide Basilisk, Scorpid Hunter, Starving Blisterpaw, Fire Roc, Divined Scroll, Dunemaul Enforcer, Dunemaul Brute, Thistleshrub Dew Collector, Thistleshrub Rootshaper, Gnarled Thistleshrub, Wastewander Rogue, Wastewander Thief, Wastewander Shadow Mage, Wastewander Bandit, Wastewander Assassin, Sandfury Shadowhunter, Scarab, Theka the Martyr, Zul'Farrak Zombie, Sergeant Bly, Hydromancer Velratha, Caliph Scorpidsting, Southsea Pirate, Southsea Freebooter, Southsea Dock Worker, Southsea Swashbuckler, Andre Firebeard, Big Voodoo Robe, Tough Scorpid Breastplate, Gor'marok the Ravager. Keep it for the next pickup.",
             complete = {
@@ -897,7 +923,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 351, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Use the OOX-17/TN Distress Beacon to accept Find OOX-17/TN!.",
             id = "accept-351-find-oox-17-tn",
@@ -918,7 +952,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 351, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             id = "objective-8365-1-southsea-pirate-hat",
             kind = "objective",
@@ -1116,7 +1158,15 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2876, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Ship Schedule", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Turn in Stoley's Shipment to Stoley.",
             route = {
@@ -1846,7 +1896,15 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 351, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             id = "objective-10-1-scrimshank-s-surveying-gear",
             kind = "objective",

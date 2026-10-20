@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Tanaris",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-tanaris-part-2",
