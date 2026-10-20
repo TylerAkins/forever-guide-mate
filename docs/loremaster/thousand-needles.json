@@ -163,6 +163,7 @@
     "horde-leveling-era-horde-thousand-needles-accept-5147-wanted-arnak-grimtotem",
     "horde-leveling-era-horde-thousand-needles-objective-5064-2-secret-note-2",
     "horde-leveling-era-horde-thousand-needles-objective-5064-1-secret-note-1",
+    "horde-leveling-era-horde-thousand-needles-objective-5064-3-secret-note-3",
     "horde-leveling-era-horde-thousand-needles-objective-5088-1-arikara",
     "horde-leveling-era-horde-thousand-needles-objective-5147-1-arnak-grimtotem",
     "horde-leveling-era-horde-thousand-needles-accept-4904-free-at-last",
@@ -1297,6 +1298,7 @@
     {
       "anchor": "horde-leveling-era-horde-thousand-needles-objective-5064-1-secret-note-1",
       "actions": [
+        "horde-leveling-era-horde-thousand-needles-objective-5064-3-secret-note-3",
         "horde-leveling-era-horde-thousand-needles-objective-5088-1-arikara"
       ],
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."

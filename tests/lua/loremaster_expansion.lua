@@ -81,6 +81,32 @@ assert(arugalReturn<checkpoint('silverpine-forest',480),'The early Arugal chain 
 local escort=action('the-barrens','objective',898)
 assert(escort.complete.quest.id==898 and escort.complete.quest.state=='complete','The escort waits for observed completion')
 print('Loremaster return placement checks passed')
+
+local function assertSecretNote3Route(guideID, objectiveID, turninID)
+    local guide=assert(ns.guides[guideID], 'Missing guide ' .. guideID)
+    local objective=ns.Engine:GetGoal(guide, objectiveID)
+    assert(objective, guideID .. ' routes to Secret Note #3')
+    assert(objective.kind=='objective' and objective.complete.questObjective.id==5064
+        and objective.complete.questObjective.index==3
+        and objective.complete.questObjective.text=='Secret Note #3',
+        guideID .. ' completes on quest 5064 objective 3')
+    assert(objective.route[1].mapID==1441 and objective.route[1].x==0.39 and objective.route[1].y==0.41,
+        guideID .. ' routes to the recorded Secret Note #3 location')
+    local turnin=assert(ns.Engine:GetGoal(guide, turninID), 'Missing quest 5064 turn-in in ' .. guideID)
+    local waitsForNote3=false
+    for _,dependency in ipairs(turnin.dependsOn or {}) do
+        if dependency==objectiveID then waitsForNote3=true end
+    end
+    assert(waitsForNote3, guideID .. ' waits for Secret Note #3 before turn-in')
+end
+
+assertSecretNote3Route('leveling-casual-horde',
+    'leveling-era-horde-thousand-needles:objective-5064-3-secret-note-3',
+    'leveling-era-horde-thousand-needles:turnin-5064-grimtotem-spying')
+assertSecretNote3Route('loremaster-thousand-needles',
+    'horde-leveling-era-horde-thousand-needles-objective-5064-3-secret-note-3',
+    'horde-leveling-era-horde-thousand-needles-turnin-5064-grimtotem-spying')
+print('Grimtotem Spying three-note route checks passed')
 for _,quest in ipairs({86614,86667,86776}) do action('loch-modan','accept',quest) end
 for _,quest in ipairs({97894,97914,97926,982}) do action('darkshore','accept',quest) end
 chain('silverpine-forest',{460,461,491})

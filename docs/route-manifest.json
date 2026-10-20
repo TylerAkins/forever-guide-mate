@@ -55833,6 +55833,16 @@
       },
       {
         "boundary": [
+          44,
+          1441,
+          "Secret Note #3"
+        ],
+        "actions": [
+          "objective-5064-3-secret-note-3"
+        ]
+      },
+      {
+        "boundary": [
           45,
           1441,
           "Arikara"
@@ -165159,6 +165169,16 @@
         ],
         "actions": [
           "horde-leveling-era-horde-thousand-needles-objective-5064-1-secret-note-1"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1441,
+          "Secret Note #3"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-5064-3-secret-note-3"
         ]
       },
       {
