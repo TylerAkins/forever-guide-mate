@@ -3215,7 +3215,7 @@
     ]
   },
   "leveling-era-alliance-winterspring-and-felwood": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -35300,7 +35300,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 16,
+    "revision": 17,
     "visits": [
       {
         "boundary": [
@@ -71302,7 +71302,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 19,
+    "revision": 20,
     "visits": [
       {
         "boundary": [
@@ -82066,7 +82066,7 @@
     ]
   },
   "leveling-era-horde-winterspring": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -88843,7 +88843,7 @@
     ]
   },
   "leveling-era-horde-felwood-and-winterspring-part-2": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -175000,6 +175000,1460 @@
         ],
         "actions": [
           "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-3564-andron-s-payment-to-jediga"
+        ]
+      }
+    ]
+  },
+  "loremaster-felwood": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-azshara-and-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1448,
+          "Arathandris Silversky"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-4101-cleansing-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-level-before-accept-5155-forces-of-jaedenar"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-5155-forces-of-jaedenar"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-4421-the-corruption-of-the-jadefire"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1448,
+          "Grazle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-8460-timbermaw-ally"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1448,
+          "Deadwood Warrior"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-8460-1-deadwood-warrior"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1448,
+          "Deadwood Pathfinder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-8460-2-deadwood-pathfinder"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1448,
+          "Deadwood Gardener"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-8460-3-deadwood-gardener"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1448,
+          "Grazle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-8460-timbermaw-ally",
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-8462-speak-to-nafien"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1448,
+          "Xavathras"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-reviewed-4"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1448,
+          "Jadefire Shadowstalker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-2-jadefire-shadowstalker"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1448,
+          "Jadefire Rogue"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-3-jadefire-rogue"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1448,
+          "Jadefire Felsworn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-1-jadefire-felsworn"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1448,
+          "Jaedenar Hound"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5155-1-jaedenar-hound"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1448,
+          "Jaedenar Guardian"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5155-2-jaedenar-guardian"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1448,
+          "Jaedenar Adept"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5155-3-jaedenar-adept"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1448,
+          "Jaedenar Cultist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5155-4-jaedenar-cultist"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-5155-forces-of-jaedenar",
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-5157-collection-of-the-corrupt-water"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-4421-the-corruption-of-the-jadefire",
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-4906-further-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1448,
+          "Taronn Redfeather"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-5156-verifying-the-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1448,
+          "Entropic Beast"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5156-1-entropic-beast"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1448,
+          "Entropic Horror"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5156-2-entropic-horror"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1448,
+          "Xavaric"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4906-reviewed-4"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-939-flute-of-xavaric"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1448,
+          "Jadefire Hellcaller"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-939-1-jadefire-hellcaller"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1448,
+          "Jadefire Hellcaller"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4906-1-jadefire-hellcaller"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1448,
+          "Jadefire Betrayer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4906-2-jadefire-betrayer"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1448,
+          "Jadefire Trickster"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4906-3-jadefire-trickster"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1448,
+          "Warpwood Moss Flayer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-4101-1-warpwood-moss-flayer"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1448,
+          "Nafien"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-8462-speak-to-nafien"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1448,
+          "Taronn Redfeather"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-5156-verifying-the-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-939-flute-of-xavaric",
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-4441-felbound-ancients",
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-4906-further-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1448,
+          "Collection of the Corrupt Water"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-5157-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-5157-collection-of-the-corrupt-water",
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-5158-seeking-spiritual-aid"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1448,
+          "Arathandris Silversky"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-4101-cleansing-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-feralas-and-azshara",
+          "alliance-leveling-era-alliance-feralas-and-azshara-level-before-turnin-5158-seeking-spiritual-aid"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1413,
+          "Islen Waterseer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-5158-seeking-spiritual-aid"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ungoro-crater-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1413,
+          "Islen Waterseer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-5159-cleansed-water-returns-to-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1457,
+          "Eridan's Vial"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4441-1-eridan-s-vial"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring-and-felwood",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-objective-5882-1-deadwood-den-watcher",
+          "alliance-extra-5249-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Ivy Leafrunner"
+        ],
+        "actions": [
+          "alliance-extra-5249-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Deadwood Den Watcher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5882-1-deadwood-den-watcher"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-turnin-5159-cleansed-water-returns-to-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5159-cleansed-water-returns-to-felwood",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5165-dousing-the-flames-of-protection"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-objective-4441-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1457,
+          "Vial of Blessed Water"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4441-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4441-felbound-ancients"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4442-purified"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1448,
+          "Eridan Bluewind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4442-purified"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-4261-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Arei"
+        ],
+        "actions": [
+          "alliance-extra-4261-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-4261-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Kayneth Stillwind"
+        ],
+        "actions": [
+          "alliance-extra-4261-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1448,
+          "Arathandris Silversky"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5882-salve-via-hunting"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-accept-5202-a-strange-red-key"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5202-a-strange-red-key"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1448,
+          "Captured Arko'narin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5202-a-strange-red-key"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1448,
+          "Nafien"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8461-deadwood-of-the-north"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1448,
+          "Deadwood Den Watcher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-8461-1-deadwood-den-watcher"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1448,
+          "Deadwood Avenger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-8461-2-deadwood-avenger"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1448,
+          "Deadwood Shaman"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-8461-3-deadwood-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1448,
+          "Nafien"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-8461-deadwood-of-the-north",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8465-speak-to-salfa"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1452,
+          "Salfa"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-8465-speak-to-salfa"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Brazier-of-Pain"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5165-1-authored-Brazier-of-Pain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Brazier-of-Hatred"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5165-4-authored-Brazier-of-Hatred"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Brazier-of-Suffering"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5165-3-authored-Brazier-of-Suffering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Brazier-of-Malice"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5165-2-authored-Brazier-of-Malice"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5165-dousing-the-flames-of-protection"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-loot-starter-before-accept-8470-deadwood-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8470-deadwood-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-8470-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1448,
+          "Kernda"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-8470-deadwood-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5242-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "alliance-extra-5242-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Salia"
+        ],
+        "actions": [
+          "alliance-extra-5242-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "alliance-extra-5242-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5249-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Wynd Nightchaser"
+        ],
+        "actions": [
+          "alliance-extra-5249-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring",
+          "horde-leveling-era-horde-felwood-and-winterspring-level-before-accept-5155-forces-of-jaedenar"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-5155-forces-of-jaedenar"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1448,
+          "Taronn Redfeather"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-5156-verifying-the-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1448,
+          "Grazle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-8460-timbermaw-ally"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1448,
+          "Deadwood Warrior"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-8460-1-deadwood-warrior"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1448,
+          "Deadwood Pathfinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-8460-2-deadwood-pathfinder"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1448,
+          "Deadwood Gardener"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-8460-3-deadwood-gardener"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1448,
+          "Grazle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-8460-timbermaw-ally",
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-8462-speak-to-nafien"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-level-before-accept-4102-cleansing-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1448,
+          "Maybess Riverbreeze"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-4102-cleansing-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1448,
+          "Jaedenar Hound"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5155-1-jaedenar-hound"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1448,
+          "Jaedenar Guardian"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5155-2-jaedenar-guardian"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1448,
+          "Jaedenar Adept"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5155-3-jaedenar-adept"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1448,
+          "Jaedenar Cultist"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5155-4-jaedenar-cultist"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-level-before-accept-4505-well-of-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1448,
+          "Winna Hazzard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-4505-well-of-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1448,
+          "Dreka'Sur"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-6162-a-husband-s-last-battle"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1448,
+          "Well of Corruption"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-4505-1-hardened-flasket"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1448,
+          "Overlord Ror"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-6162-1-overlord-ror"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-5155-forces-of-jaedenar",
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-5157-collection-of-the-corrupt-water"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1448,
+          "Entropic Beast"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5156-1-entropic-beast"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1448,
+          "Entropic Horror"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5156-2-entropic-horror"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1448,
+          "Warpwood Moss Flayer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-4102-1-warpwood-moss-flayer"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1448,
+          "Nafien"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-8462-speak-to-nafien"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1448,
+          "Dreka'Sur"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-6162-a-husband-s-last-battle"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1448,
+          "Winna Hazzard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-4505-well-of-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1448,
+          "Maybess Riverbreeze"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-4102-cleansing-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1448,
+          "Collection of the Corrupt Water"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5157-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-5157-collection-of-the-corrupt-water",
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-5158-seeking-spiritual-aid"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1448,
+          "Taronn Redfeather"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-5156-verifying-the-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ungoro-crater"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1413,
+          "Islen Waterseer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-5158-seeking-spiritual-aid"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1413,
+          "Islen Waterseer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-5159-cleansed-water-returns-to-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-level-before-accept-4506-corrupted-sabers"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1448,
+          "Winna Hazzard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-4506-corrupted-sabers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Corrupted Sabers"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4506-authored-escort"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-level-before-turnin-5159-cleansed-water-returns-to-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5159-cleansed-water-returns-to-felwood",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-5165-dousing-the-flames-of-protection"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Deadwood Warrior"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5887-1-deadwood-warrior"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1448,
+          "Maybess Riverbreeze"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-5887-salve-via-hunting"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-level-before-accept-5202-a-strange-red-key"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-5202-a-strange-red-key"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1448,
+          "Captured Arko'narin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5202-a-strange-red-key"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1448,
+          "Winna Hazzard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4506-corrupted-sabers"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1448,
+          "Nafien"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-8461-deadwood-of-the-north"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1448,
+          "Deadwood Den Watcher"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-8461-1-deadwood-den-watcher"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1448,
+          "Deadwood Avenger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-8461-2-deadwood-avenger"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1448,
+          "Deadwood Shaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-8461-3-deadwood-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1448,
+          "Nafien"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-8461-deadwood-of-the-north",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-8465-speak-to-salfa"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1452,
+          "Salfa"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-8465-speak-to-salfa"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Brazier-of-Pain"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5165-1-authored-Brazier-of-Pain"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Brazier-of-Hatred"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5165-4-authored-Brazier-of-Hatred"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Brazier-of-Suffering"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5165-3-authored-Brazier-of-Suffering"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Brazier-of-Malice"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5165-2-authored-Brazier-of-Malice"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5165-dousing-the-flames-of-protection"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-loot-starter-before-accept-8470-deadwood-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-8470-deadwood-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-8470-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1448,
+          "Kernda"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-8470-deadwood-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-winterspring",
+          "horde-extra-5242-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "horde-extra-5242-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Salia"
+        ],
+        "actions": [
+          "horde-extra-5242-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Greta Mosshoof"
+        ],
+        "actions": [
+          "horde-extra-5242-turnin"
         ]
       }
     ]

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Winterspring",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-winterspring",
@@ -909,7 +909,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = true,
             dependsOn = {},
-        },
+                    excludeWhen = { ["not"] = { quest = { id = 8470, state = "activeOrCompleted" } } },
+},
         {
             route = {
                 { y = 0.0348, mapID = 1448, label = "Kernda", offMapText = "Travel to Kernda in Felwood.", x = 0.6549 },
@@ -933,7 +934,8 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "objective-8470-quest-work" },
-        },
+                    excludeWhen = { ["not"] = { quest = { id = 8470, state = "activeOrCompleted" } } },
+},
         {
             route = {
                 { y = 0.096, mapID = 1448, label = "Deadwood Den Watcher", offMapText = "Travel to Deadwood Den Watcher.", x = 0.636 },

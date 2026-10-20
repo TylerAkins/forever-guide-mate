@@ -1228,3 +1228,7 @@ ns:RegisterQuestPrerequisite({ quest = 3841, mode = "any", quests = { 2972 } })
 -- Tanaris handoffs from the frozen QuestieDB observations.
 ns:RegisterQuestPrerequisite({ quest = 648, mode = "any", quests = { 351 } })
 ns:RegisterQuestPrerequisite({ quest = 4493, mode = "any", quests = { 162 } })
+
+-- Felwood continuation handoffs from the frozen QuestieDB observations.
+ns:RegisterQuestPrerequisite({ quest = 4261, mode = "any", quests = { 4442 } })
+ns:RegisterQuestPrerequisite({ quest = 5242, mode = "any", quests = { 5165 } })

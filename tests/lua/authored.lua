@@ -93,3 +93,5 @@ dofile("tests/lua/desolace_items.lua")
 dofile("tests/lua/feralas_items.lua")
 
 dofile("tests/lua/tanaris_items.lua")
+
+dofile("tests/lua/felwood_items.lua")

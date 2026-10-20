@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Felwood Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Azshara Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Tanaris Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Feralas Loremaster with recorded Forever evidence and advisory legacy ordering.

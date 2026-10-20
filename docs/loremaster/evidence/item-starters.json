@@ -636,5 +636,37 @@
         }
       }
     }
+  },
+  "20741": {
+    "name": "Deadwood Ritual Totem",
+    "startQuest": 8470,
+    "drops": [
+      {
+        "id": 7156,
+        "name": "Deadwood Den Watcher"
+      },
+      {
+        "id": 7157,
+        "name": "Deadwood Avenger"
+      },
+      {
+        "id": 7158,
+        "name": "Deadwood Shaman"
+      }
+    ],
+    "sources": {
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Deadwood Ritual Totem",
+          "npcDrops": [
+            7156,
+            7157,
+            7158
+          ],
+          "startQuest": 8470
+        }
+      }
+    }
   }
 }
