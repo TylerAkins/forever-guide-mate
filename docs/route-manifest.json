@@ -136418,7 +136418,7 @@
       },
       {
         "boundary": [
-          null,
+          123,
           1413,
           "Kirge Sternhorn"
         ],
@@ -136428,7 +136428,7 @@
       },
       {
         "boundary": [
-          null,
+          124,
           1413,
           "Thork"
         ],
@@ -136448,7 +136448,7 @@
       },
       {
         "boundary": [
-          null,
+          126,
           1413,
           "Jahan Hawkwing"
         ],
@@ -136458,7 +136458,7 @@
       },
       {
         "boundary": [
-          null,
+          127,
           1413,
           "Devrak"
         ],
@@ -136478,7 +136478,7 @@
       },
       {
         "boundary": [
-          null,
+          127,
           1413,
           "Devrak"
         ],
@@ -136488,7 +136488,7 @@
       },
       {
         "boundary": [
-          null,
+          128,
           1456,
           "Ahanu"
         ],
@@ -136508,7 +136508,7 @@
       },
       {
         "boundary": [
-          null,
+          128,
           1456,
           "Ahanu"
         ],
@@ -136528,7 +136528,7 @@
       },
       {
         "boundary": [
-          null,
+          140,
           1456,
           "Arch Druid Hamuul Runetotem"
         ],
@@ -136538,7 +136538,7 @@
       },
       {
         "boundary": [
-          null,
+          145,
           1456,
           "Tal"
         ],
@@ -136558,7 +136558,7 @@
       },
       {
         "boundary": [
-          null,
+          145,
           1456,
           "Tal"
         ],
@@ -136628,7 +136628,7 @@
       },
       {
         "boundary": [
-          null,
+          148,
           1413,
           "Tonga Runetotem"
         ],
@@ -136638,7 +136638,7 @@
       },
       {
         "boundary": [
-          null,
+          149,
           1413,
           "Jahan Hawkwing"
         ],
@@ -136669,7 +136669,7 @@
       },
       {
         "boundary": [
-          null,
+          4,
           1413,
           "Zargh"
         ],
@@ -136689,7 +136689,7 @@
       },
       {
         "boundary": [
-          null,
+          5,
           1413,
           "Gazrog"
         ],
@@ -136709,7 +136709,7 @@
       },
       {
         "boundary": [
-          null,
+          6,
           1413,
           "Sergra Darkthorn"
         ],
@@ -136729,7 +136729,7 @@
       },
       {
         "boundary": [
-          null,
+          7,
           1413,
           "Tonga Runetotem"
         ],
@@ -136749,7 +136749,7 @@
       },
       {
         "boundary": [
-          null,
+          8,
           1413,
           "Thork"
         ],
@@ -136759,7 +136759,7 @@
       },
       {
         "boundary": [
-          null,
+          10,
           1413,
           "Devrak"
         ],
@@ -136779,7 +136779,7 @@
       },
       {
         "boundary": [
-          null,
+          10,
           1413,
           "Devrak"
         ],
@@ -136789,7 +136789,7 @@
       },
       {
         "boundary": [
-          null,
+          11,
           1454,
           "Innkeeper Gryshka"
         ],
@@ -136809,7 +136809,7 @@
       },
       {
         "boundary": [
-          null,
+          11,
           1454,
           "Innkeeper Gryshka"
         ],
@@ -136819,7 +136819,7 @@
       },
       {
         "boundary": [
-          null,
+          12,
           1454,
           "Doras"
         ],
@@ -136839,7 +136839,7 @@
       },
       {
         "boundary": [
-          null,
+          12,
           1454,
           "Doras"
         ],
@@ -136859,7 +136859,7 @@
       },
       {
         "boundary": [
-          null,
+          14,
           1413,
           "Apothecary Helbrim"
         ],
@@ -136879,7 +136879,7 @@
       },
       {
         "boundary": [
-          null,
+          14,
           1413,
           "Apothecary Helbrim"
         ],
@@ -136889,7 +136889,7 @@
       },
       {
         "boundary": [
-          null,
+          15,
           1413,
           "Zargh"
         ],
@@ -136905,13 +136905,22 @@
         ],
         "actions": [
           "level-before-loot-starter-before-accept-819-chen-s-empty-keg",
-          "loot-starter-before-accept-819-chen-s-empty-keg",
+          "loot-starter-before-accept-819-chen-s-empty-keg"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          null,
+          null
+        ],
+        "actions": [
           "accept-819-chen-s-empty-keg"
         ]
       },
       {
         "boundary": [
-          null,
+          18,
           1413,
           "Razormane Hunter"
         ],
@@ -136921,7 +136930,7 @@
       },
       {
         "boundary": [
-          null,
+          18,
           1413,
           "Razormane Water Seeker"
         ],
@@ -136931,7 +136940,7 @@
       },
       {
         "boundary": [
-          null,
+          18,
           1413,
           "Razormane Thornweaver"
         ],
@@ -136941,7 +136950,7 @@
       },
       {
         "boundary": [
-          null,
+          21,
           1413,
           "Plainstrider Beak"
         ],
@@ -136951,7 +136960,7 @@
       },
       {
         "boundary": [
-          null,
+          22,
           1413,
           "Thork"
         ],
@@ -136971,7 +136980,7 @@
       },
       {
         "boundary": [
-          null,
+          22,
           1413,
           "Thork"
         ],
@@ -136991,7 +137000,7 @@
       },
       {
         "boundary": [
-          null,
+          22,
           1413,
           "Thork"
         ],
@@ -137011,7 +137020,7 @@
       },
       {
         "boundary": [
-          null,
+          23,
           1413,
           "Darsok Swiftdagger"
         ],
@@ -137021,7 +137030,7 @@
       },
       {
         "boundary": [
-          null,
+          24,
           1413,
           "Sergra Darkthorn"
         ],
@@ -137041,7 +137050,7 @@
       },
       {
         "boundary": [
-          null,
+          24,
           1413,
           "Sergra Darkthorn"
         ],
@@ -137051,7 +137060,7 @@
       },
       {
         "boundary": [
-          null,
+          25,
           1413,
           "Kreenig Snarlsnout"
         ],
@@ -137061,7 +137070,7 @@
       },
       {
         "boundary": [
-          null,
+          26,
           1413,
           "Crossroads' Supply Crates"
         ],
@@ -137071,7 +137080,7 @@
       },
       {
         "boundary": [
-          null,
+          27,
           1413,
           "Razormane Geomancer"
         ],
@@ -137081,7 +137090,7 @@
       },
       {
         "boundary": [
-          null,
+          27,
           1413,
           "Razormane Defender"
         ],
@@ -137101,7 +137110,7 @@
       },
       {
         "boundary": [
-          null,
+          28,
           1413,
           "Gazlowe"
         ],
@@ -137121,7 +137130,7 @@
       },
       {
         "boundary": [
-          null,
+          30,
           1413,
           "Sputtervalve"
         ],
@@ -137141,7 +137150,7 @@
       },
       {
         "boundary": [
-          null,
+          33,
           1413,
           "WANTED: Baron Longshore"
         ],
@@ -137151,7 +137160,7 @@
       },
       {
         "boundary": [
-          null,
+          34,
           1413,
           "Brewmaster Drohn"
         ],
@@ -137171,7 +137180,7 @@
       },
       {
         "boundary": [
-          null,
+          34,
           1413,
           "Brewmaster Drohn"
         ],
@@ -137181,7 +137190,7 @@
       },
       {
         "boundary": [
-          null,
+          36,
           1413,
           "Baron Longshore"
         ],
@@ -137191,7 +137200,7 @@
       },
       {
         "boundary": [
-          null,
+          37,
           1413,
           "Southsea Cannoneer"
         ],
@@ -137201,7 +137210,7 @@
       },
       {
         "boundary": [
-          null,
+          37,
           1413,
           "Southsea Brigand"
         ],
@@ -137211,7 +137220,7 @@
       },
       {
         "boundary": [
-          null,
+          40,
           1413,
           "Gazlowe"
         ],
@@ -137231,7 +137240,7 @@
       },
       {
         "boundary": [
-          null,
+          40,
           1413,
           "Gazlowe"
         ],
@@ -137242,7 +137251,7 @@
       },
       {
         "boundary": [
-          null,
+          41,
           1413,
           "Wharfmaster Dizzywig"
         ],
@@ -137263,7 +137272,7 @@
       },
       {
         "boundary": [
-          null,
+          41,
           1413,
           "Wharfmaster Dizzywig"
         ],
@@ -137283,7 +137292,7 @@
       },
       {
         "boundary": [
-          null,
+          41,
           1413,
           "Wharfmaster Dizzywig"
         ],
@@ -137293,7 +137302,7 @@
       },
       {
         "boundary": [
-          null,
+          42,
           1413,
           "Gazlowe"
         ],
@@ -137313,7 +137322,7 @@
       },
       {
         "boundary": [
-          null,
+          42,
           1413,
           "Gazlowe"
         ],
@@ -137323,7 +137332,7 @@
       },
       {
         "boundary": [
-          null,
+          43,
           1413,
           "Thork"
         ],
@@ -137334,7 +137343,7 @@
       },
       {
         "boundary": [
-          null,
+          44,
           1413,
           "Zhevra Hooves"
         ],
@@ -137344,7 +137353,7 @@
       },
       {
         "boundary": [
-          null,
+          45,
           1413,
           "Sergra Darkthorn"
         ],
@@ -137364,7 +137373,7 @@
       },
       {
         "boundary": [
-          null,
+          45,
           1413,
           "Sergra Darkthorn"
         ],
@@ -137384,7 +137393,7 @@
       },
       {
         "boundary": [
-          null,
+          46,
           1413,
           "Regthar Deathgate"
         ],
@@ -137404,7 +137413,7 @@
       },
       {
         "boundary": [
-          null,
+          46,
           1413,
           "Regthar Deathgate"
         ],
@@ -137414,7 +137423,7 @@
       },
       {
         "boundary": [
-          null,
+          48,
           1413,
           "Fungal Spores"
         ],
@@ -137424,7 +137433,7 @@
       },
       {
         "boundary": [
-          null,
+          49,
           1413,
           "Barak Kodobane"
         ],
@@ -137434,12 +137443,21 @@
       },
       {
         "boundary": [
-          null,
+          121,
+          1413,
+          "Centaur Bracers"
+        ],
+        "actions": [
+          "objective-855-1-centaur-bracers"
+        ]
+      },
+      {
+        "boundary": [
+          50,
           1413,
           "Regthar Deathgate"
         ],
         "actions": [
-          "objective-855-1-centaur-bracers",
           "turnin-855-centaur-bracers",
           "turnin-850-kolkar-leaders"
         ]
@@ -137456,7 +137474,7 @@
       },
       {
         "boundary": [
-          null,
+          50,
           1413,
           "Regthar Deathgate"
         ],
@@ -137466,7 +137484,7 @@
       },
       {
         "boundary": [
-          null,
+          51,
           1413,
           "Savannah Prowler"
         ],
@@ -137476,7 +137494,7 @@
       },
       {
         "boundary": [
-          null,
+          51,
           1413,
           "Prowler Claws"
         ],
@@ -137486,7 +137504,7 @@
       },
       {
         "boundary": [
-          null,
+          52,
           1413,
           "Witchwing Harpy"
         ],
@@ -137496,7 +137514,7 @@
       },
       {
         "boundary": [
-          null,
+          54,
           1413,
           "Samophlange"
         ],
@@ -137516,7 +137534,7 @@
       },
       {
         "boundary": [
-          null,
+          54,
           1413,
           "Samophlange"
         ],
@@ -137556,7 +137574,7 @@
       },
       {
         "boundary": [
-          null,
+          58,
           1413,
           "Samophlange"
         ],
@@ -137576,7 +137594,7 @@
       },
       {
         "boundary": [
-          null,
+          58,
           1413,
           "Samophlange"
         ],
@@ -137586,7 +137604,7 @@
       },
       {
         "boundary": [
-          null,
+          59,
           1413,
           "Tinkerer Sniggles"
         ],
@@ -137596,7 +137614,7 @@
       },
       {
         "boundary": [
-          null,
+          60,
           1413,
           "Samophlange"
         ],
@@ -137616,7 +137634,7 @@
       },
       {
         "boundary": [
-          null,
+          60,
           1413,
           "Samophlange"
         ],
@@ -137626,7 +137644,7 @@
       },
       {
         "boundary": [
-          null,
+          61,
           1413,
           "Raptor Head"
         ],
@@ -137646,7 +137664,7 @@
       },
       {
         "boundary": [
-          null,
+          65,
           1413,
           "Wharfmaster Dizzywig"
         ],
@@ -137656,7 +137674,7 @@
       },
       {
         "boundary": [
-          null,
+          67,
           1413,
           "Sputtervalve"
         ],
@@ -137676,7 +137694,7 @@
       },
       {
         "boundary": [
-          null,
+          67,
           1413,
           "Sputtervalve"
         ],
@@ -137686,7 +137704,7 @@
       },
       {
         "boundary": [
-          null,
+          68,
           1413,
           "Apothecary Helbrim"
         ],
@@ -137696,7 +137714,7 @@
       },
       {
         "boundary": [
-          null,
+          69,
           1413,
           "Darsok Swiftdagger"
         ],
@@ -137716,7 +137734,7 @@
       },
       {
         "boundary": [
-          null,
+          69,
           1413,
           "Darsok Swiftdagger"
         ],
@@ -137726,7 +137744,7 @@
       },
       {
         "boundary": [
-          null,
+          70,
           1413,
           "Tonga Runetotem"
         ],
@@ -137746,7 +137764,7 @@
       },
       {
         "boundary": [
-          null,
+          70,
           1413,
           "Tonga Runetotem"
         ],
@@ -137756,7 +137774,7 @@
       },
       {
         "boundary": [
-          null,
+          71,
           1413,
           "Sergra Darkthorn"
         ],
@@ -137776,7 +137794,7 @@
       },
       {
         "boundary": [
-          null,
+          71,
           1413,
           "Sergra Darkthorn"
         ],
@@ -137786,7 +137804,7 @@
       },
       {
         "boundary": [
-          null,
+          72,
           1413,
           "Gazrog"
         ],
@@ -137806,7 +137824,7 @@
       },
       {
         "boundary": [
-          null,
+          72,
           1413,
           "Gazrog"
         ],
@@ -137816,7 +137834,7 @@
       },
       {
         "boundary": [
-          null,
+          91,
           1413,
           "Wenikee Boltbucket"
         ],
@@ -137836,7 +137854,7 @@
       },
       {
         "boundary": [
-          null,
+          91,
           1413,
           "Wenikee Boltbucket"
         ],
@@ -137856,7 +137874,7 @@
       },
       {
         "boundary": [
-          null,
+          92,
           1413,
           "Wizzlecrank's Shredder"
         ],
@@ -137866,7 +137884,7 @@
       },
       {
         "boundary": [
-          null,
+          93,
           1413,
           "Supervisor Lugwizzle"
         ],
@@ -137876,7 +137894,7 @@
       },
       {
         "boundary": [
-          null,
+          94,
           1413,
           "Wizzlecrank's Shredder"
         ],
@@ -137896,7 +137914,7 @@
       },
       {
         "boundary": [
-          null,
+          94,
           1413,
           "Wizzlecrank's Shredder"
         ],
@@ -137906,7 +137924,7 @@
       },
       {
         "boundary": [
-          null,
+          96,
           1413,
           "Nugget Slug"
         ],
@@ -137926,7 +137944,7 @@
       },
       {
         "boundary": [
-          null,
+          97,
           1413,
           "Echeyakee"
         ],
@@ -137936,7 +137954,7 @@
       },
       {
         "boundary": [
-          null,
+          98,
           1413,
           "Wenikee Boltbucket"
         ],
@@ -137946,7 +137964,7 @@
       },
       {
         "boundary": [
-          null,
+          100,
           1413,
           "Northern Barrens plainstriders"
         ],
@@ -137956,7 +137974,7 @@
       },
       {
         "boundary": [
-          null,
+          101,
           1413,
           "Witchwing Slayer"
         ],
@@ -137966,7 +137984,7 @@
       },
       {
         "boundary": [
-          null,
+          102,
           1413,
           "Sergra Darkthorn"
         ],
@@ -137986,7 +138004,7 @@
       },
       {
         "boundary": [
-          null,
+          102,
           1413,
           "Sergra Darkthorn"
         ],
@@ -138006,7 +138024,7 @@
       },
       {
         "boundary": [
-          null,
+          104,
           1413,
           "Mankrik"
         ],
@@ -138016,7 +138034,7 @@
       },
       {
         "boundary": [
-          null,
+          105,
           1413,
           "Darsok Swiftdagger"
         ],
@@ -138036,7 +138054,7 @@
       },
       {
         "boundary": [
-          null,
+          105,
           1413,
           "Darsok Swiftdagger"
         ],
@@ -138046,7 +138064,7 @@
       },
       {
         "boundary": [
-          null,
+          109,
           1413,
           "Sputtervalve"
         ],
@@ -138066,7 +138084,7 @@
       },
       {
         "boundary": [
-          null,
+          111,
           1413,
           "Mebok Mizzyrix"
         ],
@@ -138076,7 +138094,7 @@
       },
       {
         "boundary": [
-          null,
+          115,
           1413,
           "Telescopic Lens"
         ],
@@ -138086,7 +138104,7 @@
       },
       {
         "boundary": [
-          null,
+          116,
           1413,
           "Shipment of Boots"
         ],
@@ -138096,7 +138114,7 @@
       },
       {
         "boundary": [
-          null,
+          117,
           1413,
           "Stolen Silver"
         ],
@@ -138106,7 +138124,7 @@
       },
       {
         "boundary": [
-          null,
+          118,
           1413,
           "Intact Raptor Horn"
         ],
@@ -138116,7 +138134,7 @@
       },
       {
         "boundary": [
-          null,
+          120,
           1413,
           "Verog the Dervish"
         ],
@@ -138126,7 +138144,7 @@
       },
       {
         "boundary": [
-          null,
+          129,
           1413,
           "Lost in Battle"
         ],
@@ -138136,7 +138154,7 @@
       },
       {
         "boundary": [
-          null,
+          129,
           1413,
           "Mankrik"
         ],
@@ -138156,7 +138174,7 @@
       },
       {
         "boundary": [
-          null,
+          129,
           1413,
           "Mankrik"
         ],
@@ -138166,7 +138184,7 @@
       },
       {
         "boundary": [
-          null,
+          130,
           1413,
           "The Stagnant Oasis"
         ],
@@ -138176,7 +138194,7 @@
       },
       {
         "boundary": [
-          null,
+          130,
           1413,
           "Tonga Runetotem"
         ],
@@ -138196,7 +138214,7 @@
       },
       {
         "boundary": [
-          null,
+          130,
           1413,
           "Tonga Runetotem"
         ],
@@ -138236,7 +138254,7 @@
       },
       {
         "boundary": [
-          null,
+          132,
           1413,
           "Sergra Darkthorn"
         ],
@@ -138256,7 +138274,7 @@
       },
       {
         "boundary": [
-          null,
+          132,
           1413,
           "Sergra Darkthorn"
         ],
@@ -138266,7 +138284,7 @@
       },
       {
         "boundary": [
-          null,
+          133,
           1413,
           "Gazrog"
         ],
@@ -138276,7 +138294,7 @@
       },
       {
         "boundary": [
-          null,
+          134,
           1413,
           "Regthar Deathgate"
         ],
@@ -138296,7 +138314,7 @@
       },
       {
         "boundary": [
-          null,
+          134,
           1413,
           "Regthar Deathgate"
         ],
@@ -138306,7 +138324,7 @@
       },
       {
         "boundary": [
-          null,
+          135,
           1413,
           "Serena Bloodfeather"
         ],
@@ -138316,7 +138334,7 @@
       },
       {
         "boundary": [
-          null,
+          155,
           1413,
           "Jorn Skyseer"
         ],
@@ -138336,7 +138354,7 @@
       },
       {
         "boundary": [
-          null,
+          155,
           1413,
           "Jorn Skyseer"
         ],
@@ -138356,7 +138374,7 @@
       },
       {
         "boundary": [
-          null,
+          156,
           1413,
           "Mangletooth"
         ],
@@ -138391,13 +138409,22 @@
           null
         ],
         "actions": [
-          "loot-starter-before-accept-883-lakota-mani",
+          "loot-starter-before-accept-883-lakota-mani"
+        ]
+      },
+      {
+        "boundary": [
+          158,
+          null,
+          null
+        ],
+        "actions": [
           "accept-883-lakota-mani"
         ]
       },
       {
         "boundary": [
-          null,
+          159,
           1413,
           "Thunder Lizard Horn"
         ],
@@ -138427,7 +138454,7 @@
       },
       {
         "boundary": [
-          null,
+          160,
           1413,
           "Bristleback Quilboar Tusk"
         ],
@@ -138437,7 +138464,7 @@
       },
       {
         "boundary": [
-          null,
+          161,
           1413,
           "Bristleback Water Seeker"
         ],
@@ -138447,7 +138474,7 @@
       },
       {
         "boundary": [
-          null,
+          161,
           1413,
           "Bristleback Thornweaver"
         ],
@@ -138457,7 +138484,7 @@
       },
       {
         "boundary": [
-          null,
+          161,
           1413,
           "Bristleback Geomancer"
         ],
@@ -138467,7 +138494,7 @@
       },
       {
         "boundary": [
-          null,
+          162,
           1413,
           "Oasis Snapjaw"
         ],
@@ -138497,7 +138524,7 @@
       },
       {
         "boundary": [
-          null,
+          166,
           1413,
           "Gazlowe"
         ],
@@ -138517,7 +138544,7 @@
       },
       {
         "boundary": [
-          null,
+          169,
           1413,
           "Mebok Mizzyrix"
         ],
@@ -138527,7 +138554,7 @@
       },
       {
         "boundary": [
-          null,
+          171,
           1413,
           "Brewmaster Drohn"
         ],
@@ -138537,7 +138564,7 @@
       },
       {
         "boundary": [
-          null,
+          172,
           1413,
           "Darsok Swiftdagger"
         ],
@@ -138547,7 +138574,7 @@
       },
       {
         "boundary": [
-          null,
+          173,
           1413,
           "Mankrik"
         ],
@@ -138557,7 +138584,7 @@
       },
       {
         "boundary": [
-          null,
+          175,
           1413,
           "Tonga Runetotem"
         ],
@@ -138567,19 +138594,28 @@
       },
       {
         "boundary": [
-          null,
+          191,
           1413,
           "Mangletooth"
         ],
         "actions": [
           "turnin-878-tribes-at-war",
-          "accept-5052-blood-shards-of-agamaggan",
+          "accept-5052-blood-shards-of-agamaggan"
+        ]
+      },
+      {
+        "boundary": [
+          192,
+          1413,
+          "Mangletooth"
+        ],
+        "actions": [
           "turnin-5052-blood-shards-of-agamaggan"
         ]
       },
       {
         "boundary": [
-          null,
+          194,
           1413,
           "Jorn Skyseer"
         ],
@@ -138599,7 +138635,7 @@
       },
       {
         "boundary": [
-          null,
+          194,
           1413,
           "Jorn Skyseer"
         ],
@@ -138610,7 +138646,7 @@
       },
       {
         "boundary": [
-          null,
+          195,
           1413,
           "Stormsnout"
         ],
@@ -138620,7 +138656,7 @@
       },
       {
         "boundary": [
-          null,
+          196,
           1413,
           "Jorn Skyseer"
         ],
@@ -138640,7 +138676,7 @@
       },
       {
         "boundary": [
-          null,
+          196,
           1413,
           "Jorn Skyseer"
         ],
@@ -138650,7 +138686,7 @@
       },
       {
         "boundary": [
-          null,
+          200,
           1413,
           "Thunderhawk Wings"
         ],
@@ -138660,7 +138696,7 @@
       },
       {
         "boundary": [
-          null,
+          201,
           1413,
           "Jorn Skyseer"
         ],
@@ -138680,7 +138716,7 @@
       },
       {
         "boundary": [
-          null,
+          201,
           1413,
           "Jorn Skyseer"
         ],
@@ -138700,7 +138736,7 @@
       },
       {
         "boundary": [
-          null,
+          202,
           1413,
           "Apothecary Helbrim"
         ],
@@ -138710,7 +138746,7 @@
       },
       {
         "boundary": [
-          null,
+          208,
           1456,
           "Apothecary Zamah"
         ],
@@ -138725,12 +138761,84 @@
           null
         ],
         "actions": [
-          "level-before-accept-868-egg-hunt"
+          "level-before-accept-879-betrayal-from-within",
+          "visit-before-accept-879-betrayal-from-within"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1413,
+          "Mangletooth"
+        ],
+        "actions": [
+          "accept-879-betrayal-from-within"
         ]
       },
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-893-weapons-of-choice"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1413,
+          "Tatternack Steelforge"
+        ],
+        "actions": [
+          "accept-893-weapons-of-choice"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Owatanka"
+        ],
+        "actions": [
+          "note-884-owatanka-loot"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-884-owatanka",
+          "loot-starter-before-accept-884-owatanka"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-884-owatanka"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-868-egg-hunt"
+        ]
+      },
+      {
+        "boundary": [
+          246,
           1413,
           "Korran"
         ],
@@ -138740,7 +138848,7 @@
       },
       {
         "boundary": [
-          null,
+          247,
           1413,
           "Hezrul Bloodmark"
         ],
@@ -138750,7 +138858,7 @@
       },
       {
         "boundary": [
-          null,
+          248,
           1413,
           "Regthar Deathgate"
         ],
@@ -139097,7 +139205,6 @@
           null
         ],
         "actions": [
-          "level-before-accept-879-betrayal-from-within",
           "level-before-accept-3923-loremaster"
         ]
       },
@@ -139305,78 +139412,7 @@
       },
       {
         "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "visit-before-accept-879-betrayal-from-within"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Mangletooth"
-        ],
-        "actions": [
-          "accept-879-betrayal-from-within"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-893-weapons-of-choice"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Tatternack Steelforge"
-        ],
-        "actions": [
-          "accept-893-weapons-of-choice"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-note-884-owatanka-loot"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Owatanka"
-        ],
-        "actions": [
-          "note-884-owatanka-loot"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "loot-starter-before-accept-884-owatanka",
-          "accept-884-owatanka"
-        ]
-      },
-      {
-        "boundary": [
-          null,
+          21,
           1413,
           "Silithid Mound"
         ],
@@ -139411,14 +139447,32 @@
           null
         ],
         "actions": [
-          "loot-starter-before-accept-897-the-harvester",
-          "accept-897-the-harvester",
-          "level-before-accept-843-gann-s-reclamation"
+          "loot-starter-before-accept-897-the-harvester"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          null,
+          null
+        ],
+        "actions": [
+          "accept-897-the-harvester"
         ]
       },
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-843-gann-s-reclamation"
+        ]
+      },
+      {
+        "boundary": [
+          24,
           1413,
           "Gann Stonespire"
         ],
@@ -139428,7 +139482,7 @@
       },
       {
         "boundary": [
-          null,
+          25,
           1413,
           "Kuz"
         ],
@@ -139438,7 +139492,7 @@
       },
       {
         "boundary": [
-          null,
+          26,
           1413,
           "Nak"
         ],
@@ -139448,7 +139502,7 @@
       },
       {
         "boundary": [
-          null,
+          27,
           1413,
           "Lok Orcbane"
         ],
@@ -139458,7 +139512,7 @@
       },
       {
         "boundary": [
-          null,
+          28,
           1413,
           "Razormane Backstabber"
         ],
@@ -139488,7 +139542,7 @@
       },
       {
         "boundary": [
-          null,
+          29,
           1413,
           "Charred Razormane Wand"
         ],
@@ -139498,7 +139552,7 @@
       },
       {
         "boundary": [
-          null,
+          30,
           1413,
           "Razormane War Shield"
         ],
@@ -139513,13 +139567,22 @@
           null
         ],
         "actions": [
-          "loot-starter-before-accept-885-washte-pawne",
+          "loot-starter-before-accept-885-washte-pawne"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          null,
+          null
+        ],
+        "actions": [
           "accept-885-washte-pawne"
         ]
       },
       {
         "boundary": [
-          null,
+          32,
           1413,
           "Prospector Khazgorm"
         ],
@@ -139529,7 +139592,7 @@
       },
       {
         "boundary": [
-          null,
+          33,
           1413,
           "Bael'dun Foreman"
         ],
@@ -139539,7 +139602,7 @@
       },
       {
         "boundary": [
-          null,
+          33,
           1413,
           "Bael'dun Excavator"
         ],
@@ -139549,7 +139612,7 @@
       },
       {
         "boundary": [
-          null,
+          34,
           1413,
           "Gann Stonespire"
         ],
@@ -139569,7 +139632,7 @@
       },
       {
         "boundary": [
-          null,
+          34,
           1413,
           "Gann Stonespire"
         ],
@@ -139579,7 +139642,7 @@
       },
       {
         "boundary": [
-          null,
+          35,
           1413,
           "Bael'dun Rifleman"
         ],
@@ -139589,7 +139652,7 @@
       },
       {
         "boundary": [
-          null,
+          35,
           1413,
           "Wood Pulp"
         ],
@@ -139599,7 +139662,7 @@
       },
       {
         "boundary": [
-          null,
+          35,
           1413,
           "Sodium Nitrate"
         ],
@@ -139609,7 +139672,7 @@
       },
       {
         "boundary": [
-          null,
+          36,
           1413,
           "Gann Stonespire"
         ],
@@ -139629,7 +139692,7 @@
       },
       {
         "boundary": [
-          null,
+          36,
           1413,
           "Gann Stonespire"
         ],
@@ -139639,7 +139702,7 @@
       },
       {
         "boundary": [
-          null,
+          38,
           1413,
           "Revenge of Gann"
         ],
@@ -139649,7 +139712,7 @@
       },
       {
         "boundary": [
-          null,
+          38,
           1413,
           "Gann Stonespire"
         ],
@@ -139659,7 +139722,7 @@
       },
       {
         "boundary": [
-          null,
+          41,
           1413,
           "Tatternack Steelforge"
         ],
@@ -139669,7 +139732,7 @@
       },
       {
         "boundary": [
-          null,
+          42,
           1413,
           "Jorn Skyseer"
         ],
@@ -139681,7 +139744,7 @@
       },
       {
         "boundary": [
-          null,
+          43,
           1413,
           "Mangletooth"
         ],
@@ -139701,7 +139764,7 @@
       },
       {
         "boundary": [
-          null,
+          43,
           1413,
           "Mangletooth"
         ],
@@ -139711,7 +139774,7 @@
       },
       {
         "boundary": [
-          null,
+          45,
           1413,
           "Thork"
         ],
@@ -139721,7 +139784,7 @@
       },
       {
         "boundary": [
-          null,
+          46,
           1413,
           "Korran"
         ],
@@ -139731,7 +139794,7 @@
       },
       {
         "boundary": [
-          null,
+          48,
           1413,
           "Mahren Skyseer"
         ],
@@ -139751,7 +139814,7 @@
       },
       {
         "boundary": [
-          null,
+          48,
           1413,
           "Mahren Skyseer"
         ],
@@ -139761,7 +139824,7 @@
       },
       {
         "boundary": [
-          null,
+          49,
           1413,
           "Isha Awak"
         ],
@@ -139771,7 +139834,7 @@
       },
       {
         "boundary": [
-          null,
+          50,
           1413,
           "Mahren Skyseer"
         ],

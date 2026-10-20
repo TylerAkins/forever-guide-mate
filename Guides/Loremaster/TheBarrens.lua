@@ -3118,6 +3118,100 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
         },
+        { id = "level-before-accept-879-betrayal-from-within", kind = "note", checkpointQuest = 879, text = "Reach level 17 before this visit.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 17 } }, requiredLevel = 17 },
+        { id = "visit-before-accept-879-betrayal-from-within", kind = "note", checkpointQuest = 879, text = "Return for this visit at level 24.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 24 } }, requiredLevel = 24 },
+        {
+            route = {
+                { y = 0.5924, mapID = 1413, label = "Mangletooth", offMapText = "Travel to Mangletooth in The Barrens.", x = 0.4455 },
+            },
+            text = "Accept Betrayal from Within from Mangletooth.",
+            id = "accept-879-betrayal-from-within",
+            kind = "accept",
+            conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
+            complete = {
+                quest = { id = 879, state = "activeOrCompleted" },
+            },
+            sourceStep = 16,
+            requiredQuests = { { mode = "any", quests = { 5052 }, conditions = {  } } },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        { id = "level-before-accept-893-weapons-of-choice", kind = "note", checkpointQuest = 893, text = "Reach level 17 before this visit.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 17 } }, requiredLevel = 17 },
+        {
+            route = {
+                { y = 0.5768, mapID = 1413, label = "Tatternack Steelforge", offMapText = "Travel to Tatternack Steelforge in The Barrens.", x = 0.451 },
+            },
+            text = "Accept Weapons of Choice from Tatternack Steelforge.",
+            id = "accept-893-weapons-of-choice",
+            kind = "accept",
+            conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
+            complete = {
+                quest = { id = 893, state = "activeOrCompleted" },
+            },
+            sourceStep = 18,
+            requiredQuests = {  },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        },
+        {
+            route = {
+                { y = 0.63, mapID = 1413, label = "Owatanka", offMapText = "Travel to Owatanka.", x = 0.54 },
+            },
+            text = "Kill Owatanka and loot Owatanka's Tailspike.",
+            id = "note-884-owatanka-loot",
+            kind = "note",
+            conditions = { all = { { faction = "Horde" }, { level = { min = 10 } } } },
+            complete = {
+                any = {
+                    {
+                        quest = { id = 884, state = "activeOrCompleted" },
+                    },
+                    { item = "Owatanka's Tailspike" },
+                },
+            },
+            requiredQuests = {  },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        excludeWhen = { ["not"] = { any = { { item = "Owatanka's Tailspike" }, { quest = { id = 884, state = "activeOrCompleted" } } } } }, },
+        { id = "level-before-accept-884-owatanka", kind = "note", checkpointQuest = 884, text = "Reach level 10 before this visit.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 10 } }, requiredLevel = 10 },
+        {
+            id = "loot-starter-before-accept-884-owatanka",
+            kind = "note",
+            instructionOnly = true,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 10 } } } },
+            text = "Loot Owatanka's Tailspike from Owatanka. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Owatanka's Tailspike", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 884, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {  },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        excludeWhen = { ["not"] = { any = { { item = "Owatanka's Tailspike" }, { quest = { id = 884, state = "activeOrCompleted" } } } } }, },
+        {
+            text = "Use the Owatanka's Tailspike to accept Owatanka.",
+            id = "accept-884-owatanka",
+            kind = "accept",
+            conditions = { all = { { faction = "Horde" }, { level = { min = 10 } } } },
+            complete = {
+                quest = { id = 884, state = "activeOrCompleted" },
+            },
+            sourceStep = 20,
+            requiredQuests = {  },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {  },
+        excludeWhen = { ["not"] = { any = { { item = "Owatanka's Tailspike" }, { quest = { id = 884, state = "activeOrCompleted" } } } } }, },
         { id = "level-before-accept-868-egg-hunt", kind = "note", checkpointQuest = 868, text = "Reach level 17 before this visit.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 17 } }, requiredLevel = 17 },
         {
             id = "accept-868-egg-hunt",
@@ -3596,7 +3690,6 @@ ns:RegisterGuide({
             useClientPin = false,
             dependsOn = { "woven-objective-97003-cholaruk-the-ravener" },
         },
-        { id = "level-before-accept-879-betrayal-from-within", kind = "note", checkpointQuest = 879, text = "Reach level 17 before this visit.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 17 } }, requiredLevel = 17 },
         { id = "level-before-accept-3923-loremaster", kind = "note", checkpointQuest = 3923, text = "Reach level 10 before this visit.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 10 } }, requiredLevel = 10 },
         {
             id = "accept-3923-loremaster",
@@ -3806,99 +3899,6 @@ ns:RegisterGuide({
             useClientPin = false,
             route = { { mapID = 1413, x = 0.618, y = 0.39399999999999996, label = "Bainham", offMapText = "Travel to Bainham." } },
         },
-        { id = "visit-before-accept-879-betrayal-from-within", kind = "note", checkpointQuest = 879, text = "Return for this visit at level 24.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 24 } }, requiredLevel = 24 },
-        {
-            route = {
-                { y = 0.5924, mapID = 1413, label = "Mangletooth", offMapText = "Travel to Mangletooth in The Barrens.", x = 0.4455 },
-            },
-            text = "Accept Betrayal from Within from Mangletooth.",
-            id = "accept-879-betrayal-from-within",
-            kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
-            complete = {
-                quest = { id = 879, state = "activeOrCompleted" },
-            },
-            sourceStep = 16,
-            requiredQuests = { { mode = "any", quests = { 5052 }, conditions = {  } } },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {  },
-        },
-        { id = "level-before-accept-893-weapons-of-choice", kind = "note", checkpointQuest = 893, text = "Reach level 17 before this visit.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 17 } }, requiredLevel = 17 },
-        {
-            route = {
-                { y = 0.5768, mapID = 1413, label = "Tatternack Steelforge", offMapText = "Travel to Tatternack Steelforge in The Barrens.", x = 0.451 },
-            },
-            text = "Accept Weapons of Choice from Tatternack Steelforge.",
-            id = "accept-893-weapons-of-choice",
-            kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
-            complete = {
-                quest = { id = 893, state = "activeOrCompleted" },
-            },
-            sourceStep = 18,
-            requiredQuests = {  },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {  },
-        },
-        { id = "level-before-note-884-owatanka-loot", kind = "note", checkpointQuest = 884, text = "Reach level 10 before this visit.", conditions = { all = { { faction = "Horde" }, } }, complete = { level = { min = 10 } }, requiredLevel = 10 , excludeWhen = { ["not"] = { any = { { item = "Owatanka's Tailspike" }, { quest = { id = 884, state = "activeOrCompleted" } } } } } },
-        {
-            route = {
-                { y = 0.63, mapID = 1413, label = "Owatanka", offMapText = "Travel to Owatanka.", x = 0.54 },
-            },
-            text = "Kill Owatanka and loot Owatanka's Tail.",
-            id = "note-884-owatanka-loot",
-            kind = "note",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 10 } } } },
-            complete = {
-                any = {
-                    {
-                        quest = { id = 884, state = "activeOrCompleted" },
-                    },
-                    { item = "Owatanka's Tail" },
-                },
-            },
-            requiredQuests = {  },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {  },
-        excludeWhen = { ["not"] = { any = { { item = "Owatanka's Tailspike" }, { quest = { id = 884, state = "activeOrCompleted" } } } } }, },
-        {
-            id = "loot-starter-before-accept-884-owatanka",
-            kind = "note",
-            instructionOnly = true,
-            conditions = { all = { { faction = "Horde" }, { level = { min = 10 } } } },
-            text = "Loot Owatanka's Tailspike from Owatanka. Keep it for the next pickup.",
-            complete = {
-                any = {
-                    {
-                        item = { name = "Owatanka's Tailspike", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 884, state = "activeOrCompleted" },
-                    },
-                },
-            },
-            requiredQuests = {  },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {  },
-        excludeWhen = { ["not"] = { any = { { item = "Owatanka's Tailspike" }, { quest = { id = 884, state = "activeOrCompleted" } } } } }, },
-        {
-            text = "Use the Owatanka's Tailspike to accept Owatanka.",
-            id = "accept-884-owatanka",
-            kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 10 } } } },
-            complete = {
-                quest = { id = 884, state = "activeOrCompleted" },
-            },
-            sourceStep = 20,
-            requiredQuests = {  },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {  },
-        excludeWhen = { ["not"] = { any = { { item = "Owatanka's Tailspike" }, { quest = { id = 884, state = "activeOrCompleted" } } } } }, },
         {
             text = "Collect 12 Silithid Egg.",
             route = {
