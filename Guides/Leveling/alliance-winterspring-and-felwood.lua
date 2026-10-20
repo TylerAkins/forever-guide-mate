@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Winterspring & Felwood",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-winterspring-and-felwood",
@@ -2528,6 +2528,7 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-8470-deadwood-ritual-totem",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 8470,
             conditions = { faction = "Alliance" },
             text = "Loot Deadwood Ritual Totem from Deadwood Den Watcher, Deadwood Avenger, Deadwood Shaman. Keep it for the next pickup.",
             complete = {
@@ -2544,7 +2545,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8470, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Deadwood Ritual Totem", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Use the Deadwood Ritual Totem to accept Deadwood Ritual Totem.",
             id = "accept-8470-deadwood-ritual-totem",
@@ -2565,7 +2574,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8470, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Deadwood Ritual Totem", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             route = {
                 { y = 0.0813, mapID = 1448, label = "Nafien", offMapText = "Travel to Nafien in Felwood.", x = 0.6477 },
@@ -2658,7 +2675,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = true,
             dependsOn = { "accept-8470-deadwood-ritual-totem" },
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8470, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Deadwood Ritual Totem", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Turn in Deadwood Ritual Totem to Kernda.",
             route = {
@@ -2682,7 +2707,15 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8470, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Deadwood Ritual Totem", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Turn in Winterfall Ritual Totem to Kernda.",
             route = {

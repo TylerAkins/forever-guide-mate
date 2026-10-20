@@ -84,12 +84,45 @@ for _, path in ipairs({
     "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
     "Guides/Leveling/zephras-isle.lua",
     "Guides/Loremaster/DunMorogh.lua",
+    "Guides/Loremaster/RedridgeMountains.lua",
+    "Guides/Loremaster/Duskwood.lua",
+    "Guides/Loremaster/Wetlands.lua",
+    "Guides/Loremaster/HillsbradFoothills.lua",
+    "Guides/Loremaster/AlteracMountains.lua",
+    "Guides/Loremaster/ArathiHighlands.lua",
+    "Guides/Loremaster/StranglethornVale.lua",
+    "Guides/Loremaster/Badlands.lua",
+    "Guides/Loremaster/SwampofSorrows.lua",
+    "Guides/Loremaster/BlastedLands.lua",
+    "Guides/Loremaster/SearingGorge.lua",
+    "Guides/Loremaster/BurningSteppes.lua",
+    "Guides/Loremaster/TheHinterlands.lua",
+    "Guides/Loremaster/WesternPlaguelands.lua",
+    "Guides/Loremaster/EasternPlaguelands.lua",
+    "Guides/Loremaster/StonetalonMountains.lua",
+    "Guides/Loremaster/Ashenvale.lua",
+    "Guides/Loremaster/ThousandNeedles.lua",
+    "Guides/Loremaster/Desolace.lua",
+    "Guides/Loremaster/DustwallowMarsh.lua",
+    "Guides/Loremaster/Feralas.lua",
+    "Guides/Loremaster/Tanaris.lua",
+    "Guides/Loremaster/Azshara.lua",
+    "Guides/Loremaster/Felwood.lua",
+    "Guides/Loremaster/UnGoroCrater.lua",
+    "Guides/Loremaster/Winterspring.lua",
+    "Guides/Loremaster/Silithus.lua",
+    "Guides/Loremaster/Moonglade.lua",
     "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",
     "Guides/Loremaster/Durotar.lua",
     "Guides/Loremaster/Teldrassil.lua",
     "Guides/Loremaster/ElwynnForest.lua",
+    "Guides/Loremaster/Westfall.lua",
+    "Guides/Loremaster/LochModan.lua",
+    "Guides/Loremaster/Darkshore.lua",
+    "Guides/Loremaster/SilverpineForest.lua",
+    "Guides/Loremaster/TheBarrens.lua",
     "Guides/Leveling/tirisfal-glades.lua",
     "Guides/Leveling/mulgore.lua",
     "Guides/Leveling/durotar.lua",
@@ -279,6 +312,25 @@ local function ExplicitPickupBranches(goals)
     return accepts == 2 and factions.Alliance and factions.Horde
 end
 
+local function CompleteFactionBranches(goals)
+    local branches, signature = {}, nil
+    for _, goal in ipairs(goals) do
+        local faction = FactionOf(goal.conditions)
+        if faction ~= "Alliance" and faction ~= "Horde" then return false end
+        branches[faction] = branches[faction] or {}
+        local branch = branches[faction]
+        branch[#branch + 1] = table.concat({goal.kind or "", Serialize(WithoutFaction(goal.conditions or {})),
+            Serialize(goal.complete), goal.text or "", Serialize(goal.requiredQuests)}, "|")
+    end
+    if not branches.Alliance or not branches.Horde or #branches.Alliance ~= #branches.Horde then return false end
+    for i, action in ipairs(branches.Alliance) do
+        if action ~= branches.Horde[i] then return false end
+    end
+    local accepts = 0
+    for _, goal in ipairs(goals) do if goal.kind == "accept" then accepts = accepts + 1 end end
+    return accepts == 2
+end
+
 local function GoalQuestID(goal)
     local complete = goal.complete
     if type(complete) ~= "table" then return nil end
@@ -332,7 +384,10 @@ for _, guideID in ipairs(ns.guideOrder) do
                 end
             end
             Check(mismatchID == nil or (guide.routeMode == "ordered"
-                and ExplicitPickupBranches(byQuest[questID])), ("%s quest %d: %s and %s do not share conditions")
+                and (ExplicitPickupBranches(byQuest[questID])
+                    or CompleteFactionBranches(byQuest[questID])
+                    or guideData.DisjointPickupBranches(byQuest[questID], ns.EvaluateCondition)
+                    or guideData.PreservedPickupBranches(byQuest[questID], ns.guides, ns.EvaluateCondition, Serialize))), ("%s quest %d: %s and %s do not share conditions")
                 :format(guideID, questID, tostring(firstID), tostring(mismatchID)))
         end
     end
@@ -421,19 +476,33 @@ for _, guideID in ipairs(ns.guideOrder) do
         end
     end
 
-    local objectivesByQuest = {}
-    for _, goal in ipairs(guide.goals) do
+    local objectivesByQuest, actionPositions = {}, {}
+    for index, goal in ipairs(guide.goals) do
+        actionPositions[goal.id] = index
         local spec = QuestObjectiveSpec(goal)
         if spec and type(spec.id) == "number" then
             objectivesByQuest[spec.id] = objectivesByQuest[spec.id] or {}
-            objectivesByQuest[spec.id][#objectivesByQuest[spec.id] + 1] = goal.id
+            objectivesByQuest[spec.id][#objectivesByQuest[spec.id] + 1] = goal
         end
     end
-    for _, goal in ipairs(guide.goals) do
+    for index, goal in ipairs(guide.goals) do
         if goal.kind == "turnin" then
             local questID = guideData.AcceptQuestIDFromGoal(goal)
-            for _, objectiveID in ipairs(objectivesByQuest[questID] or {}) do
-                local found = false
+            for _, objective in ipairs(objectivesByQuest[questID] or {}) do
+                local objectiveID = objective.id
+                local found = not guideData.ActionsOverlap(goal, objective, ns.EvaluateCondition)
+                -- A matching later pickup begins a separate visit.
+                if actionPositions[objectiveID] > index then
+                    for nextIndex=index+1,actionPositions[objectiveID]-1 do
+                        local pickup=guide.goals[nextIndex]
+                        if pickup.kind=="accept" and guideData.AcceptQuestIDFromGoal(pickup)==questID
+                            and Serialize(pickup.conditions)==Serialize(goal.conditions)
+                            and Serialize(pickup.conditions)==Serialize(objective.conditions) then
+                            found=true
+                            break
+                        end
+                    end
+                end
                 for _, dependency in ipairs(goal.dependsOn or {}) do
                     if dependency == objectiveID then found = true end
                 end

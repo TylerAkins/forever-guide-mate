@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Feralas & Un'Goro Crater",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-feralas-and-ungoro-crater",
@@ -908,6 +908,7 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-7738-perfect-yeti-hide",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 7738,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -931,6 +932,22 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 7738, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Perfect Yeti Hide", minCount = 1 } },
+                                { faction = "Horde" },
+                                {
+                                    any = { { any = { { quest = { id = 2822, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "Use the Perfect Yeti Hide to accept Perfect Yeti Hide.",
@@ -961,6 +978,22 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 7738, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Perfect Yeti Hide", minCount = 1 } },
+                                { faction = "Horde" },
+                                {
+                                    any = { { any = { { quest = { id = 2822, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             id = "objective-7734-1-rage-scar-yeti-hide",
@@ -2069,6 +2102,22 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 7738, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Perfect Yeti Hide", minCount = 1 } },
+                                { faction = "Horde" },
+                                {
+                                    any = { { any = { { quest = { id = 2822, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "Turn in Mountain Giant Muisek to Witch Doctor Uzer'i.",

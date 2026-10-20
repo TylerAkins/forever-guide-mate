@@ -6193,5 +6193,1083 @@
       }
     }
   },
-  "clientWalkthrough": "Not performed."
+  "clientWalkthrough": "Not performed.",
+  "inheritedOwnership": {
+    "170": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "179": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "182": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "183": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "218": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "224": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "233": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "234": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "267": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "282": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "287": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "291": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "308": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "310": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "311": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "312": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "313": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "314": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "315": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "317": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "318": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "319": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "320": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "353": {
+      "status": "supporting",
+      "areaID": 1519,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "384": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead objective areas",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [
+        1
+      ],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "400": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "412": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "413": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "414": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "415": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "416": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "417": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "418": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "419": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "420": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "432": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "433": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "1338": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "1339": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "1599": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead objective areas",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [
+        1
+      ],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "1638": {
+      "status": "unresolved",
+      "areaID": null,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        12,
+        1519
+      ]
+    },
+    "1639": {
+      "status": "supporting",
+      "areaID": 1519,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1519
+      ]
+    },
+    "1640": {
+      "status": "supporting",
+      "areaID": 1519,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1519
+      ]
+    },
+    "1645": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "1646": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "1647": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "1648": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead objective areas",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [
+        1537
+      ],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "1665": {
+      "status": "supporting",
+      "areaID": 1519,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1519
+      ]
+    },
+    "1688": {
+      "status": "supporting",
+      "areaID": 1519,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1519
+      ]
+    },
+    "1689": {
+      "status": "unresolved",
+      "areaID": null,
+      "method": "Wowhead objective areas",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [
+        1497,
+        1519,
+        1637
+      ],
+      "endpointAreas": [
+        1497,
+        1519,
+        1637
+      ]
+    },
+    "1715": {
+      "status": "unresolved",
+      "areaID": null,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1519,
+        1537
+      ]
+    },
+    "1778": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "1779": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "1783": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1,
+        1537
+      ]
+    },
+    "1784": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead objective areas",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [
+        1
+      ],
+      "endpointAreas": [
+        1,
+        1537
+      ]
+    },
+    "1785": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "2160": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "2999": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "3106": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3107": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3108": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3109": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3110": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3112": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3113": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3114": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3115": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "3361": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "3364": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "3365": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "5541": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "5625": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead objective areas",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [
+        1
+      ],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "5637": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1,
+        1519
+      ]
+    },
+    "6064": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "6084": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "6085": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "6086": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1,
+        1537
+      ]
+    },
+    "6387": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "6388": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "6391": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "6392": {
+      "status": "supporting",
+      "areaID": 38,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "6661": {
+      "status": "supporting",
+      "areaID": 2257,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "6662": {
+      "status": "supporting",
+      "areaID": 2257,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "94373": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead objective areas",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [
+        1
+      ],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "94374": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1,
+        14,
+        215
+      ]
+    },
+    "94375": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1,
+        14,
+        215
+      ]
+    },
+    "94449": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1,
+        1537
+      ]
+    },
+    "94465": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1,
+        38
+      ]
+    },
+    "94817": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1537
+      ]
+    },
+    "94824": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1,
+        1537
+      ]
+    },
+    "95041": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "95212": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "95213": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "95214": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "95217": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "96390": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "96391": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "96392": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "96408": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "96608": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "96628": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "97263": {
+      "status": "supporting",
+      "areaID": 1537,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "97277": {
+      "status": "supporting",
+      "areaID": 77,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "98319": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "98321": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "98322": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "98323": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "98326": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "98574": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "98581": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead delivery endpoints",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": [
+        1
+      ]
+    },
+    "99158": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "99159": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "99160": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "99161": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    },
+    "99162": {
+      "status": "zone-owned",
+      "areaID": 1,
+      "method": "Wowhead category",
+      "sourceRevision": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330",
+      "objectiveAreas": [],
+      "endpointAreas": []
+    }
+  },
+  "supportingQuests": [
+    224,
+    267,
+    353,
+    416,
+    418,
+    1338,
+    1339,
+    1639,
+    1640,
+    1645,
+    1646,
+    1647,
+    1648,
+    1665,
+    1688,
+    1778,
+    1779,
+    1785,
+    2999,
+    6387,
+    6388,
+    6391,
+    6392,
+    6661,
+    6662,
+    94817,
+    97263,
+    97277
+  ],
+  "unresolvedOwnershipQuests": [
+    1638,
+    1689,
+    1715
+  ]
 }

@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Feralas & Tanaris",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-feralas-and-tanaris",
@@ -585,8 +585,9 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-2766-find-oox-22-fe",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 2766,
             conditions = { faction = "Alliance" },
-            text = "Loot OOX-22/FE Distress Beacon from Gordunni Ogre, Gordunni Brute, Gordunni Mauler, Gordunni Shaman, Gordunni Ogre Mage, Gordunni Mage-Lord, Gordunni Warlock, Zukk'ash Wasp, Zukk'ash Worker, Woodpaw Mongrel, Woodpaw Alpha, Groddoc Ape, Grizzled Ironfur Bear, Sprite Darter, Feral Scar Yeti, Ferocious Rage Scar, Frayfeather Hippogryph, Frayfeather Patriarch, Vale Screecher, Hatecrest Myrmidon, Hatecrest Screamer, Book: The Powers Below, Cliff Giant, Northspring Harpy, Northspring Roguefeather, Northspring Slayer, Northspring Windcaller, Dartol's Rod of Transformation, Wandering Forest Walker, Grimtotem Raider, Grimtotem Naturalist, Grimtotem Shaman, Edana Hatetalon, Lord Shalzaru, Zapped Wave Strider, Stinglasher. Keep it for the next pickup.",
+            text = "If an OOX-22/FE Distress Beacon drops while questing in Feralas, keep it for the optional rescue chain.",
             complete = {
                 any = {
                     {
@@ -601,6 +602,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
         },
         {
             id = "level-before-accept-2766-find-oox-22-fe",
@@ -615,6 +624,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2766,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
         },
         {
             text = "Use the OOX-22/FE Distress Beacon to accept Find OOX-22/FE!.",
@@ -636,6 +653,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
         },
         {
             text = "Turn in The Missing Courier.",
@@ -1070,6 +1095,14 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
         },
         {
             id = "objective-2821-1-thick-yeti-hide",
@@ -1599,6 +1632,7 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-4281-thalanaar-delivery",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 4281,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1622,6 +1656,92 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 4281, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Undelivered Parcel", minCount = 1 } },
+                                { faction = "Alliance" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 4131, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 4130, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 4129, state = "activeOrCompleted" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 4127, state = "activeOrCompleted" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Alliance" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 4125, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Alliance" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 4124, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "Use the Undelivered Parcel to accept Thalanaar Delivery.",
@@ -1652,6 +1772,92 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 4281, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Undelivered Parcel", minCount = 1 } },
+                                { faction = "Alliance" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 4131, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 4130, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 4129, state = "activeOrCompleted" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 4127, state = "activeOrCompleted" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Alliance" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 4125, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Alliance" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 4124, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "Turn in The Writhing Deep.",
@@ -2253,6 +2459,92 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 4281, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Undelivered Parcel", minCount = 1 } },
+                                { faction = "Alliance" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 4131, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 4130, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 4129, state = "activeOrCompleted" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 4127, state = "activeOrCompleted" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Alliance" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 4125, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Alliance" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 4124, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "Turn in The Borrower to Curgle Cranklehop.",

@@ -91,6 +91,34 @@ Load("Guides/Dungeons/DrownedCity.lua")
 Load("Guides/Leveling/horde-mulgore-part-2.lua")
 Load("Guides/Leveling/zephras-isle.lua")
 Load("Guides/Loremaster/DunMorogh.lua")
+Load("Guides/Loremaster/RedridgeMountains.lua")
+Load("Guides/Loremaster/Duskwood.lua")
+Load("Guides/Loremaster/Wetlands.lua")
+Load("Guides/Loremaster/HillsbradFoothills.lua")
+Load("Guides/Loremaster/AlteracMountains.lua")
+Load("Guides/Loremaster/ArathiHighlands.lua")
+Load("Guides/Loremaster/StranglethornVale.lua")
+Load("Guides/Loremaster/Badlands.lua")
+Load("Guides/Loremaster/SwampofSorrows.lua")
+Load("Guides/Loremaster/BlastedLands.lua")
+Load("Guides/Loremaster/SearingGorge.lua")
+Load("Guides/Loremaster/BurningSteppes.lua")
+Load("Guides/Loremaster/TheHinterlands.lua")
+Load("Guides/Loremaster/WesternPlaguelands.lua")
+Load("Guides/Loremaster/EasternPlaguelands.lua")
+Load("Guides/Loremaster/StonetalonMountains.lua")
+Load("Guides/Loremaster/Ashenvale.lua")
+Load("Guides/Loremaster/ThousandNeedles.lua")
+Load("Guides/Loremaster/Desolace.lua")
+Load("Guides/Loremaster/DustwallowMarsh.lua")
+Load("Guides/Loremaster/Feralas.lua")
+Load("Guides/Loremaster/Tanaris.lua")
+Load("Guides/Loremaster/Azshara.lua")
+Load("Guides/Loremaster/Felwood.lua")
+Load("Guides/Loremaster/UnGoroCrater.lua")
+Load("Guides/Loremaster/Winterspring.lua")
+Load("Guides/Loremaster/Silithus.lua")
+Load("Guides/Loremaster/Moonglade.lua")
 Load("Guides/Loremaster/ZephrasIsle.lua")
 Load("Guides/Loremaster/TirisfalGlades.lua")
 Load("Guides/Loremaster/Mulgore.lua")
@@ -3986,7 +4014,7 @@ local otherShaman = {}
 for key, value in pairs(shaman) do otherShaman[key] = value end
 otherShaman.level = 10
 otherShaman.raceID = 6
-Equal(ns.EvaluateCondition(callOfFire.conditions, otherShaman), false, "other horde shamans do not take Call of Fire")
+Equal(ns.EvaluateCondition(callOfFire.conditions, otherShaman), true, "Wowhead permits other Horde shamans to take Call of Fire")
 local skyborneWarrior = {}
 for key, value in pairs(hordeSkyborne) do skyborneWarrior[key] = value end
 skyborneWarrior.classID = 1
@@ -6025,7 +6053,7 @@ local function TestClassQuestGuides()
         { "leveling-era-mulgore", "turnin-748-poison-water", "Horde", { { 6, 1, true }, { 2, 1, false } } },
         { "leveling-era-mulgore", "accept-854-journey-to-the-crossroads", "Horde", { { 6, 1, true }, { 8, 1, false } } },
         { "leveling-era-tirisfal-glades", "accept-363-rude-awakening", "Horde", { { 5, 1, true }, { 2, 1, false } } },
-        { "leveling-zephras-isle", "accept-welcome-to-azeroth", "Horde", { { 96, 1, true }, { 2, 1, false } }, 14 },
+        { "leveling-zephras-isle", "accept-welcome-to-azeroth", "Horde", { { 96, 1, true }, { 2, 1, true } }, 14 },
     }
     for _, case in ipairs(starterGates) do
         local step = Goal(ns.guides[case[1]], case[2])
@@ -6694,7 +6722,11 @@ function TestSameTitleQuestChainGates()
         end
     end
     for questID in pairs(chains) do
-        if questID == 166 then
+        local unresolved = guideData.UnresolvedSameTitleQuestChains[questID]
+        if unresolved then
+            Check(type(unresolved) == "string" and #unresolved > 0 and not seen[questID],
+                "unresolved same-title chain " .. questID .. " stays out of routes with its mechanics gap documented")
+        elseif questID == 166 then
             Check(actual.guides["dungeons-the-deadmines"] ~= nil,
                 "the optional Defias dungeon finale stays in the Dungeon library")
         else

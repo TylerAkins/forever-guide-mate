@@ -1,0 +1,480 @@
+"""Source precedence and unsupported mechanics are explicit authoring boundaries."""
+import sys
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
+
+
+class SourcePolicyTests(unittest.TestCase):
+    def facts(self, sources):
+        import loremaster_sources
+        return loremaster_sources.quest_facts(123, {'sourceData': {
+            name: {'attributes': facts, 'revision': name} for name, facts in sources.items()}})
+
+    def test_explicit_empty_wowhead_restrictions_win_over_other_sources(self):
+        facts = self.facts({'wowhead': {'races': [], 'classes': [], 'requiredLevel': 10},
+                            'questiedb': {'requiredRaces': [1], 'requiredClasses': [8], 'requiredLevel': 20}})
+        self.assertEqual(facts['races'], [])
+        self.assertEqual(facts['classes'], [])
+        self.assertEqual(facts['offer'], 10)
+
+    def test_predecessors_use_explicit_group_semantics_not_references(self):
+        facts = self.facts({'wowhead': {'prerequisiteReferences': [99]},
+                            'questiedb': {'preQuestGroup': [10, 11]}})
+        self.assertEqual(facts['requirements'], [{'mode': 'all', 'quests': [10, 11]}])
+        self.assertNotIn(99, facts['requirements'][0]['quests'])
+
+    def test_signed_prerequisites_remain_unresolved(self):
+        facts = self.facts({'questiedb': {'preQuestSingle': [-10]}})
+        self.assertTrue(facts['unresolved'])
+        self.assertEqual(facts['requirements'], [])
+
+    def test_zero_offer_minimum_uses_next_positive_observation(self):
+        facts = self.facts({'wowhead': {'requiredLevel': 0}, 'questiedb': {'requiredLevel': 12}})
+        self.assertEqual(facts['offer'], 12)
+
+    def test_unsupported_reputation_is_not_silently_ignored(self):
+        facts = self.facts({'questiedb': {'requiredMinRep': [529, 3000]}})
+        self.assertTrue(any('requiredMinRep' in reason for reason in facts['unresolved']))
+        self.assertEqual(facts['evidence']['questiedb']['requiredMinRep'], [529, 3000])
+
+    def test_conflicting_faction_and_races_remain_unresolved(self):
+        facts = self.facts({'wowhead': {'faction': 'Alliance', 'races': [2, 6, 8]}})
+        self.assertTrue(any('faction' in reason.lower() for reason in facts['unresolved']))
+
+    def test_objective_omits_return_instruction(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Test', 'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
+            {'point': 'start', 'coord': [10,20], 'name': 'First', 'id': 1},
+            {'point': 'requirement', 'coord': [15,20], 'name': 'Target', 'id': 3},
+            {'point': 'end', 'coord': [20,20], 'name': 'Second', 'id': 2}]]}}}},
+            'questiedb': {'objectivesText': ['Defeat the target, then return to Second.']}})
+        goal = next(g for g in build_actions(facts, 'Horde') if g['kind'] == 'objective')
+        self.assertEqual(goal['text'], 'Defeat the target.')
+
+    def test_level_checkpoint_uses_offer_minimum_not_recommended_quest_level(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Test', 'requiredLevel': 10, 'questLevel': 59,
+             'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
+                 {'point': 'start', 'coord': [10, 20], 'name': 'First', 'id': 1},
+                 {'point': 'end', 'coord': [20, 20], 'name': 'Second', 'id': 2}]]}}}}})
+        checkpoint = build_actions(facts, 'Horde')[0]
+        self.assertEqual(checkpoint['requiredLevel'], 10)
+        self.assertEqual(checkpoint['complete'], {'level': {'min': 10}})
+
+    def test_multiple_items_get_separate_objective_steps_and_visits(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({
+            'wowhead': {'name': 'Brains', 'mapper': {'objectives': {'1377': {'zone': 'Silithus', 'levels': [[
+                {'point': 'start', 'coord': [40, 88], 'name': 'Frankal', 'id': 1},
+                {'point': 'end', 'coord': [40, 88], 'name': 'Frankal', 'id': 1},
+                {'point': 'sourcerequirement', 'coord': [45, 28], 'name': 'Ashi Cache', 'id': 2, 'type': 2, 'item': 'Ashi Brain'},
+                {'point': 'sourcerequirement', 'coord': [26, 55], 'name': 'Zora Waywatcher', 'id': 3, 'type': 1, 'item': 'Zora Brain', 'reacthorde': -1}]]}}}},
+            'questiedb': {'requiredLevel': 10, 'objectives': [None, None, [[100], [200]]],
+                          'objectivesText': ['Recover a Zora Brain and an Ashi Brain.']},
+            'allthethings': {'objectives': {'item': [
+                {'id': 100, 'text': '0/3 Zora Brain'}, {'id': 200, 'text': '0/1 Ashi Brain'}]}}})
+        goals = build_actions(facts, 'Horde')
+        objectives = [g for g in goals if g['kind'] == 'objective']
+        self.assertEqual([g['complete']['questObjective']['text'] for g in objectives], ['Zora Brain', 'Ashi Brain'])
+        self.assertEqual([g['complete']['questObjective']['index'] for g in objectives], [1, 2])
+        self.assertEqual([g['complete']['questObjective']['count'] for g in objectives], [3, 1])
+        self.assertEqual([g['route'][0]['label'] for g in objectives], ['Zora Waywatcher', 'Ashi Cache'])
+        self.assertIn('marked object', objectives[1]['text'])
+        turnin = next(g for g in goals if g['kind'] == 'turnin')
+        self.assertEqual(turnin['dependsOn'], [g['id'] for g in objectives])
+        facts['otherObjectives'] = True
+        with self.assertRaisesRegex(ValueError, 'Mixed collection and non-item objectives'):
+            build_actions(facts, 'Horde')
+
+    def test_item_object_pin_takes_precedence_over_hostile_drop_candidate(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({
+            'wowhead': {'name': 'Lost Satchel', 'mapper': {'objectives': {'1377': {'zone': 'Silithus', 'levels': [[
+                {'point': 'start', 'coord': [51, 38], 'name': 'Noggle', 'id': 1},
+                {'point': 'end', 'coord': [51, 38], 'name': 'Noggle', 'id': 1},
+                {'point': 'sourcerequirement', 'coord': [44, 90], 'name': 'Deathclasp', 'id': 2, 'type': 1, 'item': 'Lost Satchel', 'reacthorde': -1},
+                {'point': 'sourcerequirement', 'coord': [44, 91], 'name': 'Lost Satchel', 'id': 3, 'type': 2, 'item': 'Lost Satchel'}]]}}}},
+            'questiedb': {'requiredLevel': 10, 'objectives': [None, None, [[100]]],
+                          'objectivesText': ['Retrieve the Lost Satchel from the mountains.']},
+            'allthethings': {'objectives': {'item': [{'id': 100, 'text': '0/1 Lost Satchel'}]}}})
+        objective = next(g for g in build_actions(facts, 'Horde') if g['kind'] == 'objective')
+        self.assertEqual(objective['route'][0]['label'], 'Lost Satchel')
+        self.assertIn('marked object', objective['text'])
+        self.assertNotIn('Deathclasp', objective['text'])
+
+    def test_source_item_without_wowhead_markup_is_preserved(self):
+        facts = self.facts({'questiedb': {'sourceItemId': 2794}})
+        self.assertEqual(facts['item'], {'id': 2794, 'name': None})
+        self.assertEqual(facts['evidence']['questiedb']['sourceItemId'], 2794)
+
+    def test_npc_provided_material_is_not_an_item_starter(self):
+        facts = self.facts({'questiedb': {'sourceItemId': 12815, 'startedBy': [[10838]]}})
+        self.assertIsNone(facts['item'])
+
+    def test_report_word_does_not_supply_a_missing_collection_provider(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Search', 'mapper': {'objectives': {'1': {'zone': 'Ashenvale', 'levels': [[
+            {'point': 'start', 'coord': [10,20], 'name': 'Giver', 'id': 1},
+            {'point': 'end', 'coord': [10,20], 'name': 'Giver', 'id': 1}]]}}}},
+            'questiedb': {'objectives': [None,None,[[281014]]], 'objectivesText': ['Search amongst the demons. Report any signs upon your return.']}})
+        with self.assertRaisesRegex(ValueError, 'collection materials'):
+            build_actions(facts, 'Alliance')
+
+    def test_unnamed_intermediate_material_requires_review(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Test', 'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
+            {'point':'start','coord':[10,20],'name':'First','id':1},
+            {'point':'sourcerequirement','coord':[15,20],'name':'First Mob','item':'Bait','id':3},
+            {'point':'sourcerequirement','coord':[16,20],'name':'Boss','item':'Head','id':4},
+            {'point':'end','coord':[20,20],'name':'Second','id':2}]]}}}},
+            'questiedb': {'objectivesText': ['Bring the Head to Second.']}})
+        with self.assertRaisesRegex(ValueError, 'intermediate'):
+            build_actions(facts, 'Horde')
+
+    def test_child_and_extra_objectives_require_reviewed_mechanics(self):
+        for field,value in [('childQuests',[349]),('extraObjectives',[[None,4,'Release the Servant',1,[['object',141812]]]])]:
+            with self.subTest(field=field):
+                facts=self.facts({'questiedb':{field:value}})
+                self.assertTrue(any(field in reason for reason in facts['unresolved']))
+                self.assertEqual(facts['evidence']['questiedb'][field],value)
+
+    def test_all_required_collection_materials_need_source_coverage(self):
+        from author_zone_loremaster import build_actions
+        facts=self.facts({'wowhead':{'name':'Test','mapper':{'objectives':{'1':{'zone':'Durotar','levels':[[
+            {'point':'start','coord':[10,20],'name':'First','id':1},
+            {'point':'sourcerequirement','coord':[15,20],'name':'Spider','item':'Leg','id':3},
+            {'point':'end','coord':[20,20],'name':'Second','id':2}]]}}}},
+            'questiedb':{'objectivesText':['Collect 20 legs and the other ledger materials.'],'objectives':[None,None,[[11725],[11724]]]}})
+        with self.assertRaisesRegex(ValueError,'collection'):
+            build_actions(facts,'Horde')
+        self.assertEqual(facts['objectiveItems'],[11725,11724])
+        self.assertEqual(facts['evidence']['questiedb']['objectives'][2],[[11725],[11724]])
+
+    def test_lua_keyword_keys_are_quoted(self):
+        from loremaster_sources import lua
+        self.assertIn('["not"]', lua({'not': {'profession': {'skillLineID': 333}}}))
+
+    def test_profession_actions_use_engine_skill_line_contract(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Test', 'requiredLevel': 1,
+             'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
+                 {'point': 'start', 'coord': [10, 20], 'name': 'First', 'id': 1},
+                 {'point': 'end', 'coord': [20, 20], 'name': 'Second', 'id': 2}]]}}}},
+             'questiedb': {'requiredSkill': [333, 1]}})
+        for goal in build_actions(facts, 'Horde'):
+            profession = next(c['profession'] for c in goal['conditions']['all'] if 'profession' in c)
+            self.assertEqual(profession, {'skillLineID': 333, 'minRank': 1})
+
+    def test_restricted_ancestor_allows_completed_history_but_excludes_cold_entry(self):
+        import shutil
+        import subprocess
+        from loremaster_sources import prerequisite_availability, lua
+        runner = shutil.which('lua5.1')
+        if not runner: self.skipTest('Lua 5.1 is required')
+        parent = self.facts({'wowhead': {'races': [1], 'classes': []}})
+        parent['id'] = 10
+        child = self.facts({'questiedb': {'preQuestSingle': [10]}})
+        condition = prerequisite_availability(123, {10: parent, 123: child})
+        source = """local n={}; assert(loadfile('GuideEngine.lua'))('FGM',n)
+local condition = %s
+local s={raceID=2,classID=1,faction='Horde',level=60,quests={},completedQuests={},questLogKnown=true,questCompletionKnown=true}
+assert(n.EvaluateCondition(condition,s)==false,'Restricted ancestor excludes cold entry')
+s.completedQuests[10]=true
+assert(n.EvaluateCondition(condition,s)==true,'Observed predecessor history allows midway entry')
+""" % lua(condition)
+        subprocess.run([runner,'-'],input=source,text=True,check=True,cwd=Path(__file__).resolve().parents[1])
+
+    def test_optional_item_parent_requires_drop_or_observed_history(self):
+        import shutil
+        import subprocess
+        from loremaster_sources import prerequisite_availability, lua
+        runner = shutil.which('lua5.1')
+        if not runner: self.skipTest('Lua 5.1 is required')
+        parent = self.facts({'questiedb': {'sourceItemId': 8704}})
+        parent['item']['name'] = 'OOX-09/HL Distress Beacon'
+        child = self.facts({'questiedb': {'preQuestSingle': [485]}})
+        condition = prerequisite_availability(836, {485: parent, 836: child})
+        source = """local n={}; assert(loadfile('GuideEngine.lua'))('FGM',n)
+assert(loadfile('PlayerState.lua'))('FGM',n)
+local c = %s
+local s={raceID=1,classID=1,faction='Alliance',level=60,quests={},completedQuests={},items={},questLogKnown=true,questCompletionKnown=true}
+assert(n.EvaluateCondition(c,s)==false,'Missing optional drop excludes cold entry')
+s.items['OOX-09/HL Distress Beacon']=1
+assert(n.EvaluateCondition(c,s)==true,'Held drop enables possible path')
+s.items={}; s.quests[485]={}
+assert(n.EvaluateCondition(c,s)==true,'Active parent survives consumed starter')
+s.quests={}; s.completedQuests[485]=true
+assert(n.EvaluateCondition(c,s)==true,'Completed parent allows follow-up')
+assert(not s.completedQuests[836],'Availability never invents completion')
+""" % lua(condition)
+        subprocess.run([runner,'-'],input=source,text=True,check=True,cwd=Path(__file__).resolve().parents[1])
+
+    def test_item_names_use_original_observations(self):
+        import gzip
+        import json
+        import tempfile
+        from loremaster_sources import load_facts
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            folder = root / 'data/forever/compilation'
+            folder.mkdir(parents=True)
+            records = [
+                {'entityType': 'quest', 'entityId': '485', 'attributes': {'sourceData': {
+                    'questiedb': {'attributes': {'sourceItemId': 8704}}}}},
+                {'entityType': 'item', 'entityId': '8704', 'attributes': {'name': 'Untrusted merged name', 'sourceData': {
+                    'questiedb': {'attributes': {'name': 'Observed beacon'}},
+                    'foreverclient': {'attributes': {'Display_lang': 'Lower priority name'}}}}}]
+            with gzip.open(folder / 'records.jsonl.gz', 'wt') as stream:
+                for record in records: stream.write(json.dumps(record) + '\n')
+            self.assertEqual(load_facts(root)[485]['item'], {'id': 8704, 'name': 'Observed beacon'})
+
+class ZonePreparationTests(unittest.TestCase):
+    def prepare(self, quests, source_goals=(), upstream_order=(), revision=None, registered=None, extra_guides=(), source_condition=None, catalog_quests=None, existing_guide_goals=()):
+        import gzip
+        import json
+        import tempfile
+        from unittest.mock import patch
+        import author_zone_loremaster as author
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        root = Path(self.temp.name)
+        (root / 'data/forever/compiled/zones').mkdir(parents=True)
+        (root / 'data/forever/compilation').mkdir(parents=True)
+        (root / 'data/forever/compiled/zones/redridge-mountains.json').write_text(json.dumps({
+            'zone': {'zoneId': 44}, 'quests': {str(q): {} for q in (quests if catalog_quests is None else catalog_quests)}}))
+        (root / 'data/forever/compilation/manifest.json').write_text('{"compilationFormatVersion":2}')
+        with gzip.open(root / 'data/forever/compilation/records.jsonl.gz', 'wt') as stream:
+            for q, fields in quests.items():
+                wh = {'name': f'Quest {q}', 'faction': 'Horde', 'races': [], 'classes': [],
+                      'requiredLevel': 10, 'questLevel': 10, 'zoneId': 44,
+                      'wowheadCatalog': {'list': {'firstseenpatch': 11302}},
+                      'mapper': {'objectives': {'44': {'zone': 'Redridge Mountains', 'levels': [[
+                          {'point': 'start', 'id': 1, 'name': 'First', 'coord': [10,20]},
+                          {'point': 'end', 'id': 2, 'name': 'Second', 'coord': [20,20]}]]}}}}
+                wh.update(fields.pop('wowhead', {}))
+                attrs = {'sourceData': {'wowhead': {'attributes': wh, 'revision': 'wh'},
+                                       'questiedb': {'attributes': fields, 'revision': 'qd'}}}
+                stream.write(json.dumps({'entityType': 'quest', 'entityId': str(q), 'attributes': attrs})+'\n')
+        spec = {'zone': 'Redridge Mountains', 'slug': 'redridge-mountains', 'file': 'Guides/Loremaster/RedridgeMountains.lua'}
+        snapshot_guides = [{'id': 'leveling-source', 'category': 'Leveling Quest Guides',
+                    'conditions': source_condition or {'faction': 'Horde'}, 'goals': list(source_goals)}] + list(extra_guides)
+        if existing_guide_goals:
+            current = {'id': 'loremaster-redridge-mountains', 'title': 'Redridge Mountains',
+                       'category': 'Loremaster Guides', 'revision': 1,
+                       'routeMode': 'ordered', 'goals': list(existing_guide_goals)}
+            snapshot_guides.append(current)
+            from loremaster_sources import lua
+            (root / spec['file']).parent.mkdir(parents=True, exist_ok=True)
+            (root / spec['file']).write_text('local _, ns = ...\nns:RegisterGuide(' + lua(current) + ')\n')
+        snapshot = {'guides': snapshot_guides, 'prerequisites': registered or {}}
+        with patch.object(author, 'ROOT', root), patch.object(author.subprocess, 'check_output', return_value=revision or author.UPSTREAM_COMMIT), patch.object(author.subprocess, 'run'), patch.object(author, 'upstream_actions', return_value=(list(upstream_order), {})):
+            text, audit = author.prepare(spec, root, root, snapshot)
+        return text, audit
+
+    def test_breadcrumb_finishes_before_its_target_pickup(self):
+        from weave_loremaster import parse_goals
+        text, audit = self.prepare({10: {'breadcrumbForQuestId': 11}, 11: {}})
+        goals = parse_goals(text, '', '', None)
+        end = next(i for i,g in enumerate(goals) if g.quest_id==10 and g.kind=='turnin')
+        target = next(i for i,g in enumerate(goals) if g.quest_id==11 and g.kind=='accept')
+        self.assertLess(end,target)
+        self.assertTrue(all('alternativeQuests' in g.raw for g in goals if g.quest_id==10))
+
+    def test_source_dependencies_resolve_across_casual_chapters(self):
+        from weave_loremaster import parse_goals
+        def goal(id, kind):
+            return {'id':id,'kind':kind,'conditions':{'faction':'Horde'},
+                    'complete':{'quest':{'id':10,'state':'complete' if kind=='objective' else 'activeOrCompleted'}},
+                    'dependsOn':['objective-10-quest-work'] if kind=='turnin' else []}
+        text, audit = self.prepare({10:{}}, [goal('accept-10','accept'),goal('objective-10','objective')],
+            extra_guides=[{'id':'leveling-second','category':'Leveling Quest Guides',
+                           'conditions':{'faction':'Horde'},'goals':[goal('turnin-10','turnin')]}])
+        turnin=next(g for g in parse_goals(text,'','',None) if g.kind=='turnin')
+        self.assertIn('horde-leveling-source-objective-10',turnin.depends)
+
+    def test_source_return_dependency_imports_its_pickup_and_prerequisites(self):
+        from weave_loremaster import parse_goals
+        def goal(q, kind, dependencies=(), requirements=()):
+            return {'id': kind+'-'+str(q), 'kind':kind, 'conditions':{'faction':'Horde'},
+                    'complete':{'quest':{'id':q,'state':'completed' if kind=='turnin' else 'activeOrCompleted'}},
+                    'dependsOn':list(dependencies), 'requiredQuests':list(requirements)}
+        group={'mode':'any','quests':[30]}
+        source=[goal(30,'accept'),goal(30,'turnin'),goal(20,'accept',requirements=[group]),
+                goal(20,'turnin'),goal(10,'accept',['turnin-20']),goal(10,'turnin')]
+        text,audit=self.prepare({10:{},20:{'preQuestSingle':[30]},30:{}},source,catalog_quests=[10])
+        goals=parse_goals(text,'','',None)
+        pickups={g.quest_id for g in goals if g.kind=='accept'}
+        self.assertTrue({10,20,30} <= pickups, 'A source handoff retains the complete prerequisite path')
+        self.assertTrue({20,30} <= set(audit['supportingQuests']))
+        self.assertIn('20',audit['quests'])
+        self.assertIn('30',audit['quests'])
+
+    def test_extra_source_prerequisite_precedes_its_casual_pickup(self):
+        from weave_loremaster import parse_goals
+        source=[]
+        for q in (20,):
+            for kind in ('accept','objective','turnin'):
+                source.append({'id':kind+'-'+str(q),'kind':kind,'conditions':{'faction':'Horde'},
+                    'complete':{'quest':{'id':q,'state':'complete' if kind=='objective' else 'completed' if kind=='turnin' else 'activeOrCompleted'}},
+                    'dependsOn':['objective-'+str(q)] if kind=='turnin' else [],
+                    'requiredQuests':[{'mode':'any','quests':[10]}] if kind=='accept' else []})
+        text,audit=self.prepare({10:{},20:{'preQuestSingle':[10]}},source,catalog_quests=[10,20])
+        goals=parse_goals(text,'','',None)
+        prerequisite_return=next(i for i,g in enumerate(goals) if g.quest_id==10 and g.kind=='turnin')
+        source_pickup=next(i for i,g in enumerate(goals) if g.quest_id==20 and g.kind=='accept')
+        self.assertLess(prerequisite_return,source_pickup)
+        self.assertEqual([g.id for g in goals if g.quest_id==20],
+                         ['horde-leveling-source-accept-20','horde-leveling-source-objective-20','horde-leveling-source-turnin-20'])
+
+    def test_rerun_preserves_existing_source_actions_still_in_casual_chapter(self):
+        from weave_loremaster import parse_goals
+        source=[]
+        existing=[]
+        for kind in ('accept','objective','turnin'):
+            source_goal={'id':kind+'-10','kind':kind,'conditions':{'faction':'Horde'},
+                'complete':{'quest':{'id':10,'state':'complete' if kind=='objective' else 'completed' if kind=='turnin' else 'activeOrCompleted'}},
+                'dependsOn':['objective-10'] if kind=='turnin' else []}
+            source.append(source_goal)
+            existing.append({**source_goal,
+                'id':'horde-leveling-source-'+source_goal['id'],
+                'sourceGuide':'leveling-source','sourceActionID':source_goal['id']})
+        text,_=self.prepare({10:{}},source,existing_guide_goals=existing)
+        goals=parse_goals(text,'','',None)
+        self.assertTrue({'horde-leveling-source-accept-10','horde-leveling-source-objective-10',
+                         'horde-leveling-source-turnin-10'} <= {g.id for g in goals})
+
+    def test_repeated_source_visit_does_not_wait_for_future_objectives(self):
+        from weave_loremaster import parse_goals
+        source=[]
+        for visit in ['first','later']:
+            for kind in ['accept','objective','turnin']:
+                source.append({'id':kind+'-10-'+visit,'kind':kind,'conditions':{'faction':'Horde'},
+                    'complete':{'quest':{'id':10,'state':'complete' if kind=='objective' else 'completed' if kind=='turnin' else 'activeOrCompleted'}},
+                    'dependsOn':['accept-10-'+visit] if kind!='accept' else []})
+        text,_=self.prepare({10:{}},source)
+        goals=parse_goals(text,'','',None)
+        returned=next(g for g in goals if g.id=='horde-leveling-source-turnin-10-first')
+        self.assertIn('horde-leveling-source-objective-10-first',returned.depends)
+        self.assertNotIn('horde-leveling-source-objective-10-later',returned.depends)
+
+    def test_extracted_visit_retains_chapter_entry_level(self):
+        from weave_loremaster import parse_goals, goal_field
+        goal={'id':'accept-10','kind':'accept','conditions':{'faction':'Horde'},
+              'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}}
+        text, audit = self.prepare({10:{}}, [goal], source_condition={'all':[{'faction':'Horde'},{'level':{'min':22}}]})
+        goals=parse_goals(text,'','',None)
+        entry=next(g for g in goals if g.id=='visit-entry-leveling-source')
+        self.assertIn('requiredLevel = 22',entry.raw)
+        self.assertNotIn('level',goal_field(entry.raw,'conditions'))
+        self.assertLess(goals.index(entry),next(i for i,g in enumerate(goals) if g.kind=='accept'))
+
+    def test_orphan_prerequisite_excursions_are_not_imported(self):
+        text,audit=self.prepare({10:{},11:{'preQuestSingle':[10],'wowhead':{'mapper':{}}}},catalog_quests=[11])
+        self.assertIsNone(text)
+        self.assertEqual(audit['quests']['11']['status'],'unresolved')
+        self.assertEqual(audit['quests']['10']['status'],'excluded')
+
+    def test_future_duplicate_pickup_dependency_uses_observed_earlier_pickup(self):
+        from weave_loremaster import parse_goals
+        condition={'faction':'Horde'}
+        first={'id':'accept-10-first','kind':'accept','conditions':condition,
+               'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}}
+        return_goal={'id':'turnin-10','kind':'turnin','conditions':condition,
+                     'complete':{'quest':{'id':10,'state':'completed'}},
+                     'dependsOn':['accept-10-first','accept-10-late']}
+        late={**first,'id':'accept-10-late'}
+        text,audit=self.prepare({10:{}},[first,return_goal,late])
+        goals=parse_goals(text,'','',None)
+        returned=next(g for g in goals if g.kind=='turnin')
+        self.assertEqual(returned.depends,['horde-leveling-source-accept-10-first'])
+        self.assertEqual([g.kind for g in goals],['accept','turnin','accept'])
+
+    def test_future_duplicate_objective_dependency_uses_earlier_visit(self):
+        from weave_loremaster import parse_goals
+        condition={'faction':'Horde'}
+        source=[
+            {'id':'accept-10-first','kind':'accept','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}},
+            {'id':'objective-10-first','kind':'objective','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'complete'}}},
+            {'id':'turnin-10','kind':'turnin','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'completed'}},'dependsOn':['objective-10-later']},
+            {'id':'accept-10-later','kind':'accept','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}},
+            {'id':'objective-10-later','kind':'objective','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'complete'}}},
+        ]
+        text,_=self.prepare({10:{}},source)
+        goals=parse_goals(text,'','',None)
+        returned=next(g for g in goals if g.kind=='turnin')
+        self.assertEqual(returned.depends,['horde-leveling-source-objective-10-first'])
+
+    def test_future_distinct_objective_dependency_is_not_rewritten(self):
+        condition={'faction':'Horde'}
+        source=[
+            {'id':'accept-10-first','kind':'accept','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}},
+            {'id':'objective-10-first','kind':'objective','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'complete'}}},
+            {'id':'turnin-10','kind':'turnin','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'completed'}},'dependsOn':['objective-10-later']},
+            {'id':'accept-10-later','kind':'accept','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}},
+            {'id':'objective-10-later','kind':'objective','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'completed'}}},
+        ]
+        with self.assertRaisesRegex(ValueError,'Prerequisite/spine cycle'):
+            self.prepare({10:{}},source)
+
+    def test_future_pickup_dependency_keeps_an_uncovered_actor_cycle(self):
+        first={'id':'accept-10-first','kind':'accept','conditions':{'faction':'Horde','class':8},
+               'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}}
+        returned={'id':'turnin-10','kind':'turnin','conditions':{'faction':'Horde'},
+                  'complete':{'quest':{'id':10,'state':'completed'}},'dependsOn':['accept-10-late']}
+        late={**first,'id':'accept-10-late','conditions':{'faction':'Horde'}}
+        with self.assertRaisesRegex(ValueError,'Prerequisite/spine cycle'):
+            self.prepare({10:{}},[first,returned,late])
+
+    def test_any_prerequisite_does_not_become_all_completion_dependencies(self):
+        text, audit = self.prepare({10: {}, 11: {}, 12: {'preQuestSingle': [10, 11]}})
+        from weave_loremaster import parse_goals, goal_field
+        accept = next(g for g in parse_goals(text, '', '', None) if g.quest_id == 12 and g.kind == 'accept')
+        self.assertIn('mode = "any"', goal_field(accept.raw, 'requiredQuests'))
+        self.assertTrue(all('level' in dependency for dependency in accept.depends))
+
+    def test_excluded_zone_prerequisite_blocks_candidate_without_importing_it(self):
+        text, audit = self.prepare({10: {'wowhead': {'mapper': {'objectives': {'1': {'zone': 'Mount Hyjal', 'levels': [[{'point': 'start', 'name': 'Forbidden', 'coord': [1,2]}]]}}}}}, 12: {'preQuestSingle': [10]}})
+        self.assertIsNone(text)
+        self.assertEqual(audit['quests']['12']['status'], 'unresolved')
+        self.assertEqual(audit['quests']['10']['status'], 'unresolved')
+
+    def test_unavailable_conditional_prerequisite_only_excludes_its_applicable_branch(self):
+        import shutil
+        import subprocess
+        from weave_loremaster import parse_goals
+        quests = {10: {'wowhead': {'mapper': {'objectives': {'1': {'zone': 'Mount Hyjal', 'levels': [[{'point': 'start', 'name': 'Forbidden', 'coord': [1,2]}]]}}}}}, 12: {}}
+        text, audit = self.prepare(quests, registered={'12': [{'mode':'all','quests':[10],'conditions':{'class':8}}]})
+        self.assertEqual(audit['quests']['12']['status'], 'included')
+        goal = next(g for g in parse_goals(text, '', '', None) if g.quest_id == 12 and g.kind == 'accept')
+        runner = shutil.which('lua5.1')
+        if not runner: self.skipTest('Lua 5.1 is required')
+        source = """local n={}; assert(loadfile('GuideEngine.lua'))('FGM',n); assert(loadfile('OrderedRoutes.lua'))('FGM',n)
+local goal = %s
+local s={raceID=2,classID=1,faction='Horde',level=60,quests={},completedQuests={},questLogKnown=true,questCompletionKnown=true}
+assert(not n.OrderedRoutes:ExcludedAction(goal,s),'Unrelated class remains eligible')
+s.classID=8
+assert(n.OrderedRoutes:ExcludedAction(goal,s),'Missing applicable predecessor excludes cold entry')
+s.completedQuests[10]=true
+assert(not n.OrderedRoutes:ExcludedAction(goal,s),'Observed history restores midway entry')
+""" % goal.raw
+        subprocess.run([runner,'-'],input=source,text=True,check=True,cwd=Path(__file__).resolve().parents[1])
+
+    def test_mismatched_upstream_revision_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, 'Expected upstream'):
+            self.prepare({}, revision='different')
+
+
+if __name__ == '__main__':
+    unittest.main()

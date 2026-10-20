@@ -26,7 +26,11 @@ for _, id in ipairs(ns.guideOrder) do
     end
 end
 check(misc == 41, 'Miscellaneous contains the books and all 40 exploration guides')
-check(loremaster == 7, 'The completed zone Loremaster guides are registered')
+local registered = 0
+for path in io.lines('ForeverGuideMate.toc') do
+    if path:match('^Guides/Loremaster/.+%.lua$') then registered = registered + 1 end
+end
+check(loremaster == registered, 'Every zone Loremaster guide in the TOC is registered')
 check(ns.guides['loremaster-coming-soon'] == nil, 'The placeholder is retired')
 check(ns.guides['leveling-durotar'] == nil and ns.guides['leveling-mulgore'] == nil, 'Retired Loremaster guides are absent')
 for _, old in ipairs({'leveling-durotar', 'leveling-mulgore'}) do
@@ -63,3 +67,33 @@ dofile('tests/lua/ashenvale_starters.lua')
 dofile('tests/lua/loremaster_migration.lua')
 
 dofile('tests/lua/item_starter_bags.lua')
+
+dofile("tests/lua/loremaster_expansion.lua")
+
+dofile("tests/lua/loremaster_parity.lua")
+
+dofile('tests/lua/loremaster_zones.lua')
+
+dofile('tests/lua/duskwood_items.lua')
+
+dofile('tests/lua/loremaster_branches.lua')
+
+dofile('tests/lua/hillsbrad_order.lua')
+
+dofile('tests/lua/arathi_breadcrumb.lua')
+
+dofile("tests/lua/hinterlands_items.lua")
+
+dofile("tests/lua/western_plaguelands.lua")
+
+dofile("tests/lua/loremaster_prerequisites.lua")
+
+dofile("tests/lua/desolace_items.lua")
+
+dofile("tests/lua/feralas_items.lua")
+
+dofile("tests/lua/tanaris_items.lua")
+
+dofile("tests/lua/felwood_items.lua")
+
+dofile("tests/lua/ungoro_route.lua")

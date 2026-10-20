@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-zephras-isle",
     title = "Zephras Isle",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     goals = {
         {
@@ -406,7 +406,7 @@ ns:RegisterGuide({
             id = "level-before-accept-embracing-the-elements",
             kind = "note",
             text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, } },
             complete = {
                 level = { min = 2 },
             },
@@ -424,7 +424,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-92461-harmony-in-balance" },
             id = "accept-embracing-the-elements",
             kind = "accept",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 2 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 2 } } } },
             complete = {
                 quest = { id = 92484, state = "activeOrCompleted" },
             },
@@ -564,7 +564,7 @@ ns:RegisterGuide({
         {
             dependsOn = { "accept-embracing-the-elements" },
             id = "objective-92484-reviewed-mechanics",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 2 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 2 } } } },
             useClientPin = true,
             classAction = "objective-92484-reviewed-mechanics",
         },
@@ -576,7 +576,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-embracing-the-elements", "objective-92484-reviewed-mechanics" },
             id = "turnin-embracing-the-elements",
             kind = "turnin",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 2 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 2 } } } },
             complete = {
                 quest = { id = 92484, state = "completed" },
             },
@@ -641,7 +641,7 @@ ns:RegisterGuide({
             id = "level-before-accept-the-gift-of-skysight",
             kind = "note",
             text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } } } },
+            conditions = { all = { { faction = "Horde" }, } },
             complete = {
                 level = { min = 2 },
             },
@@ -659,7 +659,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-elemental-unrest" },
             id = "accept-the-gift-of-skysight",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 2 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 2 } } } },
             complete = {
                 quest = { id = 92598, state = "activeOrCompleted" },
             },
@@ -863,7 +863,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-gift-of-skysight" },
             id = "objective-the-gift-of-skysight",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 2 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 2 } } } },
             complete = {
                 quest = { id = 92598, state = "complete" },
             },
@@ -1051,7 +1051,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-gift-of-skysight", "objective-the-gift-of-skysight" },
             id = "turnin-the-gift-of-skysight",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 2 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 2 } } } },
             complete = {
                 quest = { id = 92598, state = "completed" },
             },
@@ -1497,7 +1497,7 @@ ns:RegisterGuide({
             id = "level-before-accept-welcome-to-shendar-village-93461",
             kind = "note",
             text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { all = { { faction = "Alliance" }, { race = { 95 } } } },
+            conditions = { all = { { faction = "Alliance" }, } },
             complete = {
                 level = { min = 4 },
             },
@@ -1515,7 +1515,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-next-step" },
             id = "accept-welcome-to-shendar-village-93461",
             kind = "accept",
-            conditions = { all = { { faction = "Alliance" }, { race = { 95 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Alliance" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93461, state = "activeOrCompleted" },
             },
@@ -1527,7 +1527,7 @@ ns:RegisterGuide({
             id = "level-before-accept-welcome-to-shendar-village",
             kind = "note",
             text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } } } },
+            conditions = { all = { { faction = "Horde" }, } },
             complete = {
                 level = { min = 4 },
             },
@@ -1545,7 +1545,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-next-step" },
             id = "accept-welcome-to-shendar-village",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 92514, state = "activeOrCompleted" },
             },
@@ -1561,7 +1561,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-welcome-to-shendar-village-93461" },
             id = "objective-93461-authored-rathiril-sunlance",
             kind = "objective",
-            conditions = { all = { { faction = "Alliance" }, { race = { 95 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Alliance" },  { level = { min = 4 } } } },
             complete = {
                 questObjective = { id = 93461, text = "Rathiril Sunlance" },
             },
@@ -1577,7 +1577,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-welcome-to-shendar-village-93461" },
             id = "objective-93461-authored-coriella-calmbreeze",
             kind = "objective",
-            conditions = { all = { { faction = "Alliance" }, { race = { 95 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Alliance" },  { level = { min = 4 } } } },
             complete = {
                 questObjective = { id = 93461, text = "Coriella Calmbreeze" },
             },
@@ -1593,7 +1593,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-welcome-to-shendar-village" },
             id = "objective-92514-authored-illaya-amberwind",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 questObjective = { id = 92514, text = "Illaya Amberwind" },
             },
@@ -1609,7 +1609,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-welcome-to-shendar-village" },
             id = "objective-92514-authored-coriella-calmbreeze",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 questObjective = { id = 92514, text = "Coriella Calmbreeze" },
             },
@@ -1629,7 +1629,7 @@ ns:RegisterGuide({
             },
             id = "turnin-93461-welcome-to-shendar-village",
             kind = "turnin",
-            conditions = { all = { { faction = "Alliance" }, { race = { 95 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Alliance" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93461, state = "completed" },
             },
@@ -1716,7 +1716,7 @@ ns:RegisterGuide({
             },
             id = "turnin-92514-welcome-to-shendar-village",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 92514, state = "completed" },
             },
@@ -4124,7 +4124,7 @@ ns:RegisterGuide({
             id = "level-before-accept-a-grand-adventure-92708",
             kind = "note",
             text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } } } },
+            conditions = { all = { { faction = "Horde" }, } },
             complete = {
                 level = { min = 7 },
             },
@@ -4142,7 +4142,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-bugged" },
             id = "accept-a-grand-adventure-92708",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 92708, state = "activeOrCompleted" },
             },
@@ -4164,7 +4164,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-92700-the-grand-skyseer" },
             id = "accept-the-broken-construct",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93735, state = "activeOrCompleted" },
             },
@@ -4186,7 +4186,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-92700-the-grand-skyseer" },
             id = "accept-unwelcome-spirits",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93736, state = "activeOrCompleted" },
             },
@@ -4208,7 +4208,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-unwelcome-spirits" },
             id = "objective-unwelcome-spirits",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93736, state = "complete" },
             },
@@ -4230,7 +4230,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-unwelcome-spirits", "objective-unwelcome-spirits" },
             id = "turnin-unwelcome-spirits",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93736, state = "completed" },
             },
@@ -4248,7 +4248,7 @@ ns:RegisterGuide({
             text = "For A Grand Adventure: Listen to what Ayessa Dawnsinger has to say.",
             id = "objective-92708-quest-work",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 92708, state = "complete" },
             },
@@ -4271,7 +4271,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-a-grand-adventure-92708", "objective-92708-quest-work" },
             id = "turnin-a-grand-adventure-92708",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 92708, state = "completed" },
             },
@@ -4293,7 +4293,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-broken-construct" },
             id = "turnin-the-broken-construct",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93735, state = "completed" },
             },
@@ -4315,7 +4315,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-broken-construct" },
             id = "accept-the-broken-construct-93737",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93737, state = "activeOrCompleted" },
             },
@@ -4337,7 +4337,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-broken-construct-93737" },
             id = "objective-93737-authored-riaani-nightwind",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 questObjective = { id = 93737, text = "Riaani Nightwind" },
             },
@@ -4359,7 +4359,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-broken-construct-93737" },
             id = "objective-93737-authored-crystallized-lightning",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 questObjective = { id = 93737, text = "Crystallized Lightning", count = 1 },
             },
@@ -4381,7 +4381,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-broken-construct-93737" },
             id = "objective-93737-authored-enchanted-gyrozephyr",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 questObjective = { id = 93737, text = "Enchanted Gyrozephyr", count = 1 },
             },
@@ -4403,7 +4403,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-broken-construct-93737" },
             id = "objective-93737-authored-air-construct-core",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 questObjective = { id = 93737, text = "Air Construct Core", count = 1 },
             },
@@ -4431,7 +4431,7 @@ ns:RegisterGuide({
             },
             id = "turnin-the-broken-construct-93737",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93737, state = "completed" },
             },
@@ -4968,7 +4968,7 @@ ns:RegisterGuide({
             id = "level-before-accept-call-of-fire",
             kind = "note",
             text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, } },
             complete = {
                 level = { min = 10 },
             },
@@ -4986,7 +4986,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-deliver-the-news" },
             id = "accept-call-of-fire",
             kind = "accept",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97243, state = "activeOrCompleted" },
             },
@@ -5002,7 +5002,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-call-of-fire" },
             id = "turnin-call-of-fire",
             kind = "turnin",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97243, state = "completed" },
             },
@@ -5554,7 +5554,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-broken-construct-93737" },
             id = "accept-the-broken-construct-93738",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93738, state = "activeOrCompleted" },
             },
@@ -5576,7 +5576,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-broken-construct-93738" },
             id = "turnin-the-broken-construct-93738",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93738, state = "completed" },
             },
@@ -5598,7 +5598,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-broken-construct-93738" },
             id = "accept-a-firm-response",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93746, state = "activeOrCompleted" },
             },
@@ -5620,7 +5620,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-a-firm-response" },
             id = "objective-a-firm-response",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93746, state = "complete" },
             },
@@ -5642,7 +5642,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-a-firm-response", "objective-a-firm-response" },
             id = "turnin-93746-a-firm-response",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 4 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 4 } } } },
             complete = {
                 quest = { id = 93746, state = "completed" },
             },
@@ -5664,7 +5664,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-93746-a-firm-response", "turnin-blood-for-blood" },
             id = "accept-in-service-of-zephras-92871",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 6 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 6 } } } },
             complete = {
                 quest = { id = 92871, state = "activeOrCompleted" },
             },
@@ -5686,7 +5686,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-in-service-of-zephras-92871" },
             id = "turnin-92871-in-service-of-zephras",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 6 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 6 } } } },
             complete = {
                 quest = { id = 92871, state = "completed" },
             },
@@ -6821,7 +6821,7 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-ripped-missive",
             kind = "note",
             instructionOnly = true,
-            conditions = { race = { 95, 96 } },
+            conditions = {},
             text = "Loot Ripped Missive from Commander Haalien. Keep it for the next pickup.",
             complete = {
                 any = {
@@ -6845,7 +6845,7 @@ ns:RegisterGuide({
             id = "level-before-accept-ripped-missive",
             kind = "note",
             text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { race = { 95, 96 } },
+            conditions = {},
             complete = {
                 level = { min = 9 },
             },
@@ -6860,7 +6860,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-ties-that-bind" },
             id = "accept-ripped-missive",
             kind = "accept",
-            conditions = { all = { { race = { 95, 96 } }, { level = { min = 9 } } } },
+            conditions = { all = {  { level = { min = 9 } } } },
             complete = {
                 quest = { id = 94490, state = "activeOrCompleted" },
             },
@@ -6882,7 +6882,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-ripped-missive" },
             id = "turnin-94490-ripped-missive",
             kind = "turnin",
-            conditions = { all = { { race = { 95, 96 } }, { level = { min = 9 } } } },
+            conditions = { all = {  { level = { min = 9 } } } },
             complete = {
                 quest = { id = 94490, state = "completed" },
             },
@@ -7091,7 +7091,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-94484-unnerving-silence" },
             id = "accept-a-sacrifice-in-vain",
             kind = "accept",
-            conditions = { all = { { race = { 95, 96 } }, { level = { min = 8 } } } },
+            conditions = { all = { { faction = "Alliance" },  { level = { min = 8 } } } },
             complete = {
                 quest = { id = 94493, state = "activeOrCompleted" },
             },
@@ -7108,7 +7108,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-a-sacrifice-in-vain" },
             id = "turnin-a-sacrifice-in-vain",
             kind = "turnin",
-            conditions = { all = { { race = { 95, 96 } }, { level = { min = 8 } } } },
+            conditions = { all = { { faction = "Alliance" },  { level = { min = 8 } } } },
             complete = {
                 quest = { id = 94493, state = "completed" },
             },
@@ -7604,7 +7604,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-call-of-fire" },
             id = "accept-call-of-fire-97244",
             kind = "accept",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97244, state = "activeOrCompleted" },
             },
@@ -7626,7 +7626,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-call-of-fire-97244" },
             id = "objective-call-of-fire-97244",
             kind = "objective",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97244, state = "complete" },
             },
@@ -7648,7 +7648,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-call-of-fire-97244", "objective-call-of-fire-97244" },
             id = "turnin-call-of-fire-97244",
             kind = "turnin",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97244, state = "completed" },
             },
@@ -7670,7 +7670,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-call-of-fire-97244" },
             id = "accept-call-of-fire-97245",
             kind = "accept",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97245, state = "activeOrCompleted" },
             },
@@ -7692,7 +7692,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-call-of-fire-97245" },
             id = "objective-call-of-fire-97245",
             kind = "objective",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97245, state = "complete" },
             },
@@ -7714,7 +7714,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-call-of-fire-97245", "objective-call-of-fire-97245" },
             id = "turnin-call-of-fire-97245",
             kind = "turnin",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97245, state = "completed" },
             },
@@ -7736,7 +7736,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-call-of-fire-97245" },
             id = "accept-call-of-fire-97257",
             kind = "accept",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97257, state = "activeOrCompleted" },
             },
@@ -7756,7 +7756,7 @@ ns:RegisterGuide({
             },
             dependsOn = { "accept-call-of-fire-97257" },
             id = "objective-call-of-fire-97257-ritual",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             useClientPin = false,
             classAction = "objective-97257-quest-work-ritual",
         },
@@ -7766,7 +7766,7 @@ ns:RegisterGuide({
             },
             dependsOn = { "accept-call-of-fire-97257" },
             id = "objective-call-of-fire-97257-deliver-flame",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             useClientPin = false,
             classAction = "objective-97257-quest-work-deliver-flame",
         },
@@ -7782,7 +7782,7 @@ ns:RegisterGuide({
             },
             id = "turnin-call-of-fire-97257",
             kind = "turnin",
-            conditions = { all = { { class = { 7 } }, { faction = "Horde" }, { race = { 96 } }, { level = { min = 10 } } } },
+            conditions = { all = { { class = { 7 } }, { faction = "Horde" },  { level = { min = 10 } } } },
             complete = {
                 quest = { id = 97257, state = "completed" },
             },
@@ -7804,7 +7804,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-92700-the-grand-skyseer" },
             id = "accept-blood-for-blood",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 6 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 6 } } } },
             complete = {
                 quest = { id = 93740, state = "activeOrCompleted" },
             },
@@ -7826,7 +7826,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-blood-for-blood" },
             id = "objective-blood-for-blood",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 6 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 6 } } } },
             complete = {
                 quest = { id = 93740, state = "complete" },
             },
@@ -7848,7 +7848,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-blood-for-blood", "objective-blood-for-blood" },
             id = "turnin-blood-for-blood",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 6 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 6 } } } },
             complete = {
                 quest = { id = 93740, state = "completed" },
             },
@@ -8425,7 +8425,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-inner-sanctum" },
             id = "accept-confront-lorthuna",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 92646, state = "activeOrCompleted" },
             },
@@ -8447,7 +8447,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-confront-lorthuna" },
             id = "turnin-confront-lorthuna",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 92646, state = "completed" },
             },
@@ -8469,7 +8469,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-confront-lorthuna" },
             id = "accept-the-fate-of-zephras",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 93836, state = "activeOrCompleted" },
             },
@@ -8487,7 +8487,7 @@ ns:RegisterGuide({
             text = "For The Fate of Zephras: Speak with Talaanis Shadowsong in Valanaar.",
             id = "objective-93836-quest-work",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 93836, state = "complete" },
             },
@@ -8510,7 +8510,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-fate-of-zephras", "objective-93836-quest-work" },
             id = "turnin-the-fate-of-zephras",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 93836, state = "completed" },
             },
@@ -8532,7 +8532,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-fate-of-zephras" },
             id = "accept-what-comes-next-93090",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 93090, state = "activeOrCompleted" },
             },
@@ -8554,7 +8554,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-what-comes-next-93090" },
             id = "turnin-what-comes-next-93090",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 93090, state = "completed" },
             },
@@ -8576,7 +8576,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-what-comes-next-93090" },
             id = "accept-the-earthen-ring",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 95349, state = "activeOrCompleted" },
             },
@@ -8598,7 +8598,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-the-earthen-ring" },
             id = "turnin-the-earthen-ring",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 95349, state = "completed" },
             },
@@ -8616,12 +8616,12 @@ ns:RegisterGuide({
             id = "level-before-accept-welcome-to-azeroth",
             kind = "note",
             text = "Reach level 7 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } } } },
+            conditions = { all = { { faction = "Horde" }, } },
             complete = {
                 level = { min = 7 },
             },
             requiredLevel = 7,
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 95349 } } },
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 95350,
@@ -8634,11 +8634,11 @@ ns:RegisterGuide({
             dependsOn = { "turnin-the-earthen-ring" },
             id = "accept-welcome-to-azeroth",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 95350, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 95349 } } },
             useClientText = false,
             useClientPin = false,
         },
@@ -8659,11 +8659,11 @@ ns:RegisterGuide({
             dependsOn = { "accept-welcome-to-azeroth" },
             id = "turnin-welcome-to-azeroth",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 95350, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 95349 } } },
             useClientText = false,
             useClientPin = false,
         },
@@ -8675,7 +8675,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-welcome-to-azeroth" },
             id = "accept-exploring-the-horde",
             kind = "accept",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 93739, state = "activeOrCompleted" },
             },
@@ -8697,7 +8697,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-exploring-the-horde" },
             id = "objective-exploring-the-horde",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 questObjective = { id = 93739, text = "Nazgrel", index = 1 },
             },
@@ -8719,7 +8719,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-exploring-the-horde", "accept-exploring-the-horde" },
             id = "objective-exploring-the-horde-voljin",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 questObjective = { id = 93739, text = "Vol'jin", index = 2 },
             },
@@ -8752,7 +8752,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-exploring-the-horde-voljin", "accept-exploring-the-horde" },
             id = "objective-exploring-the-horde-cairne",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 questObjective = { id = 93739, text = "Cairne", index = 3 },
             },
@@ -8774,7 +8774,7 @@ ns:RegisterGuide({
             dependsOn = { "objective-exploring-the-horde-cairne", "accept-exploring-the-horde" },
             id = "objective-exploring-the-horde-sylvanas",
             kind = "objective",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 questObjective = { id = 93739, text = "Sylvanas", index = 4 },
             },
@@ -8802,7 +8802,7 @@ ns:RegisterGuide({
             },
             id = "turnin-exploring-the-horde",
             kind = "turnin",
-            conditions = { all = { { faction = "Horde" }, { race = { 96 } }, { level = { min = 7 } } } },
+            conditions = { all = { { faction = "Horde" },  { level = { min = 7 } } } },
             complete = {
                 quest = { id = 93739, state = "completed" },
             },

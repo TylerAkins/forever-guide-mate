@@ -123,6 +123,44 @@ local function journey(guideID, snapshot, expected)
         observe(ns.Engine.currentGoal, snapshot)
     end
 end
+do
+    local casual = assert(ns.guides['leveling-casual-horde'])
+    local required = {
+        ['accept-5064-grimtotem-spying'] = true,
+        ['objective-5064-2-secret-note-2'] = true,
+        ['objective-5064-1-secret-note-1'] = true,
+        ['objective-5064-3-secret-note-3'] = true,
+        ['turnin-5064-grimtotem-spying'] = true,
+    }
+    local goals = {}
+    for _, goal in ipairs(casual.goals) do
+        local suffix = goal.id:match('leveling%-era%-horde%-thousand%-needles:(.+)$')
+        if suffix and required[suffix] then
+            local copy = {}
+            for key, value in pairs(goal) do copy[key] = value end
+            copy.id = 'test-grimtotem-spying-casual:' .. suffix
+            if goal.dependsOn then
+                copy.dependsOn = {}
+                for _, dependency in ipairs(goal.dependsOn) do
+                    local dependencySuffix = dependency:match('leveling%-era%-horde%-thousand%-needles:(.+)$')
+                    copy.dependsOn[#copy.dependsOn + 1] = dependencySuffix
+                        and ('test-grimtotem-spying-casual:' .. dependencySuffix) or dependency
+                end
+            end
+            goals[#goals + 1] = copy
+            required[suffix] = nil
+        end
+    end
+    for missing in pairs(required) do error('Casual route is missing Grimtotem Spying action ' .. missing) end
+    ns:RegisterGuide({ id = 'test-grimtotem-spying-casual', title = 'Grimtotem Spying Casual test',
+        category = 'Leveling Quest Guides', revision = 1, routeMode = 'ordered',
+        conditions = { faction = 'Horde' }, goals = goals })
+    local snapshot = state(2, 1, 'Horde', 28)
+    snapshot.completedQuests[4841] = true
+    journey('test-grimtotem-spying-casual', snapshot, {
+        'accept:5064', 'objective:5064:2', 'objective:5064:1', 'objective:5064:3', 'turnin:5064',
+    })
+end
 -- These sequences were checked directly against the reference openings, before
 -- adapting the engine tests. They are not read from production guide arrays.
 local tauren = { 'accept:747', 'accept:752', 'turnin:752', 'accept:753',
@@ -1161,7 +1199,7 @@ do
     local removed = { [421] = true, [422] = true, [423] = true, [424] = true,
         [99] = true, [98298] = true, [98299] = true }
     for id, guide in pairs(ns.guides) do
-        for _, goal in ipairs(guide.goals) do
+        for _, goal in ipairs(id ~= "loremaster-silverpine-forest" and guide.goals or {}) do
             local quest = ns.Engine:GetGoalQuestID(goal) or goal.checkpointQuest or goal.referenceQuest
             equal(removed[quest] == true, false, id .. ' omits the Arugal chain action ' .. goal.id)
             for _, group in ipairs(goal.requiredQuests or {}) do

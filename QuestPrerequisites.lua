@@ -1093,3 +1093,158 @@ ns:RegisterQuestPrerequisite({ quest = 98286, mode = "any", quests = { 95998, 96
 ns:RegisterQuestPrerequisite({ quest = 23, mode = "all", quests = { 6383 } })
 
 ns:RegisterQuestPrerequisite({ quest = 2, mode = "all", quests = { 6383 } })
+
+-- Frozen zone inventories under docs/loremaster record these prerequisite observations.
+ns:RegisterQuestPrerequisite({ quest = 13, mode = "any", quests = { 12 } })
+ns:RegisterQuestPrerequisite({ quest = 14, mode = "any", quests = { 13 } })
+ns:RegisterQuestPrerequisite({ quest = 92911, mode = "all", quests = { 92910 } })
+ns:RegisterQuestPrerequisite({ quest = 92747, mode = "all", quests = { 13, 92745 } })
+ns:RegisterQuestPrerequisite({ quest = 92748, mode = "all", quests = { 92747 } })
+ns:RegisterQuestPrerequisite({ quest = 92750, mode = "all", quests = { 92748 } })
+ns:RegisterQuestPrerequisite({ quest = 92751, mode = "all", quests = { 92750 } })
+ns:RegisterQuestPrerequisite({ quest = 92749, mode = "all", quests = { 92748 } })
+ns:RegisterQuestPrerequisite({ quest = 92752, mode = "all", quests = { 92749, 92751 } })
+ns:RegisterQuestPrerequisite({ quest = 138, mode = "any", quests = { 136 } })
+ns:RegisterQuestPrerequisite({ quest = 139, mode = "any", quests = { 138 } })
+ns:RegisterQuestPrerequisite({ quest = 140, mode = "any", quests = { 139 } })
+ns:RegisterQuestPrerequisite({ quest = 161, mode = "any", quests = { 199 } })
+ns:RegisterQuestPrerequisite({ quest = 274, mode = "any", quests = { 161 } })
+ns:RegisterQuestPrerequisite({ quest = 278, mode = "any", quests = { 274 } })
+ns:RegisterQuestPrerequisite({ quest = 280, mode = "any", quests = { 278 } })
+ns:RegisterQuestPrerequisite({ quest = 283, mode = "any", quests = { 280 } })
+ns:RegisterQuestPrerequisite({ quest = 302, mode = "any", quests = { 301 } })
+ns:RegisterQuestPrerequisite({ quest = 273, mode = "any", quests = { 302 } })
+ns:RegisterQuestPrerequisite({ quest = 454, mode = "any", quests = { 273 } })
+ns:RegisterQuestPrerequisite({ quest = 309, mode = "any", quests = { 454 } })
+ns:RegisterQuestPrerequisite({ quest = 237, mode = "any", quests = { 224 } })
+ns:RegisterQuestPrerequisite({ quest = 258, mode = "any", quests = { 257 } })
+ns:RegisterQuestPrerequisite({ quest = 263, mode = "any", quests = { 237 } })
+ns:RegisterQuestPrerequisite({ quest = 271, mode = "any", quests = { 258 } })
+ns:RegisterQuestPrerequisite({ quest = 531, mode = "any", quests = { 271 } })
+ns:RegisterQuestPrerequisite({ quest = 2038, mode = "any", quests = { 2039 } })
+ns:RegisterQuestPrerequisite({ quest = 217, mode = "all", quests = { 263, 267 } })
+ns:RegisterQuestPrerequisite({ quest = 2078, mode = "any", quests = { 2098 } })
+ns:RegisterQuestPrerequisite({ quest = 951, mode = "any", quests = { 950 } })
+ns:RegisterQuestPrerequisite({ quest = 1167, mode = "any", quests = { 1140 } })
+ns:RegisterQuestPrerequisite({ quest = 1143, mode = "any", quests = { 1167 } })
+ns:RegisterQuestPrerequisite({ quest = 981, mode = "any", quests = { 1143 } })
+ns:RegisterQuestPrerequisite({ quest = 422, mode = "any", quests = { 421 } })
+ns:RegisterQuestPrerequisite({ quest = 423, mode = "any", quests = { 422 } })
+ns:RegisterQuestPrerequisite({ quest = 424, mode = "any", quests = { 423 } })
+ns:RegisterQuestPrerequisite({ quest = 99, mode = "any", quests = { 424 } })
+ns:RegisterQuestPrerequisite({ quest = 98298, mode = "all", quests = { 99 } })
+ns:RegisterQuestPrerequisite({ quest = 443, mode = "any", quests = { 439 } })
+ns:RegisterQuestPrerequisite({ quest = 444, mode = "any", quests = { 443 } })
+ns:RegisterQuestPrerequisite({ quest = 446, mode = "any", quests = { 444 } })
+ns:RegisterQuestPrerequisite({ quest = 448, mode = "any", quests = { 446 } })
+ns:RegisterQuestPrerequisite({ quest = 442, mode = "any", quests = { 448 } })
+ns:RegisterQuestPrerequisite({ quest = 440, mode = "any", quests = { 439 } })
+ns:RegisterQuestPrerequisite({ quest = 441, mode = "any", quests = { 440 } })
+ns:RegisterQuestPrerequisite({ quest = 530, mode = "any", quests = { 441 } })
+ns:RegisterQuestPrerequisite({ quest = 450, mode = "any", quests = { 447 } })
+ns:RegisterQuestPrerequisite({ quest = 451, mode = "any", quests = { 450 } })
+ns:RegisterQuestPrerequisite({ quest = 3923, mode = "any", quests = { 3922 } })
+ns:RegisterQuestPrerequisite({ quest = 3924, mode = "any", quests = { 3923 } })
+ns:RegisterQuestPrerequisite({ quest = 4021, mode = "any", quests = { 852 } })
+
+ns:RegisterQuestPrerequisite({ quest = 95350, mode = "all", quests = { 95349 } })
+
+-- Redridge outdoor chains verified in docs/loremaster/redridge-mountains.json.
+ns:RegisterQuestPrerequisite({ quest = 143, mode = "any", quests = { 121 } })
+ns:RegisterQuestPrerequisite({ quest = 19, mode = "any", quests = { 20 } })
+ns:RegisterQuestPrerequisite({ quest = 115, mode = "any", quests = { 20 } })
+ns:RegisterQuestPrerequisite({ quest = 248, mode = "any", quests = { 94 } })
+ns:RegisterQuestPrerequisite({ quest = 144, mode = "any", quests = { 143 } })
+ns:RegisterQuestPrerequisite({ quest = 145, mode = "any", quests = { 144 } })
+ns:RegisterQuestPrerequisite({ quest = 146, mode = "any", quests = { 145 } })
+ns:RegisterQuestPrerequisite({ quest = 249, mode = "any", quests = { 248 } })
+ns:RegisterQuestPrerequisite({ quest = 344, mode = "any", quests = { 343 } })
+ns:RegisterQuestPrerequisite({ quest = 345, mode = "any", quests = { 344 } })
+ns:RegisterQuestPrerequisite({ quest = 347, mode = "any", quests = { 345 } })
+
+-- Duskwood chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 253, mode = "any", quests = { 252 } })
+ns:RegisterQuestPrerequisite({ quest = 228, mode = "any", quests = { 227 } })
+ns:RegisterQuestPrerequisite({ quest = 229, mode = "any", quests = { 228 } })
+ns:RegisterQuestPrerequisite({ quest = 55, mode = "any", quests = { 325 } })
+
+-- Wetlands chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 473, mode = "any", quests = { 455 } })
+ns:RegisterQuestPrerequisite({ quest = 474, mode = "any", quests = { 465 } })
+ns:RegisterQuestPrerequisite({ quest = 98072, mode = "any", quests = { 471 } })
+ns:RegisterQuestPrerequisite({ quest = 98297, mode = "any", quests = { 98291 } })
+
+-- Alterac Mountains chain edge from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 504, mode = "any", quests = { 500 } })
+
+-- Arathi Highlands chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 694, mode = "any", quests = { 693 } })
+ns:RegisterQuestPrerequisite({ quest = 682, mode = "any", quests = { 681 } })
+ns:RegisterQuestPrerequisite({ quest = 652, mode = "any", quests = { 651 } })
+ns:RegisterQuestPrerequisite({ quest = 653, mode = "any", quests = { 652 } })
+ns:RegisterQuestPrerequisite({ quest = 640, mode = "any", quests = { 639 } })
+ns:RegisterQuestPrerequisite({ quest = 673, mode = "any", quests = { 671 } })
+ns:RegisterQuestPrerequisite({ quest = 679, mode = "any", quests = { 678 } })
+ns:RegisterQuestPrerequisite({ quest = 680, mode = "any", quests = { 678 } })
+ns:RegisterQuestPrerequisite({ quest = 688, mode = "any", quests = { 652 } })
+
+-- Malin's optional delivery is removed after starting Worth Its Weight in Gold.
+ns.questBreadcrumbBypass[690] = { 691 }
+
+-- Stranglethorn Vale chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 202, mode = "any", quests = { 574 } })
+ns:RegisterQuestPrerequisite({ quest = 206, mode = "all", quests = { 202, 205 } })
+ns:RegisterQuestPrerequisite({ quest = 613, mode = "any", quests = { 609 } })
+ns:RegisterQuestPrerequisite({ quest = 630, mode = "any", quests = { 594 } })
+ns:RegisterQuestPrerequisite({ quest = 591, mode = "any", quests = { 589 } })
+
+-- Badlands chain edges from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 732, mode = "any", quests = { 718 } })
+ns:RegisterQuestPrerequisite({ quest = 734, mode = "all", quests = { 712, 714 } })
+
+-- Burning Steppes chain edge from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 3822, mode = "any", quests = { 3821 } })
+
+-- Outdoor Loremaster chains from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 836, mode = "any", quests = { 485 } })
+ns:RegisterQuestPrerequisite({ quest = 2935, mode = "any", quests = { 2934 } })
+ns:RegisterQuestPrerequisite({ quest = 105, mode = "any", quests = { 5098 } })
+ns:RegisterQuestPrerequisite({ quest = 211, mode = "any", quests = { 5097 } })
+ns:RegisterQuestPrerequisite({ quest = 6283, mode = "any", quests = { 6282 } })
+ns:RegisterQuestPrerequisite({ quest = 6481, mode = "any", quests = { 6421 } })
+
+-- Ashenvale chains from the frozen source observations.
+ns:RegisterQuestPrerequisite({ quest = 976, mode = "any", quests = { 973 } })
+ns:RegisterQuestPrerequisite({ quest = 1012, mode = "any", quests = { 1011 } })
+
+-- Desolace handoff from the frozen ATT observation.
+ns:RegisterQuestPrerequisite({ quest = 1362, mode = "any", quests = { 1361 } })
+
+ns:RegisterQuestPrerequisite({ quest = 2767, mode = "any", quests = { 2766 } })
+ns:RegisterQuestPrerequisite({ quest = 3787, mode = "any", quests = { 3781 } })
+ns:RegisterQuestPrerequisite({ quest = 3788, mode = "any", quests = { 3781 } })
+ns:RegisterQuestPrerequisite({ quest = 3841, mode = "any", quests = { 2972 } })
+
+-- Tanaris handoffs from the frozen QuestieDB observations.
+ns:RegisterQuestPrerequisite({ quest = 648, mode = "any", quests = { 351 } })
+ns:RegisterQuestPrerequisite({ quest = 4493, mode = "any", quests = { 162 } })
+
+-- Felwood continuation handoffs from the frozen QuestieDB observations.
+ns:RegisterQuestPrerequisite({ quest = 4261, mode = "any", quests = { 4442 } })
+ns:RegisterQuestPrerequisite({ quest = 5242, mode = "any", quests = { 5165 } })
+
+ns:RegisterQuestPrerequisite({ quest = 3962, mode = "any", quests = { 3961 } })
+
+-- Winterspring chains from the frozen QuestieDB observations.
+ns:RegisterQuestPrerequisite({ quest = 5055, mode = "any", quests = { 5054 } })
+ns:RegisterQuestPrerequisite({ quest = 5056, mode = "any", quests = { 5055 } })
+ns:RegisterQuestPrerequisite({ quest = 5121, mode = "any", quests = { 5087 } })
+ns:RegisterQuestPrerequisite({ quest = 975, mode = "any", quests = { 969 } })
+
+-- Silithus handoffs from the frozen QuestieDB observations.
+ns:RegisterQuestPrerequisite({ quest = 1126, mode = "any", quests = { 1125 } })
+ns:RegisterQuestPrerequisite({ quest = 8282, mode = "any", quests = { 8278 } })
+ns:RegisterQuestPrerequisite({ quest = 8306, mode = "any", quests = { 8304 } })
+ns:RegisterQuestPrerequisite({ quest = 8310, mode = "any", quests = { 8304 } })
+ns:RegisterQuestPrerequisite({ quest = 8321, mode = "any", quests = { 8320 } })
+ns:RegisterQuestPrerequisite({ quest = 8323, mode = "any", quests = { 8279 } })

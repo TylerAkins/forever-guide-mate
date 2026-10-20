@@ -25,6 +25,9 @@ for guideID, quests in pairs(dofile('tests/fixtures/starter_detour_cuts.lua')) d
 end
 -- These actions depart from reference order for verified prerequisites or shared outings.
 local intentionalOutingReorders = {
+ ['leveling-era-horde-alterac-mountains-and-arathi-highlands'] = { ['objective:566:1:23']=true },
+ ['leveling-era-alliance-westfall'] = { ['objective:22:1:22']=true },
+ ['leveling-era-horde-the-barrens-and-stonetalon-mountain'] = { ['objective:855:1:121']=true },
  ['leveling-era-horde-hillsbrad-foothills'] = {
   ['accept:501:0:10']=true,
  },
@@ -72,7 +75,12 @@ for id, actions in pairs(expected) do
  local previous, sourceStep, stepFloor = 0, nil, 0
  local outingProgress = {}
  for _,a in ipairs(actions) do
-  if not excluded[a[2]] and not (starterCuts[id] and starterCuts[id][a[2]]) and not (a[1]=='objective' and a[2]==1009 ) then
+  -- The Horde Winterspring chapter repeated this non-repeatable quest after
+  -- its prior chapter had already completed it. These two source actions are
+  -- intentionally removed while the reference fixture remains unchanged.
+  local duplicateChillwind = id=='leveling-era-horde-winterspring' and a[2]==4809
+   and ((a[1]=='turnin' and a[4]==13) or (a[1]=='objective' and a[3]==1 and a[4]==17))
+  if not excluded[a[2]] and not duplicateChillwind and not (starterCuts[id] and starterCuts[id][a[2]]) and not (a[1]=='objective' and a[2]==1009 ) then
    local signature = table.concat({a[1],a[2] or 0,a[3] or 0,a[4]},':')
    local outing = 'reference'
    if id == 'leveling-era-tirisfal-glades' then
@@ -97,6 +105,20 @@ for id, actions in pairs(expected) do
    end
   end
  end
+end
+do
+ local winter=assert(chapters['leveling-era-horde-winterspring'])
+ for _,goal in ipairs(winter.goals) do
+  check(not (ns.Engine:GetGoalQuestID(goal)==4809 and (goal.kind=='objective' or goal.kind=='turnin')),
+   'Horde Winterspring does not repeat completed Chillwind Horns work')
+ end
+ local prior=assert(chapters['leveling-era-horde-felwood-and-winterspring-part-2'])
+ local actions={accept=0,objective=0,turnin=0}
+ for _,goal in ipairs(prior.goals) do
+  if ns.Engine:GetGoalQuestID(goal)==4809 and actions[goal.kind] then actions[goal.kind]=actions[goal.kind]+1 end
+ end
+ check(actions.accept==1 and actions.objective==1 and actions.turnin==1,
+  'Horde Felwood and Winterspring retains one complete Chillwind Horns chain')
 end
 do
  local guide=chapters['leveling-era-alliance-ashenvale-and-stonetalon-mountains']

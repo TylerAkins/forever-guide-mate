@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 11,
+    revision = 12,
     title = "Zephras Isle",
     category = "Leveling Quest Guides",
     id = "leveling-zephras-isle",
@@ -636,10 +636,7 @@ ns:RegisterGuide({
                         class = { 7 },
                     },
                     { faction = "Horde" },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -669,10 +666,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 2 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -913,10 +907,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 2 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             useClientPin = true,
@@ -940,10 +931,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 2 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -1053,10 +1041,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -1082,10 +1067,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 2 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -1390,10 +1372,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 2 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -1679,10 +1658,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 2 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -2387,10 +2363,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { race = 95 },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
+
                 },
             },
             complete = {
@@ -2416,10 +2389,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 95 },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
+
                 },
             },
             complete = {
@@ -2436,10 +2406,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -2465,10 +2432,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -2492,10 +2456,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 95 },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
+
                 },
             },
             complete = {
@@ -2519,10 +2480,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 95 },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
+
                 },
             },
             complete = {
@@ -2546,10 +2504,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -2573,10 +2528,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -2604,10 +2556,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 95 },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
+
                 },
             },
             complete = {
@@ -2746,10 +2695,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5527,10 +5473,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5556,10 +5499,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5589,10 +5529,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5622,10 +5559,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5655,10 +5589,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5688,10 +5619,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5717,10 +5645,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5751,10 +5676,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5784,10 +5706,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5817,10 +5736,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5850,10 +5766,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5883,10 +5796,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5916,10 +5826,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5949,10 +5856,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -5988,10 +5892,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -6753,10 +6654,7 @@ ns:RegisterGuide({
                         class = { 7 },
                     },
                     { faction = "Horde" },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -6786,10 +6684,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -6817,10 +6712,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -7675,10 +7567,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -7708,10 +7597,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -7741,10 +7627,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -7774,10 +7657,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -7807,10 +7687,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 4 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -7840,10 +7717,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 6 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -7873,10 +7747,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 6 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -9460,9 +9331,7 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-ripped-missive",
             kind = "note",
             instructionOnly = true,
-            conditions = {
-                race = { 95, 96 },
-            },
+            conditions = {},
             text = "Loot Ripped Missive from Commander Haalien. Keep it for the next pickup.",
             complete = {
                 any = {
@@ -9486,9 +9355,7 @@ ns:RegisterGuide({
             id = "level-before-accept-ripped-missive",
             kind = "note",
             text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                race = { 95, 96 },
-            },
+            conditions = {},
             complete = {
                 level = { min = 9 },
             },
@@ -9507,9 +9374,6 @@ ns:RegisterGuide({
                 all = {
                     {
                         level = { min = 9 },
-                    },
-                    {
-                        race = { 95, 96 },
                     },
                 },
             },
@@ -9538,9 +9402,6 @@ ns:RegisterGuide({
                 all = {
                     {
                         level = { min = 9 },
-                    },
-                    {
-                        race = { 95, 96 },
                     },
                 },
             },
@@ -9845,12 +9706,9 @@ ns:RegisterGuide({
             id = "accept-a-sacrifice-in-vain",
             kind = "accept",
             conditions = {
-                all = {
+                all = { { faction = "Alliance" },
                     {
                         level = { min = 8 },
-                    },
-                    {
-                        race = { 95, 96 },
                     },
                 },
             },
@@ -9871,12 +9729,9 @@ ns:RegisterGuide({
             id = "turnin-a-sacrifice-in-vain",
             kind = "turnin",
             conditions = {
-                all = {
+                all = { { faction = "Alliance" },
                     {
                         level = { min = 8 },
-                    },
-                    {
-                        race = { 95, 96 },
                     },
                 },
             },
@@ -10693,10 +10548,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -10730,10 +10582,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -10767,10 +10616,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -10804,10 +10650,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -10841,10 +10684,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -10878,10 +10718,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -10915,10 +10752,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -10950,10 +10784,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             useClientPin = false,
@@ -10975,10 +10806,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             useClientPin = false,
@@ -11006,10 +10834,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 10 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -11039,10 +10864,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 6 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -11072,10 +10894,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 6 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -11105,10 +10924,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 6 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -11936,10 +11752,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -11969,10 +11782,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12002,10 +11812,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12031,10 +11838,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12065,10 +11869,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12098,10 +11899,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12131,10 +11929,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12164,10 +11959,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12197,10 +11989,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12223,17 +12012,14 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
                 level = { min = 7 },
             },
             requiredLevel = 7,
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 95349 } } },
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 95350,
@@ -12252,16 +12038,13 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
                 quest = { id = 95350, state = "activeOrCompleted" },
             },
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 95349 } } },
             useClientText = false,
             useClientPin = false,
         },
@@ -12288,16 +12071,13 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
                 quest = { id = 95350, state = "completed" },
             },
-            requiredQuests = {},
+            requiredQuests = { { mode = "all", quests = { 95349 } } },
             useClientText = false,
             useClientPin = false,
         },
@@ -12315,10 +12095,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12348,10 +12125,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12381,10 +12155,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12425,10 +12196,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12458,10 +12226,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {
@@ -12497,10 +12262,7 @@ ns:RegisterGuide({
                     {
                         level = { min = 7 },
                     },
-                    { race = 96 },
-                    {
-                        race = { 96 },
-                    },
+
                 },
             },
             complete = {

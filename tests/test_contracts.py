@@ -97,6 +97,11 @@ REQUIRED_FILES = (
     "Guides/Loremaster/Durotar.lua",
     "Guides/Loremaster/Teldrassil.lua",
     "Guides/Loremaster/ElwynnForest.lua",
+    "Guides/Loremaster/Westfall.lua",
+    "Guides/Loremaster/LochModan.lua",
+    "Guides/Loremaster/Darkshore.lua",
+    "Guides/Loremaster/SilverpineForest.lua",
+    "Guides/Loremaster/TheBarrens.lua",
     "Guides/Leveling/tirisfal-glades.lua",
     "Guides/Leveling/mulgore.lua",
     "Guides/Leveling/durotar.lua",
@@ -361,6 +366,11 @@ class ContractTests(unittest.TestCase):
     "Guides/Loremaster/Durotar.lua",
     "Guides/Loremaster/Teldrassil.lua",
     "Guides/Loremaster/ElwynnForest.lua",
+    "Guides/Loremaster/Westfall.lua",
+    "Guides/Loremaster/LochModan.lua",
+    "Guides/Loremaster/Darkshore.lua",
+    "Guides/Loremaster/SilverpineForest.lua",
+    "Guides/Loremaster/TheBarrens.lua",
             )
         )
         for term in forbidden:
@@ -476,7 +486,11 @@ class ContractTests(unittest.TestCase):
 
     def test_loremaster_guides_have_ordered_zone_itineraries(self) -> None:
         files = sorted((ROOT / "Guides/Loremaster").glob("*.lua"))
-        self.assertEqual([path.name for path in files], ["DunMorogh.lua", "Durotar.lua", "ElwynnForest.lua", "Mulgore.lua", "Teldrassil.lua", "TirisfalGlades.lua", "ZephrasIsle.lua"])
+        import json
+        inventory = json.loads((ROOT / "docs/loremaster-zones.json").read_text())
+        expected = {Path(z["file"]).name for z in inventory["zones"] if z["status"] == "authored"}
+        expected.add("ZephrasIsle.lua")
+        self.assertEqual({p.name for p in files}, expected)
         for path in files:
             guide = path.read_text(encoding="utf-8")
             self.assertIn('category = "Loremaster Guides"', guide)

@@ -1531,6 +1531,39 @@ ns:RegisterGuide({
             dependsOn = { "accept-5064-grimtotem-spying" },
         },
         {
+            id = "objective-5064-3-secret-note-3",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 24 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Secret Note #3.",
+            complete = {
+                questObjective = { id = 5064, index = 3, text = "Secret Note #3", count = 1 },
+            },
+            route = {
+                { mapID = 1441, x = 0.39, y = 0.41, label = "Secret Note #3", offMapText = "Travel to Secret Note #3." },
+            },
+            sourceStep = 44,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4841 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-5064-grimtotem-spying" },
+        },
+        {
             text = "Collect 1 Arikara Serpent Skin.",
             route = {
                 { y = 0.3554, mapID = 1441, label = "Arikara", offMapText = "Travel to Arikara.", x = 0.3829 },
@@ -1736,7 +1769,7 @@ ns:RegisterGuide({
             route = {
                 { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
             },
-            dependsOn = { "accept-5064-grimtotem-spying", "objective-5064-2-secret-note-2", "objective-5064-1-secret-note-1" },
+            dependsOn = { "accept-5064-grimtotem-spying", "objective-5064-2-secret-note-2", "objective-5064-1-secret-note-1", "objective-5064-3-secret-note-3" },
             id = "turnin-5064-grimtotem-spying",
             kind = "turnin",
             conditions = {

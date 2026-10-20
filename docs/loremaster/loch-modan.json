@@ -1,0 +1,5874 @@
+{
+  "guide": "loremaster-loch-modan",
+  "title": "Loch Modan",
+  "sources": {
+    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
+    "compilation": {
+      "schemaVersion": 1,
+      "compilationFormatVersion": 2,
+      "flavor": "forever",
+      "source": "compilation",
+      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
+      "recordCount": 107209,
+      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
+      "status": "generated"
+    },
+    "sourceHashes": {
+      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
+      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+    }
+  },
+  "sourcePriority": [
+    "wowhead",
+    "questiedb",
+    "allthethings",
+    "foreverclient"
+  ],
+  "spine": "leveling-era-alliance-loch-modan",
+  "additionalSpines": [],
+  "spineActions": [
+    "accept-418-thelsamar-blood-sausages",
+    "accept-416-rat-catching",
+    "accept-1339-mountaineer-stormpike-s-task",
+    "objective-416-1-tunnel-rat-scout",
+    "turnin-1339-mountaineer-stormpike-s-task",
+    "accept-1338-stormpike-s-order",
+    "turnin-416-rat-catching",
+    "objective-418-quest-work",
+    "turnin-418-thelsamar-blood-sausages",
+    "accept-224-in-defense-of-the-king-s-lands",
+    "accept-267-the-trogg-threat",
+    "objective-224-1-stonesplinter-trogg",
+    "objective-224-2-stonesplinter-scout",
+    "turnin-224-in-defense-of-the-king-s-lands",
+    "objective-267-quest-work",
+    "turnin-267-the-trogg-threat",
+    "turnin-1338-stormpike-s-order",
+    "accept-6387-honor-students",
+    "turnin-6387-honor-students",
+    "accept-6391-ride-to-ironforge",
+    "turnin-6391-ride-to-ironforge",
+    "accept-6388-gryth-thurden",
+    "turnin-6388-gryth-thurden",
+    "accept-6392-return-to-brock",
+    "turnin-6392-return-to-brock",
+    "accept-436-ironband-s-excavation",
+    "accept-307-filthy-paws",
+    "objective-307-1-miners-league-crates",
+    "turnin-307-filthy-paws",
+    "accept-250-a-dark-threat-looms",
+    "turnin-250-a-dark-threat-looms",
+    "accept-199-a-dark-threat-looms",
+    "turnin-199-a-dark-threat-looms",
+    "accept-385-crocolisk-hunting",
+    "objective-385-2-loch-crocolisk",
+    "objective-385-1-crocolisk-meat",
+    "turnin-385-crocolisk-hunting",
+    "turnin-436-ironband-s-excavation",
+    "accept-297-gathering-idols",
+    "accept-298-excavation-progress-report",
+    "objective-297-1-berserk-trogg",
+    "turnin-297-gathering-idols",
+    "turnin-298-excavation-progress-report",
+    "accept-301-report-to-ironforge",
+    "turnin-301-report-to-ironforge"
+  ],
+  "placements": [
+    {
+      "anchor": "turnin-309-loremaster",
+      "actions": [
+        "level-before-accept-161-loremaster",
+        "accept-161-loremaster",
+        "turnin-161-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-86758-loremaster",
+      "actions": [
+        "level-before-accept-217-loremaster",
+        "accept-217-loremaster",
+        "objective-217-loremaster",
+        "turnin-217-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "level-before-accept-436-ironband-s-excavation",
+      "actions": [
+        "level-before-accept-237-loremaster",
+        "accept-237-loremaster",
+        "objective-237-loremaster",
+        "turnin-237-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-280-loremaster",
+      "actions": [
+        "level-before-accept-255-loremaster",
+        "accept-255-loremaster",
+        "objective-255-loremaster",
+        "turnin-255-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-86667-loremaster",
+      "actions": [
+        "level-before-accept-256-loremaster",
+        "accept-256-loremaster",
+        "objective-256-loremaster",
+        "turnin-256-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-2038-loremaster",
+      "actions": [
+        "level-before-accept-257-loremaster",
+        "accept-257-loremaster",
+        "objective-257-loremaster",
+        "turnin-257-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-217-loremaster",
+      "actions": [
+        "level-before-accept-258-loremaster",
+        "accept-258-loremaster",
+        "objective-258-loremaster",
+        "turnin-258-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-237-loremaster",
+      "actions": [
+        "level-before-accept-263-loremaster",
+        "accept-263-loremaster",
+        "objective-263-loremaster",
+        "turnin-263-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-255-loremaster",
+      "actions": [
+        "level-before-accept-271-loremaster",
+        "accept-271-loremaster",
+        "objective-271-loremaster",
+        "turnin-271-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-302-loremaster",
+      "actions": [
+        "level-before-accept-273-loremaster",
+        "accept-273-loremaster",
+        "objective-273-loremaster",
+        "turnin-273-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-161-loremaster",
+      "actions": [
+        "level-before-accept-274-loremaster",
+        "accept-274-loremaster",
+        "turnin-274-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-274-loremaster",
+      "actions": [
+        "level-before-accept-278-loremaster",
+        "accept-278-loremaster",
+        "objective-278-loremaster",
+        "turnin-278-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-278-loremaster",
+      "actions": [
+        "level-before-accept-280-loremaster",
+        "accept-280-loremaster",
+        "turnin-280-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-271-loremaster",
+      "actions": [
+        "level-before-accept-283-loremaster",
+        "accept-283-loremaster",
+        "turnin-283-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-301-report-to-ironforge",
+      "actions": [
+        "level-before-accept-302-loremaster",
+        "accept-302-loremaster",
+        "turnin-302-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-454-loremaster",
+      "actions": [
+        "level-before-accept-309-loremaster",
+        "accept-309-loremaster",
+        "objective-309-loremaster",
+        "turnin-309-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-273-loremaster",
+      "actions": [
+        "level-before-accept-454-loremaster",
+        "accept-454-loremaster",
+        "turnin-454-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-283-loremaster",
+      "actions": [
+        "level-before-accept-531-loremaster",
+        "accept-531-loremaster",
+        "turnin-531-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-2039-loremaster",
+      "actions": [
+        "level-before-accept-2038-loremaster",
+        "accept-2038-loremaster",
+        "objective-2038-loremaster",
+        "turnin-2038-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-263-loremaster",
+      "actions": [
+        "level-before-accept-2039-loremaster",
+        "accept-2039-loremaster",
+        "turnin-2039-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-258-loremaster",
+      "actions": [
+        "level-before-accept-86585-loremaster",
+        "accept-86585-loremaster",
+        "objective-86585-loremaster",
+        "turnin-86585-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-531-loremaster",
+      "actions": [
+        "level-before-accept-86614-loremaster",
+        "accept-86614-loremaster",
+        "turnin-86614-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-86614-loremaster",
+      "actions": [
+        "level-before-accept-86667-loremaster",
+        "accept-86667-loremaster",
+        "objective-86667-loremaster",
+        "turnin-86667-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-257-loremaster",
+      "actions": [
+        "level-before-accept-86758-loremaster",
+        "accept-86758-loremaster",
+        "objective-86758-loremaster",
+        "turnin-86758-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "anchor": "turnin-256-loremaster",
+      "actions": [
+        "level-before-accept-86776-loremaster",
+        "accept-86776-loremaster",
+        "objective-86776-loremaster",
+        "turnin-86776-loremaster"
+      ],
+      "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    }
+  ],
+  "quests": {
+    "161": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Dark Threat Looms (3/7)",
+          "preQuestSingle": [
+            199
+          ],
+          "requiredLevel": 16,
+          "startedBy": [
+            {
+              "id": 1093,
+              "spawns": [
+                [
+                  38,
+                  46,
+                  13.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1073
+            ]
+          ],
+          "name": "A Dark Threat Looms",
+          "objectivesText": [
+            "Chief Engineer Hinderweir wants you to take the strange smelling powder to Ashlan Stonesmirk, the explosives expert in Dun Modr."
+          ],
+          "preQuestSingle": [
+            199
+          ],
+          "questLevel": 18,
+          "requiredLevel": 16,
+          "startedBy": [
+            [
+              1093
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Dark Threat Looms",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 16
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1073,
+          "name": "Ashlan Stonesmirk",
+          "point": "end",
+          "coord": [
+            50,
+            18.2
+          ],
+          "type": 1,
+          "zone": "Wetlands"
+        },
+        {
+          "id": 1093,
+          "name": "Chief Engineer Hinderweir VII",
+          "point": "start",
+          "coord": [
+            46,
+            13.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "199": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Dark Threat Looms (2/7)",
+          "preQuestSingle": [
+            250
+          ],
+          "requiredLevel": 16,
+          "startedBy": [
+            {
+              "id": 257,
+              "spawns": [
+                [
+                  38,
+                  56.1,
+                  13.3
+                ]
+              ],
+              "type": "object"
+            },
+            {
+              "id": 2563,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1093
+            ]
+          ],
+          "name": "A Dark Threat Looms",
+          "objectivesText": [
+            "Return to Chief Engineer Hinderweir and show him the clue that you discovered."
+          ],
+          "preQuestSingle": [
+            250
+          ],
+          "questLevel": 18,
+          "requiredLevel": 16,
+          "startedBy": [
+            null,
+            [
+              257
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Dark Threat Looms",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 16
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 257,
+          "name": "Suspicious Barrel",
+          "point": "start",
+          "coord": [
+            56.1,
+            13.3
+          ],
+          "type": 2,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1093,
+          "name": "Chief Engineer Hinderweir VII",
+          "point": "end",
+          "coord": [
+            46,
+            13.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "217": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "In Defense of the King's Lands (4/4)",
+          "preQuestGroup": [
+            263,
+            267
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1092,
+              "spawns": [
+                [
+                  38,
+                  23.2,
+                  73.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1092
+            ]
+          ],
+          "name": "In Defense of the King's Lands",
+          "objectivesText": [
+            "Kill the Trogg leader, Grawmug, and his two guards, Gnasher and Brawler then report back to Captain Rugelfuss in the southern guard tower."
+          ],
+          "preQuestGroup": [
+            263,
+            267
+          ],
+          "preQuestSingle": [],
+          "questLevel": 17,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1092
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "In Defense of the King's Lands",
+          "prerequisiteReferences": [
+            224,
+            237,
+            263
+          ],
+          "questLevel": 17,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1092,
+          "name": "Captain Rugelfuss",
+          "point": "start",
+          "coord": [
+            23.2,
+            73.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1092,
+          "name": "Captain Rugelfuss",
+          "point": "end",
+          "coord": [
+            23.2,
+            73.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1205,
+          "name": "Grawmug",
+          "point": "requirement",
+          "coord": [
+            34.6,
+            90.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1206,
+          "name": "Gnasher",
+          "point": "requirement",
+          "coord": [
+            34.6,
+            91
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1207,
+          "name": "Brawler",
+          "point": "requirement",
+          "coord": [
+            34.6,
+            90.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "224": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "In Defense of the King's Lands (1/4)",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1089,
+              "spawns": [
+                [
+                  38,
+                  22.1,
+                  73.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1089
+            ]
+          ],
+          "name": "In Defense of the King's Lands",
+          "objectivesText": [
+            "Mountaineer Cobbleflint of the southern guard tower wants you to kill 10 Stonesplinter Troggs and 10 Stonesplinter Scouts."
+          ],
+          "questLevel": 12,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1089
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "In Defense of the King's Lands",
+          "prerequisiteReferences": [
+            217,
+            237,
+            263
+          ],
+          "questLevel": 12,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1089,
+          "name": "Mountaineer Cobbleflint",
+          "point": "start",
+          "coord": [
+            22,
+            73
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1089,
+          "name": "Mountaineer Cobbleflint",
+          "point": "end",
+          "coord": [
+            22,
+            73
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1161,
+          "name": "Stonesplinter Trogg",
+          "point": "requirement",
+          "coord": [
+            35.2,
+            72
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1162,
+          "name": "Stonesplinter Scout",
+          "point": "requirement",
+          "coord": [
+            27.2,
+            53.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "237": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "In Defense of the King's Lands (2/4)",
+          "preQuestSingle": [
+            224
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1091,
+              "spawns": [
+                [
+                  38,
+                  23.4,
+                  76.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1091
+            ]
+          ],
+          "name": "In Defense of the King's Lands",
+          "objectivesText": [
+            "Mountaineer Gravelgaw in the southern guard tower wants you to kill 10 Stonesplinter Skullthumpers and 10 Stonesplinter Seers and report back to him."
+          ],
+          "preQuestSingle": [
+            224
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1091
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "In Defense of the King's Lands",
+          "prerequisiteReferences": [
+            217,
+            224,
+            263
+          ],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1091,
+          "name": "Mountaineer Gravelgaw",
+          "point": "start",
+          "coord": [
+            23.4,
+            76.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1091,
+          "name": "Mountaineer Gravelgaw",
+          "point": "end",
+          "coord": [
+            23.4,
+            76.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1163,
+          "name": "Stonesplinter Skullthumper",
+          "point": "requirement",
+          "coord": [
+            34.6,
+            84.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1166,
+          "name": "Stonesplinter Seer",
+          "point": "requirement",
+          "coord": [
+            34,
+            85
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "250": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Dark Threat Looms (1/7)",
+          "requiredLevel": 16,
+          "startedBy": [
+            {
+              "id": 1093,
+              "spawns": [
+                [
+                  38,
+                  46,
+                  13.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              257
+            ]
+          ],
+          "name": "A Dark Threat Looms",
+          "objectivesText": [
+            "Investigate the area near the eastern ramp of the Dam and bring Chief Engineer Hinderweir a clue that might reveal what the Dark Iron Dwarves are up to."
+          ],
+          "questLevel": 18,
+          "requiredLevel": 16,
+          "startedBy": [
+            [
+              1093
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Dark Threat Looms",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 16
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1093,
+          "name": "Chief Engineer Hinderweir VII",
+          "point": "start",
+          "coord": [
+            46,
+            13.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 257,
+          "name": "Suspicious Barrel",
+          "point": "end",
+          "coord": [
+            56.1,
+            13.3
+          ],
+          "type": 2,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "255": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Mercenaries",
+          "requiredLevel": 15,
+          "startedBy": [
+            {
+              "id": 1139,
+              "spawns": [
+                [
+                  38,
+                  34.6,
+                  44.5
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1139
+            ]
+          ],
+          "name": "Mercenaries",
+          "objectivesText": [
+            "Magistrate Bluntnose of Thelsamar has hired you to kill 4 Mo'grosh Ogres, 4 Mo'grosh Brutes and 4 Mo'grosh Enforcers."
+          ],
+          "questLevel": 19,
+          "requiredLevel": 15,
+          "startedBy": [
+            [
+              1139
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Mercenaries",
+          "prerequisiteReferences": [],
+          "questLevel": 19,
+          "races": [],
+          "requiredLevel": 15
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1139,
+          "name": "Magistrate Bluntnose",
+          "point": "start",
+          "coord": [
+            34.6,
+            44.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1139,
+          "name": "Magistrate Bluntnose",
+          "point": "end",
+          "coord": [
+            34.6,
+            44.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1178,
+          "name": "Mo'grosh Ogre",
+          "point": "requirement",
+          "coord": [
+            69.4,
+            22.5
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1179,
+          "name": "Mo'grosh Enforcer",
+          "point": "requirement",
+          "coord": [
+            69.4,
+            22.5
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1180,
+          "name": "Mo'grosh Brute",
+          "point": "requirement",
+          "coord": [
+            78.6,
+            15.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "256": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "WANTED: Chok'sul",
+          "requiredLevel": 17,
+          "startedBy": [
+            {
+              "id": 256,
+              "spawns": [
+                [
+                  38,
+                  37.2,
+                  46.4
+                ]
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1139
+            ]
+          ],
+          "name": "WANTED: Chok'sul",
+          "objectivesText": [
+            "Kill Chok'sul and bring his head to Magistrate Bluntnose of Thelsamar."
+          ],
+          "questLevel": 22,
+          "requiredLevel": 17,
+          "startedBy": [
+            null,
+            [
+              256
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "WANTED: Chok'sul",
+          "prerequisiteReferences": [],
+          "questLevel": 22,
+          "races": [],
+          "requiredLevel": 17
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 256,
+          "name": "WANTED",
+          "point": "start",
+          "coord": [
+            37.2,
+            46.4
+          ],
+          "type": 2,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1139,
+          "name": "Magistrate Bluntnose",
+          "point": "end",
+          "coord": [
+            34.6,
+            44.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1210,
+          "name": "Chok'sul",
+          "point": "sourcerequirement",
+          "coord": [
+            78.8,
+            15.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "257": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Hunter's Boast",
+          "requiredLevel": 11,
+          "startedBy": [
+            {
+              "id": 1187,
+              "spawns": [
+                [
+                  38,
+                  83.4,
+                  65.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1187
+            ]
+          ],
+          "name": "A Hunter's Boast",
+          "objectivesText": [
+            "Kill 6 Mountain Buzzards and return to Daryl the Youngling in the Farstrider Lodge within 15 minutes."
+          ],
+          "questLevel": 16,
+          "requiredLevel": 11,
+          "startedBy": [
+            [
+              1187
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Hunter's Boast",
+          "prerequisiteReferences": [
+            258
+          ],
+          "questLevel": 16,
+          "races": [],
+          "requiredLevel": 11
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1187,
+          "name": "Daryl the Youngling",
+          "point": "start",
+          "coord": [
+            83.4,
+            65.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1187,
+          "name": "Daryl the Youngling",
+          "point": "end",
+          "coord": [
+            83.4,
+            65.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1194,
+          "name": "Mountain Buzzard",
+          "point": "requirement",
+          "coord": [
+            71.2,
+            73.5
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "258": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Hunter's Challenge",
+          "preQuestSingle": [
+            257
+          ],
+          "requiredLevel": 11,
+          "startedBy": [
+            {
+              "id": 1187,
+              "spawns": [
+                [
+                  38,
+                  83.4,
+                  65.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1187
+            ]
+          ],
+          "name": "A Hunter's Challenge",
+          "objectivesText": [
+            "Kill 5 Elder Mountain Boars and return to Daryl the Youngling in the Farstrider Lodge within 12 minutes."
+          ],
+          "preQuestSingle": [
+            257
+          ],
+          "questLevel": 17,
+          "requiredLevel": 11,
+          "startedBy": [
+            [
+              1187
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Hunter's Challenge",
+          "prerequisiteReferences": [
+            257
+          ],
+          "questLevel": 17,
+          "races": [],
+          "requiredLevel": 11
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1187,
+          "name": "Daryl the Youngling",
+          "point": "start",
+          "coord": [
+            83.4,
+            65.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1187,
+          "name": "Daryl the Youngling",
+          "point": "end",
+          "coord": [
+            83.4,
+            65.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1192,
+          "name": "Elder Mountain Boar",
+          "point": "requirement",
+          "coord": [
+            76.2,
+            45.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "263": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "In Defense of the King's Lands (3/4)",
+          "preQuestSingle": [
+            237
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1090,
+              "spawns": [
+                [
+                  38,
+                  23.4,
+                  74.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1090
+            ]
+          ],
+          "name": "In Defense of the King's Lands",
+          "objectivesText": [
+            "Mountaineer Wallbang in the southern guard tower wants you to kill 10 Stonesplinter Shaman and 10 Stonesplinter Bonesnappers."
+          ],
+          "preQuestSingle": [
+            237
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1090
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "In Defense of the King's Lands",
+          "prerequisiteReferences": [
+            217,
+            224,
+            237
+          ],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1090,
+          "name": "Mountaineer Wallbang",
+          "point": "start",
+          "coord": [
+            23.4,
+            74.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1090,
+          "name": "Mountaineer Wallbang",
+          "point": "end",
+          "coord": [
+            23.4,
+            74.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1164,
+          "name": "Stonesplinter Bonesnapper",
+          "point": "requirement",
+          "coord": [
+            33.8,
+            93.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1197,
+          "name": "Stonesplinter Shaman",
+          "point": "requirement",
+          "coord": [
+            34.8,
+            94.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "267": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "The Trogg Threat",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1092,
+              "spawns": [
+                [
+                  38,
+                  23.3,
+                  73.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1092
+            ]
+          ],
+          "name": "The Trogg Threat",
+          "objectivesText": [
+            "Bring 8 Trogg Stone Teeth to Captain Rugelfuss in the southern guard tower."
+          ],
+          "questLevel": 12,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1092
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "The Trogg Threat",
+          "prerequisiteReferences": [],
+          "questLevel": 12,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1092,
+          "name": "Captain Rugelfuss",
+          "point": "start",
+          "coord": [
+            23.2,
+            73.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1092,
+          "name": "Captain Rugelfuss",
+          "point": "end",
+          "coord": [
+            23.2,
+            73.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1161,
+          "name": "Stonesplinter Trogg",
+          "point": "sourcerequirement",
+          "coord": [
+            35.2,
+            72
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1162,
+          "name": "Stonesplinter Scout",
+          "point": "sourcerequirement",
+          "coord": [
+            27.2,
+            53.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1163,
+          "name": "Stonesplinter Skullthumper",
+          "point": "sourcerequirement",
+          "coord": [
+            34.6,
+            84.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1164,
+          "name": "Stonesplinter Bonesnapper",
+          "point": "sourcerequirement",
+          "coord": [
+            33.8,
+            93.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1165,
+          "name": "Stonesplinter Geomancer",
+          "point": "sourcerequirement",
+          "coord": [
+            68.3,
+            62.5
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1166,
+          "name": "Stonesplinter Seer",
+          "point": "sourcerequirement",
+          "coord": [
+            34,
+            85
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1167,
+          "name": "Stonesplinter Digger",
+          "point": "sourcerequirement",
+          "coord": [
+            70.6,
+            64.7
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1197,
+          "name": "Stonesplinter Shaman",
+          "point": "sourcerequirement",
+          "coord": [
+            34.8,
+            94.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "271": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Vyrin's Revenge (1/2)",
+          "preQuestSingle": [
+            258
+          ],
+          "requiredLevel": 15,
+          "startedBy": [
+            {
+              "id": 1156,
+              "spawns": [
+                [
+                  38,
+                  81.8,
+                  64.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1187
+            ]
+          ],
+          "name": "Vyrin's Revenge",
+          "objectivesText": [
+            "Kill Ol' Sooty then show your handiwork to Daryl the Youngling at the Farstrider Lodge."
+          ],
+          "preQuestSingle": [
+            258
+          ],
+          "questLevel": 20,
+          "requiredLevel": 15,
+          "startedBy": [
+            [
+              1156
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Vyrin's Revenge",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [],
+          "requiredLevel": 15
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1156,
+          "name": "Vyrin Swiftwind",
+          "point": "start",
+          "coord": [
+            81.8,
+            64.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1187,
+          "name": "Daryl the Youngling",
+          "point": "end",
+          "coord": [
+            83.4,
+            65.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1225,
+          "name": "Ol' Sooty",
+          "point": "sourcerequirement",
+          "coord": [
+            37,
+            61.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "273": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Resupplying the Excavation",
+          "preQuestSingle": [
+            302
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1105,
+              "spawns": [
+                [
+                  38,
+                  37.2,
+                  47.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              2057
+            ]
+          ],
+          "name": "Resupplying the Excavation",
+          "objectivesText": [
+            "Speak with Huldar."
+          ],
+          "preQuestSingle": [
+            302
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1105
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Resupplying the Excavation",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1105,
+          "name": "Jern Hornhelm",
+          "point": "start",
+          "coord": [
+            37.2,
+            47.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 2057,
+          "name": "Huldar",
+          "point": "end",
+          "coord": [
+            52.2,
+            69.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "274": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Dark Threat Looms (4/7)",
+          "preQuestSingle": [
+            161
+          ],
+          "requiredLevel": 16,
+          "startedBy": [
+            {
+              "id": 1073,
+              "spawns": [
+                [
+                  11,
+                  50,
+                  18.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1093
+            ]
+          ],
+          "name": "A Dark Threat Looms",
+          "objectivesText": [
+            "Ashlan Stonesmirk wants you to return to Chief Engineer Hinderweir and inform him of the new discovery."
+          ],
+          "preQuestSingle": [
+            161
+          ],
+          "questLevel": 18,
+          "requiredLevel": 16,
+          "startedBy": [
+            [
+              1073
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Dark Threat Looms",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 16
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1073,
+          "name": "Ashlan Stonesmirk",
+          "point": "start",
+          "coord": [
+            50,
+            18.2
+          ],
+          "type": 1,
+          "zone": "Wetlands"
+        },
+        {
+          "id": 1093,
+          "name": "Chief Engineer Hinderweir VII",
+          "point": "end",
+          "coord": [
+            46,
+            13.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "278": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Dark Threat Looms (5/7)",
+          "preQuestSingle": [
+            274
+          ],
+          "requiredLevel": 16,
+          "startedBy": [
+            {
+              "id": 1093,
+              "spawns": [
+                [
+                  38,
+                  46,
+                  13.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1093
+            ]
+          ],
+          "name": "A Dark Threat Looms",
+          "objectivesText": [
+            "Chief Engineer Hinderweir wants you to gather Lurker Venom, a Mo'grosh Crystal, and a Crocolisk Tear."
+          ],
+          "preQuestSingle": [
+            274
+          ],
+          "questLevel": 18,
+          "requiredLevel": 16,
+          "startedBy": [
+            [
+              1093
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Dark Threat Looms",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 16
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1093,
+          "name": "Chief Engineer Hinderweir VII",
+          "point": "start",
+          "coord": [
+            46,
+            13.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1093,
+          "name": "Chief Engineer Hinderweir VII",
+          "point": "end",
+          "coord": [
+            46,
+            13.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1178,
+          "name": "Mo'grosh Ogre",
+          "point": "sourcerequirement",
+          "coord": [
+            69.4,
+            22.5
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1179,
+          "name": "Mo'grosh Enforcer",
+          "point": "sourcerequirement",
+          "coord": [
+            69.4,
+            22.5
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1180,
+          "name": "Mo'grosh Brute",
+          "point": "sourcerequirement",
+          "coord": [
+            78.6,
+            15.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1181,
+          "name": "Mo'grosh Shaman",
+          "point": "sourcerequirement",
+          "coord": [
+            67.6,
+            23.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1183,
+          "name": "Mo'grosh Mystic",
+          "point": "sourcerequirement",
+          "coord": [
+            68.6,
+            18.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1184,
+          "name": "Cliff Lurker",
+          "point": "sourcerequirement",
+          "coord": [
+            67.8,
+            53.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1185,
+          "name": "Wood Lurker",
+          "point": "sourcerequirement",
+          "coord": [
+            59,
+            21.7
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1195,
+          "name": "Forest Lurker",
+          "point": "sourcerequirement",
+          "coord": [
+            30.2,
+            47.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1693,
+          "name": "Loch Crocolisk",
+          "point": "sourcerequirement",
+          "coord": [
+            62.2,
+            45.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 2476,
+          "name": "Large Loch Crocolisk",
+          "point": "sourcerequirement",
+          "coord": [
+            59.8,
+            39.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 14266,
+          "name": "Shanda the Spinner",
+          "point": "sourcerequirement",
+          "coord": [
+            80,
+            52
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 14267,
+          "name": "Emogg the Crusher",
+          "point": "sourcerequirement",
+          "coord": [
+            66.6,
+            21
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 270693,
+          "name": "Daggerfang",
+          "point": "sourcerequirement",
+          "coord": [
+            62.8,
+            51.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "280": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Dark Threat Looms (6/7)",
+          "preQuestSingle": [
+            278
+          ],
+          "requiredLevel": 16,
+          "startedBy": [
+            {
+              "id": 1093,
+              "spawns": [
+                [
+                  38,
+                  46,
+                  13.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            null,
+            [
+              1585
+            ]
+          ],
+          "name": "A Dark Threat Looms",
+          "objectivesText": [
+            "Chief Engineer Hinderweir wants you to swim down to the base of the dam, locate the powder keg and stir in the Disarming Mixture to prevent an explosion."
+          ],
+          "preQuestSingle": [
+            278
+          ],
+          "questLevel": 18,
+          "requiredLevel": 16,
+          "startedBy": [
+            [
+              1093
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Dark Threat Looms",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 16
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1093,
+          "name": "Chief Engineer Hinderweir VII",
+          "point": "start",
+          "coord": [
+            46,
+            13.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1585,
+          "name": "Explosive Charge",
+          "point": "end",
+          "coord": [
+            50.6,
+            14.4
+          ],
+          "type": 2,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "283": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "A Dark Threat Looms (7/7)",
+          "preQuestSingle": [
+            280
+          ],
+          "requiredLevel": 16,
+          "startedBy": [
+            {
+              "id": 1585,
+              "spawns": [
+                [
+                  38,
+                  50.6,
+                  14.4
+                ]
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1093
+            ]
+          ],
+          "name": "A Dark Threat Looms",
+          "objectivesText": [
+            "The Disarming Mixture seemed to take effect. Return to Chief Engineer Hinderweir to report the good news."
+          ],
+          "preQuestSingle": [
+            280
+          ],
+          "questLevel": 20,
+          "requiredLevel": 16,
+          "startedBy": [
+            null,
+            [
+              1585
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "A Dark Threat Looms",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [],
+          "requiredLevel": 16
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1585,
+          "name": "Explosive Charge",
+          "point": "start",
+          "coord": [
+            50.6,
+            14.4
+          ],
+          "type": 2,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1093,
+          "name": "Chief Engineer Hinderweir VII",
+          "point": "end",
+          "coord": [
+            46,
+            13.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "297": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Gathering Idols",
+          "preQuestSingle": [
+            436
+          ],
+          "requiredLevel": 13,
+          "startedBy": [
+            {
+              "id": 1345,
+              "spawns": [
+                [
+                  38,
+                  64.9,
+                  66.7
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1345
+            ]
+          ],
+          "name": "Gathering Idols",
+          "objectivesText": [
+            "Bring Magmar Fellhew 8 Carved Stone Idols."
+          ],
+          "questLevel": 18,
+          "requiredLevel": 13,
+          "startedBy": [
+            [
+              1345
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Gathering Idols",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 13
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1345,
+          "name": "Magmar Fellhew",
+          "point": "start",
+          "coord": [
+            64.8,
+            66.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1345,
+          "name": "Magmar Fellhew",
+          "point": "end",
+          "coord": [
+            64.8,
+            66.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1165,
+          "name": "Stonesplinter Geomancer",
+          "point": "sourcerequirement",
+          "coord": [
+            68.3,
+            62.5
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1167,
+          "name": "Stonesplinter Digger",
+          "point": "sourcerequirement",
+          "coord": [
+            70.6,
+            64.7
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1393,
+          "name": "Berserk Trogg",
+          "point": "sourcerequirement",
+          "coord": [
+            69.1,
+            66
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "298": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Excavation Progress Report",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1344,
+              "spawns": [
+                [
+                  38,
+                  65.9,
+                  65.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1105
+            ]
+          ],
+          "name": "Excavation Progress Report",
+          "objectivesText": [
+            "Bring Ironband's Progress Report to Jern Hornhelm in Thelsamar."
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1344
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Excavation Progress Report",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1344,
+          "name": "Prospector Ironband",
+          "point": "start",
+          "coord": [
+            65.8,
+            65.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1105,
+          "name": "Jern Hornhelm",
+          "point": "end",
+          "coord": [
+            37.2,
+            47.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "301": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Report to Ironforge",
+          "preQuestSingle": [
+            298
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1105,
+              "spawns": [
+                [
+                  38,
+                  37.2,
+                  47.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1356
+            ]
+          ],
+          "name": "Report to Ironforge",
+          "objectivesText": [
+            "Take Ironband's Progress Report to Prospector Stormpike."
+          ],
+          "preQuestSingle": [
+            298
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1105
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Report to Ironforge",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1356,
+          "name": "Prospector Stormpike",
+          "point": "end",
+          "coord": [
+            74.4,
+            12
+          ],
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "id": 1105,
+          "name": "Jern Hornhelm",
+          "point": "start",
+          "coord": [
+            37.2,
+            47.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "302": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Powder to Ironband",
+          "preQuestSingle": [
+            301
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1356,
+              "spawns": [
+                [
+                  1537,
+                  74.4,
+                  12
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1105
+            ]
+          ],
+          "name": "Powder to Ironband",
+          "objectivesText": [
+            "Speak with Jern Hornhelm in Thelsamar."
+          ],
+          "preQuestSingle": [
+            301
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1356
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Powder to Ironband",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1356,
+          "name": "Prospector Stormpike",
+          "point": "start",
+          "coord": [
+            74.4,
+            12
+          ],
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "id": 1105,
+          "name": "Jern Hornhelm",
+          "point": "end",
+          "coord": [
+            37.2,
+            47.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "307": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Filthy Paws",
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1343,
+              "spawns": [
+                [
+                  38,
+                  24.7,
+                  18.3
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1343
+            ]
+          ],
+          "name": "Filthy Paws",
+          "objectivesText": [
+            "Go to the Silver Stream Mine and collect 4 loads of Miners' Gear.",
+            "",
+            "Return to Mountaineer Stormpike."
+          ],
+          "questLevel": 15,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1343
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Filthy Paws",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1343,
+          "name": "Mountaineer Stormpike",
+          "point": "start",
+          "coord": [
+            24.8,
+            18.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1343,
+          "name": "Mountaineer Stormpike",
+          "point": "end",
+          "coord": [
+            24.8,
+            18.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "309": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Protecting the Shipment",
+          "preQuestSingle": [
+            454
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1379,
+              "spawns": [
+                [
+                  38,
+                  52.2,
+                  69.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1344
+            ]
+          ],
+          "name": "Protecting the Shipment",
+          "objectivesText": [
+            "Ensure Miran and the shipment arrive at the excavation site, then inform Prospector Ironband."
+          ],
+          "preQuestSingle": [
+            454
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1379
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Protecting the Shipment",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1379,
+          "name": "Miran",
+          "point": "start",
+          "coord": [
+            52.2,
+            69.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1344,
+          "name": "Prospector Ironband",
+          "point": "end",
+          "coord": [
+            65.8,
+            65.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "385": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Crocolisk Hunting",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1154,
+              "spawns": [
+                [
+                  38,
+                  81.8,
+                  61.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1154
+            ]
+          ],
+          "name": "Crocolisk Hunting",
+          "objectivesText": [
+            "Get 5 pieces of Crocolisk Meat and 6 Crocolisk Skins for Marek Ironheart at the Farstrider Lodge."
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1154
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Crocolisk Hunting",
+          "prerequisiteReferences": [
+            22,
+            38,
+            90,
+            92,
+            93,
+            127,
+            384,
+            418,
+            429,
+            471,
+            564,
+            769,
+            862,
+            1582,
+            1618,
+            2751,
+            2752,
+            2753,
+            2754,
+            2755,
+            2756,
+            2758
+          ],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1154,
+          "name": "Marek Ironheart",
+          "point": "start",
+          "coord": [
+            81.8,
+            61.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1154,
+          "name": "Marek Ironheart",
+          "point": "end",
+          "coord": [
+            81.8,
+            61.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1693,
+          "name": "Loch Crocolisk",
+          "point": "sourcerequirement",
+          "coord": [
+            62.2,
+            45.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 2476,
+          "name": "Large Loch Crocolisk",
+          "point": "sourcerequirement",
+          "coord": [
+            59.8,
+            39.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 270693,
+          "name": "Daggerfang",
+          "point": "sourcerequirement",
+          "coord": [
+            62.8,
+            51.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "416": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Rat Catching",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1340,
+              "spawns": [
+                [
+                  38,
+                  34.8,
+                  47
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1340
+            ]
+          ],
+          "name": "Rat Catching",
+          "objectivesText": [
+            "Bring 12 Tunnel Rat Ears to Mountaineer Kadrell in Thelsamar."
+          ],
+          "questLevel": 11,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1340
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Rat Catching",
+          "prerequisiteReferences": [],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1340,
+          "name": "Mountaineer Kadrell",
+          "point": "start",
+          "coord": [
+            32.8,
+            49.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1340,
+          "name": "Mountaineer Kadrell",
+          "point": "end",
+          "coord": [
+            32.8,
+            49.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1172,
+          "name": "Tunnel Rat Vermin",
+          "point": "sourcerequirement",
+          "coord": [
+            34,
+            17.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1173,
+          "name": "Tunnel Rat Scout",
+          "point": "sourcerequirement",
+          "coord": [
+            28.6,
+            45.1
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1174,
+          "name": "Tunnel Rat Geomancer",
+          "point": "sourcerequirement",
+          "coord": [
+            35,
+            23.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1175,
+          "name": "Tunnel Rat Digger",
+          "point": "sourcerequirement",
+          "coord": [
+            36.2,
+            23.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1176,
+          "name": "Tunnel Rat Forager",
+          "point": "sourcerequirement",
+          "coord": [
+            25.7,
+            44.1
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1177,
+          "name": "Tunnel Rat Surveyor",
+          "point": "sourcerequirement",
+          "coord": [
+            35.2,
+            27.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1202,
+          "name": "Tunnel Rat Kobold",
+          "point": "sourcerequirement",
+          "coord": [
+            26.2,
+            43.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "418": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Thelsamar Blood Sausages",
+          "requiredLevel": 7,
+          "startedBy": [
+            {
+              "id": 1963,
+              "spawns": [
+                [
+                  38,
+                  34.8,
+                  49.3
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1963
+            ]
+          ],
+          "name": "Thelsamar Blood Sausages",
+          "objectivesText": [
+            "Bring 3 pieces of Bear Meat, 3 Boar Intestines, and 3 Spider Ichor to Vidra Hearthstove in Thelsamar."
+          ],
+          "questLevel": 11,
+          "requiredLevel": 7,
+          "startedBy": [
+            [
+              1963
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Thelsamar Blood Sausages",
+          "prerequisiteReferences": [
+            22,
+            38,
+            90,
+            92,
+            93,
+            127,
+            384,
+            385,
+            429,
+            471,
+            564,
+            769,
+            862,
+            1582,
+            1618,
+            2751,
+            2752,
+            2753,
+            2754,
+            2755,
+            2756,
+            2758
+          ],
+          "questLevel": 11,
+          "races": [],
+          "requiredLevel": 7
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1963,
+          "name": "Vidra Hearthstove",
+          "point": "start",
+          "coord": [
+            34.8,
+            49
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1963,
+          "name": "Vidra Hearthstove",
+          "point": "end",
+          "coord": [
+            34.8,
+            49
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1184,
+          "name": "Cliff Lurker",
+          "point": "sourcerequirement",
+          "coord": [
+            67.8,
+            53.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1185,
+          "name": "Wood Lurker",
+          "point": "sourcerequirement",
+          "coord": [
+            59,
+            21.7
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1186,
+          "name": "Elder Black Bear",
+          "point": "sourcerequirement",
+          "coord": [
+            30.8,
+            9.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1188,
+          "name": "Grizzled Black Bear",
+          "point": "sourcerequirement",
+          "coord": [
+            40,
+            66.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1189,
+          "name": "Black Bear Patriarch",
+          "point": "sourcerequirement",
+          "coord": [
+            38,
+            63
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1190,
+          "name": "Mountain Boar",
+          "point": "sourcerequirement",
+          "coord": [
+            38.4,
+            37.3
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1191,
+          "name": "Mangy Mountain Boar",
+          "point": "sourcerequirement",
+          "coord": [
+            37.4,
+            50.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1192,
+          "name": "Elder Mountain Boar",
+          "point": "sourcerequirement",
+          "coord": [
+            76.2,
+            45.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1195,
+          "name": "Forest Lurker",
+          "point": "sourcerequirement",
+          "coord": [
+            30.2,
+            47.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1225,
+          "name": "Ol' Sooty",
+          "point": "sourcerequirement",
+          "coord": [
+            37,
+            61.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 14266,
+          "name": "Shanda the Spinner",
+          "point": "sourcerequirement",
+          "coord": [
+            80,
+            52
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "436": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Ironband's Excavation",
+          "requiredLevel": 13,
+          "startedBy": [
+            {
+              "id": 1105,
+              "spawns": [
+                [
+                  38,
+                  37.2,
+                  47.4
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1345
+            ]
+          ],
+          "name": "Ironband's Excavation",
+          "objectivesText": [
+            "Speak with Explorer Fellhew."
+          ],
+          "questLevel": 18,
+          "requiredLevel": 13,
+          "startedBy": [
+            [
+              1105
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Ironband's Excavation",
+          "prerequisiteReferences": [],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 13
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1105,
+          "name": "Jern Hornhelm",
+          "point": "start",
+          "coord": [
+            37.2,
+            47.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1345,
+          "name": "Magmar Fellhew",
+          "point": "end",
+          "coord": [
+            64.8,
+            66.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "454": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "After the Ambush",
+          "preQuestSingle": [
+            273
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 2057,
+              "spawns": [
+                [
+                  38,
+                  52.2,
+                  69.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1379
+            ]
+          ],
+          "name": "After the Ambush",
+          "objectivesText": [
+            "Speak with Miran."
+          ],
+          "preQuestSingle": [
+            273
+          ],
+          "questLevel": 15,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              2057
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "After the Ambush",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 2057,
+          "name": "Huldar",
+          "point": "start",
+          "coord": [
+            52.2,
+            69.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1379,
+          "name": "Miran",
+          "point": "end",
+          "coord": [
+            52.2,
+            69.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "531": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Vyrin's Revenge (2/2)",
+          "preQuestSingle": [
+            271
+          ],
+          "requiredLevel": 15,
+          "startedBy": [
+            {
+              "id": 1187,
+              "spawns": [
+                [
+                  38,
+                  83.4,
+                  65.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1156
+            ]
+          ],
+          "name": "Vyrin's Revenge",
+          "objectivesText": [
+            "Bring Ol' Sooty's head to Vyrin Swiftwind at the Farstrider Lodge."
+          ],
+          "preQuestSingle": [
+            271
+          ],
+          "questLevel": 20,
+          "requiredLevel": 15,
+          "startedBy": [
+            [
+              1187
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Vyrin's Revenge",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [],
+          "requiredLevel": 15
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1187,
+          "name": "Daryl the Youngling",
+          "point": "start",
+          "coord": [
+            83.4,
+            65.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1156,
+          "name": "Vyrin Swiftwind",
+          "point": "end",
+          "coord": [
+            81.8,
+            64.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "912": {
+      "status": "unresolved",
+      "reason": "No supported pickup or turn-in providers are recorded in Wowhead, Questie, or ATT.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "foreverclient": {},
+        "wowhead": {
+          "classes": [],
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Stonesplinter Trogg Disguise",
+          "prerequisiteReferences": [],
+          "questLevel": 12,
+          "races": [],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": []
+    },
+    "1338": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Stormpike's Order",
+          "preQuestSingle": [
+            1339
+          ],
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1343,
+              "spawns": [
+                [
+                  38,
+                  24.7,
+                  18.3
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              5413
+            ]
+          ],
+          "name": "Stormpike's Order",
+          "objectivesText": [
+            "Bring Stormpike's Request to Furen Longbeard in Stormwind."
+          ],
+          "questLevel": 14,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1343
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Stormpike's Order",
+          "prerequisiteReferences": [
+            353
+          ],
+          "questLevel": 14,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 5413,
+          "name": "Furen Longbeard",
+          "point": "end",
+          "coord": [
+            58,
+            16.8
+          ],
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "id": 1343,
+          "name": "Mountaineer Stormpike",
+          "point": "start",
+          "coord": [
+            24.8,
+            18.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "1339": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Mountaineer Stormpike's Task",
+          "requiredLevel": 9,
+          "startedBy": [
+            {
+              "id": 1340,
+              "spawns": [
+                [
+                  38,
+                  34.8,
+                  47
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1343
+            ]
+          ],
+          "name": "Mountaineer Stormpike's Task",
+          "objectivesText": [
+            "Speak with Mountaineer Stormpike."
+          ],
+          "questLevel": 15,
+          "requiredLevel": 9,
+          "startedBy": [
+            [
+              1340
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Mountaineer Stormpike's Task",
+          "prerequisiteReferences": [
+            1338
+          ],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 9
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1340,
+          "name": "Mountaineer Kadrell",
+          "point": "start",
+          "coord": [
+            32.8,
+            49.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1343,
+          "name": "Mountaineer Stormpike",
+          "point": "end",
+          "coord": [
+            24.8,
+            18.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "2038": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Bingles' Missing Supplies",
+          "preQuestSingle": [
+            2039
+          ],
+          "requiredLevel": 12,
+          "startedBy": [
+            {
+              "id": 6577,
+              "spawns": [
+                [
+                  38,
+                  63.6,
+                  47.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              6577
+            ]
+          ],
+          "name": "Bingles' Missing Supplies",
+          "objectivesText": [
+            "Find and return Bingles' supplies:",
+            "",
+            "Bingles' Wrench, Bingles' Screwdriver, Bingles' Hammer, and Bingles' Blastencapper."
+          ],
+          "questLevel": 15,
+          "requiredLevel": 12,
+          "startedBy": [
+            [
+              6577
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Bingles' Missing Supplies",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 12
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 6577,
+          "name": "Bingles Blastenheimer",
+          "point": "start",
+          "coord": [
+            63.4,
+            47.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 6577,
+          "name": "Bingles Blastenheimer",
+          "point": "end",
+          "coord": [
+            63.4,
+            47.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "2039": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [],
+      "supporting": true,
+      "evidence": {
+        "allthethings": {
+          "name": "Find Bingles",
+          "requiredLevel": 12,
+          "startedBy": [
+            {
+              "id": 6569,
+              "spawns": [
+                [
+                  1537,
+                  69.4,
+                  50.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              6577
+            ]
+          ],
+          "name": "Find Bingles",
+          "objectivesText": [
+            "Find Bingles Blastenheimer in Loch Modan."
+          ],
+          "questLevel": 15,
+          "requiredLevel": 12,
+          "startedBy": [
+            [
+              6569
+            ]
+          ],
+          "zoneOrSort": 1537
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Find Bingles",
+          "prerequisiteReferences": [],
+          "questLevel": 15,
+          "races": [],
+          "requiredLevel": 12
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 6569,
+          "name": "Gnoarn",
+          "point": "start",
+          "coord": [
+            69.4,
+            50.6
+          ],
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "id": 6577,
+          "name": "Bingles Blastenheimer",
+          "point": "end",
+          "coord": [
+            63.4,
+            47.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "2500": {
+      "status": "other-zone",
+      "reason": "Objectives and chain belong to another zone; capital or zone pickup does not establish ownership.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Badlands Reagent Run",
+          "requiredLevel": 36,
+          "startedBy": [
+            {
+              "id": 1470,
+              "spawns": [
+                [
+                  38,
+                  37.07,
+                  49.38
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1470
+            ]
+          ],
+          "name": "Badlands Reagent Run",
+          "objectivesText": [
+            "Acquire the reagents Ghak Healtouch needs from the Badlands, then return to him in Thelsamar."
+          ],
+          "questLevel": 39,
+          "requiredLevel": 36,
+          "startedBy": [
+            [
+              1470
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Badlands Reagent Run",
+          "prerequisiteReferences": [
+            17
+          ],
+          "questLevel": 39,
+          "races": [],
+          "requiredLevel": 36
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1470,
+          "name": "Ghak Healtouch",
+          "point": "start",
+          "coord": [
+            37,
+            49.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1470,
+          "name": "Ghak Healtouch",
+          "point": "end",
+          "coord": [
+            37,
+            49.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 2829,
+          "name": "Starving Buzzard",
+          "point": "sourcerequirement",
+          "coord": [
+            46.4,
+            72.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ]
+    },
+    "2501": {
+      "status": "other-zone",
+      "reason": "Objectives and chain belong to another zone; capital or zone pickup does not establish ownership.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Badlands Reagent Run II",
+          "preQuestSingle": [
+            17
+          ],
+          "requiredLevel": 40,
+          "requiredSkill": [
+            171,
+            1
+          ],
+          "startedBy": [
+            {
+              "id": 1470,
+              "spawns": [
+                [
+                  38,
+                  37.07,
+                  49.38
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1470
+            ]
+          ],
+          "name": "Badlands Reagent Run II",
+          "objectivesText": [
+            "Use the empty thaumaturgy vessels on scorched guardian dragons found in the Badlands. Once you have them filled, bring them to Ghak Healtouch in Thelsamar."
+          ],
+          "preQuestGroup": [
+            2500,
+            17
+          ],
+          "preQuestSingle": [],
+          "questLevel": 44,
+          "requiredLevel": 40,
+          "requiredSkill": [
+            171,
+            210
+          ],
+          "startedBy": [
+            [
+              1470
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Badlands Reagent Run II",
+          "prerequisiteReferences": [
+            17,
+            2500
+          ],
+          "questLevel": 44,
+          "races": [],
+          "requiredLevel": 40
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1470,
+          "name": "Ghak Healtouch",
+          "point": "start",
+          "coord": [
+            37,
+            49.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1470,
+          "name": "Ghak Healtouch",
+          "point": "end",
+          "coord": [
+            37,
+            49.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ]
+    },
+    "3182": {
+      "status": "other-zone",
+      "reason": "Objectives and chain belong to another zone; capital or zone pickup does not establish ownership.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Proof of Deed",
+          "preQuestSingle": [
+            3181
+          ],
+          "requiredLevel": 40,
+          "startedBy": [
+            {
+              "id": 3836,
+              "spawns": [
+                [
+                  38,
+                  18.2,
+                  84
+                ]
+              ],
+              "type": "npc"
+            },
+            {
+              "id": 10005,
+              "spawns": [],
+              "type": "item"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              8256
+            ]
+          ],
+          "name": "Proof of Deed",
+          "objectivesText": [
+            "Take Margol's Gigantic Horn to Curator Thorius in Ironforge."
+          ],
+          "preQuestSingle": [
+            3181
+          ],
+          "questLevel": 48,
+          "requiredLevel": 40,
+          "startedBy": [
+            [
+              3836
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Proof of Deed",
+          "prerequisiteReferences": [],
+          "questLevel": 48,
+          "races": [],
+          "requiredLevel": 40
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 8256,
+          "name": "Curator Thorius",
+          "point": "end",
+          "coord": [
+            71.4,
+            16.2
+          ],
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "id": 3836,
+          "name": "Mountaineer Pebblebitty",
+          "point": "start",
+          "coord": [
+            18.2,
+            83.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ]
+    },
+    "6387": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Honor Students",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1681,
+              "spawns": [
+                [
+                  38,
+                  37,
+                  47.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1572
+            ]
+          ],
+          "name": "Honor Students",
+          "objectivesText": [
+            "Bring Brock's List to Thorgrum Borrelson in Thelsamar."
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1681
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Honor Students",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            3,
+            7
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1681,
+          "name": "Brock Stoneseeker",
+          "point": "start",
+          "coord": [
+            37,
+            47.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1572,
+          "name": "Thorgrum Borrelson",
+          "point": "end",
+          "coord": [
+            33.8,
+            50.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "6388": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Gryth Thurden",
+          "preQuestSingle": [
+            6391
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 4256,
+              "spawns": [
+                [
+                  1537,
+                  51,
+                  26
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1573
+            ]
+          ],
+          "name": "Gryth Thurden",
+          "objectivesText": [
+            "Bring the Honorary Picks to Gryth Thurden in Ironforge."
+          ],
+          "preQuestSingle": [
+            6391
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              4256
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Gryth Thurden",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            3,
+            7
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 4256,
+          "name": "Golnir Bouldertoe",
+          "point": "start",
+          "coord": [
+            51,
+            26
+          ],
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "id": 1573,
+          "name": "Gryth Thurden",
+          "point": "end",
+          "coord": [
+            55.8,
+            48
+          ],
+          "type": 1,
+          "zone": "Ironforge"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "6391": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Ride to Ironforge",
+          "preQuestSingle": [
+            6387
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1572,
+              "spawns": [
+                [
+                  38,
+                  33.9,
+                  50.9
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              4256
+            ]
+          ],
+          "name": "Ride to Ironforge",
+          "objectivesText": [
+            "Buy a gryphon to Ironforge from the gryphon master Thorgrum Borrelson, then bring Brock's List to Golnir Bouldertoe in Ironforge."
+          ],
+          "preQuestSingle": [
+            6387
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1572
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Ride to Ironforge",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            3,
+            7
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 4256,
+          "name": "Golnir Bouldertoe",
+          "point": "end",
+          "coord": [
+            51,
+            26
+          ],
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "id": 1572,
+          "name": "Thorgrum Borrelson",
+          "point": "start",
+          "coord": [
+            33.8,
+            50.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "6392": {
+      "status": "spine",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Return to Brock",
+          "preQuestSingle": [
+            6388
+          ],
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 1573,
+              "spawns": [
+                [
+                  1537,
+                  55.6,
+                  48
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1681
+            ]
+          ],
+          "name": "Return to Brock",
+          "objectivesText": [
+            "Buy a gryphon to Thelsamar from the gryphon master Gryth Thurden, then bring the Honorary Picks to Brock Stoneseeker in Thelsamar."
+          ],
+          "preQuestSingle": [
+            6388
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              1573
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Return to Brock",
+          "prerequisiteReferences": [],
+          "questLevel": 10,
+          "races": [
+            3,
+            7
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1573,
+          "name": "Gryth Thurden",
+          "point": "start",
+          "coord": [
+            55.8,
+            48
+          ],
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "id": 1681,
+          "name": "Brock Stoneseeker",
+          "point": "end",
+          "coord": [
+            37,
+            47.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "86585": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Banner of the Fallen",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 269153,
+              "spawns": [
+                [
+                  38,
+                  31.8,
+                  86.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1092
+            ]
+          ],
+          "name": "Banner of the Fallen",
+          "objectivesText": [
+            "Raise the standard of Ironforge, call out the trogg Headsplitter and kill it, then report to Captain Rugelfuss."
+          ],
+          "questLevel": 17,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              269153
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Banner of the Fallen",
+          "prerequisiteReferences": [],
+          "questLevel": 17,
+          "races": [
+            3,
+            4,
+            7,
+            95
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 269153,
+          "name": "Mountaineer Ylva",
+          "point": "start",
+          "coord": [
+            31.8,
+            86.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1092,
+          "name": "Captain Rugelfuss",
+          "point": "end",
+          "coord": [
+            23.2,
+            73.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 269185,
+          "name": "Headsplitter",
+          "point": "requirement",
+          "coord": [
+            31.5,
+            85.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "86613": {
+      "status": "unresolved",
+      "reason": "The starter item has no verified acquisition source. Wowhead ends at Ironband, while Questie objective text names Magmar Fellhew; the 297 reference also needs chain interpretation.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1344
+            ]
+          ],
+          "name": "Excavation Tools",
+          "objectivesText": [
+            "Return 6 Excavation Tools to Magmar Fellhew."
+          ],
+          "questLevel": 18,
+          "requiredLevel": 13,
+          "startedBy": [
+            null,
+            null,
+            [
+              278049
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Excavation Tools",
+          "prerequisiteReferences": [
+            297
+          ],
+          "questLevel": 18,
+          "races": [],
+          "requiredLevel": 13
+        }
+      },
+      "sourceRevisions": {
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1344,
+          "name": "Prospector Ironband",
+          "point": "end",
+          "coord": [
+            65.8,
+            65.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ]
+    },
+    "86614": {
+      "status": "included",
+      "reason": "Verified permanent quest with supported providers and recursively authored prerequisites.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Silver of the Waves",
+          "requiredLevel": 13,
+          "startedBy": [
+            {
+              "id": 665289,
+              "spawns": [
+                [
+                  38,
+                  50.6,
+                  53.4
+                ]
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1684
+            ]
+          ],
+          "name": "Silver of the Waves",
+          "objectivesText": [
+            "Return the Monogrammed Silver Hair clip to its owner."
+          ],
+          "questLevel": 20,
+          "requiredLevel": 13,
+          "startedBy": [
+            null,
+            [
+              665289
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Silver of the Waves",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [
+            3,
+            4,
+            7,
+            95
+          ],
+          "requiredLevel": 13
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 665289,
+          "name": "Discarded Fishing Toolbox",
+          "point": "start",
+          "coord": [
+            48,
+            39.7
+          ],
+          "type": 2,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1684,
+          "name": "Khara Deepwater",
+          "point": "end",
+          "coord": [
+            40.4,
+            39.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "86667": {
+      "status": "included",
+      "reason": "Verified permanent quest with supported providers and recursively authored prerequisites.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Snowbound",
+          "requiredLevel": 10,
+          "startedBy": [
+            {
+              "id": 49808,
+              "spawns": [
+                [
+                  38,
+                  36.4,
+                  48.2
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              258043
+            ]
+          ],
+          "name": "Snowbound",
+          "objectivesText": [
+            "Deliver a Jar of Snow to Norric Lochthane at his house on the northwest coast of the Loch."
+          ],
+          "questLevel": 10,
+          "requiredLevel": 10,
+          "startedBy": [
+            [
+              49808
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Snowbound",
+          "prerequisiteReferences": [],
+          "questLevel": 20,
+          "races": [
+            3,
+            4,
+            7,
+            95
+          ],
+          "requiredLevel": 10
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 49808,
+          "name": "Grenhild Darktalon",
+          "point": "start",
+          "coord": [
+            36.4,
+            48.2
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 258043,
+          "name": "Norric Lochthane",
+          "point": "end",
+          "coord": [
+            41.8,
+            19
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "86758": {
+      "status": "included",
+      "reason": "Zone-owned permanent quest with authored pickup and return.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Twisting the Knife",
+          "requiredLevel": 12,
+          "startedBy": [
+            {
+              "id": 1154,
+              "spawns": [
+                [
+                  38,
+                  81.8,
+                  61.8
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              1154
+            ]
+          ],
+          "name": "Twisting the Knife",
+          "objectivesText": [
+            "Find and defeat the crocolisk Daggerfang and bring back Marek's knife."
+          ],
+          "questLevel": 16,
+          "requiredLevel": 12,
+          "startedBy": [
+            [
+              1154
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Twisting the Knife",
+          "prerequisiteReferences": [
+            385
+          ],
+          "questLevel": 16,
+          "races": [
+            3,
+            4,
+            7,
+            95
+          ],
+          "requiredLevel": 12
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 1154,
+          "name": "Marek Ironheart",
+          "point": "start",
+          "coord": [
+            81.8,
+            61.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 1154,
+          "name": "Marek Ironheart",
+          "point": "end",
+          "coord": [
+            81.8,
+            61.8
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 270693,
+          "name": "Daggerfang",
+          "point": "sourcerequirement",
+          "coord": [
+            62.8,
+            51.4
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "86776": {
+      "status": "included",
+      "reason": "Verified permanent quest with supported providers and recursively authored prerequisites.",
+      "catalogs": [
+        "loch-modan"
+      ],
+      "supporting": false,
+      "evidence": {
+        "allthethings": {
+          "name": "Ingredients for the Forge",
+          "requiredLevel": 15,
+          "startedBy": [
+            {
+              "id": 167,
+              "spawns": [
+                [
+                  38,
+                  34,
+                  46.6
+                ]
+              ],
+              "type": "npc"
+            }
+          ]
+        },
+        "foreverclient": {},
+        "questiedb": {
+          "finishedBy": [
+            [
+              167
+            ]
+          ],
+          "name": "Ingredients for the Forge",
+          "objectivesText": [
+            "Bring 10 Bronze Bars to Morhan Coppertongue."
+          ],
+          "questLevel": 30,
+          "requiredLevel": 15,
+          "startedBy": [
+            [
+              167
+            ]
+          ],
+          "zoneOrSort": 38
+        },
+        "wowhead": {
+          "classes": [],
+          "faction": "Alliance",
+          "flags": {
+            "daily": false,
+            "dungeon": false,
+            "monthly": false,
+            "pvp": false,
+            "raid": false,
+            "repeatable": false,
+            "sharable": true,
+            "weekly": false
+          },
+          "name": "Ingredients for the Forge",
+          "prerequisiteReferences": [],
+          "questLevel": 30,
+          "races": [],
+          "requiredLevel": 15
+        }
+      },
+      "sourceRevisions": {
+        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
+        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
+        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+      },
+      "locations": [
+        {
+          "id": 167,
+          "name": "Morhan Coppertongue",
+          "point": "start",
+          "coord": [
+            34,
+            46.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        },
+        {
+          "id": 167,
+          "name": "Morhan Coppertongue",
+          "point": "end",
+          "coord": [
+            34,
+            46.6
+          ],
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    }
+  },
+  "supportingQuests": [
+    2039
+  ],
+  "clientWalkthrough": "unverified"
+}

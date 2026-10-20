@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Feralas & Azshara",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-feralas-and-azshara",
@@ -317,6 +317,7 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-7735-pristine-yeti-hide",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 7735,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -340,6 +341,22 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 7735, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Pristine Yeti Hide", minCount = 1 } },
+                                { faction = "Alliance" },
+                                {
+                                    any = { { any = { { quest = { id = 2821, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "Use the Pristine Yeti Hide to accept Pristine Yeti Hide.",
@@ -370,6 +387,22 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 7735, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Pristine Yeti Hide", minCount = 1 } },
+                                { faction = "Alliance" },
+                                {
+                                    any = { { any = { { quest = { id = 2821, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             id = "objective-7733-1-rage-scar-yeti-hide",
@@ -1129,6 +1162,22 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 7735, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { item = { name = "Pristine Yeti Hide", minCount = 1 } },
+                                { faction = "Alliance" },
+                                {
+                                    any = { { any = { { quest = { id = 2821, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             id = "level-before-turnin-5158-seeking-spiritual-aid",

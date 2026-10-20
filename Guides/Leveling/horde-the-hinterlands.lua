@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "The Hinterlands",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-the-hinterlands",
@@ -993,11 +993,19 @@ ns:RegisterGuide({
             dependsOn = { "accept-7841-message-to-the-wildhammer" },
         },
         {
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } },
+                        { quest = { id = 485, state = "activeOrCompleted" } },
+                    },
+                },
+            },
             id = "loot-starter-before-accept-485-find-oox-09-hl",
             kind = "note",
             instructionOnly = true,
             conditions = { faction = "Horde" },
-            text = "Loot OOX-09/HL Distress Beacon from Saltwater Snapjaw, Witherbark Scalper, Witherbark Hideskinner, Ebenezer Rustlocke's Corpse, Lesser Bloodstone Deposit, Green Sludge, Waterlogged Letter, Razorbeak Skylord, Witherbark Broodguard, Stone of East Binding, Highvale Scout, Highvale Marksman, Highvale Ranger, Maiden's Folly Charts, Silvermane Howler, Silvermane Stalker, Savage Owlbeast, Vilebranch Scalper, Vilebranch Soothsayer, Gammerita, Wild Leather Shoulders, Wild Leather Helmet, Quickdraw Quiver. Keep it for the next pickup.",
+            text = "If OOX-09/HL Distress Beacon drops while questing in The Hinterlands, keep it for the optional robot rescue chain.",
             complete = {
                 any = {
                     {
@@ -1014,6 +1022,14 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } },
+                        { quest = { id = 485, state = "activeOrCompleted" } },
+                    },
+                },
+            },
             text = "Use the OOX-09/HL Distress Beacon to accept Find OOX-09/HL!.",
             id = "accept-485-find-oox-09-hl",
             kind = "accept",
@@ -1035,6 +1051,14 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } },
+                        { quest = { id = 485, state = "activeOrCompleted" } },
+                    },
+                },
+            },
             text = "Turn in Find OOX-09/HL! to Homing Robot OOX-09/HL.",
             route = {
                 { y = 0.3766, mapID = 1425, label = "Homing Robot OOX-09/HL", offMapText = "Travel to Homing Robot OOX-09/HL in The Hinterlands.", x = 0.4935 },
@@ -1675,6 +1699,14 @@ ns:RegisterGuide({
             dependsOn = { "accept-2934-undamaged-venom-sac" },
         },
         {
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } },
+                        { quest = { id = 485, state = "activeOrCompleted" } },
+                    },
+                },
+            },
             text = "Turn in Find OOX-09/HL!.",
             route = {
                 { y = 0.6419, mapID = 1425, label = "Find OOX-09/HL!", offMapText = "Travel to Find OOX-09/HL!.", x = 0.358 },

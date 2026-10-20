@@ -2,6 +2,41 @@
 
 All notable changes to this project are documented here.
 
+## 0.7.0 - 2026-10-18
+- Add the missing Secret Note #3 stop to the Grimtotem Spying Horde routes.
+- Add Moonglade Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Silithus Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Winterspring Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Un'Goro Crater Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Felwood Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Azshara Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Tanaris Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Feralas Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Dustwallow Marsh Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Desolace Loremaster and keep the optional Corrupter drop chain from blocking Casual.
+- Add Thousand Needles Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Ashenvale Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Stonetalon Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Eastern Plaguelands Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Western Plaguelands Loremaster and repair the Good Luck Charm pickup and Dalson key sequence.
+- Add The Hinterlands Loremaster and keep its beacon rescue chain optional.
+- Add Burning Steppes Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Searing Gorge Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Blasted Lands Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Swamp of Sorrows Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Badlands Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Stranglethorn Vale Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Arathi Highlands Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Alterac Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Hillsbrad Foothills Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Wetlands Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Duskwood Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Add Redridge Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
+- Place Goretusk Liver Pie and Centaur Bracers collection before their returns in Casual and Loremaster.
+- Add zone Loremaster routes for Westfall, Loch Modan, Darkshore, Silverpine Forest, and The Barrens.
+- Remove unsupported Zephras visitor race gates in Starter and Loremaster, and retain the Alliance restriction on A Sacrifice in Vain.
+- Add frozen source inventories, coverage reporting, and Casual-to-Loremaster synchronization checks.
+
 ## 0.6.3 - 2026-10-18
 - Add a search placeholder and Exploration labels to the guide library.
 - Add Loremaster guides for Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Mulgore, Tirisfal Glades, and Zephras Isle, with prerequisite routing and relevant capital visits.

@@ -15,6 +15,11 @@ M.DalaranDungeonTurninGates = {
 
 -- Single-predecessor, same-title chains verified against wow-database Forever exports.
 M.SameTitleQuestChains = {
+    [630] = 594,
+    [228] = 227,
+    [229] = 228,
+    [144] = 143,
+    [146] = 145,
     [1499] = 1485,
     [1517] = 1516,
     [1520] = 1519,
@@ -246,7 +251,22 @@ M.SameTitleQuestChains = {
     [2608] = 2607,
     [2609] = 2608,
     [2869] = 3130,
+    [2767] = 2766,
     [2972] = 2970,
+    [3787] = 3781,
+    [3788] = 3781,
+    [3841] = 2972,
+    [3962] = 3961,
+    [5055] = 5054,
+    [5056] = 5055,
+    [5121] = 5087,
+    [975] = 969,
+    [1126] = 1125,
+    [8282] = 8278,
+    [8306] = 8304,
+    [8310] = 8304,
+    [8321] = 8320,
+    [8323] = 8279,
     [2976] = 2974,
     [2980] = 2975,
     [3368] = 3367,
@@ -295,8 +315,76 @@ M.SameTitleQuestChains = {
     [7383] = 933,
 }
 
+M.UnresolvedSameTitleQuestChains = {
+    [1126] = "Tower hive trigger instructions are not supported by the frozen local observations.",
+}
+
 -- Forever quests woven into starter routes that unlock after a spine turn-in.
 M.WovenQuestTurninGates = {
+    [1362] = 1361,
+    [976] = 973,
+    [1012] = 1011,
+    [6481] = 6421,
+    [648] = 351,
+    [4493] = 162,
+    [4261] = 4442,
+    [5242] = 5165,
+    [6283] = 6282,
+    [105] = 5098,
+    [211] = 5097,
+    [836] = 485,
+    [95350] = 95349,
+    [13] = 12,
+    [14] = 13,
+    [92911] = 92910,
+    [92747] = { 13, 92745 },
+    [92748] = 92747,
+    [92750] = 92748,
+    [92751] = 92750,
+    [92749] = 92748,
+    [92752] = { 92749, 92751 },
+    [138] = 136,
+    [139] = 138,
+    [140] = 139,
+    [161] = 199,
+    [274] = 161,
+    [278] = 274,
+    [280] = 278,
+    [283] = 280,
+    [302] = 301,
+    [273] = 302,
+    [454] = 273,
+    [309] = 454,
+    [237] = 224,
+    [258] = 257,
+    [263] = 237,
+    [271] = 258,
+    [531] = 271,
+    [2038] = 2039,
+    [217] = { 263, 267 },
+    [2078] = 2098,
+    [951] = 950,
+    [1167] = 1140,
+    [1143] = 1167,
+    [981] = 1143,
+    [422] = 421,
+    [423] = 422,
+    [424] = 423,
+    [99] = 424,
+    [98298] = 99,
+    [443] = 439,
+    [444] = 443,
+    [446] = 444,
+    [448] = 446,
+    [442] = 448,
+    [440] = 439,
+    [441] = 440,
+    [530] = 441,
+    [450] = 447,
+    [451] = 450,
+    [3923] = 3922,
+    [3924] = 3923,
+    [4021] = 852,
     [2] = 6383,
     [23] = 6383,
     [76160] = 76156,
@@ -1355,6 +1443,78 @@ function M.ItemStartQuestObjectiveViolations(guides)
         end
     end
     return issues
+end
+
+-- Pickup branches may differ by race or class while sharing later work.
+local function PickupBranchCoverage(goals, evaluate, repeated)
+    local seen, count = {}, 0
+    for _, goal in ipairs(goals) do if goal.kind == "accept" then count = count + 1 end end
+    if count < 2 then return false end
+    for _, race in ipairs({1,2,3,4,5,6,7,8,95,96}) do
+        for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
+            local alliance = race==1 or race==3 or race==4 or race==7 or race==95
+            local state = {raceID=race,classID=class,faction=alliance and "Alliance" or "Horde",
+                level=60,professions={},professionsKnown=true}
+            local pickups = 0
+            for _, goal in ipairs(goals) do
+                local applies = evaluate(goal.conditions,state)
+                if applies == nil then return false end
+                if goal.kind == "accept" and applies then
+                    pickups = pickups + 1
+                    seen[goal] = true
+                end
+            end
+            if pickups > 1 and not repeated then return false end
+            local returns = 0
+            for _, goal in ipairs(goals) do
+                if goal.kind ~= "accept" and evaluate(goal.conditions,state) then
+                    if pickups < 1 then return false end
+                    if goal.kind == "turnin" then returns = returns + 1 end
+                end
+            end
+            if pickups >= 1 and returns == 0 then return false end
+        end
+    end
+    local observed = 0
+    for _ in pairs(seen) do observed = observed + 1 end
+    return observed == count
+end
+
+function M.DisjointPickupBranches(goals, evaluate)
+    return PickupBranchCoverage(goals, evaluate, false)
+end
+
+-- Repeated visits retain their source actor restrictions and quest observations.
+function M.PreservedPickupBranches(goals, guides, evaluate, serialize)
+    local seen = {}
+    for _, goal in ipairs(goals) do
+        local guide = guides[goal.sourceGuide]
+        if not guide or guide.category ~= "Leveling Quest Guides" or not goal.sourceActionID then return false end
+        local key = goal.sourceGuide .. ":" .. goal.sourceActionID
+        if seen[key] then return false end
+        seen[key] = true
+        local original
+        for _, candidate in ipairs(guide.goals) do
+            if candidate.id == goal.sourceActionID then original = candidate; break end
+        end
+        if not original or original.kind ~= goal.kind
+            or serialize(original.conditions) ~= serialize(goal.conditions)
+            or serialize(original.complete) ~= serialize(goal.complete) then return false end
+    end
+    return PickupBranchCoverage(goals, evaluate, true)
+end
+
+-- Only overlapping character branches share objective dependencies.
+function M.ActionsOverlap(first, second, evaluate)
+    for _, race in ipairs({1,2,3,4,5,6,7,8,95,96}) do
+        for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
+            local alliance = race==1 or race==3 or race==4 or race==7 or race==95
+            local state = {raceID=race,classID=class,faction=alliance and "Alliance" or "Horde",
+                level=60,professions={},professionsKnown=false}
+            if evaluate(first.conditions,state) ~= false and evaluate(second.conditions,state) ~= false then return true end
+        end
+    end
+    return false
 end
 
 return M

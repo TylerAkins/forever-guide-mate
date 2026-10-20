@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Felwood & Winterspring",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-felwood-and-winterspring-part-2",
@@ -1897,6 +1897,7 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-8470-deadwood-ritual-totem",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 8470,
             conditions = { faction = "Horde" },
             text = "Loot Deadwood Ritual Totem from Deadwood Den Watcher, Deadwood Avenger, Deadwood Shaman. Keep it for the next pickup.",
             complete = {
@@ -1913,7 +1914,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8470, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Deadwood Ritual Totem", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Use the Deadwood Ritual Totem to accept Deadwood Ritual Totem.",
             id = "accept-8470-deadwood-ritual-totem",
@@ -1934,7 +1943,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8470, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Deadwood Ritual Totem", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Reach Neutral reputation with Timbermaw Hold before speaking with the furbolgs inside the hold.",
             id = "objective-8470-quest-work",
@@ -1955,7 +1972,15 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = true,
             dependsOn = { "accept-8470-deadwood-ritual-totem" },
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8470, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Deadwood Ritual Totem", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Turn in Deadwood Ritual Totem to Kernda.",
             route = {
@@ -1979,7 +2004,15 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-        },
+                    excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8470, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Deadwood Ritual Totem", minCount = 1 } } } },
+                    },
+                },
+            },
+},
         {
             text = "Turn in Strange Sources to Donova Snowden.",
             route = {

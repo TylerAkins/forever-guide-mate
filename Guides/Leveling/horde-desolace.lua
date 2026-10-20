@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 4,
+    revision = 5,
     title = "Desolace",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-desolace",
@@ -772,77 +772,67 @@ ns:RegisterGuide({
             classAction = "turnin-1953-return-to-the-marsh",
         },
         {
-            id = "loot-starter-before-accept-1480-the-corrupter",
-            kind = "note",
-            instructionOnly = true,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Loot Flayed Demon Skin from Burning Blade Augur, Burning Blade Summoner, Burning Blade Seer. Keep it for the next pickup.",
             complete = {
-                any = {
-                    {
-                        item = { name = "Flayed Demon Skin", minCount = 1 },
-                    },
-                    {
-                        quest = { id = 1480, state = "activeOrCompleted" },
+                any = { { item = { minCount = 1, name = "Flayed Demon Skin" } }, { quest = { id = 1480, state = "activeOrCompleted" } } },
+            },
+            conditions = { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "loot-starter-before-accept-1480-the-corrupter",
+            referenceQuest = 1480,
+            instructionOnly = true,
+            kind = "note",
+            requiredQuests = {},
+            text = "If Flayed Demon Skin drops from Burning Blade Augurs, Summoners, or Seers, keep it for the optional Corrupter chain.",
+            useClientPin = false,
+            useClientText = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
                     },
                 },
             },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
+            checkpointQuest = 1480,
+            complete = { level = { min = 25 } },
+            conditions = { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8, 96 } } } },
             id = "level-before-accept-1480-the-corrupter",
             kind = "note",
-            text = "Reach level 25 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 25 },
-            },
             requiredLevel = 25,
             requiredQuests = {},
-            useClientText = false,
+            text = "Reach level 25 before continuing. Choose how to gain XP, then return to this route.",
             useClientPin = false,
-            checkpointQuest = 1480,
-        },
-        {
-            text = "Use the Flayed Demon Skin to accept The Corrupter.",
-            id = "accept-1480-the-corrupter",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
+            useClientText = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
                     },
                 },
             },
-            complete = {
-                quest = { id = 1480, state = "activeOrCompleted" },
-            },
-            sourceStep = 2,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
+        },
+        {
+            complete = { quest = { id = 1480, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
+            id = "accept-1480-the-corrupter",
+            kind = "accept",
+            requiredQuests = {},
+            sourceStep = 2,
+            text = "Use the Flayed Demon Skin to accept The Corrupter.",
+            useClientPin = false,
+            useClientText = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                    },
+                },
+            },
         },
         {
             id = "level-before-accept-5741-sceptre-of-light",
@@ -1096,64 +1086,77 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            text = "Turn in The Corrupter to Maurin Bonesplitter.",
-            route = {
-                { y = 0.5344, mapID = 1443, label = "Maurin Bonesplitter", offMapText = "Travel to Maurin Bonesplitter in Desolace.", x = 0.5224 },
-            },
+            complete = { quest = { id = 1480, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "accept-1480-the-corrupter" },
             id = "turnin-1480-the-corrupter",
             kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Maurin Bonesplitter",
+                    mapID = 1443,
+                    offMapText = "Travel to Maurin Bonesplitter in Desolace.",
+                    x = 0.5224,
+                    y = 0.5344,
+                },
+            },
+            sourceStep = 7,
+            text = "Turn in The Corrupter to Maurin Bonesplitter.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
                     },
                 },
             },
-            complete = {
-                quest = { id = 1480, state = "completed" },
-            },
-            sourceStep = 7,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
         },
         {
-            route = {
-                { y = 0.5344, mapID = 1443, label = "Maurin Bonesplitter", offMapText = "Travel to Maurin Bonesplitter in Desolace.", x = 0.5224 },
-            },
-            text = "Accept The Corrupter from Maurin Bonesplitter.",
+            complete = { quest = { id = 1481, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
             id = "accept-1481-the-corrupter",
             kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1480 } } },
+            route = {
+                {
+                    label = "Maurin Bonesplitter",
+                    mapID = 1443,
+                    offMapText = "Travel to Maurin Bonesplitter in Desolace.",
+                    x = 0.5224,
+                    y = 0.5344,
                 },
-            },
-            complete = {
-                quest = { id = 1481, state = "activeOrCompleted" },
             },
             sourceStep = 7,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1480 },
-                    conditions = {},
+            text = "Accept The Corrupter from Maurin Bonesplitter.",
+            useClientPin = false,
+            useClientText = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1481, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
             route = {
@@ -1237,37 +1240,48 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Collect 1 Shadowstalker Scalp.",
-            route = {
-                { y = 0.242, mapID = 1443, label = "Hatefury Shadowstalker", offMapText = "Travel to Hatefury Shadowstalker.", x = 0.724 },
-            },
+            complete = { questObjective = { count = 1, id = 1481, index = 1, text = "Hatefury Shadowstalker" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "accept-1481-the-corrupter" },
             id = "objective-1481-1-hatefury-shadowstalker",
             kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1480 } } },
+            route = {
+                {
+                    label = "Hatefury Shadowstalker",
+                    mapID = 1443,
+                    offMapText = "Travel to Hatefury Shadowstalker.",
+                    x = 0.724,
+                    y = 0.242,
                 },
-            },
-            complete = {
-                questObjective = { id = 1481, text = "Hatefury Shadowstalker", index = 1, count = 1 },
             },
             sourceStep = 11,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1480 },
-                    conditions = {},
+            text = "Collect 1 Shadowstalker Scalp.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1481, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
         },
         {
             id = "objective-1434-1-hatefury-rogue",
@@ -1479,70 +1493,105 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Turn in The Corrupter to Maurin Bonesplitter.",
-            route = {
-                { y = 0.5345, mapID = 1443, label = "Maurin Bonesplitter", offMapText = "Travel to Maurin Bonesplitter in Desolace.", x = 0.5225 },
-            },
+            complete = { quest = { id = 1481, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "accept-1481-the-corrupter", "objective-1481-1-hatefury-shadowstalker" },
             id = "turnin-1481-the-corrupter",
             kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1480 } } },
+            route = {
+                {
+                    label = "Maurin Bonesplitter",
+                    mapID = 1443,
+                    offMapText = "Travel to Maurin Bonesplitter in Desolace.",
+                    x = 0.5225,
+                    y = 0.5345,
                 },
-            },
-            complete = {
-                quest = { id = 1481, state = "completed" },
             },
             sourceStep = 15,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1480 },
-                    conditions = {},
+            text = "Turn in The Corrupter to Maurin Bonesplitter.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1481, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
         },
         {
-            route = {
-                { y = 0.5345, mapID = 1443, label = "Maurin Bonesplitter", offMapText = "Travel to Maurin Bonesplitter in Desolace.", x = 0.5225 },
-            },
-            text = "Accept The Corrupter from Maurin Bonesplitter.",
+            complete = { quest = { id = 1482, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
             id = "accept-1482-the-corrupter",
             kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1481 } } },
+            route = {
+                {
+                    label = "Maurin Bonesplitter",
+                    mapID = 1443,
+                    offMapText = "Travel to Maurin Bonesplitter in Desolace.",
+                    x = 0.5225,
+                    y = 0.5345,
                 },
-            },
-            complete = {
-                quest = { id = 1482, state = "activeOrCompleted" },
             },
             sourceStep = 15,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1481 },
-                    conditions = {},
+            text = "Accept The Corrupter from Maurin Bonesplitter.",
+            useClientPin = false,
+            useClientText = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1482, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
             text = "Turn in Khan Dez'hepah to Felgur Twocuts.",
@@ -2247,37 +2296,54 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            complete = { questObjective = { count = 1, id = 1482, index = 1, text = "Oracle Crystal" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "accept-1482-the-corrupter" },
             id = "objective-1482-1-oracle-crystal",
             kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            text = "Collect 1 Oracle Crystal.",
-            complete = {
-                questObjective = { id = 1482, index = 1, text = "Oracle Crystal", count = 1 },
-            },
-            route = {
-                { mapID = 1443, x = 0.27399999999999997, y = 0.08, label = "Oracle Crystal", offMapText = "Travel to Oracle Crystal." },
-            },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1481 } } },
+            route = { { label = "Oracle Crystal", mapID = 1443, offMapText = "Travel to Oracle Crystal.", x = 0.274, y = 0.08 } },
             sourceStep = 44,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1481 },
-                    conditions = {},
+            text = "Collect 1 Oracle Crystal.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1482, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "accept-1482-the-corrupter" },
         },
         {
             id = "objective-6143-1-slitherblade-myrmidon",
@@ -2424,103 +2490,205 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Turn in The Corrupter to Maurin Bonesplitter.",
-            route = {
-                { mapID = 1443, x = 0.5224, y = 0.5344, label = "Maurin Bonesplitter", offMapText = "Travel to Maurin Bonesplitter in Desolace." },
-            },
+            complete = { quest = { id = 1482, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "accept-1482-the-corrupter", "objective-1482-1-oracle-crystal" },
             id = "turnin-1482-the-corrupter",
             kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1481 } } },
+            route = {
+                {
+                    label = "Maurin Bonesplitter",
+                    mapID = 1443,
+                    offMapText = "Travel to Maurin Bonesplitter in Desolace.",
+                    x = 0.5224,
+                    y = 0.5344,
                 },
-            },
-            complete = {
-                quest = { id = 1482, state = "completed" },
             },
             sourceStep = 49,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1481 },
-                    conditions = {},
+            text = "Turn in The Corrupter to Maurin Bonesplitter.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1482, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                        { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
         },
         {
-            route = {
-                { y = 0.5344, mapID = 1443, label = "Maurin Bonesplitter", offMapText = "Travel to Maurin Bonesplitter in Desolace.", x = 0.5225 },
-            },
-            text = "Accept The Corrupter from Maurin Bonesplitter.",
+            complete = { quest = { id = 1484, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
             id = "accept-1484-the-corrupter",
             kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1482 } } },
+            route = {
+                {
+                    label = "Maurin Bonesplitter",
+                    mapID = 1443,
+                    offMapText = "Travel to Maurin Bonesplitter in Desolace.",
+                    x = 0.5225,
+                    y = 0.5344,
                 },
-            },
-            complete = {
-                quest = { id = 1484, state = "activeOrCompleted" },
             },
             sourceStep = 50,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1482 },
-                    conditions = {},
+            text = "Accept The Corrupter from Maurin Bonesplitter.",
+            useClientPin = false,
+            useClientText = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1484, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1482, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                                                { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
-            text = "Turn in The Corrupter to Takata Steelblade.",
-            route = {
-                { y = 0.5438, mapID = 1443, label = "Takata Steelblade", offMapText = "Travel to Takata Steelblade in Desolace.", x = 0.5257 },
-            },
+            complete = { quest = { id = 1484, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 25 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "accept-1484-the-corrupter" },
             id = "turnin-1484-the-corrupter",
             kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 25 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1482 } } },
+            route = {
+                {
+                    label = "Takata Steelblade",
+                    mapID = 1443,
+                    offMapText = "Travel to Takata Steelblade in Desolace.",
+                    x = 0.5257,
+                    y = 0.5438,
                 },
-            },
-            complete = {
-                quest = { id = 1484, state = "completed" },
             },
             sourceStep = 51,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 1482 },
-                    conditions = {},
+            text = "Turn in The Corrupter to Takata Steelblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1484, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 1482, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 1481, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 1480, state = "activeOrCompleted" } },
+                                                                                                { all = { { item = { name = "Flayed Demon Skin", minCount = 1 } }, { faction = "Horde" } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            useClientText = false,
-            useClientPin = false,
         },
         {
             route = {

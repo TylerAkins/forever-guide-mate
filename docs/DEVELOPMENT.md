@@ -12,7 +12,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 | `UI.lua` | Tracker and guide library |
 | `Guides/Leveling/` | Full Casual 1–60 spine (starters through Silithus); Forever weaves land here |
 | `SkipLineage.lua` | Hard skip cascade for Casual and dungeon guides |
-| `Guides/Loremaster/` | Coming Soon placeholder; add authored zone guides to the TOC when ready |
+| `Guides/Loremaster/` | Authored zone completion guides; inventories and coverage are in `docs/loremaster/` and `docs/loremaster-coverage.md` |
 | `Guides/Dungeons/` | Dungeon quest guides |
 | `Guides/Class/` | Supported class-quest guides, one per class |
 | `VERSION` | Current stable release used by automated version checks |

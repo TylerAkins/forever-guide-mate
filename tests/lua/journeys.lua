@@ -27,6 +27,9 @@ if guideID:match('^loremaster%-') then
  -- Exercise every profession branch structurally; this is not an in-game profession build.
  for _, skill in ipairs({129,164,165,171,182,185,186,197,202,333,356,393}) do s.professions[skill] = 300 end
  s.items['Dark Iron Map'] = 1
+ s.items["Captain Sander's Treasure Map"] = 1
+ s.items['A Talking Head'] = 1
+ s.items['Runed Scroll'] = 1
 end
 -- Players reach this helper from a class-chain handoff after its outdoor work.
 if guideID == 'dungeons-class-prerequisites' then
@@ -147,18 +150,36 @@ if os.getenv("FGM_DUNGEONS") == "1" then
 end
 if os.getenv('FGM_LOREMASTER') == '1' then
  contexts = {}
- for _, spec in ipairs({
-  {'dun-morogh',3,'Alliance'}, {'dun-morogh',7,'Alliance'},
-  {'elwynn-forest',1,'Alliance'}, {'teldrassil',4,'Alliance'},
-  {'durotar',2,'Horde'}, {'durotar',8,'Horde'},
-  {'mulgore',6,'Horde'}, {'tirisfal-glades',5,'Horde'},
-  {'zephras-isle',95,'Alliance'}, {'zephras-isle',96,'Horde'},
- }) do
-  for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
-   contexts[#contexts+1] = {'loremaster-' .. spec[1], spec[2], class, spec[3]}
+ local zone = os.getenv('FGM_LOREMASTER_ZONE')
+ local existingProfiles = {
+  ['loremaster-dun-morogh']={[3]=true,[7]=true}, ['loremaster-elwynn-forest']={[1]=true},
+  ['loremaster-teldrassil']={[4]=true}, ['loremaster-durotar']={[2]=true,[8]=true},
+  ['loremaster-mulgore']={[6]=true}, ['loremaster-tirisfal-glades']={[5]=true},
+  ['loremaster-zephras-isle']={[95]=true,[96]=true},
+  ['loremaster-westfall']={[1]=true,[3]=true,[4]=true,[7]=true,[95]=true},
+  ['loremaster-loch-modan']={[1]=true,[3]=true,[4]=true,[7]=true,[95]=true},
+  ['loremaster-darkshore']={[1]=true,[3]=true,[4]=true,[7]=true,[95]=true},
+  ['loremaster-silverpine-forest']={[2]=true,[5]=true,[6]=true,[8]=true,[96]=true},
+ }
+
+ for _, id in ipairs(n.guideOrder) do
+  local guide = n.guides[id]
+  if guide.category == 'Loremaster Guides' and (not zone or id == 'loremaster-' .. zone) then
+   for _, race in ipairs({1,2,3,4,5,6,7,8,95,96}) do
+    local faction = ({[1]=true,[3]=true,[4]=true,[7]=true,[95]=true})[race] and 'Alliance' or 'Horde'
+    for _, class in ipairs({1,2,3,4,5,7,8,9,11}) do
+     if (not os.getenv('FGM_MATRIX_CLASS') or class == tonumber(os.getenv('FGM_MATRIX_CLASS')))
+      and (guide.loremasterExpanded or not existingProfiles[id] or existingProfiles[id][race])
+      and n.EvaluateCondition(guide.conditions,{raceID=race,classID=class,faction=faction,level=60}) ~= false then
+      contexts[#contexts+1] = {id,race,class,faction}
+     end
+    end
+   end
   end
  end
+ assert(#contexts > 0, 'The requested Loremaster journey selection contains no contexts')
 end
+
 for _,ctx in ipairs(contexts) do
  local count=walk(unpack(ctx));total=total+count
  print(ctx[1]..' race '..ctx[2]..' class '..ctx[3]..': '..count..' observed actions')

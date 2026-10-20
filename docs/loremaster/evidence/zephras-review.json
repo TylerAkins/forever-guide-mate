@@ -1,0 +1,3875 @@
+[
+  {
+    "quest": 92460,
+    "name": "Coming of Age",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 1 } } } }",
+    "authoredPrerequisites": null,
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92461,
+    "name": "Harmony in Balance",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 1 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92460 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92460
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92460
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92462,
+    "name": "Infestation Investigation",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 1 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92460 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92460
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92460
+      ],
+      "wowhead": [
+        92463
+      ]
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92463,
+    "name": "The Cirrusfly Queen",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92462 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92462
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92462
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94414,
+    "name": "The Anchors of Zephras",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92474,
+    "name": "Falling With Style",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92464,
+    "name": "Elemental Unrest",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92481,
+    "name": "A Student of the Arcane",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [
+      8
+    ],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 8 } }, { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92483,
+    "name": "At Home in the Shadows",
+    "sourceRaces": [
+      5,
+      95
+    ],
+    "sourceClasses": [
+      4
+    ],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 4 } }, { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92482,
+    "name": "The Way of the Hunter",
+    "sourceRaces": [
+      5,
+      95
+    ],
+    "sourceClasses": [
+      3
+    ],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 3 } }, { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92484,
+    "name": "Embracing the Elements",
+    "sourceRaces": [],
+    "sourceClasses": [
+      7
+    ],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 7 } }, { faction = \"Horde\" },  { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92532,
+    "name": "The Warrior's Path",
+    "sourceRaces": [
+      6,
+      95
+    ],
+    "sourceClasses": [
+      1
+    ],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 1 } }, { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92485,
+    "name": "A Student of Nature",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [
+      11
+    ],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 11 } }, { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92466,
+    "name": "Call of Earth",
+    "sourceRaces": [
+      6
+    ],
+    "sourceClasses": [
+      7,
+      11
+    ],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 7 } }, { faction = \"Horde\" }, { race = { 96 } }, { level = { min = 3 } } } }",
+    "authoredPrerequisites": null,
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92598,
+    "name": "The Gift of Skysight",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93552,
+    "name": "Harvesting Windstones",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92597,
+    "name": "Reading the Ley Lines",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92465,
+    "name": "Agitators",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92464
+      ],
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92469,
+    "name": "Return to Rorian",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 3 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92465 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92465
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92465
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92471,
+    "name": "Aetheen of the Gales",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92470,
+    "name": "Foul Matriarch",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92471 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92471
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92471
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92467,
+    "name": "Call of Earth",
+    "sourceRaces": [
+      6,
+      8
+    ],
+    "sourceClasses": [
+      7,
+      11
+    ],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 7 } }, { faction = \"Horde\" }, { race = { 96 } }, { level = { min = 3 } } } }",
+    "authoredPrerequisites": null,
+    "sourcePrerequisites": {
+      "allthethings": [
+        92466
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        1516,
+        1519,
+        92466
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92468,
+    "name": "Call of Earth",
+    "sourceRaces": [
+      6
+    ],
+    "sourceClasses": [
+      7,
+      11
+    ],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 7 } }, { faction = \"Horde\" }, { race = { 96 } }, { level = { min = 3 } } } }",
+    "authoredPrerequisites": null,
+    "sourcePrerequisites": {
+      "allthethings": [
+        92467
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92467
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92473,
+    "name": "Aggressive Encroachment",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 3 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92471 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92471
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92471
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92472,
+    "name": "The Next Step",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 3 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92470 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92470
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92470
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 96638,
+    "name": "The Adventurer",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92470 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92470
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92470
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92544,
+    "name": "Al'Aketh Thugs",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 2 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93461,
+    "name": "Welcome to Shen'dar Village",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" },  { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92514,
+    "name": "Welcome to Shen'dar Village",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92596,
+    "name": "The High Order",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92472
+      ],
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94413,
+    "name": "A Magical Affront",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92596 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92596
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92596
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92595,
+    "name": "The Windshapers",
+    "sourceRaces": [
+      6
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" }, { race = { 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94411,
+    "name": "Meddlesome Mages",
+    "sourceRaces": [
+      6
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" }, { race = { 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92595 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92595
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92595
+      ],
+      "wowhead": [
+        1527
+      ]
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92517,
+    "name": "The Criminal Element",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92514, 93461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93461,
+        92514
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92514,
+        93461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93319,
+    "name": "Pilfered Windstones",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92514, 93461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92514,
+        93461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92514,
+        93461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92516,
+    "name": "Hippogryph Harrassment",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92514, 93461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92514,
+        93461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92514,
+        93461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92515,
+    "name": "The Problem With Prideclaws",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92514, 93461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92514,
+        93461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92514,
+        93461
+      ],
+      "wowhead": [
+        93461
+      ]
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93951,
+    "name": "A Little Beauty",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92514, 93461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92514,
+        93461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92514,
+        93461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92553,
+    "name": "Restocking the Larders",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92514, 93461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92514,
+        93461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92514,
+        93461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93318,
+    "name": "WANTED: Vulgara the Insatiable",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92514, 93461 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92514,
+        93461
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92514,
+        93461
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 96101,
+    "name": "The Great Outdoors",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96638
+      ],
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 96646,
+    "name": "Camping 101: Cooking",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 98286,
+    "name": "Camping 101: Enchanting",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": [
+      333,
+      1
+    ],
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 333, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 98284,
+    "name": "Camping 101: Enchanting",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": [
+      333,
+      1
+    ],
+    "authoredConditions": "{ all = { { faction = \"Horde\" }, { level = { min = 4 } }, { profession = { skillLineID = 333, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97973,
+    "name": "Camping 101: Tailoring",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": [
+      197,
+      1
+    ],
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 197, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97972,
+    "name": "Camping 101: Tailoring",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": [
+      197,
+      1
+    ],
+    "authoredConditions": "{ all = { { faction = \"Horde\" }, { level = { min = 4 } }, { profession = { skillLineID = 197, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97971,
+    "name": "Camping 101: Skinning",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      393,
+      1
+    ],
+    "authoredConditions": "{ all = { { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 393, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97970,
+    "name": "Camping 101: Mining",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      186,
+      1
+    ],
+    "authoredConditions": "{ all = { { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 186, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97969,
+    "name": "Camping 101: Leatherworking",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      165,
+      1
+    ],
+    "authoredConditions": "{ all = { { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 165, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97968,
+    "name": "Camping 101: Herbalism",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      182,
+      1
+    ],
+    "authoredConditions": "{ all = { { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 182, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97967,
+    "name": "Camping 101: Fishing",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      356,
+      1
+    ],
+    "authoredConditions": "{ all = { { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 356, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97965,
+    "name": "Camping 101: First Aid",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      129,
+      1
+    ],
+    "authoredConditions": "{ all = { { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 129, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97964,
+    "name": "Camping 101: Blacksmithing",
+    "sourceRaces": [
+      6,
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      164,
+      1
+    ],
+    "authoredConditions": "{ all = { { race = { 6, 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 164, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97963,
+    "name": "Camping 101: Alchemy",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      171,
+      1
+    ],
+    "authoredConditions": "{ all = { { race = { 95 } }, { level = { min = 4 } }, { profession = { skillLineID = 171, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93036,
+    "name": "Infiltrating the Cult",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92517 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92517
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92517
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92529,
+    "name": "Falaath Village",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93036 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93036
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93036
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92528,
+    "name": "Among the Faithful",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92529 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92529
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92529
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92550,
+    "name": "Havoc in the Highlands",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92528 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92528
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92528
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92551,
+    "name": "Stolen Supplies",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92528 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92528
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92528
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93926,
+    "name": "The Western Watch",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92528 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92528
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92528
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93927,
+    "name": "A Last Request",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93926 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93926
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93926
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92701,
+    "name": "To Valanaar",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"all\",\n                    quests = { 92550, 93927 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92550,
+        93927
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92550,
+        93927
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92579,
+    "name": "To Valanaar",
+    "sourceRaces": [
+      6
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" }, { race = { 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"all\",\n                    quests = { 92550, 93927 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92550,
+        93927
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92550,
+        93927
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93948,
+    "name": "Deliver the Signet",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"all\",\n                    quests = { 92550, 93927 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92550,
+        93927
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92550,
+        93927
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93317,
+    "name": "Crab Season",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92679,
+    "name": "Blood Tithe",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94484,
+    "name": "Unnerving Silence",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94896,
+    "name": "Aid For The Refugees",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92699,
+    "name": "The Supreme Magister",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92701 },\n                    conditions = { faction = \"Alliance\" },\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92701
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92701
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92700,
+    "name": "The Grand Skyseer",
+    "sourceRaces": [
+      6
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" }, { race = { 96 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92579 },\n                    conditions = { faction = \"Horde\" },\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92579
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92579
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93949,
+    "name": "Bugged",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93948 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93948
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93948
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92709,
+    "name": "A Grand Adventure",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92699 },\n                    conditions = { faction = \"Alliance\" },\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92699
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92699
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92727,
+    "name": "The Missing Scholar",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92699 },\n                    conditions = { faction = \"Alliance\" },\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92699
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92699
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92741,
+    "name": "Unwelcome Visitors",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92699 },\n                    conditions = { faction = \"Alliance\" },\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92699
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92699
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92708,
+    "name": "A Grand Adventure",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92700 },\n                    conditions = { faction = \"Horde\" },\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92700
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92700
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93735,
+    "name": "The Broken Construct",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92700 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92700
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92700
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93736,
+    "name": "Unwelcome Spirits",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92700 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92700
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92700
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93737,
+    "name": "The Broken Construct",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93735 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93735
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93735
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92682,
+    "name": "Make Yourself Useful",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92679 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92679
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92679
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92684,
+    "name": "Ornery Ornery Galestriders",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92679 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92679
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92679
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92683,
+    "name": "Flutterfly Dust",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92679 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92679
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92679
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92698,
+    "name": "What Is My Purpose?",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92679 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92679
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92679
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92685,
+    "name": "The Hills Have Eyes",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"all\",\n                    quests = { 92682, 92683, 92684 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92682,
+        92683,
+        92684
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92682,
+        92683,
+        92684
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92693,
+    "name": "Standing Our Ground",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92685 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92685
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92685
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92703,
+    "name": "Deliver the News",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92693 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92693
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92693
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97243,
+    "name": "Call of Fire",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 7 } }, { faction = \"Horde\" },  { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93791,
+    "name": "Speak with Belann",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [
+      8
+    ],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 8 } }, { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93797,
+    "name": "Boughs in the Wind",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [
+      8
+    ],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 8 } }, { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93791 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93791
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93791
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92849,
+    "name": "The Missing Scholar",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92727 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92727
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92727
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92850,
+    "name": "The Missing Scholar",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92849 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92849
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92849
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 99260,
+    "name": "Fillion's Mission",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 1, 3, 4, 7, 95 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92850 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92850
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92850
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92840,
+    "name": "Catching Wind",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 5 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 99260 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        99260
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        99260
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92834,
+    "name": "Avenged Tenfold",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92840 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92840
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92840
+      ],
+      "wowhead": [
+        93165,
+        94487
+      ]
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92860,
+    "name": "In Service of Zephras",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92840 },\n                    conditions = { faction = \"Alliance\" },\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92834
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92840
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93738,
+    "name": "The Broken Construct",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93737 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93737
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93737
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93746,
+    "name": "A Firm Response",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 4 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93738 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93738
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93738
+      ],
+      "wowhead": [
+        93735
+      ]
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92871,
+    "name": "In Service of Zephras",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93746 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93746
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93746
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93320,
+    "name": "Tower Defense",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92860, 92871 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92860,
+        92871
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92860,
+        92871
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92642,
+    "name": "Disrupting Logistics",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93320 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93320
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93320
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92645,
+    "name": "Breaking the Breaker",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93320 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93320
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93320
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92880,
+    "name": "Return to Valanaar",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"all\",\n                    quests = { 92642, 92645 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92642,
+        92645
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92642,
+        92645
+      ],
+      "wowhead": [
+        92881
+      ]
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92881,
+    "name": "The High Elder's Request",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92880 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92880
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92880
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92643,
+    "name": "The Turncoat",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92881 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92881
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92881
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 98512,
+    "name": "Al'Aketh Assassins",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92644,
+    "name": "Unfortunate News",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92643 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92643
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92643
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94568,
+    "name": "The Cult's True Plans",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92644 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92644
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92644
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94003,
+    "name": "The Skybreaker Bulwark",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 1 } }, { race = { 95, 96 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93159,
+    "name": "The Strange Hermit",
+    "sourceRaces": [
+      6,
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 98285,
+    "name": "Camping 101: Engineering",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": [
+      202,
+      1
+    ],
+    "authoredConditions": "{ all = { { level = { min = 4 } }, { profession = { skillLineID = 202, minRank = 1 } } } }",
+    "authoredPrerequisites": "{ { mode = \"any\", quests = { 95998, 96101, 96604, 96605, 96606, 96607, 96608 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        96101
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95998,
+        96101,
+        96604,
+        96605,
+        96606,
+        96607,
+        96608
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93160,
+    "name": "The Forest's Bounty",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93159 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93159
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93159
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93172,
+    "name": "Free the Hollows",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93159 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93159
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93159
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94485,
+    "name": "Tears of the Lady",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94484, 94493 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94484
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94484,
+        94493
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94486,
+    "name": "Feathers for Binding",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94484, 94493 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94484
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94484,
+        94493
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94487,
+    "name": "Unwanted and Unworthy",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94484, 94493 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94484
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94484,
+        94493
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93165,
+    "name": "Mercy Falls on Deaf Ears",
+    "sourceRaces": [
+      3,
+      6,
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94484 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94484
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94484,
+        94493
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94488,
+    "name": "The Ties That Bind",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"all\",\n                    quests = { 94486, 94487 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94485,
+        94486,
+        94487
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94485,
+        94486,
+        94487
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94490,
+    "name": "Ripped Missive",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = {  { level = { min = 9 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"all\",\n                    quests = { 94486, 94487 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94485,
+        94486,
+        94487
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94485,
+        94486,
+        94487
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94897,
+    "name": "The Fate of a Loved One",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94493,
+    "name": "A Sacrifice in Vain",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" },  { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94489,
+    "name": "The Wounds of Betrayal",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"all\",\n                    quests = { 94486, 94487 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94485,
+        94486,
+        94487
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94485,
+        94486,
+        94487
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94491,
+    "name": "The Fate of the Den",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 8 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94490 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94490
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94490
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94006,
+    "name": "The Great Ursera Spirit",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 11 } }, { race = { 95, 96 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94638,
+    "name": "Strength and Mercy",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 11 } }, { race = { 95, 96 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94006 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92840
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94006
+      ],
+      "wowhead": [
+        92840
+      ]
+    },
+    "remainingConflicts": [
+      "race",
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94007,
+    "name": "Taming the Beast",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 3 } }, { race = { 95, 96 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94978,
+    "name": "Taming the Beast",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 3 } }, { race = { 95, 96 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94979,
+    "name": "Taming the Beast",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 3 } }, { race = { 95, 96 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94978 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94978
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94978
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94013,
+    "name": "Taming the Beast",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 3 } }, { race = { 95, 96 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94979 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94979
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94979
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94050,
+    "name": "Training the Beast",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 3 } }, { race = { 95, 96 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94013 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94013
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94013
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race",
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97244,
+    "name": "Call of Fire",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 7 } }, { faction = \"Horde\" },  { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 97243 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        97243
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        97243
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97245,
+    "name": "Call of Fire",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 7 } }, { faction = \"Horde\" },  { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 97244 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        97244
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        97244
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 97257,
+    "name": "Call of Fire",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 7 } }, { faction = \"Horde\" },  { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 97245 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        97245
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        97245
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93740,
+    "name": "Blood for Blood",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93746 },\n                    conditions = { faction = \"Horde\" },\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93746
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93746
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92640,
+    "name": "Desperate Times",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 6 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94568 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94568
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94568
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93065,
+    "name": "Prepare for Battle",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92640 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92640
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92640
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92947,
+    "name": "Making Our Move",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93065 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93065
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93065
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93958,
+    "name": "The Inner Sanctum",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": null,
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { race = { 95, 96 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92947 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92947
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92947
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "race"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93835,
+    "name": "Confront Lorthuna",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93958 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93958
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93958
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94369,
+    "name": "The Fate of Zephras",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93835 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93835
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93835
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93089,
+    "name": "What Comes Next",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94369 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94369
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94369
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94946,
+    "name": "The Magical City of Dalaran",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93089 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93089
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93089
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 92646,
+    "name": "Confront Lorthuna",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93958 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93958
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93958
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93836,
+    "name": "The Fate of Zephras",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 92646 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        92646
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        92646
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93090,
+    "name": "What Comes Next",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93836 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93836
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93836
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 95349,
+    "name": "The Earthen Ring",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 93090 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        93090
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        93090
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 95350,
+    "name": "Welcome to Azeroth",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{ { mode = \"all\", quests = { 95349 } } }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        95349
+      ],
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Wowhead has no explicit prerequisite edge. Apply the explicit AllTheThings fallback predecessor 95349 consistently in both guides; eligibility alone does not establish reachability."
+  },
+  {
+    "quest": 93739,
+    "name": "Exploring the Horde",
+    "sourceRaces": [],
+    "sourceClasses": [],
+    "sourceFaction": "Horde",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Horde\" },  { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 95350 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        95350
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        95350
+      ],
+      "wowhead": [
+        5725
+      ]
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94947,
+    "name": "Welcome to Azeroth",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94912,
+    "name": "Child of Nature",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 11 } }, { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "allthethings": null,
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 93963,
+    "name": "Exploring the Alliance",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94947 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94947
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94947
+      ],
+      "wowhead": []
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 98021,
+    "name": "Journey to Sentinel Hill",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 7 } } } }",
+    "authoredPrerequisites": "{\n                {\n                    mode = \"any\",\n                    quests = { 94947 },\n                    conditions = {},\n                },\n            }",
+    "sourcePrerequisites": {
+      "allthethings": [
+        94947
+      ],
+      "foreverclient": null,
+      "questiedb": [
+        94947
+      ],
+      "wowhead": [
+        109
+      ]
+    },
+    "remainingConflicts": [],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  },
+  {
+    "quest": 94914,
+    "name": "Moonglade",
+    "sourceRaces": [
+      95
+    ],
+    "sourceClasses": [],
+    "sourceFaction": "Alliance",
+    "sourceProfession": null,
+    "authoredConditions": "{ all = { { class = { 11 } }, { faction = \"Alliance\" }, { race = { 95 } }, { level = { min = 10 } } } }",
+    "authoredPrerequisites": "{}",
+    "sourcePrerequisites": {
+      "foreverclient": null,
+      "questiedb": null,
+      "wowhead": []
+    },
+    "remainingConflicts": [
+      "class-source-gap"
+    ],
+    "decision": "Remove inherited race conditions only where Wowhead explicitly records an unrestricted race list. Preserve existing disputed branches pending source resolution; no server availability is inferred."
+  }
+]
