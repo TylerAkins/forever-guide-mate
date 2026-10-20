@@ -131841,7 +131841,7 @@
       },
       {
         "boundary": [
-          null,
+          117,
           1438,
           "Sentinel Arynia Cloudsbreak"
         ],
@@ -131851,7 +131851,7 @@
       },
       {
         "boundary": [
-          null,
+          123,
           1438,
           "Bloodfeather Belt"
         ],
@@ -131861,7 +131861,7 @@
       },
       {
         "boundary": [
-          null,
+          124,
           1438,
           "Sentinel Arynia Cloudsbreak"
         ],
@@ -131971,7 +131971,7 @@
       },
       {
         "boundary": [
-          null,
+          124,
           1438,
           "Sentinel Arynia Cloudsbreak"
         ],
@@ -131981,7 +131981,7 @@
       },
       {
         "boundary": [
-          null,
+          136,
           1457,
           "Arch Druid Fandral Staghelm"
         ],
@@ -132001,7 +132001,7 @@
       },
       {
         "boundary": [
-          null,
+          136,
           1457,
           "Arch Druid Fandral Staghelm"
         ],
@@ -132021,7 +132021,7 @@
       },
       {
         "boundary": [
-          null,
+          171,
           1457,
           "Mydrannul"
         ],
@@ -132031,7 +132031,7 @@
       },
       {
         "boundary": [
-          null,
+          189,
           1438,
           "Nessa Shadowsong"
         ],
@@ -132051,7 +132051,7 @@
       },
       {
         "boundary": [
-          null,
+          189,
           1438,
           "Nessa Shadowsong"
         ],
@@ -132061,7 +132061,7 @@
       },
       {
         "boundary": [
-          null,
+          190,
           1438,
           "Vesprystus"
         ],
@@ -132081,7 +132081,7 @@
       },
       {
         "boundary": [
-          null,
+          190,
           1438,
           "Vesprystus"
         ],
@@ -132096,42 +132096,12 @@
           null
         ],
         "actions": [
-          "level-before-accept-3524-washed-ashore"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Gwennyth Bly'Leggonde"
-        ],
-        "actions": [
-          "accept-3524-washed-ashore"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Laird"
-        ],
-        "actions": [
-          "turnin-6342-flight-to-auberdine"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
           "level-before-accept-983-buzzbox-827"
         ]
       },
       {
         "boundary": [
-          null,
+          195,
           1439,
           "Wizbang Cranktoggle"
         ],
@@ -132151,7 +132121,7 @@
       },
       {
         "boundary": [
-          null,
+          200,
           1439,
           "Tharnariun Treetender"
         ],
@@ -132171,7 +132141,7 @@
       },
       {
         "boundary": [
-          null,
+          201,
           1439,
           "Terenthis"
         ],
@@ -132182,6 +132152,66 @@
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-3524-washed-ashore"
+        ]
+      },
+      {
+        "boundary": [
+          192,
+          1439,
+          "Gwennyth Bly'Leggonde"
+        ],
+        "actions": [
+          "accept-3524-washed-ashore"
+        ]
+      },
+      {
+        "boundary": [
+          193,
+          1439,
+          "Laird"
+        ],
+        "actions": [
+          "turnin-6342-flight-to-auberdine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1141-the-family-and-the-fishing-pole"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1439,
+          "Gubber Blump"
+        ],
+        "actions": [
+          "accept-1141-the-family-and-the-fishing-pole"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1439,
+          "Gubber Blump"
+        ],
+        "actions": [
+          "turnin-1141-the-family-and-the-fishing-pole"
+        ]
+      },
+      {
+        "boundary": [
+          203,
           1439,
           "Sea Creature Bones"
         ],
@@ -132201,7 +132231,7 @@
       },
       {
         "boundary": [
-          null,
+          204,
           1439,
           "Crawler Leg"
         ],
@@ -132211,7 +132241,7 @@
       },
       {
         "boundary": [
-          null,
+          209,
           1439,
           "Buzzbox 827"
         ],
@@ -132222,6 +132252,26 @@
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-1001-buzzbox-411"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1439,
+          "Buzzbox 411"
+        ],
+        "actions": [
+          "accept-1001-buzzbox-411"
+        ]
+      },
+      {
+        "boundary": [
+          210,
           1439,
           "Gwennyth Bly'Leggonde"
         ],
@@ -132241,7 +132291,7 @@
       },
       {
         "boundary": [
-          null,
+          210,
           1439,
           "Gwennyth Bly'Leggonde"
         ],
@@ -132252,6 +132302,26 @@
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-963-for-love-eternal"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1439,
+          "Cerellean Whiteclaw"
+        ],
+        "actions": [
+          "accept-963-for-love-eternal"
+        ]
+      },
+      {
+        "boundary": [
+          211,
           1439,
           "Sea Turtle Remains"
         ],
@@ -132261,7 +132331,17 @@
       },
       {
         "boundary": [
-          null,
+          22,
+          1439,
+          "Thresher Eye"
+        ],
+        "actions": [
+          "objective-1001-1-thresher-eye"
+        ]
+      },
+      {
+        "boundary": [
+          212,
           1439,
           "Gwennyth Bly'Leggonde"
         ],
@@ -132281,7 +132361,7 @@
       },
       {
         "boundary": [
-          null,
+          216,
           1439,
           "Laird"
         ],
@@ -132291,7 +132371,7 @@
       },
       {
         "boundary": [
-          null,
+          217,
           1438,
           "Nessa Shadowsong"
         ],
@@ -132301,254 +132381,12 @@
       },
       {
         "boundary": [
-          null,
+          226,
           1439,
           "Tharnariun Treetender"
         ],
         "actions": [
           "turnin-2118-plagued-lands"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Terenthis"
-        ],
-        "actions": [
-          "turnin-984-how-big-a-threat"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-4761-thundris-windweaver"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Terenthis"
-        ],
-        "actions": [
-          "accept-4761-thundris-windweaver"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Thundris Windweaver"
-        ],
-        "actions": [
-          "turnin-4761-thundris-windweaver"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-954-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Thundris Windweaver"
-        ],
-        "actions": [
-          "accept-954-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Asterion"
-        ],
-        "actions": [
-          "turnin-954-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-955-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Asterion"
-        ],
-        "actions": [
-          "accept-955-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Wild Grell"
-        ],
-        "actions": [
-          "objective-955-1-wild-grell"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Asterion"
-        ],
-        "actions": [
-          "turnin-955-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-956-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Asterion"
-        ],
-        "actions": [
-          "accept-956-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Deth'ryll Satyr"
-        ],
-        "actions": [
-          "objective-956-1-deth-ryll-satyr"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Asterion"
-        ],
-        "actions": [
-          "turnin-956-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-957-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Asterion"
-        ],
-        "actions": [
-          "accept-957-bashal-aran"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-1141-the-family-and-the-fishing-pole",
-          "visit-before-accept-1141-the-family-and-the-fishing-pole"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Gubber Blump"
-        ],
-        "actions": [
-          "accept-1141-the-family-and-the-fishing-pole",
-          "turnin-1141-the-family-and-the-fishing-pole"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-1001-buzzbox-411"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Buzzbox 411"
-        ],
-        "actions": [
-          "accept-1001-buzzbox-411"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-accept-963-for-love-eternal"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Cerellean Whiteclaw"
-        ],
-        "actions": [
-          "accept-963-for-love-eternal"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Thresher Eye"
-        ],
-        "actions": [
-          "objective-1001-1-thresher-eye"
         ]
       },
       {
@@ -132563,12 +132401,22 @@
       },
       {
         "boundary": [
-          null,
+          24,
           1439,
           "Tharnariun Treetender"
         ],
         "actions": [
           "accept-2138-cleansing-of-the-infected"
+        ]
+      },
+      {
+        "boundary": [
+          227,
+          1439,
+          "Terenthis"
+        ],
+        "actions": [
+          "turnin-984-how-big-a-threat"
         ]
       },
       {
@@ -132583,7 +132431,7 @@
       },
       {
         "boundary": [
-          null,
+          25,
           1439,
           "Terenthis"
         ],
@@ -132598,12 +132446,42 @@
           null
         ],
         "actions": [
-          "level-before-accept-4762-the-cliffspring-river"
+          "level-before-accept-4761-thundris-windweaver"
+        ]
+      },
+      {
+        "boundary": [
+          227,
+          1439,
+          "Terenthis"
+        ],
+        "actions": [
+          "accept-4761-thundris-windweaver"
+        ]
+      },
+      {
+        "boundary": [
+          228,
+          1439,
+          "Thundris Windweaver"
+        ],
+        "actions": [
+          "turnin-4761-thundris-windweaver"
         ]
       },
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-4762-the-cliffspring-river"
+        ]
+      },
+      {
+        "boundary": [
+          26,
           1439,
           "Thundris Windweaver"
         ],
@@ -132618,12 +132496,32 @@
           null
         ],
         "actions": [
-          "level-before-accept-958-tools-of-the-highborne"
+          "level-before-accept-954-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          228,
+          1439,
+          "Thundris Windweaver"
+        ],
+        "actions": [
+          "accept-954-bashal-aran"
         ]
       },
       {
         "boundary": [
           null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-958-tools-of-the-highborne"
+        ]
+      },
+      {
+        "boundary": [
+          26,
           1439,
           "Thundris Windweaver"
         ],
@@ -132643,12 +132541,122 @@
       },
       {
         "boundary": [
-          null,
+          27,
           1439,
           "Sentinel Glynda Nal'Shea"
         ],
         "actions": [
           "accept-4811-the-red-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          229,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "turnin-954-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-955-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          229,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "accept-955-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          230,
+          1439,
+          "Wild Grell"
+        ],
+        "actions": [
+          "objective-955-1-wild-grell"
+        ]
+      },
+      {
+        "boundary": [
+          231,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "turnin-955-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-956-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          231,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "accept-956-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          232,
+          1439,
+          "Deth'ryll Satyr"
+        ],
+        "actions": [
+          "objective-956-1-deth-ryll-satyr"
+        ]
+      },
+      {
+        "boundary": [
+          233,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "turnin-956-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-accept-957-bashal-aran"
+        ]
+      },
+      {
+        "boundary": [
+          233,
+          1439,
+          "Asterion"
+        ],
+        "actions": [
+          "accept-957-bashal-aran"
         ]
       },
       {
@@ -132663,7 +132671,7 @@
       },
       {
         "boundary": [
-          null,
+          36,
           1439,
           "Beached Sea Creature"
         ],
@@ -132673,7 +132681,7 @@
       },
       {
         "boundary": [
-          null,
+          37,
           1439,
           "Buzzbox 411"
         ],
@@ -132693,7 +132701,7 @@
       },
       {
         "boundary": [
-          null,
+          37,
           1439,
           "Buzzbox 323"
         ],
@@ -132713,7 +132721,7 @@
       },
       {
         "boundary": [
-          null,
+          38,
           1439,
           "Beached Sea Turtle"
         ],
@@ -132723,7 +132731,7 @@
       },
       {
         "boundary": [
-          null,
+          40,
           1439,
           "Moonstalker Fang"
         ],
@@ -132733,7 +132741,7 @@
       },
       {
         "boundary": [
-          null,
+          41,
           1439,
           "Rabid Thistle Bear"
         ],
@@ -132743,7 +132751,7 @@
       },
       {
         "boundary": [
-          null,
+          42,
           1439,
           "Buzzbox 323"
         ],
@@ -132753,7 +132761,7 @@
       },
       {
         "boundary": [
-          null,
+          43,
           1439,
           "Empty Sampling Tube"
         ],
@@ -132773,7 +132781,7 @@
       },
       {
         "boundary": [
-          null,
+          44,
           1439,
           "Beached Sea Turtle"
         ],
@@ -132783,7 +132791,7 @@
       },
       {
         "boundary": [
-          null,
+          51,
           1439,
           "Gwennyth Bly'Leggonde"
         ],
@@ -132795,7 +132803,7 @@
       },
       {
         "boundary": [
-          null,
+          56,
           null,
           null
         ],
@@ -132805,7 +132813,7 @@
       },
       {
         "boundary": [
-          null,
+          56,
           1439,
           "Sentinel Glynda Nal'Shea"
         ],
@@ -132825,7 +132833,7 @@
       },
       {
         "boundary": [
-          null,
+          56,
           1439,
           "Sentinel Glynda Nal'Shea"
         ],
@@ -132835,7 +132843,7 @@
       },
       {
         "boundary": [
-          null,
+          57,
           1439,
           "Empty Water Tube"
         ],
@@ -132845,7 +132853,7 @@
       },
       {
         "boundary": [
-          null,
+          62,
           1439,
           "Thundris Windweaver"
         ],
@@ -132855,7 +132863,7 @@
       },
       {
         "boundary": [
-          null,
+          63,
           1439,
           "Tharnariun Treetender"
         ],
@@ -132865,7 +132873,7 @@
       },
       {
         "boundary": [
-          null,
+          64,
           1439,
           "As Water Cascades"
         ],
@@ -132885,7 +132893,7 @@
       },
       {
         "boundary": [
-          null,
+          64,
           1439,
           "The Fragments Within"
         ],
@@ -132905,7 +132913,7 @@
       },
       {
         "boundary": [
-          null,
+          65,
           1439,
           "Sentinel Tysha Moonblade"
         ],
@@ -132915,7 +132923,7 @@
       },
       {
         "boundary": [
-          null,
+          69,
           1439,
           "Anaya's Pendant"
         ],
@@ -132925,7 +132933,7 @@
       },
       {
         "boundary": [
-          null,
+          70,
           1439,
           "Highborne Relic"
         ],
@@ -132935,7 +132943,7 @@
       },
       {
         "boundary": [
-          null,
+          71,
           null,
           null
         ],
@@ -132945,7 +132953,7 @@
       },
       {
         "boundary": [
-          null,
+          71,
           1439,
           "Sentinel Tysha Moonblade"
         ],
@@ -132965,7 +132973,7 @@
       },
       {
         "boundary": [
-          null,
+          72,
           1439,
           "Beached Sea Creature"
         ],
@@ -132985,7 +132993,7 @@
       },
       {
         "boundary": [
-          null,
+          73,
           1439,
           "Beached Sea Turtle"
         ],
@@ -132995,7 +133003,7 @@
       },
       {
         "boundary": [
-          null,
+          74,
           1439,
           "Blackwood Windtalker"
         ],
@@ -133005,7 +133013,7 @@
       },
       {
         "boundary": [
-          null,
+          74,
           1439,
           "Blackwood Pathfinder"
         ],
@@ -133015,7 +133023,7 @@
       },
       {
         "boundary": [
-          null,
+          75,
           1439,
           "Gwennyth Bly'Leggonde"
         ],
@@ -133066,7 +133074,7 @@
       },
       {
         "boundary": [
-          null,
+          76,
           1439,
           "Gubber Blump"
         ],
@@ -133076,7 +133084,7 @@
       },
       {
         "boundary": [
-          null,
+          77,
           1439,
           "Cerellean Whiteclaw"
         ],
@@ -133086,7 +133094,7 @@
       },
       {
         "boundary": [
-          null,
+          78,
           1439,
           "Sentinel Glynda Nal'Shea"
         ],
@@ -133096,7 +133104,7 @@
       },
       {
         "boundary": [
-          null,
+          79,
           1439,
           "Terenthis"
         ],
@@ -133116,7 +133124,7 @@
       },
       {
         "boundary": [
-          null,
+          80,
           1439,
           "Sentinel Elissa Starbreeze"
         ],
@@ -133216,7 +133224,7 @@
       },
       {
         "boundary": [
-          null,
+          81,
           1439,
           "Gorbold Steelhand"
         ],
@@ -133231,13 +133239,22 @@
           "Thundris Windweaver"
         ],
         "actions": [
-          "turnin-97926-loremaster",
+          "turnin-97926-loremaster"
+        ]
+      },
+      {
+        "boundary": [
+          82,
+          1439,
+          "Thundris Windweaver"
+        ],
+        "actions": [
           "turnin-958-tools-of-the-highborne"
         ]
       },
       {
         "boundary": [
-          null,
+          83,
           null,
           null
         ],
@@ -133247,7 +133264,7 @@
       },
       {
         "boundary": [
-          null,
+          83,
           1439,
           "Asterion"
         ],
@@ -133257,7 +133274,7 @@
       },
       {
         "boundary": [
-          null,
+          84,
           1439,
           "Silver Dawning's Lockbox"
         ],
@@ -133267,7 +133284,7 @@
       },
       {
         "boundary": [
-          null,
+          85,
           1439,
           "Mist Veil's Lockbox"
         ],
@@ -133277,7 +133294,7 @@
       },
       {
         "boundary": [
-          null,
+          87,
           1439,
           "Fine Crab Chunks"
         ],
@@ -133287,7 +133304,7 @@
       },
       {
         "boundary": [
-          null,
+          88,
           1439,
           "Balthule Shadowstrike"
         ],
@@ -133307,7 +133324,7 @@
       },
       {
         "boundary": [
-          null,
+          88,
           1439,
           "Balthule Shadowstrike"
         ],
@@ -133317,7 +133334,7 @@
       },
       {
         "boundary": [
-          null,
+          89,
           1439,
           "Dark Strand Fanatic"
         ],
@@ -133327,7 +133344,7 @@
       },
       {
         "boundary": [
-          null,
+          90,
           1439,
           "Balthule Shadowstrike"
         ],
@@ -133347,7 +133364,7 @@
       },
       {
         "boundary": [
-          null,
+          90,
           1439,
           "Balthule Shadowstrike"
         ],
@@ -133357,7 +133374,7 @@
       },
       {
         "boundary": [
-          null,
+          93,
           1439,
           "Gubber Blump"
         ],
@@ -133367,7 +133384,7 @@
       },
       {
         "boundary": [
-          null,
+          94,
           1439,
           "Gorbold Steelhand"
         ],
@@ -133422,7 +133439,6 @@
           null
         ],
         "actions": [
-          "level-before-accept-947-cave-mushrooms",
           "level-before-accept-5713-loremaster"
         ]
       },
@@ -133454,12 +133470,13 @@
           null
         ],
         "actions": [
-          "visit-before-accept-947-cave-mushrooms"
+          "visit-before-accept-947-cave-mushrooms",
+          "level-before-accept-947-cave-mushrooms"
         ]
       },
       {
         "boundary": [
-          null,
+          1,
           1439,
           "Barithras Moonshade"
         ],
@@ -133479,7 +133496,7 @@
       },
       {
         "boundary": [
-          null,
+          3,
           1439,
           "Tharnariun Treetender"
         ],
@@ -133499,7 +133516,7 @@
       },
       {
         "boundary": [
-          null,
+          4,
           1439,
           "Terenthis"
         ],
@@ -133519,7 +133536,7 @@
       },
       {
         "boundary": [
-          null,
+          5,
           1439,
           "Thundris Windweaver"
         ],
@@ -133539,7 +133556,7 @@
       },
       {
         "boundary": [
-          null,
+          6,
           1439,
           "Archaeologist Hollee"
         ],
@@ -133559,7 +133576,7 @@
       },
       {
         "boundary": [
-          null,
+          8,
           1439,
           "Buzzbox 525"
         ],
@@ -133579,7 +133596,7 @@
       },
       {
         "boundary": [
-          null,
+          9,
           1439,
           "Gelkak Gyromast"
         ],
@@ -133589,7 +133606,7 @@
       },
       {
         "boundary": [
-          null,
+          10,
           1439,
           "Greymist Tidehunter"
         ],
@@ -133599,7 +133616,7 @@
       },
       {
         "boundary": [
-          null,
+          11,
           1439,
           "Bottom of Gelkak's Key"
         ],
@@ -133609,7 +133626,7 @@
       },
       {
         "boundary": [
-          null,
+          12,
           1439,
           "Giant Foreststrider"
         ],
@@ -133619,7 +133636,7 @@
       },
       {
         "boundary": [
-          null,
+          13,
           1439,
           "Fine Moonstalker Pelt"
         ],
@@ -133629,7 +133646,7 @@
       },
       {
         "boundary": [
-          null,
+          14,
           1439,
           "Gelkak Gyromast"
         ],
@@ -133639,7 +133656,7 @@
       },
       {
         "boundary": [
-          null,
+          16,
           1439,
           "Death Cap"
         ],
@@ -133649,7 +133666,7 @@
       },
       {
         "boundary": [
-          null,
+          17,
           1439,
           "Scaber Stalk"
         ],
@@ -133709,7 +133726,7 @@
       },
       {
         "boundary": [
-          null,
+          24,
           1439,
           "Thundris Windweaver"
         ],
@@ -133719,7 +133736,7 @@
       },
       {
         "boundary": [
-          null,
+          26,
           1439,
           "Barithras Moonshade"
         ],
@@ -133739,7 +133756,7 @@
       },
       {
         "boundary": [
-          null,
+          26,
           1439,
           "Barithras Moonshade"
         ],
@@ -133759,7 +133776,7 @@
       },
       {
         "boundary": [
-          null,
+          27,
           1439,
           "WANTED: Murkdeep!"
         ],
@@ -133769,7 +133786,7 @@
       },
       {
         "boundary": [
-          null,
+          28,
           null,
           null
         ],
@@ -133779,7 +133796,7 @@
       },
       {
         "boundary": [
-          null,
+          28,
           1439,
           "Tharnariun Treetender"
         ],
@@ -133789,7 +133806,7 @@
       },
       {
         "boundary": [
-          null,
+          29,
           1439,
           "Terenthis"
         ],
@@ -133809,7 +133826,7 @@
       },
       {
         "boundary": [
-          null,
+          29,
           1439,
           "Terenthis"
         ],
@@ -133819,7 +133836,7 @@
       },
       {
         "boundary": [
-          null,
+          30,
           1439,
           "Onu"
         ],
@@ -133840,7 +133857,7 @@
       },
       {
         "boundary": [
-          null,
+          30,
           1439,
           "Onu"
         ],
@@ -133850,7 +133867,7 @@
       },
       {
         "boundary": [
-          null,
+          31,
           1439,
           "Greymist Warrior"
         ],
@@ -133870,7 +133887,7 @@
       },
       {
         "boundary": [
-          null,
+          32,
           1439,
           "Beached Sea Creature"
         ],
@@ -133890,7 +133907,7 @@
       },
       {
         "boundary": [
-          null,
+          33,
           1439,
           "Beached Sea Turtle"
         ],
@@ -133910,7 +133927,7 @@
       },
       {
         "boundary": [
-          null,
+          34,
           1439,
           "Beached Sea Turtle"
         ],
@@ -133930,7 +133947,7 @@
       },
       {
         "boundary": [
-          null,
+          35,
           1439,
           "Beached Sea Creature"
         ],
@@ -133940,7 +133957,7 @@
       },
       {
         "boundary": [
-          null,
+          36,
           1439,
           "Prospector Remtravel"
         ],
@@ -133960,7 +133977,7 @@
       },
       {
         "boundary": [
-          null,
+          38,
           1439,
           "Prospector Remtravel"
         ],
@@ -133970,7 +133987,7 @@
       },
       {
         "boundary": [
-          null,
+          39,
           1439,
           "Escort destination"
         ],
@@ -133980,7 +133997,7 @@
       },
       {
         "boundary": [
-          null,
+          41,
           1439,
           "The Master's Glaive"
         ],
@@ -134000,12 +134017,21 @@
       },
       {
         "boundary": [
-          null,
+          41,
           1439,
           "The Twilight Camp"
         ],
         "actions": [
-          "accept-949-the-twilight-camp",
+          "accept-949-the-twilight-camp"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1439,
+          "The Twilight Camp"
+        ],
+        "actions": [
           "turnin-949-the-twilight-camp"
         ]
       },
@@ -134021,7 +134047,7 @@
       },
       {
         "boundary": [
-          null,
+          43,
           1439,
           "Return to Onu"
         ],
@@ -134041,7 +134067,7 @@
       },
       {
         "boundary": [
-          null,
+          44,
           1439,
           "Therylune"
         ],
@@ -134062,7 +134088,7 @@
       },
       {
         "boundary": [
-          null,
+          45,
           1439,
           "Escort destination"
         ],
@@ -134072,7 +134098,7 @@
       },
       {
         "boundary": [
-          null,
+          46,
           null,
           null
         ],
@@ -134082,7 +134108,7 @@
       },
       {
         "boundary": [
-          null,
+          47,
           1439,
           "Volcor"
         ],
@@ -134102,7 +134128,7 @@
       },
       {
         "boundary": [
-          null,
+          47,
           1439,
           "Volcor"
         ],
@@ -134122,7 +134148,7 @@
       },
       {
         "boundary": [
-          null,
+          47,
           1439,
           "Volcor"
         ],
@@ -134132,7 +134158,7 @@
       },
       {
         "boundary": [
-          null,
+          48,
           1439,
           "Escort destination"
         ],
@@ -134142,7 +134168,7 @@
       },
       {
         "boundary": [
-          null,
+          49,
           1439,
           "Grizzled Scalp"
         ],
@@ -134152,7 +134178,7 @@
       },
       {
         "boundary": [
-          null,
+          50,
           1439,
           "Buzzbox 525"
         ],
@@ -134162,7 +134188,7 @@
       },
       {
         "boundary": [
-          null,
+          51,
           1439,
           "Onu"
         ],
@@ -134182,7 +134208,7 @@
       },
       {
         "boundary": [
-          null,
+          52,
           1439,
           "Kerlonian Evershade"
         ],
@@ -134192,7 +134218,7 @@
       },
       {
         "boundary": [
-          null,
+          53,
           1439,
           "Kerlonian's Chest"
         ],
@@ -134202,7 +134228,7 @@
       },
       {
         "boundary": [
-          null,
+          54,
           1440,
           "Escort destination"
         ],
@@ -134212,7 +134238,7 @@
       },
       {
         "boundary": [
-          null,
+          55,
           1440,
           "Liladris Moonriver"
         ],
@@ -134392,7 +134418,7 @@
       },
       {
         "boundary": [
-          null,
+          1,
           1440,
           "Delgren the Purifier"
         ],
@@ -134412,7 +134438,7 @@
       },
       {
         "boundary": [
-          null,
+          1,
           1440,
           "Delgren the Purifier"
         ],
@@ -134422,7 +134448,7 @@
       },
       {
         "boundary": [
-          null,
+          3,
           1440,
           "Dark Strand Cultist"
         ],
@@ -134432,7 +134458,7 @@
       },
       {
         "boundary": [
-          null,
+          6,
           1440,
           "Delgren the Purifier"
         ],
@@ -134452,7 +134478,7 @@
       },
       {
         "boundary": [
-          null,
+          6,
           1440,
           "Delgren the Purifier"
         ],
@@ -134462,7 +134488,7 @@
       },
       {
         "boundary": [
-          null,
+          7,
           1440,
           "Therysil"
         ],
@@ -134472,7 +134498,7 @@
       },
       {
         "boundary": [
-          null,
+          28,
           1440,
           "Ilkrud Magthrull's Tome"
         ],
@@ -134482,7 +134508,7 @@
       },
       {
         "boundary": [
-          null,
+          29,
           1440,
           "Delgren the Purifier"
         ],
@@ -134492,7 +134518,7 @@
       },
       {
         "boundary": [
-          null,
+          47,
           1439,
           "Gwennyth Bly'Leggonde"
         ],
@@ -134505,7 +134531,7 @@
       },
       {
         "boundary": [
-          null,
+          48,
           1439,
           "Murkdeep"
         ],
@@ -134515,7 +134541,7 @@
       },
       {
         "boundary": [
-          null,
+          48,
           1439,
           "Sentinel Glynda Nal'Shea"
         ],
@@ -134525,7 +134551,7 @@
       },
       {
         "boundary": [
-          null,
+          49,
           1439,
           "Archaeologist Hollee"
         ],
@@ -134545,7 +134571,7 @@
       },
       {
         "boundary": [
-          null,
+          49,
           1439,
           "Archaeologist Hollee"
         ],
@@ -134555,7 +134581,7 @@
       },
       {
         "boundary": [
-          null,
+          50,
           1439,
           "Terenthis"
         ],
@@ -134566,7 +134592,7 @@
       },
       {
         "boundary": [
-          null,
+          51,
           1457,
           "Chief Archaeologist Greywhisker"
         ],
@@ -134586,7 +134612,7 @@
       },
       {
         "boundary": [
-          null,
+          8,
           1455,
           "Gerrig Bonegrip"
         ],
@@ -134601,7 +134627,6 @@
           null
         ],
         "actions": [
-          "level-before-accept-1140-the-tower-of-althalaxx",
           "level-before-accept-2078-loremaster"
         ]
       },
@@ -134642,12 +134667,13 @@
           null
         ],
         "actions": [
-          "visit-before-accept-1140-the-tower-of-althalaxx"
+          "visit-before-accept-1140-the-tower-of-althalaxx",
+          "level-before-accept-1140-the-tower-of-althalaxx"
         ]
       },
       {
         "boundary": [
-          null,
+          9,
           1440,
           "Delgren the Purifier"
         ],
@@ -134657,18 +134683,27 @@
       },
       {
         "boundary": [
-          null,
+          34,
           1440,
           "Circle of Imprisonment"
         ],
         "actions": [
-          "objective-1140-reviewed-1",
-          "objective-1140-2-circle-of-imprisonment"
+          "objective-1140-reviewed-1"
         ]
       },
       {
         "boundary": [
           null,
+          1440,
+          "Circle of Imprisonment"
+        ],
+        "actions": [
+          "objective-1140-2-circle-of-imprisonment"
+        ]
+      },
+      {
+        "boundary": [
+          54,
           1440,
           "Delgren the Purifier"
         ],
