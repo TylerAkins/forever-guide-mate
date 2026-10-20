@@ -45,6 +45,7 @@ Counts are unique quest IDs with authored pickups, across all race, class, and p
 | Un'Goro Crater | 40 | 41 | 1 | 2 | 8 | 4 / 0 | 2.5/5 |
 | Winterspring | 32 | 41 | 9 | 9 | 14 | 18 / 0 | 2.5/5 |
 | Silithus | 20 | 34 | 14 | 10 | 34 | 71 / 0 | 2.5/5 |
+| Moonglade | 7 | 11 | 4 | 8 | 4 | 4 / 0 | 2.5/5 |
 
 Inherited supporting work is classified from the frozen Wowhead category, then objective areas or delivery endpoints for class categories. Conflicting or missing ownership remains explicitly unresolved. A capital pickup alone does not determine ownership; Data Hoarders remains Dun Morogh content. Supporting counts include inherited neighboring-zone handoffs, whose necessity has not been reworked here. The five new catalog baselines remain 30 Westfall pickups already in Leveling, 20 Loch Modan, 69 Darkshore, 23 Silverpine, and 91 Barrens. Exclusions and ownership decisions explain why overlap can be smaller. Each new inventory records every catalog candidate, supporting prerequisites, source revisions, levels, restrictions, and fallback destinations.
 

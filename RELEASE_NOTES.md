@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Moonglade Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Silithus Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Winterspring Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Un'Goro Crater Loremaster with recorded Forever evidence and advisory legacy ordering.

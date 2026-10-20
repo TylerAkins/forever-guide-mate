@@ -182411,5 +182411,467 @@
         ]
       }
     ]
+  },
+  "loremaster-moonglade": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ungoro-crater-part-2",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-level-before-accept-1047-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-1047-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-1047-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1019-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Courier Hammerfall"
+        ],
+        "actions": [
+          "alliance-extra-1019-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1015-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Crier Goodman"
+        ],
+        "actions": [
+          "alliance-extra-1015-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1015-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-extra-1015-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1019-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-extra-1019-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-6761-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1457,
+          "Mathrengyl Bearwalker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-6761-the-new-frontier",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-6762-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring",
+          "alliance-leveling-era-alliance-winterspring-level-before-turnin-6762-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-6762-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-level-before-accept-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-accept-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-level-before-accept-5527-a-reliquary-of-purity"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-accept-5527-a-reliquary-of-purity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-silithus",
+          "alliance-leveling-era-alliance-silithus-level-before-turnin-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1451,
+          "Layo Starstrike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1451,
+          "Reliquary of Purity"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-objective-5527-1-reliquary-of-purity"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-silithus-turnin-5527-a-reliquary-of-purity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ungoro-crater",
+          "horde-leveling-era-horde-ungoro-crater-level-before-accept-1000-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-1000-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-1000-the-new-frontier"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1018-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Warcaller Gorlach"
+        ],
+        "actions": [
+          "horde-extra-1018-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1004-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Harbinger Balthazad"
+        ],
+        "actions": [
+          "horde-extra-1004-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1004-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "horde-extra-1004-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-1018-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "horde-extra-1018-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1456,
+          "Arch Druid Hamuul Runetotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-1123-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-winterspring",
+          "horde-leveling-era-horde-winterspring-level-before-turnin-1123-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-1123-rabine-saturna"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-level-before-accept-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-accept-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-level-before-accept-5527-a-reliquary-of-purity"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-accept-5527-a-reliquary-of-purity"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-silithus",
+          "horde-leveling-era-horde-silithus-level-before-turnin-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1451,
+          "Layo Starstrike"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-1124-wasteland"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1451,
+          "Reliquary of Purity"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-objective-5527-1-reliquary-of-purity"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1450,
+          "Rabine Saturna"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-silithus-turnin-5527-a-reliquary-of-purity"
+        ]
+      }
+    ]
   }
 }
