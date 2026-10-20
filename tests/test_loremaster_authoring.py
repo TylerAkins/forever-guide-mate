@@ -62,6 +62,15 @@ class SourcePolicyTests(unittest.TestCase):
         facts = self.facts({'questiedb': {'sourceItemId': 12815, 'startedBy': [[10838]]}})
         self.assertIsNone(facts['item'])
 
+    def test_report_word_does_not_supply_a_missing_collection_provider(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Search', 'mapper': {'objectives': {'1': {'zone': 'Ashenvale', 'levels': [[
+            {'point': 'start', 'coord': [10,20], 'name': 'Giver', 'id': 1},
+            {'point': 'end', 'coord': [10,20], 'name': 'Giver', 'id': 1}]]}}}},
+            'questiedb': {'objectives': [None,None,[[281014]]], 'objectivesText': ['Search amongst the demons. Report any signs upon your return.']}})
+        with self.assertRaisesRegex(ValueError, 'collection materials'):
+            build_actions(facts, 'Alliance')
+
     def test_unnamed_intermediate_material_requires_review(self):
         from author_zone_loremaster import build_actions
         facts = self.facts({'wowhead': {'name': 'Test', 'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
@@ -224,6 +233,23 @@ class ZonePreparationTests(unittest.TestCase):
                            'conditions':{'faction':'Horde'},'goals':[goal('turnin-10','turnin')]}])
         turnin=next(g for g in parse_goals(text,'','',None) if g.kind=='turnin')
         self.assertIn('horde-leveling-source-objective-10',turnin.depends)
+
+    def test_source_return_dependency_imports_its_pickup_and_prerequisites(self):
+        from weave_loremaster import parse_goals
+        def goal(q, kind, dependencies=(), requirements=()):
+            return {'id': kind+'-'+str(q), 'kind':kind, 'conditions':{'faction':'Horde'},
+                    'complete':{'quest':{'id':q,'state':'completed' if kind=='turnin' else 'activeOrCompleted'}},
+                    'dependsOn':list(dependencies), 'requiredQuests':list(requirements)}
+        group={'mode':'any','quests':[30]}
+        source=[goal(30,'accept'),goal(30,'turnin'),goal(20,'accept',requirements=[group]),
+                goal(20,'turnin'),goal(10,'accept',['turnin-20']),goal(10,'turnin')]
+        text,audit=self.prepare({10:{},20:{'preQuestSingle':[30]},30:{}},source,catalog_quests=[10])
+        goals=parse_goals(text,'','',None)
+        pickups={g.quest_id for g in goals if g.kind=='accept'}
+        self.assertTrue({10,20,30} <= pickups, 'A source handoff retains the complete prerequisite path')
+        self.assertTrue({20,30} <= set(audit['supportingQuests']))
+        self.assertIn('20',audit['quests'])
+        self.assertIn('30',audit['quests'])
 
     def test_extracted_visit_retains_chapter_entry_level(self):
         from weave_loremaster import parse_goals, goal_field

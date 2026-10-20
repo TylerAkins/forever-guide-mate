@@ -210,7 +210,7 @@
       "slug": "ashenvale",
       "mapID": 1440,
       "file": "Guides/Loremaster/Ashenvale.lua",
-      "status": "pending"
+      "status": "authored"
     },
     {
       "zone": "Thousand Needles",

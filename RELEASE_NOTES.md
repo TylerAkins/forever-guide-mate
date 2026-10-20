@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Ashenvale Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Stonetalon Mountains Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Eastern Plaguelands Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Western Plaguelands Loremaster and repair the Good Luck Charm pickup and Dalson key sequence.

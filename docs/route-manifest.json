@@ -161989,5 +161989,1841 @@
         ]
       }
     ]
+  },
+  "loremaster-ashenvale": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-darkshore"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1439,
+          "Sentinel Elissa Starbreeze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-darkshore-accept-965-the-tower-of-althalaxx"
+        ]
+      },
+      {
+        "boundary": [
+          88,
+          1439,
+          "Balthule Shadowstrike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-darkshore-turnin-965-the-tower-of-althalaxx",
+          "alliance-leveling-era-alliance-darkshore-accept-966-the-tower-of-althalaxx"
+        ]
+      },
+      {
+        "boundary": [
+          89,
+          1439,
+          "Dark Strand Fanatic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-darkshore-objective-966-1-dark-strand-fanatic"
+        ]
+      },
+      {
+        "boundary": [
+          90,
+          1439,
+          "Balthule Shadowstrike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-darkshore-turnin-966-the-tower-of-althalaxx",
+          "alliance-leveling-era-alliance-darkshore-accept-967-the-tower-of-althalaxx"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-level-before-turnin-967-the-tower-of-althalaxx"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1440,
+          "Delgren the Purifier"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-967-the-tower-of-althalaxx",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-970-the-tower-of-althalaxx"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-level-before-accept-1010-bathran-s-hair"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1440,
+          "Orendil Broadleaf"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1010-bathran-s-hair"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1440,
+          "Dark Strand Cultist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-970-1-dark-strand-cultist"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1440,
+          "Bathran's Hair"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1010-1-bathran-s-hair"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1440,
+          "Orendil Broadleaf"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1010-bathran-s-hair",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1020-orendil-s-cure"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1440,
+          "Delgren the Purifier"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-970-the-tower-of-althalaxx",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-973-the-tower-of-althalaxx"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1440,
+          "Shindrell Swiftfire"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1008-the-zoram-strand"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1440,
+          "Sentinel Thenysil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1070-on-guard-in-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1440,
+          "Faldreas Goeth'Shael"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1056-journey-to-stonetalon-peak"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1440,
+          "Raene Wolfrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-991-raene-s-cleansing",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1054-culling-the-threat"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1440,
+          "Pelturas Whitemoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1020-orendil-s-cure"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1440,
+          "Pelturas Whitemoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1033-elune-s-tear"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1440,
+          "Elune's Tear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1033-1-elune-s-tear"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1440,
+          "Dal Bloodclaw"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1054-1-dal-bloodclaw"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1440,
+          "Raene Wolfrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1054-culling-the-threat"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1440,
+          "Pelturas Whitemoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1033-elune-s-tear"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1440,
+          "Pelturas Whitemoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1034-the-ruins-of-stardust"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1440,
+          "Handful of Stardust"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1034-1-handful-of-stardust"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1440,
+          "Ilkrud Magthrull's Tome"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-973-1-ilkrud-magthrull"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1440,
+          "Delgren the Purifier"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-973-the-tower-of-althalaxx"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-976-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Feero Ironhand"
+        ],
+        "actions": [
+          "alliance-extra-976-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-976-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Delgren the Purifier"
+        ],
+        "actions": [
+          "alliance-extra-976-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1440,
+          "Raene's Cleansing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-991-raene-s-cleansing",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1023-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1440,
+          "Saltspittle Puddlejumper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1023-1-saltspittle-puddlejumper"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1440,
+          "Talen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1007-the-ancient-statuette"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1440,
+          "Ancient Statuette"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1007-1-ancient-statuette"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1440,
+          "Talen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1007-the-ancient-statuette"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1440,
+          "Talen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1009-ruuzel"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1440,
+          "Ruuzel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1009-1-ruuzel"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1440,
+          "Talen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1009-ruuzel"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1440,
+          "Wrathtail Head"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1008-1-wrathtail-head"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1440,
+          "Raene Wolfrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1023-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1440,
+          "Pelturas Whitemoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1034-the-ruins-of-stardust"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1440,
+          "Shindrell Swiftfire"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1008-the-zoram-strand",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1134-pridewings-of-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1442,
+          "Kaela Shadowspear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1070-on-guard-in-stonetalon",
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1085-on-guard-in-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1442,
+          "Gaxim Rustfizzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1085-on-guard-in-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1442,
+          "Pridewing Wyvern"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1134-1-pridewing-wyvern"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1442,
+          "Keeper Albagorm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1056-journey-to-stonetalon-peak"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1440,
+          "Shindrell Swiftfire"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1134-pridewings-of-stonetalon"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1440,
+          "Raene Wolfrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1025-an-aggressive-defense"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1440,
+          "Sentinel Velene Starstrike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1016-elemental-bracers"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          1440,
+          "Befouled Water Elemental"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1016-1-befouled-water-elemental"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1440,
+          "Sentinel Velene Starstrike"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1016-elemental-bracers"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1440,
+          "Foulweald Den Watcher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1025-1-foulweald-den-watcher"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1440,
+          "Foulweald Ursa"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1025-2-foulweald-ursa"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1440,
+          "Foulweald Totemic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1025-3-foulweald-totemic"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1440,
+          "Foulweald Warrior"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1025-4-foulweald-warrior"
+        ]
+      },
+      {
+        "boundary": [
+          96,
+          1440,
+          "Raene Wolfrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1025-an-aggressive-defense"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-level-before-accept-1022-the-howling-vale"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1440,
+          "Sentinel Melyria Frostshadow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1022-the-howling-vale"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-level-before-accept-1021-vile-satyr-dryads-in-danger"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1440,
+          "Illiyana"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1021-vile-satyr-dryads-in-danger"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1440,
+          "Shindrell Swiftfire"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-4581-kayneth-stillwind"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1440,
+          "Raene Wolfrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1024-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1440,
+          "Pelturas Whitemoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1035-fallen-sky-lake"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1440,
+          "Shael'dryn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1024-raene-s-cleansing",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1026-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Ancients"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1026-1-withered-ancient"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Worn Chest"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1026-1-worn-chest"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1440,
+          "Anilia"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1021-vile-satyr-dryads-in-danger",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1031-the-branch-of-cenarius"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1440,
+          "Geltharis"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1031-1-geltharis"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1440,
+          "Kayneth Stillwind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-4581-kayneth-stillwind",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1011-forsaken-diseases"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1022-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1440,
+          "Sentinel Melyria Frostshadow"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1022-the-howling-vale",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1037-velinde-starsong"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1440,
+          "Illiyana"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1031-the-branch-of-cenarius",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1032-satyr-slaying"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1440,
+          "Shael'dryn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1026-raene-s-cleansing",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1027-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1440,
+          "Shadethicket Oracle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1035-1-shadethicket-oracle"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1440,
+          "Rotting Slime"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1027-1-rotting-slime"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1440,
+          "Bottle of Disease"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1011-1-bottle-of-disease"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1440,
+          "Kayneth Stillwind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1011-forsaken-diseases"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1440,
+          "Satyr Horns"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1032-1-satyr-horns"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1440,
+          "Shael'dryn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1027-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1440,
+          "Shael'dryn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1028-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1440,
+          "Raene's Cleansing"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1028-raene-s-cleansing",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1055-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1440,
+          "Shael'dryn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1055-raene-s-cleansing",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1029-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1440,
+          "Pelturas Whitemoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1035-fallen-sky-lake"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1440,
+          "Raene Wolfrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1029-raene-s-cleansing",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1030-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Furbolg transformation point"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1030-1-dartol-s-rod-of-transformation"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1440,
+          "Krolg"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1030-raene-s-cleansing",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1045-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Ran Bloodtooth"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1045-1-dartol-s-rod-of-transformation"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1440,
+          "Bloodtooth Guard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1045-2-bloodtooth-guard"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1440,
+          "Krolg"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1045-raene-s-cleansing",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1046-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1046-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1440,
+          "Raene Wolfrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1046-raene-s-cleansing"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1440,
+          "Illiyana"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1032-satyr-slaying"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1457,
+          "Thyn'tel Bladeweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1037-velinde-starsong",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1038-velinde-s-effects"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1457,
+          "Velinde's Journal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1038-1-velinde-s-journal"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1457,
+          "Thyn'tel Bladeweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1038-velinde-s-effects",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1039-the-barrens-port"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1413,
+          "Wharfmaster Dizzywig"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1039-the-barrens-port"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1012-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Kayneth Stillwind"
+        ],
+        "actions": [
+          "alliance-extra-1012-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Taneel Darkwood"
+        ],
+        "actions": [
+          "alliance-extra-1012-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Kayneth Stillwind"
+        ],
+        "actions": [
+          "alliance-extra-1012-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1413,
+          "Wharfmaster Dizzywig"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1040-passage-to-booty-bay"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale",
+          "alliance-leveling-era-alliance-stranglethorn-vale-level-before-turnin-1040-passage-to-booty-bay"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1434,
+          "Caravaneer Ruzzgot"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1040-passage-to-booty-bay",
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-1041-the-caravan-road"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1431,
+          "Clerk Daltry"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1041-the-caravan-road",
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-1042-the-carevin-family"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1431,
+          "Jonathan Carevin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1042-the-carevin-family"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-98418-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Maseara Autumnmoon"
+        ],
+        "actions": [
+          "alliance-extra-98418-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Xavian Rogue"
+        ],
+        "actions": [
+          "alliance-extra-98418-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Maseara Autumnmoon"
+        ],
+        "actions": [
+          "alliance-extra-98418-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-barrens-and-stonetalon-mountain"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-844-plainstrider-menace"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1413,
+          "Plainstrider Beak"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-844-1-plainstrider-beak"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-844-plainstrider-menace",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-845-the-zhevra"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1413,
+          "Zhevra Hooves"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-845-1-zhevra-hooves"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-845-the-zhevra",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-903-prowlers-of-the-barrens"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1413,
+          "Prowler Claws"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-903-1-prowler-claws"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-903-prowlers-of-the-barrens",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-881-echeyakee"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1413,
+          "Echeyakee"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-881-1-horn-of-echeyakee"
+        ]
+      },
+      {
+        "boundary": [
+          102,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-881-echeyakee",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-905-the-angry-scytheclaws"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Blue-Raptor-Nest"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-905-1-authored-Blue-Raptor-Nest"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Red-Raptor-Nest"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-905-3-authored-Red-Raptor-Nest"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Yellow-Raptor-Nest"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-905-2-authored-Yellow-Raptor-Nest"
+        ]
+      },
+      {
+        "boundary": [
+          132,
+          1413,
+          "Sergra Darkthorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-905-the-angry-scytheclaws",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-3261-jorn-skyseer"
+        ]
+      },
+      {
+        "boundary": [
+          155,
+          1413,
+          "Jorn Skyseer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-3261-jorn-skyseer",
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-882-ishamuhale"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Zhevra Chargers"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-882-1-zhevra-charger"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Ishamuhale"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-882-1-fresh-zhevra-carcass"
+        ]
+      },
+      {
+        "boundary": [
+          194,
+          1413,
+          "Jorn Skyseer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-882-ishamuhale"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ashenvale",
+          "horde-leveling-era-horde-ashenvale-level-before-accept-216-between-a-rock-and-a-thistlefur"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1440,
+          "Karang Amakkar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-accept-216-between-a-rock-and-a-thistlefur"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1440,
+          "Marukai"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-accept-6442-naga-at-the-zoram-strand"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1440,
+          "Mitsuwa"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-accept-6462-troll-charm"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1440,
+          "Wrathtail Wave Rider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-objective-6442-1-wrathtail-wave-rider"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1440,
+          "Marukai"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-turnin-6442-naga-at-the-zoram-strand"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-barrens"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1413,
+          "Jorn Skyseer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-accept-6382-the-ashenvale-hunt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ashenvale-part-2",
+          "horde-leveling-era-horde-ashenvale-part-2-level-before-accept-6504-the-lost-pages"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1440,
+          "Gurda Ragescar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-6504-the-lost-pages"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-6504-1-shredder-operating-manual-page-1"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-6504-2-shredder-operating-manual-page-5"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-6504-3-shredder-operating-manual-page-9"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1440,
+          "Gurda Ragescar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6504-the-lost-pages"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1440,
+          "Kuray'bin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-6503-ashenvale-outrunners"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1440,
+          "Senani Thunderheart"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6382-the-ashenvale-hunt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1454,
+          "Warcaller Gorlach"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-235-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1440,
+          "Senani Thunderheart"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-235-the-ashenvale-hunt"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-742-verified-pickup"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1440,
+          "Senani Thunderheart"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-742-the-ashenvale-hunt",
+          "horde-leveling-era-horde-ashenvale-part-2-accept-6383-the-ashenvale-hunt",
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6383-the-ashenvale-hunt"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1440,
+          "Mastok Wrilehiss"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-25-stonetalon-standstill"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1440,
+          "Pixel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-6441-satyr-horns"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1440,
+          "Ashenvale Outrunner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-6503-1-ashenvale-outrunner"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1440,
+          "Torek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-6544-torek-s-assault"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-24-shadumbra-s-head"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1440,
+          "Ruul Snowhoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-6482-freedom-to-ruul"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1440,
+          "Thistlefur Avenger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-216-1-thistlefur-avenger"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1440,
+          "Thistlefur Shaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-216-2-thistlefur-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-23-ursangous-s-paw"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-1918-the-befouled-element"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1440,
+          "Befouled Water Elemental"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-25-1-befouled-water-elemental"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1440,
+          "Kuray'bin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6503-ashenvale-outrunners"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1440,
+          "Ertog Ragetusk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6544-torek-s-assault"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1440,
+          "Senani Thunderheart"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-24-shadumbra-s-head",
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-23-ursangous-s-paw"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1440,
+          "Yama Snowhoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6482-freedom-to-ruul"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1440,
+          "Mastok Wrilehiss"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-25-stonetalon-standstill",
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-1918-the-befouled-element",
+          "horde-leveling-era-horde-ashenvale-part-2-accept-824-je-neu-of-the-earthen-ring"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-6441-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1440,
+          "Pixel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6441-satyr-horns"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1440,
+          "Je'neu Sancrea"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-824-je-neu-of-the-earthen-ring"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-6462-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1440,
+          "Mitsuwa"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6462-troll-charm"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1440,
+          "Karang Amakkar"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-216-between-a-rock-and-a-thistlefur"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1440,
+          "Muglash"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-6641-vorsha-the-lasher"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1440,
+          "Warsong Runner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-6641-vorsha-the-lasher"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-accept-2-sharptalon-s-claw"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1440,
+          "Senani Thunderheart"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-2-sharptalon-s-claw",
+          "horde-leveling-era-horde-ashenvale-part-2-accept-247-the-hunt-completed"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-98251-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Va'xug Firefure"
+        ],
+        "actions": [
+          "horde-extra-98251-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Ashenvale Bear"
+        ],
+        "actions": [
+          "horde-extra-98251-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Va'xug Firefure"
+        ],
+        "actions": [
+          "horde-extra-98251-turnin"
+        ]
+      }
+    ]
   }
 }

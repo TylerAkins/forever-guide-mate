@@ -80,7 +80,7 @@ def build_actions(facts, faction):
     work = [p for p in facts['points'] if p.get('point') not in ('start', 'end')]
     instructions = facts['objectivesText']
     materials = {p['item'] for p in work if p.get('item')}
-    if work and len(facts.get('objectiveItems', [])) > len(materials):
+    if len(facts.get('objectiveItems', [])) > len(materials):
         raise ValueError('Required collection materials lack complete acquisition sources and visits')
     def words(text):
         return ' '.join(word.rstrip('s') for word in re.findall(r'[a-z0-9]+', text.lower()))
@@ -212,6 +212,29 @@ def prepare(zone_spec, database, upstream, snapshot):
                 source_actions.append((node, guide, goal))
                 by_id.setdefault(goal['id'], []).append(node)
                 if quest_id(goal): by_quest.setdefault(quest_id(goal), []).append((node, guide, goal))
+        source_lookup = {node: (guide, goal) for node, guide, goal in source_actions}
+        source_order = {node: index for index, (node, _, _) in enumerate(source_actions)}
+        def dependency_quests(quest):
+            found, seen = set(), set()
+            pending_actions = [node for node, _, _ in by_quest.get(quest, [])]
+            while pending_actions:
+                node = pending_actions.pop()
+                if node in seen: continue
+                seen.add(node)
+                guide, goal = source_lookup[node]
+                for dependency in goal.get('dependsOn', []):
+                    options = by_id.get(dependency, [])
+                    local = [candidate for candidate in options
+                             if source_lookup[candidate][0]['id'] == guide['id']]
+                    earlier = [candidate for candidate in options if source_order[candidate] < source_order[node]]
+                    target = local[0] if local else earlier[-1] if earlier else None
+                    if target:
+                        predecessor = quest_id(source_lookup[target][1])
+                        if predecessor and predecessor != quest:
+                            found.add(predecessor)
+                        else:
+                            pending_actions.append(target)
+            return found
         casual_quests = {quest_id(g) for _, _, g in source_actions if g.get('kind') == 'accept'}
         upstream_order, hashes = upstream_actions(upstream, faction, zone)
         audit['upstream']['sourceHashes'].update(hashes)
@@ -244,7 +267,7 @@ def prepare(zone_spec, database, upstream, snapshot):
         # Supporting quest closure uses the same evidence and source route actions.
         roots = set(wanted)
         pending = list(sorted(wanted))
-        requirements = {}
+        requirements, source_requirements = {}, {}
         failures = {}
         while pending:
             q = pending.pop()
@@ -270,22 +293,27 @@ def prepare(zone_spec, database, upstream, snapshot):
             if not groups and registered:
                 groups = [{'mode': g['mode'], 'quests': g['quests'], 'conditions': g.get('conditions', {})} for g in registered]
             requirements[q] = groups
+            source_requirements[q] = dependency_quests(q) if q in casual_quests else set()
             if q not in casual_quests:
                 try: build_actions(f, faction)
                 except ValueError as exc: failures[q] = str(exc)
-            for group in groups:
-                for predecessor in group['quests']:
-                    if predecessor not in wanted and predecessor not in known:
-                        wanted.add(predecessor); pending.append(predecessor)
-                        if str(predecessor) not in audit['quests'] and predecessor in facts:
-                            pf = facts[predecessor]
-                            audit['quests'][str(predecessor)] = {'catalogs': catalogs.get(predecessor, []),
-                                'supporting': True, 'evidence': pf['evidence'], 'sourceRevisions': pf['sourceRevisions'], 'locations': pf['points']}
+            predecessors = source_requirements[q] | {p for group in groups for p in group['quests']}
+            for predecessor in predecessors:
+                if predecessor not in wanted and predecessor not in known:
+                    wanted.add(predecessor); pending.append(predecessor)
+                    if str(predecessor) not in audit['quests'] and predecessor in facts:
+                        pf = facts[predecessor]
+                        audit['quests'][str(predecessor)] = {'catalogs': catalogs.get(predecessor, []),
+                            'supporting': True, 'evidence': pf['evidence'], 'sourceRevisions': pf['sourceRevisions'], 'locations': pf['points']}
+                    if predecessor not in roots and predecessor in facts:
+                        audit['quests'][str(predecessor)]['supporting'] = True
         changed = True
         while changed:
             changed = False
             for q, groups in requirements.items():
                 if q in failures: continue
+                if any(p in failures for p in source_requirements.get(q, ())):
+                    failures[q] = 'A required source handoff remains unresolved'; changed = True; continue
                 if any(not group.get('conditions') and ((group['mode'] == 'all' and any(p in failures for p in group['quests'])) or
                        (group['mode'] == 'any' and all(p in failures for p in group['quests']))) for group in groups):
                     failures[q] = 'A required prerequisite remains unresolved'; changed = True
@@ -297,8 +325,8 @@ def prepare(zone_spec, database, upstream, snapshot):
             q = pending.pop()
             if q in needed: continue
             needed.add(q)
-            pending.extend(p for group in requirements.get(q, []) for p in group['quests']
-                           if p in wanted and p not in needed)
+            predecessors = source_requirements.get(q, set()) | {p for group in requirements.get(q, []) for p in group['quests']}
+            pending.extend(p for p in predecessors if p in wanted and p not in needed)
         for q in wanted - needed:
             audit['quests'][str(q)].update(status='excluded',
                 reason='Prerequisite excursion only served a candidate whose complete itinerary remains unresolved.')
