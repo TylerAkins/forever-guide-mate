@@ -351,5 +351,177 @@
         }
       }
     }
+  },
+  "11463": {
+    "name": "Undelivered Parcel",
+    "startQuest": 4281,
+    "drops": [],
+    "sources": {
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Undelivered Parcel",
+          "objectDrops": [
+            164953
+          ],
+          "startQuest": 4281
+        }
+      }
+    }
+  },
+  "18969": {
+    "name": "Pristine Yeti Hide",
+    "startQuest": 7735,
+    "drops": [],
+    "sources": {
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Pristine Yeti Hide",
+          "npcDrops": [
+            5296,
+            5297,
+            5299,
+            7848
+          ],
+          "startQuest": 7735
+        }
+      }
+    }
+  },
+  "18972": {
+    "name": "Perfect Yeti Hide",
+    "startQuest": 7738,
+    "drops": [],
+    "sources": {
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Perfect Yeti Hide",
+          "npcDrops": [
+            5296,
+            5297,
+            5299,
+            7848
+          ],
+          "startQuest": 7738
+        }
+      }
+    }
+  },
+  "8705": {
+    "name": "OOX-22/FE Distress Beacon",
+    "startQuest": 2766,
+    "drops": [],
+    "sources": {
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "OOX-22/FE Distress Beacon",
+          "npcDrops": [
+            5229,
+            5232,
+            5234,
+            5236,
+            5237,
+            5238,
+            5239,
+            5240,
+            5241,
+            5244,
+            5245,
+            5246,
+            5247,
+            5249,
+            5251,
+            5253,
+            5254,
+            5255,
+            5258,
+            5260,
+            5262,
+            5268,
+            5272,
+            5274,
+            5276,
+            5278,
+            5286,
+            5287,
+            5288,
+            5292,
+            5293,
+            5295,
+            5296,
+            5297,
+            5299,
+            5300,
+            5304,
+            5305,
+            5306,
+            5307,
+            5308,
+            5327,
+            5328,
+            5331,
+            5332,
+            5333,
+            5334,
+            5335,
+            5336,
+            5337,
+            5343,
+            5346,
+            5347,
+            5349,
+            5350,
+            5352,
+            5356,
+            5357,
+            5358,
+            5359,
+            5360,
+            5361,
+            5362,
+            5363,
+            5364,
+            5366,
+            5461,
+            5462,
+            5881,
+            7584,
+            7725,
+            7726,
+            7727,
+            7848,
+            8075,
+            8136,
+            14603,
+            14604,
+            14638,
+            14639,
+            14640,
+            14661
+          ],
+          "startQuest": 2766
+        }
+      }
+    }
+  },
+  "9370": {
+    "name": "Gordunni Scroll",
+    "startQuest": 2978,
+    "drops": [],
+    "sources": {
+      "questiedb": {
+        "revision": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
+        "attributes": {
+          "name": "Gordunni Scroll",
+          "objectDrops": [
+            143980
+          ],
+          "startQuest": 2978
+        }
+      }
+    }
   }
 }

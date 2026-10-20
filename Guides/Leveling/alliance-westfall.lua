@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 14,
+    revision = 15,
     title = "Westfall",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-westfall",

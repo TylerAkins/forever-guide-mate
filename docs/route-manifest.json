@@ -1,6 +1,6 @@
 {
   "leveling-era-alliance-feralas-and-tanaris": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -35300,7 +35300,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 14,
+    "revision": 15,
     "visits": [
       {
         "boundary": [
@@ -53264,7 +53264,7 @@
     ]
   },
   "leveling-era-alliance-feralas-and-azshara": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -54746,7 +54746,7 @@
     ]
   },
   "leveling-era-horde-feralas-and-ungoro-crater": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -64092,7 +64092,7 @@
     ]
   },
   "leveling-era-horde-feralas": {
-    "revision": 5,
+    "revision": 6,
     "visits": [
       {
         "boundary": [
@@ -71302,7 +71302,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 17,
+    "revision": 18,
     "visits": [
       {
         "boundary": [
@@ -169846,6 +169846,2082 @@
         ],
         "actions": [
           "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-1173-challenge-overlord-mok-morokk"
+        ]
+      }
+    ]
+  },
+  "loremaster-feralas": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-feralas-and-tanaris"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1444,
+          "Pratt McGrubben"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2821-the-mark-of-quality"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1444,
+          "Latronicus Moonspear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4124-the-missing-courier"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1444,
+          "Shandris Feathermoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2866-the-ruins-of-solarsal"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1444,
+          "Troyas Moonbreeze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2939-in-search-of-knowledge"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1444,
+          "Angelas Moonbreeze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2982-the-high-wilderness"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1444,
+          "Ginro Hearthkindle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4124-the-missing-courier",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4125-the-missing-courier"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1444,
+          "The Ruins of Solarsal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2866-the-ruins-of-solarsal"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1444,
+          "Return to Feathermoon Stronghold"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2867-return-to-feathermoon-stronghold"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1444,
+          "Shandris Feathermoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2867-return-to-feathermoon-stronghold",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-3130-against-the-hatecrest"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1444,
+          "Latronicus Moonspear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-3130-against-the-hatecrest",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2869-against-the-hatecrest"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1444,
+          "Hatecrest Screamer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2869-1-hatecrest-screamer"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1444,
+          "Latronicus Moonspear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2869-against-the-hatecrest",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2870-against-lord-shalzaru"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1444,
+          "Mysterious Relic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2870-1-lord-shalzaru"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-loot-starter-before-accept-2766-find-oox-22-fe",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-level-before-accept-2766-find-oox-22-fe"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2766-find-oox-22-fe"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1444,
+          "The Missing Courier"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4125-the-missing-courier"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1444,
+          "Boat Wreckage"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4127-boat-wreckage"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1444,
+          "Ginro Hearthkindle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4127-boat-wreckage",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4129-the-knife-revealed"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1444,
+          "Quintis Jonespyre"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4129-the-knife-revealed"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1444,
+          "Quintis Jonespyre"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4130-psychometric-reading"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1444,
+          "Ginro Hearthkindle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4130-psychometric-reading",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4131-the-woodpaw-gnolls"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1444,
+          "Latronicus Moonspear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2870-against-lord-shalzaru",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2871-delivering-the-relic"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1444,
+          "Vestia Moonspear"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2871-delivering-the-relic"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1444,
+          "Homing Robot OOX-22/FE"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2766-find-oox-22-fe"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-2767-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Homing Robot OOX-22/FE"
+        ],
+        "actions": [
+          "alliance-extra-2767-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-2767-objective"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1444,
+          "Thick Yeti Hide"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2821-1-thick-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1444,
+          "Gordunni Shaman"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2982-2-gordunni-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1444,
+          "Gordunni Brute"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2982-3-gordunni-brute"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1444,
+          "Gordunni Warlock"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2982-1-gordunni-warlock"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1444,
+          "Kindal Moonweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2969-freedom-for-all-creatures"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Oglethorpe Obnoticus"
+        ],
+        "actions": [
+          "alliance-extra-2767-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1444,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2969-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          60,
+          1444,
+          "Kindal Moonweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2969-freedom-for-all-creatures"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1444,
+          "Jer'kai Moonweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2970-doling-justice"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1444,
+          "Grimtotem Shaman"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2970-3-grimtotem-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1444,
+          "Grimtotem Raider"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2970-2-grimtotem-raider"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1444,
+          "Grimtotem Naturalist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2970-1-grimtotem-naturalist"
+        ]
+      },
+      {
+        "boundary": [
+          63,
+          1444,
+          "Jer'kai Moonweaver"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2970-doling-justice",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2972-doling-justice"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1444,
+          "The Woodpaw Gnolls"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4131-the-woodpaw-gnolls"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1444,
+          "The Writhing Deep"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4135-the-writhing-deep"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-loot-starter-before-accept-4281-thalanaar-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4281-thalanaar-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1444,
+          "The Writhing Deep"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4135-the-writhing-deep"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1444,
+          "Freed from the Hive"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4265-freed-from-the-hive"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1444,
+          "Pratt McGrubben"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2821-the-mark-of-quality"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1444,
+          "Angelas Moonbreeze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2982-the-high-wilderness"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-level-before-accept-3445-the-sunken-temple"
+        ]
+      },
+      {
+        "boundary": [
+          70,
+          1444,
+          "Angelas Moonbreeze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-3445-the-sunken-temple"
+        ]
+      },
+      {
+        "boundary": [
+          71,
+          1444,
+          "Ginro Hearthkindle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4265-freed-from-the-hive",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4266-a-hero-s-welcome"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1444,
+          "Shandris Feathermoon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4266-a-hero-s-welcome",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4267-rise-of-the-silithid"
+        ]
+      },
+      {
+        "boundary": [
+          74,
+          1438,
+          "Daryn Lightwind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2939-in-search-of-knowledge"
+        ]
+      },
+      {
+        "boundary": [
+          75,
+          1438,
+          "Feralas: A History"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2940-feralas-a-history"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1438,
+          "Daryn Lightwind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2940-feralas-a-history",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2941-the-borrower"
+        ]
+      },
+      {
+        "boundary": [
+          84,
+          1457,
+          "Gracina Spiritmight"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4267-rise-of-the-silithid"
+        ]
+      },
+      {
+        "boundary": [
+          85,
+          1457,
+          "Tyrande Whisperwind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2972-doling-justice"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-3841-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Kindal Moonweaver"
+        ],
+        "actions": [
+          "alliance-extra-3841-accept"
+        ]
+      },
+      {
+        "boundary": [
+          97,
+          1444,
+          "Falfindel Waywarder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4281-thalanaar-delivery"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1446,
+          "Curgle Cranklehop"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2941-the-borrower",
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2944-the-super-snapper-fx"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-tanaris-part-2",
+          "alliance-leveling-era-alliance-tanaris-part-2-level-before-turnin-3445-the-sunken-temple"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1446,
+          "Marvon Rivetseeker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-part-2-turnin-3445-the-sunken-temple"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-azshara-and-felwood"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-2944-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1438,
+          "Daryn Lightwind"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-2944-the-super-snapper-fx",
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-2943-return-to-troyas"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1457,
+          "Un'Goro Soil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-3764-1-un-goro-soil"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-3764-un-goro-soil"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1457,
+          "Jenal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3764-un-goro-soil"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-feralas-and-azshara",
+          "alliance-leveling-era-alliance-feralas-and-azshara-level-before-accept-7733-improved-quality"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1444,
+          "Pratt McGrubben"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-7733-improved-quality"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-level-before-turnin-2943-return-to-troyas"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1444,
+          "Troyas Moonbreeze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2943-return-to-troyas"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1444,
+          "Troyas Moonbreeze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-2879-the-stave-of-equinex"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-level-before-accept-7003-zapped-giants"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1444,
+          "Zorbin Fandazzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-7003-zapped-giants",
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-7721-fuel-for-the-zapping"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1444,
+          "Zorbin's Ultra-Shrinker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-7003-1-zorbin-s-ultra-shrinker"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1444,
+          "Water Elemental Core"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-7721-1-water-elemental-core"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1444,
+          "Zorbin Fandazzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-7003-zapped-giants",
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-7721-fuel-for-the-zapping"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-loot-starter-before-accept-7735-pristine-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-7735-pristine-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1444,
+          "Rage Scar Yeti Hide"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-7733-1-rage-scar-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-level-before-accept-2844-the-giant-guardian"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1444,
+          "Rockbiter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-2844-the-giant-guardian"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Flame of Samha"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-collect-2879-samha-essence"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Flame of Imbel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-2879-1-flame-of-imbel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Flame of Lahassa"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-2879-1-flame-of-lahassa"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Flame of Byltan"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-2879-1-flame-of-byltan"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Equinex Monolith"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-2879-1-troyas-stave"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1444,
+          "The Stave of Equinex"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2879-the-stave-of-equinex"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1444,
+          "The Morrow Stone"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-2942-the-morrow-stone"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1444,
+          "Shay Leafrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2844-the-giant-guardian",
+          "alliance-leveling-era-alliance-feralas-and-azshara-accept-2845-wandering-shay"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1444,
+          "Shay's Chest"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-2845-1-shay-s-chest"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1444,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-2845-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1444,
+          "Rockbiter"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2845-wandering-shay"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-objective-2942-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1444,
+          "Troyas Moonbreeze"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2942-the-morrow-stone"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1444,
+          "Pratt McGrubben"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-7733-improved-quality",
+          "alliance-leveling-era-alliance-feralas-and-azshara-turnin-7735-pristine-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ungoro-crater-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-3781-morrowgrain-research"
+        ]
+      },
+      {
+        "boundary": [
+          80,
+          1457,
+          "Mathrengyl Bearwalker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-3781-morrowgrain-research"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-3788-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Innkeeper Shyria"
+        ],
+        "actions": [
+          "alliance-extra-3788-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-3787-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Tannysa"
+        ],
+        "actions": [
+          "alliance-extra-3787-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-3787-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Quintis Jonespyre"
+        ],
+        "actions": [
+          "alliance-extra-3787-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-3788-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Quintis Jonespyre"
+        ],
+        "actions": [
+          "alliance-extra-3788-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-3841-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1441,
+          "Quentin"
+        ],
+        "actions": [
+          "alliance-extra-3841-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-dustwallow-marsh-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1454,
+          "Belgrom Rockmaul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-accept-2981-a-threat-in-feralas"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-feralas",
+          "horde-leveling-era-horde-feralas-level-before-accept-2987-gordunni-cobalt"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1444,
+          "Orwin Gizzmick"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-accept-2987-gordunni-cobalt"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1444,
+          "Krueg Skullsplitter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-accept-2973-a-new-cloak-s-sheen"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-level-before-accept-2862-war-on-the-woodpaw"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1444,
+          "Hadoken Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-accept-2862-war-on-the-woodpaw"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-level-before-accept-2822-the-mark-of-quality"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1444,
+          "Jangdor Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-accept-2822-the-mark-of-quality"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1444,
+          "Rok Orhan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2981-a-threat-in-feralas",
+          "horde-leveling-era-horde-feralas-accept-2975-the-ogres-of-feralas"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1444,
+          "Woodpaw Mongrel"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2862-1-woodpaw-mongrel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Gordunni Scroll"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2978-1-gordunni-scroll"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-loot-starter-before-accept-2978-the-gordunni-scroll"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-accept-2978-the-gordunni-scroll"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1444,
+          "Gordunni Cobalt"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2987-1-gordunni-cobalt"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1444,
+          "Gordunni Brute"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2975-3-gordunni-brute"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1444,
+          "Gordunni Ogre"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2975-1-gordunni-ogre"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1444,
+          "Gordunni Ogre Mage"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2975-2-gordunni-ogre-mage"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1444,
+          "Hadoken Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2862-war-on-the-woodpaw",
+          "horde-leveling-era-horde-feralas-accept-2863-alpha-strike"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1444,
+          "Orwin Gizzmick"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2987-gordunni-cobalt"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1444,
+          "Rok Orhan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2975-the-ogres-of-feralas",
+          "horde-leveling-era-horde-feralas-accept-2980-the-ogres-of-feralas",
+          "horde-leveling-era-horde-feralas-turnin-2978-the-gordunni-scroll",
+          "horde-leveling-era-horde-feralas-accept-2979-dark-ceremony"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1444,
+          "Sprite Darter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2973-1-sprite-darter"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1444,
+          "Woodpaw Alpha"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2863-1-woodpaw-alpha"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1444,
+          "Hadoken Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2863-alpha-strike",
+          "horde-leveling-era-horde-feralas-accept-2902-woodpaw-investigation"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1444,
+          "Krueg Skullsplitter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2973-a-new-cloak-s-sheen",
+          "horde-leveling-era-horde-feralas-accept-2974-a-grim-discovery"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1444,
+          "Woodpaw Investigation"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2902-woodpaw-investigation"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1444,
+          "The Battle Plans"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-accept-2903-the-battle-plans"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1444,
+          "Grimtotem Shaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2974-1-grimtotem-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1444,
+          "Hadoken Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2903-the-battle-plans",
+          "horde-leveling-era-horde-feralas-accept-7730-zukk-ash-infestation",
+          "horde-leveling-era-horde-feralas-accept-7731-stinglasher"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1444,
+          "Krueg Skullsplitter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2974-a-grim-discovery",
+          "horde-leveling-era-horde-feralas-accept-2976-a-grim-discovery"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1444,
+          "Stinglasher"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-7731-1-stinglasher"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1444,
+          "Zukk'ash Carapace"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-7730-1-zukk-ash-carapace"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1444,
+          "Gordunni Mauler"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2980-3-gordunni-mauler"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1444,
+          "Gordunni Mage-Lord"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2979-1-gordunni-mage-lord"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1444,
+          "Gordunni Shaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2980-1-gordunni-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1444,
+          "Gordunni Warlock"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2980-2-gordunni-warlock"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1444,
+          "Feral Scar Yeti"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-2822-1-feral-scar-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-loot-starter-before-accept-2766-find-oox-22-fe",
+          "horde-leveling-era-horde-feralas-level-before-accept-2766-find-oox-22-fe"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-accept-2766-find-oox-22-fe"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1444,
+          "Homing Robot OOX-22/FE"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2766-find-oox-22-fe"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-accept-3121-a-strange-request"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1444,
+          "Jangdor Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2822-the-mark-of-quality"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1444,
+          "Hadoken Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-7730-zukk-ash-infestation",
+          "horde-leveling-era-horde-feralas-turnin-7731-stinglasher",
+          "horde-leveling-era-horde-feralas-accept-7732-zukk-ash-report"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1444,
+          "Rok Orhan"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2980-the-ogres-of-feralas",
+          "horde-leveling-era-horde-feralas-turnin-2979-dark-ceremony",
+          "horde-leveling-era-horde-feralas-accept-3002-the-gordunni-orb"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1454,
+          "Uthel'nay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-3002-the-gordunni-orb"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1454,
+          "Neeru Fireblade"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-3121-a-strange-request",
+          "horde-leveling-era-horde-feralas-accept-3122-return-to-witch-doctor-uzer-i"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1454,
+          "Belgrom Rockmaul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-2976-a-grim-discovery"
+        ]
+      },
+      {
+        "boundary": [
+          62,
+          1454,
+          "Zilzibin Drumlore"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-7732-zukk-ash-report"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-turnin-3122-return-to-witch-doctor-uzer-i"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-3123-testing-the-vessel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-hinterlands"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1425,
+          "Wildkin Muisek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-hinterlands-objective-3123-1-wildkin-muisek"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-feralas-and-ungoro-crater",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-level-before-accept-3062-dark-heart"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1444,
+          "Talo Thornhoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3062-dark-heart",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3063-vengeance-on-the-northspring"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1444,
+          "Jangdor Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-7734-improved-quality"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1425,
+          "Wildkin Muisek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3123-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3123-testing-the-vessel",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3124-hippogryph-muisek",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3128-natural-materials"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1444,
+          "Frayfeather Patriarch"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3124-1-frayfeather-patriarch"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1444,
+          "Resilient Sinew"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3128-3-resilient-sinew"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1444,
+          "Metallic Fragments"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3128-4-metallic-fragments"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3124-hippogryph-muisek",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3125-faerie-dragon-muisek"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1444,
+          "Sprite Darter"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3125-1-sprite-darter"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1444,
+          "Encrusted Minerals"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3128-2-encrusted-minerals"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3125-faerie-dragon-muisek",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3126-treant-muisek"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3126-1-wandering-forest-walker",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3128-1-splintered-log"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3126-treant-muisek",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3127-mountain-giant-muisek",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3128-natural-materials"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-level-before-accept-7003-zapped-giants"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1444,
+          "Zorbin Fandazzle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-7003-zapped-giants",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-7721-fuel-for-the-zapping"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1444,
+          "Zorbin's Ultra-Shrinker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-7003-1-zorbin-s-ultra-shrinker"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1444,
+          "Water Elemental Core"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-7721-1-water-elemental-core"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1444,
+          "Zorbin Fandazzle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-7003-zapped-giants",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-7721-fuel-for-the-zapping"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-loot-starter-before-accept-7738-perfect-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-7738-perfect-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1444,
+          "Rage Scar Yeti Hide"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-7734-1-rage-scar-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1444,
+          "Mountain Giant Muisek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3127-1-zorbin-s-ultra-shrinker"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Northspring harpies"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3062-1-northspring-harpy"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1444,
+          "Northspring Harpy"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3063-1-northspring-harpy"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Edana Hatetalon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3062-1-horn-of-hatetalon"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1444,
+          "Northspring Roguefeather"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3063-2-northspring-roguefeather"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1444,
+          "Northspring Slayer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3063-3-northspring-slayer"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1444,
+          "Northspring Windcaller"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3063-4-northspring-windcaller"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1444,
+          "Talo Thornhoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3063-vengeance-on-the-northspring",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3062-dark-heart"
+        ]
+      },
+      {
+        "boundary": [
+          77,
+          1444,
+          "Jangdor Swiftstrider"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-7734-improved-quality",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-7738-perfect-yeti-hide"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3127-mountain-giant-muisek",
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3129-weapons-of-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1444,
+          "Witch Doctor Uzer'i"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3129-weapons-of-spirit"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-2767-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1444,
+          "Homing Robot OOX-22/FE"
+        ],
+        "actions": [
+          "horde-extra-2767-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-2767-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Oglethorpe Obnoticus"
+        ],
+        "actions": [
+          "horde-extra-2767-turnin"
         ]
       }
     ]

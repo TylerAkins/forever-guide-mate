@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 5,
+    revision = 6,
     title = "Feralas",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-feralas",
@@ -291,11 +291,20 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2978, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                    },
+                },
+            },
         },
         {
             id = "loot-starter-before-accept-2978-the-gordunni-scroll",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 2978,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -319,6 +328,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2978, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                    },
+                },
+            },
         },
         {
             text = "Use the Gordunni Scroll to accept The Gordunni Scroll.",
@@ -343,6 +360,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2978, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                    },
+                },
+            },
         },
         {
             id = "objective-2987-1-gordunni-cobalt",
@@ -630,6 +655,14 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2978, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                    },
+                },
+            },
         },
         {
             route = {
@@ -663,6 +696,28 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2979, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 2978, state = "activeOrCompleted" } },
+                                                { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "Collect 10 Iridescent Sprite Darter Wing.",
@@ -1275,6 +1330,28 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2979, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 2978, state = "activeOrCompleted" } },
+                                                { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             id = "objective-2980-1-gordunni-shaman",
@@ -1373,8 +1450,9 @@ ns:RegisterGuide({
             id = "loot-starter-before-accept-2766-find-oox-22-fe",
             kind = "note",
             instructionOnly = true,
+            referenceQuest = 2766,
             conditions = { faction = "Horde" },
-            text = "Loot OOX-22/FE Distress Beacon from Gordunni Ogre, Gordunni Brute, Gordunni Mauler, Gordunni Shaman, Gordunni Ogre Mage, Gordunni Mage-Lord, Gordunni Warlock, Zukk'ash Wasp, Zukk'ash Worker, Woodpaw Mongrel, Woodpaw Alpha, Groddoc Ape, Grizzled Ironfur Bear, Sprite Darter, Feral Scar Yeti, Ferocious Rage Scar, Frayfeather Hippogryph, Frayfeather Patriarch, Vale Screecher, Hatecrest Myrmidon, Hatecrest Screamer, Book: The Powers Below, Cliff Giant, Northspring Harpy, Northspring Roguefeather, Northspring Slayer, Northspring Windcaller, Dartol's Rod of Transformation, Wandering Forest Walker, Grimtotem Raider, Grimtotem Naturalist, Grimtotem Shaman, Edana Hatetalon, Lord Shalzaru, Zapped Wave Strider, Stinglasher. Keep it for the next pickup.",
+            text = "If an OOX-22/FE Distress Beacon drops while questing in Feralas, keep it for the optional rescue chain.",
             complete = {
                 any = {
                     {
@@ -1389,6 +1467,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
         },
         {
             id = "level-before-accept-2766-find-oox-22-fe",
@@ -1403,6 +1489,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             checkpointQuest = 2766,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
         },
         {
             text = "Use the OOX-22/FE Distress Beacon to accept Find OOX-22/FE!.",
@@ -1424,6 +1518,14 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
         },
         {
             text = "Turn in Find OOX-22/FE! to Homing Robot OOX-22/FE.",
@@ -1448,6 +1550,14 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                    },
+                },
+            },
         },
         {
             route = {
@@ -1672,6 +1782,28 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2979, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 2978, state = "activeOrCompleted" } },
+                                                { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             route = {
@@ -1705,6 +1837,42 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 3002, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 2979, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 2978, state = "activeOrCompleted" } },
+                                                                        { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "For Deadmire: Bring Deadmire's Tooth to Melor in Thunder Bluff.",
@@ -1789,6 +1957,42 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 3002, state = "activeOrCompleted" } },
+                        {
+                            all = {
+                                { faction = "Horde" },
+                                {
+                                    any = {
+                                        {
+                                            any = {
+                                                { quest = { id = 2979, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 2978, state = "activeOrCompleted" } },
+                                                                        { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             text = "Turn in A Strange Request to Neeru Fireblade.",

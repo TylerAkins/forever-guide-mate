@@ -1219,3 +1219,8 @@ ns:RegisterQuestPrerequisite({ quest = 1012, mode = "any", quests = { 1011 } })
 
 -- Desolace handoff from the frozen ATT observation.
 ns:RegisterQuestPrerequisite({ quest = 1362, mode = "any", quests = { 1361 } })
+
+ns:RegisterQuestPrerequisite({ quest = 2767, mode = "any", quests = { 2766 } })
+ns:RegisterQuestPrerequisite({ quest = 3787, mode = "any", quests = { 3781 } })
+ns:RegisterQuestPrerequisite({ quest = 3788, mode = "any", quests = { 3781 } })
+ns:RegisterQuestPrerequisite({ quest = 3841, mode = "any", quests = { 2972 } })
