@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 6,
+    revision = 7,
     title = "Winterspring",
     category = "Leveling Quest Guides",
     id = "leveling-era-horde-winterspring",
@@ -396,36 +396,6 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
-            text = "Turn in Chillwind Horns to Felnok Steelspring.",
-            route = {
-                { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
-            },
-            dependsOn = { "objective-4809-1-uncracked-chillwind-horn" },
-            id = "turnin-4809-chillwind-horns",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 50 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 4809, state = "completed" },
-            },
-            sourceStep = 13,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 4808 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
             text = "Turn in Wild Guardians to Trull Failbane.",
             route = {
                 { y = 0.5279, mapID = 1448, label = "Trull Failbane", offMapText = "Travel to Trull Failbane in Felwood.", x = 0.3473 },
@@ -581,36 +551,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "accept-4721-wild-guardians" },
-        },
-        {
-            id = "objective-4809-1-uncracked-chillwind-horn",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 50 },
-                    },
-                },
-            },
-            text = "Collect 8 Uncracked Chillwind Horn.",
-            complete = {
-                questObjective = { id = 4809, index = 1, text = "Uncracked Chillwind Horn", count = 8 },
-            },
-            route = {
-                { mapID = 1452, x = 0.64, y = 0.302, label = "Uncracked Chillwind Horn", offMapText = "Travel to Uncracked Chillwind Horn." },
-            },
-            sourceStep = 17,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 4808 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
         },
         {
             route = {

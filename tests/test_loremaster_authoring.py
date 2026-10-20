@@ -53,6 +53,16 @@ class SourcePolicyTests(unittest.TestCase):
         goal = next(g for g in build_actions(facts, 'Horde') if g['kind'] == 'objective')
         self.assertEqual(goal['text'], 'Defeat the target.')
 
+    def test_level_checkpoint_uses_offer_minimum_not_recommended_quest_level(self):
+        from author_zone_loremaster import build_actions
+        facts = self.facts({'wowhead': {'name': 'Test', 'requiredLevel': 10, 'questLevel': 59,
+             'mapper': {'objectives': {'1': {'zone': 'Durotar', 'levels': [[
+                 {'point': 'start', 'coord': [10, 20], 'name': 'First', 'id': 1},
+                 {'point': 'end', 'coord': [20, 20], 'name': 'Second', 'id': 2}]]}}}}})
+        checkpoint = build_actions(facts, 'Horde')[0]
+        self.assertEqual(checkpoint['requiredLevel'], 10)
+        self.assertEqual(checkpoint['complete'], {'level': {'min': 10}})
+
     def test_source_item_without_wowhead_markup_is_preserved(self):
         facts = self.facts({'questiedb': {'sourceItemId': 2794}})
         self.assertEqual(facts['item'], {'id': 2794, 'name': None})
@@ -180,7 +190,7 @@ assert(not s.completedQuests[836],'Availability never invents completion')
             self.assertEqual(load_facts(root)[485]['item'], {'id': 8704, 'name': 'Observed beacon'})
 
 class ZonePreparationTests(unittest.TestCase):
-    def prepare(self, quests, source_goals=(), upstream_order=(), revision=None, registered=None, extra_guides=(), source_condition=None, catalog_quests=None):
+    def prepare(self, quests, source_goals=(), upstream_order=(), revision=None, registered=None, extra_guides=(), source_condition=None, catalog_quests=None, existing_guide_goals=()):
         import gzip
         import json
         import tempfile
@@ -206,9 +216,18 @@ class ZonePreparationTests(unittest.TestCase):
                 attrs = {'sourceData': {'wowhead': {'attributes': wh, 'revision': 'wh'},
                                        'questiedb': {'attributes': fields, 'revision': 'qd'}}}
                 stream.write(json.dumps({'entityType': 'quest', 'entityId': str(q), 'attributes': attrs})+'\n')
-        snapshot = {'guides': [{'id': 'leveling-source', 'category': 'Leveling Quest Guides',
-                    'conditions': source_condition or {'faction': 'Horde'}, 'goals': list(source_goals)}] + list(extra_guides), 'prerequisites': registered or {}}
         spec = {'zone': 'Redridge Mountains', 'slug': 'redridge-mountains', 'file': 'Guides/Loremaster/RedridgeMountains.lua'}
+        snapshot_guides = [{'id': 'leveling-source', 'category': 'Leveling Quest Guides',
+                    'conditions': source_condition or {'faction': 'Horde'}, 'goals': list(source_goals)}] + list(extra_guides)
+        if existing_guide_goals:
+            current = {'id': 'loremaster-redridge-mountains', 'title': 'Redridge Mountains',
+                       'category': 'Loremaster Guides', 'revision': 1,
+                       'routeMode': 'ordered', 'goals': list(existing_guide_goals)}
+            snapshot_guides.append(current)
+            from loremaster_sources import lua
+            (root / spec['file']).parent.mkdir(parents=True, exist_ok=True)
+            (root / spec['file']).write_text('local _, ns = ...\nns:RegisterGuide(' + lua(current) + ')\n')
+        snapshot = {'guides': snapshot_guides, 'prerequisites': registered or {}}
         with patch.object(author, 'ROOT', root), patch.object(author.subprocess, 'check_output', return_value=revision or author.UPSTREAM_COMMIT), patch.object(author.subprocess, 'run'), patch.object(author, 'upstream_actions', return_value=(list(upstream_order), {})):
             text, audit = author.prepare(spec, root, root, snapshot)
         return text, audit
@@ -250,6 +269,40 @@ class ZonePreparationTests(unittest.TestCase):
         self.assertTrue({20,30} <= set(audit['supportingQuests']))
         self.assertIn('20',audit['quests'])
         self.assertIn('30',audit['quests'])
+
+    def test_extra_source_prerequisite_precedes_its_casual_pickup(self):
+        from weave_loremaster import parse_goals
+        source=[]
+        for q in (20,):
+            for kind in ('accept','objective','turnin'):
+                source.append({'id':kind+'-'+str(q),'kind':kind,'conditions':{'faction':'Horde'},
+                    'complete':{'quest':{'id':q,'state':'complete' if kind=='objective' else 'completed' if kind=='turnin' else 'activeOrCompleted'}},
+                    'dependsOn':['objective-'+str(q)] if kind=='turnin' else [],
+                    'requiredQuests':[{'mode':'any','quests':[10]}] if kind=='accept' else []})
+        text,audit=self.prepare({10:{},20:{'preQuestSingle':[10]}},source,catalog_quests=[10,20])
+        goals=parse_goals(text,'','',None)
+        prerequisite_return=next(i for i,g in enumerate(goals) if g.quest_id==10 and g.kind=='turnin')
+        source_pickup=next(i for i,g in enumerate(goals) if g.quest_id==20 and g.kind=='accept')
+        self.assertLess(prerequisite_return,source_pickup)
+        self.assertEqual([g.id for g in goals if g.quest_id==20],
+                         ['horde-leveling-source-accept-20','horde-leveling-source-objective-20','horde-leveling-source-turnin-20'])
+
+    def test_rerun_preserves_existing_source_actions_still_in_casual_chapter(self):
+        from weave_loremaster import parse_goals
+        source=[]
+        existing=[]
+        for kind in ('accept','objective','turnin'):
+            source_goal={'id':kind+'-10','kind':kind,'conditions':{'faction':'Horde'},
+                'complete':{'quest':{'id':10,'state':'complete' if kind=='objective' else 'completed' if kind=='turnin' else 'activeOrCompleted'}},
+                'dependsOn':['objective-10'] if kind=='turnin' else []}
+            source.append(source_goal)
+            existing.append({**source_goal,
+                'id':'horde-leveling-source-'+source_goal['id'],
+                'sourceGuide':'leveling-source','sourceActionID':source_goal['id']})
+        text,_=self.prepare({10:{}},source,existing_guide_goals=existing)
+        goals=parse_goals(text,'','',None)
+        self.assertTrue({'horde-leveling-source-accept-10','horde-leveling-source-objective-10',
+                         'horde-leveling-source-turnin-10'} <= {g.id for g in goals})
 
     def test_repeated_source_visit_does_not_wait_for_future_objectives(self):
         from weave_loremaster import parse_goals
@@ -296,6 +349,43 @@ class ZonePreparationTests(unittest.TestCase):
         returned=next(g for g in goals if g.kind=='turnin')
         self.assertEqual(returned.depends,['horde-leveling-source-accept-10-first'])
         self.assertEqual([g.kind for g in goals],['accept','turnin','accept'])
+
+    def test_future_duplicate_objective_dependency_uses_earlier_visit(self):
+        from weave_loremaster import parse_goals
+        condition={'faction':'Horde'}
+        source=[
+            {'id':'accept-10-first','kind':'accept','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}},
+            {'id':'objective-10-first','kind':'objective','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'complete'}}},
+            {'id':'turnin-10','kind':'turnin','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'completed'}},'dependsOn':['objective-10-later']},
+            {'id':'accept-10-later','kind':'accept','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}},
+            {'id':'objective-10-later','kind':'objective','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'complete'}}},
+        ]
+        text,_=self.prepare({10:{}},source)
+        goals=parse_goals(text,'','',None)
+        returned=next(g for g in goals if g.kind=='turnin')
+        self.assertEqual(returned.depends,['horde-leveling-source-objective-10-first'])
+
+    def test_future_distinct_objective_dependency_is_not_rewritten(self):
+        condition={'faction':'Horde'}
+        source=[
+            {'id':'accept-10-first','kind':'accept','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}},
+            {'id':'objective-10-first','kind':'objective','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'complete'}}},
+            {'id':'turnin-10','kind':'turnin','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'completed'}},'dependsOn':['objective-10-later']},
+            {'id':'accept-10-later','kind':'accept','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'activeOrCompleted'}}},
+            {'id':'objective-10-later','kind':'objective','conditions':condition,
+             'complete':{'quest':{'id':10,'state':'completed'}}},
+        ]
+        with self.assertRaisesRegex(ValueError,'Prerequisite/spine cycle'):
+            self.prepare({10:{}},source)
 
     def test_future_pickup_dependency_keeps_an_uncovered_actor_cycle(self):
         first={'id':'accept-10-first','kind':'accept','conditions':{'faction':'Horde','class':8},

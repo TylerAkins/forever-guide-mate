@@ -273,7 +273,8 @@
       "slug": "winterspring",
       "mapID": 1452,
       "file": "Guides/Loremaster/Winterspring.lua",
-      "status": "pending"
+      "status": "authored",
+      "reason": "No supported permanent outdoor quest itinerary in the available source observations."
     },
     {
       "zone": "Silithus",

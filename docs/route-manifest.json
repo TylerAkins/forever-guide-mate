@@ -71302,7 +71302,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 20,
+    "revision": 21,
     "visits": [
       {
         "boundary": [
@@ -82066,7 +82066,7 @@
     ]
   },
   "leveling-era-horde-winterspring": {
-    "revision": 6,
+    "revision": 7,
     "visits": [
       {
         "boundary": [
@@ -82220,16 +82220,6 @@
       },
       {
         "boundary": [
-          13,
-          1452,
-          "Felnok Steelspring"
-        ],
-        "actions": [
-          "turnin-4809-chillwind-horns"
-        ]
-      },
-      {
-        "boundary": [
           14,
           1448,
           "Trull Failbane"
@@ -82267,16 +82257,6 @@
         ],
         "actions": [
           "objective-4721-1-berserk-owlbeast"
-        ]
-      },
-      {
-        "boundary": [
-          17,
-          1452,
-          "Uncracked Chillwind Horn"
-        ],
-        "actions": [
-          "objective-4809-1-uncracked-chillwind-horn"
         ]
       },
       {
@@ -178707,6 +178687,1811 @@
         ],
         "actions": [
           "horde-extra-3962-turnin"
+        ]
+      }
+    ]
+  },
+  "loremaster-winterspring": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-feralas-and-tanaris"
+        ]
+      },
+      {
+        "boundary": [
+          73,
+          1438,
+          "Erelas Ambersky"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-feralas-and-tanaris-accept-3661-favored-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-the-hinterlands",
+          "alliance-leveling-era-alliance-the-hinterlands-level-before-objective-3661-1-wildkin-feather"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1425,
+          "Wildkin Feather"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-the-hinterlands-objective-3661-1-wildkin-feather"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1455,
+          "Wildkin Feather"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-3661-1-wildkin-feather"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-azshara-and-felwood",
+          "alliance-leveling-era-alliance-azshara-and-felwood-level-before-objective-3661-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1425,
+          "Wildkin Feather"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-3661-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1438,
+          "Erelas Ambersky"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3661-favored-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-level-before-accept-978-moontouched-wildkin"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1438,
+          "Erelas Ambersky"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-accept-978-moontouched-wildkin"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1452,
+          "Moontouched Feather"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-azshara-and-felwood-objective-978-1-moontouched-feather"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-ungoro-crater-part-2",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-level-before-accept-974-finding-the-source"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1449,
+          "Krakle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-974-finding-the-source"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-974-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1449,
+          "Krakle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-974-finding-the-source",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-level-before-objective-978-1-moontouched-feather"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1446,
+          "Moontouched Feather"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-978-1-moontouched-feather"
+        ]
+      },
+      {
+        "boundary": [
+          81,
+          1438,
+          "Erelas Ambersky"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-978-moontouched-wildkin",
+          "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-979-find-ranshalla"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring-and-felwood",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-turnin-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-accept-5082-threat-of-the-winterfall"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5082-threat-of-the-winterfall"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5083-winterfall-firewater"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1452,
+          "Winterfall Totemic"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5082-3-winterfall-totemic"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1452,
+          "Winterfall Pathfinder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5082-1-winterfall-pathfinder"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1452,
+          "Winterfall Den Watcher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5082-2-winterfall-den-watcher"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5082-threat-of-the-winterfall",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5083-winterfall-firewater",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5084-falling-to-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1448,
+          "Falling to Corruption"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5084-falling-to-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1448,
+          "Mystery Goo"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5085-mystery-goo"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5085-mystery-goo",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5086-toxic-horrors"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1448,
+          "Toxic Horror Droplet"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5086-1-toxic-horror-droplet"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5086-toxic-horrors",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5087-winterfall-runners",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4842-strange-sources"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5087-1-winterfall-runner"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1452,
+          "Wynd Nightchaser"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5244-the-ruins-of-kel-theril"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1452,
+          "Jaron Stoneshaper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5244-the-ruins-of-kel-theril",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-5245-troubled-spirits-of-kel-theril"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-6604-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Harlo Wigglesworth"
+        ],
+        "actions": [
+          "alliance-extra-6604-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-6604-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Jaron Stoneshaper"
+        ],
+        "actions": [
+          "alliance-extra-6604-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1452,
+          "Jaron Stoneshaper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4861-enraged-wildkin"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1452,
+          "Second Relic Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5245-2-second-relic-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1452,
+          "Fourth Relic Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5245-4-fourth-relic-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1452,
+          "Third Relic Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5245-3-third-relic-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1452,
+          "First Relic Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5245-1-first-relic-fragment"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1452,
+          "Gregor Greystone"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-6028-the-everlook-report",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-6030-duke-nicholas-zverenhoff"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1452,
+          "Enraged Wildkin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4861-enraged-wildkin",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4863-enraged-wildkin"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1452,
+          "Enraged Wildkin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4863-enraged-wildkin",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4864-enraged-wildkin"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1452,
+          "Jaron's Supplies"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4864-1-jaron-s-supplies"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1452,
+          "Ranshalla"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-979-find-ranshalla",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4901-guardians-of-the-altar"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1452,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4901-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1452,
+          "Blue-feathered Amulet"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4864-2-blue-feathered-amulet"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1452,
+          "Jaron Stoneshaper"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4864-enraged-wildkin"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4842-strange-sources",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5087-winterfall-runners"
+        ]
+      },
+      {
+        "boundary": [
+          68,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8471-winterfall-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1448,
+          "Kernda"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-8471-winterfall-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1438,
+          "Erelas Ambersky"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4901-guardians-of-the-altar",
+          "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4902-wildkin-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          79,
+          1457,
+          "Arch Druid Fandral Staghelm"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4902-wildkin-of-elune"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-burning-steppes",
+          "alliance-leveling-era-alliance-burning-steppes-level-before-accept-4726-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1428,
+          "Tinkee Steamboil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-accept-4726-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1428,
+          "Broodling Essence"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-objective-4726-1-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1428,
+          "Tinkee Steamboil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-burning-steppes-turnin-4726-broodling-essence",
+          "alliance-leveling-era-alliance-burning-steppes-accept-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-western-and-eastern-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1422,
+          "Argent Officer Pureheart"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6028-the-everlook-report"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1423,
+          "Duke Nicholas Zverenhoff"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6030-duke-nicholas-zverenhoff"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1452,
+          "Second Relic Fragment"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5245-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1423,
+          "Aurora Skycaller"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5245-troubled-spirits-of-kel-theril"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-winterspring",
+          "alliance-leveling-era-alliance-winterspring-level-before-turnin-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1452,
+          "Felnok Steelspring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-4808-felnok-steelspring",
+          "alliance-leveling-era-alliance-winterspring-accept-4809-chillwind-horns"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-level-before-accept-3783-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1452,
+          "Umi Rumplesnicker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-accept-3783-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1452,
+          "Ice Thistle Yeti"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-objective-3783-1-ice-thistle-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1452,
+          "Umi Rumplesnicker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-3783-are-we-there-yeti",
+          "alliance-leveling-era-alliance-winterspring-accept-977-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5121-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-extra-5121-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "High Chief Winterfall"
+        ],
+        "actions": [
+          "alliance-extra-5121-objective"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1452,
+          "Ice Thistle Matriarch"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-objective-977-1-ice-thistle-matriarch"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1452,
+          "Uncracked Chillwind Horn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-objective-4809-1-uncracked-chillwind-horn"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1452,
+          "Umi Rumplesnicker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-977-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1452,
+          "Felnok Steelspring"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-winterspring-turnin-4809-chillwind-horns"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-969-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Witch Doctor Mau'ari"
+        ],
+        "actions": [
+          "alliance-extra-969-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Frostmaul Giant"
+        ],
+        "actions": [
+          "alliance-extra-969-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Witch Doctor Mau'ari"
+        ],
+        "actions": [
+          "alliance-extra-969-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-975-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Witch Doctor Mau'ari"
+        ],
+        "actions": [
+          "alliance-extra-975-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "alliance-extra-5121-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-975-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Witch Doctor Mau'ari"
+        ],
+        "actions": [
+          "alliance-extra-975-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5126-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Lorax"
+        ],
+        "actions": [
+          "alliance-extra-5126-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-5126-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Lorax"
+        ],
+        "actions": [
+          "alliance-extra-5126-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-burning-steppes-and-azshara",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-level-before-accept-4726-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1428,
+          "Tinkee Steamboil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-4726-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1428,
+          "Broodling Essence"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-objective-4726-1-broodling-essence"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1428,
+          "Tinkee Steamboil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-4726-broodling-essence",
+          "horde-leveling-era-horde-burning-steppes-and-azshara-accept-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring",
+          "horde-leveling-era-horde-felwood-and-winterspring-level-before-accept-5082-threat-of-the-winterfall"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-5082-threat-of-the-winterfall"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-5083-winterfall-firewater"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1452,
+          "Winterfall Totemic"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5082-3-winterfall-totemic"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1452,
+          "Winterfall Pathfinder"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5082-1-winterfall-pathfinder"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1452,
+          "Winterfall Den Watcher"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-objective-5082-2-winterfall-den-watcher"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-5082-threat-of-the-winterfall",
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-5083-winterfall-firewater",
+          "horde-leveling-era-horde-felwood-and-winterspring-accept-5084-falling-to-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1452,
+          "Felnok Steelspring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-turnin-4808-felnok-steelspring"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ungoro-crater",
+          "horde-leveling-era-horde-ungoro-crater-level-before-accept-974-finding-the-source"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1449,
+          "Krakle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-accept-974-finding-the-source"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-objective-974-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1449,
+          "Krakle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ungoro-crater-turnin-974-finding-the-source",
+          "horde-leveling-era-horde-ungoro-crater-accept-980-the-new-springs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-level-before-accept-4521-wild-guardians"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1448,
+          "Trull Failbane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-4521-wild-guardians"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-level-before-turnin-5084-falling-to-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1448,
+          "Falling to Corruption"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5084-falling-to-corruption"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1448,
+          "Mystery Goo"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-5085-mystery-goo"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-980-the-new-springs",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-4842-strange-sources",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5085-mystery-goo",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-5086-toxic-horrors"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1452,
+          "Ragged Owlbeast"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4521-2-ragged-owlbeast"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1452,
+          "Umi Rumplesnicker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3783-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1452,
+          "Raging Owlbeast"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4521-1-raging-owlbeast"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1452,
+          "Thick Yeti Fur"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-3783-1-thick-yeti-fur"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1452,
+          "Umi Rumplesnicker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3783-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Felnok Steelspring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-connector-accept-4809-chillwind-horns"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1452,
+          "Uncracked Chillwind Horn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4809-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1452,
+          "Felnok Steelspring"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4809-chillwind-horns"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1448,
+          "Trull Failbane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4521-wild-guardians",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-4741-wild-guardians"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1452,
+          "Gregor Greystone"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-6029-the-everlook-report",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-6030-duke-nicholas-zverenhoff"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1448,
+          "Toxic Horror Droplet"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5086-1-toxic-horror-droplet"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4842-strange-sources",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5086-toxic-horrors",
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-5087-winterfall-runners"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5087-1-winterfall-runner"
+        ]
+      },
+      {
+        "boundary": [
+          67,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5087-winterfall-runners"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-western-and-eastern-plaguelands"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1420,
+          "Argent Officer Garush"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6029-the-everlook-report"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1423,
+          "Duke Nicholas Zverenhoff"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6030-duke-nicholas-zverenhoff"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-winterspring",
+          "horde-leveling-era-horde-winterspring-level-before-accept-977-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1452,
+          "Umi Rumplesnicker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-accept-977-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1452,
+          "Ice Thistle Matriarch"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-objective-977-1-ice-thistle-matriarch"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-accept-8471-winterfall-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-level-before-objective-4741-1-moontouched-owlbeast"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1452,
+          "Moontouched Owlbeast"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-objective-4741-1-moontouched-owlbeast"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1452,
+          "Umi Rumplesnicker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-977-are-we-there-yeti"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1448,
+          "Trull Failbane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-4741-wild-guardians"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-accept-4882-guarding-secrets"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1448,
+          "Kernda"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-8471-winterfall-ritual-totem"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1448,
+          "Trull Failbane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-4882-guarding-secrets",
+          "horde-leveling-era-horde-winterspring-accept-4883-guarding-secrets"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1456,
+          "Nara Wildmane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-winterspring-turnin-4883-guarding-secrets"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-969-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Witch Doctor Mau'ari"
+        ],
+        "actions": [
+          "horde-extra-969-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Frostmaul Giant"
+        ],
+        "actions": [
+          "horde-extra-969-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Witch Doctor Mau'ari"
+        ],
+        "actions": [
+          "horde-extra-969-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-975-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Witch Doctor Mau'ari"
+        ],
+        "actions": [
+          "horde-extra-975-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-975-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Witch Doctor Mau'ari"
+        ],
+        "actions": [
+          "horde-extra-975-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5054-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Storm Shadowhoof"
+        ],
+        "actions": [
+          "horde-extra-5054-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Ursius"
+        ],
+        "actions": [
+          "horde-extra-5054-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Storm Shadowhoof"
+        ],
+        "actions": [
+          "horde-extra-5054-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5055-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Storm Shadowhoof"
+        ],
+        "actions": [
+          "horde-extra-5055-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Brumeran"
+        ],
+        "actions": [
+          "horde-extra-5055-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Storm Shadowhoof"
+        ],
+        "actions": [
+          "horde-extra-5055-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5056-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Storm Shadowhoof"
+        ],
+        "actions": [
+          "horde-extra-5056-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Shy-Rotam"
+        ],
+        "actions": [
+          "horde-extra-5056-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Storm Shadowhoof"
+        ],
+        "actions": [
+          "horde-extra-5056-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5121-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-extra-5121-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "High Chief Winterfall"
+        ],
+        "actions": [
+          "horde-extra-5121-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Donova Snowden"
+        ],
+        "actions": [
+          "horde-extra-5121-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5126-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Lorax"
+        ],
+        "actions": [
+          "horde-extra-5126-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-5126-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Lorax"
+        ],
+        "actions": [
+          "horde-extra-5126-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6605-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1452,
+          "Harlo Wigglesworth"
+        ],
+        "actions": [
+          "horde-extra-6605-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-6605-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1448,
+          "Winna Hazzard"
+        ],
+        "actions": [
+          "horde-extra-6605-turnin"
         ]
       }
     ]

@@ -109,6 +109,7 @@ for _, path in ipairs({
     "Guides/Loremaster/Azshara.lua",
     "Guides/Loremaster/Felwood.lua",
     "Guides/Loremaster/UnGoroCrater.lua",
+    "Guides/Loremaster/Winterspring.lua",
     "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",
@@ -309,6 +310,25 @@ local function ExplicitPickupBranches(goals)
     return accepts == 2 and factions.Alliance and factions.Horde
 end
 
+local function CompleteFactionBranches(goals)
+    local branches, signature = {}, nil
+    for _, goal in ipairs(goals) do
+        local faction = FactionOf(goal.conditions)
+        if faction ~= "Alliance" and faction ~= "Horde" then return false end
+        branches[faction] = branches[faction] or {}
+        local branch = branches[faction]
+        branch[#branch + 1] = table.concat({goal.kind or "", Serialize(WithoutFaction(goal.conditions or {})),
+            Serialize(goal.complete), goal.text or "", Serialize(goal.requiredQuests)}, "|")
+    end
+    if not branches.Alliance or not branches.Horde or #branches.Alliance ~= #branches.Horde then return false end
+    for i, action in ipairs(branches.Alliance) do
+        if action ~= branches.Horde[i] then return false end
+    end
+    local accepts = 0
+    for _, goal in ipairs(goals) do if goal.kind == "accept" then accepts = accepts + 1 end end
+    return accepts == 2
+end
+
 local function GoalQuestID(goal)
     local complete = goal.complete
     if type(complete) ~= "table" then return nil end
@@ -363,6 +383,7 @@ for _, guideID in ipairs(ns.guideOrder) do
             end
             Check(mismatchID == nil or (guide.routeMode == "ordered"
                 and (ExplicitPickupBranches(byQuest[questID])
+                    or CompleteFactionBranches(byQuest[questID])
                     or guideData.DisjointPickupBranches(byQuest[questID], ns.EvaluateCondition)
                     or guideData.PreservedPickupBranches(byQuest[questID], ns.guides, ns.EvaluateCondition, Serialize))), ("%s quest %d: %s and %s do not share conditions")
                 :format(guideID, questID, tostring(firstID), tostring(mismatchID)))

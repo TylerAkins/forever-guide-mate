@@ -1234,3 +1234,9 @@ ns:RegisterQuestPrerequisite({ quest = 4261, mode = "any", quests = { 4442 } })
 ns:RegisterQuestPrerequisite({ quest = 5242, mode = "any", quests = { 5165 } })
 
 ns:RegisterQuestPrerequisite({ quest = 3962, mode = "any", quests = { 3961 } })
+
+-- Winterspring chains from the frozen QuestieDB observations.
+ns:RegisterQuestPrerequisite({ quest = 5055, mode = "any", quests = { 5054 } })
+ns:RegisterQuestPrerequisite({ quest = 5056, mode = "any", quests = { 5055 } })
+ns:RegisterQuestPrerequisite({ quest = 5121, mode = "any", quests = { 5087 } })
+ns:RegisterQuestPrerequisite({ quest = 975, mode = "any", quests = { 969 } })

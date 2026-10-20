@@ -1,4 +1,5 @@
 ## 0.6.4 - 2026-10-18
+- Add Winterspring Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Un'Goro Crater Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Felwood Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Azshara Loremaster with recorded Forever evidence and advisory legacy ordering.

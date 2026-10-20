@@ -133,9 +133,9 @@ def build_actions(facts, faction):
                     {'quest': {'id': q, 'state': 'completed'}})
     turnin['dependsOn'] = [objective['id'] if objective else accept['id']]
     checkpoint = {'id': prefix + '-level', 'kind': 'note', 'checkpointQuest': q,
-                  'text': f'Reach level {facts["level"]} before this visit.',
+                  'text': f'Reach level {facts["offer"]} before this visit.',
                   'conditions': {'all': [c for c in copy.deepcopy(conditions) if 'level' not in c]},
-                  'complete': {'level': {'min': facts['level']}}, 'requiredLevel': facts['level']}
+                  'complete': {'level': {'min': facts['offer']}}, 'requiredLevel': facts['offer']}
     if exclusion: checkpoint['excludeWhen'] = {'any': copy.deepcopy(exclusion)}
     if facts.get('breadcrumbForQuestId'): checkpoint['alternativeQuests'] = [facts['breadcrumbForQuestId']]
     accept['dependsOn'] = [checkpoint['id']]
@@ -202,6 +202,7 @@ def prepare(zone_spec, database, upstream, snapshot):
     if current:
         raw = {g.id: g.raw for g in parse_goals(path.read_text(), '', '', None)}
     added, sources_used, matches, placements = [], [], {}, []
+    removed = set()
     for faction in ('Alliance', 'Horde'):
         source_guides = [g for g in guides if g['category'] == 'Leveling Quest Guides'
                          and faction_of(g.get('conditions')) == faction]
@@ -362,17 +363,20 @@ def prepare(zone_spec, database, upstream, snapshot):
                     earlier = [n for n, _, action in selected if action['id'] == dep
                                and source_ordinals[n] < source_ordinals[node]]
                     target = earlier[-1] if earlier else None
-                # An identical earlier pickup already satisfies the observed quest state.
+                # A repeated quest can expose a later pickup or objective for the
+                # same quest in a merged source chapter. Reuse the earlier visit.
                 if target and source_ordinals[target] > source_ordinals[node]:
                     dependency = originals[target]
-                    if dependency.get('kind') == 'accept' and quest_id(dependency) == quest_id(goal):
-                        earlier_pickups = [n for n, original in originals.items()
+                    if dependency.get('kind') in ('accept', 'objective') and quest_id(dependency) == quest_id(goal):
+                        earlier_visits = [n for n, original in originals.items()
                             if source_ordinals[n] < source_ordinals[node]
-                            and original.get('kind') == 'accept'
+                            and original.get('kind') == dependency.get('kind')
                             and quest_id(original) == quest_id(goal)
+                            and original.get('complete') == dependency.get('complete')
                             and original.get('conditions') == goal.get('conditions')
-                            and original.get('complete', {}).get('quest', {}).get('state') == 'activeOrCompleted']
-                        if earlier_pickups: target = max(earlier_pickups, key=source_ordinals.get)
+                            and (dependency.get('kind') != 'accept'
+                                 or original.get('complete', {}).get('quest', {}).get('state') == 'activeOrCompleted')]
+                        if earlier_visits: target = max(earlier_visits, key=source_ordinals.get)
                 if target and target not in clone['dependsOn']: clone['dependsOn'].append(target)
             all_goals[node] = clone; added.append(node);faction_spine.append(node)
             if guide['id'] not in sources_used: sources_used.append(guide['id'])
@@ -381,6 +385,23 @@ def prepare(zone_spec, database, upstream, snapshot):
             for goal in build_actions(facts[q], faction):
                 all_goals[goal['id']] = goal;added.append(goal['id']);extra_ids.append(goal['id'])
         existing = [g['id'] for g in current_goals if faction_of(g.get('conditions')) in (None, faction)]
+        for node in existing:
+            goal = all_goals[node]
+            q = goal.get('checkpointQuest')
+            if '-extra-' in node and q in facts:
+                level = facts[q]['offer']
+                goal['text'] = f'Reach level {level} before this visit.'
+                goal['complete'] = {'level': {'min': level}}
+                goal['requiredLevel'] = level
+                raw.pop(node, None)
+        source_ids_present = {node for node, _, _ in source_actions}
+        guide_ids = {guide['id'] for guide in source_guides}
+        stale = {goal['id'] for goal in current_goals
+                 if goal.get('sourceGuide') in guide_ids
+                 and faction_of(goal.get('conditions')) in (None, faction)
+                 and faction.lower() + '-' + goal['sourceGuide'] + '-' + goal.get('sourceActionID', '') not in source_ids_present}
+        removed.update(stale)
+        existing = [node for node in existing if node not in stale]
         movable = [n for n in existing if quest_id(all_goals[n]) in facts
                    and quest_id(all_goals[n]) not in casual_quests
                    and (('-extra-' in n) or (not facts[quest_id(all_goals[n])]['forever']
@@ -471,13 +492,32 @@ def prepare(zone_spec, database, upstream, snapshot):
         # Casual chapter bands to keep higher recommendations in later returns.
         bands_path = ROOT / 'tests/fixtures/reference_bands.json'
         bands = json.loads(bands_path.read_text()) if bands_path.exists() else {}
+        prerequisite_pickups = {}
+        for node in active:
+            goal = all_goals[node]
+            if goal.get('kind') != 'accept': continue
+            q = quest_id(goal)
+            for group in goal.get('requiredQuests') or requirements.get(q, []):
+                for parent in group['quests']:
+                    prerequisite_pickups.setdefault(parent, []).append(node)
+            for parent, parent_turnins in turnins.items():
+                if any(turnin in predecessors[node] for turnin in parent_turnins):
+                    prerequisite_pickups.setdefault(parent, []).append(node)
         for node in extra_ids:
             goal = all_goals[node];q = quest_id(goal)
             if goal['kind'] != 'accept': continue
             level = facts[q]['level']
             visits = [(n,bands.get(all_goals[n].get('sourceGuide'))) for n in active]
-            anchor = next((n for n,band in visits if band and band['max'] >= level), None)
-            if anchor is None and active: anchor = active[-1]
+            dependent_pickups = prerequisite_pickups.get(q, [])
+            if dependent_pickups:
+                first_pickup = min(dependent_pickups, key=active.index)
+                pickup_index = active.index(first_pickup)
+                anchor = active[pickup_index - 1] if pickup_index else None
+                for pickup in dependent_pickups:
+                    predecessors[pickup].extend(turnins.get(q, []))
+            else:
+                anchor = next((n for n,band in visits if band and band['max'] >= level), None)
+                if anchor is None and active: anchor = active[-1]
             if anchor:
                 predecessors[node].append(anchor)
                 checkpoint = next((n for n in extra_ids if all_goals[n].get('checkpointQuest') == q), None)
@@ -494,7 +534,7 @@ def prepare(zone_spec, database, upstream, snapshot):
         if not current:
             current_goals.extend(all_goals[n] for n in order)
         else:
-            replaced = set(nodes)
+            replaced = set(nodes) | removed
             first = next((i for i,g in enumerate(current_goals) if g['id'] in replaced), len(current_goals))
             remaining = [g for g in current_goals if g['id'] not in replaced]
             current_goals = remaining[:first] + [all_goals[n] for n in order] + remaining[first:]
@@ -509,25 +549,28 @@ def prepare(zone_spec, database, upstream, snapshot):
         return {k: ([without_level(c) for c in value if not (isinstance(c, dict) and set(c) == {'level'})]
                     if k in ('all', 'any') else without_level(value))
                 for k, value in condition.items() if k != 'level'}
-    visits = set()
-    for goal in list(current_goals):
+    visits = []
+    for goal in current_goals:
         source = goal.get('sourceGuide')
-        if not source or source in visits: continue
-        visits.add(source)
+        if source and source not in visits: visits.append(source)
+    for source in visits:
         original = next(g for g in guides if g['id'] == source)
         condition = original.get('conditions', {})
         levels = [condition.get('level', {}).get('min', 1)]
         levels.extend(c.get('level', {}).get('min', 1) for c in condition.get('all', []))
         level = max(levels)
         node = 'visit-entry-' + source
-        if level <= 1 or any(g['id'] == node for g in current_goals): continue
+        prior = next((g for g in current_goals if g['id'] == node), None)
+        current_goals = [g for g in current_goals if g['id'] != node]
+        if level <= 1: continue
         actor = without_level(condition)
         entry = {'id': node, 'kind': 'note', 'visitSourceGuide': source,
                  'text': f'Reach level {level} before the {original.get("title", source)} visit.',
                  'conditions': actor, 'excludeWhen': {'not': actor},
                  'complete': {'level': {'min': level}}, 'requiredLevel': level}
-        current_goals.insert(current_goals.index(goal), entry)
-        added.append(node)
+        first_action = next((i for i, g in enumerate(current_goals) if g.get('sourceGuide') == source), len(current_goals))
+        current_goals.insert(first_action, entry)
+        if prior is None: added.append(node)
     authored = {quest_id(g) for g in current_goals if g.get('kind') == 'accept'}
     for q in authored:
         entry = audit['quests'].get(str(q))
