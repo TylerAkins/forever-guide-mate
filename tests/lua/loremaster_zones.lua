@@ -2,6 +2,7 @@ local ns = {}
 for path in io.lines('ForeverGuideMate.toc') do
     if path:match('%.lua$') then assert(loadfile(path))('FGM', ns) end
 end
+local guideData = dofile('tests/lua/guide_data_checks.lua')
 local serialize = dofile('tools/loremaster_parity.lua').Serialize
 local sourcePositions, sourceGoals, ordinal = {}, {}, 0
 for _, id in ipairs(ns.guideOrder) do
@@ -28,7 +29,7 @@ end
 for _, id in ipairs(ns.guideOrder) do
     local guide = ns.guides[id]
     if guide.category == 'Loremaster Guides' then
-        local previous = {}
+        local previous, questActions = {}, {}
         local pickups, finishes = {Alliance={},Horde={}}, {Alliance={},Horde={}}
         for i, goal in ipairs(guide.goals) do
             local quest = ns.Engine:GetGoalQuestID(goal)
@@ -48,6 +49,10 @@ for _, id in ipairs(ns.guideOrder) do
                     check(serialize(goal[field]) == serialize(original[field]), id .. ' preserves source ' .. field .. ': ' .. goal.id)
                 end
             end
+            if quest and (goal.kind=='accept' or goal.kind=='turnin') then
+                questActions[quest] = questActions[quest] or {}
+                questActions[quest][#questActions[quest]+1] = {index=i,goal=goal}
+            end
             for _,faction in ipairs(factions(goal)) do
                 if goal.kind == 'accept' then pickups[faction][quest] = pickups[faction][quest] or i end
                 if goal.kind == 'turnin' then finishes[faction][quest] = finishes[faction][quest] or i end
@@ -64,8 +69,21 @@ for _, id in ipairs(ns.guideOrder) do
                 for _,faction in ipairs(factions(goal)) do
                 local pickups,finishes=pickups[faction],finishes[faction]
                 if goal.kind == 'objective' then
-                    check(pickups[quest] and pickups[quest] < i, id .. ' picks up before objectives: ' .. goal.id)
-                    check(finishes[quest] and i < finishes[quest], id .. ' completes objectives before returning: ' .. goal.id)
+                    local pickup, priorReturn, nextReturn
+                    local branch={conditions={all={goal.conditions or {},{faction=faction}}}}
+                    for _, entry in ipairs(questActions[quest] or {}) do
+                        if guideData.ActionsOverlap(branch,entry.goal,ns.EvaluateCondition) then
+                            if entry.goal.kind=='accept' and entry.index<i then pickup=entry.index end
+                            if entry.goal.kind=='turnin' then
+                                if entry.index<i then priorReturn=entry.index
+                                elseif not nextReturn then nextReturn=entry.index end
+                            end
+                        end
+                    end
+                    check(pickup and pickup < i, id .. ' picks up before objectives: ' .. goal.id)
+                    check(nextReturn and i < nextReturn, id .. ' completes objectives before returning: ' .. goal.id)
+                    check(not priorReturn or pickup and priorReturn<pickup,
+                        id .. ' starts a new pickup after the prior return: ' .. goal.id)
                 end
                 if goal.kind == 'accept' then
                     for _, group in ipairs(goal.requiredQuests or {}) do

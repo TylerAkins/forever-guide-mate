@@ -3,6 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.6.4 - 2026-10-18
+- Add Dustwallow Marsh Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Desolace Loremaster and keep the optional Corrupter drop chain from blocking Casual.
 - Add Thousand Needles Loremaster with recorded Forever evidence and advisory legacy ordering.
 - Add Ashenvale Loremaster with recorded Forever evidence and advisory legacy ordering.

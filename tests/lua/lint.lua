@@ -103,6 +103,7 @@ for _, path in ipairs({
     "Guides/Loremaster/Ashenvale.lua",
     "Guides/Loremaster/ThousandNeedles.lua",
     "Guides/Loremaster/Desolace.lua",
+    "Guides/Loremaster/DustwallowMarsh.lua",
     "Guides/Loremaster/ZephrasIsle.lua",
     "Guides/Loremaster/TirisfalGlades.lua",
     "Guides/Loremaster/Mulgore.lua",
@@ -447,20 +448,33 @@ for _, guideID in ipairs(ns.guideOrder) do
         end
     end
 
-    local objectivesByQuest = {}
-    for _, goal in ipairs(guide.goals) do
+    local objectivesByQuest, actionPositions = {}, {}
+    for index, goal in ipairs(guide.goals) do
+        actionPositions[goal.id] = index
         local spec = QuestObjectiveSpec(goal)
         if spec and type(spec.id) == "number" then
             objectivesByQuest[spec.id] = objectivesByQuest[spec.id] or {}
             objectivesByQuest[spec.id][#objectivesByQuest[spec.id] + 1] = goal
         end
     end
-    for _, goal in ipairs(guide.goals) do
+    for index, goal in ipairs(guide.goals) do
         if goal.kind == "turnin" then
             local questID = guideData.AcceptQuestIDFromGoal(goal)
             for _, objective in ipairs(objectivesByQuest[questID] or {}) do
                 local objectiveID = objective.id
                 local found = not guideData.ActionsOverlap(goal, objective, ns.EvaluateCondition)
+                -- A matching later pickup begins a separate visit.
+                if actionPositions[objectiveID] > index then
+                    for nextIndex=index+1,actionPositions[objectiveID]-1 do
+                        local pickup=guide.goals[nextIndex]
+                        if pickup.kind=="accept" and guideData.AcceptQuestIDFromGoal(pickup)==questID
+                            and Serialize(pickup.conditions)==Serialize(goal.conditions)
+                            and Serialize(pickup.conditions)==Serialize(objective.conditions) then
+                            found=true
+                            break
+                        end
+                    end
+                end
                 for _, dependency in ipairs(goal.dependsOn or {}) do
                     if dependency == objectiveID then found = true end
                 end

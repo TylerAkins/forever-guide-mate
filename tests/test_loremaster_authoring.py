@@ -251,6 +251,20 @@ class ZonePreparationTests(unittest.TestCase):
         self.assertIn('20',audit['quests'])
         self.assertIn('30',audit['quests'])
 
+    def test_repeated_source_visit_does_not_wait_for_future_objectives(self):
+        from weave_loremaster import parse_goals
+        source=[]
+        for visit in ['first','later']:
+            for kind in ['accept','objective','turnin']:
+                source.append({'id':kind+'-10-'+visit,'kind':kind,'conditions':{'faction':'Horde'},
+                    'complete':{'quest':{'id':10,'state':'complete' if kind=='objective' else 'completed' if kind=='turnin' else 'activeOrCompleted'}},
+                    'dependsOn':['accept-10-'+visit] if kind!='accept' else []})
+        text,_=self.prepare({10:{}},source)
+        goals=parse_goals(text,'','',None)
+        returned=next(g for g in goals if g.id=='horde-leveling-source-turnin-10-first')
+        self.assertIn('horde-leveling-source-objective-10-first',returned.depends)
+        self.assertNotIn('horde-leveling-source-objective-10-later',returned.depends)
+
     def test_extracted_visit_retains_chapter_entry_level(self):
         from weave_loremaster import parse_goals, goal_field
         goal={'id':'accept-10','kind':'accept','conditions':{'faction':'Horde'},

@@ -410,11 +410,12 @@ def prepare(zone_spec, database, upstream, snapshot):
             goal = all_goals[node];q = quest_id(goal)
             if goal.get('kind') == 'turnin': turnins.setdefault(q, []).append(node)
             if goal.get('kind') == 'accept': accepts.setdefault(q, []).append(node)
+        positions = {node: index for index, node in enumerate(nodes)}
         for node in nodes:
             goal = all_goals[node]
             if goal.get('kind') == 'turnin':
                 work = [n for n in nodes if all_goals[n].get('kind') == 'objective'
-                        and quest_id(all_goals[n]) == quest_id(goal)]
+                        and quest_id(all_goals[n]) == quest_id(goal) and positions[n] < positions[node]]
                 goal['dependsOn'] = list(dict.fromkeys(list(goal.get('dependsOn') or []) + work))
                 if node in raw: raw.pop(node)
         predecessors = {node: [d for d in all_goals[node].get('dependsOn', []) if d in nodes] for node in nodes}

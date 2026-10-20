@@ -114,6 +114,53 @@ table.insert(goals,target+1,objective)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('completes objectives before returning: horde-extra-652-objective', result.stderr)
 
+    def test_repeated_visit_still_rejects_work_after_its_own_return(self):
+        import shutil
+        import subprocess
+        runner = shutil.which('lua5.1')
+        if not runner: self.skipTest('Lua 5.1 is required')
+        source = (ROOT / 'tests/lua/loremaster_zones.lua').read_text()
+        mutation = """local goals=ns.guides['loremaster-dustwallow-marsh'].goals
+local objective,target
+for i,g in ipairs(goals) do
+ if g.kind=='objective' and ns.Engine:GetGoalQuestID(g)==1324 then objective=table.remove(goals,i);break end
+end
+assert(objective)
+objective.sourceGuide=nil
+objective.id='alliance-extra-1324-objective'
+for i,g in ipairs(goals) do
+ if g.kind=='turnin' and ns.Engine:GetGoalQuestID(g)==1324 then target=i;break end
+end
+table.insert(goals,target+1,objective)
+"""
+        source=source.replace('local guideData =',mutation+'local guideData =',1)
+        result=subprocess.run([runner,'-'],input=source,text=True,capture_output=True,cwd=ROOT)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn('starts a new pickup after the prior return: alliance-extra-1324-objective',result.stderr)
+
+    def test_repeated_visit_lint_still_requires_its_own_objective_dependency(self):
+        import shutil
+        import subprocess
+        runner=shutil.which('lua5.1')
+        if not runner: self.skipTest('Lua 5.1 is required')
+        source=(ROOT / 'tests/lua/lint.lua').read_text()
+        mutation="""for _,goal in ipairs(ns.guides['loremaster-dustwallow-marsh'].goals) do
+ if goal.kind=='turnin' and ns.Engine:GetGoalQuestID(goal)==1324 then
+  local dependencies={}
+  for _,dependency in ipairs(goal.dependsOn or {}) do
+   if not dependency:find('objective-1324-1-private-hendel',1,true) then dependencies[#dependencies+1]=dependency end
+  end
+  goal.dependsOn=dependencies
+  break
+ end
+end
+"""
+        marker='for _, guideID in ipairs(ns.guideOrder) do'
+        source=source.replace(marker,mutation+marker,1)
+        result=subprocess.run([runner,'-'],input=source,text=True,capture_output=True,cwd=ROOT)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn('must dependOn objective alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1324-1-private-hendel',result.stderr)
+
     def test_dun_morogh_ownership_and_prerequisite_evidence(self):
         audit = json.loads((ROOT / 'docs/loremaster/dun-morogh.json').read_text())
         quests = audit['quests']

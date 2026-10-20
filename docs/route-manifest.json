@@ -168285,5 +168285,1569 @@
         ]
       }
     ]
+  },
+  "loremaster-dustwallow-marsh": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-duskwood-and-stranglethorn-vale",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-1274-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1453,
+          "Thomas"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1274-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1453,
+          "Bishop DeLavey"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1274-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1241-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1453,
+          "Jorgen"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1241-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1242-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1453,
+          "Elling Trias"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1242-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1243-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1243-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1244-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1431,
+          "Defias Docket"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1244-1-defias-docket"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1244-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1245-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1453,
+          "Elling Trias"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1245-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1246-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          88,
+          1453,
+          "Dashel Stonefist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1246-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1447-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1453,
+          "Dashel Stonefist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1447-1-dashel-stonefist"
+        ]
+      },
+      {
+        "boundary": [
+          90,
+          1453,
+          "Dashel Stonefist"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1447-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1247-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          91,
+          1453,
+          "Elling Trias"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1247-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1248-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          94,
+          1437,
+          "Vincent Hyal"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1302-james-hyal"
+        ]
+      },
+      {
+        "boundary": [
+          96,
+          1437,
+          "Mikhail"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1248-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1249-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Tapoke \"Slim\" Jahn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1249-1-tapoke-slim-jahn"
+        ]
+      },
+      {
+        "boundary": [
+          98,
+          1437,
+          "Mikhail"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1249-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          99,
+          1437,
+          "Tapoke \"Slim\" Jahn"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1250-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          100,
+          1437,
+          "Mikhail"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1250-the-missing-diplomat",
+          "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1264-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-level-before-accept-1135-highperch-venom"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1445,
+          "Fiora Longears"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1135-highperch-venom"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-level-before-accept-1282-they-call-him-smiling-jim"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1445,
+          "Guard Byron"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1282-they-call-him-smiling-jim"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1445,
+          "Clerk Lendry"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1302-james-hyal"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1445,
+          "Commander Samaul"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1264-the-missing-diplomat",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1265-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1445,
+          "Captain Garran Vimes"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1282-they-call-him-smiling-jim"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1445,
+          "Archmage Tervosh"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1265-the-missing-diplomat",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1266-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1445,
+          "Archmage Tervosh"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1265-the-missing-diplomat-2",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1266-the-missing-diplomat-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-level-before-accept-1218-soothing-spices"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1218-soothing-spices"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1218-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1218-soothing-spices"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1445,
+          "The Orc Report"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1219-the-orc-report"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1445,
+          "Private Hendel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1266-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1445,
+          "Private Hendel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1324-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1445,
+          "Private Hendel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1324-1-private-hendel"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1445,
+          "Archmage Tervosh"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1324-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1445,
+          "Lady Jaina Proudmoore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1267-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-level-before-accept-1177-hungry"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1445,
+          "Mudcrush Durtfeet"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1177-hungry"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1445,
+          "Suspicious Hoofprints"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1284-suspicious-hoofprints"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1445,
+          "Lieutenant Paval Reethe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1252-lieutenant-paval-reethe"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1445,
+          "The Black Shield"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1253-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1135-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1445,
+          "Fiora Longears"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1135-highperch-venom"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1445,
+          "Theramore Lieutenant"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1219-the-orc-report",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1220-captain-vimes"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1445,
+          "Captain Garran Vimes"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1220-captain-vimes",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1252-lieutenant-paval-reethe",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1259-lieutenant-paval-reethe",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1253-the-black-shield",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1319-the-black-shield",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1284-suspicious-hoofprints"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1445,
+          "Adjutant Tesoran"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1259-lieutenant-paval-reethe",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1285-daelin-s-men"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1445,
+          "Captain Garran Vimes"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1285-daelin-s-men"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1445,
+          "Caz Twosprocket"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1319-the-black-shield",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1320-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1445,
+          "Captain Garran Vimes"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1320-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1260-morgan-stern"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1453,
+          "Angus Stern"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1260-morgan-stern"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1453,
+          "Angus Stern"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1260-morgan-stern-2"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-dustwallow-marsh",
+          "alliance-leveling-era-alliance-dustwallow-marsh-level-before-accept-1286-the-deserters"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1445,
+          "Captain Garran Vimes"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1286-the-deserters"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-level-before-turnin-1260-morgan-stern"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1445,
+          "Morgan Stern"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1260-morgan-stern",
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1204-mudrock-soup-and-bugs"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1445,
+          "Mudrock Spikeshell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-objective-1204-1-mudrock-spikeshell"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-level-before-objective-1177-1-mirefin-coastrunner"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1445,
+          "Mirefin Coastrunner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-objective-1177-1-mirefin-coastrunner"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1206-jarl-needs-eyes"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1445,
+          "\"Stinky\" Ignatz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1222-stinky-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1445,
+          "Escort destination"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-objective-1222-reviewed-escort"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1445,
+          "Private Hendel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1324-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1445,
+          "Private Hendel"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-objective-1324-1-private-hendel"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1445,
+          "Archmage Tervosh"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1324-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1445,
+          "Lady Jaina Proudmoore"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1267-the-missing-diplomat"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1445,
+          "Darkmist Silkspinner"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-objective-1206-1-darkmist-silkspinner"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1206-jarl-needs-eyes",
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1203-jarl-needs-a-blade"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-objective-1203-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1203-jarl-needs-a-blade"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1445,
+          "Mudcrush Durtfeet"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1177-hungry"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1445,
+          "The Deserters"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1286-the-deserters",
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1287-the-deserters"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1445,
+          "Morgan Stern"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1204-mudrock-soup-and-bugs",
+          "alliance-leveling-era-alliance-dustwallow-marsh-accept-1258-and-bugs",
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1222-stinky-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1445,
+          "Captain Garran Vimes"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-turnin-1287-the-deserters"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1435,
+          "Pristine Crawler Leg"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1258-1-pristine-crawler-leg"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1445,
+          "Morgan Stern"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1258-and-bugs"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1133-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1445,
+          "Fiora Longears"
+        ],
+        "actions": [
+          "alliance-extra-1133-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-1133-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1440,
+          "Shindrell Swiftfire"
+        ],
+        "actions": [
+          "alliance-extra-1133-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-dustwallow-marsh",
+          "horde-leveling-era-horde-dustwallow-marsh-level-before-accept-1201-theramore-spies"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1445,
+          "Nazeer Bloodpike"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1201-theramore-spies"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1445,
+          "Suspicious Hoofprints"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1268-suspicious-hoofprints"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1445,
+          "Lieutenant Paval Reethe"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1269-lieutenant-paval-reethe"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1445,
+          "The Black Shield"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1251-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-level-before-accept-1177-hungry"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1445,
+          "Mudcrush Durtfeet"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1177-hungry"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1445,
+          "Krog"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1268-suspicious-hoofprints",
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1269-lieutenant-paval-reethe",
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1251-the-black-shield",
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1321-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1445,
+          "Do'gol"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1321-the-black-shield",
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1322-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1445,
+          "Theramore Infiltrator"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-objective-1201-1-theramore-infiltrator"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1445,
+          "\"Stinky\" Ignatz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1270-stinky-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1218-soothing-spices"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-objective-1218-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1218-soothing-spices"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1445,
+          "The Lost Report"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1238-the-lost-report"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1445,
+          "Mirefin Coastrunner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-objective-1177-1-mirefin-coastrunner"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1206-jarl-needs-eyes"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1445,
+          "Acidic Venom Sac"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-objective-1322-1-acidic-venom-sac"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1445,
+          "Darkmist Silkspinner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-objective-1206-1-darkmist-silkspinner"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1445,
+          "Nazeer Bloodpike"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1201-theramore-spies",
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1202-the-theramore-docks",
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1238-the-lost-report"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1445,
+          "Do'gol"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1322-the-black-shield",
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1323-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1445,
+          "Krog"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1323-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1445,
+          "Ogron"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1273-questioning-reethe"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1445,
+          "Mudcrush Durtfeet"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1177-hungry"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1445,
+          "Krog"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1273-questioning-reethe",
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1276-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1206-jarl-needs-eyes",
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1203-jarl-needs-a-blade"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-objective-1203-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1445,
+          "\"Swamp Eye\" Jarl"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1203-jarl-needs-a-blade"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1445,
+          "The Severed Head"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1239-the-severed-head"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1445,
+          "Captain's Footlocker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-objective-1202-1-captain-s-footlocker"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1445,
+          "Nazeer Bloodpike"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1202-the-theramore-docks",
+          "horde-leveling-era-horde-dustwallow-marsh-turnin-1239-the-severed-head",
+          "horde-leveling-era-horde-dustwallow-marsh-accept-1240-the-troll-witchdoctor"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-badlands"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1456,
+          "Mosarn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-1276-the-black-shield"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1456,
+          "Melor Stonehoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-accept-1205-deadmire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-turnin-1270-stinky-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1413,
+          "Mebok Mizzyrix"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1270-stinky-s-escape"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Kin'weelay"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1240-the-troll-witchdoctor"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1434,
+          "Marg Speaks"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1261-marg-speaks"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-dustwallow-marsh-part-2",
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-level-before-accept-1166-overlord-mok-morokk-s-concern"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1445,
+          "Overlord Mok'Morokk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-accept-1166-overlord-mok-morokk-s-concern"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1445,
+          "Draz'Zilb"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-accept-1169-identifying-the-brood"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1445,
+          "Tharg"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-accept-1168-army-of-the-black-dragon"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1205-1-deadmire"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1445,
+          "Muckshell Razorclaw"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1261-1-muckshell-razorclaw"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1445,
+          "Mok'Morokk's Grog"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1166-2-mok-morokk-s-grog"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1445,
+          "Mok'Morokk's Strongbox"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1166-3-mok-morokk-s-strongbox"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1445,
+          "Firemane Scalebane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1168-3-firemane-scalebane"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1445,
+          "Firemane Ash Tail"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1168-2-firemane-ash-tail"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1445,
+          "Firemane Scout"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1168-1-firemane-scout"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1445,
+          "Searing Tongue"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1169-1-searing-tongue"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1445,
+          "Searing Heart"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1169-2-searing-heart"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1445,
+          "Draz'Zilb"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-turnin-1169-identifying-the-brood"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          1445,
+          "Draz'Zilb"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-accept-1170-the-brood-of-onyxia"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1445,
+          "Tharg"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-turnin-1168-army-of-the-black-dragon"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1445,
+          "Overlord Mok'Morokk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-turnin-1166-overlord-mok-morokk-s-concern",
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-turnin-1170-the-brood-of-onyxia",
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-accept-1171-the-brood-of-onyxia"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1445,
+          "Draz'Zilb"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-turnin-1171-the-brood-of-onyxia"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1445,
+          "Nazeer Bloodpike"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-turnin-1261-marg-speaks",
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-accept-1262-report-to-zor"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1454,
+          "Zor Lonetree"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-turnin-1262-report-to-zor",
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-accept-7541-service-to-the-horde"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-feralas"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-objective-1205-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1456,
+          "Melor Stonehoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-feralas-turnin-1205-deadmire"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-tanaris-and-dustwallow-marsh"
+        ]
+      },
+      {
+        "boundary": [
+          66,
+          1445,
+          "Draz'Zilb"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-1172-the-brood-of-onyxia"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1445,
+          "The Brood of Onyxia"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-objective-1172-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          69,
+          1445,
+          "Draz'Zilb"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-1172-the-brood-of-onyxia"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1445,
+          "Overlord Mok'Morokk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-1173-challenge-overlord-mok-morokk"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1445,
+          "Draz'Zilb"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-1173-challenge-overlord-mok-morokk"
+        ]
+      }
+    ]
   }
 }
