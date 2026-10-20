@@ -163825,5 +163825,2342 @@
         ]
       }
     ]
+  },
+  "loremaster-thousand-needles": {
+    "revision": 1,
+    "visits": [
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-level-before-accept-1179-the-brassbolts-brothers"
+        ]
+      },
+      {
+        "boundary": [
+          72,
+          1455,
+          "Pilot Longbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1179-the-brassbolts-brothers"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1100-lonebrow-s-journal"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1444,
+          "Falfindel Waywarder"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1100-lonebrow-s-journal"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1110-rocket-car-parts"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1104-salt-flat-venom"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1441,
+          "Wizzle Brassbolts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1179-the-brassbolts-brothers",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1105-hardened-shells"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1176-load-lightening"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1441,
+          "Trackmaster Zherin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1175-a-bump-in-the-road"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1441,
+          "Saltstone Gazer"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1175-3-saltstone-gazer"
+        ]
+      },
+      {
+        "boundary": [
+          35,
+          1441,
+          "Salt Flats Scavenger"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1176-1-salt-flats-scavenger"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1441,
+          "Hardened Tortoise Shell"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1105-1-hardened-tortoise-shell"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1441,
+          "Salty Scorpid Venom"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1104-1-salty-scorpid-venom"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1441,
+          "Saltstone Basilisk"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1175-1-saltstone-basilisk"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1441,
+          "Saltstone Crystalhide"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1175-2-saltstone-crystalhide"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1441,
+          "Rocket Car Parts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-objective-1110-1-rocket-car-parts"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1110-rocket-car-parts",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1111-wharfmaster-dizzywig",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-5762-hemet-nesingwary-jr"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1104-salt-flat-venom"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1441,
+          "Wizzle Brassbolts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1105-hardened-shells"
+        ]
+      },
+      {
+        "boundary": [
+          44,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1176-load-lightening",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1178-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1441,
+          "Trackmaster Zherin"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1175-a-bump-in-the-road"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1413,
+          "Gazlowe"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1178-goblin-sponsorship",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1180-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          61,
+          1413,
+          "Wharfmaster Dizzywig"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1111-wharfmaster-dizzywig",
+          "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1112-parts-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale",
+          "alliance-leveling-era-alliance-stranglethorn-vale-level-before-turnin-1180-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1434,
+          "Wharfmaster Lozgil"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1180-goblin-sponsorship",
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-1181-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1181-goblin-sponsorship",
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-1182-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1434,
+          "Hemet Nesingwary"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-5762-hemet-nesingwary"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Foreman Cozzle"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-1182-1-foreman-cozzle"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1434,
+          "Cozzle's Footlocker"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-objective-1182-prepared-result"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1182-goblin-sponsorship",
+          "alliance-leveling-era-alliance-stranglethorn-vale-accept-1183-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-desolace"
+        ]
+      },
+      {
+        "boundary": [
+          54,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1112-parts-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-1114-delivery-to-the-gnomes"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1114-delivery-to-the-gnomes"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-accept-1115-the-rumormonger"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1183-goblin-sponsorship",
+          "alliance-leveling-era-alliance-desolace-accept-1186-the-eighteenth-pilot"
+        ]
+      },
+      {
+        "boundary": [
+          59,
+          1441,
+          "Razzeric"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-turnin-1186-the-eighteenth-pilot",
+          "alliance-leveling-era-alliance-desolace-accept-1187-razzeric-s-tweaking"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-2",
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-level-before-turnin-1115-the-rumormonger"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-1115-the-rumormonger"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-1116-dream-dust-in-the-swamp"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows",
+          "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-objective-1116-1-adolescent-whelp"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1435,
+          "Adolescent Whelp"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1435,
+          "Adolescent Whelp"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp-2"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1117-rumors-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-dustwallow-marsh"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1445,
+          "Razzeric's Tweaking"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-dustwallow-marsh-objective-1187-1-seaforium-booster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-desolace-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-turnin-1117-rumors-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-level-before-accept-1118-back-to-booty-bay"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-accept-1118-back-to-booty-bay"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-accept-1106-martek-the-exiled"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1445,
+          "Razzeric's Tweaking"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-objective-1187-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1441,
+          "Razzeric"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-desolace-part-2-turnin-1187-razzeric-s-tweaking",
+          "alliance-leveling-era-alliance-desolace-part-2-accept-1188-safety-first"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-badlands"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1418,
+          "Martek the Exiled"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-1106-martek-the-exiled",
+          "alliance-leveling-era-alliance-badlands-accept-1108-indurium"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1418,
+          "Indurium Flake"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-objective-1108-1-indurium-flake"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1418,
+          "Martek the Exiled"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-turnin-1108-indurium"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1418,
+          "Martek the Exiled"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-badlands-accept-1137-news-for-fizzle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-1118-back-to-booty-bay"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-621-zanzil-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1434,
+          "Zanzil's Mixture"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-objective-621-1-zanzil-s-mixture"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-621-zanzil-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1119-zanzil-s-mixture-and-a-fool-s-stout"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-tanaris",
+          "alliance-leveling-era-alliance-tanaris-level-before-turnin-1188-safety-first"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1446,
+          "Shreev"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-turnin-1188-safety-first",
+          "alliance-leveling-era-alliance-tanaris-accept-1189-safety-first"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-level-before-turnin-1119-zanzil-s-mixture-and-a-fool-s-stout"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-turnin-1119-zanzil-s-mixture-and-a-fool-s-stout"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-accept-1120-get-the-gnomes-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1441,
+          "Gnome Pit Boss"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-turnin-1120-get-the-gnomes-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-accept-1122-report-back-to-fizzlebub"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-turnin-1137-news-for-fizzle"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-accept-1190-keeping-pace"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1441,
+          "Razzeric"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-turnin-1189-safety-first"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1441,
+          "Zamek"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-accept-1191-zamek-s-distraction"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1441,
+          "Keeping Pace"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-turnin-1190-keeping-pace"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1441,
+          "Rizzle's Schematics"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-accept-1194-rizzle-s-schematics"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-tanaris-turnin-1194-rizzle-s-schematics"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-alliance-stranglethorn-vale-part-4"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-1122-report-back-to-fizzlebub"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-the-barrens",
+          "horde-leveling-era-horde-the-barrens-level-before-accept-1195-the-sacred-flame"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1456,
+          "Zangen Stonehoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-the-barrens-accept-1195-the-sacred-flame"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-ashenvale-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1440,
+          "Etched Phial"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-objective-1195-1-etched-phial"
+        ]
+      },
+      {
+        "boundary": [
+          76,
+          1456,
+          "Zangen Stonehoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-ashenvale-part-2-turnin-1195-the-sacred-flame",
+          "horde-leveling-era-horde-ashenvale-part-2-accept-1196-the-sacred-flame"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-thousand-needles"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1441,
+          "Brave Moonhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-4542-message-to-freewind-post"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1441,
+          "Elu"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-4767-wind-rider"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1441,
+          "Hagar Lightninghoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-4821-alien-egg"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1441,
+          "Cliffwatcher Longhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-4542-message-to-freewind-post",
+          "horde-leveling-era-horde-thousand-needles-accept-4841-pacify-the-centaur"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1441,
+          "Rau Cliffrunner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-1196-the-sacred-flame",
+          "horde-leveling-era-horde-thousand-needles-accept-1197-the-sacred-flame"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1441,
+          "Cloven Hoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-1197-1-cloven-hoof"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1441,
+          "Galak Windchaser"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-4841-3-galak-windchaser"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1441,
+          "Galak Wrangler"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-4841-2-galak-wrangler"
+        ]
+      },
+      {
+        "boundary": [
+          11,
+          1441,
+          "Galak Scout"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-4841-1-galak-scout"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1441,
+          "Dorn Plainstalker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-1149-test-of-faith"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1441,
+          "Dorn Plainstalker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-1149-test-of-faith"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1441,
+          "Alien Egg"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-4821-1-alien-egg"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1441,
+          "Hagar Lightninghoof"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-4821-alien-egg",
+          "horde-leveling-era-horde-thousand-needles-accept-4865-serpent-wild"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1441,
+          "Cliffwatcher Longhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-4841-pacify-the-centaur"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1441,
+          "Rau Cliffrunner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-1197-the-sacred-flame"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1441,
+          "Pao'ka Swiftmountain"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-4770-homeward-bound"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1441,
+          "Motega Firemane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-4770-homeward-bound",
+          "horde-leveling-era-horde-thousand-needles-turnin-4865-serpent-wild",
+          "horde-leveling-era-horde-thousand-needles-accept-5062-sacred-fire"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-4881-assassination-plot"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-4881-assassination-plot-2"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1441,
+          "Kanati Greycloud"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-4881-assassination-plot",
+          "horde-leveling-era-horde-thousand-needles-accept-4966-protect-kanati-greycloud"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-4966-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          31,
+          1441,
+          "Kanati Greycloud"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-4966-protect-kanati-greycloud"
+        ]
+      },
+      {
+        "boundary": [
+          32,
+          1441,
+          "Incendia Agave"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-5062-1-incendia-agave"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1456,
+          "Magatha Grimtotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-5062-sacred-fire",
+          "horde-leveling-era-horde-thousand-needles-accept-5088-arikara"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-4767-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          37,
+          1441,
+          "Elu"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-4767-wind-rider"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1441,
+          "Cliffwatcher Longhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-5064-grimtotem-spying"
+        ]
+      },
+      {
+        "boundary": [
+          39,
+          1441,
+          "Wanted - Arnak Grimtotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-5147-wanted-arnak-grimtotem"
+        ]
+      },
+      {
+        "boundary": [
+          42,
+          1441,
+          "Secret Note #2"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-5064-2-secret-note-2"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1441,
+          "Secret Note #1"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-5064-1-secret-note-1"
+        ]
+      },
+      {
+        "boundary": [
+          45,
+          1441,
+          "Arikara"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-5088-1-arikara"
+        ]
+      },
+      {
+        "boundary": [
+          46,
+          1441,
+          "Arnak Grimtotem"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-5147-1-arnak-grimtotem"
+        ]
+      },
+      {
+        "boundary": [
+          47,
+          1441,
+          "Lakota Windsong"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-4904-free-at-last"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1441,
+          "Motega Firemane"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-5088-arikara"
+        ]
+      },
+      {
+        "boundary": [
+          50,
+          1441,
+          "Wizlo Bearingshiner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-5151-hypercapacitor-gizmo"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1441,
+          "Enraged Panther"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-objective-5151-1-enraged-panther"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1441,
+          "Wizlo Bearingshiner"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-5151-hypercapacitor-gizmo"
+        ]
+      },
+      {
+        "boundary": [
+          55,
+          1441,
+          "Cliffwatcher Longhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-5064-grimtotem-spying",
+          "horde-leveling-era-horde-thousand-needles-turnin-5147-wanted-arnak-grimtotem"
+        ]
+      },
+      {
+        "boundary": [
+          57,
+          1441,
+          "Thalia Amberhide"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-4904-free-at-last"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-level-before-accept-1111-wharfmaster-dizzywig"
+        ]
+      },
+      {
+        "boundary": [
+          58,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-1111-wharfmaster-dizzywig"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-level-before-accept-1145-the-swarm-grows"
+        ]
+      },
+      {
+        "boundary": [
+          64,
+          1413,
+          "Korran"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-accept-1145-the-swarm-grows"
+        ]
+      },
+      {
+        "boundary": [
+          65,
+          1413,
+          "Wharfmaster Dizzywig"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-1111-wharfmaster-dizzywig",
+          "horde-leveling-era-horde-thousand-needles-accept-1112-parts-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          78,
+          1454,
+          "Belgrom Rockmaul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-turnin-1145-the-swarm-grows",
+          "horde-leveling-era-horde-thousand-needles-accept-1146-the-swarm-grows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-thousand-needles-part-2",
+          "horde-leveling-era-horde-thousand-needles-part-2-level-before-turnin-1146-the-swarm-grows"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1441,
+          "Moktar Krin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1146-the-swarm-grows",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1147-the-swarm-grows"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-level-before-turnin-1112-parts-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1112-parts-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1110-rocket-car-parts",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1114-delivery-to-the-gnomes"
+        ]
+      },
+      {
+        "boundary": [
+          6,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1114-delivery-to-the-gnomes",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1104-salt-flat-venom"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1115-the-rumormonger"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1441,
+          "Wizzle Brassbolts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1105-hardened-shells"
+        ]
+      },
+      {
+        "boundary": [
+          9,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1176-load-lightening"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1441,
+          "Trackmaster Zherin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1175-a-bump-in-the-road"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1441,
+          "Silithid Invader"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1147-3-silithid-invader"
+        ]
+      },
+      {
+        "boundary": [
+          13,
+          1441,
+          "Silithid Searcher"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1147-1-silithid-searcher"
+        ]
+      },
+      {
+        "boundary": [
+          14,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1148-parts-of-the-swarm"
+        ]
+      },
+      {
+        "boundary": [
+          15,
+          1441,
+          "Silithid Hive Drone"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1147-2-silithid-hive-drone"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1441,
+          "Silithid Heart"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1148-1-silithid-heart"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1441,
+          "Intact Silithid Carapace"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1148-3-intact-silithid-carapace"
+        ]
+      },
+      {
+        "boundary": [
+          16,
+          1441,
+          "Silithid Talon"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1148-2-silithid-talon"
+        ]
+      },
+      {
+        "boundary": [
+          17,
+          1441,
+          "Saltstone Gazer"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1175-3-saltstone-gazer"
+        ]
+      },
+      {
+        "boundary": [
+          18,
+          1441,
+          "Salt Flats Scavenger"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1176-1-salt-flats-scavenger"
+        ]
+      },
+      {
+        "boundary": [
+          19,
+          1441,
+          "Hardened Tortoise Shell"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1105-1-hardened-tortoise-shell"
+        ]
+      },
+      {
+        "boundary": [
+          20,
+          1441,
+          "Salty Scorpid Venom"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1104-1-salty-scorpid-venom"
+        ]
+      },
+      {
+        "boundary": [
+          21,
+          1441,
+          "Saltstone Basilisk"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1175-1-saltstone-basilisk"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1441,
+          "Saltstone Crystalhide"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1175-2-saltstone-crystalhide"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1441,
+          "Rocket Car Parts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-objective-1110-1-rocket-car-parts"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1441,
+          "Moktar Krin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1147-the-swarm-grows"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1110-rocket-car-parts",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-5762-hemet-nesingwary-jr"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1104-salt-flat-venom"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1441,
+          "Wizzle Brassbolts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1105-hardened-shells"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1106-martek-the-exiled"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1176-load-lightening",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1178-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          30,
+          1441,
+          "Trackmaster Zherin"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1175-a-bump-in-the-road"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-level-before-accept-5361-family-tree"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1441,
+          "Cliffwatcher Longhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-5361-family-tree"
+        ]
+      },
+      {
+        "boundary": [
+          34,
+          1413,
+          "Korran"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1148-parts-of-the-swarm",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1184-parts-of-the-swarm"
+        ]
+      },
+      {
+        "boundary": [
+          36,
+          1413,
+          "Gazlowe"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1178-goblin-sponsorship",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1180-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          38,
+          1434,
+          "Wharfmaster Lozgil"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1180-goblin-sponsorship",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1181-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          41,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1115-the-rumormonger"
+        ]
+      },
+      {
+        "boundary": [
+          43,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1181-goblin-sponsorship",
+          "horde-leveling-era-horde-thousand-needles-part-2-accept-1182-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1454,
+          "Belgrom Rockmaul"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-thousand-needles-part-2-turnin-1184-parts-of-the-swarm"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-desolace",
+          "horde-leveling-era-horde-desolace-level-before-turnin-5361-family-tree"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1443,
+          "Nataka Longhorn"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-desolace-turnin-5361-family-tree"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale",
+          "horde-leveling-era-horde-stranglethorn-vale-level-before-turnin-5762-hemet-nesingwary-jr"
+        ]
+      },
+      {
+        "boundary": [
+          8,
+          1434,
+          "Hemet Nesingwary Jr."
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-5762-hemet-nesingwary-jr"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1434,
+          "Foreman Cozzle"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-1182-1-foreman-cozzle"
+        ]
+      },
+      {
+        "boundary": [
+          48,
+          1434,
+          "Cozzle's Footlocker"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-objective-1182-prepared-result"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-turnin-1182-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-badlands"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1418,
+          "Martek the Exiled"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-1106-martek-the-exiled",
+          "horde-leveling-era-horde-badlands-accept-1108-indurium"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1418,
+          "Stonevault Shaman"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-objective-1108-1-stonevault-shaman"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1418,
+          "Martek the Exiled"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-turnin-1108-indurium"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1418,
+          "Martek the Exiled"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-badlands-accept-1137-news-for-fizzle"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1116-dream-dust-in-the-swamp"
+        ]
+      },
+      {
+        "boundary": [
+          33,
+          1435,
+          "Adolescent Whelp"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1116-1-adolescent-whelp"
+        ]
+      },
+      {
+        "boundary": [
+          51,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp"
+        ]
+      },
+      {
+        "boundary": [
+          52,
+          1434,
+          "Krazek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1117-rumors-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          53,
+          1434,
+          "Baron Revilgaz"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1183-goblin-sponsorship"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-tanaris"
+        ]
+      },
+      {
+        "boundary": [
+          22,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-turnin-1117-rumors-for-kravel"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-accept-1118-back-to-booty-bay"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1441,
+          "Fizzle Brassbolts"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-turnin-1137-news-for-fizzle"
+        ]
+      },
+      {
+        "boundary": [
+          25,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-turnin-1183-goblin-sponsorship",
+          "horde-leveling-era-horde-tanaris-accept-1186-the-eighteenth-pilot",
+          "horde-leveling-era-horde-tanaris-accept-1190-keeping-pace"
+        ]
+      },
+      {
+        "boundary": [
+          26,
+          1441,
+          "Razzeric"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-turnin-1186-the-eighteenth-pilot",
+          "horde-leveling-era-horde-tanaris-accept-1187-razzeric-s-tweaking"
+        ]
+      },
+      {
+        "boundary": [
+          27,
+          1441,
+          "Zamek"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-accept-1191-zamek-s-distraction"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1441,
+          "Keeping Pace"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-turnin-1190-keeping-pace"
+        ]
+      },
+      {
+        "boundary": [
+          28,
+          1441,
+          "Rizzle's Schematics"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-accept-1194-rizzle-s-schematics"
+        ]
+      },
+      {
+        "boundary": [
+          29,
+          1441,
+          "Pozzik"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-turnin-1194-rizzle-s-schematics"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-dustwallow-marsh-part-2",
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-level-before-objective-1187-1-seaforium-booster"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1445,
+          "Razzeric's Tweaking"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-dustwallow-marsh-part-2-objective-1187-1-seaforium-booster"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-part-2",
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-level-before-turnin-1118-back-to-booty-bay"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-1118-back-to-booty-bay"
+        ]
+      },
+      {
+        "boundary": [
+          24,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-accept-621-zanzil-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          49,
+          1434,
+          "Zanzil's Mixture"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-objective-621-1-zanzil-s-mixture"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-part-2-turnin-621-zanzil-s-secret"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-swamp-of-sorrows",
+          "horde-leveling-era-horde-swamp-of-sorrows-level-before-accept-1119-zanzil-s-mixture-and-a-fool-s-stout"
+        ]
+      },
+      {
+        "boundary": [
+          23,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-swamp-of-sorrows-accept-1119-zanzil-s-mixture-and-a-fool-s-stout"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-tanaris-and-dustwallow-marsh",
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-level-before-turnin-1119-zanzil-s-mixture-and-a-fool-s-stout"
+        ]
+      },
+      {
+        "boundary": [
+          1,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-1119-zanzil-s-mixture-and-a-fool-s-stout"
+        ]
+      },
+      {
+        "boundary": [
+          2,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-1120-get-the-gnomes-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1441,
+          "Gnome Pit Boss"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-1120-get-the-gnomes-drunk"
+        ]
+      },
+      {
+        "boundary": [
+          4,
+          1441,
+          "Kravel Koalbeard"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-1122-report-back-to-fizzlebub"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1445,
+          "Razzeric's Tweaking"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-objective-1187-quest-work"
+        ]
+      },
+      {
+        "boundary": [
+          5,
+          1441,
+          "Razzeric"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-1187-razzeric-s-tweaking",
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-1188-safety-first"
+        ]
+      },
+      {
+        "boundary": [
+          7,
+          1446,
+          "Shreev"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-1188-safety-first"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2"
+        ]
+      },
+      {
+        "boundary": [
+          3,
+          1434,
+          "Crank Fizzlebub"
+        ],
+        "actions": [
+          "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-1122-report-back-to-fizzlebub"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-97985-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Calder Gray"
+        ],
+        "actions": [
+          "horde-extra-97985-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1441,
+          "Stormheart"
+        ],
+        "actions": [
+          "horde-extra-97985-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Calder Gray"
+        ],
+        "actions": [
+          "horde-extra-97985-turnin"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "horde-extra-98070-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1441,
+          "Jandia"
+        ],
+        "actions": [
+          "horde-extra-98070-accept"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1441,
+          "Screeching Harpy"
+        ],
+        "actions": [
+          "horde-extra-98070-objective"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1441,
+          "Jandia"
+        ],
+        "actions": [
+          "horde-extra-98070-turnin"
+        ]
+      }
+    ]
   }
 }
