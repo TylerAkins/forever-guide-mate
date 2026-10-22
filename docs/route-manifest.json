@@ -56111,7 +56111,7 @@
     ]
   },
   "leveling-era-durotar": {
-    "revision": 8,
+    "revision": 9,
     "visits": [
       {
         "boundary": [
@@ -56141,6 +56141,7 @@
         ],
         "actions": [
           "turnin-4641-your-place-in-the-world",
+          "woven-accept-97279-wayward-weapons",
           "accept-788-cutting-teeth"
         ]
       },
@@ -56151,7 +56152,18 @@
           "Mottled Boar"
         ],
         "actions": [
-          "objective-788-1-mottled-boar"
+          "objective-788-1-mottled-boar",
+          "woven-objective-97279-wayward-weapons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Kzan Thornslash"
+        ],
+        "actions": [
+          "woven-turnin-97279-wayward-weapons"
         ]
       },
       {
@@ -56664,36 +56676,6 @@
         ],
         "actions": [
           "turnin-6394-thazz-ril-s-pick"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1411,
-          "Gornek"
-        ],
-        "actions": [
-          "woven-accept-97279-wayward-weapons"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1411,
-          "Valley of Trials"
-        ],
-        "actions": [
-          "woven-objective-97279-wayward-weapons"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1411,
-          "Kzan Thornslash"
-        ],
-        "actions": [
-          "woven-turnin-97279-wayward-weapons"
         ]
       },
       {
@@ -115315,7 +115297,7 @@
     ]
   },
   "loremaster-durotar": {
-    "revision": 1,
+    "revision": 3,
     "visits": [
       {
         "boundary": [
@@ -115345,6 +115327,7 @@
         ],
         "actions": [
           "turnin-4641-your-place-in-the-world",
+          "woven-accept-97279-wayward-weapons",
           "accept-788-cutting-teeth"
         ]
       },
@@ -115355,7 +115338,18 @@
           "Mottled Boar"
         ],
         "actions": [
-          "objective-788-1-mottled-boar"
+          "objective-788-1-mottled-boar",
+          "woven-objective-97279-wayward-weapons"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1411,
+          "Kzan Thornslash"
+        ],
+        "actions": [
+          "woven-turnin-97279-wayward-weapons"
         ]
       },
       {
@@ -115868,36 +115862,6 @@
         ],
         "actions": [
           "turnin-6394-thazz-ril-s-pick"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1411,
-          "Gornek"
-        ],
-        "actions": [
-          "woven-accept-97279-wayward-weapons"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1411,
-          "Valley of Trials"
-        ],
-        "actions": [
-          "woven-objective-97279-wayward-weapons"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1411,
-          "Kzan Thornslash"
-        ],
-        "actions": [
-          "woven-turnin-97279-wayward-weapons"
         ]
       },
       {

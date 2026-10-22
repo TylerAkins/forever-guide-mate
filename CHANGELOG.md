@@ -2,6 +2,9 @@
 
 All notable changes to this project are documented here.
 
+## 0.7.2 - 2026-10-22
+- Move Wayward Weapons into the Durotar starter boar outing and allow all Horde races to take it at level 1.
+
 ## 0.7.1 - 2026-10-22
 - Source Loremaster quest facts and generated zone audits from the pinned QuestieDB artifact and Questie policy export.
 - Add QuestieDB baked-store and dynamic-correction exporters, validated Go readers, and source coverage tests.

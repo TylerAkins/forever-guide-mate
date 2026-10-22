@@ -301,8 +301,9 @@ for _, goalID in ipairs({ 'woven-accept-764-the-venture-co', 'woven-accept-765-s
     equal(ns.OrderedRoutes:Prerequisites(accept, snapshot), true, goalID .. ' unlocks after the caravan turn-in')
 end
 local starterVisits = {
-    { 'durotar', 2, 1, 'turnin-6394-thazz-ril-s-pick', {
-        'woven-accept-97279-wayward-weapons', 'woven-objective-97279-wayward-weapons', 'woven-turnin-97279-wayward-weapons' } },
+    { 'durotar', 2, 1, 'turnin-4641-your-place-in-the-world', {
+        'woven-accept-97279-wayward-weapons', 'accept-788-cutting-teeth', 'objective-788-1-mottled-boar',
+        'woven-objective-97279-wayward-weapons', 'woven-turnin-97279-wayward-weapons' } },
     { 'elwynn-forest', 1, 3, 'turnin-21-skirmish-at-echo-ridge', {
         'loot-starter-before-accept-91741-verified-pickup', 'accept-91741-verified-pickup', 'woven-turnin-91741-nibbled-on-book' } },
     { 'dun-morogh', 3, 7, 'turnin-3361-a-refugee-s-quandary', {
@@ -408,11 +409,24 @@ for _, completed in ipairs({ false, true }) do
     equal(ns.Engine.currentGoal.id, 'woven-turnin-860-sergra-darkthorn', 'active Sergra Darkthorn still turns in after Plainstrider Menace')
 end
 journey('leveling-era-durotar', state(2, 1, 'Horde'), {
-    'accept:4641', 'turnin:4641', 'accept:788', 'objective:788:1', 'accept:790',
-    'objective:790:1', 'turnin:790', 'accept:804', 'turnin:788', 'turnin:804' })
+    'accept:4641', 'turnin:4641', 'accept:97279', 'accept:788', 'objective:788:1',
+    'objective:97279', 'turnin:97279', 'accept:790', 'objective:790:1', 'turnin:790',
+    'accept:804', 'turnin:788', 'turnin:804' })
 journey('leveling-era-durotar', state(8, 9, 'Horde'), {
-    'accept:4641', 'accept:1485', 'turnin:4641', 'accept:788', 'objective:788:1',
-    'objective:1485:1', 'accept:790', 'objective:790:1', 'turnin:790' })
+    'accept:4641', 'accept:1485', 'turnin:4641', 'accept:97279', 'accept:788',
+    'objective:788:1', 'objective:97279', 'turnin:97279', 'objective:1485:1',
+    'accept:790', 'objective:790:1', 'turnin:790' })
+do
+    local guide = ns.guides['leveling-era-durotar']
+    local undead = state(5, 1, 'Horde')
+    local alliance = state(1, 1, 'Alliance')
+    for _, id in ipairs({ 'woven-accept-97279-wayward-weapons', 'woven-objective-97279-wayward-weapons',
+        'woven-turnin-97279-wayward-weapons' }) do
+        local goal = ns.Engine:GetGoal(guide, id)
+        equal(ns.OrderedRoutes:ExcludedAction(goal, undead), false, id .. ' is available to Horde races beyond Orcs and Trolls')
+        equal(ns.OrderedRoutes:ExcludedAction(goal, alliance), true, id .. ' remains Horde-only')
+    end
+end
 journey('leveling-era-elwynn-forest', state(1, 1, 'Alliance'), { 'accept:783', 'turnin:783', 'accept:7', 'accept:5261', 'turnin:5261', 'accept:33' })
 journey('leveling-era-elwynn-forest', state(1, 9, 'Alliance'), { 'accept:1598', 'objective:1598:1', 'turnin:1598', 'accept:783', 'turnin:783', 'accept:7' })
 for _, race in ipairs({ 3, 7 }) do journey('leveling-era-dun-morogh', state(race, 1, 'Alliance'), { 'accept:179', 'objective:179:1', 'turnin:179' }) end
