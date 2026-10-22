@@ -20,7 +20,7 @@ The 1–60 Casual spine lives in `Guides/Leveling/`. Weaving means inserting For
 7. When moving, re-gating, or retargeting steps on an existing chapter, follow [Editing an existing route](../../../docs/guide-authoring.md#editing-an-existing-route).
 8. Run the checks at the bottom.
 
-`tools/weave_loremaster.py` (`recommended_level`, `insert_quest`, `place_woven`) encodes placement helpers. Read its output before shipping.
+`internal/loremaster/levels.go` owns recommended-level, insertion, and woven-placement policy. Its Go tests cover placement boundaries; still review the resulting route before shipping.
 
 ## Capital pickups
 
@@ -58,14 +58,14 @@ Use the first rule that fits.
 
 ## Ship it
 
-- Keep the file in `Guides/Leveling/` and registered in `ForeverGuideMate.toc` / `tools/compile_addon.py` / lint / run / contracts.
+- Keep the file in `Guides/Leveling/` and registered in `ForeverGuideMate.toc` / addon compiler / lint / run / contracts.
 - Assert woven chains, split objectives, elite wording when needed, and omissions in the header.
 - Bump `VERSION` one patch and refresh `CHANGELOG.md` plus `RELEASE_NOTES.md` when shipping.
 
 ```sh
-python3 -m unittest discover -s tests
-lua5.1 tests/lua/run.lua
-lua5.1 tests/lua/lint.lua
-lua5.1 tests/lua/audit_accept_chains.lua
-python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
+go test ./...
+luajit -joff tests/lua/run.lua
+luajit -joff tests/lua/lint.lua
+luajit -joff tests/lua/audit_accept_chains.lua
+go run ./cmd/guide-release validate-notes --version "$(tr -d '[:space:]' < VERSION)"
 ```

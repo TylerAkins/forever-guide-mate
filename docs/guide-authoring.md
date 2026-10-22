@@ -42,7 +42,7 @@ The route remains quest-only: the supplied reference includes grind and level-up
 
 Loremaster guides use ordered zone itineraries. Retired guide selections migrate to an available Loremaster guide; their saved completion ledgers remain archived. See [zone-loremaster-guides.md](zone-loremaster-guides.md) for capital ownership and source selection.
 
-Run `python3 tools/loremaster_report.py` to inspect combined and character-specific pickup sets. Read [coverage and verification](loremaster-coverage.md) for source conflicts and walkthrough gaps.
+Run `go run ./cmd/loremaster-report` to inspect combined and character-specific pickup sets. Read [coverage and verification](loremaster-coverage.md) for source conflicts and walkthrough gaps.
 
 Record chapter visits and insertion points in `route-manifest.json`. `route-conversion-audit.json` records the pinned facts, removed imports, and exclusions. Legacy import and append tools refuse to overwrite ordered guides. Update an itinerary through explicit reviewed action positions.
 
@@ -144,7 +144,7 @@ If the client offers quest B only after quest A is turned in, the accept for B m
 
 ### Accept-only deferral
 
-An accept with no turn-in in the same chapter is allowed when the turn-in lives in a later chapter, dungeon, or class guide. `lua5.1 tests/lua/audit_accept_chains.lua` and `lint.lua` fail if an accept has **no turn-in in any shipped guide**. Instant/auto omits go in `OrphanAcceptAllowlist`. Same-chapter denylist remains `SameChapterTurninRequired`.
+An accept with no turn-in in the same chapter is allowed when the turn-in lives in a later chapter, dungeon, or class guide. `luajit -joff tests/lua/audit_accept_chains.lua` and `lint.lua` fail if an accept has **no turn-in in any shipped guide**. Instant/auto omits go in `OrphanAcceptAllowlist`. Same-chapter denylist remains `SameChapterTurninRequired`.
 
 ### Skip lineage (player Skip, not soft defer)
 
@@ -152,7 +152,7 @@ Casual and dungeon guides support hard **Skip** with a cascade confirm when depe
 
 ### Forever Casual Route composition
 
-`FinalizeGuides` merges non-starter `leveling-era-*` chapters into `leveling-casual-alliance` and `leveling-casual-horde` with `compactLibrary = true`. Starters stay individual library guides. The spine comes from `tools/import_classic_leveling.py`; Forever steps are woven afterward (`tools/port_forever_weaves.py` or the era-forever-weave skill). Casual is one flat route in the tracker (no zone chapter title); segments exist only for composition. Step `text` must say how to finish the objective (mob/object, until condition, item-start loot → use → accept).
+`FinalizeGuides` merges non-starter `leveling-era-*` chapters into `leveling-casual-alliance` and `leveling-casual-horde` with `compactLibrary = true`. Starters stay individual library guides. The spine comes from `go run ./cmd/import-classic-leveling`; Forever steps can be ported with `go run ./cmd/port-forever-weaves` or the era-forever-weave skill. Casual is one flat route in the tracker (no zone chapter title); segments exist only for composition. Step `text` must say how to finish the objective (mob/object, until condition, item-start loot → use → accept).
 
 ### When an accept may have no `dependsOn`
 
@@ -188,10 +188,10 @@ CI enforces known class-branch gates (`tests/lua/guide_data_checks.lua`).
 
 | Check | Command | What it catches |
 |--------|---------|----------------|
-| CI lint | `lua5.1 tests/lua/lint.lua` | Wrong objective quest ids, mismatched conditions, incomplete turn-in dependencies, registered prerequisite errors, and more |
-| Chain audit | `lua5.1 tests/lua/audit_accept_chains.lua` | Enforces registered prerequisite references (same rules as lint, quick standalone pass) |
-| Authored contracts | `lua5.1 tests/lua/authored.lua` | Category placement, priority removal, prerequisite pickup order, and retired Loremaster selection migration |
-| Class-branch turn-ins | part of `lua5.1 tests/lua/lint.lua` | Curated dual `dependsOn` rules (e.g. Burning Blade Medallion and Lazy Peons vs 792 and 1499) |
+| CI lint | `luajit -joff tests/lua/lint.lua` | Wrong objective quest ids, mismatched conditions, incomplete turn-in dependencies, registered prerequisite errors, and more |
+| Chain audit | `luajit -joff tests/lua/audit_accept_chains.lua` | Enforces registered prerequisite references (same rules as lint, quick standalone pass) |
+| Authored contracts | `luajit -joff tests/lua/authored.lua` | Category placement, priority removal, prerequisite pickup order, and retired Loremaster selection migration |
+| Class-branch turn-ins | part of `luajit -joff tests/lua/lint.lua` | Curated dual `dependsOn` rules (e.g. Burning Blade Medallion and Lazy Peons vs 792 and 1499) |
 | Quest giver audit | in game on gossip | Rewinds through a registered prerequisite or blocks with a diagnostic; it never silently skips (see `QuestAudit.lua`) |
 
 ### Data requiring manual review
@@ -214,18 +214,18 @@ If a giver does not offer an accept, do not add a skip workaround. Register and 
 ## Before you ship
 
 ```sh
-python3 -m unittest discover -s tests
-lua5.1 tests/lua/run.lua
-lua5.1 tests/lua/authored.lua
-lua5.1 tests/lua/ordered.lua
-lua5.1 tests/lua/catalog.lua
-FGM_FULL_MATRIX=1 lua5.1 tests/lua/journeys.lua
-FGM_DUNGEONS=1 lua5.1 tests/lua/journeys.lua
-FGM_LOREMASTER=1 lua5.1 tests/lua/journeys.lua
-lua5.1 tests/lua/ui.lua
-lua5.1 tests/lua/lint.lua
-lua5.1 tests/lua/audit_accept_chains.lua
-python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
+go test ./...
+luajit -joff tests/lua/run.lua
+luajit -joff tests/lua/authored.lua
+luajit -joff tests/lua/ordered.lua
+luajit -joff tests/lua/catalog.lua
+FGM_FULL_MATRIX=1 luajit -joff tests/lua/journeys.lua
+FGM_DUNGEONS=1 luajit -joff tests/lua/journeys.lua
+FGM_LOREMASTER=1 luajit -joff tests/lua/journeys.lua
+luajit -joff tests/lua/ui.lua
+luajit -joff tests/lua/lint.lua
+luajit -joff tests/lua/audit_accept_chains.lua
+go run ./cmd/guide-release validate-notes --version "$(tr -d '[:space:]' < VERSION)"
 ```
 
 If the change should publish (guides, engine, or TOC), bump `VERSION` by exactly one patch and refresh `CHANGELOG.md` plus `RELEASE_NOTES.md` (current release only). Merging that reviewed PR tags and publishes the GitHub Release and CurseForge package. Release mechanics are in [DEVELOPMENT.md](DEVELOPMENT.md).

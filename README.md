@@ -53,29 +53,31 @@ Close the tracker to clear GuideMate’s owned destination, then reopen it from 
 
 ## Development
 
-Run the project-contract tests:
+Repository tooling targets Go 1.27.3 and LuaJIT in Lua 5.1 compatibility mode.
+
+Run the Go tests, including the LuaJIT runtime suites:
 
 ```sh
-python3 -m unittest discover -s tests
+go test ./...
 ```
 
 Run the Lua 5.1 engine and UI tests:
 
 ```sh
-lua5.1 tests/lua/run.lua
-lua5.1 tests/lua/ui.lua
+luajit -joff tests/lua/run.lua
+luajit -joff tests/lua/ui.lua
 ```
 
 Lint the shipped guide data:
 
 ```sh
-lua5.1 tests/lua/lint.lua
+luajit -joff tests/lua/lint.lua
 ```
 
 Compile the addon:
 
 ```sh
-python3 tools/compile_addon.py
+go run ./cmd/compile-addon
 ```
 
 The compiled addon appears at `.compiled/ForeverGuideMate`. Copy that `ForeverGuideMate` folder into your World of Warcraft AddOns directory to install it manually.

@@ -34,7 +34,7 @@ quests until their missing or contradictory mechanics can be resolved.
 The full race/class journey matrix includes Loremaster. To isolate those journeys:
 
 ```sh
-FGM_LOREMASTER=1 lua5.1 tests/lua/journeys.lua
+FGM_LOREMASTER=1 luajit -joff tests/lua/journeys.lua
 ```
 
 These simulations supply observed quest states, levels, optional item drops, and
@@ -43,6 +43,8 @@ availability or that one character can learn every profession.
 
 Automated checks verify structural order and observed progress, not sufficient XP,
 server availability, or pin accuracy. No Forever client walkthrough has been performed.
+The live Wowhead zone-list review audit runs with `go run ./cmd/audit-leveling-zone-quests`;
+it caches pages under the system temporary directory and does not gate CI.
 
 See [coverage and verification](loremaster-coverage.md) for reproducible counts, character applicability, source conflicts, provisional quality ratings, and requested client walkthroughs.
 
@@ -72,7 +74,7 @@ zone's guide, evidence, registration, tests, and release notes in its checkpoint
 Keep one patch bump relative to the PR base across all zone commits; CI validates
 the combined branch rather than each intermediate commit's parent.
 
-For one-zone authoring, `tools/author_zone_loremaster.py <zone-slug> --upstream
+For one-zone authoring, `go run ./cmd/author-zone-loremaster <zone-slug> --upstream
 <checkout>` previews dispositions using a clean upstream checkout at the pinned
 revision. Add `--write` to prepare that zone's guide and evidence for review.
 The tool does not register guides, change release metadata, or create commits.

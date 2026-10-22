@@ -9,8 +9,8 @@ When changing a Casual or Starter quest that also appears in Loremaster, update 
 
 Read `docs/guide-authoring.md` before editing. Loremaster preserves the zone's
 leveling spine and adds eligible permanent completion quests. Use
-`routeMode = "ordered"`; array position chooses the next action. The legacy
-`tools/weave_loremaster.py` cannot author ordered guides.
+`routeMode = "ordered"`; array position chooses the next action. The former bulk
+weaver was retired; use the one-zone authoring workflow below for ordered guides.
 
 ## Establish the completion set
 

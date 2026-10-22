@@ -1,7 +1,7 @@
-#!/usr/bin/env lua5.1
+#!/usr/bin/env luajit
 -- Optional review pass: chain violations (must be zero) and orphan-accept hints
 -- (manual review). Run from repo root:
---   lua5.1 tests/lua/audit_accept_chains.lua
+--   luajit -joff tests/lua/audit_accept_chains.lua
 
 local guideData = dofile("tests/lua/guide_data_checks.lua")
 

@@ -1,8 +1,8 @@
 # Quest level audit
 
-Pickup availability and recommended quest level serve different purposes. `tests/test_quest_min_levels.py` checks that accepts meet uncontested offer minima. It parses legacy completion helpers, declarative completion tables, and shared class actions. Waypoint completion and preparation notes do not identify quest actions. The fixture covers current leveling, class, and dungeon quests; unused source facts remain available for future guides.
+Pickup availability and recommended quest level serve different purposes. `internal/loremaster/repository_test.go` checks that accepts meet uncontested offer minima. It parses legacy completion helpers, declarative completion tables, and shared class actions. Waypoint completion and preparation notes do not identify quest actions. The fixture covers current leveling, class, and dungeon quests; unused source facts remain available for future guides.
 
-`tests/fixtures/quest_min_levels.json` preserves `step` and `offer` separately. Recommendations guide itinerary placement rather than imposing the same gate on accepts, objectives, and returns. `tests/test_route_placements.py` checks added, non-class quests against the supplied reference chapter's upper level band and verifies the reviewed moves and omissions. `tests/lua/catalog.lua` independently checks the reference action order.
+`tests/fixtures/quest_min_levels.json` preserves `step` and `offer` separately. Recommendations guide itinerary placement rather than imposing the same gate on accepts, objectives, and returns. The same Go repository tests check added, non-class quests against the supplied reference chapter's upper level band and verify the reviewed moves and omissions. `tests/lua/catalog.lua` independently checks the reference action order.
 
 The source snapshot was captured on October 16, 2026 from the local `wow-database` checkout while its scrape was incomplete. `quest_min_levels_sources.json` records the SHA-256 of each captured file. Reads were validated and frozen before deriving expectations. This does not establish that all files belong to the same scrape run. The fixture includes class quests resolved through shared actions.
 
@@ -21,13 +21,12 @@ The current audit separates pickup availability, source conflicts, reference ord
 Run the checks with:
 
 ```sh
-python3 -m unittest discover -s tests -p test_quest_min_levels.py
-python3 -m unittest discover -s tests -p test_route_placements.py
-lua5.1 tests/lua/catalog.lua
+go test ./internal/loremaster -run 'Test(StepAndOfferLevel|RecommendedLevel|InsertQuestAndSetMinLevel|PlaceWovenMovesAboveCeilingAndUpdatesPriorities|FitPriorities|ApplyLevelGate)' -count=1
+luajit -joff tests/lua/catalog.lua
 ```
 
 When refreshing facts, capture the database first, review conflicts and missing values, and update the hashes with source-derived expectations. CI does not read a developer's local scrape. The legacy stamping tool previews differences by default and refuses to write ordered guides before modifying any files:
 
 ```sh
-python3 tools/apply_quest_min_levels.py --database /path/to/database-snapshot
+go run ./cmd/apply-quest-min-levels --database /path/to/database-snapshot
 ```
