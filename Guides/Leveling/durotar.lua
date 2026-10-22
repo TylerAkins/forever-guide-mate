@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 8,
+    revision = 9,
     title = "Orc & Troll Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-durotar",
@@ -99,6 +99,22 @@ ns:RegisterGuide({
         },
         {
             route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek.", x = 0.42 },
+            },
+            text = "Accept Wayward Weapons from Gornek in The Den.",
+            id = "woven-accept-97279-wayward-weapons",
+            kind = "accept",
+            conditions = { all = { { faction = "Horde" }, { level = { min = 1 } } } },
+            complete = {
+                quest = { id = 97279, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            route = {
                 { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
             },
             id = "accept-788-cutting-teeth",
@@ -138,6 +154,38 @@ ns:RegisterGuide({
             sourceStep = 11,
             useClientPin = false,
             classAction = "objective-788-1-mottled-boar",
+        },
+        {
+            text = "Collect 6 Abandoned Training Weapons around the Valley of Trials. No saved spot for this, so the guide follows the pin in your quest log.",
+            route = {
+                { y = 0.684, mapID = 1411, label = "Valley of Trials", offMapText = "Travel to Valley of Trials.", x = 0.42 },
+            },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 1 } } } },
+            id = "woven-objective-97279-wayward-weapons",
+            kind = "objective",
+            useClientPin = false,
+            complete = {
+                quest = { id = 97279, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "woven-accept-97279-wayward-weapons" },
+        },
+        {
+            route = {
+                { y = 0.68, mapID = 1411, label = "Kzan Thornslash", offMapText = "Travel to Kzan Thornslash.", x = 0.404 },
+            },
+            text = "Turn in Wayward Weapons to Kzan Thornslash in The Den.",
+            id = "woven-turnin-97279-wayward-weapons",
+            kind = "turnin",
+            conditions = { all = { { faction = "Horde" }, { level = { min = 1 } } } },
+            complete = {
+                quest = { id = 97279, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97279-wayward-weapons", "woven-objective-97279-wayward-weapons" },
         },
         {
             id = "objective-1485-1-vile-familiar-head",
@@ -2394,93 +2442,6 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.684, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek.", x = 0.42 },
-            },
-            text = "Accept Wayward Weapons from Gornek in The Den.",
-            id = "woven-accept-97279-wayward-weapons",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                    {
-                        race = { 2, 8 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97279, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            text = "Collect 6 Abandoned Training Weapons around the Valley of Trials. No saved spot for this, so the guide follows the pin in your quest log.",
-            route = {
-                { y = 0.684, mapID = 1411, label = "Valley of Trials", offMapText = "Travel to Valley of Trials.", x = 0.42 },
-            },
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                    {
-                        race = { 2, 8 },
-                    },
-                },
-            },
-            id = "woven-objective-97279-wayward-weapons",
-            kind = "objective",
-            useClientPin = false,
-            complete = {
-                quest = { id = 97279, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "woven-accept-97279-wayward-weapons" },
-        },
-        {
-            route = {
-                { y = 0.68, mapID = 1411, label = "Kzan Thornslash", offMapText = "Travel to Kzan Thornslash.", x = 0.404 },
-            },
-            text = "Turn in Wayward Weapons to Kzan Thornslash in The Den.",
-            id = "woven-turnin-97279-wayward-weapons",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                    {
-                        race = { 2, 8 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97279, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97279-wayward-weapons", "woven-objective-97279-wayward-weapons" },
         },
         {
             route = {
